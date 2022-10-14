@@ -1,0 +1,5 @@
+var classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception =
+[
+    [ "~streets_desired_phase_plan_arbitrator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception.html#a9e22c3e31e2b70b15d43a345810fcb76", null ],
+    [ "streets_desired_phase_plan_arbitrator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception.html#a20970d9088da2208fecaab183ad9b014", null ]
+];

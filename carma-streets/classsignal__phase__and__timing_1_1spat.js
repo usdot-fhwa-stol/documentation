@@ -1,0 +1,27 @@
+var classsignal__phase__and__timing_1_1spat =
+[
+    [ "append_full_green_yellow_red_phases_by_desired_green", "classsignal__phase__and__timing_1_1spat.html#abbdc76328ccf9f1d15d5d15e6241e7d4", null ],
+    [ "find_max_desired_yellow_duration_red_clearance_pair", "classsignal__phase__and__timing_1_1spat.html#a039ae20f62541487dac614cf260c6ecd", null ],
+    [ "fromJson", "classsignal__phase__and__timing_1_1spat.html#a034410d8e6254100552d88d21ca5bedd", null ],
+    [ "get_intersection", "classsignal__phase__and__timing_1_1spat.html#a55b4c116c81f46b7747826c8bb9d238a", null ],
+    [ "get_name", "classsignal__phase__and__timing_1_1spat.html#a0e3c8a3be68736ff463cdfb2b185e38d", null ],
+    [ "get_timestamp", "classsignal__phase__and__timing_1_1spat.html#a56267b9a334f79513b0c01cf5ef1dbb4", null ],
+    [ "initialize_intersection", "classsignal__phase__and__timing_1_1spat.html#a8225fc5b13a6faaf4d1e309dadd76858", null ],
+    [ "operator!=", "classsignal__phase__and__timing_1_1spat.html#a5c73cc279f79a8bfcbd3fbbb1dc31889", null ],
+    [ "operator==", "classsignal__phase__and__timing_1_1spat.html#ae09b881219e3f51e7d9839668abbb52e", null ],
+    [ "populate_movement_event", "classsignal__phase__and__timing_1_1spat.html#ae996635c8e4bc134da15362e7813fade", null ],
+    [ "process_first_desired_green", "classsignal__phase__and__timing_1_1spat.html#a67c64af528dd1d1dcced1dbf2729a593", null ],
+    [ "process_second_onward_desired_green", "classsignal__phase__and__timing_1_1spat.html#a40277118c7dbeb9f5d1dfe414ea2f28c", null ],
+    [ "set_intersection", "classsignal__phase__and__timing_1_1spat.html#a67ec458f5628cf595b6f895eede30daa", null ],
+    [ "set_timestamp_local", "classsignal__phase__and__timing_1_1spat.html#ac664acbcf145d92f92605e3bfde11ce7", null ],
+    [ "set_timestamp_ntcip", "classsignal__phase__and__timing_1_1spat.html#a59f4842ab1588deac2746ecdafcd29b3", null ],
+    [ "toJson", "classsignal__phase__and__timing_1_1spat.html#af97069bb9821745c89704f1b7ef0f8a5", null ],
+    [ "update", "classsignal__phase__and__timing_1_1spat.html#abf3e0ae490abd77f4c168e34222c21dc", null ],
+    [ "update_intersection_state", "classsignal__phase__and__timing_1_1spat.html#ae02c2e6b6a732834be0f8472270f7931", null ],
+    [ "update_spat_with_candidate_dpp", "classsignal__phase__and__timing_1_1spat.html#a2382404fe3b23725a9a255564cf2b752", null ],
+    [ "intersections", "classsignal__phase__and__timing_1_1spat.html#a1ab4b5232e535810906b7076d08812ca", null ],
+    [ "name", "classsignal__phase__and__timing_1_1spat.html#a0a562044bd6250986b309068c079ade0", null ],
+    [ "phase_to_signal_group", "classsignal__phase__and__timing_1_1spat.html#a2c2dd359b921afee78e049ee9ce550dd", null ],
+    [ "spat_lock", "classsignal__phase__and__timing_1_1spat.html#a58e4d382adf28bea9200a167794b3e31", null ],
+    [ "timestamp", "classsignal__phase__and__timing_1_1spat.html#ac08c93a991a59d5d32fb2a363460d874", null ]
+];

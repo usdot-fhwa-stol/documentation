@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['origin_5fshift_0',['ORIGIN_SHIFT',['../classcc_1_1geosrv_1_1Mercator.html#a2c7fab8ddcfb2c4e894623c10974aea7',1,'cc::geosrv::Mercator']]],
-  ['origin_5fshift_5fdivided_5fby_5f180_1',['ORIGIN_SHIFT_DIVIDED_BY_180',['../classcc_1_1geosrv_1_1Mercator.html#a6e39e78e5becb229ab1cedc554f94d4a',1,'cc::geosrv::Mercator']]]
+  ['keys_5f_0',['keys_',['../classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer.html#a3b47bca969c4f12d31a76bb2701d16e2',1,'cc::vector_tile::VectorTile::Tile::Layer']]],
+  ['keys_5ffield_5fnumber_1',['KEYS_FIELD_NUMBER',['../classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer.html#ac4bddd44adaca63e0041c1a825931bed',1,'cc::vector_tile::VectorTile::Tile::Layer']]]
 ];

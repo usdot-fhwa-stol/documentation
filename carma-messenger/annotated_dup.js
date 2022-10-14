@@ -91,6 +91,7 @@ var annotated_dup =
     [ "DYearMonth", "structDYearMonth.html", "structDYearMonth" ],
     [ "EmergencyDetails", "structEmergencyDetails.html", "structEmergencyDetails" ],
     [ "EmergencyVehicleAlert", "structEmergencyVehicleAlert.html", "structEmergencyVehicleAlert" ],
+    [ "EmergencyVehicleResponse", "structEmergencyVehicleResponse.html", "structEmergencyVehicleResponse" ],
     [ "EnabledLaneList", "structEnabledLaneList.html", "structEnabledLaneList" ],
     [ "EventDescription", "structEventDescription.html", "structEventDescription" ],
     [ "ExitService", "structExitService.html", "structExitService" ],

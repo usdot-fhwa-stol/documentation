@@ -83,6 +83,7 @@ var hierarchy =
     [ "EmergencyDetails", "structEmergencyDetails.html", null ],
     [ "EmergencyVehicleAlert", "structEmergencyVehicleAlert.html", null ],
     [ "EmergencyVehicleAlert::EmergencyVehicleAlert__regional", "structEmergencyVehicleAlert_1_1EmergencyVehicleAlert____regional.html", null ],
+    [ "EmergencyVehicleResponse", "structEmergencyVehicleResponse.html", null ],
     [ "EnabledLaneList", "structEnabledLaneList.html", null ],
     [ "EventDescription", "structEventDescription.html", null ],
     [ "EventDescription::EventDescription__description", "structEventDescription_1_1EventDescription____description.html", null ],

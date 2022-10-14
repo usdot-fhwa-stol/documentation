@@ -210,164 +210,189 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>decoded ros message, returns ROS warning and an empty optional if decoding fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8cpp_source.html#l00025">25</a> of file <a class="el" href="MobilityPath__Message_8cpp_source.html">MobilityPath_Message.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>    {</div>
-<div class="line"><span class="lineno">   27</span>        carma_v2x_msgs::msg::MobilityHeader header;</div>
-<div class="line"><span class="lineno">   28</span>        carma_v2x_msgs::msg::Trajectory trajectory;</div>
-<div class="line"><span class="lineno">   29</span>        carma_v2x_msgs::msg::MobilityPath output;</div>
-<div class="line"><span class="lineno">   30</span>        <span class="comment">//decode results - stored in binary_array</span></div>
-<div class="line"><span class="lineno">   31</span>        <a class="code hl_struct" href="structasn__dec__rval__s.html">asn_dec_rval_t</a> rval;</div>
-<div class="line"><span class="lineno">   32</span>        <a class="code hl_struct" href="structMessageFrame.html">MessageFrame_t</a>* <a class="code hl_namespace" href="namespacemessage.html">message</a>=0;</div>
-<div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>        <span class="comment">//copy from vector to array         </span></div>
-<div class="line"><span class="lineno">   35</span>        <span class="keywordtype">size_t</span> len=binary_array.size();</div>
-<div class="line"><span class="lineno">   36</span>  </div>
-<div class="line"><span class="lineno">   37</span>        uint8_t buf[len];</div>
-<div class="line"><span class="lineno">   38</span>        std::copy(binary_array.begin(),binary_array.end(),buf);</div>
-<div class="line"><span class="lineno">   39</span>        <span class="comment">//use asn1c lib to decode</span></div>
-<div class="line"><span class="lineno">   40</span>        rval=<a class="code hl_function" href="per__decoder_8h.html#a76f8c1079ff1986561a848a2b41c1bda">uper_decode</a>(0, &amp;<a class="code hl_variable" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>,(<span class="keywordtype">void</span> **) &amp;<a class="code hl_namespace" href="namespacemessage.html">message</a>, buf, len, 0, 0);        </div>
-<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">if</span>(rval.<a class="code hl_variable" href="structasn__dec__rval__s.html#a5c379ac0e3d6d27d687b6a439123b47f">code</a>==<a class="code hl_enumvalue" href="asn__codecs_8h.html#a300b5e87269e3bf6300f0e08600df357ab834a5bb2ce6d97c2831fe3d71103c14">RC_OK</a>)</div>
-<div class="line"><span class="lineno">   42</span>        {</div>
-<div class="line"><span class="lineno">   43</span>            Mobility_Header Header_constant;</div>
-<div class="line"><span class="lineno">   44</span>            std::string sender_id, recipient_id, sender_bsm_id, plan_id;</div>
-<div class="line"><span class="lineno">   45</span>            uint64_t timestamp;</div>
-<div class="line"><span class="lineno">   46</span>            <span class="comment">//get sender id</span></div>
-<div class="line"><span class="lineno">   47</span>            <span class="keywordtype">size_t</span> str_len=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostStaticId.size;</div>
-<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">if</span>(str_len&lt;=Header_constant.STATIC_ID_MAX_LENGTH &amp;&amp; str_len&gt;=Header_constant.STATIC_ID_MIN_LENGTH)</div>
-<div class="line"><span class="lineno">   49</span>            {</div>
-<div class="line"><span class="lineno">   50</span>                <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;str_len;i++){</div>
-<div class="line"><span class="lineno">   51</span>                    sender_id +=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostStaticId.buf[i];</div>
-<div class="line"><span class="lineno">   52</span>                }</div>
-<div class="line"><span class="lineno">   53</span>            }</div>
-<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">else</span> sender_id=Header_constant.STRING_DEFAULT;</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>            header.sender_id=sender_id;</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>            <span class="comment">//get recepient id</span></div>
-<div class="line"><span class="lineno">   59</span>            str_len=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.targetStaticId.size;</div>
-<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">if</span>(str_len&lt;=Header_constant.STATIC_ID_MAX_LENGTH &amp;&amp; str_len&gt;=Header_constant.STATIC_ID_MIN_LENGTH)</div>
-<div class="line"><span class="lineno">   61</span>            {</div>
-<div class="line"><span class="lineno">   62</span>                <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;str_len;i++){</div>
-<div class="line"><span class="lineno">   63</span>                    recipient_id +=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.targetStaticId.buf[i];</div>
-<div class="line"><span class="lineno">   64</span>                }</div>
-<div class="line"><span class="lineno">   65</span>            }</div>
-<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">else</span> recipient_id=Header_constant.STRING_DEFAULT;</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>            header.recipient_id=recipient_id;</div>
-<div class="line"><span class="lineno">   69</span>            </div>
-<div class="line"><span class="lineno">   70</span>            <span class="comment">//get bsm id</span></div>
-<div class="line"><span class="lineno">   71</span>            <span class="comment">//sender_bsm_id is meant to represent the vehicle BSM id in hex string (Ex: FFFFFFFF)</span></div>
-<div class="line"><span class="lineno">   72</span>            str_len=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostBSMId.size;</div>
-<div class="line"><span class="lineno">   73</span>            <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;str_len;i++){</div>
-<div class="line"><span class="lineno">   74</span>                sender_bsm_id +=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostBSMId.buf[i];</div>
-<div class="line"><span class="lineno">   75</span>            }</div>
-<div class="line"><span class="lineno">   76</span>           </div>
-<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">if</span>(str_len&lt;Header_constant.BSM_ID_LENGTH)</div>
+<p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8cpp_source.html#l00033">33</a> of file <a class="el" href="MobilityPath__Message_8cpp_source.html">MobilityPath_Message.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>    {</div>
+<div class="line"><span class="lineno">   35</span>        std::vector&lt;std::shared_ptr&lt;void&gt;&gt; shared_ptrs; <span class="comment">// keep references to the objects until the encoding is complete</span></div>
+<div class="line"><span class="lineno">   36</span>        carma_v2x_msgs::msg::MobilityHeader header;</div>
+<div class="line"><span class="lineno">   37</span>        carma_v2x_msgs::msg::Trajectory trajectory;</div>
+<div class="line"><span class="lineno">   38</span>        carma_v2x_msgs::msg::MobilityPath output;</div>
+<div class="line"><span class="lineno">   39</span>        <span class="comment">// decode results - stored in binary_array</span></div>
+<div class="line"><span class="lineno">   40</span>        <a class="code hl_struct" href="structasn__dec__rval__s.html">asn_dec_rval_t</a> rval;</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_struct" href="structMessageFrame.html">MessageFrame_t</a> *<a class="code hl_namespace" href="namespacemessage.html">message</a> = 0;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>        <span class="comment">// copy from vector to array</span></div>
+<div class="line"><span class="lineno">   44</span>        <span class="keywordtype">size_t</span> len = binary_array.size();</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>        uint8_t buf[len];</div>
+<div class="line"><span class="lineno">   47</span>        std::copy(binary_array.begin(), binary_array.end(), buf);</div>
+<div class="line"><span class="lineno">   48</span>        <span class="comment">// use asn1c lib to decode</span></div>
+<div class="line"><span class="lineno">   49</span>        rval = <a class="code hl_function" href="per__decoder_8h.html#a76f8c1079ff1986561a848a2b41c1bda">uper_decode</a>(0, &amp;<a class="code hl_variable" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, (<span class="keywordtype">void</span> **)&amp;<a class="code hl_namespace" href="namespacemessage.html">message</a>, buf, len, 0, 0);</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">if</span> (rval.<a class="code hl_variable" href="structasn__dec__rval__s.html#a5c379ac0e3d6d27d687b6a439123b47f">code</a> != <a class="code hl_enumvalue" href="asn__codecs_8h.html#a300b5e87269e3bf6300f0e08600df357ab834a5bb2ce6d97c2831fe3d71103c14">RC_OK</a>)</div>
+<div class="line"><span class="lineno">   51</span>        {</div>
+<div class="line"><span class="lineno">   52</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Decoding mobility path message failed&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span>            <a class="code hl_define" href="constr__TYPE_8h.html#a87b7ea155e1b74d50411b63c49e87680">ASN_STRUCT_FREE</a>(<a class="code hl_variable" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, <a class="code hl_namespace" href="namespacemessage.html">message</a>);</div>
+<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">return</span> boost::optional&lt;carma_v2x_msgs::msg::MobilityPath&gt;{};</div>
+<div class="line"><span class="lineno">   55</span>        }</div>
+<div class="line"><span class="lineno">   56</span>        Mobility_Header Header_constant;</div>
+<div class="line"><span class="lineno">   57</span>        std::string sender_id, recipient_id, sender_bsm_id, plan_id;</div>
+<div class="line"><span class="lineno">   58</span>        uint64_t timestamp;</div>
+<div class="line"><span class="lineno">   59</span>        <span class="comment">// get sender id</span></div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordtype">size_t</span> str_len = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostStaticId.size;</div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">if</span> (str_len &lt;= Header_constant.STATIC_ID_MAX_LENGTH &amp;&amp; str_len &gt;= Header_constant.STATIC_ID_MIN_LENGTH)</div>
+<div class="line"><span class="lineno">   62</span>        {</div>
+<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; str_len; i++)</div>
+<div class="line"><span class="lineno">   64</span>            {</div>
+<div class="line"><span class="lineno">   65</span>                sender_id += <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostStaticId.buf[i];</div>
+<div class="line"><span class="lineno">   66</span>            }</div>
+<div class="line"><span class="lineno">   67</span>        }</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   69</span>            sender_id = Header_constant.STRING_DEFAULT;</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>        header.sender_id = sender_id;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>        <span class="comment">// get recepient id</span></div>
+<div class="line"><span class="lineno">   74</span>        str_len = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.targetStaticId.size;</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">if</span> (str_len &lt;= Header_constant.STATIC_ID_MAX_LENGTH &amp;&amp; str_len &gt;= Header_constant.STATIC_ID_MIN_LENGTH)</div>
+<div class="line"><span class="lineno">   76</span>        {</div>
+<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; str_len; i++)</div>
 <div class="line"><span class="lineno">   78</span>            {</div>
-<div class="line"><span class="lineno">   79</span>                sender_bsm_id=std::string((Header_constant.BSM_ID_LENGTH-str_len),<span class="charliteral">&#39;0&#39;</span>).append(sender_bsm_id);</div>
+<div class="line"><span class="lineno">   79</span>                recipient_id += <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.targetStaticId.buf[i];</div>
 <div class="line"><span class="lineno">   80</span>            }</div>
-<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(str_len&gt;Header_constant.BSM_ID_LENGTH){</div>
-<div class="line"><span class="lineno">   82</span>                <span class="comment">// RCLCPP_WARN(get_logger(),&quot;BSM ID -size greater than limit, changing to default&quot;);</span></div>
-<div class="line"><span class="lineno">   83</span>                sender_bsm_id=Header_constant.BSM_ID_DEFAULT;</div>
-<div class="line"><span class="lineno">   84</span>            }</div>
-<div class="line"><span class="lineno">   85</span>            header.sender_bsm_id=sender_bsm_id;</div>
+<div class="line"><span class="lineno">   81</span>        }</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   83</span>            recipient_id = Header_constant.STRING_DEFAULT;</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>        header.recipient_id = recipient_id;</div>
 <div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>            <span class="comment">//get plan id</span></div>
-<div class="line"><span class="lineno">   88</span>            str_len=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.planId.size;</div>
-<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">if</span>(str_len==Header_constant.GUID_LENGTH)</div>
-<div class="line"><span class="lineno">   90</span>            {</div>
-<div class="line"><span class="lineno">   91</span>                <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;str_len;i++){</div>
-<div class="line"><span class="lineno">   92</span>                    plan_id +=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.planId.buf[i];</div>
-<div class="line"><span class="lineno">   93</span>                }</div>
-<div class="line"><span class="lineno">   94</span>            }</div>
-<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">else</span> plan_id=Header_constant.GUID_DEFAULT;</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>            header.plan_id=plan_id;</div>
-<div class="line"><span class="lineno">   98</span>            </div>
-<div class="line"><span class="lineno">   99</span>            <span class="comment">//recover uint64_t timestamp from string</span></div>
-<div class="line"><span class="lineno">  100</span>            str_len=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.timestamp.size;</div>
-<div class="line"><span class="lineno">  101</span>            timestamp=0;</div>
-<div class="line"><span class="lineno">  102</span>            <span class="keywordtype">char</span> timestamp_ch[str_len];</div>
-<div class="line"><span class="lineno">  103</span>            <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;str_len;i++){</div>
-<div class="line"><span class="lineno">  104</span>                timestamp_ch[i]=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.timestamp.buf[i];</div>
-<div class="line"><span class="lineno">  105</span>            }</div>
-<div class="line"><span class="lineno">  106</span>            timestamp=atoll(timestamp_ch);</div>
-<div class="line"><span class="lineno">  107</span>            header.timestamp=timestamp;</div>
-<div class="line"><span class="lineno">  108</span>            output.m_header=header;</div>
-<div class="line"><span class="lineno">  109</span>            <span class="comment">//Trajectory</span></div>
-<div class="line"><span class="lineno">  110</span>            carma_v2x_msgs::msg::LocationECEF location;</div>
-<div class="line"><span class="lineno">  111</span>            <span class="keywordtype">long</span> tmp=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.ecefX;</div>
-<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">if</span>(tmp&gt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a377dba21770367b5726032166c9a557e">LOCATION_MAX</a> || tmp&lt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a521ad8a76168e6327338513e0667de9e">LOCATION_MIN</a>){</div>
-<div class="line"><span class="lineno">  113</span>                RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Location ecefX is out of range&quot;</span>);</div>
-<div class="line"><span class="lineno">  114</span>                <span class="keywordflow">return</span> boost::optional&lt;carma_v2x_msgs::msg::MobilityPath&gt;{};</div>
-<div class="line"><span class="lineno">  115</span>            }</div>
-<div class="line"><span class="lineno">  116</span>            location.ecef_x=tmp;</div>
+<div class="line"><span class="lineno">   87</span>        <span class="comment">// get bsm id</span></div>
+<div class="line"><span class="lineno">   88</span>        <span class="comment">// sender_bsm_id is meant to represent the vehicle BSM id in hex string (Ex: FFFFFFFF)</span></div>
+<div class="line"><span class="lineno">   89</span>        str_len = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostBSMId.size;</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; str_len; i++)</div>
+<div class="line"><span class="lineno">   91</span>        {</div>
+<div class="line"><span class="lineno">   92</span>            sender_bsm_id += <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostBSMId.buf[i];</div>
+<div class="line"><span class="lineno">   93</span>        }</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">if</span> (str_len &lt; Header_constant.BSM_ID_LENGTH)</div>
+<div class="line"><span class="lineno">   96</span>        {</div>
+<div class="line"><span class="lineno">   97</span>            sender_bsm_id = std::string((Header_constant.BSM_ID_LENGTH - str_len), <span class="charliteral">&#39;0&#39;</span>).append(sender_bsm_id);</div>
+<div class="line"><span class="lineno">   98</span>        }</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (str_len &gt; Header_constant.BSM_ID_LENGTH)</div>
+<div class="line"><span class="lineno">  100</span>        {</div>
+<div class="line"><span class="lineno">  101</span>            <span class="comment">// RCLCPP_WARN(get_logger(),&quot;BSM ID -size greater than limit, changing to default&quot;);</span></div>
+<div class="line"><span class="lineno">  102</span>            sender_bsm_id = Header_constant.BSM_ID_DEFAULT;</div>
+<div class="line"><span class="lineno">  103</span>        }</div>
+<div class="line"><span class="lineno">  104</span>        header.sender_bsm_id = sender_bsm_id;</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>        <span class="comment">// get plan id</span></div>
+<div class="line"><span class="lineno">  107</span>        str_len = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.planId.size;</div>
+<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">if</span> (str_len == Header_constant.GUID_LENGTH)</div>
+<div class="line"><span class="lineno">  109</span>        {</div>
+<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; str_len; i++)</div>
+<div class="line"><span class="lineno">  111</span>            {</div>
+<div class="line"><span class="lineno">  112</span>                plan_id += <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.planId.buf[i];</div>
+<div class="line"><span class="lineno">  113</span>            }</div>
+<div class="line"><span class="lineno">  114</span>        }</div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  116</span>            plan_id = Header_constant.GUID_DEFAULT;</div>
 <div class="line"><span class="lineno">  117</span> </div>
-<div class="line"><span class="lineno">  118</span>            tmp=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.ecefY;</div>
-<div class="line"><span class="lineno">  119</span>            <span class="keywordflow">if</span>(tmp&gt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a377dba21770367b5726032166c9a557e">LOCATION_MAX</a> || tmp&lt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a521ad8a76168e6327338513e0667de9e">LOCATION_MIN</a>){</div>
-<div class="line"><span class="lineno">  120</span>                RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Location ecefY is out of range&quot;</span>);</div>
-<div class="line"><span class="lineno">  121</span>                <span class="keywordflow">return</span> boost::optional&lt;carma_v2x_msgs::msg::MobilityPath&gt;{};</div>
-<div class="line"><span class="lineno">  122</span>            }</div>
-<div class="line"><span class="lineno">  123</span>            location.ecef_y=tmp;</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>            tmp=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.ecefZ;</div>
-<div class="line"><span class="lineno">  126</span>            <span class="keywordflow">if</span>(tmp&gt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a613501ad2181b740f330364b81318e70">LOCATION_MAX_Z</a> || tmp&lt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a6e628ce5b8a4ee7385b6794010d79824">LOCATION_MIN_Z</a>){</div>
-<div class="line"><span class="lineno">  127</span>                RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Location ecefZ is out of range&quot;</span>);</div>
-<div class="line"><span class="lineno">  128</span>                <span class="keywordflow">return</span> boost::optional&lt;carma_v2x_msgs::msg::MobilityPath&gt;{};</div>
-<div class="line"><span class="lineno">  129</span>            }</div>
-<div class="line"><span class="lineno">  130</span>            location.ecef_z=tmp;</div>
-<div class="line"><span class="lineno">  131</span>            </div>
-<div class="line"><span class="lineno">  132</span>            <span class="comment">//convert location timestamp from string in asn1 to uint64 for ros message</span></div>
-<div class="line"><span class="lineno">  133</span>            str_len=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.timestamp.size;</div>
-<div class="line"><span class="lineno">  134</span>            uint64_t location_timestamp=0;</div>
-<div class="line"><span class="lineno">  135</span>            <span class="keywordtype">char</span> location_timestamp_ch[str_len];</div>
-<div class="line"><span class="lineno">  136</span>            <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;str_len;i++){</div>
-<div class="line"><span class="lineno">  137</span>                location_timestamp_ch[i]=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.timestamp.buf[i];</div>
-<div class="line"><span class="lineno">  138</span>            }</div>
-<div class="line"><span class="lineno">  139</span>            location_timestamp=atoll(location_timestamp_ch);</div>
-<div class="line"><span class="lineno">  140</span>            location.timestamp=location_timestamp;</div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>            trajectory.location=location;</div>
-<div class="line"><span class="lineno">  143</span>            </div>
-<div class="line"><span class="lineno">  144</span>            <span class="comment">//Trajectory-offset</span></div>
-<div class="line"><span class="lineno">  145</span>            <span class="keywordtype">int</span> offset_count=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.trajectory.list.count;</div>
-<div class="line"><span class="lineno">  146</span>            </div>
-<div class="line"><span class="lineno">  147</span>            <span class="keywordflow">if</span>(offset_count&gt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a7a7a3f736336ee9eb5326f3fed97e5eb">MAX_POINTS_IN_MESSAGE</a>){</div>
-<div class="line"><span class="lineno">  148</span>                RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;offset count greater than 60.&quot;</span>);</div>
-<div class="line"><span class="lineno">  149</span>                <span class="keywordflow">return</span> boost::optional&lt;carma_v2x_msgs::msg::MobilityPath&gt;{};</div>
-<div class="line"><span class="lineno">  150</span>            } </div>
+<div class="line"><span class="lineno">  118</span>        header.plan_id = plan_id;</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>        <span class="comment">// recover uint64_t timestamp from string</span></div>
+<div class="line"><span class="lineno">  121</span>        str_len = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.timestamp.size;</div>
+<div class="line"><span class="lineno">  122</span>        timestamp = 0;</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordtype">char</span> timestamp_ch[str_len + 1];</div>
+<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; str_len; i++)</div>
+<div class="line"><span class="lineno">  125</span>        {</div>
+<div class="line"><span class="lineno">  126</span>            timestamp_ch[i] = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.timestamp.buf[i];</div>
+<div class="line"><span class="lineno">  127</span>        }</div>
+<div class="line"><span class="lineno">  128</span>        timestamp_ch[str_len] = 0; <span class="comment">// String needs a null terminator</span></div>
+<div class="line"><span class="lineno">  129</span>        timestamp = atoll(timestamp_ch);</div>
+<div class="line"><span class="lineno">  130</span>        header.timestamp = timestamp;</div>
+<div class="line"><span class="lineno">  131</span>        output.m_header = header;</div>
+<div class="line"><span class="lineno">  132</span>        <span class="comment">// Trajectory</span></div>
+<div class="line"><span class="lineno">  133</span>        carma_v2x_msgs::msg::LocationECEF location;</div>
+<div class="line"><span class="lineno">  134</span>        <span class="keywordtype">long</span> tmp = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.ecefX;</div>
+<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">if</span> (tmp &gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a377dba21770367b5726032166c9a557e">LOCATION_MAX</a> || tmp &lt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a521ad8a76168e6327338513e0667de9e">LOCATION_MIN</a>)</div>
+<div class="line"><span class="lineno">  136</span>        {</div>
+<div class="line"><span class="lineno">  137</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Location ecefX is out of range&quot;</span>);</div>
+<div class="line"><span class="lineno">  138</span>            <a class="code hl_define" href="constr__TYPE_8h.html#a87b7ea155e1b74d50411b63c49e87680">ASN_STRUCT_FREE</a>(<a class="code hl_variable" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, <a class="code hl_namespace" href="namespacemessage.html">message</a>);</div>
+<div class="line"><span class="lineno">  139</span>            <span class="keywordflow">return</span> boost::optional&lt;carma_v2x_msgs::msg::MobilityPath&gt;{};</div>
+<div class="line"><span class="lineno">  140</span>        }</div>
+<div class="line"><span class="lineno">  141</span>        location.ecef_x = tmp;</div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>        tmp = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.ecefY;</div>
+<div class="line"><span class="lineno">  144</span>        <span class="keywordflow">if</span> (tmp &gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a377dba21770367b5726032166c9a557e">LOCATION_MAX</a> || tmp &lt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a521ad8a76168e6327338513e0667de9e">LOCATION_MIN</a>)</div>
+<div class="line"><span class="lineno">  145</span>        {</div>
+<div class="line"><span class="lineno">  146</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Location ecefY is out of range&quot;</span>);</div>
+<div class="line"><span class="lineno">  147</span>            <a class="code hl_define" href="constr__TYPE_8h.html#a87b7ea155e1b74d50411b63c49e87680">ASN_STRUCT_FREE</a>(<a class="code hl_variable" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, <a class="code hl_namespace" href="namespacemessage.html">message</a>);</div>
+<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">return</span> boost::optional&lt;carma_v2x_msgs::msg::MobilityPath&gt;{};</div>
+<div class="line"><span class="lineno">  149</span>        }</div>
+<div class="line"><span class="lineno">  150</span>        location.ecef_y = tmp;</div>
 <div class="line"><span class="lineno">  151</span> </div>
-<div class="line"><span class="lineno">  152</span>            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0;i&lt;offset_count;i++){</div>
-<div class="line"><span class="lineno">  153</span>                carma_v2x_msgs::msg::LocationOffsetECEF Offsets;</div>
-<div class="line"><span class="lineno">  154</span>                </div>
-<div class="line"><span class="lineno">  155</span>                Offsets.offset_x=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.trajectory.list.array[i]-&gt;offsetX;</div>
-<div class="line"><span class="lineno">  156</span>                <span class="keywordflow">if</span>(Offsets.offset_x&lt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a7a0591261d257e93530688a70c9fb49b">OFFSET_MIN</a> || Offsets.offset_x&gt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#afecd7a7cf238c750318fbb8ebe1fb018">OFFSET_MAX</a>)</div>
-<div class="line"><span class="lineno">  157</span>                {</div>
-<div class="line"><span class="lineno">  158</span>                    Offsets.offset_x=<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a170f29bb5c3b35c41fd4b9b774da88fb">OFFSET_UNAVAILABLE</a>;</div>
-<div class="line"><span class="lineno">  159</span>                }</div>
-<div class="line"><span class="lineno">  160</span>                </div>
-<div class="line"><span class="lineno">  161</span>                Offsets.offset_y=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.trajectory.list.array[i]-&gt;offsetY;</div>
-<div class="line"><span class="lineno">  162</span>                <span class="keywordflow">if</span>(Offsets.offset_y&lt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a7a0591261d257e93530688a70c9fb49b">OFFSET_MIN</a> || Offsets.offset_y&gt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#afecd7a7cf238c750318fbb8ebe1fb018">OFFSET_MAX</a>)</div>
-<div class="line"><span class="lineno">  163</span>                {</div>
-<div class="line"><span class="lineno">  164</span>                    Offsets.offset_y=<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a170f29bb5c3b35c41fd4b9b774da88fb">OFFSET_UNAVAILABLE</a>;</div>
-<div class="line"><span class="lineno">  165</span>                }</div>
-<div class="line"><span class="lineno">  166</span>                </div>
-<div class="line"><span class="lineno">  167</span>                Offsets.offset_z=<a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.trajectory.list.array[i]-&gt;offsetZ;                </div>
-<div class="line"><span class="lineno">  168</span>                <span class="keywordflow">if</span>(Offsets.offset_z&lt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a7a0591261d257e93530688a70c9fb49b">OFFSET_MIN</a> || Offsets.offset_z&gt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#afecd7a7cf238c750318fbb8ebe1fb018">OFFSET_MAX</a>)</div>
-<div class="line"><span class="lineno">  169</span>                {</div>
-<div class="line"><span class="lineno">  170</span>                    Offsets.offset_z=<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a170f29bb5c3b35c41fd4b9b774da88fb">OFFSET_UNAVAILABLE</a>;</div>
-<div class="line"><span class="lineno">  171</span>                }</div>
-<div class="line"><span class="lineno">  172</span>                </div>
-<div class="line"><span class="lineno">  173</span>                trajectory.offsets.push_back(Offsets);</div>
-<div class="line"><span class="lineno">  174</span>            }</div>
-<div class="line"><span class="lineno">  175</span> </div>
-<div class="line"><span class="lineno">  176</span>            output.trajectory=trajectory;</div>
-<div class="line"><span class="lineno">  177</span>            </div>
-<div class="line"><span class="lineno">  178</span>            <span class="keywordflow">return</span> boost::optional&lt;carma_v2x_msgs::msg::MobilityPath&gt;(output);</div>
-<div class="line"><span class="lineno">  179</span>        }</div>
-<div class="line"><span class="lineno">  180</span>        RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Decoding mobility path message failed&quot;</span>);</div>
-<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">return</span> boost::optional&lt;carma_v2x_msgs::msg::MobilityPath&gt; {};</div>
-<div class="line"><span class="lineno">  182</span>    }</div>
+<div class="line"><span class="lineno">  152</span>        tmp = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.ecefZ;</div>
+<div class="line"><span class="lineno">  153</span>        <span class="keywordflow">if</span> (tmp &gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a613501ad2181b740f330364b81318e70">LOCATION_MAX_Z</a> || tmp &lt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a6e628ce5b8a4ee7385b6794010d79824">LOCATION_MIN_Z</a>)</div>
+<div class="line"><span class="lineno">  154</span>        {</div>
+<div class="line"><span class="lineno">  155</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Location ecefZ is out of range&quot;</span>);</div>
+<div class="line"><span class="lineno">  156</span>            <a class="code hl_define" href="constr__TYPE_8h.html#a87b7ea155e1b74d50411b63c49e87680">ASN_STRUCT_FREE</a>(<a class="code hl_variable" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, <a class="code hl_namespace" href="namespacemessage.html">message</a>);</div>
+<div class="line"><span class="lineno">  157</span>            <span class="keywordflow">return</span> boost::optional&lt;carma_v2x_msgs::msg::MobilityPath&gt;{};</div>
+<div class="line"><span class="lineno">  158</span>        }</div>
+<div class="line"><span class="lineno">  159</span>        location.ecef_z = tmp;</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>        <span class="comment">// convert location timestamp from string in asn1 to uint64 for ros message</span></div>
+<div class="line"><span class="lineno">  162</span>        str_len = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.timestamp.size;</div>
+<div class="line"><span class="lineno">  163</span>        uint64_t location_timestamp = 0;</div>
+<div class="line"><span class="lineno">  164</span>        <span class="keywordtype">char</span> location_timestamp_ch[str_len + 1];</div>
+<div class="line"><span class="lineno">  165</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; str_len; i++)</div>
+<div class="line"><span class="lineno">  166</span>        {</div>
+<div class="line"><span class="lineno">  167</span>            location_timestamp_ch[i] = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.timestamp.buf[i];</div>
+<div class="line"><span class="lineno">  168</span>        }</div>
+<div class="line"><span class="lineno">  169</span>        location_timestamp_ch[str_len] = 0; <span class="comment">// String needs a null terminator</span></div>
+<div class="line"><span class="lineno">  170</span>        location_timestamp = atoll(location_timestamp_ch);</div>
+<div class="line"><span class="lineno">  171</span>        location.timestamp = location_timestamp;</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>        trajectory.location = location;</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>        <span class="comment">// Trajectory-offset</span></div>
+<div class="line"><span class="lineno">  176</span>        <span class="keywordtype">int</span> offset_count = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.trajectory.list.count;</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>        <span class="keywordflow">if</span> (offset_count &gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a7a7a3f736336ee9eb5326f3fed97e5eb">MAX_POINTS_IN_MESSAGE</a>)</div>
+<div class="line"><span class="lineno">  179</span>        {</div>
+<div class="line"><span class="lineno">  180</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;offset count greater than 60.&quot;</span>);</div>
+<div class="line"><span class="lineno">  181</span>            <a class="code hl_define" href="constr__TYPE_8h.html#a87b7ea155e1b74d50411b63c49e87680">ASN_STRUCT_FREE</a>(<a class="code hl_variable" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, <a class="code hl_namespace" href="namespacemessage.html">message</a>);</div>
+<div class="line"><span class="lineno">  182</span>            <span class="keywordflow">return</span> boost::optional&lt;carma_v2x_msgs::msg::MobilityPath&gt;{};</div>
+<div class="line"><span class="lineno">  183</span>        }</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; offset_count; i++)</div>
+<div class="line"><span class="lineno">  186</span>        {</div>
+<div class="line"><span class="lineno">  187</span>            <span class="keyword">auto</span> Offsets = *create_store_shared&lt;carma_v2x_msgs::msg::LocationOffsetECEF&gt;(shared_ptrs);</div>
+<div class="line"><span class="lineno">  188</span>            <span class="comment">// carma_v2x_msgs::msg::LocationOffsetECEF Offsets;</span></div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>            Offsets.offset_x = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.trajectory.list.array[i]-&gt;offsetX;</div>
+<div class="line"><span class="lineno">  191</span>            <span class="keywordflow">if</span> (Offsets.offset_x &lt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a7a0591261d257e93530688a70c9fb49b">OFFSET_MIN</a> || Offsets.offset_x &gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#afecd7a7cf238c750318fbb8ebe1fb018">OFFSET_MAX</a>)</div>
+<div class="line"><span class="lineno">  192</span>            {</div>
+<div class="line"><span class="lineno">  193</span>                Offsets.offset_x = <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a170f29bb5c3b35c41fd4b9b774da88fb">OFFSET_UNAVAILABLE</a>;</div>
+<div class="line"><span class="lineno">  194</span>            }</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>            Offsets.offset_y = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.trajectory.list.array[i]-&gt;offsetY;</div>
+<div class="line"><span class="lineno">  197</span>            <span class="keywordflow">if</span> (Offsets.offset_y &lt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a7a0591261d257e93530688a70c9fb49b">OFFSET_MIN</a> || Offsets.offset_y &gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#afecd7a7cf238c750318fbb8ebe1fb018">OFFSET_MAX</a>)</div>
+<div class="line"><span class="lineno">  198</span>            {</div>
+<div class="line"><span class="lineno">  199</span>                Offsets.offset_y = <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a170f29bb5c3b35c41fd4b9b774da88fb">OFFSET_UNAVAILABLE</a>;</div>
+<div class="line"><span class="lineno">  200</span>            }</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>            Offsets.offset_z = <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.trajectory.list.array[i]-&gt;offsetZ;</div>
+<div class="line"><span class="lineno">  203</span>            <span class="keywordflow">if</span> (Offsets.offset_z &lt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a7a0591261d257e93530688a70c9fb49b">OFFSET_MIN</a> || Offsets.offset_z &gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#afecd7a7cf238c750318fbb8ebe1fb018">OFFSET_MAX</a>)</div>
+<div class="line"><span class="lineno">  204</span>            {</div>
+<div class="line"><span class="lineno">  205</span>                Offsets.offset_z = <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a170f29bb5c3b35c41fd4b9b774da88fb">OFFSET_UNAVAILABLE</a>;</div>
+<div class="line"><span class="lineno">  206</span>            }</div>
+<div class="line"><span class="lineno">  207</span> </div>
+<div class="line"><span class="lineno">  208</span>            trajectory.offsets.push_back(Offsets);</div>
+<div class="line"><span class="lineno">  209</span>        }</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>        output.trajectory = trajectory;</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>        <a class="code hl_define" href="constr__TYPE_8h.html#a87b7ea155e1b74d50411b63c49e87680">ASN_STRUCT_FREE</a>(<a class="code hl_variable" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, <a class="code hl_namespace" href="namespacemessage.html">message</a>);</div>
+<div class="line"><span class="lineno">  214</span>        <span class="keywordflow">return</span> boost::optional&lt;carma_v2x_msgs::msg::MobilityPath&gt;(output);</div>
+<div class="line"><span class="lineno">  215</span>    }</div>
 <div class="ttc" id="aMessageFrame_8h_html_ac2fe16169ee58fd67c1e8a773ae61f1f"><div class="ttname"><a href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a></div><div class="ttdeci">asn_TYPE_descriptor_t asn_DEF_MessageFrame</div></div>
 <div class="ttc" id="aasn__codecs_8h_html_a300b5e87269e3bf6300f0e08600df357ab834a5bb2ce6d97c2831fe3d71103c14"><div class="ttname"><a href="asn__codecs_8h.html#a300b5e87269e3bf6300f0e08600df357ab834a5bb2ce6d97c2831fe3d71103c14">RC_OK</a></div><div class="ttdeci">@ RC_OK</div><div class="ttdef"><b>Definition:</b> <a href="asn__codecs_8h_source.html#l00082">asn_codecs.h:82</a></div></div>
 <div class="ttc" id="aclasscpp__message_1_1Mobility__Path_html_a170f29bb5c3b35c41fd4b9b774da88fb"><div class="ttname"><a href="classcpp__message_1_1Mobility__Path.html#a170f29bb5c3b35c41fd4b9b774da88fb">cpp_message::Mobility_Path::OFFSET_UNAVAILABLE</a></div><div class="ttdeci">static const int OFFSET_UNAVAILABLE</div><div class="ttdef"><b>Definition:</b> <a href="MobilityPath__Message_8h_source.html#l00036">MobilityPath_Message.h:36</a></div></div>
@@ -378,13 +403,14 @@ Static Private Attributes</h2></td></tr>
 <div class="ttc" id="aclasscpp__message_1_1Mobility__Path_html_a7a0591261d257e93530688a70c9fb49b"><div class="ttname"><a href="classcpp__message_1_1Mobility__Path.html#a7a0591261d257e93530688a70c9fb49b">cpp_message::Mobility_Path::OFFSET_MIN</a></div><div class="ttdeci">static const int OFFSET_MIN</div><div class="ttdef"><b>Definition:</b> <a href="MobilityPath__Message_8h_source.html#l00034">MobilityPath_Message.h:34</a></div></div>
 <div class="ttc" id="aclasscpp__message_1_1Mobility__Path_html_a7a7a3f736336ee9eb5326f3fed97e5eb"><div class="ttname"><a href="classcpp__message_1_1Mobility__Path.html#a7a7a3f736336ee9eb5326f3fed97e5eb">cpp_message::Mobility_Path::MAX_POINTS_IN_MESSAGE</a></div><div class="ttdeci">static const int MAX_POINTS_IN_MESSAGE</div><div class="ttdef"><b>Definition:</b> <a href="MobilityPath__Message_8h_source.html#l00026">MobilityPath_Message.h:26</a></div></div>
 <div class="ttc" id="aclasscpp__message_1_1Mobility__Path_html_afecd7a7cf238c750318fbb8ebe1fb018"><div class="ttname"><a href="classcpp__message_1_1Mobility__Path.html#afecd7a7cf238c750318fbb8ebe1fb018">cpp_message::Mobility_Path::OFFSET_MAX</a></div><div class="ttdeci">static const int OFFSET_MAX</div><div class="ttdef"><b>Definition:</b> <a href="MobilityPath__Message_8h_source.html#l00035">MobilityPath_Message.h:35</a></div></div>
+<div class="ttc" id="aconstr__TYPE_8h_html_a87b7ea155e1b74d50411b63c49e87680"><div class="ttname"><a href="constr__TYPE_8h.html#a87b7ea155e1b74d50411b63c49e87680">ASN_STRUCT_FREE</a></div><div class="ttdeci">#define ASN_STRUCT_FREE(asn_DEF, ptr)</div><div class="ttdef"><b>Definition:</b> <a href="constr__TYPE_8h_source.html#l00072">constr_TYPE.h:72</a></div></div>
 <div class="ttc" id="anamespacemessage_html"><div class="ttname"><a href="namespacemessage.html">message</a></div><div class="ttdef"><b>Definition:</b> <a href="message_8launch_8py_source.html#l00001">message.launch.py:1</a></div></div>
 <div class="ttc" id="aper__decoder_8h_html_a76f8c1079ff1986561a848a2b41c1bda"><div class="ttname"><a href="per__decoder_8h.html#a76f8c1079ff1986561a848a2b41c1bda">uper_decode</a></div><div class="ttdeci">asn_dec_rval_t uper_decode(const struct asn_codec_ctx_s *opt_codec_ctx, const struct asn_TYPE_descriptor_s *type_descriptor, void **struct_ptr, const void *buffer, size_t size, int skip_bits, int unused_bits)</div></div>
 <div class="ttc" id="astructMessageFrame_html"><div class="ttname"><a href="structMessageFrame.html">MessageFrame</a></div><div class="ttdef"><b>Definition:</b> <a href="MessageFrame_8h_source.html#l00094">MessageFrame.h:94</a></div></div>
 <div class="ttc" id="astructasn__dec__rval__s_html"><div class="ttname"><a href="structasn__dec__rval__s.html">asn_dec_rval_s</a></div><div class="ttdef"><b>Definition:</b> <a href="asn__codecs_8h_source.html#l00086">asn_codecs.h:86</a></div></div>
 <div class="ttc" id="astructasn__dec__rval__s_html_a5c379ac0e3d6d27d687b6a439123b47f"><div class="ttname"><a href="structasn__dec__rval__s.html#a5c379ac0e3d6d27d687b6a439123b47f">asn_dec_rval_s::code</a></div><div class="ttdeci">enum asn_dec_rval_code_e code</div><div class="ttdef"><b>Definition:</b> <a href="asn__codecs_8h_source.html#l00087">asn_codecs.h:87</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, <a class="el" href="MobilityHeader__Message_8h_source.html#l00026">cpp_message::Mobility_Header::BSM_ID_DEFAULT</a>, <a class="el" href="MobilityHeader__Message_8h_source.html#l00027">cpp_message::Mobility_Header::BSM_ID_LENGTH</a>, <a class="el" href="asn__codecs_8h_source.html#l00087">asn_dec_rval_s::code</a>, <a class="el" href="MobilityHeader__Message_8h_source.html#l00030">cpp_message::Mobility_Header::GUID_DEFAULT</a>, <a class="el" href="MobilityHeader__Message_8h_source.html#l00031">cpp_message::Mobility_Header::GUID_LENGTH</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00029">LOCATION_MAX</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00032">LOCATION_MAX_Z</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00028">LOCATION_MIN</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00031">LOCATION_MIN_Z</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00026">MAX_POINTS_IN_MESSAGE</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00048">node_logging_</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00035">OFFSET_MAX</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00034">OFFSET_MIN</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00036">OFFSET_UNAVAILABLE</a>, <a class="el" href="asn__codecs_8h_source.html#l00082">RC_OK</a>, <a class="el" href="MobilityHeader__Message_8h_source.html#l00024">cpp_message::Mobility_Header::STATIC_ID_MIN_LENGTH</a>, <a class="el" href="MobilityHeader__Message_8h_source.html#l00028">cpp_message::Mobility_Header::STRING_DEFAULT</a>, and <a class="el" href="per__decoder_8h.html#a76f8c1079ff1986561a848a2b41c1bda">uper_decode()</a>.</p>
+<p class="reference">References <a class="el" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, <a class="el" href="constr__TYPE_8h_source.html#l00072">ASN_STRUCT_FREE</a>, <a class="el" href="MobilityHeader__Message_8h_source.html#l00026">cpp_message::Mobility_Header::BSM_ID_DEFAULT</a>, <a class="el" href="MobilityHeader__Message_8h_source.html#l00027">cpp_message::Mobility_Header::BSM_ID_LENGTH</a>, <a class="el" href="asn__codecs_8h_source.html#l00087">asn_dec_rval_s::code</a>, <a class="el" href="MobilityHeader__Message_8h_source.html#l00030">cpp_message::Mobility_Header::GUID_DEFAULT</a>, <a class="el" href="MobilityHeader__Message_8h_source.html#l00031">cpp_message::Mobility_Header::GUID_LENGTH</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00029">LOCATION_MAX</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00032">LOCATION_MAX_Z</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00028">LOCATION_MIN</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00031">LOCATION_MIN_Z</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00026">MAX_POINTS_IN_MESSAGE</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00048">node_logging_</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00035">OFFSET_MAX</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00034">OFFSET_MIN</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00036">OFFSET_UNAVAILABLE</a>, <a class="el" href="asn__codecs_8h_source.html#l00082">RC_OK</a>, <a class="el" href="MobilityHeader__Message_8h_source.html#l00024">cpp_message::Mobility_Header::STATIC_ID_MIN_LENGTH</a>, <a class="el" href="MobilityHeader__Message_8h_source.html#l00028">cpp_message::Mobility_Header::STRING_DEFAULT</a>, and <a class="el" href="per__decoder_8h.html#a76f8c1079ff1986561a848a2b41c1bda">uper_decode()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="cpp__message_8cpp_source.html#l00071">cpp_message::Node::inbound_binary_callback()</a>.</p>
 <div class="dynheader">
@@ -434,222 +460,211 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>encoded byte array, returns ROS warning and an empty optional if encoding fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8cpp_source.html#l00184">184</a> of file <a class="el" href="MobilityPath__Message_8cpp_source.html">MobilityPath_Message.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  185</span>    {</div>
-<div class="line"><span class="lineno">  186</span>        </div>
-<div class="line"><span class="lineno">  187</span>        uint8_t buffer[1472];</div>
-<div class="line"><span class="lineno">  188</span>        <span class="keywordtype">size_t</span> buffer_size=<span class="keyword">sizeof</span>(buffer);</div>
-<div class="line"><span class="lineno">  189</span>        <a class="code hl_struct" href="structasn__enc__rval__s.html">asn_enc_rval_t</a> ec;</div>
-<div class="line"><span class="lineno">  190</span>        std::shared_ptr&lt;MessageFrame_t&gt;message_shared(<span class="keyword">new</span> <a class="code hl_struct" href="structMessageFrame.html">MessageFrame_t</a>);</div>
-<div class="line"><span class="lineno">  191</span>        <span class="comment">//if mem allocation fails</span></div>
-<div class="line"><span class="lineno">  192</span>        <span class="keywordflow">if</span>(!message_shared)</div>
-<div class="line"><span class="lineno">  193</span>        {</div>
-<div class="line"><span class="lineno">  194</span>            RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Cannot allocate mem for MobilityPath message encoding&quot;</span>);</div>
-<div class="line"><span class="lineno">  195</span>            <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{};            </div>
-<div class="line"><span class="lineno">  196</span>        }</div>
-<div class="line"><span class="lineno">  197</span>        <a class="code hl_struct" href="structMessageFrame.html">MessageFrame_t</a>* <a class="code hl_namespace" href="namespacemessage.html">message</a>=message_shared.get();</div>
-<div class="line"><span class="lineno">  198</span>        </div>
-<div class="line"><span class="lineno">  199</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;messageId=<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#ae4ec735d36df74c0b71e9f2819307eb9">MOBILITYPATH_TEST_ID</a>;</div>
-<div class="line"><span class="lineno">  200</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.present=<a class="code hl_enumvalue" href="MessageFrame_8h.html#a86d4c60129bda8cf3e86a65cb8d44dd1a2dbda5cc2df39b0f1daf1f2425631ff0">MessageFrame__value_PR_TestMessage02</a>;</div>
-<div class="line"><span class="lineno">  201</span>                </div>
-<div class="line"><span class="lineno">  202</span>        Mobility_Header <a class="code hl_struct" href="structHeader.html">Header</a>;</div>
-<div class="line"><span class="lineno">  203</span>        <span class="comment">//convert host_id string to char array</span></div>
-<div class="line"><span class="lineno">  204</span>        std::string sender_id=plainMessage.m_header.sender_id;</div>
-<div class="line"><span class="lineno">  205</span>        <span class="keywordtype">size_t</span> string_size=sender_id.size();</div>
-<div class="line"><span class="lineno">  206</span>        <span class="keywordflow">if</span>(string_size&lt;Header.STATIC_ID_MIN_LENGTH || string_size&gt;<a class="code hl_struct" href="structHeader.html">Header</a>.STATIC_ID_MAX_LENGTH)</div>
-<div class="line"><span class="lineno">  207</span>        {</div>
-<div class="line"><span class="lineno">  208</span>            RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(),<span class="stringliteral">&quot;Unacceptable host id value, changing to default&quot;</span>);</div>
-<div class="line"><span class="lineno">  209</span>            sender_id=<a class="code hl_struct" href="structHeader.html">Header</a>.STRING_DEFAULT;</div>
-<div class="line"><span class="lineno">  210</span>            string_size=<a class="code hl_struct" href="structHeader.html">Header</a>.STRING_DEFAULT.size();</div>
-<div class="line"><span class="lineno">  211</span>        }                </div>
-<div class="line"><span class="lineno">  212</span> </div>
-<div class="line"><span class="lineno">  213</span>        uint8_t string_content_hostId[string_size];</div>
-<div class="line"><span class="lineno">  214</span>        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;string_size;i++)</div>
-<div class="line"><span class="lineno">  215</span>        {</div>
-<div class="line"><span class="lineno">  216</span>            string_content_hostId[i]=sender_id[i];</div>
-<div class="line"><span class="lineno">  217</span>        }</div>
-<div class="line"><span class="lineno">  218</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostStaticId.buf=string_content_hostId;</div>
-<div class="line"><span class="lineno">  219</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostStaticId.size=string_size;</div>
-<div class="line"><span class="lineno">  220</span>        <span class="comment">//convert target_id string to char array</span></div>
-<div class="line"><span class="lineno">  221</span>        std::string recipient_id=plainMessage.m_header.recipient_id;</div>
-<div class="line"><span class="lineno">  222</span>        string_size=recipient_id.size();</div>
-<div class="line"><span class="lineno">  223</span>        <span class="keywordflow">if</span>(string_size&lt;Header.STATIC_ID_MIN_LENGTH || string_size&gt; <a class="code hl_struct" href="structHeader.html">Header</a>.STATIC_ID_MAX_LENGTH){</div>
-<div class="line"><span class="lineno">  224</span>            <span class="comment">// RCLCPP_WARN(get_logger(),&quot;Unacceptable recipient id value, changing to default&quot;);</span></div>
-<div class="line"><span class="lineno">  225</span>            recipient_id=<a class="code hl_struct" href="structHeader.html">Header</a>.STRING_DEFAULT;</div>
-<div class="line"><span class="lineno">  226</span>            string_size=<a class="code hl_struct" href="structHeader.html">Header</a>.STRING_DEFAULT.size();</div>
-<div class="line"><span class="lineno">  227</span>        }</div>
-<div class="line"><span class="lineno">  228</span>            </div>
-<div class="line"><span class="lineno">  229</span> </div>
-<div class="line"><span class="lineno">  230</span>        uint8_t string_content_targetId[string_size];</div>
-<div class="line"><span class="lineno">  231</span>        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;string_size;i++)</div>
-<div class="line"><span class="lineno">  232</span>        {</div>
-<div class="line"><span class="lineno">  233</span>            string_content_targetId[i]=recipient_id[i];</div>
-<div class="line"><span class="lineno">  234</span>        }</div>
-<div class="line"><span class="lineno">  235</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.targetStaticId.buf=string_content_targetId;</div>
-<div class="line"><span class="lineno">  236</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.targetStaticId.size=string_size;</div>
-<div class="line"><span class="lineno">  237</span>            </div>
-<div class="line"><span class="lineno">  238</span>         <span class="comment">//convert bsm_id string to char array</span></div>
-<div class="line"><span class="lineno">  239</span>         <span class="comment">//sender_bsm_id is meant to represent the vehicle BSM id in hex string (Ex: FFFFFFFF)</span></div>
-<div class="line"><span class="lineno">  240</span>        std::string sender_bsm_id=plainMessage.m_header.sender_bsm_id;</div>
-<div class="line"><span class="lineno">  241</span>        string_size=sender_bsm_id.size();</div>
-<div class="line"><span class="lineno">  242</span>        <span class="keywordflow">if</span>(string_size&lt;<a class="code hl_struct" href="structHeader.html">Header</a>.BSM_ID_LENGTH)</div>
-<div class="line"><span class="lineno">  243</span>        {</div>
-<div class="line"><span class="lineno">  244</span>            sender_bsm_id=std::string((<a class="code hl_struct" href="structHeader.html">Header</a>.BSM_ID_LENGTH-string_size),<span class="charliteral">&#39;0&#39;</span>).append(sender_bsm_id);</div>
-<div class="line"><span class="lineno">  245</span>        }</div>
-<div class="line"><span class="lineno">  246</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(string_size&gt;<a class="code hl_struct" href="structHeader.html">Header</a>.BSM_ID_LENGTH)</div>
-<div class="line"><span class="lineno">  247</span>        {</div>
-<div class="line"><span class="lineno">  248</span>            RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Unacceptable bsm id, changing to default&quot;</span>);</div>
-<div class="line"><span class="lineno">  249</span>            sender_bsm_id=<a class="code hl_struct" href="structHeader.html">Header</a>.BSM_ID_DEFAULT;</div>
-<div class="line"><span class="lineno">  250</span>        }</div>
-<div class="line"><span class="lineno">  251</span>        string_size=<a class="code hl_struct" href="structHeader.html">Header</a>.BSM_ID_LENGTH;</div>
-<div class="line"><span class="lineno">  252</span>        RCLCPP_DEBUG_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;String_Size &quot;</span> &lt;&lt; string_size);</div>
-<div class="line"><span class="lineno">  253</span>        </div>
-<div class="line"><span class="lineno">  254</span>        uint8_t string_content_BSMId[string_size];</div>
-<div class="line"><span class="lineno">  255</span>        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;string_size;i++)</div>
-<div class="line"><span class="lineno">  256</span>        {</div>
-<div class="line"><span class="lineno">  257</span>            string_content_BSMId[i]=sender_bsm_id[i];</div>
-<div class="line"><span class="lineno">  258</span>        }</div>
-<div class="line"><span class="lineno">  259</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostBSMId.buf=string_content_BSMId;</div>
-<div class="line"><span class="lineno">  260</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostBSMId.size=string_size;</div>
-<div class="line"><span class="lineno">  261</span>        </div>
-<div class="line"><span class="lineno">  262</span>         <span class="comment">//convert plan_id string to char array</span></div>
-<div class="line"><span class="lineno">  263</span>        std::string plan_id=plainMessage.m_header.plan_id;</div>
-<div class="line"><span class="lineno">  264</span>        string_size=plainMessage.m_header.plan_id.size();</div>
-<div class="line"><span class="lineno">  265</span>        <span class="keywordflow">if</span>(string_size!=<a class="code hl_struct" href="structHeader.html">Header</a>.GUID_LENGTH){</div>
-<div class="line"><span class="lineno">  266</span>            <span class="comment">// RCLCPP_WARN(get_logger(),&quot;Unacceptable GUID, changing to default&quot;);</span></div>
-<div class="line"><span class="lineno">  267</span>            plan_id=<a class="code hl_struct" href="structHeader.html">Header</a>.GUID_DEFAULT;</div>
-<div class="line"><span class="lineno">  268</span>            string_size=<a class="code hl_struct" href="structHeader.html">Header</a>.GUID_LENGTH;</div>
-<div class="line"><span class="lineno">  269</span>        }</div>
-<div class="line"><span class="lineno">  270</span>        uint8_t string_content_planId[string_size];</div>
-<div class="line"><span class="lineno">  271</span>        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;string_size;i++)</div>
-<div class="line"><span class="lineno">  272</span>        {</div>
-<div class="line"><span class="lineno">  273</span>            string_content_planId[i]=plan_id[i];</div>
-<div class="line"><span class="lineno">  274</span>        }</div>
-<div class="line"><span class="lineno">  275</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.planId.buf=string_content_planId;</div>
-<div class="line"><span class="lineno">  276</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.planId.size=string_size;</div>
-<div class="line"><span class="lineno">  277</span>        <span class="comment">//get timestamp and convert to char array</span></div>
-<div class="line"><span class="lineno">  278</span>        uint64_t time=plainMessage.m_header.timestamp;</div>
-<div class="line"><span class="lineno">  279</span>        std::string timestamp=std::to_string(time);</div>
-<div class="line"><span class="lineno">  280</span>        string_size=timestamp.size();</div>
-<div class="line"><span class="lineno">  281</span>        <span class="keywordflow">if</span>(string_size&lt;<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH){</div>
-<div class="line"><span class="lineno">  282</span>            timestamp=std::string((<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH-string_size),<span class="charliteral">&#39;0&#39;</span>).append(timestamp);</div>
-<div class="line"><span class="lineno">  283</span>        }</div>
-<div class="line"><span class="lineno">  284</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(string_size&gt;<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH){</div>
-<div class="line"><span class="lineno">  285</span>            <span class="comment">// RCLCPP_WARN(get_logger(),&quot;Unacceptable timestamp, changing to default&quot;);</span></div>
-<div class="line"><span class="lineno">  286</span>            timestamp=std::string(<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH,<span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><span class="lineno">  287</span>        }</div>
-<div class="line"><span class="lineno">  288</span>        string_size=<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH;</div>
-<div class="line"><span class="lineno">  289</span>        uint8_t string_content_timestamp[string_size];</div>
-<div class="line"><span class="lineno">  290</span>        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;string_size;i++)</div>
-<div class="line"><span class="lineno">  291</span>        {</div>
-<div class="line"><span class="lineno">  292</span>            string_content_timestamp[i]=timestamp[i];</div>
-<div class="line"><span class="lineno">  293</span>        }</div>
-<div class="line"><span class="lineno">  294</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.timestamp.buf=string_content_timestamp;</div>
-<div class="line"><span class="lineno">  295</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.timestamp.size=string_size;</div>
-<div class="line"><span class="lineno">  296</span> </div>
-<div class="line"><span class="lineno">  297</span>        <span class="comment">//location</span></div>
-<div class="line"><span class="lineno">  298</span>        carma_v2x_msgs::msg::LocationECEF starting_location;</div>
-<div class="line"><span class="lineno">  299</span>        <span class="keywordtype">long</span> location_val;</div>
-<div class="line"><span class="lineno">  300</span>        location_val=plainMessage.trajectory.location.ecef_x;</div>
-<div class="line"><span class="lineno">  301</span>        <span class="keywordflow">if</span>(location_val&gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a377dba21770367b5726032166c9a557e">LOCATION_MAX</a> || location_val&lt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a521ad8a76168e6327338513e0667de9e">LOCATION_MIN</a>){</div>
-<div class="line"><span class="lineno">  302</span>            RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Location ecefX is out of range&quot;</span>);</div>
-<div class="line"><span class="lineno">  303</span>            <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{};</div>
-<div class="line"><span class="lineno">  304</span>        }</div>
-<div class="line"><span class="lineno">  305</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.ecefX=location_val;</div>
-<div class="line"><span class="lineno">  306</span> </div>
-<div class="line"><span class="lineno">  307</span>        location_val=plainMessage.trajectory.location.ecef_y;</div>
-<div class="line"><span class="lineno">  308</span>        <span class="keywordflow">if</span>(location_val&gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a377dba21770367b5726032166c9a557e">LOCATION_MAX</a> || location_val&lt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a521ad8a76168e6327338513e0667de9e">LOCATION_MIN</a>){</div>
-<div class="line"><span class="lineno">  309</span>            RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Location ecefY is out of range&quot;</span>);</div>
-<div class="line"><span class="lineno">  310</span>            <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{};</div>
+<p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8cpp_source.html#l00217">217</a> of file <a class="el" href="MobilityPath__Message_8cpp_source.html">MobilityPath_Message.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  218</span>    {</div>
+<div class="line"><span class="lineno">  219</span>        std::vector&lt;std::shared_ptr&lt;void&gt;&gt; shared_ptrs; <span class="comment">// keep references to the objects until the encoding is complete</span></div>
+<div class="line"><span class="lineno">  220</span>        uint8_t buffer[1472];</div>
+<div class="line"><span class="lineno">  221</span>        <span class="keywordtype">size_t</span> buffer_size = <span class="keyword">sizeof</span>(buffer);</div>
+<div class="line"><span class="lineno">  222</span>        <a class="code hl_struct" href="structasn__enc__rval__s.html">asn_enc_rval_t</a> ec;</div>
+<div class="line"><span class="lineno">  223</span>        <a class="code hl_struct" href="structMessageFrame.html">MessageFrame_t</a> *<a class="code hl_namespace" href="namespacemessage.html">message</a> = create_store_shared&lt;MessageFrame_t&gt;(shared_ptrs);</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;messageId = <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#ae4ec735d36df74c0b71e9f2819307eb9">MOBILITYPATH_TEST_ID</a>;</div>
+<div class="line"><span class="lineno">  226</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.present = <a class="code hl_enumvalue" href="MessageFrame_8h.html#a86d4c60129bda8cf3e86a65cb8d44dd1a2dbda5cc2df39b0f1daf1f2425631ff0">MessageFrame__value_PR_TestMessage02</a>;</div>
+<div class="line"><span class="lineno">  227</span> </div>
+<div class="line"><span class="lineno">  228</span>        Mobility_Header <a class="code hl_struct" href="structHeader.html">Header</a>;</div>
+<div class="line"><span class="lineno">  229</span>        <span class="comment">// convert host_id string to char array</span></div>
+<div class="line"><span class="lineno">  230</span>        std::string sender_id = plainMessage.m_header.sender_id;</div>
+<div class="line"><span class="lineno">  231</span>        <span class="keywordtype">size_t</span> string_size = sender_id.size();</div>
+<div class="line"><span class="lineno">  232</span>        <span class="keywordflow">if</span> (string_size &lt; Header.STATIC_ID_MIN_LENGTH || string_size &gt; <a class="code hl_struct" href="structHeader.html">Header</a>.STATIC_ID_MAX_LENGTH)</div>
+<div class="line"><span class="lineno">  233</span>        {</div>
+<div class="line"><span class="lineno">  234</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Unacceptable host id value, changing to default&quot;</span>);</div>
+<div class="line"><span class="lineno">  235</span>            sender_id = <a class="code hl_struct" href="structHeader.html">Header</a>.STRING_DEFAULT;</div>
+<div class="line"><span class="lineno">  236</span>            string_size = <a class="code hl_struct" href="structHeader.html">Header</a>.STRING_DEFAULT.size();</div>
+<div class="line"><span class="lineno">  237</span>        }</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>        uint8_t string_content_hostId[string_size];</div>
+<div class="line"><span class="lineno">  240</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; string_size; i++)</div>
+<div class="line"><span class="lineno">  241</span>        {</div>
+<div class="line"><span class="lineno">  242</span>            string_content_hostId[i] = sender_id[i];</div>
+<div class="line"><span class="lineno">  243</span>        }</div>
+<div class="line"><span class="lineno">  244</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostStaticId.buf = string_content_hostId;</div>
+<div class="line"><span class="lineno">  245</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostStaticId.size = string_size;</div>
+<div class="line"><span class="lineno">  246</span>        <span class="comment">// convert target_id string to char array</span></div>
+<div class="line"><span class="lineno">  247</span>        std::string recipient_id = plainMessage.m_header.recipient_id;</div>
+<div class="line"><span class="lineno">  248</span>        string_size = recipient_id.size();</div>
+<div class="line"><span class="lineno">  249</span>        <span class="keywordflow">if</span> (string_size &lt; Header.STATIC_ID_MIN_LENGTH || string_size &gt; <a class="code hl_struct" href="structHeader.html">Header</a>.STATIC_ID_MAX_LENGTH)</div>
+<div class="line"><span class="lineno">  250</span>        {</div>
+<div class="line"><span class="lineno">  251</span>            <span class="comment">// RCLCPP_WARN(get_logger(),&quot;Unacceptable recipient id value, changing to default&quot;);</span></div>
+<div class="line"><span class="lineno">  252</span>            recipient_id = <a class="code hl_struct" href="structHeader.html">Header</a>.STRING_DEFAULT;</div>
+<div class="line"><span class="lineno">  253</span>            string_size = <a class="code hl_struct" href="structHeader.html">Header</a>.STRING_DEFAULT.size();</div>
+<div class="line"><span class="lineno">  254</span>        }</div>
+<div class="line"><span class="lineno">  255</span> </div>
+<div class="line"><span class="lineno">  256</span>        uint8_t string_content_targetId[string_size];</div>
+<div class="line"><span class="lineno">  257</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; string_size; i++)</div>
+<div class="line"><span class="lineno">  258</span>        {</div>
+<div class="line"><span class="lineno">  259</span>            string_content_targetId[i] = recipient_id[i];</div>
+<div class="line"><span class="lineno">  260</span>        }</div>
+<div class="line"><span class="lineno">  261</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.targetStaticId.buf = string_content_targetId;</div>
+<div class="line"><span class="lineno">  262</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.targetStaticId.size = string_size;</div>
+<div class="line"><span class="lineno">  263</span> </div>
+<div class="line"><span class="lineno">  264</span>        <span class="comment">// convert bsm_id string to char array</span></div>
+<div class="line"><span class="lineno">  265</span>        <span class="comment">// sender_bsm_id is meant to represent the vehicle BSM id in hex string (Ex: FFFFFFFF)</span></div>
+<div class="line"><span class="lineno">  266</span>        std::string sender_bsm_id = plainMessage.m_header.sender_bsm_id;</div>
+<div class="line"><span class="lineno">  267</span>        string_size = sender_bsm_id.size();</div>
+<div class="line"><span class="lineno">  268</span>        <span class="keywordflow">if</span> (string_size &lt; <a class="code hl_struct" href="structHeader.html">Header</a>.BSM_ID_LENGTH)</div>
+<div class="line"><span class="lineno">  269</span>        {</div>
+<div class="line"><span class="lineno">  270</span>            sender_bsm_id = std::string((<a class="code hl_struct" href="structHeader.html">Header</a>.BSM_ID_LENGTH - string_size), <span class="charliteral">&#39;0&#39;</span>).append(sender_bsm_id);</div>
+<div class="line"><span class="lineno">  271</span>        }</div>
+<div class="line"><span class="lineno">  272</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (string_size &gt; <a class="code hl_struct" href="structHeader.html">Header</a>.BSM_ID_LENGTH)</div>
+<div class="line"><span class="lineno">  273</span>        {</div>
+<div class="line"><span class="lineno">  274</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Unacceptable bsm id, changing to default&quot;</span>);</div>
+<div class="line"><span class="lineno">  275</span>            sender_bsm_id = <a class="code hl_struct" href="structHeader.html">Header</a>.BSM_ID_DEFAULT;</div>
+<div class="line"><span class="lineno">  276</span>        }</div>
+<div class="line"><span class="lineno">  277</span>        string_size = <a class="code hl_struct" href="structHeader.html">Header</a>.BSM_ID_LENGTH;</div>
+<div class="line"><span class="lineno">  278</span>        RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;String_Size &quot;</span> &lt;&lt; string_size);</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>        uint8_t string_content_BSMId[string_size];</div>
+<div class="line"><span class="lineno">  281</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; string_size; i++)</div>
+<div class="line"><span class="lineno">  282</span>        {</div>
+<div class="line"><span class="lineno">  283</span>            string_content_BSMId[i] = sender_bsm_id[i];</div>
+<div class="line"><span class="lineno">  284</span>        }</div>
+<div class="line"><span class="lineno">  285</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostBSMId.buf = string_content_BSMId;</div>
+<div class="line"><span class="lineno">  286</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.hostBSMId.size = string_size;</div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>        <span class="comment">// convert plan_id string to char array</span></div>
+<div class="line"><span class="lineno">  289</span>        std::string plan_id = plainMessage.m_header.plan_id;</div>
+<div class="line"><span class="lineno">  290</span>        string_size = plainMessage.m_header.plan_id.size();</div>
+<div class="line"><span class="lineno">  291</span>        <span class="keywordflow">if</span> (string_size != <a class="code hl_struct" href="structHeader.html">Header</a>.GUID_LENGTH)</div>
+<div class="line"><span class="lineno">  292</span>        {</div>
+<div class="line"><span class="lineno">  293</span>            <span class="comment">// RCLCPP_WARN(get_logger(),&quot;Unacceptable GUID, changing to default&quot;);</span></div>
+<div class="line"><span class="lineno">  294</span>            plan_id = <a class="code hl_struct" href="structHeader.html">Header</a>.GUID_DEFAULT;</div>
+<div class="line"><span class="lineno">  295</span>            string_size = <a class="code hl_struct" href="structHeader.html">Header</a>.GUID_LENGTH;</div>
+<div class="line"><span class="lineno">  296</span>        }</div>
+<div class="line"><span class="lineno">  297</span>        uint8_t string_content_planId[string_size];</div>
+<div class="line"><span class="lineno">  298</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; string_size; i++)</div>
+<div class="line"><span class="lineno">  299</span>        {</div>
+<div class="line"><span class="lineno">  300</span>            string_content_planId[i] = plan_id[i];</div>
+<div class="line"><span class="lineno">  301</span>        }</div>
+<div class="line"><span class="lineno">  302</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.planId.buf = string_content_planId;</div>
+<div class="line"><span class="lineno">  303</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.planId.size = string_size;</div>
+<div class="line"><span class="lineno">  304</span>        <span class="comment">// get timestamp and convert to char array</span></div>
+<div class="line"><span class="lineno">  305</span>        uint64_t time = plainMessage.m_header.timestamp;</div>
+<div class="line"><span class="lineno">  306</span>        std::string timestamp = std::to_string(time);</div>
+<div class="line"><span class="lineno">  307</span>        string_size = timestamp.size();</div>
+<div class="line"><span class="lineno">  308</span>        <span class="keywordflow">if</span> (string_size &lt; <a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH)</div>
+<div class="line"><span class="lineno">  309</span>        {</div>
+<div class="line"><span class="lineno">  310</span>            timestamp = std::string((<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH - string_size), <span class="charliteral">&#39;0&#39;</span>).append(timestamp);</div>
 <div class="line"><span class="lineno">  311</span>        }</div>
-<div class="line"><span class="lineno">  312</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.ecefY=location_val;</div>
-<div class="line"><span class="lineno">  313</span> </div>
-<div class="line"><span class="lineno">  314</span>        location_val=plainMessage.trajectory.location.ecef_z;</div>
-<div class="line"><span class="lineno">  315</span>        <span class="keywordflow">if</span>(location_val&gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a613501ad2181b740f330364b81318e70">LOCATION_MAX_Z</a> || location_val&lt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a6e628ce5b8a4ee7385b6794010d79824">LOCATION_MIN_Z</a>){</div>
-<div class="line"><span class="lineno">  316</span>            RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Location ecefX is out of range&quot;</span>);</div>
-<div class="line"><span class="lineno">  317</span>            <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{};</div>
-<div class="line"><span class="lineno">  318</span>        }</div>
-<div class="line"><span class="lineno">  319</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.ecefZ=location_val;</div>
-<div class="line"><span class="lineno">  320</span> </div>
-<div class="line"><span class="lineno">  321</span>        <span class="comment">//get location timestamp and convert to char array</span></div>
-<div class="line"><span class="lineno">  322</span>        time=plainMessage.trajectory.location.timestamp;</div>
-<div class="line"><span class="lineno">  323</span>        timestamp=std::to_string(time);</div>
-<div class="line"><span class="lineno">  324</span>        string_size=timestamp.size();</div>
-<div class="line"><span class="lineno">  325</span>        <span class="keywordflow">if</span>(string_size&lt;<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH){</div>
-<div class="line"><span class="lineno">  326</span>            timestamp=std::string(<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH-string_size,<span class="charliteral">&#39;0&#39;</span>).append(timestamp);</div>
-<div class="line"><span class="lineno">  327</span>        }</div>
-<div class="line"><span class="lineno">  328</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(string_size&gt;<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH){</div>
-<div class="line"><span class="lineno">  329</span>            <span class="comment">// RCLCPP_WARN(get_logger(),&quot;Unacceptable timestamp, changing to default&quot;);</span></div>
-<div class="line"><span class="lineno">  330</span>            timestamp=std::string(<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH,<span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><span class="lineno">  331</span>        }</div>
-<div class="line"><span class="lineno">  332</span>        string_size=<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH;</div>
-<div class="line"><span class="lineno">  333</span>        uint8_t string_location_timestamp[string_size];</div>
-<div class="line"><span class="lineno">  334</span>        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;string_size;i++)</div>
-<div class="line"><span class="lineno">  335</span>        {</div>
-<div class="line"><span class="lineno">  336</span>            string_location_timestamp[i]=timestamp[i];</div>
-<div class="line"><span class="lineno">  337</span>        }</div>
-<div class="line"><span class="lineno">  338</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.timestamp.buf=string_location_timestamp;</div>
-<div class="line"><span class="lineno">  339</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.timestamp.size=string_size;</div>
-<div class="line"><span class="lineno">  340</span> </div>
-<div class="line"><span class="lineno">  341</span>        <span class="comment">//trajectory</span></div>
-<div class="line"><span class="lineno">  342</span>        <span class="keywordtype">size_t</span> offset_count=plainMessage.trajectory.offsets.size();</div>
-<div class="line"><span class="lineno">  343</span>        </div>
-<div class="line"><span class="lineno">  344</span>        <span class="keywordflow">if</span>(offset_count&gt;<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a7a7a3f736336ee9eb5326f3fed97e5eb">MAX_POINTS_IN_MESSAGE</a>){</div>
-<div class="line"><span class="lineno">  345</span>            RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;offset count greater than 60.&quot;</span>);</div>
-<div class="line"><span class="lineno">  346</span>            <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{};</div>
-<div class="line"><span class="lineno">  347</span>        }</div>
-<div class="line"><span class="lineno">  348</span> </div>
-<div class="line"><span class="lineno">  349</span>        <a class="code hl_struct" href="structMobilityLocationOffsets.html">MobilityLocationOffsets</a>* offsets_list;</div>
-<div class="line"><span class="lineno">  350</span>        offsets_list=(<a class="code hl_struct" href="structMobilityLocationOffsets.html">MobilityLocationOffsets</a>*)calloc(1,<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structMobilityLocationOffsets.html">MobilityLocationOffsets</a>));</div>
-<div class="line"><span class="lineno">  351</span>        <span class="keywordflow">if</span>(!offsets_list)</div>
-<div class="line"><span class="lineno">  352</span>        {</div>
-<div class="line"><span class="lineno">  353</span>            RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Cannot allocate mem for offsets list&quot;</span>);</div>
-<div class="line"><span class="lineno">  354</span>            <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{}; </div>
-<div class="line"><span class="lineno">  355</span>        }</div>
-<div class="line"><span class="lineno">  356</span> </div>
-<div class="line"><span class="lineno">  357</span>        <a class="code hl_struct" href="structMobilityECEFOffset.html">MobilityECEFOffset</a>* Offsets;    </div>
-<div class="line"><span class="lineno">  358</span>        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i=0;i&lt;offset_count;i++){</div>
-<div class="line"><span class="lineno">  359</span>            Offsets=(<a class="code hl_struct" href="structMobilityECEFOffset.html">MobilityECEFOffset</a>*)calloc(1,<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structMobilityECEFOffset.html">MobilityECEFOffset</a>));</div>
-<div class="line"><span class="lineno">  360</span>            <span class="keywordflow">if</span>(!Offsets)</div>
-<div class="line"><span class="lineno">  361</span>            {</div>
-<div class="line"><span class="lineno">  362</span>                RCLCPP_WARN_STREAM( <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Cannot allocate mem for offsets&quot;</span>);</div>
-<div class="line"><span class="lineno">  363</span>                <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{};</div>
-<div class="line"><span class="lineno">  364</span>            }</div>
-<div class="line"><span class="lineno">  365</span>            Offsets-&gt;<a class="code hl_variable" href="structMobilityECEFOffset.html#aa0f40d4d2b5123232380afe310ab7302">offsetX</a>=plainMessage.trajectory.offsets[i].offset_x;</div>
-<div class="line"><span class="lineno">  366</span>            Offsets-&gt;<a class="code hl_variable" href="structMobilityECEFOffset.html#a3f8ea4a6817458cf379385e4a3622cad">offsetY</a>=plainMessage.trajectory.offsets[i].offset_y;</div>
-<div class="line"><span class="lineno">  367</span>            Offsets-&gt;<a class="code hl_variable" href="structMobilityECEFOffset.html#aebb7a62b61eafbf8a8f19d6d8931a202">offsetZ</a>=plainMessage.trajectory.offsets[i].offset_z;</div>
-<div class="line"><span class="lineno">  368</span>            <a class="code hl_define" href="asn__SEQUENCE__OF_8h.html#a4aee7090b76bad5067992d5f46370a2a">asn_sequence_add</a>(&amp;offsets_list-&gt;list,Offsets);</div>
-<div class="line"><span class="lineno">  369</span>        }</div>
-<div class="line"><span class="lineno">  370</span> </div>
-<div class="line"><span class="lineno">  371</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.trajectory=*offsets_list;</div>
-<div class="line"><span class="lineno">  372</span> </div>
-<div class="line"><span class="lineno">  373</span>        ec=<a class="code hl_function" href="per__encoder_8h.html#ad9d25a879d4499db83fb133c1b8636b9">uper_encode_to_buffer</a>(&amp;<a class="code hl_variable" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>,0, <a class="code hl_namespace" href="namespacemessage.html">message</a>, buffer, buffer_size);</div>
-<div class="line"><span class="lineno">  374</span>        <span class="comment">//log a warning if it fails</span></div>
-<div class="line"><span class="lineno">  375</span>        <span class="keywordflow">if</span>(ec.<a class="code hl_variable" href="structasn__enc__rval__s.html#ada573b8183a1af819ea3df7a7ea1ba04">encoded</a>==-1){</div>
-<div class="line"><span class="lineno">  376</span>            <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{}; </div>
-<div class="line"><span class="lineno">  377</span>        }</div>
-<div class="line"><span class="lineno">  378</span> </div>
-<div class="line"><span class="lineno">  379</span>        <span class="comment">//copy to byte array msg</span></div>
-<div class="line"><span class="lineno">  380</span>        <span class="keywordtype">size_t</span> array_length=(ec.<a class="code hl_variable" href="structasn__enc__rval__s.html#ada573b8183a1af819ea3df7a7ea1ba04">encoded</a> + 7) / 8;</div>
-<div class="line"><span class="lineno">  381</span>        std::vector&lt;uint8_t&gt; b_array(array_length);</div>
-<div class="line"><span class="lineno">  382</span>        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; array_length; i++) b_array[i] = buffer[i];</div>
+<div class="line"><span class="lineno">  312</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (string_size &gt; <a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH)</div>
+<div class="line"><span class="lineno">  313</span>        {</div>
+<div class="line"><span class="lineno">  314</span>            <span class="comment">// RCLCPP_WARN(get_logger(),&quot;Unacceptable timestamp, changing to default&quot;);</span></div>
+<div class="line"><span class="lineno">  315</span>            timestamp = std::string(<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH, <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><span class="lineno">  316</span>        }</div>
+<div class="line"><span class="lineno">  317</span>        string_size = <a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH;</div>
+<div class="line"><span class="lineno">  318</span>        uint8_t string_content_timestamp[string_size];</div>
+<div class="line"><span class="lineno">  319</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; string_size; i++)</div>
+<div class="line"><span class="lineno">  320</span>        {</div>
+<div class="line"><span class="lineno">  321</span>            string_content_timestamp[i] = timestamp[i];</div>
+<div class="line"><span class="lineno">  322</span>        }</div>
+<div class="line"><span class="lineno">  323</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.timestamp.buf = string_content_timestamp;</div>
+<div class="line"><span class="lineno">  324</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.header.timestamp.size = string_size;</div>
+<div class="line"><span class="lineno">  325</span> </div>
+<div class="line"><span class="lineno">  326</span>        <span class="comment">// location</span></div>
+<div class="line"><span class="lineno">  327</span>        carma_v2x_msgs::msg::LocationECEF starting_location;</div>
+<div class="line"><span class="lineno">  328</span>        <span class="keywordtype">long</span> location_val;</div>
+<div class="line"><span class="lineno">  329</span>        location_val = plainMessage.trajectory.location.ecef_x;</div>
+<div class="line"><span class="lineno">  330</span>        <span class="keywordflow">if</span> (location_val &gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a377dba21770367b5726032166c9a557e">LOCATION_MAX</a> || location_val &lt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a521ad8a76168e6327338513e0667de9e">LOCATION_MIN</a>)</div>
+<div class="line"><span class="lineno">  331</span>        {</div>
+<div class="line"><span class="lineno">  332</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Location ecefX is out of range&quot;</span>);</div>
+<div class="line"><span class="lineno">  333</span>            <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{};</div>
+<div class="line"><span class="lineno">  334</span>        }</div>
+<div class="line"><span class="lineno">  335</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.ecefX = location_val;</div>
+<div class="line"><span class="lineno">  336</span> </div>
+<div class="line"><span class="lineno">  337</span>        location_val = plainMessage.trajectory.location.ecef_y;</div>
+<div class="line"><span class="lineno">  338</span>        <span class="keywordflow">if</span> (location_val &gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a377dba21770367b5726032166c9a557e">LOCATION_MAX</a> || location_val &lt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a521ad8a76168e6327338513e0667de9e">LOCATION_MIN</a>)</div>
+<div class="line"><span class="lineno">  339</span>        {</div>
+<div class="line"><span class="lineno">  340</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Location ecefY is out of range&quot;</span>);</div>
+<div class="line"><span class="lineno">  341</span>            <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{};</div>
+<div class="line"><span class="lineno">  342</span>        }</div>
+<div class="line"><span class="lineno">  343</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.ecefY = location_val;</div>
+<div class="line"><span class="lineno">  344</span> </div>
+<div class="line"><span class="lineno">  345</span>        location_val = plainMessage.trajectory.location.ecef_z;</div>
+<div class="line"><span class="lineno">  346</span>        <span class="keywordflow">if</span> (location_val &gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a613501ad2181b740f330364b81318e70">LOCATION_MAX_Z</a> || location_val &lt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a6e628ce5b8a4ee7385b6794010d79824">LOCATION_MIN_Z</a>)</div>
+<div class="line"><span class="lineno">  347</span>        {</div>
+<div class="line"><span class="lineno">  348</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Location ecefX is out of range&quot;</span>);</div>
+<div class="line"><span class="lineno">  349</span>            <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{};</div>
+<div class="line"><span class="lineno">  350</span>        }</div>
+<div class="line"><span class="lineno">  351</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.ecefZ = location_val;</div>
+<div class="line"><span class="lineno">  352</span> </div>
+<div class="line"><span class="lineno">  353</span>        <span class="comment">// get location timestamp and convert to char array</span></div>
+<div class="line"><span class="lineno">  354</span>        time = plainMessage.trajectory.location.timestamp;</div>
+<div class="line"><span class="lineno">  355</span>        timestamp = std::to_string(time);</div>
+<div class="line"><span class="lineno">  356</span>        string_size = timestamp.size();</div>
+<div class="line"><span class="lineno">  357</span>        <span class="keywordflow">if</span> (string_size &lt; <a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH)</div>
+<div class="line"><span class="lineno">  358</span>        {</div>
+<div class="line"><span class="lineno">  359</span>            timestamp = std::string(<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH - string_size, <span class="charliteral">&#39;0&#39;</span>).append(timestamp);</div>
+<div class="line"><span class="lineno">  360</span>        }</div>
+<div class="line"><span class="lineno">  361</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (string_size &gt; <a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH)</div>
+<div class="line"><span class="lineno">  362</span>        {</div>
+<div class="line"><span class="lineno">  363</span>            <span class="comment">// RCLCPP_WARN(get_logger(),&quot;Unacceptable timestamp, changing to default&quot;);</span></div>
+<div class="line"><span class="lineno">  364</span>            timestamp = std::string(<a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH, <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><span class="lineno">  365</span>        }</div>
+<div class="line"><span class="lineno">  366</span>        string_size = <a class="code hl_struct" href="structHeader.html">Header</a>.TIMESTAMP_MESSAGE_LENGTH;</div>
+<div class="line"><span class="lineno">  367</span>        uint8_t string_location_timestamp[string_size];</div>
+<div class="line"><span class="lineno">  368</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; string_size; i++)</div>
+<div class="line"><span class="lineno">  369</span>        {</div>
+<div class="line"><span class="lineno">  370</span>            string_location_timestamp[i] = timestamp[i];</div>
+<div class="line"><span class="lineno">  371</span>        }</div>
+<div class="line"><span class="lineno">  372</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.timestamp.buf = string_location_timestamp;</div>
+<div class="line"><span class="lineno">  373</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.location.timestamp.size = string_size;</div>
+<div class="line"><span class="lineno">  374</span> </div>
+<div class="line"><span class="lineno">  375</span>        <span class="comment">// trajectory</span></div>
+<div class="line"><span class="lineno">  376</span>        <span class="keywordtype">size_t</span> offset_count = plainMessage.trajectory.offsets.size();</div>
+<div class="line"><span class="lineno">  377</span> </div>
+<div class="line"><span class="lineno">  378</span>        <span class="keywordflow">if</span> (offset_count &gt; <a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a7a7a3f736336ee9eb5326f3fed97e5eb">MAX_POINTS_IN_MESSAGE</a>)</div>
+<div class="line"><span class="lineno">  379</span>        {</div>
+<div class="line"><span class="lineno">  380</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classcpp__message_1_1Mobility__Path.html#a39214ac2b84779eed8303b5c12a5c229">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;offset count greater than 60.&quot;</span>);</div>
+<div class="line"><span class="lineno">  381</span>            <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{};</div>
+<div class="line"><span class="lineno">  382</span>        }</div>
 <div class="line"><span class="lineno">  383</span> </div>
-<div class="line"><span class="lineno">  384</span>        <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;(b_array);</div>
-<div class="line"><span class="lineno">  385</span>    }</div>
+<div class="line"><span class="lineno">  384</span>        <span class="keyword">auto</span> offsets_list = create_store_shared&lt;MobilityLocationOffsets&gt;(shared_ptrs);</div>
+<div class="line"><span class="lineno">  385</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; offset_count; i++)</div>
+<div class="line"><span class="lineno">  386</span>        {</div>
+<div class="line"><span class="lineno">  387</span>            <span class="keyword">auto</span> Offsets = create_store_shared&lt;MobilityECEFOffset&gt;(shared_ptrs);</div>
+<div class="line"><span class="lineno">  388</span>            Offsets-&gt;offsetX = plainMessage.trajectory.offsets[i].offset_x;</div>
+<div class="line"><span class="lineno">  389</span>            Offsets-&gt;offsetY = plainMessage.trajectory.offsets[i].offset_y;</div>
+<div class="line"><span class="lineno">  390</span>            Offsets-&gt;offsetZ = plainMessage.trajectory.offsets[i].offset_z;</div>
+<div class="line"><span class="lineno">  391</span>            <a class="code hl_define" href="asn__SEQUENCE__OF_8h.html#a4aee7090b76bad5067992d5f46370a2a">asn_sequence_add</a>(&amp;offsets_list-&gt;list, Offsets);</div>
+<div class="line"><span class="lineno">  392</span>        }</div>
+<div class="line"><span class="lineno">  393</span> </div>
+<div class="line"><span class="lineno">  394</span>        <a class="code hl_namespace" href="namespacemessage.html">message</a>-&gt;value.choice.TestMessage02.body.trajectory = *offsets_list;</div>
+<div class="line"><span class="lineno">  395</span> </div>
+<div class="line"><span class="lineno">  396</span>        ec = <a class="code hl_function" href="per__encoder_8h.html#ad9d25a879d4499db83fb133c1b8636b9">uper_encode_to_buffer</a>(&amp;<a class="code hl_variable" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, 0, <a class="code hl_namespace" href="namespacemessage.html">message</a>, buffer, buffer_size);</div>
+<div class="line"><span class="lineno">  397</span>        <span class="comment">// log a warning if it fails</span></div>
+<div class="line"><span class="lineno">  398</span>        <span class="keywordflow">if</span> (ec.<a class="code hl_variable" href="structasn__enc__rval__s.html#ada573b8183a1af819ea3df7a7ea1ba04">encoded</a> == -1)</div>
+<div class="line"><span class="lineno">  399</span>        {</div>
+<div class="line"><span class="lineno">  400</span>            <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;{};</div>
+<div class="line"><span class="lineno">  401</span>        }</div>
+<div class="line"><span class="lineno">  402</span> </div>
+<div class="line"><span class="lineno">  403</span>        <span class="comment">// copy to byte array msg</span></div>
+<div class="line"><span class="lineno">  404</span>        <span class="keywordtype">size_t</span> array_length = (ec.<a class="code hl_variable" href="structasn__enc__rval__s.html#ada573b8183a1af819ea3df7a7ea1ba04">encoded</a> + 7) / 8;</div>
+<div class="line"><span class="lineno">  405</span>        std::vector&lt;uint8_t&gt; b_array(array_length);</div>
+<div class="line"><span class="lineno">  406</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; array_length; i++)</div>
+<div class="line"><span class="lineno">  407</span>            b_array[i] = buffer[i];</div>
+<div class="line"><span class="lineno">  408</span> </div>
+<div class="line"><span class="lineno">  409</span>        <a class="code hl_define" href="constr__TYPE_8h.html#a87b7ea155e1b74d50411b63c49e87680">ASN_STRUCT_FREE</a>(<a class="code hl_variable" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, <a class="code hl_namespace" href="namespacemessage.html">message</a>);</div>
+<div class="line"><span class="lineno">  410</span>        <span class="comment">// ASN_STRUCT_FREE_CONTENTS_ONLY(asn_DEF_MobilityLocationOffsets, &amp;offsets_list);</span></div>
+<div class="line"><span class="lineno">  411</span>        <span class="keywordflow">return</span> boost::optional&lt;std::vector&lt;uint8_t&gt;&gt;(b_array);</div>
+<div class="line"><span class="lineno">  412</span>    }</div>
 <div class="ttc" id="aMessageFrame_8h_html_a86d4c60129bda8cf3e86a65cb8d44dd1a2dbda5cc2df39b0f1daf1f2425631ff0"><div class="ttname"><a href="MessageFrame_8h.html#a86d4c60129bda8cf3e86a65cb8d44dd1a2dbda5cc2df39b0f1daf1f2425631ff0">MessageFrame__value_PR_TestMessage02</a></div><div class="ttdeci">@ MessageFrame__value_PR_TestMessage02</div><div class="ttdef"><b>Definition:</b> <a href="MessageFrame_8h_source.html#l00077">MessageFrame.h:77</a></div></div>
 <div class="ttc" id="aasn__SEQUENCE__OF_8h_html_a4aee7090b76bad5067992d5f46370a2a"><div class="ttname"><a href="asn__SEQUENCE__OF_8h.html#a4aee7090b76bad5067992d5f46370a2a">asn_sequence_add</a></div><div class="ttdeci">#define asn_sequence_add</div><div class="ttdef"><b>Definition:</b> <a href="asn__SEQUENCE__OF_8h_source.html#l00028">asn_SEQUENCE_OF.h:28</a></div></div>
 <div class="ttc" id="aclasscpp__message_1_1Mobility__Path_html_ae4ec735d36df74c0b71e9f2819307eb9"><div class="ttname"><a href="classcpp__message_1_1Mobility__Path.html#ae4ec735d36df74c0b71e9f2819307eb9">cpp_message::Mobility_Path::MOBILITYPATH_TEST_ID</a></div><div class="ttdeci">static const int MOBILITYPATH_TEST_ID</div><div class="ttdef"><b>Definition:</b> <a href="MobilityPath__Message_8h_source.html#l00038">MobilityPath_Message.h:38</a></div></div>
 <div class="ttc" id="aper__encoder_8h_html_ad9d25a879d4499db83fb133c1b8636b9"><div class="ttname"><a href="per__encoder_8h.html#ad9d25a879d4499db83fb133c1b8636b9">uper_encode_to_buffer</a></div><div class="ttdeci">asn_enc_rval_t uper_encode_to_buffer(const struct asn_TYPE_descriptor_s *type_descriptor, const asn_per_constraints_t *constraints, const void *struct_ptr, void *buffer, size_t buffer_size)</div></div>
 <div class="ttc" id="astructHeader_html"><div class="ttname"><a href="structHeader.html">Header</a></div><div class="ttdef"><b>Definition:</b> <a href="Header_8h_source.html#l00026">Header.h:26</a></div></div>
-<div class="ttc" id="astructMobilityECEFOffset_html"><div class="ttname"><a href="structMobilityECEFOffset.html">MobilityECEFOffset</a></div><div class="ttdef"><b>Definition:</b> <a href="MobilityECEFOffset_8h_source.html#l00023">MobilityECEFOffset.h:23</a></div></div>
-<div class="ttc" id="astructMobilityECEFOffset_html_a3f8ea4a6817458cf379385e4a3622cad"><div class="ttname"><a href="structMobilityECEFOffset.html#a3f8ea4a6817458cf379385e4a3622cad">MobilityECEFOffset::offsetY</a></div><div class="ttdeci">MobilityECEFOffsetCoordinate_t offsetY</div><div class="ttdef"><b>Definition:</b> <a href="MobilityECEFOffset_8h_source.html#l00025">MobilityECEFOffset.h:25</a></div></div>
-<div class="ttc" id="astructMobilityECEFOffset_html_aa0f40d4d2b5123232380afe310ab7302"><div class="ttname"><a href="structMobilityECEFOffset.html#aa0f40d4d2b5123232380afe310ab7302">MobilityECEFOffset::offsetX</a></div><div class="ttdeci">MobilityECEFOffsetCoordinate_t offsetX</div><div class="ttdef"><b>Definition:</b> <a href="MobilityECEFOffset_8h_source.html#l00024">MobilityECEFOffset.h:24</a></div></div>
-<div class="ttc" id="astructMobilityECEFOffset_html_aebb7a62b61eafbf8a8f19d6d8931a202"><div class="ttname"><a href="structMobilityECEFOffset.html#aebb7a62b61eafbf8a8f19d6d8931a202">MobilityECEFOffset::offsetZ</a></div><div class="ttdeci">MobilityECEFOffsetCoordinate_t offsetZ</div><div class="ttdef"><b>Definition:</b> <a href="MobilityECEFOffset_8h_source.html#l00026">MobilityECEFOffset.h:26</a></div></div>
-<div class="ttc" id="astructMobilityLocationOffsets_html"><div class="ttname"><a href="structMobilityLocationOffsets.html">MobilityLocationOffsets</a></div><div class="ttdef"><b>Definition:</b> <a href="MobilityLocationOffsets_8h_source.html#l00026">MobilityLocationOffsets.h:26</a></div></div>
 <div class="ttc" id="astructasn__enc__rval__s_html"><div class="ttname"><a href="structasn__enc__rval__s.html">asn_enc_rval_s</a></div><div class="ttdef"><b>Definition:</b> <a href="asn__codecs_8h_source.html#l00041">asn_codecs.h:41</a></div></div>
 <div class="ttc" id="astructasn__enc__rval__s_html_ada573b8183a1af819ea3df7a7ea1ba04"><div class="ttname"><a href="structasn__enc__rval__s.html#ada573b8183a1af819ea3df7a7ea1ba04">asn_enc_rval_s::encoded</a></div><div class="ttdeci">ssize_t encoded</div><div class="ttdef"><b>Definition:</b> <a href="asn__codecs_8h_source.html#l00047">asn_codecs.h:47</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, <a class="el" href="asn__SEQUENCE__OF_8h_source.html#l00028">asn_sequence_add</a>, <a class="el" href="asn__codecs_8h_source.html#l00047">asn_enc_rval_s::encoded</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00029">LOCATION_MAX</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00032">LOCATION_MAX_Z</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00028">LOCATION_MIN</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00031">LOCATION_MIN_Z</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00026">MAX_POINTS_IN_MESSAGE</a>, <a class="el" href="MessageFrame_8h_source.html#l00077">MessageFrame__value_PR_TestMessage02</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00038">MOBILITYPATH_TEST_ID</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00048">node_logging_</a>, <a class="el" href="MobilityECEFOffset_8h_source.html#l00024">MobilityECEFOffset::offsetX</a>, <a class="el" href="MobilityECEFOffset_8h_source.html#l00025">MobilityECEFOffset::offsetY</a>, <a class="el" href="MobilityECEFOffset_8h_source.html#l00026">MobilityECEFOffset::offsetZ</a>, and <a class="el" href="per__encoder_8h.html#ad9d25a879d4499db83fb133c1b8636b9">uper_encode_to_buffer()</a>.</p>
+<p class="reference">References <a class="el" href="MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f">asn_DEF_MessageFrame</a>, <a class="el" href="asn__SEQUENCE__OF_8h_source.html#l00028">asn_sequence_add</a>, <a class="el" href="constr__TYPE_8h_source.html#l00072">ASN_STRUCT_FREE</a>, <a class="el" href="asn__codecs_8h_source.html#l00047">asn_enc_rval_s::encoded</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00029">LOCATION_MAX</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00032">LOCATION_MAX_Z</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00028">LOCATION_MIN</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00031">LOCATION_MIN_Z</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00026">MAX_POINTS_IN_MESSAGE</a>, <a class="el" href="MessageFrame_8h_source.html#l00077">MessageFrame__value_PR_TestMessage02</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00038">MOBILITYPATH_TEST_ID</a>, <a class="el" href="MobilityPath__Message_8h_source.html#l00048">node_logging_</a>, and <a class="el" href="per__encoder_8h.html#ad9d25a879d4499db83fb133c1b8636b9">uper_encode_to_buffer()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="cpp__message_8cpp_source.html#l00299">cpp_message::Node::outbound_mobility_path_message_callback()</a>.</p>
 <div class="dynheader">
@@ -697,7 +712,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8h_source.html#l00029">29</a> of file <a class="el" href="MobilityPath__Message_8h_source.html">MobilityPath_Message.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00025">decode_mobility_path_message()</a>, and <a class="el" href="MobilityPath__Message_8cpp_source.html#l00184">encode_mobility_path_message()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00033">decode_mobility_path_message()</a>, and <a class="el" href="MobilityPath__Message_8cpp_source.html#l00217">encode_mobility_path_message()</a>.</p>
 
 </div>
 </div>
@@ -723,7 +738,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8h_source.html#l00032">32</a> of file <a class="el" href="MobilityPath__Message_8h_source.html">MobilityPath_Message.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00025">decode_mobility_path_message()</a>, and <a class="el" href="MobilityPath__Message_8cpp_source.html#l00184">encode_mobility_path_message()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00033">decode_mobility_path_message()</a>, and <a class="el" href="MobilityPath__Message_8cpp_source.html#l00217">encode_mobility_path_message()</a>.</p>
 
 </div>
 </div>
@@ -749,7 +764,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8h_source.html#l00028">28</a> of file <a class="el" href="MobilityPath__Message_8h_source.html">MobilityPath_Message.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00025">decode_mobility_path_message()</a>, and <a class="el" href="MobilityPath__Message_8cpp_source.html#l00184">encode_mobility_path_message()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00033">decode_mobility_path_message()</a>, and <a class="el" href="MobilityPath__Message_8cpp_source.html#l00217">encode_mobility_path_message()</a>.</p>
 
 </div>
 </div>
@@ -775,7 +790,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8h_source.html#l00031">31</a> of file <a class="el" href="MobilityPath__Message_8h_source.html">MobilityPath_Message.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00025">decode_mobility_path_message()</a>, and <a class="el" href="MobilityPath__Message_8cpp_source.html#l00184">encode_mobility_path_message()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00033">decode_mobility_path_message()</a>, and <a class="el" href="MobilityPath__Message_8cpp_source.html#l00217">encode_mobility_path_message()</a>.</p>
 
 </div>
 </div>
@@ -801,7 +816,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8h_source.html#l00026">26</a> of file <a class="el" href="MobilityPath__Message_8h_source.html">MobilityPath_Message.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00025">decode_mobility_path_message()</a>, and <a class="el" href="MobilityPath__Message_8cpp_source.html#l00184">encode_mobility_path_message()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00033">decode_mobility_path_message()</a>, and <a class="el" href="MobilityPath__Message_8cpp_source.html#l00217">encode_mobility_path_message()</a>.</p>
 
 </div>
 </div>
@@ -827,7 +842,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8h_source.html#l00038">38</a> of file <a class="el" href="MobilityPath__Message_8h_source.html">MobilityPath_Message.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00184">encode_mobility_path_message()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00217">encode_mobility_path_message()</a>.</p>
 
 </div>
 </div>
@@ -845,7 +860,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8h_source.html#l00048">48</a> of file <a class="el" href="MobilityPath__Message_8h_source.html">MobilityPath_Message.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8h_source.html#l00043">Mobility_Path()</a>, <a class="el" href="MobilityPath__Message_8cpp_source.html#l00025">decode_mobility_path_message()</a>, and <a class="el" href="MobilityPath__Message_8cpp_source.html#l00184">encode_mobility_path_message()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8h_source.html#l00043">Mobility_Path()</a>, <a class="el" href="MobilityPath__Message_8cpp_source.html#l00033">decode_mobility_path_message()</a>, and <a class="el" href="MobilityPath__Message_8cpp_source.html#l00217">encode_mobility_path_message()</a>.</p>
 
 </div>
 </div>
@@ -871,7 +886,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8h_source.html#l00035">35</a> of file <a class="el" href="MobilityPath__Message_8h_source.html">MobilityPath_Message.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00025">decode_mobility_path_message()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00033">decode_mobility_path_message()</a>.</p>
 
 </div>
 </div>
@@ -897,7 +912,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8h_source.html#l00034">34</a> of file <a class="el" href="MobilityPath__Message_8h_source.html">MobilityPath_Message.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00025">decode_mobility_path_message()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00033">decode_mobility_path_message()</a>.</p>
 
 </div>
 </div>
@@ -923,7 +938,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="MobilityPath__Message_8h_source.html#l00036">36</a> of file <a class="el" href="MobilityPath__Message_8h_source.html">MobilityPath_Message.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00025">decode_mobility_path_message()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MobilityPath__Message_8cpp_source.html#l00033">decode_mobility_path_message()</a>.</p>
 
 </div>
 </div>
@@ -937,7 +952,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecpp__message.html">cpp_message</a></li><li class="navelem"><a class="el" href="classcpp__message_1_1Mobility__Path.html">Mobility_Path</a></li>
-    <li class="footer">Generated on Fri Oct 14 2022 18:04:01 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Oct 14 2022 18:14:20 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

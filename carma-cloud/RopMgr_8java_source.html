@@ -184,89 +184,48 @@ $(document).ready(function(){initNavTree('RopMgr_8java_source.html',''); initRes
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                sSearch[0] = <a class="code hl_class" href="classcc_1_1util_1_1Text.html">Text</a>.<a class="code hl_function" href="classcc_1_1util_1_1Text.html#abd320c8559cebc701139928e3afb9329">getUUID</a>();</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            StringBuilder sBuffer = <span class="keyword">new</span> StringBuilder(oReq.getParameter(<span class="stringliteral">&quot;data&quot;</span>));</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="keywordtype">int</span> nBufferIndex = sBuffer.length();</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">while</span> (nBufferIndex-- &gt; 0)</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                <span class="keywordtype">char</span> cChar = sBuffer.charAt(nBufferIndex);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                <span class="keywordflow">if</span> (cChar == <span class="charliteral">&#39;\t&#39;</span> || cChar == <span class="charliteral">&#39;\n&#39;</span>)</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                    sBuffer.deleteCharAt(nBufferIndex);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">if</span> (sBuffer.indexOf(<span class="stringliteral">&quot;\&quot;status\&quot;&quot;</span>) &lt; 0) <span class="comment">// add default status of unused to json</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="keywordflow">if</span> (sBuffer.indexOf(<span class="stringliteral">&quot;\&quot;status\&quot;&quot;</span>) &lt; 0) <span class="comment">// add default status of unused to json</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                <a class="code hl_class" href="classcc_1_1util_1_1Text.html">Text</a>.<a class="code hl_function" href="classcc_1_1util_1_1Text.html#a93d0818e002d6d28377f9a209f58c450">removeWhitespace</a>(sBuffer);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                sBuffer.insert(sBuffer.length() - 2, <span class="stringliteral">&quot;,\&quot;status\&quot;:\&quot;U\&quot;&quot;</span>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordtype">int</span> nIndex = Collections.binarySearch(<a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">m_oRops</a>, sSearch, <a class="code hl_variable" href="classcc_1_1ws_1_1Handler.html#adf0511ef2cfc2873a1ba093f9110a5a0">STR_ARR_COMP</a>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">if</span> (nIndex &lt; 0)</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <a class="code hl_class" href="classcc_1_1util_1_1Text.html">Text</a>.<a class="code hl_function" href="classcc_1_1util_1_1Text.html#a93d0818e002d6d28377f9a209f58c450">removeWhitespace</a>(sBuffer);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                sBuffer.insert(sBuffer.lastIndexOf(<span class="stringliteral">&quot;}&quot;</span>), <span class="stringliteral">&quot;,\&quot;status\&quot;:\&quot;U\&quot;&quot;</span>);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                nIndex = ~nIndex;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                <a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">m_oRops</a>.add(nIndex, <span class="keyword">new</span> String[]{sSearch[0], oSess.m_oUser.m_sUser, <span class="keyword">null</span>, sBuffer.toString()}); <span class="comment">// create new array </span></div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordtype">int</span> nIndex = Collections.binarySearch(<a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">m_oRops</a>, sSearch, <a class="code hl_variable" href="classcc_1_1ws_1_1Handler.html#adf0511ef2cfc2873a1ba093f9110a5a0">STR_ARR_COMP</a>);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keywordflow">if</span> (nIndex &lt; 0)</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                nIndex = ~nIndex;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                <a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">m_oRops</a>.add(nIndex, <span class="keyword">new</span> String[]{sSearch[0], oSess.m_oUser.m_sUser, <span class="keyword">null</span>, <span class="keyword">null</span>}); <span class="comment">// create new array </span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            sRop = <a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">m_oRops</a>.get(nIndex);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <span class="keyword">synchronized</span> (<a class="code hl_variable" href="classcc_1_1ws_1_1Handler.html#a40e01d946c459ca19f034a85a82ac7df">ISO8601Sdf</a>)</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                sRop[2] = <a class="code hl_variable" href="classcc_1_1ws_1_1Handler.html#a40e01d946c459ca19f034a85a82ac7df">ISO8601Sdf</a>.format(System.currentTimeMillis());</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            }</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            sRop[3] = sBuffer.toString();</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">if</span> (sRop[3].contains(<span class="stringliteral">&quot;\&quot;status\&quot;:\&quot;D\&quot;&quot;</span>)) <span class="comment">// remove from list if the status is deleted</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                <a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">m_oRops</a>.remove(nIndex);</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">try</span> (BufferedWriter oFileOut = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(<a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#a87fae2b5e44baf7066536b03a14b119d">m_sRopFile</a>, <span class="keyword">true</span>)))</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            {</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                oFileOut.write(sRop[0]);</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; sRop.length; i++)</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                {</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                    oFileOut.write(<span class="stringliteral">&quot;\t&quot;</span>);</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                    oFileOut.write(sRop[i]);</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                }</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                oFileOut.write(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            }</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        }</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        oOut.write(<span class="stringliteral">&quot;{&quot;</span>);</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <a class="code hl_function" href="classcc_1_1ws_1_1Handler.html#a3547939d5b2c14d6f26535f26312450a">writeJson</a>(oOut, sRop[0], sRop[sRop.length - 1]); <span class="comment">// id:data</span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        oOut.write(<span class="stringliteral">&quot;}&quot;</span>);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classcc_1_1ws_1_1RopMgr.html#ab17de47977402d0657fa1c8eef225d4b">  149</a></span>    <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classcc_1_1ws_1_1RopMgr.html#ab17de47977402d0657fa1c8eef225d4b">doDetails</a>(<a class="code hl_class" href="classcc_1_1ws_1_1Session.html">Session</a> oSess, HttpServletRequest oReq, PrintWriter oOut)</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>       <span class="keywordflow">throws</span> IOException</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        String sRopIds = oReq.getParameter(<span class="stringliteral">&quot;rops&quot;</span>);</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordflow">if</span> (sRopIds == <span class="keyword">null</span> || <a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">m_oRops</a>.isEmpty())</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            oOut.write(<span class="stringliteral">&quot;{}&quot;</span>);</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        String[] sIds = sRopIds.split(<span class="stringliteral">&quot;,&quot;</span>);</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        oOut.write(<span class="stringliteral">&quot;{&quot;</span>);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        String[] sSearch = <span class="keyword">new</span> String[1];</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordtype">int</span> nCount = 0;</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keyword">synchronized</span> (<a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">m_oRops</a>)</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        {</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            <span class="keywordflow">for</span> (String sId : sIds)</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            {</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                sSearch[0] = sId;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                <span class="keywordtype">int</span> nIndex = Collections.binarySearch(<a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">m_oRops</a>, sSearch, <a class="code hl_variable" href="classcc_1_1ws_1_1Handler.html#adf0511ef2cfc2873a1ba093f9110a5a0">STR_ARR_COMP</a>);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                <span class="keywordflow">if</span> (nIndex &lt; 0)</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                String[] sRop = <a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">m_oRops</a>.get(nIndex);</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                <span class="keywordflow">if</span> (nCount++ &gt; 0)</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                    oOut.write(<span class="stringliteral">&quot;,&quot;</span>);</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                <a class="code hl_function" href="classcc_1_1ws_1_1Handler.html#a3547939d5b2c14d6f26535f26312450a">writeJson</a>(oOut, sRop[0], sRop[sRop.length - 1]);</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            }</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        }</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        oOut.write(<span class="stringliteral">&quot;}&quot;</span>);</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    }</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>}</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            sRop = <a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">m_oRops</a>.get(nIndex);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keyword">synchronized</span> (<a class="code hl_variable" href="classcc_1_1ws_1_1Handler.html#a40e01d946c459ca19f034a85a82ac7df">ISO8601Sdf</a>)</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                sRop[2] = <a class="code hl_variable" href="classcc_1_1ws_1_1Handler.html#a40e01d946c459ca19f034a85a82ac7df">ISO8601Sdf</a>.format(System.currentTimeMillis());</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">if</span> (sRop[3].contains(<span class="stringliteral">&quot;\&quot;status\&quot;:\&quot;D\&quot;&quot;</span>)) <span class="comment">// remove from list if the status is deleted</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                <a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">m_oRops</a>.remove(nIndex);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keywordflow">try</span> (BufferedWriter oFileOut = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(<a class="code hl_variable" href="classcc_1_1ws_1_1RopMgr.html#a87fae2b5e44baf7066536b03a14b119d">m_sRopFile</a>, <span class="keyword">true</span>)))</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                oFileOut.write(sRop[0]);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; sRop.length; i++)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                    oFileOut.write(<span class="stringliteral">&quot;\t&quot;</span>);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                    oFileOut.write(sRop[i]);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                oFileOut.write(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        oOut.write(<span class="stringliteral">&quot;{&quot;</span>);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <a class="code hl_function" href="classcc_1_1ws_1_1Handler.html#a3547939d5b2c14d6f26535f26312450a">writeJson</a>(oOut, sRop[0], sRop[sRop.length - 1]); <span class="comment">// id:data</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        oOut.write(<span class="stringliteral">&quot;}&quot;</span>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
 <div class="ttc" id="aclassRunnable_html"><div class="ttname"><a href="classRunnable.html">Runnable</a></div></div>
 <div class="ttc" id="aclasscc_1_1util_1_1CsvReader_html"><div class="ttname"><a href="classcc_1_1util_1_1CsvReader.html">cc.util.CsvReader</a></div><div class="ttdef"><b>Definition:</b> <a href="CsvReader_8java_source.html#l00007">CsvReader.java:8</a></div></div>
-<div class="ttc" id="aclasscc_1_1util_1_1Text_html"><div class="ttname"><a href="classcc_1_1util_1_1Text.html">cc.util.Text</a></div><div class="ttdef"><b>Definition:</b> <a href="Text_8java_source.html#l00013">Text.java:14</a></div></div>
-<div class="ttc" id="aclasscc_1_1util_1_1Text_html_a93d0818e002d6d28377f9a209f58c450"><div class="ttname"><a href="classcc_1_1util_1_1Text.html#a93d0818e002d6d28377f9a209f58c450">cc.util.Text.removeWhitespace</a></div><div class="ttdeci">static void removeWhitespace(StringBuilder sBuffer)</div><div class="ttdef"><b>Definition:</b> <a href="Text_8java_source.html#l00122">Text.java:122</a></div></div>
-<div class="ttc" id="aclasscc_1_1util_1_1Text_html_abd320c8559cebc701139928e3afb9329"><div class="ttname"><a href="classcc_1_1util_1_1Text.html#abd320c8559cebc701139928e3afb9329">cc.util.Text.getUUID</a></div><div class="ttdeci">static String getUUID()</div><div class="ttdef"><b>Definition:</b> <a href="Text_8java_source.html#l00679">Text.java:679</a></div></div>
+<div class="ttc" id="aclasscc_1_1util_1_1Text_html"><div class="ttname"><a href="classcc_1_1util_1_1Text.html">cc.util.Text</a></div><div class="ttdef"><b>Definition:</b> <a href="Text_8java_source.html#l00012">Text.java:13</a></div></div>
+<div class="ttc" id="aclasscc_1_1util_1_1Text_html_a93d0818e002d6d28377f9a209f58c450"><div class="ttname"><a href="classcc_1_1util_1_1Text.html#a93d0818e002d6d28377f9a209f58c450">cc.util.Text.removeWhitespace</a></div><div class="ttdeci">static void removeWhitespace(StringBuilder sBuffer)</div><div class="ttdef"><b>Definition:</b> <a href="Text_8java_source.html#l00103">Text.java:103</a></div></div>
+<div class="ttc" id="aclasscc_1_1util_1_1Text_html_abd320c8559cebc701139928e3afb9329"><div class="ttname"><a href="classcc_1_1util_1_1Text.html#abd320c8559cebc701139928e3afb9329">cc.util.Text.getUUID</a></div><div class="ttdeci">static String getUUID()</div><div class="ttdef"><b>Definition:</b> <a href="Text_8java_source.html#l00660">Text.java:660</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1Handler_html"><div class="ttname"><a href="classcc_1_1ws_1_1Handler.html">cc.ws.Handler</a></div><div class="ttdef"><b>Definition:</b> <a href="Handler_8java_source.html#l00017">Handler.java:18</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1Handler_html_a3547939d5b2c14d6f26535f26312450a"><div class="ttname"><a href="classcc_1_1ws_1_1Handler.html#a3547939d5b2c14d6f26535f26312450a">cc.ws.Handler.writeJson</a></div><div class="ttdeci">static void writeJson(PrintWriter oOut, String sId, String sData)</div><div class="ttdef"><b>Definition:</b> <a href="Handler_8java_source.html#l00082">Handler.java:82</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1Handler_html_a40e01d946c459ca19f034a85a82ac7df"><div class="ttname"><a href="classcc_1_1ws_1_1Handler.html#a40e01d946c459ca19f034a85a82ac7df">cc.ws.Handler.ISO8601Sdf</a></div><div class="ttdeci">static final SimpleDateFormat ISO8601Sdf</div><div class="ttdef"><b>Definition:</b> <a href="Handler_8java_source.html#l00020">Handler.java:20</a></div></div>
@@ -277,17 +236,16 @@ $(document).ready(function(){initNavTree('RopMgr_8java_source.html',''); initRes
 <div class="ttc" id="aclasscc_1_1ws_1_1RopMgr_html_a78fec92ea7b3909cd76e8e3a008a7b61"><div class="ttname"><a href="classcc_1_1ws_1_1RopMgr.html#a78fec92ea7b3909cd76e8e3a008a7b61">cc.ws.RopMgr.doNull</a></div><div class="ttdeci">void doNull(Session oSess, HttpServletRequest oReq, PrintWriter oOut)</div><div class="ttdef"><b>Definition:</b> <a href="RopMgr_8java_source.html#l00069">RopMgr.java:69</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1RopMgr_html_a7d4d3918f2f2a3ae3986aca7470025de"><div class="ttname"><a href="classcc_1_1ws_1_1RopMgr.html#a7d4d3918f2f2a3ae3986aca7470025de">cc.ws.RopMgr.doSave</a></div><div class="ttdeci">void doSave(Session oSess, HttpServletRequest oReq, PrintWriter oOut)</div><div class="ttdef"><b>Definition:</b> <a href="RopMgr_8java_source.html#l00091">RopMgr.java:91</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1RopMgr_html_a87fae2b5e44baf7066536b03a14b119d"><div class="ttname"><a href="classcc_1_1ws_1_1RopMgr.html#a87fae2b5e44baf7066536b03a14b119d">cc.ws.RopMgr.m_sRopFile</a></div><div class="ttdeci">String m_sRopFile</div><div class="ttdef"><b>Definition:</b> <a href="RopMgr_8java_source.html#l00025">RopMgr.java:25</a></div></div>
-<div class="ttc" id="aclasscc_1_1ws_1_1RopMgr_html_ab17de47977402d0657fa1c8eef225d4b"><div class="ttname"><a href="classcc_1_1ws_1_1RopMgr.html#ab17de47977402d0657fa1c8eef225d4b">cc.ws.RopMgr.doDetails</a></div><div class="ttdeci">void doDetails(Session oSess, HttpServletRequest oReq, PrintWriter oOut)</div><div class="ttdef"><b>Definition:</b> <a href="RopMgr_8java_source.html#l00149">RopMgr.java:149</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1RopMgr_html_ae56c64450d615ec34832f7f1940d7867"><div class="ttname"><a href="classcc_1_1ws_1_1RopMgr.html#ae56c64450d615ec34832f7f1940d7867">cc.ws.RopMgr.run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> <a href="RopMgr_8java_source.html#l00042">RopMgr.java:42</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1RopMgr_html_aefdb484b3285adcce8a2a3143d765a17"><div class="ttname"><a href="classcc_1_1ws_1_1RopMgr.html#aefdb484b3285adcce8a2a3143d765a17">cc.ws.RopMgr.m_oRops</a></div><div class="ttdeci">ArrayList&lt; String[]&gt; m_oRops</div><div class="ttdef"><b>Definition:</b> <a href="RopMgr_8java_source.html#l00026">RopMgr.java:26</a></div></div>
-<div class="ttc" id="aclasscc_1_1ws_1_1Session_html"><div class="ttname"><a href="classcc_1_1ws_1_1Session.html">cc.ws.Session</a></div><div class="ttdef"><b>Definition:</b> <a href="Session_8java_source.html#l00007">Session.java:8</a></div></div>
+<div class="ttc" id="aclasscc_1_1ws_1_1Session_html"><div class="ttname"><a href="classcc_1_1ws_1_1Session.html">cc.ws.Session</a></div><div class="ttdef"><b>Definition:</b> <a href="Session_8java_source.html#l00006">Session.java:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b35e6539d4252f2f7831d547d43ad4a7.html">cc</a></li><li class="navelem"><a class="el" href="dir_9116f041f3c28a3cdf8c25a69e5adfe1.html">ws</a></li><li class="navelem"><a class="el" href="RopMgr_8java.html">RopMgr.java</a></li>
-    <li class="footer">Generated on Fri Oct 14 2022 18:12:20 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Oct 17 2022 16:19:38 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

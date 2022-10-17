@@ -176,9 +176,9 @@ Static Package Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UserMgr_8java_source.html#l00032">32</a> of file <a class="el" href="UserMgr_8java_source.html">UserMgr.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>    {</div>
-<div class="line"><span class="lineno">   34</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="UserMgr_8java_source.html#l00033">33</a> of file <a class="el" href="UserMgr_8java_source.html">UserMgr.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>    {</div>
+<div class="line"><span class="lineno">   35</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -239,50 +239,49 @@ Static Package Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UserMgr_8java_source.html#l00054">54</a> of file <a class="el" href="UserMgr_8java_source.html">UserMgr.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>    {</div>
-<div class="line"><span class="lineno">   56</span>        StringBuilder sBuf = <span class="keyword">new</span> StringBuilder(<span class="stringliteral">&quot;{\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   57</span>        String sPath = oReq.getPathInfo();</div>
-<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span> (sPath.contains(<span class="stringliteral">&quot;login&quot;</span>))</div>
-<div class="line"><span class="lineno">   59</span>        {</div>
-<div class="line"><span class="lineno">   60</span>            String sUname = oReq.getParameter(<span class="stringliteral">&quot;uname&quot;</span>);</div>
-<div class="line"><span class="lineno">   61</span>            String sPword = oReq.getParameter(<span class="stringliteral">&quot;pword&quot;</span>);</div>
-<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">if</span> (sUname != <span class="keyword">null</span> &amp;&amp; sUname.length() &gt; 0 &amp;&amp; sPword != <span class="keyword">null</span> &amp;&amp; sPword.length() &gt; 0)</div>
-<div class="line"><span class="lineno">   63</span>            {</div>
-<div class="line"><span class="lineno">   64</span>                <span class="keywordtype">int</span> nIndex = Collections.binarySearch(<a class="code hl_variable" href="classcc_1_1ws_1_1UserMgr.html#a12822546a8ff8703bb54a529f4f9605b">m_oCreds</a>, sUname);</div>
-<div class="line"><span class="lineno">   65</span>                <span class="keywordflow">if</span> (nIndex &gt;= 0)</div>
-<div class="line"><span class="lineno">   66</span>                {</div>
-<div class="line"><span class="lineno">   67</span>                    User oUser = <a class="code hl_variable" href="classcc_1_1ws_1_1UserMgr.html#a12822546a8ff8703bb54a529f4f9605b">m_oCreds</a>.get(nIndex);</div>
-<div class="line"><span class="lineno">   68</span>                    StringBuilder sSecPass = <span class="keyword">new</span> StringBuilder();</div>
-<div class="line"><span class="lineno">   69</span>                    <a class="code hl_function" href="classcc_1_1ws_1_1UserMgr.html#a4d331efcc3b5b99963dc701f37a84129">getSecurePassword</a>(sPword, oUser.m_ySalt, sSecPass);</div>
-<div class="line"><span class="lineno">   70</span>                    <span class="keywordflow">if</span> (Text.compare(oUser.m_sPass, sSecPass) == 0)</div>
-<div class="line"><span class="lineno">   71</span>                    {</div>
-<div class="line"><span class="lineno">   72</span>                        Session oSess = SessMgr.getSession(oReq, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   73</span>                        oSess.m_oUser = oUser; <span class="comment">// save credentials in session</span></div>
-<div class="line"><span class="lineno">   74</span>                        sBuf.append(<span class="stringliteral">&quot;\t\&quot;token\&quot;: \&quot;&quot;</span>).append(oSess.m_sToken).append(<span class="stringliteral">&quot;\&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   75</span>                    }</div>
-<div class="line"><span class="lineno">   76</span>                }</div>
-<div class="line"><span class="lineno">   77</span>            }</div>
-<div class="line"><span class="lineno">   78</span>        }</div>
-<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   80</span>        {</div>
-<div class="line"><span class="lineno">   81</span>            Session oSess = SessMgr.getSession(oReq);</div>
-<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">if</span> (sPath.contains(<span class="stringliteral">&quot;check&quot;</span>))</div>
-<div class="line"><span class="lineno">   83</span>            {</div>
-<div class="line"><span class="lineno">   84</span>                <span class="keywordflow">if</span> (oSess != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   85</span>                    sBuf.append(<span class="stringliteral">&quot;\t\&quot;token\&quot;: \&quot;&quot;</span>).append(oSess.m_sToken).append(<span class="stringliteral">&quot;\&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   86</span>            }</div>
-<div class="line"><span class="lineno">   87</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sPath.contains(<span class="stringliteral">&quot;logout&quot;</span>))</div>
-<div class="line"><span class="lineno">   88</span>            {</div>
-<div class="line"><span class="lineno">   89</span>                    SessMgr.removeSession(oSess);</div>
-<div class="line"><span class="lineno">   90</span>            }</div>
-<div class="line"><span class="lineno">   91</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sPath.contains(<span class="stringliteral">&quot;update&quot;</span>))</div>
-<div class="line"><span class="lineno">   92</span>            {</div>
-<div class="line"><span class="lineno">   93</span>            }</div>
-<div class="line"><span class="lineno">   94</span>        }</div>
-<div class="line"><span class="lineno">   95</span>        sBuf.append(<span class="stringliteral">&quot;}\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   96</span>        </div>
-<div class="line"><span class="lineno">   97</span>        oRep.setContentType(<span class="stringliteral">&quot;text/plain&quot;</span>);</div>
+<p class="definition">Definition at line <a class="el" href="UserMgr_8java_source.html#l00055">55</a> of file <a class="el" href="UserMgr_8java_source.html">UserMgr.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>        StringBuilder sBuf = <span class="keyword">new</span> StringBuilder(<span class="stringliteral">&quot;{\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   58</span>        String sPath = oReq.getPathInfo();</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">if</span> (sPath.contains(<span class="stringliteral">&quot;login&quot;</span>))</div>
+<div class="line"><span class="lineno">   60</span>        {</div>
+<div class="line"><span class="lineno">   61</span>            String sUname = oReq.getParameter(<span class="stringliteral">&quot;uname&quot;</span>);</div>
+<div class="line"><span class="lineno">   62</span>            String sPword = oReq.getParameter(<span class="stringliteral">&quot;pword&quot;</span>);</div>
+<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">if</span> (sUname != <span class="keyword">null</span> &amp;&amp; sUname.length() &gt; 0 &amp;&amp; sPword != <span class="keyword">null</span> &amp;&amp; sPword.length() &gt; 0)</div>
+<div class="line"><span class="lineno">   64</span>            {</div>
+<div class="line"><span class="lineno">   65</span>                <span class="keywordtype">int</span> nIndex = Collections.binarySearch(<a class="code hl_variable" href="classcc_1_1ws_1_1UserMgr.html#a12822546a8ff8703bb54a529f4f9605b">m_oCreds</a>, sUname);</div>
+<div class="line"><span class="lineno">   66</span>                <span class="keywordflow">if</span> (nIndex &gt;= 0)</div>
+<div class="line"><span class="lineno">   67</span>                {</div>
+<div class="line"><span class="lineno">   68</span>                    User oUser = <a class="code hl_variable" href="classcc_1_1ws_1_1UserMgr.html#a12822546a8ff8703bb54a529f4f9605b">m_oCreds</a>.get(nIndex);</div>
+<div class="line"><span class="lineno">   69</span>                    StringBuilder sSecPass = <span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><span class="lineno">   70</span>                    <a class="code hl_function" href="classcc_1_1ws_1_1UserMgr.html#a4d331efcc3b5b99963dc701f37a84129">getSecurePassword</a>(sPword, oUser.m_ySalt, sSecPass);</div>
+<div class="line"><span class="lineno">   71</span>                    <span class="keywordflow">if</span> (Text.compare(oUser.m_sPass, sSecPass) == 0)</div>
+<div class="line"><span class="lineno">   72</span>                    {</div>
+<div class="line"><span class="lineno">   73</span>                        Session oSess = SessMgr.getSession(oReq, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   74</span>                        oSess.m_oUser = oUser; <span class="comment">// save credentials in session</span></div>
+<div class="line"><span class="lineno">   75</span>                        sBuf.append(<span class="stringliteral">&quot;\t\&quot;token\&quot;: \&quot;&quot;</span>).append(oSess.m_sToken).append(<span class="stringliteral">&quot;\&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   76</span>                    }</div>
+<div class="line"><span class="lineno">   77</span>                }</div>
+<div class="line"><span class="lineno">   78</span>            }</div>
+<div class="line"><span class="lineno">   79</span>        }</div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   81</span>        {</div>
+<div class="line"><span class="lineno">   82</span>            Session oSess = SessMgr.getSession(oReq);</div>
+<div class="line"><span class="lineno">   83</span>            <span class="keywordflow">if</span> (sPath.contains(<span class="stringliteral">&quot;check&quot;</span>))</div>
+<div class="line"><span class="lineno">   84</span>            {</div>
+<div class="line"><span class="lineno">   85</span>                <span class="keywordflow">if</span> (oSess != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   86</span>                    sBuf.append(<span class="stringliteral">&quot;\t\&quot;token\&quot;: \&quot;&quot;</span>).append(oSess.m_sToken).append(<span class="stringliteral">&quot;\&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   87</span>            }</div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sPath.contains(<span class="stringliteral">&quot;logout&quot;</span>))</div>
+<div class="line"><span class="lineno">   89</span>            {</div>
+<div class="line"><span class="lineno">   90</span>                    SessMgr.removeSession(oSess);</div>
+<div class="line"><span class="lineno">   91</span>            }</div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sPath.contains(<span class="stringliteral">&quot;update&quot;</span>))</div>
+<div class="line"><span class="lineno">   93</span>            {</div>
+<div class="line"><span class="lineno">   94</span>            }</div>
+<div class="line"><span class="lineno">   95</span>        }</div>
+<div class="line"><span class="lineno">   96</span>        sBuf.append(<span class="stringliteral">&quot;}\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   97</span> </div>
 <div class="line"><span class="lineno">   98</span>        <span class="keywordflow">try</span> (ServletOutputStream oOut = oRep.getOutputStream())</div>
 <div class="line"><span class="lineno">   99</span>        {</div>
 <div class="line"><span class="lineno">  100</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nIndex = 0; nIndex &lt; sBuf.length(); nIndex++)</div>
@@ -295,7 +294,7 @@ Static Package Functions</h2></td></tr>
 <div class="ttc" id="aclasscc_1_1ws_1_1UserMgr_html_a12822546a8ff8703bb54a529f4f9605b"><div class="ttname"><a href="classcc_1_1ws_1_1UserMgr.html#a12822546a8ff8703bb54a529f4f9605b">cc.ws.UserMgr.m_oCreds</a></div><div class="ttdeci">ArrayList&lt; User &gt; m_oCreds</div><div class="ttdef"><b>Definition:</b> <a href="UserMgr_8java_source.html#l00020">UserMgr.java:20</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1UserMgr_html_a4d331efcc3b5b99963dc701f37a84129"><div class="ttname"><a href="classcc_1_1ws_1_1UserMgr.html#a4d331efcc3b5b99963dc701f37a84129">cc.ws.UserMgr.getSecurePassword</a></div><div class="ttdeci">static void getSecurePassword(String sPass, byte[] ySalt, StringBuilder sBuf)</div><div class="ttdef"><b>Definition:</b> <a href="UserMgr_8java_source.html#l00109">UserMgr.java:109</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Text_8java_source.html#l00444">cc.util.Text.compare()</a>, <a class="el" href="UserMgr_8java_source.html#l00109">cc.ws.UserMgr.getSecurePassword()</a>, <a class="el" href="SessMgr_8java_source.html#l00033">cc.ws.SessMgr.getSession()</a>, <a class="el" href="UserMgr_8java_source.html#l00020">cc.ws.UserMgr.m_oCreds</a>, <a class="el" href="User_8java_source.html#l00012">cc.ws.User.m_sPass</a>, <a class="el" href="Session_8java_source.html#l00010">cc.ws.Session.m_sToken</a>, <a class="el" href="User_8java_source.html#l00010">cc.ws.User.m_ySalt</a>, and <a class="el" href="SessMgr_8java_source.html#l00086">cc.ws.SessMgr.removeSession()</a>.</p>
+<p class="reference">References <a class="el" href="Text_8java_source.html#l00425">cc.util.Text.compare()</a>, <a class="el" href="UserMgr_8java_source.html#l00109">cc.ws.UserMgr.getSecurePassword()</a>, <a class="el" href="SessMgr_8java_source.html#l00033">cc.ws.SessMgr.getSession()</a>, <a class="el" href="UserMgr_8java_source.html#l00020">cc.ws.UserMgr.m_oCreds</a>, <a class="el" href="User_8java_source.html#l00012">cc.ws.User.m_sPass</a>, <a class="el" href="Session_8java_source.html#l00009">cc.ws.Session.m_sToken</a>, <a class="el" href="User_8java_source.html#l00010">cc.ws.User.m_ySalt</a>, and <a class="el" href="SessMgr_8java_source.html#l00086">cc.ws.SessMgr.removeSession()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -364,9 +363,9 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclasscc_1_1ws_1_1UserMgr_html_a2c37bb1b4adccaec4c7741d896185f3e"><div class="ttname"><a href="classcc_1_1ws_1_1UserMgr.html#a2c37bb1b4adccaec4c7741d896185f3e">cc.ws.UserMgr.LOCK</a></div><div class="ttdeci">static final Object LOCK</div><div class="ttdef"><b>Definition:</b> <a href="UserMgr_8java_source.html#l00018">UserMgr.java:18</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1UserMgr_html_ac633dc3c9206c45295bfacbdfbedd1d3"><div class="ttname"><a href="classcc_1_1ws_1_1UserMgr.html#ac633dc3c9206c45295bfacbdfbedd1d3">cc.ws.UserMgr.DIGEST</a></div><div class="ttdeci">static MessageDigest DIGEST</div><div class="ttdef"><b>Definition:</b> <a href="UserMgr_8java_source.html#l00019">UserMgr.java:19</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserMgr_8java_source.html#l00019">cc.ws.UserMgr.DIGEST</a>, <a class="el" href="UserMgr_8java_source.html#l00018">cc.ws.UserMgr.LOCK</a>, and <a class="el" href="Text_8java_source.html#l00544">cc.util.Text.toHexString()</a>.</p>
+<p class="reference">References <a class="el" href="UserMgr_8java_source.html#l00019">cc.ws.UserMgr.DIGEST</a>, <a class="el" href="UserMgr_8java_source.html#l00018">cc.ws.UserMgr.LOCK</a>, and <a class="el" href="Text_8java_source.html#l00525">cc.util.Text.toHexString()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UserMgr_8java_source.html#l00054">cc.ws.UserMgr.doPost()</a>, and <a class="el" href="UserMgr_8java_source.html#l00120">cc.ws.UserMgr.main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UserMgr_8java_source.html#l00055">cc.ws.UserMgr.doPost()</a>, and <a class="el" href="UserMgr_8java_source.html#l00120">cc.ws.UserMgr.main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -412,19 +411,19 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UserMgr_8java_source.html#l00038">38</a> of file <a class="el" href="UserMgr_8java_source.html">UserMgr.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>    {</div>
-<div class="line"><span class="lineno">   40</span>        ServletConfig oConf = getServletConfig();</div>
-<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">try</span> (CsvReader oCsv = <span class="keyword">new</span> CsvReader(<span class="keyword">new</span> FileInputStream(oConf.getInitParameter(<span class="stringliteral">&quot;pwdfile&quot;</span>))))</div>
-<div class="line"><span class="lineno">   42</span>        {</div>
-<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">while</span> (oCsv.readLine() &gt; 0)</div>
-<div class="line"><span class="lineno">   44</span>                <a class="code hl_variable" href="classcc_1_1ws_1_1UserMgr.html#a12822546a8ff8703bb54a529f4f9605b">m_oCreds</a>.add(<span class="keyword">new</span> User(oCsv));</div>
-<div class="line"><span class="lineno">   45</span>        }</div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">catch</span> (Exception oEx)</div>
-<div class="line"><span class="lineno">   47</span>        {</div>
-<div class="line"><span class="lineno">   48</span>        }</div>
-<div class="line"><span class="lineno">   49</span>        Collections.sort(<a class="code hl_variable" href="classcc_1_1ws_1_1UserMgr.html#a12822546a8ff8703bb54a529f4f9605b">m_oCreds</a>, <span class="keyword">new</span> User());</div>
-<div class="line"><span class="lineno">   50</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="UserMgr_8java_source.html#l00039">39</a> of file <a class="el" href="UserMgr_8java_source.html">UserMgr.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        ServletConfig oConf = getServletConfig();</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">try</span> (CsvReader oCsv = <span class="keyword">new</span> CsvReader(<span class="keyword">new</span> FileInputStream(oConf.getInitParameter(<span class="stringliteral">&quot;pwdfile&quot;</span>))))</div>
+<div class="line"><span class="lineno">   43</span>        {</div>
+<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">while</span> (oCsv.readLine() &gt; 0)</div>
+<div class="line"><span class="lineno">   45</span>                <a class="code hl_variable" href="classcc_1_1ws_1_1UserMgr.html#a12822546a8ff8703bb54a529f4f9605b">m_oCreds</a>.add(<span class="keyword">new</span> User(oCsv));</div>
+<div class="line"><span class="lineno">   46</span>        }</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">catch</span> (Exception oEx)</div>
+<div class="line"><span class="lineno">   48</span>        {</div>
+<div class="line"><span class="lineno">   49</span>        }</div>
+<div class="line"><span class="lineno">   50</span>        Collections.sort(<a class="code hl_variable" href="classcc_1_1ws_1_1UserMgr.html#a12822546a8ff8703bb54a529f4f9605b">m_oCreds</a>, <span class="keyword">new</span> User());</div>
+<div class="line"><span class="lineno">   51</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="UserMgr_8java_source.html#l00020">cc.ws.UserMgr.m_oCreds</a>.</p>
 
@@ -476,12 +475,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  139</span>        }</div>
 <div class="line"><span class="lineno">  140</span>        <span class="keywordflow">catch</span> (Exception oEx)</div>
 <div class="line"><span class="lineno">  141</span>        {</div>
-<div class="line"><span class="lineno">  142</span>            oEx.printStackTrace();</div>
-<div class="line"><span class="lineno">  143</span>        }</div>
-<div class="line"><span class="lineno">  144</span>    }</div>
-<div class="ttc" id="aclasscc_1_1ws_1_1UserMgr_html_ad3f06bad683ed51534ef65fb454eea1a"><div class="ttname"><a href="classcc_1_1ws_1_1UserMgr.html#ad3f06bad683ed51534ef65fb454eea1a">cc.ws.UserMgr.UserMgr</a></div><div class="ttdeci">UserMgr()</div><div class="ttdef"><b>Definition:</b> <a href="UserMgr_8java_source.html#l00032">UserMgr.java:32</a></div></div>
+<div class="line"><span class="lineno">  142</span>        }</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
+<div class="ttc" id="aclasscc_1_1ws_1_1UserMgr_html_ad3f06bad683ed51534ef65fb454eea1a"><div class="ttname"><a href="classcc_1_1ws_1_1UserMgr.html#ad3f06bad683ed51534ef65fb454eea1a">cc.ws.UserMgr.UserMgr</a></div><div class="ttdeci">UserMgr()</div><div class="ttdef"><b>Definition:</b> <a href="UserMgr_8java_source.html#l00033">UserMgr.java:33</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="UserMgr_8java_source.html#l00109">cc.ws.UserMgr.getSecurePassword()</a>, and <a class="el" href="Text_8java_source.html#l00544">cc.util.Text.toHexString()</a>.</p>
+<p class="reference">References <a class="el" href="UserMgr_8java_source.html#l00109">cc.ws.UserMgr.getSecurePassword()</a>, and <a class="el" href="Text_8java_source.html#l00525">cc.util.Text.toHexString()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -570,7 +568,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="UserMgr_8java_source.html#l00020">20</a> of file <a class="el" href="UserMgr_8java_source.html">UserMgr.java</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UserMgr_8java_source.html#l00054">cc.ws.UserMgr.doPost()</a>, and <a class="el" href="UserMgr_8java_source.html#l00038">cc.ws.UserMgr.init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UserMgr_8java_source.html#l00055">cc.ws.UserMgr.doPost()</a>, and <a class="el" href="UserMgr_8java_source.html#l00039">cc.ws.UserMgr.init()</a>.</p>
 
 </div>
 </div>
@@ -583,7 +581,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>cc</b></li><li class="navelem"><a class="el" href="namespacecc_1_1ws.html">ws</a></li><li class="navelem"><a class="el" href="classcc_1_1ws_1_1UserMgr.html">UserMgr</a></li>
-    <li class="footer">Generated on Fri Oct 14 2022 18:12:23 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Oct 17 2022 16:19:38 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

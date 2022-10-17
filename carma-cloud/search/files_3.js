@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['detector_2ejava_0',['Detector.java',['../Detector_8java.html',1,'']]]
+  ['eventmgr_2ejava_0',['EventMgr.java',['../EventMgr_8java.html',1,'']]]
 ];

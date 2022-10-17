@@ -10,6 +10,7 @@ var namespaces_dup =
       [ "CHANNEL_CONTROL_TYPE_PARAMETER", "namespacentcip__oids.html#a9c039d3da352a48fe04ff8fd43014fec", null ],
       [ "ENABLE_SPAT_OID", "namespacentcip__oids.html#ab1f88eabb00f61c8b06fea2deae959b5", null ],
       [ "MAX_CHANNELS", "namespacentcip__oids.html#a5e92b2d342b6fa23f9be040041b5d631", null ],
+      [ "MAX_RINGS", "namespacentcip__oids.html#a0f688c62b46ab34346b42e846c072f06", null ],
       [ "MAXIMUM_GREEN", "namespacentcip__oids.html#a4affb9d542bfdef8b1a3a2ef06941c7c", null ],
       [ "MINIMUM_GREEN", "namespacentcip__oids.html#a90dca09384bbe13e3ee22c4ba9510079", null ],
       [ "PHASE_CONCURRENCY", "namespacentcip__oids.html#aedc3a19c20b2cd545d70616264b5805d", null ],

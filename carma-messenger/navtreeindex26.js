@@ -1,5 +1,7 @@
 var NAVTREEINDEX26 =
 {
+"ThrottleConfidence_8h.html#ae8c025754fea7f6a1d1fd6a985a53fa7":[10,0,1,1,0,1,471,4],
+"ThrottleConfidence_8h_source.html":[10,0,1,1,0,1,471],
 "ThrottlePosition_8h.html":[10,0,1,1,0,1,472],
 "ThrottlePosition_8h.html#a047e0aebea0aa4c546a66b988fbbed9a":[10,0,1,1,0,1,472,0],
 "ThrottlePosition_8h.html#a0cf7576b49c76bd5e662ad4cef23c078":[10,0,1,1,0,1,472,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX26 =
 "TractionControlStatus_8h.html#a5b3bcec9015cc10d6a48d70fed57b701":[10,0,1,1,0,1,485,13],
 "TractionControlStatus_8h.html#a7fd6a5f3175dc2de97221b9d7afa2075":[10,0,1,1,0,1,485,7],
 "TractionControlStatus_8h.html#a80e6a9a1d4967a3e3ddcfb7b644cda23":[10,0,1,1,0,1,485,6],
-"TractionControlStatus_8h.html#a8b1db2f942129139577ec1de3a7db679":[10,0,1,1,0,1,485,0],
-"TractionControlStatus_8h.html#a99b81d6ee03a32fde4babb02f3f6d3ab":[10,0,1,1,0,1,485,16],
-"TractionControlStatus_8h.html#aa5db629aacc4a630e1c30d4881df8ea3":[10,0,1,1,0,1,485,4]
+"TractionControlStatus_8h.html#a8b1db2f942129139577ec1de3a7db679":[10,0,1,1,0,1,485,0]
 };

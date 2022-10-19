@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"Location-tech_8h.html#aa44b8bcf1469b548b53feb47e4d5e17face96aafe7ff6014b7821663e441f2b72":[10,0,1,1,0,1,199,2,0],
+"Location-tech_8h.html#aa44b8bcf1469b548b53feb47e4d5e17fadce04311d3da0e36b028248da02259a1":[10,0,1,1,0,1,199,2,3],
 "Location-tech_8h.html#aa44b8bcf1469b548b53feb47e4d5e17faea427308941fdcb9e752a0461d0d0d6b":[10,0,1,1,0,1,199,2,8],
 "Location-tech_8h.html#aaf4a6c56be619b47ad850bd3bfd6febe":[10,0,1,1,0,1,199,11],
 "Location-tech_8h_source.html":[10,0,1,1,0,1,199],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "MinutesDuration_8h.html#aabea21fbce1bddbd83ed525d81bcd16d":[10,0,1,1,0,1,214,2],
 "MinutesDuration_8h.html#abbe5930dba66660a9bdf5f22fa0597c6":[10,0,1,1,0,1,214,8],
 "MinutesDuration_8h.html#abf77e5fb1ce9f81a0a61de8748796c76":[10,0,1,1,0,1,214,3],
-"MinutesDuration_8h.html#ac249a79512552d941c4e21f6730dfd08":[10,0,1,1,0,1,214,10],
-"MinutesDuration_8h.html#acfd134fed6565948abed3db9f53aff66":[10,0,1,1,0,1,214,1],
-"MinutesDuration_8h.html#ad4e9fe732611c87d89b1b790ad339b89":[10,0,1,1,0,1,214,6]
+"MinutesDuration_8h.html#ac249a79512552d941c4e21f6730dfd08":[10,0,1,1,0,1,214,10]
 };

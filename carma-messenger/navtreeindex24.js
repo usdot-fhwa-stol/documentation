@@ -1,5 +1,7 @@
 var NAVTREEINDEX24 =
 {
+"SpecialVehicleExtensions_8h.html#abc99c8beb156b717641fcc7ab6c946b6":[10,0,1,1,0,1,429,3],
+"SpecialVehicleExtensions_8h.html#adbf8e9e4889b7ab58ebbaee9ae8611b1":[10,0,1,1,0,1,429,1],
 "SpecialVehicleExtensions_8h_source.html":[10,0,1,1,0,1,429],
 "SpeedAdvice_8h.html":[10,0,1,1,0,1,431],
 "SpeedAdvice_8h.html#a3819cb50818c945fb06272231d6aa523":[10,0,1,1,0,1,431,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX24 =
 "SteeringWheelAngleRateOfChange_8h.html#a463dc96b35e2036b033df5658213c69b":[10,0,1,1,0,1,447,0],
 "SteeringWheelAngleRateOfChange_8h.html#a63be9ee093dbd082e97e30a86eaf6e97":[10,0,1,1,0,1,447,13],
 "SteeringWheelAngleRateOfChange_8h.html#a6ef9b39ba98c402f9d218e1549588134":[10,0,1,1,0,1,447,3],
-"SteeringWheelAngleRateOfChange_8h.html#a72307f69ea7aa12e0ae869562c500f1d":[10,0,1,1,0,1,447,9],
-"SteeringWheelAngleRateOfChange_8h.html#a7670fd51cf40f2ab6fa630d9b2998762":[10,0,1,1,0,1,447,2],
-"SteeringWheelAngleRateOfChange_8h.html#a7f3d373986a092b9bbbd3afffdfb0e03":[10,0,1,1,0,1,447,8]
+"SteeringWheelAngleRateOfChange_8h.html#a72307f69ea7aa12e0ae869562c500f1d":[10,0,1,1,0,1,447,9]
 };

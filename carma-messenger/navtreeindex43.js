@@ -1,5 +1,6 @@
 var NAVTREEINDEX43 =
 {
+"structTrafficControlParams.html":[9,0,250],
 "structTrafficControlParams.html#a51d9bd99b93c80a38c167080b94bd531":[9,0,250,4],
 "structTrafficControlParams.html#a5e6be0d5b5b251f23e2f19d732ca6b03":[9,0,250,5],
 "structTrafficControlParams.html#a9483d0f4550aec7fb91f4a89ef683a95":[9,0,250,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX43 =
 "structWeatherReport.html":[9,0,277],
 "structWeatherReport.html#a0d755cbf222a2d2f3ecea4b00c3e9cc0":[9,0,277,6],
 "structWeatherReport.html#a4dc0f4223182c5e97d35528cd00beac8":[9,0,277,4],
-"structWeatherReport.html#a8a7ff16674a10bf8568a94a290c940f4":[9,0,277,3],
-"structWeatherReport.html#a8d54d6a1a153f050df428b663ddd117a":[9,0,277,5]
+"structWeatherReport.html#a8a7ff16674a10bf8568a94a290c940f4":[9,0,277,3]
 };

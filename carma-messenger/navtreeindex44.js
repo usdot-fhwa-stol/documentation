@@ -1,5 +1,6 @@
 var NAVTREEINDEX44 =
 {
+"structWeatherReport.html#a8d54d6a1a153f050df428b663ddd117a":[9,0,277,5],
 "structWeatherReport.html#a94df796980b6b76511d52f393b0f6ea8":[9,0,277,1],
 "structWeatherReport.html#abb66adc55e500caace36cc2e6ba08d04":[9,0,277,0],
 "structWeatherReport.html#af56e08f5495474c1a6df08b0ce57b2c3":[9,0,277,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX44 =
 "unionLaneDataAttribute_1_1LaneDataAttribute__u.html#acbb5a69839392571e5967ec08d5e2786":[9,0,91,0,6],
 "unionLaneDataAttribute_1_1LaneDataAttribute__u.html#ad43b239704605a924fe923b0865e7958":[9,0,91,0,7],
 "unionLaneDataAttribute_1_1LaneDataAttribute__u.html#ae75644e7237ddf486592bc28d08ca3e6":[9,0,91,0,3],
-"unionLaneTypeAttributes_1_1LaneTypeAttributes__u.html":[9,0,95,0],
-"unionLaneTypeAttributes_1_1LaneTypeAttributes__u.html#a33f393d68751d69f099d947b00b15945":[9,0,95,0,2]
+"unionLaneTypeAttributes_1_1LaneTypeAttributes__u.html":[9,0,95,0]
 };

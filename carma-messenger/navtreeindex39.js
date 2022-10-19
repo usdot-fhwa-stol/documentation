@@ -1,5 +1,6 @@
 var NAVTREEINDEX39 =
 {
+"structHeader.html#ac00325a945fee10fca38ca518cc466ae":[9,0,78,4],
 "structITIScodesAndText.html":[9,0,87],
 "structITIScodesAndText.html#aae1e410706733a4a044c354133023f38":[9,0,87,0],
 "structITIScodesAndText.html#aeb775c4f3021b2c25ed7675334300a55":[9,0,87,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX39 =
 "structNodeAttributeSetLL.html#ab65196f389f682dadd9145ea228fa304":[9,0,134,8],
 "structNodeAttributeSetLL.html#ad95d6ad3a8827642497aabd924f26cc0":[9,0,134,6],
 "structNodeAttributeSetLL.html#ae95cac7ca7a4f4677b285aafcb6b24e2":[9,0,134,2],
-"structNodeAttributeSetLL_1_1NodeAttributeSetLL____regional.html":[9,0,134,0],
-"structNodeAttributeSetLL_1_1NodeAttributeSetLL____regional.html#a1963eda929c50b7343e6ea4096c6cc5b":[9,0,134,0,1]
+"structNodeAttributeSetLL_1_1NodeAttributeSetLL____regional.html":[9,0,134,0]
 };

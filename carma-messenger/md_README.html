@@ -123,7 +123,8 @@ carma-messenger</h1>
 Architecture</h2>
 <p >The core components in CARMA Messenger contains two ROS nodes origionally developed for the CARMA Platform communication stack: <a class="el" href="classMessage.html" title="Is the class responsible for DSRC message encoding and decoding.">Message</a> node and J2735 Convertor Node. The <a class="el" href="classMessage.html" title="Is the class responsible for DSRC message encoding and decoding.">Message</a> node takes in a ROS message and uses asn1c lib generated code to convert it to a binary blob and forwards it to the DSRC driver, such that any OBU/RSU can broadcast the message directly. The J2735 Converter converts the data from a ROS message based on the J2735 standard units to another message using more usable SI units and vice-versa. <br  />
  To implement each CARMA messenger feature, different ROS nodes can be built to serve as plugins to CARMA Messenger platform. Their responsibilities are generating messages and responses to messages from CARMA Platform vehicles. Similar functionalities will be grouped under the same plugin. An example of this archetecture can be seen below. <img src="docs/media/carma-messenger-diagram.png" alt="" class="inline"/> <br  />
- As shown in the diagram, any given piece of functionality may require client nodes running on the CARMA Platform which are configued to address the specific scenario under test.</p>
+ As shown in the diagram, any given piece of functionality may require client nodes running on the CARMA Platform which are configued to address the specific scenario under test. <br  />
+ Additional documentation can be found on the <a href="https://usdot-fhwa-stol.github.io/documentation/carma-messenger">Doxygen Source Code Documentation page</a>.</p>
 <h2><a class="anchor" id="autotoc_md42"></a>
 System Configuration and Installation</h2>
 <p >The carma-messenger system is meant to be run using docker. The configuration of carma-messanger is similar, though not identical, to configuring the CARMA Platform following the process described in the document <a href="https://usdot-carma.atlassian.net/wiki/spaces/CRMPLT/pages/196182019/CARMA3+Detailed+Design+Documentation">CARMA Platform Detailed Design - Parameter and Launch Standards for Different Vehicle Configurations.docx</a>. At the moment, the user does not need to configure any folders on the host vehicle except ensuring that the logging directories <code>/opt/carma/logs</code> and <code>/opt/carma/.ros</code> exist and are writeable. In addition, the user should utilize the <a href="https://github.com/usdot-fhwa-stol/CARMAPlatform/blob/master/engineering_tools/carma">carma script</a> and <a href="https://github.com/usdot-fhwa-stol/CARMAPlatform/blob/master/engineering_tools/__carma_autocomplete">__carma_autocomplete file</a> to launch and manage the system. The carma script can be placed under <code>/usr/bin</code> and the autocomplete file under <code>/etc/bash_completion.d/</code> (Ubuntu 16.04).</p>
@@ -184,7 +185,7 @@ Contact</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Oct 17 2022 16:05:23 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Oct 19 2022 17:52:50 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['intgroupiterator_0',['IntGroupIterator',['../classcc_1_1util_1_1Arrays_1_1IntGroupIterator.html',1,'cc::util::Arrays']]]
+  ['handler_0',['Handler',['../classcc_1_1ws_1_1Handler.html',1,'cc::ws']]],
+  ['hashways_1',['HashWays',['../classcc_1_1ws_1_1GeoSvc_1_1HashWays.html',1,'cc::ws::GeoSvc']]]
 ];

@@ -1,5 +1,6 @@
 var classcc_1_1ws_1_1RopMgr =
 [
+    [ "doDetails", "classcc_1_1ws_1_1RopMgr.html#ab17de47977402d0657fa1c8eef225d4b", null ],
     [ "doNull", "classcc_1_1ws_1_1RopMgr.html#a78fec92ea7b3909cd76e8e3a008a7b61", null ],
     [ "doSave", "classcc_1_1ws_1_1RopMgr.html#a7d4d3918f2f2a3ae3986aca7470025de", null ],
     [ "init", "classcc_1_1ws_1_1RopMgr.html#a0bd85e3a91d2c838004bc59f23ef384b", null ],

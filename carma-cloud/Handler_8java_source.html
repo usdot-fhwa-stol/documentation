@@ -171,27 +171,61 @@ $(document).ready(function(){initNavTree('Handler_8java_source.html',''); initRe
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    {</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        oOut.write(String.format(<span class="stringliteral">&quot;\&quot;%s\&quot;:%s&quot;</span>, sId, sData));</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classcc_1_1ws_1_1Handler.html#a3ec7880b56b5934f722f2bd092a885ec">   88</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> String <a class="code hl_function" href="classcc_1_1ws_1_1Handler.html#a3ec7880b56b5934f722f2bd092a885ec">getJsonString</a>(String sData, String sTag)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        StringBuilder sBuffer = <span class="keyword">new</span> StringBuilder(sTag);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        sBuffer.insert(0, <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        sBuffer.append(<span class="stringliteral">&quot;\&quot;:\&quot;&quot;</span>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        sTag = sBuffer.toString();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordtype">int</span> nStart = sData.indexOf(sTag);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">if</span> (nStart &lt; 0)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>; <span class="comment">// tag doesn&#39;t exist</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        nStart += sTag.length();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordtype">int</span> nEnd = sData.indexOf(<span class="stringliteral">&quot;\&quot;&quot;</span>, nStart);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> (nEnd &lt; 0)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> sData.substring(nStart, nEnd);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classcc_1_1ws_1_1Handler.html#a8085056725f3d6ea8dec9b26f992e9fa">  105</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> String <a class="code hl_function" href="classcc_1_1ws_1_1Handler.html#a8085056725f3d6ea8dec9b26f992e9fa">getJsonArray</a>(String sData, String sTag)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        StringBuilder sBuffer = <span class="keyword">new</span> StringBuilder(sTag);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        sBuffer.insert(0, <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        sBuffer.append(<span class="stringliteral">&quot;\&quot;:[&quot;</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        sTag = sBuffer.toString();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordtype">int</span> nStart = sData.indexOf(sTag);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">if</span> (nStart &lt; 0)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        nStart += sTag.length();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordtype">int</span> nEnd = sData.indexOf(<span class="stringliteral">&quot;]&quot;</span>, nStart);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">return</span> sData.substring(nStart, nEnd).replaceAll(<span class="stringliteral">&quot;\&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
 <div class="ttc" id="aclasscc_1_1util_1_1CsvReader_html"><div class="ttname"><a href="classcc_1_1util_1_1CsvReader.html">cc.util.CsvReader</a></div><div class="ttdef"><b>Definition:</b> <a href="CsvReader_8java_source.html#l00007">CsvReader.java:8</a></div></div>
 <div class="ttc" id="aclasscc_1_1util_1_1CsvReader_html_adea1436910614c0d55f8028f3901685e"><div class="ttname"><a href="classcc_1_1util_1_1CsvReader.html#adea1436910614c0d55f8028f3901685e">cc.util.CsvReader.parseString</a></div><div class="ttdeci">String parseString(int nCol)</div><div class="ttdef"><b>Definition:</b> <a href="CsvReader_8java_source.html#l00132">CsvReader.java:132</a></div></div>
-<div class="ttc" id="aclasscc_1_1util_1_1Text_html"><div class="ttname"><a href="classcc_1_1util_1_1Text.html">cc.util.Text</a></div><div class="ttdef"><b>Definition:</b> <a href="Text_8java_source.html#l00012">Text.java:13</a></div></div>
-<div class="ttc" id="aclasscc_1_1util_1_1Text_html_a8cc156997e0e99dc11d811002c67633c"><div class="ttname"><a href="classcc_1_1util_1_1Text.html#a8cc156997e0e99dc11d811002c67633c">cc.util.Text.compare</a></div><div class="ttdeci">static int compare(CharSequence iSeqL, CharSequence iSeqR)</div><div class="ttdef"><b>Definition:</b> <a href="Text_8java_source.html#l00425">Text.java:425</a></div></div>
+<div class="ttc" id="aclasscc_1_1util_1_1Text_html"><div class="ttname"><a href="classcc_1_1util_1_1Text.html">cc.util.Text</a></div><div class="ttdef"><b>Definition:</b> <a href="Text_8java_source.html#l00013">Text.java:14</a></div></div>
+<div class="ttc" id="aclasscc_1_1util_1_1Text_html_a8cc156997e0e99dc11d811002c67633c"><div class="ttname"><a href="classcc_1_1util_1_1Text.html#a8cc156997e0e99dc11d811002c67633c">cc.util.Text.compare</a></div><div class="ttdeci">static int compare(CharSequence iSeqL, CharSequence iSeqR)</div><div class="ttdef"><b>Definition:</b> <a href="Text_8java_source.html#l00444">Text.java:444</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1Handler_html"><div class="ttname"><a href="classcc_1_1ws_1_1Handler.html">cc.ws.Handler</a></div><div class="ttdef"><b>Definition:</b> <a href="Handler_8java_source.html#l00017">Handler.java:18</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1Handler_html_a3547939d5b2c14d6f26535f26312450a"><div class="ttname"><a href="classcc_1_1ws_1_1Handler.html#a3547939d5b2c14d6f26535f26312450a">cc.ws.Handler.writeJson</a></div><div class="ttdeci">static void writeJson(PrintWriter oOut, String sId, String sData)</div><div class="ttdef"><b>Definition:</b> <a href="Handler_8java_source.html#l00082">Handler.java:82</a></div></div>
+<div class="ttc" id="aclasscc_1_1ws_1_1Handler_html_a3ec7880b56b5934f722f2bd092a885ec"><div class="ttname"><a href="classcc_1_1ws_1_1Handler.html#a3ec7880b56b5934f722f2bd092a885ec">cc.ws.Handler.getJsonString</a></div><div class="ttdeci">static String getJsonString(String sData, String sTag)</div><div class="ttdef"><b>Definition:</b> <a href="Handler_8java_source.html#l00088">Handler.java:88</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1Handler_html_a40e01d946c459ca19f034a85a82ac7df"><div class="ttname"><a href="classcc_1_1ws_1_1Handler.html#a40e01d946c459ca19f034a85a82ac7df">cc.ws.Handler.ISO8601Sdf</a></div><div class="ttdeci">static final SimpleDateFormat ISO8601Sdf</div><div class="ttdef"><b>Definition:</b> <a href="Handler_8java_source.html#l00020">Handler.java:20</a></div></div>
+<div class="ttc" id="aclasscc_1_1ws_1_1Handler_html_a8085056725f3d6ea8dec9b26f992e9fa"><div class="ttname"><a href="classcc_1_1ws_1_1Handler.html#a8085056725f3d6ea8dec9b26f992e9fa">cc.ws.Handler.getJsonArray</a></div><div class="ttdeci">static String getJsonArray(String sData, String sTag)</div><div class="ttdef"><b>Definition:</b> <a href="Handler_8java_source.html#l00105">Handler.java:105</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1Handler_html_ac685f55e38cceadf503faaf5be2a164f"><div class="ttname"><a href="classcc_1_1ws_1_1Handler.html#ac685f55e38cceadf503faaf5be2a164f">cc.ws.Handler.update</a></div><div class="ttdeci">static void update(String[] sObj, int nCols, CsvReader oIn)</div><div class="ttdef"><b>Definition:</b> <a href="Handler_8java_source.html#l00074">Handler.java:74</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1Handler_html_accdb2f55bb74acbc7a80584466397761"><div class="ttname"><a href="classcc_1_1ws_1_1Handler.html#accdb2f55bb74acbc7a80584466397761">cc.ws.Handler.doPost</a></div><div class="ttdeci">void doPost(HttpServletRequest oReq, HttpServletResponse oRep)</div><div class="ttdef"><b>Definition:</b> <a href="Handler_8java_source.html#l00028">Handler.java:28</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1Handler_html_adf0511ef2cfc2873a1ba093f9110a5a0"><div class="ttname"><a href="classcc_1_1ws_1_1Handler.html#adf0511ef2cfc2873a1ba093f9110a5a0">cc.ws.Handler.STR_ARR_COMP</a></div><div class="ttdeci">static Comparator&lt; String[]&gt; STR_ARR_COMP</div><div class="ttdef"><b>Definition:</b> <a href="Handler_8java_source.html#l00019">Handler.java:19</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1SessMgr_html"><div class="ttname"><a href="classcc_1_1ws_1_1SessMgr.html">cc.ws.SessMgr</a></div><div class="ttdef"><b>Definition:</b> <a href="SessMgr_8java_source.html#l00012">SessMgr.java:13</a></div></div>
 <div class="ttc" id="aclasscc_1_1ws_1_1SessMgr_html_a7b682eaadda0463058bf36e230b2492d"><div class="ttname"><a href="classcc_1_1ws_1_1SessMgr.html#a7b682eaadda0463058bf36e230b2492d">cc.ws.SessMgr.getSession</a></div><div class="ttdeci">static Session getSession(HttpServletRequest oReq)</div><div class="ttdef"><b>Definition:</b> <a href="SessMgr_8java_source.html#l00033">SessMgr.java:33</a></div></div>
-<div class="ttc" id="aclasscc_1_1ws_1_1Session_html"><div class="ttname"><a href="classcc_1_1ws_1_1Session.html">cc.ws.Session</a></div><div class="ttdef"><b>Definition:</b> <a href="Session_8java_source.html#l00006">Session.java:7</a></div></div>
+<div class="ttc" id="aclasscc_1_1ws_1_1Session_html"><div class="ttname"><a href="classcc_1_1ws_1_1Session.html">cc.ws.Session</a></div><div class="ttdef"><b>Definition:</b> <a href="Session_8java_source.html#l00007">Session.java:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b35e6539d4252f2f7831d547d43ad4a7.html">cc</a></li><li class="navelem"><a class="el" href="dir_9116f041f3c28a3cdf8c25a69e5adfe1.html">ws</a></li><li class="navelem"><a class="el" href="Handler_8java.html">Handler.java</a></li>
-    <li class="footer">Generated on Mon Oct 17 2022 16:19:38 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Oct 19 2022 20:37:42 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

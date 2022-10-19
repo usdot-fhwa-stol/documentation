@@ -4,7 +4,9 @@ var classcc_1_1ws_1_1Session =
     [ "Session", "classcc_1_1ws_1_1Session.html#a325ebd7a938d30d8d0722a79919dbdd9", null ],
     [ "compare", "classcc_1_1ws_1_1Session.html#a4d850231de1760e889d78020f810bb30", null ],
     [ "compareTo", "classcc_1_1ws_1_1Session.html#a5d254f331491133cef30f46263584132", null ],
+    [ "getUserName", "classcc_1_1ws_1_1Session.html#a21eee4bf4b3f5116b6bb1b9fda4f6fbf", null ],
     [ "m_lUpdate", "classcc_1_1ws_1_1Session.html#aed6821a9be39cd0052f9c513141d2e7c", null ],
     [ "m_oUser", "classcc_1_1ws_1_1Session.html#a31bfd02709a61ea15e13538803581a6d", null ],
-    [ "m_sToken", "classcc_1_1ws_1_1Session.html#a46b72d12d0ab77b2c95a812240fe6e6f", null ]
+    [ "m_sToken", "classcc_1_1ws_1_1Session.html#a46b72d12d0ab77b2c95a812240fe6e6f", null ],
+    [ "oLoadedIds", "classcc_1_1ws_1_1Session.html#a1affdc75f9e0ed9518f96cd18c72a76c", null ]
 ];

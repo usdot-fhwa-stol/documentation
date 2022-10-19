@@ -1,0 +1,26 @@
+var classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder =
+[
+    [ "Builder", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#aa291470719c14434ad9e403dccee99ed", null ],
+    [ "addAllGeometry", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#abcf96164002840ede81f6a1c8405eec1", null ],
+    [ "addAllTags", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a0c95ac2b1e513bfb65eb2033f28b9131", null ],
+    [ "addGeometry", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#ac0ebbee6bd17f6c5f5ea16150b2b8078", null ],
+    [ "addTags", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a7230b461873c55cf04d89bbc6dd40bc1", null ],
+    [ "clearGeometry", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a0748631c6169284439545e381e206d28", null ],
+    [ "clearId", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a57357664e1e762dc35edd82c37601132", null ],
+    [ "clearTags", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a4a64464ccd91de1230db7f8cf8271ac0", null ],
+    [ "clearType", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#ae8a165e37c8ff78a6026c501735bfd6f", null ],
+    [ "getGeometry", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#ac32251ec86ac0536f36bd2114f46476c", null ],
+    [ "getGeometryCount", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a2ceaded292ed76e446696fdbd5c5cadf", null ],
+    [ "getGeometryList", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a9e67fda2813522a38c1140677aca81d6", null ],
+    [ "getId", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a0456bb3adb93cd004b811094ec96b987", null ],
+    [ "getTags", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a72f026a6c78d2e5cd901006354d1ad50", null ],
+    [ "getTagsCount", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a30e73a7298d89d83e32c15725c833960", null ],
+    [ "getTagsList", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#aa7da6741ed4ddddd2c4a55eb00b7d756", null ],
+    [ "getType", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a3cf7019951a853f08fef2fa566e211f4", null ],
+    [ "hasId", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a8ab2c42dc6d1869ce35c7b049cb2b64d", null ],
+    [ "hasType", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a50d4b600eea520b96e623cdbb5a3fd9b", null ],
+    [ "setGeometry", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#ab1cd64cfb1c01aa5b9a138ab770fc071", null ],
+    [ "setId", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#ac81842c4ec4f2ac6e5d2e4fc515725ef", null ],
+    [ "setTags", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#acba185852fb7461c5b743543311a6d2d", null ],
+    [ "setType", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html#a4cd954e82729c901675bc6ce2ec03114", null ]
+];

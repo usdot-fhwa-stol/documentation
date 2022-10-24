@@ -10,6 +10,7 @@ var searchData=
   ['estimate_5fentering_5ftime_5ffor_5fev_7',['estimate_entering_time_for_ev',['../classstreets__vehicle__scheduler_1_1all__stop__vehicle__scheduler.html#a9b5ee4ffdbd82cbf0c48f7981e7dff9c',1,'streets_vehicle_scheduler::all_stop_vehicle_scheduler']]],
   ['estimate_5fet_8',['estimate_et',['../classstreets__vehicle__scheduler_1_1signalized__vehicle__scheduler.html#a4d00a1ab964b44569653d414280a3419',1,'streets_vehicle_scheduler::signalized_vehicle_scheduler']]],
   ['estimate_5fvehicles_5fat_5fcommon_5ftime_9',['estimate_vehicles_at_common_time',['../classstreets__vehicle__scheduler_1_1vehicle__scheduler.html#a85947f43b293504a108619374c0c0dae',1,'streets_vehicle_scheduler::vehicle_scheduler']]],
-  ['event_5fcb_10',['event_cb',['../classkafka__clients_1_1consumer__event__cb.html#aa550098445e8249fb8ec232dedcae1fd',1,'kafka_clients::consumer_event_cb::event_cb()'],['../classkafka__clients_1_1producer__event__cb.html#af5f5fccf06ef48c54c557ddac68d009b',1,'kafka_clients::producer_event_cb::event_cb()']]],
-  ['execute_11',['execute',['../classOpenAPI_1_1OAIHttpRequestWorker.html#a241304dc9d0548df76510834b44617fe',1,'OpenAPI::OAIHttpRequestWorker']]]
+  ['et_5fcomparator_10',['et_comparator',['../namespacestreets__vehicle__scheduler.html#acd0cc54330a871634259b2815cc7750d',1,'streets_vehicle_scheduler']]],
+  ['event_5fcb_11',['event_cb',['../classkafka__clients_1_1consumer__event__cb.html#aa550098445e8249fb8ec232dedcae1fd',1,'kafka_clients::consumer_event_cb::event_cb()'],['../classkafka__clients_1_1producer__event__cb.html#af5f5fccf06ef48c54c557ddac68d009b',1,'kafka_clients::producer_event_cb::event_cb()']]],
+  ['execute_12',['execute',['../classOpenAPI_1_1OAIHttpRequestWorker.html#a241304dc9d0548df76510834b44617fe',1,'OpenAPI::OAIHttpRequestWorker']]]
 ];

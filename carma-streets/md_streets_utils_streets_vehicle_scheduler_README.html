@@ -86,10 +86,10 @@ $(document).ready(function(){initNavTree('md_streets_utils_streets_vehicle_sched
   <div class="headertitle"><div class="title">Streets Vehicle Scheduler Library </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md112"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md114"></a>
 Introduction</h1>
 <p >This library is intended to contain the vehicle scheduling business logic for <b>CARMA Streets</b>. This library consists of two main classes: the <b>intersection_schedule</b> struct and the <b>vehicle_scheduler</b> abstract class.</p>
-<h2><a class="anchor" id="autotoc_md113"></a>
+<h2><a class="anchor" id="autotoc_md115"></a>
 Intersection Schedule</h2>
 <p >The intersection schedule is the data object that holds the <b>vehicle_schedule(s)</b> for all vehicles in the intersection. Each <b>vehicle_schedule</b> contains the <b>vehicle ID</b> <code>v_id</code>, the current planned <b>stopping time</b> <code>st</code>, the current planned <b>entering time</b> <code>et</code>, the current planned <b>departure time</b> <code>dt</code>, the current planned <b>departure position</b> <code>dp</code>, and a boolean flag indicating whether the vehicle has <b>access</b> to the intersection <code>access</code>. Below is an sample JSON for a stopped controlled intersection. <b>Note</b> : The JSON serialization will need to be overriden for <b>signalized</b> intersection_type for UC 3. </p><div class="fragment"><div class="line">{</div>
 <div class="line">  &quot;metadata&quot;:{</div>
@@ -115,7 +115,7 @@ Intersection Schedule</h2>
 <div class="line">    }</div>
 <div class="line">  ]  </div>
 <div class="line">}</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md114"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md116"></a>
 Vehicle scheduler</h2>
 <p >The <code>vehicle_scheduler</code> class is an abstract class meant to be extended to implement custom scheduling logic (see <code>all_stop_vehicle_scheduler</code>). This class contains a protected members that stores information about intersection geometry (<code>intersection_info</code>) . To implement custom scheduling business logic simply extend this class and implement the virtual method <code>schedule_vehicles</code> which takes in a map of <code>vehicles</code> with vehicle string IDs as keys and an empty <code>intersection_schedule</code>. To produce an <code>intersection_schedule</code>, simply call this method and pass it a map of <code>vehicles</code> obtained from the <code>vehicle_list::get_vehicles()</code> method and an empty intersection_schedule. Using pass by reference, the implemented method should populate this intersection schedule with vehicle_schedule(s) for all the relevant vehicles in the intersection. Below is an example custom vehicle scheduler.</p>
 <div class="fragment"><div class="line">class custom_vehicle_scheduler : public vehicle_scheduler {</div>
@@ -158,7 +158,7 @@ Vehicle scheduler</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 18 2022 19:00:34 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Oct 24 2022 20:25:54 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

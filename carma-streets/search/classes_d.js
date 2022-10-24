@@ -28,6 +28,9 @@ var searchData=
   ['streets_5fdesired_5fphase_5fplan_5farbitrator_25',['streets_desired_phase_plan_arbitrator',['../classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator.html',1,'streets_signal_optimization']]],
   ['streets_5fdesired_5fphase_5fplan_5farbitrator_5fexception_26',['streets_desired_phase_plan_arbitrator_exception',['../classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception.html',1,'streets_signal_optimization']]],
   ['streets_5fdesired_5fphase_5fplan_5fexception_27',['streets_desired_phase_plan_exception',['../classstreets__desired__phase__plan_1_1streets__desired__phase__plan__exception.html',1,'streets_desired_phase_plan']]],
-  ['streets_5fsingleton_28',['streets_singleton',['../classstreets__service_1_1streets__singleton.html',1,'streets_service']]],
-  ['streets_5fsingleton_3c_20streets_5fconfiguration_20_3e_29',['streets_singleton&lt; streets_configuration &gt;',['../classstreets__service_1_1streets__singleton.html',1,'streets_service']]]
+  ['streets_5fdesired_5fphase_5fplan_5fgenerator_28',['streets_desired_phase_plan_generator',['../classstreets__signal__optimization_1_1streets__desired__phase__plan__generator.html',1,'streets_signal_optimization']]],
+  ['streets_5fdesired_5fphase_5fplan_5fgenerator_5fconfiguration_29',['streets_desired_phase_plan_generator_configuration',['../structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html',1,'streets_signal_optimization']]],
+  ['streets_5fdesired_5fphase_5fplan_5fgenerator_5fexception_30',['streets_desired_phase_plan_generator_exception',['../classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception.html',1,'streets_signal_optimization']]],
+  ['streets_5fsingleton_31',['streets_singleton',['../classstreets__service_1_1streets__singleton.html',1,'streets_service']]],
+  ['streets_5fsingleton_3c_20streets_5fconfiguration_20_3e_32',['streets_singleton&lt; streets_configuration &gt;',['../classstreets__service_1_1streets__singleton.html',1,'streets_service']]]
 ];

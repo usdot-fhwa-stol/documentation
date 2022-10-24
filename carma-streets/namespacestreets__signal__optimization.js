@@ -1,5 +1,10 @@
 var namespacestreets__signal__optimization =
 [
+    [ "movement_group", "structstreets__signal__optimization_1_1movement__group.html", "structstreets__signal__optimization_1_1movement__group" ],
+    [ "movement_groups", "structstreets__signal__optimization_1_1movement__groups.html", "structstreets__signal__optimization_1_1movement__groups" ],
     [ "streets_desired_phase_plan_arbitrator", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator.html", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator" ],
-    [ "streets_desired_phase_plan_arbitrator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception.html", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception" ]
+    [ "streets_desired_phase_plan_arbitrator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception.html", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception" ],
+    [ "streets_desired_phase_plan_generator", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator.html", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator" ],
+    [ "streets_desired_phase_plan_generator_configuration", "structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html", "structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration" ],
+    [ "streets_desired_phase_plan_generator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception.html", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception" ]
 ];

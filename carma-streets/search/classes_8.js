@@ -21,7 +21,7 @@ var searchData=
   ['monitor_5fdesired_5fphase_5fplan_5fexception_18',['monitor_desired_phase_plan_exception',['../classtraffic__signal__controller__service_1_1monitor__desired__phase__plan__exception.html',1,'traffic_signal_controller_service']]],
   ['monitor_5fstates_5fexception_19',['monitor_states_exception',['../classtraffic__signal__controller__service_1_1monitor__states__exception.html',1,'traffic_signal_controller_service']]],
   ['movement_5fevent_20',['movement_event',['../structsignal__phase__and__timing_1_1movement__event.html',1,'signal_phase_and_timing']]],
-  ['movement_5fgroup_21',['movement_group',['../structsignal__opt__service_1_1movement__group.html',1,'signal_opt_service']]],
-  ['movement_5fgroups_22',['movement_groups',['../structsignal__opt__service_1_1movement__groups.html',1,'signal_opt_service']]],
+  ['movement_5fgroup_21',['movement_group',['../structsignal__opt__service_1_1movement__group.html',1,'signal_opt_service::movement_group'],['../structstreets__signal__optimization_1_1movement__group.html',1,'streets_signal_optimization::movement_group']]],
+  ['movement_5fgroups_22',['movement_groups',['../structsignal__opt__service_1_1movement__groups.html',1,'signal_opt_service::movement_groups'],['../structstreets__signal__optimization_1_1movement__groups.html',1,'streets_signal_optimization::movement_groups']]],
   ['movement_5fstate_23',['movement_state',['../structsignal__phase__and__timing_1_1movement__state.html',1,'signal_phase_and_timing']]]
 ];

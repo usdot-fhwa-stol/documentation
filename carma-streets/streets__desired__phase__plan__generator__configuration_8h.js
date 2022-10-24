@@ -1,0 +1,4 @@
+var streets__desired__phase__plan__generator__configuration_8h =
+[
+    [ "streets_signal_optimization::streets_desired_phase_plan_generator_configuration", "structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html", "structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration" ]
+];

@@ -1,0 +1,5 @@
+var classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception =
+[
+    [ "~streets_desired_phase_plan_generator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception.html#ae8beb755ff9b3cf8dd1ce2f3790bb28c", null ],
+    [ "streets_desired_phase_plan_generator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception.html#aeab968c6fef74c90078cc6b08d3fddc8", null ]
+];

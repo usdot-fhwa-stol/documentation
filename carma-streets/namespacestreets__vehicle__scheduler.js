@@ -13,5 +13,6 @@ var namespacestreets__vehicle__scheduler =
     [ "delay_comparator", "namespacestreets__vehicle__scheduler.html#ab6598f6bcdf2edaadecc3f4b68debb66", null ],
     [ "departure_position_comparator", "namespacestreets__vehicle__scheduler.html#aa9f946d7c588b2697fd379fbed72f382", null ],
     [ "distance_comparator", "namespacestreets__vehicle__scheduler.html#ab550673e6a269f9f374ca3ca7ff6ba82", null ],
+    [ "et_comparator", "namespacestreets__vehicle__scheduler.html#acd0cc54330a871634259b2815cc7750d", null ],
     [ "st_comparator", "namespacestreets__vehicle__scheduler.html#a62007ad8cbd331963378ff836d2ce767", null ]
 ];

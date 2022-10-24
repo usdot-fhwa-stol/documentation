@@ -59,7 +59,9 @@ var hierarchy =
     [ "traffic_signal_controller_service::monitor_desired_phase_plan", "classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html", null ],
     [ "signal_phase_and_timing::movement_event", "structsignal__phase__and__timing_1_1movement__event.html", null ],
     [ "signal_opt_service::movement_group", "structsignal__opt__service_1_1movement__group.html", null ],
+    [ "streets_signal_optimization::movement_group", "structstreets__signal__optimization_1_1movement__group.html", null ],
     [ "signal_opt_service::movement_groups", "structsignal__opt__service_1_1movement__groups.html", null ],
+    [ "streets_signal_optimization::movement_groups", "structstreets__signal__optimization_1_1movement__groups.html", null ],
     [ "signal_phase_and_timing::movement_state", "structsignal__phase__and__timing_1_1movement__state.html", null ],
     [ "ntcip::ntcip_1202_ext", "structntcip_1_1ntcip__1202__ext.html", null ],
     [ "ntcip::ntcip_1202_ext_phasetime", "structntcip_1_1ntcip__1202__ext__phasetime.html", null ],
@@ -103,6 +105,7 @@ var hierarchy =
       [ "streets_desired_phase_plan::streets_desired_phase_plan_exception", "classstreets__desired__phase__plan_1_1streets__desired__phase__plan__exception.html", null ],
       [ "streets_service::streets_configuration_exception", "classstreets__service_1_1streets__configuration__exception.html", null ],
       [ "streets_signal_optimization::streets_desired_phase_plan_arbitrator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception.html", null ],
+      [ "streets_signal_optimization::streets_desired_phase_plan_generator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception.html", null ],
       [ "streets_tsc_configuration::tsc_configuration_state_exception", "classstreets__tsc__configuration_1_1tsc__configuration__state__exception.html", null ],
       [ "streets_vehicle_scheduler::scheduling_exception", "classstreets__vehicle__scheduler_1_1scheduling__exception.html", null ],
       [ "streets_vehicles::status_intent_processing_exception", "classstreets__vehicles_1_1status__intent__processing__exception.html", null ],
@@ -132,6 +135,8 @@ var hierarchy =
     ] ],
     [ "streets_desired_phase_plan::streets_desired_phase_plan", "structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html", null ],
     [ "streets_signal_optimization::streets_desired_phase_plan_arbitrator", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator.html", null ],
+    [ "streets_signal_optimization::streets_desired_phase_plan_generator", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator.html", null ],
+    [ "streets_signal_optimization::streets_desired_phase_plan_generator_configuration", "structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html", null ],
     [ "streets_service::streets_singleton< T >", "classstreets__service_1_1streets__singleton.html", null ],
     [ "streets_service::streets_singleton< streets_configuration >", "classstreets__service_1_1streets__singleton.html", [
       [ "streets_service::streets_configuration", "classstreets__service_1_1streets__configuration.html", null ]

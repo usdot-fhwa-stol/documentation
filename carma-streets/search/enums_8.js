@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vehicle_5fstate_0',['vehicle_state',['../namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405ac',1,'streets_vehicles']]]
+  ['speed_5fconfidence_0',['speed_confidence',['../namespacesignal__phase__and__timing.html#a73071ea25111b378aeca7eb3d5a91bc3',1,'signal_phase_and_timing']]]
 ];

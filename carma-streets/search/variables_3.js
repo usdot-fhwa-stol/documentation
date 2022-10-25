@@ -17,12 +17,15 @@ var searchData=
   ['connectionid_14',['connectionID',['../structintersection__model_1_1map__connection.html#a421c6fbe4be8a62bb2c3404fde2677e7',1,'intersection_model::map_connection']]],
   ['consumer_5ftopic_15',['consumer_topic',['../classscheduling__service_1_1scheduling__service.html#a07eac2323c3c4e6b99405be4af6aeb2e',1,'scheduling_service::scheduling_service']]],
   ['consumer_5fworker_16',['consumer_worker',['../classscheduling__service_1_1scheduling__service.html#a8dbb4778c85e002162d207a1cdcd2cb4',1,'scheduling_service::scheduling_service']]],
-  ['core_5fdata_17',['core_data',['../classmessage__services_1_1models_1_1bsm.html#a1faacadd5ac2b05e16d4b61a4c8f9539',1,'message_services::models::bsm']]],
-  ['count_18',['count',['../namespacesimulate__bsm.html#a76f645adf8af768fa959ecb6f90d7831',1,'simulate_bsm.count()'],['../namespacesimulate__mobilityoperation.html#a2c39e7ee01a8e135f48a28ce8c2eb91f',1,'simulate_mobilityoperation.count()'],['../namespacesimulate__mobilitypath.html#ac771fa8ed1f1bb95d7b8f0ac116f6aab',1,'simulate_mobilitypath.count()']]],
-  ['cur_5faccel_19',['cur_accel',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#ad0a90853799d941ef22e9db21dfcddc0',1,'message_services::models::vehicle_status_intent']]],
-  ['cur_5fdistance_20',['cur_distance',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#ac2fe9847faf615a411015521a37604f9',1,'message_services::models::vehicle_status_intent']]],
-  ['cur_5flanelet_5fid_21',['cur_lanelet_id',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#a429cef22eb0dfc9cedb43a179b7234dd',1,'message_services::models::vehicle_status_intent']]],
-  ['cur_5fspeed_22',['cur_speed',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#aaa49104e45f29a668a373e44963213c7',1,'message_services::models::vehicle_status_intent']]],
-  ['cur_5ftimestamp_23',['cur_timestamp',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#ae46520705399ceffd6333d0070ccd607',1,'message_services::models::vehicle_status_intent']]],
-  ['customdatetimeformat_24',['customDateTimeFormat',['../classOpenAPI_1_1OAISerializerSettings.html#a40ca47d1213337184303c8d079af1181',1,'OpenAPI::OAISerializerSettings']]]
+  ['control_5ftsc_5fstate_5fptr_5f_17',['control_tsc_state_ptr_',['../classtraffic__signal__controller__service_1_1tsc__service.html#aca861e53ecc25e0c144e8fff3801bdf0',1,'traffic_signal_controller_service::tsc_service']]],
+  ['control_5ftsc_5fstate_5fsleep_5fdur_5f_18',['control_tsc_state_sleep_dur_',['../classtraffic__signal__controller__service_1_1tsc__service.html#afb9e4af5a21306d19065a0119a13bc08',1,'traffic_signal_controller_service::tsc_service']]],
+  ['control_5ftype_5f_19',['control_type_',['../structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a42bc93c0f45164999d4e3395e43c444f',1,'traffic_signal_controller_service::snmp_cmd_struct']]],
+  ['core_5fdata_20',['core_data',['../classmessage__services_1_1models_1_1bsm.html#a1faacadd5ac2b05e16d4b61a4c8f9539',1,'message_services::models::bsm']]],
+  ['count_21',['count',['../namespacesimulate__bsm.html#a76f645adf8af768fa959ecb6f90d7831',1,'simulate_bsm.count()'],['../namespacesimulate__mobilityoperation.html#a2c39e7ee01a8e135f48a28ce8c2eb91f',1,'simulate_mobilityoperation.count()'],['../namespacesimulate__mobilitypath.html#ac771fa8ed1f1bb95d7b8f0ac116f6aab',1,'simulate_mobilitypath.count()']]],
+  ['cur_5faccel_22',['cur_accel',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#ad0a90853799d941ef22e9db21dfcddc0',1,'message_services::models::vehicle_status_intent']]],
+  ['cur_5fdistance_23',['cur_distance',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#ac2fe9847faf615a411015521a37604f9',1,'message_services::models::vehicle_status_intent']]],
+  ['cur_5flanelet_5fid_24',['cur_lanelet_id',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#a429cef22eb0dfc9cedb43a179b7234dd',1,'message_services::models::vehicle_status_intent']]],
+  ['cur_5fspeed_25',['cur_speed',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#aaa49104e45f29a668a373e44963213c7',1,'message_services::models::vehicle_status_intent']]],
+  ['cur_5ftimestamp_26',['cur_timestamp',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#ae46520705399ceffd6333d0070ccd607',1,'message_services::models::vehicle_status_intent']]],
+  ['customdatetimeformat_27',['customDateTimeFormat',['../classOpenAPI_1_1OAISerializerSettings.html#a40ca47d1213337184303c8d079af1181',1,'OpenAPI::OAISerializerSettings']]]
 ];

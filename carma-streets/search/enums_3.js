@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['intersection_5flanelet_5ftype_0',['intersection_lanelet_type',['../namespacemessage__services_1_1models.html#adadf916283b2bc01c875dce103fadcae',1,'message_services::models']]]
+  ['data_5ftype_0',['data_type',['../namespacestreets__service.html#a48aeb3058116f112bc1af5e5920548f4',1,'streets_service']]]
 ];

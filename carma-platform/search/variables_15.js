@@ -16,8 +16,9 @@ var searchData=
   ['update_5fcount_5f_13',['update_count_',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#a644d3ebd9dd0e50b9152e965fd9f0721',1,'carma_wm_ctrl::WMBroadcaster']]],
   ['update_5flist_5f_14',['update_list_',['../classcarma__wm_1_1TrafficControl.html#a62c926f4f36345b18a543248ca11fbb2',1,'carma_wm::TrafficControl::update_list_()'],['../classcarma__wm__ctrl_1_1Geofence.html#a9311d375e7dc84d79c2ce079b9c71144',1,'carma_wm_ctrl::Geofence::update_list_()']]],
   ['update_5fsub_5f_15',['update_sub_',['../classMapUpdateLogger.html#ae0ad21d1ff208e93c26265ac532e21f5',1,'MapUpdateLogger']]],
-  ['use_5ffixed_5fcosts_16',['use_fixed_costs',['../structarbitrator_1_1Config.html#aba6e22d41904cf47e6bf602d12d39ef3',1,'arbitrator::Config']]],
-  ['user_5ffilter_5fvalue_5f_17',['user_filter_value_',['../classpcl_1_1experimental_1_1advanced_1_1FunctorFilter.html#aa5e1b371ea35327ac0f4c630422e7b03',1,'pcl::experimental::advanced::FunctorFilter']]],
-  ['user_5frequested_5factivation_5f_18',['user_requested_activation_',['../structsubsystem__controllers_1_1Entry.html#a91c245cbfbc0fb117cfacbc5f16ed3f0',1,'subsystem_controllers::Entry']]],
-  ['userbuffer_5f_19',['userBuffer_',['../classMemoryPoolAllocator.html#aa3c4d2503b12acc7d14e4a5da67ac46e',1,'MemoryPoolAllocator']]]
+  ['url_16',['url',['../structcarma__cloud__client_1_1Config.html#a4bc4e39f7a5a330ad647bdc3d5af63b7',1,'carma_cloud_client::Config']]],
+  ['use_5ffixed_5fcosts_17',['use_fixed_costs',['../structarbitrator_1_1Config.html#aba6e22d41904cf47e6bf602d12d39ef3',1,'arbitrator::Config']]],
+  ['user_5ffilter_5fvalue_5f_18',['user_filter_value_',['../classpcl_1_1experimental_1_1advanced_1_1FunctorFilter.html#aa5e1b371ea35327ac0f4c630422e7b03',1,'pcl::experimental::advanced::FunctorFilter']]],
+  ['user_5frequested_5factivation_5f_19',['user_requested_activation_',['../structsubsystem__controllers_1_1Entry.html#a91c245cbfbc0fb117cfacbc5f16ed3f0',1,'subsystem_controllers::Entry']]],
+  ['userbuffer_5f_20',['userBuffer_',['../classMemoryPoolAllocator.html#aa3c4d2503b12acc7d14e4a5da67ac46e',1,'MemoryPoolAllocator']]]
 ];

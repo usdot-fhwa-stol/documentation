@@ -29,6 +29,7 @@ var hierarchy =
       [ "arbitrator::ArbitratorNode", "classarbitrator_1_1ArbitratorNode.html", null ],
       [ "bounding_box_to_detected_object::Node", "classbounding__box__to__detected__object_1_1Node.html", null ],
       [ "bsm_generator::BSMGenerator", "classbsm__generator_1_1BSMGenerator.html", null ],
+      [ "carma_cloud_client::CarmaCloudClient", "classcarma__cloud__client_1_1CarmaCloudClient.html", null ],
       [ "carma_guidance_plugins::PluginBaseNode", "classcarma__guidance__plugins_1_1PluginBaseNode.html", [
         [ "carma_guidance_plugins::ControlPlugin", "classcarma__guidance__plugins_1_1ControlPlugin.html", [
           [ "SUB::Node", "classSUB_1_1Node.html", null ],
@@ -86,6 +87,7 @@ var hierarchy =
     [ "approximate_intersection::Config", "structapproximate__intersection_1_1Config.html", null ],
     [ "arbitrator::Config", "structarbitrator_1_1Config.html", null ],
     [ "bsm_generator::Config", "structbsm__generator_1_1Config.html", null ],
+    [ "carma_cloud_client::Config", "structcarma__cloud__client_1_1Config.html", null ],
     [ "carma_wm_ctrl::Config", "structcarma__wm__ctrl_1_1Config.html", null ],
     [ "cooperative_lanechange::Config", "structcooperative__lanechange_1_1Config.html", null ],
     [ "frame_transformer::Config", "structframe__transformer_1_1Config.html", null ],

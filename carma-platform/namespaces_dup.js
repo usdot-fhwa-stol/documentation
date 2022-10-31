@@ -20,6 +20,10 @@ var namespaces_dup =
       [ "generate_launch_description", "namespacebsm__generator__launch.html#ab9e7e23a7679eca24b1074b3f3ede43c", null ]
     ] ],
     [ "call_test", "namespacecall__test.html", "namespacecall__test" ],
+    [ "carma_cloud_client", "namespacecarma__cloud__client.html", "namespacecarma__cloud__client" ],
+    [ "carma_cloud_client_launch", "namespacecarma__cloud__client__launch.html", [
+      [ "generate_launch_description", "namespacecarma__cloud__client__launch.html#a61660dc0389cc0486295cd5ab8c7bfcc", null ]
+    ] ],
     [ "carma_guidance_plugins", "namespacecarma__guidance__plugins.html", "namespacecarma__guidance__plugins" ],
     [ "carma_record", "namespacecarma__record.html", "namespacecarma__record" ],
     [ "carma_src", "namespacecarma__src.html", [

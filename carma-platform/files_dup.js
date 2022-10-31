@@ -6,6 +6,7 @@ var files_dup =
     [ "basic_autonomy_ros2", "dir_81e4214e732b63254210354ec5727868.html", "dir_81e4214e732b63254210354ec5727868" ],
     [ "bsm_generator", "dir_9702e71d13d159944d09538e3f25fe74.html", "dir_9702e71d13d159944d09538e3f25fe74" ],
     [ "carma", "dir_65035b4805221094def83884081b1f33.html", "dir_65035b4805221094def83884081b1f33" ],
+    [ "carma_cloud_client", "dir_e26c8738d2025130a9ad40823cbd5c67.html", "dir_e26c8738d2025130a9ad40823cbd5c67" ],
     [ "carma_guidance_plugins", "dir_d5f084badec3f37704845c74a174bd28.html", "dir_d5f084badec3f37704845c74a174bd28" ],
     [ "carma_record", "dir_3f61e4bc5851cf3435ec5d8ed501421a.html", "dir_3f61e4bc5851cf3435ec5d8ed501421a" ],
     [ "carma_wm", "dir_063394ac95ddab6826ca68be56e39eae.html", "dir_063394ac95ddab6826ca68be56e39eae" ],

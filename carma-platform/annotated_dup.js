@@ -44,6 +44,10 @@ var annotated_dup =
     [ "call_test", "namespacecall__test.html", [
       [ "CallTest", "classcall__test_1_1CallTest.html", "classcall__test_1_1CallTest" ]
     ] ],
+    [ "carma_cloud_client", "namespacecarma__cloud__client.html", [
+      [ "CarmaCloudClient", "classcarma__cloud__client_1_1CarmaCloudClient.html", "classcarma__cloud__client_1_1CarmaCloudClient" ],
+      [ "Config", "structcarma__cloud__client_1_1Config.html", "structcarma__cloud__client_1_1Config" ]
+    ] ],
     [ "carma_guidance_plugins", "namespacecarma__guidance__plugins.html", [
       [ "ControlPlugin", "classcarma__guidance__plugins_1_1ControlPlugin.html", "classcarma__guidance__plugins_1_1ControlPlugin" ],
       [ "PluginBaseNode", "classcarma__guidance__plugins_1_1PluginBaseNode.html", "classcarma__guidance__plugins_1_1PluginBaseNode" ],

@@ -7,6 +7,7 @@ var searchData=
   ['x3_5f_4',['x3_',['../structlci__strategic__plugin_1_1TrajectoryParams.html#aafbadd77d407a1b2cd351105eb9f564e',1,'lci_strategic_plugin::TrajectoryParams::x3_()'],['../structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#af2bfc7d9a0e947b7ade1783890e2d105',1,'light_controlled_intersection_tactical_plugin::TrajectoryParams::x3_()']]],
   ['x_5fgap_5',['x_gap',['../structYieldPluginConfig.html#a8d69f757c5437a1176ba5a11d30a27b6',1,'YieldPluginConfig']]],
   ['x_5foffset_6',['x_offset',['../structlocalization__manager_1_1LocalizationManagerConfig.html#aa4973d8be04cfc255e6adbb883a8b7d8',1,'localization_manager::LocalizationManagerConfig']]],
-  ['xy_7',['xy',['../namespaceprocess__traj__logs.html#a5320d01448ddd395e971d73eebdef288',1,'process_traj_logs']]],
-  ['xy_5fscatter_5fwith_5fslider_8',['xy_scatter_with_slider',['../namespaceprocess__traj__logs.html#a79e2b7750b483e4164528c3bcf339c00',1,'process_traj_logs']]]
+  ['xmlconversion_7',['XMLconversion',['../classcarma__cloud__client_1_1CarmaCloudClient.html#aa9bee7b1b058329f9121ca67e071aa08',1,'carma_cloud_client::CarmaCloudClient']]],
+  ['xy_8',['xy',['../namespaceprocess__traj__logs.html#a5320d01448ddd395e971d73eebdef288',1,'process_traj_logs']]],
+  ['xy_5fscatter_5fwith_5fslider_9',['xy_scatter_with_slider',['../namespaceprocess__traj__logs.html#a79e2b7750b483e4164528c3bcf339c00',1,'process_traj_logs']]]
 ];

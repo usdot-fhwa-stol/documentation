@@ -102,6 +102,7 @@ var hierarchy =
       [ "kafka_clients::consumer_rebalance_cb", "classkafka__clients_1_1consumer__rebalance__cb.html", null ]
     ] ],
     [ "std::runtime_error", null, [
+      [ "message_services::exceptions::message_lanelet2_translation_exception", "classmessage__services_1_1exceptions_1_1message__lanelet2__translation__exception.html", null ],
       [ "signal_phase_and_timing::signal_phase_and_timing_exception", "classsignal__phase__and__timing_1_1signal__phase__and__timing__exception.html", null ],
       [ "streets_desired_phase_plan::streets_desired_phase_plan_exception", "classstreets__desired__phase__plan_1_1streets__desired__phase__plan__exception.html", null ],
       [ "streets_service::streets_configuration_exception", "classstreets__service_1_1streets__configuration__exception.html", null ],

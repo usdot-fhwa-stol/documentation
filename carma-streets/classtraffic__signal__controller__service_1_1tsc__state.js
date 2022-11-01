@@ -2,8 +2,6 @@ var classtraffic__signal__controller__service_1_1tsc__state =
 [
     [ "tsc_state", "classtraffic__signal__controller__service_1_1tsc__state.html#aedb4290f73cd4cfd58b04e1e05969781", null ],
     [ "add_future_movement_events", "classtraffic__signal__controller__service_1_1tsc__state.html#af739a1bdb23638f28315e8680f407fdd", null ],
-    [ "convert_hour_tenth_secs2epoch_ts", "classtraffic__signal__controller__service_1_1tsc__state.html#a6ac79c6f55b96327e9ad3ef8de6f0f5a", null ],
-    [ "convert_msepoch_to_hour_tenth_secs", "classtraffic__signal__controller__service_1_1tsc__state.html#ab63c22e776c61212200f708edc26159f", null ],
     [ "define_tsc_config_state", "classtraffic__signal__controller__service_1_1tsc__state.html#a0848c00c6e083fbb76fc7bf976898869", null ],
     [ "FRIEND_TEST", "classtraffic__signal__controller__service_1_1tsc__state.html#a682e309e0c5cea9e6568d08f0b231701", null ],
     [ "get_active_ring_sequences", "classtraffic__signal__controller__service_1_1tsc__state.html#a216684e69a6518858a3ab9666eb107be", null ],

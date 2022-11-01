@@ -30,6 +30,9 @@ var annotated_dup =
       [ "producer_event_cb", "classkafka__clients_1_1producer__event__cb.html", "classkafka__clients_1_1producer__event__cb" ]
     ] ],
     [ "message_services", "namespacemessage__services.html", [
+      [ "exceptions", "namespacemessage__services_1_1exceptions.html", [
+        [ "message_lanelet2_translation_exception", "classmessage__services_1_1exceptions_1_1message__lanelet2__translation__exception.html", "classmessage__services_1_1exceptions_1_1message__lanelet2__translation__exception" ]
+      ] ],
       [ "message_translations", "namespacemessage__services_1_1message__translations.html", [
         [ "message_lanelet2_translation", "classmessage__services_1_1message__translations_1_1message__lanelet2__translation.html", "classmessage__services_1_1message__translations_1_1message__lanelet2__translation" ]
       ] ],

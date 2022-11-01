@@ -246,15 +246,15 @@ Public Attributes</h2></td></tr>
 <p>Calculate <a class="el" href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html" title="Object to represent schedule for single vehicle.">signalized_vehicle_schedule</a> delay. This is the result of EET-ET for each vehicle schedule. </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00066">66</a> of file <a class="el" href="signalized__intersection__schedule_8cpp_source.html">signalized_intersection_schedule.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                    {</div>
-<div class="line"><span class="lineno">   67</span>        <span class="keyword">auto</span> delta_et = int(<a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html#a508a6d75fcf630309aa378c4fbeb3171">et</a>-<a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html#afa9ea3f6d6edea565e80cd279f69df0b">eet</a>);</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span>(delta_et &lt;= 0)</div>
-<div class="line"><span class="lineno">   69</span>        {</div>
-<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">throw</span> <a class="code hl_class" href="classstreets__vehicle__scheduler_1_1scheduling__exception.html">streets_vehicle_scheduler::scheduling_exception</a>(<span class="stringliteral">&quot;EET cannot be greater than ET.&quot;</span>);</div>
-<div class="line"><span class="lineno">   71</span>        }</div>
-<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">return</span> delta_et;</div>
-<div class="line"><span class="lineno">   73</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00073">73</a> of file <a class="el" href="signalized__intersection__schedule_8cpp_source.html">signalized_intersection_schedule.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>                                                    {</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keyword">auto</span> delta_et = int(<a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html#a508a6d75fcf630309aa378c4fbeb3171">et</a>-<a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html#afa9ea3f6d6edea565e80cd279f69df0b">eet</a>);</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">if</span>(delta_et &lt;= 0)</div>
+<div class="line"><span class="lineno">   76</span>        {</div>
+<div class="line"><span class="lineno">   77</span>            <span class="keywordflow">throw</span> <a class="code hl_class" href="classstreets__vehicle__scheduler_1_1scheduling__exception.html">streets_vehicle_scheduler::scheduling_exception</a>(<span class="stringliteral">&quot;EET cannot be greater than ET.&quot;</span>);</div>
+<div class="line"><span class="lineno">   78</span>        }</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">return</span> delta_et;</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
 <div class="ttc" id="aclassstreets__vehicle__scheduler_1_1scheduling__exception_html"><div class="ttname"><a href="classstreets__vehicle__scheduler_1_1scheduling__exception.html">streets_vehicle_scheduler::scheduling_exception</a></div><div class="ttdoc">Runtime error related to processing status intent vehicle updates.</div><div class="ttdef"><b>Definition:</b> <a href="scheduling__exception_8h_source.html#l00013">scheduling_exception.h:13</a></div></div>
 <div class="ttc" id="astructstreets__vehicle__scheduler_1_1signalized__vehicle__schedule_html_a508a6d75fcf630309aa378c4fbeb3171"><div class="ttname"><a href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html#a508a6d75fcf630309aa378c4fbeb3171">streets_vehicle_scheduler::signalized_vehicle_schedule::et</a></div><div class="ttdeci">u_int64_t et</div><div class="ttdoc">Entering time considering the preceding vehicles and the modified spat. Entering time is the time sin...</div><div class="ttdef"><b>Definition:</b> <a href="signalized__intersection__schedule_8h_source.html#l00035">signalized_intersection_schedule.h:35</a></div></div>
 <div class="ttc" id="astructstreets__vehicle__scheduler_1_1signalized__vehicle__schedule_html_afa9ea3f6d6edea565e80cd279f69df0b"><div class="ttname"><a href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html#afa9ea3f6d6edea565e80cd279f69df0b">streets_vehicle_scheduler::signalized_vehicle_schedule::eet</a></div><div class="ttdeci">u_int64_t eet</div><div class="ttdoc">Earliest possible entering time based on kinematic information and lanelet speed limit and length....</div><div class="ttdef"><b>Definition:</b> <a href="signalized__intersection__schedule_8h_source.html#l00030">signalized_intersection_schedule.h:30</a></div></div>
@@ -298,15 +298,15 @@ Public Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="structstreets__vehicle__scheduler_1_1vehicle__schedule.html#ab1a23876fbb6958eb224d8ce05a52d2e">streets_vehicle_scheduler::vehicle_schedule</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00057">57</a> of file <a class="el" href="signalized__intersection__schedule_8cpp_source.html">signalized_intersection_schedule.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>                                                                                                      {</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>        rapidjson::Value vehicle_sched(rapidjson::kObjectType);</div>
-<div class="line"><span class="lineno">   60</span>        vehicle_sched.AddMember(<span class="stringliteral">&quot;v_id&quot;</span>, <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1vehicle__schedule.html#ad9c43fcd19029d3f8ddc56486a0a2cf1">v_id</a>, allocator);</div>
-<div class="line"><span class="lineno">   61</span>        vehicle_sched.AddMember(<span class="stringliteral">&quot;et&quot;</span>, <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html#a508a6d75fcf630309aa378c4fbeb3171">et</a>, allocator);</div>
-<div class="line"><span class="lineno">   62</span>        vehicle_sched.AddMember(<span class="stringliteral">&quot;dt&quot;</span>, <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html#a4e258c3309f6d86f85f5fb36e801ee5d">dt</a>, allocator);</div>
-<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">return</span> vehicle_sched;</div>
-<div class="line"><span class="lineno">   64</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00064">64</a> of file <a class="el" href="signalized__intersection__schedule_8cpp_source.html">signalized_intersection_schedule.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                                                                                                      {</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>        rapidjson::Value vehicle_sched(rapidjson::kObjectType);</div>
+<div class="line"><span class="lineno">   67</span>        vehicle_sched.AddMember(<span class="stringliteral">&quot;v_id&quot;</span>, <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1vehicle__schedule.html#ad9c43fcd19029d3f8ddc56486a0a2cf1">v_id</a>, allocator);</div>
+<div class="line"><span class="lineno">   68</span>        vehicle_sched.AddMember(<span class="stringliteral">&quot;et&quot;</span>, <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html#a508a6d75fcf630309aa378c4fbeb3171">et</a>, allocator);</div>
+<div class="line"><span class="lineno">   69</span>        vehicle_sched.AddMember(<span class="stringliteral">&quot;dt&quot;</span>, <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html#a4e258c3309f6d86f85f5fb36e801ee5d">dt</a>, allocator);</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> vehicle_sched;</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
 <div class="ttc" id="astructstreets__vehicle__scheduler_1_1signalized__vehicle__schedule_html_a4e258c3309f6d86f85f5fb36e801ee5d"><div class="ttname"><a href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html#a4e258c3309f6d86f85f5fb36e801ee5d">streets_vehicle_scheduler::signalized_vehicle_schedule::dt</a></div><div class="ttdeci">u_int64_t dt</div><div class="ttdoc">Departure time considering the preceding vehicles and the modified spat. Departure time is the time s...</div><div class="ttdef"><b>Definition:</b> <a href="signalized__intersection__schedule_8h_source.html#l00041">signalized_intersection_schedule.h:41</a></div></div>
 <div class="ttc" id="astructstreets__vehicle__scheduler_1_1vehicle__schedule_html_ad9c43fcd19029d3f8ddc56486a0a2cf1"><div class="ttname"><a href="structstreets__vehicle__scheduler_1_1vehicle__schedule.html#ad9c43fcd19029d3f8ddc56486a0a2cf1">streets_vehicle_scheduler::vehicle_schedule::v_id</a></div><div class="ttdeci">std::string v_id</div><div class="ttdoc">string unique static vehicle id.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__schedule_8h_source.html#l00028">intersection_schedule.h:28</a></div></div>
 </div><!-- fragment -->
@@ -331,7 +331,7 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="signalized__intersection__schedule_8h_source.html#l00041">41</a> of file <a class="el" href="signalized__intersection__schedule_8h_source.html">signalized_intersection_schedule.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="signalized__vehicle__scheduler_8cpp_source.html#l00190">streets_vehicle_scheduler::signalized_vehicle_scheduler::estimate_et()</a>, <a class="el" href="signalized__vehicle__scheduler_8cpp_source.html#l00046">streets_vehicle_scheduler::signalized_vehicle_scheduler::schedule_dvs()</a>, and <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00057">toJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="signalized__vehicle__scheduler_8cpp_source.html#l00190">streets_vehicle_scheduler::signalized_vehicle_scheduler::estimate_et()</a>, <a class="el" href="signalized__vehicle__scheduler_8cpp_source.html#l00046">streets_vehicle_scheduler::signalized_vehicle_scheduler::schedule_dvs()</a>, and <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00064">toJson()</a>.</p>
 
 </div>
 </div>
@@ -351,7 +351,7 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="signalized__intersection__schedule_8h_source.html#l00030">30</a> of file <a class="el" href="signalized__intersection__schedule_8h_source.html">signalized_intersection_schedule.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="signalized__vehicle__scheduler_8cpp_source.html#l00190">streets_vehicle_scheduler::signalized_vehicle_scheduler::estimate_et()</a>, and <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00066">get_delay()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="signalized__vehicle__scheduler_8cpp_source.html#l00190">streets_vehicle_scheduler::signalized_vehicle_scheduler::estimate_et()</a>, and <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00073">get_delay()</a>.</p>
 
 </div>
 </div>
@@ -371,7 +371,7 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="signalized__intersection__schedule_8h_source.html#l00035">35</a> of file <a class="el" href="signalized__intersection__schedule_8h_source.html">signalized_intersection_schedule.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="signalized__vehicle__scheduler_8cpp_source.html#l00190">streets_vehicle_scheduler::signalized_vehicle_scheduler::estimate_et()</a>, <a class="el" href="vehicle__sorting_8cpp_source.html#l00037">streets_vehicle_scheduler::et_comparator()</a>, <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00066">get_delay()</a>, <a class="el" href="streets__desired__phase__plan__generator_8cpp_source.html#l00306">streets_signal_optimization::streets_desired_phase_plan_generator::get_green_end_per_entry_lane()</a>, <a class="el" href="streets__desired__phase__plan__generator_8cpp_source.html#l00336">streets_signal_optimization::streets_desired_phase_plan_generator::get_last_vehicle_in_queue()</a>, <a class="el" href="signalized__vehicle__scheduler_8cpp_source.html#l00046">streets_vehicle_scheduler::signalized_vehicle_scheduler::schedule_dvs()</a>, and <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00057">toJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="signalized__vehicle__scheduler_8cpp_source.html#l00190">streets_vehicle_scheduler::signalized_vehicle_scheduler::estimate_et()</a>, <a class="el" href="vehicle__sorting_8cpp_source.html#l00037">streets_vehicle_scheduler::et_comparator()</a>, <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00073">get_delay()</a>, <a class="el" href="streets__desired__phase__plan__generator_8cpp_source.html#l00306">streets_signal_optimization::streets_desired_phase_plan_generator::get_green_end_per_entry_lane()</a>, <a class="el" href="streets__desired__phase__plan__generator_8cpp_source.html#l00336">streets_signal_optimization::streets_desired_phase_plan_generator::get_last_vehicle_in_queue()</a>, <a class="el" href="signalized__vehicle__scheduler_8cpp_source.html#l00046">streets_vehicle_scheduler::signalized_vehicle_scheduler::schedule_dvs()</a>, and <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00064">toJson()</a>.</p>
 
 </div>
 </div>
@@ -406,7 +406,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacestreets__vehicle__scheduler.html">streets_vehicle_scheduler</a></li><li class="navelem"><a class="el" href="structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html">signalized_vehicle_schedule</a></li>
-    <li class="footer">Generated on Tue Nov 1 2022 17:38:43 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Nov 1 2022 17:40:38 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

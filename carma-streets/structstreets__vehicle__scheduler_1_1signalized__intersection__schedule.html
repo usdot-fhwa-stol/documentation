@@ -246,34 +246,43 @@ Public Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00006">6</a> of file <a class="el" href="signalized__intersection__schedule_8cpp_source.html">signalized_intersection_schedule.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    6</span>                                                            {</div>
 <div class="line"><span class="lineno">    7</span>    </div>
-<div class="line"><span class="lineno">    8</span>        std::string schedule_info = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">    9</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;sched : <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__intersection__schedule.html#a3b09d9fc484f0294af2f7ae4fe7b195b">vehicle_schedules</a> ){</div>
-<div class="line"><span class="lineno">   10</span>            schedule_info += <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(<a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1intersection__schedule.html#ad8c673b720928c7e181c7777ede5d3d4">timestamp</a>) + <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><span class="lineno">   11</span>            schedule_info += sched.v_id + <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><span class="lineno">   12</span>            schedule_info += <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(sched.entry_lane) + <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><span class="lineno">   13</span>            schedule_info += <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(sched.link_id) + <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><span class="lineno">   14</span>            schedule_info += <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(sched.eet) + <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><span class="lineno">   15</span>            schedule_info += <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(sched.et) + <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><span class="lineno">   16</span>            schedule_info += <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(sched.dt) + <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><span class="lineno">   17</span>            <span class="keywordflow">if</span> ( sched.state == <a class="code hl_enumvalue" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca834d41112f2943c357f660165b6eb6de">streets_vehicles::vehicle_state::EV</a>) {</div>
-<div class="line"><span class="lineno">   18</span>                schedule_info += <span class="stringliteral">&quot;EV&quot;</span>;</div>
-<div class="line"><span class="lineno">   19</span>            }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ( sched.state == <a class="code hl_enumvalue" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca58d6a88f13e2db7f5059c41047876f00">streets_vehicles::vehicle_state::DV</a>) {</div>
-<div class="line"><span class="lineno">   20</span>                schedule_info += <span class="stringliteral">&quot;DV&quot;</span>;</div>
-<div class="line"><span class="lineno">   21</span>            }<span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   22</span>                schedule_info += <span class="stringliteral">&quot;ND&quot;</span>;</div>
-<div class="line"><span class="lineno">   23</span>            }</div>
-<div class="line"><span class="lineno">   24</span>            schedule_info += <span class="stringliteral">&quot;\n&quot;</span>;  </div>
-<div class="line"><span class="lineno">   25</span>        }</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">return</span> schedule_info;</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="line"><span class="lineno">    8</span>        <span class="keywordtype">int</span> <a class="code hl_variable" href="namespacesimulate__bsm.html#a76f645adf8af768fa959ecb6f90d7831">count</a> = 0;</div>
+<div class="line"><span class="lineno">    9</span>        std::string schedule_info = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   10</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;sched : <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__intersection__schedule.html#a3b09d9fc484f0294af2f7ae4fe7b195b">vehicle_schedules</a> ){</div>
+<div class="line"><span class="lineno">   11</span>            schedule_info += <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(<a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1intersection__schedule.html#ad8c673b720928c7e181c7777ede5d3d4">timestamp</a>) + <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><span class="lineno">   12</span>            schedule_info += sched.v_id + <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><span class="lineno">   13</span>            schedule_info += <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(sched.entry_lane) + <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><span class="lineno">   14</span>            schedule_info += <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(sched.link_id) + <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><span class="lineno">   15</span>            schedule_info += <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(sched.eet) + <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><span class="lineno">   16</span>            schedule_info += <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(sched.et) + <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><span class="lineno">   17</span>            schedule_info += <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(sched.dt) + <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><span class="lineno">   18</span>            <span class="keywordflow">if</span> ( sched.state == <a class="code hl_enumvalue" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca834d41112f2943c357f660165b6eb6de">streets_vehicles::vehicle_state::EV</a>) {</div>
+<div class="line"><span class="lineno">   19</span>                schedule_info += <span class="stringliteral">&quot;EV&quot;</span>;</div>
+<div class="line"><span class="lineno">   20</span>            }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ( sched.state == <a class="code hl_enumvalue" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca58d6a88f13e2db7f5059c41047876f00">streets_vehicles::vehicle_state::DV</a>) {</div>
+<div class="line"><span class="lineno">   21</span>                schedule_info += <span class="stringliteral">&quot;DV&quot;</span>;</div>
+<div class="line"><span class="lineno">   22</span>            }<span class="keywordflow">else</span> <span class="keywordflow">if</span> (sched.state == <a class="code hl_enumvalue" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405acaa7bdee32cb21f0abbf9f878cb06cfe16">streets_vehicles::vehicle_state::LV</a>) {</div>
+<div class="line"><span class="lineno">   23</span>                schedule_info += <span class="stringliteral">&quot;LV&quot;</span>;</div>
+<div class="line"><span class="lineno">   24</span>            }<span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   25</span>                schedule_info += <span class="stringliteral">&quot;ND&quot;</span>;</div>
+<div class="line"><span class="lineno">   26</span>            }   </div>
+<div class="line"><span class="lineno">   27</span>            <a class="code hl_variable" href="namespacesimulate__bsm.html#a76f645adf8af768fa959ecb6f90d7831">count</a>++;</div>
+<div class="line"><span class="lineno">   28</span>            <span class="comment">// If not last schedule, give line break</span></div>
+<div class="line"><span class="lineno">   29</span>            <span class="keywordflow">if</span>(<a class="code hl_variable" href="namespacesimulate__bsm.html#a76f645adf8af768fa959ecb6f90d7831">count</a> != <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__intersection__schedule.html#a3b09d9fc484f0294af2f7ae4fe7b195b">vehicle_schedules</a>.size()){</div>
+<div class="line"><span class="lineno">   30</span>                schedule_info += <span class="stringliteral">&quot;\n&quot;</span>;  </div>
+<div class="line"><span class="lineno">   31</span>            }</div>
+<div class="line"><span class="lineno">   32</span>        }</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">return</span> schedule_info;</div>
+<div class="line"><span class="lineno">   35</span>    }</div>
+<div class="ttc" id="anamespacesimulate__bsm_html_a76f645adf8af768fa959ecb6f90d7831"><div class="ttname"><a href="namespacesimulate__bsm.html#a76f645adf8af768fa959ecb6f90d7831">simulate_bsm.count</a></div><div class="ttdeci">int count</div><div class="ttdef"><b>Definition:</b> <a href="simulate__bsm_8py_source.html#l00018">simulate_bsm.py:18</a></div></div>
 <div class="ttc" id="anamespacestreets__vehicles_html_a41f5c896d8020c141aa96235cf1405aca58d6a88f13e2db7f5059c41047876f00"><div class="ttname"><a href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca58d6a88f13e2db7f5059c41047876f00">streets_vehicles::vehicle_state::DV</a></div><div class="ttdeci">@ DV</div></div>
 <div class="ttc" id="anamespacestreets__vehicles_html_a41f5c896d8020c141aa96235cf1405aca834d41112f2943c357f660165b6eb6de"><div class="ttname"><a href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca834d41112f2943c357f660165b6eb6de">streets_vehicles::vehicle_state::EV</a></div><div class="ttdeci">@ EV</div></div>
+<div class="ttc" id="anamespacestreets__vehicles_html_a41f5c896d8020c141aa96235cf1405acaa7bdee32cb21f0abbf9f878cb06cfe16"><div class="ttname"><a href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405acaa7bdee32cb21f0abbf9f878cb06cfe16">streets_vehicles::vehicle_state::LV</a></div><div class="ttdeci">@ LV</div></div>
 <div class="ttc" id="antcip__1202__ext_8h_html_a576de7b60eacee3f1a70393a005502cd"><div class="ttname"><a href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">Returns std::string representation of ntcip_1202_ext message including phase_times array.</div></div>
 <div class="ttc" id="astructstreets__vehicle__scheduler_1_1intersection__schedule_html_ad8c673b720928c7e181c7777ede5d3d4"><div class="ttname"><a href="structstreets__vehicle__scheduler_1_1intersection__schedule.html#ad8c673b720928c7e181c7777ede5d3d4">streets_vehicle_scheduler::intersection_schedule::timestamp</a></div><div class="ttdeci">u_int64_t timestamp</div><div class="ttdoc">Time since epoch in milliseconds timestamp for intersection schedule.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__schedule_8h_source.html#l00067">intersection_schedule.h:67</a></div></div>
 <div class="ttc" id="astructstreets__vehicle__scheduler_1_1signalized__intersection__schedule_html_a3b09d9fc484f0294af2f7ae4fe7b195b"><div class="ttname"><a href="structstreets__vehicle__scheduler_1_1signalized__intersection__schedule.html#a3b09d9fc484f0294af2f7ae4fe7b195b">streets_vehicle_scheduler::signalized_intersection_schedule::vehicle_schedules</a></div><div class="ttdeci">std::vector&lt; signalized_vehicle_schedule &gt; vehicle_schedules</div><div class="ttdoc">Vector of all scheduled vehicles.</div><div class="ttdef"><b>Definition:</b> <a href="signalized__intersection__schedule_8h_source.html#l00079">signalized_intersection_schedule.h:79</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca58d6a88f13e2db7f5059c41047876f00">streets_vehicles::DV</a>, <a class="el" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca834d41112f2943c357f660165b6eb6de">streets_vehicles::EV</a>, <a class="el" href="intersection__schedule_8h_source.html#l00067">streets_vehicle_scheduler::intersection_schedule::timestamp</a>, <a class="el" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">to_string()</a>, and <a class="el" href="signalized__intersection__schedule_8h_source.html#l00079">vehicle_schedules</a>.</p>
+<p class="reference">References <a class="el" href="simulate__bsm_8py_source.html#l00018">simulate_bsm::count</a>, <a class="el" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca58d6a88f13e2db7f5059c41047876f00">streets_vehicles::DV</a>, <a class="el" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca834d41112f2943c357f660165b6eb6de">streets_vehicles::EV</a>, <a class="el" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405acaa7bdee32cb21f0abbf9f878cb06cfe16">streets_vehicles::LV</a>, <a class="el" href="intersection__schedule_8h_source.html#l00067">streets_vehicle_scheduler::intersection_schedule::timestamp</a>, <a class="el" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">to_string()</a>, and <a class="el" href="signalized__intersection__schedule_8h_source.html#l00079">vehicle_schedules</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -314,33 +323,33 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="structstreets__vehicle__scheduler_1_1intersection__schedule.html#abf2990ad805708f9aa0e8c24b4c76be8">streets_vehicle_scheduler::intersection_schedule</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00030">30</a> of file <a class="el" href="signalized__intersection__schedule_8cpp_source.html">signalized_intersection_schedule.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>                                                             {</div>
-<div class="line"><span class="lineno">   31</span>        </div>
-<div class="line"><span class="lineno">   32</span>        rapidjson::Document doc;</div>
-<div class="line"><span class="lineno">   33</span>        doc.SetObject();</div>
-<div class="line"><span class="lineno">   34</span>        rapidjson::Document::AllocatorType &amp;allocator = doc.GetAllocator();</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>        rapidjson::Value metadata(rapidjson::kObjectType);</div>
-<div class="line"><span class="lineno">   37</span>        metadata.AddMember(<span class="stringliteral">&quot;timestamp&quot;</span>, <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1intersection__schedule.html#ad8c673b720928c7e181c7777ede5d3d4">timestamp</a>, allocator);</div>
-<div class="line"><span class="lineno">   38</span>        metadata.AddMember(<span class="stringliteral">&quot;intersection_type&quot;</span>, <span class="stringliteral">&quot;Carma/signalized_intersection&quot;</span>, allocator);</div>
-<div class="line"><span class="lineno">   39</span>        doc.AddMember(<span class="stringliteral">&quot;metadata&quot;</span>, metadata, allocator);</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>        rapidjson::Value json_sched(rapidjson::kArrayType);</div>
-<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;veh_sched: <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__intersection__schedule.html#a3b09d9fc484f0294af2f7ae4fe7b195b">vehicle_schedules</a> ) {</div>
-<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">if</span> (veh_sched.state == <a class="code hl_enumvalue" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca834d41112f2943c357f660165b6eb6de">streets_vehicles::vehicle_state::EV</a>) {</div>
-<div class="line"><span class="lineno">   44</span>                json_sched.PushBack(veh_sched.toJson(allocator), allocator);</div>
-<div class="line"><span class="lineno">   45</span>            }</div>
-<div class="line"><span class="lineno">   46</span>        }</div>
-<div class="line"><span class="lineno">   47</span>        doc.AddMember(<span class="stringliteral">&quot;payload&quot;</span>, json_sched, allocator);</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>        rapidjson::StringBuffer buffer;                </div>
-<div class="line"><span class="lineno">   50</span>        rapidjson::Writer&lt;rapidjson::StringBuffer&gt; writer(buffer);</div>
-<div class="line"><span class="lineno">   51</span>        doc.Accept(writer);</div>
-<div class="line"><span class="lineno">   52</span>        std::string string_sched = buffer.GetString();</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">return</span> string_sched;</div>
-<div class="line"><span class="lineno">   55</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00037">37</a> of file <a class="el" href="signalized__intersection__schedule_8cpp_source.html">signalized_intersection_schedule.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>                                                             {</div>
+<div class="line"><span class="lineno">   38</span>        </div>
+<div class="line"><span class="lineno">   39</span>        rapidjson::Document doc;</div>
+<div class="line"><span class="lineno">   40</span>        doc.SetObject();</div>
+<div class="line"><span class="lineno">   41</span>        rapidjson::Document::AllocatorType &amp;allocator = doc.GetAllocator();</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>        rapidjson::Value metadata(rapidjson::kObjectType);</div>
+<div class="line"><span class="lineno">   44</span>        metadata.AddMember(<span class="stringliteral">&quot;timestamp&quot;</span>, <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1intersection__schedule.html#ad8c673b720928c7e181c7777ede5d3d4">timestamp</a>, allocator);</div>
+<div class="line"><span class="lineno">   45</span>        metadata.AddMember(<span class="stringliteral">&quot;intersection_type&quot;</span>, <span class="stringliteral">&quot;Carma/signalized_intersection&quot;</span>, allocator);</div>
+<div class="line"><span class="lineno">   46</span>        doc.AddMember(<span class="stringliteral">&quot;metadata&quot;</span>, metadata, allocator);</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>        rapidjson::Value json_sched(rapidjson::kArrayType);</div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;veh_sched: <a class="code hl_variable" href="structstreets__vehicle__scheduler_1_1signalized__intersection__schedule.html#a3b09d9fc484f0294af2f7ae4fe7b195b">vehicle_schedules</a> ) {</div>
+<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">if</span> (veh_sched.state == <a class="code hl_enumvalue" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca834d41112f2943c357f660165b6eb6de">streets_vehicles::vehicle_state::EV</a>) {</div>
+<div class="line"><span class="lineno">   51</span>                json_sched.PushBack(veh_sched.toJson(allocator), allocator);</div>
+<div class="line"><span class="lineno">   52</span>            }</div>
+<div class="line"><span class="lineno">   53</span>        }</div>
+<div class="line"><span class="lineno">   54</span>        doc.AddMember(<span class="stringliteral">&quot;payload&quot;</span>, json_sched, allocator);</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>        rapidjson::StringBuffer buffer;                </div>
+<div class="line"><span class="lineno">   57</span>        rapidjson::Writer&lt;rapidjson::StringBuffer&gt; writer(buffer);</div>
+<div class="line"><span class="lineno">   58</span>        doc.Accept(writer);</div>
+<div class="line"><span class="lineno">   59</span>        std::string string_sched = buffer.GetString();</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">return</span> string_sched;</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca834d41112f2943c357f660165b6eb6de">streets_vehicles::EV</a>, <a class="el" href="intersection__schedule_8h_source.html#l00067">streets_vehicle_scheduler::intersection_schedule::timestamp</a>, and <a class="el" href="signalized__intersection__schedule_8h_source.html#l00079">vehicle_schedules</a>.</p>
 
@@ -363,7 +372,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="signalized__intersection__schedule_8h_source.html#l00079">79</a> of file <a class="el" href="signalized__intersection__schedule_8h_source.html">signalized_intersection_schedule.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="streets__desired__phase__plan__generator_8cpp_source.html#l00006">streets_signal_optimization::streets_desired_phase_plan_generator::generate_desire_phase_plan_list()</a>, <a class="el" href="streets__desired__phase__plan__generator_8cpp_source.html#l00264">streets_signal_optimization::streets_desired_phase_plan_generator::get_ev_schedules_within_so()</a>, <a class="el" href="streets__desired__phase__plan__generator_8cpp_source.html#l00280">streets_signal_optimization::streets_desired_phase_plan_generator::get_schedules_in_tbd_per_lane()</a>, <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00006">toCSV()</a>, and <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00030">toJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="streets__desired__phase__plan__generator_8cpp_source.html#l00006">streets_signal_optimization::streets_desired_phase_plan_generator::generate_desire_phase_plan_list()</a>, <a class="el" href="streets__desired__phase__plan__generator_8cpp_source.html#l00264">streets_signal_optimization::streets_desired_phase_plan_generator::get_ev_schedules_within_so()</a>, <a class="el" href="streets__desired__phase__plan__generator_8cpp_source.html#l00280">streets_signal_optimization::streets_desired_phase_plan_generator::get_schedules_in_tbd_per_lane()</a>, <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00006">toCSV()</a>, and <a class="el" href="signalized__intersection__schedule_8cpp_source.html#l00037">toJson()</a>.</p>
 
 </div>
 </div>
@@ -377,7 +386,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacestreets__vehicle__scheduler.html">streets_vehicle_scheduler</a></li><li class="navelem"><a class="el" href="structstreets__vehicle__scheduler_1_1signalized__intersection__schedule.html">signalized_intersection_schedule</a></li>
-    <li class="footer">Generated on Tue Nov 1 2022 17:38:43 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Nov 1 2022 17:40:38 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

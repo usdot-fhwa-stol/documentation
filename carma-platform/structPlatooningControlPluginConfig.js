@@ -23,7 +23,6 @@ var structPlatooningControlPluginConfig =
     [ "minValue", "structPlatooningControlPluginConfig.html#a8511952f2d9131c78e3674f0e58af3f3", null ],
     [ "shutdownTimeout", "structPlatooningControlPluginConfig.html#a8964a8fc361b40ce081558c830d48ffc", null ],
     [ "standStillHeadway", "structPlatooningControlPluginConfig.html#adc1e1f7ce4d8585801362df79655232a", null ],
-    [ "timeHeadway", "structPlatooningControlPluginConfig.html#a788113ad4b130473ac4df318e9e65f22", null ],
     [ "vehicleID", "structPlatooningControlPluginConfig.html#a01aa38f7696989b00769d12bd19977b3", null ],
     [ "wheelBase", "structPlatooningControlPluginConfig.html#af39116d783ff2a98750be3bfbd598818", null ]
 ];

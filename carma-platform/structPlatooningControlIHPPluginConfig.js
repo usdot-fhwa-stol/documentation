@@ -26,7 +26,6 @@ var structPlatooningControlIHPPluginConfig =
     [ "standStillHeadway", "structPlatooningControlIHPPluginConfig.html#a2ab4d678534e5c531a12f53b75217a26", null ],
     [ "test_front_join", "structPlatooningControlIHPPluginConfig.html#a2101abda8346149c20966e7b91f6027c", null ],
     [ "time_step", "structPlatooningControlIHPPluginConfig.html#acdb1c0eb1b5b84ddf45205b2938e6fa7", null ],
-    [ "timeHeadway", "structPlatooningControlIHPPluginConfig.html#acca9753019dbab529ef887a566ddcc84", null ],
     [ "vehicleID", "structPlatooningControlIHPPluginConfig.html#ab59891aa771c3427b1264b5943f4dafc", null ],
     [ "vehicleLength", "structPlatooningControlIHPPluginConfig.html#a2cd36e3f0f18224db17ec0f312f50430", null ],
     [ "wheelBase", "structPlatooningControlIHPPluginConfig.html#ac55f57ed1c02ed84730e05f76aa111dc", null ]

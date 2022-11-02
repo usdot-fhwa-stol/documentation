@@ -1,11 +1,13 @@
 var NAVTREEINDEX55 =
 {
-"unioninternal_1_1Hasher_1_1Number_1_1U.html":[42,0,21,6,0,0],
+"unionGenericValue_1_1Number.html#a7ca3ad492fff303586d241eb0d17c242":[42,0,93,3,2],
+"unionGenericValue_1_1Number.html#ae53d96a8ead92099541da3b71633b77b":[42,0,93,3,4],
 "unioninternal_1_1Hasher_1_1Number_1_1U.html":[41,0,36,6,0,0],
+"unioninternal_1_1Hasher_1_1Number_1_1U.html":[42,0,21,6,0,0],
 "unioninternal_1_1Hasher_1_1Number_1_1U.html#a19099b91768e67f02ed5a27fc157974b":[41,0,36,6,0,0,0],
 "unioninternal_1_1Hasher_1_1Number_1_1U.html#a19099b91768e67f02ed5a27fc157974b":[42,0,21,6,0,0,0],
-"unioninternal_1_1Hasher_1_1Number_1_1U.html#a6380a48b72a4bb5dd7291d47814e6421":[42,0,21,6,0,0,1],
 "unioninternal_1_1Hasher_1_1Number_1_1U.html#a6380a48b72a4bb5dd7291d47814e6421":[41,0,36,6,0,0,1],
+"unioninternal_1_1Hasher_1_1Number_1_1U.html#a6380a48b72a4bb5dd7291d47814e6421":[42,0,21,6,0,0,1],
 "v2x__controller__node_8cpp.html":[43,0,51,1,5,1],
 "v2x__controller__node_8cpp_source.html":[43,0,51,1,5,1],
 "v2x__controller__node_8hpp.html":[43,0,51,0,0,5,0],

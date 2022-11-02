@@ -1,6 +1,5 @@
 var structlci__strategic__plugin_1_1LCIStrategicPluginConfig =
 [
-    [ "absolute_minimum_speed", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#afe2ab14744011bfe1dadba7db9e68488", null ],
     [ "algo_minimum_speed", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a26987cdb2e41209df729d5f5c087bec2", null ],
     [ "carma_streets_update_interval", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#acee45c04297576c188b19dc782ca6f9d", null ],
     [ "deceleration_fraction", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#aa23372bc397e9fd707e0acd75b9aa941", null ],

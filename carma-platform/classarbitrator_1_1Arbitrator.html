@@ -320,41 +320,41 @@ Private Attributes</h2></td></tr>
 
 <p>Callback for the front bumper pose transform. </p>
 
-<p class="definition">Definition at line <a class="el" href="arbitrator_8cpp_source.html#l00176">176</a> of file <a class="el" href="arbitrator_8cpp_source.html">arbitrator.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  177</span>    {</div>
-<div class="line"><span class="lineno">  178</span>        <span class="keywordflow">try</span></div>
+<p class="definition">Definition at line <a class="el" href="arbitrator_8cpp_source.html#l00170">170</a> of file <a class="el" href="arbitrator_8cpp_source.html">arbitrator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>    {</div>
+<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  173</span>        {</div>
+<div class="line"><span class="lineno">  174</span>            <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#adf98c8f2d5dab797a4f66f3005530df7">tf_</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a4f280f42e58722907e29e4b066d4eeae">tf2_buffer_</a>.lookupTransform(<span class="stringliteral">&quot;map&quot;</span>, <span class="stringliteral">&quot;vehicle_front&quot;</span>, rclcpp::Time(0), rclcpp::Duration(1.0, 0)); <span class="comment">//save to local copy of transform 1 sec timeout</span></div>
+<div class="line"><span class="lineno">  175</span>            tf2::fromMsg(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#adf98c8f2d5dab797a4f66f3005530df7">tf_</a>, <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a1a498dd6b9ca42f2b1ebe02fdf2d9522">bumper_transform_</a>);</div>
+<div class="line"><span class="lineno">  176</span>            <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a8448983fcaf5ebdd4faf4c1c55d688c6">stamp</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#adf98c8f2d5dab797a4f66f3005530df7">tf_</a>.header.stamp;</div>
+<div class="line"><span class="lineno">  177</span>        }</div>
+<div class="line"><span class="lineno">  178</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> tf2::TransformException &amp;ex)</div>
 <div class="line"><span class="lineno">  179</span>        {</div>
-<div class="line"><span class="lineno">  180</span>            <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#adf98c8f2d5dab797a4f66f3005530df7">tf_</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a4f280f42e58722907e29e4b066d4eeae">tf2_buffer_</a>.lookupTransform(<span class="stringliteral">&quot;map&quot;</span>, <span class="stringliteral">&quot;vehicle_front&quot;</span>, rclcpp::Time(0), rclcpp::Duration(1.0, 0)); <span class="comment">//save to local copy of transform 1 sec timeout</span></div>
-<div class="line"><span class="lineno">  181</span>            tf2::fromMsg(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#adf98c8f2d5dab797a4f66f3005530df7">tf_</a>, <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a1a498dd6b9ca42f2b1ebe02fdf2d9522">bumper_transform_</a>);</div>
-<div class="line"><span class="lineno">  182</span>            <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a8448983fcaf5ebdd4faf4c1c55d688c6">stamp</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#adf98c8f2d5dab797a4f66f3005530df7">tf_</a>.header.stamp;</div>
-<div class="line"><span class="lineno">  183</span>        }</div>
-<div class="line"><span class="lineno">  184</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> tf2::TransformException &amp;ex)</div>
-<div class="line"><span class="lineno">  185</span>        {</div>
-<div class="line"><span class="lineno">  186</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), ex.what());</div>
-<div class="line"><span class="lineno">  187</span>        }</div>
+<div class="line"><span class="lineno">  180</span>            RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), ex.what());</div>
+<div class="line"><span class="lineno">  181</span>        }</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a88ba572a307c86a871e06113063b6039">x</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a1a498dd6b9ca42f2b1ebe02fdf2d9522">bumper_transform_</a>.getOrigin().getX();</div>
+<div class="line"><span class="lineno">  184</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a09c7f3866c88d93bdb5e9bded181b1ff">y</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a1a498dd6b9ca42f2b1ebe02fdf2d9522">bumper_transform_</a>.getOrigin().getY();</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>        <span class="comment">// If the route is available then set the downtrack and lane id</span></div>
+<div class="line"><span class="lineno">  187</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a62bc07d37ce53cc5a65d37da43e157d6">wm_</a>-&gt;getRoute()) {</div>
 <div class="line"><span class="lineno">  188</span> </div>
-<div class="line"><span class="lineno">  189</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a88ba572a307c86a871e06113063b6039">x</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a1a498dd6b9ca42f2b1ebe02fdf2d9522">bumper_transform_</a>.getOrigin().getX();</div>
-<div class="line"><span class="lineno">  190</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a09c7f3866c88d93bdb5e9bded181b1ff">y</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a1a498dd6b9ca42f2b1ebe02fdf2d9522">bumper_transform_</a>.getOrigin().getY();</div>
-<div class="line"><span class="lineno">  191</span> </div>
-<div class="line"><span class="lineno">  192</span>        <span class="comment">// If the route is available then set the downtrack and lane id</span></div>
-<div class="line"><span class="lineno">  193</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a62bc07d37ce53cc5a65d37da43e157d6">wm_</a>-&gt;getRoute()) {</div>
+<div class="line"><span class="lineno">  189</span>            <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a7750c03074ee01efa9a61190aa63dc85">downtrack</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a62bc07d37ce53cc5a65d37da43e157d6">wm_</a>-&gt;routeTrackPos( { <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a88ba572a307c86a871e06113063b6039">x</a>, <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a09c7f3866c88d93bdb5e9bded181b1ff">y</a> } ).downtrack;</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>            <span class="keyword">auto</span> lanelets = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a62bc07d37ce53cc5a65d37da43e157d6">wm_</a>-&gt;getLaneletsBetween(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a7750c03074ee01efa9a61190aa63dc85">downtrack</a>, <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a7750c03074ee01efa9a61190aa63dc85">downtrack</a>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>            <span class="keywordflow">if</span> (lanelets.empty()) {</div>
 <div class="line"><span class="lineno">  194</span> </div>
-<div class="line"><span class="lineno">  195</span>            <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a7750c03074ee01efa9a61190aa63dc85">downtrack</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a62bc07d37ce53cc5a65d37da43e157d6">wm_</a>-&gt;routeTrackPos( { <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a88ba572a307c86a871e06113063b6039">x</a>, <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a09c7f3866c88d93bdb5e9bded181b1ff">y</a> } ).downtrack;</div>
-<div class="line"><span class="lineno">  196</span> </div>
-<div class="line"><span class="lineno">  197</span>            <span class="keyword">auto</span> lanelets = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a62bc07d37ce53cc5a65d37da43e157d6">wm_</a>-&gt;getLaneletsBetween(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a7750c03074ee01efa9a61190aa63dc85">downtrack</a>, <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a7750c03074ee01efa9a61190aa63dc85">downtrack</a>, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  198</span> </div>
-<div class="line"><span class="lineno">  199</span>            <span class="keywordflow">if</span> (lanelets.empty()) {</div>
-<div class="line"><span class="lineno">  200</span> </div>
-<div class="line"><span class="lineno">  201</span>                RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Vehicle is not in a lanelet.&quot;</span>);</div>
-<div class="line"><span class="lineno">  202</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#aa89f91c64fa25163a42921194f9c277f">lane_id</a> = lanelet::InvalId;</div>
+<div class="line"><span class="lineno">  195</span>                RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Vehicle is not in a lanelet.&quot;</span>);</div>
+<div class="line"><span class="lineno">  196</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#aa89f91c64fa25163a42921194f9c277f">lane_id</a> = lanelet::InvalId;</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#aa89f91c64fa25163a42921194f9c277f">lane_id</a> = lanelets[0].id();</div>
+<div class="line"><span class="lineno">  201</span>            }</div>
+<div class="line"><span class="lineno">  202</span>        }</div>
 <div class="line"><span class="lineno">  203</span> </div>
-<div class="line"><span class="lineno">  204</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  205</span> </div>
-<div class="line"><span class="lineno">  206</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#aa89f91c64fa25163a42921194f9c277f">lane_id</a> = lanelets[0].id();</div>
-<div class="line"><span class="lineno">  207</span>            }</div>
-<div class="line"><span class="lineno">  208</span>        }</div>
-<div class="line"><span class="lineno">  209</span> </div>
-<div class="line"><span class="lineno">  210</span>    }</div>
+<div class="line"><span class="lineno">  204</span>    }</div>
 <div class="ttc" id="aclassarbitrator_1_1Arbitrator_html_a1a498dd6b9ca42f2b1ebe02fdf2d9522"><div class="ttname"><a href="classarbitrator_1_1Arbitrator.html#a1a498dd6b9ca42f2b1ebe02fdf2d9522">arbitrator::Arbitrator::bumper_transform_</a></div><div class="ttdeci">tf2::Stamped&lt; tf2::Transform &gt; bumper_transform_</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator_8hpp_source.html#l00152">arbitrator.hpp:152</a></div></div>
 <div class="ttc" id="aclassarbitrator_1_1Arbitrator_html_ad619f030d916d0f3d7f800d4a9e9b16d"><div class="ttname"><a href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">arbitrator::Arbitrator::vehicle_state_</a></div><div class="ttdeci">VehicleState vehicle_state_</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator_8hpp_source.html#l00133">arbitrator.hpp:133</a></div></div>
 <div class="ttc" id="aclassarbitrator_1_1Arbitrator_html_adf98c8f2d5dab797a4f66f3005530df7"><div class="ttname"><a href="classarbitrator_1_1Arbitrator.html#adf98c8f2d5dab797a4f66f3005530df7">arbitrator::Arbitrator::tf_</a></div><div class="ttdeci">geometry_msgs::msg::TransformStamped tf_</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator_8hpp_source.html#l00147">arbitrator.hpp:147</a></div></div>
@@ -550,11 +550,11 @@ Here is the caller graph for this function:</div>
 
 <p>Initialize transform Lookup from front bumper to map. </p>
 
-<p class="definition">Definition at line <a class="el" href="arbitrator_8cpp_source.html#l00217">217</a> of file <a class="el" href="arbitrator_8cpp_source.html">arbitrator.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  218</span>    {</div>
-<div class="line"><span class="lineno">  219</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#acaa9d790f9a27d4e7db83d8bb301b886">tf2_listener_</a>.reset(<span class="keyword">new</span> tf2_ros::TransformListener(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a4f280f42e58722907e29e4b066d4eeae">tf2_buffer_</a>));</div>
-<div class="line"><span class="lineno">  220</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a4f280f42e58722907e29e4b066d4eeae">tf2_buffer_</a>.setUsingDedicatedThread(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  221</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="arbitrator_8cpp_source.html#l00211">211</a> of file <a class="el" href="arbitrator_8cpp_source.html">arbitrator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  212</span>    {</div>
+<div class="line"><span class="lineno">  213</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#acaa9d790f9a27d4e7db83d8bb301b886">tf2_listener_</a>.reset(<span class="keyword">new</span> tf2_ros::TransformListener(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a4f280f42e58722907e29e4b066d4eeae">tf2_buffer_</a>));</div>
+<div class="line"><span class="lineno">  214</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a4f280f42e58722907e29e4b066d4eeae">tf2_buffer_</a>.setUsingDedicatedThread(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  215</span>    }</div>
 <div class="ttc" id="aclassarbitrator_1_1Arbitrator_html_acaa9d790f9a27d4e7db83d8bb301b886"><div class="ttname"><a href="classarbitrator_1_1Arbitrator.html#acaa9d790f9a27d4e7db83d8bb301b886">arbitrator::Arbitrator::tf2_listener_</a></div><div class="ttdeci">std::unique_ptr&lt; tf2_ros::TransformListener &gt; tf2_listener_</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator_8hpp_source.html#l00150">arbitrator.hpp:150</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="arbitrator_8hpp_source.html#l00149">tf2_buffer_</a>, and <a class="el" href="arbitrator_8hpp_source.html#l00150">tf2_listener_</a>.</p>
@@ -586,10 +586,10 @@ Here is the caller graph for this function:</div>
 
 <p>Function to be executed when the <a class="el" href="classarbitrator_1_1Arbitrator.html">Arbitrator</a> is not planning but also not awaiting a new plan cycle. </p>
 
-<p class="definition">Definition at line <a class="el" href="arbitrator_8cpp_source.html#l00165">165</a> of file <a class="el" href="arbitrator_8cpp_source.html">arbitrator.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>    {</div>
-<div class="line"><span class="lineno">  167</span>       std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
-<div class="line"><span class="lineno">  168</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="arbitrator_8cpp_source.html#l00159">159</a> of file <a class="el" href="arbitrator_8cpp_source.html">arbitrator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>    {</div>
+<div class="line"><span class="lineno">  161</span>       std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
+<div class="line"><span class="lineno">  162</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00027">run()</a>.</p>
 <div class="dynheader">
@@ -752,11 +752,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   65</span>    }</div>
 <div class="ttc" id="aclassarbitrator_1_1Arbitrator_html_a05eeae03160be1b7d759b220e9ca36fb"><div class="ttname"><a href="classarbitrator_1_1Arbitrator.html#a05eeae03160be1b7d759b220e9ca36fb">arbitrator::Arbitrator::planning_state</a></div><div class="ttdeci">void planning_state()</div><div class="ttdoc">Function to be called when the Arbitrator begins planning.</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator_8cpp_source.html#l00120">arbitrator.cpp:120</a></div></div>
 <div class="ttc" id="aclassarbitrator_1_1Arbitrator_html_a0f8d5860c35f8a848f44b895560335be"><div class="ttname"><a href="classarbitrator_1_1Arbitrator.html#a0f8d5860c35f8a848f44b895560335be">arbitrator::Arbitrator::planning_in_progress_</a></div><div class="ttdeci">bool planning_in_progress_</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator_8hpp_source.html#l00153">arbitrator.hpp:153</a></div></div>
-<div class="ttc" id="aclassarbitrator_1_1Arbitrator_html_a1fa0dc7a577648a501bdf0849ef42c07"><div class="ttname"><a href="classarbitrator_1_1Arbitrator.html#a1fa0dc7a577648a501bdf0849ef42c07">arbitrator::Arbitrator::paused_state</a></div><div class="ttdeci">void paused_state()</div><div class="ttdoc">Function to be executed when the Arbitrator is not planning but also not awaiting a new plan cycle.</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator_8cpp_source.html#l00165">arbitrator.cpp:165</a></div></div>
+<div class="ttc" id="aclassarbitrator_1_1Arbitrator_html_a1fa0dc7a577648a501bdf0849ef42c07"><div class="ttname"><a href="classarbitrator_1_1Arbitrator.html#a1fa0dc7a577648a501bdf0849ef42c07">arbitrator::Arbitrator::paused_state</a></div><div class="ttdeci">void paused_state()</div><div class="ttdoc">Function to be executed when the Arbitrator is not planning but also not awaiting a new plan cycle.</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator_8cpp_source.html#l00159">arbitrator.cpp:159</a></div></div>
 <div class="ttc" id="aclassarbitrator_1_1Arbitrator_html_a2762efbdc3a5ce10e89f9d7dcc58afbf"><div class="ttname"><a href="classarbitrator_1_1Arbitrator.html#a2762efbdc3a5ce10e89f9d7dcc58afbf">arbitrator::Arbitrator::initial_state</a></div><div class="ttdeci">void initial_state()</div><div class="ttdoc">Function to be executed during the initial state of the Arbitrator.</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator_8cpp_source.html#l00105">arbitrator.cpp:105</a></div></div>
 <div class="ttc" id="aclassarbitrator_1_1Arbitrator_html_a5f57ba9f27837cb7cd04eb424200a2d0"><div class="ttname"><a href="classarbitrator_1_1Arbitrator.html#a5f57ba9f27837cb7cd04eb424200a2d0">arbitrator::Arbitrator::waiting_state</a></div><div class="ttdeci">void waiting_state()</div><div class="ttdoc">Function to be executed when the Arbitrator has finished planning and is awaiting another planning cy...</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator_8cpp_source.html#l00153">arbitrator.cpp:153</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00032">arbitrator::INITIAL</a>, <a class="el" href="arbitrator_8cpp_source.html#l00105">initial_state()</a>, <a class="el" href="arbitrator_8hpp_source.html#l00138">nh_</a>, <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00035">arbitrator::PAUSED</a>, <a class="el" href="arbitrator_8cpp_source.html#l00165">paused_state()</a>, <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00033">arbitrator::PLANNING</a>, <a class="el" href="arbitrator_8hpp_source.html#l00153">planning_in_progress_</a>, <a class="el" href="arbitrator_8cpp_source.html#l00120">planning_state()</a>, <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00036">arbitrator::SHUTDOWN</a>, <a class="el" href="arbitrator_8hpp_source.html#l00135">sm_</a>, <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00034">arbitrator::WAITING</a>, and <a class="el" href="arbitrator_8cpp_source.html#l00153">waiting_state()</a>.</p>
+<p class="reference">References <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00032">arbitrator::INITIAL</a>, <a class="el" href="arbitrator_8cpp_source.html#l00105">initial_state()</a>, <a class="el" href="arbitrator_8hpp_source.html#l00138">nh_</a>, <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00035">arbitrator::PAUSED</a>, <a class="el" href="arbitrator_8cpp_source.html#l00159">paused_state()</a>, <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00033">arbitrator::PLANNING</a>, <a class="el" href="arbitrator_8hpp_source.html#l00153">planning_in_progress_</a>, <a class="el" href="arbitrator_8cpp_source.html#l00120">planning_state()</a>, <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00036">arbitrator::SHUTDOWN</a>, <a class="el" href="arbitrator_8hpp_source.html#l00135">sm_</a>, <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00034">arbitrator::WAITING</a>, and <a class="el" href="arbitrator_8cpp_source.html#l00153">waiting_state()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -802,11 +802,11 @@ Here is the call graph for this function:</div>
 
 <p>Function to be executed when the <a class="el" href="classarbitrator_1_1Arbitrator.html">Arbitrator</a> is to clean up and shutdown. </p>
 
-<p class="definition">Definition at line <a class="el" href="arbitrator_8cpp_source.html#l00170">170</a> of file <a class="el" href="arbitrator_8cpp_source.html">arbitrator.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  171</span>    {</div>
-<div class="line"><span class="lineno">  172</span>        RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator shutting down...&quot;</span>);</div>
-<div class="line"><span class="lineno">  173</span>        rclcpp::shutdown(); <span class="comment">// Will stop upper level spin and shutdown node</span></div>
-<div class="line"><span class="lineno">  174</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="arbitrator_8cpp_source.html#l00164">164</a> of file <a class="el" href="arbitrator_8cpp_source.html">arbitrator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>    {</div>
+<div class="line"><span class="lineno">  166</span>        RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator shutting down...&quot;</span>);</div>
+<div class="line"><span class="lineno">  167</span>        rclcpp::shutdown(); <span class="comment">// Will stop upper level spin and shutdown node</span></div>
+<div class="line"><span class="lineno">  168</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="arbitrator_8hpp_source.html#l00138">nh_</a>.</p>
 
@@ -836,10 +836,10 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="arbitrator_8cpp_source.html#l00212">212</a> of file <a class="el" href="arbitrator_8cpp_source.html">arbitrator.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  213</span>    {</div>
-<div class="line"><span class="lineno">  214</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a0cf1d33be164a8832bcbd54bf123a2e3">velocity</a> = msg-&gt;twist.linear.x;</div>
-<div class="line"><span class="lineno">  215</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="arbitrator_8cpp_source.html#l00206">206</a> of file <a class="el" href="arbitrator_8cpp_source.html">arbitrator.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  207</span>    {</div>
+<div class="line"><span class="lineno">  208</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a0cf1d33be164a8832bcbd54bf123a2e3">velocity</a> = msg-&gt;twist.linear.x;</div>
+<div class="line"><span class="lineno">  209</span>    }</div>
 <div class="ttc" id="astructarbitrator_1_1VehicleState_html_a0cf1d33be164a8832bcbd54bf123a2e3"><div class="ttname"><a href="structarbitrator_1_1VehicleState.html#a0cf1d33be164a8832bcbd54bf123a2e3">arbitrator::VehicleState::velocity</a></div><div class="ttdeci">double velocity</div><div class="ttdef"><b>Definition:</b> <a href="vehicle__state_8hpp_source.html#l00034">vehicle_state.hpp:34</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="arbitrator_8hpp_source.html#l00133">vehicle_state_</a>, and <a class="el" href="vehicle__state_8hpp_source.html#l00034">arbitrator::VehicleState::velocity</a>.</p>
@@ -884,18 +884,12 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="arbitrator_8cpp_source.html#l00153">153</a> of file <a class="el" href="arbitrator_8cpp_source.html">arbitrator.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  154</span>    {</div>
-<div class="line"><span class="lineno">  155</span>        <span class="comment">// Sleep in 100ms increments until our next planning cycle</span></div>
-<div class="line"><span class="lineno">  156</span>        <span class="comment">// This ensures we spin() at least a few times</span></div>
-<div class="line"><span class="lineno">  157</span>        <span class="keywordflow">while</span> (<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_clock()-&gt;now() &lt; <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a1b2fefbefce1e21e3ec1cf0544e7cfd2">next_planning_process_start_</a>)</div>
-<div class="line"><span class="lineno">  158</span>        {</div>
-<div class="line"><span class="lineno">  159</span>            std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
-<div class="line"><span class="lineno">  160</span>        }</div>
-<div class="line"><span class="lineno">  161</span>        RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator transitioning from WAITING to PLANNING state.&quot;</span>);</div>
-<div class="line"><span class="lineno">  162</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#afa8df447cf2131908b025c19f092ef41">sm_</a>-&gt;submit_event(<a class="code hl_enumvalue" href="namespacearbitrator.html#a4a07092774e143f298b2e71bd4a710d5a3e67e64d17d48850a988135c8f34d69a">ArbitratorEvent::PLANNING_TIMER_TRIGGER</a>);</div>
-<div class="line"><span class="lineno">  163</span>    }</div>
+<div class="line"><span class="lineno">  155</span>        RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator transitioning from WAITING to PLANNING state.&quot;</span>);</div>
+<div class="line"><span class="lineno">  156</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#afa8df447cf2131908b025c19f092ef41">sm_</a>-&gt;submit_event(<a class="code hl_enumvalue" href="namespacearbitrator.html#a4a07092774e143f298b2e71bd4a710d5a3e67e64d17d48850a988135c8f34d69a">ArbitratorEvent::PLANNING_TIMER_TRIGGER</a>);</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
 <div class="ttc" id="anamespacearbitrator_html_a4a07092774e143f298b2e71bd4a710d5a3e67e64d17d48850a988135c8f34d69a"><div class="ttname"><a href="namespacearbitrator.html#a4a07092774e143f298b2e71bd4a710d5a3e67e64d17d48850a988135c8f34d69a">arbitrator::PLANNING_TIMER_TRIGGER</a></div><div class="ttdeci">@ PLANNING_TIMER_TRIGGER</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator__state__machine_8hpp_source.html#l00050">arbitrator_state_machine.hpp:50</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="arbitrator_8hpp_source.html#l00141">next_planning_process_start_</a>, <a class="el" href="arbitrator_8hpp_source.html#l00138">nh_</a>, <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00050">arbitrator::PLANNING_TIMER_TRIGGER</a>, and <a class="el" href="arbitrator_8hpp_source.html#l00135">sm_</a>.</p>
+<p class="reference">References <a class="el" href="arbitrator_8hpp_source.html#l00138">nh_</a>, <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00050">arbitrator::PLANNING_TIMER_TRIGGER</a>, and <a class="el" href="arbitrator_8hpp_source.html#l00135">sm_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00027">run()</a>.</p>
 <div class="dynheader">
@@ -933,7 +927,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="arbitrator_8hpp_source.html#l00152">152</a> of file <a class="el" href="arbitrator_8hpp_source.html">arbitrator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00176">bumper_pose_cb()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00170">bumper_pose_cb()</a>.</p>
 
 </div>
 </div>
@@ -1087,7 +1081,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="arbitrator_8hpp_source.html#l00141">141</a> of file <a class="el" href="arbitrator_8hpp_source.html">arbitrator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00120">planning_state()</a>, and <a class="el" href="arbitrator_8cpp_source.html#l00153">waiting_state()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00120">planning_state()</a>.</p>
 
 </div>
 </div>
@@ -1113,7 +1107,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="arbitrator_8hpp_source.html#l00138">138</a> of file <a class="el" href="arbitrator_8hpp_source.html">arbitrator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00176">bumper_pose_cb()</a>, <a class="el" href="arbitrator_8cpp_source.html#l00067">guidance_state_cb()</a>, <a class="el" href="arbitrator_8cpp_source.html#l00105">initial_state()</a>, <a class="el" href="arbitrator_8cpp_source.html#l00120">planning_state()</a>, <a class="el" href="arbitrator_8cpp_source.html#l00027">run()</a>, <a class="el" href="arbitrator_8cpp_source.html#l00170">shutdown_state()</a>, and <a class="el" href="arbitrator_8cpp_source.html#l00153">waiting_state()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00170">bumper_pose_cb()</a>, <a class="el" href="arbitrator_8cpp_source.html#l00067">guidance_state_cb()</a>, <a class="el" href="arbitrator_8cpp_source.html#l00105">initial_state()</a>, <a class="el" href="arbitrator_8cpp_source.html#l00120">planning_state()</a>, <a class="el" href="arbitrator_8cpp_source.html#l00027">run()</a>, <a class="el" href="arbitrator_8cpp_source.html#l00164">shutdown_state()</a>, and <a class="el" href="arbitrator_8cpp_source.html#l00153">waiting_state()</a>.</p>
 
 </div>
 </div>
@@ -1217,7 +1211,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="arbitrator_8hpp_source.html#l00149">149</a> of file <a class="el" href="arbitrator_8hpp_source.html">arbitrator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00176">bumper_pose_cb()</a>, and <a class="el" href="arbitrator_8cpp_source.html#l00217">initializeBumperTransformLookup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00170">bumper_pose_cb()</a>, and <a class="el" href="arbitrator_8cpp_source.html#l00211">initializeBumperTransformLookup()</a>.</p>
 
 </div>
 </div>
@@ -1243,7 +1237,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="arbitrator_8hpp_source.html#l00150">150</a> of file <a class="el" href="arbitrator_8hpp_source.html">arbitrator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00217">initializeBumperTransformLookup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00211">initializeBumperTransformLookup()</a>.</p>
 
 </div>
 </div>
@@ -1269,7 +1263,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="arbitrator_8hpp_source.html#l00147">147</a> of file <a class="el" href="arbitrator_8hpp_source.html">arbitrator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00176">bumper_pose_cb()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00170">bumper_pose_cb()</a>.</p>
 
 </div>
 </div>
@@ -1321,7 +1315,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="arbitrator_8hpp_source.html#l00133">133</a> of file <a class="el" href="arbitrator_8hpp_source.html">arbitrator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00176">bumper_pose_cb()</a>, <a class="el" href="arbitrator_8cpp_source.html#l00120">planning_state()</a>, and <a class="el" href="arbitrator_8cpp_source.html#l00212">twist_cb()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00170">bumper_pose_cb()</a>, <a class="el" href="arbitrator_8cpp_source.html#l00120">planning_state()</a>, and <a class="el" href="arbitrator_8cpp_source.html#l00206">twist_cb()</a>.</p>
 
 </div>
 </div>
@@ -1347,7 +1341,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="arbitrator_8hpp_source.html#l00145">145</a> of file <a class="el" href="arbitrator_8hpp_source.html">arbitrator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00176">bumper_pose_cb()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="arbitrator_8cpp_source.html#l00170">bumper_pose_cb()</a>.</p>
 
 </div>
 </div>
@@ -1361,7 +1355,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacearbitrator.html">arbitrator</a></li><li class="navelem"><a class="el" href="classarbitrator_1_1Arbitrator.html">Arbitrator</a></li>
-    <li class="footer">Generated on Wed Nov 2 2022 19:11:52 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Nov 2 2022 19:53:22 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

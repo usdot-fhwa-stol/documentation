@@ -1,6 +1,6 @@
 var classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin =
 [
-    [ "LightControlledIntersectionTacticalPlugin", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#aee3dfa8d16fb63056df1306711cc4670", null ],
+    [ "LightControlledIntersectionTacticalPlugin", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#a11137b33c2a5c3bb18f04968a3299c9e", null ],
     [ "applyOptimizedTargetSpeedProfile", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#a932b0caef86ca4b4e28063218202d1d7", null ],
     [ "applyTrajectorySmoothingAlgorithm", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#a405afb4e30f548826f3ebb791446f55f", null ],
     [ "createGeometryProfile", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#afee417a4310729540055e6c6f35eeccf", null ],
@@ -26,7 +26,7 @@ var classlight__controlled__intersection__tactical__plugin_1_1LightControlledInt
     [ "last_trajectory_", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#a8b2cbd2dec45b257a1c94c5311ebe5ad", null ],
     [ "light_controlled_intersection_strategy_", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#a439e090bb002da183b94deb63c61d022", null ],
     [ "logger_", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#a408b293994ba8468e2d80de598f06c88", null ],
-    [ "plugin_discovery_msg_", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#af0549f964683ce38002da5334c378f9d", null ],
+    [ "plugin_name_", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#a77084017c2e799aef5d6deb92aea86a2", null ],
     [ "scheduled_depart_time_", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#a92268360afb77f2032d6dd97f086f795", null ],
     [ "scheduled_enter_time_", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#a1fcf7f989a53fbb48b798fe571ae4e46", null ],
     [ "scheduled_latest_depart_time_", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#af1273a57e30a62ac36b4b214d952aa3c", null ],

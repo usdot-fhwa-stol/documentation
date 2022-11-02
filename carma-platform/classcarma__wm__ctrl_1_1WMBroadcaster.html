@@ -1713,139 +1713,140 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 2033</span> </div>
 <div class="line"><span class="lineno"> 2034</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9f7ae45f954ed5f177756a56b9387545">active_geofence_llt_ids_</a>.size() &lt;= 0 ) </div>
 <div class="line"><span class="lineno"> 2035</span>  {</div>
-<div class="line"><span class="lineno"> 2036</span>    RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;No active geofence llt ids are loaded to the WMBroadcaster&quot;</span>);</div>
-<div class="line"><span class="lineno"> 2037</span>    <span class="keywordflow">return</span> outgoing_geof;</div>
-<div class="line"><span class="lineno"> 2038</span>  }</div>
-<div class="line"><span class="lineno"> 2039</span> </div>
-<div class="line"><span class="lineno"> 2040</span>  <span class="comment">// Obtain the closest lanelet to the vehicle&#39;s current position</span></div>
-<div class="line"><span class="lineno"> 2041</span>  <span class="keyword">auto</span> current_llt = lanelet::geometry::findNearest(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;laneletLayer, curr_pos, 1)[0].second;</div>
-<div class="line"><span class="lineno"> 2042</span> </div>
+<div class="line"><span class="lineno"> 2036</span>    <span class="keywordflow">return</span> outgoing_geof;</div>
+<div class="line"><span class="lineno"> 2037</span>  }</div>
+<div class="line"><span class="lineno"> 2038</span>  </div>
+<div class="line"><span class="lineno"> 2039</span>  RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Active geofence llt ids are loaded to the WMBroadcaster&quot;</span>);</div>
+<div class="line"><span class="lineno"> 2040</span> </div>
+<div class="line"><span class="lineno"> 2041</span>  <span class="comment">// Obtain the closest lanelet to the vehicle&#39;s current position</span></div>
+<div class="line"><span class="lineno"> 2042</span>  <span class="keyword">auto</span> current_llt = lanelet::geometry::findNearest(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;laneletLayer, curr_pos, 1)[0].second;</div>
 <div class="line"><span class="lineno"> 2043</span> </div>
-<div class="line"><span class="lineno"> 2044</span>  <span class="comment">/* determine whether or not the vehicle&#39;s current position is within an active geofence */</span></div>
-<div class="line"><span class="lineno"> 2045</span>  <span class="keywordflow">if</span> (boost::geometry::within(curr_pos, current_llt.polygon2d().basicPolygon()))</div>
-<div class="line"><span class="lineno"> 2046</span>  {         </div>
-<div class="line"><span class="lineno"> 2047</span>    next_distance = <a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a35a706cbbb3b04dc4dfc3eea40ececcc">distToNearestActiveGeofence</a>(curr_pos);</div>
-<div class="line"><span class="lineno"> 2048</span>    outgoing_geof.distance_to_next_geofence = next_distance;</div>
-<div class="line"><span class="lineno"> 2049</span> </div>
-<div class="line"><span class="lineno"> 2050</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> <span class="keywordtype">id</span> : <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9f7ae45f954ed5f177756a56b9387545">active_geofence_llt_ids_</a>) </div>
-<div class="line"><span class="lineno"> 2051</span>    {</div>
-<div class="line"><span class="lineno"> 2052</span>      <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == current_llt.id())</div>
-<div class="line"><span class="lineno"> 2053</span>      {           </div>
-<div class="line"><span class="lineno"> 2054</span>        RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Vehicle is on Lanelet &quot;</span> &lt;&lt; current_llt.id() &lt;&lt; <span class="stringliteral">&quot;, which has an active geofence&quot;</span>);</div>
-<div class="line"><span class="lineno"> 2055</span>        outgoing_geof.is_on_active_geofence = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno"> 2056</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> regem: current_llt.regulatoryElements())</div>
-<div class="line"><span class="lineno"> 2057</span>        {</div>
-<div class="line"><span class="lineno"> 2058</span>          <span class="comment">// Assign active geofence fields based on the speed limit associated with this lanelet</span></div>
-<div class="line"><span class="lineno"> 2059</span>          <span class="keywordflow">if</span> (regem-&gt;attribute(lanelet::AttributeName::Subtype).value().compare(lanelet::DigitalSpeedLimit::RuleName) == 0)</div>
-<div class="line"><span class="lineno"> 2060</span>          {</div>
-<div class="line"><span class="lineno"> 2061</span>            lanelet::DigitalSpeedLimitPtr speed =  std::dynamic_pointer_cast&lt;lanelet::DigitalSpeedLimit&gt;</div>
-<div class="line"><span class="lineno"> 2062</span>            (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(regem-&gt;id()));</div>
-<div class="line"><span class="lineno"> 2063</span>            outgoing_geof.value = speed-&gt;speed_limit_.value();</div>
-<div class="line"><span class="lineno"> 2064</span>            outgoing_geof.advisory_speed = speed-&gt;speed_limit_.value();</div>
-<div class="line"><span class="lineno"> 2065</span>            outgoing_geof.reason = speed-&gt;getReason(); </div>
-<div class="line"><span class="lineno"> 2066</span> </div>
-<div class="line"><span class="lineno"> 2067</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Active geofence has a speed limit of &quot;</span> &lt;&lt; speed-&gt;speed_limit_.value());</div>
-<div class="line"><span class="lineno"> 2068</span>                    </div>
-<div class="line"><span class="lineno"> 2069</span>            <span class="comment">// Cannot overrule outgoing_geof.type if it is already set to LANE_CLOSED</span></div>
-<div class="line"><span class="lineno"> 2070</span>            <span class="keywordflow">if</span>(outgoing_geof.type != carma_perception_msgs::msg::CheckActiveGeofence::LANE_CLOSED)</div>
-<div class="line"><span class="lineno"> 2071</span>            {</div>
-<div class="line"><span class="lineno"> 2072</span>              outgoing_geof.type = carma_perception_msgs::msg::CheckActiveGeofence::SPEED_LIMIT;</div>
-<div class="line"><span class="lineno"> 2073</span>            }</div>
-<div class="line"><span class="lineno"> 2074</span>          }</div>
-<div class="line"><span class="lineno"> 2075</span> </div>
-<div class="line"><span class="lineno"> 2076</span>          <span class="comment">// Assign active geofence fields based on the minimum gap associated with this lanelet (if it exists)</span></div>
-<div class="line"><span class="lineno"> 2077</span>          <span class="keywordflow">if</span>(regem-&gt;attribute(lanelet::AttributeName::Subtype).value().compare(lanelet::DigitalMinimumGap::RuleName) == 0)</div>
-<div class="line"><span class="lineno"> 2078</span>          {</div>
-<div class="line"><span class="lineno"> 2079</span>            lanelet::DigitalMinimumGapPtr min_gap =  std::dynamic_pointer_cast&lt;lanelet::DigitalMinimumGap&gt;</div>
-<div class="line"><span class="lineno"> 2080</span>            (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(regem-&gt;id()));</div>
-<div class="line"><span class="lineno"> 2081</span>            outgoing_geof.minimum_gap = min_gap-&gt;getMinimumGap();</div>
-<div class="line"><span class="lineno"> 2082</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Active geofence has a minimum gap of &quot;</span> &lt;&lt; min_gap-&gt;getMinimumGap());</div>
-<div class="line"><span class="lineno"> 2083</span>          }</div>
-<div class="line"><span class="lineno"> 2084</span>                 </div>
-<div class="line"><span class="lineno"> 2085</span>          <span class="comment">// Assign active geofence fields based on whether the current lane is closed or is immediately adjacent to a closed lane</span></div>
-<div class="line"><span class="lineno"> 2086</span>          <span class="keywordflow">if</span>(regem-&gt;attribute(lanelet::AttributeName::Subtype).value().compare(lanelet::RegionAccessRule::RuleName) == 0)</div>
-<div class="line"><span class="lineno"> 2087</span>          {</div>
-<div class="line"><span class="lineno"> 2088</span>            lanelet::RegionAccessRulePtr accessRuleReg =  std::dynamic_pointer_cast&lt;lanelet::RegionAccessRule&gt;</div>
-<div class="line"><span class="lineno"> 2089</span>            (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(regem-&gt;id()));</div>
-<div class="line"><span class="lineno"> 2090</span> </div>
-<div class="line"><span class="lineno"> 2091</span>            <span class="comment">// Update the &#39;type&#39; and &#39;reason&#39; for this active geofence if the vehicle is in a closed lane</span></div>
-<div class="line"><span class="lineno"> 2092</span>            <span class="keywordflow">if</span>(!accessRuleReg-&gt;accessable(lanelet::Participants::VehicleCar) || !accessRuleReg-&gt;accessable(lanelet::Participants::VehicleTruck)) </div>
-<div class="line"><span class="lineno"> 2093</span>            {</div>
-<div class="line"><span class="lineno"> 2094</span>              RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Active geofence is a closed lane.&quot;</span>);</div>
-<div class="line"><span class="lineno"> 2095</span>              RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Closed lane reason: &quot;</span> &lt;&lt; accessRuleReg-&gt;getReason());</div>
-<div class="line"><span class="lineno"> 2096</span>              outgoing_geof.reason = accessRuleReg-&gt;getReason();</div>
-<div class="line"><span class="lineno"> 2097</span>              outgoing_geof.type = carma_perception_msgs::msg::CheckActiveGeofence::LANE_CLOSED;</div>
-<div class="line"><span class="lineno"> 2098</span>            }</div>
-<div class="line"><span class="lineno"> 2099</span>            <span class="comment">// Otherwise, update the &#39;type&#39; and &#39;reason&#39; for this active geofence if the vehicle is in a lane immediately adjacent to a closed lane with the same travel direction</span></div>
-<div class="line"><span class="lineno"> 2100</span>            <span class="keywordflow">else</span> </div>
-<div class="line"><span class="lineno"> 2101</span>            {</div>
-<div class="line"><span class="lineno"> 2102</span>              <span class="comment">// Obtain all same-direction lanes sharing the right lane boundary (will include the current lanelet)</span></div>
-<div class="line"><span class="lineno"> 2103</span>              <span class="keyword">auto</span> right_boundary_lanelets = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;laneletLayer.findUsages(current_llt.rightBound());</div>
-<div class="line"><span class="lineno"> 2104</span> </div>
-<div class="line"><span class="lineno"> 2105</span>              <span class="comment">// Check if the adjacent right lane is closed</span></div>
-<div class="line"><span class="lineno"> 2106</span>              <span class="keywordflow">if</span>(right_boundary_lanelets.size() &gt; 1)</div>
-<div class="line"><span class="lineno"> 2107</span>              {</div>
-<div class="line"><span class="lineno"> 2108</span>                <span class="keywordflow">for</span>(<span class="keyword">auto</span> <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a> : right_boundary_lanelets)</div>
-<div class="line"><span class="lineno"> 2109</span>                {</div>
-<div class="line"><span class="lineno"> 2110</span>                  <span class="comment">// Only check the adjacent right lanelet; ignore the current lanelet</span></div>
-<div class="line"><span class="lineno"> 2111</span>                  <span class="keywordflow">if</span>(<a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.id() != current_llt.id())</div>
-<div class="line"><span class="lineno"> 2112</span>                  {</div>
-<div class="line"><span class="lineno"> 2113</span>                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> rightRegem: <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.regulatoryElements())</div>
-<div class="line"><span class="lineno"> 2114</span>                    {</div>
-<div class="line"><span class="lineno"> 2115</span>                      <span class="keywordflow">if</span>(rightRegem-&gt;attribute(lanelet::AttributeName::Subtype).value().compare(lanelet::RegionAccessRule::RuleName) == 0)</div>
-<div class="line"><span class="lineno"> 2116</span>                      {</div>
-<div class="line"><span class="lineno"> 2117</span>                        lanelet::RegionAccessRulePtr rightAccessRuleReg =  std::dynamic_pointer_cast&lt;lanelet::RegionAccessRule&gt;</div>
-<div class="line"><span class="lineno"> 2118</span>                        (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(rightRegem-&gt;id()));</div>
-<div class="line"><span class="lineno"> 2119</span>                        <span class="keywordflow">if</span>(!rightAccessRuleReg-&gt;accessable(lanelet::Participants::VehicleCar) || !rightAccessRuleReg-&gt;accessable(lanelet::Participants::VehicleTruck))</div>
-<div class="line"><span class="lineno"> 2120</span>                        {</div>
-<div class="line"><span class="lineno"> 2121</span>                          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Right adjacent Lanelet &quot;</span> &lt;&lt; <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.id() &lt;&lt; <span class="stringliteral">&quot; is CLOSED&quot;</span>);</div>
-<div class="line"><span class="lineno"> 2122</span>                          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Assigning LANE_CLOSED type to active geofence&quot;</span>);</div>
-<div class="line"><span class="lineno"> 2123</span>                          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Assigning reason &quot;</span> &lt;&lt; rightAccessRuleReg-&gt;getReason());</div>
-<div class="line"><span class="lineno"> 2124</span>                          outgoing_geof.reason = rightAccessRuleReg-&gt;getReason();</div>
-<div class="line"><span class="lineno"> 2125</span>                          outgoing_geof.type = carma_perception_msgs::msg::CheckActiveGeofence::LANE_CLOSED;</div>
-<div class="line"><span class="lineno"> 2126</span>                        }</div>
-<div class="line"><span class="lineno"> 2127</span>                      }</div>
-<div class="line"><span class="lineno"> 2128</span>                    }</div>
-<div class="line"><span class="lineno"> 2129</span>                  }</div>
-<div class="line"><span class="lineno"> 2130</span>                }</div>
-<div class="line"><span class="lineno"> 2131</span>              }</div>
-<div class="line"><span class="lineno"> 2132</span> </div>
-<div class="line"><span class="lineno"> 2133</span>              <span class="comment">// Check if the adjacent left lane is closed</span></div>
-<div class="line"><span class="lineno"> 2134</span>              <span class="keyword">auto</span> left_boundary_lanelets = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;laneletLayer.findUsages(current_llt.leftBound());</div>
-<div class="line"><span class="lineno"> 2135</span>              <span class="keywordflow">if</span>(left_boundary_lanelets.size() &gt; 1)</div>
-<div class="line"><span class="lineno"> 2136</span>              {</div>
-<div class="line"><span class="lineno"> 2137</span>                <span class="keywordflow">for</span>(<span class="keyword">auto</span> <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a> : left_boundary_lanelets)</div>
-<div class="line"><span class="lineno"> 2138</span>                {</div>
-<div class="line"><span class="lineno"> 2139</span>                  <span class="comment">// Only check the adjacent left lanelet; ignore the current lanelet</span></div>
-<div class="line"><span class="lineno"> 2140</span>                  <span class="keywordflow">if</span>(<a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.id() != current_llt.id())</div>
-<div class="line"><span class="lineno"> 2141</span>                  {</div>
-<div class="line"><span class="lineno"> 2142</span>                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> leftRegem: <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.regulatoryElements())</div>
-<div class="line"><span class="lineno"> 2143</span>                    {</div>
-<div class="line"><span class="lineno"> 2144</span>                      <span class="keywordflow">if</span>(leftRegem-&gt;attribute(lanelet::AttributeName::Subtype).value().compare(lanelet::RegionAccessRule::RuleName) == 0)</div>
-<div class="line"><span class="lineno"> 2145</span>                      {</div>
-<div class="line"><span class="lineno"> 2146</span>                        lanelet::RegionAccessRulePtr leftAccessRuleReg =  std::dynamic_pointer_cast&lt;lanelet::RegionAccessRule&gt;</div>
-<div class="line"><span class="lineno"> 2147</span>                        (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(leftRegem-&gt;id()));</div>
-<div class="line"><span class="lineno"> 2148</span>                        <span class="keywordflow">if</span>(!leftAccessRuleReg-&gt;accessable(lanelet::Participants::VehicleCar) || !leftAccessRuleReg-&gt;accessable(lanelet::Participants::VehicleTruck))</div>
-<div class="line"><span class="lineno"> 2149</span>                        {</div>
-<div class="line"><span class="lineno"> 2150</span>                          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Left adjacent Lanelet &quot;</span> &lt;&lt; <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.id() &lt;&lt; <span class="stringliteral">&quot; is CLOSED&quot;</span>);</div>
-<div class="line"><span class="lineno"> 2151</span>                          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Assigning LANE_CLOSED type to active geofence&quot;</span>);</div>
-<div class="line"><span class="lineno"> 2152</span>                          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Assigning reason &quot;</span> &lt;&lt; leftAccessRuleReg-&gt;getReason());</div>
-<div class="line"><span class="lineno"> 2153</span>                          outgoing_geof.reason = leftAccessRuleReg-&gt;getReason();</div>
-<div class="line"><span class="lineno"> 2154</span>                          outgoing_geof.type = carma_perception_msgs::msg::CheckActiveGeofence::LANE_CLOSED;</div>
-<div class="line"><span class="lineno"> 2155</span>                        }</div>
-<div class="line"><span class="lineno"> 2156</span>                      }</div>
-<div class="line"><span class="lineno"> 2157</span>                    }</div>
-<div class="line"><span class="lineno"> 2158</span>                  }</div>
-<div class="line"><span class="lineno"> 2159</span>                }</div>
-<div class="line"><span class="lineno"> 2160</span>              }</div>
-<div class="line"><span class="lineno"> 2161</span>            }</div>
-<div class="line"><span class="lineno"> 2162</span>          }</div>
-<div class="line"><span class="lineno"> 2163</span>        }</div>
-<div class="line"><span class="lineno"> 2164</span>      }</div>
-<div class="line"><span class="lineno"> 2165</span>    }</div>
-<div class="line"><span class="lineno"> 2166</span>  }</div>
-<div class="line"><span class="lineno"> 2167</span>  <span class="keywordflow">return</span> outgoing_geof;</div>
-<div class="line"><span class="lineno"> 2168</span>}</div>
+<div class="line"><span class="lineno"> 2044</span> </div>
+<div class="line"><span class="lineno"> 2045</span>  <span class="comment">/* determine whether or not the vehicle&#39;s current position is within an active geofence */</span></div>
+<div class="line"><span class="lineno"> 2046</span>  <span class="keywordflow">if</span> (boost::geometry::within(curr_pos, current_llt.polygon2d().basicPolygon()))</div>
+<div class="line"><span class="lineno"> 2047</span>  {         </div>
+<div class="line"><span class="lineno"> 2048</span>    next_distance = <a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a35a706cbbb3b04dc4dfc3eea40ececcc">distToNearestActiveGeofence</a>(curr_pos);</div>
+<div class="line"><span class="lineno"> 2049</span>    outgoing_geof.distance_to_next_geofence = next_distance;</div>
+<div class="line"><span class="lineno"> 2050</span> </div>
+<div class="line"><span class="lineno"> 2051</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> <span class="keywordtype">id</span> : <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9f7ae45f954ed5f177756a56b9387545">active_geofence_llt_ids_</a>) </div>
+<div class="line"><span class="lineno"> 2052</span>    {</div>
+<div class="line"><span class="lineno"> 2053</span>      <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == current_llt.id())</div>
+<div class="line"><span class="lineno"> 2054</span>      {           </div>
+<div class="line"><span class="lineno"> 2055</span>        RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Vehicle is on Lanelet &quot;</span> &lt;&lt; current_llt.id() &lt;&lt; <span class="stringliteral">&quot;, which has an active geofence&quot;</span>);</div>
+<div class="line"><span class="lineno"> 2056</span>        outgoing_geof.is_on_active_geofence = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 2057</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> regem: current_llt.regulatoryElements())</div>
+<div class="line"><span class="lineno"> 2058</span>        {</div>
+<div class="line"><span class="lineno"> 2059</span>          <span class="comment">// Assign active geofence fields based on the speed limit associated with this lanelet</span></div>
+<div class="line"><span class="lineno"> 2060</span>          <span class="keywordflow">if</span> (regem-&gt;attribute(lanelet::AttributeName::Subtype).value().compare(lanelet::DigitalSpeedLimit::RuleName) == 0)</div>
+<div class="line"><span class="lineno"> 2061</span>          {</div>
+<div class="line"><span class="lineno"> 2062</span>            lanelet::DigitalSpeedLimitPtr speed =  std::dynamic_pointer_cast&lt;lanelet::DigitalSpeedLimit&gt;</div>
+<div class="line"><span class="lineno"> 2063</span>            (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(regem-&gt;id()));</div>
+<div class="line"><span class="lineno"> 2064</span>            outgoing_geof.value = speed-&gt;speed_limit_.value();</div>
+<div class="line"><span class="lineno"> 2065</span>            outgoing_geof.advisory_speed = speed-&gt;speed_limit_.value();</div>
+<div class="line"><span class="lineno"> 2066</span>            outgoing_geof.reason = speed-&gt;getReason(); </div>
+<div class="line"><span class="lineno"> 2067</span> </div>
+<div class="line"><span class="lineno"> 2068</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Active geofence has a speed limit of &quot;</span> &lt;&lt; speed-&gt;speed_limit_.value());</div>
+<div class="line"><span class="lineno"> 2069</span>                    </div>
+<div class="line"><span class="lineno"> 2070</span>            <span class="comment">// Cannot overrule outgoing_geof.type if it is already set to LANE_CLOSED</span></div>
+<div class="line"><span class="lineno"> 2071</span>            <span class="keywordflow">if</span>(outgoing_geof.type != carma_perception_msgs::msg::CheckActiveGeofence::LANE_CLOSED)</div>
+<div class="line"><span class="lineno"> 2072</span>            {</div>
+<div class="line"><span class="lineno"> 2073</span>              outgoing_geof.type = carma_perception_msgs::msg::CheckActiveGeofence::SPEED_LIMIT;</div>
+<div class="line"><span class="lineno"> 2074</span>            }</div>
+<div class="line"><span class="lineno"> 2075</span>          }</div>
+<div class="line"><span class="lineno"> 2076</span> </div>
+<div class="line"><span class="lineno"> 2077</span>          <span class="comment">// Assign active geofence fields based on the minimum gap associated with this lanelet (if it exists)</span></div>
+<div class="line"><span class="lineno"> 2078</span>          <span class="keywordflow">if</span>(regem-&gt;attribute(lanelet::AttributeName::Subtype).value().compare(lanelet::DigitalMinimumGap::RuleName) == 0)</div>
+<div class="line"><span class="lineno"> 2079</span>          {</div>
+<div class="line"><span class="lineno"> 2080</span>            lanelet::DigitalMinimumGapPtr min_gap =  std::dynamic_pointer_cast&lt;lanelet::DigitalMinimumGap&gt;</div>
+<div class="line"><span class="lineno"> 2081</span>            (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(regem-&gt;id()));</div>
+<div class="line"><span class="lineno"> 2082</span>            outgoing_geof.minimum_gap = min_gap-&gt;getMinimumGap();</div>
+<div class="line"><span class="lineno"> 2083</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Active geofence has a minimum gap of &quot;</span> &lt;&lt; min_gap-&gt;getMinimumGap());</div>
+<div class="line"><span class="lineno"> 2084</span>          }</div>
+<div class="line"><span class="lineno"> 2085</span>                 </div>
+<div class="line"><span class="lineno"> 2086</span>          <span class="comment">// Assign active geofence fields based on whether the current lane is closed or is immediately adjacent to a closed lane</span></div>
+<div class="line"><span class="lineno"> 2087</span>          <span class="keywordflow">if</span>(regem-&gt;attribute(lanelet::AttributeName::Subtype).value().compare(lanelet::RegionAccessRule::RuleName) == 0)</div>
+<div class="line"><span class="lineno"> 2088</span>          {</div>
+<div class="line"><span class="lineno"> 2089</span>            lanelet::RegionAccessRulePtr accessRuleReg =  std::dynamic_pointer_cast&lt;lanelet::RegionAccessRule&gt;</div>
+<div class="line"><span class="lineno"> 2090</span>            (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(regem-&gt;id()));</div>
+<div class="line"><span class="lineno"> 2091</span> </div>
+<div class="line"><span class="lineno"> 2092</span>            <span class="comment">// Update the &#39;type&#39; and &#39;reason&#39; for this active geofence if the vehicle is in a closed lane</span></div>
+<div class="line"><span class="lineno"> 2093</span>            <span class="keywordflow">if</span>(!accessRuleReg-&gt;accessable(lanelet::Participants::VehicleCar) || !accessRuleReg-&gt;accessable(lanelet::Participants::VehicleTruck)) </div>
+<div class="line"><span class="lineno"> 2094</span>            {</div>
+<div class="line"><span class="lineno"> 2095</span>              RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Active geofence is a closed lane.&quot;</span>);</div>
+<div class="line"><span class="lineno"> 2096</span>              RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Closed lane reason: &quot;</span> &lt;&lt; accessRuleReg-&gt;getReason());</div>
+<div class="line"><span class="lineno"> 2097</span>              outgoing_geof.reason = accessRuleReg-&gt;getReason();</div>
+<div class="line"><span class="lineno"> 2098</span>              outgoing_geof.type = carma_perception_msgs::msg::CheckActiveGeofence::LANE_CLOSED;</div>
+<div class="line"><span class="lineno"> 2099</span>            }</div>
+<div class="line"><span class="lineno"> 2100</span>            <span class="comment">// Otherwise, update the &#39;type&#39; and &#39;reason&#39; for this active geofence if the vehicle is in a lane immediately adjacent to a closed lane with the same travel direction</span></div>
+<div class="line"><span class="lineno"> 2101</span>            <span class="keywordflow">else</span> </div>
+<div class="line"><span class="lineno"> 2102</span>            {</div>
+<div class="line"><span class="lineno"> 2103</span>              <span class="comment">// Obtain all same-direction lanes sharing the right lane boundary (will include the current lanelet)</span></div>
+<div class="line"><span class="lineno"> 2104</span>              <span class="keyword">auto</span> right_boundary_lanelets = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;laneletLayer.findUsages(current_llt.rightBound());</div>
+<div class="line"><span class="lineno"> 2105</span> </div>
+<div class="line"><span class="lineno"> 2106</span>              <span class="comment">// Check if the adjacent right lane is closed</span></div>
+<div class="line"><span class="lineno"> 2107</span>              <span class="keywordflow">if</span>(right_boundary_lanelets.size() &gt; 1)</div>
+<div class="line"><span class="lineno"> 2108</span>              {</div>
+<div class="line"><span class="lineno"> 2109</span>                <span class="keywordflow">for</span>(<span class="keyword">auto</span> <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a> : right_boundary_lanelets)</div>
+<div class="line"><span class="lineno"> 2110</span>                {</div>
+<div class="line"><span class="lineno"> 2111</span>                  <span class="comment">// Only check the adjacent right lanelet; ignore the current lanelet</span></div>
+<div class="line"><span class="lineno"> 2112</span>                  <span class="keywordflow">if</span>(<a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.id() != current_llt.id())</div>
+<div class="line"><span class="lineno"> 2113</span>                  {</div>
+<div class="line"><span class="lineno"> 2114</span>                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> rightRegem: <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.regulatoryElements())</div>
+<div class="line"><span class="lineno"> 2115</span>                    {</div>
+<div class="line"><span class="lineno"> 2116</span>                      <span class="keywordflow">if</span>(rightRegem-&gt;attribute(lanelet::AttributeName::Subtype).value().compare(lanelet::RegionAccessRule::RuleName) == 0)</div>
+<div class="line"><span class="lineno"> 2117</span>                      {</div>
+<div class="line"><span class="lineno"> 2118</span>                        lanelet::RegionAccessRulePtr rightAccessRuleReg =  std::dynamic_pointer_cast&lt;lanelet::RegionAccessRule&gt;</div>
+<div class="line"><span class="lineno"> 2119</span>                        (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(rightRegem-&gt;id()));</div>
+<div class="line"><span class="lineno"> 2120</span>                        <span class="keywordflow">if</span>(!rightAccessRuleReg-&gt;accessable(lanelet::Participants::VehicleCar) || !rightAccessRuleReg-&gt;accessable(lanelet::Participants::VehicleTruck))</div>
+<div class="line"><span class="lineno"> 2121</span>                        {</div>
+<div class="line"><span class="lineno"> 2122</span>                          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Right adjacent Lanelet &quot;</span> &lt;&lt; <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.id() &lt;&lt; <span class="stringliteral">&quot; is CLOSED&quot;</span>);</div>
+<div class="line"><span class="lineno"> 2123</span>                          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Assigning LANE_CLOSED type to active geofence&quot;</span>);</div>
+<div class="line"><span class="lineno"> 2124</span>                          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Assigning reason &quot;</span> &lt;&lt; rightAccessRuleReg-&gt;getReason());</div>
+<div class="line"><span class="lineno"> 2125</span>                          outgoing_geof.reason = rightAccessRuleReg-&gt;getReason();</div>
+<div class="line"><span class="lineno"> 2126</span>                          outgoing_geof.type = carma_perception_msgs::msg::CheckActiveGeofence::LANE_CLOSED;</div>
+<div class="line"><span class="lineno"> 2127</span>                        }</div>
+<div class="line"><span class="lineno"> 2128</span>                      }</div>
+<div class="line"><span class="lineno"> 2129</span>                    }</div>
+<div class="line"><span class="lineno"> 2130</span>                  }</div>
+<div class="line"><span class="lineno"> 2131</span>                }</div>
+<div class="line"><span class="lineno"> 2132</span>              }</div>
+<div class="line"><span class="lineno"> 2133</span> </div>
+<div class="line"><span class="lineno"> 2134</span>              <span class="comment">// Check if the adjacent left lane is closed</span></div>
+<div class="line"><span class="lineno"> 2135</span>              <span class="keyword">auto</span> left_boundary_lanelets = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;laneletLayer.findUsages(current_llt.leftBound());</div>
+<div class="line"><span class="lineno"> 2136</span>              <span class="keywordflow">if</span>(left_boundary_lanelets.size() &gt; 1)</div>
+<div class="line"><span class="lineno"> 2137</span>              {</div>
+<div class="line"><span class="lineno"> 2138</span>                <span class="keywordflow">for</span>(<span class="keyword">auto</span> <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a> : left_boundary_lanelets)</div>
+<div class="line"><span class="lineno"> 2139</span>                {</div>
+<div class="line"><span class="lineno"> 2140</span>                  <span class="comment">// Only check the adjacent left lanelet; ignore the current lanelet</span></div>
+<div class="line"><span class="lineno"> 2141</span>                  <span class="keywordflow">if</span>(<a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.id() != current_llt.id())</div>
+<div class="line"><span class="lineno"> 2142</span>                  {</div>
+<div class="line"><span class="lineno"> 2143</span>                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> leftRegem: <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.regulatoryElements())</div>
+<div class="line"><span class="lineno"> 2144</span>                    {</div>
+<div class="line"><span class="lineno"> 2145</span>                      <span class="keywordflow">if</span>(leftRegem-&gt;attribute(lanelet::AttributeName::Subtype).value().compare(lanelet::RegionAccessRule::RuleName) == 0)</div>
+<div class="line"><span class="lineno"> 2146</span>                      {</div>
+<div class="line"><span class="lineno"> 2147</span>                        lanelet::RegionAccessRulePtr leftAccessRuleReg =  std::dynamic_pointer_cast&lt;lanelet::RegionAccessRule&gt;</div>
+<div class="line"><span class="lineno"> 2148</span>                        (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(leftRegem-&gt;id()));</div>
+<div class="line"><span class="lineno"> 2149</span>                        <span class="keywordflow">if</span>(!leftAccessRuleReg-&gt;accessable(lanelet::Participants::VehicleCar) || !leftAccessRuleReg-&gt;accessable(lanelet::Participants::VehicleTruck))</div>
+<div class="line"><span class="lineno"> 2150</span>                        {</div>
+<div class="line"><span class="lineno"> 2151</span>                          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Left adjacent Lanelet &quot;</span> &lt;&lt; <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.id() &lt;&lt; <span class="stringliteral">&quot; is CLOSED&quot;</span>);</div>
+<div class="line"><span class="lineno"> 2152</span>                          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Assigning LANE_CLOSED type to active geofence&quot;</span>);</div>
+<div class="line"><span class="lineno"> 2153</span>                          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Assigning reason &quot;</span> &lt;&lt; leftAccessRuleReg-&gt;getReason());</div>
+<div class="line"><span class="lineno"> 2154</span>                          outgoing_geof.reason = leftAccessRuleReg-&gt;getReason();</div>
+<div class="line"><span class="lineno"> 2155</span>                          outgoing_geof.type = carma_perception_msgs::msg::CheckActiveGeofence::LANE_CLOSED;</div>
+<div class="line"><span class="lineno"> 2156</span>                        }</div>
+<div class="line"><span class="lineno"> 2157</span>                      }</div>
+<div class="line"><span class="lineno"> 2158</span>                    }</div>
+<div class="line"><span class="lineno"> 2159</span>                  }</div>
+<div class="line"><span class="lineno"> 2160</span>                }</div>
+<div class="line"><span class="lineno"> 2161</span>              }</div>
+<div class="line"><span class="lineno"> 2162</span>            }</div>
+<div class="line"><span class="lineno"> 2163</span>          }</div>
+<div class="line"><span class="lineno"> 2164</span>        }</div>
+<div class="line"><span class="lineno"> 2165</span>      }</div>
+<div class="line"><span class="lineno"> 2166</span>    }</div>
+<div class="line"><span class="lineno"> 2167</span>  }</div>
+<div class="line"><span class="lineno"> 2168</span>  <span class="keywordflow">return</span> outgoing_geof;</div>
+<div class="line"><span class="lineno"> 2169</span>}</div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a35a706cbbb3b04dc4dfc3eea40ececcc"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a35a706cbbb3b04dc4dfc3eea40ececcc">carma_wm_ctrl::WMBroadcaster::distToNearestActiveGeofence</a></div><div class="ttdeci">double distToNearestActiveGeofence(const lanelet::BasicPoint2d &amp;curr_pos)</div><div class="ttdoc">Returns the route distance (downtrack or crosstrack in meters) to the nearest active geofence lanelet...</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l01868">WMBroadcaster.cpp:1868</a></div></div>
 <div class="ttc" id="anamespacelanelet_html"><div class="ttname"><a href="namespacelanelet.html">lanelet</a></div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8h_source.html#l00039">MapConformer.h:40</a></div></div>
 </div><!-- fragment -->
@@ -2459,13 +2460,13 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcaster_8cpp_source.html#l02191">2191</a> of file <a class="el" href="WMBroadcaster_8cpp_source.html">WMBroadcaster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2192</span>{</div>
-<div class="line"><span class="lineno"> 2193</span>  <span class="keywordflow">return</span> lanelet::Lanelet(lanelet::utils::getId(), <a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aef58891043a14a620343f1fc477b8393">createLinearInterpolatingLinestring</a>(left_front_pt, left_back_pt, increment_distance), <a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aef58891043a14a620343f1fc477b8393">createLinearInterpolatingLinestring</a>(right_front_pt, right_back_pt, increment_distance));</div>
-<div class="line"><span class="lineno"> 2194</span>}</div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_aef58891043a14a620343f1fc477b8393"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aef58891043a14a620343f1fc477b8393">carma_wm_ctrl::WMBroadcaster::createLinearInterpolatingLinestring</a></div><div class="ttdeci">lanelet::LineString3d createLinearInterpolatingLinestring(const lanelet::Point3d &amp;front_pt, const lanelet::Point3d &amp;back_pt, double increment_distance=0.25)</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l02170">WMBroadcaster.cpp:2170</a></div></div>
+<p class="definition">Definition at line <a class="el" href="WMBroadcaster_8cpp_source.html#l02192">2192</a> of file <a class="el" href="WMBroadcaster_8cpp_source.html">WMBroadcaster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2193</span>{</div>
+<div class="line"><span class="lineno"> 2194</span>  <span class="keywordflow">return</span> lanelet::Lanelet(lanelet::utils::getId(), <a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aef58891043a14a620343f1fc477b8393">createLinearInterpolatingLinestring</a>(left_front_pt, left_back_pt, increment_distance), <a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aef58891043a14a620343f1fc477b8393">createLinearInterpolatingLinestring</a>(right_front_pt, right_back_pt, increment_distance));</div>
+<div class="line"><span class="lineno"> 2195</span>}</div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_aef58891043a14a620343f1fc477b8393"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aef58891043a14a620343f1fc477b8393">carma_wm_ctrl::WMBroadcaster::createLinearInterpolatingLinestring</a></div><div class="ttdeci">lanelet::LineString3d createLinearInterpolatingLinestring(const lanelet::Point3d &amp;front_pt, const lanelet::Point3d &amp;back_pt, double increment_distance=0.25)</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l02171">WMBroadcaster.cpp:2171</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WMBroadcaster_8cpp_source.html#l02170">createLinearInterpolatingLinestring()</a>.</p>
+<p class="reference">References <a class="el" href="WMBroadcaster_8cpp_source.html#l02171">createLinearInterpolatingLinestring()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l00420">createWorkzoneGeometry()</a>.</p>
 <div class="dynheader">
@@ -2532,28 +2533,28 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcaster_8cpp_source.html#l02170">2170</a> of file <a class="el" href="WMBroadcaster_8cpp_source.html">WMBroadcaster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2171</span>{</div>
-<div class="line"><span class="lineno"> 2172</span>  <span class="keywordtype">double</span> dx = back_pt.x() - front_pt.x();</div>
-<div class="line"><span class="lineno"> 2173</span>  <span class="keywordtype">double</span> dy = back_pt.y() - front_pt.y();</div>
-<div class="line"><span class="lineno"> 2174</span> </div>
-<div class="line"><span class="lineno"> 2175</span>  std::vector&lt;lanelet::Point3d&gt; points;</div>
-<div class="line"><span class="lineno"> 2176</span>  <span class="keywordtype">double</span> distance = std::sqrt(pow(dx, 2) + pow(dy,2));</div>
-<div class="line"><span class="lineno"> 2177</span>  <span class="keywordtype">double</span> cos = dx / distance;</div>
-<div class="line"><span class="lineno"> 2178</span>  <span class="keywordtype">double</span> sin = dy / distance;</div>
-<div class="line"><span class="lineno"> 2179</span>  points.push_back(front_pt);</div>
-<div class="line"><span class="lineno"> 2180</span>  <span class="keywordtype">double</span> sum = increment_distance;</div>
-<div class="line"><span class="lineno"> 2181</span>  <span class="keywordflow">while</span> ( sum &lt; distance)</div>
-<div class="line"><span class="lineno"> 2182</span>  {</div>
-<div class="line"><span class="lineno"> 2183</span>    points.push_back(lanelet::Point3d(lanelet::utils::getId(),front_pt.x() + sum * cos, front_pt.y() + sum * sin, 0.0));</div>
-<div class="line"><span class="lineno"> 2184</span>    sum += increment_distance;</div>
-<div class="line"><span class="lineno"> 2185</span>  }</div>
-<div class="line"><span class="lineno"> 2186</span>  points.push_back(back_pt);</div>
-<div class="line"><span class="lineno"> 2187</span> </div>
-<div class="line"><span class="lineno"> 2188</span>  <span class="keywordflow">return</span> lanelet::LineString3d(lanelet::utils::getId(), points);</div>
-<div class="line"><span class="lineno"> 2189</span>}</div>
+<p class="definition">Definition at line <a class="el" href="WMBroadcaster_8cpp_source.html#l02171">2171</a> of file <a class="el" href="WMBroadcaster_8cpp_source.html">WMBroadcaster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2172</span>{</div>
+<div class="line"><span class="lineno"> 2173</span>  <span class="keywordtype">double</span> dx = back_pt.x() - front_pt.x();</div>
+<div class="line"><span class="lineno"> 2174</span>  <span class="keywordtype">double</span> dy = back_pt.y() - front_pt.y();</div>
+<div class="line"><span class="lineno"> 2175</span> </div>
+<div class="line"><span class="lineno"> 2176</span>  std::vector&lt;lanelet::Point3d&gt; points;</div>
+<div class="line"><span class="lineno"> 2177</span>  <span class="keywordtype">double</span> distance = std::sqrt(pow(dx, 2) + pow(dy,2));</div>
+<div class="line"><span class="lineno"> 2178</span>  <span class="keywordtype">double</span> cos = dx / distance;</div>
+<div class="line"><span class="lineno"> 2179</span>  <span class="keywordtype">double</span> sin = dy / distance;</div>
+<div class="line"><span class="lineno"> 2180</span>  points.push_back(front_pt);</div>
+<div class="line"><span class="lineno"> 2181</span>  <span class="keywordtype">double</span> sum = increment_distance;</div>
+<div class="line"><span class="lineno"> 2182</span>  <span class="keywordflow">while</span> ( sum &lt; distance)</div>
+<div class="line"><span class="lineno"> 2183</span>  {</div>
+<div class="line"><span class="lineno"> 2184</span>    points.push_back(lanelet::Point3d(lanelet::utils::getId(),front_pt.x() + sum * cos, front_pt.y() + sum * sin, 0.0));</div>
+<div class="line"><span class="lineno"> 2185</span>    sum += increment_distance;</div>
+<div class="line"><span class="lineno"> 2186</span>  }</div>
+<div class="line"><span class="lineno"> 2187</span>  points.push_back(back_pt);</div>
+<div class="line"><span class="lineno"> 2188</span> </div>
+<div class="line"><span class="lineno"> 2189</span>  <span class="keywordflow">return</span> lanelet::LineString3d(lanelet::utils::getId(), points);</div>
+<div class="line"><span class="lineno"> 2190</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l02191">createLinearInterpolatingLanelet()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l02192">createLinearInterpolatingLanelet()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2887,7 +2888,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  591</span>  </div>
 <div class="line"><span class="lineno">  592</span>  <span class="keywordflow">return</span> gf_ptr;</div>
 <div class="line"><span class="lineno">  593</span>}</div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a07466352083e95712cfed377a61c3bc7"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a07466352083e95712cfed377a61c3bc7">carma_wm_ctrl::WMBroadcaster::createLinearInterpolatingLanelet</a></div><div class="ttdeci">lanelet::Lanelet createLinearInterpolatingLanelet(const lanelet::Point3d &amp;left_front_pt, const lanelet::Point3d &amp;right_front_pt, const lanelet::Point3d &amp;left_back_pt, const lanelet::Point3d &amp;right_back_pt, double increment_distance=0.25)</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l02191">WMBroadcaster.cpp:2191</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a07466352083e95712cfed377a61c3bc7"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a07466352083e95712cfed377a61c3bc7">carma_wm_ctrl::WMBroadcaster::createLinearInterpolatingLanelet</a></div><div class="ttdeci">lanelet::Lanelet createLinearInterpolatingLanelet(const lanelet::Point3d &amp;left_front_pt, const lanelet::Point3d &amp;right_front_pt, const lanelet::Point3d &amp;left_back_pt, const lanelet::Point3d &amp;right_back_pt, double increment_distance=0.25)</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l02192">WMBroadcaster.cpp:2192</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a264607b6ec5b20d8971f8dc14a4b1825"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a264607b6ec5b20d8971f8dc14a4b1825">carma_wm_ctrl::WMBroadcaster::splitOppositeLaneletWithPoint</a></div><div class="ttdeci">lanelet::Lanelets splitOppositeLaneletWithPoint(std::shared_ptr&lt; std::vector&lt; lanelet::Lanelet &gt; &gt; opposite_llts, const lanelet::BasicPoint2d &amp;input_pt, const lanelet::Lanelet &amp;input_llt, double error_distance)</div><div class="ttdoc">Split given lanelet's adjacent, OPPOSITE lanelet with same proportion as the given point's downtrack ...</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l00776">WMBroadcaster.cpp:776</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_ab5567570e8a54c507f1c55c23f364933"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#ab5567570e8a54c507f1c55c23f364933">carma_wm_ctrl::WMBroadcaster::error_distance_</a></div><div class="ttdeci">double error_distance_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8hpp_source.html#l00409">WMBroadcaster.hpp:409</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_adfb94b051e74a67830c1795e32081cbc"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#adfb94b051e74a67830c1795e32081cbc">carma_wm_ctrl::WMBroadcaster::generate32BitId</a></div><div class="ttdeci">uint32_t generate32BitId(const std::string &amp;label)</div><div class="ttdoc">helper for generating 32bit traffic light Id from TCM label field consisting workzone intersection/si...</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l01252">WMBroadcaster.cpp:1252</a></div></div>
@@ -2896,7 +2897,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="astructcarma__wm__ctrl_1_1WorkZoneSection_html_ac422b9b0dab0dea3fdf1a8ee4dc64abc"><div class="ttname"><a href="structcarma__wm__ctrl_1_1WorkZoneSection.html#ac422b9b0dab0dea3fdf1a8ee4dc64abc">carma_wm_ctrl::WorkZoneSection::OPENRIGHT</a></div><div class="ttdeci">static const uint8_t OPENRIGHT</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8hpp_source.html#l00062">WMBroadcaster.hpp:62</a></div></div>
 <div class="ttc" id="astructcarma__wm__ctrl_1_1WorkZoneSection_html_ade4ff9d14cf9c540b8235d25a3fe1b61"><div class="ttname"><a href="structcarma__wm__ctrl_1_1WorkZoneSection.html#ade4ff9d14cf9c540b8235d25a3fe1b61">carma_wm_ctrl::WorkZoneSection::REVERSE</a></div><div class="ttdeci">static const uint8_t REVERSE</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8hpp_source.html#l00062">WMBroadcaster.hpp:62</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WMBroadcaster_8cpp_source.html#l00926">addRegionAccessRule()</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00062">carma_wm_ctrl::WorkZoneSection::CLOSED</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l02191">createLinearInterpolatingLanelet()</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00429">current_map_</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00409">error_distance_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01252">generate32BitId()</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00062">carma_wm_ctrl::WorkZoneSection::OPENRIGHT</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00062">carma_wm_ctrl::WorkZoneSection::REVERSE</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00776">splitOppositeLaneletWithPoint()</a>, and <a class="el" href="WMBroadcaster_8hpp_source.html#l00062">carma_wm_ctrl::WorkZoneSection::TAPERRIGHT</a>.</p>
+<p class="reference">References <a class="el" href="WMBroadcaster_8cpp_source.html#l00926">addRegionAccessRule()</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00062">carma_wm_ctrl::WorkZoneSection::CLOSED</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l02192">createLinearInterpolatingLanelet()</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00429">current_map_</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00409">error_distance_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01252">generate32BitId()</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00062">carma_wm_ctrl::WorkZoneSection::OPENRIGHT</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00062">carma_wm_ctrl::WorkZoneSection::REVERSE</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00776">splitOppositeLaneletWithPoint()</a>, and <a class="el" href="WMBroadcaster_8hpp_source.html#l00062">carma_wm_ctrl::WorkZoneSection::TAPERRIGHT</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l00393">createWorkzoneGeofence()</a>.</p>
 <div class="dynheader">
@@ -3381,10 +3382,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1135</span>};</div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a4f20a8fa387e6ae0d4db62b8f3207efea7e83ae21b9e9b168f12ba5a90ee82c94"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a4f20a8fa387e6ae0d4db62b8f3207efea7e83ae21b9e9b168f12ba5a90ee82c94">carma_wm_ctrl::WMBroadcaster::AcknowledgementStatus::ACKNOWLEDGED</a></div><div class="ttdeci">@ ACKNOWLEDGED</div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a4f20a8fa387e6ae0d4db62b8f3207efea9cc8ad3d99798c6726d4af0bd14e49d2"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a4f20a8fa387e6ae0d4db62b8f3207efea9cc8ad3d99798c6726d4af0bd14e49d2">carma_wm_ctrl::WMBroadcaster::AcknowledgementStatus::REJECTED</a></div><div class="ttdeci">@ REJECTED</div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_acc8891ed0c1949e44412537e7c904f4c"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#acc8891ed0c1949e44412537e7c904f4c">carma_wm_ctrl::WMBroadcaster::pubTCMACK</a></div><div class="ttdeci">void pubTCMACK(j2735_v2x_msgs::msg::Id64b tcm_req_id, uint16_t msgnum, int ack_status, const std::string &amp;ack_reason)</div><div class="ttdoc">Construct TCM acknowledgement object and populate it with params. Publish the object for a configured...</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l02261">WMBroadcaster.cpp:2261</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_acc8891ed0c1949e44412537e7c904f4c"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#acc8891ed0c1949e44412537e7c904f4c">carma_wm_ctrl::WMBroadcaster::pubTCMACK</a></div><div class="ttdeci">void pubTCMACK(j2735_v2x_msgs::msg::Id64b tcm_req_id, uint16_t msgnum, int ack_status, const std::string &amp;ack_reason)</div><div class="ttdoc">Construct TCM acknowledgement object and populate it with params. Publish the object for a configured...</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l02262">WMBroadcaster.cpp:2262</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_af032eaea663f829c386e54bef319b09c"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#af032eaea663f829c386e54bef319b09c">carma_wm_ctrl::WMBroadcaster::checked_geofence_ids_</a></div><div class="ttdeci">std::unordered_set&lt; std::string &gt; checked_geofence_ids_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8hpp_source.html#l00433">WMBroadcaster.hpp:433</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a4f20a8fa387e6ae0d4db62b8f3207efea7e83ae21b9e9b168f12ba5a90ee82c94">ACKNOWLEDGED</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00117">addScheduleFromMsg()</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00433">checked_geofence_ids_</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00434">generated_geofence_reqids_</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00436">map_mutex_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l02261">pubTCMACK()</a>, <a class="el" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a4f20a8fa387e6ae0d4db62b8f3207efea9cc8ad3d99798c6726d4af0bd14e49d2">REJECTED</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l01137">scheduleGeofence()</a>.</p>
+<p class="reference">References <a class="el" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a4f20a8fa387e6ae0d4db62b8f3207efea7e83ae21b9e9b168f12ba5a90ee82c94">ACKNOWLEDGED</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00117">addScheduleFromMsg()</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00433">checked_geofence_ids_</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00434">generated_geofence_reqids_</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00436">map_mutex_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l02262">pubTCMACK()</a>, <a class="el" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a4f20a8fa387e6ae0d4db62b8f3207efea9cc8ad3d99798c6726d4af0bd14e49d2">REJECTED</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l01137">scheduleGeofence()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00153">carma_wm_ctrl::WMBroadcasterNode::handle_on_activate()</a>.</p>
 <div class="dynheader">
@@ -4528,26 +4529,26 @@ Here is the call graph for this function:</div>
 
 <p>Construct TCM acknowledgement object and populate it with params. Publish the object for a configured number of times. </p>
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcaster_8cpp_source.html#l02261">2261</a> of file <a class="el" href="WMBroadcaster_8cpp_source.html">WMBroadcaster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2262</span>{</div>
-<div class="line"><span class="lineno"> 2263</span>  carma_v2x_msgs::msg::MobilityOperation mom_msg;</div>
-<div class="line"><span class="lineno"> 2264</span>  mom_msg.m_header.timestamp = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#abbf8a6885fb83de6bdf0241ef3e1401f">scheduler_</a>.<a class="code hl_function" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a645ff72ccf3e3b7f6a529debf7a172a2">now</a>().nanoseconds()/1000000;</div>
-<div class="line"><span class="lineno"> 2265</span>  mom_msg.m_header.sender_id = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#ac34bbb28c302480f2876f0946105cbd6">vehicle_id_</a>;</div>
-<div class="line"><span class="lineno"> 2266</span>  mom_msg.strategy = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a229cd9488710003a3f7da5be95ce9f4f">geofence_ack_strategy_</a>;</div>
-<div class="line"><span class="lineno"> 2267</span>  std::stringstream ss;</div>
-<div class="line"><span class="lineno"> 2268</span>  <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>=0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; tcm_req_id.id.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
-<div class="line"><span class="lineno"> 2269</span>  {</div>
-<div class="line"><span class="lineno"> 2270</span>    ss &lt;&lt; std::setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; std::setw(2) &lt;&lt; std::hex &lt;&lt; (unsigned) tcm_req_id.id.at(<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>);</div>
-<div class="line"><span class="lineno"> 2271</span>  }</div>
-<div class="line"><span class="lineno"> 2272</span>    std::string tcmv01_req_id_hex = ss.str();   </div>
-<div class="line"><span class="lineno"> 2273</span>  ss.str(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno"> 2274</span>  ss &lt;&lt; <span class="stringliteral">&quot;traffic_control_id:&quot;</span> &lt;&lt; tcmv01_req_id_hex &lt;&lt; <span class="stringliteral">&quot;, msgnum:&quot;</span>&lt;&lt; msgnum &lt;&lt; <span class="stringliteral">&quot;, acknowledgement:&quot;</span> &lt;&lt; ack_status &lt;&lt; <span class="stringliteral">&quot;, reason:&quot;</span> &lt;&lt; ack_reason;</div>
-<div class="line"><span class="lineno"> 2275</span>  mom_msg.strategy_params = ss.str();</div>
-<div class="line"><span class="lineno"> 2276</span>  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a19e428bc63bdb7eef768738e08af92ac">ack_pub_times_</a>; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
-<div class="line"><span class="lineno"> 2277</span>  {</div>
-<div class="line"><span class="lineno"> 2278</span>    <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a96fcd16e9d674a448e5a46a08c3a3b64">tcm_ack_pub_</a>(mom_msg);</div>
-<div class="line"><span class="lineno"> 2279</span>  }</div>
-<div class="line"><span class="lineno"> 2280</span>}</div>
+<p class="definition">Definition at line <a class="el" href="WMBroadcaster_8cpp_source.html#l02262">2262</a> of file <a class="el" href="WMBroadcaster_8cpp_source.html">WMBroadcaster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2263</span>{</div>
+<div class="line"><span class="lineno"> 2264</span>  carma_v2x_msgs::msg::MobilityOperation mom_msg;</div>
+<div class="line"><span class="lineno"> 2265</span>  mom_msg.m_header.timestamp = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#abbf8a6885fb83de6bdf0241ef3e1401f">scheduler_</a>.<a class="code hl_function" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a645ff72ccf3e3b7f6a529debf7a172a2">now</a>().nanoseconds()/1000000;</div>
+<div class="line"><span class="lineno"> 2266</span>  mom_msg.m_header.sender_id = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#ac34bbb28c302480f2876f0946105cbd6">vehicle_id_</a>;</div>
+<div class="line"><span class="lineno"> 2267</span>  mom_msg.strategy = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a229cd9488710003a3f7da5be95ce9f4f">geofence_ack_strategy_</a>;</div>
+<div class="line"><span class="lineno"> 2268</span>  std::stringstream ss;</div>
+<div class="line"><span class="lineno"> 2269</span>  <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>=0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; tcm_req_id.id.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
+<div class="line"><span class="lineno"> 2270</span>  {</div>
+<div class="line"><span class="lineno"> 2271</span>    ss &lt;&lt; std::setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; std::setw(2) &lt;&lt; std::hex &lt;&lt; (unsigned) tcm_req_id.id.at(<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>);</div>
+<div class="line"><span class="lineno"> 2272</span>  }</div>
+<div class="line"><span class="lineno"> 2273</span>    std::string tcmv01_req_id_hex = ss.str();   </div>
+<div class="line"><span class="lineno"> 2274</span>  ss.str(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno"> 2275</span>  ss &lt;&lt; <span class="stringliteral">&quot;traffic_control_id:&quot;</span> &lt;&lt; tcmv01_req_id_hex &lt;&lt; <span class="stringliteral">&quot;, msgnum:&quot;</span>&lt;&lt; msgnum &lt;&lt; <span class="stringliteral">&quot;, acknowledgement:&quot;</span> &lt;&lt; ack_status &lt;&lt; <span class="stringliteral">&quot;, reason:&quot;</span> &lt;&lt; ack_reason;</div>
+<div class="line"><span class="lineno"> 2276</span>  mom_msg.strategy_params = ss.str();</div>
+<div class="line"><span class="lineno"> 2277</span>  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a19e428bc63bdb7eef768738e08af92ac">ack_pub_times_</a>; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
+<div class="line"><span class="lineno"> 2278</span>  {</div>
+<div class="line"><span class="lineno"> 2279</span>    <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a96fcd16e9d674a448e5a46a08c3a3b64">tcm_ack_pub_</a>(mom_msg);</div>
+<div class="line"><span class="lineno"> 2280</span>  }</div>
+<div class="line"><span class="lineno"> 2281</span>}</div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1GeofenceScheduler_html_a645ff72ccf3e3b7f6a529debf7a172a2"><div class="ttname"><a href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a645ff72ccf3e3b7f6a529debf7a172a2">carma_wm_ctrl::GeofenceScheduler::now</a></div><div class="ttdeci">rclcpp::Time now()</div><div class="ttdoc">Get current time used by scheduler.</div><div class="ttdef"><b>Definition:</b> <a href="GeofenceScheduler_8cpp_source.html#l00032">GeofenceScheduler.cpp:32</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a19e428bc63bdb7eef768738e08af92ac"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a19e428bc63bdb7eef768738e08af92ac">carma_wm_ctrl::WMBroadcaster::ack_pub_times_</a></div><div class="ttdeci">int ack_pub_times_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8hpp_source.html#l00470">WMBroadcaster.hpp:470</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a229cd9488710003a3f7da5be95ce9f4f"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a229cd9488710003a3f7da5be95ce9f4f">carma_wm_ctrl::WMBroadcaster::geofence_ack_strategy_</a></div><div class="ttdeci">const std::string geofence_ack_strategy_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8hpp_source.html#l00469">WMBroadcaster.hpp:469</a></div></div>
@@ -5719,70 +5720,70 @@ Here is the caller graph for this function:</div>
 
 <p>populate upcoming_intersection_ids_ from local traffic lanelet ids </p>
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcaster_8cpp_source.html#l02196">2196</a> of file <a class="el" href="WMBroadcaster_8cpp_source.html">WMBroadcaster.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 2197</span>{</div>
-<div class="line"><span class="lineno"> 2198</span>  <a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> map_msg_intersection_id = 0;</div>
-<div class="line"><span class="lineno"> 2199</span>  <a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> cur_signal_group_id = 0;</div>
-<div class="line"><span class="lineno"> 2200</span>  std::vector&lt;lanelet::CarmaTrafficSignalPtr&gt; traffic_lights;</div>
-<div class="line"><span class="lineno"> 2201</span>  lanelet::Lanelet route_lanelet;</div>
-<div class="line"><span class="lineno"> 2202</span>  lanelet::Ids cur_route_lanelet_ids = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a2c67e3708a1f2e191b24bdec5caf2af3">current_route</a>.route_path_lanelet_ids;</div>
-<div class="line"><span class="lineno"> 2203</span>  <span class="keywordtype">bool</span> isLightFound = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno"> 2204</span>  </div>
-<div class="line"><span class="lineno"> 2205</span>  <span class="keywordflow">for</span>(<span class="keyword">auto</span> <span class="keywordtype">id</span> : cur_route_lanelet_ids) </div>
-<div class="line"><span class="lineno"> 2206</span>  {    </div>
-<div class="line"><span class="lineno"> 2207</span>    route_lanelet= <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;laneletLayer.get(<span class="keywordtype">id</span>);</div>
-<div class="line"><span class="lineno"> 2208</span>    traffic_lights = route_lanelet.regulatoryElementsAs&lt;lanelet::CarmaTrafficSignal&gt;();</div>
-<div class="line"><span class="lineno"> 2209</span>    <span class="keywordflow">if</span>(!traffic_lights.empty())</div>
-<div class="line"><span class="lineno"> 2210</span>    {</div>
-<div class="line"><span class="lineno"> 2211</span>      isLightFound  = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno"> 2212</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno"> 2213</span>    }</div>
-<div class="line"><span class="lineno"> 2214</span>  }</div>
-<div class="line"><span class="lineno"> 2215</span> </div>
-<div class="line"><span class="lineno"> 2216</span>  <span class="keywordflow">if</span>(isLightFound &amp;&amp; !<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aa26bb2f41f25b523fd2a98010af60cb0">sim_</a>)</div>
-<div class="line"><span class="lineno"> 2217</span>  {</div>
-<div class="line"><span class="lineno"> 2218</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aa26bb2f41f25b523fd2a98010af60cb0">sim_</a>-&gt;signal_group_to_traffic_light_id_.begin(); itr != <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aa26bb2f41f25b523fd2a98010af60cb0">sim_</a>-&gt;signal_group_to_traffic_light_id_.end(); itr++)</div>
-<div class="line"><span class="lineno"> 2219</span>    {     </div>
-<div class="line"><span class="lineno"> 2220</span>      <span class="keywordflow">if</span>(itr-&gt;second == traffic_lights.front()-&gt;id())</div>
-<div class="line"><span class="lineno"> 2221</span>      {</div>
-<div class="line"><span class="lineno"> 2222</span>        cur_signal_group_id = itr-&gt;first;</div>
-<div class="line"><span class="lineno"> 2223</span>      }</div>
-<div class="line"><span class="lineno"> 2224</span>    }</div>
-<div class="line"><span class="lineno"> 2225</span>  }</div>
-<div class="line"><span class="lineno"> 2226</span>  <span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno"> 2227</span>     RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;NO matching Traffic lights along the route&quot;</span>);</div>
-<div class="line"><span class="lineno"> 2228</span>  }<span class="comment">//END Traffic signals</span></div>
-<div class="line"><span class="lineno"> 2229</span> </div>
-<div class="line"><span class="lineno"> 2230</span>  <span class="keyword">auto</span> intersections = route_lanelet.regulatoryElementsAs&lt;lanelet::SignalizedIntersection&gt;();</div>
-<div class="line"><span class="lineno"> 2231</span>  <span class="keywordflow">if</span> (intersections.empty())</div>
-<div class="line"><span class="lineno"> 2232</span>  {</div>
-<div class="line"><span class="lineno"> 2233</span>    <span class="comment">// no match if any of the entry lanelet is not part of any intersection.</span></div>
-<div class="line"><span class="lineno"> 2234</span>    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;NO matching intersection for current lanelet. lanelet id = &quot;</span> &lt;&lt; route_lanelet.id());</div>
-<div class="line"><span class="lineno"> 2235</span>  }</div>
-<div class="line"><span class="lineno"> 2236</span>  <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno"> 2237</span>  {</div>
-<div class="line"><span class="lineno"> 2238</span>    <span class="comment">//Currently, each lanelet has only one intersection</span></div>
-<div class="line"><span class="lineno"> 2239</span>    lanelet::Id intersection_id = intersections.front()-&gt;id();    </div>
-<div class="line"><span class="lineno"> 2240</span>    <span class="keywordflow">if</span>(intersection_id != lanelet::InvalId)</div>
-<div class="line"><span class="lineno"> 2241</span>    {</div>
-<div class="line"><span class="lineno"> 2242</span>      <span class="keywordflow">for</span>(<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aa26bb2f41f25b523fd2a98010af60cb0">sim_</a>-&gt;intersection_id_to_regem_id_.begin(); itr != <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aa26bb2f41f25b523fd2a98010af60cb0">sim_</a>-&gt;intersection_id_to_regem_id_.end(); itr++)</div>
-<div class="line"><span class="lineno"> 2243</span>      {</div>
-<div class="line"><span class="lineno"> 2244</span>        <span class="keywordflow">if</span>(itr-&gt;second == intersection_id)</div>
-<div class="line"><span class="lineno"> 2245</span>        {</div>
-<div class="line"><span class="lineno"> 2246</span>          map_msg_intersection_id = itr-&gt;first;</div>
-<div class="line"><span class="lineno"> 2247</span>        }</div>
-<div class="line"><span class="lineno"> 2248</span>      }</div>
-<div class="line"><span class="lineno"> 2249</span>    }</div>
-<div class="line"><span class="lineno"> 2250</span>  } <span class="comment">//END intersections</span></div>
-<div class="line"><span class="lineno"> 2251</span> </div>
-<div class="line"><span class="lineno"> 2252</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;MAP msg: Intersection ID = &quot;</span> &lt;&lt;  map_msg_intersection_id &lt;&lt; <span class="stringliteral">&quot;, Signal Group ID =&quot;</span> &lt;&lt; cur_signal_group_id );</div>
-<div class="line"><span class="lineno"> 2253</span>  <span class="keywordflow">if</span>(map_msg_intersection_id != 0 &amp;&amp; cur_signal_group_id != 0)</div>
-<div class="line"><span class="lineno"> 2254</span>  { </div>
-<div class="line"><span class="lineno"> 2255</span>    <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9976591578b2eb031c24c9f63f9c3051">upcoming_intersection_ids_</a>.data.clear();</div>
-<div class="line"><span class="lineno"> 2256</span>    <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9976591578b2eb031c24c9f63f9c3051">upcoming_intersection_ids_</a>.data.push_back(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(map_msg_intersection_id));</div>
-<div class="line"><span class="lineno"> 2257</span>    <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9976591578b2eb031c24c9f63f9c3051">upcoming_intersection_ids_</a>.data.push_back(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(cur_signal_group_id));</div>
-<div class="line"><span class="lineno"> 2258</span>  }</div>
-<div class="line"><span class="lineno"> 2259</span>}</div>
+<p class="definition">Definition at line <a class="el" href="WMBroadcaster_8cpp_source.html#l02197">2197</a> of file <a class="el" href="WMBroadcaster_8cpp_source.html">WMBroadcaster.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 2198</span>{</div>
+<div class="line"><span class="lineno"> 2199</span>  <a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> map_msg_intersection_id = 0;</div>
+<div class="line"><span class="lineno"> 2200</span>  <a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> cur_signal_group_id = 0;</div>
+<div class="line"><span class="lineno"> 2201</span>  std::vector&lt;lanelet::CarmaTrafficSignalPtr&gt; traffic_lights;</div>
+<div class="line"><span class="lineno"> 2202</span>  lanelet::Lanelet route_lanelet;</div>
+<div class="line"><span class="lineno"> 2203</span>  lanelet::Ids cur_route_lanelet_ids = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a2c67e3708a1f2e191b24bdec5caf2af3">current_route</a>.route_path_lanelet_ids;</div>
+<div class="line"><span class="lineno"> 2204</span>  <span class="keywordtype">bool</span> isLightFound = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 2205</span>  </div>
+<div class="line"><span class="lineno"> 2206</span>  <span class="keywordflow">for</span>(<span class="keyword">auto</span> <span class="keywordtype">id</span> : cur_route_lanelet_ids) </div>
+<div class="line"><span class="lineno"> 2207</span>  {    </div>
+<div class="line"><span class="lineno"> 2208</span>    route_lanelet= <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;laneletLayer.get(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno"> 2209</span>    traffic_lights = route_lanelet.regulatoryElementsAs&lt;lanelet::CarmaTrafficSignal&gt;();</div>
+<div class="line"><span class="lineno"> 2210</span>    <span class="keywordflow">if</span>(!traffic_lights.empty())</div>
+<div class="line"><span class="lineno"> 2211</span>    {</div>
+<div class="line"><span class="lineno"> 2212</span>      isLightFound  = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno"> 2213</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno"> 2214</span>    }</div>
+<div class="line"><span class="lineno"> 2215</span>  }</div>
+<div class="line"><span class="lineno"> 2216</span> </div>
+<div class="line"><span class="lineno"> 2217</span>  <span class="keywordflow">if</span>(isLightFound &amp;&amp; !<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aa26bb2f41f25b523fd2a98010af60cb0">sim_</a>)</div>
+<div class="line"><span class="lineno"> 2218</span>  {</div>
+<div class="line"><span class="lineno"> 2219</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aa26bb2f41f25b523fd2a98010af60cb0">sim_</a>-&gt;signal_group_to_traffic_light_id_.begin(); itr != <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aa26bb2f41f25b523fd2a98010af60cb0">sim_</a>-&gt;signal_group_to_traffic_light_id_.end(); itr++)</div>
+<div class="line"><span class="lineno"> 2220</span>    {     </div>
+<div class="line"><span class="lineno"> 2221</span>      <span class="keywordflow">if</span>(itr-&gt;second == traffic_lights.front()-&gt;id())</div>
+<div class="line"><span class="lineno"> 2222</span>      {</div>
+<div class="line"><span class="lineno"> 2223</span>        cur_signal_group_id = itr-&gt;first;</div>
+<div class="line"><span class="lineno"> 2224</span>      }</div>
+<div class="line"><span class="lineno"> 2225</span>    }</div>
+<div class="line"><span class="lineno"> 2226</span>  }</div>
+<div class="line"><span class="lineno"> 2227</span>  <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno"> 2228</span>     RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;NO matching Traffic lights along the route&quot;</span>);</div>
+<div class="line"><span class="lineno"> 2229</span>  }<span class="comment">//END Traffic signals</span></div>
+<div class="line"><span class="lineno"> 2230</span> </div>
+<div class="line"><span class="lineno"> 2231</span>  <span class="keyword">auto</span> intersections = route_lanelet.regulatoryElementsAs&lt;lanelet::SignalizedIntersection&gt;();</div>
+<div class="line"><span class="lineno"> 2232</span>  <span class="keywordflow">if</span> (intersections.empty())</div>
+<div class="line"><span class="lineno"> 2233</span>  {</div>
+<div class="line"><span class="lineno"> 2234</span>    <span class="comment">// no match if any of the entry lanelet is not part of any intersection.</span></div>
+<div class="line"><span class="lineno"> 2235</span>    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;NO matching intersection for current lanelet. lanelet id = &quot;</span> &lt;&lt; route_lanelet.id());</div>
+<div class="line"><span class="lineno"> 2236</span>  }</div>
+<div class="line"><span class="lineno"> 2237</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 2238</span>  {</div>
+<div class="line"><span class="lineno"> 2239</span>    <span class="comment">//Currently, each lanelet has only one intersection</span></div>
+<div class="line"><span class="lineno"> 2240</span>    lanelet::Id intersection_id = intersections.front()-&gt;id();    </div>
+<div class="line"><span class="lineno"> 2241</span>    <span class="keywordflow">if</span>(intersection_id != lanelet::InvalId)</div>
+<div class="line"><span class="lineno"> 2242</span>    {</div>
+<div class="line"><span class="lineno"> 2243</span>      <span class="keywordflow">for</span>(<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aa26bb2f41f25b523fd2a98010af60cb0">sim_</a>-&gt;intersection_id_to_regem_id_.begin(); itr != <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#aa26bb2f41f25b523fd2a98010af60cb0">sim_</a>-&gt;intersection_id_to_regem_id_.end(); itr++)</div>
+<div class="line"><span class="lineno"> 2244</span>      {</div>
+<div class="line"><span class="lineno"> 2245</span>        <span class="keywordflow">if</span>(itr-&gt;second == intersection_id)</div>
+<div class="line"><span class="lineno"> 2246</span>        {</div>
+<div class="line"><span class="lineno"> 2247</span>          map_msg_intersection_id = itr-&gt;first;</div>
+<div class="line"><span class="lineno"> 2248</span>        }</div>
+<div class="line"><span class="lineno"> 2249</span>      }</div>
+<div class="line"><span class="lineno"> 2250</span>    }</div>
+<div class="line"><span class="lineno"> 2251</span>  } <span class="comment">//END intersections</span></div>
+<div class="line"><span class="lineno"> 2252</span> </div>
+<div class="line"><span class="lineno"> 2253</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;MAP msg: Intersection ID = &quot;</span> &lt;&lt;  map_msg_intersection_id &lt;&lt; <span class="stringliteral">&quot;, Signal Group ID =&quot;</span> &lt;&lt; cur_signal_group_id );</div>
+<div class="line"><span class="lineno"> 2254</span>  <span class="keywordflow">if</span>(map_msg_intersection_id != 0 &amp;&amp; cur_signal_group_id != 0)</div>
+<div class="line"><span class="lineno"> 2255</span>  { </div>
+<div class="line"><span class="lineno"> 2256</span>    <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9976591578b2eb031c24c9f63f9c3051">upcoming_intersection_ids_</a>.data.clear();</div>
+<div class="line"><span class="lineno"> 2257</span>    <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9976591578b2eb031c24c9f63f9c3051">upcoming_intersection_ids_</a>.data.push_back(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(map_msg_intersection_id));</div>
+<div class="line"><span class="lineno"> 2258</span>    <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9976591578b2eb031c24c9f63f9c3051">upcoming_intersection_ids_</a>.data.push_back(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(cur_signal_group_id));</div>
+<div class="line"><span class="lineno"> 2259</span>  }</div>
+<div class="line"><span class="lineno"> 2260</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="WMBroadcaster_8hpp_source.html#l00429">current_map_</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00453">current_route</a>, <a class="el" href="WMBroadcaster_8hpp_source.html#l00463">sim_</a>, and <a class="el" href="WMBroadcaster_8hpp_source.html#l00406">upcoming_intersection_ids_</a>.</p>
 
@@ -5811,7 +5812,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMBroadcaster_8hpp_source.html#l00470">470</a> of file <a class="el" href="WMBroadcaster_8hpp_source.html">WMBroadcaster.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l02261">pubTCMACK()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l01238">setConfigACKPubTimes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l02262">pubTCMACK()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l01238">setConfigACKPubTimes()</a>.</p>
 
 </div>
 </div>
@@ -6043,7 +6044,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMBroadcaster_8hpp_source.html#l00429">429</a> of file <a class="el" href="WMBroadcaster_8hpp_source.html">WMBroadcaster.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l01457">addBackRegulatoryComponent()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01488">addGeofence()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01912">addGeofenceHelper()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01416">addRegulatoryComponent()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00056">baseMapCallback()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l02012">checkActiveGeofenceLogic()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01641">controlRequestFromRoute()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00420">createWorkzoneGeometry()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01946">currentLocationCallback()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01868">distToNearestActiveGeofence()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01030">externalMapMsgCallback()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00217">geofenceFromMapMsg()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00262">geofenceFromMsg()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01344">getAffectedLaneletOrAreas()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01264">getPointsInLocalFrame()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00600">preprocessWorkzoneGeometry()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01971">publishLightId()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01578">removeGeofence()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01357">shouldChangeControlLine()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01388">shouldChangeTrafficSignal()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00797">splitLaneletWithRatio()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00776">splitOppositeLaneletWithPoint()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l02196">updateUpcomingSGIntersectionIds()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l01457">addBackRegulatoryComponent()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01488">addGeofence()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01912">addGeofenceHelper()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01416">addRegulatoryComponent()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00056">baseMapCallback()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l02012">checkActiveGeofenceLogic()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01641">controlRequestFromRoute()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00420">createWorkzoneGeometry()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01946">currentLocationCallback()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01868">distToNearestActiveGeofence()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01030">externalMapMsgCallback()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00217">geofenceFromMapMsg()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00262">geofenceFromMsg()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01344">getAffectedLaneletOrAreas()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01264">getPointsInLocalFrame()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00600">preprocessWorkzoneGeometry()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01971">publishLightId()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01578">removeGeofence()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01357">shouldChangeControlLine()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01388">shouldChangeTrafficSignal()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00797">splitLaneletWithRatio()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00776">splitOppositeLaneletWithPoint()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l02197">updateUpcomingSGIntersectionIds()</a>.</p>
 
 </div>
 </div>
@@ -6095,7 +6096,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMBroadcaster_8hpp_source.html#l00453">453</a> of file <a class="el" href="WMBroadcaster_8hpp_source.html">WMBroadcaster.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l01627">getRoute()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01971">publishLightId()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01632">routeCallbackMessage()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l02196">updateUpcomingSGIntersectionIds()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l01627">getRoute()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01971">publishLightId()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01632">routeCallbackMessage()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l02197">updateUpcomingSGIntersectionIds()</a>.</p>
 
 </div>
 </div>
@@ -6199,7 +6200,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMBroadcaster_8hpp_source.html#l00469">469</a> of file <a class="el" href="WMBroadcaster_8hpp_source.html">WMBroadcaster.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l02261">pubTCMACK()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l02262">pubTCMACK()</a>.</p>
 
 </div>
 </div>
@@ -6406,7 +6407,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMBroadcaster_8hpp_source.html#l00441">441</a> of file <a class="el" href="WMBroadcaster_8hpp_source.html">WMBroadcaster.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l00047">WMBroadcaster()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00117">addScheduleFromMsg()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01641">controlRequestFromRoute()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l02261">pubTCMACK()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l01137">scheduleGeofence()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l00047">WMBroadcaster()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00117">addScheduleFromMsg()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01641">controlRequestFromRoute()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l02262">pubTCMACK()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l01137">scheduleGeofence()</a>.</p>
 
 </div>
 </div>
@@ -6432,7 +6433,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMBroadcaster_8hpp_source.html#l00463">463</a> of file <a class="el" href="WMBroadcaster_8hpp_source.html">WMBroadcaster.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l01488">addGeofence()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01416">addRegulatoryComponent()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01030">externalMapMsgCallback()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00217">geofenceFromMapMsg()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01198">geoReferenceCallback()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01213">setIntersectionCoordCorrection()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01205">setMaxLaneWidth()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01388">shouldChangeTrafficSignal()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l02196">updateUpcomingSGIntersectionIds()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l01488">addGeofence()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01416">addRegulatoryComponent()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01030">externalMapMsgCallback()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00217">geofenceFromMapMsg()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01198">geoReferenceCallback()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01213">setIntersectionCoordCorrection()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01205">setMaxLaneWidth()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01388">shouldChangeTrafficSignal()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l02197">updateUpcomingSGIntersectionIds()</a>.</p>
 
 </div>
 </div>
@@ -6458,7 +6459,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMBroadcaster_8hpp_source.html#l00442">442</a> of file <a class="el" href="WMBroadcaster_8hpp_source.html">WMBroadcaster.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l02261">pubTCMACK()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l02262">pubTCMACK()</a>.</p>
 
 </div>
 </div>
@@ -6538,7 +6539,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMBroadcaster_8hpp_source.html#l00406">406</a> of file <a class="el" href="WMBroadcaster_8hpp_source.html">WMBroadcaster.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l01971">publishLightId()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l02196">updateUpcomingSGIntersectionIds()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l01971">publishLightId()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l02197">updateUpcomingSGIntersectionIds()</a>.</p>
 
 </div>
 </div>
@@ -6590,7 +6591,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMBroadcaster_8hpp_source.html#l00471">471</a> of file <a class="el" href="WMBroadcaster_8hpp_source.html">WMBroadcaster.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l02261">pubTCMACK()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l01234">setConfigVehicleId()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l02262">pubTCMACK()</a>, and <a class="el" href="WMBroadcaster_8cpp_source.html#l01234">setConfigVehicleId()</a>.</p>
 
 </div>
 </div>
@@ -6678,7 +6679,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm__ctrl.html">carma_wm_ctrl</a></li><li class="navelem"><a class="el" href="classcarma__wm__ctrl_1_1WMBroadcaster.html">WMBroadcaster</a></li>
-    <li class="footer">Generated on Wed Nov 2 2022 19:11:54 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Nov 2 2022 19:53:24 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -169,85 +169,86 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   89</span>                ],</div>
 <div class="line"><span class="lineno">   90</span>                remappings=[</div>
 <div class="line"><span class="lineno">   91</span>                    (<span class="stringliteral">&quot;plan_trajectory&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_GUIDE_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/plan_trajectory&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">   92</span>                    (<span class="stringliteral">&quot;georeference&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">   93</span>                    (<span class="stringliteral">&quot;mobility_path_msg&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/outgoing_mobility_path&quot;</span> ] )</div>
-<div class="line"><span class="lineno">   94</span>                ],</div>
-<div class="line"><span class="lineno">   95</span>                parameters=[ </div>
-<div class="line"><span class="lineno">   96</span>                    mobilitypath_publisher_param_file,</div>
-<div class="line"><span class="lineno">   97</span>                    vehicle_characteristics_param_file</div>
-<div class="line"><span class="lineno">   98</span>                ]</div>
-<div class="line"><span class="lineno">   99</span>            ),</div>
-<div class="line"><span class="lineno">  100</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  101</span>                package=<span class="stringliteral">&#39;bsm_generator&#39;</span>,</div>
-<div class="line"><span class="lineno">  102</span>                plugin=<span class="stringliteral">&#39;bsm_generator::BSMGenerator&#39;</span>,</div>
-<div class="line"><span class="lineno">  103</span>                name=<span class="stringliteral">&#39;bsm_generator_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  104</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  105</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>}, </div>
-<div class="line"><span class="lineno">  106</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;bsm_generator&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  107</span>                ],</div>
-<div class="line"><span class="lineno">  108</span>                remappings=[</div>
-<div class="line"><span class="lineno">  109</span>                    (<span class="stringliteral">&quot;velocity_accel_cov&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/velocity_accel_cov&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  110</span>                    (<span class="stringliteral">&quot;ekf_twist&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/vehicle/twist&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  111</span>                    (<span class="stringliteral">&quot;imu_raw&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/imu_raw&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  112</span>                    (<span class="stringliteral">&quot;transmission_state&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/can/transmission_state&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  113</span>                    (<span class="stringliteral">&quot;brake_position&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/can/brake_position&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  114</span>                    (<span class="stringliteral">&quot;steering_wheel_angle&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/can/steering_wheel_angle&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  115</span>                    (<span class="stringliteral">&quot;gnss_fix_fused&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/gnss_fix_fused&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  116</span>                    (<span class="stringliteral">&quot;pose&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/current_pose&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  117</span>                    (<span class="stringliteral">&quot;georeference&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span> ] )</div>
-<div class="line"><span class="lineno">  118</span>                ],</div>
-<div class="line"><span class="lineno">  119</span>                parameters=[ </div>
-<div class="line"><span class="lineno">  120</span>                    bsm_generator_param_file,</div>
-<div class="line"><span class="lineno">  121</span>                    vehicle_characteristics_param_file,</div>
-<div class="line"><span class="lineno">  122</span>                    vehicle_config_param_file</div>
-<div class="line"><span class="lineno">  123</span>                ]</div>
-<div class="line"><span class="lineno">  124</span>            ),</div>
-<div class="line"><span class="lineno">  125</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  126</span>                package=<span class="stringliteral">&#39;cpp_message&#39;</span>,</div>
-<div class="line"><span class="lineno">  127</span>                plugin=<span class="stringliteral">&#39;cpp_message::Node&#39;</span>,</div>
-<div class="line"><span class="lineno">  128</span>                name=<span class="stringliteral">&#39;cpp_message_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  129</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  130</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  131</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cpp_message&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  132</span>                ],</div>
-<div class="line"><span class="lineno">  133</span>                remappings=[</div>
-<div class="line"><span class="lineno">  134</span>                    (<span class="stringliteral">&quot;inbound_binary_msg&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/comms/inbound_binary_msg&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  135</span>                    (<span class="stringliteral">&quot;outbound_binary_msg&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/comms/outbound_binary_msg&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  136</span>                ],</div>
-<div class="line"><span class="lineno">  137</span>            ),</div>
-<div class="line"><span class="lineno">  138</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  139</span>                package=<span class="stringliteral">&#39;j2735_convertor&#39;</span>,</div>
-<div class="line"><span class="lineno">  140</span>                plugin=<span class="stringliteral">&#39;j2735_convertor::Node&#39;</span>,</div>
-<div class="line"><span class="lineno">  141</span>                name=<span class="stringliteral">&#39;j2735_convertor_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  142</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  143</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  144</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;j2735_convertor&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  145</span>                ],</div>
-<div class="line"><span class="lineno">  146</span>                remappings=[</div>
-<div class="line"><span class="lineno">  147</span>                    (<span class="stringliteral">&quot;outgoing_bsm&quot;</span>, <span class="stringliteral">&quot;bsm_outbound&quot;</span> ),</div>
-<div class="line"><span class="lineno">  148</span>                ],</div>
-<div class="line"><span class="lineno">  149</span>            ),</div>
-<div class="line"><span class="lineno">  150</span>        ]</div>
-<div class="line"><span class="lineno">  151</span>    )</div>
-<div class="line"><span class="lineno">  152</span> </div>
-<div class="line"><span class="lineno">  153</span>    <span class="comment"># subsystem_controller which orchestrates the lifecycle of this subsystem&#39;s components</span></div>
-<div class="line"><span class="lineno">  154</span>    subsystem_controller = Node(</div>
-<div class="line"><span class="lineno">  155</span>        package=<span class="stringliteral">&#39;subsystem_controllers&#39;</span>,</div>
-<div class="line"><span class="lineno">  156</span>        name=<span class="stringliteral">&#39;v2x_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  157</span>        executable=<span class="stringliteral">&#39;v2x_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  158</span>        parameters=[ subsystem_controller_default_param_file, subsystem_controller_param_file ], <span class="comment"># Default file is loaded first followed by config file</span></div>
-<div class="line"><span class="lineno">  159</span>        on_exit= Shutdown(), <span class="comment"># Mark the subsystem controller as required</span></div>
-<div class="line"><span class="lineno">  160</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;subsystem_controllers&#39;</span>, env_log_levels)]</div>
-<div class="line"><span class="lineno">  161</span>    )</div>
-<div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">  164</span>        declare_vehicle_config_param_file_arg,</div>
-<div class="line"><span class="lineno">  165</span>        declare_vehicle_characteristics_param_file_arg, </div>
-<div class="line"><span class="lineno">  166</span>        declare_subsystem_controller_param_file_arg,       </div>
-<div class="line"><span class="lineno">  167</span>        carma_v2x_container,</div>
-<div class="line"><span class="lineno">  168</span>        subsystem_controller</div>
-<div class="line"><span class="lineno">  169</span>    ]) </div>
-<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">   92</span>                    (<span class="stringliteral">&quot;guidance_state&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_GUIDE_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/state&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">   93</span>                    (<span class="stringliteral">&quot;georeference&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">   94</span>                    (<span class="stringliteral">&quot;mobility_path_msg&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/outgoing_mobility_path&quot;</span> ] )</div>
+<div class="line"><span class="lineno">   95</span>                ],</div>
+<div class="line"><span class="lineno">   96</span>                parameters=[ </div>
+<div class="line"><span class="lineno">   97</span>                    mobilitypath_publisher_param_file,</div>
+<div class="line"><span class="lineno">   98</span>                    vehicle_characteristics_param_file</div>
+<div class="line"><span class="lineno">   99</span>                ]</div>
+<div class="line"><span class="lineno">  100</span>            ),</div>
+<div class="line"><span class="lineno">  101</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  102</span>                package=<span class="stringliteral">&#39;bsm_generator&#39;</span>,</div>
+<div class="line"><span class="lineno">  103</span>                plugin=<span class="stringliteral">&#39;bsm_generator::BSMGenerator&#39;</span>,</div>
+<div class="line"><span class="lineno">  104</span>                name=<span class="stringliteral">&#39;bsm_generator_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  105</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  106</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>}, </div>
+<div class="line"><span class="lineno">  107</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;bsm_generator&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  108</span>                ],</div>
+<div class="line"><span class="lineno">  109</span>                remappings=[</div>
+<div class="line"><span class="lineno">  110</span>                    (<span class="stringliteral">&quot;velocity_accel_cov&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/velocity_accel_cov&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  111</span>                    (<span class="stringliteral">&quot;ekf_twist&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/vehicle/twist&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  112</span>                    (<span class="stringliteral">&quot;imu_raw&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/imu_raw&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  113</span>                    (<span class="stringliteral">&quot;transmission_state&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/can/transmission_state&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  114</span>                    (<span class="stringliteral">&quot;brake_position&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/can/brake_position&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  115</span>                    (<span class="stringliteral">&quot;steering_wheel_angle&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/can/steering_wheel_angle&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  116</span>                    (<span class="stringliteral">&quot;gnss_fix_fused&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/gnss_fix_fused&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  117</span>                    (<span class="stringliteral">&quot;pose&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/current_pose&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  118</span>                    (<span class="stringliteral">&quot;georeference&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span> ] )</div>
+<div class="line"><span class="lineno">  119</span>                ],</div>
+<div class="line"><span class="lineno">  120</span>                parameters=[ </div>
+<div class="line"><span class="lineno">  121</span>                    bsm_generator_param_file,</div>
+<div class="line"><span class="lineno">  122</span>                    vehicle_characteristics_param_file,</div>
+<div class="line"><span class="lineno">  123</span>                    vehicle_config_param_file</div>
+<div class="line"><span class="lineno">  124</span>                ]</div>
+<div class="line"><span class="lineno">  125</span>            ),</div>
+<div class="line"><span class="lineno">  126</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  127</span>                package=<span class="stringliteral">&#39;cpp_message&#39;</span>,</div>
+<div class="line"><span class="lineno">  128</span>                plugin=<span class="stringliteral">&#39;cpp_message::Node&#39;</span>,</div>
+<div class="line"><span class="lineno">  129</span>                name=<span class="stringliteral">&#39;cpp_message_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  130</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  131</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  132</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cpp_message&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  133</span>                ],</div>
+<div class="line"><span class="lineno">  134</span>                remappings=[</div>
+<div class="line"><span class="lineno">  135</span>                    (<span class="stringliteral">&quot;inbound_binary_msg&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/comms/inbound_binary_msg&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  136</span>                    (<span class="stringliteral">&quot;outbound_binary_msg&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/comms/outbound_binary_msg&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  137</span>                ],</div>
+<div class="line"><span class="lineno">  138</span>            ),</div>
+<div class="line"><span class="lineno">  139</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  140</span>                package=<span class="stringliteral">&#39;j2735_convertor&#39;</span>,</div>
+<div class="line"><span class="lineno">  141</span>                plugin=<span class="stringliteral">&#39;j2735_convertor::Node&#39;</span>,</div>
+<div class="line"><span class="lineno">  142</span>                name=<span class="stringliteral">&#39;j2735_convertor_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  143</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  144</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  145</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;j2735_convertor&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  146</span>                ],</div>
+<div class="line"><span class="lineno">  147</span>                remappings=[</div>
+<div class="line"><span class="lineno">  148</span>                    (<span class="stringliteral">&quot;outgoing_bsm&quot;</span>, <span class="stringliteral">&quot;bsm_outbound&quot;</span> )</div>
+<div class="line"><span class="lineno">  149</span>                ],</div>
+<div class="line"><span class="lineno">  150</span>            ),</div>
+<div class="line"><span class="lineno">  151</span>        ]</div>
+<div class="line"><span class="lineno">  152</span>    )</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    <span class="comment"># subsystem_controller which orchestrates the lifecycle of this subsystem&#39;s components</span></div>
+<div class="line"><span class="lineno">  155</span>    subsystem_controller = Node(</div>
+<div class="line"><span class="lineno">  156</span>        package=<span class="stringliteral">&#39;subsystem_controllers&#39;</span>,</div>
+<div class="line"><span class="lineno">  157</span>        name=<span class="stringliteral">&#39;v2x_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  158</span>        executable=<span class="stringliteral">&#39;v2x_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  159</span>        parameters=[ subsystem_controller_default_param_file, subsystem_controller_param_file ], <span class="comment"># Default file is loaded first followed by config file</span></div>
+<div class="line"><span class="lineno">  160</span>        on_exit= Shutdown(), <span class="comment"># Mark the subsystem controller as required</span></div>
+<div class="line"><span class="lineno">  161</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;subsystem_controllers&#39;</span>, env_log_levels)]</div>
+<div class="line"><span class="lineno">  162</span>    )</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><span class="lineno">  165</span>        declare_vehicle_config_param_file_arg,</div>
+<div class="line"><span class="lineno">  166</span>        declare_vehicle_characteristics_param_file_arg, </div>
+<div class="line"><span class="lineno">  167</span>        declare_subsystem_controller_param_file_arg,       </div>
+<div class="line"><span class="lineno">  168</span>        carma_v2x_container,</div>
+<div class="line"><span class="lineno">  169</span>        subsystem_controller</div>
+<div class="line"><span class="lineno">  170</span>    ]) </div>
+<div class="line"><span class="lineno">  171</span> </div>
 <div class="ttc" id="anamespacemessage_html_ac800f8f1604a1c698b659abcf26c83ad"><div class="ttname"><a href="namespacemessage.html#ac800f8f1604a1c698b659abcf26c83ad">message.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="message_8launch_8py_source.html#l00035">message.launch.py:35</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -258,7 +259,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemessage.html">message</a></li>
-    <li class="footer">Generated on Wed Nov 2 2022 19:11:55 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Nov 2 2022 19:53:26 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

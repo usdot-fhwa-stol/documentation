@@ -305,6 +305,7 @@ var menudata={children:[
 {text:"Macros",url:"globals_defs.html",children:[
 {text:"_",url:"globals_defs.html#index__5F"},
 {text:"c",url:"globals_defs_c.html#index_c"},
+{text:"e",url:"globals_defs_e.html#index_e"},
 {text:"g",url:"globals_defs_g.html#index_g"},
 {text:"i",url:"globals_defs_i.html#index_i"},
 {text:"p",url:"globals_defs_p.html#index_p"},

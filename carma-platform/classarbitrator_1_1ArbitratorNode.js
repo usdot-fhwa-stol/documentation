@@ -8,6 +8,7 @@ var classarbitrator_1_1ArbitratorNode =
     [ "arbitrator_run_", "classarbitrator_1_1ArbitratorNode.html#a1bb04fc666f6b536442f99e50a188815", null ],
     [ "bumper_pose_timer_", "classarbitrator_1_1ArbitratorNode.html#a11a4d64af87ff4256d06daa062435da2", null ],
     [ "config_", "classarbitrator_1_1ArbitratorNode.html#aa13f0f1ac25777c39accd44b156f6f1c", null ],
+    [ "twist_sub_", "classarbitrator_1_1ArbitratorNode.html#a3132754db16842b791454f7aeead2388", null ],
     [ "wm_", "classarbitrator_1_1ArbitratorNode.html#a17d25fa12d5a4123b52aab553aa608d6", null ],
     [ "wm_listener_", "classarbitrator_1_1ArbitratorNode.html#abff157ce0e4fe61276300c828d388684", null ]
 ];

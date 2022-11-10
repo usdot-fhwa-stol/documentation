@@ -94,223 +94,358 @@ $(document).ready(function(){initNavTree('signal__opt__service_8cpp_source.html'
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>        <span class="keywordflow">try</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>            _so_msgs_worker_ptr = std::make_shared&lt;signal_opt_messages_worker&gt;();</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>            _so_processing_worker_ptr = std::make_shared&lt;signal_opt_processing_worker&gt;();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            _movement_groups = std::make_shared&lt;movement_groups&gt;();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            intersection_info_ptr = std::make_shared&lt;OpenAPI::OAIIntersection_info&gt;();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            vehicle_list_ptr = std::make_shared&lt;streets_vehicles::vehicle_list&gt;();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keyword">auto</span> processor = std::make_shared&lt;streets_vehicles::signalized_status_intent_processor&gt;();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            processor-&gt;set_timeout(<a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;exp_delta&quot;</span>));</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            vehicle_list_ptr-&gt;set_processor(processor);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            spat_ptr = std::make_shared&lt;signal_phase_and_timing::spat&gt;();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            tsc_configuration_ptr = std::make_shared&lt;streets_tsc_configuration::tsc_configuration_state&gt;();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="comment">// Kafka config</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keyword">auto</span> client = std::make_unique&lt;kafka_clients::kafka_client&gt;();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            _bootstrap_server = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;bootstrap_server&quot;</span>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            _spat_topic_name = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;spat_consumer_topic&quot;</span>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            _spat_group_id = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;spat_group_id&quot;</span>);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            _vsi_topic_name = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;vsi_consumer_topic&quot;</span>);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            _vsi_group_id = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;vsi_group_id&quot;</span>);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            _tsc_config_topic_name = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;tsc_config_consumer_topic&quot;</span>);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            _tsc_config_group_id = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;tsc_config_group_id&quot;</span>);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            _spat_consumer = client-&gt;create_consumer(_bootstrap_server, _spat_topic_name, _spat_group_id);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            _vsi_consumer = client-&gt;create_consumer(_bootstrap_server, _vsi_topic_name, _vsi_group_id);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            _tsc_config_consumer = client-&gt;create_consumer(_bootstrap_server, _tsc_config_topic_name, _tsc_config_group_id);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordflow">if</span> (!_spat_consumer-&gt;init() || !_vsi_consumer-&gt;init() || !_tsc_config_consumer-&gt;init() )</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                SPDLOG_CRITICAL(<span class="stringliteral">&quot;kafka consumers ( _spat_consumer, _tsc_config_consumer  or _vsi_consumer ) initialize error&quot;</span>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                _spat_consumer-&gt;subscribe();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                _vsi_consumer-&gt;subscribe();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                _tsc_config_consumer-&gt;subscribe();</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <span class="keywordflow">if</span> (!_spat_consumer-&gt;is_running() || !_vsi_consumer-&gt;is_running() || !_tsc_config_consumer-&gt;is_running())</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;kafka consumers ( _spat_consumer, _tsc_config_consumer or _vsi_consumer) is not running&quot;</span>);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                    exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="comment">// Serice config</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keyword">auto</span> sleep_millisecs = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;sleep_millisecs&quot;</span>);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keyword">auto</span> int_client_request_attempts = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;int_client_request_attempts&quot;</span>);            </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="comment">// HTTP request to update intersection information</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">if</span> (!update_intersection_info(sleep_millisecs, int_client_request_attempts))</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to initialize signal_opt_service due to intersection client request failure!&quot;</span>);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            SPDLOG_INFO(<span class="stringliteral">&quot;signal_opt_service initialized successfully!!!&quot;</span>);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="comment">//Parameter config</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            _initial_green_buffer =<a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;initial_green_buffer&quot;</span>);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            _final_green_buffer = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;final_green_buffer&quot;</span>);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classstreets__service_1_1streets__configuration__exception.html">streets_service::streets_configuration_exception</a> &amp;ex)</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Signal Optimization Service Initialization failure: {0} &quot;</span>, ex.what());</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#ad12855361a0142c7a4e52439169ccc43">   75</a></span>    <span class="keywordtype">void</span> signal_opt_service::start()</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        std::thread tsc_config_t(&amp;signal_opt_service::consume_tsc_config, <span class="keyword">this</span>, this-&gt;_tsc_config_consumer, this-&gt;tsc_configuration_ptr);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="comment">// Block until TSC configuration information is received </span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        tsc_config_t.join();</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="comment">// After TSC configuration information is received, use it to determine movemement groups</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        populate_movement_groups(_movement_groups, tsc_configuration_ptr);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="comment">// After movement groups are created, process vehicle status and intent and spat messages to</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="comment">// maintain information about current vehicle states and TSC state</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        std::thread vsi_t(&amp;signal_opt_service::consume_vsi,  <span class="keyword">this</span>, this-&gt;_vsi_consumer, this-&gt;vehicle_list_ptr);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        std::thread spat_t(&amp;signal_opt_service::consume_spat,<span class="keyword">this</span>, this-&gt;_spat_consumer, this-&gt;spat_ptr);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="comment">// Running in parallel</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        spat_t.join();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        vsi_t.join();</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a7ec147e3dacd67b830825ecca3d03da2">   91</a></span>    <span class="keywordtype">void</span> signal_opt_service::consume_spat(<span class="keyword">const</span> std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; spat_consumer, </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                                            <span class="keyword">const</span> std::shared_ptr&lt;signal_phase_and_timing::spat&gt; _spat_ptr )<span class="keyword"> const</span>{</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">while</span>( spat_consumer-&gt;is_running()) {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keyword">const</span> std::string payload = spat_consumer-&gt;consume(1000); </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">if</span> (!payload.empty()) {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <span class="keywordtype">bool</span> update = _so_msgs_worker_ptr-&gt;update_spat(payload,_spat_ptr);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                <span class="keywordflow">if</span> ( !update )</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to update SPaT with update {0}!&quot;</span>, payload);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a7bf6f1bfa75563286ff32a61df80e96f">  103</a></span>    <span class="keywordtype">void</span> signal_opt_service::consume_vsi(<span class="keyword">const</span> std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; vsi_consumer,</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                                         <span class="keyword">const</span> std::shared_ptr&lt;streets_vehicles::vehicle_list&gt; _vehicle_list_ptr)<span class="keyword"> const</span>{</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">while</span>( vsi_consumer-&gt;is_running()) {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keyword">const</span> std::string payload = vsi_consumer-&gt;consume(1000); </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keywordflow">if</span> (!payload.empty()) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                <span class="keywordtype">bool</span> update = _so_msgs_worker_ptr-&gt;update_vehicle_list(payload,_vehicle_list_ptr);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                <span class="keywordflow">if</span> (!update)</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to update Vehicle List with update {0}!&quot;</span>, payload);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            }</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a31b70d2b908ea9a867d49a7f809c98e8">  115</a></span>    <span class="keywordtype">void</span> signal_opt_service::consume_tsc_config( <span class="keyword">const</span> std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; tsc_config_consumer,</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                                                <span class="keyword">const</span> std::shared_ptr&lt;streets_tsc_configuration::tsc_configuration_state&gt; _tsc_config_ptr)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">while</span>( tsc_config_consumer-&gt;is_running()) {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <span class="keyword">const</span> std::string payload = tsc_config_consumer-&gt;consume(1000); </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">if</span> (!payload.empty()) {</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                <span class="keywordtype">bool</span> update = _so_msgs_worker_ptr-&gt;update_tsc_config(payload,_tsc_config_ptr);</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                <span class="keywordflow">if</span> (!update) {</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to update TSC Configuration with update {0}!&quot;</span>, payload);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                }<span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                    <span class="comment">// Stop consumer after receiving tsc_configuration information</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                    tsc_config_consumer-&gt;stop();</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a646100738cee50a274d142e680d3721e">  132</a></span>    <span class="keywordtype">void</span> signal_opt_service::populate_movement_groups(std::shared_ptr&lt;movement_groups&gt; _groups, </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                                                <span class="keyword">const</span> std::shared_ptr&lt;streets_tsc_configuration::tsc_configuration_state&gt; tsc_config)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keywordflow">if</span> (tsc_config) {</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;phase_config : tsc_config-&gt;tsc_config_list) {</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                <span class="comment">// If signal group has one or more concurrent phase</span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                <span class="keywordflow">if</span> ( !phase_config.concurrent_signal_groups.empty() ) {</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                    <span class="comment">// Loop through concurrent phases and create a movement group for each pair</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;concur : phase_config.concurrent_signal_groups) {</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                        <a class="code hl_struct" href="structsignal__opt__service_1_1movement__group.html">movement_group</a> new_group;</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                        new_group.<a class="code hl_variable" href="structsignal__opt__service_1_1movement__group.html#aba592cd2ae1c50d2fb1a89152ae624dc">signal_groups</a> = {phase_config.signal_group_id, concur};</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                        <span class="comment">// Initialize a flag for if this pair already exists in the movement groups in reverse.</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                        <span class="keywordtype">bool</span> already_added = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                        <span class="comment">// loop through movement groups and set flag to true if pair already exists in reverse order.</span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                        <span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keyword">auto</span> &amp;add_group: _groups-&gt;groups ) {</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                            <span class="keywordflow">if</span> ( add_group.signal_groups.second == new_group.<a class="code hl_variable" href="structsignal__opt__service_1_1movement__group.html#aba592cd2ae1c50d2fb1a89152ae624dc">signal_groups</a>.first &amp;&amp; </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                                    add_group.signal_groups.first == new_group.<a class="code hl_variable" href="structsignal__opt__service_1_1movement__group.html#aba592cd2ae1c50d2fb1a89152ae624dc">signal_groups</a>.second) {</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                                already_added = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                            }</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                        }</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                        <span class="comment">// Only add a new pair if it does not already exist in movement groups in reverse.</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                        <span class="keywordflow">if</span> (!already_added) {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                            _groups-&gt;groups.push_back(new_group);</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                        }</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                    }</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                }</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                <span class="comment">// If signal group does not have any concurrent phases add it as a movement group pair of between itself and 0 since</span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                <span class="comment">// 0 is an invalid signal group</span></div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                    <a class="code hl_struct" href="structsignal__opt__service_1_1movement__group.html">movement_group</a> new_group;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                    <span class="comment">// Add invalid signal group 0 as current signal group to indicate there is none.</span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                    new_group.<a class="code hl_variable" href="structsignal__opt__service_1_1movement__group.html#aba592cd2ae1c50d2fb1a89152ae624dc">signal_groups</a> = { phase_config.signal_group_id, 0};</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                    _groups-&gt;groups.push_back(new_group);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                }</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            }</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Movement Groups: &quot;</span>);</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keyword">auto</span> &amp;mg : _groups-&gt;groups) {</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                SPDLOG_DEBUG(<span class="stringliteral">&quot;Signal Group {0} and Signal Group {1}.&quot;</span>, mg.signal_groups.first, mg.signal_groups.second );</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            }</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        }</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a605d6fc843afcaf4f667be4bd8db65c4">  175</a></span>    <span class="keywordtype">bool</span> signal_opt_service::update_intersection_info(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> sleep_millisecs, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> int_client_request_attempts)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keyword">auto</span> sleep_secs = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(sleep_millisecs / 1000);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        SPDLOG_INFO(<span class="stringliteral">&quot;Send client request to update intersection inforamtion every {0} seconds for maximum {1} times.&quot;</span>, sleep_secs, int_client_request_attempts);</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordtype">int</span> attempt_count = 0;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">while</span> (attempt_count &lt; int_client_request_attempts)</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        {</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="comment">// Send HTTP request, and update intersection information. If updated successfully, it returns true and exit the while loop.</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            <span class="keywordflow">if</span> (_so_msgs_worker_ptr &amp;&amp; _so_msgs_worker_ptr-&gt;request_intersection_info(intersection_info_ptr))</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            {</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            }</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            sleep(sleep_secs);</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            attempt_count++;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        }</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="comment">// If failed to update the intersection information after certain numbers of attempts</span></div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        SPDLOG_ERROR(<span class="stringliteral">&quot;Updating Intersection information failed. &quot;</span>);</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    }</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a0d08faf7254086e5e9507957fa4b2acc">  195</a></span>    signal_opt_service::~signal_opt_service()</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    {</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordflow">if</span> (_spat_consumer)</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        {</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            _spat_consumer-&gt;stop();</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        }</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keywordflow">if</span> (_vsi_consumer)</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        {</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            _vsi_consumer-&gt;stop();</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        }</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordflow">if</span> (_tsc_config_consumer) </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        {</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            _tsc_config_consumer-&gt;stop();</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        }</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>            read_configuration_params();</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>            </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            _so_msgs_worker_ptr = std::make_shared&lt;signal_opt_messages_worker&gt;();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            _so_processing_worker_ptr = std::make_shared&lt;signal_opt_processing_worker&gt;();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            movement_groups_ptr = std::make_shared&lt;streets_signal_optimization::movement_groups&gt;();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            vehicle_list_ptr = std::make_shared&lt;streets_vehicles::vehicle_list&gt;();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keyword">auto</span> processor = std::make_shared&lt;streets_vehicles::signalized_status_intent_processor&gt;();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            processor-&gt;set_timeout(_exp_delta);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            vehicle_list_ptr-&gt;set_processor(processor);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            intersection_info_ptr = std::make_shared&lt;OpenAPI::OAIIntersection_info&gt;();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            spat_ptr = std::make_shared&lt;signal_phase_and_timing::spat&gt;();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            tsc_configuration_ptr = std::make_shared&lt;streets_tsc_configuration::tsc_configuration_state&gt;();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="comment">// Kafka config</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keyword">auto</span> client = std::make_unique&lt;kafka_clients::kafka_client&gt;();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            _spat_consumer = client-&gt;create_consumer(_bootstrap_server, _spat_topic_name, _spat_group_id);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            _vsi_consumer = client-&gt;create_consumer(_bootstrap_server, _vsi_topic_name, _vsi_group_id);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            _tsc_config_consumer = client-&gt;create_consumer(_bootstrap_server, _tsc_config_topic_name, _tsc_config_group_id);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            _dpp_producer = client-&gt;create_producer(_bootstrap_server, _dpp_topic_name);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordflow">if</span> (!_spat_consumer-&gt;init() || !_vsi_consumer-&gt;init() || !_tsc_config_consumer-&gt;init() )</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                SPDLOG_CRITICAL(<span class="stringliteral">&quot;kafka consumers ( _spat_consumer, _tsc_config_consumer  or _vsi_consumer ) initialize error!&quot;</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                _spat_consumer-&gt;subscribe();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                _vsi_consumer-&gt;subscribe();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                _tsc_config_consumer-&gt;subscribe();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <span class="keywordflow">if</span> (!_spat_consumer-&gt;is_running() || !_vsi_consumer-&gt;is_running() || !_tsc_config_consumer-&gt;is_running())</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;kafka consumers ( _spat_consumer, _tsc_config_consumer or _vsi_consumer) is not running!&quot;</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">if</span>(!_dpp_producer-&gt;init())</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                SPDLOG_CRITICAL(<span class="stringliteral">&quot;kafka producer (_dpp_producer) initialize error!&quot;</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="comment">// Create logger</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordflow">if</span> ( enable_so_logging ) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                configure_csv_logger();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                _so_processing_worker_ptr-&gt;set_enable_so_logging(enable_so_logging);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="comment">// Service config</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keyword">auto</span> sleep_millisecs = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;sleep_millisecs&quot;</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keyword">auto</span> int_client_request_attempts = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;int_client_request_attempts&quot;</span>);            </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="comment">// HTTP request to update intersection information</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">if</span> (!update_intersection_info(sleep_millisecs, int_client_request_attempts))</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to initialize signal_opt_service due to intersection client request failure!&quot;</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="comment">//Configure signal_opt_processing_worker</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            _so_processing_worker_ptr-&gt;configure_signal_opt_processing_worker(dpp_config);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            SPDLOG_INFO(<span class="stringliteral">&quot;signal_opt_service initialized successfully!!!&quot;</span>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classstreets__service_1_1streets__configuration__exception.html">streets_service::streets_configuration_exception</a> &amp;ex)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Signal Optimization Service Initialization failure: {0} &quot;</span>, ex.what());</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#ad12855361a0142c7a4e52439169ccc43">   83</a></span>    <span class="keywordtype">void</span> signal_opt_service::start()</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        std::thread tsc_config_t(&amp;signal_opt_service::consume_tsc_config, <span class="keyword">this</span>, this-&gt;_tsc_config_consumer, this-&gt;tsc_configuration_ptr);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="comment">// Block until TSC configuration information is received </span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        tsc_config_t.join();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="comment">// After TSC configuration information is received, use it to determine movemement groups</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        populate_movement_groups(movement_groups_ptr, tsc_configuration_ptr);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="comment">// After movement groups are created, process vehicle status and intent and spat messages to</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="comment">// maintain information about current vehicle states and TSC state</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        std::thread vsi_t(&amp;signal_opt_service::consume_vsi,  <span class="keyword">this</span>, this-&gt;_vsi_consumer, this-&gt;vehicle_list_ptr);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        std::thread spat_t(&amp;signal_opt_service::consume_spat,<span class="keyword">this</span>, this-&gt;_spat_consumer, this-&gt;spat_ptr);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        std::thread dpp_t(&amp;signal_opt_service::produce_dpp, <span class="keyword">this</span>, this-&gt;_dpp_producer,</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                                                            this-&gt;intersection_info_ptr,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                                                            this-&gt;vehicle_list_ptr, </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                                                            this-&gt;spat_ptr, </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                                                            this-&gt;tsc_configuration_ptr,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                                                            this-&gt;movement_groups_ptr,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                                                            this-&gt;dpp_config,</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                                                            this-&gt;so_sleep_time);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="comment">// Running in parallel</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        spat_t.join();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        vsi_t.join();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        dpp_t.join();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a7ec147e3dacd67b830825ecca3d03da2">  108</a></span>    <span class="keywordtype">void</span> signal_opt_service::consume_spat(<span class="keyword">const</span> std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; spat_consumer, </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                                            <span class="keyword">const</span> std::shared_ptr&lt;signal_phase_and_timing::spat&gt; _spat_ptr )<span class="keyword"> const</span>{</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">while</span>( spat_consumer-&gt;is_running()) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <span class="keyword">const</span> std::string payload = spat_consumer-&gt;consume(1000); </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keywordflow">if</span> (!payload.empty()) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                <span class="keywordtype">bool</span> update = _so_msgs_worker_ptr-&gt;update_spat(payload,_spat_ptr);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                <span class="keywordflow">if</span> ( !update ){</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to update SPaT with update {0}!&quot;</span>, payload);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            }   </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a7bf6f1bfa75563286ff32a61df80e96f">  121</a></span>    <span class="keywordtype">void</span> signal_opt_service::consume_vsi(<span class="keyword">const</span> std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; vsi_consumer,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                                         <span class="keyword">const</span> std::shared_ptr&lt;streets_vehicles::vehicle_list&gt; _vehicle_list_ptr)<span class="keyword"> const</span>{</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordflow">while</span>( vsi_consumer-&gt;is_running()) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keyword">const</span> std::string payload = vsi_consumer-&gt;consume(1000); </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keywordflow">if</span> (!payload.empty()) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                <span class="keywordtype">bool</span> update = _so_msgs_worker_ptr-&gt;update_vehicle_list(payload,_vehicle_list_ptr);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                <span class="keywordflow">if</span> (!update) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to update Vehicle List with update {0}!&quot;</span>, payload);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            }   </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a31b70d2b908ea9a867d49a7f809c98e8">  134</a></span>    <span class="keywordtype">void</span> signal_opt_service::consume_tsc_config( <span class="keyword">const</span> std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; tsc_config_consumer,</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                                                <span class="keyword">const</span> std::shared_ptr&lt;streets_tsc_configuration::tsc_configuration_state&gt; _tsc_config_ptr)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">while</span>( tsc_config_consumer-&gt;is_running()) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            <span class="keyword">const</span> std::string payload = tsc_config_consumer-&gt;consume(1000); </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <span class="keywordflow">if</span> (!payload.empty()) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                <span class="keywordtype">bool</span> update = _so_msgs_worker_ptr-&gt;update_tsc_config(payload,_tsc_config_ptr);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                <span class="keywordflow">if</span> (!update) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to update TSC Configuration with update {0}!&quot;</span>, payload);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                }<span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                    <span class="comment">// Stop consumer after receiving tsc_configuration information</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                    tsc_config_consumer-&gt;stop();</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a5360de5c3760ef1994bb48c737f3989c">  151</a></span>    <span class="keywordtype">void</span> signal_opt_service::produce_dpp(<span class="keyword">const</span> std::shared_ptr&lt;kafka_clients::kafka_producer_worker&gt; dpp_producer,</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                                <span class="keyword">const</span> std::shared_ptr&lt;OpenAPI::OAIIntersection_info&gt; _intersection_info_ptr, </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                                <span class="keyword">const</span> std::shared_ptr&lt;streets_vehicles::vehicle_list&gt; _vehicle_list_ptr, </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                                <span class="keyword">const</span> std::shared_ptr&lt;signal_phase_and_timing::spat&gt; _spat_ptr, </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                                <span class="keyword">const</span> std::shared_ptr&lt;streets_tsc_configuration::tsc_configuration_state&gt; _tsc_config_ptr, </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                                <span class="keyword">const</span> std::shared_ptr&lt;streets_signal_optimization::movement_groups&gt; _movement_groups_ptr,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                                <span class="keyword">const</span> <a class="code hl_struct" href="structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html">streets_signal_optimization::streets_desired_phase_plan_generator_configuration</a> &amp;_dpp_config,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                                <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;_so_sleep_time)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">if</span> (!_so_processing_worker_ptr-&gt;get_is_configured()) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            _so_processing_worker_ptr-&gt;configure_signal_opt_processing_worker(_dpp_config);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keyword">auto</span> sleep_secs = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(_so_sleep_time / 1000);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordtype">int</span> prev_future_move_group_count = 0;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordtype">int</span> current_future_move_group_count = 0;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordflow">while</span> ( dpp_producer-&gt;is_running() ) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <a class="code hl_struct" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html">streets_desired_phase_plan::streets_desired_phase_plan</a> spat_dpp;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                spat_dpp = _so_processing_worker_ptr-&gt;convert_spat_to_dpp(_spat_ptr, _movement_groups_ptr);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code hl_class" href="classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception.html">streets_signal_optimization::streets_desired_phase_plan_generator_exception</a> &amp;ex)</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                SPDLOG_ERROR(<span class="stringliteral">&quot;dpp_generator_ptr is not initialized! : {0} &quot;</span>, ex.what());</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            current_future_move_group_count = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(spat_dpp.<a class="code hl_variable" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html#a03eca534118891c3c183eed332b33810">desired_phase_plan</a>.size());</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keywordflow">if</span> (current_future_move_group_count != prev_future_move_group_count) {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                SPDLOG_INFO(<span class="stringliteral">&quot;The number of future movement groups in the spat is updated from {0} to {1}.&quot;</span>, </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                                                            prev_future_move_group_count, current_future_move_group_count);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                <span class="keywordflow">if</span> (current_future_move_group_count &lt;= _dpp_config.<a class="code hl_variable" href="structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html#af1fe0710dcf4720b5edd7c3169cc7a81">desired_future_move_group_count</a>) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                    <a class="code hl_struct" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html">streets_desired_phase_plan::streets_desired_phase_plan</a> optimal_dpp = </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                                _so_processing_worker_ptr-&gt;select_optimal_dpp(_intersection_info_ptr, </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                                                                            _spat_ptr, </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                                                                            _tsc_config_ptr, </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                                                                            _vehicle_list_ptr, </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                                                                            _movement_groups_ptr, </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                                                                            _dpp_config);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                    std::string msg_to_send = optimal_dpp.<a class="code hl_function" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html#ae2a335d599173d37b8a12abe26948c01">toJson</a>();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                    <span class="comment">/* produce the optimal desired phase plan to kafka */</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                    dpp_producer-&gt;send(msg_to_send);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                SPDLOG_INFO(<span class="stringliteral">&quot;The number of future movement groups in the spat did not change from the previous check.&quot;</span>);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            prev_future_move_group_count = current_future_move_group_count;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            sleep(sleep_secs);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        SPDLOG_WARN(<span class="stringliteral">&quot;Stopping desired phase plan producer thread!&quot;</span>);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        dpp_producer-&gt;stop();</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>}</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a69da1a8f88693f184f76642c7674c151">  213</a></span>    <span class="keywordtype">void</span> signal_opt_service::populate_movement_groups(std::shared_ptr&lt;streets_signal_optimization::movement_groups&gt; _groups, </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                                        <span class="keyword">const</span> std::shared_ptr&lt;streets_tsc_configuration::tsc_configuration_state&gt; tsc_config)<span class="keyword"> const </span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <span class="keywordflow">if</span> (tsc_config) {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;phase_config : tsc_config-&gt;tsc_config_list) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                <span class="comment">// If signal group has one or more concurrent phase</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>                <span class="keywordflow">if</span> ( !phase_config.concurrent_signal_groups.empty() ) {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                    <span class="comment">// Loop through concurrent phases and create a movement group for each pair</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;concur : phase_config.concurrent_signal_groups) {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                        <a class="code hl_struct" href="structstreets__signal__optimization_1_1movement__group.html">streets_signal_optimization::movement_group</a> new_group;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                        new_group.<a class="code hl_variable" href="structstreets__signal__optimization_1_1movement__group.html#af1f1b26380de8f35224dc4cbd75843b8">signal_groups</a> = {phase_config.signal_group_id, concur};</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                        <span class="comment">// Initialize a flag for if this pair already exists in the movement groups in reverse.</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                        <span class="keywordtype">bool</span> already_added = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                        <span class="comment">// loop through movement groups and set flag to true if pair already exists in reverse order.</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                        <span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keyword">auto</span> &amp;add_group: _groups-&gt;groups ) {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                            <span class="keywordflow">if</span> ( add_group.signal_groups.second == new_group.<a class="code hl_variable" href="structstreets__signal__optimization_1_1movement__group.html#af1f1b26380de8f35224dc4cbd75843b8">signal_groups</a>.first &amp;&amp; </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                                    add_group.signal_groups.first == new_group.<a class="code hl_variable" href="structstreets__signal__optimization_1_1movement__group.html#af1f1b26380de8f35224dc4cbd75843b8">signal_groups</a>.second) {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                                already_added = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                            }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                        }</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                        <span class="comment">// Only add a new pair if it does not already exist in movement groups in reverse.</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                        <span class="keywordflow">if</span> (!already_added) {</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                            _groups-&gt;groups.push_back(new_group);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                        }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                    }</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                }</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                <span class="comment">// If signal group does not have any concurrent phases add it as a movement group pair of between itself and 0 since</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                <span class="comment">// 0 is an invalid signal group</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                    <a class="code hl_struct" href="structstreets__signal__optimization_1_1movement__group.html">streets_signal_optimization::movement_group</a> new_group;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                    <span class="comment">// Add invalid signal group 0 as current signal group to indicate there is none.</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                    new_group.<a class="code hl_variable" href="structstreets__signal__optimization_1_1movement__group.html#af1f1b26380de8f35224dc4cbd75843b8">signal_groups</a> = { phase_config.signal_group_id, 0};</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                    _groups-&gt;groups.push_back(new_group);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                }</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            }</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Movement Groups: &quot;</span>);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            <span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keyword">auto</span> &amp;mg : _groups-&gt;groups) {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                SPDLOG_DEBUG(<span class="stringliteral">&quot;Signal Group {0} and Signal Group {1}.&quot;</span>, mg.signal_groups.first, mg.signal_groups.second );</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    }</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a605d6fc843afcaf4f667be4bd8db65c4">  257</a></span>    <span class="keywordtype">bool</span> signal_opt_service::update_intersection_info(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> sleep_millisecs, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> int_client_request_attempts)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keyword">auto</span> sleep_secs = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(sleep_millisecs / 1000);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        SPDLOG_INFO(<span class="stringliteral">&quot;Send client request to update intersection inforamtion every {0} seconds for maximum {1} times.&quot;</span>, sleep_secs, int_client_request_attempts);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keywordtype">int</span> attempt_count = 0;</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <span class="keywordflow">while</span> (attempt_count &lt; int_client_request_attempts)</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            <span class="comment">// Send HTTP request, and update intersection information. If updated successfully, it returns true and exit the while loop.</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            <span class="keywordflow">if</span> (_so_msgs_worker_ptr &amp;&amp; _so_msgs_worker_ptr-&gt;request_intersection_info(intersection_info_ptr))</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            {</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            }</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            sleep(sleep_secs);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            attempt_count++;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        }</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <span class="comment">// If failed to update the intersection information after certain numbers of attempts</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        SPDLOG_ERROR(<span class="stringliteral">&quot;Updating Intersection information failed. &quot;</span>);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    }</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a41b10efc5ef2997dffd2bc6b3d2c04be">  277</a></span>    <span class="keywordtype">void</span> signal_opt_service::configure_csv_logger()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        <span class="keywordflow">try</span>{</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>            SPDLOG_INFO(<span class="stringliteral">&quot;csv log path: {0}&quot;</span>, _so_log_path + _so_log_filename + <span class="stringliteral">&quot;.csv&quot;</span>);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            <span class="keyword">auto</span> csv_logger = spdlog::daily_logger_mt&lt;spdlog::async_factory&gt;(</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                <span class="stringliteral">&quot;so_csv_logger&quot;</span>,  <span class="comment">// logger name</span></div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                _so_log_path + _so_log_filename +<span class="stringliteral">&quot;.csv&quot;</span>,  <span class="comment">// log file name and path</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                23, <span class="comment">// hours to rotate</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                59 <span class="comment">// minutes to rotate</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                );</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>            <span class="comment">// Only log log statement content</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>            csv_logger-&gt;set_pattern(<span class="stringliteral">&quot;%v&quot;</span>);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>            csv_logger-&gt;set_level(spdlog::level::info);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        }</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> spdlog::spdlog_ex&amp; ex)</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            spdlog::error( <span class="stringliteral">&quot;Log initialization failed: {0}!&quot;</span>,ex.what());</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        }</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    }</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a87ed940771637f27c1a3e776e3a5f67c">  297</a></span>    <span class="keywordtype">void</span> signal_opt_service::read_configuration_params() </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    {</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        _exp_delta = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;exp_delta&quot;</span>);</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        _bootstrap_server = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;bootstrap_server&quot;</span>);</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        _spat_topic_name = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;spat_consumer_topic&quot;</span>);</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        _spat_group_id = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;spat_group_id&quot;</span>);</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        _vsi_topic_name = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;vsi_consumer_topic&quot;</span>);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        _vsi_group_id = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;vsi_group_id&quot;</span>);</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        _tsc_config_topic_name = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;tsc_config_consumer_topic&quot;</span>);</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        _tsc_config_group_id = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;tsc_config_group_id&quot;</span>);</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        _dpp_topic_name = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;dpp_producer_topic&quot;</span>);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        _so_log_path = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;so_log_path&quot;</span>);</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        _so_log_filename = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;so_log_filename&quot;</span>);</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        enable_so_logging = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a48f38b0b6ecb3043cc051b624f12824b">streets_service::streets_configuration::get_boolean_config</a>(<span class="stringliteral">&quot;enable_so_logging&quot;</span>);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        so_sleep_time = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;signal_optimization_frequency&quot;</span>);</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        dpp_config.initial_green_buffer = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;initial_green_buffer&quot;</span>);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        dpp_config.final_green_buffer = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;final_green_buffer&quot;</span>);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        dpp_config.et_inaccuracy_buffer = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;et_inaccuracy_buffer&quot;</span>);</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        dpp_config.queue_max_time_headway = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;queue_max_time_headway&quot;</span>);</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        dpp_config.so_radius = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ae1ce5cdd4b4d28cc8e4034c429aabb66">streets_service::streets_configuration::get_double_config</a>(<span class="stringliteral">&quot;so_radius&quot;</span>);</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        dpp_config.min_green = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;min_green&quot;</span>);</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        dpp_config.max_green = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;max_green&quot;</span>);</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        dpp_config.desired_future_move_group_count = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a>(<span class="stringliteral">&quot;desired_future_move_group_count&quot;</span>));</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno"><a class="line" href="classsignal__opt__service_1_1signal__opt__service.html#a0d08faf7254086e5e9507957fa4b2acc">  324</a></span>    signal_opt_service::~signal_opt_service()</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    {</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        <span class="keywordflow">if</span> (_spat_consumer)</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        {</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            _spat_consumer-&gt;stop();</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        }</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <span class="keywordflow">if</span> (_vsi_consumer)</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        {</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>            _vsi_consumer-&gt;stop();</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        }</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>        <span class="keywordflow">if</span> (_tsc_config_consumer) </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>            _tsc_config_consumer-&gt;stop();</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        }</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <span class="keywordflow">if</span> (_dpp_producer) </div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        {</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>            _dpp_producer-&gt;stop();</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        }</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    }</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>}</div>
 <div class="ttc" id="aclassstreets__service_1_1streets__configuration__exception_html"><div class="ttname"><a href="classstreets__service_1_1streets__configuration__exception.html">streets_service::streets_configuration_exception</a></div><div class="ttdoc">Streets Configuration Exception thrown when manifest.json configuration files are incorrectly formatt...</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration__exception_8h_source.html#l00011">streets_configuration_exception.h:11</a></div></div>
 <div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a03603871626201e07690effb9f2440bf"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a></div><div class="ttdeci">static std::string get_string_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter string value with provided name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00103">streets_configuration.cpp:103</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a48f38b0b6ecb3043cc051b624f12824b"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a48f38b0b6ecb3043cc051b624f12824b">streets_service::streets_configuration::get_boolean_config</a></div><div class="ttdeci">static bool get_boolean_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter boolean value with provide name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00149">streets_configuration.cpp:149</a></div></div>
 <div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_ab33a5d183c0ca2b2f0d757f5466f200b"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a></div><div class="ttdeci">static int get_int_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter integer value with provided name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00118">streets_configuration.cpp:118</a></div></div>
-<div class="ttc" id="anamespacesignal__opt__service_html"><div class="ttname"><a href="namespacesignal__opt__service.html">signal_opt_service</a></div><div class="ttdef"><b>Definition:</b> <a href="signal__opt__service_2include_2movement__group_8h_source.html#l00004">movement_group.h:5</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_ae1ce5cdd4b4d28cc8e4034c429aabb66"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#ae1ce5cdd4b4d28cc8e4034c429aabb66">streets_service::streets_configuration::get_double_config</a></div><div class="ttdeci">static double get_double_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter double value with provide name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00134">streets_configuration.cpp:134</a></div></div>
+<div class="ttc" id="aclassstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception_html"><div class="ttname"><a href="classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception.html">streets_signal_optimization::streets_desired_phase_plan_generator_exception</a></div><div class="ttdoc">Runtime error related to generating desired phase plan list.</div><div class="ttdef"><b>Definition:</b> <a href="streets__desired__phase__plan__generator__exception_8h_source.html#l00012">streets_desired_phase_plan_generator_exception.h:12</a></div></div>
+<div class="ttc" id="anamespacesignal__opt__service_html"><div class="ttname"><a href="namespacesignal__opt__service.html">signal_opt_service</a></div><div class="ttdef"><b>Definition:</b> <a href="signal__opt__messages__worker_8h_source.html#l00021">signal_opt_messages_worker.h:22</a></div></div>
 <div class="ttc" id="asignal__opt__service_8h_html"><div class="ttname"><a href="signal__opt__service_8h.html">signal_opt_service.h</a></div></div>
-<div class="ttc" id="astructsignal__opt__service_1_1movement__group_html"><div class="ttname"><a href="structsignal__opt__service_1_1movement__group.html">signal_opt_service::movement_group</a></div><div class="ttdoc">Movement group consists of up to two signal group ids which can concurrently be given green in a NEMA...</div><div class="ttdef"><b>Definition:</b> <a href="signal__opt__service_2include_2movement__group_8h_source.html#l00014">movement_group.h:15</a></div></div>
-<div class="ttc" id="astructsignal__opt__service_1_1movement__group_html_aba592cd2ae1c50d2fb1a89152ae624dc"><div class="ttname"><a href="structsignal__opt__service_1_1movement__group.html#aba592cd2ae1c50d2fb1a89152ae624dc">signal_opt_service::movement_group::signal_groups</a></div><div class="ttdeci">std::pair&lt; int, int &gt; signal_groups</div><div class="ttdoc">Up to two signal group ids from different rings but a common barrier in a Dual Ring 8 Phase TSC setup...</div><div class="ttdef"><b>Definition:</b> <a href="signal__opt__service_2include_2movement__group_8h_source.html#l00027">movement_group.h:27</a></div></div>
+<div class="ttc" id="astructstreets__desired__phase__plan_1_1streets__desired__phase__plan_html"><div class="ttname"><a href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html">streets_desired_phase_plan::streets_desired_phase_plan</a></div><div class="ttdef"><b>Definition:</b> <a href="streets__desired__phase__plan_8h_source.html#l00029">streets_desired_phase_plan.h:30</a></div></div>
+<div class="ttc" id="astructstreets__desired__phase__plan_1_1streets__desired__phase__plan_html_a03eca534118891c3c183eed332b33810"><div class="ttname"><a href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html#a03eca534118891c3c183eed332b33810">streets_desired_phase_plan::streets_desired_phase_plan::desired_phase_plan</a></div><div class="ttdeci">std::vector&lt; signal_group2green_phase_timing &gt; desired_phase_plan</div><div class="ttdoc">Descriptive name for this collection.</div><div class="ttdef"><b>Definition:</b> <a href="streets__desired__phase__plan_8h_source.html#l00038">streets_desired_phase_plan.h:38</a></div></div>
+<div class="ttc" id="astructstreets__desired__phase__plan_1_1streets__desired__phase__plan_html_ae2a335d599173d37b8a12abe26948c01"><div class="ttname"><a href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html#ae2a335d599173d37b8a12abe26948c01">streets_desired_phase_plan::streets_desired_phase_plan::toJson</a></div><div class="ttdeci">std::string toJson() const</div><div class="ttdoc">Serialize Desired phase plan object to rapidjson::Value for writing as JSON string.</div><div class="ttdef"><b>Definition:</b> <a href="streets__desired__phase__plan_8cpp_source.html#l00006">streets_desired_phase_plan.cpp:6</a></div></div>
+<div class="ttc" id="astructstreets__signal__optimization_1_1movement__group_html"><div class="ttname"><a href="structstreets__signal__optimization_1_1movement__group.html">streets_signal_optimization::movement_group</a></div><div class="ttdoc">A movement group is a combination of signal groups with non-conflicting directions....</div><div class="ttdef"><b>Definition:</b> <a href="movement__group_8h_source.html#l00011">movement_group.h:12</a></div></div>
+<div class="ttc" id="astructstreets__signal__optimization_1_1movement__group_html_af1f1b26380de8f35224dc4cbd75843b8"><div class="ttname"><a href="structstreets__signal__optimization_1_1movement__group.html#af1f1b26380de8f35224dc4cbd75843b8">streets_signal_optimization::movement_group::signal_groups</a></div><div class="ttdeci">std::pair&lt; int, int &gt; signal_groups</div><div class="ttdoc">List of signal groups. Each movement group contains a set of signal groups with non-conflicting direc...</div><div class="ttdef"><b>Definition:</b> <a href="movement__group_8h_source.html#l00017">movement_group.h:17</a></div></div>
+<div class="ttc" id="astructstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration_html"><div class="ttname"><a href="structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html">streets_signal_optimization::streets_desired_phase_plan_generator_configuration</a></div><div class="ttdef"><b>Definition:</b> <a href="streets__desired__phase__plan__generator__configuration_8h_source.html#l00009">streets_desired_phase_plan_generator_configuration.h:9</a></div></div>
+<div class="ttc" id="astructstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration_html_af1fe0710dcf4720b5edd7c3169cc7a81"><div class="ttname"><a href="structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html#af1fe0710dcf4720b5edd7c3169cc7a81">streets_signal_optimization::streets_desired_phase_plan_generator_configuration::desired_future_move_group_count</a></div><div class="ttdeci">uint8_t desired_future_move_group_count</div><div class="ttdoc">The configurable parameter that defines the desired number of fixed future movement groups in the spa...</div><div class="ttdef"><b>Definition:</b> <a href="streets__desired__phase__plan__generator__configuration_8h_source.html#l00059">streets_desired_phase_plan_generator_configuration.h:59</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f45123e60d40f0f466503f4a9cc2129d.html">signal_opt_service</a></li><li class="navelem"><a class="el" href="dir_2b2e8f28ae23c64fc1316f4fe0c36006.html">src</a></li><li class="navelem"><a class="el" href="signal__opt__service_8cpp.html">signal_opt_service.cpp</a></li>
-    <li class="footer">Generated on Tue Nov 1 2022 17:40:35 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Nov 10 2022 14:29:27 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

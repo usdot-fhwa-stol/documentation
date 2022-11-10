@@ -26,6 +26,7 @@ var annotated_dup =
       [ "kafka_consumer_worker", "classkafka__clients_1_1kafka__consumer__worker.html", "classkafka__clients_1_1kafka__consumer__worker" ],
       [ "kafka_producer_worker", "classkafka__clients_1_1kafka__producer__worker.html", "classkafka__clients_1_1kafka__producer__worker" ],
       [ "mock_kafka_consumer_worker", "classkafka__clients_1_1mock__kafka__consumer__worker.html", "classkafka__clients_1_1mock__kafka__consumer__worker" ],
+      [ "mock_kafka_producer_worker", "classkafka__clients_1_1mock__kafka__producer__worker.html", "classkafka__clients_1_1mock__kafka__producer__worker" ],
       [ "producer_delivery_report_cb", "classkafka__clients_1_1producer__delivery__report__cb.html", "classkafka__clients_1_1producer__delivery__report__cb" ],
       [ "producer_event_cb", "classkafka__clients_1_1producer__event__cb.html", "classkafka__clients_1_1producer__event__cb" ]
     ] ],
@@ -94,8 +95,6 @@ var annotated_dup =
       [ "scheduling_worker", "classscheduling__service_1_1scheduling__worker.html", "classscheduling__service_1_1scheduling__worker" ]
     ] ],
     [ "signal_opt_service", "namespacesignal__opt__service.html", [
-      [ "movement_group", "structsignal__opt__service_1_1movement__group.html", "structsignal__opt__service_1_1movement__group" ],
-      [ "movement_groups", "structsignal__opt__service_1_1movement__groups.html", "structsignal__opt__service_1_1movement__groups" ],
       [ "signal_opt_messages_worker", "classsignal__opt__service_1_1signal__opt__messages__worker.html", "classsignal__opt__service_1_1signal__opt__messages__worker" ],
       [ "signal_opt_processing_worker", "classsignal__opt__service_1_1signal__opt__processing__worker.html", "classsignal__opt__service_1_1signal__opt__processing__worker" ],
       [ "signal_opt_service", "classsignal__opt__service_1_1signal__opt__service.html", "classsignal__opt__service_1_1signal__opt__service" ]

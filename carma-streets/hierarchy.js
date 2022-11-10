@@ -42,7 +42,9 @@ var hierarchy =
     [ "kafka_clients::kafka_consumer_worker", "classkafka__clients_1_1kafka__consumer__worker.html", [
       [ "kafka_clients::mock_kafka_consumer_worker", "classkafka__clients_1_1mock__kafka__consumer__worker.html", null ]
     ] ],
-    [ "kafka_clients::kafka_producer_worker", "classkafka__clients_1_1kafka__producer__worker.html", null ],
+    [ "kafka_clients::kafka_producer_worker", "classkafka__clients_1_1kafka__producer__worker.html", [
+      [ "kafka_clients::mock_kafka_producer_worker", "classkafka__clients_1_1mock__kafka__producer__worker.html", null ]
+    ] ],
     [ "intersection_model::lanelet_info_t", "structintersection__model_1_1lanelet__info__t.html", null ],
     [ "message_services::models::locationECEF", "structmessage__services_1_1models_1_1locationECEF.html", null ],
     [ "message_services::models::locationOffsetECEF", "structmessage__services_1_1models_1_1locationOffsetECEF.html", null ],
@@ -59,9 +61,7 @@ var hierarchy =
     [ "message_services::services::mobility_operation_service", "classmessage__services_1_1services_1_1mobility__operation__service.html", null ],
     [ "traffic_signal_controller_service::monitor_desired_phase_plan", "classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html", null ],
     [ "signal_phase_and_timing::movement_event", "structsignal__phase__and__timing_1_1movement__event.html", null ],
-    [ "signal_opt_service::movement_group", "structsignal__opt__service_1_1movement__group.html", null ],
     [ "streets_signal_optimization::movement_group", "structstreets__signal__optimization_1_1movement__group.html", null ],
-    [ "signal_opt_service::movement_groups", "structsignal__opt__service_1_1movement__groups.html", null ],
     [ "streets_signal_optimization::movement_groups", "structstreets__signal__optimization_1_1movement__groups.html", null ],
     [ "signal_phase_and_timing::movement_state", "structsignal__phase__and__timing_1_1movement__state.html", null ],
     [ "ntcip::ntcip_1202_ext", "structntcip_1_1ntcip__1202__ext.html", null ],

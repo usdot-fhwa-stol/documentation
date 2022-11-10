@@ -6,6 +6,7 @@ var namespacekafka__clients =
     [ "kafka_consumer_worker", "classkafka__clients_1_1kafka__consumer__worker.html", "classkafka__clients_1_1kafka__consumer__worker" ],
     [ "kafka_producer_worker", "classkafka__clients_1_1kafka__producer__worker.html", "classkafka__clients_1_1kafka__producer__worker" ],
     [ "mock_kafka_consumer_worker", "classkafka__clients_1_1mock__kafka__consumer__worker.html", "classkafka__clients_1_1mock__kafka__consumer__worker" ],
+    [ "mock_kafka_producer_worker", "classkafka__clients_1_1mock__kafka__producer__worker.html", "classkafka__clients_1_1mock__kafka__producer__worker" ],
     [ "producer_delivery_report_cb", "classkafka__clients_1_1producer__delivery__report__cb.html", "classkafka__clients_1_1producer__delivery__report__cb" ],
     [ "producer_event_cb", "classkafka__clients_1_1producer__event__cb.html", "classkafka__clients_1_1producer__event__cb" ],
     [ "eof_cnt", "namespacekafka__clients.html#ae4fbee381b5cbd9bdd27b0e738566d85", null ],

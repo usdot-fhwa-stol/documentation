@@ -16,6 +16,7 @@ var namespaces_dup =
       [ "PHASE_CONCURRENCY", "namespacentcip__oids.html#aedc3a19c20b2cd545d70616264b5805d", null ],
       [ "PHASE_HOLD_CONTROL", "namespacentcip__oids.html#aad289043e420893eb52f7595358c8f37", null ],
       [ "PHASE_OMIT_CONTROL", "namespacentcip__oids.html#a7f4c260396ed3a1f385340bd69e67fd7", null ],
+      [ "PHASE_STATUS_GROUP_PHASE_NEXT", "namespacentcip__oids.html#a84cca9aac94935e04813e700bbd36e2f", null ],
       [ "RED_CLEAR_PARAMETER", "namespacentcip__oids.html#a3ea2c7de3db40c5169671e9c74083bba", null ],
       [ "SEQUENCE_DATA", "namespacentcip__oids.html#aa886cce34306b7d970f546e495a80480", null ],
       [ "YELLOW_CHANGE_PARAMETER", "namespacentcip__oids.html#a8af63441377ae9f0975ef2d6dc2c744e", null ]

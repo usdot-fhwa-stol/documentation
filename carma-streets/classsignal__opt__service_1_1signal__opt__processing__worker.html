@@ -396,10 +396,10 @@ Here is the caller graph for this function:</div>
 <p>Method to get the state of is_configured member. </p>
 <dl class="section return"><dt>Returns</dt><dd>The bool parameter defining whether <a class="el" href="classsignal__opt__service_1_1signal__opt__processing__worker.html">signal_opt_processing_worker</a> is configured or not </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00101">101</a> of file <a class="el" href="signal__opt__processing__worker_8cpp_source.html">signal_opt_processing_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>                                                               {</div>
-<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classsignal__opt__service_1_1signal__opt__processing__worker.html#ab476a4248a89d10412ea7b74cecc949b">is_configured</a>;</div>
-<div class="line"><span class="lineno">  103</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00102">102</a> of file <a class="el" href="signal__opt__processing__worker_8cpp_source.html">signal_opt_processing_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>                                                               {</div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classsignal__opt__service_1_1signal__opt__processing__worker.html#ab476a4248a89d10412ea7b74cecc949b">is_configured</a>;</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="signal__opt__processing__worker_8h_source.html#l00030">is_configured</a>.</p>
 
@@ -485,32 +485,33 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   67</span>            dpp_list = <a class="code hl_variable" href="classsignal__opt__service_1_1signal__opt__processing__worker.html#a412d258ee6cb4fa6c4ddc1109449a4ff">dpp_generator_ptr</a>-&gt;generate_desire_phase_plan_list(intersection_info_ptr, </div>
 <div class="line"><span class="lineno">   68</span>                                                                            vehicle_map, </div>
 <div class="line"><span class="lineno">   69</span>                                                                            intersection_state, </div>
-<div class="line"><span class="lineno">   70</span>                                                                            move_groups);</div>
-<div class="line"><span class="lineno">   71</span>        }</div>
-<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception.html">streets_signal_optimization::streets_desired_phase_plan_generator_exception</a> &amp;ex) </div>
-<div class="line"><span class="lineno">   73</span>        {</div>
-<div class="line"><span class="lineno">   74</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;streets_desired_phase_plan_generator desired phase plan list generation failure: {0} &quot;</span>, ex.what());</div>
-<div class="line"><span class="lineno">   75</span>        }</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>        <a class="code hl_struct" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html">streets_desired_phase_plan::streets_desired_phase_plan</a> chosen_dpp;</div>
-<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   79</span>        {</div>
-<div class="line"><span class="lineno">   80</span>            chosen_dpp = <a class="code hl_variable" href="classsignal__opt__service_1_1signal__opt__processing__worker.html#accfdc0dbc930df02c9bbd1ea531f2d56">dpp_arbitrator_ptr</a>-&gt;select_optimal_dpp(dpp_list, </div>
-<div class="line"><span class="lineno">   81</span>                                                                intersection_info_ptr, </div>
-<div class="line"><span class="lineno">   82</span>                                                                spat_ptr, </div>
-<div class="line"><span class="lineno">   83</span>                                                                tsc_config_state, </div>
-<div class="line"><span class="lineno">   84</span>                                                                veh_list_ptr, </div>
-<div class="line"><span class="lineno">   85</span>                                                                dpp_config.<a class="code hl_variable" href="structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html#aa9bb51b9b9206a5e7ec16a941f4bce5c">initial_green_buffer</a>, </div>
-<div class="line"><span class="lineno">   86</span>                                                                dpp_config.<a class="code hl_variable" href="structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html#a379a98a899ebbb6f41bfe60d1fc4623d">final_green_buffer</a>, </div>
-<div class="line"><span class="lineno">   87</span>                                                                dpp_config.<a class="code hl_variable" href="structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html#a12b15542431455c37b8cfa602963dc97">so_radius</a>);</div>
-<div class="line"><span class="lineno">   88</span>        }</div>
-<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code hl_class" href="classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception.html">streets_signal_optimization::streets_desired_phase_plan_arbitrator_exception</a> &amp;ex)</div>
-<div class="line"><span class="lineno">   90</span>        {</div>
-<div class="line"><span class="lineno">   91</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;streets_desired_phase_plan_arbitrator optimal desired phase plan selection failure: {0} &quot;</span>, ex.what());</div>
-<div class="line"><span class="lineno">   92</span>        }</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">return</span> chosen_dpp;</div>
-<div class="line"><span class="lineno">   95</span>    }</div>
+<div class="line"><span class="lineno">   70</span>                                                                            move_groups, </div>
+<div class="line"><span class="lineno">   71</span>                                                                            tsc_config_state);</div>
+<div class="line"><span class="lineno">   72</span>        }</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception.html">streets_signal_optimization::streets_desired_phase_plan_generator_exception</a> &amp;ex) </div>
+<div class="line"><span class="lineno">   74</span>        {</div>
+<div class="line"><span class="lineno">   75</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;streets_desired_phase_plan_generator desired phase plan list generation failure: {0} &quot;</span>, ex.what());</div>
+<div class="line"><span class="lineno">   76</span>        }</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>        <a class="code hl_struct" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html">streets_desired_phase_plan::streets_desired_phase_plan</a> chosen_dpp;</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   80</span>        {</div>
+<div class="line"><span class="lineno">   81</span>            chosen_dpp = <a class="code hl_variable" href="classsignal__opt__service_1_1signal__opt__processing__worker.html#accfdc0dbc930df02c9bbd1ea531f2d56">dpp_arbitrator_ptr</a>-&gt;select_optimal_dpp(dpp_list, </div>
+<div class="line"><span class="lineno">   82</span>                                                                intersection_info_ptr, </div>
+<div class="line"><span class="lineno">   83</span>                                                                spat_ptr, </div>
+<div class="line"><span class="lineno">   84</span>                                                                tsc_config_state, </div>
+<div class="line"><span class="lineno">   85</span>                                                                veh_list_ptr, </div>
+<div class="line"><span class="lineno">   86</span>                                                                dpp_config.<a class="code hl_variable" href="structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html#aa9bb51b9b9206a5e7ec16a941f4bce5c">initial_green_buffer</a>, </div>
+<div class="line"><span class="lineno">   87</span>                                                                dpp_config.<a class="code hl_variable" href="structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html#a379a98a899ebbb6f41bfe60d1fc4623d">final_green_buffer</a>, </div>
+<div class="line"><span class="lineno">   88</span>                                                                dpp_config.<a class="code hl_variable" href="structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html#a12b15542431455c37b8cfa602963dc97">so_radius</a>);</div>
+<div class="line"><span class="lineno">   89</span>        }</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code hl_class" href="classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception.html">streets_signal_optimization::streets_desired_phase_plan_arbitrator_exception</a> &amp;ex)</div>
+<div class="line"><span class="lineno">   91</span>        {</div>
+<div class="line"><span class="lineno">   92</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;streets_desired_phase_plan_arbitrator optimal desired phase plan selection failure: {0} &quot;</span>, ex.what());</div>
+<div class="line"><span class="lineno">   93</span>        }</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">return</span> chosen_dpp;</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
 <div class="ttc" id="aclasssignal__opt__service_1_1signal__opt__processing__worker_html_a566e2af5c8d92153141be5da2fc89f34"><div class="ttname"><a href="classsignal__opt__service_1_1signal__opt__processing__worker.html#a566e2af5c8d92153141be5da2fc89f34">signal_opt_service::signal_opt_processing_worker::configure_signal_opt_processing_worker</a></div><div class="ttdeci">void configure_signal_opt_processing_worker(const streets_signal_optimization::streets_desired_phase_plan_generator_configuration &amp;dpp_config)</div><div class="ttdoc">Configure the libraries used in signal_opt_processing_worker.</div><div class="ttdef"><b>Definition:</b> <a href="signal__opt__processing__worker_8cpp_source.html#l00005">signal_opt_processing_worker.cpp:5</a></div></div>
 <div class="ttc" id="aclassstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception_html"><div class="ttname"><a href="classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception.html">streets_signal_optimization::streets_desired_phase_plan_arbitrator_exception</a></div><div class="ttdoc">Runtime error related to processing desired phase plan arbitrator.</div><div class="ttdef"><b>Definition:</b> <a href="streets__desired__phase__plan__arbitrator__exception_8h_source.html#l00011">streets_desired_phase_plan_arbitrator_exception.h:11</a></div></div>
 </div><!-- fragment -->
@@ -545,10 +546,10 @@ Here is the call graph for this function:</div>
 
 <p>Method to set enable_so_logging. </p>
 
-<p class="definition">Definition at line <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00097">97</a> of file <a class="el" href="signal__opt__processing__worker_8cpp_source.html">signal_opt_processing_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   97</span>                                                                                          {</div>
-<div class="line"><span class="lineno">   98</span>        <a class="code hl_variable" href="classsignal__opt__service_1_1signal__opt__processing__worker.html#ac7980a4baa19b393fd3f8b7b1aff4f45">enable_so_logging</a> = _enable_so_logging;</div>
-<div class="line"><span class="lineno">   99</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00098">98</a> of file <a class="el" href="signal__opt__processing__worker_8cpp_source.html">signal_opt_processing_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>                                                                                          {</div>
+<div class="line"><span class="lineno">   99</span>        <a class="code hl_variable" href="classsignal__opt__service_1_1signal__opt__processing__worker.html#ac7980a4baa19b393fd3f8b7b1aff4f45">enable_so_logging</a> = _enable_so_logging;</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="signal__opt__processing__worker_8h_source.html#l00026">enable_so_logging</a>.</p>
 
@@ -635,7 +636,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="signal__opt__processing__worker_8h_source.html#l00026">26</a> of file <a class="el" href="signal__opt__processing__worker_8h_source.html">signal_opt_processing_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00005">configure_signal_opt_processing_worker()</a>, and <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00097">set_enable_so_logging()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00005">configure_signal_opt_processing_worker()</a>, and <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00098">set_enable_so_logging()</a>.</p>
 
 </div>
 </div>
@@ -663,7 +664,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="signal__opt__processing__worker_8h_source.html#l00030">30</a> of file <a class="el" href="signal__opt__processing__worker_8h_source.html">signal_opt_processing_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00005">configure_signal_opt_processing_worker()</a>, <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00101">get_is_configured()</a>, and <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00048">select_optimal_dpp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00005">configure_signal_opt_processing_worker()</a>, <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00102">get_is_configured()</a>, and <a class="el" href="signal__opt__processing__worker_8cpp_source.html#l00048">select_optimal_dpp()</a>.</p>
 
 </div>
 </div>
@@ -677,7 +678,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesignal__opt__service.html">signal_opt_service</a></li><li class="navelem"><a class="el" href="classsignal__opt__service_1_1signal__opt__processing__worker.html">signal_opt_processing_worker</a></li>
-    <li class="footer">Generated on Wed Nov 16 2022 15:10:43 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Nov 17 2022 19:09:25 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

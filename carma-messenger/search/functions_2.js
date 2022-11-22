@@ -26,5 +26,6 @@ var searchData=
   ['convertregulatoryspeedlimit_23',['convertRegulatorySpeedLimit',['../classj2735__convertor_1_1MapConvertor.html#adce6e311735035053146660843b208e8',1,'j2735_convertor::MapConvertor']]],
   ['convertroadsegment_24',['convertRoadSegment',['../classj2735__convertor_1_1MapConvertor.html#a8f23cd446fbdc1c266e768d610df0ebc',1,'j2735_convertor::MapConvertor']]],
   ['converttimechangedetails_25',['convertTimeChangeDetails',['../classj2735__convertor_1_1SPATConvertor.html#a158b5afcbf04e437496a76a83950aadb',1,'j2735_convertor::SPATConvertor']]],
-  ['create_5fstore_5fshared_26',['create_store_shared',['../namespacecpp__message.html#a33fce4f055513ac329f2ad164873ea84',1,'cpp_message']]]
+  ['create_5fstore_5fshared_26',['create_store_shared',['../namespacecpp__message.html#a33fce4f055513ac329f2ad164873ea84',1,'cpp_message']]],
+  ['create_5fstore_5fshared_5farray_27',['create_store_shared_array',['../namespacecpp__message.html#a73483a92fd4303e4c88740078a4e7fc4',1,'cpp_message']]]
 ];

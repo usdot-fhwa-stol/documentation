@@ -1,5 +1,11 @@
 var NAVTREEINDEX26 =
 {
+"ThrottleConfidence_8h.html#aa49b23720aaac5eeee8b2cb7012fc6a9":[10,0,1,1,0,1,471,15],
+"ThrottleConfidence_8h.html#ac92c231cde06db1a7edc60bba84bc87e":[10,0,1,1,0,1,471,1],
+"ThrottleConfidence_8h.html#acdab4b0685774c14056cfc2f459cd3a1":[10,0,1,1,0,1,471,14],
+"ThrottleConfidence_8h.html#ad515c7024a08794aca7aef36e8e4eac0":[10,0,1,1,0,1,471,0],
+"ThrottleConfidence_8h.html#ad5dfd1960133060d31485da7a4f1186f":[10,0,1,1,0,1,471,12],
+"ThrottleConfidence_8h.html#ada62b388e0c9fc6dd9700fa4b6981df6":[10,0,1,1,0,1,471,3],
 "ThrottleConfidence_8h.html#ae8c025754fea7f6a1d1fd6a985a53fa7":[10,0,1,1,0,1,471,4],
 "ThrottleConfidence_8h_source.html":[10,0,1,1,0,1,471],
 "ThrottlePosition_8h.html":[10,0,1,1,0,1,472],
@@ -243,11 +249,5 @@ var NAVTREEINDEX26 =
 "TractionControlStatus_8h.html#a3ed6118f824810da07bb5361159dff85a19c05faa18c348ce9351643ab602672c":[10,0,1,1,0,1,485,2,0],
 "TractionControlStatus_8h.html#a3ed6118f824810da07bb5361159dff85a55a3b08e9eaba6b562b4e6b95c136ecf":[10,0,1,1,0,1,485,2,3],
 "TractionControlStatus_8h.html#a3ed6118f824810da07bb5361159dff85acb5fafb15ab058a25961333275beb20d":[10,0,1,1,0,1,485,2,1],
-"TractionControlStatus_8h.html#a3ed6118f824810da07bb5361159dff85afd4a136d0a702233b6a9042e92af53cf":[10,0,1,1,0,1,485,2,2],
-"TractionControlStatus_8h.html#a4ead2387e4bdc07f8b3da903cf04bfff":[10,0,1,1,0,1,485,15],
-"TractionControlStatus_8h.html#a5329a14dad8f381956fb5511d32dc613":[10,0,1,1,0,1,485,9],
-"TractionControlStatus_8h.html#a5b3bcec9015cc10d6a48d70fed57b701":[10,0,1,1,0,1,485,13],
-"TractionControlStatus_8h.html#a7fd6a5f3175dc2de97221b9d7afa2075":[10,0,1,1,0,1,485,7],
-"TractionControlStatus_8h.html#a80e6a9a1d4967a3e3ddcfb7b644cda23":[10,0,1,1,0,1,485,6],
-"TractionControlStatus_8h.html#a8b1db2f942129139577ec1de3a7db679":[10,0,1,1,0,1,485,0]
+"TractionControlStatus_8h.html#a3ed6118f824810da07bb5361159dff85afd4a136d0a702233b6a9042e92af53cf":[10,0,1,1,0,1,485,2,2]
 };

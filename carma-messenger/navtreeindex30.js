@@ -1,5 +1,11 @@
 var NAVTREEINDEX30 =
 {
+"VehicleStatusDeviceTypeTag_8h_source.html":[10,0,1,1,0,1,531],
+"VehicleStatusRequestList_8h.html":[10,0,1,1,0,1,533],
+"VehicleStatusRequestList_8h.html#a0c83cc4c61737015350aa79d09eeb3cd":[10,0,1,1,0,1,533,4],
+"VehicleStatusRequestList_8h.html#a4116dceb1ccaba98c8d0de2d3ab106af":[10,0,1,1,0,1,533,2],
+"VehicleStatusRequestList_8h.html#a5c5adb6af039fd607375405a1a4a1192":[10,0,1,1,0,1,533,3],
+"VehicleStatusRequestList_8h.html#a677b2f6db0893a7768386d49b1858d22":[10,0,1,1,0,1,533,5],
 "VehicleStatusRequestList_8h.html#aea4dc9dbf4b40e8422062647b87d7549":[10,0,1,1,0,1,533,1],
 "VehicleStatusRequestList_8h_source.html":[10,0,1,1,0,1,533],
 "VehicleStatusRequest_8h.html":[10,0,1,1,0,1,532],
@@ -243,11 +249,5 @@ var NAVTREEINDEX30 =
 "VerticalOffset_8h.html#acf02f73f60d38d36ea7243c446f24990ac0e03e17736bd1b04b42a09ed3221321":[10,0,1,1,0,1,541,4,6],
 "VerticalOffset_8h.html#acf02f73f60d38d36ea7243c446f24990af71ca31b000c830d4e5fd86c4aaaeaea":[10,0,1,1,0,1,541,4,7],
 "VerticalOffset_8h.html#acf02f73f60d38d36ea7243c446f24990af833ba32af601f9e4e6312c01b488921":[10,0,1,1,0,1,541,4,0],
-"VerticalOffset_8h_source.html":[10,0,1,1,0,1,541],
-"WaitOnStopline_8h.html":[10,0,1,1,0,1,549],
-"WaitOnStopline_8h.html#a199e041c0129c29c1f549aa14b783e45":[10,0,1,1,0,1,549,5],
-"WaitOnStopline_8h.html#a1d22ad756256b41438ff9ebe8370b4d3":[10,0,1,1,0,1,549,0],
-"WaitOnStopline_8h.html#a258aca685ea1e21e6cb71a967aea1876":[10,0,1,1,0,1,549,10],
-"WaitOnStopline_8h.html#a2a62f6dc7ff985502794f3d37ed3561f":[10,0,1,1,0,1,549,6],
-"WaitOnStopline_8h.html#a2d276f6d4a89366e08a7d0e40e546ea8":[10,0,1,1,0,1,549,12]
+"VerticalOffset_8h_source.html":[10,0,1,1,0,1,541]
 };

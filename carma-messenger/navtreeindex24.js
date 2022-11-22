@@ -1,5 +1,11 @@
 var NAVTREEINDEX24 =
 {
+"Snapshot_8h.html#ab3c251ee35ec352e6553c38e4d817d68":[10,0,1,1,0,1,425,1],
+"Snapshot_8h.html#ac565a95473f80774f41a8673cd6eef8c":[10,0,1,1,0,1,425,4],
+"Snapshot_8h_source.html":[10,0,1,1,0,1,425],
+"SpecialVehicleExtensions_8h.html":[10,0,1,1,0,1,429],
+"SpecialVehicleExtensions_8h.html#a0c346dca25337d55f0d0ac7081e715fc":[10,0,1,1,0,1,429,2],
+"SpecialVehicleExtensions_8h.html#a725539e33dd4abd6b6c56d3560e6479b":[10,0,1,1,0,1,429,4],
 "SpecialVehicleExtensions_8h.html#abc99c8beb156b717641fcc7ab6c946b6":[10,0,1,1,0,1,429,3],
 "SpecialVehicleExtensions_8h.html#adbf8e9e4889b7ab58ebbaee9ae8611b1":[10,0,1,1,0,1,429,1],
 "SpecialVehicleExtensions_8h_source.html":[10,0,1,1,0,1,429],
@@ -243,11 +249,5 @@ var NAVTREEINDEX24 =
 "SteeringWheelAngleConfidence_8h.html#ad0ee80fc788a5bbb81ffd775e5dc2e91":[10,0,1,1,0,1,446,6],
 "SteeringWheelAngleConfidence_8h.html#af47f8bee78f619468250b5b402707a2d":[10,0,1,1,0,1,446,9],
 "SteeringWheelAngleConfidence_8h.html#af778cb865f78a104942450d8ccd75e8c":[10,0,1,1,0,1,446,10],
-"SteeringWheelAngleConfidence_8h_source.html":[10,0,1,1,0,1,446],
-"SteeringWheelAngleRateOfChange_8h.html":[10,0,1,1,0,1,447],
-"SteeringWheelAngleRateOfChange_8h.html#a25cf21fafecc880702ebf260c9b9df3c":[10,0,1,1,0,1,447,4],
-"SteeringWheelAngleRateOfChange_8h.html#a463dc96b35e2036b033df5658213c69b":[10,0,1,1,0,1,447,0],
-"SteeringWheelAngleRateOfChange_8h.html#a63be9ee093dbd082e97e30a86eaf6e97":[10,0,1,1,0,1,447,13],
-"SteeringWheelAngleRateOfChange_8h.html#a6ef9b39ba98c402f9d218e1549588134":[10,0,1,1,0,1,447,3],
-"SteeringWheelAngleRateOfChange_8h.html#a72307f69ea7aa12e0ae869562c500f1d":[10,0,1,1,0,1,447,9]
+"SteeringWheelAngleConfidence_8h_source.html":[10,0,1,1,0,1,446]
 };

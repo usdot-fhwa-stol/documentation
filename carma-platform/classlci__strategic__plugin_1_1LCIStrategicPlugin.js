@@ -114,5 +114,6 @@ var classlci__strategic__plugin_1_1LCIStrategicPlugin =
     [ "tf2_buffer_", "classlci__strategic__plugin_1_1LCIStrategicPlugin.html#a4c5c4c4424dbe28de12ecc631c817daa", null ],
     [ "tf2_listener_", "classlci__strategic__plugin_1_1LCIStrategicPlugin.html#aef286b3de570f73e947a6f2e223b0c90", null ],
     [ "transition_table_", "classlci__strategic__plugin_1_1LCIStrategicPlugin.html#ada2e0860177c4a9126e3f7469a555124", null ],
+    [ "upcoming_id_", "classlci__strategic__plugin_1_1LCIStrategicPlugin.html#a31499f8e464eedc17d071335fb9ce1ad", null ],
     [ "wm_", "classlci__strategic__plugin_1_1LCIStrategicPlugin.html#a2962a4cd6062a6c5b0191b574fbaa8cf", null ]
 ];

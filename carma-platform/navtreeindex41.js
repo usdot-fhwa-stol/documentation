@@ -1,5 +1,7 @@
 var NAVTREEINDEX41 =
 {
+"namespacehealth__monitor.html":[43,0,34],
+"namespaceinlanecruising__plugin.html":[43,0,35],
 "namespaceinlanecruising__plugin.html#a2db6b939afc2965cea1af8ae4def7a1b":[43,0,35,5],
 "namespaceinlanecruising__plugin.html#a39e2ce861dd14142c3f0fbb3d1b7fd46":[43,0,35,7],
 "namespaceinlanecruising__plugin.html#a5dd735de6d7c43798367c6318694982f":[43,0,35,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX41 =
 "namespacemessage.html#ac800f8f1604a1c698b659abcf26c83ad":[43,0,45,0],
 "namespacemobilitypath__publisher.html":[43,0,46],
 "namespacemobilitypath__publisher__launch.html":[43,0,47],
-"namespacemobilitypath__publisher__launch.html#aed8ad47047efc6bbe84689ec4916d5ce":[43,0,47,0],
-"namespacemobilitypath__visualizer.html":[43,0,48],
-"namespacemobilitypath__visualizer.html#a089b166b7397b9ba738c7f90abc5161d":[43,0,48,4]
+"namespacemobilitypath__publisher__launch.html#aed8ad47047efc6bbe84689ec4916d5ce":[43,0,47,0]
 };

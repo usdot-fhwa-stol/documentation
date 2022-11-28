@@ -1,5 +1,7 @@
 var NAVTREEINDEX55 =
 {
+"unionGenericValue_1_1Number.html#a1c8d3c6d226cf74315e233b30b622430":[44,0,93,3,6],
+"unionGenericValue_1_1Number.html#a3b5f0986718c830b88d641491248131d":[44,0,93,3,5],
 "unionGenericValue_1_1Number.html#a7ca3ad492fff303586d241eb0d17c242":[44,0,93,3,2],
 "unionGenericValue_1_1Number.html#ae53d96a8ead92099541da3b71633b77b":[44,0,93,3,4],
 "unioninternal_1_1Hasher_1_1Number_1_1U.html":[43,0,36,6,0,0],

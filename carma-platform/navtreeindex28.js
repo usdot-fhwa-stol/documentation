@@ -1,5 +1,7 @@
 var NAVTREEINDEX28 =
 {
+"classplatooning__tactical__plugin_1_1Node.html":[44,0,40,0],
+"classplatooning__tactical__plugin_1_1Node.html#a1bea2c00d87446e193645648e555b7e3":[44,0,40,0,4],
 "classplatooning__tactical__plugin_1_1Node.html#a1bea2c00d87446e193645648e555b7e3":[43,0,63,0,4],
 "classplatooning__tactical__plugin_1_1Node.html#a4561c382a1403dc297ed45bd1bd1c257":[43,0,63,0,7],
 "classplatooning__tactical__plugin_1_1Node.html#a4561c382a1403dc297ed45bd1bd1c257":[44,0,40,0,7],
@@ -33,8 +35,8 @@ var NAVTREEINDEX28 =
 "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#ae55551debb24c9eb4a01235f50380936":[44,0,40,1,2],
 "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#ae73d9469b34ddbecb6b488bc3914c606":[44,0,40,1,6],
 "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#ae73d9469b34ddbecb6b488bc3914c606":[43,0,63,1,6],
-"classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#aee3afe082ccd5ab937dbb1c49f9e21ff":[44,0,40,1,1],
 "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#aee3afe082ccd5ab937dbb1c49f9e21ff":[43,0,63,1,1],
+"classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#aee3afe082ccd5ab937dbb1c49f9e21ff":[44,0,40,1,1],
 "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#af47e2ea0589156f9d3bc070f0cf7be8d":[43,0,63,1,3],
 "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#af47e2ea0589156f9d3bc070f0cf7be8d":[44,0,40,1,3],
 "classpoints__map__filter_1_1Node.html":[44,0,41,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX28 =
 "classpose__to__tf_1_1PoseToTF2.html#a3e4d28ef746b0847427d37ebbebe094d":[43,0,70,0,0],
 "classpose__to__tf_1_1PoseToTF2.html#a82ead8e55c7250f213302769721ebda2":[43,0,70,0,4],
 "classpose__to__tf_1_1PoseToTF2.html#a82ead8e55c7250f213302769721ebda2":[44,0,43,0,4],
-"classpose__to__tf_1_1PoseToTF2.html#a91806c6f3e293a0ab2d7d4e95430b943":[43,0,70,0,2],
-"classpose__to__tf_1_1PoseToTF2.html#a91806c6f3e293a0ab2d7d4e95430b943":[44,0,43,0,2],
-"classpose__to__tf_1_1PoseToTF2.html#a9efbbe606c4bbd4cf303c25eb5d652bc":[43,0,70,0,6]
+"classpose__to__tf_1_1PoseToTF2.html#a91806c6f3e293a0ab2d7d4e95430b943":[43,0,70,0,2]
 };

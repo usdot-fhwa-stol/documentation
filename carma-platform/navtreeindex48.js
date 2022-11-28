@@ -1,5 +1,7 @@
 var NAVTREEINDEX48 =
 {
+"structParseResult.html#a38ca49a53e80633d0864ad5026adaf84":[42,0,0,2],
+"structParseResult.html#a4854b4b3210fd1bbc0f1457aa0d2b65a":[42,0,0,16],
 "structParseResult.html#a4d98465a5dc6055e367a7ea7089fc73d":[42,0,0,10],
 "structParseResult.html#a58c9982e833d1c74686506ac7449200c":[42,0,0,14],
 "structParseResult.html#a6de18a7e43013b2defc51d892c2cf90f":[42,0,0,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX48 =
 "structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a4bf547260f4eb35b2df2a8ddb5b216c8":[44,0,2,1,0,7],
 "structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a4bf547260f4eb35b2df2a8ddb5b216c8":[43,0,3,2,0,7],
 "structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a4c8a65b9797246e176f6245025e21b95":[43,0,3,2,0,0],
-"structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a4c8a65b9797246e176f6245025e21b95":[44,0,2,1,0,0],
-"structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a60a7d101e04a9a2bf755b8c5a9741354":[44,0,2,1,0,2],
-"structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a60a7d101e04a9a2bf755b8c5a9741354":[43,0,3,2,0,2]
+"structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a4c8a65b9797246e176f6245025e21b95":[44,0,2,1,0,0]
 };

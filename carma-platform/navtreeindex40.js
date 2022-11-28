@@ -1,5 +1,7 @@
 var NAVTREEINDEX40 =
 {
+"namespacebasic__autonomy_1_1waypoint__generation.html#a8be61ccb69db73e2e70d5e59f88ce446":[43,0,3,2,8],
+"namespacebasic__autonomy_1_1waypoint__generation.html#a924ac023f1b51e791ca1b61b9194f44a":[43,0,3,2,32],
 "namespacebasic__autonomy_1_1waypoint__generation.html#a9876518513a13a569a63f225013b686f":[43,0,3,2,24],
 "namespacebasic__autonomy_1_1waypoint__generation.html#a9dd6a1f0fa9c6f6590b83a7cc2e0d118":[43,0,3,2,36],
 "namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04":[43,0,3,2,15],
@@ -247,7 +249,5 @@ var NAVTREEINDEX40 =
 "namespaceguidance__plugin__validator_1_1guidance__plugin__validator.html":[43,0,33,1],
 "namespaceguidance__plugin__validator_1_1main.html":[43,0,33,2],
 "namespaceguidance__plugin__validator_1_1main.html#aa0d53c90a1a2068bd01c55c2605bb2c2":[43,0,33,2,0],
-"namespaceguidance__plugin__validator_1_1main.html#ae2f7a8ade6f8e66316ec9756f97bef4a":[43,0,33,2,1],
-"namespacehealth__monitor.html":[43,0,34],
-"namespaceinlanecruising__plugin.html":[43,0,35]
+"namespaceguidance__plugin__validator_1_1main.html#ae2f7a8ade6f8e66316ec9756f97bef4a":[43,0,33,2,1]
 };

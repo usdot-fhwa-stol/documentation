@@ -1,5 +1,7 @@
 var NAVTREEINDEX49 =
 {
+"structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a60a7d101e04a9a2bf755b8c5a9741354":[44,0,2,1,0,2],
+"structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a60a7d101e04a9a2bf755b8c5a9741354":[43,0,3,2,0,2],
 "structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a75872d4c289f3eda6a9a6cfca337534b":[44,0,2,1,0,5],
 "structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a75872d4c289f3eda6a9a6cfca337534b":[43,0,3,2,0,5],
 "structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a89ca36377e20e514abc609c5bd65a941":[44,0,2,1,0,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX49 =
 "structframe__transformer_1_1Config.html#a7809fad27c013c8d8314e46f22f62ca7":[43,0,27,0,0],
 "structframe__transformer_1_1Config.html#a7809fad27c013c8d8314e46f22f62ca7":[44,0,15,0,0],
 "structframe__transformer_1_1Config.html#a7b0a1aac05e5394a2b3b5df7659781b9":[43,0,27,0,2],
-"structframe__transformer_1_1Config.html#a7b0a1aac05e5394a2b3b5df7659781b9":[44,0,15,0,2],
-"structframe__transformer_1_1Config.html#afd4fff7fd0d08bafb9a604b31ed6fa97":[44,0,15,0,1],
-"structframe__transformer_1_1Config.html#afd4fff7fd0d08bafb9a604b31ed6fa97":[43,0,27,0,1]
+"structframe__transformer_1_1Config.html#a7b0a1aac05e5394a2b3b5df7659781b9":[44,0,15,0,2]
 };

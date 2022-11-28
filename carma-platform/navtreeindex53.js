@@ -1,5 +1,7 @@
 var NAVTREEINDEX53 =
 {
+"structplatoon__strategic__ihp_1_1PlatoonMember.html#aa0f2f5d4a24a4a213036b1c6c3867bcc":[43,0,61,3,0],
+"structplatoon__strategic__ihp_1_1PlatoonMember.html#ad0601bee56770b150c3826ce849a56f4":[44,0,39,3,4],
 "structplatoon__strategic__ihp_1_1PlatoonMember.html#ad0601bee56770b150c3826ce849a56f4":[43,0,61,3,4],
 "structplatoon__strategic__ihp_1_1PlatoonMember.html#af1c48353e45a30b01a1d59fdd1a19c9f":[43,0,61,3,3],
 "structplatoon__strategic__ihp_1_1PlatoonMember.html#af1c48353e45a30b01a1d59fdd1a19c9f":[44,0,39,3,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX53 =
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#af77d91a1d597e6d185488823109ed307":[44,0,49,1,9],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#afffeb1d7f537113aabc22f0cca16f6f0":[43,0,85,2,12],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#afffeb1d7f537113aabc22f0cca16f6f0":[44,0,49,1,12],
-"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html":[43,0,85,1,0],
-"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html":[44,0,49,0,0],
-"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#a9abd4258c073f1412b608038c56b8283":[44,0,49,0,0,3]
+"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html":[43,0,85,1,0]
 };

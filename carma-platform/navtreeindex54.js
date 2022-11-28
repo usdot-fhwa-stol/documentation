@@ -1,5 +1,7 @@
 var NAVTREEINDEX54 =
 {
+"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html":[44,0,49,0,0],
+"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#a9abd4258c073f1412b608038c56b8283":[44,0,49,0,0,3],
 "structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#a9abd4258c073f1412b608038c56b8283":[43,0,85,1,0,3],
 "structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#aa65ec11175fdf5ac236ea7d2c15e13ef":[43,0,85,1,0,1],
 "structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#aa65ec11175fdf5ac236ea7d2c15e13ef":[44,0,49,0,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX54 =
 "unionGenericValue_1_1Data.html#aeac31cf55bf5a024cead5ecb63e4fd48":[44,0,93,1,0],
 "unionGenericValue_1_1Data.html#af6417eca530fba0d8bd65d309628eb11":[44,0,93,1,3],
 "unionGenericValue_1_1Number.html":[44,0,93,3],
-"unionGenericValue_1_1Number.html#a0593fffc72a240979606668179e94436":[44,0,93,3,3],
-"unionGenericValue_1_1Number.html#a1c8d3c6d226cf74315e233b30b622430":[44,0,93,3,6],
-"unionGenericValue_1_1Number.html#a3b5f0986718c830b88d641491248131d":[44,0,93,3,5]
+"unionGenericValue_1_1Number.html#a0593fffc72a240979606668179e94436":[44,0,93,3,3]
 };

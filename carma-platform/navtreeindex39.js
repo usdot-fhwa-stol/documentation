@@ -1,5 +1,7 @@
 var NAVTREEINDEX39 =
 {
+"md_carma_cloud_client_README.html":[5],
+"md_carma_guidance_plugins_README.html":[6],
 "md_carma_wm_README.html":[8],
 "md_carma_wm_README.html#autotoc_md10":[8,1],
 "md_carma_wm_README.html#autotoc_md11":[8,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX39 =
 "namespacebasic__autonomy_1_1waypoint__generation.html#a73ab9c892a44135816fd70e344d1e956":[43,0,3,2,26],
 "namespacebasic__autonomy_1_1waypoint__generation.html#a741942c16ca54212b9adf3ddc2eea66d":[43,0,3,2,10],
 "namespacebasic__autonomy_1_1waypoint__generation.html#a84a6c11da2d9736a8f277b6afd124100":[43,0,3,2,37],
-"namespacebasic__autonomy_1_1waypoint__generation.html#a8746a5ca630da4365cf22bba2018e346":[43,0,3,2,13],
-"namespacebasic__autonomy_1_1waypoint__generation.html#a8be61ccb69db73e2e70d5e59f88ce446":[43,0,3,2,8],
-"namespacebasic__autonomy_1_1waypoint__generation.html#a924ac023f1b51e791ca1b61b9194f44a":[43,0,3,2,32]
+"namespacebasic__autonomy_1_1waypoint__generation.html#a8746a5ca630da4365cf22bba2018e346":[43,0,3,2,13]
 };

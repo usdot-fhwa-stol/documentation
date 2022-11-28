@@ -1,5 +1,7 @@
 var NAVTREEINDEX51 =
 {
+"structinternal_1_1TypeHelper_3_01ValueType_00_01const_01typename_01ValueType_1_1Ch_01_5_01_4.html#a9543f180b6ac2b923486f1b69d5356ea":[44,0,21,22,2],
+"structinternal_1_1TypeHelper_3_01ValueType_00_01double_01_4.html":[43,0,36,23],
 "structinternal_1_1TypeHelper_3_01ValueType_00_01double_01_4.html":[44,0,21,23],
 "structinternal_1_1TypeHelper_3_01ValueType_00_01double_01_4.html#a277ba130e18b0cddf9184416c43040cb":[43,0,36,23,3],
 "structinternal_1_1TypeHelper_3_01ValueType_00_01double_01_4.html#a277ba130e18b0cddf9184416c43040cb":[44,0,21,23,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX51 =
 "structlight__controlled__intersection__tactical__plugin_1_1Config.html#ab1760d442dc6f45627c672d450223082":[44,0,24,0,16],
 "structlight__controlled__intersection__tactical__plugin_1_1Config.html#abe8a6ebcd737855f2ee6c81293bd532e":[43,0,40,0,18],
 "structlight__controlled__intersection__tactical__plugin_1_1Config.html#abe8a6ebcd737855f2ee6c81293bd532e":[44,0,24,0,18],
-"structlight__controlled__intersection__tactical__plugin_1_1Config.html#ae49daa0903947808eaf0a0b459b57fef":[43,0,40,0,11],
-"structlight__controlled__intersection__tactical__plugin_1_1Config.html#ae49daa0903947808eaf0a0b459b57fef":[44,0,24,0,11],
-"structlight__controlled__intersection__tactical__plugin_1_1Config.html#af534741dfc39a77abc5c1fa071d03786":[43,0,40,0,19]
+"structlight__controlled__intersection__tactical__plugin_1_1Config.html#ae49daa0903947808eaf0a0b459b57fef":[43,0,40,0,11]
 };

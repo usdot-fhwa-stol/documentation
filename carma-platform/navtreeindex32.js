@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"classsubsystem__controllers_1_1EntryManager.html#a189a4c1457d3df7d64460e8006ea9435":[43,0,93,4,4],
+"classsubsystem__controllers_1_1EntryManager.html#a4204928cd382c992b11ff3e2b8c0da98":[43,0,93,4,3],
 "classsubsystem__controllers_1_1EntryManager.html#a4204928cd382c992b11ff3e2b8c0da98":[44,0,53,4,3],
 "classsubsystem__controllers_1_1EntryManager.html#a4e1e8c5cd8705381b99e4ab9dbc4877c":[43,0,93,4,1],
 "classsubsystem__controllers_1_1EntryManager.html#a4e1e8c5cd8705381b99e4ab9dbc4877c":[44,0,53,4,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "classtrajectory__executor_1_1TrajectoryExecutor.html#a0dbf9ccb618425dda735fbe6c3987e41":[43,0,99,1,13],
 "classtrajectory__executor_1_1TrajectoryExecutor.html#a2cbba75d00349bfc1bfba78defed1b7f":[43,0,99,1,0],
 "classtrajectory__executor_1_1TrajectoryExecutor.html#a2cbba75d00349bfc1bfba78defed1b7f":[44,0,56,1,0],
-"classtrajectory__executor_1_1TrajectoryExecutor.html#a6f46116e44f324f955b3c9a42f4abc1f":[44,0,56,1,4],
-"classtrajectory__executor_1_1TrajectoryExecutor.html#a6f46116e44f324f955b3c9a42f4abc1f":[43,0,99,1,4],
-"classtrajectory__executor_1_1TrajectoryExecutor.html#a7031be6e1a63288c10e7daa881c4048a":[43,0,99,1,10]
+"classtrajectory__executor_1_1TrajectoryExecutor.html#a6f46116e44f324f955b3c9a42f4abc1f":[44,0,56,1,4]
 };

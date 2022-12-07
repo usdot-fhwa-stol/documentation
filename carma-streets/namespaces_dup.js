@@ -3,6 +3,10 @@ var namespaces_dup =
     [ "intersection_model", "namespaceintersection__model.html", "namespaceintersection__model" ],
     [ "IntersectionModelAPI", "namespaceIntersectionModelAPI.html", "namespaceIntersectionModelAPI" ],
     [ "kafka_clients", "namespacekafka__clients.html", "namespacekafka__clients" ],
+    [ "kafka_logs", "namespacekafka__logs.html", [
+      [ "main", "namespacekafka__logs.html#ac529309c830d34e46d2d6b0e4f30a6d7", null ],
+      [ "store_kafka_topic", "namespacekafka__logs.html#aaf26eebab62a70b417cf810efe8f9e65", null ]
+    ] ],
     [ "message_services", "namespacemessage__services.html", "namespacemessage__services" ],
     [ "ntcip", "namespacentcip.html", "namespacentcip" ],
     [ "ntcip_oids", "namespacentcip__oids.html", [

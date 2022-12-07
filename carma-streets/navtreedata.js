@@ -177,12 +177,12 @@ var NAVTREEINDEX =
 "classtraffic__signal__controller__service_1_1tsc__state.html#af739a1bdb23638f28315e8680f407fdd",
 "intersection__client__api_2OAIHelpers_8cpp.html#a630e4fb65133f5c7b49d115c0b9ed900",
 "intersection__state_8cpp_source.html",
-"namespaceOpenAPI.html#a7318e77bbf4d103c864148311d02299c",
-"ntcip__1202__ext_8h.html#a71e538a579eb50365b9ea196739c59c5",
-"structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#aeab3c3c1fecb43a5859afb70bbeac338",
-"structntcip_1_1ntcip__1202__ext.html#a2c56febabf67e8344b47f82a8ff9d696",
-"structsignal__phase__and__timing_1_1time__change__details.html#aa43eafdf46377a5743e82b5be8ce3133",
-"structstreets__vehicles_1_1vehicle.html#adeea1853cfdf53e36447ff2525656ff5"
+"namespaceOpenAPI.html#a6240bfcafd8856eb3dd93ccfd1243c76",
+"ntcip__1202__ext_8h.html#a4204cf1735cde488c89b22e76d48b480",
+"structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html",
+"structntcip_1_1ntcip__1202__ext.html#a0cbc4b96d4191b8cc8834cf06f7a810b",
+"structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a",
+"structstreets__vehicles_1_1vehicle.html#ab142b19b021e3ac4908714eaa94cd47e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

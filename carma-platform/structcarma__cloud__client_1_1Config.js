@@ -8,5 +8,7 @@ var structcarma__cloud__client_1_1Config =
     [ "list", "structcarma__cloud__client_1_1Config.html#a4ee1131034721716261ab98ce5417287", null ],
     [ "method", "structcarma__cloud__client_1_1Config.html#a5a03c6f612b18c57ead862fb88f616bf", null ],
     [ "port", "structcarma__cloud__client_1_1Config.html#a0080512820b090a1f919d66eb23e1a1b", null ],
-    [ "url", "structcarma__cloud__client_1_1Config.html#a4bc4e39f7a5a330ad647bdc3d5af63b7", null ]
+    [ "url", "structcarma__cloud__client_1_1Config.html#a4bc4e39f7a5a330ad647bdc3d5af63b7", null ],
+    [ "webip", "structcarma__cloud__client_1_1Config.html#a98bdd2fb789aaf8820139cda916ebafc", null ],
+    [ "webport", "structcarma__cloud__client_1_1Config.html#a6271b94e0d9f098fdcc6b1a4897a63e6", null ]
 ];

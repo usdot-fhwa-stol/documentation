@@ -22,7 +22,8 @@ var namespaces_dup =
     [ "call_test", "namespacecall__test.html", "namespacecall__test" ],
     [ "carma_cloud_client", "namespacecarma__cloud__client.html", "namespacecarma__cloud__client" ],
     [ "carma_cloud_client_launch", "namespacecarma__cloud__client__launch.html", [
-      [ "generate_launch_description", "namespacecarma__cloud__client__launch.html#a61660dc0389cc0486295cd5ab8c7bfcc", null ]
+      [ "generate_launch_description", "namespacecarma__cloud__client__launch.html#a61660dc0389cc0486295cd5ab8c7bfcc", null ],
+      [ "open_tunnels", "namespacecarma__cloud__client__launch.html#a197dfe55298d247edddfcd4aa5624d40", null ]
     ] ],
     [ "carma_guidance_plugins", "namespacecarma__guidance__plugins.html", "namespacecarma__guidance__plugins" ],
     [ "carma_record", "namespacecarma__record.html", "namespacecarma__record" ],
@@ -96,7 +97,8 @@ var namespaces_dup =
     ] ],
     [ "localization_manager", "namespacelocalization__manager.html", "namespacelocalization__manager" ],
     [ "message", "namespacemessage.html", [
-      [ "generate_launch_description", "namespacemessage.html#ac800f8f1604a1c698b659abcf26c83ad", null ]
+      [ "generate_launch_description", "namespacemessage.html#ac800f8f1604a1c698b659abcf26c83ad", null ],
+      [ "open_tunnels", "namespacemessage.html#afb314c0375c651564c18f936d339570e", null ]
     ] ],
     [ "mobilitypath_publisher", "namespacemobilitypath__publisher.html", "namespacemobilitypath__publisher" ],
     [ "mobilitypath_publisher_launch", "namespacemobilitypath__publisher__launch.html", [

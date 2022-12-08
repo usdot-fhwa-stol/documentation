@@ -91,6 +91,8 @@ $(document).ready(function(){initNavTree('namespacecarma__cloud__client__launch.
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a197dfe55298d247edddfcd4aa5624d40"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__cloud__client__launch.html#a197dfe55298d247edddfcd4aa5624d40">open_tunnels</a> ()</td></tr>
+<tr class="separator:a197dfe55298d247edddfcd4aa5624d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61660dc0389cc0486295cd5ab8c7bfcc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__cloud__client__launch.html#a61660dc0389cc0486295cd5ab8c7bfcc">generate_launch_description</a> ()</td></tr>
 <tr class="separator:a61660dc0389cc0486295cd5ab8c7bfcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -110,47 +112,114 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="carma__cloud__client__launch_8py_source.html#l00031">31</a> of file <a class="el" href="carma__cloud__client__launch_8py_source.html">carma_cloud_client_launch.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span><span class="keyword">def </span><a class="code hl_function" href="namespacecarma__cloud__client__launch.html#a61660dc0389cc0486295cd5ab8c7bfcc">generate_launch_description</a>():</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>    <span class="comment"># Declare the log_level launch argument</span></div>
-<div class="line"><span class="lineno">   34</span>    log_level = LaunchConfiguration(<span class="stringliteral">&#39;log_level&#39;</span>)</div>
-<div class="line"><span class="lineno">   35</span>    declare_log_level_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   36</span>        name =<span class="stringliteral">&#39;log_level&#39;</span>, default_value=<span class="stringliteral">&#39;WARN&#39;</span>)</div>
-<div class="line"><span class="lineno">   37</span>    </div>
-<div class="line"><span class="lineno">   38</span>    <span class="comment"># Get parameter file path</span></div>
-<div class="line"><span class="lineno">   39</span>    param_file_path = os.path.join(</div>
-<div class="line"><span class="lineno">   40</span>        get_package_share_directory(<span class="stringliteral">&#39;carma_cloud_client&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>        </div>
-<div class="line"><span class="lineno">   43</span>    <span class="comment"># Launch node(s) in a carma container to allow logging to be configured</span></div>
-<div class="line"><span class="lineno">   44</span>    container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">   45</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
-<div class="line"><span class="lineno">   46</span>        name=<span class="stringliteral">&#39;carma_cloud_client_container&#39;</span>,</div>
-<div class="line"><span class="lineno">   47</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">   48</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">   49</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">   50</span>            </div>
-<div class="line"><span class="lineno">   51</span>            <span class="comment"># Launch the core node(s)</span></div>
-<div class="line"><span class="lineno">   52</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">   53</span>                    package=<span class="stringliteral">&#39;carma_cloud_client&#39;</span>,</div>
-<div class="line"><span class="lineno">   54</span>                    plugin=<span class="stringliteral">&#39;carma_cloud_client::CarmaCloudClient&#39;</span>,</div>
-<div class="line"><span class="lineno">   55</span>                    name=<span class="stringliteral">&#39;carma_cloud_client&#39;</span>,</div>
-<div class="line"><span class="lineno">   56</span>                    extra_arguments=[</div>
-<div class="line"><span class="lineno">   57</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">   58</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : log_level }</div>
-<div class="line"><span class="lineno">   59</span>                    ],</div>
-<div class="line"><span class="lineno">   60</span>                    parameters=[ param_file_path ]</div>
-<div class="line"><span class="lineno">   61</span>            ),</div>
-<div class="line"><span class="lineno">   62</span>        ]</div>
-<div class="line"><span class="lineno">   63</span>    )</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">   66</span>        declare_log_level_arg,</div>
-<div class="line"><span class="lineno">   67</span>        container</div>
-<div class="line"><span class="lineno">   68</span>    ])</div>
-<div class="ttc" id="anamespacecarma__cloud__client__launch_html_a61660dc0389cc0486295cd5ab8c7bfcc"><div class="ttname"><a href="namespacecarma__cloud__client__launch.html#a61660dc0389cc0486295cd5ab8c7bfcc">carma_cloud_client_launch.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="carma__cloud__client__launch_8py_source.html#l00031">carma_cloud_client_launch.py:31</a></div></div>
+<p class="definition">Definition at line <a class="el" href="carma__cloud__client__launch_8py_source.html#l00057">57</a> of file <a class="el" href="carma__cloud__client__launch_8py_source.html">carma_cloud_client_launch.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span><span class="keyword">def </span><a class="code hl_function" href="namespacecarma__cloud__client__launch.html#a61660dc0389cc0486295cd5ab8c7bfcc">generate_launch_description</a>():</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_function" href="namespacecarma__cloud__client__launch.html#a197dfe55298d247edddfcd4aa5624d40">open_tunnels</a>()</div>
+<div class="line"><span class="lineno">   60</span>    <span class="comment"># Declare the log_level launch argument</span></div>
+<div class="line"><span class="lineno">   61</span>    log_level = LaunchConfiguration(<span class="stringliteral">&#39;log_level&#39;</span>)</div>
+<div class="line"><span class="lineno">   62</span>    declare_log_level_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   63</span>        name =<span class="stringliteral">&#39;log_level&#39;</span>, default_value=<span class="stringliteral">&#39;WARN&#39;</span>)</div>
+<div class="line"><span class="lineno">   64</span>    </div>
+<div class="line"><span class="lineno">   65</span>    <span class="comment"># Get parameter file path</span></div>
+<div class="line"><span class="lineno">   66</span>    param_file_path = os.path.join(</div>
+<div class="line"><span class="lineno">   67</span>        get_package_share_directory(<span class="stringliteral">&#39;carma_cloud_client&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>        </div>
+<div class="line"><span class="lineno">   70</span>    <span class="comment"># Launch node(s) in a carma container to allow logging to be configured</span></div>
+<div class="line"><span class="lineno">   71</span>    container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">   72</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
+<div class="line"><span class="lineno">   73</span>        name=<span class="stringliteral">&#39;carma_cloud_client_container&#39;</span>,</div>
+<div class="line"><span class="lineno">   74</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">   75</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
+<div class="line"><span class="lineno">   76</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">   77</span>            </div>
+<div class="line"><span class="lineno">   78</span>            <span class="comment"># Launch the core node(s)</span></div>
+<div class="line"><span class="lineno">   79</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">   80</span>                    package=<span class="stringliteral">&#39;carma_cloud_client&#39;</span>,</div>
+<div class="line"><span class="lineno">   81</span>                    plugin=<span class="stringliteral">&#39;carma_cloud_client::CarmaCloudClient&#39;</span>,</div>
+<div class="line"><span class="lineno">   82</span>                    name=<span class="stringliteral">&#39;carma_cloud_client&#39;</span>,</div>
+<div class="line"><span class="lineno">   83</span>                    extra_arguments=[</div>
+<div class="line"><span class="lineno">   84</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">   85</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : log_level }</div>
+<div class="line"><span class="lineno">   86</span>                    ],</div>
+<div class="line"><span class="lineno">   87</span>                    parameters=[ param_file_path ]</div>
+<div class="line"><span class="lineno">   88</span>            ),</div>
+<div class="line"><span class="lineno">   89</span>        ]</div>
+<div class="line"><span class="lineno">   90</span>    )</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><span class="lineno">   93</span>        declare_log_level_arg,</div>
+<div class="line"><span class="lineno">   94</span>        container</div>
+<div class="line"><span class="lineno">   95</span>    ])</div>
+<div class="ttc" id="anamespacecarma__cloud__client__launch_html_a197dfe55298d247edddfcd4aa5624d40"><div class="ttname"><a href="namespacecarma__cloud__client__launch.html#a197dfe55298d247edddfcd4aa5624d40">carma_cloud_client_launch.open_tunnels</a></div><div class="ttdeci">def open_tunnels()</div><div class="ttdef"><b>Definition:</b> <a href="carma__cloud__client__launch_8py_source.html#l00033">carma_cloud_client_launch.py:33</a></div></div>
+<div class="ttc" id="anamespacecarma__cloud__client__launch_html_a61660dc0389cc0486295cd5ab8c7bfcc"><div class="ttname"><a href="namespacecarma__cloud__client__launch.html#a61660dc0389cc0486295cd5ab8c7bfcc">carma_cloud_client_launch.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="carma__cloud__client__launch_8py_source.html#l00057">carma_cloud_client_launch.py:57</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="carma__cloud__client__launch_8py_source.html#l00033">open_tunnels()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacecarma__cloud__client__launch_a61660dc0389cc0486295cd5ab8c7bfcc_cgraph.png" border="0" usemap="#anamespacecarma__cloud__client__launch_a61660dc0389cc0486295cd5ab8c7bfcc_cgraph" alt=""/></div>
+<map name="anamespacecarma__cloud__client__launch_a61660dc0389cc0486295cd5ab8c7bfcc_cgraph" id="anamespacecarma__cloud__client__launch_a61660dc0389cc0486295cd5ab8c7bfcc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,171,61"/>
+<area shape="rect" href="namespacecarma__cloud__client__launch.html#a197dfe55298d247edddfcd4aa5624d40" title=" " alt="" coords="219,13,365,54"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a197dfe55298d247edddfcd4aa5624d40" name="a197dfe55298d247edddfcd4aa5624d40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a197dfe55298d247edddfcd4aa5624d40">&#9670;&nbsp;</a></span>open_tunnels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def carma_cloud_client_launch.open_tunnels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="carma__cloud__client__launch_8py_source.html#l00033">33</a> of file <a class="el" href="carma__cloud__client__launch_8py_source.html">carma_cloud_client_launch.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span><span class="keyword">def </span><a class="code hl_function" href="namespacecarma__cloud__client__launch.html#a197dfe55298d247edddfcd4aa5624d40">open_tunnels</a>():</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    REMOTE_USER=<span class="stringliteral">&quot;ubuntu&quot;</span></div>
+<div class="line"><span class="lineno">   36</span>    REMOTE_ADDR=<span class="stringliteral">&quot;www.carma-cloud.com&quot;</span></div>
+<div class="line"><span class="lineno">   37</span>    KEY_FILE=<span class="stringliteral">&quot;carma-cloud-test-1.pem&quot;</span></div>
+<div class="line"><span class="lineno">   38</span>    HOST_PORT=<span class="stringliteral">&quot;33333&quot;</span> <span class="comment"># This port is forwarded to remote host (carma-cloud)</span></div>
+<div class="line"><span class="lineno">   39</span>    REMOTE_PORT=<span class="stringliteral">&quot;33333&quot;</span> <span class="comment"># This port is forwarded to local host </span></div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    param_launch_path = os.path.join(</div>
+<div class="line"><span class="lineno">   42</span>        get_package_share_directory(<span class="stringliteral">&#39;carma_cloud_client&#39;</span>), <span class="stringliteral">&#39;launch/scripts&#39;</span>)</div>
+<div class="line"><span class="lineno">   43</span>        </div>
+<div class="line"><span class="lineno">   44</span>    </div>
+<div class="line"><span class="lineno">   45</span>    cmd = param_launch_path + <span class="stringliteral">&#39;/open_tunnels.sh&#39;</span></div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    subprocess.check_call([<span class="stringliteral">&#39;chmod&#39;</span>,<span class="stringliteral">&#39;u+x&#39;</span>, cmd])</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    key_path = <span class="stringliteral">&quot;/opt/carma/vehicle/calibration/cloud_permission&quot;</span></div>
+<div class="line"><span class="lineno">   50</span>    </div>
+<div class="line"><span class="lineno">   51</span>    key = param_launch_path + <span class="stringliteral">&#39;/&#39;</span> + KEY_FILE</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    subprocess.check_call([<span class="stringliteral">&#39;sudo&#39;</span>,<span class="stringliteral">&#39;chmod&#39;</span>,<span class="stringliteral">&#39;400&#39;</span>, key])</div>
+<div class="line"><span class="lineno">   54</span>    subprocess.check_call([<span class="stringliteral">&#39;sudo&#39;</span>, cmd, <span class="stringliteral">&#39;-u&#39;</span>, REMOTE_USER, <span class="stringliteral">&#39;-a&#39;</span>, REMOTE_ADDR, <span class="stringliteral">&#39;-k&#39;</span>, key, <span class="stringliteral">&#39;-p&#39;</span>, REMOTE_PORT,  <span class="stringliteral">&#39;-r&#39;</span>, HOST_PORT])</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span> </div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="carma__cloud__client__launch_8py_source.html#l00057">generate_launch_description()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacecarma__cloud__client__launch_a197dfe55298d247edddfcd4aa5624d40_icgraph.png" border="0" usemap="#anamespacecarma__cloud__client__launch_a197dfe55298d247edddfcd4aa5624d40_icgraph" alt=""/></div>
+<map name="anamespacecarma__cloud__client__launch_a197dfe55298d247edddfcd4aa5624d40_icgraph" id="anamespacecarma__cloud__client__launch_a197dfe55298d247edddfcd4aa5624d40_icgraph">
+<area shape="rect" title=" " alt="" coords="219,13,365,54"/>
+<area shape="rect" href="namespacecarma__cloud__client__launch.html#a61660dc0389cc0486295cd5ab8c7bfcc" title=" " alt="" coords="5,5,171,61"/>
+</map>
+</div>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -159,7 +228,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cloud__client__launch.html">carma_cloud_client_launch</a></li>
-    <li class="footer">Generated on Wed Dec 7 2022 19:37:09 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Dec 8 2022 17:55:20 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

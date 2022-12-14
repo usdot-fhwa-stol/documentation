@@ -1,5 +1,8 @@
 var PartII_Id_8h =
 [
+    [ "PartII_Id_specialVehicleExt", "PartII-Id_8h.html#a62b092234b6f3930267b1e3743c0f027", null ],
+    [ "PartII_Id_supplementalVehicleExt", "PartII-Id_8h.html#af81567c5cff8949e0768ff547a587278", null ],
+    [ "PartII_Id_vehicleSafetyExt", "PartII-Id_8h.html#a9c69ab59869ac941f9bf4431b64f781f", null ],
     [ "PartII_Id_t", "PartII-Id_8h.html#a0053f7ffb761052a88c5b1ea7958041b", null ],
     [ "asn_DEF_PartII_Id", "PartII-Id_8h.html#abcb86bcd570aaa57336345b29fe9f069", null ],
     [ "asn_PER_type_PartII_Id_constr_1", "PartII-Id_8h.html#abe90122f46a3a6b6cd4907d65c00279c", null ],

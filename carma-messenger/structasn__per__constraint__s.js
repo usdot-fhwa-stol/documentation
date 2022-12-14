@@ -8,7 +8,7 @@ var structasn__per__constraint__s =
     ] ],
     [ "effective_bits", "structasn__per__constraint__s.html#a7f6e70444d737a7e4bb8099e07008445", null ],
     [ "flags", "structasn__per__constraint__s.html#afd70745d49c793a18761de9767d21e0a", null ],
-    [ "lower_bound", "structasn__per__constraint__s.html#ab3d9a410fde0efb00412226ad51bccea", null ],
+    [ "lower_bound", "structasn__per__constraint__s.html#aa13e75426b23aeeed1392bc4f86a107b", null ],
     [ "range_bits", "structasn__per__constraint__s.html#aededf9e836382738b542e560d9bb1e50", null ],
-    [ "upper_bound", "structasn__per__constraint__s.html#ac114d50dfb41a04a9448777fc6ad4863", null ]
+    [ "upper_bound", "structasn__per__constraint__s.html#a77c0738f5e1b5e12e6a7a0f6a74777a8", null ]
 ];

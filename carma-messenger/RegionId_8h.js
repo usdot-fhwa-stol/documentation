@@ -1,5 +1,10 @@
 var RegionId_8h =
 [
+    [ "RegionId_addGrpA", "RegionId_8h.html#adeeb20f7b405dc407c144ac177ada37c", null ],
+    [ "RegionId_addGrpB", "RegionId_8h.html#a9b4165b797da9b00efaf5dab9950882e", null ],
+    [ "RegionId_addGrpC", "RegionId_8h.html#a8779d14c8ddba5bf6eb1fee4c575470d", null ],
+    [ "RegionId_addGrpCarma", "RegionId_8h.html#a7fcf2c0d7196730ea3ef4f5a5191ded8", null ],
+    [ "RegionId_noRegion", "RegionId_8h.html#a7703724bcb0a5d704f1ddc6f86d578d0", null ],
     [ "RegionId_t", "RegionId_8h.html#add3742429b9b332c2d2f7c65b09b8b44", null ],
     [ "asn_DEF_RegionId", "RegionId_8h.html#ae40bc0f1f13f33463e7c41bb00bc044a", null ],
     [ "asn_PER_type_RegionId_constr_1", "RegionId_8h.html#aeb97e34f67acac18e771cbd6efc0fbc3", null ],

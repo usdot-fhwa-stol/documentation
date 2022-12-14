@@ -1,5 +1,15 @@
 var FuelType_8h =
 [
+    [ "FuelType_diesel", "FuelType_8h.html#a077ada35ee576b484c68b6fadff1bc7e", null ],
+    [ "FuelType_electric", "FuelType_8h.html#a9462482f12b2ab7695e4cdf8d87fc673", null ],
+    [ "FuelType_ethanol", "FuelType_8h.html#afdcd5f50cdaa17ebe7112fe98d17efb9", null ],
+    [ "FuelType_gasoline", "FuelType_8h.html#af2eefb8ec01d286420f5d8bdd4a014e6", null ],
+    [ "FuelType_hybrid", "FuelType_8h.html#a4a25fdcb183ec600398fdbd91339518f", null ],
+    [ "FuelType_hydrogen", "FuelType_8h.html#acbf5445c0b6691d5b9ede5ded9ac4f25", null ],
+    [ "FuelType_natGasComp", "FuelType_8h.html#aa0202e1100aeb7b458a11e9c5019404c", null ],
+    [ "FuelType_natGasLiquid", "FuelType_8h.html#aa83b7ea16b80cd11f3c921df01b8b17c", null ],
+    [ "FuelType_propane", "FuelType_8h.html#a3dcfa33d4519a52933bafff9fe8b66ac", null ],
+    [ "FuelType_unknownFuel", "FuelType_8h.html#a95ac601836b53d3a804ff4afcbaa274f", null ],
     [ "FuelType_t", "FuelType_8h.html#a41067ed63e30a7f331981e121416ee5a", null ],
     [ "asn_DEF_FuelType", "FuelType_8h.html#afea1915fe7c40ba1e77f38a4e888ce3a", null ],
     [ "asn_PER_type_FuelType_constr_1", "FuelType_8h.html#a20d4b0504a5160b829d21ada731835d9", null ],

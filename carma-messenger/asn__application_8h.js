@@ -15,8 +15,11 @@ var asn__application_8h =
       [ "ATS_CANONICAL_OER", "asn__application_8h.html#a12694ab96b5e3e479778ab483ff16916a6bc73dfd8525f5c1dbf555db8b501ba4", null ],
       [ "ATS_UNALIGNED_BASIC_PER", "asn__application_8h.html#a12694ab96b5e3e479778ab483ff16916a91f611f41a795664e4126d7110988047", null ],
       [ "ATS_UNALIGNED_CANONICAL_PER", "asn__application_8h.html#a12694ab96b5e3e479778ab483ff16916a7729d7117c6d47902d9e40522585e621", null ],
+      [ "ATS_ALIGNED_BASIC_PER", "asn__application_8h.html#a12694ab96b5e3e479778ab483ff16916a400e55fd74ef068d82e56337b6304c23", null ],
+      [ "ATS_ALIGNED_CANONICAL_PER", "asn__application_8h.html#a12694ab96b5e3e479778ab483ff16916ad4754d763a3082c7555bce9a7b334ddf", null ],
       [ "ATS_BASIC_XER", "asn__application_8h.html#a12694ab96b5e3e479778ab483ff16916ac4fda4533af2f77d4094d5001d1d4663", null ],
-      [ "ATS_CANONICAL_XER", "asn__application_8h.html#a12694ab96b5e3e479778ab483ff16916a2d0cdf8d683f71e3cc76442898894bdd", null ]
+      [ "ATS_CANONICAL_XER", "asn__application_8h.html#a12694ab96b5e3e479778ab483ff16916a2d0cdf8d683f71e3cc76442898894bdd", null ],
+      [ "ATS_JER", "asn__application_8h.html#a12694ab96b5e3e479778ab483ff16916a99ddef8ebd1d560c6b461cb53967cd20", null ]
     ] ],
     [ "asn_decode", "asn__application_8h.html#ab84570b8b7bca40e964cc7bb0db19b0f", null ],
     [ "asn_encode", "asn__application_8h.html#a07f66b64a68c857fb5853dd430a64554", null ],

@@ -1,0 +1,6 @@
+var unionBSMpartIIExtension_1_1BSMpartIIExtension____partII__Value_1_1BSMpartIIExtension____partII__Value__u =
+[
+    [ "SpecialVehicleExtensions", "unionBSMpartIIExtension_1_1BSMpartIIExtension____partII__Value_1_1BSMpartIIExtension____partII__Value__u.html#a959d23a62f907661ffce27e744e172a6", null ],
+    [ "SupplementalVehicleExtensions", "unionBSMpartIIExtension_1_1BSMpartIIExtension____partII__Value_1_1BSMpartIIExtension____partII__Value__u.html#ae82db8394dc71647271024aa926cb309", null ],
+    [ "VehicleSafetyExtensions", "unionBSMpartIIExtension_1_1BSMpartIIExtension____partII__Value_1_1BSMpartIIExtension____partII__Value__u.html#a7abf174e30aa82d7990d7c80e9b8337f", null ]
+];

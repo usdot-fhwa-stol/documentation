@@ -46,5 +46,9 @@ var searchData=
   ['brakeappliedstatus_5funavailable_43',['BrakeAppliedStatus_unavailable',['../BrakeAppliedStatus_8h.html#aa8d3c407a36019498ceabf15bf36a21ea5c785c2ebb98f380fb1c0d2fcc8074fc',1,'BrakeAppliedStatus.h']]],
   ['brakeboostapplied_5foff_44',['BrakeBoostApplied_off',['../BrakeBoostApplied_8h.html#a648de9f1cb134ba815b2b8474161eadcac253b2291dbb198b977b30f468906658',1,'BrakeBoostApplied.h']]],
   ['brakeboostapplied_5fon_45',['BrakeBoostApplied_on',['../BrakeBoostApplied_8h.html#a648de9f1cb134ba815b2b8474161eadca06445afb3b0c205a5dbca6ff85bcf218',1,'BrakeBoostApplied.h']]],
-  ['brakeboostapplied_5funavailable_46',['BrakeBoostApplied_unavailable',['../BrakeBoostApplied_8h.html#a648de9f1cb134ba815b2b8474161eadca65ec1ee67dcdd4177f1d440d75c1c945',1,'BrakeBoostApplied.h']]]
+  ['brakeboostapplied_5funavailable_46',['BrakeBoostApplied_unavailable',['../BrakeBoostApplied_8h.html#a648de9f1cb134ba815b2b8474161eadca65ec1ee67dcdd4177f1d440d75c1c945',1,'BrakeBoostApplied.h']]],
+  ['bsmpartiiextension_5f_5fpartii_5fvalue_5fpr_5fnothing_47',['BSMpartIIExtension__partII_Value_PR_NOTHING',['../PartIIcontent_8h.html#a38088693882970f554a1a35cfc626d1fa1695f441627d81fb7c711a6b58de044c',1,'PartIIcontent.h']]],
+  ['bsmpartiiextension_5f_5fpartii_5fvalue_5fpr_5fspecialvehicleextensions_48',['BSMpartIIExtension__partII_Value_PR_SpecialVehicleExtensions',['../PartIIcontent_8h.html#a38088693882970f554a1a35cfc626d1fa2f79bdb0237d82013fb01cc5dc373def',1,'PartIIcontent.h']]],
+  ['bsmpartiiextension_5f_5fpartii_5fvalue_5fpr_5fsupplementalvehicleextensions_49',['BSMpartIIExtension__partII_Value_PR_SupplementalVehicleExtensions',['../PartIIcontent_8h.html#a38088693882970f554a1a35cfc626d1fa6e995369b53108923340cd0460b7b6bb',1,'PartIIcontent.h']]],
+  ['bsmpartiiextension_5f_5fpartii_5fvalue_5fpr_5fvehiclesafetyextensions_50',['BSMpartIIExtension__partII_Value_PR_VehicleSafetyExtensions',['../PartIIcontent_8h.html#a38088693882970f554a1a35cfc626d1fa4a4e0e18bc3c88fb1f03ebf20615cfe9',1,'PartIIcontent.h']]]
 ];

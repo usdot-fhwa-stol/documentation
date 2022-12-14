@@ -9,6 +9,7 @@ var searchData=
   ['geographicalpath_5ft_6',['GeographicalPath_t',['../GeographicalPath_8h.html#a30e4f2421ba6e4715d9f85dcfecf6834',1,'GeographicalPath.h']]],
   ['geometricprojection_5ft_7',['GeometricProjection_t',['../GeometricProjection_8h.html#a38ecd5e260016f01a8752b001cb1b619',1,'GeometricProjection.h']]],
   ['gnssstatus_5ft_8',['GNSSstatus_t',['../GNSSstatus_8h.html#a33c8a924381a2a3f34c97d2d6b227c87',1,'GNSSstatus.h']]],
-  ['grossdistance_5ft_9',['GrossDistance_t',['../GrossDistance_8h.html#a9d6435ce8fc1e5ed9f726b8017459506',1,'GrossDistance.h']]],
-  ['grossspeed_5ft_10',['GrossSpeed_t',['../GrossSpeed_8h.html#a5b5f6d2f3e00d09cf912ed6668375fd3',1,'GrossSpeed.h']]]
+  ['graphicstring_5ft_9',['GraphicString_t',['../GraphicString_8h.html#a83115e91b388d410614925a3931f4853',1,'GraphicString.h']]],
+  ['grossdistance_5ft_10',['GrossDistance_t',['../GrossDistance_8h.html#a9d6435ce8fc1e5ed9f726b8017459506',1,'GrossDistance.h']]],
+  ['grossspeed_5ft_11',['GrossSpeed_t',['../GrossSpeed_8h.html#a5b5f6d2f3e00d09cf912ed6668375fd3',1,'GrossSpeed.h']]]
 ];

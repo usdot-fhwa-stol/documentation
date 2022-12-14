@@ -9,5 +9,8 @@ var NodeOffsetPointXY_addGrpB_8h =
       [ "NodeOffsetPointXY_addGrpB_PR_posA", "NodeOffsetPointXY-addGrpB_8h.html#a5b771e09a9aef637388103a68dc25638a888ca57e3e879b13934d1421be1b40c9", null ],
       [ "NodeOffsetPointXY_addGrpB_PR_posB", "NodeOffsetPointXY-addGrpB_8h.html#a5b771e09a9aef637388103a68dc25638a50bb01409cacae46a0294615875e23e2", null ]
     ] ],
-    [ "asn_DEF_NodeOffsetPointXY_addGrpB", "NodeOffsetPointXY-addGrpB_8h.html#a73330bd86d038c0a935656563c73d02c", null ]
+    [ "asn_DEF_NodeOffsetPointXY_addGrpB", "NodeOffsetPointXY-addGrpB_8h.html#a73330bd86d038c0a935656563c73d02c", null ],
+    [ "asn_MBR_NodeOffsetPointXY_addGrpB_1", "NodeOffsetPointXY-addGrpB_8h.html#a4b1ef97a881cbc86bc1917867908eee5", null ],
+    [ "asn_PER_type_NodeOffsetPointXY_addGrpB_constr_1", "NodeOffsetPointXY-addGrpB_8h.html#a270fdfe6aab0760d4558a83baed13bc8", null ],
+    [ "asn_SPC_NodeOffsetPointXY_addGrpB_specs_1", "NodeOffsetPointXY-addGrpB_8h.html#aa8405b04f59a1e709823087c99fc5f6a", null ]
 ];

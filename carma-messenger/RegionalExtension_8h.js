@@ -1,14 +1,15 @@
 var RegionalExtension_8h =
 [
-    [ "RegionalExtension_99P0", "structRegionalExtension__99P0.html", "structRegionalExtension__99P0" ],
-    [ "RegionalExtension_99P0::RegionalExtension_99P0__regExtValue", "structRegionalExtension__99P0_1_1RegionalExtension__99P0____regExtValue.html", "structRegionalExtension__99P0_1_1RegionalExtension__99P0____regExtValue" ],
-    [ "RegionalExtension_99P0::RegionalExtension_99P0__regExtValue::RegionalExtension_99P0__regExtValue_u", "unionRegionalExtension__99P0_1_1RegionalExtension__99P0____regExtValue_1_1RegionalExtension__99P0____regExtValue__u.html", null ],
-    [ "RegionalExtension_99P0__regExtValue_PR", "RegionalExtension_8h.html#a4c513713e9577f1b77e9d323709b2b60", null ],
-    [ "RegionalExtension_99P0_t", "RegionalExtension_8h.html#acf063dfdf14e3d2854b806193320d16f", null ],
-    [ "RegionalExtension_99P0__regExtValue_PR", "RegionalExtension_8h.html#a10dd8706a952667b6b462f3f87cb6e7a", [
-      [ "RegionalExtension_99P0__regExtValue_PR_NOTHING", "RegionalExtension_8h.html#a10dd8706a952667b6b462f3f87cb6e7aad3ef8d694e9f545e66c53d497d2938a3", null ]
+    [ "Reg_BasicSafetyMessage", "structReg__BasicSafetyMessage.html", "structReg__BasicSafetyMessage" ],
+    [ "Reg_BasicSafetyMessage::Reg_BasicSafetyMessage__regExtValue", "structReg__BasicSafetyMessage_1_1Reg__BasicSafetyMessage____regExtValue.html", "structReg__BasicSafetyMessage_1_1Reg__BasicSafetyMessage____regExtValue" ],
+    [ "Reg_BasicSafetyMessage::Reg_BasicSafetyMessage__regExtValue::Reg_BasicSafetyMessage__regExtValue_u", "unionReg__BasicSafetyMessage_1_1Reg__BasicSafetyMessage____regExtValue_1_1Reg__BasicSafetyMessage____regExtValue__u.html", "unionReg__BasicSafetyMessage_1_1Reg__BasicSafetyMessage____regExtValue_1_1Reg__BasicSafetyMessage____regExtValue__u" ],
+    [ "Reg_BasicSafetyMessage__regExtValue_PR", "RegionalExtension_8h.html#ab34aec4d3702ecefd8f375e1cd97792d", null ],
+    [ "Reg_BasicSafetyMessage_t", "RegionalExtension_8h.html#af9069d9ac4fedd7bb73cf7163c52a11f", null ],
+    [ "Reg_BasicSafetyMessage__regExtValue_PR", "RegionalExtension_8h.html#a668794521a393523ccb9efd532feee11", [
+      [ "Reg_BasicSafetyMessage__regExtValue_PR_NOTHING", "RegionalExtension_8h.html#a668794521a393523ccb9efd532feee11a49e17b7c5be2abbd237c3386864c7ebd", null ],
+      [ "Reg_BasicSafetyMessage__regExtValue_PR_BasicSafetyMessage_addGrpCarma", "RegionalExtension_8h.html#a668794521a393523ccb9efd532feee11a23aaa3ce8bf4146f197dbccc59275598", null ]
     ] ],
-    [ "asn_DEF_RegionalExtension_99P0", "RegionalExtension_8h.html#a8898d3530ff0ad820715dc32ec686b2c", null ],
-    [ "asn_MBR_RegionalExtension_99P0_1", "RegionalExtension_8h.html#a82fe89313e16a8350196880739cb2602", null ],
-    [ "asn_SPC_RegionalExtension_99P0_specs_1", "RegionalExtension_8h.html#ae54d4be77d60509a0b790b3bdf535a89", null ]
+    [ "asn_DEF_Reg_BasicSafetyMessage", "RegionalExtension_8h.html#ab9cbfcc016838480a726cfa302e8f7e7", null ],
+    [ "asn_MBR_Reg_BasicSafetyMessage_1", "RegionalExtension_8h.html#a1b564a270e2fdffd57dbcf8defa6edaf", null ],
+    [ "asn_SPC_Reg_BasicSafetyMessage_specs_1", "RegionalExtension_8h.html#ac0bf0b659633aab8d57b1bd0a2057d2b", null ]
 ];

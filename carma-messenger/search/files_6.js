@@ -6,6 +6,7 @@ var searchData=
   ['geographicalpath_2eh_3',['GeographicalPath.h',['../GeographicalPath_8h.html',1,'']]],
   ['geometricprojection_2eh_4',['GeometricProjection.h',['../GeometricProjection_8h.html',1,'']]],
   ['gnssstatus_2eh_5',['GNSSstatus.h',['../GNSSstatus_8h.html',1,'']]],
-  ['grossdistance_2eh_6',['GrossDistance.h',['../GrossDistance_8h.html',1,'']]],
-  ['grossspeed_2eh_7',['GrossSpeed.h',['../GrossSpeed_8h.html',1,'']]]
+  ['graphicstring_2eh_6',['GraphicString.h',['../GraphicString_8h.html',1,'']]],
+  ['grossdistance_2eh_7',['GrossDistance.h',['../GrossDistance_8h.html',1,'']]],
+  ['grossspeed_2eh_8',['GrossSpeed.h',['../GrossSpeed_8h.html',1,'']]]
 ];

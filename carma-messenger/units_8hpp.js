@@ -1,6 +1,7 @@
 var units_8hpp =
 [
     [ "CENTI_DEG_PER_DEG", "units_8hpp.html#ac161274a7b181cd60bea0f44f0cf28f9", null ],
+    [ "CENTI_S_PER_S", "units_8hpp.html#ab6e6f0894abf0c831fecd61656dd1bb7", null ],
     [ "CM_PER_M", "units_8hpp.html#aa8b965803a5d19f65caf062168e9dcb9", null ],
     [ "DECA_DEG_PER_DEG", "units_8hpp.html#a0532bb5d9a64b8a1880b8672de6bd009", null ],
     [ "DECI_M_PER_M", "units_8hpp.html#a2bc0d58954ed3f51939ee5b1f89c0568", null ],
@@ -10,13 +11,20 @@ var units_8hpp =
     [ "EIGHTIETH_DEG_PER_DEG", "units_8hpp.html#acba01150732c7a6615081223560c9c55", null ],
     [ "FIFTIETH_G_PER_M_PER_SEC_SQR", "units_8hpp.html#a9c5e8b8eea6fb413198c03ec9e844cd3", null ],
     [ "FIFTIETH_M_PER_M", "units_8hpp.html#a4513552384dd8515c17a2ec7a3e199bf", null ],
+    [ "FORTY_DEGREES_C", "units_8hpp.html#a70453a08c3c56c40893cd850b16f85a8", null ],
+    [ "HALF_PERCENT_PER_HUNDRED_PERCENT", "units_8hpp.html#aab5bac353e50490f70a43dba77b11bf4", null ],
+    [ "HPA_PER_TWO_PA", "units_8hpp.html#a70f18c1e43f82a9516805eb46a253fed", null ],
+    [ "KG_PER_HALF_METRIC_TON", "units_8hpp.html#a48c0ed2a48d86c575da3140facc110cc", null ],
     [ "MS_PER_S", "units_8hpp.html#a89caa084213283adc3ed030cc21c0736", null ],
     [ "NS_PER_MS_INT", "units_8hpp.html#a71872b9742d1fc251b1e676a87311d3d", null ],
     [ "ONE_AND_A_HALF_DEG", "units_8hpp.html#ae1aeddd68e3cfc7886b50175d79791a3", null ],
     [ "ONE_AND_A_HALF_DEG_PER_DEG", "units_8hpp.html#ad8f05ec859b6534188a955aa3c442722", null ],
     [ "SEC_PER_MIN", "units_8hpp.html#a1fb5a4dd4c6081910896c289478a47f8", null ],
+    [ "TENTH_GRAM_PER_GRAM", "units_8hpp.html#a9c925d05308a500d8a4f2ecdf9764613", null ],
     [ "TENTH_MICRO_DEG_PER_DEG", "units_8hpp.html#aa0d36b7a62e9c411e294b5792a44a026", null ],
     [ "THREE_TENTHS_DEG", "units_8hpp.html#ae0b2156861b5d4b41843f8bcb51baed4", null ],
     [ "TWENTIETH_M_PER_M", "units_8hpp.html#ad73a5342e82dc854a61a241264eb00ba", null ],
+    [ "TWO_KG", "units_8hpp.html#a9d50bd29858390ec6b0ed5809561a242", null ],
+    [ "TWO_TENTHS_MICRO", "units_8hpp.html#ad6d02420d7cdf4a19daaea959c90370a", null ],
     [ "UNCHANGED", "units_8hpp.html#ac9a6e43f0a635c7fba391bccc102f822", null ]
 ];

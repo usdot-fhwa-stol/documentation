@@ -1,9 +1,12 @@
 var structasn__TYPE__operation__s =
 [
+    [ "aper_decoder", "structasn__TYPE__operation__s.html#a4e0074bab09952eeab8248f13bbc0198", null ],
+    [ "aper_encoder", "structasn__TYPE__operation__s.html#a70de53d29b7444226c9666cc317f501b", null ],
     [ "ber_decoder", "structasn__TYPE__operation__s.html#ac8e330078a4c180d46ad0d9c4368c6ec", null ],
     [ "compare_struct", "structasn__TYPE__operation__s.html#a5571cfe7617f22801ff7c823d252051c", null ],
     [ "der_encoder", "structasn__TYPE__operation__s.html#ab9c92b5104b74526c398acd51fcc3a43", null ],
     [ "free_struct", "structasn__TYPE__operation__s.html#ab09fe89a37a4e6aff67684366825b66b", null ],
+    [ "jer_encoder", "structasn__TYPE__operation__s.html#a026a770b3e2cc37274a53ac82e3cc961", null ],
     [ "oer_decoder", "structasn__TYPE__operation__s.html#af729addd55deb3a84c002e7e182598c1", null ],
     [ "oer_encoder", "structasn__TYPE__operation__s.html#a9df93a9efa7771c79c486a55fd893c01", null ],
     [ "outmost_tag", "structasn__TYPE__operation__s.html#a4bc9d80c9d19fa938e9e599dbfb57333", null ],

@@ -10,7 +10,5 @@ var searchData=
   ['vehicle_5fstatus_5fintent_2ecpp_7',['vehicle_status_intent.cpp',['../vehicle__status__intent_8cpp.html',1,'']]],
   ['vehicle_5fstatus_5fintent_2eh_8',['vehicle_status_intent.h',['../vehicle__status__intent_8h.html',1,'']]],
   ['vehicle_5fstatus_5fintent_5fservice_2ecpp_9',['vehicle_status_intent_service.cpp',['../vehicle__status__intent__service_8cpp.html',1,'']]],
-  ['vehicle_5fstatus_5fintent_5fservice_2eh_10',['vehicle_status_intent_service.h',['../vehicle__status__intent__service_8h.html',1,'']]],
-  ['vehicle_5fstatus_5fintent_5fworker_2ecpp_11',['vehicle_status_intent_worker.cpp',['../vehicle__status__intent__worker_8cpp.html',1,'']]],
-  ['vehicle_5fstatus_5fintent_5fworker_2eh_12',['vehicle_status_intent_worker.h',['../vehicle__status__intent__worker_8h.html',1,'']]]
+  ['vehicle_5fstatus_5fintent_5fservice_2eh_10',['vehicle_status_intent_service.h',['../vehicle__status__intent__service_8h.html',1,'']]]
 ];

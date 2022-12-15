@@ -69,6 +69,5 @@ var searchData=
   ['_7evehicle_5fschedule_66',['~vehicle_schedule',['../structstreets__vehicle__scheduler_1_1vehicle__schedule.html#acbacfc0a4c092253495fb90c47031089',1,'streets_vehicle_scheduler::vehicle_schedule']]],
   ['_7evehicle_5fscheduler_67',['~vehicle_scheduler',['../classstreets__vehicle__scheduler_1_1vehicle__scheduler.html#ab4ebf26e4aae6538e7481220b2df3488',1,'streets_vehicle_scheduler::vehicle_scheduler']]],
   ['_7evehicle_5fstatus_5fintent_68',['~vehicle_status_intent',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#a6cdd648d978dafc8ee755afd44c89ca8',1,'message_services::models::vehicle_status_intent']]],
-  ['_7evehicle_5fstatus_5fintent_5fservice_69',['~vehicle_status_intent_service',['../classmessage__services_1_1services_1_1vehicle__status__intent__service.html#a8cf177c69275dd3df6e35085eb011bce',1,'message_services::services::vehicle_status_intent_service']]],
-  ['_7evehicle_5fstatus_5fintent_5fworker_70',['~vehicle_status_intent_worker',['../classmessage__services_1_1workers_1_1vehicle__status__intent__worker.html#a47c09db9f6e85814d80c9861e16ebc7c',1,'message_services::workers::vehicle_status_intent_worker']]]
+  ['_7evehicle_5fstatus_5fintent_5fservice_69',['~vehicle_status_intent_service',['../classmessage__services_1_1services_1_1vehicle__status__intent__service.html#a8cf177c69275dd3df6e35085eb011bce',1,'message_services::services::vehicle_status_intent_service']]]
 ];

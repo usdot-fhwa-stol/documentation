@@ -5,8 +5,7 @@ var hierarchy =
     [ "message_services::workers::base_worker", "classmessage__services_1_1workers_1_1base__worker.html", [
       [ "message_services::workers::bsm_worker", "classmessage__services_1_1workers_1_1bsm__worker.html", null ],
       [ "message_services::workers::mobilityoperation_worker", "classmessage__services_1_1workers_1_1mobilityoperation__worker.html", null ],
-      [ "message_services::workers::mobilitypath_worker", "classmessage__services_1_1workers_1_1mobilitypath__worker.html", null ],
-      [ "message_services::workers::vehicle_status_intent_worker", "classmessage__services_1_1workers_1_1vehicle__status__intent__worker.html", null ]
+      [ "message_services::workers::mobilitypath_worker", "classmessage__services_1_1workers_1_1mobilitypath__worker.html", null ]
     ] ],
     [ "message_services::models::baseMessage", "classmessage__services_1_1models_1_1baseMessage.html", [
       [ "message_services::models::bsm", "classmessage__services_1_1models_1_1bsm.html", null ],

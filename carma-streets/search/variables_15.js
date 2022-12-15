@@ -19,7 +19,6 @@ var searchData=
   ['vehicles_16',['vehicles',['../classstreets__vehicles_1_1vehicle__list.html#a5f453f61801ffa52db53f5803c817ba5',1,'streets_vehicles::vehicle_list']]],
   ['vert_17',['vert',['../structmessage__services_1_1models_1_1AccelerationSet4Way.html#ac45250c20f28e378def1768f30779aae',1,'message_services::models::AccelerationSet4Way']]],
   ['vsi_5fest_5fpath_5fpoint_5fcount_18',['vsi_est_path_point_count',['../classmessage__services_1_1services_1_1vehicle__status__intent__service.html#a8825fbe5dddce9c54ebd8d0e44cc92d5',1,'message_services::services::vehicle_status_intent_service']]],
-  ['vsi_5fmap_5f_19',['vsi_map_',['../classmessage__services_1_1workers_1_1vehicle__status__intent__worker.html#a9b48463961d3f30cfb3fdae30343ffd1',1,'message_services::workers::vehicle_status_intent_worker']]],
-  ['vsi_5fth_5fsleep_5fmilli_5fsec_20',['VSI_TH_SLEEP_MILLI_SEC',['../classmessage__services_1_1services_1_1vehicle__status__intent__service.html#a896a975dbedfc8f3d0e7aea120523f71',1,'message_services::services::vehicle_status_intent_service']]],
-  ['vsi_5ftopic_5fname_21',['vsi_topic_name',['../classmessage__services_1_1services_1_1vehicle__status__intent__service.html#a3f2850c83fa4e58b87f55429f30aefd0',1,'message_services::services::vehicle_status_intent_service']]]
+  ['vsi_5fth_5fsleep_5fmilli_5fsec_19',['VSI_TH_SLEEP_MILLI_SEC',['../classmessage__services_1_1services_1_1vehicle__status__intent__service.html#a896a975dbedfc8f3d0e7aea120523f71',1,'message_services::services::vehicle_status_intent_service']]],
+  ['vsi_5ftopic_5fname_20',['vsi_topic_name',['../classmessage__services_1_1services_1_1vehicle__status__intent__service.html#a3f2850c83fa4e58b87f55429f30aefd0',1,'message_services::services::vehicle_status_intent_service']]]
 ];

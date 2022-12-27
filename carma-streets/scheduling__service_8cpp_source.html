@@ -365,55 +365,56 @@ $(document).ready(function(){initNavTree('scheduling__service_8cpp_source.html',
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            <span class="comment">// Only log log statement content</span></div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            csv_logger-&gt;set_pattern(<span class="stringliteral">&quot;%v&quot;</span>);</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            csv_logger-&gt;set_level(spdlog::level::info);</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        }</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> spdlog::spdlog_ex&amp; ex)</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        {</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            spdlog::error( <span class="stringliteral">&quot;Log initialization failed: {0}!&quot;</span>,ex.what());</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        }</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    }</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>            csv_logger-&gt;flush_on(spdlog::level::info);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        }</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> spdlog::spdlog_ex&amp; ex)</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        {</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            spdlog::error( <span class="stringliteral">&quot;Log initialization failed: {0}!&quot;</span>,ex.what());</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        }</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    }</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#aef21bc1adf0a4ce5e240bfdb122325e8">  288</a></span>    scheduling_service::~scheduling_service()</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    {</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <span class="keywordflow">if</span> (consumer_worker)</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        {</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping consumer worker!&quot;</span>);</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            consumer_worker-&gt;stop();</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        }</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        <span class="keywordflow">if</span> (producer_worker)</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        {</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping producer worker&quot;</span>);</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>            producer_worker-&gt;stop();</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        }</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    }</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a8a86cc97c1202f0ec041e659a005177a">  304</a></span>    <span class="keywordtype">void</span> scheduling_service::set_scheduling_worker(std::shared_ptr&lt;scheduling_worker&gt; sched_worker) {</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        _scheduling_worker = sched_worker;</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    }</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#ab935f5e89218b93f02ed4ba648c45349">  308</a></span>    <span class="keywordtype">void</span> scheduling_service::set_vehicle_list(std::shared_ptr&lt;streets_vehicles::vehicle_list&gt; veh_list) {</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        vehicle_list_ptr = veh_list;</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    }</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a0acbcea3c17432026aa4d871e63bdf92">  312</a></span>    <span class="keywordtype">void</span> scheduling_service::set_vehicle_scheduler(std::shared_ptr&lt;streets_vehicle_scheduler::vehicle_scheduler&gt; scheduler) {</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        scheduler_ptr = scheduler;</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    }</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#ad1cee628ef1dba0a569236aff1113d2a">  316</a></span>    <span class="keywordtype">void</span> scheduling_service::set_consumer_worker(std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; worker) {</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        consumer_worker = worker;</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    }</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a7110ab08ca6178e99bfe0d34c5b6d1a2">  320</a></span>    <span class="keywordtype">void</span> scheduling_service::set_producer_worker(std::shared_ptr&lt;kafka_clients::kafka_producer_worker&gt; worker) {</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        producer_worker = worker;</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    }</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a7f6b6ec887b1ebf100ad7b8eec4a890d">  324</a></span>    <span class="keywordtype">void</span> scheduling_service::set_spat_consumer_worker(std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; worker) {</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        spat_consumer_worker = worker;</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    }</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>}</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#aef21bc1adf0a4ce5e240bfdb122325e8">  289</a></span>    scheduling_service::~scheduling_service()</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    {</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordflow">if</span> (consumer_worker)</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping consumer worker!&quot;</span>);</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            consumer_worker-&gt;stop();</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        }</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        <span class="keywordflow">if</span> (producer_worker)</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        {</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping producer worker&quot;</span>);</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>            producer_worker-&gt;stop();</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        }</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    }</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a8a86cc97c1202f0ec041e659a005177a">  305</a></span>    <span class="keywordtype">void</span> scheduling_service::set_scheduling_worker(std::shared_ptr&lt;scheduling_worker&gt; sched_worker) {</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        _scheduling_worker = sched_worker;</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    }</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#ab935f5e89218b93f02ed4ba648c45349">  309</a></span>    <span class="keywordtype">void</span> scheduling_service::set_vehicle_list(std::shared_ptr&lt;streets_vehicles::vehicle_list&gt; veh_list) {</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        vehicle_list_ptr = veh_list;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    }</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a0acbcea3c17432026aa4d871e63bdf92">  313</a></span>    <span class="keywordtype">void</span> scheduling_service::set_vehicle_scheduler(std::shared_ptr&lt;streets_vehicle_scheduler::vehicle_scheduler&gt; scheduler) {</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        scheduler_ptr = scheduler;</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    }</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#ad1cee628ef1dba0a569236aff1113d2a">  317</a></span>    <span class="keywordtype">void</span> scheduling_service::set_consumer_worker(std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; worker) {</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        consumer_worker = worker;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    }</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a7110ab08ca6178e99bfe0d34c5b6d1a2">  321</a></span>    <span class="keywordtype">void</span> scheduling_service::set_producer_worker(std::shared_ptr&lt;kafka_clients::kafka_producer_worker&gt; worker) {</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        producer_worker = worker;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    }</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a7f6b6ec887b1ebf100ad7b8eec4a890d">  325</a></span>    <span class="keywordtype">void</span> scheduling_service::set_spat_consumer_worker(std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; worker) {</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        spat_consumer_worker = worker;</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    }</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>}</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
 <div class="ttc" id="aclasssignal__phase__and__timing_1_1signal__phase__and__timing__exception_html"><div class="ttname"><a href="classsignal__phase__and__timing_1_1signal__phase__and__timing__exception.html">signal_phase_and_timing::signal_phase_and_timing_exception</a></div><div class="ttdoc">Runtime error related to processing signal_phase_and_timing JSON updates.</div><div class="ttdef"><b>Definition:</b> <a href="signal__phase__and__timing__exception_8h_source.html#l00013">signal_phase_and_timing_exception.h:13</a></div></div>
 <div class="ttc" id="aclassstreets__service_1_1streets__configuration__exception_html"><div class="ttname"><a href="classstreets__service_1_1streets__configuration__exception.html">streets_service::streets_configuration_exception</a></div><div class="ttdoc">Streets Configuration Exception thrown when manifest.json configuration files are incorrectly formatt...</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration__exception_8h_source.html#l00011">streets_configuration_exception.h:11</a></div></div>
 <div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a03603871626201e07690effb9f2440bf"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a></div><div class="ttdeci">static std::string get_string_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter string value with provided name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00103">streets_configuration.cpp:103</a></div></div>
@@ -429,7 +430,7 @@ $(document).ready(function(){initNavTree('scheduling__service_8cpp_source.html',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_0a5dd744e173470e5673b2d7425b82fe.html">scheduling_service</a></li><li class="navelem"><a class="el" href="dir_cb97f5385e392d758fdfc53af5f3d1a2.html">src</a></li><li class="navelem"><a class="el" href="scheduling__service_8cpp.html">scheduling_service.cpp</a></li>
-    <li class="footer">Generated on Tue Dec 27 2022 14:36:42 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Dec 27 2022 15:31:28 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -101,7 +101,7 @@ Collaboration diagram for traffic_signal_controller_service::snmp_cmd_struct:</d
 <div class="dyncontent">
 <div class="center"><img src="structtraffic__signal__controller__service_1_1snmp__cmd__struct__coll__graph.png" border="0" usemap="#atraffic__signal__controller__service_1_1snmp__cmd__struct_coll__map" alt="Collaboration graph"/></div>
 <map name="atraffic__signal__controller__service_1_1snmp__cmd__struct_coll__map" id="atraffic__signal__controller__service_1_1snmp__cmd__struct_coll__map">
-<area shape="rect" title="Object to store snmp control commands. Contructed with an initialized snmp_client_worker_ this object..." alt="" coords="313,315,494,421"/>
+<area shape="rect" title="Object to store snmp control commands. Contructed with an initialized snmp_client_worker_ this object..." alt="" coords="313,315,494,436"/>
 <area shape="rect" title=" " alt="" coords="5,145,177,252"/>
 <area shape="rect" href="structtraffic__signal__controller__service_1_1snmp__response__obj.html" title="A struct to hold the value being sent to the TSC, can be integer or string. Type needs to be defined." alt="" coords="201,153,395,245"/>
 <area shape="rect" title=" " alt="" coords="159,5,221,83"/>
@@ -127,6 +127,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a190fa7a7a91020d22141d1b290fdac4a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a190fa7a7a91020d22141d1b290fdac4a">run</a> ()</td></tr>
 <tr class="memdesc:a190fa7a7a91020d22141d1b290fdac4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to call the snmp command. Object type determines what SET command is sent. Types are Omit and Hold.  <a href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a190fa7a7a91020d22141d1b290fdac4a">More...</a><br /></td></tr>
 <tr class="separator:a190fa7a7a91020d22141d1b290fdac4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8975975a42ef5056cbe2bab57e7cae13"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a8975975a42ef5056cbe2bab57e7cae13">get_cmd_info</a> () const</td></tr>
+<tr class="memdesc:a8975975a42ef5056cbe2bab57e7cae13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to return information about the snmp set command.  <a href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a8975975a42ef5056cbe2bab57e7cae13">More...</a><br /></td></tr>
+<tr class="separator:a8975975a42ef5056cbe2bab57e7cae13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -244,6 +247,58 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8975975a42ef5056cbe2bab57e7cae13" name="a8975975a42ef5056cbe2bab57e7cae13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8975975a42ef5056cbe2bab57e7cae13">&#9670;&nbsp;</a></span>get_cmd_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string traffic_signal_controller_service::snmp_cmd_struct::get_cmd_info </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method to return information about the snmp set command. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns string formatted as "control_cmd_type:&lt;HOLD/OMIT&gt;;execution_start_time:&lt;calculated_start_time&gt;;signal_groups_set:&lt;signal groups being set separated by commas&gt;". </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="control__tsc__state_8cpp_source.html#l00140">140</a> of file <a class="el" href="control__tsc__state_8cpp_source.html">control_tsc_state.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>                                                 {</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>        std::string command_type;</div>
+<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a42bc93c0f45164999d4e3395e43c444f">control_type_</a> == <a class="code hl_enumvalue" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac">control_type::Hold</a>){</div>
+<div class="line"><span class="lineno">  144</span>            command_type = <span class="stringliteral">&quot;Hold&quot;</span>;</div>
+<div class="line"><span class="lineno">  145</span>        }</div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  147</span>            command_type = <span class="stringliteral">&quot;Omit&quot;</span>;</div>
+<div class="line"><span class="lineno">  148</span>        }</div>
+<div class="line"><span class="lineno">  149</span>        std::string execution_start_time = <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(<a class="code hl_variable" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#ad6bdc7b343392e7357a7bf4a9c5d58e8">start_time_</a>);</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>        <span class="comment">// Convert value set to phases nums</span></div>
+<div class="line"><span class="lineno">  152</span>        std::string value_set = <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(<a class="code hl_variable" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#ad6de041a8b0f7fe6e16400b3843ca285">set_val_</a>.<a class="code hl_variable" href="structtraffic__signal__controller__service_1_1snmp__response__obj.html#abbd5d90ba42fc8e1c7747f97b965da30">val_int</a>);</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;control_cmd_type:&quot;</span> + command_type + <span class="stringliteral">&quot;;execution_start_time:&quot;</span> + execution_start_time + <span class="stringliteral">&quot;;value_set:&quot;</span> + value_set;</div>
+<div class="line"><span class="lineno">  155</span>        </div>
+<div class="line"><span class="lineno">  156</span>    }</div>
+<div class="ttc" id="antcip__1202__ext_8h_html_a576de7b60eacee3f1a70393a005502cd"><div class="ttname"><a href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">Returns std::string representation of ntcip_1202_ext message including phase_times array.</div></div>
+<div class="ttc" id="astructtraffic__signal__controller__service_1_1snmp__cmd__struct_html_a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac"><div class="ttname"><a href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac">traffic_signal_controller_service::snmp_cmd_struct::control_type::Hold</a></div><div class="ttdeci">@ Hold</div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="control__tsc__state_8h_source.html#l00028">control_type_</a>, <a class="el" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac">Hold</a>, <a class="el" href="control__tsc__state_8h_source.html#l00024">set_val_</a>, <a class="el" href="control__tsc__state_8h_source.html#l00026">start_time_</a>, <a class="el" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">to_string()</a>, and <a class="el" href="snmp__client_8h_source.html#l00037">traffic_signal_controller_service::snmp_response_obj::val_int</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structtraffic__signal__controller__service_1_1snmp__cmd__struct_a8975975a42ef5056cbe2bab57e7cae13_cgraph.png" border="0" usemap="#astructtraffic__signal__controller__service_1_1snmp__cmd__struct_a8975975a42ef5056cbe2bab57e7cae13_cgraph" alt=""/></div>
+<map name="astructtraffic__signal__controller__service_1_1snmp__cmd__struct_a8975975a42ef5056cbe2bab57e7cae13_cgraph" id="astructtraffic__signal__controller__service_1_1snmp__cmd__struct_a8975975a42ef5056cbe2bab57e7cae13_cgraph">
+<area shape="rect" title="Method to return information about the snmp set command." alt="" coords="5,5,187,61"/>
+<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="235,20,307,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a190fa7a7a91020d22141d1b290fdac4a" name="a190fa7a7a91020d22141d1b290fdac4a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a190fa7a7a91020d22141d1b290fdac4a">&#9670;&nbsp;</a></span>run()</h2>
 
@@ -316,7 +371,7 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="control__tsc__state_8h_source.html#l00028">28</a> of file <a class="el" href="control__tsc__state_8h_source.html">control_tsc_state.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="control__tsc__state_8h_source.html#l00042">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00140">get_cmd_info()</a>, and <a class="el" href="control__tsc__state_8h_source.html#l00042">run()</a>.</p>
 
 </div>
 </div>
@@ -334,7 +389,7 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="control__tsc__state_8h_source.html#l00024">24</a> of file <a class="el" href="control__tsc__state_8h_source.html">control_tsc_state.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="control__tsc__state_8h_source.html#l00030">snmp_cmd_struct()</a>, and <a class="el" href="control__tsc__state_8h_source.html#l00042">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="control__tsc__state_8h_source.html#l00030">snmp_cmd_struct()</a>, <a class="el" href="control__tsc__state_8cpp_source.html#l00140">get_cmd_info()</a>, and <a class="el" href="control__tsc__state_8h_source.html#l00042">run()</a>.</p>
 
 </div>
 </div>
@@ -370,10 +425,13 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="control__tsc__state_8h_source.html#l00026">26</a> of file <a class="el" href="control__tsc__state_8h_source.html">control_tsc_state.h</a>.</p>
 
+<p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00140">get_cmd_info()</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>tsc_client_service/include/<a class="el" href="control__tsc__state_8h_source.html">control_tsc_state.h</a></li>
+<li>tsc_client_service/src/<a class="el" href="control__tsc__state_8cpp_source.html">control_tsc_state.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -381,7 +439,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetraffic__signal__controller__service.html">traffic_signal_controller_service</a></li><li class="navelem"><a class="el" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html">snmp_cmd_struct</a></li>
-    <li class="footer">Generated on Tue Dec 27 2022 14:16:36 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Dec 27 2022 14:36:45 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

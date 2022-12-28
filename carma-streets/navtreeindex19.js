@@ -1,5 +1,9 @@
 var NAVTREEINDEX19 =
 {
+"structstreets__vehicles_1_1vehicle.html#a54872859b3a12ee290b98e0eedd2864f":[18,0,23,5,9],
+"structstreets__vehicles_1_1vehicle.html#a5aaf317105b29db5a564b0a5c5468d7d":[19,0,14,5,12],
+"structstreets__vehicles_1_1vehicle.html#a5aaf317105b29db5a564b0a5c5468d7d":[18,0,23,5,12],
+"structstreets__vehicles_1_1vehicle.html#a5c6b46bfbbb31785e7a07e96bc18ae76":[18,0,23,5,22],
 "structstreets__vehicles_1_1vehicle.html#a5c6b46bfbbb31785e7a07e96bc18ae76":[19,0,14,5,22],
 "structstreets__vehicles_1_1vehicle.html#a8df55ea8c6a305540ae4601f5c770843":[19,0,14,5,18],
 "structstreets__vehicles_1_1vehicle.html#a8df55ea8c6a305540ae4601f5c770843":[18,0,23,5,18],

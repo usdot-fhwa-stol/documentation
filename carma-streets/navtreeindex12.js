@@ -1,5 +1,9 @@
 var NAVTREEINDEX12 =
 {
+"intersection__client__api_2OAIHelpers_8cpp.html#a1de27b45189fe8f86d6cbd4c70ed82ae":[20,0,8,0,0,3,12],
+"intersection__client__api_2OAIHelpers_8cpp.html#a1e6a550ef16686e286394028f97a92cd":[20,0,8,0,0,3,20],
+"intersection__client__api_2OAIHelpers_8cpp.html#a2e8e5c3fa53b7544613e5cb7f1ab3bb8":[20,0,8,0,0,3,5],
+"intersection__client__api_2OAIHelpers_8cpp.html#a30c1c4286e2bc2c535f7565c919921e7":[20,0,8,0,0,3,3],
 "intersection__client__api_2OAIHelpers_8cpp.html#a45ef46d7bcdc4cf12b775eef8ec1f99d":[20,0,8,0,0,3,27],
 "intersection__client__api_2OAIHelpers_8cpp.html#a4810235cb9f2ff824b2b602bb45ecc9e":[20,0,8,0,0,3,39],
 "intersection__client__api_2OAIHelpers_8cpp.html#a4cbe07b0c46d0da127db34797c6e6b4c":[20,0,8,0,0,3,21],
@@ -245,9 +249,5 @@ var NAVTREEINDEX12 =
 "intersection__server__api_2src_2models_2OAIHelpers_8h_source.html":[20,0,8,0,1,0,1,2],
 "intersection__server__api_2src_2models_2OAIHttpFileElement_8cpp.html":[20,0,8,0,1,0,1,3],
 "intersection__server__api_2src_2models_2OAIHttpFileElement_8cpp_source.html":[20,0,8,0,1,0,1,3],
-"intersection__server__api_2src_2models_2OAIHttpFileElement_8h.html":[20,0,8,0,1,0,1,4],
-"intersection__server__api_2src_2models_2OAIHttpFileElement_8h_source.html":[20,0,8,0,1,0,1,4],
-"intersection__server__api_2src_2models_2OAIIntersection__info_8cpp.html":[20,0,8,0,1,0,1,5],
-"intersection__server__api_2src_2models_2OAIIntersection__info_8cpp_source.html":[20,0,8,0,1,0,1,5],
-"intersection__server__api_2src_2models_2OAIIntersection__info_8h.html":[20,0,8,0,1,0,1,6]
+"intersection__server__api_2src_2models_2OAIHttpFileElement_8h.html":[20,0,8,0,1,0,1,4]
 };

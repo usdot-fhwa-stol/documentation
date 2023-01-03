@@ -48,6 +48,10 @@ var NAVTREEINDEX11 =
 "classtraffic__signal__controller__service_1_1udp__socket__listener__exception.html#a4631464f60296775abac8276e8b8298d":[18,0,24,16,0],
 "classtraffic__signal__controller__service_1_1udp__socket__listener__exception.html#a989aa85d4ec13ab8fd3a658d71bcea7d":[18,0,24,16,1],
 "classtraffic__signal__controller__service_1_1udp__socket__listener__exception.html#a989aa85d4ec13ab8fd3a658d71bcea7d":[19,0,15,16,1],
+"collect__kafka__logs_8py.html":[20,0,10],
+"collect__kafka__logs_8py.html#a5624652a60794ffc2b2a80698361b335":[20,0,10,0],
+"collect__kafka__logs_8py.html#a865d902d44390655d826670cfa2bd8c1":[20,0,10,1],
+"collect__kafka__logs_8py_source.html":[20,0,10],
 "configuration_8cpp.html":[20,0,8,2,1,0],
 "configuration_8cpp_source.html":[20,0,8,2,1,0],
 "configuration_8h.html":[20,0,8,2,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX11 =
 "intersection__client__api_2OAIHelpers_8cpp.html#a025bad99c7825a6a65912412bc8ec7b6":[20,0,8,0,0,3,41],
 "intersection__client__api_2OAIHelpers_8cpp.html#a08398938666c611a8e6cc223228b5a21":[20,0,8,0,0,3,11],
 "intersection__client__api_2OAIHelpers_8cpp.html#a0936af7eed3f4d752547de5934fed423":[20,0,8,0,0,3,44],
-"intersection__client__api_2OAIHelpers_8cpp.html#a0ae0ea67dbf759294765989d7230fba3":[20,0,8,0,0,3,9],
-"intersection__client__api_2OAIHelpers_8cpp.html#a13ba82bc9d8295489691d9a6c115e871":[20,0,8,0,0,3,35],
-"intersection__client__api_2OAIHelpers_8cpp.html#a1613385db422b2cfdd9aae66f527b3c9":[20,0,8,0,0,3,31],
-"intersection__client__api_2OAIHelpers_8cpp.html#a1b070c2e165f800eea4a2c86ddeaa745":[20,0,8,0,0,3,47],
-"intersection__client__api_2OAIHelpers_8cpp.html#a1dce1e3ef69547133c27ece962c7a928":[20,0,8,0,0,3,45]
+"intersection__client__api_2OAIHelpers_8cpp.html#a0ae0ea67dbf759294765989d7230fba3":[20,0,8,0,0,3,9]
 };

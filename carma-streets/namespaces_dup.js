@@ -1,12 +1,12 @@
 var namespaces_dup =
 [
+    [ "collect_kafka_logs", "namespacecollect__kafka__logs.html", [
+      [ "main", "namespacecollect__kafka__logs.html#a5624652a60794ffc2b2a80698361b335", null ],
+      [ "store_kafka_topic", "namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1", null ]
+    ] ],
     [ "intersection_model", "namespaceintersection__model.html", "namespaceintersection__model" ],
     [ "IntersectionModelAPI", "namespaceIntersectionModelAPI.html", "namespaceIntersectionModelAPI" ],
     [ "kafka_clients", "namespacekafka__clients.html", "namespacekafka__clients" ],
-    [ "kafka_logs", "namespacekafka__logs.html", [
-      [ "main", "namespacekafka__logs.html#ac529309c830d34e46d2d6b0e4f30a6d7", null ],
-      [ "store_kafka_topic", "namespacekafka__logs.html#aaf26eebab62a70b417cf810efe8f9e65", null ]
-    ] ],
     [ "message_services", "namespacemessage__services.html", "namespacemessage__services" ],
     [ "ntcip", "namespacentcip.html", "namespacentcip" ],
     [ "ntcip_oids", "namespacentcip__oids.html", [

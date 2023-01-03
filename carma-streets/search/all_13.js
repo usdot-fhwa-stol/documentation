@@ -254,7 +254,7 @@ var searchData=
   ['stop_251',['stop',['../classkafka__clients_1_1kafka__producer__worker.html#aa980d0bb119c78f73ea9bc1ac3abdd1a',1,'kafka_clients::kafka_producer_worker::stop()'],['../classkafka__clients_1_1kafka__consumer__worker.html#a43c96012dc78c2deaf7aad1cf2f7e94c',1,'kafka_clients::kafka_consumer_worker::stop()']]],
   ['stop_5fand_5fremain_252',['stop_and_remain',['../namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a03e3f63efcce21f01897bc0583979afa',1,'signal_phase_and_timing']]],
   ['stop_5fthen_5fproceed_253',['stop_then_proceed',['../namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a82f58c8125d6f043623349cf7330ef62',1,'signal_phase_and_timing']]],
-  ['store_5fkafka_5ftopic_254',['store_kafka_topic',['../namespacekafka__logs.html#aaf26eebab62a70b417cf810efe8f9e65',1,'kafka_logs']]],
+  ['store_5fkafka_5ftopic_254',['store_kafka_topic',['../namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1',1,'collect_kafka_logs']]],
   ['str_5ffetch_5fnum_255',['STR_FETCH_NUM',['../classkafka__clients_1_1kafka__consumer__worker.html#ab2ec9e7d75acb7cafcf7f4266c18cc1f',1,'kafka_clients::kafka_consumer_worker']]],
   ['strategy_256',['strategy',['../classmessage__services_1_1models_1_1mobilityoperation.html#a8c250c464b28f7fd66ca519626b2e9b8',1,'message_services::models::mobilityoperation']]],
   ['strategy_5fparams_257',['strategy_params',['../classmessage__services_1_1models_1_1mobilityoperation.html#a5bec3900b48dd621f828be276d9bfebb',1,'message_services::models::mobilityoperation::strategy_params()'],['../namespacesimulate__mobilityoperation.html#a5e2eb405c9e19653e75ab7e8e81219d8',1,'simulate_mobilityoperation.strategy_params()']]],

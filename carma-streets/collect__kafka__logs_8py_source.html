@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Carma-streets: scripts/kafka_logs.py Source File</title>
+<title>Carma-streets: collect_kafka_logs.py Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('kafka__logs_8py_source.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('collect__kafka__logs_8py_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -83,10 +83,10 @@ $(document).ready(function(){initNavTree('kafka__logs_8py_source.html',''); init
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">kafka_logs.py</div></div>
+  <div class="headertitle"><div class="title">collect_kafka_logs.py</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="kafka__logs_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespacekafka__logs.html">    1</a></span><span class="keyword">import</span> os</div>
+<a href="collect__kafka__logs_8py.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespacecollect__kafka__logs.html">    1</a></span><span class="keyword">import</span> os</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">import</span> time</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> re</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> signal</div>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('kafka__logs_8py_source.html',''); init
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespacekafka__logs.html#aaf26eebab62a70b417cf810efe8f9e65">   18</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacekafka__logs.html#aaf26eebab62a70b417cf810efe8f9e65">store_kafka_topic</a>(topic, dir, timeout, start_time, end_time):</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1">   18</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1">store_kafka_topic</a>(topic, dir, timeout, start_time, end_time):</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    timestamp_regex = <span class="stringliteral">&#39;CreateTime:(\d+)\t{&#39;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    filename = f<span class="stringliteral">&#39;{dir}/{topic}.log&#39;</span></div>
@@ -150,12 +150,12 @@ $(document).ready(function(){initNavTree('kafka__logs_8py_source.html',''); init
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">return</span> 0</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="namespacekafka__logs.html#ac529309c830d34e46d2d6b0e4f30a6d7">   71</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacekafka__logs.html#ac529309c830d34e46d2d6b0e4f30a6d7">main</a>():</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="namespacecollect__kafka__logs.html#a5624652a60794ffc2b2a80698361b335">   71</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacecollect__kafka__logs.html#a5624652a60794ffc2b2a80698361b335">main</a>():</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment"># Default list of topics, aka all topics from https://usdot-carma.atlassian.net/wiki/spaces/CRMSRT/pages/2317549999/CARMA-Streets+Messaging</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment"># topic desire_phase_plan is in the list from confluence, but doesn&#39;t exist in kafka as of 2022/12/05</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    topics = [<span class="stringliteral">&#39;v2xhub_scheduling_plan_sub&#39;</span> ,<span class="stringliteral">&#39;v2xhub_bsm_in&#39;</span>, <span class="stringliteral">&#39;v2xhub_mobility_operation_in&#39;</span>, <span class="stringliteral">&#39;v2xhub_mobility_path_in&#39;</span>,</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>              <span class="stringliteral">&#39;vehicle_status_intent_output&#39;</span>, <span class="stringliteral">&#39;v2xhub_map_msg_in&#39;</span>, <span class="stringliteral">&#39;modified_spat&#39;</span>, <span class="stringliteral">&#39;tsc_config_state&#39;</span>]</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>              <span class="stringliteral">&#39;vehicle_status_intent_output&#39;</span>, <span class="stringliteral">&#39;v2xhub_map_msg_in&#39;</span>, <span class="stringliteral">&#39;modified_spat&#39;</span>, <span class="stringliteral">&#39;tsc_config_state&#39;</span>, <span class="stringliteral">&#39;desired_phase_plan&#39;</span>]</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    timeout = 5</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment"># Get arguments</span></div>
@@ -208,7 +208,7 @@ $(document).ready(function(){initNavTree('kafka__logs_8py_source.html',''); init
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    os.system(f<span class="stringliteral">&#39;mkdir {outfile}&#39;</span>)</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">for</span> topic <span class="keywordflow">in</span> topics:</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        ret = <a class="code hl_function" href="namespacekafka__logs.html#aaf26eebab62a70b417cf810efe8f9e65">store_kafka_topic</a>(topic, outfile, timeout, start_time, end_time)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        ret = <a class="code hl_function" href="namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1">store_kafka_topic</a>(topic, outfile, timeout, start_time, end_time)</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">if</span> ret != 0:</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            print(<span class="stringliteral">&#39;received error, stopping execution&#39;</span>)</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">return</span></div>
@@ -219,16 +219,16 @@ $(document).ready(function(){initNavTree('kafka__logs_8py_source.html',''); init
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_function" href="namespacekafka__logs.html#ac529309c830d34e46d2d6b0e4f30a6d7">main</a>()</div>
-<div class="ttc" id="anamespacekafka__logs_html_aaf26eebab62a70b417cf810efe8f9e65"><div class="ttname"><a href="namespacekafka__logs.html#aaf26eebab62a70b417cf810efe8f9e65">kafka_logs.store_kafka_topic</a></div><div class="ttdeci">def store_kafka_topic(topic, dir, timeout, start_time, end_time)</div><div class="ttdoc">Python script to download and store kafka logs Opens the kafka docker container, then uses the exampl...</div><div class="ttdef"><b>Definition:</b> <a href="kafka__logs_8py_source.html#l00018">kafka_logs.py:18</a></div></div>
-<div class="ttc" id="anamespacekafka__logs_html_ac529309c830d34e46d2d6b0e4f30a6d7"><div class="ttname"><a href="namespacekafka__logs.html#ac529309c830d34e46d2d6b0e4f30a6d7">kafka_logs.main</a></div><div class="ttdeci">def main()</div><div class="ttdef"><b>Definition:</b> <a href="kafka__logs_8py_source.html#l00071">kafka_logs.py:71</a></div></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_function" href="namespacecollect__kafka__logs.html#a5624652a60794ffc2b2a80698361b335">main</a>()</div>
+<div class="ttc" id="anamespacecollect__kafka__logs_html_a5624652a60794ffc2b2a80698361b335"><div class="ttname"><a href="namespacecollect__kafka__logs.html#a5624652a60794ffc2b2a80698361b335">collect_kafka_logs.main</a></div><div class="ttdeci">def main()</div><div class="ttdef"><b>Definition:</b> <a href="collect__kafka__logs_8py_source.html#l00071">collect_kafka_logs.py:71</a></div></div>
+<div class="ttc" id="anamespacecollect__kafka__logs_html_a865d902d44390655d826670cfa2bd8c1"><div class="ttname"><a href="namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1">collect_kafka_logs.store_kafka_topic</a></div><div class="ttdeci">def store_kafka_topic(topic, dir, timeout, start_time, end_time)</div><div class="ttdoc">Python script to download and store kafka logs Opens the kafka docker container, then uses the exampl...</div><div class="ttdef"><b>Definition:</b> <a href="collect__kafka__logs_8py_source.html#l00018">collect_kafka_logs.py:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_53e6fa9553ac22a5646d2a2b2d7b97a1.html">scripts</a></li><li class="navelem"><a class="el" href="kafka__logs_8py.html">kafka_logs.py</a></li>
-    <li class="footer">Generated on Wed Dec 28 2022 14:55:54 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="navelem"><a class="el" href="collect__kafka__logs_8py.html">collect_kafka_logs.py</a></li>
+    <li class="footer">Generated on Tue Jan 3 2023 14:34:41 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

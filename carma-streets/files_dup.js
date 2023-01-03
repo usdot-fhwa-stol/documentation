@@ -9,5 +9,6 @@ var files_dup =
     [ "scripts", "dir_53e6fa9553ac22a5646d2a2b2d7b97a1.html", "dir_53e6fa9553ac22a5646d2a2b2d7b97a1" ],
     [ "signal_opt_service", "dir_f45123e60d40f0f466503f4a9cc2129d.html", "dir_f45123e60d40f0f466503f4a9cc2129d" ],
     [ "streets_utils", "dir_ae16f81f3adaed1b7f2ce47d60bade96.html", "dir_ae16f81f3adaed1b7f2ce47d60bade96" ],
-    [ "tsc_client_service", "dir_88e0e19bf6a2a3b6b8c9fa641d700f45.html", "dir_88e0e19bf6a2a3b6b8c9fa641d700f45" ]
+    [ "tsc_client_service", "dir_88e0e19bf6a2a3b6b8c9fa641d700f45.html", "dir_88e0e19bf6a2a3b6b8c9fa641d700f45" ],
+    [ "collect_kafka_logs.py", "collect__kafka__logs_8py.html", "collect__kafka__logs_8py" ]
 ];

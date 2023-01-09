@@ -1,7 +1,5 @@
 var NAVTREEINDEX13 =
 {
-"intersection__server__api_2src_2models_2OAIHelpers_8h_source.html":[20,0,8,0,1,0,1,2],
-"intersection__server__api_2src_2models_2OAIHttpFileElement_8cpp.html":[20,0,8,0,1,0,1,3],
 "intersection__server__api_2src_2models_2OAIHttpFileElement_8cpp_source.html":[20,0,8,0,1,0,1,3],
 "intersection__server__api_2src_2models_2OAIHttpFileElement_8h.html":[20,0,8,0,1,0,1,4],
 "intersection__server__api_2src_2models_2OAIHttpFileElement_8h_source.html":[20,0,8,0,1,0,1,4],
@@ -249,5 +247,7 @@ var NAVTREEINDEX13 =
 "namespaceOpenAPI.html#a1613385db422b2cfdd9aae66f527b3c9":[18,0,7,52],
 "namespaceOpenAPI.html#a1b070c2e165f800eea4a2c86ddeaa745":[18,0,7,71],
 "namespaceOpenAPI.html#a1dce1e3ef69547133c27ece962c7a928":[18,0,7,69],
-"namespaceOpenAPI.html#a1de27b45189fe8f86d6cbd4c70ed82ae":[18,0,7,27]
+"namespaceOpenAPI.html#a1de27b45189fe8f86d6cbd4c70ed82ae":[18,0,7,27],
+"namespaceOpenAPI.html#a1e6a550ef16686e286394028f97a92cd":[18,0,7,41],
+"namespaceOpenAPI.html#a2894bbbb6b1a2a6c2d67ad6bed4614e5":[18,0,7,29]
 };

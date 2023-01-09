@@ -1,7 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"classtraffic__signal__controller__service_1_1tsc__state.html#acaee10dcfb57b70be35a81723b21761b":[19,0,15,14,17],
-"classtraffic__signal__controller__service_1_1tsc__state.html#acaee10dcfb57b70be35a81723b21761b":[18,0,24,14,17],
 "classtraffic__signal__controller__service_1_1tsc__state.html#ace2712eeb290c972b3ead1c4ee7e7744":[18,0,24,14,30],
 "classtraffic__signal__controller__service_1_1tsc__state.html#ace2712eeb290c972b3ead1c4ee7e7744":[19,0,15,14,30],
 "classtraffic__signal__controller__service_1_1tsc__state.html#ae5bfca513648fa55566289fe8a9de750":[19,0,15,14,16],
@@ -249,5 +247,7 @@ var NAVTREEINDEX11 =
 "intersection__client__api_2OAIHelpers_8cpp.html#a025bad99c7825a6a65912412bc8ec7b6":[20,0,8,0,0,3,41],
 "intersection__client__api_2OAIHelpers_8cpp.html#a08398938666c611a8e6cc223228b5a21":[20,0,8,0,0,3,11],
 "intersection__client__api_2OAIHelpers_8cpp.html#a0936af7eed3f4d752547de5934fed423":[20,0,8,0,0,3,44],
-"intersection__client__api_2OAIHelpers_8cpp.html#a0ae0ea67dbf759294765989d7230fba3":[20,0,8,0,0,3,9]
+"intersection__client__api_2OAIHelpers_8cpp.html#a0ae0ea67dbf759294765989d7230fba3":[20,0,8,0,0,3,9],
+"intersection__client__api_2OAIHelpers_8cpp.html#a13ba82bc9d8295489691d9a6c115e871":[20,0,8,0,0,3,35],
+"intersection__client__api_2OAIHelpers_8cpp.html#a1613385db422b2cfdd9aae66f527b3c9":[20,0,8,0,0,3,31]
 };

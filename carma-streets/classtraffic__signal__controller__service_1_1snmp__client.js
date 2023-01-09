@@ -13,6 +13,5 @@ var classtraffic__signal__controller__service_1_1snmp__client =
     [ "port_", "classtraffic__signal__controller__service_1_1snmp__client.html#ad7af16f9f063c8cb45454bc697c1caae", null ],
     [ "session", "classtraffic__signal__controller__service_1_1snmp__client.html#a1e412bcb68120f12e14e098da1d9c287", null ],
     [ "snmp_version_", "classtraffic__signal__controller__service_1_1snmp__client.html#acf0ab65d68fb0ffe4ca56f34d4d98204", null ],
-    [ "ss", "classtraffic__signal__controller__service_1_1snmp__client.html#a64cb68344815e02b9d7c72541b59cc37", null ],
-    [ "timeout_", "classtraffic__signal__controller__service_1_1snmp__client.html#ac9f177424aa02e6231dfe99685452bea", null ]
+    [ "ss", "classtraffic__signal__controller__service_1_1snmp__client.html#a64cb68344815e02b9d7c72541b59cc37", null ]
 ];

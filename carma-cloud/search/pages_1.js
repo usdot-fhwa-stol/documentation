@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readme_0',['README',['../md_README.html',1,'']]]
+  ['pull_5frequest_5ftemplate_0',['PULL_REQUEST_TEMPLATE',['../md_docs_PULL_REQUEST_TEMPLATE.html',1,'']]]
 ];

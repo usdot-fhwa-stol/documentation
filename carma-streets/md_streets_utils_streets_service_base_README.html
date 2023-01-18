@@ -86,13 +86,13 @@ $(document).ready(function(){initNavTree('md_streets_utils_streets_service_base_
   <div class="headertitle"><div class="title">Streets Service Base Library </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md88"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md85"></a>
 Introduction</h1>
 <p >This is the <code>streets_service_base</code> library meant to be the base of each new CARMA-Streets service. It contains a extensible templated singleton implementation that allows for the creation of singleton scoped objects in CARMA-Streets services with static access. This means that by extending this class you can implement a class of which there can only ever be a single instance and which is statically retrievable using the <code>streets_singleton::get_singleton()</code> method. This library also includes an implemented singleton <code>streets_configuration</code> class which standardizes how CARMA-Streets services will read configuration parameters from <code>manifest.json</code> configuration files. This <code>streets_configuration</code> singleton parses the <code>manifest.json</code> configuration file and then allows for static retrieval of configuration parameters using the <code>get_int_config()</code>,<code>get_double_config</code>,<code>get_string_config()</code>, and <code>get_bool_config()</code> methods.</p>
-<h1><a class="anchor" id="autotoc_md89"></a>
+<h1><a class="anchor" id="autotoc_md86"></a>
 Streets Singleton</h1>
 <p >Library offers access to the <code>streets_singleton</code> class. This is a templated, extensible class that stores and offers static retrieval of a single instance of itself, which is lazily initialized (not initialized until retrieved for the first time). To ensure that new instances of this class can not be created the constructors are deleted or hidden using private or protected access.</p>
-<h1><a class="anchor" id="autotoc_md90"></a>
+<h1><a class="anchor" id="autotoc_md87"></a>
 Streets Configuration</h1>
 <p >Library creates <code>streets_configuration</code> singleton which standardizes the <code>manifest.json</code> configuration file parsing and configuration parameter retrieval. Extending <code>streets_singleton</code> allows <code>streets_configuration</code> to be limited to singleton scope ( single instance ) and offer static methods for configuration parameter retrieval. <code>streets_configuration</code> also parses some service required configurations like <b>loglevel</b> and <b>service_name</b> to create and configure a <code>spdlog::async_loggerr</code> with a <code>spdlog::sinks::daily_file_sink_mt</code> and a <code>spdlog::sinks::stdout_color_sink_mt</code>.</p>
 <p >Example <code>manifest.json</code> configuration file. </p><div class="fragment"><div class="line">{</div>
@@ -125,7 +125,7 @@ Streets Configuration</h1>
 <div class="line">        }</div>
 <div class="line">    ]</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md91"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md88"></a>
 Include streets_service_base_lib::streets_service_base_lib</h1>
 <p >Streets Service Base <code>CMakeList.txt</code> includes an install target which will install this library as a CMake package. The library along with it's dependencies can then be included by simply using the find_package() instruction.</p>
 <div class="fragment"><div class="line">find_package(streets_service_base_lib COMPONENT streets_service_base_lib)</div>
@@ -137,7 +137,7 @@ Include streets_service_base_lib::streets_service_base_lib</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Jan 11 2023 16:38:13 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Jan 18 2023 15:41:04 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

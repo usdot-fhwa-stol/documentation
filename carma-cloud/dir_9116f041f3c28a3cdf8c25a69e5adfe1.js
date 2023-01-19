@@ -8,6 +8,7 @@ var dir_9116f041f3c28a3cdf8c25a69e5adfe1 =
     [ "ReplayMgr.java", "ReplayMgr_8java.html", "ReplayMgr_8java" ],
     [ "RopMgr.java", "RopMgr_8java.html", "RopMgr_8java" ],
     [ "RsmServlet.java", "RsmServlet_8java.html", "RsmServlet_8java" ],
+    [ "RSUServlet.java", "RSUServlet_8java.html", "RSUServlet_8java" ],
     [ "Session.java", "Session_8java.html", "Session_8java" ],
     [ "SessMgr.java", "SessMgr_8java.html", "SessMgr_8java" ],
     [ "TcmAckServlet.java", "TcmAckServlet_8java.html", "TcmAckServlet_8java" ],

@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "platoon_strategic_ihp::ActionPlan", "structplatoon__strategic__ihp_1_1ActionPlan.html", null ],
     [ "Allocator", "classrapidjson_1_1Allocator.html", null ],
+    [ "approaching_emergency_vehicle_plugin::ApproachingEmergencyVehicleTransitionTable", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html", null ],
     [ "arbitrator::Arbitrator", "classarbitrator_1_1Arbitrator.html", null ],
     [ "arbitrator::ArbitratorStateMachine", "classarbitrator_1_1ArbitratorStateMachine.html", null ],
     [ "arbitrator::ArbitratorStateTransition", "structarbitrator_1_1ArbitratorStateTransition.html", null ],
@@ -37,6 +38,7 @@ var hierarchy =
         ] ],
         [ "carma_guidance_plugins::StrategicPlugin", "classcarma__guidance__plugins_1_1StrategicPlugin.html", [
           [ "SUB::Node", "classSUB_1_1Node.html", null ],
+          [ "approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin.html", null ],
           [ "platoon_strategic_ihp::Node", "classplatoon__strategic__ihp_1_1Node.html", null ],
           [ "route_following_plugin::RouteFollowingPlugin", "classroute__following__plugin_1_1RouteFollowingPlugin.html", null ],
           [ "sci_strategic_plugin::SCIStrategicPlugin", "classsci__strategic__plugin_1_1SCIStrategicPlugin.html", null ]
@@ -84,6 +86,7 @@ var hierarchy =
     [ "MemoryPoolAllocator< BaseAllocator >::ChunkHeader", "structMemoryPoolAllocator_1_1ChunkHeader.html", null ],
     [ "GenericDocument< Encoding, Allocator, StackAllocator >::ClearStackOnExit", "structGenericDocument_1_1ClearStackOnExit.html", null ],
     [ "GenericReader< SourceEncoding, TargetEncoding, StackAllocator >::ClearStackOnExit", "structGenericReader_1_1ClearStackOnExit.html", null ],
+    [ "approaching_emergency_vehicle_plugin::Config", "structapproaching__emergency__vehicle__plugin_1_1Config.html", null ],
     [ "approximate_intersection::Config", "structapproximate__intersection_1_1Config.html", null ],
     [ "arbitrator::Config", "structarbitrator_1_1Config.html", null ],
     [ "bsm_generator::Config", "structbsm__generator_1_1Config.html", null ],
@@ -143,6 +146,7 @@ var hierarchy =
     [ "subsystem_controllers::Entry", "structsubsystem__controllers_1_1Entry.html", null ],
     [ "health_monitor::EntryManager", "classhealth__monitor_1_1EntryManager.html", null ],
     [ "subsystem_controllers::EntryManager", "classsubsystem__controllers_1_1EntryManager.html", null ],
+    [ "approaching_emergency_vehicle_plugin::ErvInformation", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html", null ],
     [ "std::exception", null, [
       [ "lightbar_manager::LIGHTBAR_MANAGER_ERROR", "classlightbar__manager_1_1LIGHTBAR__MANAGER__ERROR.html", [
         [ "lightbar_manager::INDICATOR_NOT_MAPPED", "structlightbar__manager_1_1INDICATOR__NOT__MAPPED.html", null ],

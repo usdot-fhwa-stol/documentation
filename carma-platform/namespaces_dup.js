@@ -1,5 +1,9 @@
 var namespaces_dup =
 [
+    [ "approaching_emergency_vehicle_plugin", "namespaceapproaching__emergency__vehicle__plugin.html", "namespaceapproaching__emergency__vehicle__plugin" ],
+    [ "approaching_emergency_vehicle_plugin_launch", "namespaceapproaching__emergency__vehicle__plugin__launch.html", [
+      [ "generate_launch_description", "namespaceapproaching__emergency__vehicle__plugin__launch.html#aa525cb3a0dd835adb215b6bd4ca803b0", null ]
+    ] ],
     [ "approximate_intersection", "namespaceapproximate__intersection.html", "namespaceapproximate__intersection" ],
     [ "arbitrator", "namespacearbitrator.html", "namespacearbitrator" ],
     [ "arbitrator_utils", "namespacearbitrator__utils.html", [

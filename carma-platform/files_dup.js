@@ -1,5 +1,6 @@
 var files_dup =
 [
+    [ "approaching_emergency_vehicle_plugin", "dir_7026c4de5f5d87920db889333beddb80.html", "dir_7026c4de5f5d87920db889333beddb80" ],
     [ "approximate_intersection", "dir_5342b982f3fdf5c3d8856cb7f376544a.html", "dir_5342b982f3fdf5c3d8856cb7f376544a" ],
     [ "arbitrator", "dir_f133d8f6f41cd9c571dad37b841ce09d.html", "dir_f133d8f6f41cd9c571dad37b841ce09d" ],
     [ "basic_autonomy", "dir_16a7f3bdd30cf8a55d8e1f4bc430a213.html", "dir_16a7f3bdd30cf8a55d8e1f4bc430a213" ],

@@ -1,0 +1,4 @@
+var approaching__emergency__vehicle__transition__table_8hpp =
+[
+    [ "approaching_emergency_vehicle_plugin::ApproachingEmergencyVehicleTransitionTable", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable" ]
+];

@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"classFileReadStream.html#a1989429ffa42111e6f56ee14a3916cac":[46,0,77,4],
+"classFileReadStream.html#a1b1a7cadb599e83b1f781c0b16d4ed50":[46,0,77,18],
 "classFileReadStream.html#a1b5563bcaa959d95f9bc3511a73ebbad":[46,0,77,11],
 "classFileReadStream.html#a21421afa5b1f41f7349f633f290aa223":[46,0,77,6],
 "classFileReadStream.html#a47dc4f7f100bcc02a02e619f9b494a62":[46,0,77,17],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "classGenericPointer_1_1PercentDecodeStream.html#a2fbffff07719607aebc96fed0c9ed715":[46,0,87,0,2],
 "classGenericPointer_1_1PercentDecodeStream.html#a3d3af2068010133489411da5e06ee234":[46,0,87,0,7],
 "classGenericPointer_1_1PercentDecodeStream.html#a67635511b16364c0e5ab6e3d3ab552fa":[46,0,87,0,0],
-"classGenericPointer_1_1PercentDecodeStream.html#a92c06268c22a1cdec8a227e8f20f7293":[46,0,87,0,8],
-"classGenericPointer_1_1PercentDecodeStream.html#ad83c47089db2a7d20bb1dff7510d369f":[46,0,87,0,5],
-"classGenericPointer_1_1PercentDecodeStream.html#ae31de02a2b6bc43fc6072bd26e95c746":[46,0,87,0,6]
+"classGenericPointer_1_1PercentDecodeStream.html#a92c06268c22a1cdec8a227e8f20f7293":[46,0,87,0,8]
 };

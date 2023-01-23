@@ -4,7 +4,8 @@ var annotated_dup =
       [ "ApproachingEmergencyVehiclePlugin", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin.html", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin" ],
       [ "ApproachingEmergencyVehicleTransitionTable", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable" ],
       [ "Config", "structapproaching__emergency__vehicle__plugin_1_1Config.html", "structapproaching__emergency__vehicle__plugin_1_1Config" ],
-      [ "ErvInformation", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation" ]
+      [ "ErvInformation", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation" ],
+      [ "UpcomingLaneChangeParameters", "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html", "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters" ]
     ] ],
     [ "approximate_intersection", "namespaceapproximate__intersection.html", [
       [ "Config", "structapproximate__intersection_1_1Config.html", "structapproximate__intersection_1_1Config" ],

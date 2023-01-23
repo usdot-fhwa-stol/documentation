@@ -1,9 +1,13 @@
 var namespaceapproaching__emergency__vehicle__plugin =
 [
+    [ "anonymous_namespace{approaching_emergency_vehicle_plugin_node.cpp}", "namespaceapproaching__emergency__vehicle__plugin_1_1anonymous__namespace_02approaching__emergenc6b477e4cfd274375085cbaf134e12178.html", [
+      [ "getManeuverEndSpeed", "namespaceapproaching__emergency__vehicle__plugin_1_1anonymous__namespace_02approaching__emergenc6b477e4cfd274375085cbaf134e12178.html#a824526918073d730865d3616fded75c4", null ]
+    ] ],
     [ "ApproachingEmergencyVehiclePlugin", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin.html", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin" ],
     [ "ApproachingEmergencyVehicleTransitionTable", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable" ],
     [ "Config", "structapproaching__emergency__vehicle__plugin_1_1Config.html", "structapproaching__emergency__vehicle__plugin_1_1Config" ],
     [ "ErvInformation", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation" ],
+    [ "UpcomingLaneChangeParameters", "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html", "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters" ],
     [ "ApproachingEmergencyVehicleEvent", "namespaceapproaching__emergency__vehicle__plugin.html#ae26e1cd128942ddf2ca8eccadb66a6ca", [
       [ "ERV_UPDATE_TIMEOUT", "namespaceapproaching__emergency__vehicle__plugin.html#ae26e1cd128942ddf2ca8eccadb66a6caa9c81e8ddfa49697b5d0ec5d8eeb79674", null ],
       [ "NO_APPROACHING_ERV", "namespaceapproaching__emergency__vehicle__plugin.html#ae26e1cd128942ddf2ca8eccadb66a6caa3dc495a5c3931df7278a227f93d6b70a", null ],

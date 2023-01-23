@@ -411,6 +411,7 @@ var hierarchy =
     [ "internal::TypeHelper< ValueType, unsigned >", "structinternal_1_1TypeHelper_3_01ValueType_00_01unsigned_01_4.html", null ],
     [ "GenericValue< Encoding, Allocator >::Number::U", "structGenericValue_1_1Number_1_1U.html", null ],
     [ "internal::Hasher< Encoding, Allocator >::Number::U", "unioninternal_1_1Hasher_1_1Number_1_1U.html", null ],
+    [ "approaching_emergency_vehicle_plugin::UpcomingLaneChangeParameters", "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html", null ],
     [ "UTF16< CharType >", "structUTF16.html", null ],
     [ "UTF16< wchar_t >", "structUTF16.html", [
       [ "UTF16BE< CharType >", "structUTF16BE.html", null ],

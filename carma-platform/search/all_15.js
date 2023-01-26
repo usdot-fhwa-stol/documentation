@@ -260,6 +260,5 @@ var searchData=
   ['typehelper_3c_20valuetype_2c_20uint64_5ft_20_3e_257',['TypeHelper&lt; ValueType, uint64_t &gt;',['../structinternal_1_1TypeHelper_3_01ValueType_00_01uint64__t_01_4.html',1,'internal']]],
   ['typehelper_3c_20valuetype_2c_20unsigned_20_3e_258',['TypeHelper&lt; ValueType, unsigned &gt;',['../structinternal_1_1TypeHelper_3_01ValueType_00_01unsigned_01_4.html',1,'internal']]],
   ['typeless_5f_259',['typeless_',['../classGenericSchemaDocument.html#a7393ecd4d607c1f81ce9eac5becf92a8',1,'GenericSchemaDocument::typeless_()'],['../classinternal_1_1Schema.html#a78fab4d04b9aa76db745a22b03933211',1,'internal::Schema::typeless_()']]],
-  ['types_20of_20issue_260',['Types of Issue',['../md_docs_ISSUE_TEMPLATE.html',1,'']]],
-  ['types_2eh_261',['types.h',['../types_8h.html',1,'']]]
+  ['types_2eh_260',['types.h',['../types_8h.html',1,'']]]
 ];

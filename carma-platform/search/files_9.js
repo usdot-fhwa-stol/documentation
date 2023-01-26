@@ -14,9 +14,8 @@ var searchData=
   ['intersection_5ftransit_5fmaneuvering_2eh_11',['intersection_transit_maneuvering.h',['../intersection__transit__maneuvering_8h.html',1,'']]],
   ['intersection_5ftransit_5fmaneuvering_5fnode_2eh_12',['intersection_transit_maneuvering_node.h',['../intersection__transit__maneuvering__node_8h.html',1,'']]],
   ['inttypes_2eh_13',['inttypes.h',['../inttypes_8h.html',1,'']]],
-  ['issue_5ftemplate_2emd_14',['ISSUE_TEMPLATE.md',['../ISSUE__TEMPLATE_8md.html',1,'']]],
-  ['istreamwrapper_2eh_15',['istreamwrapper.h',['../istreamwrapper_8h.html',1,'']]],
-  ['itm_5fservice_2ecpp_16',['itm_service.cpp',['../itm__service_8cpp.html',1,'']]],
-  ['itm_5fservice_2eh_17',['itm_service.h',['../itm__service_8h.html',1,'']]],
-  ['itoa_2eh_18',['itoa.h',['../itoa_8h.html',1,'']]]
+  ['istreamwrapper_2eh_14',['istreamwrapper.h',['../istreamwrapper_8h.html',1,'']]],
+  ['itm_5fservice_2ecpp_15',['itm_service.cpp',['../itm__service_8cpp.html',1,'']]],
+  ['itm_5fservice_2eh_16',['itm_service.h',['../itm__service_8h.html',1,'']]],
+  ['itoa_2eh_17',['itoa.h',['../itoa_8h.html',1,'']]]
 ];

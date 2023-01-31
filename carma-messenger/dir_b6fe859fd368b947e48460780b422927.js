@@ -2,6 +2,7 @@ var dir_b6fe859fd368b947e48460780b422927 =
 [
     [ "BSM_Message.h", "BSM__Message_8h.html", "BSM__Message_8h" ],
     [ "cpp_message.h", "cpp__message_8h.html", "cpp__message_8h" ],
+    [ "EmergencyVehicleAck_Message.h", "EmergencyVehicleAck__Message_8h.html", "EmergencyVehicleAck__Message_8h" ],
     [ "EmergencyVehicleResponse_Message.h", "EmergencyVehicleResponse__Message_8h.html", "EmergencyVehicleResponse__Message_8h" ],
     [ "Map_Message.h", "Map__Message_8h.html", "Map__Message_8h" ],
     [ "MobilityHeader_Message.h", "MobilityHeader__Message_8h.html", "MobilityHeader__Message_8h" ],

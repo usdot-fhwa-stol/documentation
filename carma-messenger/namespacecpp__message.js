@@ -1,6 +1,7 @@
 var namespacecpp__message =
 [
     [ "BSM_Message", "classcpp__message_1_1BSM__Message.html", "classcpp__message_1_1BSM__Message" ],
+    [ "Emergency_Vehicle_Ack", "classcpp__message_1_1Emergency__Vehicle__Ack.html", "classcpp__message_1_1Emergency__Vehicle__Ack" ],
     [ "Emergency_Vehicle_Response", "classcpp__message_1_1Emergency__Vehicle__Response.html", "classcpp__message_1_1Emergency__Vehicle__Response" ],
     [ "Map_Message", "classcpp__message_1_1Map__Message.html", "classcpp__message_1_1Map__Message" ],
     [ "Mobility_Header", "classcpp__message_1_1Mobility__Header.html", "classcpp__message_1_1Mobility__Header" ],

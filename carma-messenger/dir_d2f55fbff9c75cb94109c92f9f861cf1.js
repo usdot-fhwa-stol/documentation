@@ -122,6 +122,7 @@ var dir_d2f55fbff9c75cb94109c92f9f861cf1 =
     [ "DYearMonth.h", "DYearMonth_8h.html", "DYearMonth_8h" ],
     [ "ElevationConfidence.h", "ElevationConfidence_8h.html", "ElevationConfidence_8h" ],
     [ "EmergencyDetails.h", "EmergencyDetails_8h.html", "EmergencyDetails_8h" ],
+    [ "EmergencyVehicleAck.h", "EmergencyVehicleAck_8h.html", "EmergencyVehicleAck_8h" ],
     [ "EmergencyVehicleAlert.h", "EmergencyVehicleAlert_8h.html", "EmergencyVehicleAlert_8h" ],
     [ "EmergencyVehicleResponse.h", "EmergencyVehicleResponse_8h.html", "EmergencyVehicleResponse_8h" ],
     [ "EmissionType.h", "EmissionType_8h.html", "EmissionType_8h" ],

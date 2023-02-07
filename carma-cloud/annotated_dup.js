@@ -96,6 +96,10 @@ var annotated_dup =
         [ "RsmParser", "classcc_1_1rsm_1_1RsmParser.html", "classcc_1_1rsm_1_1RsmParser" ]
       ] ],
       [ "rsu", "namespacecc_1_1rsu.html", [
+        [ "BSMRequest", "classcc_1_1rsu_1_1BSMRequest.html", "classcc_1_1rsu_1_1BSMRequest" ],
+        [ "BSMRequestParser", "classcc_1_1rsu_1_1BSMRequestParser.html", "classcc_1_1rsu_1_1BSMRequestParser" ],
+        [ "Position", "classcc_1_1rsu_1_1Position.html", "classcc_1_1rsu_1_1Position" ],
+        [ "RSUIdentificationTask", "classcc_1_1rsu_1_1RSUIdentificationTask.html", "classcc_1_1rsu_1_1RSUIdentificationTask" ],
         [ "RSULocation", "classcc_1_1rsu_1_1RSULocation.html", "classcc_1_1rsu_1_1RSULocation" ],
         [ "RSULocationParser", "classcc_1_1rsu_1_1RSULocationParser.html", "classcc_1_1rsu_1_1RSULocationParser" ],
         [ "RSUService", "classcc_1_1rsu_1_1RSUService.html", "classcc_1_1rsu_1_1RSUService" ]

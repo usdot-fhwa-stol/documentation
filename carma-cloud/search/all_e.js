@@ -15,7 +15,8 @@ var searchData=
   ['next_12',['next',['../classcc_1_1util_1_1Arrays_1_1DoubleGroupIterator.html#a8725d80f6b376b3c908b9459112b7e4c',1,'cc.util.Arrays.DoubleGroupIterator.next()'],['../classcc_1_1util_1_1Arrays_1_1IntGroupIterator.html#ae092bfe1ce5ac0fa69a644fc3d79dfbe',1,'cc.util.Arrays.IntGroupIterator.next()']]],
   ['nextway_13',['nextWay',['../classcc_1_1ws_1_1GeoSvc_1_1SimWay.html#ae7749ee44b4b57ddda78ea888bc71a1c',1,'cc::ws::GeoSvc::SimWay']]],
   ['normalizeradians_14',['normalizeRadians',['../classcc_1_1util_1_1MathUtil.html#aa94a9f8490cd681671003c3b6a33544d',1,'cc::util::MathUtil']]],
-  ['nullproj_15',['NullProj',['../classcc_1_1geosrv_1_1Proj_1_1NullProj.html',1,'cc.geosrv.Proj.NullProj'],['../classcc_1_1geosrv_1_1Proj_1_1NullProj.html#a90b0731c9c0517b633cb9e4678c610ca',1,'cc.geosrv.Proj.NullProj.NullProj()']]],
+  ['nullproj_15',['NullProj',['../classcc_1_1geosrv_1_1Proj_1_1NullProj.html',1,'cc::geosrv::Proj']]],
   ['nullproj_16',['NULLPROJ',['../classcc_1_1geosrv_1_1Proj.html#a0e041ad97d4fccd376a113320fa896c2',1,'cc::geosrv::Proj']]],
-  ['numbers_17',['NUMBERS',['../classcc_1_1ctrl_1_1proc_1_1ProcCtrl.html#af4b5b7b7be79ec780453d34f4d8252ec',1,'cc::ctrl::proc::ProcCtrl']]]
+  ['nullproj_17',['NullProj',['../classcc_1_1geosrv_1_1Proj_1_1NullProj.html#a90b0731c9c0517b633cb9e4678c610ca',1,'cc::geosrv::Proj::NullProj']]],
+  ['numbers_18',['NUMBERS',['../classcc_1_1ctrl_1_1proc_1_1ProcCtrl.html#af4b5b7b7be79ec780453d34f4d8252ec',1,'cc::ctrl::proc::ProcCtrl']]]
 ];

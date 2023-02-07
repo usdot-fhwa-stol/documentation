@@ -10,7 +10,7 @@ var searchData=
   ['defaultspd_7',['DEFAULTSPD',['../classcc_1_1ctrl_1_1proc_1_1ProcMaxSpeed.html#a446b5b3f391845699852c63db8e24b50',1,'cc::ctrl::proc::ProcMaxSpeed']]],
   ['deletecontrol_8',['deleteControl',['../classcc_1_1ws_1_1CtrlTiles.html#a9f304e5621439f44cce4df0395f96567',1,'cc.ws.CtrlTiles.deleteControl()'],['../classcc_1_1ctrl_1_1proc_1_1ProcCtrl.html#ac752ac7277da7a07b3e5d12faa3e1227',1,'cc.ctrl.proc.ProcCtrl.deleteControl(TrafCtrl oCtrl)'],['../classcc_1_1ctrl_1_1proc_1_1ProcCtrl.html#a6134a6591786c1cc202e110ce6a4a411',1,'cc.ctrl.proc.ProcCtrl.deleteControl(String sId)']]],
   ['deprecated_20list_9',['Deprecated List',['../deprecated.html',1,'']]],
-  ['destroy_10',['destroy',['../classcc_1_1ws_1_1RsmServlet.html#a4acde9739add03417322a8789216d216',1,'cc::ws::RsmServlet']]],
+  ['destroy_10',['destroy',['../classcc_1_1ws_1_1RSUServlet.html#a7761aca9c5c9c129a56d9d874c4769cc',1,'cc.ws.RSUServlet.destroy()'],['../classcc_1_1ws_1_1RsmServlet.html#a4acde9739add03417322a8789216d216',1,'cc.ws.RsmServlet.destroy()']]],
   ['detector_11',['Detector',['../classcc_1_1ihp_1_1Detector.html',1,'cc.ihp.Detector'],['../classcc_1_1ihp_1_1Detector.html#ad9b83d86141cb680d6257e6786af4ba8',1,'cc.ihp.Detector.Detector()'],['../classcc_1_1ihp_1_1Detector.html#a86140d12623b6f38f7b3c77804c3aa90',1,'cc.ihp.Detector.Detector(String sId, double dLon, double dLat)']]],
   ['detector_2ejava_12',['Detector.java',['../Detector_8java.html',1,'']]],
   ['diff_13',['DIFF',['../classcc_1_1util_1_1Gpc.html#aad0694284dad298d31a6abab763e1d30',1,'cc::util::Gpc']]],

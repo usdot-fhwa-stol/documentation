@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "cc.util.Arrays", "classcc_1_1util_1_1Arrays.html", null ],
+    [ "cc.rsu.BSMRequest", "classcc_1_1rsu_1_1BSMRequest.html", null ],
     [ "com.google.protobuf.GeneratedMessageLite.Builder", "classcom_1_1google_1_1protobuf_1_1GeneratedMessageLite_1_1Builder.html", [
       [ "cc.vector_tile.VectorTile.Tile.Feature.Builder", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html", null ]
     ] ],
@@ -103,6 +104,7 @@ var hierarchy =
         [ "cc.vector_tile.VectorTile.Tile.Feature.Builder", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html", null ]
       ] ]
     ] ],
+    [ "cc.rsu.Position", "classcc_1_1rsu_1_1Position.html", null ],
     [ "cc.ctrl.proc.ProcCtrl", "classcc_1_1ctrl_1_1proc_1_1ProcCtrl.html", [
       [ "cc.ctrl.proc.ProcClosed", "classcc_1_1ctrl_1_1proc_1_1ProcClosed.html", null ],
       [ "cc.ctrl.proc.ProcClosing", "classcc_1_1ctrl_1_1proc_1_1ProcClosing.html", null ],
@@ -166,6 +168,9 @@ var hierarchy =
       [ "cc.ws.GeoSvc.HashWays", "classcc_1_1ws_1_1GeoSvc_1_1HashWays.html", null ],
       [ "cc.ws.TcmReqServlet.TileIds", "classcc_1_1ws_1_1TcmReqServlet_1_1TileIds.html", null ]
     ] ],
+    [ "Callable", null, [
+      [ "cc.rsu.RSUIdentificationTask", "classcc_1_1rsu_1_1RSUIdentificationTask.html", null ]
+    ] ],
     [ "Comparator", null, [
       [ "cc.util.SimpleHull", "classcc_1_1util_1_1SimpleHull.html", null ],
       [ "cc.util.SimpleHull.BottomLeft", "classcc_1_1util_1_1SimpleHull_1_1BottomLeft.html", null ],
@@ -182,6 +187,7 @@ var hierarchy =
       [ "cc.geosrv.xodr.pvmt.XodrPvmtParser", "classcc_1_1geosrv_1_1xodr_1_1pvmt_1_1XodrPvmtParser.html", null ],
       [ "cc.geosrv.xodr.rdmk.XodrRoadMarkParser", "classcc_1_1geosrv_1_1xodr_1_1rdmk_1_1XodrRoadMarkParser.html", null ],
       [ "cc.rsm.RsmParser", "classcc_1_1rsm_1_1RsmParser.html", null ],
+      [ "cc.rsu.BSMRequestParser", "classcc_1_1rsu_1_1BSMRequestParser.html", null ],
       [ "cc.rsu.RSULocationParser", "classcc_1_1rsu_1_1RSULocationParser.html", null ]
     ] ],
     [ "FilterInputStream", null, [

@@ -11,9 +11,10 @@ var searchData=
   ['rsmparser_8',['RsmParser',['../classcc_1_1rsm_1_1RsmParser.html',1,'cc::rsm']]],
   ['rsmrecord_9',['RsmRecord',['../classcc_1_1rsm_1_1RsmCollect_1_1RsmRecord.html',1,'cc::rsm::RsmCollect']]],
   ['rsmservlet_10',['RsmServlet',['../classcc_1_1ws_1_1RsmServlet.html',1,'cc::ws']]],
-  ['rsulocation_11',['RSULocation',['../classcc_1_1rsu_1_1RSULocation.html',1,'cc::rsu']]],
-  ['rsulocationparser_12',['RSULocationParser',['../classcc_1_1rsu_1_1RSULocationParser.html',1,'cc::rsu']]],
-  ['rsuservice_13',['RSUService',['../classcc_1_1rsu_1_1RSUService.html',1,'cc::rsu']]],
-  ['rsuservlet_14',['RSUServlet',['../classcc_1_1ws_1_1RSUServlet.html',1,'cc::ws']]],
-  ['runnable_15',['Runnable',['../classRunnable.html',1,'']]]
+  ['rsuidentificationtask_11',['RSUIdentificationTask',['../classcc_1_1rsu_1_1RSUIdentificationTask.html',1,'cc::rsu']]],
+  ['rsulocation_12',['RSULocation',['../classcc_1_1rsu_1_1RSULocation.html',1,'cc::rsu']]],
+  ['rsulocationparser_13',['RSULocationParser',['../classcc_1_1rsu_1_1RSULocationParser.html',1,'cc::rsu']]],
+  ['rsuservice_14',['RSUService',['../classcc_1_1rsu_1_1RSUService.html',1,'cc::rsu']]],
+  ['rsuservlet_15',['RSUServlet',['../classcc_1_1ws_1_1RSUServlet.html',1,'cc::ws']]],
+  ['runnable_16',['Runnable',['../classRunnable.html',1,'']]]
 ];

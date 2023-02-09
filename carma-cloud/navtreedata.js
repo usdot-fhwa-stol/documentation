@@ -25,28 +25,18 @@
 var NAVTREE =
 [
   [ "Carma-cloud", "index.html", [
-    [ "PULL_REQUEST_TEMPLATE", "md_docs_PULL_REQUEST_TEMPLATE.html", [
-      [ "PR Details", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md0", [
-        [ "Description", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md1", null ],
-        [ "Related Issue", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md2", null ],
-        [ "Motivation and Context", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md3", null ],
-        [ "How Has This Been Tested?", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md4", null ],
-        [ "Types of changes", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md5", null ],
-        [ "Checklist:", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md6", null ]
-      ] ]
-    ] ],
     [ "README", "md_README.html", [
-      [ "CARMAcloud", "md_README.html#autotoc_md7", [
-        [ "Documentation", "md_README.html#autotoc_md8", null ],
-        [ "Deployment", "md_README.html#autotoc_md9", null ],
-        [ "Configuration", "md_README.html#autotoc_md10", [
-          [ "Bounds File for IHP2 Speed Harmonization", "md_README.html#autotoc_md11", null ]
+      [ "CARMAcloud", "md_README.html#autotoc_md0", [
+        [ "Documentation", "md_README.html#autotoc_md1", null ],
+        [ "Deployment", "md_README.html#autotoc_md2", null ],
+        [ "Configuration", "md_README.html#autotoc_md3", [
+          [ "Bounds File for IHP2 Speed Harmonization", "md_README.html#autotoc_md4", null ]
         ] ],
-        [ "Contribution", "md_README.html#autotoc_md12", null ],
-        [ "Code of Conduct", "md_README.html#autotoc_md13", null ],
-        [ "Attribution", "md_README.html#autotoc_md14", null ],
-        [ "License", "md_README.html#autotoc_md15", null ],
-        [ "Contact", "md_README.html#autotoc_md16", null ]
+        [ "Contribution", "md_README.html#autotoc_md5", null ],
+        [ "Code of Conduct", "md_README.html#autotoc_md6", null ],
+        [ "Attribution", "md_README.html#autotoc_md7", null ],
+        [ "License", "md_README.html#autotoc_md8", null ],
+        [ "Contact", "md_README.html#autotoc_md9", null ]
       ] ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],

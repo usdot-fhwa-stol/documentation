@@ -63,32 +63,22 @@ var NAVTREE =
         [ "API vs Input", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md29", null ]
       ] ]
     ] ],
-    [ "PULL_REQUEST_TEMPLATE", "md_docs_PULL_REQUEST_TEMPLATE.html", [
-      [ "PR Details", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md30", [
-        [ "Description", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md31", null ],
-        [ "Related Issue", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md32", null ],
-        [ "Motivation and Context", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md33", null ],
-        [ "How Has This Been Tested?", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md34", null ],
-        [ "Types of changes", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md35", null ],
-        [ "Checklist:", "md_docs_PULL_REQUEST_TEMPLATE.html#autotoc_md36", null ]
-      ] ]
-    ] ],
     [ "README", "md_README.html", [
-      [ "DockerHub Release Builds", "md_README.html#autotoc_md37", null ],
-      [ "DockerHub Release Candidate Builds", "md_README.html#autotoc_md38", null ],
-      [ "DockerHub Develop Builds", "md_README.html#autotoc_md39", null ],
-      [ "carma-messenger", "md_README.html#autotoc_md40", [
-        [ "Architecture", "md_README.html#autotoc_md41", null ],
-        [ "System Configuration and Installation", "md_README.html#autotoc_md42", [
-          [ "Example Setup", "md_README.html#autotoc_md43", null ]
+      [ "DockerHub Release Builds", "md_README.html#autotoc_md30", null ],
+      [ "DockerHub Release Candidate Builds", "md_README.html#autotoc_md31", null ],
+      [ "DockerHub Develop Builds", "md_README.html#autotoc_md32", null ],
+      [ "carma-messenger", "md_README.html#autotoc_md33", [
+        [ "Architecture", "md_README.html#autotoc_md34", null ],
+        [ "System Configuration and Installation", "md_README.html#autotoc_md35", [
+          [ "Example Setup", "md_README.html#autotoc_md36", null ]
         ] ]
       ] ],
-      [ "CARMAPlatform", "md_README.html#autotoc_md44", [
-        [ "Contribution", "md_README.html#autotoc_md45", null ],
-        [ "Code of Conduct", "md_README.html#autotoc_md46", null ],
-        [ "Attribution", "md_README.html#autotoc_md47", null ],
-        [ "License", "md_README.html#autotoc_md48", null ],
-        [ "Contact", "md_README.html#autotoc_md49", null ]
+      [ "CARMAPlatform", "md_README.html#autotoc_md37", [
+        [ "Contribution", "md_README.html#autotoc_md38", null ],
+        [ "Code of Conduct", "md_README.html#autotoc_md39", null ],
+        [ "Attribution", "md_README.html#autotoc_md40", null ],
+        [ "License", "md_README.html#autotoc_md41", null ],
+        [ "Contact", "md_README.html#autotoc_md42", null ]
       ] ]
     ] ],
     [ "Namespaces", "namespaces.html", [
@@ -169,17 +159,17 @@ var NAVTREEINDEX =
 "classcpp__message_1_1Node.html#a88dc0228d7ea3be17ed9c2a9d8e4758e",
 "classj2735__convertor_1_1Node.html#ac3851d769ef1a1f171f260491b09e80c",
 "constr__SEQUENCE_8h.html#a85815ec71785d1a7f033cb2cc75188e8",
-"functions_vars_a.html",
-"namespacej2735__convertor_1_1geofence__control.html#ae59e31c7cfccf68c9ad8ee97df5c0d12",
-"structComputedLane.html#a6bed2aeb9e11fdcacdcd30dbc1914c0b",
-"structITIScodesAndText____Member_1_1ITIScodesAndText____Member____item.html#aaef569b331a8358fef9101c471d39d9c",
-"structNodeAttributeSetXY.html#a9f33a6bdcfd37b546d57f4dcbca665f8",
-"structProbeDataManagement_1_1ProbeDataManagement____regional.html#a7cb7a2a1befbc3d675b7841ac319d2fd",
-"structSignalRequesterInfo.html#a3633da73f3760d5202231aa4b0719a43",
-"structTrafficControlRequest.html#ad5c5c7320910a2d0d5c0af561e934ccb",
-"structWorkZone.html#a706ea3769b4abcaaa7b8455bb64c50c3",
-"unionGeographicalPath_1_1GeographicalPath____description_1_1GeographicalPath____description__u.html",
-"xer__decoder_8h.html#aeed84c89c41ab6b813669a3e08218d68"
+"functions_vars_b.html",
+"namespacej2735__convertor_1_1geofence__request.html#ac590ce116ed71f9c41d87b520e3eaf4e",
+"structComputedLane_1_1ComputedLane____offsetYaxis.html",
+"structIntersectionCollision.html#a598c7170cfb4605cf459952034e75789",
+"structNodeLL.html#a2b419335b649efa678156c10620bdbca",
+"structProbeVehicleData.html",
+"structSignalStatus.html#aba75b2b7485c084a95c375781016a883",
+"structTrafficControlRequestV01_1_1TrafficControlRequestV01____bounds.html#ae5b7c43d1997e28a23c74c90b17ad3e9",
+"struct__el__buffer.html#a182e44a537a38fc8216cabf9e4d5a29b",
+"unionIntersectionAccessPoint_1_1IntersectionAccessPoint__u.html#a7ace9df7671b55a476bedd7855980f71",
+"xer__encoder_8h.html#a68fe2b1a6550a7f0f711585cb5151c88a2af6683bc4890cde58108cf31e2e0712"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -10,6 +10,7 @@ var searchData=
   ['ber_5ftlv_5ftag_5fsnprint_7',['ber_tlv_tag_snprint',['../ber__tlv__tag_8h.html#acf4d4c347bf9816930ffff30e4261e78',1,'ber_tlv_tag.h']]],
   ['ber_5ftlv_5ftag_5fstring_8',['ber_tlv_tag_string',['../ber__tlv__tag_8h.html#a94e59d972f477a2d8910ba76f413612b',1,'ber_tlv_tag.h']]],
   ['bit_5fstring_5f_5fcompactify_9',['BIT_STRING__compactify',['../BIT__STRING_8h.html#a0f12420108152eac2325ac84e723e1e1',1,'BIT_STRING.h']]],
-  ['bsm_5fmessage_10',['BSM_Message',['../classcpp__message_1_1BSM__Message.html#a85c1a60e84eb3c798ab31d1f30cc25f7',1,'cpp_message::BSM_Message']]],
-  ['bsmhandler_11',['BsmHandler',['../classj2735__convertor_1_1Node.html#a05293d7748b2407925e822ea283a816b',1,'j2735_convertor::Node']]]
+  ['broadcastemergencyvehicleack_10',['broadcastEmergencyVehicleAck',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ae0f4217007231d59bd9458a9e7a8ce75',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
+  ['bsm_5fmessage_11',['BSM_Message',['../classcpp__message_1_1BSM__Message.html#a85c1a60e84eb3c798ab31d1f30cc25f7',1,'cpp_message::BSM_Message']]],
+  ['bsmhandler_12',['BsmHandler',['../classj2735__convertor_1_1Node.html#a05293d7748b2407925e822ea283a816b',1,'j2735_convertor::Node']]]
 ];

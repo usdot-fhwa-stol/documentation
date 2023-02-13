@@ -13,6 +13,10 @@ var namespaces_dup =
     [ "drivers", "namespacedrivers.html", [
       [ "generate_launch_description", "namespacedrivers.html#aa911b3266eb7a2a400026f3dd9e2e562", null ]
     ] ],
+    [ "emergency_response_vehicle_plugin", "namespaceemergency__response__vehicle__plugin.html", "namespaceemergency__response__vehicle__plugin" ],
+    [ "emergency_response_vehicle_plugin_launch", "namespaceemergency__response__vehicle__plugin__launch.html", [
+      [ "generate_launch_description", "namespaceemergency__response__vehicle__plugin__launch.html#a8942ed221b890858f0461fdfbecd121c", null ]
+    ] ],
     [ "j2735_convertor", "namespacej2735__convertor.html", "namespacej2735__convertor" ],
     [ "j2735_convertor_launch", "namespacej2735__convertor__launch.html", [
       [ "generate_launch_description", "namespacej2735__convertor__launch.html#a8256d94a243250ef99be09574cb9db06", null ]

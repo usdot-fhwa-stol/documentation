@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['truck_5finspection_5fplugin_0',['truck_inspection_plugin',['../md_carma_messenger_core_truck_inspection_plugin_README.html',1,'']]]
+  ['readme_0',['README',['../md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html',1,'(Global Namespace)'],['../md_README.html',1,'(Global Namespace)']]]
 ];

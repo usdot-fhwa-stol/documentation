@@ -59,6 +59,7 @@ var hierarchy =
     [ "BumperHeights", "structBumperHeights.html", null ],
     [ "carma_ros2_utils::CarmaLifecycleNode", null, [
       [ "cpp_message::Node", "classcpp__message_1_1Node.html", null ],
+      [ "emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html", null ],
       [ "j2735_convertor::Node", "classj2735__convertor_1_1Node.html", null ],
       [ "truck_inspection_plugin::Node", "classtruck__inspection__plugin_1_1Node.html", null ]
     ] ],
@@ -72,6 +73,7 @@ var hierarchy =
     [ "ComputedLane::ComputedLane__offsetYaxis::ComputedLane__offsetYaxis_u", "unionComputedLane_1_1ComputedLane____offsetYaxis_1_1ComputedLane____offsetYaxis__u.html", null ],
     [ "ComputedLane::ComputedLane__regional", "structComputedLane_1_1ComputedLane____regional.html", null ],
     [ "ConfidenceSet", "structConfidenceSet.html", null ],
+    [ "emergency_response_vehicle_plugin::Config", "structemergency__response__vehicle__plugin_1_1Config.html", null ],
     [ "truck_inspection_plugin::Config", "structtruck__inspection__plugin_1_1Config.html", null ],
     [ "ConnectingLane", "structConnectingLane.html", null ],
     [ "Connection", "structConnection.html", null ],
@@ -387,6 +389,7 @@ var hierarchy =
     [ "TravelerDataFrameList", "structTravelerDataFrameList.html", null ],
     [ "TravelerInformation", "structTravelerInformation.html", null ],
     [ "TravelerInformation::TravelerInformation__regional", "structTravelerInformation_1_1TravelerInformation____regional.html", null ],
+    [ "emergency_response_vehicle_plugin::UDPListener", "classemergency__response__vehicle__plugin_1_1UDPListener.html", null ],
     [ "ValidRegion", "structValidRegion.html", null ],
     [ "ValidRegion::ValidRegion__area", "structValidRegion_1_1ValidRegion____area.html", null ],
     [ "ValidRegion::ValidRegion__area::ValidRegion__area_u", "unionValidRegion_1_1ValidRegion____area_1_1ValidRegion____area__u.html", null ],

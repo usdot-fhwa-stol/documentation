@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['plugins_0',['plugins',['../namespaceplugins.html',1,'']]]
+  ['message_0',['message',['../namespacemessage.html',1,'']]]
 ];

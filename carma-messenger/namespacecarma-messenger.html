@@ -121,33 +121,43 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   36</span>    declare_configuration_delay_arg = DeclareLaunchArgument(</div>
 <div class="line"><span class="lineno">   37</span>        name =<span class="stringliteral">&#39;configuration_delay&#39;</span>, default_value=<span class="stringliteral">&#39;4.0&#39;</span>)</div>
 <div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    v2x_group = GroupAction(</div>
-<div class="line"><span class="lineno">   40</span>        actions=[</div>
-<div class="line"><span class="lineno">   41</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">   42</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/message.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">   43</span>                launch_arguments = { </div>
-<div class="line"><span class="lineno">   44</span>                    <span class="stringliteral">&#39;configuration_delay&#39;</span> : [configuration_delay]</div>
-<div class="line"><span class="lineno">   45</span>                }.items()</div>
-<div class="line"><span class="lineno">   46</span>            ),</div>
-<div class="line"><span class="lineno">   47</span>        ]</div>
-<div class="line"><span class="lineno">   48</span>    )</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>    plugins_group = GroupAction(</div>
-<div class="line"><span class="lineno">   51</span>        actions=[</div>
-<div class="line"><span class="lineno">   52</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">   53</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/plugins.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">   54</span>                launch_arguments = { </div>
-<div class="line"><span class="lineno">   55</span>                    <span class="stringliteral">&#39;configuration_delay&#39;</span> : [configuration_delay]</div>
-<div class="line"><span class="lineno">   56</span>                }.items()</div>
-<div class="line"><span class="lineno">   57</span>            ),</div>
-<div class="line"><span class="lineno">   58</span>        ]</div>
-<div class="line"><span class="lineno">   59</span>    )</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">   62</span>        declare_configuration_delay_arg,</div>
-<div class="line"><span class="lineno">   63</span>        v2x_group,</div>
-<div class="line"><span class="lineno">   64</span>        plugins_group</div>
-<div class="line"><span class="lineno">   65</span>    ])</div>
+<div class="line"><span class="lineno">   39</span>    <span class="comment"># Declare the route file folder launch argument</span></div>
+<div class="line"><span class="lineno">   40</span>    route_file_folder = LaunchConfiguration(<span class="stringliteral">&#39;route_file_folder&#39;</span>)</div>
+<div class="line"><span class="lineno">   41</span>    declare_route_file_folder = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   42</span>        name = <span class="stringliteral">&#39;route_file_folder&#39;</span>,</div>
+<div class="line"><span class="lineno">   43</span>        default_value=<span class="stringliteral">&#39;/opt/carma/routes/&#39;</span>,</div>
+<div class="line"><span class="lineno">   44</span>        description = <span class="stringliteral">&#39;Path of folder on host PC containing route CSV file(s) that can be accessed by plugins&#39;</span></div>
+<div class="line"><span class="lineno">   45</span>    )</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    v2x_group = GroupAction(</div>
+<div class="line"><span class="lineno">   48</span>        actions=[</div>
+<div class="line"><span class="lineno">   49</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">   50</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/message.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">   51</span>                launch_arguments = { </div>
+<div class="line"><span class="lineno">   52</span>                    <span class="stringliteral">&#39;configuration_delay&#39;</span> : [configuration_delay]</div>
+<div class="line"><span class="lineno">   53</span>                }.items()</div>
+<div class="line"><span class="lineno">   54</span>            ),</div>
+<div class="line"><span class="lineno">   55</span>        ]</div>
+<div class="line"><span class="lineno">   56</span>    )</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    plugins_group = GroupAction(</div>
+<div class="line"><span class="lineno">   59</span>        actions=[</div>
+<div class="line"><span class="lineno">   60</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">   61</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/plugins.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">   62</span>                launch_arguments = { </div>
+<div class="line"><span class="lineno">   63</span>                    <span class="stringliteral">&#39;configuration_delay&#39;</span> : [configuration_delay],</div>
+<div class="line"><span class="lineno">   64</span>                    <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder</div>
+<div class="line"><span class="lineno">   65</span>                }.items()</div>
+<div class="line"><span class="lineno">   66</span>            ),</div>
+<div class="line"><span class="lineno">   67</span>        ]</div>
+<div class="line"><span class="lineno">   68</span>    )</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><span class="lineno">   71</span>        declare_configuration_delay_arg,</div>
+<div class="line"><span class="lineno">   72</span>        declare_route_file_folder,</div>
+<div class="line"><span class="lineno">   73</span>        v2x_group,</div>
+<div class="line"><span class="lineno">   74</span>        plugins_group</div>
+<div class="line"><span class="lineno">   75</span>    ])</div>
 <div class="ttc" id="anamespacecarma-messenger_html_a111bc28796dc376bb4331b6b7d9b0024"><div class="ttname"><a href="namespacecarma-messenger.html#a111bc28796dc376bb4331b6b7d9b0024">carma-messenger.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="carma-messenger_8launch_8py_source.html#l00030">carma-messenger.launch.py:30</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -158,7 +168,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma-messenger.html">carma-messenger</a></li>
-    <li class="footer">Generated on Mon Feb 13 2023 17:54:16 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Feb 13 2023 19:12:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

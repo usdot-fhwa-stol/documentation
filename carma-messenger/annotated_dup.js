@@ -14,6 +14,11 @@ var annotated_dup =
       [ "PSM_Message", "classcpp__message_1_1PSM__Message.html", "classcpp__message_1_1PSM__Message" ],
       [ "SPAT_Message", "classcpp__message_1_1SPAT__Message.html", "classcpp__message_1_1SPAT__Message" ]
     ] ],
+    [ "emergency_response_vehicle_plugin", "namespaceemergency__response__vehicle__plugin.html", [
+      [ "Config", "structemergency__response__vehicle__plugin_1_1Config.html", "structemergency__response__vehicle__plugin_1_1Config" ],
+      [ "EmergencyResponseVehiclePlugin", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin" ],
+      [ "UDPListener", "classemergency__response__vehicle__plugin_1_1UDPListener.html", "classemergency__response__vehicle__plugin_1_1UDPListener" ]
+    ] ],
     [ "j2735_convertor", "namespacej2735__convertor.html", [
       [ "BSMConvertor", "classj2735__convertor_1_1BSMConvertor.html", "classj2735__convertor_1_1BSMConvertor" ],
       [ "MapConvertor", "classj2735__convertor_1_1MapConvertor.html", "classj2735__convertor_1_1MapConvertor" ],

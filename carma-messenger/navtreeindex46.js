@@ -1,11 +1,5 @@
 var NAVTREEINDEX46 =
 {
-"structTestMessage03.html#acd7f7500c8a0539162f1fa2088a78778":[9,0,237,1],
-"structTestMessage04.html":[9,0,238],
-"structTestMessage04.html#a6ec430ad7ecfbd4cd1ca1d88622102fa":[9,0,238,1],
-"structTestMessage04.html#ab755b234ee9567aba7ed4aef691defa9":[9,0,238,0],
-"structTestMessage05.html":[9,0,239],
-"structTestMessage05.html#afb2e99dbcb209d58033393c6d8815f54":[9,0,239,0],
 "structTestMessage05.html#afcd9f5e8e53c2fc91a85a5d2e20f1734":[9,0,239,1],
 "structTestMessage06.html":[9,0,240],
 "structTestMessage06.html#a192b32244d74b80ae2f7144e6bc86597":[9,0,240,2],
@@ -249,5 +243,11 @@ var NAVTREEINDEX46 =
 "structVehicleClassification.html#abd748884733de4c9990a321aec753bfa":[9,0,273,6],
 "structVehicleClassification.html#afaae3cb3d06f47a6bdea5719f44b531b":[9,0,273,5],
 "structVehicleClassification_1_1VehicleClassification____regional.html":[9,0,273,0],
-"structVehicleClassification_1_1VehicleClassification____regional.html#a3a40fd09e1c261da27b483ee4a6c3d88":[9,0,273,0,0]
+"structVehicleClassification_1_1VehicleClassification____regional.html#a3a40fd09e1c261da27b483ee4a6c3d88":[9,0,273,0,0],
+"structVehicleClassification_1_1VehicleClassification____regional.html#ae3befa5b82b4572e7551f86a1d7c0136":[9,0,273,0,1],
+"structVehicleData.html":[9,0,274],
+"structVehicleData.html#a199efb143a4c63c57d849da10690da1c":[9,0,274,1],
+"structVehicleData.html#a2c64d1ae5b07f2b5cff0e63cc38424f9":[9,0,274,4],
+"structVehicleData.html#a2e269fe56d1d3307b939e44ff5b66222":[9,0,274,2],
+"structVehicleData.html#a73064a60446995c40a3c44342a1ec1b0":[9,0,274,0]
 };

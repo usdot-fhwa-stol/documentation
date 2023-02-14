@@ -1,11 +1,5 @@
 var NAVTREEINDEX45 =
 {
-"structRestrictionUserType.html#a6af5b88075659c5ed8bc59ac79302433":[9,0,192,2],
-"structRestrictionUserType.html#a971e1212f6734be7d46426ceaac54d1c":[9,0,192,1],
-"structRestrictionUserType.html#aa4eab733fd05d475d8ad40d1b3bfffaf":[9,0,192,3],
-"structRestrictionUserTypeList.html":[9,0,194],
-"structRestrictionUserTypeList.html#a0306fe2f642f3716eb4c7a92bddf68cd":[9,0,194,1],
-"structRestrictionUserTypeList.html#a386c65d6a4a6981a1fe6fead3904e18a":[9,0,194,0],
 "structRestrictionUserType_1_1RestrictionUserType__u_1_1RestrictionUserType____regional.html":[9,0,192,0,0],
 "structRestrictionUserType_1_1RestrictionUserType__u_1_1RestrictionUserType____regional.html#a5bbb3035202f7a819763e1f0315632f9":[9,0,192,0,0,1],
 "structRestrictionUserType_1_1RestrictionUserType__u_1_1RestrictionUserType____regional.html#ac47b74251043928c0d100c3635f32850":[9,0,192,0,0,0],
@@ -249,5 +243,11 @@ var NAVTREEINDEX45 =
 "structTestMessage02.html#ad478d0db142d5052b629667b0b06fcb6":[9,0,236,1],
 "structTestMessage03.html":[9,0,237],
 "structTestMessage03.html#a170fa859c1040ccee4baefe1ec2962e9":[9,0,237,0],
-"structTestMessage03.html#a63aaf15dc49e5d444e65c39e3c7a58f4":[9,0,237,2]
+"structTestMessage03.html#a63aaf15dc49e5d444e65c39e3c7a58f4":[9,0,237,2],
+"structTestMessage03.html#acd7f7500c8a0539162f1fa2088a78778":[9,0,237,1],
+"structTestMessage04.html":[9,0,238],
+"structTestMessage04.html#a6ec430ad7ecfbd4cd1ca1d88622102fa":[9,0,238,1],
+"structTestMessage04.html#ab755b234ee9567aba7ed4aef691defa9":[9,0,238,0],
+"structTestMessage05.html":[9,0,239],
+"structTestMessage05.html#afb2e99dbcb209d58033393c6d8815f54":[9,0,239,0]
 };

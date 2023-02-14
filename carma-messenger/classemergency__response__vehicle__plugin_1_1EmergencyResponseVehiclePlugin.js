@@ -11,7 +11,6 @@ var classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin 
     [ "FRIEND_TEST", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a8032cc2764a17cbf670cc440ec068de7", null ],
     [ "generateBSM", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a799090d050825e0ebf281570faaf1383", null ],
     [ "getDistanceBetween", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a9ceec14aa51f981f3cd9e8a08e804fe7", null ],
-    [ "getEmergencyRouteCallback", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#af351a6fdb08300091fa39fbc4a67e8a1", null ],
     [ "getNextMsgCount", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a1c6f1819b3be8fefbd093d04e5cb715a", null ],
     [ "handle_on_activate", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a910b6eb8776913e472c319ccabdea4de", null ],
     [ "handle_on_configure", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a35cdb6f84b872aff64b6cfc3803a1cbd", null ],
@@ -33,7 +32,6 @@ var classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin 
     [ "emergency_lights_active_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a5c127acc975fce2de781a65ead627ec3", null ],
     [ "emergency_sirens_active_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a01b5578caec4cb13ef18e210d14a7a93", null ],
     [ "emergency_vehicle_ui_warnings_pub_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a07b01453eb517f54fddd7ccdc1942b92", null ],
-    [ "get_emergency_route_server_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a00d262ab4944ff992caa85abea1ad1a1", null ],
     [ "incoming_emergency_vehicle_response_sub_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a9095e584ac66e886475dae4ab02d728a", null ],
     [ "io_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ad25ac29a67f86a15051fc280cf968080", null ],
     [ "io_thread_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#adc5b02be33dc5bc9aa3aad7d50f0c348", null ],
@@ -43,7 +41,6 @@ var classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin 
     [ "pose_sub_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a48fd74a1232b8030fce5f4fa26c48a31", null ],
     [ "prev_msg_count_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a933d82171c4614166abe8a1fde84cd11", null ],
     [ "route_destination_points_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a4414e1e62c3f0b3b6d9cf5d4556e64a6", null ],
-    [ "route_final_destination_name_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#aa7780a8da874cb1b7fad739b816a10bf", null ],
     [ "twist_sub_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ad2a83f65e24b1574225333e541bc4791", null ],
     [ "udp_listener_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a0da9d85bb40af0c8f8147649e45172e1", null ],
     [ "work_", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a0d7792256033992791d5d9093dbec7fd", null ]

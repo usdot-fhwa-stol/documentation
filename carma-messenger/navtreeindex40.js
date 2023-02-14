@@ -1,11 +1,5 @@
 var NAVTREEINDEX40 =
 {
-"globals_v.html":[10,1,0,21],
-"globals_vars.html":[10,1,2],
-"globals_vars.html":[10,1,2,0],
-"globals_vars_b.html":[10,1,2,1],
-"globals_vars_c.html":[10,1,2,2],
-"globals_vars_d.html":[10,1,2,3],
 "globals_vars_e.html":[10,1,2,4],
 "globals_vars_f.html":[10,1,2,5],
 "globals_vars_g.html":[10,1,2,6],
@@ -249,5 +243,11 @@ var NAVTREEINDEX40 =
 "structASN____PRIMITIVE__TYPE__s.html#af73d99eaa535a8c0404549f04044bf23":[9,0,17,1],
 "structAccelSteerYawRateConfidence.html":[9,0,9],
 "structAccelSteerYawRateConfidence.html#a0eaabb99d36c8f91b0f5ca711abe8df7":[9,0,9,1],
-"structAccelSteerYawRateConfidence.html#a570d88f8427334a72b599cc7c82e57d6":[9,0,9,3]
+"structAccelSteerYawRateConfidence.html#a570d88f8427334a72b599cc7c82e57d6":[9,0,9,3],
+"structAccelSteerYawRateConfidence.html#a7edcf1f6b0de9e85ca790ae187787c5b":[9,0,9,0],
+"structAccelSteerYawRateConfidence.html#ad3ad0cde072582b7c56dfd20a4713960":[9,0,9,2],
+"structAccelerationSet4Way.html":[9,0,8],
+"structAccelerationSet4Way.html#a52f55a5914fbd341e909d91d51a14e7a":[9,0,8,4],
+"structAccelerationSet4Way.html#a818a0aaaf836d9ba2c8ef3fb7e856059":[9,0,8,0],
+"structAccelerationSet4Way.html#a928ff62613782ca1244f70eb6dad8e16":[9,0,8,2]
 };

@@ -1,11 +1,5 @@
 var NAVTREEINDEX41 =
 {
-"structAccelSteerYawRateConfidence.html#a7edcf1f6b0de9e85ca790ae187787c5b":[9,0,9,0],
-"structAccelSteerYawRateConfidence.html#ad3ad0cde072582b7c56dfd20a4713960":[9,0,9,2],
-"structAccelerationSet4Way.html":[9,0,8],
-"structAccelerationSet4Way.html#a52f55a5914fbd341e909d91d51a14e7a":[9,0,8,4],
-"structAccelerationSet4Way.html#a818a0aaaf836d9ba2c8ef3fb7e856059":[9,0,8,0],
-"structAccelerationSet4Way.html#a928ff62613782ca1244f70eb6dad8e16":[9,0,8,2],
 "structAccelerationSet4Way.html#aa290fcdf95d1dc2b47f4c26f3a56b13b":[9,0,8,3],
 "structAccelerationSet4Way.html#aecf3c8b1d7c704f650e56999ee842a09":[9,0,8,1],
 "structAddGrpB__TimeMark.html":[9,0,10],
@@ -249,5 +243,11 @@ var NAVTREEINDEX41 =
 "structEmergencyDetails.html#a56d9631718da53846ef0e80855651450":[9,0,71,3],
 "structEmergencyDetails.html#a57f23b629d402601ba66919fc60d9868":[9,0,71,0],
 "structEmergencyDetails.html#a6b179698f4feb760c374e1b3c64d88f8":[9,0,71,5],
-"structEmergencyDetails.html#a782274c05dfa54b400991ba9a92a3114":[9,0,71,6]
+"structEmergencyDetails.html#a782274c05dfa54b400991ba9a92a3114":[9,0,71,6],
+"structEmergencyDetails.html#a804f811a5f2f1b535a76ac89780cfd65":[9,0,71,2],
+"structEmergencyDetails.html#ab61a9fb210dd5b845c81470df0af4f68":[9,0,71,4],
+"structEmergencyVehicleAck.html":[9,0,72],
+"structEmergencyVehicleAck.html#a5adbd46a793d2a3518df60a156893c68":[9,0,72,1],
+"structEmergencyVehicleAck.html#ac5aba80c538c55164bfdaf4f54d4294d":[9,0,72,0],
+"structEmergencyVehicleAlert.html":[9,0,73]
 };

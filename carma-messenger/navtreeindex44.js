@@ -1,11 +1,5 @@
 var NAVTREEINDEX44 =
 {
-"structOffsetSystem.html#a2e1745f39d93f1cc8e97241646090bad":[9,0,158,3],
-"structOffsetSystem.html#a4098534abc0d9dc8f1c687cafa1adea4":[9,0,158,2],
-"structOffsetSystem.html#aa11cf03ffaf5be401ffad27a910be783":[9,0,158,1],
-"structOffsetSystem_1_1OffsetSystem____offset.html":[9,0,158,0],
-"structOffsetSystem_1_1OffsetSystem____offset.html#a60502cbbbbe29820e17f841a620f82a3":[9,0,158,0,1],
-"structOffsetSystem_1_1OffsetSystem____offset.html#a980a1e0101f9f5bc68ae65994a772f16":[9,0,158,0,3],
 "structOffsetSystem_1_1OffsetSystem____offset.html#ab7a7bccc5128955dea71570cd87f8f1a":[9,0,158,0,2],
 "structOverlayLaneList.html":[9,0,159],
 "structOverlayLaneList.html#a02b748bcbdd96ac589761ee3446a34d0":[9,0,159,0],
@@ -249,5 +243,11 @@ var NAVTREEINDEX44 =
 "structRestrictionClassList.html":[9,0,191],
 "structRestrictionClassList.html#a435adf5e073ad35db4ecbac9ef8bdc96":[9,0,191,0],
 "structRestrictionClassList.html#ae457c1524d80bedf3c4c71adb4795b2a":[9,0,191,1],
-"structRestrictionUserType.html":[9,0,192]
+"structRestrictionUserType.html":[9,0,192],
+"structRestrictionUserType.html#a6af5b88075659c5ed8bc59ac79302433":[9,0,192,2],
+"structRestrictionUserType.html#a971e1212f6734be7d46426ceaac54d1c":[9,0,192,1],
+"structRestrictionUserType.html#aa4eab733fd05d475d8ad40d1b3bfffaf":[9,0,192,3],
+"structRestrictionUserTypeList.html":[9,0,194],
+"structRestrictionUserTypeList.html#a0306fe2f642f3716eb4c7a92bddf68cd":[9,0,194,1],
+"structRestrictionUserTypeList.html#a386c65d6a4a6981a1fe6fead3904e18a":[9,0,194,0]
 };

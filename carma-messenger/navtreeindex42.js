@@ -1,11 +1,5 @@
 var NAVTREEINDEX42 =
 {
-"structEmergencyDetails.html#a804f811a5f2f1b535a76ac89780cfd65":[9,0,71,2],
-"structEmergencyDetails.html#ab61a9fb210dd5b845c81470df0af4f68":[9,0,71,4],
-"structEmergencyVehicleAck.html":[9,0,72],
-"structEmergencyVehicleAck.html#a5adbd46a793d2a3518df60a156893c68":[9,0,72,1],
-"structEmergencyVehicleAck.html#ac5aba80c538c55164bfdaf4f54d4294d":[9,0,72,0],
-"structEmergencyVehicleAlert.html":[9,0,73],
 "structEmergencyVehicleAlert.html#a07eccfd3e724421dc0e01ccad0476c81":[9,0,73,1],
 "structEmergencyVehicleAlert.html#a1b61390b64948c46b9561de7a3e7c0b5":[9,0,73,11],
 "structEmergencyVehicleAlert.html#a2ad1aa3349f1de9f8d4e067813d0fbb2":[9,0,73,12],
@@ -249,5 +243,11 @@ var NAVTREEINDEX42 =
 "structMapData.html#a4e6a3c0eedf13cfca0b04adc2b101b5c":[9,0,109,9],
 "structMapData.html#a5477953521ec385c11bfa74aad5ac8df":[9,0,109,3],
 "structMapData.html#a5f8e8f5b2d6d6028e0ef87a46f252bcf":[9,0,109,5],
-"structMapData.html#a7079e1096f3e9377dd284801bb05a142":[9,0,109,8]
+"structMapData.html#a7079e1096f3e9377dd284801bb05a142":[9,0,109,8],
+"structMapData.html#a93c991235c2d3c691ef381c6b0a23cd3":[9,0,109,7],
+"structMapData.html#ab8da8803b0277e20af49b6a35bd5e646":[9,0,109,2],
+"structMapData.html#ac191e552cfda373d23e7bd6fe079a6a0":[9,0,109,1],
+"structMapData.html#ae40c64ddada1120805f8618d977a63e8":[9,0,109,10],
+"structMapData.html#afcb08dcb86e2aacd8b1f7f62bffa6950":[9,0,109,6],
+"structMapData_1_1MapData____regional.html":[9,0,109,0]
 };

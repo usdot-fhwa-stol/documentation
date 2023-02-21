@@ -101,8 +101,7 @@ var namespaces_dup =
     ] ],
     [ "localization_manager", "namespacelocalization__manager.html", "namespacelocalization__manager" ],
     [ "message", "namespacemessage.html", [
-      [ "generate_launch_description", "namespacemessage.html#ac800f8f1604a1c698b659abcf26c83ad", null ],
-      [ "open_tunnels", "namespacemessage.html#afb314c0375c651564c18f936d339570e", null ]
+      [ "generate_launch_description", "namespacemessage.html#ac800f8f1604a1c698b659abcf26c83ad", null ]
     ] ],
     [ "mobilitypath_publisher", "namespacemobilitypath__publisher.html", "namespacemobilitypath__publisher" ],
     [ "mobilitypath_publisher_launch", "namespacemobilitypath__publisher__launch.html", [

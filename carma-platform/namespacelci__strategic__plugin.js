@@ -28,7 +28,9 @@ var namespacelci__strategic__plugin =
       [ "CASE_7", "namespacelci__strategic__plugin.html#a8c6e35d446c028b1e38bd354bb3a273ba19ec3ba898d093501c77fa4ee0e410c4", null ],
       [ "CASE_8", "namespacelci__strategic__plugin.html#a8c6e35d446c028b1e38bd354bb3a273bab3a92d4f4f925b8c566bd63101cf412f", null ],
       [ "STOPPING", "namespacelci__strategic__plugin.html#a8c6e35d446c028b1e38bd354bb3a273badd0a350fa9aa0480df27d0db9e960964", null ],
-      [ "UNAVAILABLE", "namespacelci__strategic__plugin.html#a8c6e35d446c028b1e38bd354bb3a273bab7d0527f72b2019a46ec64928c7f2063", null ]
+      [ "UNAVAILABLE", "namespacelci__strategic__plugin.html#a8c6e35d446c028b1e38bd354bb3a273bab7d0527f72b2019a46ec64928c7f2063", null ],
+      [ "EMERGENCY_STOPPING", "namespacelci__strategic__plugin.html#a8c6e35d446c028b1e38bd354bb3a273bacfe02bba2d0d58f65b97219819aa9013", null ],
+      [ "DEGRADED_TSCASE", "namespacelci__strategic__plugin.html#a8c6e35d446c028b1e38bd354bb3a273ba2e962f86afb4c45a2b1939726a663a65", null ]
     ] ],
     [ "TurnDirection", "namespacelci__strategic__plugin.html#a1e0201b2cf65a27f7075fd60ce35e2e9", [
       [ "Straight", "namespacelci__strategic__plugin.html#a1e0201b2cf65a27f7075fd60ce35e2e9ab6bd418b8879851e86bcaccd553b74db", null ],

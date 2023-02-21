@@ -277,179 +277,179 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A list of trajectory points to send to the carma planning stack </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00215">215</a> of file <a class="el" href="stop__and__wait__plugin_8cpp_source.html">stop_and_wait_plugin.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  218</span>{</div>
-<div class="line"><span class="lineno">  219</span>  std::vector&lt;carma_planning_msgs::msg::TrajectoryPlanPoint&gt; plan;</div>
-<div class="line"><span class="lineno">  220</span>  <span class="keywordflow">if</span> (points.size() == 0)</div>
-<div class="line"><span class="lineno">  221</span>  {</div>
-<div class="line"><span class="lineno">  222</span>    RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;No points to use as trajectory in stop and wait plugin&quot;</span>);</div>
-<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">return</span> plan;</div>
-<div class="line"><span class="lineno">  224</span>  }</div>
-<div class="line"><span class="lineno">  225</span> </div>
-<div class="line"><span class="lineno">  226</span>  std::vector&lt;PointSpeedPair&gt; final_points;</div>
-<div class="line"><span class="lineno">  227</span> </div>
-<div class="line"><span class="lineno">  228</span>  <span class="keywordtype">double</span> half_stopping_buffer = stop_location_buffer * 0.5;</div>
-<div class="line"><span class="lineno">  229</span>  <span class="keywordtype">double</span> remaining_distance = stop_location - half_stopping_buffer - starting_downtrack; <span class="comment">// Target to stop in the middle of the buffer</span></div>
-<div class="line"><span class="lineno">  230</span> </div>
-<div class="line"><span class="lineno">  231</span>  <span class="keywordtype">double</span> target_accel = stopping_acceleration * <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#ae028cbbe5066f0c0a70f877188a739c4">accel_limit_multiplier</a>;</div>
-<div class="line"><span class="lineno">  232</span>  <span class="keywordtype">double</span> req_dist = (starting_speed * starting_speed) /</div>
-<div class="line"><span class="lineno">  233</span>                    (2.0 * target_accel);  <span class="comment">// Distance needed to go from current speed to 0 at target accel</span></div>
-<div class="line"><span class="lineno">  234</span> </div>
-<div class="line"><span class="lineno">  235</span>  <span class="comment">// In cases where the vehicle is not able to stop before the half_stopping_buffer the remaining distance becomes negative</span></div>
-<div class="line"><span class="lineno">  236</span>  <span class="comment">// which will cause the target accel in this loop to be negative and make the vehicle speed up</span></div>
-<div class="line"><span class="lineno">  237</span>  <span class="keywordflow">while</span> (remaining_distance &lt;= 0.0)</div>
-<div class="line"><span class="lineno">  238</span>  {</div>
-<div class="line"><span class="lineno">  239</span>    <span class="keywordflow">if</span>(remaining_distance &lt;= (stop_location - starting_downtrack))</div>
-<div class="line"><span class="lineno">  240</span>    {</div>
-<div class="line"><span class="lineno">  241</span>    <span class="comment">//Add additional distance to remaining to allow vehicle to stop within buffer</span></div>
-<div class="line"><span class="lineno">  242</span>      remaining_distance += 0.2;</div>
-<div class="line"><span class="lineno">  243</span>    }</div>
-<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  245</span>     <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  246</span>   }</div>
-<div class="line"><span class="lineno">  247</span>  }</div>
-<div class="line"><span class="lineno">  248</span>  </div>
-<div class="line"><span class="lineno">  249</span>  <span class="keywordflow">if</span> (req_dist &gt; remaining_distance)</div>
-<div class="line"><span class="lineno">  250</span>  {</div>
-<div class="line"><span class="lineno">  251</span> </div>
-<div class="line"><span class="lineno">  252</span>    RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;Target Accel Update From: &quot;</span> &lt;&lt; target_accel);</div>
-<div class="line"><span class="lineno">  253</span>    target_accel =</div>
-<div class="line"><span class="lineno">  254</span>        (starting_speed * starting_speed) / (2.0 * remaining_distance);  <span class="comment">// If we cannot reach the end point it the</span></div>
-<div class="line"><span class="lineno">  255</span>                                                                         <span class="comment">// required distance update the accel target</span></div>
-<div class="line"><span class="lineno">  256</span>    RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;Target Accel Update To: &quot;</span> &lt;&lt; target_accel);</div>
-<div class="line"><span class="lineno">  257</span>  }</div>
-<div class="line"><span class="lineno">  258</span> </div>
+<p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00223">223</a> of file <a class="el" href="stop__and__wait__plugin_8cpp_source.html">stop_and_wait_plugin.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  226</span>{</div>
+<div class="line"><span class="lineno">  227</span>  std::vector&lt;carma_planning_msgs::msg::TrajectoryPlanPoint&gt; plan;</div>
+<div class="line"><span class="lineno">  228</span>  <span class="keywordflow">if</span> (points.size() == 0)</div>
+<div class="line"><span class="lineno">  229</span>  {</div>
+<div class="line"><span class="lineno">  230</span>    RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;No points to use as trajectory in stop and wait plugin&quot;</span>);</div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">return</span> plan;</div>
+<div class="line"><span class="lineno">  232</span>  }</div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>  std::vector&lt;PointSpeedPair&gt; final_points;</div>
+<div class="line"><span class="lineno">  235</span> </div>
+<div class="line"><span class="lineno">  236</span>  <span class="keywordtype">double</span> half_stopping_buffer = stop_location_buffer * 0.5;</div>
+<div class="line"><span class="lineno">  237</span>  <span class="keywordtype">double</span> remaining_distance = stop_location - half_stopping_buffer - starting_downtrack; <span class="comment">// Target to stop in the middle of the buffer</span></div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>  <span class="keywordtype">double</span> target_accel = stopping_acceleration * <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#ae028cbbe5066f0c0a70f877188a739c4">accel_limit_multiplier</a>;</div>
+<div class="line"><span class="lineno">  240</span>  <span class="keywordtype">double</span> req_dist = (starting_speed * starting_speed) /</div>
+<div class="line"><span class="lineno">  241</span>                    (2.0 * target_accel);  <span class="comment">// Distance needed to go from current speed to 0 at target accel</span></div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span>  <span class="comment">// In cases where the vehicle is not able to stop before the half_stopping_buffer the remaining distance becomes negative</span></div>
+<div class="line"><span class="lineno">  244</span>  <span class="comment">// which will cause the target accel in this loop to be negative and make the vehicle speed up</span></div>
+<div class="line"><span class="lineno">  245</span>  <span class="keywordflow">while</span> (remaining_distance &lt;= 0.0)</div>
+<div class="line"><span class="lineno">  246</span>  {</div>
+<div class="line"><span class="lineno">  247</span>    <span class="keywordflow">if</span>(remaining_distance &lt;= (stop_location - starting_downtrack))</div>
+<div class="line"><span class="lineno">  248</span>    {</div>
+<div class="line"><span class="lineno">  249</span>    <span class="comment">//Add additional distance to remaining to allow vehicle to stop within buffer</span></div>
+<div class="line"><span class="lineno">  250</span>      remaining_distance += 0.2;</div>
+<div class="line"><span class="lineno">  251</span>    }</div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  253</span>     <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  254</span>   }</div>
+<div class="line"><span class="lineno">  255</span>  }</div>
+<div class="line"><span class="lineno">  256</span>  </div>
+<div class="line"><span class="lineno">  257</span>  <span class="keywordflow">if</span> (req_dist &gt; remaining_distance)</div>
+<div class="line"><span class="lineno">  258</span>  {</div>
 <div class="line"><span class="lineno">  259</span> </div>
-<div class="line"><span class="lineno">  260</span>  std::vector&lt;double&gt; inverse_downtracks; <span class="comment">// Store downtracks in reverse</span></div>
-<div class="line"><span class="lineno">  261</span>  inverse_downtracks.reserve(points.size());</div>
-<div class="line"><span class="lineno">  262</span>  final_points.reserve(points.size());</div>
-<div class="line"><span class="lineno">  263</span> </div>
-<div class="line"><span class="lineno">  264</span>  <a class="code hl_typedef" href="namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67">PointSpeedPair</a> prev_pair = points.back();</div>
-<div class="line"><span class="lineno">  265</span>  prev_pair.<a class="code hl_variable" href="structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html#aafb815247d0179093dcd47c9e9be3428">speed</a> = 0.0;</div>
-<div class="line"><span class="lineno">  266</span>  final_points.push_back(prev_pair);  <span class="comment">// Store the points in reverse</span></div>
-<div class="line"><span class="lineno">  267</span>  inverse_downtracks.push_back(0);</div>
-<div class="line"><span class="lineno">  268</span> </div>
-<div class="line"><span class="lineno">  269</span>  <span class="keywordtype">bool</span> reached_end = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  270</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = points.size() - 2; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &gt;= 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>--)</div>
-<div class="line"><span class="lineno">  271</span>  {  <span class="comment">// NOTE: Do not use size_t for i type here as -- with &gt; 0 will result in overflow</span></div>
-<div class="line"><span class="lineno">  272</span> </div>
-<div class="line"><span class="lineno">  273</span>    <span class="keywordtype">double</span> v_i = prev_pair.speed;</div>
-<div class="line"><span class="lineno">  274</span>    <span class="keywordtype">double</span> dx = lanelet::geometry::distance2d(prev_pair.point, points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].point);</div>
-<div class="line"><span class="lineno">  275</span>    <span class="keywordtype">double</span> new_downtrack = inverse_downtracks.back() + dx;</div>
+<div class="line"><span class="lineno">  260</span>    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;Target Accel Update From: &quot;</span> &lt;&lt; target_accel);</div>
+<div class="line"><span class="lineno">  261</span>    target_accel =</div>
+<div class="line"><span class="lineno">  262</span>        (starting_speed * starting_speed) / (2.0 * remaining_distance);  <span class="comment">// If we cannot reach the end point it the</span></div>
+<div class="line"><span class="lineno">  263</span>                                                                         <span class="comment">// required distance update the accel target</span></div>
+<div class="line"><span class="lineno">  264</span>    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;Target Accel Update To: &quot;</span> &lt;&lt; target_accel);</div>
+<div class="line"><span class="lineno">  265</span>  }</div>
+<div class="line"><span class="lineno">  266</span> </div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>  std::vector&lt;double&gt; inverse_downtracks; <span class="comment">// Store downtracks in reverse</span></div>
+<div class="line"><span class="lineno">  269</span>  inverse_downtracks.reserve(points.size());</div>
+<div class="line"><span class="lineno">  270</span>  final_points.reserve(points.size());</div>
+<div class="line"><span class="lineno">  271</span> </div>
+<div class="line"><span class="lineno">  272</span>  <a class="code hl_typedef" href="namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67">PointSpeedPair</a> prev_pair = points.back();</div>
+<div class="line"><span class="lineno">  273</span>  prev_pair.<a class="code hl_variable" href="structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html#aafb815247d0179093dcd47c9e9be3428">speed</a> = 0.0;</div>
+<div class="line"><span class="lineno">  274</span>  final_points.push_back(prev_pair);  <span class="comment">// Store the points in reverse</span></div>
+<div class="line"><span class="lineno">  275</span>  inverse_downtracks.push_back(0);</div>
 <div class="line"><span class="lineno">  276</span> </div>
-<div class="line"><span class="lineno">  277</span>    <span class="keywordflow">if</span> (new_downtrack &lt; half_stopping_buffer) { <span class="comment">// Points after (when viewed not in reverse) the midpoint of the buffer should be 0 speed</span></div>
-<div class="line"><span class="lineno">  278</span>      <a class="code hl_typedef" href="namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67">PointSpeedPair</a> pair = points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
-<div class="line"><span class="lineno">  279</span>      pair.<a class="code hl_variable" href="structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html#aafb815247d0179093dcd47c9e9be3428">speed</a> = 0;</div>
-<div class="line"><span class="lineno">  280</span>      final_points.push_back(pair);  <span class="comment">// Store the points in reverse</span></div>
-<div class="line"><span class="lineno">  281</span>      inverse_downtracks.push_back(new_downtrack);</div>
-<div class="line"><span class="lineno">  282</span>      prev_pair = pair;</div>
-<div class="line"><span class="lineno">  283</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  284</span>    }</div>
-<div class="line"><span class="lineno">  285</span>    </div>
-<div class="line"><span class="lineno">  286</span>    <span class="keywordflow">if</span> (reached_end || v_i &gt;= starting_speed)</div>
-<div class="line"><span class="lineno">  287</span>    {  <span class="comment">// We are walking backward, so if the prev speed is greater than or equal to the starting speed then we are done</span></div>
-<div class="line"><span class="lineno">  288</span>       <span class="comment">// backtracking</span></div>
-<div class="line"><span class="lineno">  289</span>      reached_end = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  290</span>      <a class="code hl_typedef" href="namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67">PointSpeedPair</a> pair = points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
-<div class="line"><span class="lineno">  291</span>      pair.<a class="code hl_variable" href="structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html#aafb815247d0179093dcd47c9e9be3428">speed</a> = starting_speed;</div>
-<div class="line"><span class="lineno">  292</span>      final_points.push_back(pair);  <span class="comment">// Store the points in reverse</span></div>
-<div class="line"><span class="lineno">  293</span>      inverse_downtracks.push_back(new_downtrack);</div>
-<div class="line"><span class="lineno">  294</span>      prev_pair = pair;</div>
-<div class="line"><span class="lineno">  295</span>      <span class="keywordflow">continue</span>;  <span class="comment">// continue until loop end</span></div>
-<div class="line"><span class="lineno">  296</span>    }</div>
-<div class="line"><span class="lineno">  297</span>   </div>
-<div class="line"><span class="lineno">  298</span>    <span class="keywordtype">double</span> v_f = sqrt(v_i * v_i + 2 * target_accel * dx);</div>
-<div class="line"><span class="lineno">  299</span> </div>
-<div class="line"><span class="lineno">  300</span>    <a class="code hl_typedef" href="namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67">PointSpeedPair</a> pair = points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
-<div class="line"><span class="lineno">  301</span>    pair.<a class="code hl_variable" href="structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html#aafb815247d0179093dcd47c9e9be3428">speed</a> = std::min(v_f, starting_speed);</div>
-<div class="line"><span class="lineno">  302</span>    final_points.push_back(pair);  <span class="comment">// Store the points in reverse</span></div>
-<div class="line"><span class="lineno">  303</span>    inverse_downtracks.push_back(new_downtrack);</div>
-<div class="line"><span class="lineno">  304</span> </div>
-<div class="line"><span class="lineno">  305</span>    prev_pair = pair;</div>
-<div class="line"><span class="lineno">  306</span>  }</div>
+<div class="line"><span class="lineno">  277</span>  <span class="keywordtype">bool</span> reached_end = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  278</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = points.size() - 2; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &gt;= 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>--)</div>
+<div class="line"><span class="lineno">  279</span>  {  <span class="comment">// NOTE: Do not use size_t for i type here as -- with &gt; 0 will result in overflow</span></div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>    <span class="keywordtype">double</span> v_i = prev_pair.speed;</div>
+<div class="line"><span class="lineno">  282</span>    <span class="keywordtype">double</span> dx = lanelet::geometry::distance2d(prev_pair.point, points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].point);</div>
+<div class="line"><span class="lineno">  283</span>    <span class="keywordtype">double</span> new_downtrack = inverse_downtracks.back() + dx;</div>
+<div class="line"><span class="lineno">  284</span> </div>
+<div class="line"><span class="lineno">  285</span>    <span class="keywordflow">if</span> (new_downtrack &lt; half_stopping_buffer) { <span class="comment">// Points after (when viewed not in reverse) the midpoint of the buffer should be 0 speed</span></div>
+<div class="line"><span class="lineno">  286</span>      <a class="code hl_typedef" href="namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67">PointSpeedPair</a> pair = points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
+<div class="line"><span class="lineno">  287</span>      pair.<a class="code hl_variable" href="structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html#aafb815247d0179093dcd47c9e9be3428">speed</a> = 0;</div>
+<div class="line"><span class="lineno">  288</span>      final_points.push_back(pair);  <span class="comment">// Store the points in reverse</span></div>
+<div class="line"><span class="lineno">  289</span>      inverse_downtracks.push_back(new_downtrack);</div>
+<div class="line"><span class="lineno">  290</span>      prev_pair = pair;</div>
+<div class="line"><span class="lineno">  291</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  292</span>    }</div>
+<div class="line"><span class="lineno">  293</span>    </div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">if</span> (reached_end || v_i &gt;= starting_speed)</div>
+<div class="line"><span class="lineno">  295</span>    {  <span class="comment">// We are walking backward, so if the prev speed is greater than or equal to the starting speed then we are done</span></div>
+<div class="line"><span class="lineno">  296</span>       <span class="comment">// backtracking</span></div>
+<div class="line"><span class="lineno">  297</span>      reached_end = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  298</span>      <a class="code hl_typedef" href="namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67">PointSpeedPair</a> pair = points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
+<div class="line"><span class="lineno">  299</span>      pair.<a class="code hl_variable" href="structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html#aafb815247d0179093dcd47c9e9be3428">speed</a> = starting_speed;</div>
+<div class="line"><span class="lineno">  300</span>      final_points.push_back(pair);  <span class="comment">// Store the points in reverse</span></div>
+<div class="line"><span class="lineno">  301</span>      inverse_downtracks.push_back(new_downtrack);</div>
+<div class="line"><span class="lineno">  302</span>      prev_pair = pair;</div>
+<div class="line"><span class="lineno">  303</span>      <span class="keywordflow">continue</span>;  <span class="comment">// continue until loop end</span></div>
+<div class="line"><span class="lineno">  304</span>    }</div>
+<div class="line"><span class="lineno">  305</span>   </div>
+<div class="line"><span class="lineno">  306</span>    <span class="keywordtype">double</span> v_f = sqrt(v_i * v_i + 2 * target_accel * dx);</div>
 <div class="line"><span class="lineno">  307</span> </div>
-<div class="line"><span class="lineno">  308</span>  <span class="comment">// Now we have a trajectory that decelerates from our end point to somewhere in the maneuver</span></div>
-<div class="line"><span class="lineno">  309</span>  std::reverse(final_points.begin(),</div>
-<div class="line"><span class="lineno">  310</span>               final_points.end());  </div>
-<div class="line"><span class="lineno">  311</span> </div>
-<div class="line"><span class="lineno">  312</span>  std::vector&lt;double&gt; speeds;</div>
-<div class="line"><span class="lineno">  313</span>  std::vector&lt;lanelet::BasicPoint2d&gt; raw_points;</div>
-<div class="line"><span class="lineno">  314</span>  <a class="code hl_function" href="classstop__and__wait__plugin_1_1StopandWait.html#a8dc5745955f3c287e4217b20359eb771">splitPointSpeedPairs</a>(final_points, &amp;raw_points, &amp;speeds);</div>
+<div class="line"><span class="lineno">  308</span>    <a class="code hl_typedef" href="namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67">PointSpeedPair</a> pair = points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
+<div class="line"><span class="lineno">  309</span>    pair.<a class="code hl_variable" href="structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html#aafb815247d0179093dcd47c9e9be3428">speed</a> = std::min(v_f, starting_speed);</div>
+<div class="line"><span class="lineno">  310</span>    final_points.push_back(pair);  <span class="comment">// Store the points in reverse</span></div>
+<div class="line"><span class="lineno">  311</span>    inverse_downtracks.push_back(new_downtrack);</div>
+<div class="line"><span class="lineno">  312</span> </div>
+<div class="line"><span class="lineno">  313</span>    prev_pair = pair;</div>
+<div class="line"><span class="lineno">  314</span>  }</div>
 <div class="line"><span class="lineno">  315</span> </div>
-<div class="line"><span class="lineno">  316</span>  <span class="comment">// Convert the inverted downtracks back to regular downtracks</span></div>
-<div class="line"><span class="lineno">  317</span>  <span class="keywordtype">double</span> max_downtrack = inverse_downtracks.back();</div>
-<div class="line"><span class="lineno">  318</span>  std::vector&lt;double&gt; downtracks = lanelet::utils::transform(inverse_downtracks, [max_downtrack](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; d) { <span class="keywordflow">return</span> max_downtrack - d; });</div>
-<div class="line"><span class="lineno">  319</span>  std::reverse(downtracks.begin(),</div>
-<div class="line"><span class="lineno">  320</span>               downtracks.end()); </div>
-<div class="line"><span class="lineno">  321</span> </div>
-<div class="line"><span class="lineno">  322</span>  <span class="keywordtype">bool</span> in_range = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  323</span>  <span class="keywordtype">double</span> stopped_downtrack = 0;</div>
-<div class="line"><span class="lineno">  324</span>  lanelet::BasicPoint2d stopped_point;</div>
-<div class="line"><span class="lineno">  325</span> </div>
-<div class="line"><span class="lineno">  326</span>  <span class="keywordtype">bool</span> vehicle_in_buffer = downtracks.back() &lt; stop_location_buffer;</div>
-<div class="line"><span class="lineno">  327</span> </div>
-<div class="line"><span class="lineno">  328</span>  std::vector&lt;double&gt; filtered_speeds = <a class="code hl_function" href="namespacebasic__autonomy_1_1smoothing.html#afb726e75a21ada8efa3ca5561ffc9984">basic_autonomy::smoothing::moving_average_filter</a>(speeds, <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#af830ceb9940a67c70d3283b186a1c68c">moving_average_window_size</a>);</div>
+<div class="line"><span class="lineno">  316</span>  <span class="comment">// Now we have a trajectory that decelerates from our end point to somewhere in the maneuver</span></div>
+<div class="line"><span class="lineno">  317</span>  std::reverse(final_points.begin(),</div>
+<div class="line"><span class="lineno">  318</span>               final_points.end());  </div>
+<div class="line"><span class="lineno">  319</span> </div>
+<div class="line"><span class="lineno">  320</span>  std::vector&lt;double&gt; speeds;</div>
+<div class="line"><span class="lineno">  321</span>  std::vector&lt;lanelet::BasicPoint2d&gt; raw_points;</div>
+<div class="line"><span class="lineno">  322</span>  <a class="code hl_function" href="classstop__and__wait__plugin_1_1StopandWait.html#a8dc5745955f3c287e4217b20359eb771">splitPointSpeedPairs</a>(final_points, &amp;raw_points, &amp;speeds);</div>
+<div class="line"><span class="lineno">  323</span> </div>
+<div class="line"><span class="lineno">  324</span>  <span class="comment">// Convert the inverted downtracks back to regular downtracks</span></div>
+<div class="line"><span class="lineno">  325</span>  <span class="keywordtype">double</span> max_downtrack = inverse_downtracks.back();</div>
+<div class="line"><span class="lineno">  326</span>  std::vector&lt;double&gt; downtracks = lanelet::utils::transform(inverse_downtracks, [max_downtrack](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; d) { <span class="keywordflow">return</span> max_downtrack - d; });</div>
+<div class="line"><span class="lineno">  327</span>  std::reverse(downtracks.begin(),</div>
+<div class="line"><span class="lineno">  328</span>               downtracks.end()); </div>
 <div class="line"><span class="lineno">  329</span> </div>
-<div class="line"><span class="lineno">  330</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; filtered_speeds.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
-<div class="line"><span class="lineno">  331</span>  {  <span class="comment">// Apply minimum speed constraint</span></div>
-<div class="line"><span class="lineno">  332</span>    <span class="keywordtype">double</span> downtrack = downtracks[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
+<div class="line"><span class="lineno">  330</span>  <span class="keywordtype">bool</span> in_range = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  331</span>  <span class="keywordtype">double</span> stopped_downtrack = 0;</div>
+<div class="line"><span class="lineno">  332</span>  lanelet::BasicPoint2d stopped_point;</div>
 <div class="line"><span class="lineno">  333</span> </div>
-<div class="line"><span class="lineno">  334</span>    <span class="keyword">constexpr</span> <span class="keywordtype">double</span> one_mph_in_mps = 0.44704;</div>
+<div class="line"><span class="lineno">  334</span>  <span class="keywordtype">bool</span> vehicle_in_buffer = downtracks.back() &lt; stop_location_buffer;</div>
 <div class="line"><span class="lineno">  335</span> </div>
-<div class="line"><span class="lineno">  336</span>    <span class="keywordflow">if</span> (downtracks.back() - downtrack &lt; stop_location_buffer &amp;&amp; filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] &lt; <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#a583803dc91f20ed0dc9584fb4f416cb3">crawl_speed</a> + one_mph_in_mps)</div>
-<div class="line"><span class="lineno">  337</span>    {  <span class="comment">// if we are within the stopping buffer and going at near crawl speed then command stop</span></div>
-<div class="line"><span class="lineno">  338</span>      </div>
-<div class="line"><span class="lineno">  339</span>      <span class="comment">// To avoid any issues in control plugin behavior we only command 0 if the vehicle is inside the buffer</span></div>
-<div class="line"><span class="lineno">  340</span>      <span class="keywordflow">if</span> (vehicle_in_buffer || (<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> == filtered_speeds.size() - 1)) { <span class="comment">// Vehicle is in the buffer</span></div>
-<div class="line"><span class="lineno">  341</span>        filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = 0.0;</div>
-<div class="line"><span class="lineno">  342</span>      } <span class="keywordflow">else</span> { <span class="comment">// Vehicle is not in the buffer so fill buffer with crawl speed</span></div>
-<div class="line"><span class="lineno">  343</span>        filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = std::max(filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#a583803dc91f20ed0dc9584fb4f416cb3">crawl_speed</a>);</div>
-<div class="line"><span class="lineno">  344</span>      }</div>
-<div class="line"><span class="lineno">  345</span> </div>
-<div class="line"><span class="lineno">  346</span>    }</div>
-<div class="line"><span class="lineno">  347</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  348</span>    {</div>
-<div class="line"><span class="lineno">  349</span>      filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = std::max(filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#a583803dc91f20ed0dc9584fb4f416cb3">crawl_speed</a>);</div>
-<div class="line"><span class="lineno">  350</span>    }</div>
-<div class="line"><span class="lineno">  351</span>  }</div>
-<div class="line"><span class="lineno">  352</span> </div>
-<div class="line"><span class="lineno">  353</span>  std::vector&lt;double&gt; times;</div>
-<div class="line"><span class="lineno">  354</span>  trajectory_utils::conversions::speed_to_time(downtracks, filtered_speeds, &amp;times);</div>
-<div class="line"><span class="lineno">  355</span> </div>
-<div class="line"><span class="lineno">  356</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; times.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
-<div class="line"><span class="lineno">  357</span>  {</div>
-<div class="line"><span class="lineno">  358</span>    <span class="keywordflow">if</span> (times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] != 0 &amp;&amp; !std::isnormal(times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]) &amp;&amp; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> != 0)</div>
-<div class="line"><span class="lineno">  359</span>    {  <span class="comment">// If the time</span></div>
-<div class="line"><span class="lineno">  360</span>      RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;Detected non-normal (nan, inf, etc.) time. Making it same as before: &quot;</span> &lt;&lt; times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>-1]);</div>
-<div class="line"><span class="lineno">  361</span>      <span class="comment">// NOTE: overriding the timestamps in assumption that pure_pursuit_wrapper will detect it as stopping case</span></div>
-<div class="line"><span class="lineno">  362</span>      times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> - 1];</div>
-<div class="line"><span class="lineno">  363</span>    }</div>
-<div class="line"><span class="lineno">  364</span>  }</div>
-<div class="line"><span class="lineno">  365</span> </div>
-<div class="line"><span class="lineno">  366</span>  std::vector&lt;double&gt; yaws = <a class="code hl_function" href="namespacecarma__wm_1_1geometry.html#ad8a3ee0bf06f85a6e7a8b5097251da2b">carma_wm::geometry::compute_tangent_orientations</a>(raw_points);</div>
-<div class="line"><span class="lineno">  367</span> </div>
-<div class="line"><span class="lineno">  368</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; points.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
-<div class="line"><span class="lineno">  369</span>  {</div>
-<div class="line"><span class="lineno">  370</span>    RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;1d: &quot;</span> &lt;&lt; downtracks[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] &lt;&lt; <span class="stringliteral">&quot; t: &quot;</span> &lt;&lt; times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] &lt;&lt; <span class="stringliteral">&quot; v: &quot;</span> &lt;&lt; filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]);</div>
-<div class="line"><span class="lineno">  371</span>  }</div>
-<div class="line"><span class="lineno">  372</span> </div>
-<div class="line"><span class="lineno">  373</span>  <span class="keyword">auto</span> traj = <a class="code hl_function" href="classstop__and__wait__plugin_1_1StopandWait.html#afda81ce6bf1b8913bad9f071b7881790">trajectory_from_points_times_orientations</a>(raw_points, times, yaws, start_time);</div>
-<div class="line"><span class="lineno">  374</span> </div>
-<div class="line"><span class="lineno">  375</span>  <span class="keywordflow">while</span> (rclcpp::Time(traj.back().target_time) - rclcpp::Time(traj.front().target_time) &lt; rclcpp::Duration(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#ae1af2b1d26f072bf494c62634514f3e7">minimal_trajectory_duration</a> * 1e9))</div>
-<div class="line"><span class="lineno">  376</span>  {</div>
-<div class="line"><span class="lineno">  377</span>    carma_planning_msgs::msg::TrajectoryPlanPoint new_point = traj.back();</div>
-<div class="line"><span class="lineno">  378</span>    new_point.target_time = rclcpp::Time(new_point.target_time) + rclcpp::Duration(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#af15c8b21219680d90ce427c056542ba5">stop_timestep</a> * 1e9);</div>
-<div class="line"><span class="lineno">  379</span>    new_point.planner_plugin_name = <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a64d6b1a64dc7e3fc03e39b6f1d7225e3">plugin_name_</a>;</div>
-<div class="line"><span class="lineno">  380</span>    traj.push_back(new_point);</div>
-<div class="line"><span class="lineno">  381</span>  }</div>
+<div class="line"><span class="lineno">  336</span>  std::vector&lt;double&gt; filtered_speeds = <a class="code hl_function" href="namespacebasic__autonomy_1_1smoothing.html#afb726e75a21ada8efa3ca5561ffc9984">basic_autonomy::smoothing::moving_average_filter</a>(speeds, <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#af830ceb9940a67c70d3283b186a1c68c">moving_average_window_size</a>);</div>
+<div class="line"><span class="lineno">  337</span> </div>
+<div class="line"><span class="lineno">  338</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; filtered_speeds.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
+<div class="line"><span class="lineno">  339</span>  {  <span class="comment">// Apply minimum speed constraint</span></div>
+<div class="line"><span class="lineno">  340</span>    <span class="keywordtype">double</span> downtrack = downtracks[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
+<div class="line"><span class="lineno">  341</span> </div>
+<div class="line"><span class="lineno">  342</span>    <span class="keyword">constexpr</span> <span class="keywordtype">double</span> one_mph_in_mps = 0.44704;</div>
+<div class="line"><span class="lineno">  343</span> </div>
+<div class="line"><span class="lineno">  344</span>    <span class="keywordflow">if</span> (downtracks.back() - downtrack &lt; stop_location_buffer &amp;&amp; filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] &lt; <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#a583803dc91f20ed0dc9584fb4f416cb3">crawl_speed</a> + one_mph_in_mps)</div>
+<div class="line"><span class="lineno">  345</span>    {  <span class="comment">// if we are within the stopping buffer and going at near crawl speed then command stop</span></div>
+<div class="line"><span class="lineno">  346</span>      </div>
+<div class="line"><span class="lineno">  347</span>      <span class="comment">// To avoid any issues in control plugin behavior we only command 0 if the vehicle is inside the buffer</span></div>
+<div class="line"><span class="lineno">  348</span>      <span class="keywordflow">if</span> (vehicle_in_buffer || (<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> == filtered_speeds.size() - 1)) { <span class="comment">// Vehicle is in the buffer</span></div>
+<div class="line"><span class="lineno">  349</span>        filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = 0.0;</div>
+<div class="line"><span class="lineno">  350</span>      } <span class="keywordflow">else</span> { <span class="comment">// Vehicle is not in the buffer so fill buffer with crawl speed</span></div>
+<div class="line"><span class="lineno">  351</span>        filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = std::max(filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#a583803dc91f20ed0dc9584fb4f416cb3">crawl_speed</a>);</div>
+<div class="line"><span class="lineno">  352</span>      }</div>
+<div class="line"><span class="lineno">  353</span> </div>
+<div class="line"><span class="lineno">  354</span>    }</div>
+<div class="line"><span class="lineno">  355</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  356</span>    {</div>
+<div class="line"><span class="lineno">  357</span>      filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = std::max(filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#a583803dc91f20ed0dc9584fb4f416cb3">crawl_speed</a>);</div>
+<div class="line"><span class="lineno">  358</span>    }</div>
+<div class="line"><span class="lineno">  359</span>  }</div>
+<div class="line"><span class="lineno">  360</span> </div>
+<div class="line"><span class="lineno">  361</span>  std::vector&lt;double&gt; times;</div>
+<div class="line"><span class="lineno">  362</span>  trajectory_utils::conversions::speed_to_time(downtracks, filtered_speeds, &amp;times);</div>
+<div class="line"><span class="lineno">  363</span> </div>
+<div class="line"><span class="lineno">  364</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; times.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
+<div class="line"><span class="lineno">  365</span>  {</div>
+<div class="line"><span class="lineno">  366</span>    <span class="keywordflow">if</span> (times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] != 0 &amp;&amp; !std::isnormal(times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]) &amp;&amp; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> != 0)</div>
+<div class="line"><span class="lineno">  367</span>    {  <span class="comment">// If the time</span></div>
+<div class="line"><span class="lineno">  368</span>      RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;Detected non-normal (nan, inf, etc.) time. Making it same as before: &quot;</span> &lt;&lt; times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>-1]);</div>
+<div class="line"><span class="lineno">  369</span>      <span class="comment">// NOTE: overriding the timestamps in assumption that pure_pursuit_wrapper will detect it as stopping case</span></div>
+<div class="line"><span class="lineno">  370</span>      times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> - 1];</div>
+<div class="line"><span class="lineno">  371</span>    }</div>
+<div class="line"><span class="lineno">  372</span>  }</div>
+<div class="line"><span class="lineno">  373</span> </div>
+<div class="line"><span class="lineno">  374</span>  std::vector&lt;double&gt; yaws = <a class="code hl_function" href="namespacecarma__wm_1_1geometry.html#ad8a3ee0bf06f85a6e7a8b5097251da2b">carma_wm::geometry::compute_tangent_orientations</a>(raw_points);</div>
+<div class="line"><span class="lineno">  375</span> </div>
+<div class="line"><span class="lineno">  376</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; points.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
+<div class="line"><span class="lineno">  377</span>  {</div>
+<div class="line"><span class="lineno">  378</span>    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;1d: &quot;</span> &lt;&lt; downtracks[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] &lt;&lt; <span class="stringliteral">&quot; t: &quot;</span> &lt;&lt; times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] &lt;&lt; <span class="stringliteral">&quot; v: &quot;</span> &lt;&lt; filtered_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]);</div>
+<div class="line"><span class="lineno">  379</span>  }</div>
+<div class="line"><span class="lineno">  380</span> </div>
+<div class="line"><span class="lineno">  381</span>  <span class="keyword">auto</span> traj = <a class="code hl_function" href="classstop__and__wait__plugin_1_1StopandWait.html#afda81ce6bf1b8913bad9f071b7881790">trajectory_from_points_times_orientations</a>(raw_points, times, yaws, start_time);</div>
 <div class="line"><span class="lineno">  382</span> </div>
-<div class="line"><span class="lineno">  383</span>  <span class="keywordflow">if</span> (!filtered_speeds.empty())</div>
-<div class="line"><span class="lineno">  384</span>    initial_speed = filtered_speeds.front(); <span class="comment">//modify initial_speed variable passed by reference</span></div>
-<div class="line"><span class="lineno">  385</span> </div>
-<div class="line"><span class="lineno">  386</span>  <span class="keywordflow">return</span> traj;</div>
-<div class="line"><span class="lineno">  387</span>}</div>
-<div class="ttc" id="aclassstop__and__wait__plugin_1_1StopandWait_html_a8dc5745955f3c287e4217b20359eb771"><div class="ttname"><a href="classstop__and__wait__plugin_1_1StopandWait.html#a8dc5745955f3c287e4217b20359eb771">stop_and_wait_plugin::StopandWait::splitPointSpeedPairs</a></div><div class="ttdeci">void splitPointSpeedPairs(const std::vector&lt; PointSpeedPair &gt; &amp;points, std::vector&lt; lanelet::BasicPoint2d &gt; *basic_points, std::vector&lt; double &gt; *speeds) const</div><div class="ttdoc">Helper method to split a list of PointSpeedPair into separate point and speed lists.</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__plugin_8cpp_source.html#l00389">stop_and_wait_plugin.cpp:389</a></div></div>
-<div class="ttc" id="aclassstop__and__wait__plugin_1_1StopandWait_html_afda81ce6bf1b8913bad9f071b7881790"><div class="ttname"><a href="classstop__and__wait__plugin_1_1StopandWait.html#afda81ce6bf1b8913bad9f071b7881790">stop_and_wait_plugin::StopandWait::trajectory_from_points_times_orientations</a></div><div class="ttdeci">std::vector&lt; carma_planning_msgs::msg::TrajectoryPlanPoint &gt; trajectory_from_points_times_orientations(const std::vector&lt; lanelet::BasicPoint2d &gt; &amp;points, const std::vector&lt; double &gt; &amp;times, const std::vector&lt; double &gt; &amp;yaws, rclcpp::Time startTime)</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__plugin_8cpp_source.html#l00186">stop_and_wait_plugin.cpp:186</a></div></div>
+<div class="line"><span class="lineno">  383</span>  <span class="keywordflow">while</span> (rclcpp::Time(traj.back().target_time) - rclcpp::Time(traj.front().target_time) &lt; rclcpp::Duration(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#ae1af2b1d26f072bf494c62634514f3e7">minimal_trajectory_duration</a> * 1e9))</div>
+<div class="line"><span class="lineno">  384</span>  {</div>
+<div class="line"><span class="lineno">  385</span>    carma_planning_msgs::msg::TrajectoryPlanPoint new_point = traj.back();</div>
+<div class="line"><span class="lineno">  386</span>    new_point.target_time = rclcpp::Time(new_point.target_time) + rclcpp::Duration(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#af15c8b21219680d90ce427c056542ba5">stop_timestep</a> * 1e9);</div>
+<div class="line"><span class="lineno">  387</span>    new_point.planner_plugin_name = <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a64d6b1a64dc7e3fc03e39b6f1d7225e3">plugin_name_</a>;</div>
+<div class="line"><span class="lineno">  388</span>    traj.push_back(new_point);</div>
+<div class="line"><span class="lineno">  389</span>  }</div>
+<div class="line"><span class="lineno">  390</span> </div>
+<div class="line"><span class="lineno">  391</span>  <span class="keywordflow">if</span> (!filtered_speeds.empty())</div>
+<div class="line"><span class="lineno">  392</span>    initial_speed = filtered_speeds.front(); <span class="comment">//modify initial_speed variable passed by reference</span></div>
+<div class="line"><span class="lineno">  393</span> </div>
+<div class="line"><span class="lineno">  394</span>  <span class="keywordflow">return</span> traj;</div>
+<div class="line"><span class="lineno">  395</span>}</div>
+<div class="ttc" id="aclassstop__and__wait__plugin_1_1StopandWait_html_a8dc5745955f3c287e4217b20359eb771"><div class="ttname"><a href="classstop__and__wait__plugin_1_1StopandWait.html#a8dc5745955f3c287e4217b20359eb771">stop_and_wait_plugin::StopandWait::splitPointSpeedPairs</a></div><div class="ttdeci">void splitPointSpeedPairs(const std::vector&lt; PointSpeedPair &gt; &amp;points, std::vector&lt; lanelet::BasicPoint2d &gt; *basic_points, std::vector&lt; double &gt; *speeds) const</div><div class="ttdoc">Helper method to split a list of PointSpeedPair into separate point and speed lists.</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__plugin_8cpp_source.html#l00397">stop_and_wait_plugin.cpp:397</a></div></div>
+<div class="ttc" id="aclassstop__and__wait__plugin_1_1StopandWait_html_afda81ce6bf1b8913bad9f071b7881790"><div class="ttname"><a href="classstop__and__wait__plugin_1_1StopandWait.html#afda81ce6bf1b8913bad9f071b7881790">stop_and_wait_plugin::StopandWait::trajectory_from_points_times_orientations</a></div><div class="ttdeci">std::vector&lt; carma_planning_msgs::msg::TrajectoryPlanPoint &gt; trajectory_from_points_times_orientations(const std::vector&lt; lanelet::BasicPoint2d &gt; &amp;points, const std::vector&lt; double &gt; &amp;times, const std::vector&lt; double &gt; &amp;yaws, rclcpp::Time startTime)</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__plugin_8cpp_source.html#l00194">stop_and_wait_plugin.cpp:194</a></div></div>
 <div class="ttc" id="anamespacebasic__autonomy_1_1smoothing_html_afb726e75a21ada8efa3ca5561ffc9984"><div class="ttname"><a href="namespacebasic__autonomy_1_1smoothing.html#afb726e75a21ada8efa3ca5561ffc9984">basic_autonomy::smoothing::moving_average_filter</a></div><div class="ttdeci">std::vector&lt; double &gt; moving_average_filter(const std::vector&lt; double &gt; input, int window_size, bool ignore_first_point=true)</div><div class="ttdoc">Extremely simplie moving average filter.</div><div class="ttdef"><b>Definition:</b> <a href="src_2smoothing_2filters_8cpp_source.html#l00024">filters.cpp:24</a></div></div>
 <div class="ttc" id="anamespacecarma__wm_1_1geometry_html_ad8a3ee0bf06f85a6e7a8b5097251da2b"><div class="ttname"><a href="namespacecarma__wm_1_1geometry.html#ad8a3ee0bf06f85a6e7a8b5097251da2b">carma_wm::geometry::compute_tangent_orientations</a></div><div class="ttdeci">std::vector&lt; double &gt; compute_tangent_orientations(const lanelet::BasicLineString2d &amp;centerline)</div><div class="ttdoc">Compute an approximate orientation for the vehicle at each point along the provided centerline.</div><div class="ttdef"><b>Definition:</b> <a href="src_2Geometry_8cpp_source.html#l00559">Geometry.cpp:559</a></div></div>
 <div class="ttc" id="anamespacecooperative__lanechange_html_af2521f0bb23baab64641072110316a67"><div class="ttname"><a href="namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67">cooperative_lanechange::PointSpeedPair</a></div><div class="ttdeci">basic_autonomy::waypoint_generation::PointSpeedPair PointSpeedPair</div><div class="ttdef"><b>Definition:</b> <a href="cooperative__lanechange__node_8hpp_source.html#l00048">cooperative_lanechange_node.hpp:48</a></div></div>
@@ -461,7 +461,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="astructStopandWaitConfig_html_af830ceb9940a67c70d3283b186a1c68c"><div class="ttname"><a href="structStopandWaitConfig.html#af830ceb9940a67c70d3283b186a1c68c">StopandWaitConfig::moving_average_window_size</a></div><div class="ttdeci">double moving_average_window_size</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__config_8hpp_source.html#l00034">stop_and_wait_config.hpp:34</a></div></div>
 <div class="ttc" id="astructbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair_html_aafb815247d0179093dcd47c9e9be3428"><div class="ttname"><a href="structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html#aafb815247d0179093dcd47c9e9be3428">basic_autonomy::waypoint_generation::PointSpeedPair::speed</a></div><div class="ttdeci">double speed</div><div class="ttdef"><b>Definition:</b> <a href="basic__autonomy_8h_source.html#l00063">basic_autonomy.h:63</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stop__and__wait__config_8hpp_source.html#l00029">StopandWaitConfig::accel_limit_multiplier</a>, <a class="el" href="src_2Geometry_8cpp_source.html#l00559">carma_wm::geometry::compute_tangent_orientations()</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00120">config_</a>, <a class="el" href="stop__and__wait__config_8hpp_source.html#l00031">StopandWaitConfig::crawl_speed</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="stop__and__wait__config_8hpp_source.html#l00026">StopandWaitConfig::minimal_trajectory_duration</a>, <a class="el" href="src_2smoothing_2filters_8cpp_source.html#l00024">basic_autonomy::smoothing::moving_average_filter()</a>, <a class="el" href="stop__and__wait__config_8hpp_source.html#l00034">StopandWaitConfig::moving_average_window_size</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00121">nh_</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00117">plugin_name_</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00046">stop_and_wait_plugin::PointSpeedPair::point</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00047">stop_and_wait_plugin::PointSpeedPair::speed</a>, <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00389">splitPointSpeedPairs()</a>, <a class="el" href="stop__and__wait__config_8hpp_source.html#l00027">StopandWaitConfig::stop_timestep</a>, and <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00186">trajectory_from_points_times_orientations()</a>.</p>
+<p class="reference">References <a class="el" href="stop__and__wait__config_8hpp_source.html#l00029">StopandWaitConfig::accel_limit_multiplier</a>, <a class="el" href="src_2Geometry_8cpp_source.html#l00559">carma_wm::geometry::compute_tangent_orientations()</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00120">config_</a>, <a class="el" href="stop__and__wait__config_8hpp_source.html#l00031">StopandWaitConfig::crawl_speed</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="stop__and__wait__config_8hpp_source.html#l00026">StopandWaitConfig::minimal_trajectory_duration</a>, <a class="el" href="src_2smoothing_2filters_8cpp_source.html#l00024">basic_autonomy::smoothing::moving_average_filter()</a>, <a class="el" href="stop__and__wait__config_8hpp_source.html#l00034">StopandWaitConfig::moving_average_window_size</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00117">plugin_name_</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00046">stop_and_wait_plugin::PointSpeedPair::point</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00047">stop_and_wait_plugin::PointSpeedPair::speed</a>, <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00397">splitPointSpeedPairs()</a>, <a class="el" href="stop__and__wait__config_8hpp_source.html#l00027">StopandWaitConfig::stop_timestep</a>, and <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00194">trajectory_from_points_times_orientations()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00059">plan_trajectory_cb()</a>.</p>
 <div class="dynheader">
@@ -533,38 +533,38 @@ Here is the caller graph for this function:</div>
 <p>ASSUMPTION: Since the vehicle is trying to stop the assumption made is that the speed limit is irrelevant. ASSUMPTION: The provided maneuver lies on the route shortest path</p>
 <dl class="section return"><dt>Returns</dt><dd>List of centerline points paired with speed limits. All output points will have speed matching state.logitudinal_velocity </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00151">151</a> of file <a class="el" href="stop__and__wait__plugin_8cpp_source.html">stop_and_wait_plugin.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  154</span>{</div>
-<div class="line"><span class="lineno">  155</span>  std::vector&lt;PointSpeedPair&gt; points_and_target_speeds;</div>
-<div class="line"><span class="lineno">  156</span>  std::unordered_set&lt;lanelet::Id&gt; visited_lanelets;</div>
-<div class="line"><span class="lineno">  157</span> </div>
-<div class="line"><span class="lineno">  158</span>  carma_planning_msgs::msg::StopAndWaitManeuver stop_and_wait_maneuver = maneuvers[0].stop_and_wait_maneuver;</div>
-<div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>  lanelet::BasicPoint2d veh_pos(state.x_pos_global, state.y_pos_global);</div>
-<div class="line"><span class="lineno">  161</span>  <span class="keywordtype">double</span> starting_downtrack = <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a2346402ff858040dbc850412cf1fedab">wm_</a>-&gt;routeTrackPos(veh_pos).downtrack;  <span class="comment">// The vehicle position</span></div>
-<div class="line"><span class="lineno">  162</span>  <span class="keywordtype">double</span> starting_speed = state.longitudinal_vel;</div>
-<div class="line"><span class="lineno">  163</span> </div>
-<div class="line"><span class="lineno">  164</span>  <span class="comment">// Sample the lanelet centerline at fixed increments.</span></div>
-<div class="line"><span class="lineno">  165</span>  <span class="comment">// std::min call here is a guard against starting_downtrack being within 1m of the maneuver end_dist</span></div>
-<div class="line"><span class="lineno">  166</span>  <span class="comment">// in this case the sampleRoutePoints method will return a single point allowing execution to continue</span></div>
-<div class="line"><span class="lineno">  167</span>  std::vector&lt;lanelet::BasicPoint2d&gt; route_points = wm-&gt;sampleRoutePoints(</div>
-<div class="line"><span class="lineno">  168</span>      std::min(starting_downtrack + <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#a5da42279802aa5b76f2e0d152bc495ca">centerline_sampling_spacing</a>, stop_and_wait_maneuver.end_dist),</div>
-<div class="line"><span class="lineno">  169</span>      stop_and_wait_maneuver.end_dist, <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#a5da42279802aa5b76f2e0d152bc495ca">centerline_sampling_spacing</a>);</div>
-<div class="line"><span class="lineno">  170</span> </div>
+<p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00159">159</a> of file <a class="el" href="stop__and__wait__plugin_8cpp_source.html">stop_and_wait_plugin.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>{</div>
+<div class="line"><span class="lineno">  163</span>  std::vector&lt;PointSpeedPair&gt; points_and_target_speeds;</div>
+<div class="line"><span class="lineno">  164</span>  std::unordered_set&lt;lanelet::Id&gt; visited_lanelets;</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>  carma_planning_msgs::msg::StopAndWaitManeuver stop_and_wait_maneuver = maneuvers[0].stop_and_wait_maneuver;</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>  lanelet::BasicPoint2d veh_pos(state.x_pos_global, state.y_pos_global);</div>
+<div class="line"><span class="lineno">  169</span>  <span class="keywordtype">double</span> starting_downtrack = <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a2346402ff858040dbc850412cf1fedab">wm_</a>-&gt;routeTrackPos(veh_pos).downtrack;  <span class="comment">// The vehicle position</span></div>
+<div class="line"><span class="lineno">  170</span>  <span class="keywordtype">double</span> starting_speed = state.longitudinal_vel;</div>
 <div class="line"><span class="lineno">  171</span> </div>
-<div class="line"><span class="lineno">  172</span>  route_points.insert(route_points.begin(), veh_pos);</div>
-<div class="line"><span class="lineno">  173</span> </div>
-<div class="line"><span class="lineno">  174</span> </div>
-<div class="line"><span class="lineno">  175</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : route_points)</div>
-<div class="line"><span class="lineno">  176</span>  {</div>
-<div class="line"><span class="lineno">  177</span>    <a class="code hl_typedef" href="namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67">PointSpeedPair</a> pair;</div>
-<div class="line"><span class="lineno">  178</span>    pair.<a class="code hl_variable" href="structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html#a628d9d3853745335b42ad940136d88ac">point</a> = p;</div>
-<div class="line"><span class="lineno">  179</span>    pair.speed = starting_speed; <span class="comment">// NOTE: Since the vehicle is trying to stop the assumption made is that the speed limit is irrelevant. </span></div>
-<div class="line"><span class="lineno">  180</span>    points_and_target_speeds.push_back(pair);</div>
-<div class="line"><span class="lineno">  181</span>  }</div>
+<div class="line"><span class="lineno">  172</span>  <span class="comment">// Sample the lanelet centerline at fixed increments.</span></div>
+<div class="line"><span class="lineno">  173</span>  <span class="comment">// std::min call here is a guard against starting_downtrack being within 1m of the maneuver end_dist</span></div>
+<div class="line"><span class="lineno">  174</span>  <span class="comment">// in this case the sampleRoutePoints method will return a single point allowing execution to continue</span></div>
+<div class="line"><span class="lineno">  175</span>  std::vector&lt;lanelet::BasicPoint2d&gt; route_points = wm-&gt;sampleRoutePoints(</div>
+<div class="line"><span class="lineno">  176</span>      std::min(starting_downtrack + <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#a5da42279802aa5b76f2e0d152bc495ca">centerline_sampling_spacing</a>, stop_and_wait_maneuver.end_dist),</div>
+<div class="line"><span class="lineno">  177</span>      stop_and_wait_maneuver.end_dist, <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#a5da42279802aa5b76f2e0d152bc495ca">centerline_sampling_spacing</a>);</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>  route_points.insert(route_points.begin(), veh_pos);</div>
+<div class="line"><span class="lineno">  181</span> </div>
 <div class="line"><span class="lineno">  182</span> </div>
-<div class="line"><span class="lineno">  183</span>  <span class="keywordflow">return</span> points_and_target_speeds;</div>
-<div class="line"><span class="lineno">  184</span>}</div>
+<div class="line"><span class="lineno">  183</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : route_points)</div>
+<div class="line"><span class="lineno">  184</span>  {</div>
+<div class="line"><span class="lineno">  185</span>    <a class="code hl_typedef" href="namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67">PointSpeedPair</a> pair;</div>
+<div class="line"><span class="lineno">  186</span>    pair.<a class="code hl_variable" href="structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html#a628d9d3853745335b42ad940136d88ac">point</a> = p;</div>
+<div class="line"><span class="lineno">  187</span>    pair.speed = starting_speed; <span class="comment">// NOTE: Since the vehicle is trying to stop the assumption made is that the speed limit is irrelevant. </span></div>
+<div class="line"><span class="lineno">  188</span>    points_and_target_speeds.push_back(pair);</div>
+<div class="line"><span class="lineno">  189</span>  }</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>  <span class="keywordflow">return</span> points_and_target_speeds;</div>
+<div class="line"><span class="lineno">  192</span>}</div>
 <div class="ttc" id="astructStopandWaitConfig_html_a5da42279802aa5b76f2e0d152bc495ca"><div class="ttname"><a href="structStopandWaitConfig.html#a5da42279802aa5b76f2e0d152bc495ca">StopandWaitConfig::centerline_sampling_spacing</a></div><div class="ttdeci">double centerline_sampling_spacing</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__config_8hpp_source.html#l00032">stop_and_wait_config.hpp:32</a></div></div>
 <div class="ttc" id="astructbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair_html_a628d9d3853745335b42ad940136d88ac"><div class="ttname"><a href="structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html#a628d9d3853745335b42ad940136d88ac">basic_autonomy::waypoint_generation::PointSpeedPair::point</a></div><div class="ttdeci">lanelet::BasicPoint2d point</div><div class="ttdef"><b>Definition:</b> <a href="basic__autonomy_8h_source.html#l00062">basic_autonomy.h:62</a></div></div>
 </div><!-- fragment -->
@@ -621,8 +621,8 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00059">59</a> of file <a class="el" href="stop__and__wait__plugin_8cpp_source.html">stop_and_wait_plugin.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>  RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;Starting stop&amp;wait planning&quot;</span>);</div>
+<div class="line"><span class="lineno">   61</span>  std::chrono::system_clock::time_point start_time = std::chrono::system_clock::now();  <span class="comment">// Start timing the execution time for planning so it can be logged</span></div>
+<div class="line"><span class="lineno">   62</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;Starting stop&amp;wait planning&quot;</span>);</div>
 <div class="line"><span class="lineno">   63</span> </div>
 <div class="line"><span class="lineno">   64</span>  <span class="keywordflow">if</span> (req-&gt;maneuver_index_to_plan &gt;= req-&gt;maneuver_plan.maneuvers.size())</div>
 <div class="line"><span class="lineno">   65</span>  {</div>
@@ -638,18 +638,18 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   75</span> </div>
 <div class="line"><span class="lineno">   76</span>  lanelet::BasicPoint2d veh_pos(req-&gt;vehicle_state.x_pos_global, req-&gt;vehicle_state.y_pos_global);</div>
 <div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>  RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;planning state x:&quot;</span> &lt;&lt; req-&gt;vehicle_state.x_pos_global &lt;&lt; <span class="stringliteral">&quot;, y: &quot;</span> &lt;&lt; req-&gt;vehicle_state.y_pos_global &lt;&lt; <span class="stringliteral">&quot;, speed: &quot;</span> &lt;&lt; req-&gt;vehicle_state.longitudinal_vel);</div>
+<div class="line"><span class="lineno">   78</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;planning state x:&quot;</span> &lt;&lt; req-&gt;vehicle_state.x_pos_global &lt;&lt; <span class="stringliteral">&quot;, y: &quot;</span> &lt;&lt; req-&gt;vehicle_state.y_pos_global &lt;&lt; <span class="stringliteral">&quot;, speed: &quot;</span> &lt;&lt; req-&gt;vehicle_state.longitudinal_vel);</div>
 <div class="line"><span class="lineno">   79</span> </div>
 <div class="line"><span class="lineno">   80</span>  <span class="keywordflow">if</span> (req-&gt;vehicle_state.longitudinal_vel &lt; <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a85799673152ebcc839e30f3c4a7cc6f8">epsilon_</a>)</div>
 <div class="line"><span class="lineno">   81</span>  {</div>
-<div class="line"><span class="lineno">   82</span>    RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;Detected that car is already stopped! Ignoring the request to plan Stop&amp;Wait&quot;</span>);</div>
+<div class="line"><span class="lineno">   82</span>    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;Detected that car is already stopped! Ignoring the request to plan Stop&amp;Wait&quot;</span>);</div>
 <div class="line"><span class="lineno">   83</span>     </div>
 <div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   85</span>  }</div>
 <div class="line"><span class="lineno">   86</span> </div>
 <div class="line"><span class="lineno">   87</span>  <span class="keywordtype">double</span> current_downtrack = <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a2346402ff858040dbc850412cf1fedab">wm_</a>-&gt;routeTrackPos(veh_pos).downtrack;</div>
 <div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>  RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;Current_downtrack&quot;</span> &lt;&lt; current_downtrack);</div>
+<div class="line"><span class="lineno">   89</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;Current_downtrack&quot;</span> &lt;&lt; current_downtrack);</div>
 <div class="line"><span class="lineno">   90</span> </div>
 <div class="line"><span class="lineno">   91</span>  <span class="keywordflow">if</span> (req-&gt;maneuver_plan.maneuvers[req-&gt;maneuver_index_to_plan].stop_and_wait_maneuver.end_dist &lt; current_downtrack)</div>
 <div class="line"><span class="lineno">   92</span>  {</div>
@@ -661,7 +661,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   98</span> </div>
 <div class="line"><span class="lineno">   99</span>  std::string maneuver_id = req-&gt;maneuver_plan.maneuvers[req-&gt;maneuver_index_to_plan].stop_and_wait_maneuver.parameters.maneuver_id;</div>
 <div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>  RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;Maneuver not yet planned, planning new trajectory&quot;</span>);</div>
+<div class="line"><span class="lineno">  101</span>  RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;Maneuver not yet planned, planning new trajectory&quot;</span>);</div>
 <div class="line"><span class="lineno">  102</span> </div>
 <div class="line"><span class="lineno">  103</span>  <span class="comment">// Maneuver input is valid so continue with execution</span></div>
 <div class="line"><span class="lineno">  104</span>  std::vector&lt;carma_planning_msgs::msg::Maneuver&gt; maneuver_plan = { req-&gt;maneuver_plan.maneuvers[req-&gt;maneuver_index_to_plan] };</div>
@@ -688,8 +688,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  125</span>    stop_location_buffer = maneuver_plan[0].stop_and_wait_maneuver.parameters.float_valued_meta_data[0];</div>
 <div class="line"><span class="lineno">  126</span>    stopping_accel = maneuver_plan[0].stop_and_wait_maneuver.parameters.float_valued_meta_data[1];</div>
 <div class="line"><span class="lineno">  127</span> </div>
-<div class="line"><span class="lineno">  128</span>    RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;Using stop buffer from meta data: &quot;</span> &lt;&lt; stop_location_buffer);</div>
-<div class="line"><span class="lineno">  129</span>    RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;Using stopping acceleration from meta data: &quot;</span>&lt;&lt; stopping_accel);</div>
+<div class="line"><span class="lineno">  128</span>    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;Using stop buffer from meta data: &quot;</span> &lt;&lt; stop_location_buffer);</div>
+<div class="line"><span class="lineno">  129</span>    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;Using stopping acceleration from meta data: &quot;</span>&lt;&lt; stopping_accel);</div>
 <div class="line"><span class="lineno">  130</span>  }</div>
 <div class="line"><span class="lineno">  131</span>  <span class="keywordflow">else</span>{</div>
 <div class="line"><span class="lineno">  132</span>    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;stop and wait maneuver message missing required float meta data&quot;</span>);</div>
@@ -697,24 +697,32 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  134</span> </div>
 <div class="line"><span class="lineno">  135</span>  <span class="keywordtype">double</span> initial_speed = req-&gt;vehicle_state.longitudinal_vel; <span class="comment">//will be modified after compose_trajectory_from_centerline </span></div>
 <div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>  trajectory.trajectory_points = <a class="code hl_function" href="classstop__and__wait__plugin_1_1StopandWait.html#ad80a802e059ba3e8a458eb53c0093a0b">compose_trajectory_from_centerline</a>(</div>
-<div class="line"><span class="lineno">  138</span>      points_and_target_speeds, current_downtrack, req-&gt;vehicle_state.longitudinal_vel,</div>
-<div class="line"><span class="lineno">  139</span>      maneuver_plan[0].stop_and_wait_maneuver.end_dist, stop_location_buffer, req-&gt;header.stamp, stopping_accel, initial_speed);</div>
-<div class="line"><span class="lineno">  140</span> </div>
-<div class="line"><span class="lineno">  141</span>  RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#af3e2cab6d9967d86936e4f47caa37008">nh_</a>-&gt;get_logger(),<span class="stringliteral">&quot;Trajectory points size:&quot;</span> &lt;&lt; trajectory.trajectory_points.size());</div>
+<div class="line"><span class="lineno">  137</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;Original size: &quot;</span> &lt;&lt; points_and_target_speeds.size());</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>  trajectory.trajectory_points = <a class="code hl_function" href="classstop__and__wait__plugin_1_1StopandWait.html#ad80a802e059ba3e8a458eb53c0093a0b">compose_trajectory_from_centerline</a>(</div>
+<div class="line"><span class="lineno">  140</span>      points_and_target_speeds, current_downtrack, req-&gt;vehicle_state.longitudinal_vel,</div>
+<div class="line"><span class="lineno">  141</span>      maneuver_plan[0].stop_and_wait_maneuver.end_dist, stop_location_buffer, req-&gt;header.stamp, stopping_accel, initial_speed);</div>
 <div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span>  trajectory.initial_longitudinal_velocity = initial_speed;</div>
+<div class="line"><span class="lineno">  143</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>),<span class="stringliteral">&quot;Trajectory points size:&quot;</span> &lt;&lt; trajectory.trajectory_points.size());</div>
 <div class="line"><span class="lineno">  144</span> </div>
-<div class="line"><span class="lineno">  145</span>  resp-&gt;trajectory_plan = trajectory;</div>
+<div class="line"><span class="lineno">  145</span>  trajectory.initial_longitudinal_velocity = initial_speed;</div>
 <div class="line"><span class="lineno">  146</span> </div>
-<div class="line"><span class="lineno">  147</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  148</span>}</div>
+<div class="line"><span class="lineno">  147</span>  resp-&gt;trajectory_plan = trajectory;</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>  std::chrono::system_clock::time_point end_time = std::chrono::system_clock::now();  <span class="comment">// Planning complete</span></div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>  <span class="keyword">auto</span> duration = end_time - start_time;</div>
+<div class="line"><span class="lineno">  153</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_wait_plugin&quot;</span>), <span class="stringliteral">&quot;ExecutionTime Stop&amp;Wait Trajectory: &quot;</span> &lt;&lt; std::chrono::duration&lt;double&gt;(duration).count());</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  156</span>}</div>
 <div class="ttc" id="aclassstop__and__wait__plugin_1_1StopandWait_html_a85799673152ebcc839e30f3c4a7cc6f8"><div class="ttname"><a href="classstop__and__wait__plugin_1_1StopandWait.html#a85799673152ebcc839e30f3c4a7cc6f8">stop_and_wait_plugin::StopandWait::epsilon_</a></div><div class="ttdeci">double epsilon_</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__plugin_8hpp_source.html#l00114">stop_and_wait_plugin.hpp:114</a></div></div>
-<div class="ttc" id="aclassstop__and__wait__plugin_1_1StopandWait_html_aa9627181b624dc0e6c96ea2255bdf062"><div class="ttname"><a href="classstop__and__wait__plugin_1_1StopandWait.html#aa9627181b624dc0e6c96ea2255bdf062">stop_and_wait_plugin::StopandWait::maneuvers_to_points</a></div><div class="ttdeci">std::vector&lt; PointSpeedPair &gt; maneuvers_to_points(const std::vector&lt; carma_planning_msgs::msg::Maneuver &gt; &amp;maneuvers, const carma_wm::WorldModelConstPtr &amp;wm, const carma_planning_msgs::msg::VehicleState &amp;state)</div><div class="ttdoc">Converts a set of requested STOP_AND_WAIT maneuvers to point speed limit pairs.</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__plugin_8cpp_source.html#l00151">stop_and_wait_plugin.cpp:151</a></div></div>
-<div class="ttc" id="aclassstop__and__wait__plugin_1_1StopandWait_html_ad80a802e059ba3e8a458eb53c0093a0b"><div class="ttname"><a href="classstop__and__wait__plugin_1_1StopandWait.html#ad80a802e059ba3e8a458eb53c0093a0b">stop_and_wait_plugin::StopandWait::compose_trajectory_from_centerline</a></div><div class="ttdeci">std::vector&lt; carma_planning_msgs::msg::TrajectoryPlanPoint &gt; compose_trajectory_from_centerline(const std::vector&lt; PointSpeedPair &gt; &amp;points, double starting_downtrack, double starting_speed, double stop_location, double stop_location_buffer, rclcpp::Time start_time, double stopping_acceleration, double &amp;initial_speed)</div><div class="ttdoc">Method converts a list of lanelet centerline points and current vehicle state into a usable list of t...</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__plugin_8cpp_source.html#l00215">stop_and_wait_plugin.cpp:215</a></div></div>
+<div class="ttc" id="aclassstop__and__wait__plugin_1_1StopandWait_html_aa9627181b624dc0e6c96ea2255bdf062"><div class="ttname"><a href="classstop__and__wait__plugin_1_1StopandWait.html#aa9627181b624dc0e6c96ea2255bdf062">stop_and_wait_plugin::StopandWait::maneuvers_to_points</a></div><div class="ttdeci">std::vector&lt; PointSpeedPair &gt; maneuvers_to_points(const std::vector&lt; carma_planning_msgs::msg::Maneuver &gt; &amp;maneuvers, const carma_wm::WorldModelConstPtr &amp;wm, const carma_planning_msgs::msg::VehicleState &amp;state)</div><div class="ttdoc">Converts a set of requested STOP_AND_WAIT maneuvers to point speed limit pairs.</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__plugin_8cpp_source.html#l00159">stop_and_wait_plugin.cpp:159</a></div></div>
+<div class="ttc" id="aclassstop__and__wait__plugin_1_1StopandWait_html_ad80a802e059ba3e8a458eb53c0093a0b"><div class="ttname"><a href="classstop__and__wait__plugin_1_1StopandWait.html#ad80a802e059ba3e8a458eb53c0093a0b">stop_and_wait_plugin::StopandWait::compose_trajectory_from_centerline</a></div><div class="ttdeci">std::vector&lt; carma_planning_msgs::msg::TrajectoryPlanPoint &gt; compose_trajectory_from_centerline(const std::vector&lt; PointSpeedPair &gt; &amp;points, double starting_downtrack, double starting_speed, double stop_location, double stop_location_buffer, rclcpp::Time start_time, double stopping_acceleration, double &amp;initial_speed)</div><div class="ttdoc">Method converts a list of lanelet centerline points and current vehicle state into a usable list of t...</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__plugin_8cpp_source.html#l00223">stop_and_wait_plugin.cpp:223</a></div></div>
 <div class="ttc" id="astructStopandWaitConfig_html_aca43edbb1111fbf89bf99f7cbacd6796"><div class="ttname"><a href="structStopandWaitConfig.html#aca43edbb1111fbf89bf99f7cbacd6796">StopandWaitConfig::default_stopping_buffer</a></div><div class="ttdeci">double default_stopping_buffer</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__config_8hpp_source.html#l00033">stop_and_wait_config.hpp:33</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00215">compose_trajectory_from_centerline()</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00120">config_</a>, <a class="el" href="stop__and__wait__config_8hpp_source.html#l00033">StopandWaitConfig::default_stopping_buffer</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00114">epsilon_</a>, <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00151">maneuvers_to_points()</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00121">nh_</a>, and <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00119">wm_</a>.</p>
+<p class="reference">References <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00223">compose_trajectory_from_centerline()</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00120">config_</a>, <a class="el" href="stop__and__wait__config_8hpp_source.html#l00033">StopandWaitConfig::default_stopping_buffer</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00114">epsilon_</a>, <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00159">maneuvers_to_points()</a>, and <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00119">wm_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -768,19 +776,19 @@ Here is the call graph for this function:</div>
 
 <p>Helper method to split a list of <a class="el" href="structstop__and__wait__plugin_1_1PointSpeedPair.html" title="Convenience class for pairing 2d points with speeds.">PointSpeedPair</a> into separate point and speed lists. </p>
 
-<p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00389">389</a> of file <a class="el" href="stop__and__wait__plugin_8cpp_source.html">stop_and_wait_plugin.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  392</span>{</div>
-<div class="line"><span class="lineno">  393</span>  basic_points-&gt;reserve(points.size());</div>
-<div class="line"><span class="lineno">  394</span>  speeds-&gt;reserve(points.size());</div>
-<div class="line"><span class="lineno">  395</span> </div>
-<div class="line"><span class="lineno">  396</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : points)</div>
-<div class="line"><span class="lineno">  397</span>  {</div>
-<div class="line"><span class="lineno">  398</span>    basic_points-&gt;push_back(p.point);</div>
-<div class="line"><span class="lineno">  399</span>    speeds-&gt;push_back(p.speed);</div>
-<div class="line"><span class="lineno">  400</span>  }</div>
-<div class="line"><span class="lineno">  401</span>}</div>
+<p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00397">397</a> of file <a class="el" href="stop__and__wait__plugin_8cpp_source.html">stop_and_wait_plugin.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  400</span>{</div>
+<div class="line"><span class="lineno">  401</span>  basic_points-&gt;reserve(points.size());</div>
+<div class="line"><span class="lineno">  402</span>  speeds-&gt;reserve(points.size());</div>
+<div class="line"><span class="lineno">  403</span> </div>
+<div class="line"><span class="lineno">  404</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : points)</div>
+<div class="line"><span class="lineno">  405</span>  {</div>
+<div class="line"><span class="lineno">  406</span>    basic_points-&gt;push_back(p.point);</div>
+<div class="line"><span class="lineno">  407</span>    speeds-&gt;push_back(p.speed);</div>
+<div class="line"><span class="lineno">  408</span>  }</div>
+<div class="line"><span class="lineno">  409</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00215">compose_trajectory_from_centerline()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00223">compose_trajectory_from_centerline()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -832,36 +840,36 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00186">186</a> of file <a class="el" href="stop__and__wait__plugin_8cpp_source.html">stop_and_wait_plugin.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  189</span>{</div>
-<div class="line"><span class="lineno">  190</span>  <span class="keywordflow">if</span> (points.size() != times.size() || points.size() != yaws.size())</div>
-<div class="line"><span class="lineno">  191</span>  {</div>
-<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;All input vectors must have the same size&quot;</span>);</div>
-<div class="line"><span class="lineno">  193</span>  }</div>
-<div class="line"><span class="lineno">  194</span> </div>
-<div class="line"><span class="lineno">  195</span>  std::vector&lt;carma_planning_msgs::msg::TrajectoryPlanPoint&gt; traj;</div>
-<div class="line"><span class="lineno">  196</span>  traj.reserve(points.size());</div>
-<div class="line"><span class="lineno">  197</span> </div>
-<div class="line"><span class="lineno">  198</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; points.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
+<p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00194">194</a> of file <a class="el" href="stop__and__wait__plugin_8cpp_source.html">stop_and_wait_plugin.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  197</span>{</div>
+<div class="line"><span class="lineno">  198</span>  <span class="keywordflow">if</span> (points.size() != times.size() || points.size() != yaws.size())</div>
 <div class="line"><span class="lineno">  199</span>  {</div>
-<div class="line"><span class="lineno">  200</span>    carma_planning_msgs::msg::TrajectoryPlanPoint tpp;</div>
-<div class="line"><span class="lineno">  201</span>    rclcpp::Duration relative_time(times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] * 1e9);</div>
-<div class="line"><span class="lineno">  202</span>    tpp.target_time = startTime + relative_time;</div>
-<div class="line"><span class="lineno">  203</span>    tpp.x = points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].x();</div>
-<div class="line"><span class="lineno">  204</span>    tpp.y = points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].y();</div>
-<div class="line"><span class="lineno">  205</span>    tpp.yaw = yaws[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
-<div class="line"><span class="lineno">  206</span>    tpp.planner_plugin_name = <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a64d6b1a64dc7e3fc03e39b6f1d7225e3">plugin_name_</a>;</div>
-<div class="line"><span class="lineno">  207</span>    tpp.controller_plugin_name = <span class="stringliteral">&quot;default&quot;</span>;</div>
-<div class="line"><span class="lineno">  208</span> </div>
-<div class="line"><span class="lineno">  209</span>    traj.push_back(tpp);</div>
-<div class="line"><span class="lineno">  210</span>  }</div>
-<div class="line"><span class="lineno">  211</span> </div>
-<div class="line"><span class="lineno">  212</span>  <span class="keywordflow">return</span> traj;</div>
-<div class="line"><span class="lineno">  213</span>}</div>
+<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;All input vectors must have the same size&quot;</span>);</div>
+<div class="line"><span class="lineno">  201</span>  }</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>  std::vector&lt;carma_planning_msgs::msg::TrajectoryPlanPoint&gt; traj;</div>
+<div class="line"><span class="lineno">  204</span>  traj.reserve(points.size());</div>
+<div class="line"><span class="lineno">  205</span> </div>
+<div class="line"><span class="lineno">  206</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; points.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
+<div class="line"><span class="lineno">  207</span>  {</div>
+<div class="line"><span class="lineno">  208</span>    carma_planning_msgs::msg::TrajectoryPlanPoint tpp;</div>
+<div class="line"><span class="lineno">  209</span>    rclcpp::Duration relative_time(times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] * 1e9);</div>
+<div class="line"><span class="lineno">  210</span>    tpp.target_time = startTime + relative_time;</div>
+<div class="line"><span class="lineno">  211</span>    tpp.x = points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].x();</div>
+<div class="line"><span class="lineno">  212</span>    tpp.y = points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].y();</div>
+<div class="line"><span class="lineno">  213</span>    tpp.yaw = yaws[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
+<div class="line"><span class="lineno">  214</span>    tpp.planner_plugin_name = <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a64d6b1a64dc7e3fc03e39b6f1d7225e3">plugin_name_</a>;</div>
+<div class="line"><span class="lineno">  215</span>    tpp.controller_plugin_name = <span class="stringliteral">&quot;default&quot;</span>;</div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>    traj.push_back(tpp);</div>
+<div class="line"><span class="lineno">  218</span>  }</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>  <span class="keywordflow">return</span> traj;</div>
+<div class="line"><span class="lineno">  221</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, and <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00117">plugin_name_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00215">compose_trajectory_from_centerline()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00223">compose_trajectory_from_centerline()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -898,7 +906,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00120">120</a> of file <a class="el" href="stop__and__wait__plugin_8hpp_source.html">stop_and_wait_plugin.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00215">compose_trajectory_from_centerline()</a>, <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00151">maneuvers_to_points()</a>, and <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00059">plan_trajectory_cb()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00223">compose_trajectory_from_centerline()</a>, <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00159">maneuvers_to_points()</a>, and <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00059">plan_trajectory_cb()</a>.</p>
 
 </div>
 </div>
@@ -950,8 +958,6 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00121">121</a> of file <a class="el" href="stop__and__wait__plugin_8hpp_source.html">stop_and_wait_plugin.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00215">compose_trajectory_from_centerline()</a>, and <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00059">plan_trajectory_cb()</a>.</p>
-
 </div>
 </div>
 <a id="a64d6b1a64dc7e3fc03e39b6f1d7225e3" name="a64d6b1a64dc7e3fc03e39b6f1d7225e3"></a>
@@ -976,7 +982,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00117">117</a> of file <a class="el" href="stop__and__wait__plugin_8hpp_source.html">stop_and_wait_plugin.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00215">compose_trajectory_from_centerline()</a>, and <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00186">trajectory_from_points_times_orientations()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00223">compose_trajectory_from_centerline()</a>, and <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00194">trajectory_from_points_times_orientations()</a>.</p>
 
 </div>
 </div>
@@ -1026,7 +1032,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00119">119</a> of file <a class="el" href="stop__and__wait__plugin_8hpp_source.html">stop_and_wait_plugin.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00151">maneuvers_to_points()</a>, and <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00059">plan_trajectory_cb()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00159">maneuvers_to_points()</a>, and <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00059">plan_trajectory_cb()</a>.</p>
 
 </div>
 </div>
@@ -1040,7 +1046,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacestop__and__wait__plugin.html">stop_and_wait_plugin</a></li><li class="navelem"><a class="el" href="classstop__and__wait__plugin_1_1StopandWait.html">StopandWait</a></li>
-    <li class="footer">Generated on Thu Jan 26 2023 14:31:55 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Feb 21 2023 17:51:41 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

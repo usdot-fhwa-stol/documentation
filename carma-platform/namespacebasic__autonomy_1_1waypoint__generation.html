@@ -518,7 +518,7 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="basic__autonomy_8h_source.html#l00085">basic_autonomy::waypoint_generation::DetailedTrajConfig::buffer_ending_downtrack</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="basic__autonomy_8h_source.html#l00062">basic_autonomy::waypoint_generation::PointSpeedPair::point</a>, and <a class="el" href="basic__autonomy_8h_source.html#l00063">basic_autonomy::waypoint_generation::PointSpeedPair::speed</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="src_2basic__autonomy_8cpp_source.html#l00024">create_geometry_profile()</a>, and <a class="el" href="light__controlled__intersection__tactical__plugin_8cpp_source.html#l00358">light_controlled_intersection_tactical_plugin::LightControlledIntersectionTacticalPlugin::createGeometryProfile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="src_2basic__autonomy_8cpp_source.html#l00024">create_geometry_profile()</a>, and <a class="el" href="light__controlled__intersection__tactical__plugin_8cpp_source.html#l00386">light_controlled_intersection_tactical_plugin::LightControlledIntersectionTacticalPlugin::createGeometryProfile()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -580,24 +580,24 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A Shifted trajectory </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ros2_2src_2basic__autonomy_8cpp_source.html#l01258">1258</a> of file <a class="el" href="ros2_2src_2basic__autonomy_8cpp_source.html">basic_autonomy.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1259</span>        { <span class="comment">// Note first speed is assumed to be vehicle speed</span></div>
-<div class="line"><span class="lineno"> 1260</span>            <span class="keywordflow">if</span> (speeds.size() != downtracks.size()) {</div>
-<div class="line"><span class="lineno"> 1261</span>                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Speed list and downtrack list are not the same size.&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1262</span>            }</div>
-<div class="line"><span class="lineno"> 1263</span> </div>
-<div class="line"><span class="lineno"> 1264</span>            std::vector&lt;double&gt; output;</div>
-<div class="line"><span class="lineno"> 1265</span>            <span class="keywordflow">if</span> (speeds.empty()) {</div>
-<div class="line"><span class="lineno"> 1266</span>                <span class="keywordflow">return</span> output;</div>
-<div class="line"><span class="lineno"> 1267</span>            }</div>
-<div class="line"><span class="lineno"> 1268</span> </div>
-<div class="line"><span class="lineno"> 1269</span>            <span class="keywordtype">double</span> lookahead_distance = speeds[0] * response_lag;</div>
+<p class="definition">Definition at line <a class="el" href="ros2_2src_2basic__autonomy_8cpp_source.html#l01260">1260</a> of file <a class="el" href="ros2_2src_2basic__autonomy_8cpp_source.html">basic_autonomy.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1261</span>        { <span class="comment">// Note first speed is assumed to be vehicle speed</span></div>
+<div class="line"><span class="lineno"> 1262</span>            <span class="keywordflow">if</span> (speeds.size() != downtracks.size()) {</div>
+<div class="line"><span class="lineno"> 1263</span>                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Speed list and downtrack list are not the same size.&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1264</span>            }</div>
+<div class="line"><span class="lineno"> 1265</span> </div>
+<div class="line"><span class="lineno"> 1266</span>            std::vector&lt;double&gt; output;</div>
+<div class="line"><span class="lineno"> 1267</span>            <span class="keywordflow">if</span> (speeds.empty()) {</div>
+<div class="line"><span class="lineno"> 1268</span>                <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno"> 1269</span>            }</div>
 <div class="line"><span class="lineno"> 1270</span> </div>
-<div class="line"><span class="lineno"> 1271</span>            <span class="keywordtype">double</span> downtrack_cutoff = downtracks[0] + lookahead_distance;</div>
-<div class="line"><span class="lineno"> 1272</span>            <span class="keywordtype">size_t</span> lookahead_count = std::lower_bound(downtracks.begin(),downtracks.end(), downtrack_cutoff) - downtracks.begin(); <span class="comment">// Use binary search to find lower bound cutoff point</span></div>
-<div class="line"><span class="lineno"> 1273</span>            output = trajectory_utils::shift_by_lookahead(speeds, (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) lookahead_count);</div>
-<div class="line"><span class="lineno"> 1274</span>            <span class="keywordflow">return</span> output;</div>
-<div class="line"><span class="lineno"> 1275</span>        }</div>
+<div class="line"><span class="lineno"> 1271</span>            <span class="keywordtype">double</span> lookahead_distance = speeds[0] * response_lag;</div>
+<div class="line"><span class="lineno"> 1272</span> </div>
+<div class="line"><span class="lineno"> 1273</span>            <span class="keywordtype">double</span> downtrack_cutoff = downtracks[0] + lookahead_distance;</div>
+<div class="line"><span class="lineno"> 1274</span>            <span class="keywordtype">size_t</span> lookahead_count = std::lower_bound(downtracks.begin(),downtracks.end(), downtrack_cutoff) - downtracks.begin(); <span class="comment">// Use binary search to find lower bound cutoff point</span></div>
+<div class="line"><span class="lineno"> 1275</span>            output = trajectory_utils::shift_by_lookahead(speeds, (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) lookahead_count);</div>
+<div class="line"><span class="lineno"> 1276</span>            <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno"> 1277</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ros2_2src_2basic__autonomy_8cpp_source.html#l01184">process_trajectory_plan()</a>.</p>
 <div class="dynheader">
@@ -3343,7 +3343,7 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="src_2Geometry_8cpp_source.html#l00373">carma_wm::geometry::concatenate_line_strings()</a>, <a class="el" href="basic__autonomy_8h_source.html#l00069">basic_autonomy::waypoint_generation::GeneralTrajConfig::default_downsample_ratio</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="basic__autonomy_8h_source.html#l00062">basic_autonomy::waypoint_generation::PointSpeedPair::point</a>, <a class="el" href="basic__autonomy_8h_source.html#l00063">basic_autonomy::waypoint_generation::PointSpeedPair::speed</a>, and <a class="el" href="basic__autonomy_8h_source.html#l00070">basic_autonomy::waypoint_generation::GeneralTrajConfig::turn_downsample_ratio</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="src_2basic__autonomy_8cpp_source.html#l00024">create_geometry_profile()</a>, and <a class="el" href="light__controlled__intersection__tactical__plugin_8cpp_source.html#l00358">light_controlled_intersection_tactical_plugin::LightControlledIntersectionTacticalPlugin::createGeometryProfile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="src_2basic__autonomy_8cpp_source.html#l00024">create_geometry_profile()</a>, and <a class="el" href="light__controlled__intersection__tactical__plugin_8cpp_source.html#l00386">light_controlled_intersection_tactical_plugin::LightControlledIntersectionTacticalPlugin::createGeometryProfile()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -4650,43 +4650,45 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1219</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; speeds.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++) { <span class="comment">// Ensure 0 is min speed</span></div>
 <div class="line"><span class="lineno"> 1220</span>                <span class="keywordflow">if</span> (stopping_index != 0 &amp;&amp; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &gt;= stopping_index - 1)</div>
 <div class="line"><span class="lineno"> 1221</span>                {</div>
-<div class="line"><span class="lineno"> 1222</span>                    speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = 0.0;  <span class="comment">//stopping case</span></div>
-<div class="line"><span class="lineno"> 1223</span>                }</div>
-<div class="line"><span class="lineno"> 1224</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno"> 1225</span>                {</div>
-<div class="line"><span class="lineno"> 1226</span>                    speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = std::max(0.0, speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]);</div>
-<div class="line"><span class="lineno"> 1227</span>                }</div>
-<div class="line"><span class="lineno"> 1228</span>            }</div>
-<div class="line"><span class="lineno"> 1229</span> </div>
-<div class="line"><span class="lineno"> 1230</span>            std::vector&lt;double&gt; lag_speeds;</div>
-<div class="line"><span class="lineno"> 1231</span>            lag_speeds = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a3c66a834de5e4a066c8c9011e25f8e71">apply_response_lag</a>(speeds, downtracks, vehicle_response_lag); <span class="comment">// This call requires that the first speed point be current speed to work as expected</span></div>
-<div class="line"><span class="lineno"> 1232</span>                </div>
-<div class="line"><span class="lineno"> 1233</span>            autoware_auto_msgs::msg::Trajectory autoware_trajectory;</div>
-<div class="line"><span class="lineno"> 1234</span>            autoware_trajectory.header = tp.header;</div>
-<div class="line"><span class="lineno"> 1235</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;size: &quot;</span> &lt;&lt; trajectory_points.size());</div>
-<div class="line"><span class="lineno"> 1236</span>            </div>
-<div class="line"><span class="lineno"> 1237</span>            <span class="keyword">auto</span> max_size = std::min(99, (<span class="keywordtype">int</span>)trajectory_points.size());  <span class="comment">//NOTE: more than this size autoware auto raises exception with &quot;Exceeded upper bound while in ACTIVE state.&quot;</span></div>
-<div class="line"><span class="lineno"> 1238</span>                                                                            <span class="comment">//large portion of the points are not needed anyways </span></div>
-<div class="line"><span class="lineno"> 1239</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; max_size; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
-<div class="line"><span class="lineno"> 1240</span>            {</div>
-<div class="line"><span class="lineno"> 1241</span>                autoware_auto_msgs::msg::TrajectoryPoint autoware_point;</div>
-<div class="line"><span class="lineno"> 1242</span> </div>
-<div class="line"><span class="lineno"> 1243</span>                autoware_point.x = trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].x;</div>
-<div class="line"><span class="lineno"> 1244</span>                autoware_point.y = trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].y;</div>
-<div class="line"><span class="lineno"> 1245</span>                autoware_point.longitudinal_velocity_mps = lag_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
-<div class="line"><span class="lineno"> 1246</span> </div>
-<div class="line"><span class="lineno"> 1247</span>                autoware_point.time_from_start = rclcpp::Duration(times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] * 1e9);</div>
-<div class="line"><span class="lineno"> 1248</span>                RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Setting waypoint idx: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt;&lt;<span class="stringliteral">&quot;, with planner: &lt;&lt; &quot;</span> &lt;&lt; trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].planner_plugin_name &lt;&lt; <span class="stringliteral">&quot;, x: &quot;</span> &lt;&lt; trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].<a class="code hl_variable" href="namespaceprocess__traj__logs.html#af3ba6144a2d35a4990f1a8d04632a052">x</a> &lt;&lt; </div>
-<div class="line"><span class="lineno"> 1249</span>                                        <span class="stringliteral">&quot;, y: &quot;</span> &lt;&lt; trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].<a class="code hl_variable" href="namespaceprocess__traj__logs.html#a05bdb238bfbf3836fb0aa69c5aa1bb48">y</a> &lt;&lt;</div>
-<div class="line"><span class="lineno"> 1250</span>                                        <span class="stringliteral">&quot;, speed: &quot;</span> &lt;&lt; lag_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]* 2.23694 &lt;&lt; <span class="stringliteral">&quot;mph&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1251</span>                autoware_trajectory.points.push_back(autoware_point);</div>
-<div class="line"><span class="lineno"> 1252</span>            }</div>
-<div class="line"><span class="lineno"> 1253</span> </div>
-<div class="line"><span class="lineno"> 1254</span>            <span class="keywordflow">return</span> autoware_trajectory;</div>
-<div class="line"><span class="lineno"> 1255</span>        }</div>
-<div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_a3c66a834de5e4a066c8c9011e25f8e71"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#a3c66a834de5e4a066c8c9011e25f8e71">basic_autonomy::waypoint_generation::apply_response_lag</a></div><div class="ttdeci">std::vector&lt; double &gt; apply_response_lag(const std::vector&lt; double &gt; &amp;speeds, const std::vector&lt; double &gt; downtracks, double response_lag)</div><div class="ttdoc">Applies a specified response lag in seconds to the trajectory shifting the whole thing by the specifi...</div><div class="ttdef"><b>Definition:</b> <a href="ros2_2src_2basic__autonomy_8cpp_source.html#l01258">basic_autonomy.cpp:1258</a></div></div>
+<div class="line"><span class="lineno"> 1222</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Made it to 0, i: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>);</div>
+<div class="line"><span class="lineno"> 1223</span>                    </div>
+<div class="line"><span class="lineno"> 1224</span>                    speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = 0.0;  <span class="comment">//stopping case</span></div>
+<div class="line"><span class="lineno"> 1225</span>                }</div>
+<div class="line"><span class="lineno"> 1226</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 1227</span>                {</div>
+<div class="line"><span class="lineno"> 1228</span>                    speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = std::max(0.0, speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]);</div>
+<div class="line"><span class="lineno"> 1229</span>                }</div>
+<div class="line"><span class="lineno"> 1230</span>            }</div>
+<div class="line"><span class="lineno"> 1231</span> </div>
+<div class="line"><span class="lineno"> 1232</span>            std::vector&lt;double&gt; lag_speeds;</div>
+<div class="line"><span class="lineno"> 1233</span>            lag_speeds = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a3c66a834de5e4a066c8c9011e25f8e71">apply_response_lag</a>(speeds, downtracks, vehicle_response_lag); <span class="comment">// This call requires that the first speed point be current speed to work as expected</span></div>
+<div class="line"><span class="lineno"> 1234</span>                </div>
+<div class="line"><span class="lineno"> 1235</span>            autoware_auto_msgs::msg::Trajectory autoware_trajectory;</div>
+<div class="line"><span class="lineno"> 1236</span>            autoware_trajectory.header = tp.header;</div>
+<div class="line"><span class="lineno"> 1237</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;size: &quot;</span> &lt;&lt; trajectory_points.size());</div>
+<div class="line"><span class="lineno"> 1238</span>            </div>
+<div class="line"><span class="lineno"> 1239</span>            <span class="keyword">auto</span> max_size = std::min(99, (<span class="keywordtype">int</span>)trajectory_points.size());  <span class="comment">//NOTE: more than this size autoware auto raises exception with &quot;Exceeded upper bound while in ACTIVE state.&quot;</span></div>
+<div class="line"><span class="lineno"> 1240</span>                                                                            <span class="comment">//large portion of the points are not needed anyways </span></div>
+<div class="line"><span class="lineno"> 1241</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; max_size; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
+<div class="line"><span class="lineno"> 1242</span>            {</div>
+<div class="line"><span class="lineno"> 1243</span>                autoware_auto_msgs::msg::TrajectoryPoint autoware_point;</div>
+<div class="line"><span class="lineno"> 1244</span> </div>
+<div class="line"><span class="lineno"> 1245</span>                autoware_point.x = trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].x;</div>
+<div class="line"><span class="lineno"> 1246</span>                autoware_point.y = trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].y;</div>
+<div class="line"><span class="lineno"> 1247</span>                autoware_point.longitudinal_velocity_mps = lag_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
+<div class="line"><span class="lineno"> 1248</span> </div>
+<div class="line"><span class="lineno"> 1249</span>                autoware_point.time_from_start = rclcpp::Duration(times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] * 1e9);</div>
+<div class="line"><span class="lineno"> 1250</span>                RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Setting waypoint idx: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt;&lt;<span class="stringliteral">&quot;, with planner: &lt;&lt; &quot;</span> &lt;&lt; trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].planner_plugin_name &lt;&lt; <span class="stringliteral">&quot;, x: &quot;</span> &lt;&lt; trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].<a class="code hl_variable" href="namespaceprocess__traj__logs.html#af3ba6144a2d35a4990f1a8d04632a052">x</a> &lt;&lt; </div>
+<div class="line"><span class="lineno"> 1251</span>                                        <span class="stringliteral">&quot;, y: &quot;</span> &lt;&lt; trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].<a class="code hl_variable" href="namespaceprocess__traj__logs.html#a05bdb238bfbf3836fb0aa69c5aa1bb48">y</a> &lt;&lt;</div>
+<div class="line"><span class="lineno"> 1252</span>                                        <span class="stringliteral">&quot;, speed: &quot;</span> &lt;&lt; lag_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]* 2.23694 &lt;&lt; <span class="stringliteral">&quot;mph&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1253</span>                autoware_trajectory.points.push_back(autoware_point);</div>
+<div class="line"><span class="lineno"> 1254</span>            }</div>
+<div class="line"><span class="lineno"> 1255</span> </div>
+<div class="line"><span class="lineno"> 1256</span>            <span class="keywordflow">return</span> autoware_trajectory;</div>
+<div class="line"><span class="lineno"> 1257</span>        }</div>
+<div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_a3c66a834de5e4a066c8c9011e25f8e71"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#a3c66a834de5e4a066c8c9011e25f8e71">basic_autonomy::waypoint_generation::apply_response_lag</a></div><div class="ttdeci">std::vector&lt; double &gt; apply_response_lag(const std::vector&lt; double &gt; &amp;speeds, const std::vector&lt; double &gt; downtracks, double response_lag)</div><div class="ttdoc">Applies a specified response lag in seconds to the trajectory shifting the whole thing by the specifi...</div><div class="ttdef"><b>Definition:</b> <a href="ros2_2src_2basic__autonomy_8cpp_source.html#l01260">basic_autonomy.cpp:1260</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ros2_2src_2basic__autonomy_8cpp_source.html#l01258">apply_response_lag()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00062">BASIC_AUTONOMY_LOGGER</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="process__traj__logs_8py_source.html#l00128">process_traj_logs::x</a>, and <a class="el" href="process__traj__logs_8py_source.html#l00129">process_traj_logs::y</a>.</p>
+<p class="reference">References <a class="el" href="ros2_2src_2basic__autonomy_8cpp_source.html#l01260">apply_response_lag()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00062">BASIC_AUTONOMY_LOGGER</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="process__traj__logs_8py_source.html#l00128">process_traj_logs::x</a>, and <a class="el" href="process__traj__logs_8py_source.html#l00129">process_traj_logs::y</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="pure__pursuit__wrapper_8cpp_source.html#l00132">pure_pursuit_wrapper::PurePursuitWrapperNode::generate_command()</a>.</p>
 <div class="dynheader">
@@ -5166,7 +5168,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacebasic__autonomy.html">basic_autonomy</a></li><li class="navelem"><a class="el" href="namespacebasic__autonomy_1_1waypoint__generation.html">waypoint_generation</a></li>
-    <li class="footer">Generated on Thu Jan 26 2023 14:31:50 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Feb 21 2023 17:51:36 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

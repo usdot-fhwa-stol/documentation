@@ -79,7 +79,7 @@ var searchData=
   ['reflon_76',['reflon',['../structTrafficControlGeometry.html#ad4df8119c86acaed97b11f00f9bb1c53',1,'TrafficControlGeometry::reflon()'],['../structTrafficControlBounds.html#af578d6364870cce1ec6da9fa450a5fb3',1,'TrafficControlBounds::reflon()']]],
   ['refpoint_77',['refPoint',['../structRoadSegment.html#ac5df5c32efd918ed25f5dfdb5cddf587',1,'RoadSegment::refPoint()'],['../structIntersectionGeometry.html#a3ce4e886cf87a7bc63900b652c771c1c',1,'IntersectionGeometry::refPoint()']]],
   ['reftime_78',['reftime',['../structTrafficControlGeometry.html#a27804bd8eb0208546a648cc28e9509b1',1,'TrafficControlGeometry']]],
-  ['refwidth_79',['refwidth',['../structTrafficControlGeometry.html#a65cafc7c1072f864e4dc979866058ef2',1,'TrafficControlGeometry']]],
+  ['refwidth_79',['refwidth',['../structTrafficControlGeometry.html#a5f2443ec8e40746fac644c914d523d66',1,'TrafficControlGeometry']]],
   ['reg_5fbasicsafetymessage_80',['Reg_BasicSafetyMessage',['../structReg__BasicSafetyMessage.html',1,'']]],
   ['reg_5fbasicsafetymessage_5f_5fregextvalue_81',['Reg_BasicSafetyMessage__regExtValue',['../structReg__BasicSafetyMessage_1_1Reg__BasicSafetyMessage____regExtValue.html',1,'Reg_BasicSafetyMessage']]],
   ['reg_5fbasicsafetymessage_5f_5fregextvalue_5fpr_82',['Reg_BasicSafetyMessage__regExtValue_PR',['../RegionalExtension_8h.html#a668794521a393523ccb9efd532feee11',1,'Reg_BasicSafetyMessage__regExtValue_PR():&#160;RegionalExtension.h'],['../RegionalExtension_8h.html#ab34aec4d3702ecefd8f375e1cd97792d',1,'Reg_BasicSafetyMessage__regExtValue_PR():&#160;RegionalExtension.h']]],

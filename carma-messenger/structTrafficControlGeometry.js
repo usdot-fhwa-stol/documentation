@@ -10,5 +10,5 @@ var structTrafficControlGeometry =
     [ "reflat", "structTrafficControlGeometry.html#af47b4d76e4e9a6ca286ef2c5ef2ab0ba", null ],
     [ "reflon", "structTrafficControlGeometry.html#ad4df8119c86acaed97b11f00f9bb1c53", null ],
     [ "reftime", "structTrafficControlGeometry.html#a27804bd8eb0208546a648cc28e9509b1", null ],
-    [ "refwidth", "structTrafficControlGeometry.html#a65cafc7c1072f864e4dc979866058ef2", null ]
+    [ "refwidth", "structTrafficControlGeometry.html#a5f2443ec8e40746fac644c914d523d66", null ]
 ];

@@ -294,6 +294,7 @@ var annotated_dup =
     ] ],
     [ "plan_delegator", "namespaceplan__delegator.html", [
       [ "Config", "structplan__delegator_1_1Config.html", "structplan__delegator_1_1Config" ],
+      [ "LaneChangeInformation", "structplan__delegator_1_1LaneChangeInformation.html", "structplan__delegator_1_1LaneChangeInformation" ],
       [ "PlanDelegator", "classplan__delegator_1_1PlanDelegator.html", "classplan__delegator_1_1PlanDelegator" ]
     ] ],
     [ "platoon_control", "namespaceplatoon__control.html", [

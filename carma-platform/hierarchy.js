@@ -226,6 +226,7 @@ var hierarchy =
       [ "GenericMemberIterator< Const, Encoding, Allocator >", "classGenericMemberIterator.html", null ]
     ] ],
     [ "carma_wm::LANE_DIRECTION", "structcarma__wm_1_1LANE__DIRECTION.html", null ],
+    [ "plan_delegator::LaneChangeInformation", "structplan__delegator_1_1LaneChangeInformation.html", null ],
     [ "cooperative_lanechange::LaneChangeManeuverOriginalValues", "structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html", null ],
     [ "carma_wm::LaneletDowntrackPair", "classcarma__wm_1_1LaneletDowntrackPair.html", null ],
     [ "port_drayage_plugin::LatLonCoordinate", "structport__drayage__plugin_1_1LatLonCoordinate.html", null ],

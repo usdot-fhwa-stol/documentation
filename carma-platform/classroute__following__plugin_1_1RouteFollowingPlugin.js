@@ -4,7 +4,6 @@ var classroute__following__plugin_1_1RouteFollowingPlugin =
     [ "addStopAndWaitAtRouteEnd", "classroute__following__plugin_1_1RouteFollowingPlugin.html#aef98e4f85a3a9dd0ac4f8aa2bccc3077", null ],
     [ "bumper_pose_cb", "classroute__following__plugin_1_1RouteFollowingPlugin.html#a65fc4245c9eb4f377690321e322c532d", null ],
     [ "composeLaneChangeManeuverMessage", "classroute__following__plugin_1_1RouteFollowingPlugin.html#a4a984f6bd1178a6d79886321c8680c7e", null ],
-    [ "ComposeLaneChangeStatus", "classroute__following__plugin_1_1RouteFollowingPlugin.html#a620e99386d1cb2213db51c63f8f11f62", null ],
     [ "composeLaneFollowingManeuverMessage", "classroute__following__plugin_1_1RouteFollowingPlugin.html#a5e9bb087420ee42250c07ce8b1640509", null ],
     [ "composeStopAndWaitManeuverMessage", "classroute__following__plugin_1_1RouteFollowingPlugin.html#addf16b06e2e2053d9a2575b5f76248d7", null ],
     [ "current_maneuver_plan_cb", "classroute__following__plugin_1_1RouteFollowingPlugin.html#a86a93ad88943fbf56ac87195706ea25a", null ],
@@ -59,8 +58,6 @@ var classroute__following__plugin_1_1RouteFollowingPlugin =
     [ "tf2_listener_", "classroute__following__plugin_1_1RouteFollowingPlugin.html#a3d587e4f1aef34d0d97e74b655d7f0de", null ],
     [ "tf_", "classroute__following__plugin_1_1RouteFollowingPlugin.html#aee9ed912513ae39c8bf8d5100b4ab86c", null ],
     [ "twist_sub_", "classroute__following__plugin_1_1RouteFollowingPlugin.html#ac34b11de0eb1b225341e6b8cf20c3faf", null ],
-    [ "upcoming_lane_change_status_msg_map_", "classroute__following__plugin_1_1RouteFollowingPlugin.html#a5b39d466146bf619575cad41bb08c09c", null ],
-    [ "upcoming_lane_change_status_pub_", "classroute__following__plugin_1_1RouteFollowingPlugin.html#aae4679244e841354fcdefffdb8258934", null ],
     [ "wm_", "classroute__following__plugin_1_1RouteFollowingPlugin.html#af6f7bdeb8816c83b212f6329f8e5652d", null ],
     [ "wml_", "classroute__following__plugin_1_1RouteFollowingPlugin.html#a97e8eff5885a9de9769304019b6c5a79", null ]
 ];

@@ -100,7 +100,7 @@ Collaboration diagram for plan_delegator::Config:</div>
 <div class="dyncontent">
 <div class="center"><img src="structplan__delegator_1_1Config__coll__graph.png" border="0" usemap="#aplan__delegator_1_1Config_coll__map" alt="Collaboration graph"/></div>
 <map name="aplan__delegator_1_1Config_coll__map" id="aplan__delegator_1_1Config_coll__map">
-<area shape="rect" title="Config struct." alt="" coords="40,175,188,252"/>
+<area shape="rect" title="Config struct." alt="" coords="40,204,188,281"/>
 <area shape="rect" title=" " alt="" coords="5,5,60,83"/>
 <area shape="rect" title=" " alt="" coords="165,5,225,83"/>
 </map>
@@ -118,6 +118,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ac8e357d37edd1e17c78c7c5a0b9e5340"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeb79573f1c58e9179ddceefeb31bf27"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structplan__delegator_1_1Config.html#adeb79573f1c58e9179ddceefeb31bf27">min_crawl_speed</a> = 2.2352</td></tr>
 <tr class="separator:adeb79573f1c58e9179ddceefeb31bf27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ec85b389472992bf6a3d5391f42d5c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structplan__delegator_1_1Config.html#ac5ec85b389472992bf6a3d5391f42d5c">duration_to_signal_before_lane_change</a> = 2.5</td></tr>
+<tr class="separator:ac5ec85b389472992bf6a3d5391f42d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -127,7 +129,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="structplan__delegator_1_1Config.html" title="Config struct.">Config</a> struct. </p>
 
-<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00067">67</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00070">70</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
 </div><h2 class="groupheader">Friends And Related Function Documentation</h2>
 <a id="a7809fad27c013c8d8314e46f22f62ca7" name="a7809fad27c013c8d8314e46f22f62ca7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7809fad27c013c8d8314e46f22f62ca7">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
@@ -163,22 +165,41 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00077">77</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>        {</div>
-<div class="line"><span class="lineno">   79</span>        output &lt;&lt; <span class="stringliteral">&quot;PlanDelegator::Config { &quot;</span> &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">   80</span>            &lt;&lt; <span class="stringliteral">&quot;planning_topic_prefix: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.planning_topic_prefix &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">   81</span>            &lt;&lt; <span class="stringliteral">&quot;planning_topic_suffix: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.planning_topic_suffix &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">   82</span>            &lt;&lt; <span class="stringliteral">&quot;trajectory_planning_rate: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.trajectory_planning_rate &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">   83</span>            &lt;&lt; <span class="stringliteral">&quot;max_trajectory_duration: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.max_trajectory_duration &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">   84</span>            &lt;&lt; <span class="stringliteral">&quot;min_crawl_speed: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.min_crawl_speed &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">   85</span>            &lt;&lt; <span class="stringliteral">&quot;}&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">return</span> output;</div>
-<div class="line"><span class="lineno">   87</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00081">81</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>        {</div>
+<div class="line"><span class="lineno">   83</span>        output &lt;&lt; <span class="stringliteral">&quot;PlanDelegator::Config { &quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   84</span>            &lt;&lt; <span class="stringliteral">&quot;planning_topic_prefix: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.planning_topic_prefix &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   85</span>            &lt;&lt; <span class="stringliteral">&quot;planning_topic_suffix: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.planning_topic_suffix &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   86</span>            &lt;&lt; <span class="stringliteral">&quot;trajectory_planning_rate: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.trajectory_planning_rate &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   87</span>            &lt;&lt; <span class="stringliteral">&quot;max_trajectory_duration: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.max_trajectory_duration &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   88</span>            &lt;&lt; <span class="stringliteral">&quot;min_crawl_speed: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.min_crawl_speed &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   89</span>            &lt;&lt; <span class="stringliteral">&quot;duration_to_signal_before_lane_change: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.duration_to_signal_before_lane_change &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   90</span>            &lt;&lt; <span class="stringliteral">&quot;}&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno">   92</span>        }</div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_a49cd466f330a9498d8373baecf47e071"><div class="ttname"><a href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">process_traj_logs.c</a></div><div class="ttdeci">c</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00166">process_traj_logs.py:166</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac5ec85b389472992bf6a3d5391f42d5c" name="ac5ec85b389472992bf6a3d5391f42d5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5ec85b389472992bf6a3d5391f42d5c">&#9670;&nbsp;</a></span>duration_to_signal_before_lane_change</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double plan_delegator::Config::duration_to_signal_before_lane_change = 2.5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00078">78</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="plan__delegator_8cpp_source.html#l00131">plan_delegator::PlanDelegator::PlanDelegator()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00147">plan_delegator::PlanDelegator::handle_on_configure()</a>, and <a class="el" href="plan__delegator_8cpp_source.html#l00311">plan_delegator::PlanDelegator::publishTurnSignalCommand()</a>.</p>
+
+</div>
+</div>
 <a id="ac8e357d37edd1e17c78c7c5a0b9e5340" name="ac8e357d37edd1e17c78c7c5a0b9e5340"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8e357d37edd1e17c78c7c5a0b9e5340">&#9670;&nbsp;</a></span>max_trajectory_duration</h2>
 
@@ -191,9 +212,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00073">73</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00076">76</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="plan__delegator_8cpp_source.html#l00131">plan_delegator::PlanDelegator::PlanDelegator()</a>, and <a class="el" href="plan__delegator_8cpp_source.html#l00146">plan_delegator::PlanDelegator::handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="plan__delegator_8cpp_source.html#l00131">plan_delegator::PlanDelegator::PlanDelegator()</a>, and <a class="el" href="plan__delegator_8cpp_source.html#l00147">plan_delegator::PlanDelegator::handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -209,9 +230,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00074">74</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00077">77</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="plan__delegator_8cpp_source.html#l00131">plan_delegator::PlanDelegator::PlanDelegator()</a>, and <a class="el" href="plan__delegator_8cpp_source.html#l00146">plan_delegator::PlanDelegator::handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="plan__delegator_8cpp_source.html#l00131">plan_delegator::PlanDelegator::PlanDelegator()</a>, and <a class="el" href="plan__delegator_8cpp_source.html#l00147">plan_delegator::PlanDelegator::handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -227,9 +248,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00070">70</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00073">73</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="plan__delegator_8cpp_source.html#l00131">plan_delegator::PlanDelegator::PlanDelegator()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00206">plan_delegator::PlanDelegator::getPlannerClientByName()</a>, and <a class="el" href="plan__delegator_8cpp_source.html#l00146">plan_delegator::PlanDelegator::handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="plan__delegator_8cpp_source.html#l00131">plan_delegator::PlanDelegator::PlanDelegator()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00349">plan_delegator::PlanDelegator::getPlannerClientByName()</a>, and <a class="el" href="plan__delegator_8cpp_source.html#l00147">plan_delegator::PlanDelegator::handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -245,9 +266,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00071">71</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00074">74</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="plan__delegator_8cpp_source.html#l00131">plan_delegator::PlanDelegator::PlanDelegator()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00206">plan_delegator::PlanDelegator::getPlannerClientByName()</a>, and <a class="el" href="plan__delegator_8cpp_source.html#l00146">plan_delegator::PlanDelegator::handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="plan__delegator_8cpp_source.html#l00131">plan_delegator::PlanDelegator::PlanDelegator()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00349">plan_delegator::PlanDelegator::getPlannerClientByName()</a>, and <a class="el" href="plan__delegator_8cpp_source.html#l00147">plan_delegator::PlanDelegator::handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -263,9 +284,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00072">72</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00075">75</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="plan__delegator_8cpp_source.html#l00131">plan_delegator::PlanDelegator::PlanDelegator()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00172">plan_delegator::PlanDelegator::handle_on_activate()</a>, and <a class="el" href="plan__delegator_8cpp_source.html#l00146">plan_delegator::PlanDelegator::handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="plan__delegator_8cpp_source.html#l00131">plan_delegator::PlanDelegator::PlanDelegator()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00178">plan_delegator::PlanDelegator::handle_on_activate()</a>, and <a class="el" href="plan__delegator_8cpp_source.html#l00147">plan_delegator::PlanDelegator::handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -278,7 +299,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceplan__delegator.html">plan_delegator</a></li><li class="navelem"><a class="el" href="structplan__delegator_1_1Config.html">Config</a></li>
-    <li class="footer">Generated on Mon Feb 27 2023 14:26:40 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Mar 1 2023 15:09:30 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

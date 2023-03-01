@@ -65,11 +65,12 @@ var searchData=
   ['dt_62',['dt',['../structPlatooningControlPluginConfig.html#adb0c12da25d6cc1a437fbd8b01148d3b',1,'PlatooningControlPluginConfig::dt()'],['../structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html#a5048f509be266c19a7cd21ad1b9d0dfa',1,'pure_pursuit_wrapper::PurePursuitWrapperConfig::dt()'],['../structPlatooningControlIHPPluginConfig.html#a17e9d8f17bda7134e7381b3602f934d2',1,'PlatooningControlIHPPluginConfig::dt()']]],
   ['dummy_5f_63',['dummy_',['../classmock__drivers_1_1MockDriverNode.html#aff13509a801604dc2d5c4c43b8bbba6e',1,'mock_drivers::MockDriverNode']]],
   ['dummyid_64',['dummyID',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#ae067830e0351c8ba271b00cb4a6f15c1',1,'platoon_strategic_ihp::PlatoonManager']]],
-  ['dx1_65',['dx1',['../structlci__strategic__plugin_1_1BoundaryDistances.html#a3d5a8c3afa280b1384e68461a0c88cba',1,'lci_strategic_plugin::BoundaryDistances']]],
-  ['dx2_66',['dx2',['../structlci__strategic__plugin_1_1BoundaryDistances.html#a819e44f33fe671d8fd157c429ef56616',1,'lci_strategic_plugin::BoundaryDistances']]],
-  ['dx3_67',['dx3',['../structlci__strategic__plugin_1_1BoundaryDistances.html#ab76a47e7bffcaa87d4c822154c99033d',1,'lci_strategic_plugin::BoundaryDistances']]],
-  ['dx4_68',['dx4',['../structlci__strategic__plugin_1_1BoundaryDistances.html#af25701f8060412da31ab4f0e7707deb2',1,'lci_strategic_plugin::BoundaryDistances']]],
-  ['dx5_69',['dx5',['../structlci__strategic__plugin_1_1BoundaryDistances.html#a9331b5ec4fb947a7b63751494ddd024d',1,'lci_strategic_plugin::BoundaryDistances']]],
-  ['dyn_5fcfg_5fmutex_5f_70',['dyn_cfg_mutex_',['../classNS3Adapter.html#a7392b1bb40518b648983cdc9a26f77d3',1,'NS3Adapter']]],
-  ['dynamic_5fleader_5findex_5f_71',['dynamic_leader_index_',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a5f0e8506da98a7cb29aca9750e310319',1,'platoon_strategic_ihp::PlatoonManager']]]
+  ['duration_5fto_5fsignal_5fbefore_5flane_5fchange_65',['duration_to_signal_before_lane_change',['../structplan__delegator_1_1Config.html#ac5ec85b389472992bf6a3d5391f42d5c',1,'plan_delegator::Config']]],
+  ['dx1_66',['dx1',['../structlci__strategic__plugin_1_1BoundaryDistances.html#a3d5a8c3afa280b1384e68461a0c88cba',1,'lci_strategic_plugin::BoundaryDistances']]],
+  ['dx2_67',['dx2',['../structlci__strategic__plugin_1_1BoundaryDistances.html#a819e44f33fe671d8fd157c429ef56616',1,'lci_strategic_plugin::BoundaryDistances']]],
+  ['dx3_68',['dx3',['../structlci__strategic__plugin_1_1BoundaryDistances.html#ab76a47e7bffcaa87d4c822154c99033d',1,'lci_strategic_plugin::BoundaryDistances']]],
+  ['dx4_69',['dx4',['../structlci__strategic__plugin_1_1BoundaryDistances.html#af25701f8060412da31ab4f0e7707deb2',1,'lci_strategic_plugin::BoundaryDistances']]],
+  ['dx5_70',['dx5',['../structlci__strategic__plugin_1_1BoundaryDistances.html#a9331b5ec4fb947a7b63751494ddd024d',1,'lci_strategic_plugin::BoundaryDistances']]],
+  ['dyn_5fcfg_5fmutex_5f_71',['dyn_cfg_mutex_',['../classNS3Adapter.html#a7392b1bb40518b648983cdc9a26f77d3',1,'NS3Adapter']]],
+  ['dynamic_5fleader_5findex_5f_72',['dynamic_leader_index_',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a5f0e8506da98a7cb29aca9750e310319',1,'platoon_strategic_ihp::PlatoonManager']]]
 ];

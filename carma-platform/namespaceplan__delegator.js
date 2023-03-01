@@ -7,6 +7,7 @@ var namespaceplan__delegator =
       [ "setManeuverStartingLaneletId", "namespaceplan__delegator_1_1anonymous__namespace_02plan__delegator_8cpp_03.html#af9151c6e30ac71f3830fb105406bacd8", null ]
     ] ],
     [ "Config", "structplan__delegator_1_1Config.html", "structplan__delegator_1_1Config" ],
+    [ "LaneChangeInformation", "structplan__delegator_1_1LaneChangeInformation.html", "structplan__delegator_1_1LaneChangeInformation" ],
     [ "PlanDelegator", "classplan__delegator_1_1PlanDelegator.html", "classplan__delegator_1_1PlanDelegator" ],
     [ "generate_launch_description", "namespaceplan__delegator.html#a01d640cbe710262bfae0f08e752bc164", null ]
 ];

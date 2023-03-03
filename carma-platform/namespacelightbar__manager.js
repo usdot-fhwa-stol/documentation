@@ -1,5 +1,6 @@
 var namespacelightbar__manager =
 [
+    [ "Config", "structlightbar__manager_1_1Config.html", "structlightbar__manager_1_1Config" ],
     [ "INDICATOR_NOT_MAPPED", "structlightbar__manager_1_1INDICATOR__NOT__MAPPED.html", "structlightbar__manager_1_1INDICATOR__NOT__MAPPED" ],
     [ "INVALID_LIGHTBAR_MANAGER_PRIORITY", "structlightbar__manager_1_1INVALID__LIGHTBAR__MANAGER__PRIORITY.html", "structlightbar__manager_1_1INVALID__LIGHTBAR__MANAGER__PRIORITY" ],
     [ "LIGHTBAR_MANAGER_ERROR", "classlightbar__manager_1_1LIGHTBAR__MANAGER__ERROR.html", "classlightbar__manager_1_1LIGHTBAR__MANAGER__ERROR" ],
@@ -40,5 +41,6 @@ var namespacelightbar__manager =
       [ "DISENGAGED", "namespacelightbar__manager.html#aab380495443d8cbd852a707cf8478f49a4d78081400cb2311c7c6f971f49acc83", null ],
       [ "ENGAGED", "namespacelightbar__manager.html#aab380495443d8cbd852a707cf8478f49aa1efdd482908b789c53ae09fd2ec72fc", null ],
       [ "ACTIVE", "namespacelightbar__manager.html#aab380495443d8cbd852a707cf8478f49ae41477ac7921a06bf04483490b7578bd", null ]
-    ] ]
+    ] ],
+    [ "generate_launch_description", "namespacelightbar__manager.html#a0849256af7c08fdc308b7d9dab5cd8d1", null ]
 ];

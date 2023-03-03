@@ -214,6 +214,7 @@ var annotated_dup =
       [ "TrajectoryParams", "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html", "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams" ]
     ] ],
     [ "lightbar_manager", "namespacelightbar__manager.html", [
+      [ "Config", "structlightbar__manager_1_1Config.html", "structlightbar__manager_1_1Config" ],
       [ "INDICATOR_NOT_MAPPED", "structlightbar__manager_1_1INDICATOR__NOT__MAPPED.html", "structlightbar__manager_1_1INDICATOR__NOT__MAPPED" ],
       [ "INVALID_LIGHTBAR_MANAGER_PRIORITY", "structlightbar__manager_1_1INVALID__LIGHTBAR__MANAGER__PRIORITY.html", "structlightbar__manager_1_1INVALID__LIGHTBAR__MANAGER__PRIORITY" ],
       [ "LIGHTBAR_MANAGER_ERROR", "classlightbar__manager_1_1LIGHTBAR__MANAGER__ERROR.html", "classlightbar__manager_1_1LIGHTBAR__MANAGER__ERROR" ],
@@ -457,6 +458,7 @@ var annotated_dup =
     [ "IGenericRemoteSchemaDocumentProvider", "classIGenericRemoteSchemaDocumentProvider.html", "classIGenericRemoteSchemaDocumentProvider" ],
     [ "imaxdiv_t", "structimaxdiv__t.html", "structimaxdiv__t" ],
     [ "InLaneCruisingPluginConfig", "structInLaneCruisingPluginConfig.html", "structInLaneCruisingPluginConfig" ],
+    [ "LightBarManager", "classLightBarManager.html", null ],
     [ "MapUpdateLogger", "classMapUpdateLogger.html", "classMapUpdateLogger" ],
     [ "MemoryPoolAllocator", "classMemoryPoolAllocator.html", "classMemoryPoolAllocator" ],
     [ "MemoryStream", "structMemoryStream.html", "structMemoryStream" ],

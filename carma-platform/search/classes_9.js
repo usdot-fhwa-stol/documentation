@@ -10,7 +10,7 @@ var searchData=
   ['lcistrategicstatetransitiontable_7',['LCIStrategicStateTransitionTable',['../classlci__strategic__plugin_1_1LCIStrategicStateTransitionTable.html',1,'lci_strategic_plugin']]],
   ['level_8',['Level',['../structWriter_1_1Level.html',1,'Writer']]],
   ['lightbar_5fmanager_5ferror_9',['LIGHTBAR_MANAGER_ERROR',['../classlightbar__manager_1_1LIGHTBAR__MANAGER__ERROR.html',1,'lightbar_manager']]],
-  ['lightbarmanager_10',['LightBarManager',['../classlightbar__manager_1_1LightBarManager.html',1,'lightbar_manager']]],
+  ['lightbarmanager_10',['LightBarManager',['../classlightbar__manager_1_1LightBarManager.html',1,'lightbar_manager::LightBarManager'],['../classLightBarManager.html',1,'LightBarManager']]],
   ['lightbarmanagerstatemachine_11',['LightBarManagerStateMachine',['../classlightbar__manager_1_1LightBarManagerStateMachine.html',1,'lightbar_manager']]],
   ['lightbarmanagerworker_12',['LightBarManagerWorker',['../classlightbar__manager_1_1LightBarManagerWorker.html',1,'lightbar_manager']]],
   ['lightcontrolledintersectiontacticalplugin_13',['LightControlledIntersectionTacticalPlugin',['../classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html',1,'light_controlled_intersection_tactical_plugin']]],

@@ -11,9 +11,10 @@ var searchData=
   ['rsmcollect_2ejava_8',['RsmCollect.java',['../RsmCollect_8java.html',1,'']]],
   ['rsmparser_2ejava_9',['RsmParser.java',['../RsmParser_8java.html',1,'']]],
   ['rsmservlet_2ejava_10',['RsmServlet.java',['../RsmServlet_8java.html',1,'']]],
-  ['rsuidentificationtask_2ejava_11',['RSUIdentificationTask.java',['../RSUIdentificationTask_8java.html',1,'']]],
-  ['rsulocation_2ejava_12',['RSULocation.java',['../RSULocation_8java.html',1,'']]],
-  ['rsulocationparser_2ejava_13',['RSULocationParser.java',['../RSULocationParser_8java.html',1,'']]],
-  ['rsuservice_2ejava_14',['RSUService.java',['../RSUService_8java.html',1,'']]],
-  ['rsuservlet_2ejava_15',['RSUServlet.java',['../RSUServlet_8java.html',1,'']]]
+  ['rsuboundingbox_2ejava_11',['RSUBoundingbox.java',['../RSUBoundingbox_8java.html',1,'']]],
+  ['rsuidentificationtask_2ejava_12',['RSUIdentificationTask.java',['../RSUIdentificationTask_8java.html',1,'']]],
+  ['rsulocation_2ejava_13',['RSULocation.java',['../RSULocation_8java.html',1,'']]],
+  ['rsulocationparser_2ejava_14',['RSULocationParser.java',['../RSULocationParser_8java.html',1,'']]],
+  ['rsuservice_2ejava_15',['RSUService.java',['../RSUService_8java.html',1,'']]],
+  ['rsuservlet_2ejava_16',['RSUServlet.java',['../RSUServlet_8java.html',1,'']]]
 ];

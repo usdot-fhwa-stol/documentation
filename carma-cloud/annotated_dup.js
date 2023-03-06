@@ -96,9 +96,15 @@ var annotated_dup =
         [ "RsmParser", "classcc_1_1rsm_1_1RsmParser.html", "classcc_1_1rsm_1_1RsmParser" ]
       ] ],
       [ "rsu", "namespacecc_1_1rsu.html", [
+        [ "BoundingBox", "classcc_1_1rsu_1_1BoundingBox.html", "classcc_1_1rsu_1_1BoundingBox" ],
+        [ "BoundingBoxUtils", "classcc_1_1rsu_1_1BoundingBoxUtils.html", "classcc_1_1rsu_1_1BoundingBoxUtils" ],
         [ "BSMRequest", "classcc_1_1rsu_1_1BSMRequest.html", "classcc_1_1rsu_1_1BSMRequest" ],
         [ "BSMRequestParser", "classcc_1_1rsu_1_1BSMRequestParser.html", "classcc_1_1rsu_1_1BSMRequestParser" ],
+        [ "GeodesicCartesianConverter", "classcc_1_1rsu_1_1GeodesicCartesianConverter.html", "classcc_1_1rsu_1_1GeodesicCartesianConverter" ],
+        [ "HTTPClientTask", "classcc_1_1rsu_1_1HTTPClientTask.html", "classcc_1_1rsu_1_1HTTPClientTask" ],
+        [ "Point", "classcc_1_1rsu_1_1Point.html", "classcc_1_1rsu_1_1Point" ],
         [ "Position", "classcc_1_1rsu_1_1Position.html", "classcc_1_1rsu_1_1Position" ],
+        [ "RSUBoundingbox", "classcc_1_1rsu_1_1RSUBoundingbox.html", "classcc_1_1rsu_1_1RSUBoundingbox" ],
         [ "RSUIdentificationTask", "classcc_1_1rsu_1_1RSUIdentificationTask.html", "classcc_1_1rsu_1_1RSUIdentificationTask" ],
         [ "RSULocation", "classcc_1_1rsu_1_1RSULocation.html", "classcc_1_1rsu_1_1RSULocation" ],
         [ "RSULocationParser", "classcc_1_1rsu_1_1RSULocationParser.html", "classcc_1_1rsu_1_1RSULocationParser" ],

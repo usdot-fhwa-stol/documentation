@@ -1,6 +1,8 @@
 var hierarchy =
 [
     [ "cc.util.Arrays", "classcc_1_1util_1_1Arrays.html", null ],
+    [ "cc.rsu.BoundingBox", "classcc_1_1rsu_1_1BoundingBox.html", null ],
+    [ "cc.rsu.BoundingBoxUtils", "classcc_1_1rsu_1_1BoundingBoxUtils.html", null ],
     [ "cc.rsu.BSMRequest", "classcc_1_1rsu_1_1BSMRequest.html", null ],
     [ "com.google.protobuf.GeneratedMessageLite.Builder", "classcom_1_1google_1_1protobuf_1_1GeneratedMessageLite_1_1Builder.html", [
       [ "cc.vector_tile.VectorTile.Tile.Feature.Builder", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html", null ]
@@ -85,6 +87,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "cc.util.Geo", "classcc_1_1util_1_1Geo.html", null ],
+    [ "cc.rsu.GeodesicCartesianConverter", "classcc_1_1rsu_1_1GeodesicCartesianConverter.html", null ],
     [ "cc.util.Gpc", "classcc_1_1util_1_1Gpc.html", null ],
     [ "cc.util.Arrays.GroupIterator", "classcc_1_1util_1_1Arrays_1_1GroupIterator.html", [
       [ "cc.util.Arrays.DoubleGroupIterator", "classcc_1_1util_1_1Arrays_1_1DoubleGroupIterator.html", null ],
@@ -104,6 +107,7 @@ var hierarchy =
         [ "cc.vector_tile.VectorTile.Tile.Feature.Builder", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature_1_1Builder.html", null ]
       ] ]
     ] ],
+    [ "cc.rsu.Point", "classcc_1_1rsu_1_1Point.html", null ],
     [ "cc.rsu.Position", "classcc_1_1rsu_1_1Position.html", null ],
     [ "cc.ctrl.proc.ProcCtrl", "classcc_1_1ctrl_1_1proc_1_1ProcCtrl.html", [
       [ "cc.ctrl.proc.ProcClosed", "classcc_1_1ctrl_1_1proc_1_1ProcClosed.html", null ],
@@ -128,6 +132,7 @@ var hierarchy =
     [ "ProjCtx", "structProjCtx.html", null ],
     [ "cc.ctrl.RenderCtrl", "classcc_1_1ctrl_1_1RenderCtrl.html", null ],
     [ "cc.geosrv.xodr.geo.RoadLink", "classcc_1_1geosrv_1_1xodr_1_1geo_1_1RoadLink.html", null ],
+    [ "cc.rsu.RSUBoundingbox", "classcc_1_1rsu_1_1RSUBoundingbox.html", null ],
     [ "cc.rsu.RSULocation", "classcc_1_1rsu_1_1RSULocation.html", null ],
     [ "cc.rsu.RSUService", "classcc_1_1rsu_1_1RSUService.html", null ],
     [ "Runnable", "classRunnable.html", [
@@ -169,6 +174,7 @@ var hierarchy =
       [ "cc.ws.TcmReqServlet.TileIds", "classcc_1_1ws_1_1TcmReqServlet_1_1TileIds.html", null ]
     ] ],
     [ "Callable", null, [
+      [ "cc.rsu.HTTPClientTask", "classcc_1_1rsu_1_1HTTPClientTask.html", null ],
       [ "cc.rsu.RSUIdentificationTask", "classcc_1_1rsu_1_1RSUIdentificationTask.html", null ]
     ] ],
     [ "Comparator", null, [

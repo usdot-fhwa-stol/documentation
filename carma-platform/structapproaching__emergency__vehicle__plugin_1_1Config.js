@@ -1,6 +1,7 @@
 var structapproaching__emergency__vehicle__plugin_1_1Config =
 [
     [ "operator<<", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a7809fad27c013c8d8314e46f22f62ca7", null ],
+    [ "approaching_erv_status_publication_frequency", "structapproaching__emergency__vehicle__plugin_1_1Config.html#abf16d22f1b3443854a970a490e2cc97d", null ],
     [ "approaching_threshold", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a78537e382e029464ea6fa1d1e9053cd5", null ],
     [ "bsm_processing_frequency", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a2e6f2566571a01c095800f712e8ee183", null ],
     [ "buffer_distance_before_stopping", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a725f395f09130e206956a7deb30f6644", null ],
@@ -13,6 +14,7 @@ var structapproaching__emergency__vehicle__plugin_1_1Config =
     [ "minimal_plan_duration", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a82d53d570af61ab41e04d4a27243102e", null ],
     [ "minimum_reduced_speed_limit", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a7d48d943b50100d1c3e2099c36070da9", null ],
     [ "passing_threshold", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a3f55d992021d18a02478cbc07ef0bb25", null ],
+    [ "reduced_speed_buffer", "structapproaching__emergency__vehicle__plugin_1_1Config.html#ad8731d21c88e346dd0d379680afdde72", null ],
     [ "route_end_point_buffer", "structapproaching__emergency__vehicle__plugin_1_1Config.html#ae1af2f64a5f86e70ea737bb9b0370cdd", null ],
     [ "speed_limit_reduction_during_passing", "structapproaching__emergency__vehicle__plugin_1_1Config.html#acd12c1b7c7c6546c81679ace095f0c7c", null ],
     [ "stop_and_wait_plugin", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a859e48c953178140090bbf4d89744f86", null ],

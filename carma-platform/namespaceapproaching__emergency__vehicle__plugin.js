@@ -26,5 +26,6 @@ var namespaceapproaching__emergency__vehicle__plugin =
       [ "SLOWING_DOWN_FOR_ERV", "namespaceapproaching__emergency__vehicle__plugin.html#aeb182d0e6c9d53e276e1b9935aff0630abe5a505910aae73e4a99392e4b36e99a", null ]
     ] ],
     [ "operator<<", "namespaceapproaching__emergency__vehicle__plugin.html#aa1f0528bd901591593adb2c34b007b57", null ],
-    [ "operator<<", "namespaceapproaching__emergency__vehicle__plugin.html#aa31226cb1566974b18d04bbc9ec559d2", null ]
+    [ "operator<<", "namespaceapproaching__emergency__vehicle__plugin.html#aa31226cb1566974b18d04bbc9ec559d2", null ],
+    [ "METERS_PER_SEC_TO_MILES_PER_HOUR", "namespaceapproaching__emergency__vehicle__plugin.html#a2dbb3f37c243c291470089b3d68d82e4", null ]
 ];

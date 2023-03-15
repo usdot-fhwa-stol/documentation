@@ -426,65 +426,64 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  339</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;twist_gate&#39;</span>, env_log_levels) }</div>
 <div class="line"><span class="lineno">  340</span>                ],</div>
 <div class="line"><span class="lineno">  341</span>                remappings = [</div>
-<div class="line"><span class="lineno">  342</span>                    (<span class="stringliteral">&quot;/vehicle_cmd&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/vehicle_cmd&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  342</span>                    (<span class="stringliteral">&quot;vehicle_cmd&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/vehicle_cmd&quot;</span> ] ),</div>
 <div class="line"><span class="lineno">  343</span>                    (<span class="stringliteral">&quot;/lamp_cmd&quot;</span>, [<span class="stringliteral">&quot;lamp_cmd&quot;</span> ] ),</div>
 <div class="line"><span class="lineno">  344</span>                    (<span class="stringliteral">&quot;/twist_cmd&quot;</span>, [<span class="stringliteral">&quot;twist_cmd&quot;</span> ] ),</div>
 <div class="line"><span class="lineno">  345</span>                    (<span class="stringliteral">&quot;/decision_maker/state&quot;</span>, [<span class="stringliteral">&quot;decision_maker/state&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  346</span>                    (<span class="stringliteral">&quot;/ctrl_mode&quot;</span>, [<span class="stringliteral">&quot;ctrl_mode&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  347</span>                    (<span class="stringliteral">&quot;/ctrl_cmd&quot;</span>,   [<span class="stringliteral">&quot;ctrl_cmd&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  348</span>                ],</div>
-<div class="line"><span class="lineno">  349</span>                parameters = [</div>
-<div class="line"><span class="lineno">  350</span>                    {<span class="stringliteral">&#39;loop_rate&#39;</span>:30.0},</div>
-<div class="line"><span class="lineno">  351</span>                    {<span class="stringliteral">&#39;use_decision_maker&#39;</span>:<span class="keyword">False</span>}</div>
-<div class="line"><span class="lineno">  352</span>                ]</div>
-<div class="line"><span class="lineno">  353</span>            )</div>
-<div class="line"><span class="lineno">  354</span>        ]</div>
-<div class="line"><span class="lineno">  355</span>    )</div>
-<div class="line"><span class="lineno">  356</span> </div>
-<div class="line"><span class="lineno">  357</span>    <span class="comment"># Launch plugins</span></div>
-<div class="line"><span class="lineno">  358</span>    plugins_group = GroupAction(</div>
-<div class="line"><span class="lineno">  359</span>        actions=[</div>
-<div class="line"><span class="lineno">  360</span>            PushRosNamespace(<span class="stringliteral">&quot;plugins&quot;</span>),</div>
-<div class="line"><span class="lineno">  361</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  362</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/plugins.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  363</span>                launch_arguments={</div>
-<div class="line"><span class="lineno">  364</span>                    <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder,</div>
-<div class="line"><span class="lineno">  365</span>                    <span class="stringliteral">&#39;vehicle_calibration_dir&#39;</span> : vehicle_calibration_dir,</div>
-<div class="line"><span class="lineno">  366</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file, </div>
-<div class="line"><span class="lineno">  367</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
-<div class="line"><span class="lineno">  368</span>                    <span class="stringliteral">&#39;enable_guidance_plugin_validator&#39;</span> : enable_guidance_plugin_validator,</div>
-<div class="line"><span class="lineno">  369</span>                    <span class="stringliteral">&#39;strategic_plugins_to_validate&#39;</span> : strategic_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  370</span>                    <span class="stringliteral">&#39;tactical_plugins_to_validate&#39;</span> : tactical_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  371</span>                    <span class="stringliteral">&#39;control_plugins_to_validate&#39;</span> : control_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  372</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
-<div class="line"><span class="lineno">  373</span>                }.items()</div>
-<div class="line"><span class="lineno">  374</span>            ),</div>
-<div class="line"><span class="lineno">  375</span>        ]</div>
-<div class="line"><span class="lineno">  376</span>    )</div>
-<div class="line"><span class="lineno">  377</span>      </div>
-<div class="line"><span class="lineno">  378</span>    <span class="comment"># subsystem_controller which orchestrates the lifecycle of this subsystem&#39;s components</span></div>
-<div class="line"><span class="lineno">  379</span>    subsystem_controller = Node(</div>
-<div class="line"><span class="lineno">  380</span>        package=<span class="stringliteral">&#39;subsystem_controllers&#39;</span>,</div>
-<div class="line"><span class="lineno">  381</span>        name=<span class="stringliteral">&#39;guidance_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  382</span>        executable=<span class="stringliteral">&#39;guidance_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  383</span>        parameters=[ subsystem_controller_default_param_file, subsystem_controller_param_file ],</div>
-<div class="line"><span class="lineno">  384</span>        on_exit= Shutdown(), <span class="comment"># Mark the subsystem controller as required</span></div>
-<div class="line"><span class="lineno">  385</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;subsystem_controllers&#39;</span>, env_log_levels)]</div>
-<div class="line"><span class="lineno">  386</span>    )</div>
-<div class="line"><span class="lineno">  387</span> </div>
-<div class="line"><span class="lineno">  388</span>    <span class="keywordflow">return</span> LaunchDescription([  </div>
-<div class="line"><span class="lineno">  389</span>        declare_vehicle_config_param_file_arg,</div>
-<div class="line"><span class="lineno">  390</span>        declare_subsystem_controller_param_file_arg,  </div>
-<div class="line"><span class="lineno">  391</span>        carma_trajectory_executor_and_route_container,</div>
-<div class="line"><span class="lineno">  392</span>        carma_guidance_visualizer_container,    </div>
-<div class="line"><span class="lineno">  393</span>        carma_guidance_worker_container,</div>
-<div class="line"><span class="lineno">  394</span>        carma_plan_delegator_container,</div>
-<div class="line"><span class="lineno">  395</span>        carma_arbitrator_container,</div>
-<div class="line"><span class="lineno">  396</span>        carma_port_drayage_plugin_container,</div>
-<div class="line"><span class="lineno">  397</span>        twist_filter_container,</div>
-<div class="line"><span class="lineno">  398</span>        plugins_group,</div>
-<div class="line"><span class="lineno">  399</span>        subsystem_controller</div>
-<div class="line"><span class="lineno">  400</span>    ]) </div>
+<div class="line"><span class="lineno">  346</span>                    (<span class="stringliteral">&quot;/ctrl_cmd&quot;</span>,   [<span class="stringliteral">&quot;ctrl_cmd&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  347</span>                ],</div>
+<div class="line"><span class="lineno">  348</span>                parameters = [</div>
+<div class="line"><span class="lineno">  349</span>                    {<span class="stringliteral">&#39;loop_rate&#39;</span>:30.0},</div>
+<div class="line"><span class="lineno">  350</span>                    {<span class="stringliteral">&#39;use_decision_maker&#39;</span>:<span class="keyword">False</span>}</div>
+<div class="line"><span class="lineno">  351</span>                ]</div>
+<div class="line"><span class="lineno">  352</span>            )</div>
+<div class="line"><span class="lineno">  353</span>        ]</div>
+<div class="line"><span class="lineno">  354</span>    )</div>
+<div class="line"><span class="lineno">  355</span> </div>
+<div class="line"><span class="lineno">  356</span>    <span class="comment"># Launch plugins</span></div>
+<div class="line"><span class="lineno">  357</span>    plugins_group = GroupAction(</div>
+<div class="line"><span class="lineno">  358</span>        actions=[</div>
+<div class="line"><span class="lineno">  359</span>            PushRosNamespace(<span class="stringliteral">&quot;plugins&quot;</span>),</div>
+<div class="line"><span class="lineno">  360</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  361</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/plugins.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  362</span>                launch_arguments={</div>
+<div class="line"><span class="lineno">  363</span>                    <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder,</div>
+<div class="line"><span class="lineno">  364</span>                    <span class="stringliteral">&#39;vehicle_calibration_dir&#39;</span> : vehicle_calibration_dir,</div>
+<div class="line"><span class="lineno">  365</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file, </div>
+<div class="line"><span class="lineno">  366</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
+<div class="line"><span class="lineno">  367</span>                    <span class="stringliteral">&#39;enable_guidance_plugin_validator&#39;</span> : enable_guidance_plugin_validator,</div>
+<div class="line"><span class="lineno">  368</span>                    <span class="stringliteral">&#39;strategic_plugins_to_validate&#39;</span> : strategic_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  369</span>                    <span class="stringliteral">&#39;tactical_plugins_to_validate&#39;</span> : tactical_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  370</span>                    <span class="stringliteral">&#39;control_plugins_to_validate&#39;</span> : control_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  371</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
+<div class="line"><span class="lineno">  372</span>                }.items()</div>
+<div class="line"><span class="lineno">  373</span>            ),</div>
+<div class="line"><span class="lineno">  374</span>        ]</div>
+<div class="line"><span class="lineno">  375</span>    )</div>
+<div class="line"><span class="lineno">  376</span>      </div>
+<div class="line"><span class="lineno">  377</span>    <span class="comment"># subsystem_controller which orchestrates the lifecycle of this subsystem&#39;s components</span></div>
+<div class="line"><span class="lineno">  378</span>    subsystem_controller = Node(</div>
+<div class="line"><span class="lineno">  379</span>        package=<span class="stringliteral">&#39;subsystem_controllers&#39;</span>,</div>
+<div class="line"><span class="lineno">  380</span>        name=<span class="stringliteral">&#39;guidance_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  381</span>        executable=<span class="stringliteral">&#39;guidance_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  382</span>        parameters=[ subsystem_controller_default_param_file, subsystem_controller_param_file ],</div>
+<div class="line"><span class="lineno">  383</span>        on_exit= Shutdown(), <span class="comment"># Mark the subsystem controller as required</span></div>
+<div class="line"><span class="lineno">  384</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;subsystem_controllers&#39;</span>, env_log_levels)]</div>
+<div class="line"><span class="lineno">  385</span>    )</div>
+<div class="line"><span class="lineno">  386</span> </div>
+<div class="line"><span class="lineno">  387</span>    <span class="keywordflow">return</span> LaunchDescription([  </div>
+<div class="line"><span class="lineno">  388</span>        declare_vehicle_config_param_file_arg,</div>
+<div class="line"><span class="lineno">  389</span>        declare_subsystem_controller_param_file_arg,  </div>
+<div class="line"><span class="lineno">  390</span>        carma_trajectory_executor_and_route_container,</div>
+<div class="line"><span class="lineno">  391</span>        carma_guidance_visualizer_container,    </div>
+<div class="line"><span class="lineno">  392</span>        carma_guidance_worker_container,</div>
+<div class="line"><span class="lineno">  393</span>        carma_plan_delegator_container,</div>
+<div class="line"><span class="lineno">  394</span>        carma_arbitrator_container,</div>
+<div class="line"><span class="lineno">  395</span>        carma_port_drayage_plugin_container,</div>
+<div class="line"><span class="lineno">  396</span>        twist_filter_container,</div>
+<div class="line"><span class="lineno">  397</span>        plugins_group,</div>
+<div class="line"><span class="lineno">  398</span>        subsystem_controller</div>
+<div class="line"><span class="lineno">  399</span>    ]) </div>
 <div class="ttc" id="anamespaceguidance_html_aaf77543a8a569d9a547f1e1d79702d54"><div class="ttname"><a href="namespaceguidance.html#aaf77543a8a569d9a547f1e1d79702d54">guidance.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="guidance_8launch_8py_source.html#l00039">guidance.launch.py:39</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -495,7 +494,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceguidance.html">guidance</a></li>
-    <li class="footer">Generated on Tue Mar 7 2023 14:58:03 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Mar 15 2023 00:32:03 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

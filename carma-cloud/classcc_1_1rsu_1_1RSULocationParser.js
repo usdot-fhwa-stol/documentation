@@ -5,7 +5,7 @@ var classcc_1_1rsu_1_1RSULocationParser =
     [ "endElement", "classcc_1_1rsu_1_1RSULocationParser.html#a86a85115c10e64f1bbe97e331c3ffbd3", null ],
     [ "parseRequest", "classcc_1_1rsu_1_1RSULocationParser.html#ac0c63701d6e8745714ab2a182a6128e2", null ],
     [ "startElement", "classcc_1_1rsu_1_1RSULocationParser.html#a03ad1023df67ba8e0585eba368ce48e4", null ],
+    [ "HUNDREDTH_MICRO_DEG_PER_DEG", "classcc_1_1rsu_1_1RSULocationParser.html#a5edd40be752f96f49b4b0327e30c0665", null ],
     [ "m_sbuf", "classcc_1_1rsu_1_1RSULocationParser.html#a66a5694d444964de611d128fc1e97498", null ],
-    [ "rsu_loc", "classcc_1_1rsu_1_1RSULocationParser.html#a9df604db3fc6d09b1d18f2e65e6c108b", null ],
-    [ "TENTH_MICRO_DEG_PER_DEG", "classcc_1_1rsu_1_1RSULocationParser.html#adbbb3ef0978ca2763afe82ad047b622b", null ]
+    [ "rsu_loc", "classcc_1_1rsu_1_1RSULocationParser.html#a9df604db3fc6d09b1d18f2e65e6c108b", null ]
 ];

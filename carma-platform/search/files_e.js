@@ -1,7 +1,7 @@
 var searchData=
 [
   ['pid_5fcontroller_2ecpp_0',['pid_controller.cpp',['../ihp_2src_2pid__controller_8cpp.html',1,'(Global Namespace)'],['../src_2pid__controller_8cpp.html',1,'(Global Namespace)']]],
-  ['pid_5fcontroller_2eh_1',['pid_controller.h',['../ihp_2include_2pid__controller_8h.html',1,'(Global Namespace)'],['../include_2pid__controller_8h.html',1,'(Global Namespace)']]],
+  ['pid_5fcontroller_2eh_1',['pid_controller.h',['../include_2pid__controller_8h.html',1,'(Global Namespace)'],['../ihp_2include_2pid__controller_8h.html',1,'(Global Namespace)']]],
   ['plan_5fdelegator_2ecpp_2',['plan_delegator.cpp',['../plan__delegator_8cpp.html',1,'']]],
   ['plan_5fdelegator_2ehpp_3',['plan_delegator.hpp',['../plan__delegator_8hpp.html',1,'']]],
   ['plan_5fdelegator_2elaunch_2epy_4',['plan_delegator.launch.py',['../plan__delegator_8launch_8py.html',1,'']]],

@@ -496,30 +496,30 @@ $(document).ready(function(){initNavTree('ros2_2src_2basic__autonomy_8cpp_source
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>            downsampled_target_centerline.reserve(400);</div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>            downsampled_target_centerline = carma_ros2_utils::containers::downsample_vector(target_lane_centerline, downsample_ratio);</div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>            <span class="comment">//If points are not the same size - resample to ensure same size along both centerlines</span></div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>            <span class="keywordflow">if</span>(downsampled_starting_centerline.size() != downsampled_target_centerline.size())</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>            {</div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>                <span class="keyword">auto</span> centerlines = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a19cf5cf882789e1e9ed3e92d0105a8de">resample_linestring_pair_to_same_size</a>(downsampled_starting_centerline, downsampled_target_centerline);</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>                downsampled_starting_centerline = centerlines[0];</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>                downsampled_target_centerline = centerlines[1];</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>            <span class="comment">// Constrain centerlines to starting and ending downtrack</span></div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>            <span class="keywordtype">int</span> start_index_starting_centerline = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a">waypoint_generation::get_nearest_index_by_downtrack</a>(downsampled_starting_centerline, wm, starting_downtrack);</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>            carma_planning_msgs::msg::VehicleState start_state;</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>            start_state.x_pos_global = downsampled_starting_centerline[start_index_starting_centerline].x();</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>            start_state.y_pos_global = downsampled_starting_centerline[start_index_starting_centerline].y();</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>            <span class="keywordtype">int</span> start_index_target_centerline = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a4a4e269a309709b2997e42430203d022">waypoint_generation::get_nearest_point_index</a>(downsampled_target_centerline, start_state);</div>
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>            }</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>            <span class="comment">//Constrain to starting and ending downtrack</span></div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>            <span class="keywordtype">int</span> start_index_starting_centerline = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a">waypoint_generation::get_nearest_index_by_downtrack</a>(downsampled_starting_centerline, wm, starting_downtrack);</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>            carma_planning_msgs::msg::VehicleState start_state;</div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>            start_state.x_pos_global = downsampled_starting_centerline[start_index_starting_centerline].x();</div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>            start_state.y_pos_global = downsampled_starting_centerline[start_index_starting_centerline].y();</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>            <span class="keywordtype">int</span> start_index_target_centerline = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a4a4e269a309709b2997e42430203d022">waypoint_generation::get_nearest_point_index</a>(downsampled_target_centerline, start_state);</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>            <span class="keywordtype">int</span> end_index_target_centerline = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a">waypoint_generation::get_nearest_index_by_downtrack</a>(downsampled_target_centerline, wm, ending_downtrack);</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>            carma_planning_msgs::msg::VehicleState end_state;</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>            end_state.x_pos_global = downsampled_target_centerline[end_index_target_centerline].x();</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>            end_state.y_pos_global = downsampled_target_centerline[end_index_target_centerline].y();</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>            <span class="keywordtype">int</span> end_index_starting_centerline = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a4a4e269a309709b2997e42430203d022">waypoint_generation::get_nearest_point_index</a>(downsampled_starting_centerline, end_state);</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>            std::vector&lt;lanelet::BasicPoint2d&gt; constrained_start_centerline(downsampled_starting_centerline.begin() + start_index_starting_centerline, downsampled_starting_centerline.begin() + end_index_starting_centerline);</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>            std::vector&lt;lanelet::BasicPoint2d&gt; constrained_target_centerline(downsampled_target_centerline.begin() + start_index_target_centerline, downsampled_target_centerline.begin() + end_index_target_centerline);</div>
 <div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span> </div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>            <span class="keywordtype">int</span> end_index_target_centerline = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a">waypoint_generation::get_nearest_index_by_downtrack</a>(downsampled_target_centerline, wm, ending_downtrack);</div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>            carma_planning_msgs::msg::VehicleState end_state;</div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>            end_state.x_pos_global = downsampled_target_centerline[end_index_target_centerline].x();</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>            end_state.y_pos_global = downsampled_target_centerline[end_index_target_centerline].y();</div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>            <span class="keywordtype">int</span> end_index_starting_centerline = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a4a4e269a309709b2997e42430203d022">waypoint_generation::get_nearest_point_index</a>(downsampled_starting_centerline, end_state);</div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>            std::vector&lt;lanelet::BasicPoint2d&gt; constrained_start_centerline(downsampled_starting_centerline.begin() + start_index_starting_centerline, downsampled_starting_centerline.begin() + end_index_starting_centerline);</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>            std::vector&lt;lanelet::BasicPoint2d&gt; constrained_target_centerline(downsampled_target_centerline.begin() + start_index_target_centerline, downsampled_target_centerline.begin() + end_index_target_centerline);</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>            <span class="comment">// If constrained centerlines are not the same size - resample to ensure same size along both centerlines</span></div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>            <span class="keywordflow">if</span>(constrained_start_centerline.size() != constrained_target_centerline.size())</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>            {</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>                <span class="keyword">auto</span> centerlines = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a19cf5cf882789e1e9ed3e92d0105a8de">resample_linestring_pair_to_same_size</a>(constrained_start_centerline, constrained_target_centerline);</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>                constrained_start_centerline = centerlines[0];</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>                constrained_target_centerline = centerlines[1];</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span> </div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>            }</div>
 <div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span> </div>
 <div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>            <span class="comment">//Create Trajectory geometry</span></div>
 <div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>            <span class="keywordtype">double</span> delta_step = 1.0 / constrained_start_centerline.size();</div>
@@ -1439,7 +1439,7 @@ $(document).ready(function(){initNavTree('ros2_2src_2basic__autonomy_8cpp_source
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_81e4214e732b63254210354ec5727868.html">basic_autonomy_ros2</a></li><li class="navelem"><a class="el" href="dir_14ff0602e99a1f18c579a833c92c3748.html">src</a></li><li class="navelem"><a class="el" href="ros2_2src_2basic__autonomy_8cpp.html">basic_autonomy.cpp</a></li>
-    <li class="footer">Generated on Wed Mar 15 2023 00:31:56 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Mar 23 2023 20:26:18 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

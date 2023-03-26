@@ -368,6 +368,10 @@ var annotated_dup =
       [ "SCIStrategicPlugin", "classsci__strategic__plugin_1_1SCIStrategicPlugin.html", "classsci__strategic__plugin_1_1SCIStrategicPlugin" ],
       [ "SCIStrategicPluginConfig", "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html", "structsci__strategic__plugin_1_1SCIStrategicPluginConfig" ]
     ] ],
+    [ "stop_and_dwell_strategic_plugin", "namespacestop__and__dwell__strategic__plugin.html", [
+      [ "StopAndDwellStrategicPlugin", "classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html", "classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin" ],
+      [ "StopAndDwellStrategicPluginConfig", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig" ]
+    ] ],
     [ "stop_and_wait_plugin", "namespacestop__and__wait__plugin.html", [
       [ "PointSpeedPair", "structstop__and__wait__plugin_1_1PointSpeedPair.html", "structstop__and__wait__plugin_1_1PointSpeedPair" ],
       [ "StopandWait", "classstop__and__wait__plugin_1_1StopandWait.html", "classstop__and__wait__plugin_1_1StopandWait" ],

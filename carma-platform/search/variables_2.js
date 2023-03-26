@@ -52,5 +52,6 @@ var searchData=
   ['bufferlast_5f_49',['bufferLast_',['../classFileReadStream.html#a5affa127604e77646d7acc94432c7e59',1,'FileReadStream']]],
   ['buffersize_5f_50',['bufferSize_',['../classFileReadStream.html#af65abe97e76c94c7f0f6419f94e9105f',1,'FileReadStream']]],
   ['bumper_5fpose_5ftimer_5f_51',['bumper_pose_timer_',['../classarbitrator_1_1ArbitratorNode.html#a11a4d64af87ff4256d06daa062435da2',1,'arbitrator::ArbitratorNode']]],
-  ['bumper_5ftransform_5f_52',['bumper_transform_',['../classarbitrator_1_1Arbitrator.html#a1a498dd6b9ca42f2b1ebe02fdf2d9522',1,'arbitrator::Arbitrator']]]
+  ['bumper_5ftransform_5f_52',['bumper_transform_',['../classarbitrator_1_1Arbitrator.html#a1a498dd6b9ca42f2b1ebe02fdf2d9522',1,'arbitrator::Arbitrator']]],
+  ['bus_5fline_5fexit_5fzone_5flength_53',['bus_line_exit_zone_length',['../structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a8e4f4801a5cca9adc3e4c7f18568f16a',1,'stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig']]]
 ];

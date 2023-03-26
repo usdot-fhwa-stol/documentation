@@ -41,7 +41,8 @@ var hierarchy =
           [ "approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin.html", null ],
           [ "platoon_strategic_ihp::Node", "classplatoon__strategic__ihp_1_1Node.html", null ],
           [ "route_following_plugin::RouteFollowingPlugin", "classroute__following__plugin_1_1RouteFollowingPlugin.html", null ],
-          [ "sci_strategic_plugin::SCIStrategicPlugin", "classsci__strategic__plugin_1_1SCIStrategicPlugin.html", null ]
+          [ "sci_strategic_plugin::SCIStrategicPlugin", "classsci__strategic__plugin_1_1SCIStrategicPlugin.html", null ],
+          [ "stop_and_dwell_strategic_plugin::StopAndDwellStrategicPlugin", "classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html", null ]
         ] ],
         [ "carma_guidance_plugins::TacticalPlugin", "classcarma__guidance__plugins_1_1TacticalPlugin.html", [
           [ "SUB::Node", "classSUB_1_1Node.html", null ],
@@ -365,6 +366,7 @@ var hierarchy =
     [ "GenericReader< SourceEncoding, TargetEncoding, StackAllocator >::StackStream< CharType >", "classGenericReader_1_1StackStream.html", null ],
     [ "GenericReader< SourceEncoding, TargetEncoding, StackAllocator >::StackStream< char >", "classGenericReader_1_1StackStream.html", null ],
     [ "internal::GenericRegex< Encoding, Allocator >::State", "structinternal_1_1GenericRegex_1_1State.html", null ],
+    [ "stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html", null ],
     [ "stop_and_wait_plugin::StopandWait", "classstop__and__wait__plugin_1_1StopandWait.html", null ],
     [ "StopandWaitConfig", "structStopandWaitConfig.html", null ],
     [ "stop_controlled_intersection_tactical_plugin::StopControlledIntersectionTacticalPluginConfig", "structstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPluginConfig.html", null ],
@@ -429,6 +431,7 @@ var hierarchy =
     [ "arbitrator::VehicleState", "structarbitrator_1_1VehicleState.html", null ],
     [ "lci_strategic_plugin::LCIStrategicPlugin::VehicleState", "structlci__strategic__plugin_1_1LCIStrategicPlugin_1_1VehicleState.html", null ],
     [ "sci_strategic_plugin::SCIStrategicPlugin::VehicleState", "structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html", null ],
+    [ "stop_and_dwell_strategic_plugin::StopAndDwellStrategicPlugin::VehicleState", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_1_1VehicleState.html", null ],
     [ "NS3Adapter::WaveConfigStruct", "structNS3Adapter_1_1WaveConfigStruct.html", null ],
     [ "carma_wm_ctrl::WMBroadcaster", "classcarma__wm__ctrl_1_1WMBroadcaster.html", null ],
     [ "carma_wm::WMListener", "classcarma__wm_1_1WMListener.html", null ],

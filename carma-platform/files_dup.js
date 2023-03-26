@@ -50,6 +50,7 @@ var files_dup =
     [ "route", "dir_4005b166026311c360bb4fe9f8933493.html", "dir_4005b166026311c360bb4fe9f8933493" ],
     [ "route_following_plugin", "dir_95cd68ac93928c44fbd424a91e6daa3d.html", "dir_95cd68ac93928c44fbd424a91e6daa3d" ],
     [ "sci_strategic_plugin", "dir_ec49578c0173fe2161efda189246c06c.html", "dir_ec49578c0173fe2161efda189246c06c" ],
+    [ "stop_and_dwell_strategic_plugin", "dir_8c38500dee8f58a7d1393d5248eee26d.html", "dir_8c38500dee8f58a7d1393d5248eee26d" ],
     [ "stop_and_wait_plugin", "dir_c744803b381d4198f3a03790afe86525.html", "dir_c744803b381d4198f3a03790afe86525" ],
     [ "stop_controlled_intersection_tactical_plugin", "dir_805e93226a5b7a5aefa4cc470cc1e7ae.html", "dir_805e93226a5b7a5aefa4cc470cc1e7ae" ],
     [ "subsystem_controllers", "dir_604f13b711db50b6c389bf80ae8bec2f.html", "dir_604f13b711db50b6c389bf80ae8bec2f" ],

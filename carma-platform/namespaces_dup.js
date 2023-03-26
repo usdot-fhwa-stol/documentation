@@ -250,6 +250,7 @@ var namespaces_dup =
       [ "vehicles_url", "namespacespeedharm__auto__configure.html#a51ef3bb0779c361ebdb3f94e6614005a", null ],
       [ "version_id", "namespacespeedharm__auto__configure.html#a1159b6aa7098b9103843a3f8a69f2712", null ]
     ] ],
+    [ "stop_and_dwell_strategic_plugin", "namespacestop__and__dwell__strategic__plugin.html", "namespacestop__and__dwell__strategic__plugin" ],
     [ "stop_and_wait_plugin", "namespacestop__and__wait__plugin.html", "namespacestop__and__wait__plugin" ],
     [ "stop_and_wait_plugin_launch", "namespacestop__and__wait__plugin__launch.html", [
       [ "generate_launch_description", "namespacestop__and__wait__plugin__launch.html#a71b7537661a2bcfa3c3a5b99addf4f1d", null ]

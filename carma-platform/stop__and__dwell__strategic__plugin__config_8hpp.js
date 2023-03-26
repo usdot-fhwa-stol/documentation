@@ -1,0 +1,4 @@
+var stop__and__dwell__strategic__plugin__config_8hpp =
+[
+    [ "stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig" ]
+];

@@ -39,6 +39,7 @@ var hierarchy =
         [ "carma_guidance_plugins::StrategicPlugin", "classcarma__guidance__plugins_1_1StrategicPlugin.html", [
           [ "SUB::Node", "classSUB_1_1Node.html", null ],
           [ "approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin.html", null ],
+          [ "lci_strategic_plugin::LCIStrategicPlugin", "classlci__strategic__plugin_1_1LCIStrategicPlugin.html", null ],
           [ "platoon_strategic_ihp::Node", "classplatoon__strategic__ihp_1_1Node.html", null ],
           [ "route_following_plugin::RouteFollowingPlugin", "classroute__following__plugin_1_1RouteFollowingPlugin.html", null ],
           [ "sci_strategic_plugin::SCIStrategicPlugin", "classsci__strategic__plugin_1_1SCIStrategicPlugin.html", null ],
@@ -233,7 +234,6 @@ var hierarchy =
     [ "cooperative_lanechange::LaneChangeManeuverOriginalValues", "structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html", null ],
     [ "carma_wm::LaneletDowntrackPair", "classcarma__wm_1_1LaneletDowntrackPair.html", null ],
     [ "port_drayage_plugin::LatLonCoordinate", "structport__drayage__plugin_1_1LatLonCoordinate.html", null ],
-    [ "lci_strategic_plugin::LCIStrategicPlugin", "classlci__strategic__plugin_1_1LCIStrategicPlugin.html", null ],
     [ "lci_strategic_plugin::LCIStrategicPluginConfig", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html", null ],
     [ "lci_strategic_plugin::LCIStrategicStateTransitionTable", "classlci__strategic__plugin_1_1LCIStrategicStateTransitionTable.html", null ],
     [ "Writer< OutputStream, SourceEncoding, TargetEncoding, StackAllocator, writeFlags >::Level", "structWriter_1_1Level.html", null ],

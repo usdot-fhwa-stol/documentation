@@ -1,7 +1,7 @@
 var structlci__strategic__plugin_1_1LCIStrategicPluginConfig =
 [
+    [ "operator<<", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#aacd1a44a684581def06861b55c2d12ba", null ],
     [ "algo_minimum_speed", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a26987cdb2e41209df729d5f5c087bec2", null ],
-    [ "carma_streets_update_interval", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#acee45c04297576c188b19dc782ca6f9d", null ],
     [ "deceleration_fraction", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#aa23372bc397e9fd707e0acd75b9aa941", null ],
     [ "desired_distance_to_stop_buffer", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#ab79bce20a6f3373603ad92b33b1f4232", null ],
     [ "enable_carma_streets_connection", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a055fcdaa6b5f1b2065df726a6687de84", null ],
@@ -14,7 +14,6 @@ var structlci__strategic__plugin_1_1LCIStrategicPluginConfig =
     [ "mobility_rate", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#ab660df5cc3ba479a07f190e00c9ebbea", null ],
     [ "reaction_time", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a4815821904dcefecf744a71e0ca50a9e", null ],
     [ "stop_and_wait_plugin_name", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a35cdfbe518abecdfe0452ccf0ada4224", null ],
-    [ "stop_light_time_buffer", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#ae62ad486e624b9260aac9df9e0774a03", null ],
     [ "stopping_location_buffer", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a3a0e8c26f578b34ca773be49061364a6", null ],
     [ "strategic_plugin_name", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#aa1f3fefe2ee7fc7af0d064ece71bf971", null ],
     [ "trajectory_smoothing_activation_distance", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a1b6855596f36c0929143bb379c9dc937", null ],

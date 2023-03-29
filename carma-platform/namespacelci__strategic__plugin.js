@@ -37,6 +37,7 @@ var namespacelci__strategic__plugin =
       [ "Right", "namespacelci__strategic__plugin.html#a1e0201b2cf65a27f7075fd60ce35e2e9a92b09c7c48c520c3c55e497875da437c", null ],
       [ "Left", "namespacelci__strategic__plugin.html#a1e0201b2cf65a27f7075fd60ce35e2e9a945d5e233cf7d6240f6b783b36a374ff", null ]
     ] ],
+    [ "generate_launch_description", "namespacelci__strategic__plugin.html#aad04e8c64222c6172863fa4d5d3af0f0", null ],
     [ "operator<<", "namespacelci__strategic__plugin.html#a3fc15fb3a695b886bd6f0bb92510b095", null ],
     [ "operator<<", "namespacelci__strategic__plugin.html#ab1592a4c03317796102d8a3f6c98420d", null ]
 ];

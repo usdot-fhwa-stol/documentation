@@ -86,7 +86,7 @@ $(document).ready(function(){initNavTree('md_carma_wm_README.html',''); initResi
   <div class="headertitle"><div class="title"><a class="el" href="namespacecarma__wm.html">carma_wm</a> </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >This package provides the <a class="el" href="namespacecarma__wm.html">carma_wm</a> C++ library which manages and simplifies accessing and querying the road network that the vehicle is operating in. This package makes heavy use of the <a href="https://github.com/fzi-forschungszentrum-informatik/Lanelet2">Lanelet2 C++ Library</a> to represent road geometry and communicate with the rest of the CARMA Platform. A copy of the Lanelet2 License can be found <a class="el" href="md_carma_wm_doc_LANELET2_LICENSE.html">here</a>. <br  />
+<div class="textblock"><p >This package provides the <a class="el" href="namespacecarma__wm.html">carma_wm</a> C++ library which manages and simplifies accessing and querying the road network that the vehicle is operating in. This package makes heavy use of the <a href="https://github.com/fzi-forschungszentrum-informatik/Lanelet2">Lanelet2 C++ Library</a> to represent road geometry and communicate with the rest of the CARMA Platform. A copy of the Lanelet2 License can be found here. <br  />
 </p>
 <h1><a class="anchor" id="autotoc_md19"></a>
 Library Role</h1>
@@ -114,72 +114,86 @@ Initialization</h2>
 <h3><a class="anchor" id="autotoc_md24"></a>
 Single Threaded Example Code</h3>
 <div class="fragment"><div class="line"> {c++}</div>
-<div class="line">#include &lt;ros/ros.h&gt;</div>
-<div class="line">#include &lt;carma_wm/WMListener.h&gt;</div>
-<div class="line">#include &lt;carma_wm/WorldModel.h&gt;</div>
+<div class="line">#include &lt;rclcpp/rclcpp.hpp&gt;</div>
+<div class="line">#include &lt;carma_wm/WMListener.hpp&gt;</div>
+<div class="line">#include &lt;carma_wm/WorldModel.hpp&gt;</div>
 <div class="line">int main(int argc, char **argv)</div>
 <div class="line">{</div>
-<div class="line">  ros::init(argc, argv, &quot;map_user&quot;);</div>
+<div class="line">    rclcpp::init(argc, argv, &quot;map_user&quot;);</div>
 <div class="line"> </div>
-<div class="line">  // Create WMListener after initializing ros</div>
-<div class="line">  // It is recommended only one instance be created per node</div>
-<div class="line">  carma_wm::WMListener wml; // Create single threaded listener instance. Equivalent to carma_wm::WMListener wml(false);</div>
+<div class="line">    // Create WMListener after initializing ros</div>
+<div class="line">    // It is recommended only one instance be created per node</div>
 <div class="line"> </div>
-<div class="line">  carma_wm::WorldModelConstPtr wm = wml.getWorldModel(); // Get pointer to WorldModel</div>
+<div class="line">    auto node = std::make_shared&lt;rclcpp::Node&gt;(&quot;base_node&quot;);</div>
 <div class="line"> </div>
-<div class="line">  ros::Rate loop_rate(10);</div>
-<div class="line">  while (ros::ok())</div>
-<div class="line">  {</div>
+<div class="line">    //Extract node interfaces from base node</div>
+<div class="line">    rclcpp::node_interfaces::NodeBaseInterface::SharedPtr node_base = node-&gt;get_node_base_interface(); </div>
+<div class="line">    rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr node_logging = node-&gt;get_node_logging_interface();)</div>
+<div class="line">    rclcpp::node_interfaces::NodeTopicsInterface::SharedPtr node_topics = node-&gt;get_node_topics_interface();</div>
+<div class="line">    rclcpp::node_interfaces::NodeParametersInterface::SharedPtr node_params_ = node-&gt;get_node_parameters_interface();</div>
+<div class="line">    </div>
+<div class="line">    auto wml = std::make_shared&lt;carma_wm::WMListener&gt;(rclcpp::NodeOptions(), node_base, node_logging, node_topics, node_params_); // Create single threaded listener instance. Equivalent to carma_wm::WMListener wm (rclcpp::NodeOptions(), node_base, node_logging, node_topics,false);</div>
+<div class="line"> </div>
+<div class="line">    carma_wm::WorldModelConstPtr wm = wml.getWorldModel(); // Get pointer to WorldModel</div>
+<div class="line"> </div>
 <div class="line"> </div>
 <div class="line">    if (wml.getRoute()) { // Route object provided a shared_ptr so you can use it to check for availability</div>
-<div class="line">      lanelet::Point3d pt;</div>
+<div class="line">        lanelet::Point3d pt;</div>
 <div class="line"> </div>
-<div class="line">      carma_wm::TrackPos tc = wm-&gt;routeTrackPos(pt); // Get the downtrack and crosstrack position of the provided point on the route</div>
+<div class="line">        carma_wm::TrackPos tc = wm-&gt;routeTrackPos(pt); // Get the downtrack and crosstrack position of the provided point on the route</div>
 <div class="line">    }</div>
-<div class="line">    ros::spinOnce();</div>
+<div class="line">    </div>
+<div class="line">    rclcpp::executors::MultiThreadedExecutor executor;</div>
+<div class="line">    executor.add_node(node-&gt;get_node_base_interface());</div>
+<div class="line">    executor.spin();</div>
 <div class="line"> </div>
-<div class="line">    loop_rate.sleep();</div>
-<div class="line">  }</div>
-<div class="line"> </div>
-<div class="line">  return 0;</div>
+<div class="line">    rclcpp::shutdown();</div>
+<div class="line">    return 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md25"></a>
 Multi-Threaded Example Code</h3>
 <div class="fragment"><div class="line"> {c++}</div>
-<div class="line">#include &lt;ros/ros.h&gt;</div>
+<div class="line">#include &lt;rclcpp/rclcpp.hpp&gt;</div>
 <div class="line">#include &lt;atomic&gt;</div>
-<div class="line">#include &lt;carma_wm/WMListener.h&gt;</div>
-<div class="line">#include &lt;carma_wm/WorldModel.h&gt;</div>
+<div class="line">#include &lt;carma_wm/WMListener.hpp&gt;</div>
+<div class="line">#include &lt;carma_wm/WorldModel.hpp&gt;</div>
 <div class="line">int main(int argc, char **argv)</div>
 <div class="line">{</div>
-<div class="line">  ros::init(argc, argv, &quot;map_user&quot;);</div>
+<div class="line">    rclcpp::init(argc, argv, &quot;map_user&quot;);</div>
 <div class="line"> </div>
-<div class="line">  // Create WMListener after initializing ros</div>
-<div class="line">  // It is recommended only one instance be created per node</div>
-<div class="line">  carma_wm::WMListener wml(true); // Create multi-threaded listener instance by passing true constructor parameter</div>
+<div class="line">    auto node = std::make_shared&lt;rclcpp::Node&gt;(&quot;base_node&quot;);</div>
 <div class="line"> </div>
-<div class="line">  carma_wm::WorldModelConstPtr wm = wml.getWorldModel(); // Get pointer to WorldModel</div>
+<div class="line">    //Extract node interfaces from base node</div>
+<div class="line">    rclcpp::node_interfaces::NodeBaseInterface::SharedPtr node_base = node-&gt;get_node_base_interface(); </div>
+<div class="line">    rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr node_logging = node-&gt;get_node_logging_interface();)</div>
+<div class="line">    rclcpp::node_interfaces::NodeTopicsInterface::SharedPtr node_topics = node-&gt;get_node_topics_interface();</div>
+<div class="line">    rclcpp::node_interfaces::NodeParametersInterface::SharedPtr node_params_ = node-&gt;get_node_parameters_interface();</div>
 <div class="line"> </div>
-<div class="line">  std::atomic&lt;bool&gt; routeReady(false);</div>
-<div class="line">  wml.setRouteCallback([&amp;]() { // User can set callback to trigger when a new route or map is received. Works in single threaded case as well</div>
-<div class="line">   routeReady.store(true);</div>
-<div class="line">  });</div>
+<div class="line">    // Create WMListener after initializing ros</div>
+<div class="line">    // It is recommended only one instance be created per node</div>
+<div class="line">    auto wml = std::make_shared&lt;carma_wm::WMListener&gt;(rclcpp::NodeOptions(), node_base, node_logging, node_topics, node_params_, true); // Create multi-threaded listener instance by passing true constructor parameter</div>
 <div class="line"> </div>
-<div class="line">  ros::Rate loop_rate(10);</div>
-<div class="line">  while (ros::ok())</div>
-<div class="line">  {</div>
+<div class="line">    carma_wm::WorldModelConstPtr wm = wml.getWorldModel(); // Get pointer to WorldModel</div>
+<div class="line"> </div>
+<div class="line">    std::atomic&lt;bool&gt; routeReady(false);</div>
+<div class="line">    wml.setRouteCallback([&amp;]() { // User can set callback to trigger when a new route or map is received. Works in single threaded case as well</div>
+<div class="line">        routeReady.store(true);</div>
+<div class="line">    });</div>
+<div class="line"> </div>
 <div class="line"> </div>
 <div class="line">    auto lock = wml.getLock(); // Acquire lock. Now user can safely access map and route data</div>
 <div class="line">    if (routeReady) { </div>
-<div class="line">      lanelet::Point3d pt;</div>
-<div class="line">      carma_wm::TrackPos tc = wm-&gt;routeTrackPos(pt); // Get the downtrack and crosstrack position of the provided point on the route</div>
+<div class="line">        lanelet::Point3d pt;</div>
+<div class="line">        carma_wm::TrackPos tc = wm-&gt;routeTrackPos(pt); // Get the downtrack and crosstrack position of the provided point on the route</div>
 <div class="line">    }</div>
-<div class="line">    ros::spinOnce();</div>
+<div class="line">    </div>
+<div class="line">    rclcpp::executors::MultiThreadedExecutor executor;</div>
+<div class="line">    executor.add_node(node-&gt;get_node_base_interface());</div>
+<div class="line">    executor.spin();</div>
 <div class="line"> </div>
-<div class="line">    loop_rate.sleep();</div>
-<div class="line">  }</div>
-<div class="line"> </div>
-<div class="line">  return 0;</div>
+<div class="line">    rclcpp::shutdown();</div>
+<div class="line">  </div>
+<div class="line">    return 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md26"></a>
 Unit Test Example Pseudo Code</h3>
@@ -275,11 +289,9 @@ Unit Test Example for WMTestLibForGuidance</h3>
 </div><!-- fragment --></li>
 <li>add traffic light into the map <div class="fragment"><div class="line"> {c++}</div>
 <div class="line">using namespace carma_wm::test</div>
-<div class="line"> </div>
 <div class="line">TEST(UserTest, someTest)</div>
 <div class="line">{</div>
 <div class="line">  auto cmw = getGuidanceTestMap(mp);</div>
-<div class="line"> </div>
 <div class="line">  // Light with default signal timers will be located on lanelet 1200 (entry) and exit at 1203.</div>
 <div class="line">  // Notice that multiple entry and exit lanelets can be given.</div>
 <div class="line">  lanelet::Id traffic_light_id = lanelet::utils::getId();</div>
@@ -293,10 +305,8 @@ Unit Test Example for WMTestLibForGuidance</h3>
 <div class="line">    std::make_pair&lt;boost::posix_time::ptime, lanelet::CarmaTrafficSignalState&gt;(lanelet::time::timeFromSec(17.0), lanelet::CarmaTrafficSignalState::STOP_AND_REMAIN), // 15 sec red</div>
 <div class="line">    std::make_pair&lt;boost::posix_time::ptime, lanelet::CarmaTrafficSignalState&gt;(lanelet::time::timeFromSec(32.0), lanelet::CarmaTrafficSignalState::PROTECTED_MOVEMENT_ALLOWED) // 15 sec green</div>
 <div class="line">  }</div>
-<div class="line"> </div>
 <div class="line">  lanelet::Id traffic_light_id = lanelet::utils::getId();</div>
 <div class="line">  carma_wm::test::addTrafficLight(cmw, traffic_light_id, {1200}, { 1203 }, timing_plan);</div>
-<div class="line"> </div>
 <div class="line">}</div>
 </div><!-- fragment --> </li>
 </ul>
@@ -308,7 +318,7 @@ Unit Test Example for WMTestLibForGuidance</h3>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Mar 29 2023 06:07:26 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Apr 4 2023 16:50:21 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

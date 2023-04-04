@@ -5,5 +5,6 @@ var helper__functions_8hpp =
     [ "get_nearest_index_by_downtrack", "helper__functions_8hpp.html#a51d5d768864d9632b6c59acddbb804a6", null ],
     [ "get_nearest_point_index", "helper__functions_8hpp.html#a924ac023f1b51e791ca1b61b9194f44a", null ],
     [ "get_nearest_point_index", "helper__functions_8hpp.html#a9ef24fc9ed2fb1aeccb039313bdf858c", null ],
-    [ "split_point_speed_pairs", "helper__functions_8hpp.html#a0f07faaac8c54cc485f2bb217097326e", null ]
+    [ "split_point_speed_pairs", "helper__functions_8hpp.html#a0f07faaac8c54cc485f2bb217097326e", null ],
+    [ "epsilon_", "helper__functions_8hpp.html#a05408c147e288f4120ad1a8c90dd3241", null ]
 ];

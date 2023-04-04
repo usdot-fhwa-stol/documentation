@@ -101,16 +101,6 @@ var annotated_dup =
       [ "CooperativeLaneChangePlugin", "classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html", "classcooperative__lanechange_1_1CooperativeLaneChangePlugin" ],
       [ "LaneChangeManeuverOriginalValues", "structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html", "structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues" ]
     ] ],
-    [ "cost_plugin_system", "namespacecost__plugin__system.html", [
-      [ "CostofComfort", "classcost__plugin__system_1_1CostofComfort.html", "classcost__plugin__system_1_1CostofComfort" ],
-      [ "CostofEfficiency", "classcost__plugin__system_1_1CostofEfficiency.html", "classcost__plugin__system_1_1CostofEfficiency" ],
-      [ "CostofFeasibility", "classcost__plugin__system_1_1CostofFeasibility.html", "classcost__plugin__system_1_1CostofFeasibility" ],
-      [ "CostofFuel", "classcost__plugin__system_1_1CostofFuel.html", "classcost__plugin__system_1_1CostofFuel" ],
-      [ "CostofLegality", "classcost__plugin__system_1_1CostofLegality.html", "classcost__plugin__system_1_1CostofLegality" ],
-      [ "CostofSafety", "classcost__plugin__system_1_1CostofSafety.html", "classcost__plugin__system_1_1CostofSafety" ],
-      [ "CostPlugins", "classcost__plugin__system_1_1CostPlugins.html", "classcost__plugin__system_1_1CostPlugins" ],
-      [ "CostPluginWorker", "classcost__plugin__system_1_1CostPluginWorker.html", "classcost__plugin__system_1_1CostPluginWorker" ]
-    ] ],
     [ "extract_rpy_from_quat", "namespaceextract__rpy__from__quat.html", [
       [ "Converter", "classextract__rpy__from__quat_1_1Converter.html", "classextract__rpy__from__quat_1_1Converter" ]
     ] ],
@@ -262,10 +252,6 @@ var annotated_dup =
     ] ],
     [ "motion_prediction_visualizer", "namespacemotion__prediction__visualizer.html", [
       [ "Node", "classmotion__prediction__visualizer_1_1Node.html", "classmotion__prediction__visualizer_1_1Node" ]
-    ] ],
-    [ "mpc_follower_wrapper", "namespacempc__follower__wrapper.html", [
-      [ "MPCFollowerWrapper", "classmpc__follower__wrapper_1_1MPCFollowerWrapper.html", "classmpc__follower__wrapper_1_1MPCFollowerWrapper" ],
-      [ "MPCFollowerWrapperWorker", "classmpc__follower__wrapper_1_1MPCFollowerWrapperWorker.html", "classmpc__follower__wrapper_1_1MPCFollowerWrapperWorker" ]
     ] ],
     [ "object", "namespaceobject.html", [
       [ "ObjectDetectionTrackingNode", "classobject_1_1ObjectDetectionTrackingNode.html", "classobject_1_1ObjectDetectionTrackingNode" ],
@@ -431,7 +417,6 @@ var annotated_dup =
     [ "BaseReaderHandler", "structBaseReaderHandler.html", "structBaseReaderHandler" ],
     [ "BasicIStreamWrapper", "classBasicIStreamWrapper.html", "classBasicIStreamWrapper" ],
     [ "BasicOStreamWrapper", "classBasicOStreamWrapper.html", "classBasicOStreamWrapper" ],
-    [ "CallbackHolder", "classCallbackHolder.html", "classCallbackHolder" ],
     [ "CallInterface", "classCallInterface.html", "classCallInterface" ],
     [ "CrtAllocator", "classCrtAllocator.html", "classCrtAllocator" ],
     [ "EncodedInputStream", "classEncodedInputStream.html", "classEncodedInputStream" ],

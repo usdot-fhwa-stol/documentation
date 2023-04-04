@@ -17,7 +17,7 @@ var searchData=
   ['upcoming_5flane_5fchange_5fstatus_5fpub_5f_14',['upcoming_lane_change_status_pub_',['../classplan__delegator_1_1PlanDelegator.html#a2669b0d8008ddb1f8da78a88b001b12c',1,'plan_delegator::PlanDelegator']]],
   ['upcoming_5flc_5fparams_5f_15',['upcoming_lc_params_',['../classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin.html#a2ca981bae82972205b3877b06054d09d',1,'approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin']]],
   ['update_5fcount_5f_16',['update_count_',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#a644d3ebd9dd0e50b9152e965fd9f0721',1,'carma_wm_ctrl::WMBroadcaster']]],
-  ['update_5flist_5f_17',['update_list_',['../classcarma__wm_1_1TrafficControl.html#a62c926f4f36345b18a543248ca11fbb2',1,'carma_wm::TrafficControl::update_list_()'],['../classcarma__wm__ctrl_1_1Geofence.html#a9311d375e7dc84d79c2ce079b9c71144',1,'carma_wm_ctrl::Geofence::update_list_()']]],
+  ['update_5flist_5f_17',['update_list_',['../classcarma__wm_1_1TrafficControl.html#a0b401a7c3daabe57b7f7d3e259a52abf',1,'carma_wm::TrafficControl::update_list_()'],['../classcarma__wm__ctrl_1_1Geofence.html#a9311d375e7dc84d79c2ce079b9c71144',1,'carma_wm_ctrl::Geofence::update_list_()']]],
   ['update_5fsub_5f_18',['update_sub_',['../classMapUpdateLogger.html#ae0ad21d1ff208e93c26265ac532e21f5',1,'MapUpdateLogger']]],
   ['url_19',['url',['../structcarma__cloud__client_1_1Config.html#a4bc4e39f7a5a330ad647bdc3d5af63b7',1,'carma_cloud_client::Config']]],
   ['use_5ffixed_5fcosts_20',['use_fixed_costs',['../structarbitrator_1_1Config.html#aba6e22d41904cf47e6bf602d12d39ef3',1,'arbitrator::Config']]],

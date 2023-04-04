@@ -21,7 +21,5 @@ var searchData=
   ['mockroadwaysensordriver_18',['MockRoadwaySensorDriver',['../classmock__drivers_1_1MockRoadwaySensorDriver.html',1,'mock_drivers']]],
   ['motioncomputationnode_19',['MotionComputationNode',['../classmotion__computation_1_1MotionComputationNode.html',1,'motion_computation']]],
   ['motioncomputationworker_20',['MotionComputationWorker',['../classmotion__computation_1_1MotionComputationWorker.html',1,'motion_computation']]],
-  ['movingobject_21',['MovingObject',['../structcarma__wm_1_1collision__detection_1_1MovingObject.html',1,'carma_wm::collision_detection']]],
-  ['mpcfollowerwrapper_22',['MPCFollowerWrapper',['../classmpc__follower__wrapper_1_1MPCFollowerWrapper.html',1,'mpc_follower_wrapper']]],
-  ['mpcfollowerwrapperworker_23',['MPCFollowerWrapperWorker',['../classmpc__follower__wrapper_1_1MPCFollowerWrapperWorker.html',1,'mpc_follower_wrapper']]]
+  ['movingobject_21',['MovingObject',['../structcarma__wm_1_1collision__detection_1_1MovingObject.html',1,'carma_wm::collision_detection']]]
 ];

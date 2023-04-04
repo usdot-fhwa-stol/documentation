@@ -13,11 +13,9 @@ var searchData=
   ['collision_5fdetection_10',['collision_detection',['../namespacecarma__wm_1_1collision__detection.html',1,'carma_wm']]],
   ['cooperative_5flanechange_11',['cooperative_lanechange',['../namespacecooperative__lanechange.html',1,'']]],
   ['cooperative_5flanechange_5flaunch_12',['cooperative_lanechange_launch',['../namespacecooperative__lanechange__launch.html',1,'']]],
-  ['cost_5fplugin_5fsystem_13',['cost_plugin_system',['../namespacecost__plugin__system.html',1,'']]],
-  ['cost_5futils_14',['cost_utils',['../namespacecost__utils.html',1,'']]],
-  ['covariance_5fhelper_15',['covariance_helper',['../namespacecovariance__helper.html',1,'']]],
-  ['geometry_16',['geometry',['../namespacecarma__wm_1_1geometry.html',1,'carma_wm']]],
-  ['query_17',['query',['../namespacecarma__wm_1_1query.html',1,'carma_wm']]],
-  ['test_18',['test',['../namespacecarma__wm_1_1test.html',1,'carma_wm']]],
-  ['utils_19',['utils',['../namespacecarma__wm_1_1utils.html',1,'carma_wm']]]
+  ['covariance_5fhelper_13',['covariance_helper',['../namespacecovariance__helper.html',1,'']]],
+  ['geometry_14',['geometry',['../namespacecarma__wm_1_1geometry.html',1,'carma_wm']]],
+  ['query_15',['query',['../namespacecarma__wm_1_1query.html',1,'carma_wm']]],
+  ['test_16',['test',['../namespacecarma__wm_1_1test.html',1,'carma_wm']]],
+  ['utils_17',['utils',['../namespacecarma__wm_1_1utils.html',1,'carma_wm']]]
 ];

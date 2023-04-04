@@ -44,21 +44,6 @@ var namespaces_dup =
     [ "cooperative_lanechange_launch", "namespacecooperative__lanechange__launch.html", [
       [ "generate_launch_description", "namespacecooperative__lanechange__launch.html#a8eeaf25b9dddf06d79ef0444488cf34a", null ]
     ] ],
-    [ "cost_plugin_system", "namespacecost__plugin__system.html", "namespacecost__plugin__system" ],
-    [ "cost_utils", "namespacecost__utils.html", [
-      [ "get_maneuver_end_distance", "namespacecost__utils.html#a734d860040cbf1cc56736db6ecc3deec", null ],
-      [ "get_maneuver_end_speed", "namespacecost__utils.html#a9085af85baecba8cc448ba31736a1b5f", null ],
-      [ "get_maneuver_end_time", "namespacecost__utils.html#a6b23212b8dff611a3aa2014f58a0b8ee", null ],
-      [ "get_maneuver_ending_lane_id", "namespacecost__utils.html#ac29f789c83a7a30c64ff6a0778d1ea7a", null ],
-      [ "get_maneuver_start_distance", "namespacecost__utils.html#ac052707febdd222f830378263df70c6a", null ],
-      [ "get_maneuver_start_speed", "namespacecost__utils.html#a86b850960da1a5f8c4be4fb3e39b8205", null ],
-      [ "get_maneuver_start_time", "namespacecost__utils.html#af29dec506f8d8e0b08e7f677eab297d4", null ],
-      [ "get_maneuver_starting_lane_id", "namespacecost__utils.html#a3afe2ecbcd20cbeed3a7e59a56525e13", null ],
-      [ "get_plan_end_distance", "namespacecost__utils.html#a22bf179f1631588b7ca7d2530baefa32", null ],
-      [ "get_plan_end_time", "namespacecost__utils.html#a61af4580eb22705f9981f2b471b2fa9b", null ],
-      [ "get_plan_start_distance", "namespacecost__utils.html#a07e48bcfb53cf8070efee81bcdbfabd1", null ],
-      [ "get_plan_start_time", "namespacecost__utils.html#a0bee624777c0e2681cd46332af784bd6", null ]
-    ] ],
     [ "covariance_helper", "namespacecovariance__helper.html", [
       [ "transformCovariance", "namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e", null ]
     ] ],
@@ -114,7 +99,6 @@ var namespaces_dup =
       [ "generate_launch_description", "namespacemotion__computation__launch.html#a55ceded82280a1b26dd9e38e93304c14", null ]
     ] ],
     [ "motion_prediction_visualizer", "namespacemotion__prediction__visualizer.html", "namespacemotion__prediction__visualizer" ],
-    [ "mpc_follower_wrapper", "namespacempc__follower__wrapper.html", "namespacempc__follower__wrapper" ],
     [ "object", "namespaceobject.html", "namespaceobject" ],
     [ "object_visualizer", "namespaceobject__visualizer.html", "namespaceobject__visualizer" ],
     [ "object_visualizer_launch", "namespaceobject__visualizer__launch.html", [

@@ -19,7 +19,6 @@ var hierarchy =
     [ "internal::BigInteger", "classinternal_1_1BigInteger.html", null ],
     [ "lci_strategic_plugin::BoundaryDistances", "structlci__strategic__plugin_1_1BoundaryDistances.html", null ],
     [ "bsm_generator::BSMGeneratorWorker", "classbsm__generator_1_1BSMGeneratorWorker.html", null ],
-    [ "CallbackHolder", "classCallbackHolder.html", null ],
     [ "CallInterface", "classCallInterface.html", [
       [ "call_test::CallTest", "classcall__test_1_1CallTest.html", null ],
       [ "intersection_transit_maneuvering::Servicer", "classintersection__transit__maneuvering_1_1Servicer.html", null ]
@@ -119,15 +118,6 @@ var hierarchy =
       [ "arbitrator::CostSystemCostFunction", "classarbitrator_1_1CostSystemCostFunction.html", null ],
       [ "arbitrator::FixedPriorityCostFunction", "classarbitrator_1_1FixedPriorityCostFunction.html", null ]
     ] ],
-    [ "cost_plugin_system::CostPlugins", "classcost__plugin__system_1_1CostPlugins.html", [
-      [ "cost_plugin_system::CostofComfort", "classcost__plugin__system_1_1CostofComfort.html", null ],
-      [ "cost_plugin_system::CostofEfficiency", "classcost__plugin__system_1_1CostofEfficiency.html", null ],
-      [ "cost_plugin_system::CostofFeasibility", "classcost__plugin__system_1_1CostofFeasibility.html", null ],
-      [ "cost_plugin_system::CostofFuel", "classcost__plugin__system_1_1CostofFuel.html", null ],
-      [ "cost_plugin_system::CostofLegality", "classcost__plugin__system_1_1CostofLegality.html", null ],
-      [ "cost_plugin_system::CostofSafety", "classcost__plugin__system_1_1CostofSafety.html", null ]
-    ] ],
-    [ "cost_plugin_system::CostPluginWorker", "classcost__plugin__system_1_1CostPluginWorker.html", null ],
     [ "CrtAllocator", "classCrtAllocator.html", null ],
     [ "GenericValue< Encoding, Allocator >::Data", "unionGenericValue_1_1Data.html", null ],
     [ "internal::DecodedStream< SourceStream, Encoding >", "classinternal_1_1DecodedStream.html", null ],
@@ -265,8 +255,6 @@ var hierarchy =
     [ "mock_drivers::MockLightBarDriver", "classmock__drivers_1_1MockLightBarDriver.html", null ],
     [ "motion_computation::MotionComputationWorker", "classmotion__computation_1_1MotionComputationWorker.html", null ],
     [ "carma_wm::collision_detection::MovingObject", "structcarma__wm_1_1collision__detection_1_1MovingObject.html", null ],
-    [ "mpc_follower_wrapper::MPCFollowerWrapper", "classmpc__follower__wrapper_1_1MPCFollowerWrapper.html", null ],
-    [ "mpc_follower_wrapper::MPCFollowerWrapperWorker", "classmpc__follower__wrapper_1_1MPCFollowerWrapperWorker.html", null ],
     [ "arbitrator::NeighborGenerator", "classarbitrator_1_1NeighborGenerator.html", [
       [ "arbitrator::PluginNeighborGenerator< T >", "classarbitrator_1_1PluginNeighborGenerator.html", null ]
     ] ],
@@ -353,7 +341,6 @@ var hierarchy =
     [ "GenericValue< Encoding, Allocator >::ShortString", "structGenericValue_1_1ShortString.html", null ],
     [ "carma_wm::SignalizedIntersectionManager", "classcarma__wm_1_1SignalizedIntersectionManager.html", null ],
     [ "basic_autonomy::smoothing::SplineI", "classbasic__autonomy_1_1smoothing_1_1SplineI.html", [
-      [ "basic_autonomy::smoothing::BSpline", "classbasic__autonomy_1_1smoothing_1_1BSpline.html", null ],
       [ "basic_autonomy::smoothing::BSpline", "classbasic__autonomy_1_1smoothing_1_1BSpline.html", null ]
     ] ],
     [ "inlanecruising_plugin::smoothing::SplineI", "classinlanecruising__plugin_1_1smoothing_1_1SplineI.html", [
@@ -438,7 +425,6 @@ var hierarchy =
     [ "carma_wm::WMListenerWorker", "classcarma__wm_1_1WMListenerWorker.html", null ],
     [ "carma_wm_ctrl::WorkZoneSection", "structcarma__wm__ctrl_1_1WorkZoneSection.html", null ],
     [ "carma_wm::WorldModel", "classcarma__wm_1_1WorldModel.html", [
-      [ "carma_wm::CARMAWorldModel", "classcarma__wm_1_1CARMAWorldModel.html", null ],
       [ "carma_wm::CARMAWorldModel", "classcarma__wm_1_1CARMAWorldModel.html", null ]
     ] ],
     [ "Writer< OutputStream, SourceEncoding, TargetEncoding, StackAllocator, writeFlags >", "classWriter.html", null ],

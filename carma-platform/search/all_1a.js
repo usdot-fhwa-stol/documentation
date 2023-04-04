@@ -9,7 +9,7 @@ var searchData=
   ['yellow_5farrow_5fright_6',['YELLOW_ARROW_RIGHT',['../namespacelightbar__manager.html#ad65e92a99b6a98bdd0f10d921e9df5a5a3ee4bb51dae324f0189de9d1a26f33c8',1,'lightbar_manager']]],
   ['yellow_5fdim_7',['YELLOW_DIM',['../namespacelightbar__manager.html#ad65e92a99b6a98bdd0f10d921e9df5a5ac33b4736a79ec97a0dc9b83978c15715',1,'lightbar_manager']]],
   ['yellow_5fflash_8',['YELLOW_FLASH',['../namespacelightbar__manager.html#ad65e92a99b6a98bdd0f10d921e9df5a5a691df4ceae93c8689c2ec7cc98521798',1,'lightbar_manager']]],
-  ['yellow_5flight_5fduration_9',['YELLOW_LIGHT_DURATION',['../classcarma__wm_1_1CARMAWorldModel.html#a0a79b6e34bcd4549090e0a9b925e544e',1,'carma_wm::CARMAWorldModel']]],
+  ['yellow_5flight_5fduration_9',['YELLOW_LIGHT_DURATION',['../classcarma__wm_1_1CARMAWorldModel.html#a78ccc3564961689a86c66886aaf3de05',1,'carma_wm::CARMAWorldModel']]],
   ['yellow_5fsides_10',['YELLOW_SIDES',['../namespacelightbar__manager.html#ad65e92a99b6a98bdd0f10d921e9df5a5a12bd8782875f12186b66e3f298d8c96b',1,'lightbar_manager']]],
   ['yellowdim_11',['yellowDim',['../classmock__drivers_1_1MockLightBarDriver.html#ac05952057dad05dca6ed464ce5680454',1,'mock_drivers::MockLightBarDriver']]],
   ['yellowflash_12',['yellowFlash',['../classmock__drivers_1_1MockLightBarDriver.html#a2cd28d1c6f19171eb6f2eea8546046a8',1,'mock_drivers::MockLightBarDriver']]],

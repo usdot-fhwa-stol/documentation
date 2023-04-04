@@ -1,6 +1,8 @@
 var collision__detection_8hpp =
 [
     [ "carma_wm::collision_detection::MovingObject", "structcarma__wm_1_1collision__detection_1_1MovingObject.html", "structcarma__wm_1_1collision__detection_1_1MovingObject" ],
+    [ "point_t", "collision__detection_8hpp.html#a6004c603e70ad2964e784209574662ee", null ],
+    [ "polygon_t", "collision__detection_8hpp.html#a3002eac85a8982d9fc6c6e9d16900174", null ],
     [ "CheckPolygonIntersection", "collision__detection_8hpp.html#a8f119b1433d2e72efa49c08a7abe140d", null ],
     [ "ConvertRoadwayObstacleToMovingObject", "collision__detection_8hpp.html#a6893491eb1249546dee61c0abcddb678", null ],
     [ "ConvertVehicleToMovingObject", "collision__detection_8hpp.html#a5b2de50bab5d356ba4e9f0c3f1734742", null ],

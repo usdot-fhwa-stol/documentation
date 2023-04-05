@@ -1,5 +1,17 @@
 var NAVTREEINDEX45 =
 {
+"structRestrictionClassAssignment.html":[9,0,190],
+"structRestrictionClassAssignment.html#ac8d0b875ffaff0b05b3ffc3616ae4115":[9,0,190,1],
+"structRestrictionClassAssignment.html#ae2704b82fd5a2e865243c0ab57404be0":[9,0,190,0],
+"structRestrictionClassAssignment.html#af1a3ac4e3dc6f6d5c30f7d8c399a875e":[9,0,190,2],
+"structRestrictionClassList.html":[9,0,191],
+"structRestrictionClassList.html#a435adf5e073ad35db4ecbac9ef8bdc96":[9,0,191,0],
+"structRestrictionClassList.html#ae457c1524d80bedf3c4c71adb4795b2a":[9,0,191,1],
+"structRestrictionUserType.html":[9,0,192],
+"structRestrictionUserType.html#a6af5b88075659c5ed8bc59ac79302433":[9,0,192,2],
+"structRestrictionUserType.html#a971e1212f6734be7d46426ceaac54d1c":[9,0,192,1],
+"structRestrictionUserType.html#aa4eab733fd05d475d8ad40d1b3bfffaf":[9,0,192,3],
+"structRestrictionUserTypeList.html":[9,0,194],
 "structRestrictionUserTypeList.html#a0306fe2f642f3716eb4c7a92bddf68cd":[9,0,194,1],
 "structRestrictionUserTypeList.html#a386c65d6a4a6981a1fe6fead3904e18a":[9,0,194,0],
 "structRestrictionUserType_1_1RestrictionUserType__u_1_1RestrictionUserType____regional.html":[9,0,192,0,0],
@@ -237,17 +249,5 @@ var NAVTREEINDEX45 =
 "structTestMessage00.html#a65534a90427b9f818b27fc433f89deb4":[9,0,234,1],
 "structTestMessage01.html":[9,0,235],
 "structTestMessage01.html#a5ab1bf96c1d1ec8a3d65a3bce3cf38fa":[9,0,235,0],
-"structTestMessage01.html#a733d8512dcf9704ff121dea0bed9b00b":[9,0,235,2],
-"structTestMessage01.html#aae8606f78c3a44a23d944488fa094509":[9,0,235,1],
-"structTestMessage02.html":[9,0,236],
-"structTestMessage02.html#a8969904fdd603148e6e299bd57feade2":[9,0,236,2],
-"structTestMessage02.html#ac6064d32c91f4eaae3dbe9119e906412":[9,0,236,0],
-"structTestMessage02.html#ad478d0db142d5052b629667b0b06fcb6":[9,0,236,1],
-"structTestMessage03.html":[9,0,237],
-"structTestMessage03.html#a170fa859c1040ccee4baefe1ec2962e9":[9,0,237,0],
-"structTestMessage03.html#a63aaf15dc49e5d444e65c39e3c7a58f4":[9,0,237,2],
-"structTestMessage03.html#acd7f7500c8a0539162f1fa2088a78778":[9,0,237,1],
-"structTestMessage04.html":[9,0,238],
-"structTestMessage04.html#a6ec430ad7ecfbd4cd1ca1d88622102fa":[9,0,238,1],
-"structTestMessage04.html#ab755b234ee9567aba7ed4aef691defa9":[9,0,238,0]
+"structTestMessage01.html#a733d8512dcf9704ff121dea0bed9b00b":[9,0,235,2]
 };

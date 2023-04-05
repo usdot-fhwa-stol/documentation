@@ -1,5 +1,17 @@
 var NAVTREEINDEX47 =
 {
+"structVehicleClassification.html#a3be9885fb9e0b04ad151b4a914e79c6e":[9,0,273,10],
+"structVehicleClassification.html#a4ff5e4e0a3ec04f1f07346582c41668e":[9,0,273,8],
+"structVehicleClassification.html#a5bfef36200298d168c6a45b2d5875e65":[9,0,273,1],
+"structVehicleClassification.html#a8b540ce6b6796512ebe9dd6bd90edd2d":[9,0,273,2],
+"structVehicleClassification.html#abd748884733de4c9990a321aec753bfa":[9,0,273,6],
+"structVehicleClassification.html#afaae3cb3d06f47a6bdea5719f44b531b":[9,0,273,5],
+"structVehicleClassification_1_1VehicleClassification____regional.html":[9,0,273,0],
+"structVehicleClassification_1_1VehicleClassification____regional.html#a3a40fd09e1c261da27b483ee4a6c3d88":[9,0,273,0,0],
+"structVehicleClassification_1_1VehicleClassification____regional.html#ae3befa5b82b4572e7551f86a1d7c0136":[9,0,273,0,1],
+"structVehicleData.html":[9,0,274],
+"structVehicleData.html#a199efb143a4c63c57d849da10690da1c":[9,0,274,1],
+"structVehicleData.html#a2c64d1ae5b07f2b5cff0e63cc38424f9":[9,0,274,4],
 "structVehicleData.html#a2e269fe56d1d3307b939e44ff5b66222":[9,0,274,2],
 "structVehicleData.html#a73064a60446995c40a3c44342a1ec1b0":[9,0,274,0],
 "structVehicleData.html#a9468e93c0eb15653379a3b6cfa3ae7ff":[9,0,274,3],
@@ -237,17 +249,5 @@ var NAVTREEINDEX47 =
 "structasn__TYPE__operation__s.html#ab9c92b5104b74526c398acd51fcc3a43":[9,0,41,4],
 "structasn__TYPE__operation__s.html#ac8e330078a4c180d46ad0d9c4368c6ec":[9,0,41,2],
 "structasn__TYPE__operation__s.html#ad8813e5b27528e3d99ad27e843df5c93":[9,0,41,15],
-"structasn__TYPE__operation__s.html#af729addd55deb3a84c002e7e182598c1":[9,0,41,7],
-"structasn__TYPE__tag2member__s.html":[9,0,43],
-"structasn__TYPE__tag2member__s.html#a143e6abb4385cf1afdb1f8748714efea":[9,0,43,0],
-"structasn__TYPE__tag2member__s.html#a5e6c60c9b693dfe75f474b874ceb5553":[9,0,43,1],
-"structasn__TYPE__tag2member__s.html#a5ecd9b207d1e711e3791bdb33080b862":[9,0,43,3],
-"structasn__TYPE__tag2member__s.html#aa142c0183296929729d180377f418a56":[9,0,43,2],
-"structasn__bit__data__s.html":[9,0,18],
-"structasn__bit__data__s.html#a37a6d1b2c4e90faf257cd1a8df7ad71e":[9,0,18,0],
-"structasn__bit__data__s.html#a7674c7a1b6c03503e8b7ba05f88a4b4c":[9,0,18,4],
-"structasn__bit__data__s.html#a7df10c50aeae10a1f270ff09eb312433":[9,0,18,5],
-"structasn__bit__data__s.html#a832b0762258600544fce2aeb4a0be149":[9,0,18,1],
-"structasn__bit__data__s.html#ac9f8b479aa92570e794452f98afc271b":[9,0,18,2],
-"structasn__bit__data__s.html#ae4d85f3a79cdec10184e9a48aa741c26":[9,0,18,3]
+"structasn__TYPE__operation__s.html#af729addd55deb3a84c002e7e182598c1":[9,0,41,7]
 };

@@ -87,7 +87,9 @@ var NAVTREE =
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ]
+        [ "Variables", "namespacemembers_vars.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -161,16 +163,16 @@ var NAVTREEINDEX =
 "classj2735__convertor_1_1BSMConvertor.html#a98d82992e7aa3aa4e497606773162780",
 "classtraffic_1_1TrafficIncidentWorker.html#a845ad4de091bc64c08429e65683d9960",
 "control__request__convertor_8hpp.html#a7f42a1c1382e968508096843daf8af51",
-"globals_vars_e.html",
-"structAccelerationSet4Way.html#a818a0aaaf836d9ba2c8ef3fb7e856059",
-"structEmergencyVehicleAck.html#ac5aba80c538c55164bfdaf4f54d4294d",
-"structMapData.html#afcb08dcb86e2aacd8b1f7f62bffa6950",
-"structOffsetSystem_1_1OffsetSystem____offset.html#a60502cbbbbe29820e17f841a620f82a3",
-"structRestrictionUserTypeList.html#a0306fe2f642f3716eb4c7a92bddf68cd",
-"structTestMessage05.html",
-"structVehicleData.html#a2e269fe56d1d3307b939e44ff5b66222",
-"structasn__bit__outp__s.html",
-"unionPropelledInformation_1_1PropelledInformation__u.html#abedde5f383f808d47e430f7cbb99ae19"
+"globals_vars.html",
+"structANY.html#a44c170a6a47e78a956a3aa748e869168",
+"structEXTERNAL_1_1EXTERNAL____encoding.html#aab9cbff4d1a474a0e8fdad02877ff35f",
+"structManeuverAssistList.html#a4837a6f055b1e4aca94556f00c4ca070",
+"structObstacleDetection.html#a71f9d854ef04dd618624267f68c9f746",
+"structRestrictionClassAssignment.html",
+"structTestMessage01.html#aae8606f78c3a44a23d944488fa094509",
+"structVehicleClassification.html#a3be9885fb9e0b04ad151b4a914e79c6e",
+"structasn__TYPE__tag2member__s.html",
+"unionOffsetSystem_1_1OffsetSystem____offset_1_1OffsetSystem____offset__u.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

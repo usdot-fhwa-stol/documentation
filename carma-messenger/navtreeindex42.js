@@ -1,5 +1,17 @@
 var NAVTREEINDEX42 =
 {
+"structEXTERNAL_1_1EXTERNAL____encoding.html#aab9cbff4d1a474a0e8fdad02877ff35f":[9,0,80,0,1],
+"structEXTERNAL_1_1EXTERNAL____encoding.html#af29b3c2a8083f1b90eec76ecd8f8178c":[9,0,80,0,3],
+"structEmergencyDetails.html":[9,0,71],
+"structEmergencyDetails.html#a46deaafcff7835fd708364977401df2b":[9,0,71,1],
+"structEmergencyDetails.html#a56d9631718da53846ef0e80855651450":[9,0,71,3],
+"structEmergencyDetails.html#a57f23b629d402601ba66919fc60d9868":[9,0,71,0],
+"structEmergencyDetails.html#a6b179698f4feb760c374e1b3c64d88f8":[9,0,71,5],
+"structEmergencyDetails.html#a782274c05dfa54b400991ba9a92a3114":[9,0,71,6],
+"structEmergencyDetails.html#a804f811a5f2f1b535a76ac89780cfd65":[9,0,71,2],
+"structEmergencyDetails.html#ab61a9fb210dd5b845c81470df0af4f68":[9,0,71,4],
+"structEmergencyVehicleAck.html":[9,0,72],
+"structEmergencyVehicleAck.html#a5adbd46a793d2a3518df60a156893c68":[9,0,72,1],
 "structEmergencyVehicleAck.html#ac5aba80c538c55164bfdaf4f54d4294d":[9,0,72,0],
 "structEmergencyVehicleAlert.html":[9,0,73],
 "structEmergencyVehicleAlert.html#a07eccfd3e724421dc0e01ccad0476c81":[9,0,73,1],
@@ -237,17 +249,5 @@ var NAVTREEINDEX42 =
 "structLongitudeDMS2.html#a336c3ef59677916e9b09b70ae4d31d83":[9,0,106,0],
 "structLongitudeDMS2.html#a6261d3a996d74c67072b3585df6a59c1":[9,0,106,1],
 "structLongitudeDMS2.html#a691b5b4c5f5ffdd99e2c3aa27dca5268":[9,0,106,2],
-"structManeuverAssistList.html":[9,0,107],
-"structManeuverAssistList.html#a4837a6f055b1e4aca94556f00c4ca070":[9,0,107,1],
-"structManeuverAssistList.html#a5833b188602fb443cd5335adc09442e0":[9,0,107,0],
-"structMapData.html":[9,0,109],
-"structMapData.html#a4d871d3e039664f62aa076bf74982d5a":[9,0,109,4],
-"structMapData.html#a4e6a3c0eedf13cfca0b04adc2b101b5c":[9,0,109,9],
-"structMapData.html#a5477953521ec385c11bfa74aad5ac8df":[9,0,109,3],
-"structMapData.html#a5f8e8f5b2d6d6028e0ef87a46f252bcf":[9,0,109,5],
-"structMapData.html#a7079e1096f3e9377dd284801bb05a142":[9,0,109,8],
-"structMapData.html#a93c991235c2d3c691ef381c6b0a23cd3":[9,0,109,7],
-"structMapData.html#ab8da8803b0277e20af49b6a35bd5e646":[9,0,109,2],
-"structMapData.html#ac191e552cfda373d23e7bd6fe079a6a0":[9,0,109,1],
-"structMapData.html#ae40c64ddada1120805f8618d977a63e8":[9,0,109,10]
+"structManeuverAssistList.html":[9,0,107]
 };

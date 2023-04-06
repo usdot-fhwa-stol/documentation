@@ -1,5 +1,9 @@
 var NAVTREEINDEX41 =
 {
+"namespacemembers_u.html":[41,1,0,17],
+"namespacemembers_v.html":[41,1,0,18],
+"namespacemembers_vars.html":[41,1,2],
+"namespacemembers_w.html":[41,1,0,19],
 "namespacemembers_x.html":[41,1,0,20],
 "namespacemembers_y.html":[41,1,0,21],
 "namespacemessage.html":[41,0,45],
@@ -245,9 +249,5 @@ var NAVTREEINDEX41 =
 "namespacestop__and__dwell__strategic__plugin.html#a61b457192fe18399ade09573cc61581d":[41,0,88,3],
 "namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html":[41,0,88,0],
 "namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html#af094e7f4040bb805d05e70298ef35cf9":[41,0,88,0,0],
-"namespacestop__and__wait__plugin.html":[41,0,89],
-"namespacestop__and__wait__plugin__launch.html":[41,0,90],
-"namespacestop__and__wait__plugin__launch.html#a71b7537661a2bcfa3c3a5b99addf4f1d":[41,0,90,0],
-"namespacestop__controlled__intersection__tactical__plugin.html":[41,0,91],
-"namespacestop__controlled__intersection__tactical__plugin.html#a53f6e30eb04be1818ab30525f205ab6c":[41,0,91,3]
+"namespacestop__and__wait__plugin.html":[41,0,89]
 };

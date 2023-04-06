@@ -1,5 +1,9 @@
 var NAVTREEINDEX42 =
 {
+"namespacestop__and__wait__plugin__launch.html":[41,0,90],
+"namespacestop__and__wait__plugin__launch.html#a71b7537661a2bcfa3c3a5b99addf4f1d":[41,0,90,0],
+"namespacestop__controlled__intersection__tactical__plugin.html":[41,0,91],
+"namespacestop__controlled__intersection__tactical__plugin.html#a53f6e30eb04be1818ab30525f205ab6c":[41,0,91,3],
 "namespacestop__controlled__intersection__tactical__plugin.html#afa295d53ae945f3d845e2d9bd4e7a6be":[41,0,91,2],
 "namespacesubsystem__controllers.html":[41,0,93],
 "namespacesubsystem__controllers.html#a90feee896f86cc1ca40fc9e37289a710":[41,0,93,17],
@@ -245,9 +249,5 @@ var NAVTREEINDEX42 =
 "pointer_8h.html#ac28f67a837bdead4e9a0b8bd02dbd4d8":[43,0,30,2,0,0,0,14,38],
 "pointer_8h.html#accdac20f6fea3ab631da1a0df5208a61":[43,0,30,2,0,0,0,14,23],
 "pointer_8h.html#adb82dfe18535e9a30aa97d275f82bd55":[43,0,30,2,0,0,0,14,48],
-"pointer_8h.html#ae0edeb21a41191c864727b3b2ce95131":[43,0,30,2,0,0,0,14,13],
-"pointer_8h.html#ae26d117fc2f0ef0275825d2a510e8a8d":[43,0,30,2,0,0,0,14,27],
-"pointer_8h.html#ae54ef57a7b599e262127c5adcc55960e":[43,0,30,2,0,0,0,14,46],
-"pointer_8h.html#ae5f22e098e170e51d47beb75812b9a5b":[43,0,30,2,0,0,0,14,6],
-"pointer_8h.html#aeeddce917cf130d62c370b8f216026dd":[43,0,30,2,0,0,0,14,44]
+"pointer_8h.html#ae0edeb21a41191c864727b3b2ce95131":[43,0,30,2,0,0,0,14,13]
 };

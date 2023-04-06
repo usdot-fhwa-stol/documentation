@@ -6,11 +6,11 @@ var structapproaching__emergency__vehicle__plugin_1_1Config =
     [ "bsm_processing_frequency", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a2e6f2566571a01c095800f712e8ee183", null ],
     [ "buffer_distance_before_stopping", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a725f395f09130e206956a7deb30f6644", null ],
     [ "default_speed_limit", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a64b3bef57508c81e9403778f1415d3be", null ],
-    [ "do_not_move_over_threshold", "structapproaching__emergency__vehicle__plugin_1_1Config.html#ae555ca39fc20049ef385665f0eea2454", null ],
     [ "finished_passing_threshold", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a7573a5e45947f7d8fa3504161936bd19", null ],
     [ "lane_change_plugin", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a6dd3156876736b67368486db8f4fcc7f", null ],
     [ "lane_following_plugin", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a2bad9c38f2c863cb52ce08c89c2ed0f8", null ],
     [ "max_warning_broadcasts", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a357d49d8f1e6e554bf550a1f873c63bc", null ],
+    [ "min_lane_following_duration_before_lane_change", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a2617bd4b6850d11f938dfd39efb0ad1c", null ],
     [ "minimal_plan_duration", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a82d53d570af61ab41e04d4a27243102e", null ],
     [ "minimum_reduced_speed_limit", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a7d48d943b50100d1c3e2099c36070da9", null ],
     [ "passing_threshold", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a3f55d992021d18a02478cbc07ef0bb25", null ],
@@ -23,5 +23,6 @@ var structapproaching__emergency__vehicle__plugin_1_1Config =
     [ "timeout_duration", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a021c15bd670c461bd74b23f40ce28594", null ],
     [ "vehicle_acceleration_limit", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a1b30e6e0c5ce1e2eefa70b1af6e941eb", null ],
     [ "vehicle_id", "structapproaching__emergency__vehicle__plugin_1_1Config.html#aa70358d5fbdea25512a0e0dd2750a3ea", null ],
+    [ "vehicle_length", "structapproaching__emergency__vehicle__plugin_1_1Config.html#afe9dff631c6c75497bbecfe6f6029753", null ],
     [ "warning_broadcast_frequency", "structapproaching__emergency__vehicle__plugin_1_1Config.html#a0bacd4168f75ca1d5c784847ebf52598", null ]
 ];

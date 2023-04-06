@@ -1,5 +1,9 @@
 var NAVTREEINDEX45 =
 {
+"strfunc_8h.html#a9cd1cee166f1e18e117d3ce9dc1c83da":[43,0,30,2,0,0,0,1,9,3],
+"strfunc_8h.html#ac61f7d1bfae1fb68526633edd418fa1c":[43,0,30,2,0,0,0,1,9,2],
+"strfunc_8h_source.html":[43,0,30,2,0,0,0,1,9],
+"stringbuffer_8h.html":[43,0,30,2,0,0,0,20],
 "stringbuffer_8h.html#a2ff92a4ec7c5995738cfaf39fe99f31a":[43,0,30,2,0,0,0,20,4],
 "stringbuffer_8h.html#a4bcf83273503d7b834ec530e84914f8c":[43,0,30,2,0,0,0,20,2],
 "stringbuffer_8h.html#a76f1b69abd71a248a55c8a55792dfd69":[43,0,30,2,0,0,0,20,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX45 =
 "structPlatooningControlIHPPluginConfig.html#acaf615795ed73a78b32719e5963188d6":[42,0,105,15],
 "structPlatooningControlIHPPluginConfig.html#acdb1c0eb1b5b84ddf45205b2938e6fa7":[42,0,105,25],
 "structPlatooningControlIHPPluginConfig.html#ad99cb1ace2fcc8737230a9e33c0af8b5":[42,0,105,19],
-"structPlatooningControlIHPPluginConfig.html#ae8fca93fc3eed2301410d4d3874edf16":[42,0,105,9],
-"structPlatooningControlIHPPluginConfig.html#ae9536a454b3c7aaae8da47725a7d7b06":[42,0,105,20],
-"structPlatooningControlIHPPluginConfig.html#aeaa6d71bb2b3750d9ab6432ce1aa3caf":[42,0,105,18],
-"structPlatooningControlIHPPluginConfig.html#aec890440287b7b19cef2a6d45bf53f93":[42,0,105,14],
-"structPlatooningControlIHPPluginConfig.html#aeedbabef189672c123acc060d69cf28e":[42,0,105,17]
+"structPlatooningControlIHPPluginConfig.html#ae8fca93fc3eed2301410d4d3874edf16":[42,0,105,9]
 };

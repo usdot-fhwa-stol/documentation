@@ -1,5 +1,7 @@
 var NAVTREEINDEX53 =
 {
+"template__strategic__plugin__node_8hpp.html":[43,0,51,0,0,3],
+"template__strategic__plugin__node_8hpp_source.html":[43,0,51,0,0,3],
 "template__tactical__plugin__node_8cpp.html":[43,0,51,2,4],
 "template__tactical__plugin__node_8cpp_source.html":[43,0,51,2,4],
 "template__tactical__plugin__node_8hpp.html":[43,0,51,0,0,4],

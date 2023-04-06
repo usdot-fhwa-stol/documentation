@@ -6,7 +6,6 @@ var classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleT
     [ "eventWhenMOVING_OVER_FOR_APPROACHING_ERV", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html#adebb7f88d2d6080e73470074230bc879", null ],
     [ "eventWhenNO_APPROACHING_ERV", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html#a56ae3973111fbc7409d4166543382a50", null ],
     [ "eventWhenSLOWING_DOWN_FOR_ERV", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html#a4eb3fe3727c4c898a052a2a1d663c04e", null ],
-    [ "eventWhenWAITING_FOR_APPROACHING_ERV", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html#a348687afba28f5f555a2a49eda18475a", null ],
     [ "getState", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html#a4c74448ef5d30dcda8bbc4fecf054199", null ],
     [ "logDebugEvent", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html#a5d3102533937f874456c0ac2c1c6727e", null ],
     [ "setAndLogState", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html#a6a7841176e1372e0dcf5d94d2b1f53fe", null ],

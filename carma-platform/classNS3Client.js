@@ -7,6 +7,7 @@ var classNS3Client =
     [ "connect", "classNS3Client.html#aa62d4a34df37ca64a77217a58a652642", null ],
     [ "connected", "classNS3Client.html#a1d90d224d73ba13c5a3e5bbac2d19149", null ],
     [ "process", "classNS3Client.html#a51572c7be971d670e29cc8ae0504c179", null ],
+    [ "registermsg", "classNS3Client.html#ab5410dae555efd766856f604c7b3727a", null ],
     [ "sendNS3Message", "classNS3Client.html#a3085a9d506de03255e3acc00aa778c25", null ],
     [ "io_", "classNS3Client.html#a40c78d293b8a7e67633672ae4c581731", null ],
     [ "io_thread_", "classNS3Client.html#a67e0c244c18413f0204feed132ba7fe6", null ],

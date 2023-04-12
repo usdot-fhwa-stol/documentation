@@ -1,5 +1,13 @@
 var NAVTREEINDEX41 =
 {
+"namespacemembers_m.html":[41,1,0,10],
+"namespacemembers_n.html":[41,1,0,11],
+"namespacemembers_o.html":[41,1,0,12],
+"namespacemembers_p.html":[41,1,0,13],
+"namespacemembers_r.html":[41,1,0,14],
+"namespacemembers_s.html":[41,1,0,15],
+"namespacemembers_t.html":[41,1,0,16],
+"namespacemembers_type.html":[41,1,3],
 "namespacemembers_u.html":[41,1,0,17],
 "namespacemembers_v.html":[41,1,0,18],
 "namespacemembers_vars.html":[41,1,2],
@@ -241,13 +249,5 @@ var NAVTREEINDEX41 =
 "namespacespeedharm__auto__configure.html#ab5c47a63f734a568ead6efeace9242ba":[41,0,87,0],
 "namespacespeedharm__auto__configure.html#abbac6d6e6a32afcce10ff5ec2dab83eb":[41,0,87,5],
 "namespacespeedharm__auto__configure.html#acb765d80c31964d6f089c581e94c5d3f":[41,0,87,13],
-"namespacespeedharm__auto__configure.html#acc02c1d42f9fedac14434ee839653c5c":[41,0,87,10],
-"namespacespeedharm__auto__configure.html#acc643a0fed34b04976fd92db53bebbf4":[41,0,87,9],
-"namespacespeedharm__auto__configure.html#af9039230f7683abbe9e036ed9c310175":[41,0,87,1],
-"namespacespeedharm__auto__configure.html#afa1fe3a30017d1d0127ba5032faef0b1":[41,0,87,11],
-"namespacestop__and__dwell__strategic__plugin.html":[41,0,88],
-"namespacestop__and__dwell__strategic__plugin.html#a61b457192fe18399ade09573cc61581d":[41,0,88,3],
-"namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html":[41,0,88,0],
-"namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html#af094e7f4040bb805d05e70298ef35cf9":[41,0,88,0,0],
-"namespacestop__and__wait__plugin.html":[41,0,89]
+"namespacespeedharm__auto__configure.html#acc02c1d42f9fedac14434ee839653c5c":[41,0,87,10]
 };

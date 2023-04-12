@@ -1,5 +1,13 @@
 var NAVTREEINDEX46 =
 {
+"structPlatooningControlIHPPluginConfig.html#aa28a5a773589ea6c4606a2997ce612e4":[42,0,105,8],
+"structPlatooningControlIHPPluginConfig.html#ab59891aa771c3427b1264b5943f4dafc":[42,0,105,26],
+"structPlatooningControlIHPPluginConfig.html#ac0d99cc8ef274aa45245368ea2ec3dae":[42,0,105,4],
+"structPlatooningControlIHPPluginConfig.html#ac55f57ed1c02ed84730e05f76aa111dc":[42,0,105,28],
+"structPlatooningControlIHPPluginConfig.html#acaf615795ed73a78b32719e5963188d6":[42,0,105,15],
+"structPlatooningControlIHPPluginConfig.html#acdb1c0eb1b5b84ddf45205b2938e6fa7":[42,0,105,25],
+"structPlatooningControlIHPPluginConfig.html#ad99cb1ace2fcc8737230a9e33c0af8b5":[42,0,105,19],
+"structPlatooningControlIHPPluginConfig.html#ae8fca93fc3eed2301410d4d3874edf16":[42,0,105,9],
 "structPlatooningControlIHPPluginConfig.html#ae9536a454b3c7aaae8da47725a7d7b06":[42,0,105,20],
 "structPlatooningControlIHPPluginConfig.html#aeaa6d71bb2b3750d9ab6432ce1aa3caf":[42,0,105,18],
 "structPlatooningControlIHPPluginConfig.html#aec890440287b7b19cef2a6d45bf53f93":[42,0,105,14],
@@ -241,13 +249,5 @@ var NAVTREEINDEX46 =
 "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html#ae583a07d646008f81d0ad1d4ed1201dd":[41,0,0,5,2],
 "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html#afabe50de6bef9dbcf906f85044b6e56f":[42,0,0,4,1],
 "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html#afabe50de6bef9dbcf906f85044b6e56f":[41,0,0,5,1],
-"structapproximate__intersection_1_1Config.html":[42,0,1,0],
-"structapproximate__intersection_1_1Config.html":[41,0,2,0],
-"structapproximate__intersection_1_1Config.html#a1dbb5b176793109a2563520eddf93035":[41,0,2,0,5],
-"structapproximate__intersection_1_1Config.html#a1dbb5b176793109a2563520eddf93035":[42,0,1,0,5],
-"structapproximate__intersection_1_1Config.html#a5e300ab5ecc062b4496425c05a3d8582":[41,0,2,0,2],
-"structapproximate__intersection_1_1Config.html#a5e300ab5ecc062b4496425c05a3d8582":[42,0,1,0,2],
-"structapproximate__intersection_1_1Config.html#a7809fad27c013c8d8314e46f22f62ca7":[41,0,2,0,0],
-"structapproximate__intersection_1_1Config.html#a7809fad27c013c8d8314e46f22f62ca7":[42,0,1,0,0],
-"structapproximate__intersection_1_1Config.html#af7a440a0a7d70b95dd00b0023831068d":[41,0,2,0,3]
+"structapproximate__intersection_1_1Config.html":[42,0,1,0]
 };

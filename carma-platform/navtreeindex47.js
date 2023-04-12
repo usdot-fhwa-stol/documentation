@@ -1,5 +1,13 @@
 var NAVTREEINDEX47 =
 {
+"structapproximate__intersection_1_1Config.html":[41,0,2,0],
+"structapproximate__intersection_1_1Config.html#a1dbb5b176793109a2563520eddf93035":[41,0,2,0,5],
+"structapproximate__intersection_1_1Config.html#a1dbb5b176793109a2563520eddf93035":[42,0,1,0,5],
+"structapproximate__intersection_1_1Config.html#a5e300ab5ecc062b4496425c05a3d8582":[41,0,2,0,2],
+"structapproximate__intersection_1_1Config.html#a5e300ab5ecc062b4496425c05a3d8582":[42,0,1,0,2],
+"structapproximate__intersection_1_1Config.html#a7809fad27c013c8d8314e46f22f62ca7":[41,0,2,0,0],
+"structapproximate__intersection_1_1Config.html#a7809fad27c013c8d8314e46f22f62ca7":[42,0,1,0,0],
+"structapproximate__intersection_1_1Config.html#af7a440a0a7d70b95dd00b0023831068d":[41,0,2,0,3],
 "structapproximate__intersection_1_1Config.html#af7a440a0a7d70b95dd00b0023831068d":[42,0,1,0,3],
 "structapproximate__intersection_1_1Config.html#aff0ae4c0b55d2ac453b9be29d6f87938":[41,0,2,0,4],
 "structapproximate__intersection_1_1Config.html#aff0ae4c0b55d2ac453b9be29d6f87938":[42,0,1,0,4],
@@ -241,13 +249,5 @@ var NAVTREEINDEX47 =
 "structcooperative__lanechange_1_1Config.html#aae0c7bd3f545836704bcabb13e6d7ccd":[41,0,20,0,13],
 "structcooperative__lanechange_1_1Config.html#ab336f530c52f154bf0435a8de3934b37":[41,0,20,0,15],
 "structcooperative__lanechange_1_1Config.html#ab336f530c52f154bf0435a8de3934b37":[42,0,13,0,15],
-"structcooperative__lanechange_1_1Config.html#ab736b781cc446add6559116a2803e1c8":[42,0,13,0,7],
-"structcooperative__lanechange_1_1Config.html#ab736b781cc446add6559116a2803e1c8":[41,0,20,0,7],
-"structcooperative__lanechange_1_1Config.html#ad65d815cda0fa4fb502bff6866fa3bed":[42,0,13,0,25],
-"structcooperative__lanechange_1_1Config.html#ad65d815cda0fa4fb502bff6866fa3bed":[41,0,20,0,25],
-"structcooperative__lanechange_1_1Config.html#ad7d4c99f474f91975d11216c0bef5b5b":[42,0,13,0,10],
-"structcooperative__lanechange_1_1Config.html#ad7d4c99f474f91975d11216c0bef5b5b":[41,0,20,0,10],
-"structcooperative__lanechange_1_1Config.html#ade558e9e6870f9f98966e3f5eaa2aaae":[42,0,13,0,2],
-"structcooperative__lanechange_1_1Config.html#ade558e9e6870f9f98966e3f5eaa2aaae":[41,0,20,0,2],
-"structcooperative__lanechange_1_1Config.html#ae537b946eb1d089c2ed554cfc5258ba7":[42,0,13,0,8]
+"structcooperative__lanechange_1_1Config.html#ab736b781cc446add6559116a2803e1c8":[42,0,13,0,7]
 };

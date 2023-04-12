@@ -36,13 +36,14 @@ var searchData=
   ['heading_5fsub_5f_33',['heading_sub_',['../classbsm__generator_1_1BSMGenerator.html#a4565e20bbf8a21a59785bb7fd754e608',1,'bsm_generator::BSMGenerator']]],
   ['host_5fbsm_5fid_5f_34',['host_bsm_id_',['../classyield__plugin_1_1YieldPlugin.html#ad25df251a12c9c052daeab2f58385c7d',1,'yield_plugin::YieldPlugin']]],
   ['host_5fid_35',['host_id',['../structmobilitypath__visualizer_1_1Config.html#a868240d48879600fb48658c1516e02ec',1,'mobilitypath_visualizer::Config']]],
-  ['host_5fmarker_5f_36',['host_marker_',['../classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#a42df0dff4d0238cbc9efdb8f6ce2c468',1,'mobilitypath_visualizer::MobilityPathVisualizer']]],
-  ['host_5fmarker_5fpub_5f_37',['host_marker_pub_',['../classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#af689219edb7702a1285164691e39ba00',1,'mobilitypath_visualizer::MobilityPathVisualizer']]],
-  ['host_5fmarker_5freceived_5f_38',['host_marker_received_',['../classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#a6551c01802644a81dc488038c7c071a7',1,'mobilitypath_visualizer::MobilityPathVisualizer']]],
-  ['host_5fmob_5fpath_5fsub_5f_39',['host_mob_path_sub_',['../classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#afbace617e1bb232c1766791317d64d42',1,'mobilitypath_visualizer::MobilityPathVisualizer']]],
-  ['host_5fplatoon_5f_40',['host_platoon_',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#ad408d9fd019a1f61369db874447f4ace',1,'platoon_strategic_ihp::PlatoonManager']]],
-  ['host_5fplatoon_5fposition_5f_41',['host_platoon_position_',['../classplatoon__control__ihp_1_1PlatoonControlIHPWorker.html#af0b15b61cf7e764850163c081ec1da57',1,'platoon_control_ihp::PlatoonControlIHPWorker']]],
-  ['host_5fvehicle_5fsize_42',['host_vehicle_size',['../classyield__plugin_1_1YieldPlugin.html#a238b7f67b846cc65d8d55e8d3500f96c',1,'yield_plugin::YieldPlugin']]],
-  ['hostmobilityid_43',['HostMobilityId',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a54c4103e4b8705ee687effb030fb7040',1,'platoon_strategic_ihp::PlatoonManager::HostMobilityId()'],['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a986341c08763b68ba3aa958535b61fda',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin::HostMobilityId()']]],
-  ['hostposinplatoon_5f_44',['hostPosInPlatoon_',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a822212181c90d3fa29f8a9aa513fab3f',1,'platoon_strategic_ihp::PlatoonManager']]]
+  ['host_5fip_5f_36',['host_ip_',['../classNS3Adapter.html#aa5e08d811e3a25d384d7d66c3ce9acb3',1,'NS3Adapter']]],
+  ['host_5fmarker_5f_37',['host_marker_',['../classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#a42df0dff4d0238cbc9efdb8f6ce2c468',1,'mobilitypath_visualizer::MobilityPathVisualizer']]],
+  ['host_5fmarker_5fpub_5f_38',['host_marker_pub_',['../classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#af689219edb7702a1285164691e39ba00',1,'mobilitypath_visualizer::MobilityPathVisualizer']]],
+  ['host_5fmarker_5freceived_5f_39',['host_marker_received_',['../classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#a6551c01802644a81dc488038c7c071a7',1,'mobilitypath_visualizer::MobilityPathVisualizer']]],
+  ['host_5fmob_5fpath_5fsub_5f_40',['host_mob_path_sub_',['../classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#afbace617e1bb232c1766791317d64d42',1,'mobilitypath_visualizer::MobilityPathVisualizer']]],
+  ['host_5fplatoon_5f_41',['host_platoon_',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#ad408d9fd019a1f61369db874447f4ace',1,'platoon_strategic_ihp::PlatoonManager']]],
+  ['host_5fplatoon_5fposition_5f_42',['host_platoon_position_',['../classplatoon__control__ihp_1_1PlatoonControlIHPWorker.html#af0b15b61cf7e764850163c081ec1da57',1,'platoon_control_ihp::PlatoonControlIHPWorker']]],
+  ['host_5fvehicle_5fsize_43',['host_vehicle_size',['../classyield__plugin_1_1YieldPlugin.html#a238b7f67b846cc65d8d55e8d3500f96c',1,'yield_plugin::YieldPlugin']]],
+  ['hostmobilityid_44',['HostMobilityId',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a54c4103e4b8705ee687effb030fb7040',1,'platoon_strategic_ihp::PlatoonManager::HostMobilityId()'],['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a986341c08763b68ba3aa958535b61fda',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin::HostMobilityId()']]],
+  ['hostposinplatoon_5f_45',['hostPosInPlatoon_',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a822212181c90d3fa29f8a9aa513fab3f',1,'platoon_strategic_ihp::PlatoonManager']]]
 ];

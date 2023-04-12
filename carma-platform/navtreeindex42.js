@@ -1,5 +1,13 @@
 var NAVTREEINDEX42 =
 {
+"namespacespeedharm__auto__configure.html#acc643a0fed34b04976fd92db53bebbf4":[41,0,87,9],
+"namespacespeedharm__auto__configure.html#af9039230f7683abbe9e036ed9c310175":[41,0,87,1],
+"namespacespeedharm__auto__configure.html#afa1fe3a30017d1d0127ba5032faef0b1":[41,0,87,11],
+"namespacestop__and__dwell__strategic__plugin.html":[41,0,88],
+"namespacestop__and__dwell__strategic__plugin.html#a61b457192fe18399ade09573cc61581d":[41,0,88,3],
+"namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html":[41,0,88,0],
+"namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html#af094e7f4040bb805d05e70298ef35cf9":[41,0,88,0,0],
+"namespacestop__and__wait__plugin.html":[41,0,89],
 "namespacestop__and__wait__plugin__launch.html":[41,0,90],
 "namespacestop__and__wait__plugin__launch.html#a71b7537661a2bcfa3c3a5b99addf4f1d":[41,0,90,0],
 "namespacestop__controlled__intersection__tactical__plugin.html":[41,0,91],
@@ -241,13 +249,5 @@ var NAVTREEINDEX42 =
 "pointer_8h.html#a8db3e2eda83fba7d12ee284fff895262":[43,0,30,2,0,0,0,14,4],
 "pointer_8h.html#a8f368fc6d5e55f6f0a5ea5e2af7ea23f":[43,0,30,2,0,0,0,14,42],
 "pointer_8h.html#a916460d6eccdc49ecf85e2e6ab9767a4":[43,0,30,2,0,0,0,14,8],
-"pointer_8h.html#a9c1c1317bc0a138099995ef011f0db3f":[43,0,30,2,0,0,0,14,18],
-"pointer_8h.html#aa818d57b32e8d879ba37871b01a2b9e3":[43,0,30,2,0,0,0,14,16],
-"pointer_8h.html#aaaf14202ae851a7d3c3db56789b9eab4":[43,0,30,2,0,0,0,14,25],
-"pointer_8h.html#aae1f8d263916ad71bd415381591549c0":[43,0,30,2,0,0,0,14,47],
-"pointer_8h.html#abd25c9d96f8e5002f93f998cf11905a3":[43,0,30,2,0,0,0,14,41],
-"pointer_8h.html#ac28f67a837bdead4e9a0b8bd02dbd4d8":[43,0,30,2,0,0,0,14,38],
-"pointer_8h.html#accdac20f6fea3ab631da1a0df5208a61":[43,0,30,2,0,0,0,14,23],
-"pointer_8h.html#adb82dfe18535e9a30aa97d275f82bd55":[43,0,30,2,0,0,0,14,48],
-"pointer_8h.html#ae0edeb21a41191c864727b3b2ce95131":[43,0,30,2,0,0,0,14,13]
+"pointer_8h.html#a9c1c1317bc0a138099995ef011f0db3f":[43,0,30,2,0,0,0,14,18]
 };

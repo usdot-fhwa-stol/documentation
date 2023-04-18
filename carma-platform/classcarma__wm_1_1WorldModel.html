@@ -99,8 +99,8 @@ Inheritance diagram for carma_wm::WorldModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm_1_1WorldModel__inherit__graph.png" border="0" usemap="#acarma__wm_1_1WorldModel_inherit__map" alt="Inheritance graph"/></div>
 <map name="acarma__wm_1_1WorldModel_inherit__map" id="acarma__wm_1_1WorldModel_inherit__map">
-<area shape="rect" title="An interface which provides read access to the semantic map and route. This class is not thread safe...." alt="" coords="7,5,210,523"/>
-<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html" title="Class which implements the WorldModel interface. In addition this class provides write access to the ..." alt="" coords="5,571,212,1719"/>
+<area shape="rect" title="An interface which provides read access to the semantic map and route. This class is not thread safe...." alt="" coords="7,5,210,537"/>
+<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html" title="Class which implements the WorldModel interface. In addition this class provides write access to the ..." alt="" coords="5,585,212,1748"/>
 </map>
 </div>
 <div class="dynheader">
@@ -108,7 +108,7 @@ Collaboration diagram for carma_wm::WorldModel:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm_1_1WorldModel__coll__graph.png" border="0" usemap="#acarma__wm_1_1WorldModel_coll__map" alt="Collaboration graph"/></div>
 <map name="acarma__wm_1_1WorldModel_coll__map" id="acarma__wm_1_1WorldModel_coll__map">
-<area shape="rect" title="An interface which provides read access to the semantic map and route. This class is not thread safe...." alt="" coords="5,5,208,523"/>
+<area shape="rect" title="An interface which provides read access to the semantic map and route. This class is not thread safe...." alt="" coords="5,5,208,537"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -165,6 +165,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3239fded8c5085c5e533c928512c4099"><td class="memItemLeft" align="right" valign="top">virtual lanelet::Optional&lt; lanelet::Lanelet &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1WorldModel.html#a3239fded8c5085c5e533c928512c4099">getIntersectingLanelet</a> (const carma_perception_msgs::msg::ExternalObject &amp;object) const =0</td></tr>
 <tr class="memdesc:a3239fded8c5085c5e533c928512c4099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the a lanelet the object is currently on determined by its position on the semantic map. If it's across multiple lanelets, get the closest one.  <a href="classcarma__wm_1_1WorldModel.html#a3239fded8c5085c5e533c928512c4099">More...</a><br /></td></tr>
 <tr class="separator:a3239fded8c5085c5e533c928512c4099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f4c2be71fca378db3a09483c829959"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; lanelet::BusStopRulePtr &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1WorldModel.html#af7f4c2be71fca378db3a09483c829959">getBusStopsAlongRoute</a> (const lanelet::BasicPoint2d &amp;loc) const =0</td></tr>
+<tr class="memdesc:af7f4c2be71fca378db3a09483c829959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a list of bus stop along the current route. <br  />
+ The bus stop along a route and the next bus stop ahead of us on the route specifically, so a sorted list (by downtrack distance) of bus stop on the route ahead of us thus eliminating those behind the vehicle.  <a href="classcarma__wm_1_1WorldModel.html#af7f4c2be71fca378db3a09483c829959">More...</a><br /></td></tr>
+<tr class="separator:af7f4c2be71fca378db3a09483c829959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fcc52a19e42a4a1b63bb96add8ad028"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; carma_perception_msgs::msg::RoadwayObstacle &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1WorldModel.html#a8fcc52a19e42a4a1b63bb96add8ad028">getInLaneObjects</a> (const lanelet::ConstLanelet &amp;lanelet, const <a class="el" href="namespacecarma__wm.html#a4d1f40e90b83192f3f9de7cc2bba1827">LaneSection</a> &amp;section=<a class="el" href="namespacecarma__wm.html#a4d1f40e90b83192f3f9de7cc2bba1827ac70bc5e488128f3e0389f5ba4eae8cf5">LANE_AHEAD</a>) const =0</td></tr>
 <tr class="memdesc:a8fcc52a19e42a4a1b63bb96add8ad028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all roadway objects currently in the same lane as the given lanelet.  <a href="classcarma__wm_1_1WorldModel.html#a8fcc52a19e42a4a1b63bb96add8ad028">More...</a><br /></td></tr>
 <tr class="separator:a8fcc52a19e42a4a1b63bb96add8ad028"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -209,7 +213,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p >An interface which provides read access to the semantic map and route. This class is not thread safe. All units of distance are in meters. </p>
 <p >Utility functions are provided by this interface for functionality not present in the lanelet2 library such as computing downtrack and crosstrack distances or road curvatures. </p>
 
-<p class="definition">Definition at line <a class="el" href="WorldModel_8hpp_source.html#l00070">70</a> of file <a class="el" href="WorldModel_8hpp_source.html">WorldModel.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorldModel_8hpp_source.html#l00072">72</a> of file <a class="el" href="WorldModel_8hpp_source.html">WorldModel.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9566138254e9c7d7a94c197b677c5bb7" name="a9566138254e9c7d7a94c197b677c5bb7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9566138254e9c7d7a94c197b677c5bb7">&#9670;&nbsp;</a></span>~WorldModel()</h2>
@@ -236,8 +240,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Virtual destructor to ensure delete safety for pointers to implementing classes. </p>
 
-<p class="definition">Definition at line <a class="el" href="WorldModel_8hpp_source.html#l00077">77</a> of file <a class="el" href="WorldModel_8hpp_source.html">WorldModel.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="WorldModel_8hpp_source.html#l00079">79</a> of file <a class="el" href="WorldModel_8hpp_source.html">WorldModel.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -282,6 +286,50 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>An optional Cartesian distance in double to the closest in lane object. Return empty if there is no objects on current lane or the road </dd></dl>
 
 <p>Implemented in <a class="el" href="classcarma__wm_1_1CARMAWorldModel.html#a131c9d5adca779c9efd7601f1dcfef5b">carma_wm::CARMAWorldModel</a>.</p>
+
+</div>
+</div>
+<a id="af7f4c2be71fca378db3a09483c829959" name="af7f4c2be71fca378db3a09483c829959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f4c2be71fca378db3a09483c829959">&#9670;&nbsp;</a></span>getBusStopsAlongRoute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::vector&lt; lanelet::BusStopRulePtr &gt; carma_wm::WorldModel::getBusStopsAlongRoute </td>
+          <td>(</td>
+          <td class="paramtype">const lanelet::BasicPoint2d &amp;&#160;</td>
+          <td class="paramname"><em>loc</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a list of bus stop along the current route. <br  />
+ The bus stop along a route and the next bus stop ahead of us on the route specifically, so a sorted list (by downtrack distance) of bus stop on the route ahead of us thus eliminating those behind the vehicle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">loc</td><td>location </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>if the map is not set, contains no lanelets, or route is not set</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>list of bus stop along the current route </dd></dl>
+
+<p>Implemented in <a class="el" href="classcarma__wm_1_1CARMAWorldModel.html#a39dfa00a1066900c54ddae987d19b2d8">carma_wm::CARMAWorldModel</a>.</p>
 
 </div>
 </div>
@@ -1430,7 +1478,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm.html">carma_wm</a></li><li class="navelem"><a class="el" href="classcarma__wm_1_1WorldModel.html">WorldModel</a></li>
-    <li class="footer">Generated on Wed Apr 12 2023 13:55:44 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Apr 18 2023 03:39:51 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

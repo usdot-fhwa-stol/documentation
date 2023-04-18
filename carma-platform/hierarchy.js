@@ -418,7 +418,7 @@ var hierarchy =
     [ "arbitrator::VehicleState", "structarbitrator_1_1VehicleState.html", null ],
     [ "lci_strategic_plugin::LCIStrategicPlugin::VehicleState", "structlci__strategic__plugin_1_1LCIStrategicPlugin_1_1VehicleState.html", null ],
     [ "sci_strategic_plugin::SCIStrategicPlugin::VehicleState", "structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html", null ],
-    [ "stop_and_dwell_strategic_plugin::StopAndDwellStrategicPlugin::VehicleState", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_1_1VehicleState.html", null ],
+    [ "stop_and_dwell_strategic_plugin::VehicleState", "structstop__and__dwell__strategic__plugin_1_1VehicleState.html", null ],
     [ "NS3Adapter::WaveConfigStruct", "structNS3Adapter_1_1WaveConfigStruct.html", null ],
     [ "carma_wm_ctrl::WMBroadcaster", "classcarma__wm__ctrl_1_1WMBroadcaster.html", null ],
     [ "carma_wm::WMListener", "classcarma__wm_1_1WMListener.html", null ],

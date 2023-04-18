@@ -1,7 +1,11 @@
 var structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig =
 [
     [ "operator<<", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a0c03c72bf198dcd6e311a4fb753b47db", null ],
+    [ "activation_distance", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a00278312ed09ccdc135ba9180e674787", null ],
     [ "bus_line_exit_zone_length", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a8e4f4801a5cca9adc3e4c7f18568f16a", null ],
+    [ "deceleration_fraction", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a661e0284bed5a74fa8ffdca6261d7a18", null ],
+    [ "desired_distance_to_stop_buffer", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a6edc1ff71e24c7ed4a1037cd769b8994", null ],
+    [ "dwell_time", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#ad0b4de41f6b1c2992e62073153a1c91e", null ],
     [ "lane_following_plugin_name", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#aac0a9617a66a6537bcd4dcb57c7a215d", null ],
     [ "min_maneuver_planning_period", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a571872bd00307722a2fd9c5089b5e517", null ],
     [ "stop_and_wait_plugin_name", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a2b050fd1adafc395d595be4bf59842e5", null ],

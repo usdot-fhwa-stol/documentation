@@ -356,7 +356,8 @@ var annotated_dup =
     ] ],
     [ "stop_and_dwell_strategic_plugin", "namespacestop__and__dwell__strategic__plugin.html", [
       [ "StopAndDwellStrategicPlugin", "classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html", "classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin" ],
-      [ "StopAndDwellStrategicPluginConfig", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig" ]
+      [ "StopAndDwellStrategicPluginConfig", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig" ],
+      [ "VehicleState", "structstop__and__dwell__strategic__plugin_1_1VehicleState.html", "structstop__and__dwell__strategic__plugin_1_1VehicleState" ]
     ] ],
     [ "stop_and_wait_plugin", "namespacestop__and__wait__plugin.html", [
       [ "PointSpeedPair", "structstop__and__wait__plugin_1_1PointSpeedPair.html", "structstop__and__wait__plugin_1_1PointSpeedPair" ],

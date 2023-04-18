@@ -5,5 +5,6 @@ var namespacestop__and__dwell__strategic__plugin =
     ] ],
     [ "StopAndDwellStrategicPlugin", "classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html", "classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin" ],
     [ "StopAndDwellStrategicPluginConfig", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig" ],
+    [ "VehicleState", "structstop__and__dwell__strategic__plugin_1_1VehicleState.html", "structstop__and__dwell__strategic__plugin_1_1VehicleState" ],
     [ "generate_launch_description", "namespacestop__and__dwell__strategic__plugin.html#a61b457192fe18399ade09573cc61581d", null ]
 ];

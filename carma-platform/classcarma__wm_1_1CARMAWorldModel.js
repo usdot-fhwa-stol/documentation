@@ -6,6 +6,7 @@ var classcarma__wm_1_1CARMAWorldModel =
     [ "computeDowntrackReferenceLine", "classcarma__wm_1_1CARMAWorldModel.html#a6f924aa42ade5d323045fdad9b7ca3a8", null ],
     [ "copyConstructLineString", "classcarma__wm_1_1CARMAWorldModel.html#a1f25006ada239cea8226b7f36afc267e", null ],
     [ "distToNearestObjInLane", "classcarma__wm_1_1CARMAWorldModel.html#a131c9d5adca779c9efd7601f1dcfef5b", null ],
+    [ "getBusStopsAlongRoute", "classcarma__wm_1_1CARMAWorldModel.html#a39dfa00a1066900c54ddae987d19b2d8", null ],
     [ "getEntryExitOfSignalAlongRoute", "classcarma__wm_1_1CARMAWorldModel.html#a2c46116ef711d1e03298f9efd57f2bdd", null ],
     [ "getInLaneObjects", "classcarma__wm_1_1CARMAWorldModel.html#a19b8c922c7524c769f96a57b91f6a6bd", null ],
     [ "getIntersectingLanelet", "classcarma__wm_1_1CARMAWorldModel.html#a347bdceaab5df16ff4a676a733c32808", null ],

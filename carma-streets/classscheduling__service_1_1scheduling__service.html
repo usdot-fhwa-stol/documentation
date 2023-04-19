@@ -236,19 +236,25 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00292">292</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  293</span>    {</div>
-<div class="line"><span class="lineno">  294</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a8dbb4778c85e002162d207a1cdcd2cb4">consumer_worker</a>)</div>
-<div class="line"><span class="lineno">  295</span>        {</div>
-<div class="line"><span class="lineno">  296</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping consumer worker!&quot;</span>);</div>
-<div class="line"><span class="lineno">  297</span>            <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a8dbb4778c85e002162d207a1cdcd2cb4">consumer_worker</a>-&gt;stop();</div>
-<div class="line"><span class="lineno">  298</span>        }</div>
-<div class="line"><span class="lineno">  299</span> </div>
-<div class="line"><span class="lineno">  300</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#ab3d4a038ce60a6860531acf429b74a5e">producer_worker</a>)</div>
-<div class="line"><span class="lineno">  301</span>        {</div>
-<div class="line"><span class="lineno">  302</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping producer worker&quot;</span>);</div>
-<div class="line"><span class="lineno">  303</span>            <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#ab3d4a038ce60a6860531acf429b74a5e">producer_worker</a>-&gt;stop();</div>
-<div class="line"><span class="lineno">  304</span>        }</div>
-<div class="line"><span class="lineno">  305</span> </div>
-<div class="line"><span class="lineno">  306</span>    }</div>
+<div class="line"><span class="lineno">  294</span>        SPDLOG_WARN(<span class="stringliteral">&quot;Stopping Scheduling Service!&quot;</span>);</div>
+<div class="line"><span class="lineno">  295</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a8dbb4778c85e002162d207a1cdcd2cb4">consumer_worker</a>)</div>
+<div class="line"><span class="lineno">  296</span>        {</div>
+<div class="line"><span class="lineno">  297</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping consumer worker!&quot;</span>);</div>
+<div class="line"><span class="lineno">  298</span>            <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a8dbb4778c85e002162d207a1cdcd2cb4">consumer_worker</a>-&gt;stop();</div>
+<div class="line"><span class="lineno">  299</span>        }</div>
+<div class="line"><span class="lineno">  300</span> </div>
+<div class="line"><span class="lineno">  301</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#ab3d4a038ce60a6860531acf429b74a5e">producer_worker</a>)</div>
+<div class="line"><span class="lineno">  302</span>        {</div>
+<div class="line"><span class="lineno">  303</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping producer worker&quot;</span>);</div>
+<div class="line"><span class="lineno">  304</span>            <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#ab3d4a038ce60a6860531acf429b74a5e">producer_worker</a>-&gt;stop();</div>
+<div class="line"><span class="lineno">  305</span>        }</div>
+<div class="line"><span class="lineno">  306</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a0031ac9712167ac5a8d4b77fe6ee21f7">spat_consumer_worker</a>) {</div>
+<div class="line"><span class="lineno">  307</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping spat consumer worker&quot;</span>);</div>
+<div class="line"><span class="lineno">  308</span>            <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a0031ac9712167ac5a8d4b77fe6ee21f7">spat_consumer_worker</a>-&gt;stop();</div>
+<div class="line"><span class="lineno">  309</span>        }</div>
+<div class="line"><span class="lineno">  310</span> </div>
+<div class="line"><span class="lineno">  311</span>    }</div>
+<div class="ttc" id="aclassscheduling__service_1_1scheduling__service_html_a0031ac9712167ac5a8d4b77fe6ee21f7"><div class="ttname"><a href="classscheduling__service_1_1scheduling__service.html#a0031ac9712167ac5a8d4b77fe6ee21f7">scheduling_service::scheduling_service::spat_consumer_worker</a></div><div class="ttdeci">std::shared_ptr&lt; kafka_clients::kafka_consumer_worker &gt; spat_consumer_worker</div><div class="ttdef"><b>Definition:</b> <a href="scheduling__service_8h_source.html#l00041">scheduling_service.h:41</a></div></div>
 <div class="ttc" id="aclassscheduling__service_1_1scheduling__service_html_a8dbb4778c85e002162d207a1cdcd2cb4"><div class="ttname"><a href="classscheduling__service_1_1scheduling__service.html#a8dbb4778c85e002162d207a1cdcd2cb4">scheduling_service::scheduling_service::consumer_worker</a></div><div class="ttdeci">std::shared_ptr&lt; kafka_clients::kafka_consumer_worker &gt; consumer_worker</div><div class="ttdef"><b>Definition:</b> <a href="scheduling__service_8h_source.html#l00040">scheduling_service.h:40</a></div></div>
 <div class="ttc" id="aclassscheduling__service_1_1scheduling__service_html_ab3d4a038ce60a6860531acf429b74a5e"><div class="ttname"><a href="classscheduling__service_1_1scheduling__service.html#ab3d4a038ce60a6860531acf429b74a5e">scheduling_service::scheduling_service::producer_worker</a></div><div class="ttdeci">std::shared_ptr&lt; kafka_clients::kafka_producer_worker &gt; producer_worker</div><div class="ttdef"><b>Definition:</b> <a href="scheduling__service_8h_source.html#l00042">scheduling_service.h:42</a></div></div>
 </div><!-- fragment -->
@@ -316,19 +322,27 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  172</span>    }</div>
 <div class="ttc" id="aclassscheduling__service_1_1scheduling__service_html_a912d731630f5b4c1c8e343354da02b7b"><div class="ttname"><a href="classscheduling__service_1_1scheduling__service.html#a912d731630f5b4c1c8e343354da02b7b">scheduling_service::scheduling_service::scheduler_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; streets_vehicle_scheduler::vehicle_scheduler &gt; scheduler_ptr</div><div class="ttdef"><b>Definition:</b> <a href="scheduling__service_8h_source.html#l00037">scheduling_service.h:37</a></div></div>
 <div class="ttc" id="aclassscheduling__service_1_1scheduling__service_html_ad588a3c47c8c738498677be7329d9d09"><div class="ttname"><a href="classscheduling__service_1_1scheduling__service.html#ad588a3c47c8c738498677be7329d9d09">scheduling_service::scheduling_service::spat_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; signal_phase_and_timing::spat &gt; spat_ptr</div><div class="ttdef"><b>Definition:</b> <a href="scheduling__service_8h_source.html#l00038">scheduling_service.h:38</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a03603871626201e07690effb9f2440bf"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a></div><div class="ttdeci">static std::string get_string_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter string value with provided name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00103">streets_configuration.cpp:103</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_ab33a5d183c0ca2b2f0d757f5466f200b"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a></div><div class="ttdeci">static int get_int_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter integer value with provided name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00118">streets_configuration.cpp:118</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a03603871626201e07690effb9f2440bf"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a></div><div class="ttdeci">static std::string get_string_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter string value with provided name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00104">streets_configuration.cpp:104</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_ab33a5d183c0ca2b2f0d757f5466f200b"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a></div><div class="ttdeci">static int get_int_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter integer value with provided name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00119">streets_configuration.cpp:119</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00118">streets_service::streets_configuration::get_int_config()</a>, and <a class="el" href="streets__configuration_8cpp_source.html#l00103">streets_service::streets_configuration::get_string_config()</a>.</p>
+<p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00119">streets_service::streets_configuration::get_int_config()</a>, and <a class="el" href="streets__configuration_8cpp_source.html#l00104">streets_service::streets_configuration::get_string_config()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscheduling__service_1_1scheduling__service_a13bb653277956326ecc5b11cf7342460_cgraph.png" border="0" usemap="#aclassscheduling__service_1_1scheduling__service_a13bb653277956326ecc5b11cf7342460_cgraph" alt=""/></div>
 <map name="aclassscheduling__service_1_1scheduling__service_a13bb653277956326ecc5b11cf7342460_cgraph" id="aclassscheduling__service_1_1scheduling__service_a13bb653277956326ecc5b11cf7342460_cgraph">
-<area shape="rect" title="Configure the scheduler object." alt="" coords="5,31,144,87"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b" title="Retreive configuration parameter integer value with provided name." alt="" coords="201,5,389,47"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf" title="Retreive configuration parameter string value with provided name." alt="" coords="192,71,399,112"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a92ea5469cbab9198efb4696b7e5598eb" title=" " alt="" coords="447,39,632,80"/>
+<area shape="rect" title="Configure the scheduler object." alt="" coords="5,103,144,159"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b" title="Retreive configuration parameter integer value with provided name." alt="" coords="201,77,389,119"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf" title="Retreive configuration parameter string value with provided name." alt="" coords="192,143,399,184"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a595d66c854ec6d7bb85d975721b5cde3" title="Method to check last modified time of file to see if a file update is necessary." alt="" coords="447,77,636,119"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="449,143,634,184"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#acf5b0a74be5323a4efe6e623f230ef85" title="Parse manifest.json configuration file for CARMA&#45;Streets service and update configurations." alt="" coords="684,5,927,47"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#add8020786e63d730992680e57bde66b3" title="Update configuration parameters using json Document." alt="" coords="727,70,884,126"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ac3be4830490f02d88d5fa5c23c8aa5e1" title="Update loglevel for logger using json Document." alt="" coords="727,150,884,206"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#abf6b664ead9e4d6f9f77c2ad26cec13b" title="Helper method that reads the configurations array inside the manifest.json configuration file." alt="" coords="975,77,1237,119"/>
+<area shape="rect" href="structstreets__service_1_1configuration.html#a879fd3a8c15c4167ca1ba4d3a1bb3753" title="Method to translate json object to configuration struct." alt="" coords="1285,77,1476,119"/>
+<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="1524,85,1596,111"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#af65edea791c4df09b00836dd0dbf164d" title="Method to set the spdlog::default." alt="" coords="1017,157,1195,199"/>
 </map>
 </div>
 
@@ -379,19 +393,27 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  134</span>        </div>
 <div class="line"><span class="lineno">  135</span>    }</div>
 <div class="ttc" id="aclassscheduling__service_1_1scheduling__service_html_a6a1858cd90f4989890108d861893a7bd"><div class="ttname"><a href="classscheduling__service_1_1scheduling__service.html#a6a1858cd90f4989890108d861893a7bd">scheduling_service::scheduling_service::vehicle_list_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; streets_vehicles::vehicle_list &gt; vehicle_list_ptr</div><div class="ttdef"><b>Definition:</b> <a href="scheduling__service_8h_source.html#l00036">scheduling_service.h:36</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_ae1ce5cdd4b4d28cc8e4034c429aabb66"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#ae1ce5cdd4b4d28cc8e4034c429aabb66">streets_service::streets_configuration::get_double_config</a></div><div class="ttdeci">static double get_double_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter double value with provide name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00134">streets_configuration.cpp:134</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_ae1ce5cdd4b4d28cc8e4034c429aabb66"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#ae1ce5cdd4b4d28cc8e4034c429aabb66">streets_service::streets_configuration::get_double_config</a></div><div class="ttdeci">static double get_double_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter double value with provide name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00135">streets_configuration.cpp:135</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00134">streets_service::streets_configuration::get_double_config()</a>, <a class="el" href="streets__configuration_8cpp_source.html#l00118">streets_service::streets_configuration::get_int_config()</a>, and <a class="el" href="streets__configuration_8cpp_source.html#l00103">streets_service::streets_configuration::get_string_config()</a>.</p>
+<p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00135">streets_service::streets_configuration::get_double_config()</a>, <a class="el" href="streets__configuration_8cpp_source.html#l00119">streets_service::streets_configuration::get_int_config()</a>, and <a class="el" href="streets__configuration_8cpp_source.html#l00104">streets_service::streets_configuration::get_string_config()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscheduling__service_1_1scheduling__service_aa901f39ddb922a8d02955220a40d92c7_cgraph.png" border="0" usemap="#aclassscheduling__service_1_1scheduling__service_aa901f39ddb922a8d02955220a40d92c7_cgraph" alt=""/></div>
 <map name="aclassscheduling__service_1_1scheduling__service_aa901f39ddb922a8d02955220a40d92c7_cgraph" id="aclassscheduling__service_1_1scheduling__service_aa901f39ddb922a8d02955220a40d92c7_cgraph">
-<area shape="rect" title="Create the vehicle list processor and configure it." alt="" coords="5,63,144,119"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ae1ce5cdd4b4d28cc8e4034c429aabb66" title="Retreive configuration parameter double value with provide name." alt="" coords="192,5,404,47"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b" title="Retreive configuration parameter integer value with provided name." alt="" coords="204,71,392,112"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf" title="Retreive configuration parameter string value with provided name." alt="" coords="195,136,401,177"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a92ea5469cbab9198efb4696b7e5598eb" title=" " alt="" coords="452,71,637,112"/>
+<area shape="rect" title="Create the vehicle list processor and configure it." alt="" coords="5,102,144,158"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ae1ce5cdd4b4d28cc8e4034c429aabb66" title="Retreive configuration parameter double value with provide name." alt="" coords="192,44,404,85"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b" title="Retreive configuration parameter integer value with provided name." alt="" coords="204,109,392,151"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf" title="Retreive configuration parameter string value with provided name." alt="" coords="195,175,401,216"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a595d66c854ec6d7bb85d975721b5cde3" title="Method to check last modified time of file to see if a file update is necessary." alt="" coords="452,77,641,119"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="454,143,639,184"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#acf5b0a74be5323a4efe6e623f230ef85" title="Parse manifest.json configuration file for CARMA&#45;Streets service and update configurations." alt="" coords="689,5,932,47"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#add8020786e63d730992680e57bde66b3" title="Update configuration parameters using json Document." alt="" coords="732,70,889,126"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ac3be4830490f02d88d5fa5c23c8aa5e1" title="Update loglevel for logger using json Document." alt="" coords="732,150,889,206"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#abf6b664ead9e4d6f9f77c2ad26cec13b" title="Helper method that reads the configurations array inside the manifest.json configuration file." alt="" coords="980,77,1243,119"/>
+<area shape="rect" href="structstreets__service_1_1configuration.html#a879fd3a8c15c4167ca1ba4d3a1bb3753" title="Method to translate json object to configuration struct." alt="" coords="1291,77,1481,119"/>
+<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="1529,85,1601,111"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#af65edea791c4df09b00836dd0dbf164d" title="Method to set the spdlog::default." alt="" coords="1023,157,1200,199"/>
 </map>
 </div>
 
@@ -435,15 +457,23 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  288</span>        }</div>
 <div class="line"><span class="lineno">  289</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00103">streets_service::streets_configuration::get_string_config()</a>.</p>
+<p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00104">streets_service::streets_configuration::get_string_config()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscheduling__service_1_1scheduling__service_aedb80eb05613731a0d0192e5e3823121_cgraph.png" border="0" usemap="#aclassscheduling__service_1_1scheduling__service_aedb80eb05613731a0d0192e5e3823121_cgraph" alt=""/></div>
 <map name="aclassscheduling__service_1_1scheduling__service_aedb80eb05613731a0d0192e5e3823121_cgraph" id="aclassscheduling__service_1_1scheduling__service_aedb80eb05613731a0d0192e5e3823121_cgraph">
-<area shape="rect" title="Method to configure spdlog::logger for logging scheduling metrics into daily rotating csv file." alt="" coords="5,5,156,61"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf" title="Retreive configuration parameter string value with provided name." alt="" coords="204,13,411,54"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a92ea5469cbab9198efb4696b7e5598eb" title=" " alt="" coords="459,13,644,54"/>
+<area shape="rect" title="Method to configure spdlog::logger for logging scheduling metrics into daily rotating csv file." alt="" coords="5,103,156,159"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf" title="Retreive configuration parameter string value with provided name." alt="" coords="204,111,411,152"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a595d66c854ec6d7bb85d975721b5cde3" title="Method to check last modified time of file to see if a file update is necessary." alt="" coords="459,77,648,119"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="461,143,646,184"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#acf5b0a74be5323a4efe6e623f230ef85" title="Parse manifest.json configuration file for CARMA&#45;Streets service and update configurations." alt="" coords="696,5,939,47"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#add8020786e63d730992680e57bde66b3" title="Update configuration parameters using json Document." alt="" coords="739,70,896,126"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ac3be4830490f02d88d5fa5c23c8aa5e1" title="Update loglevel for logger using json Document." alt="" coords="739,150,896,206"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#abf6b664ead9e4d6f9f77c2ad26cec13b" title="Helper method that reads the configurations array inside the manifest.json configuration file." alt="" coords="987,77,1249,119"/>
+<area shape="rect" href="structstreets__service_1_1configuration.html#a879fd3a8c15c4167ca1ba4d3a1bb3753" title="Method to translate json object to configuration struct." alt="" coords="1297,77,1488,119"/>
+<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="1536,85,1608,111"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#af65edea791c4df09b00836dd0dbf164d" title="Method to set the spdlog::default." alt="" coords="1029,157,1207,199"/>
 </map>
 </div>
 
@@ -523,7 +553,6 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  211</span>        SPDLOG_WARN(<span class="stringliteral">&quot;Stopping spat consumer thread!&quot;</span>);</div>
 <div class="line"><span class="lineno">  212</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a0031ac9712167ac5a8d4b77fe6ee21f7">spat_consumer_worker</a>-&gt;stop();</div>
 <div class="line"><span class="lineno">  213</span>    }</div>
-<div class="ttc" id="aclassscheduling__service_1_1scheduling__service_html_a0031ac9712167ac5a8d4b77fe6ee21f7"><div class="ttname"><a href="classscheduling__service_1_1scheduling__service.html#a0031ac9712167ac5a8d4b77fe6ee21f7">scheduling_service::scheduling_service::spat_consumer_worker</a></div><div class="ttdeci">std::shared_ptr&lt; kafka_clients::kafka_consumer_worker &gt; spat_consumer_worker</div><div class="ttdef"><b>Definition:</b> <a href="scheduling__service_8h_source.html#l00041">scheduling_service.h:41</a></div></div>
 <div class="ttc" id="aclasssignal__phase__and__timing_1_1signal__phase__and__timing__exception_html"><div class="ttname"><a href="classsignal__phase__and__timing_1_1signal__phase__and__timing__exception.html">signal_phase_and_timing::signal_phase_and_timing_exception</a></div><div class="ttdoc">Runtime error related to processing signal_phase_and_timing JSON updates.</div><div class="ttdef"><b>Definition:</b> <a href="signal__phase__and__timing__exception_8h_source.html#l00013">signal_phase_and_timing_exception.h:13</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -653,9 +682,9 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassscheduling__service_1_1scheduling__service_html_ae10a9e9b3b7ee3e7dbd695a592c340a4"><div class="ttname"><a href="classscheduling__service_1_1scheduling__service.html#ae10a9e9b3b7ee3e7dbd695a592c340a4">scheduling_service::scheduling_service::group_id</a></div><div class="ttdeci">std::string group_id</div><div class="ttdef"><b>Definition:</b> <a href="scheduling__service_8h_source.html#l00031">scheduling_service.h:31</a></div></div>
 <div class="ttc" id="aclassscheduling__service_1_1scheduling__service_html_aedb80eb05613731a0d0192e5e3823121"><div class="ttname"><a href="classscheduling__service_1_1scheduling__service.html#aedb80eb05613731a0d0192e5e3823121">scheduling_service::scheduling_service::configure_csv_logger</a></div><div class="ttdeci">void configure_csv_logger() const</div><div class="ttdoc">Method to configure spdlog::logger for logging scheduling metrics into daily rotating csv file.</div><div class="ttdef"><b>Definition:</b> <a href="scheduling__service_8cpp_source.html#l00270">scheduling_service.cpp:270</a></div></div>
 <div class="ttc" id="aclassstreets__service_1_1streets__configuration__exception_html"><div class="ttname"><a href="classstreets__service_1_1streets__configuration__exception.html">streets_service::streets_configuration_exception</a></div><div class="ttdoc">Streets Configuration Exception thrown when manifest.json configuration files are incorrectly formatt...</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration__exception_8h_source.html#l00011">streets_configuration_exception.h:11</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a48f38b0b6ecb3043cc051b624f12824b"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a48f38b0b6ecb3043cc051b624f12824b">streets_service::streets_configuration::get_boolean_config</a></div><div class="ttdeci">static bool get_boolean_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter boolean value with provide name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00149">streets_configuration.cpp:149</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a48f38b0b6ecb3043cc051b624f12824b"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a48f38b0b6ecb3043cc051b624f12824b">streets_service::streets_configuration::get_boolean_config</a></div><div class="ttdeci">static bool get_boolean_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter boolean value with provide name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00150">streets_configuration.cpp:150</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00149">streets_service::streets_configuration::get_boolean_config()</a>, and <a class="el" href="streets__configuration_8cpp_source.html#l00103">streets_service::streets_configuration::get_string_config()</a>.</p>
+<p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00150">streets_service::streets_configuration::get_boolean_config()</a>, and <a class="el" href="streets__configuration_8cpp_source.html#l00104">streets_service::streets_configuration::get_string_config()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="scheduling__service_2src_2main_8cpp_source.html#l00007">main()</a>.</p>
 <div class="dynheader">
@@ -663,10 +692,18 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscheduling__service_1_1scheduling__service_a29432e862ffe2f710ed92bd1a7ea66dd_cgraph.png" border="0" usemap="#aclassscheduling__service_1_1scheduling__service_a29432e862ffe2f710ed92bd1a7ea66dd_cgraph" alt=""/></div>
 <map name="aclassscheduling__service_1_1scheduling__service_a29432e862ffe2f710ed92bd1a7ea66dd_cgraph" id="aclassscheduling__service_1_1scheduling__service_a29432e862ffe2f710ed92bd1a7ea66dd_cgraph">
-<area shape="rect" title="Initialize the consumer, producer, and scheduling workers. Create a vehicle list and scheduler object..." alt="" coords="5,31,144,87"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a48f38b0b6ecb3043cc051b624f12824b" title="Retreive configuration parameter boolean value with provide name." alt="" coords="192,5,411,47"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf" title="Retreive configuration parameter string value with provided name." alt="" coords="198,71,405,112"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a92ea5469cbab9198efb4696b7e5598eb" title=" " alt="" coords="459,39,644,80"/>
+<area shape="rect" title="Initialize the consumer, producer, and scheduling workers. Create a vehicle list and scheduler object..." alt="" coords="5,103,144,159"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a48f38b0b6ecb3043cc051b624f12824b" title="Retreive configuration parameter boolean value with provide name." alt="" coords="192,77,411,119"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf" title="Retreive configuration parameter string value with provided name." alt="" coords="198,143,405,184"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a595d66c854ec6d7bb85d975721b5cde3" title="Method to check last modified time of file to see if a file update is necessary." alt="" coords="459,77,648,119"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="461,143,646,184"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#acf5b0a74be5323a4efe6e623f230ef85" title="Parse manifest.json configuration file for CARMA&#45;Streets service and update configurations." alt="" coords="696,5,939,47"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#add8020786e63d730992680e57bde66b3" title="Update configuration parameters using json Document." alt="" coords="739,70,896,126"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ac3be4830490f02d88d5fa5c23c8aa5e1" title="Update loglevel for logger using json Document." alt="" coords="739,150,896,206"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#abf6b664ead9e4d6f9f77c2ad26cec13b" title="Helper method that reads the configurations array inside the manifest.json configuration file." alt="" coords="987,77,1249,119"/>
+<area shape="rect" href="structstreets__service_1_1configuration.html#a879fd3a8c15c4167ca1ba4d3a1bb3753" title="Method to translate json object to configuration struct." alt="" coords="1297,77,1488,119"/>
+<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="1536,85,1608,111"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#af65edea791c4df09b00836dd0dbf164d" title="Method to set the spdlog::default." alt="" coords="1029,157,1207,199"/>
 </map>
 </div>
 <div class="dynheader">
@@ -710,8 +747,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  225</span>        <span class="keyword">auto</span> scheduling_delta = u_int64_t(<a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ae1ce5cdd4b4d28cc8e4034c429aabb66">streets_service::streets_configuration::get_double_config</a>(<span class="stringliteral">&quot;scheduling_delta&quot;</span>) * 1000);</div>
 <div class="line"><span class="lineno">  226</span>        <span class="keywordtype">int</span> sch_count = 0;</div>
 <div class="line"><span class="lineno">  227</span>        std::unordered_map&lt;std::string, streets_vehicles::vehicle&gt; veh_map;</div>
-<div class="line"><span class="lineno">  228</span> </div>
-<div class="line"><span class="lineno">  229</span>        <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  228</span>        <span class="comment">// Check health of producer worker to only run scheduling while producer is running</span></div>
+<div class="line"><span class="lineno">  229</span>        <span class="keywordflow">while</span> (<a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#ab3d4a038ce60a6860531acf429b74a5e">producer_worker</a>-&gt;is_running())</div>
 <div class="line"><span class="lineno">  230</span>        {</div>
 <div class="line"><span class="lineno">  231</span>            <span class="keyword">auto</span> current_timestamp = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(std::chrono::system_clock::now().time_since_epoch()).count();</div>
 <div class="line"><span class="lineno">  232</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Schedule iteration start time {0}!&quot;</span>, current_timestamp);</div>
@@ -752,16 +789,24 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  267</span>    }</div>
 <div class="ttc" id="aclassstreets__vehicle__scheduler_1_1scheduling__exception_html"><div class="ttname"><a href="classstreets__vehicle__scheduler_1_1scheduling__exception.html">streets_vehicle_scheduler::scheduling_exception</a></div><div class="ttdoc">Runtime error related to processing status intent vehicle updates.</div><div class="ttdef"><b>Definition:</b> <a href="scheduling__exception_8h_source.html#l00013">scheduling_exception.h:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00149">streets_service::streets_configuration::get_boolean_config()</a>, and <a class="el" href="streets__configuration_8cpp_source.html#l00134">streets_service::streets_configuration::get_double_config()</a>.</p>
+<p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00150">streets_service::streets_configuration::get_boolean_config()</a>, and <a class="el" href="streets__configuration_8cpp_source.html#l00135">streets_service::streets_configuration::get_double_config()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscheduling__service_1_1scheduling__service_a7bdd65e11e2bd2c3d4029e2f7510f2d9_cgraph.png" border="0" usemap="#aclassscheduling__service_1_1scheduling__service_a7bdd65e11e2bd2c3d4029e2f7510f2d9_cgraph" alt=""/></div>
 <map name="aclassscheduling__service_1_1scheduling__service_a7bdd65e11e2bd2c3d4029e2f7510f2d9_cgraph" id="aclassscheduling__service_1_1scheduling__service_a7bdd65e11e2bd2c3d4029e2f7510f2d9_cgraph">
-<area shape="rect" title="Schedule vehicles and produce the schedule plan." alt="" coords="5,31,144,87"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a48f38b0b6ecb3043cc051b624f12824b" title="Retreive configuration parameter boolean value with provide name." alt="" coords="192,5,411,47"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ae1ce5cdd4b4d28cc8e4034c429aabb66" title="Retreive configuration parameter double value with provide name." alt="" coords="195,71,407,112"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a92ea5469cbab9198efb4696b7e5598eb" title=" " alt="" coords="459,39,644,80"/>
+<area shape="rect" title="Schedule vehicles and produce the schedule plan." alt="" coords="5,103,144,159"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a48f38b0b6ecb3043cc051b624f12824b" title="Retreive configuration parameter boolean value with provide name." alt="" coords="192,77,411,119"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ae1ce5cdd4b4d28cc8e4034c429aabb66" title="Retreive configuration parameter double value with provide name." alt="" coords="195,143,407,184"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a595d66c854ec6d7bb85d975721b5cde3" title="Method to check last modified time of file to see if a file update is necessary." alt="" coords="459,77,648,119"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="461,143,646,184"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#acf5b0a74be5323a4efe6e623f230ef85" title="Parse manifest.json configuration file for CARMA&#45;Streets service and update configurations." alt="" coords="696,5,939,47"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#add8020786e63d730992680e57bde66b3" title="Update configuration parameters using json Document." alt="" coords="739,70,896,126"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ac3be4830490f02d88d5fa5c23c8aa5e1" title="Update loglevel for logger using json Document." alt="" coords="739,150,896,206"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#abf6b664ead9e4d6f9f77c2ad26cec13b" title="Helper method that reads the configurations array inside the manifest.json configuration file." alt="" coords="987,77,1249,119"/>
+<area shape="rect" href="structstreets__service_1_1configuration.html#a879fd3a8c15c4167ca1ba4d3a1bb3753" title="Method to translate json object to configuration struct." alt="" coords="1297,77,1488,119"/>
+<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="1536,85,1608,111"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#af65edea791c4df09b00836dd0dbf164d" title="Method to set the spdlog::default." alt="" coords="1029,157,1207,199"/>
 </map>
 </div>
 
@@ -791,10 +836,10 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00320">320</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  320</span>                                                                                                         {</div>
-<div class="line"><span class="lineno">  321</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a8dbb4778c85e002162d207a1cdcd2cb4">consumer_worker</a> = worker;</div>
-<div class="line"><span class="lineno">  322</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00325">325</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  325</span>                                                                                                         {</div>
+<div class="line"><span class="lineno">  326</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a8dbb4778c85e002162d207a1cdcd2cb4">consumer_worker</a> = worker;</div>
+<div class="line"><span class="lineno">  327</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -822,10 +867,10 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00324">324</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  324</span>                                                                                                         {</div>
-<div class="line"><span class="lineno">  325</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#ab3d4a038ce60a6860531acf429b74a5e">producer_worker</a> = worker;</div>
-<div class="line"><span class="lineno">  326</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00329">329</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  329</span>                                                                                                         {</div>
+<div class="line"><span class="lineno">  330</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#ab3d4a038ce60a6860531acf429b74a5e">producer_worker</a> = worker;</div>
+<div class="line"><span class="lineno">  331</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -853,10 +898,10 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00308">308</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  308</span>                                                                                                {</div>
-<div class="line"><span class="lineno">  309</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#aa9fee6426c387ab6df684e5a82e1dd83">_scheduling_worker</a> = sched_worker;</div>
-<div class="line"><span class="lineno">  310</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00313">313</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  313</span>                                                                                                {</div>
+<div class="line"><span class="lineno">  314</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#aa9fee6426c387ab6df684e5a82e1dd83">_scheduling_worker</a> = sched_worker;</div>
+<div class="line"><span class="lineno">  315</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -884,10 +929,10 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00328">328</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  328</span>                                                                                                              {</div>
-<div class="line"><span class="lineno">  329</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a0031ac9712167ac5a8d4b77fe6ee21f7">spat_consumer_worker</a> = worker;</div>
-<div class="line"><span class="lineno">  330</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00333">333</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  333</span>                                                                                                              {</div>
+<div class="line"><span class="lineno">  334</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a0031ac9712167ac5a8d4b77fe6ee21f7">spat_consumer_worker</a> = worker;</div>
+<div class="line"><span class="lineno">  335</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -915,10 +960,10 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00312">312</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  312</span>                                                                                                  {</div>
-<div class="line"><span class="lineno">  313</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a6a1858cd90f4989890108d861893a7bd">vehicle_list_ptr</a> = veh_list;</div>
-<div class="line"><span class="lineno">  314</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00317">317</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  317</span>                                                                                                  {</div>
+<div class="line"><span class="lineno">  318</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a6a1858cd90f4989890108d861893a7bd">vehicle_list_ptr</a> = veh_list;</div>
+<div class="line"><span class="lineno">  319</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -946,10 +991,10 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00316">316</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  316</span>                                                                                                                      {</div>
-<div class="line"><span class="lineno">  317</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a912d731630f5b4c1c8e343354da02b7b">scheduler_ptr</a> = scheduler;</div>
-<div class="line"><span class="lineno">  318</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="scheduling__service_8cpp_source.html#l00321">321</a> of file <a class="el" href="scheduling__service_8cpp_source.html">scheduling_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  321</span>                                                                                                                      {</div>
+<div class="line"><span class="lineno">  322</span>        <a class="code hl_variable" href="classscheduling__service_1_1scheduling__service.html#a912d731630f5b4c1c8e343354da02b7b">scheduler_ptr</a> = scheduler;</div>
+<div class="line"><span class="lineno">  323</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -984,7 +1029,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  105</span>        scheduling_thread.join();</div>
 <div class="line"><span class="lineno">  106</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00103">streets_service::streets_configuration::get_string_config()</a>.</p>
+<p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00104">streets_service::streets_configuration::get_string_config()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="scheduling__service_2src_2main_8cpp_source.html#l00007">main()</a>.</p>
 <div class="dynheader">
@@ -992,9 +1037,17 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classscheduling__service_1_1scheduling__service_af7adc4a45f194a6aace56a3eafed61fa_cgraph.png" border="0" usemap="#aclassscheduling__service_1_1scheduling__service_af7adc4a45f194a6aace56a3eafed61fa_cgraph" alt=""/></div>
 <map name="aclassscheduling__service_1_1scheduling__service_af7adc4a45f194a6aace56a3eafed61fa_cgraph" id="aclassscheduling__service_1_1scheduling__service_af7adc4a45f194a6aace56a3eafed61fa_cgraph">
-<area shape="rect" title="Create 2 threads: The first thread consumes status and intent message and updates the vehicle list...." alt="" coords="5,5,144,61"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf" title="Retreive configuration parameter string value with provided name." alt="" coords="192,13,399,54"/>
-<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a92ea5469cbab9198efb4696b7e5598eb" title=" " alt="" coords="447,13,632,54"/>
+<area shape="rect" title="Create 2 threads: The first thread consumes status and intent message and updates the vehicle list...." alt="" coords="5,103,144,159"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf" title="Retreive configuration parameter string value with provided name." alt="" coords="192,111,399,152"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a595d66c854ec6d7bb85d975721b5cde3" title="Method to check last modified time of file to see if a file update is necessary." alt="" coords="447,77,636,119"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="449,143,634,184"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#acf5b0a74be5323a4efe6e623f230ef85" title="Parse manifest.json configuration file for CARMA&#45;Streets service and update configurations." alt="" coords="684,5,927,47"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#add8020786e63d730992680e57bde66b3" title="Update configuration parameters using json Document." alt="" coords="727,70,884,126"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#ac3be4830490f02d88d5fa5c23c8aa5e1" title="Update loglevel for logger using json Document." alt="" coords="727,150,884,206"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#abf6b664ead9e4d6f9f77c2ad26cec13b" title="Helper method that reads the configurations array inside the manifest.json configuration file." alt="" coords="975,77,1237,119"/>
+<area shape="rect" href="structstreets__service_1_1configuration.html#a879fd3a8c15c4167ca1ba4d3a1bb3753" title="Method to translate json object to configuration struct." alt="" coords="1285,77,1476,119"/>
+<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="1524,85,1596,111"/>
+<area shape="rect" href="classstreets__service_1_1streets__configuration.html#af65edea791c4df09b00836dd0dbf164d" title="Method to set the spdlog::default." alt="" coords="1017,157,1195,199"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1308,7 +1361,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacescheduling__service.html">scheduling_service</a></li><li class="navelem"><a class="el" href="classscheduling__service_1_1scheduling__service.html">scheduling_service</a></li>
-    <li class="footer">Generated on Tue Apr 11 2023 14:38:44 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 19 2023 13:18:58 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

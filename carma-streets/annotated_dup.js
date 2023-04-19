@@ -114,10 +114,16 @@ var annotated_dup =
       [ "streets_desired_phase_plan_exception", "classstreets__desired__phase__plan_1_1streets__desired__phase__plan__exception.html", "classstreets__desired__phase__plan_1_1streets__desired__phase__plan__exception" ]
     ] ],
     [ "streets_service", "namespacestreets__service.html", [
+      [ "simulation", "namespacestreets__service_1_1simulation.html", [
+        [ "time_sync_message", "structstreets__service_1_1simulation_1_1time__sync__message.html", "structstreets__service_1_1simulation_1_1time__sync__message" ]
+      ] ],
       [ "configuration", "structstreets__service_1_1configuration.html", "structstreets__service_1_1configuration" ],
+      [ "streets_clock_singleton", "classstreets__service_1_1streets__clock__singleton.html", "classstreets__service_1_1streets__clock__singleton" ],
       [ "streets_configuration", "classstreets__service_1_1streets__configuration.html", "classstreets__service_1_1streets__configuration" ],
       [ "streets_configuration_exception", "classstreets__service_1_1streets__configuration__exception.html", "classstreets__service_1_1streets__configuration__exception" ],
-      [ "streets_singleton", "classstreets__service_1_1streets__singleton.html", "classstreets__service_1_1streets__singleton" ]
+      [ "streets_service", "classstreets__service_1_1streets__service.html", "classstreets__service_1_1streets__service" ],
+      [ "streets_singleton", "classstreets__service_1_1streets__singleton.html", "classstreets__service_1_1streets__singleton" ],
+      [ "streets_singleton_exception", "classstreets__service_1_1streets__singleton__exception.html", "classstreets__service_1_1streets__singleton__exception" ]
     ] ],
     [ "streets_signal_optimization", "namespacestreets__signal__optimization.html", [
       [ "movement_group", "structstreets__signal__optimization_1_1movement__group.html", "structstreets__signal__optimization_1_1movement__group" ],

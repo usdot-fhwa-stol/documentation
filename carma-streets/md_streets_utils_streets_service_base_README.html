@@ -88,45 +88,17 @@ $(document).ready(function(){initNavTree('md_streets_utils_streets_service_base_
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md85"></a>
 Introduction</h1>
-<p >This is the <code>streets_service_base</code> library meant to be the base of each new CARMA-Streets service. It contains a extensible templated singleton implementation that allows for the creation of singleton scoped objects in CARMA-Streets services with static access. This means that by extending this class you can implement a class of which there can only ever be a single instance and which is statically retrievable using the <code>streets_singleton::get_singleton()</code> method. This library also includes an implemented singleton <code>streets_configuration</code> class which standardizes how CARMA-Streets services will read configuration parameters from <code>manifest.json</code> configuration files. This <code>streets_configuration</code> singleton parses the <code>manifest.json</code> configuration file and then allows for static retrieval of configuration parameters using the <code>get_int_config()</code>,<code>get_double_config</code>,<code>get_string_config()</code>, and <code>get_bool_config()</code> methods.</p>
+<p >This is the <code>streets_service_base</code> library meant to be the base of each new CARMA-Streets service. This library exposes two major classes. The first is <code>streets_clock_singleton</code>, which is a <code>streets_singleton</code> that manages as instance of CarmaClock (see <a href="https://github.com/usdot-fhwa-stol/carma-time-lib">https://github.com/usdot-fhwa-stol/carma-time-lib</a> ). The second is <code><a class="el" href="namespacestreets__service.html">streets_service</a></code>, which is meant to be a base class for all CARMA-Streets services that offers a framework for standing up new CARMA-Streets services. <br  />
+</p>
 <h1><a class="anchor" id="autotoc_md86"></a>
-Streets Singleton</h1>
-<p >Library offers access to the <code>streets_singleton</code> class. This is a templated, extensible class that stores and offers static retrieval of a single instance of itself, which is lazily initialized (not initialized until retrieved for the first time). To ensure that new instances of this class can not be created the constructors are deleted or hidden using private or protected access.</p>
+streets_clock_singleton</h1>
+<p >The streets_clock_singleton is a streets_singleton which manages and instance of CarmaClock (see <a href="https://github.com/usdot-fhwa-stol/carma-time-lib">https://github.com/usdot-fhwa-stol/carma-time-lib</a> ). It offers static access to the CarmaClock time wrapper, which is meant to allow CARMA-Streets services to configurable use system time or an external source for time.</p>
 <h1><a class="anchor" id="autotoc_md87"></a>
-Streets Configuration</h1>
-<p >Library creates <code>streets_configuration</code> singleton which standardizes the <code>manifest.json</code> configuration file parsing and configuration parameter retrieval. Extending <code>streets_singleton</code> allows <code>streets_configuration</code> to be limited to singleton scope ( single instance ) and offer static methods for configuration parameter retrieval. <code>streets_configuration</code> also parses some service required configurations like <b>loglevel</b> and <b>service_name</b> to create and configure a <code>spdlog::async_loggerr</code> with a <code>spdlog::sinks::daily_file_sink_mt</code> and a <code>spdlog::sinks::stdout_color_sink_mt</code>.</p>
-<p >Example <code>manifest.json</code> configuration file. </p><div class="fragment"><div class="line">{</div>
-<div class="line">    &quot;service_name&quot;: &quot;test_service&quot;,</div>
-<div class="line">    &quot;loglevel&quot;: &quot;info&quot;,</div>
-<div class="line">    &quot;configurations&quot;: [</div>
-<div class="line">        {</div>
-<div class="line">            &quot;name&quot;: &quot;param_1&quot;,</div>
-<div class="line">            &quot;value&quot;: 1,</div>
-<div class="line">            &quot;description&quot;: &quot;Test Parameter 1&quot;,</div>
-<div class="line">            &quot;type&quot;: &quot;INTEGER&quot;</div>
-<div class="line">        },</div>
-<div class="line">        {</div>
-<div class="line">            &quot;name&quot;: &quot;param_2&quot;,</div>
-<div class="line">            &quot;value&quot;: &quot;Second Parameter&quot;,</div>
-<div class="line">            &quot;description&quot;: &quot;Test Parameter 2&quot;,</div>
-<div class="line">            &quot;type&quot;: &quot;STRING&quot;</div>
-<div class="line">        },</div>
-<div class="line">        {</div>
-<div class="line">            &quot;name&quot;: &quot;param_3&quot;,</div>
-<div class="line">            &quot;value&quot;: 123.2,</div>
-<div class="line">            &quot;description&quot;: &quot;Test Parameter 3&quot;,</div>
-<div class="line">            &quot;type&quot;: &quot;DOUBLE&quot;</div>
-<div class="line">        },</div>
-<div class="line">        {</div>
-<div class="line">            &quot;name&quot;: &quot;param_4&quot;,</div>
-<div class="line">            &quot;value&quot;: true,</div>
-<div class="line">            &quot;description&quot;: &quot;Test Parameter 3&quot;,</div>
-<div class="line">            &quot;type&quot;: &quot;BOOL&quot;</div>
-<div class="line">        }</div>
-<div class="line">    ]</div>
-<div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md88"></a>
-Include streets_service_base_lib::streets_service_base_lib</h1>
+streets_service</h1>
+<p >The street_service class is a base class that sets up method to help standup new CARMA-Streets Services. This includes protected methods to initialize kafka consumers and producers, methods to start service threads and methods to intialize service members. The virtual <code>initialize</code> method initializes streets_singletons streets_clock_singleton and streets_configuration based on environment variables: <b>SIMULATION_MODE</b>: TRUE will initialize streets_clock_singleton in simulation mode which will allow for time updating from external source via static update() method.FALSE will initialize streets_clock_singleton in realtime mode which will make streets_clock_singleton call system time. <b>CONFIG_FILE_PATH</b> : String relative path from executable or absolute path to JSON configuration file. This is used to initialize streets_configuration singleton. The initialize() and start() methods is meant to be overriden as follows: protected: bool initialize() override { // Initializes streets_clock singleton, streets_configuration singleton and kafka consumer for simulation time streets_service::initialize(); }</p>
+<p >void start() override { // Starts thread to use kafka time consumer to consume time sync messages and update streets_clock_singleton streets_service::start(); }</p>
+<h1><a class="anchor" id="autotoc_md88"></a>
+Include streets_service_base_lib</h1>
 <p >Streets Service Base <code>CMakeList.txt</code> includes an install target which will install this library as a CMake package. The library along with it's dependencies can then be included by simply using the find_package() instruction.</p>
 <div class="fragment"><div class="line">find_package(streets_service_base_lib COMPONENT streets_service_base_lib)</div>
 <div class="line">...</div>
@@ -137,7 +109,7 @@ Include streets_service_base_lib::streets_service_base_lib</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Apr 11 2023 14:38:43 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 19 2023 13:18:57 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

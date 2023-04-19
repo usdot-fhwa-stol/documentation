@@ -313,8 +313,8 @@ $(document).ready(function(){initNavTree('scheduling__service_8cpp_source.html',
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keyword">auto</span> scheduling_delta = u_int64_t(<a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#ae1ce5cdd4b4d28cc8e4034c429aabb66">streets_service::streets_configuration::get_double_config</a>(<span class="stringliteral">&quot;scheduling_delta&quot;</span>) * 1000);</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <span class="keywordtype">int</span> sch_count = 0;</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        std::unordered_map&lt;std::string, streets_vehicles::vehicle&gt; veh_map;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <span class="comment">// Check health of producer worker to only run scheduling while producer is running</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">while</span> (producer_worker-&gt;is_running())</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        {</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            <span class="keyword">auto</span> current_timestamp = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(std::chrono::system_clock::now().time_since_epoch()).count();</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Schedule iteration start time {0}!&quot;</span>, current_timestamp);</div>
@@ -379,51 +379,56 @@ $(document).ready(function(){initNavTree('scheduling__service_8cpp_source.html',
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#aef21bc1adf0a4ce5e240bfdb122325e8">  292</a></span>    scheduling_service::~scheduling_service()</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    {</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        <span class="keywordflow">if</span> (consumer_worker)</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        {</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping consumer worker!&quot;</span>);</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            consumer_worker-&gt;stop();</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        }</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keywordflow">if</span> (producer_worker)</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        {</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping producer worker&quot;</span>);</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>            producer_worker-&gt;stop();</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        }</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    }</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a8a86cc97c1202f0ec041e659a005177a">  308</a></span>    <span class="keywordtype">void</span> scheduling_service::set_scheduling_worker(std::shared_ptr&lt;scheduling_worker&gt; sched_worker) {</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        _scheduling_worker = sched_worker;</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    }</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#ab935f5e89218b93f02ed4ba648c45349">  312</a></span>    <span class="keywordtype">void</span> scheduling_service::set_vehicle_list(std::shared_ptr&lt;streets_vehicles::vehicle_list&gt; veh_list) {</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        vehicle_list_ptr = veh_list;</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    }</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a0acbcea3c17432026aa4d871e63bdf92">  316</a></span>    <span class="keywordtype">void</span> scheduling_service::set_vehicle_scheduler(std::shared_ptr&lt;streets_vehicle_scheduler::vehicle_scheduler&gt; scheduler) {</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        scheduler_ptr = scheduler;</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    }</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#ad1cee628ef1dba0a569236aff1113d2a">  320</a></span>    <span class="keywordtype">void</span> scheduling_service::set_consumer_worker(std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; worker) {</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        consumer_worker = worker;</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    }</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a7110ab08ca6178e99bfe0d34c5b6d1a2">  324</a></span>    <span class="keywordtype">void</span> scheduling_service::set_producer_worker(std::shared_ptr&lt;kafka_clients::kafka_producer_worker&gt; worker) {</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        producer_worker = worker;</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    }</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a7f6b6ec887b1ebf100ad7b8eec4a890d">  328</a></span>    <span class="keywordtype">void</span> scheduling_service::set_spat_consumer_worker(std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; worker) {</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        spat_consumer_worker = worker;</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    }</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>}</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        SPDLOG_WARN(<span class="stringliteral">&quot;Stopping Scheduling Service!&quot;</span>);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        <span class="keywordflow">if</span> (consumer_worker)</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        {</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping consumer worker!&quot;</span>);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            consumer_worker-&gt;stop();</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        }</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <span class="keywordflow">if</span> (producer_worker)</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        {</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping producer worker&quot;</span>);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            producer_worker-&gt;stop();</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        }</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        <span class="keywordflow">if</span> (spat_consumer_worker) {</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Stopping spat consumer worker&quot;</span>);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>            spat_consumer_worker-&gt;stop();</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        }</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    }</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a8a86cc97c1202f0ec041e659a005177a">  313</a></span>    <span class="keywordtype">void</span> scheduling_service::set_scheduling_worker(std::shared_ptr&lt;scheduling_worker&gt; sched_worker) {</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        _scheduling_worker = sched_worker;</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    }</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#ab935f5e89218b93f02ed4ba648c45349">  317</a></span>    <span class="keywordtype">void</span> scheduling_service::set_vehicle_list(std::shared_ptr&lt;streets_vehicles::vehicle_list&gt; veh_list) {</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        vehicle_list_ptr = veh_list;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    }</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a0acbcea3c17432026aa4d871e63bdf92">  321</a></span>    <span class="keywordtype">void</span> scheduling_service::set_vehicle_scheduler(std::shared_ptr&lt;streets_vehicle_scheduler::vehicle_scheduler&gt; scheduler) {</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        scheduler_ptr = scheduler;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    }</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#ad1cee628ef1dba0a569236aff1113d2a">  325</a></span>    <span class="keywordtype">void</span> scheduling_service::set_consumer_worker(std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; worker) {</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        consumer_worker = worker;</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    }</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a7110ab08ca6178e99bfe0d34c5b6d1a2">  329</a></span>    <span class="keywordtype">void</span> scheduling_service::set_producer_worker(std::shared_ptr&lt;kafka_clients::kafka_producer_worker&gt; worker) {</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        producer_worker = worker;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    }</div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno"><a class="line" href="classscheduling__service_1_1scheduling__service.html#a7f6b6ec887b1ebf100ad7b8eec4a890d">  333</a></span>    <span class="keywordtype">void</span> scheduling_service::set_spat_consumer_worker(std::shared_ptr&lt;kafka_clients::kafka_consumer_worker&gt; worker) {</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>        spat_consumer_worker = worker;</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    }</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>}</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
 <div class="ttc" id="aclasssignal__phase__and__timing_1_1signal__phase__and__timing__exception_html"><div class="ttname"><a href="classsignal__phase__and__timing_1_1signal__phase__and__timing__exception.html">signal_phase_and_timing::signal_phase_and_timing_exception</a></div><div class="ttdoc">Runtime error related to processing signal_phase_and_timing JSON updates.</div><div class="ttdef"><b>Definition:</b> <a href="signal__phase__and__timing__exception_8h_source.html#l00013">signal_phase_and_timing_exception.h:13</a></div></div>
 <div class="ttc" id="aclassstreets__service_1_1streets__configuration__exception_html"><div class="ttname"><a href="classstreets__service_1_1streets__configuration__exception.html">streets_service::streets_configuration_exception</a></div><div class="ttdoc">Streets Configuration Exception thrown when manifest.json configuration files are incorrectly formatt...</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration__exception_8h_source.html#l00011">streets_configuration_exception.h:11</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a03603871626201e07690effb9f2440bf"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a></div><div class="ttdeci">static std::string get_string_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter string value with provided name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00103">streets_configuration.cpp:103</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a48f38b0b6ecb3043cc051b624f12824b"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a48f38b0b6ecb3043cc051b624f12824b">streets_service::streets_configuration::get_boolean_config</a></div><div class="ttdeci">static bool get_boolean_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter boolean value with provide name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00149">streets_configuration.cpp:149</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_ab33a5d183c0ca2b2f0d757f5466f200b"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a></div><div class="ttdeci">static int get_int_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter integer value with provided name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00118">streets_configuration.cpp:118</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_ae1ce5cdd4b4d28cc8e4034c429aabb66"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#ae1ce5cdd4b4d28cc8e4034c429aabb66">streets_service::streets_configuration::get_double_config</a></div><div class="ttdeci">static double get_double_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter double value with provide name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00134">streets_configuration.cpp:134</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a03603871626201e07690effb9f2440bf"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a></div><div class="ttdeci">static std::string get_string_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter string value with provided name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00104">streets_configuration.cpp:104</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a48f38b0b6ecb3043cc051b624f12824b"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a48f38b0b6ecb3043cc051b624f12824b">streets_service::streets_configuration::get_boolean_config</a></div><div class="ttdeci">static bool get_boolean_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter boolean value with provide name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00150">streets_configuration.cpp:150</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_ab33a5d183c0ca2b2f0d757f5466f200b"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#ab33a5d183c0ca2b2f0d757f5466f200b">streets_service::streets_configuration::get_int_config</a></div><div class="ttdeci">static int get_int_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter integer value with provided name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00119">streets_configuration.cpp:119</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_ae1ce5cdd4b4d28cc8e4034c429aabb66"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#ae1ce5cdd4b4d28cc8e4034c429aabb66">streets_service::streets_configuration::get_double_config</a></div><div class="ttdeci">static double get_double_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter double value with provide name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00135">streets_configuration.cpp:135</a></div></div>
 <div class="ttc" id="aclassstreets__vehicle__scheduler_1_1scheduling__exception_html"><div class="ttname"><a href="classstreets__vehicle__scheduler_1_1scheduling__exception.html">streets_vehicle_scheduler::scheduling_exception</a></div><div class="ttdoc">Runtime error related to processing status intent vehicle updates.</div><div class="ttdef"><b>Definition:</b> <a href="scheduling__exception_8h_source.html#l00013">scheduling_exception.h:13</a></div></div>
 <div class="ttc" id="anamespacescheduling__service_html"><div class="ttname"><a href="namespacescheduling__service.html">scheduling_service</a></div><div class="ttdef"><b>Definition:</b> <a href="scheduling__service_2include_2intersection__client_8h_source.html#l00015">intersection_client.h:15</a></div></div>
 <div class="ttc" id="ascheduling__service_8h_html"><div class="ttname"><a href="scheduling__service_8h.html">scheduling_service.h</a></div></div>
@@ -433,7 +438,7 @@ $(document).ready(function(){initNavTree('scheduling__service_8cpp_source.html',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_0a5dd744e173470e5673b2d7425b82fe.html">scheduling_service</a></li><li class="navelem"><a class="el" href="dir_cb97f5385e392d758fdfc53af5f3d1a2.html">src</a></li><li class="navelem"><a class="el" href="scheduling__service_8cpp.html">scheduling_service.cpp</a></li>
-    <li class="footer">Generated on Tue Apr 11 2023 14:38:42 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 19 2023 13:18:55 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

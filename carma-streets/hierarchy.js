@@ -105,6 +105,7 @@ var hierarchy =
       [ "signal_phase_and_timing::signal_phase_and_timing_exception", "classsignal__phase__and__timing_1_1signal__phase__and__timing__exception.html", null ],
       [ "streets_desired_phase_plan::streets_desired_phase_plan_exception", "classstreets__desired__phase__plan_1_1streets__desired__phase__plan__exception.html", null ],
       [ "streets_service::streets_configuration_exception", "classstreets__service_1_1streets__configuration__exception.html", null ],
+      [ "streets_service::streets_singleton_exception", "classstreets__service_1_1streets__singleton__exception.html", null ],
       [ "streets_signal_optimization::streets_desired_phase_plan_arbitrator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception.html", null ],
       [ "streets_signal_optimization::streets_desired_phase_plan_generator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception.html", null ],
       [ "streets_tsc_configuration::tsc_configuration_state_exception", "classstreets__tsc__configuration_1_1tsc__configuration__state__exception.html", null ],
@@ -140,14 +141,20 @@ var hierarchy =
     [ "streets_signal_optimization::streets_desired_phase_plan_arbitrator", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator.html", null ],
     [ "streets_signal_optimization::streets_desired_phase_plan_generator", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator.html", null ],
     [ "streets_signal_optimization::streets_desired_phase_plan_generator_configuration", "structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html", null ],
-    [ "streets_service::streets_singleton< T >", "classstreets__service_1_1streets__singleton.html", null ],
-    [ "streets_service::streets_singleton< streets_configuration >", "classstreets__service_1_1streets__singleton.html", [
+    [ "streets_service::streets_service", "classstreets__service_1_1streets__service.html", [
+      [ "traffic_signal_controller_service::tsc_service", "classtraffic__signal__controller__service_1_1tsc__service.html", null ]
+    ] ],
+    [ "streets_service::streets_singleton< T, Args >", "classstreets__service_1_1streets__singleton.html", null ],
+    [ "streets_service::streets_singleton< fwha_stol::lib::time::CarmaClock, bool >", "classstreets__service_1_1streets__singleton.html", [
+      [ "streets_service::streets_clock_singleton", "classstreets__service_1_1streets__clock__singleton.html", null ]
+    ] ],
+    [ "streets_service::streets_singleton< streets_configuration, std::string >", "classstreets__service_1_1streets__singleton.html", [
       [ "streets_service::streets_configuration", "classstreets__service_1_1streets__configuration.html", null ]
     ] ],
     [ "signal_phase_and_timing::time_change_details", "structsignal__phase__and__timing_1_1time__change__details.html", null ],
+    [ "streets_service::simulation::time_sync_message", "structstreets__service_1_1simulation_1_1time__sync__message.html", null ],
     [ "message_services::models::trajectory", "structmessage__services_1_1models_1_1trajectory.html", null ],
     [ "streets_tsc_configuration::tsc_configuration_state", "structstreets__tsc__configuration_1_1tsc__configuration__state.html", null ],
-    [ "traffic_signal_controller_service::tsc_service", "classtraffic__signal__controller__service_1_1tsc__service.html", null ],
     [ "traffic_signal_controller_service::tsc_state", "classtraffic__signal__controller__service_1_1tsc__state.html", null ],
     [ "traffic_signal_controller_service::udp_socket_listener", "classtraffic__signal__controller__service_1_1udp__socket__listener.html", null ],
     [ "streets_vehicles::vehicle", "structstreets__vehicles_1_1vehicle.html", null ],
@@ -162,5 +169,6 @@ var hierarchy =
     ] ],
     [ "message_services::services::vehicle_status_intent_service", "classmessage__services_1_1services_1_1vehicle__status__intent__service.html", null ],
     [ "message_services::models::VehicleSize", "structmessage__services_1_1models_1_1VehicleSize.html", null ],
-    [ "message_services::services::vsi_message_bucket", "structmessage__services_1_1services_1_1vsi__message__bucket.html", null ]
+    [ "message_services::services::vsi_message_bucket", "structmessage__services_1_1services_1_1vsi__message__bucket.html", null ],
+    [ "CarmaClock *", "classstatic_01fwha__stol_1_1lib_1_1time_1_1CarmaClock_01_5.html", null ]
 ];

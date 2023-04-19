@@ -1,7 +1,7 @@
 var classkafka__clients_1_1kafka__producer__worker =
 [
     [ "kafka_producer_worker", "classkafka__clients_1_1kafka__producer__worker.html#abff1d3ab487e6533ed0a505d861c96d5", null ],
-    [ "~kafka_producer_worker", "classkafka__clients_1_1kafka__producer__worker.html#a469d3566bbc6c44c1612f3645cde7cfc", null ],
+    [ "~kafka_producer_worker", "classkafka__clients_1_1kafka__producer__worker.html#a73198d70d091ac944db133e28fa4bcb6", null ],
     [ "init", "classkafka__clients_1_1kafka__producer__worker.html#a0bc4fc9719a218b561789c217aa8ff80", null ],
     [ "is_running", "classkafka__clients_1_1kafka__producer__worker.html#aa7d44762c5751bf71257e5cc53bf224c", null ],
     [ "printCurrConf", "classkafka__clients_1_1kafka__producer__worker.html#aaa1ce1c199b4fd69c59dd715294aabb4", null ],

@@ -140,9 +140,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaa1ce1c199b4fd69c59dd715294aabb4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkafka__clients_1_1kafka__producer__worker.html#aaa1ce1c199b4fd69c59dd715294aabb4">printCurrConf</a> ()</td></tr>
 <tr class="memdesc:aaa1ce1c199b4fd69c59dd715294aabb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print current configurations.  <a href="classkafka__clients_1_1kafka__producer__worker.html#aaa1ce1c199b4fd69c59dd715294aabb4">More...</a><br /></td></tr>
 <tr class="separator:aaa1ce1c199b4fd69c59dd715294aabb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a469d3566bbc6c44c1612f3645cde7cfc"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkafka__clients_1_1kafka__producer__worker.html#a469d3566bbc6c44c1612f3645cde7cfc">~kafka_producer_worker</a> ()=default</td></tr>
-<tr class="memdesc:a469d3566bbc6c44c1612f3645cde7cfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the kafka producer worker object.  <a href="classkafka__clients_1_1kafka__producer__worker.html#a469d3566bbc6c44c1612f3645cde7cfc">More...</a><br /></td></tr>
-<tr class="separator:a469d3566bbc6c44c1612f3645cde7cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73198d70d091ac944db133e28fa4bcb6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkafka__clients_1_1kafka__producer__worker.html#a73198d70d091ac944db133e28fa4bcb6">~kafka_producer_worker</a> ()</td></tr>
+<tr class="memdesc:a73198d70d091ac944db133e28fa4bcb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the kafka producer worker object.  <a href="classkafka__clients_1_1kafka__producer__worker.html#a73198d70d091ac944db133e28fa4bcb6">More...</a><br /></td></tr>
+<tr class="separator:a73198d70d091ac944db133e28fa4bcb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -227,8 +227,8 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a469d3566bbc6c44c1612f3645cde7cfc" name="a469d3566bbc6c44c1612f3645cde7cfc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a469d3566bbc6c44c1612f3645cde7cfc">&#9670;&nbsp;</a></span>~kafka_producer_worker()</h2>
+<a id="a73198d70d091ac944db133e28fa4bcb6" name="a73198d70d091ac944db133e28fa4bcb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73198d70d091ac944db133e28fa4bcb6">&#9670;&nbsp;</a></span>~kafka_producer_worker()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,7 +237,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual kafka_clients::kafka_producer_worker::~kafka_producer_worker </td>
+          <td class="memname">kafka_clients::kafka_producer_worker::~kafka_producer_worker </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -245,12 +245,26 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Destroy the kafka producer worker object. </p>
+
+<p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">11</a> of file <a class="el" href="kafka__producer__worker_8cpp_source.html">kafka_producer_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>                                                  {</div>
+<div class="line"><span class="lineno">   12</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a> ) {</div>
+<div class="line"><span class="lineno">   13</span>            <span class="keyword">delete</span> <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>;</div>
+<div class="line"><span class="lineno">   14</span>        }</div>
+<div class="line"><span class="lineno">   15</span>        <span class="keywordflow">if</span> ( <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a65e51a375deafee6c444020c57037084">_topic</a> ) {</div>
+<div class="line"><span class="lineno">   16</span>            <span class="keyword">delete</span> <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a65e51a375deafee6c444020c57037084">_topic</a>;</div>
+<div class="line"><span class="lineno">   17</span>        }</div>
+<div class="line"><span class="lineno">   18</span>    }</div>
+<div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_a65e51a375deafee6c444020c57037084"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#a65e51a375deafee6c444020c57037084">kafka_clients::kafka_producer_worker::_topic</a></div><div class="ttdeci">RdKafka::Topic * _topic</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8h_source.html#l00074">kafka_producer_worker.h:74</a></div></div>
+<div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_ad24185bcbdf6f674d7b1e81eb6aee89e"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">kafka_clients::kafka_producer_worker::_producer</a></div><div class="ttdeci">RdKafka::Producer * _producer</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8h_source.html#l00073">kafka_producer_worker.h:73</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="kafka__producer__worker_8h_source.html#l00073">_producer</a>, and <a class="el" href="kafka__producer__worker_8h_source.html#l00074">_topic</a>.</p>
 
 </div>
 </div>
@@ -283,71 +297,69 @@ Private Attributes</h2></td></tr>
 <dd>
 false if unsuccessful. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">11</a> of file <a class="el" href="kafka__producer__worker_8cpp_source.html">kafka_producer_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>    {</div>
-<div class="line"><span class="lineno">   13</span>        std::string errstr = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">   14</span> </div>
-<div class="line"><span class="lineno">   15</span>        <span class="comment">// Create configuration objects</span></div>
-<div class="line"><span class="lineno">   16</span>        RdKafka::Conf *conf = RdKafka::Conf::create(RdKafka::Conf::CONF_GLOBAL);</div>
-<div class="line"><span class="lineno">   17</span>        RdKafka::Conf *tconf = RdKafka::Conf::create(RdKafka::Conf::CONF_TOPIC);</div>
-<div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span><span class="comment">        /***</span></div>
-<div class="line"><span class="lineno">   20</span><span class="comment">         * Set Configuration properties</span></div>
-<div class="line"><span class="lineno">   21</span><span class="comment">         */</span></div>
-<div class="line"><span class="lineno">   22</span>        <span class="comment">// set broker list</span></div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">if</span> (conf-&gt;set(<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a0e130dd02a30f05539120cb5ba477510">BOOTSTRAP_SERVER</a>, <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a38bf3fabc40b1db6b4850b335cf6fe4b">_broker_str</a>, errstr) != RdKafka::Conf::CONF_OK)</div>
-<div class="line"><span class="lineno">   24</span>        {</div>
-<div class="line"><span class="lineno">   25</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;RdKafka conf set brokerlist failed: {0} &quot;</span>, errstr.c_str());</div>
-<div class="line"><span class="lineno">   26</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   27</span>        }</div>
-<div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>        <span class="comment">// set delivery report callback</span></div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span> (conf-&gt;set(<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a15f3f181dd5c04c64d04bb6473ae2cac">DR_CB</a>, &amp;<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#aa172375ad141af4a27bdb852a7492026">_producer_delivery_report_cb</a>, errstr) != RdKafka::Conf::CONF_OK)</div>
-<div class="line"><span class="lineno">   31</span>        {</div>
-<div class="line"><span class="lineno">   32</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;RdKafka conf set delivery report callback failed:   {0}&quot;</span>, errstr.c_str());</div>
-<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   34</span>        }</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>        <span class="comment">// set event callback</span></div>
-<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (conf-&gt;set(<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a12fac0bb7e9d9fe2425ff506948c51ea">EVENT_CB</a>, &amp;<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#aa71379a7f3bec4a50216eefdd03c640e">_producer_event_cb</a>, errstr) != RdKafka::Conf::CONF_OK)</div>
-<div class="line"><span class="lineno">   38</span>        {</div>
-<div class="line"><span class="lineno">   39</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;RdKafka conf set event callback failed: {0} &quot;</span>, errstr.c_str());</div>
-<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   41</span>        }</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>        <span class="comment">// create producer using accumulated global configuration.</span></div>
-<div class="line"><span class="lineno">   44</span>        <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a> = RdKafka::Producer::create(conf, errstr);</div>
-<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>)</div>
-<div class="line"><span class="lineno">   46</span>        {</div>
-<div class="line"><span class="lineno">   47</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to create producer:  {0} &quot;</span>, errstr.c_str());</div>
-<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   49</span>        }</div>
-<div class="line"><span class="lineno">   50</span>        <span class="keyword">delete</span> conf;</div>
+<p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">20</a> of file <a class="el" href="kafka__producer__worker_8cpp_source.html">kafka_producer_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>    {</div>
+<div class="line"><span class="lineno">   22</span>        std::string errstr = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>        <span class="comment">// Create configuration objects</span></div>
+<div class="line"><span class="lineno">   25</span>        RdKafka::Conf *conf = RdKafka::Conf::create(RdKafka::Conf::CONF_GLOBAL);</div>
+<div class="line"><span class="lineno">   26</span>        RdKafka::Conf *tconf = RdKafka::Conf::create(RdKafka::Conf::CONF_TOPIC);</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span><span class="comment">        /***</span></div>
+<div class="line"><span class="lineno">   29</span><span class="comment">         * Set Configuration properties</span></div>
+<div class="line"><span class="lineno">   30</span><span class="comment">         */</span></div>
+<div class="line"><span class="lineno">   31</span>        <span class="comment">// set broker list</span></div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">if</span> (conf-&gt;set(<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a0e130dd02a30f05539120cb5ba477510">BOOTSTRAP_SERVER</a>, <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a38bf3fabc40b1db6b4850b335cf6fe4b">_broker_str</a>, errstr) != RdKafka::Conf::CONF_OK)</div>
+<div class="line"><span class="lineno">   33</span>        {</div>
+<div class="line"><span class="lineno">   34</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;RdKafka conf set brokerlist failed: {0} &quot;</span>, errstr.c_str());</div>
+<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   36</span>        }</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>        <span class="comment">// set delivery report callback</span></div>
+<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">if</span> (conf-&gt;set(<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a15f3f181dd5c04c64d04bb6473ae2cac">DR_CB</a>, &amp;<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#aa172375ad141af4a27bdb852a7492026">_producer_delivery_report_cb</a>, errstr) != RdKafka::Conf::CONF_OK)</div>
+<div class="line"><span class="lineno">   40</span>        {</div>
+<div class="line"><span class="lineno">   41</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;RdKafka conf set delivery report callback failed:   {0}&quot;</span>, errstr.c_str());</div>
+<div class="line"><span class="lineno">   42</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   43</span>        }</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>        <span class="comment">// set event callback</span></div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">if</span> (conf-&gt;set(<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a12fac0bb7e9d9fe2425ff506948c51ea">EVENT_CB</a>, &amp;<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#aa71379a7f3bec4a50216eefdd03c640e">_producer_event_cb</a>, errstr) != RdKafka::Conf::CONF_OK)</div>
+<div class="line"><span class="lineno">   47</span>        {</div>
+<div class="line"><span class="lineno">   48</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;RdKafka conf set event callback failed: {0} &quot;</span>, errstr.c_str());</div>
+<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   50</span>        }</div>
 <div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>        SPDLOG_INFO(<span class="stringliteral">&quot;created producer:  {:&gt;8} &quot;</span>, <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;name());</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>        <span class="comment">// Create topic handle</span></div>
-<div class="line"><span class="lineno">   55</span>        <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a65e51a375deafee6c444020c57037084">_topic</a> = RdKafka::Topic::create(<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>, <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a0b385423f1b004ef8dd4cb1a276cb6b2">_topics_str</a>, tconf, errstr);</div>
-<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a65e51a375deafee6c444020c57037084">_topic</a>)</div>
-<div class="line"><span class="lineno">   57</span>        {</div>
-<div class="line"><span class="lineno">   58</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to create producer:  {0} &quot;</span>, errstr.c_str());</div>
-<div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   61</span>        }</div>
-<div class="line"><span class="lineno">   62</span>        <span class="keyword">delete</span> tconf;</div>
-<div class="line"><span class="lineno">   63</span>        <a class="code hl_function" href="classkafka__clients_1_1kafka__producer__worker.html#aaa1ce1c199b4fd69c59dd715294aabb4">printCurrConf</a>();</div>
-<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   52</span>        <span class="comment">// create producer using accumulated global configuration.</span></div>
+<div class="line"><span class="lineno">   53</span>        <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a> = RdKafka::Producer::create(conf, errstr);</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>)</div>
+<div class="line"><span class="lineno">   55</span>        {</div>
+<div class="line"><span class="lineno">   56</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to create producer:  {0} &quot;</span>, errstr.c_str());</div>
+<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   58</span>        }</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keyword">delete</span> conf;</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>        SPDLOG_INFO(<span class="stringliteral">&quot;created producer:  {:&gt;8} &quot;</span>, <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;name());</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>        <span class="comment">// Create topic handle</span></div>
+<div class="line"><span class="lineno">   64</span>        <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a65e51a375deafee6c444020c57037084">_topic</a> = RdKafka::Topic::create(<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>, <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a0b385423f1b004ef8dd4cb1a276cb6b2">_topics_str</a>, tconf, errstr);</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a65e51a375deafee6c444020c57037084">_topic</a>)</div>
+<div class="line"><span class="lineno">   66</span>        {</div>
+<div class="line"><span class="lineno">   67</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to create producer:  {0} &quot;</span>, errstr.c_str());</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   70</span>        }</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keyword">delete</span> tconf;</div>
+<div class="line"><span class="lineno">   72</span>        <a class="code hl_function" href="classkafka__clients_1_1kafka__producer__worker.html#aaa1ce1c199b4fd69c59dd715294aabb4">printCurrConf</a>();</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_a0e130dd02a30f05539120cb5ba477510"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#a0e130dd02a30f05539120cb5ba477510">kafka_clients::kafka_producer_worker::BOOTSTRAP_SERVER</a></div><div class="ttdeci">const std::string BOOTSTRAP_SERVER</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8h_source.html#l00069">kafka_producer_worker.h:69</a></div></div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_a12fac0bb7e9d9fe2425ff506948c51ea"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#a12fac0bb7e9d9fe2425ff506948c51ea">kafka_clients::kafka_producer_worker::EVENT_CB</a></div><div class="ttdeci">const std::string EVENT_CB</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8h_source.html#l00071">kafka_producer_worker.h:71</a></div></div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_a15f3f181dd5c04c64d04bb6473ae2cac"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#a15f3f181dd5c04c64d04bb6473ae2cac">kafka_clients::kafka_producer_worker::DR_CB</a></div><div class="ttdeci">const std::string DR_CB</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8h_source.html#l00070">kafka_producer_worker.h:70</a></div></div>
-<div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_a65e51a375deafee6c444020c57037084"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#a65e51a375deafee6c444020c57037084">kafka_clients::kafka_producer_worker::_topic</a></div><div class="ttdeci">RdKafka::Topic * _topic</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8h_source.html#l00074">kafka_producer_worker.h:74</a></div></div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_aa172375ad141af4a27bdb852a7492026"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#aa172375ad141af4a27bdb852a7492026">kafka_clients::kafka_producer_worker::_producer_delivery_report_cb</a></div><div class="ttdeci">producer_delivery_report_cb _producer_delivery_report_cb</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8h_source.html#l00079">kafka_producer_worker.h:79</a></div></div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_aa71379a7f3bec4a50216eefdd03c640e"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#aa71379a7f3bec4a50216eefdd03c640e">kafka_clients::kafka_producer_worker::_producer_event_cb</a></div><div class="ttdeci">producer_event_cb _producer_event_cb</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8h_source.html#l00080">kafka_producer_worker.h:80</a></div></div>
-<div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_aaa1ce1c199b4fd69c59dd715294aabb4"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#aaa1ce1c199b4fd69c59dd715294aabb4">kafka_clients::kafka_producer_worker::printCurrConf</a></div><div class="ttdeci">virtual void printCurrConf()</div><div class="ttdoc">Print current configurations.</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8cpp_source.html#l00158">kafka_producer_worker.cpp:158</a></div></div>
-<div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_ad24185bcbdf6f674d7b1e81eb6aee89e"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">kafka_clients::kafka_producer_worker::_producer</a></div><div class="ttdeci">RdKafka::Producer * _producer</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8h_source.html#l00073">kafka_producer_worker.h:73</a></div></div>
+<div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_aaa1ce1c199b4fd69c59dd715294aabb4"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#aaa1ce1c199b4fd69c59dd715294aabb4">kafka_clients::kafka_producer_worker::printCurrConf</a></div><div class="ttdeci">virtual void printCurrConf()</div><div class="ttdoc">Print current configurations.</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8cpp_source.html#l00167">kafka_producer_worker.cpp:167</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="kafka__producer__worker_8h_source.html#l00076">_broker_str</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00073">_producer</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00079">_producer_delivery_report_cb</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00080">_producer_event_cb</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00074">_topic</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00075">_topics_str</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00069">BOOTSTRAP_SERVER</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00070">DR_CB</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00071">EVENT_CB</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00158">printCurrConf()</a>.</p>
+<p class="reference">References <a class="el" href="kafka__producer__worker_8h_source.html#l00076">_broker_str</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00073">_producer</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00079">_producer_delivery_report_cb</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00080">_producer_event_cb</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00074">_topic</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00075">_topics_str</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00069">BOOTSTRAP_SERVER</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00070">DR_CB</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00071">EVENT_CB</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00167">printCurrConf()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="examples_2kafka__examples_2src_2main_8cpp_source.html#l00044">call_producer_thread()</a>.</p>
 <div class="dynheader">
@@ -400,10 +412,10 @@ Here is the caller graph for this function:</div>
 <dd>
 false if kafka producer is stopped. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8cpp_source.html#l00067">67</a> of file <a class="el" href="kafka__producer__worker_8cpp_source.html">kafka_producer_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>                                                 {</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a90d01ae6c611aac0ecd18eef5a74bf3b">_run</a>;</div>
-<div class="line"><span class="lineno">   69</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8cpp_source.html#l00076">76</a> of file <a class="el" href="kafka__producer__worker_8cpp_source.html">kafka_producer_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>                                                 {</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a90d01ae6c611aac0ecd18eef5a74bf3b">_run</a>;</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="kafka__producer__worker_8h_source.html#l00077">_run</a>.</p>
 
@@ -434,15 +446,15 @@ false if kafka producer is stopped. </dd></dl>
 
 <p>Print current configurations. </p>
 
-<p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8cpp_source.html#l00158">158</a> of file <a class="el" href="kafka__producer__worker_8cpp_source.html">kafka_producer_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  159</span>    {</div>
-<div class="line"><span class="lineno">  160</span>        SPDLOG_INFO(<span class="stringliteral">&quot;Producer connect to bootstrap_server: {0}, topic: {1} ,partition: {2} &quot;</span>,</div>
-<div class="line"><span class="lineno">  161</span>                     (<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a38bf3fabc40b1db6b4850b335cf6fe4b">_broker_str</a>.empty() ? <span class="stringliteral">&quot;UNKNOWN&quot;</span> : <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a38bf3fabc40b1db6b4850b335cf6fe4b">_broker_str</a>), (<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a0b385423f1b004ef8dd4cb1a276cb6b2">_topics_str</a>.empty() ? <span class="stringliteral">&quot;UNKNOWN&quot;</span> : <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a0b385423f1b004ef8dd4cb1a276cb6b2">_topics_str</a>), <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a5ca099fa0f72e3758455930bf7957905">_partition</a>);</div>
-<div class="line"><span class="lineno">  162</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8cpp_source.html#l00167">167</a> of file <a class="el" href="kafka__producer__worker_8cpp_source.html">kafka_producer_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>    {</div>
+<div class="line"><span class="lineno">  169</span>        SPDLOG_INFO(<span class="stringliteral">&quot;Producer connect to bootstrap_server: {0}, topic: {1} ,partition: {2} &quot;</span>,</div>
+<div class="line"><span class="lineno">  170</span>                     (<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a38bf3fabc40b1db6b4850b335cf6fe4b">_broker_str</a>.empty() ? <span class="stringliteral">&quot;UNKNOWN&quot;</span> : <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a38bf3fabc40b1db6b4850b335cf6fe4b">_broker_str</a>), (<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a0b385423f1b004ef8dd4cb1a276cb6b2">_topics_str</a>.empty() ? <span class="stringliteral">&quot;UNKNOWN&quot;</span> : <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a0b385423f1b004ef8dd4cb1a276cb6b2">_topics_str</a>), <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a5ca099fa0f72e3758455930bf7957905">_partition</a>);</div>
+<div class="line"><span class="lineno">  171</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="kafka__producer__worker_8h_source.html#l00076">_broker_str</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00078">_partition</a>, and <a class="el" href="kafka__producer__worker_8h_source.html#l00075">_topics_str</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">init()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -489,68 +501,68 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8cpp_source.html#l00071">71</a> of file <a class="el" href="kafka__producer__worker_8cpp_source.html">kafka_producer_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>    {</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a90d01ae6c611aac0ecd18eef5a74bf3b">_run</a>)</div>
-<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">if</span> (msg.empty())</div>
-<div class="line"><span class="lineno">   78</span>        {</div>
-<div class="line"><span class="lineno">   79</span>            <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;poll(0);</div>
-<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   81</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8cpp_source.html#l00080">80</a> of file <a class="el" href="kafka__producer__worker_8cpp_source.html">kafka_producer_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>    {</div>
 <div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>        <span class="comment">// produce messages</span></div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
-<div class="line"><span class="lineno">   85</span>        {</div>
-<div class="line"><span class="lineno">   86</span>            RdKafka::ErrorCode resp = <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;produce(<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a65e51a375deafee6c444020c57037084">_topic</a>,</div>
-<div class="line"><span class="lineno">   87</span>                                                         <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a5ca099fa0f72e3758455930bf7957905">_partition</a>,</div>
-<div class="line"><span class="lineno">   88</span>                                                         RdKafka::Producer::RK_MSG_COPY,</div>
-<div class="line"><span class="lineno">   89</span>                                                         <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(msg.c_str()),</div>
-<div class="line"><span class="lineno">   90</span>                                                         msg.size(),</div>
-<div class="line"><span class="lineno">   91</span>                                                         NULL,</div>
-<div class="line"><span class="lineno">   92</span>                                                         NULL);</div>
-<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">if</span> (resp != RdKafka::ERR_NO_ERROR)</div>
-<div class="line"><span class="lineno">   94</span>            {</div>
-<div class="line"><span class="lineno">   95</span>                SPDLOG_CRITICAL(<span class="stringliteral">&quot; {0} Produce failed:  {1} &quot;</span>, <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;name(), RdKafka::err2str(resp));</div>
-<div class="line"><span class="lineno">   96</span>                <span class="keywordflow">if</span> (resp == RdKafka::ERR__QUEUE_FULL)</div>
-<div class="line"><span class="lineno">   97</span>                {</div>
-<div class="line"><span class="lineno">   98</span>                    <span class="comment">/* If the internal queue is full, wait for</span></div>
-<div class="line"><span class="lineno">   99</span><span class="comment">                     * messages to be delivered and then retry.</span></div>
-<div class="line"><span class="lineno">  100</span><span class="comment">                     * The internal queue represents both</span></div>
-<div class="line"><span class="lineno">  101</span><span class="comment">                     * messages to be sent and messages that have</span></div>
-<div class="line"><span class="lineno">  102</span><span class="comment">                     * been sent or failed, awaiting their</span></div>
-<div class="line"><span class="lineno">  103</span><span class="comment">                     * delivery report callback to be called.</span></div>
-<div class="line"><span class="lineno">  104</span><span class="comment">                     *</span></div>
-<div class="line"><span class="lineno">  105</span><span class="comment">                     * The internal queue is limited by the</span></div>
-<div class="line"><span class="lineno">  106</span><span class="comment">                     * configuration property</span></div>
-<div class="line"><span class="lineno">  107</span><span class="comment">                     * queue.buffering.max.messages */</span></div>
-<div class="line"><span class="lineno">  108</span>                    <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;poll(1000 <span class="comment">/*block for max 1000ms*/</span>);</div>
-<div class="line"><span class="lineno">  109</span>                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  110</span>                }</div>
-<div class="line"><span class="lineno">  111</span>            }</div>
-<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  113</span>            {</div>
-<div class="line"><span class="lineno">  114</span>                SPDLOG_TRACE(<span class="stringliteral">&quot; {0} Produced message ( {1}  bytes ) , message content:  {2}&quot;</span>, <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;name(), msg.size(), msg.c_str());</div>
-<div class="line"><span class="lineno">  115</span>            }</div>
-<div class="line"><span class="lineno">  116</span> </div>
-<div class="line"><span class="lineno">  117</span>            <span class="comment">// break the loop regardless of sucessfully sent or failed</span></div>
-<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  119</span>        }</div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>        <span class="comment">/* A producer application should continually serve</span></div>
-<div class="line"><span class="lineno">  122</span><span class="comment">         * the delivery report queue by calling poll()</span></div>
-<div class="line"><span class="lineno">  123</span><span class="comment">         * at frequent intervals.</span></div>
-<div class="line"><span class="lineno">  124</span><span class="comment">         * Either put the poll call in your main loop, or in a</span></div>
-<div class="line"><span class="lineno">  125</span><span class="comment">         * dedicated thread, or call it after every produce() call.</span></div>
-<div class="line"><span class="lineno">  126</span><span class="comment">         * Just make sure that poll() is still called</span></div>
-<div class="line"><span class="lineno">  127</span><span class="comment">         * during periods where you are not producing any messages</span></div>
-<div class="line"><span class="lineno">  128</span><span class="comment">         * to make sure previously produced messages have their</span></div>
-<div class="line"><span class="lineno">  129</span><span class="comment">         * delivery report callback served (and any other callbacks</span></div>
-<div class="line"><span class="lineno">  130</span><span class="comment">         * you register). */</span></div>
-<div class="line"><span class="lineno">  131</span>        <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;poll(0);</div>
-<div class="line"><span class="lineno">  132</span>    }</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a90d01ae6c611aac0ecd18eef5a74bf3b">_run</a>)</div>
+<div class="line"><span class="lineno">   84</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">if</span> (msg.empty())</div>
+<div class="line"><span class="lineno">   87</span>        {</div>
+<div class="line"><span class="lineno">   88</span>            <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;poll(0);</div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   90</span>        }</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>        <span class="comment">// produce messages</span></div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">   94</span>        {</div>
+<div class="line"><span class="lineno">   95</span>            RdKafka::ErrorCode resp = <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;produce(<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a65e51a375deafee6c444020c57037084">_topic</a>,</div>
+<div class="line"><span class="lineno">   96</span>                                                         <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a5ca099fa0f72e3758455930bf7957905">_partition</a>,</div>
+<div class="line"><span class="lineno">   97</span>                                                         RdKafka::Producer::RK_MSG_COPY,</div>
+<div class="line"><span class="lineno">   98</span>                                                         <span class="keyword">const_cast&lt;</span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(msg.c_str()),</div>
+<div class="line"><span class="lineno">   99</span>                                                         msg.size(),</div>
+<div class="line"><span class="lineno">  100</span>                                                         NULL,</div>
+<div class="line"><span class="lineno">  101</span>                                                         NULL);</div>
+<div class="line"><span class="lineno">  102</span>            <span class="keywordflow">if</span> (resp != RdKafka::ERR_NO_ERROR)</div>
+<div class="line"><span class="lineno">  103</span>            {</div>
+<div class="line"><span class="lineno">  104</span>                SPDLOG_CRITICAL(<span class="stringliteral">&quot; {0} Produce failed:  {1} &quot;</span>, <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;name(), RdKafka::err2str(resp));</div>
+<div class="line"><span class="lineno">  105</span>                <span class="keywordflow">if</span> (resp == RdKafka::ERR__QUEUE_FULL)</div>
+<div class="line"><span class="lineno">  106</span>                {</div>
+<div class="line"><span class="lineno">  107</span>                    <span class="comment">/* If the internal queue is full, wait for</span></div>
+<div class="line"><span class="lineno">  108</span><span class="comment">                     * messages to be delivered and then retry.</span></div>
+<div class="line"><span class="lineno">  109</span><span class="comment">                     * The internal queue represents both</span></div>
+<div class="line"><span class="lineno">  110</span><span class="comment">                     * messages to be sent and messages that have</span></div>
+<div class="line"><span class="lineno">  111</span><span class="comment">                     * been sent or failed, awaiting their</span></div>
+<div class="line"><span class="lineno">  112</span><span class="comment">                     * delivery report callback to be called.</span></div>
+<div class="line"><span class="lineno">  113</span><span class="comment">                     *</span></div>
+<div class="line"><span class="lineno">  114</span><span class="comment">                     * The internal queue is limited by the</span></div>
+<div class="line"><span class="lineno">  115</span><span class="comment">                     * configuration property</span></div>
+<div class="line"><span class="lineno">  116</span><span class="comment">                     * queue.buffering.max.messages */</span></div>
+<div class="line"><span class="lineno">  117</span>                    <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;poll(1000 <span class="comment">/*block for max 1000ms*/</span>);</div>
+<div class="line"><span class="lineno">  118</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  119</span>                }</div>
+<div class="line"><span class="lineno">  120</span>            }</div>
+<div class="line"><span class="lineno">  121</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  122</span>            {</div>
+<div class="line"><span class="lineno">  123</span>                SPDLOG_TRACE(<span class="stringliteral">&quot; {0} Produced message ( {1}  bytes ) , message content:  {2}&quot;</span>, <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;name(), msg.size(), msg.c_str());</div>
+<div class="line"><span class="lineno">  124</span>            }</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>            <span class="comment">// break the loop regardless of sucessfully sent or failed</span></div>
+<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  128</span>        }</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>        <span class="comment">/* A producer application should continually serve</span></div>
+<div class="line"><span class="lineno">  131</span><span class="comment">         * the delivery report queue by calling poll()</span></div>
+<div class="line"><span class="lineno">  132</span><span class="comment">         * at frequent intervals.</span></div>
+<div class="line"><span class="lineno">  133</span><span class="comment">         * Either put the poll call in your main loop, or in a</span></div>
+<div class="line"><span class="lineno">  134</span><span class="comment">         * dedicated thread, or call it after every produce() call.</span></div>
+<div class="line"><span class="lineno">  135</span><span class="comment">         * Just make sure that poll() is still called</span></div>
+<div class="line"><span class="lineno">  136</span><span class="comment">         * during periods where you are not producing any messages</span></div>
+<div class="line"><span class="lineno">  137</span><span class="comment">         * to make sure previously produced messages have their</span></div>
+<div class="line"><span class="lineno">  138</span><span class="comment">         * delivery report callback served (and any other callbacks</span></div>
+<div class="line"><span class="lineno">  139</span><span class="comment">         * you register). */</span></div>
+<div class="line"><span class="lineno">  140</span>        <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;poll(0);</div>
+<div class="line"><span class="lineno">  141</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="kafka__producer__worker_8h_source.html#l00078">_partition</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00073">_producer</a>, <a class="el" href="kafka__producer__worker_8h_source.html#l00077">_run</a>, and <a class="el" href="kafka__producer__worker_8h_source.html#l00074">_topic</a>.</p>
 
@@ -593,29 +605,29 @@ Here is the caller graph for this function:</div>
 
 <p>Stop running kafka producer. </p>
 
-<p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8cpp_source.html#l00134">134</a> of file <a class="el" href="kafka__producer__worker_8cpp_source.html">kafka_producer_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>    {</div>
-<div class="line"><span class="lineno">  136</span>        <span class="comment">/* Wait for final messages to be delivered or fail.</span></div>
-<div class="line"><span class="lineno">  137</span><span class="comment">         * flush() is an abstraction over poll() which</span></div>
-<div class="line"><span class="lineno">  138</span><span class="comment">         * waits for all messages to be delivered. */</span></div>
-<div class="line"><span class="lineno">  139</span>        <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a90d01ae6c611aac0ecd18eef5a74bf3b">_run</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  140</span>        SPDLOG_CRITICAL(<span class="stringliteral">&quot;Stopping producer client.. &quot;</span>);</div>
-<div class="line"><span class="lineno">  141</span>        SPDLOG_CRITICAL(<span class="stringliteral">&quot;Flushing final messages... &quot;</span>);</div>
-<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  143</span>        {</div>
-<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>)</div>
-<div class="line"><span class="lineno">  145</span>            {</div>
-<div class="line"><span class="lineno">  146</span>                <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;flush(10 * 1000 <span class="comment">/* wait for max 10 seconds */</span>);</div>
-<div class="line"><span class="lineno">  147</span> </div>
-<div class="line"><span class="lineno">  148</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;outq_len() &gt; 0)</div>
-<div class="line"><span class="lineno">  149</span>                    SPDLOG_INFO(<span class="stringliteral">&quot;  {0} {1} message(s) were not delivered  &quot;</span>, <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;name(), <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;outq_len());</div>
-<div class="line"><span class="lineno">  150</span>            }</div>
-<div class="line"><span class="lineno">  151</span>        }</div>
-<div class="line"><span class="lineno">  152</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::runtime_error &amp;e)</div>
-<div class="line"><span class="lineno">  153</span>        {</div>
-<div class="line"><span class="lineno">  154</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;Error encountered flushing producer : {0}&quot;</span>, e.what());</div>
-<div class="line"><span class="lineno">  155</span>        }</div>
-<div class="line"><span class="lineno">  156</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8cpp_source.html#l00143">143</a> of file <a class="el" href="kafka__producer__worker_8cpp_source.html">kafka_producer_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>    {</div>
+<div class="line"><span class="lineno">  145</span>        <span class="comment">/* Wait for final messages to be delivered or fail.</span></div>
+<div class="line"><span class="lineno">  146</span><span class="comment">         * flush() is an abstraction over poll() which</span></div>
+<div class="line"><span class="lineno">  147</span><span class="comment">         * waits for all messages to be delivered. */</span></div>
+<div class="line"><span class="lineno">  148</span>        <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#a90d01ae6c611aac0ecd18eef5a74bf3b">_run</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  149</span>        SPDLOG_CRITICAL(<span class="stringliteral">&quot;Stopping producer client.. &quot;</span>);</div>
+<div class="line"><span class="lineno">  150</span>        SPDLOG_CRITICAL(<span class="stringliteral">&quot;Flushing final messages... &quot;</span>);</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  152</span>        {</div>
+<div class="line"><span class="lineno">  153</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>)</div>
+<div class="line"><span class="lineno">  154</span>            {</div>
+<div class="line"><span class="lineno">  155</span>                <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;flush(10 * 1000 <span class="comment">/* wait for max 10 seconds */</span>);</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;outq_len() &gt; 0)</div>
+<div class="line"><span class="lineno">  158</span>                    SPDLOG_INFO(<span class="stringliteral">&quot;  {0} {1} message(s) were not delivered  &quot;</span>, <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;name(), <a class="code hl_variable" href="classkafka__clients_1_1kafka__producer__worker.html#ad24185bcbdf6f674d7b1e81eb6aee89e">_producer</a>-&gt;outq_len());</div>
+<div class="line"><span class="lineno">  159</span>            }</div>
+<div class="line"><span class="lineno">  160</span>        }</div>
+<div class="line"><span class="lineno">  161</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::runtime_error &amp;e)</div>
+<div class="line"><span class="lineno">  162</span>        {</div>
+<div class="line"><span class="lineno">  163</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;Error encountered flushing producer : {0}&quot;</span>, e.what());</div>
+<div class="line"><span class="lineno">  164</span>        }</div>
+<div class="line"><span class="lineno">  165</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="kafka__producer__worker_8h_source.html#l00073">_producer</a>, and <a class="el" href="kafka__producer__worker_8h_source.html#l00077">_run</a>.</p>
 
@@ -656,7 +668,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8h_source.html#l00076">76</a> of file <a class="el" href="kafka__producer__worker_8h_source.html">kafka_producer_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">init()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00158">printCurrConf()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">init()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00167">printCurrConf()</a>.</p>
 
 </div>
 </div>
@@ -682,7 +694,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8h_source.html#l00078">78</a> of file <a class="el" href="kafka__producer__worker_8h_source.html">kafka_producer_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00158">printCurrConf()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00071">send()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00167">printCurrConf()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00080">send()</a>.</p>
 
 </div>
 </div>
@@ -708,7 +720,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8h_source.html#l00073">73</a> of file <a class="el" href="kafka__producer__worker_8h_source.html">kafka_producer_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">init()</a>, <a class="el" href="kafka__producer__worker_8cpp_source.html#l00071">send()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00134">stop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">~kafka_producer_worker()</a>, <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">init()</a>, <a class="el" href="kafka__producer__worker_8cpp_source.html#l00080">send()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00143">stop()</a>.</p>
 
 </div>
 </div>
@@ -734,7 +746,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8h_source.html#l00079">79</a> of file <a class="el" href="kafka__producer__worker_8h_source.html">kafka_producer_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">init()</a>.</p>
 
 </div>
 </div>
@@ -760,7 +772,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8h_source.html#l00080">80</a> of file <a class="el" href="kafka__producer__worker_8h_source.html">kafka_producer_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">init()</a>.</p>
 
 </div>
 </div>
@@ -786,7 +798,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8h_source.html#l00077">77</a> of file <a class="el" href="kafka__producer__worker_8h_source.html">kafka_producer_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00067">is_running()</a>, <a class="el" href="kafka__producer__worker_8cpp_source.html#l00071">send()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00134">stop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00076">is_running()</a>, <a class="el" href="kafka__producer__worker_8cpp_source.html#l00080">send()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00143">stop()</a>.</p>
 
 </div>
 </div>
@@ -812,7 +824,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8h_source.html#l00074">74</a> of file <a class="el" href="kafka__producer__worker_8h_source.html">kafka_producer_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">init()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00071">send()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">~kafka_producer_worker()</a>, <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">init()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00080">send()</a>.</p>
 
 </div>
 </div>
@@ -838,7 +850,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8h_source.html#l00075">75</a> of file <a class="el" href="kafka__producer__worker_8h_source.html">kafka_producer_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">init()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00158">printCurrConf()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">init()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00167">printCurrConf()</a>.</p>
 
 </div>
 </div>
@@ -864,7 +876,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8h_source.html#l00069">69</a> of file <a class="el" href="kafka__producer__worker_8h_source.html">kafka_producer_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">init()</a>.</p>
 
 </div>
 </div>
@@ -890,7 +902,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8h_source.html#l00070">70</a> of file <a class="el" href="kafka__producer__worker_8h_source.html">kafka_producer_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">init()</a>.</p>
 
 </div>
 </div>
@@ -916,7 +928,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="kafka__producer__worker_8h_source.html#l00071">71</a> of file <a class="el" href="kafka__producer__worker_8h_source.html">kafka_producer_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00011">init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">init()</a>.</p>
 
 </div>
 </div>
@@ -930,7 +942,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacekafka__clients.html">kafka_clients</a></li><li class="navelem"><a class="el" href="classkafka__clients_1_1kafka__producer__worker.html">kafka_producer_worker</a></li>
-    <li class="footer">Generated on Tue Apr 11 2023 14:38:43 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 19 2023 13:18:57 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

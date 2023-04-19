@@ -86,7 +86,7 @@ $(document).ready(function(){initNavTree('md_tsc_client_service_README.html','')
   <div class="headertitle"><div class="title">Traffic Signal Controller Service Library </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md115"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md120"></a>
 Introduction</h1>
 <p >This is the <b>TSC Service</b> (<b>Traffic Signal Controller Service</b>) meant to be a communication interface between CARMA-Streets and a <b>Traffic Signal Controller</b> (TSC). The service uses <b>net-snmp</b> library to implement a client that can GET and SET specified OIDs from a TSC. Current implementation allows the client to establish communication with a configurable host through snmp versions 1 and 2.</p>
 <p >The configurable parameters are defined in the <code>manifest.json</code> and include <b>ip</b>, <b>port</b> for the snmp server. Currently snmp version 3 is <em>not</em> supported as it requires authentication. Most signal controllers only support NTCIP 1202 v2 currently.</p>
@@ -102,7 +102,7 @@ Introduction</h1>
 <li>FORCE_OFF</li>
 </ul>
 <p >Modification of the <b>TSC</b> default signal phase sequence and timing is done based on the output of the <b>SO Service (Signal Optimization)</b>. This output is referred to as the <b>Desired Phase Plan</b> and consists of future desired phases and green timing intervals. The <b>TSC Service</b> will consume these messages from the <b>SO Service</b> on every phase transition (Yellow Change) and attempt to send the appropriate SNMP commands to NTCIP OIDs to make the <b>TSC</b> reflect this behavior. The <b>TSC Service</b> will also populate the JSON J2735 <b>SPaT</b> with <b>Desired Phase Plan</b> information as future state informat in the form of <b>MovementEvents</b> (See J2735 SPaT definition).</p>
-<h1><a class="anchor" id="autotoc_md116"></a>
+<h1><a class="anchor" id="autotoc_md121"></a>
 tsc_service</h1>
 <p >The main class in the <b>TSC Service</b> is the <code>tsc_service</code> class. This class is used to load configuration values from the <code>manifest.json</code> file, initialize any objects and launches any joined or detached threads of execution. Some important data stored in this class include the <code>spat</code> pointer (see <a class="el" href="streets__utils_2streets__signal__phase__and__timing_2README_8md.html">streets_utils/streets_signal_phase_and_timing/README.md</a>) and <code>tsc_state</code>. Some important classes initialize here as well include the <code>snmp_client</code>, <code><a class="el" href="classintersection__client.html">intersection_client</a></code>, <code>spat_worker</code> and a <code>kafka_producer</code> for producing modified SPaT JSON messages (see <a class="el" href="namespacekafka__clients.html">kafka_clients</a> README.md).</p>
 <p >This information is requested and stored in the <code>tsc_state</code> object, which on intialization, uses an <code>snmp_client</code> to query this information from the TSC.</p>
@@ -115,7 +115,7 @@ tsc_service</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Apr 11 2023 14:38:43 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 19 2023 13:18:57 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

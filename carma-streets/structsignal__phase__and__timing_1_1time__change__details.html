@@ -177,7 +177,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00011">11</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00010">10</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a74ace40856526a37410e434bcee7917a" name="a74ace40856526a37410e434bcee7917a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a74ace40856526a37410e434bcee7917a">&#9670;&nbsp;</a></span>convert_hour_tenth_secs2epoch_ts()</h2>
@@ -206,18 +206,27 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00101">101</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  101</span>                                                                                                {</div>
-<div class="line"><span class="lineno">  102</span>        <span class="keyword">auto</span> tp = std::chrono::system_clock::now();</div>
-<div class="line"><span class="lineno">  103</span>        <span class="keyword">auto</span> duration = tp.time_since_epoch();</div>
-<div class="line"><span class="lineno">  104</span>        <span class="keyword">auto</span> hours_since_epoch = std::chrono::duration_cast&lt;std::chrono::hours&gt;(duration).count();</div>
-<div class="line"><span class="lineno">  105</span>        <span class="keyword">auto</span> epoch_start_time = hours_since_epoch * <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a00485dd9201e04b0098432a82eb3fee8">HOUR_TO_SECONDS</a> * <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#ad113c5a526aa240f00f9203edc24af8d">SECOND_TO_MILLISECONDS</a> + hour_tenth_secs * 100;</div>
-<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">return</span> epoch_start_time;</div>
-<div class="line"><span class="lineno">  107</span>    }</div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_a00485dd9201e04b0098432a82eb3fee8"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#a00485dd9201e04b0098432a82eb3fee8">signal_phase_and_timing::time_change_details::HOUR_TO_SECONDS</a></div><div class="ttdeci">int HOUR_TO_SECONDS</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00012">time_change_details.h:12</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_ad113c5a526aa240f00f9203edc24af8d"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#ad113c5a526aa240f00f9203edc24af8d">signal_phase_and_timing::time_change_details::SECOND_TO_MILLISECONDS</a></div><div class="ttdeci">int SECOND_TO_MILLISECONDS</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00013">time_change_details.h:13</a></div></div>
+<div class="line"><span class="lineno">  102</span>        <span class="keyword">auto</span> hours_since_epoch = std::floor(<a class="code hl_function" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a>()/ (<a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a00485dd9201e04b0098432a82eb3fee8">HOUR_TO_SECONDS</a> * <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#ad113c5a526aa240f00f9203edc24af8d">SECOND_TO_MILLISECONDS</a>) );</div>
+<div class="line"><span class="lineno">  103</span>        <span class="keyword">auto</span> epoch_start_time = hours_since_epoch * <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a00485dd9201e04b0098432a82eb3fee8">HOUR_TO_SECONDS</a> * <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#ad113c5a526aa240f00f9203edc24af8d">SECOND_TO_MILLISECONDS</a> + hour_tenth_secs * 100;</div>
+<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">return</span> epoch_start_time;</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
+<div class="ttc" id="aclassstreets__service_1_1streets__clock__singleton_html_ace444a4a74b0cea211bf89ed89371bae"><div class="ttname"><a href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a></div><div class="ttdeci">static uint64_t time_in_ms()</div><div class="ttdoc">Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot-fhwa-stol/car...</div><div class="ttdef"><b>Definition:</b> <a href="streets__clock__singleton_8cpp_source.html#l00010">streets_clock_singleton.cpp:10</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_a00485dd9201e04b0098432a82eb3fee8"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#a00485dd9201e04b0098432a82eb3fee8">signal_phase_and_timing::time_change_details::HOUR_TO_SECONDS</a></div><div class="ttdeci">int HOUR_TO_SECONDS</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00011">time_change_details.h:11</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_ad113c5a526aa240f00f9203edc24af8d"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#ad113c5a526aa240f00f9203edc24af8d">signal_phase_and_timing::time_change_details::SECOND_TO_MILLISECONDS</a></div><div class="ttdeci">int SECOND_TO_MILLISECONDS</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00012">time_change_details.h:12</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8h_source.html#l00012">HOUR_TO_SECONDS</a>, and <a class="el" href="time__change__details_8h_source.html#l00013">SECOND_TO_MILLISECONDS</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8h_source.html#l00011">HOUR_TO_SECONDS</a>, <a class="el" href="time__change__details_8h_source.html#l00012">SECOND_TO_MILLISECONDS</a>, and <a class="el" href="streets__clock__singleton_8cpp_source.html#l00010">streets_service::streets_clock_singleton::time_in_ms()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00149">get_epoch_max_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00145">get_epoch_min_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00153">get_epoch_next_time()</a>, and <a class="el" href="time__change__details_8cpp_source.html#l00141">get_epoch_start_time()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00145">get_epoch_max_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00141">get_epoch_min_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00149">get_epoch_next_time()</a>, and <a class="el" href="time__change__details_8cpp_source.html#l00137">get_epoch_start_time()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structsignal__phase__and__timing_1_1time__change__details_a74ace40856526a37410e434bcee7917a_cgraph.png" border="0" usemap="#astructsignal__phase__and__timing_1_1time__change__details_a74ace40856526a37410e434bcee7917a_cgraph" alt=""/></div>
+<map name="astructsignal__phase__and__timing_1_1time__change__details_a74ace40856526a37410e434bcee7917a_cgraph" id="astructsignal__phase__and__timing_1_1time__change__details_a74ace40856526a37410e434bcee7917a_cgraph">
+<area shape="rect" title="Convert current hours of the year and milliseconds of the current hours into epoch timestamp in milli..." alt="" coords="5,5,240,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="288,13,480,54"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="528,13,731,54"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -259,42 +268,50 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>uint64_t epoch timestamp in milliseconds </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00109">109</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  109</span>                                                                                                {</div>
-<div class="line"><span class="lineno">  110</span>        <span class="keyword">auto</span> system_time = std::chrono::system_clock::now();</div>
-<div class="line"><span class="lineno">  111</span>        <span class="keyword">auto</span> duration = system_time.time_since_epoch();</div>
-<div class="line"><span class="lineno">  112</span>        <span class="keyword">auto</span> hours_since_epoch = std::chrono::duration_cast&lt;std::chrono::hours&gt;(duration).count();</div>
-<div class="line"><span class="lineno">  113</span>        <span class="keyword">auto</span> hours_since_epoch_ms = hours_since_epoch * <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a00485dd9201e04b0098432a82eb3fee8">HOUR_TO_SECONDS</a> * <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#ad113c5a526aa240f00f9203edc24af8d">SECOND_TO_MILLISECONDS</a>;</div>
-<div class="line"><span class="lineno">  114</span>        uint64_t tenth_seconds_from_current_hour;</div>
-<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">if</span> ( hours_since_epoch_ms &gt; epoch_time_ms ) {</div>
-<div class="line"><span class="lineno">  116</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Epoch time provided {0} is smaller than the current UTC hour time {1}! SPaT cannot represent a time from a previous hour. Approximating time as beginning of current hour.&quot;</span></div>
-<div class="line"><span class="lineno">  117</span>                , epoch_time_ms, hours_since_epoch_ms);</div>
-<div class="line"><span class="lineno">  118</span>            tenth_seconds_from_current_hour = 0;</div>
-<div class="line"><span class="lineno">  119</span>        }</div>
-<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  121</span>            tenth_seconds_from_current_hour = (epoch_time_ms - hours_since_epoch_ms )/100;</div>
-<div class="line"><span class="lineno">  122</span>        }</div>
-<div class="line"><span class="lineno">  123</span>        <span class="comment">// TimeMark Max value is 36001 and 36001 is reserved for invalid unknown times (see J2737 TimeMark message documentation).</span></div>
-<div class="line"><span class="lineno">  124</span>        <span class="comment">// Relevant section</span></div>
-<div class="line"><span class="lineno">  125</span>        <span class="comment">//         TimeMark ::= INTEGER (0..36001)</span></div>
-<div class="line"><span class="lineno">  126</span>        <span class="comment">//          -- Tenths of a second in the current or next hour</span></div>
-<div class="line"><span class="lineno">  127</span>        <span class="comment">//          -- In units of 1/10th second from UTC time</span></div>
-<div class="line"><span class="lineno">  128</span>        <span class="comment">//          -- A range of 0~36000 covers one hour</span></div>
-<div class="line"><span class="lineno">  129</span>        <span class="comment">//          -- The values 35991..35999 are used when a leap second occurs</span></div>
-<div class="line"><span class="lineno">  130</span>        <span class="comment">//          -- The value 36000 is used to indicate time &gt;3600 seconds</span></div>
-<div class="line"><span class="lineno">  131</span>        <span class="comment">//          -- 36001 is to be used when value undefined or unknown</span></div>
-<div class="line"><span class="lineno">  132</span>        <span class="comment">//          -- Note that this is NOT expressed in GPS time</span></div>
-<div class="line"><span class="lineno">  133</span>        <span class="comment">//          -- or in local time</span></div>
-<div class="line"><span class="lineno">  134</span>        <span class="keywordflow">if</span> ( tenth_seconds_from_current_hour &gt;= 36000) {</div>
-<div class="line"><span class="lineno">  135</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Approximating {0} as 36000! TimeMark maximum value is 36000!&quot;</span>, tenth_seconds_from_current_hour);</div>
-<div class="line"><span class="lineno">  136</span>            tenth_seconds_from_current_hour = 36000;</div>
-<div class="line"><span class="lineno">  137</span>        }</div>
-<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(tenth_seconds_from_current_hour);</div>
-<div class="line"><span class="lineno">  139</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00107">107</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>                                                                                                {</div>
+<div class="line"><span class="lineno">  108</span>        <span class="keyword">auto</span> hours_since_epoch = std::floor(<a class="code hl_function" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a>()/ (<a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a00485dd9201e04b0098432a82eb3fee8">HOUR_TO_SECONDS</a> * <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#ad113c5a526aa240f00f9203edc24af8d">SECOND_TO_MILLISECONDS</a>) );</div>
+<div class="line"><span class="lineno">  109</span>        <span class="keyword">auto</span> hours_since_epoch_ms = hours_since_epoch * <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a00485dd9201e04b0098432a82eb3fee8">HOUR_TO_SECONDS</a> * <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#ad113c5a526aa240f00f9203edc24af8d">SECOND_TO_MILLISECONDS</a>;</div>
+<div class="line"><span class="lineno">  110</span>        uint64_t tenth_seconds_from_current_hour;</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">if</span> ( hours_since_epoch_ms &gt; epoch_time_ms ) {</div>
+<div class="line"><span class="lineno">  112</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Epoch time provided {0} is smaller than the current UTC hour time {1}! SPaT cannot represent a time from a previous hour. Approximating time as beginning of current hour.&quot;</span></div>
+<div class="line"><span class="lineno">  113</span>                , epoch_time_ms, hours_since_epoch_ms);</div>
+<div class="line"><span class="lineno">  114</span>            tenth_seconds_from_current_hour = 0;</div>
+<div class="line"><span class="lineno">  115</span>        }</div>
+<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  117</span>            tenth_seconds_from_current_hour = (epoch_time_ms - hours_since_epoch_ms )/100;</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>        <span class="comment">// TimeMark Max value is 36001 and 36001 is reserved for invalid unknown times (see J2737 TimeMark message documentation).</span></div>
+<div class="line"><span class="lineno">  120</span>        <span class="comment">// Relevant section</span></div>
+<div class="line"><span class="lineno">  121</span>        <span class="comment">//         TimeMark ::= INTEGER (0..36001)</span></div>
+<div class="line"><span class="lineno">  122</span>        <span class="comment">//          -- Tenths of a second in the current or next hour</span></div>
+<div class="line"><span class="lineno">  123</span>        <span class="comment">//          -- In units of 1/10th second from UTC time</span></div>
+<div class="line"><span class="lineno">  124</span>        <span class="comment">//          -- A range of 0~36000 covers one hour</span></div>
+<div class="line"><span class="lineno">  125</span>        <span class="comment">//          -- The values 35991..35999 are used when a leap second occurs</span></div>
+<div class="line"><span class="lineno">  126</span>        <span class="comment">//          -- The value 36000 is used to indicate time &gt;3600 seconds</span></div>
+<div class="line"><span class="lineno">  127</span>        <span class="comment">//          -- 36001 is to be used when value undefined or unknown</span></div>
+<div class="line"><span class="lineno">  128</span>        <span class="comment">//          -- Note that this is NOT expressed in GPS time</span></div>
+<div class="line"><span class="lineno">  129</span>        <span class="comment">//          -- or in local time</span></div>
+<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">if</span> ( tenth_seconds_from_current_hour &gt;= 36000) {</div>
+<div class="line"><span class="lineno">  131</span>            SPDLOG_WARN(<span class="stringliteral">&quot;Approximating {0} as 36000! TimeMark maximum value is 36000!&quot;</span>, tenth_seconds_from_current_hour);</div>
+<div class="line"><span class="lineno">  132</span>            tenth_seconds_from_current_hour = 36000;</div>
+<div class="line"><span class="lineno">  133</span>        }</div>
+<div class="line"><span class="lineno">  134</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(tenth_seconds_from_current_hour);</div>
+<div class="line"><span class="lineno">  135</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8h_source.html#l00012">HOUR_TO_SECONDS</a>, and <a class="el" href="time__change__details_8h_source.html#l00013">SECOND_TO_MILLISECONDS</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8h_source.html#l00011">HOUR_TO_SECONDS</a>, <a class="el" href="time__change__details_8h_source.html#l00012">SECOND_TO_MILLISECONDS</a>, and <a class="el" href="streets__clock__singleton_8cpp_source.html#l00010">streets_service::streets_clock_singleton::time_in_ms()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00165">set_max_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00161">set_min_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00169">set_next_time()</a>, and <a class="el" href="time__change__details_8cpp_source.html#l00157">set_start_time()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00161">set_max_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00157">set_min_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00165">set_next_time()</a>, and <a class="el" href="time__change__details_8cpp_source.html#l00153">set_start_time()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structsignal__phase__and__timing_1_1time__change__details_acf7978bdb4500f5d084b0d814a28f9c4_cgraph.png" border="0" usemap="#astructsignal__phase__and__timing_1_1time__change__details_acf7978bdb4500f5d084b0d814a28f9c4_cgraph" alt=""/></div>
+<map name="astructsignal__phase__and__timing_1_1time__change__details_acf7978bdb4500f5d084b0d814a28f9c4_cgraph" id="astructsignal__phase__and__timing_1_1time__change__details_acf7978bdb4500f5d084b0d814a28f9c4_cgraph">
+<area shape="rect" title="Convert epoch timestamp in milliseconds into tenths of seconds of the current UTC hour...." alt="" coords="5,5,187,76"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="235,20,427,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="475,20,677,61"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -390,14 +407,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   88</span>            }</div>
 <div class="line"><span class="lineno">   89</span>        }</div>
 <div class="line"><span class="lineno">   90</span>    }</div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_a1c9501b5a44c66a178b8753db439a753"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#a1c9501b5a44c66a178b8753db439a753">signal_phase_and_timing::time_change_details::max_end_time</a></div><div class="ttdeci">uint16_t max_end_time</div><div class="ttdoc">Expected longest end time. (tenths of a second in current or next hour)</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00025">time_change_details.h:25</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_a57ea53825ad4df7b1dff194a151ffa8a"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#a57ea53825ad4df7b1dff194a151ffa8a">signal_phase_and_timing::time_change_details::next_time</a></div><div class="ttdeci">uint16_t next_time</div><div class="ttdoc">A rough estimate of time when this phase may next occur. (tenths of a second in current or next hour)</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00055">time_change_details.h:55</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_a6351871d46c1e47aab9589c11836e50b"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#a6351871d46c1e47aab9589c11836e50b">signal_phase_and_timing::time_change_details::likely_time</a></div><div class="ttdeci">uint16_t likely_time</div><div class="ttdoc">Best predicted value based on other data (tenths of a second in current or next hour)</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00029">time_change_details.h:29</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_a93d23e5cd628d55957a45255fbec51a3"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#a93d23e5cd628d55957a45255fbec51a3">signal_phase_and_timing::time_change_details::confidence</a></div><div class="ttdeci">uint8_t confidence</div><div class="ttdoc">Applies to the above time interval only – Value Probability – 0 21% – 1 36% – 2 47% – 3 56% – 4 62% –...</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00050">time_change_details.h:50</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_aa43eafdf46377a5743e82b5be8ce3133"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#aa43eafdf46377a5743e82b5be8ce3133">signal_phase_and_timing::time_change_details::start_time</a></div><div class="ttdeci">uint16_t start_time</div><div class="ttdoc">When this phase first started. (tenths of a second in current or next hour)</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00017">time_change_details.h:17</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_ad39cfa60daafb321241d3a00fea563e5"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#ad39cfa60daafb321241d3a00fea563e5">signal_phase_and_timing::time_change_details::min_end_time</a></div><div class="ttdeci">uint16_t min_end_time</div><div class="ttdoc">Expected shortest end time. (tenths of a second in current or next hour)</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00021">time_change_details.h:21</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_a1c9501b5a44c66a178b8753db439a753"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#a1c9501b5a44c66a178b8753db439a753">signal_phase_and_timing::time_change_details::max_end_time</a></div><div class="ttdeci">uint16_t max_end_time</div><div class="ttdoc">Expected longest end time. (tenths of a second in current or next hour)</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00024">time_change_details.h:24</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_a57ea53825ad4df7b1dff194a151ffa8a"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#a57ea53825ad4df7b1dff194a151ffa8a">signal_phase_and_timing::time_change_details::next_time</a></div><div class="ttdeci">uint16_t next_time</div><div class="ttdoc">A rough estimate of time when this phase may next occur. (tenths of a second in current or next hour)</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00054">time_change_details.h:54</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_a6351871d46c1e47aab9589c11836e50b"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#a6351871d46c1e47aab9589c11836e50b">signal_phase_and_timing::time_change_details::likely_time</a></div><div class="ttdeci">uint16_t likely_time</div><div class="ttdoc">Best predicted value based on other data (tenths of a second in current or next hour)</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00028">time_change_details.h:28</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_a93d23e5cd628d55957a45255fbec51a3"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#a93d23e5cd628d55957a45255fbec51a3">signal_phase_and_timing::time_change_details::confidence</a></div><div class="ttdeci">uint8_t confidence</div><div class="ttdoc">Applies to the above time interval only – Value Probability – 0 21% – 1 36% – 2 47% – 3 56% – 4 62% –...</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00049">time_change_details.h:49</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_aa43eafdf46377a5743e82b5be8ce3133"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#aa43eafdf46377a5743e82b5be8ce3133">signal_phase_and_timing::time_change_details::start_time</a></div><div class="ttdeci">uint16_t start_time</div><div class="ttdoc">When this phase first started. (tenths of a second in current or next hour)</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00016">time_change_details.h:16</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_ad39cfa60daafb321241d3a00fea563e5"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#ad39cfa60daafb321241d3a00fea563e5">signal_phase_and_timing::time_change_details::min_end_time</a></div><div class="ttdeci">uint16_t min_end_time</div><div class="ttdoc">Expected shortest end time. (tenths of a second in current or next hour)</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8h_source.html#l00020">time_change_details.h:20</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8h_source.html#l00050">confidence</a>, <a class="el" href="time__change__details_8h_source.html#l00029">likely_time</a>, <a class="el" href="time__change__details_8h_source.html#l00025">max_end_time</a>, <a class="el" href="time__change__details_8h_source.html#l00021">min_end_time</a>, <a class="el" href="time__change__details_8h_source.html#l00055">next_time</a>, and <a class="el" href="time__change__details_8h_source.html#l00017">start_time</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8h_source.html#l00049">confidence</a>, <a class="el" href="time__change__details_8h_source.html#l00028">likely_time</a>, <a class="el" href="time__change__details_8h_source.html#l00024">max_end_time</a>, <a class="el" href="time__change__details_8h_source.html#l00020">min_end_time</a>, <a class="el" href="time__change__details_8h_source.html#l00054">next_time</a>, and <a class="el" href="time__change__details_8h_source.html#l00016">start_time</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="movement__event_8cpp_source.html#l00022">signal_phase_and_timing::movement_event::fromJson()</a>.</p>
 <div class="dynheader">
@@ -433,13 +450,13 @@ Here is the caller graph for this function:</div>
 <p>Get the epoch timestamp of the max end timestamp. </p>
 <dl class="section return"><dt>Returns</dt><dd>** uint64_t epoch timestamp in unit of milliseconds </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00149">149</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  149</span>                                                              {</div>
-<div class="line"><span class="lineno">  150</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a">convert_hour_tenth_secs2epoch_ts</a>(<a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a1c9501b5a44c66a178b8753db439a753">max_end_time</a>);</div>
-<div class="line"><span class="lineno">  151</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00145">145</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>                                                              {</div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a">convert_hour_tenth_secs2epoch_ts</a>(<a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a1c9501b5a44c66a178b8753db439a753">max_end_time</a>);</div>
+<div class="line"><span class="lineno">  147</span>    }</div>
 <div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_a74ace40856526a37410e434bcee7917a"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a">signal_phase_and_timing::time_change_details::convert_hour_tenth_secs2epoch_ts</a></div><div class="ttdeci">uint64_t convert_hour_tenth_secs2epoch_ts(uint16_t hour_tenth_secs) const</div><div class="ttdoc">Convert current hours of the year and milliseconds of the current hours into epoch timestamp in milli...</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8cpp_source.html#l00101">time_change_details.cpp:101</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00101">convert_hour_tenth_secs2epoch_ts()</a>, and <a class="el" href="time__change__details_8h_source.html#l00025">max_end_time</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00101">convert_hour_tenth_secs2epoch_ts()</a>, and <a class="el" href="time__change__details_8h_source.html#l00024">max_end_time</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -447,6 +464,8 @@ Here is the call graph for this function:</div>
 <map name="astructsignal__phase__and__timing_1_1time__change__details_a37e66edff4920b53af3e3a268186f407_cgraph" id="astructsignal__phase__and__timing_1_1time__change__details_a37e66edff4920b53af3e3a268186f407_cgraph">
 <area shape="rect" title="Get the epoch timestamp of the max end timestamp." alt="" coords="5,5,184,61"/>
 <area shape="rect" href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a" title="Convert current hours of the year and milliseconds of the current hours into epoch timestamp in milli..." alt="" coords="232,5,467,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="515,13,707,54"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="755,13,957,54"/>
 </map>
 </div>
 
@@ -470,12 +489,12 @@ Here is the call graph for this function:</div>
 <p>Get the epoch timestamp of the min end timestamp. </p>
 <dl class="section return"><dt>Returns</dt><dd>** uint64_t epoch timestamp in unit of milliseconds </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00145">145</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  145</span>                                                              {</div>
-<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a">convert_hour_tenth_secs2epoch_ts</a>(<a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#ad39cfa60daafb321241d3a00fea563e5">min_end_time</a>);</div>
-<div class="line"><span class="lineno">  147</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00141">141</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>                                                              {</div>
+<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a">convert_hour_tenth_secs2epoch_ts</a>(<a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#ad39cfa60daafb321241d3a00fea563e5">min_end_time</a>);</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00101">convert_hour_tenth_secs2epoch_ts()</a>, and <a class="el" href="time__change__details_8h_source.html#l00021">min_end_time</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00101">convert_hour_tenth_secs2epoch_ts()</a>, and <a class="el" href="time__change__details_8h_source.html#l00020">min_end_time</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00152">traffic_signal_controller_service::tsc_state::add_future_movement_events()</a>.</p>
 <div class="dynheader">
@@ -485,6 +504,8 @@ Here is the call graph for this function:</div>
 <map name="astructsignal__phase__and__timing_1_1time__change__details_ace57d6d7e92d000560753346277a4e20_cgraph" id="astructsignal__phase__and__timing_1_1time__change__details_ace57d6d7e92d000560753346277a4e20_cgraph">
 <area shape="rect" title="Get the epoch timestamp of the min end timestamp." alt="" coords="5,5,181,61"/>
 <area shape="rect" href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a" title="Convert current hours of the year and milliseconds of the current hours into epoch timestamp in milli..." alt="" coords="229,5,464,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="512,13,704,54"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="752,13,955,54"/>
 </map>
 </div>
 <div class="dynheader">
@@ -518,12 +539,12 @@ Here is the caller graph for this function:</div>
  </p>
 <dl class="section return"><dt>Returns</dt><dd>** uint64_t epoch timestamp in unit of milliseconds </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00153">153</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  153</span>                                                           {</div>
-<div class="line"><span class="lineno">  154</span>       <span class="keywordflow">return</span> <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a">convert_hour_tenth_secs2epoch_ts</a>(<a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a57ea53825ad4df7b1dff194a151ffa8a">next_time</a>);</div>
-<div class="line"><span class="lineno">  155</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00149">149</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>                                                           {</div>
+<div class="line"><span class="lineno">  150</span>       <span class="keywordflow">return</span> <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a">convert_hour_tenth_secs2epoch_ts</a>(<a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a57ea53825ad4df7b1dff194a151ffa8a">next_time</a>);</div>
+<div class="line"><span class="lineno">  151</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00101">convert_hour_tenth_secs2epoch_ts()</a>, and <a class="el" href="time__change__details_8h_source.html#l00055">next_time</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00101">convert_hour_tenth_secs2epoch_ts()</a>, and <a class="el" href="time__change__details_8h_source.html#l00054">next_time</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -531,6 +552,8 @@ Here is the call graph for this function:</div>
 <map name="astructsignal__phase__and__timing_1_1time__change__details_adeca62d30921732346c615faaf64a9ec_cgraph" id="astructsignal__phase__and__timing_1_1time__change__details_adeca62d30921732346c615faaf64a9ec_cgraph">
 <area shape="rect" title="Get the epoch timestamp of the next end timestamp" alt="" coords="5,5,173,61"/>
 <area shape="rect" href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a" title="Convert current hours of the year and milliseconds of the current hours into epoch timestamp in milli..." alt="" coords="221,5,456,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="504,13,696,54"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="744,13,947,54"/>
 </map>
 </div>
 
@@ -554,12 +577,12 @@ Here is the call graph for this function:</div>
 <p>Get the epoch timestamp of the start timestamp. </p>
 <dl class="section return"><dt>Returns</dt><dd>** uint64_t epoch timestamp in unit of milliseconds </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00141">141</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  141</span>                                                            {</div>
-<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a">convert_hour_tenth_secs2epoch_ts</a>(<a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#aa43eafdf46377a5743e82b5be8ce3133">start_time</a>);</div>
-<div class="line"><span class="lineno">  143</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00137">137</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>                                                            {</div>
+<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a">convert_hour_tenth_secs2epoch_ts</a>(<a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#aa43eafdf46377a5743e82b5be8ce3133">start_time</a>);</div>
+<div class="line"><span class="lineno">  139</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00101">convert_hour_tenth_secs2epoch_ts()</a>, and <a class="el" href="time__change__details_8h_source.html#l00017">start_time</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00101">convert_hour_tenth_secs2epoch_ts()</a>, and <a class="el" href="time__change__details_8h_source.html#l00016">start_time</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -567,6 +590,8 @@ Here is the call graph for this function:</div>
 <map name="astructsignal__phase__and__timing_1_1time__change__details_a650a958f01c7a1fd2e845c08e27fb88e_cgraph" id="astructsignal__phase__and__timing_1_1time__change__details_a650a958f01c7a1fd2e845c08e27fb88e_cgraph">
 <area shape="rect" title="Get the epoch timestamp of the start timestamp." alt="" coords="5,5,173,61"/>
 <area shape="rect" href="structsignal__phase__and__timing_1_1time__change__details.html#a74ace40856526a37410e434bcee7917a" title="Convert current hours of the year and milliseconds of the current hours into epoch timestamp in milli..." alt="" coords="221,5,456,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="504,13,696,54"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="744,13,947,54"/>
 </map>
 </div>
 
@@ -651,7 +676,7 @@ false if not. </dd></dl>
 <div class="line"><span class="lineno">   94</span>            &amp;&amp; <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a6351871d46c1e47aab9589c11836e50b">likely_time</a> == other.likely_time &amp;&amp; <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a93d23e5cd628d55957a45255fbec51a3">confidence</a> == other.confidence;</div>
 <div class="line"><span class="lineno">   95</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8h_source.html#l00050">confidence</a>, <a class="el" href="time__change__details_8h_source.html#l00029">likely_time</a>, <a class="el" href="time__change__details_8h_source.html#l00025">max_end_time</a>, <a class="el" href="time__change__details_8h_source.html#l00021">min_end_time</a>, and <a class="el" href="time__change__details_8h_source.html#l00017">start_time</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8h_source.html#l00049">confidence</a>, <a class="el" href="time__change__details_8h_source.html#l00028">likely_time</a>, <a class="el" href="time__change__details_8h_source.html#l00024">max_end_time</a>, <a class="el" href="time__change__details_8h_source.html#l00020">min_end_time</a>, and <a class="el" href="time__change__details_8h_source.html#l00016">start_time</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00097">operator!=()</a>.</p>
 <div class="dynheader">
@@ -690,13 +715,13 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00165">165</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  165</span>                                                                     {</div>
-<div class="line"><span class="lineno">  166</span>        <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a1c9501b5a44c66a178b8753db439a753">max_end_time</a> =  <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4">convert_msepoch_to_hour_tenth_secs</a>(epoch_time_ms);</div>
-<div class="line"><span class="lineno">  167</span>    }</div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_acf7978bdb4500f5d084b0d814a28f9c4"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4">signal_phase_and_timing::time_change_details::convert_msepoch_to_hour_tenth_secs</a></div><div class="ttdeci">uint16_t convert_msepoch_to_hour_tenth_secs(uint64_t epoch_time_ms) const</div><div class="ttdoc">Convert epoch timestamp in milliseconds into tenths of seconds of the current UTC hour....</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8cpp_source.html#l00109">time_change_details.cpp:109</a></div></div>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00161">161</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>                                                                     {</div>
+<div class="line"><span class="lineno">  162</span>        <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a1c9501b5a44c66a178b8753db439a753">max_end_time</a> =  <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4">convert_msepoch_to_hour_tenth_secs</a>(epoch_time_ms);</div>
+<div class="line"><span class="lineno">  163</span>    }</div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1time__change__details_html_acf7978bdb4500f5d084b0d814a28f9c4"><div class="ttname"><a href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4">signal_phase_and_timing::time_change_details::convert_msepoch_to_hour_tenth_secs</a></div><div class="ttdeci">uint16_t convert_msepoch_to_hour_tenth_secs(uint64_t epoch_time_ms) const</div><div class="ttdoc">Convert epoch timestamp in milliseconds into tenths of seconds of the current UTC hour....</div><div class="ttdef"><b>Definition:</b> <a href="time__change__details_8cpp_source.html#l00107">time_change_details.cpp:107</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00109">convert_msepoch_to_hour_tenth_secs()</a>, and <a class="el" href="time__change__details_8h_source.html#l00025">max_end_time</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00107">convert_msepoch_to_hour_tenth_secs()</a>, and <a class="el" href="time__change__details_8h_source.html#l00024">max_end_time</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00116">traffic_signal_controller_service::tsc_state::get_following_event()</a>.</p>
 <div class="dynheader">
@@ -706,6 +731,8 @@ Here is the call graph for this function:</div>
 <map name="astructsignal__phase__and__timing_1_1time__change__details_a2fef256765d3164ba312edf02300b7d9_cgraph" id="astructsignal__phase__and__timing_1_1time__change__details_a2fef256765d3164ba312edf02300b7d9_cgraph">
 <area shape="rect" title="Set min_end_time for movement event. Method expects epoch time in milliseconds and converts to tenths..." alt="" coords="5,13,173,69"/>
 <area shape="rect" href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4" title="Convert epoch timestamp in milliseconds into tenths of seconds of the current UTC hour...." alt="" coords="221,5,403,76"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="451,20,643,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="691,20,893,61"/>
 </map>
 </div>
 <div class="dynheader">
@@ -745,12 +772,12 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00161">161</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  161</span>                                                                     {</div>
-<div class="line"><span class="lineno">  162</span>        <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#ad39cfa60daafb321241d3a00fea563e5">min_end_time</a> = <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4">convert_msepoch_to_hour_tenth_secs</a>(epoch_time_ms);</div>
-<div class="line"><span class="lineno">  163</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00157">157</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>                                                                     {</div>
+<div class="line"><span class="lineno">  158</span>        <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#ad39cfa60daafb321241d3a00fea563e5">min_end_time</a> = <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4">convert_msepoch_to_hour_tenth_secs</a>(epoch_time_ms);</div>
+<div class="line"><span class="lineno">  159</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00109">convert_msepoch_to_hour_tenth_secs()</a>, and <a class="el" href="time__change__details_8h_source.html#l00021">min_end_time</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00107">convert_msepoch_to_hour_tenth_secs()</a>, and <a class="el" href="time__change__details_8h_source.html#l00020">min_end_time</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00116">traffic_signal_controller_service::tsc_state::get_following_event()</a>, and <a class="el" href="spat_8cpp_source.html#l00362">signal_phase_and_timing::spat::populate_movement_event()</a>.</p>
 <div class="dynheader">
@@ -760,6 +787,8 @@ Here is the call graph for this function:</div>
 <map name="astructsignal__phase__and__timing_1_1time__change__details_a2db5c3a1b3948f6e6e75ce2ae7311f68_cgraph" id="astructsignal__phase__and__timing_1_1time__change__details_a2db5c3a1b3948f6e6e75ce2ae7311f68_cgraph">
 <area shape="rect" title="Set min_end_time for movement event. Method expects epoch time in milliseconds and converts to tenths..." alt="" coords="5,13,173,69"/>
 <area shape="rect" href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4" title="Convert epoch timestamp in milliseconds into tenths of seconds of the current UTC hour...." alt="" coords="221,5,403,76"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="451,20,643,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="691,20,893,61"/>
 </map>
 </div>
 <div class="dynheader">
@@ -804,12 +833,12 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00169">169</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  169</span>                                                                  {</div>
-<div class="line"><span class="lineno">  170</span>        <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a57ea53825ad4df7b1dff194a151ffa8a">next_time</a> =  <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4">convert_msepoch_to_hour_tenth_secs</a>(epoch_time_ms);</div>
-<div class="line"><span class="lineno">  171</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00165">165</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>                                                                  {</div>
+<div class="line"><span class="lineno">  166</span>        <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#a57ea53825ad4df7b1dff194a151ffa8a">next_time</a> =  <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4">convert_msepoch_to_hour_tenth_secs</a>(epoch_time_ms);</div>
+<div class="line"><span class="lineno">  167</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00109">convert_msepoch_to_hour_tenth_secs()</a>, and <a class="el" href="time__change__details_8h_source.html#l00055">next_time</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00107">convert_msepoch_to_hour_tenth_secs()</a>, and <a class="el" href="time__change__details_8h_source.html#l00054">next_time</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -817,6 +846,8 @@ Here is the call graph for this function:</div>
 <map name="astructsignal__phase__and__timing_1_1time__change__details_af48143f84b1047346da1d7d571f4511a_cgraph" id="astructsignal__phase__and__timing_1_1time__change__details_af48143f84b1047346da1d7d571f4511a_cgraph">
 <area shape="rect" title="Set next_time for movement event. Method expects epoch time in milliseconds and converts to tenths of..." alt="" coords="5,13,173,69"/>
 <area shape="rect" href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4" title="Convert epoch timestamp in milliseconds into tenths of seconds of the current UTC hour...." alt="" coords="221,5,403,76"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="451,20,643,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="691,20,893,61"/>
 </map>
 </div>
 
@@ -846,12 +877,12 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00157">157</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  157</span>                                                                   {</div>
-<div class="line"><span class="lineno">  158</span>        <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#aa43eafdf46377a5743e82b5be8ce3133">start_time</a> = <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4">convert_msepoch_to_hour_tenth_secs</a>(epoch_time_ms);</div>
-<div class="line"><span class="lineno">  159</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8cpp_source.html#l00153">153</a> of file <a class="el" href="time__change__details_8cpp_source.html">time_change_details.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>                                                                   {</div>
+<div class="line"><span class="lineno">  154</span>        <a class="code hl_variable" href="structsignal__phase__and__timing_1_1time__change__details.html#aa43eafdf46377a5743e82b5be8ce3133">start_time</a> = <a class="code hl_function" href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4">convert_msepoch_to_hour_tenth_secs</a>(epoch_time_ms);</div>
+<div class="line"><span class="lineno">  155</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00109">convert_msepoch_to_hour_tenth_secs()</a>, and <a class="el" href="time__change__details_8h_source.html#l00017">start_time</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8cpp_source.html#l00107">convert_msepoch_to_hour_tenth_secs()</a>, and <a class="el" href="time__change__details_8h_source.html#l00016">start_time</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00116">traffic_signal_controller_service::tsc_state::get_following_event()</a>, and <a class="el" href="spat_8cpp_source.html#l00362">signal_phase_and_timing::spat::populate_movement_event()</a>.</p>
 <div class="dynheader">
@@ -861,6 +892,8 @@ Here is the call graph for this function:</div>
 <map name="astructsignal__phase__and__timing_1_1time__change__details_aeeff6dd233876204f6758aaf09d532c6_cgraph" id="astructsignal__phase__and__timing_1_1time__change__details_aeeff6dd233876204f6758aaf09d532c6_cgraph">
 <area shape="rect" title="Set start_time for movement_event. Method expects epoch time in milliseconds and converts to tenths o..." alt="" coords="5,13,173,69"/>
 <area shape="rect" href="structsignal__phase__and__timing_1_1time__change__details.html#acf7978bdb4500f5d084b0d814a28f9c4" title="Convert epoch timestamp in milliseconds into tenths of seconds of the current UTC hour...." alt="" coords="221,5,403,76"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="451,20,643,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="691,20,893,61"/>
 </map>
 </div>
 <div class="dynheader">
@@ -940,7 +973,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   41</span>    }</div>
 <div class="ttc" id="antcip__1202__ext_8h_html_a576de7b60eacee3f1a70393a005502cd"><div class="ttname"><a href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">Returns std::string representation of ntcip_1202_ext message including phase_times array.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__change__details_8h_source.html#l00050">confidence</a>, <a class="el" href="time__change__details_8h_source.html#l00029">likely_time</a>, <a class="el" href="time__change__details_8h_source.html#l00025">max_end_time</a>, <a class="el" href="time__change__details_8h_source.html#l00021">min_end_time</a>, <a class="el" href="time__change__details_8h_source.html#l00055">next_time</a>, <a class="el" href="time__change__details_8h_source.html#l00017">start_time</a>, and <a class="el" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">to_string()</a>.</p>
+<p class="reference">References <a class="el" href="time__change__details_8h_source.html#l00049">confidence</a>, <a class="el" href="time__change__details_8h_source.html#l00028">likely_time</a>, <a class="el" href="time__change__details_8h_source.html#l00024">max_end_time</a>, <a class="el" href="time__change__details_8h_source.html#l00020">min_end_time</a>, <a class="el" href="time__change__details_8h_source.html#l00054">next_time</a>, <a class="el" href="time__change__details_8h_source.html#l00016">start_time</a>, and <a class="el" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">to_string()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="movement__event_8cpp_source.html#l00005">signal_phase_and_timing::movement_event::toJson()</a>.</p>
 <div class="dynheader">
@@ -979,7 +1012,7 @@ Here is the caller graph for this function:</div>
 
 <p>Applies to the above time interval only &ndash; Value Probability &ndash; 0 21% &ndash; 1 36% &ndash; 2 47% &ndash; 3 56% &ndash; 4 62% &ndash; 5 68% &ndash; 6 73% &ndash; 7 77% &ndash; 8 81% &ndash; 9 85% &ndash; 10 88% &ndash; 11 91% &ndash; 12 94% &ndash; 13 96% &ndash; 14 98% &ndash; 15 100%. </p>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00050">50</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00049">49</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00043">fromJson()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00092">operator==()</a>, and <a class="el" href="time__change__details_8cpp_source.html#l00005">toJson()</a>.</p>
 
@@ -997,9 +1030,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00012">12</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00011">11</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00101">convert_hour_tenth_secs2epoch_ts()</a>, and <a class="el" href="time__change__details_8cpp_source.html#l00109">convert_msepoch_to_hour_tenth_secs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00101">convert_hour_tenth_secs2epoch_ts()</a>, and <a class="el" href="time__change__details_8cpp_source.html#l00107">convert_msepoch_to_hour_tenth_secs()</a>.</p>
 
 </div>
 </div>
@@ -1017,7 +1050,7 @@ Here is the caller graph for this function:</div>
 
 <p>Best predicted value based on other data (tenths of a second in current or next hour) </p>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00029">29</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00028">28</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00043">fromJson()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00092">operator==()</a>, and <a class="el" href="time__change__details_8cpp_source.html#l00005">toJson()</a>.</p>
 
@@ -1037,9 +1070,9 @@ Here is the caller graph for this function:</div>
 
 <p>Expected longest end time. (tenths of a second in current or next hour) </p>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00025">25</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00024">24</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00043">fromJson()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00149">get_epoch_max_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00092">operator==()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00165">set_max_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00005">toJson()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00208">signal_phase_and_timing::intersection_state::update_movement_state()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00043">fromJson()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00145">get_epoch_max_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00092">operator==()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00161">set_max_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00005">toJson()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00208">signal_phase_and_timing::intersection_state::update_movement_state()</a>.</p>
 
 </div>
 </div>
@@ -1057,9 +1090,9 @@ Here is the caller graph for this function:</div>
 
 <p>Expected shortest end time. (tenths of a second in current or next hour) </p>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00021">21</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00020">20</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00043">fromJson()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00145">get_epoch_min_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00092">operator==()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00161">set_min_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00005">toJson()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00208">signal_phase_and_timing::intersection_state::update_movement_state()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00043">fromJson()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00141">get_epoch_min_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00092">operator==()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00157">set_min_end_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00005">toJson()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00208">signal_phase_and_timing::intersection_state::update_movement_state()</a>.</p>
 
 </div>
 </div>
@@ -1077,9 +1110,9 @@ Here is the caller graph for this function:</div>
 
 <p>A rough estimate of time when this phase may next occur. (tenths of a second in current or next hour) </p>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00055">55</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00054">54</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00043">fromJson()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00153">get_epoch_next_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00169">set_next_time()</a>, and <a class="el" href="time__change__details_8cpp_source.html#l00005">toJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00043">fromJson()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00149">get_epoch_next_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00165">set_next_time()</a>, and <a class="el" href="time__change__details_8cpp_source.html#l00005">toJson()</a>.</p>
 
 </div>
 </div>
@@ -1095,9 +1128,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00013">13</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00012">12</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00101">convert_hour_tenth_secs2epoch_ts()</a>, and <a class="el" href="time__change__details_8cpp_source.html#l00109">convert_msepoch_to_hour_tenth_secs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00101">convert_hour_tenth_secs2epoch_ts()</a>, and <a class="el" href="time__change__details_8cpp_source.html#l00107">convert_msepoch_to_hour_tenth_secs()</a>.</p>
 
 </div>
 </div>
@@ -1115,9 +1148,9 @@ Here is the caller graph for this function:</div>
 
 <p>When this phase first started. (tenths of a second in current or next hour) </p>
 
-<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00017">17</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="time__change__details_8h_source.html#l00016">16</a> of file <a class="el" href="time__change__details_8h_source.html">time_change_details.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00043">fromJson()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00141">get_epoch_start_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00092">operator==()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00157">set_start_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00005">toJson()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00208">signal_phase_and_timing::intersection_state::update_movement_state()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="time__change__details_8cpp_source.html#l00043">fromJson()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00137">get_epoch_start_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00092">operator==()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00153">set_start_time()</a>, <a class="el" href="time__change__details_8cpp_source.html#l00005">toJson()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00208">signal_phase_and_timing::intersection_state::update_movement_state()</a>.</p>
 
 </div>
 </div>
@@ -1131,7 +1164,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesignal__phase__and__timing.html">signal_phase_and_timing</a></li><li class="navelem"><a class="el" href="structsignal__phase__and__timing_1_1time__change__details.html">time_change_details</a></li>
-    <li class="footer">Generated on Tue Apr 11 2023 14:38:44 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 19 2023 13:18:58 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

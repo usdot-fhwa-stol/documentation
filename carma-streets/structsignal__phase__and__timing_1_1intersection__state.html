@@ -189,7 +189,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00016">16</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00017">17</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1b3063027b0686bd2e01dc696a2974a9" name="a1b3063027b0686bd2e01dc696a2974a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b3063027b0686bd2e01dc696a2974a9">&#9670;&nbsp;</a></span>clear_future_movement_events()</h2>
@@ -226,9 +226,9 @@ Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  304</span>            }           </div>
 <div class="line"><span class="lineno">  305</span>        }</div>
 <div class="line"><span class="lineno">  306</span>    }</div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a7ede63a37705e6c5cdce68883fe78a7d"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a7ede63a37705e6c5cdce68883fe78a7d">signal_phase_and_timing::intersection_state::states</a></div><div class="ttdeci">std::list&lt; movement_state &gt; states</div><div class="ttdoc">Each Movement is given in turn and contains its signal phase state, mapping to the lanes it applies t...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00094">intersection_state.h:94</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a7ede63a37705e6c5cdce68883fe78a7d"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a7ede63a37705e6c5cdce68883fe78a7d">signal_phase_and_timing::intersection_state::states</a></div><div class="ttdeci">std::list&lt; movement_state &gt; states</div><div class="ttdoc">Each Movement is given in turn and contains its signal phase state, mapping to the lanes it applies t...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00095">intersection_state.h:95</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00094">states</a>.</p>
+<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00095">states</a>.</p>
 
 </div>
 </div>
@@ -271,7 +271,7 @@ Public Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="intersection__state_8cpp_source.html#l00139">139</a> of file <a class="el" href="intersection__state_8cpp_source.html">intersection_state.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  139</span>                                                                                                               {</div>
 <div class="line"><span class="lineno">  140</span>        <span class="comment">//Calculate timestamp for beginning of the year</span></div>
-<div class="line"><span class="lineno">  141</span>        std::chrono::system_clock::time_point now = std::chrono::system_clock::now();</div>
+<div class="line"><span class="lineno">  141</span>        std::chrono::system_clock::time_point now{std::chrono::milliseconds(<a class="code hl_function" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a>())};</div>
 <div class="line"><span class="lineno">  142</span>        time_t tt = std::chrono::system_clock::to_time_t(now);</div>
 <div class="line"><span class="lineno">  143</span>        tm utctime;</div>
 <div class="line"><span class="lineno">  144</span>        gmtime_r(&amp;tt, &amp;utctime);</div>
@@ -288,12 +288,23 @@ Public Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  155</span>        <span class="keyword">auto</span> epoch_timestamp = year_begin_utc_timestamp + <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span><span class="keyword">&gt;</span>(moy_ll) * <a class="code hl_variable" href="structsignal__phase__and__timing_1_1intersection__state.html#ad71bed5c8cd56cac8dcd041c5fd5a83e">MIN_TO_SECONDS</a> * <a class="code hl_variable" href="structsignal__phase__and__timing_1_1intersection__state.html#aebaed676aff07f126fe01e1319b4c605">SECOND_TO_MILLISECONDS</a> + min_mills_timestamp;</div>
 <div class="line"><span class="lineno">  156</span>        <span class="keywordflow">return</span> epoch_timestamp;</div>
 <div class="line"><span class="lineno">  157</span>    }</div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_ad71bed5c8cd56cac8dcd041c5fd5a83e"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#ad71bed5c8cd56cac8dcd041c5fd5a83e">signal_phase_and_timing::intersection_state::MIN_TO_SECONDS</a></div><div class="ttdeci">int MIN_TO_SECONDS</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00018">intersection_state.h:18</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_aebaed676aff07f126fe01e1319b4c605"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#aebaed676aff07f126fe01e1319b4c605">signal_phase_and_timing::intersection_state::SECOND_TO_MILLISECONDS</a></div><div class="ttdeci">int SECOND_TO_MILLISECONDS</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00019">intersection_state.h:19</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__clock__singleton_html_ace444a4a74b0cea211bf89ed89371bae"><div class="ttname"><a href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a></div><div class="ttdeci">static uint64_t time_in_ms()</div><div class="ttdoc">Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot-fhwa-stol/car...</div><div class="ttdef"><b>Definition:</b> <a href="streets__clock__singleton_8cpp_source.html#l00010">streets_clock_singleton.cpp:10</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_ad71bed5c8cd56cac8dcd041c5fd5a83e"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#ad71bed5c8cd56cac8dcd041c5fd5a83e">signal_phase_and_timing::intersection_state::MIN_TO_SECONDS</a></div><div class="ttdeci">int MIN_TO_SECONDS</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00019">intersection_state.h:19</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_aebaed676aff07f126fe01e1319b4c605"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#aebaed676aff07f126fe01e1319b4c605">signal_phase_and_timing::intersection_state::SECOND_TO_MILLISECONDS</a></div><div class="ttdeci">int SECOND_TO_MILLISECONDS</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00020">intersection_state.h:20</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00018">MIN_TO_SECONDS</a>, and <a class="el" href="intersection__state_8h_source.html#l00019">SECOND_TO_MILLISECONDS</a>.</p>
+<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00019">MIN_TO_SECONDS</a>, <a class="el" href="intersection__state_8h_source.html#l00020">SECOND_TO_MILLISECONDS</a>, and <a class="el" href="streets__clock__singleton_8cpp_source.html#l00010">streets_service::streets_clock_singleton::time_in_ms()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00159">get_epoch_timestamp()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structsignal__phase__and__timing_1_1intersection__state_a4fde3ad2fb225f963f411ad66e72066f_cgraph.png" border="0" usemap="#astructsignal__phase__and__timing_1_1intersection__state_a4fde3ad2fb225f963f411ad66e72066f_cgraph" alt=""/></div>
+<map name="astructsignal__phase__and__timing_1_1intersection__state_a4fde3ad2fb225f963f411ad66e72066f_cgraph" id="astructsignal__phase__and__timing_1_1intersection__state_a4fde3ad2fb225f963f411ad66e72066f_cgraph">
+<area shape="rect" title="Convert current mimutes of the year and milliseconds of the current minute into epoch timestamp in mi..." alt="" coords="5,5,192,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="240,13,432,54"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="480,13,683,54"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -336,7 +347,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  308</span>        <span class="comment">// Convert tenths of seconds to milliseconds</span></div>
 <div class="line"><span class="lineno">  309</span>        <span class="keywordtype">int</span> offset_ms = offset_tenths_of_seconds * 100;</div>
 <div class="line"><span class="lineno">  310</span> </div>
-<div class="line"><span class="lineno">  311</span>        std::chrono::system_clock::time_point nowTimePoint = std::chrono::system_clock::now();</div>
+<div class="line"><span class="lineno">  311</span>        std::chrono::system_clock::time_point nowTimePoint {std::chrono::milliseconds(<a class="code hl_function" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a>())};</div>
 <div class="line"><span class="lineno">  312</span>        std::chrono::system_clock::time_point nowPlusOffsetTimePoint = nowTimePoint +  std::chrono::milliseconds(offset_ms);</div>
 <div class="line"><span class="lineno">  313</span> </div>
 <div class="line"><span class="lineno">  314</span>        std::chrono::system_clock::duration tp = nowPlusOffsetTimePoint.time_since_epoch();</div>
@@ -358,7 +369,19 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  330</span>        <span class="keywordflow">return</span> (uint16_t) retTimeD;</div>
 <div class="line"><span class="lineno">  331</span>    }</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="streets__clock__singleton_8cpp_source.html#l00010">streets_service::streets_clock_singleton::time_in_ms()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00208">update_movement_state()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structsignal__phase__and__timing_1_1intersection__state_a7f3126c08963787918c8d007255b4193_cgraph.png" border="0" usemap="#astructsignal__phase__and__timing_1_1intersection__state_a7f3126c08963787918c8d007255b4193_cgraph" alt=""/></div>
+<map name="astructsignal__phase__and__timing_1_1intersection__state_a7f3126c08963787918c8d007255b4193_cgraph" id="astructsignal__phase__and__timing_1_1intersection__state_a7f3126c08963787918c8d007255b4193_cgraph">
+<area shape="rect" title="Convert time offset (in tenths of seconds) from current time (NTCIP SPaT timing information units) to..." alt="" coords="5,5,173,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="221,13,413,54"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="461,13,664,54"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -468,15 +491,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  125</span>            }</div>
 <div class="line"><span class="lineno">  126</span>        }</div>
 <div class="line"><span class="lineno">  127</span>    }</div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a0a0ee55cccc9fb11add9902564ad504e"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a0a0ee55cccc9fb11add9902564ad504e">signal_phase_and_timing::intersection_state::moy</a></div><div class="ttdeci">uint32_t moy</div><div class="ttdoc">Minute of current UTC year.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00080">intersection_state.h:80</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a51c19a8652fc7761cb9e632fc01a9dd2"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a51c19a8652fc7761cb9e632fc01a9dd2">signal_phase_and_timing::intersection_state::time_stamp</a></div><div class="ttdeci">uint16_t time_stamp</div><div class="ttdoc">Millisecond point in the current UTC minute that this message was created.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00084">intersection_state.h:84</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a608bced258a6e40c5b975021b3a6bc02"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a608bced258a6e40c5b975021b3a6bc02">signal_phase_and_timing::intersection_state::maneuver_assist_list</a></div><div class="ttdeci">std::list&lt; connection_maneuver_assist &gt; maneuver_assist_list</div><div class="ttdoc">Assist Data.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00099">intersection_state.h:99</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a6da9216f423d4fdb2d754ea68e276e73"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a6da9216f423d4fdb2d754ea68e276e73">signal_phase_and_timing::intersection_state::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">Descriptive name for this collection.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00024">intersection_state.h:24</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a7ec8a1a400233389a5640c48bda4d1e3"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a7ec8a1a400233389a5640c48bda4d1e3">signal_phase_and_timing::intersection_state::revision</a></div><div class="ttdeci">uint8_t revision</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00033">intersection_state.h:33</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a8c616e91f927f3803dcd2367e12a4eb9"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a8c616e91f927f3803dcd2367e12a4eb9">signal_phase_and_timing::intersection_state::enabled_lanes</a></div><div class="ttdeci">std::list&lt; int &gt; enabled_lanes</div><div class="ttdoc">A list of unique lane ID for each lane object which is active. Refers to dynamic MAP contents.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00088">intersection_state.h:88</a></div></div>
-<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_abbd9ce5f7a9b4930e5cdfeaf84ddbe02"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#abbd9ce5f7a9b4930e5cdfeaf84ddbe02">signal_phase_and_timing::intersection_state::status</a></div><div class="ttdeci">uint8_t status</div><div class="ttdoc">BIT String of IntersectionStatusObject:</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00076">intersection_state.h:76</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a0a0ee55cccc9fb11add9902564ad504e"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a0a0ee55cccc9fb11add9902564ad504e">signal_phase_and_timing::intersection_state::moy</a></div><div class="ttdeci">uint32_t moy</div><div class="ttdoc">Minute of current UTC year.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00081">intersection_state.h:81</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a51c19a8652fc7761cb9e632fc01a9dd2"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a51c19a8652fc7761cb9e632fc01a9dd2">signal_phase_and_timing::intersection_state::time_stamp</a></div><div class="ttdeci">uint16_t time_stamp</div><div class="ttdoc">Millisecond point in the current UTC minute that this message was created.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00085">intersection_state.h:85</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a608bced258a6e40c5b975021b3a6bc02"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a608bced258a6e40c5b975021b3a6bc02">signal_phase_and_timing::intersection_state::maneuver_assist_list</a></div><div class="ttdeci">std::list&lt; connection_maneuver_assist &gt; maneuver_assist_list</div><div class="ttdoc">Assist Data.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00100">intersection_state.h:100</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a6da9216f423d4fdb2d754ea68e276e73"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a6da9216f423d4fdb2d754ea68e276e73">signal_phase_and_timing::intersection_state::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">Descriptive name for this collection.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00025">intersection_state.h:25</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a7ec8a1a400233389a5640c48bda4d1e3"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a7ec8a1a400233389a5640c48bda4d1e3">signal_phase_and_timing::intersection_state::revision</a></div><div class="ttdeci">uint8_t revision</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00034">intersection_state.h:34</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a8c616e91f927f3803dcd2367e12a4eb9"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a8c616e91f927f3803dcd2367e12a4eb9">signal_phase_and_timing::intersection_state::enabled_lanes</a></div><div class="ttdeci">std::list&lt; int &gt; enabled_lanes</div><div class="ttdoc">A list of unique lane ID for each lane object which is active. Refers to dynamic MAP contents.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00089">intersection_state.h:89</a></div></div>
+<div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_abbd9ce5f7a9b4930e5cdfeaf84ddbe02"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#abbd9ce5f7a9b4930e5cdfeaf84ddbe02">signal_phase_and_timing::intersection_state::status</a></div><div class="ttdeci">uint8_t status</div><div class="ttdoc">BIT String of IntersectionStatusObject:</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8h_source.html#l00077">intersection_state.h:77</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00088">enabled_lanes</a>, <a class="el" href="connection__maneuver__assist_8cpp_source.html#l00020">signal_phase_and_timing::connection_maneuver_assist::fromJson()</a>, <a class="el" href="movement__state_8cpp_source.html#l00031">signal_phase_and_timing::movement_state::fromJson()</a>, <a class="el" href="intersection__state_8h_source.html#l00099">maneuver_assist_list</a>, <a class="el" href="intersection__state_8h_source.html#l00080">moy</a>, <a class="el" href="intersection__state_8h_source.html#l00024">name</a>, <a class="el" href="intersection__state_8h_source.html#l00033">revision</a>, <a class="el" href="intersection__state_8h_source.html#l00094">states</a>, <a class="el" href="intersection__state_8h_source.html#l00076">status</a>, and <a class="el" href="intersection__state_8h_source.html#l00084">time_stamp</a>.</p>
+<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00089">enabled_lanes</a>, <a class="el" href="connection__maneuver__assist_8cpp_source.html#l00020">signal_phase_and_timing::connection_maneuver_assist::fromJson()</a>, <a class="el" href="movement__state_8cpp_source.html#l00031">signal_phase_and_timing::movement_state::fromJson()</a>, <a class="el" href="intersection__state_8h_source.html#l00100">maneuver_assist_list</a>, <a class="el" href="intersection__state_8h_source.html#l00081">moy</a>, <a class="el" href="intersection__state_8h_source.html#l00025">name</a>, <a class="el" href="intersection__state_8h_source.html#l00034">revision</a>, <a class="el" href="intersection__state_8h_source.html#l00095">states</a>, <a class="el" href="intersection__state_8h_source.html#l00077">status</a>, and <a class="el" href="intersection__state_8h_source.html#l00085">time_stamp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="spat_8cpp_source.html#l00035">signal_phase_and_timing::spat::fromJson()</a>.</p>
 <div class="dynheader">
@@ -529,7 +552,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  162</span>    }</div>
 <div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a4fde3ad2fb225f963f411ad66e72066f"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a4fde3ad2fb225f963f411ad66e72066f">signal_phase_and_timing::intersection_state::convert_min_mills2epoch_ts</a></div><div class="ttdeci">uint64_t convert_min_mills2epoch_ts(uint32_t moy_ll, uint16_t min_mills_timestamp) const</div><div class="ttdoc">Convert current mimutes of the year and milliseconds of the current minute into epoch timestamp in mi...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8cpp_source.html#l00139">intersection_state.cpp:139</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="intersection__state_8cpp_source.html#l00139">convert_min_mills2epoch_ts()</a>, <a class="el" href="intersection__state_8h_source.html#l00080">moy</a>, and <a class="el" href="intersection__state_8h_source.html#l00084">time_stamp</a>.</p>
+<p class="reference">References <a class="el" href="intersection__state_8cpp_source.html#l00139">convert_min_mills2epoch_ts()</a>, <a class="el" href="intersection__state_8h_source.html#l00081">moy</a>, and <a class="el" href="intersection__state_8h_source.html#l00085">time_stamp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -537,6 +560,8 @@ Here is the call graph for this function:</div>
 <map name="astructsignal__phase__and__timing_1_1intersection__state_a8bc23ba89dd6c079735485173ba6d6d5_cgraph" id="astructsignal__phase__and__timing_1_1intersection__state_a8bc23ba89dd6c079735485173ba6d6d5_cgraph">
 <area shape="rect" title="Get the epoch timestamp of the intersection state timestamp." alt="" coords="5,5,173,61"/>
 <area shape="rect" href="structsignal__phase__and__timing_1_1intersection__state.html#a4fde3ad2fb225f963f411ad66e72066f" title="Convert current mimutes of the year and milliseconds of the current minute into epoch timestamp in mi..." alt="" coords="221,5,408,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="456,13,648,54"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="696,13,899,54"/>
 </map>
 </div>
 
@@ -578,7 +603,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  195</span>    }</div>
 <div class="ttc" id="antcip__1202__ext_8h_html_a576de7b60eacee3f1a70393a005502cd"><div class="ttname"><a href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">Returns std::string representation of ntcip_1202_ext message including phase_times array.</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00094">states</a>, and <a class="el" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">to_string()</a>.</p>
+<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00095">states</a>, and <a class="el" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">to_string()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="streets__desired__phase__plan__generator_8cpp_source.html#l00156">streets_signal_optimization::streets_desired_phase_plan_generator::convert_spat_to_dpp()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00208">update_movement_state()</a>.</p>
 <div class="dynheader">
@@ -641,7 +666,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  205</span>        }</div>
 <div class="line"><span class="lineno">  206</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="movement__state_8h_source.html#l00025">signal_phase_and_timing::movement_state::signal_group</a>, and <a class="el" href="intersection__state_8h_source.html#l00094">states</a>.</p>
+<p class="reference">References <a class="el" href="movement__state_8h_source.html#l00025">signal_phase_and_timing::movement_state::signal_group</a>, and <a class="el" href="intersection__state_8h_source.html#l00095">states</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="spat_8cpp_source.html#l00084">signal_phase_and_timing::spat::initialize_intersection()</a>.</p>
 <div class="dynheader">
@@ -736,7 +761,7 @@ false if not. </dd></dl>
 <div class="line"><span class="lineno">  132</span>            &amp;&amp; <a class="code hl_variable" href="structsignal__phase__and__timing_1_1intersection__state.html#a7ede63a37705e6c5cdce68883fe78a7d">states</a> == other.states &amp;&amp; <a class="code hl_variable" href="structsignal__phase__and__timing_1_1intersection__state.html#a608bced258a6e40c5b975021b3a6bc02">maneuver_assist_list</a> == other.maneuver_assist_list;</div>
 <div class="line"><span class="lineno">  133</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00088">enabled_lanes</a>, <a class="el" href="intersection__state_8h_source.html#l00031">id</a>, <a class="el" href="intersection__state_8h_source.html#l00099">maneuver_assist_list</a>, <a class="el" href="intersection__state_8h_source.html#l00080">moy</a>, <a class="el" href="intersection__state_8h_source.html#l00024">name</a>, <a class="el" href="intersection__state_8h_source.html#l00033">revision</a>, <a class="el" href="intersection__state_8h_source.html#l00094">states</a>, <a class="el" href="intersection__state_8h_source.html#l00076">status</a>, and <a class="el" href="intersection__state_8h_source.html#l00084">time_stamp</a>.</p>
+<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00089">enabled_lanes</a>, <a class="el" href="intersection__state_8h_source.html#l00032">id</a>, <a class="el" href="intersection__state_8h_source.html#l00100">maneuver_assist_list</a>, <a class="el" href="intersection__state_8h_source.html#l00081">moy</a>, <a class="el" href="intersection__state_8h_source.html#l00025">name</a>, <a class="el" href="intersection__state_8h_source.html#l00034">revision</a>, <a class="el" href="intersection__state_8h_source.html#l00095">states</a>, <a class="el" href="intersection__state_8h_source.html#l00077">status</a>, and <a class="el" href="intersection__state_8h_source.html#l00085">time_stamp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00135">operator!=()</a>.</p>
 <div class="dynheader">
@@ -770,7 +795,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="intersection__state_8cpp_source.html#l00176">176</a> of file <a class="el" href="intersection__state_8cpp_source.html">intersection_state.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  176</span>                                                 {</div>
-<div class="line"><span class="lineno">  177</span>        std::chrono::system_clock::time_point now = std::chrono::system_clock::now();</div>
+<div class="line"><span class="lineno">  177</span>        std::chrono::system_clock::time_point now {std::chrono::milliseconds(<a class="code hl_function" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a>())};</div>
 <div class="line"><span class="lineno">  178</span>        time_t tt = std::chrono::system_clock::to_time_t(now);</div>
 <div class="line"><span class="lineno">  179</span>        tm utc_tm;</div>
 <div class="line"><span class="lineno">  180</span>        gmtime_r(&amp;tt, &amp;utc_tm);</div>
@@ -781,7 +806,17 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  185</span>       </div>
 <div class="line"><span class="lineno">  186</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00080">moy</a>, and <a class="el" href="intersection__state_8h_source.html#l00084">time_stamp</a>.</p>
+<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00081">moy</a>, <a class="el" href="streets__clock__singleton_8cpp_source.html#l00010">streets_service::streets_clock_singleton::time_in_ms()</a>, and <a class="el" href="intersection__state_8h_source.html#l00085">time_stamp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structsignal__phase__and__timing_1_1intersection__state_a480dafe7aae5c872f14d1f60c8627636_cgraph.png" border="0" usemap="#astructsignal__phase__and__timing_1_1intersection__state_a480dafe7aae5c872f14d1f60c8627636_cgraph" alt=""/></div>
+<map name="astructsignal__phase__and__timing_1_1intersection__state_a480dafe7aae5c872f14d1f60c8627636_cgraph" id="astructsignal__phase__and__timing_1_1intersection__state_a480dafe7aae5c872f14d1f60c8627636_cgraph">
+<area shape="rect" title="Set timestamp for intersection state based on host machine unix time." alt="" coords="5,5,173,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="221,13,413,54"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="461,13,664,54"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -822,7 +857,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="intersection__state_8cpp_source.html#l00164">164</a> of file <a class="el" href="intersection__state_8cpp_source.html">intersection_state.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  164</span>                                                                                                                    {</div>
-<div class="line"><span class="lineno">  165</span>        std::chrono::system_clock::time_point now = std::chrono::system_clock::now();</div>
+<div class="line"><span class="lineno">  165</span>        std::chrono::system_clock::time_point now {std::chrono::milliseconds(<a class="code hl_function" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a>())};</div>
 <div class="line"><span class="lineno">  166</span>        time_t tt = std::chrono::system_clock::to_time_t(now);</div>
 <div class="line"><span class="lineno">  167</span>        tm utc_tm;</div>
 <div class="line"><span class="lineno">  168</span>        gmtime_r(&amp;tt, &amp;utc_tm);</div>
@@ -832,7 +867,17 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  172</span>        <a class="code hl_variable" href="structsignal__phase__and__timing_1_1intersection__state.html#a51c19a8652fc7761cb9e632fc01a9dd2">time_stamp</a> = ((second_of_day%60)*1000) + millisecond_of_second;</div>
 <div class="line"><span class="lineno">  173</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00080">moy</a>, and <a class="el" href="intersection__state_8h_source.html#l00084">time_stamp</a>.</p>
+<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00081">moy</a>, <a class="el" href="streets__clock__singleton_8cpp_source.html#l00010">streets_service::streets_clock_singleton::time_in_ms()</a>, and <a class="el" href="intersection__state_8h_source.html#l00085">time_stamp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structsignal__phase__and__timing_1_1intersection__state_a5aa5329bedd738f5579cf045975d87a9_cgraph.png" border="0" usemap="#astructsignal__phase__and__timing_1_1intersection__state_a5aa5329bedd738f5579cf045975d87a9_cgraph" alt=""/></div>
+<map name="astructsignal__phase__and__timing_1_1intersection__state_a5aa5329bedd738f5579cf045975d87a9_cgraph" id="astructsignal__phase__and__timing_1_1intersection__state_a5aa5329bedd738f5579cf045975d87a9_cgraph">
+<area shape="rect" title="Set timestamp for intersection state based on NTCIP SPaT UDP message timestamp which is transmitted a..." alt="" coords="5,5,173,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="221,13,413,54"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="461,13,664,54"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -908,7 +953,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   54</span>        <span class="keywordflow">return</span> state;</div>
 <div class="line"><span class="lineno">   55</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00088">enabled_lanes</a>, <a class="el" href="intersection__state_8h_source.html#l00099">maneuver_assist_list</a>, <a class="el" href="intersection__state_8h_source.html#l00080">moy</a>, <a class="el" href="intersection__state_8h_source.html#l00024">name</a>, <a class="el" href="intersection__state_8h_source.html#l00033">revision</a>, <a class="el" href="intersection__state_8h_source.html#l00094">states</a>, <a class="el" href="intersection__state_8h_source.html#l00076">status</a>, and <a class="el" href="intersection__state_8h_source.html#l00084">time_stamp</a>.</p>
+<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00089">enabled_lanes</a>, <a class="el" href="intersection__state_8h_source.html#l00100">maneuver_assist_list</a>, <a class="el" href="intersection__state_8h_source.html#l00081">moy</a>, <a class="el" href="intersection__state_8h_source.html#l00025">name</a>, <a class="el" href="intersection__state_8h_source.html#l00034">revision</a>, <a class="el" href="intersection__state_8h_source.html#l00095">states</a>, <a class="el" href="intersection__state_8h_source.html#l00077">status</a>, and <a class="el" href="intersection__state_8h_source.html#l00085">time_stamp</a>.</p>
 
 </div>
 </div>
@@ -1028,7 +1073,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a0212a92fdea9a7f1f5959d002ba7dda9"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a0212a92fdea9a7f1f5959d002ba7dda9">signal_phase_and_timing::intersection_state::get_movement</a></div><div class="ttdeci">movement_state &amp; get_movement(const int signal_group_id)</div><div class="ttdoc">Return reference to movement_state for signal group.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8cpp_source.html#l00188">intersection_state.cpp:188</a></div></div>
 <div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a7f3126c08963787918c8d007255b4193"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a7f3126c08963787918c8d007255b4193">signal_phase_and_timing::intersection_state::convert_offset</a></div><div class="ttdeci">uint16_t convert_offset(const uint16_t offset_tenths_of_sec) const</div><div class="ttdoc">Convert time offset (in tenths of seconds) from current time (NTCIP SPaT timing information units) to...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8cpp_source.html#l00307">intersection_state.cpp:307</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14ae7bfb5169b6040cc3adbcaa21dd1bc38">signal_phase_and_timing::caution_conflicting_traffic</a>, <a class="el" href="intersection__state_8cpp_source.html#l00307">convert_offset()</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14aa82fd95db10ff25dfad39f07372ebe37">signal_phase_and_timing::dark</a>, <a class="el" href="movement__event_8h_source.html#l00115">signal_phase_and_timing::movement_event::event_state</a>, <a class="el" href="intersection__state_8cpp_source.html#l00188">get_movement()</a>, <a class="el" href="ntcip__1202__ext_8cpp_source.html#l00074">ntcip::ntcip_1202_ext::get_phase_flashing_status()</a>, <a class="el" href="ntcip__1202__ext_8cpp_source.html#l00046">ntcip::ntcip_1202_ext::get_phase_green_status()</a>, <a class="el" href="ntcip__1202__ext_8cpp_source.html#l00038">ntcip::ntcip_1202_ext::get_phase_red_status()</a>, <a class="el" href="ntcip__1202__ext_8cpp_source.html#l00042">ntcip::ntcip_1202_ext::get_phase_yellow_status()</a>, <a class="el" href="ntcip__1202__ext_8cpp_source.html#l00094">ntcip::ntcip_1202_ext::get_phasetime()</a>, <a class="el" href="ntcip__1202__ext__phasetime_8cpp_source.html#l00020">ntcip::ntcip_1202_ext_phasetime::get_spat_veh_max_time_to_change()</a>, <a class="el" href="ntcip__1202__ext__phasetime_8cpp_source.html#l00016">ntcip::ntcip_1202_ext_phasetime::get_spat_veh_min_time_to_change()</a>, <a class="el" href="time__change__details_8h_source.html#l00025">signal_phase_and_timing::time_change_details::max_end_time</a>, <a class="el" href="time__change__details_8h_source.html#l00021">signal_phase_and_timing::time_change_details::min_end_time</a>, <a class="el" href="ntcip__1202__ext__phasetime_8h_source.html#l00001">phase_number</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a909f43d0494b87359c21298b5310e4fc">signal_phase_and_timing::protected_clearance</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14ababa6a65d4933ea6229e61b20668218b">signal_phase_and_timing::protected_movement_allowed</a>, <a class="el" href="time__change__details_8h_source.html#l00017">signal_phase_and_timing::time_change_details::start_time</a>, <a class="el" href="movement__state_8h_source.html#l00034">signal_phase_and_timing::movement_state::state_time_speed</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a03e3f63efcce21f01897bc0583979afa">signal_phase_and_timing::stop_and_remain</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a82f58c8125d6f043623349cf7330ef62">signal_phase_and_timing::stop_then_proceed</a>, and <a class="el" href="movement__event_8h_source.html#l00121">signal_phase_and_timing::movement_event::timing</a>.</p>
+<p class="reference">References <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14ae7bfb5169b6040cc3adbcaa21dd1bc38">signal_phase_and_timing::caution_conflicting_traffic</a>, <a class="el" href="intersection__state_8cpp_source.html#l00307">convert_offset()</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14aa82fd95db10ff25dfad39f07372ebe37">signal_phase_and_timing::dark</a>, <a class="el" href="movement__event_8h_source.html#l00115">signal_phase_and_timing::movement_event::event_state</a>, <a class="el" href="intersection__state_8cpp_source.html#l00188">get_movement()</a>, <a class="el" href="ntcip__1202__ext_8cpp_source.html#l00074">ntcip::ntcip_1202_ext::get_phase_flashing_status()</a>, <a class="el" href="ntcip__1202__ext_8cpp_source.html#l00046">ntcip::ntcip_1202_ext::get_phase_green_status()</a>, <a class="el" href="ntcip__1202__ext_8cpp_source.html#l00038">ntcip::ntcip_1202_ext::get_phase_red_status()</a>, <a class="el" href="ntcip__1202__ext_8cpp_source.html#l00042">ntcip::ntcip_1202_ext::get_phase_yellow_status()</a>, <a class="el" href="ntcip__1202__ext_8cpp_source.html#l00094">ntcip::ntcip_1202_ext::get_phasetime()</a>, <a class="el" href="ntcip__1202__ext__phasetime_8cpp_source.html#l00020">ntcip::ntcip_1202_ext_phasetime::get_spat_veh_max_time_to_change()</a>, <a class="el" href="ntcip__1202__ext__phasetime_8cpp_source.html#l00016">ntcip::ntcip_1202_ext_phasetime::get_spat_veh_min_time_to_change()</a>, <a class="el" href="time__change__details_8h_source.html#l00024">signal_phase_and_timing::time_change_details::max_end_time</a>, <a class="el" href="time__change__details_8h_source.html#l00020">signal_phase_and_timing::time_change_details::min_end_time</a>, <a class="el" href="ntcip__1202__ext__phasetime_8h_source.html#l00001">phase_number</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a909f43d0494b87359c21298b5310e4fc">signal_phase_and_timing::protected_clearance</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14ababa6a65d4933ea6229e61b20668218b">signal_phase_and_timing::protected_movement_allowed</a>, <a class="el" href="time__change__details_8h_source.html#l00016">signal_phase_and_timing::time_change_details::start_time</a>, <a class="el" href="movement__state_8h_source.html#l00034">signal_phase_and_timing::movement_state::state_time_speed</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a03e3f63efcce21f01897bc0583979afa">signal_phase_and_timing::stop_and_remain</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a82f58c8125d6f043623349cf7330ef62">signal_phase_and_timing::stop_then_proceed</a>, and <a class="el" href="movement__event_8h_source.html#l00121">signal_phase_and_timing::movement_event::timing</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00266">update_movements()</a>.</p>
 <div class="dynheader">
@@ -1046,7 +1091,9 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="structntcip_1_1ntcip__1202__ext.html#a0cbc4b96d4191b8cc8834cf06f7a810b" title="Returns reference to ntcip_1202_ext_phasetime of phase." alt="" coords="240,441,383,482"/>
 <area shape="rect" href="structntcip_1_1ntcip__1202__ext__phasetime.html#ac2bd3254673a1650bbb1481bd15d627b" title="Get spat_veh_max_time_to_change and convert from network byte order to host byte order." alt="" coords="221,505,401,561"/>
 <area shape="rect" href="structntcip_1_1ntcip__1202__ext__phasetime.html#ac4be29069aab2d1659df59c7e3a92dc7" title="Get spat_veh_min_time_to_change and convert from network byte order to host byte order." alt="" coords="223,585,400,641"/>
-<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="449,275,521,301"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="449,13,641,54"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="689,13,892,54"/>
+<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="509,273,581,300"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1121,7 +1168,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  287</span>    }</div>
 <div class="ttc" id="astructsignal__phase__and__timing_1_1intersection__state_html_a01285f8060241eec1adbaa0c5e97a1df"><div class="ttname"><a href="structsignal__phase__and__timing_1_1intersection__state.html#a01285f8060241eec1adbaa0c5e97a1df">signal_phase_and_timing::intersection_state::update_movement_state</a></div><div class="ttdeci">void update_movement_state(ntcip::ntcip_1202_ext &amp;spat_data, const int signal_group_id, const int phase_number)</div><div class="ttdoc">Method to update movement_state with signal_group_id using ntcip spat data.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__state_8cpp_source.html#l00208">intersection_state.cpp:208</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00094">states</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00208">update_movement_state()</a>.</p>
+<p class="reference">References <a class="el" href="intersection__state_8h_source.html#l00095">states</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00208">update_movement_state()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1138,7 +1185,9 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="structntcip_1_1ntcip__1202__ext.html#a0cbc4b96d4191b8cc8834cf06f7a810b" title="Returns reference to ntcip_1202_ext_phasetime of phase." alt="" coords="456,441,599,482"/>
 <area shape="rect" href="structntcip_1_1ntcip__1202__ext__phasetime.html#ac2bd3254673a1650bbb1481bd15d627b" title="Get spat_veh_max_time_to_change and convert from network byte order to host byte order." alt="" coords="437,505,617,561"/>
 <area shape="rect" href="structntcip_1_1ntcip__1202__ext__phasetime.html#ac4be29069aab2d1659df59c7e3a92dc7" title="Get spat_veh_min_time_to_change and convert from network byte order to host byte order." alt="" coords="439,585,616,641"/>
-<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="665,275,737,301"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="665,13,857,54"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="905,13,1108,54"/>
+<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="725,273,797,300"/>
 </map>
 </div>
 
@@ -1159,7 +1208,7 @@ Here is the call graph for this function:</div>
 
 <p>A list of unique lane ID for each lane object which is active. Refers to dynamic MAP contents. </p>
 
-<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00088">88</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00089">89</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00057">fromJson()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00129">operator==()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00005">toJson()</a>.</p>
 
@@ -1179,7 +1228,7 @@ Here is the call graph for this function:</div>
 
 <p>A globally unique value set and consisting of regionID and intersection ID assignment. Provides unique mapping to the intersection MAP in question which provides complete location and approach/move/lane data. </p>
 
-<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00031">31</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00032">32</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="spat_8cpp_source.html#l00084">signal_phase_and_timing::spat::initialize_intersection()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00129">operator==()</a>.</p>
 
@@ -1199,7 +1248,7 @@ Here is the call graph for this function:</div>
 
 <p>Assist Data. </p>
 
-<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00099">99</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00100">100</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00057">fromJson()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00129">operator==()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00005">toJson()</a>.</p>
 
@@ -1217,7 +1266,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00018">18</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00019">19</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00139">convert_min_mills2epoch_ts()</a>.</p>
 
@@ -1237,7 +1286,7 @@ Here is the call graph for this function:</div>
 
 <p>Minute of current UTC year. </p>
 
-<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00080">80</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00081">81</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00057">fromJson()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00159">get_epoch_timestamp()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00129">operator==()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00176">set_timestamp_local()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00164">set_timestamp_ntcip()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00005">toJson()</a>.</p>
 
@@ -1257,7 +1306,7 @@ Here is the call graph for this function:</div>
 
 <p>Descriptive name for this collection. </p>
 
-<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00024">24</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00025">25</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00057">fromJson()</a>, <a class="el" href="spat_8cpp_source.html#l00084">signal_phase_and_timing::spat::initialize_intersection()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00129">operator==()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00005">toJson()</a>.</p>
 
@@ -1275,7 +1324,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00033">33</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00034">34</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00057">fromJson()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00129">operator==()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00005">toJson()</a>.</p>
 
@@ -1293,7 +1342,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00019">19</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00020">20</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00139">convert_min_mills2epoch_ts()</a>.</p>
 
@@ -1313,7 +1362,7 @@ Here is the call graph for this function:</div>
 
 <p>Each Movement is given in turn and contains its signal phase state, mapping to the lanes it applies to, and point in time it will and. It may contain both active and future states. </p>
 
-<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00094">94</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00095">95</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00289">clear_future_movement_events()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00057">fromJson()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00188">get_movement()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00197">initialize_movement_states()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00129">operator==()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00005">toJson()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00266">update_movements()</a>.</p>
 
@@ -1336,7 +1385,7 @@ Here is the call graph for this function:</div>
  &ndash; Additional states fixedTimeOperation (5), &ndash; Schedule of signals is based on time only &ndash; (i.e. the state can be calculated) trafficDependentOperation (6), &ndash; Operation is based on different levels of traffic parameters &ndash; (requests, duration of gaps or more complex parameters) standbyOperation (7), &ndash; Controller: partially switched off or partially amber flashing failureMode (8), &ndash; Controller has a problem or failure in operation off (9), &ndash; Controller is switched off &ndash; Related to MAP and SPAT bindings recentMAPmessageUpdate (10), &ndash; Map revision with content changes recentChangeInMAPassignedLanesIDsUsed (11), &ndash; Change in MAP's assigned lanes used (lane changes) &ndash; Changes in the active lane list description noValidMAPisAvailableAtThisTime (12), &ndash; MAP (and various lanes indexes) not available noValidSPATisAvailableAtThisTime (13) &ndash; SPAT system is not working at this time <br  />
  &ndash; Bits 14,15 reserved at this time and shall be zero } (SIZE(16)) </p>
 
-<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00076">76</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00077">77</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00057">fromJson()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00129">operator==()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00005">toJson()</a>.</p>
 
@@ -1356,7 +1405,7 @@ Here is the call graph for this function:</div>
 
 <p>Millisecond point in the current UTC minute that this message was created. </p>
 
-<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00084">84</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="intersection__state_8h_source.html#l00085">85</a> of file <a class="el" href="intersection__state_8h_source.html">intersection_state.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="intersection__state_8cpp_source.html#l00057">fromJson()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00159">get_epoch_timestamp()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00129">operator==()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00176">set_timestamp_local()</a>, <a class="el" href="intersection__state_8cpp_source.html#l00164">set_timestamp_ntcip()</a>, and <a class="el" href="intersection__state_8cpp_source.html#l00005">toJson()</a>.</p>
 
@@ -1372,7 +1421,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesignal__phase__and__timing.html">signal_phase_and_timing</a></li><li class="navelem"><a class="el" href="structsignal__phase__and__timing_1_1intersection__state.html">intersection_state</a></li>
-    <li class="footer">Generated on Tue Apr 11 2023 14:38:44 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 19 2023 13:18:58 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

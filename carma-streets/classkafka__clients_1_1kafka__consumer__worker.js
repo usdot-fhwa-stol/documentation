@@ -1,7 +1,7 @@
 var classkafka__clients_1_1kafka__consumer__worker =
 [
     [ "kafka_consumer_worker", "classkafka__clients_1_1kafka__consumer__worker.html#adf3002f09100c517c7b89f822040dc1c", null ],
-    [ "~kafka_consumer_worker", "classkafka__clients_1_1kafka__consumer__worker.html#a9a888c09069abedb569aaa0d36e3e795", null ],
+    [ "~kafka_consumer_worker", "classkafka__clients_1_1kafka__consumer__worker.html#acb977326716369b414381358afcf7432", null ],
     [ "consume", "classkafka__clients_1_1kafka__consumer__worker.html#a3578a2abd82b20715659c9784a43b035", null ],
     [ "init", "classkafka__clients_1_1kafka__consumer__worker.html#acf1e722c898d99c45c54cb16ba50d1b0", null ],
     [ "is_running", "classkafka__clients_1_1kafka__consumer__worker.html#a5e1fa977ccf844b1e8d9df7d45956422", null ],

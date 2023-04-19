@@ -164,7 +164,7 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00012">12</a> of file <a class="el" href="monitor__desired__phase__plan_8h_source.html">monitor_desired_phase_plan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00014">14</a> of file <a class="el" href="monitor__desired__phase__plan_8h_source.html">monitor_desired_phase_plan.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a69a95828a2a76bc2dd1e3724bcced2c7" name="a69a95828a2a76bc2dd1e3724bcced2c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69a95828a2a76bc2dd1e3724bcced2c7">&#9670;&nbsp;</a></span>monitor_desired_phase_plan()</h2>
@@ -202,7 +202,7 @@ Friends</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>                                                                                                  :  <a class="code hl_variable" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#af39b5d16b681d8a0a473874bde88da7d">_snmp_client</a>(client) {</div>
 <div class="line"><span class="lineno">    6</span> </div>
 <div class="line"><span class="lineno">    7</span>    }</div>
-<div class="ttc" id="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_html_af39b5d16b681d8a0a473874bde88da7d"><div class="ttname"><a href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#af39b5d16b681d8a0a473874bde88da7d">traffic_signal_controller_service::monitor_desired_phase_plan::_snmp_client</a></div><div class="ttdeci">std::shared_ptr&lt; snmp_client &gt; _snmp_client</div><div class="ttdef"><b>Definition:</b> <a href="monitor__desired__phase__plan_8h_source.html#l00017">monitor_desired_phase_plan.h:17</a></div></div>
+<div class="ttc" id="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_html_af39b5d16b681d8a0a473874bde88da7d"><div class="ttname"><a href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#af39b5d16b681d8a0a473874bde88da7d">traffic_signal_controller_service::monitor_desired_phase_plan::_snmp_client</a></div><div class="ttdeci">std::shared_ptr&lt; snmp_client &gt; _snmp_client</div><div class="ttdef"><b>Definition:</b> <a href="monitor__desired__phase__plan_8h_source.html#l00019">monitor_desired_phase_plan.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -284,7 +284,7 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">   90</span>        <span class="comment">// Start time for fixed up coming green</span></div>
 <div class="line"><span class="lineno">   91</span>        uint64_t start_time_epoch_ms = 0;</div>
 <div class="line"><span class="lineno">   92</span>        <span class="comment">// Current time used for any calculations</span></div>
-<div class="line"><span class="lineno">   93</span>        uint64_t cur_time_since_epoch = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(std::chrono::system_clock::now().time_since_epoch()).count();</div>
+<div class="line"><span class="lineno">   93</span>        uint64_t cur_time_since_epoch = <a class="code hl_function" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a>();</div>
 <div class="line"><span class="lineno">   94</span>        <span class="keyword">auto</span> state = spat_ptr-&gt;get_intersection();</div>
 <div class="line"><span class="lineno">   95</span>        std::vector&lt;signal_phase_and_timing::movement_state&gt; yellow_phase_present;</div>
 <div class="line"><span class="lineno">   96</span>        <span class="comment">// Check if current spat includes yellow clearance</span></div>
@@ -378,7 +378,8 @@ Friends</h2></td></tr>
 <div class="line"><span class="lineno">  199</span>        spat_ptr-&gt;update_spat_with_candidate_dpp(one_fixed_green, tsc_state-&gt;get_tsc_config_state());</div>
 <div class="line"><span class="lineno">  200</span> </div>
 <div class="line"><span class="lineno">  201</span>    }</div>
-<div class="ttc" id="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_html_a36b9bee06c62d76b9fb153a44fab095d"><div class="ttname"><a href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#a36b9bee06c62d76b9fb153a44fab095d">traffic_signal_controller_service::monitor_desired_phase_plan::last_green_served</a></div><div class="ttdeci">std::vector&lt; signal_phase_and_timing::movement_state &gt; last_green_served</div><div class="ttdoc">Holds a vector of signal groups that represent the phases that were most recently green....</div><div class="ttdef"><b>Definition:</b> <a href="monitor__desired__phase__plan_8h_source.html#l00022">monitor_desired_phase_plan.h:22</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__clock__singleton_html_ace444a4a74b0cea211bf89ed89371bae"><div class="ttname"><a href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a></div><div class="ttdeci">static uint64_t time_in_ms()</div><div class="ttdoc">Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot-fhwa-stol/car...</div><div class="ttdef"><b>Definition:</b> <a href="streets__clock__singleton_8cpp_source.html#l00010">streets_clock_singleton.cpp:10</a></div></div>
+<div class="ttc" id="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_html_a36b9bee06c62d76b9fb153a44fab095d"><div class="ttname"><a href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#a36b9bee06c62d76b9fb153a44fab095d">traffic_signal_controller_service::monitor_desired_phase_plan::last_green_served</a></div><div class="ttdeci">std::vector&lt; signal_phase_and_timing::movement_state &gt; last_green_served</div><div class="ttdoc">Holds a vector of signal groups that represent the phases that were most recently green....</div><div class="ttdef"><b>Definition:</b> <a href="monitor__desired__phase__plan_8h_source.html#l00024">monitor_desired_phase_plan.h:24</a></div></div>
 <div class="ttc" id="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_html_ada0aa81915b2c7d287b64fbc61127726"><div class="ttname"><a href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#ada0aa81915b2c7d287b64fbc61127726">traffic_signal_controller_service::monitor_desired_phase_plan::update_last_green_served</a></div><div class="ttdeci">void update_last_green_served(const std::vector&lt; signal_phase_and_timing::movement_state &gt; &amp;green_phases_present)</div><div class="ttdoc">Method to update last greens served with currently present green movement states.</div><div class="ttdef"><b>Definition:</b> <a href="monitor__desired__phase__plan_8cpp_source.html#l00249">monitor_desired_phase_plan.cpp:249</a></div></div>
 <div class="ttc" id="anamespacentcip__oids_html_a84cca9aac94935e04813e700bbd36e2f"><div class="ttname"><a href="namespacentcip__oids.html#a84cca9aac94935e04813e700bbd36e2f">ntcip_oids::PHASE_STATUS_GROUP_PHASE_NEXT</a></div><div class="ttdeci">static const std::string PHASE_STATUS_GROUP_PHASE_NEXT</div><div class="ttdoc">Phase Status Group Phase Next object is used to determine whether any vehicle phases are committed by...</div><div class="ttdef"><b>Definition:</b> <a href="ntcip__oids_8h_source.html#l00105">ntcip_oids.h:105</a></div></div>
 <div class="ttc" id="anamespacesignal__phase__and__timing_html_a89bd5b280352669f719b2c36a9dc2a14a03e3f63efcce21f01897bc0583979afa"><div class="ttname"><a href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a03e3f63efcce21f01897bc0583979afa">signal_phase_and_timing::movement_phase_state::stop_and_remain</a></div><div class="ttdeci">@ stop_and_remain</div><div class="ttdoc">e.g. called 'red light' in US. Driver Action: Stop vehicle at stop line. Do not proceed....</div></div>
@@ -395,7 +396,7 @@ Friends</h2></td></tr>
 <div class="ttc" id="astructstreets__desired__phase__plan_1_1streets__desired__phase__plan_html_ae2a335d599173d37b8a12abe26948c01"><div class="ttname"><a href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html#ae2a335d599173d37b8a12abe26948c01">streets_desired_phase_plan::streets_desired_phase_plan::toJson</a></div><div class="ttdeci">std::string toJson() const</div><div class="ttdoc">Serialize Desired phase plan object to rapidjson::Value for writing as JSON string.</div><div class="ttdef"><b>Definition:</b> <a href="streets__desired__phase__plan_8cpp_source.html#l00006">streets_desired_phase_plan.cpp:6</a></div></div>
 <div class="ttc" id="astructtraffic__signal__controller__service_1_1snmp__response__obj_html_a7379a4a3fcabddd7000d9be76111c38aa5d5cd46919fa987731fb2edefe0f2a0c"><div class="ttname"><a href="structtraffic__signal__controller__service_1_1snmp__response__obj.html#a7379a4a3fcabddd7000d9be76111c38aa5d5cd46919fa987731fb2edefe0f2a0c">traffic_signal_controller_service::snmp_response_obj::response_type::INTEGER</a></div><div class="ttdeci">@ INTEGER</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00017">_snmp_client</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00038">streets_desired_phase_plan::streets_desired_phase_plan::desired_phase_plan</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00020">streets_desired_phase_plan::signal_group2green_phase_timing::end_time</a>, <a class="el" href="namespacetraffic__signal__controller__service.html#aa91e53dd22b41ddac648a9b468615b61a7528035a93ee69cedb1dbddb2f0bfcc8">traffic_signal_controller_service::GET</a>, <a class="el" href="monitor__tsc__state_8cpp_source.html#l00551">traffic_signal_controller_service::tsc_state::get_signal_group_state_map()</a>, <a class="el" href="monitor__tsc__state_8cpp_source.html#l00111">traffic_signal_controller_service::tsc_state::get_tsc_config_state()</a>, <a class="el" href="monitor__tsc__state_8cpp_source.html#l00420">traffic_signal_controller_service::tsc_state::get_vehicle_signal_group_id()</a>, <a class="el" href="simulate__bsm_8py_source.html#l00019">simulate_bsm::i</a>, <a class="el" href="structtraffic__signal__controller__service_1_1snmp__response__obj.html#a7379a4a3fcabddd7000d9be76111c38aa5d5cd46919fa987731fb2edefe0f2a0c">traffic_signal_controller_service::snmp_response_obj::INTEGER</a>, <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00022">last_green_served</a>, <a class="el" href="ntcip__oids_8h_source.html#l00105">ntcip_oids::PHASE_STATUS_GROUP_PHASE_NEXT</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a909f43d0494b87359c21298b5310e4fc">signal_phase_and_timing::protected_clearance</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00021">streets_desired_phase_plan::signal_group2green_phase_timing::signal_groups</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00019">streets_desired_phase_plan::signal_group2green_phase_timing::start_time</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a03e3f63efcce21f01897bc0583979afa">signal_phase_and_timing::stop_and_remain</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00034">streets_desired_phase_plan::streets_desired_phase_plan::timestamp</a>, <a class="el" href="streets__desired__phase__plan_8cpp_source.html#l00006">streets_desired_phase_plan::streets_desired_phase_plan::toJson()</a>, <a class="el" href="snmp__client_8h_source.html#l00039">traffic_signal_controller_service::snmp_response_obj::type</a>, <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00249">update_last_green_served()</a>, and <a class="el" href="snmp__client_8h_source.html#l00037">traffic_signal_controller_service::snmp_response_obj::val_int</a>.</p>
+<p class="reference">References <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00019">_snmp_client</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00038">streets_desired_phase_plan::streets_desired_phase_plan::desired_phase_plan</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00020">streets_desired_phase_plan::signal_group2green_phase_timing::end_time</a>, <a class="el" href="namespacetraffic__signal__controller__service.html#aa91e53dd22b41ddac648a9b468615b61a7528035a93ee69cedb1dbddb2f0bfcc8">traffic_signal_controller_service::GET</a>, <a class="el" href="monitor__tsc__state_8cpp_source.html#l00551">traffic_signal_controller_service::tsc_state::get_signal_group_state_map()</a>, <a class="el" href="monitor__tsc__state_8cpp_source.html#l00111">traffic_signal_controller_service::tsc_state::get_tsc_config_state()</a>, <a class="el" href="monitor__tsc__state_8cpp_source.html#l00420">traffic_signal_controller_service::tsc_state::get_vehicle_signal_group_id()</a>, <a class="el" href="simulate__bsm_8py_source.html#l00019">simulate_bsm::i</a>, <a class="el" href="structtraffic__signal__controller__service_1_1snmp__response__obj.html#a7379a4a3fcabddd7000d9be76111c38aa5d5cd46919fa987731fb2edefe0f2a0c">traffic_signal_controller_service::snmp_response_obj::INTEGER</a>, <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00024">last_green_served</a>, <a class="el" href="ntcip__oids_8h_source.html#l00105">ntcip_oids::PHASE_STATUS_GROUP_PHASE_NEXT</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a909f43d0494b87359c21298b5310e4fc">signal_phase_and_timing::protected_clearance</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00021">streets_desired_phase_plan::signal_group2green_phase_timing::signal_groups</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00019">streets_desired_phase_plan::signal_group2green_phase_timing::start_time</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14a03e3f63efcce21f01897bc0583979afa">signal_phase_and_timing::stop_and_remain</a>, <a class="el" href="streets__clock__singleton_8cpp_source.html#l00010">streets_service::streets_clock_singleton::time_in_ms()</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00034">streets_desired_phase_plan::streets_desired_phase_plan::timestamp</a>, <a class="el" href="streets__desired__phase__plan_8cpp_source.html#l00006">streets_desired_phase_plan::streets_desired_phase_plan::toJson()</a>, <a class="el" href="snmp__client_8h_source.html#l00039">traffic_signal_controller_service::snmp_response_obj::type</a>, <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00249">update_last_green_served()</a>, and <a class="el" href="snmp__client_8h_source.html#l00037">traffic_signal_controller_service::snmp_response_obj::val_int</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00019">update_spat_future_movement_events()</a>.</p>
 <div class="dynheader">
@@ -403,13 +404,15 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan_af3aad7133e6da0308277109a8a104ef0_cgraph.png" border="0" usemap="#aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_af3aad7133e6da0308277109a8a104ef0_cgraph" alt=""/></div>
 <map name="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_af3aad7133e6da0308277109a8a104ef0_cgraph" id="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_af3aad7133e6da0308277109a8a104ef0_cgraph">
-<area shape="rect" title="Method to represent the upcoming green, when no desired phase plan is present and the TSC is currentl..." alt="" coords="5,165,220,221"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a27876c0c6172cbb37788cadd97bf6ff3" title="Return reference to signal group state map." alt="" coords="268,5,439,61"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a05b2aa1aff298e094fd02d59b067e4e7" title="Returns a pointer to the tsc_config_state." alt="" coords="276,85,431,141"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a42882c2c84b9decb8ab4d89485a5321f" title="Get the signal group id using phase number.Only for vehicle phases." alt="" coords="270,165,437,221"/>
-<area shape="rect" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html#ae2a335d599173d37b8a12abe26948c01" title="Serialize Desired phase plan object to rapidjson::Value for writing as JSON string." alt="" coords="277,245,430,301"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#ada0aa81915b2c7d287b64fbc61127726" title="Method to update last greens served with currently present green movement states." alt="" coords="269,326,438,397"/>
-<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="487,180,559,207"/>
+<area shape="rect" title="Method to represent the upcoming green, when no desired phase plan is present and the TSC is currentl..." alt="" coords="5,201,220,257"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a27876c0c6172cbb37788cadd97bf6ff3" title="Return reference to signal group state map." alt="" coords="279,5,449,61"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a05b2aa1aff298e094fd02d59b067e4e7" title="Returns a pointer to the tsc_config_state." alt="" coords="287,85,441,141"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a42882c2c84b9decb8ab4d89485a5321f" title="Get the signal group id using phase number.Only for vehicle phases." alt="" coords="281,165,447,221"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="268,245,460,286"/>
+<area shape="rect" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html#ae2a335d599173d37b8a12abe26948c01" title="Serialize Desired phase plan object to rapidjson::Value for writing as JSON string." alt="" coords="287,309,441,365"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#ada0aa81915b2c7d287b64fbc61127726" title="Method to update last greens served with currently present green movement states." alt="" coords="279,390,449,461"/>
+<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="573,180,645,207"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="508,245,711,286"/>
 </map>
 </div>
 <div class="dynheader">
@@ -485,7 +488,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  214</span>        }</div>
 <div class="line"><span class="lineno">  215</span>        <span class="comment">// Current time used for any calculations</span></div>
 <div class="line"><span class="lineno">  216</span>        <a class="code hl_struct" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html">streets_desired_phase_plan::streets_desired_phase_plan</a> one_fixed_green;</div>
-<div class="line"><span class="lineno">  217</span>        uint64_t cur_time_since_epoch = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(std::chrono::system_clock::now().time_since_epoch()).count();</div>
+<div class="line"><span class="lineno">  217</span>        uint64_t cur_time_since_epoch = <a class="code hl_function" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a>();</div>
 <div class="line"><span class="lineno">  218</span>        <span class="keyword">auto</span> state = spat_ptr-&gt;get_intersection();</div>
 <div class="line"><span class="lineno">  219</span>        <span class="comment">// Get green phase configuration to get min green.</span></div>
 <div class="line"><span class="lineno">  220</span>        <span class="keyword">auto</span> green_phase_config =tsc_state-&gt;get_signal_group_state_map().find(green_phases.front().signal_group)-&gt;second;</div>
@@ -500,7 +503,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  229</span>        spat_ptr-&gt;update_spat_with_candidate_dpp(one_fixed_green, tsc_state-&gt;get_tsc_config_state());    </div>
 <div class="line"><span class="lineno">  230</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="streets__desired__phase__plan_8h_source.html#l00038">streets_desired_phase_plan::streets_desired_phase_plan::desired_phase_plan</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00020">streets_desired_phase_plan::signal_group2green_phase_timing::end_time</a>, <a class="el" href="monitor__tsc__state_8cpp_source.html#l00551">traffic_signal_controller_service::tsc_state::get_signal_group_state_map()</a>, <a class="el" href="monitor__tsc__state_8cpp_source.html#l00111">traffic_signal_controller_service::tsc_state::get_tsc_config_state()</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00021">streets_desired_phase_plan::signal_group2green_phase_timing::signal_groups</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00019">streets_desired_phase_plan::signal_group2green_phase_timing::start_time</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00034">streets_desired_phase_plan::streets_desired_phase_plan::timestamp</a>, and <a class="el" href="streets__desired__phase__plan_8cpp_source.html#l00006">streets_desired_phase_plan::streets_desired_phase_plan::toJson()</a>.</p>
+<p class="reference">References <a class="el" href="streets__desired__phase__plan_8h_source.html#l00038">streets_desired_phase_plan::streets_desired_phase_plan::desired_phase_plan</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00020">streets_desired_phase_plan::signal_group2green_phase_timing::end_time</a>, <a class="el" href="monitor__tsc__state_8cpp_source.html#l00551">traffic_signal_controller_service::tsc_state::get_signal_group_state_map()</a>, <a class="el" href="monitor__tsc__state_8cpp_source.html#l00111">traffic_signal_controller_service::tsc_state::get_tsc_config_state()</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00021">streets_desired_phase_plan::signal_group2green_phase_timing::signal_groups</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00019">streets_desired_phase_plan::signal_group2green_phase_timing::start_time</a>, <a class="el" href="streets__clock__singleton_8cpp_source.html#l00010">streets_service::streets_clock_singleton::time_in_ms()</a>, <a class="el" href="streets__desired__phase__plan_8h_source.html#l00034">streets_desired_phase_plan::streets_desired_phase_plan::timestamp</a>, and <a class="el" href="streets__desired__phase__plan_8cpp_source.html#l00006">streets_desired_phase_plan::streets_desired_phase_plan::toJson()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00019">update_spat_future_movement_events()</a>.</p>
 <div class="dynheader">
@@ -508,10 +511,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan_ad06fb1cbc4f3de4eda56c3999bd111d9_cgraph.png" border="0" usemap="#aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_ad06fb1cbc4f3de4eda56c3999bd111d9_cgraph" alt=""/></div>
 <map name="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_ad06fb1cbc4f3de4eda56c3999bd111d9_cgraph" id="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_ad06fb1cbc4f3de4eda56c3999bd111d9_cgraph">
-<area shape="rect" title="Method to represent yellow change and red clearance when no desired phase plan is present and the TSC..." alt="" coords="5,78,181,149"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a27876c0c6172cbb37788cadd97bf6ff3" title="Return reference to signal group state map." alt="" coords="229,5,400,61"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a05b2aa1aff298e094fd02d59b067e4e7" title="Returns a pointer to the tsc_config_state." alt="" coords="237,85,392,141"/>
-<area shape="rect" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html#ae2a335d599173d37b8a12abe26948c01" title="Serialize Desired phase plan object to rapidjson::Value for writing as JSON string." alt="" coords="238,165,391,221"/>
+<area shape="rect" title="Method to represent yellow change and red clearance when no desired phase plan is present and the TSC..." alt="" coords="5,114,181,185"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a27876c0c6172cbb37788cadd97bf6ff3" title="Return reference to signal group state map." alt="" coords="240,5,411,61"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a05b2aa1aff298e094fd02d59b067e4e7" title="Returns a pointer to the tsc_config_state." alt="" coords="248,85,403,141"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="229,165,421,206"/>
+<area shape="rect" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html#ae2a335d599173d37b8a12abe26948c01" title="Serialize Desired phase plan object to rapidjson::Value for writing as JSON string." alt="" coords="249,229,402,285"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="469,165,672,206"/>
 </map>
 </div>
 <div class="dynheader">
@@ -692,9 +697,9 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   15</span>    {</div>
 <div class="line"><span class="lineno">   16</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#ae6b65664bfddcfb561e83b33cc6bec27">desired_phase_plan_ptr</a>;</div>
 <div class="line"><span class="lineno">   17</span>    }</div>
-<div class="ttc" id="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_html_ae6b65664bfddcfb561e83b33cc6bec27"><div class="ttname"><a href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#ae6b65664bfddcfb561e83b33cc6bec27">traffic_signal_controller_service::monitor_desired_phase_plan::desired_phase_plan_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; streets_desired_phase_plan::streets_desired_phase_plan &gt; desired_phase_plan_ptr</div><div class="ttdef"><b>Definition:</b> <a href="monitor__desired__phase__plan_8h_source.html#l00015">monitor_desired_phase_plan.h:15</a></div></div>
+<div class="ttc" id="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_html_ae6b65664bfddcfb561e83b33cc6bec27"><div class="ttname"><a href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#ae6b65664bfddcfb561e83b33cc6bec27">traffic_signal_controller_service::monitor_desired_phase_plan::desired_phase_plan_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; streets_desired_phase_plan::streets_desired_phase_plan &gt; desired_phase_plan_ptr</div><div class="ttdef"><b>Definition:</b> <a href="monitor__desired__phase__plan_8h_source.html#l00017">monitor_desired_phase_plan.h:17</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00015">desired_phase_plan_ptr</a>.</p>
+<p class="reference">References <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00017">desired_phase_plan_ptr</a>.</p>
 
 </div>
 </div>
@@ -726,7 +731,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">  232</span>                                                                                                                                                        {</div>
 <div class="line"><span class="lineno">  233</span>        <span class="comment">// Loop through the desired phase plan and remove an event if the end time is past current</span></div>
 <div class="line"><span class="lineno">  234</span>            <span class="keywordtype">bool</span> no_expired_events = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  235</span>            uint64_t cur_time_since_epoch = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(std::chrono::system_clock::now().time_since_epoch()).count();</div>
+<div class="line"><span class="lineno">  235</span>            uint64_t cur_time_since_epoch = <a class="code hl_function" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a>();</div>
 <div class="line"><span class="lineno">  236</span>            <span class="keywordflow">while</span>( !no_expired_events &amp;&amp; dpp != <span class="keyword">nullptr</span> &amp;&amp; !dpp-&gt;desired_phase_plan.empty()){</div>
 <div class="line"><span class="lineno">  237</span>                <span class="comment">// Check first event in desired phase plan and remove if expired</span></div>
 <div class="line"><span class="lineno">  238</span>                <span class="keywordflow">if</span>(cur_time_since_epoch &lt; dpp-&gt;desired_phase_plan.front().end_time){</div>
@@ -740,7 +745,19 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  246</span>            }</div>
 <div class="line"><span class="lineno">  247</span>    }</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="streets__clock__singleton_8cpp_source.html#l00010">streets_service::streets_clock_singleton::time_in_ms()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00019">update_spat_future_movement_events()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan_a72ddbd7f967b05cf79cf5a19fef28561_cgraph.png" border="0" usemap="#aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_a72ddbd7f967b05cf79cf5a19fef28561_cgraph" alt=""/></div>
+<map name="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_a72ddbd7f967b05cf79cf5a19fef28561_cgraph" id="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_a72ddbd7f967b05cf79cf5a19fef28561_cgraph">
+<area shape="rect" title="Method to prune the desired phase plan of any entries for which the end time is less than the current..." alt="" coords="5,5,187,76"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="235,20,427,61"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="475,20,677,61"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -783,7 +800,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   11</span>        <a class="code hl_variable" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#ae6b65664bfddcfb561e83b33cc6bec27">desired_phase_plan_ptr</a>-&gt;fromJson(payload);</div>
 <div class="line"><span class="lineno">   12</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00015">desired_phase_plan_ptr</a>.</p>
+<p class="reference">References <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00017">desired_phase_plan_ptr</a>.</p>
 
 </div>
 </div>
@@ -833,7 +850,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  261</span>        }</div>
 <div class="line"><span class="lineno">  262</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00022">last_green_served</a>.</p>
+<p class="reference">References <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00024">last_green_served</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00086">fix_upcoming_green()</a>, and <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00019">update_spat_future_movement_events()</a>.</p>
 <div class="dynheader">
@@ -955,22 +972,24 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_html_af3aad7133e6da0308277109a8a104ef0"><div class="ttname"><a href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#af3aad7133e6da0308277109a8a104ef0">traffic_signal_controller_service::monitor_desired_phase_plan::fix_upcoming_green</a></div><div class="ttdeci">void fix_upcoming_green(const std::shared_ptr&lt; signal_phase_and_timing::spat &gt; spat_ptr, const std::shared_ptr&lt; tsc_state &gt; tsc_state_ptr)</div><div class="ttdoc">Method to represent the upcoming green, when no desired phase plan is present and the TSC is currentl...</div><div class="ttdef"><b>Definition:</b> <a href="monitor__desired__phase__plan_8cpp_source.html#l00086">monitor_desired_phase_plan.cpp:86</a></div></div>
 <div class="ttc" id="anamespacesignal__phase__and__timing_html_a89bd5b280352669f719b2c36a9dc2a14ababa6a65d4933ea6229e61b20668218b"><div class="ttname"><a href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14ababa6a65d4933ea6229e61b20668218b">signal_phase_and_timing::movement_phase_state::protected_movement_allowed</a></div><div class="ttdeci">@ protected_movement_allowed</div><div class="ttdoc">Often called 'protected green' in US Driver Action: Proceed, tossing caution to the wind,...</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00015">desired_phase_plan_ptr</a>, <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00086">fix_upcoming_green()</a>, <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00204">fix_upcoming_yell_red()</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14ababa6a65d4933ea6229e61b20668218b">signal_phase_and_timing::protected_movement_allowed</a>, <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00232">prune_expired_greens_from_dpp()</a>, and <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00249">update_last_green_served()</a>.</p>
+<p class="reference">References <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00017">desired_phase_plan_ptr</a>, <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00086">fix_upcoming_green()</a>, <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00204">fix_upcoming_yell_red()</a>, <a class="el" href="namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14ababa6a65d4933ea6229e61b20668218b">signal_phase_and_timing::protected_movement_allowed</a>, <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00232">prune_expired_greens_from_dpp()</a>, and <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00249">update_last_green_served()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan_aa3549e37ef3a3ffe9c0ce7c3c0f24605_cgraph.png" border="0" usemap="#aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_aa3549e37ef3a3ffe9c0ce7c3c0f24605_cgraph" alt=""/></div>
 <map name="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_aa3549e37ef3a3ffe9c0ce7c3c0f24605_cgraph" id="aclasstraffic__signal__controller__service_1_1monitor__desired__phase__plan_aa3549e37ef3a3ffe9c0ce7c3c0f24605_cgraph">
-<area shape="rect" title="Update spat movement_event list with desired phase plan information." alt="" coords="5,199,181,270"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#af3aad7133e6da0308277109a8a104ef0" title="Method to represent the upcoming green, when no desired phase plan is present and the TSC is currentl..." alt="" coords="229,173,444,229"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#ada0aa81915b2c7d287b64fbc61127726" title="Method to update last greens served with currently present green movement states." alt="" coords="493,326,662,397"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#ad06fb1cbc4f3de4eda56c3999bd111d9" title="Method to represent yellow change and red clearance when no desired phase plan is present and the TSC..." alt="" coords="249,78,425,149"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#a72ddbd7f967b05cf79cf5a19fef28561" title="Method to prune the desired phase plan of any entries for which the end time is less than the current..." alt="" coords="246,305,427,375"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a27876c0c6172cbb37788cadd97bf6ff3" title="Return reference to signal group state map." alt="" coords="492,5,663,61"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a05b2aa1aff298e094fd02d59b067e4e7" title="Returns a pointer to the tsc_config_state." alt="" coords="500,85,655,141"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a42882c2c84b9decb8ab4d89485a5321f" title="Get the signal group id using phase number.Only for vehicle phases." alt="" coords="494,245,661,301"/>
-<area shape="rect" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html#ae2a335d599173d37b8a12abe26948c01" title="Serialize Desired phase plan object to rapidjson::Value for writing as JSON string." alt="" coords="501,165,654,221"/>
-<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="711,260,783,287"/>
+<area shape="rect" title="Update spat movement_event list with desired phase plan information." alt="" coords="5,226,181,297"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#af3aad7133e6da0308277109a8a104ef0" title="Method to represent the upcoming green, when no desired phase plan is present and the TSC is currentl..." alt="" coords="229,189,444,245"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#ada0aa81915b2c7d287b64fbc61127726" title="Method to update last greens served with currently present green movement states." alt="" coords="503,390,673,461"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#ad06fb1cbc4f3de4eda56c3999bd111d9" title="Method to represent yellow change and red clearance when no desired phase plan is present and the TSC..." alt="" coords="249,94,425,165"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#a72ddbd7f967b05cf79cf5a19fef28561" title="Method to prune the desired phase plan of any entries for which the end time is less than the current..." alt="" coords="246,270,427,341"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a27876c0c6172cbb37788cadd97bf6ff3" title="Return reference to signal group state map." alt="" coords="503,5,673,61"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a05b2aa1aff298e094fd02d59b067e4e7" title="Returns a pointer to the tsc_config_state." alt="" coords="511,85,665,141"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__state.html#a42882c2c84b9decb8ab4d89485a5321f" title="Get the signal group id using phase number.Only for vehicle phases." alt="" coords="505,309,671,365"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae" title="Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot&#45;fhwa&#45;stol/car..." alt="" coords="492,245,684,286"/>
+<area shape="rect" href="structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html#ae2a335d599173d37b8a12abe26948c01" title="Serialize Desired phase plan object to rapidjson::Value for writing as JSON string." alt="" coords="511,165,665,221"/>
+<area shape="rect" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd" title="Returns std::string representation of ntcip_1202_ext message including phase_times array." alt="" coords="797,324,869,351"/>
+<area shape="rect" href="classstreets__service_1_1streets__clock__singleton.html#a9421907fc5114a7d1077cef450ca5c94" title=" " alt="" coords="732,245,935,286"/>
 </map>
 </div>
 
@@ -997,7 +1016,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00024">24</a> of file <a class="el" href="monitor__desired__phase__plan_8h_source.html">monitor_desired_phase_plan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00026">26</a> of file <a class="el" href="monitor__desired__phase__plan_8h_source.html">monitor_desired_phase_plan.h</a>.</p>
 
 </div>
 </div>
@@ -1022,7 +1041,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00017">17</a> of file <a class="el" href="monitor__desired__phase__plan_8h_source.html">monitor_desired_phase_plan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00019">19</a> of file <a class="el" href="monitor__desired__phase__plan_8h_source.html">monitor_desired_phase_plan.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00086">fix_upcoming_green()</a>.</p>
 
@@ -1048,7 +1067,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00015">15</a> of file <a class="el" href="monitor__desired__phase__plan_8h_source.html">monitor_desired_phase_plan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00017">17</a> of file <a class="el" href="monitor__desired__phase__plan_8h_source.html">monitor_desired_phase_plan.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00014">get_desired_phase_plan_ptr()</a>, <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00008">update_desired_phase_plan()</a>, and <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00019">update_spat_future_movement_events()</a>.</p>
 
@@ -1076,7 +1095,7 @@ Here is the call graph for this function:</div>
 
 <p>Holds a vector of signal groups that represent the phases that were most recently green. This vector is used to determine which signal group is currently in red clearance. </p>
 
-<p class="definition">Definition at line <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00022">22</a> of file <a class="el" href="monitor__desired__phase__plan_8h_source.html">monitor_desired_phase_plan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="monitor__desired__phase__plan_8h_source.html#l00024">24</a> of file <a class="el" href="monitor__desired__phase__plan_8h_source.html">monitor_desired_phase_plan.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00086">fix_upcoming_green()</a>, and <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00249">update_last_green_served()</a>.</p>
 
@@ -1092,7 +1111,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetraffic__signal__controller__service.html">traffic_signal_controller_service</a></li><li class="navelem"><a class="el" href="classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html">monitor_desired_phase_plan</a></li>
-    <li class="footer">Generated on Tue Apr 11 2023 14:38:45 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 19 2023 13:18:59 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

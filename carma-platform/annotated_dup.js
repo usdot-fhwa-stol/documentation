@@ -48,9 +48,6 @@ var annotated_dup =
       [ "BSMGeneratorWorker", "classbsm__generator_1_1BSMGeneratorWorker.html", "classbsm__generator_1_1BSMGeneratorWorker" ],
       [ "Config", "structbsm__generator_1_1Config.html", "structbsm__generator_1_1Config" ]
     ] ],
-    [ "call_test", "namespacecall__test.html", [
-      [ "CallTest", "classcall__test_1_1CallTest.html", "classcall__test_1_1CallTest" ]
-    ] ],
     [ "carma_cloud_client", "namespacecarma__cloud__client.html", [
       [ "CarmaCloudClient", "classcarma__cloud__client_1_1CarmaCloudClient.html", "classcarma__cloud__client_1_1CarmaCloudClient" ],
       [ "Config", "structcarma__cloud__client_1_1Config.html", "structcarma__cloud__client_1_1Config" ]
@@ -186,7 +183,6 @@ var annotated_dup =
       [ "TypeHelper< ValueType, unsigned >", "structinternal_1_1TypeHelper_3_01ValueType_00_01unsigned_01_4.html", "structinternal_1_1TypeHelper_3_01ValueType_00_01unsigned_01_4" ]
     ] ],
     [ "intersection_transit_maneuvering", "namespaceintersection__transit__maneuvering.html", [
-      [ "IntersectionTransitManeuvering", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuvering.html", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuvering" ],
       [ "IntersectionTransitManeuveringNode", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode" ],
       [ "Servicer", "classintersection__transit__maneuvering_1_1Servicer.html", "classintersection__transit__maneuvering_1_1Servicer" ]
     ] ],

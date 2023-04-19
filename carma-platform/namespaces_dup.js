@@ -23,7 +23,6 @@ var namespaces_dup =
     [ "bsm_generator_launch", "namespacebsm__generator__launch.html", [
       [ "generate_launch_description", "namespacebsm__generator__launch.html#ab9e7e23a7679eca24b1074b3f3ede43c", null ]
     ] ],
-    [ "call_test", "namespacecall__test.html", "namespacecall__test" ],
     [ "carma_cloud_client", "namespacecarma__cloud__client.html", "namespacecarma__cloud__client" ],
     [ "carma_cloud_client_launch", "namespacecarma__cloud__client__launch.html", [
       [ "generate_launch_description", "namespacecarma__cloud__client__launch.html#a61660dc0389cc0486295cd5ab8c7bfcc", null ],
@@ -74,6 +73,9 @@ var namespaces_dup =
     [ "inlanecruising_plugin", "namespaceinlanecruising__plugin.html", "namespaceinlanecruising__plugin" ],
     [ "internal", "namespaceinternal.html", "namespaceinternal" ],
     [ "intersection_transit_maneuvering", "namespaceintersection__transit__maneuvering.html", "namespaceintersection__transit__maneuvering" ],
+    [ "intersection_transit_maneuvering_launch", "namespaceintersection__transit__maneuvering__launch.html", [
+      [ "generate_launch_description", "namespaceintersection__transit__maneuvering__launch.html#aa38d5dd626bf05b88edb595c264791cf", null ]
+    ] ],
     [ "lanelet", "namespacelanelet.html", "namespacelanelet" ],
     [ "lci_strategic_plugin", "namespacelci__strategic__plugin.html", "namespacelci__strategic__plugin" ],
     [ "light_controlled_intersection_tactical_plugin", "namespacelight__controlled__intersection__tactical__plugin.html", "namespacelight__controlled__intersection__tactical__plugin" ],

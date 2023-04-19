@@ -643,22 +643,44 @@ $(document).ready(function(){initNavTree('plugins_8launch_8py_source.html',''); 
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>        ]</div>
 <div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>    )</div>
 <div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span> </div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>    <span class="keywordflow">return</span> LaunchDescription([    </div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>        carma_inlanecruising_plugin_container, </div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        carma_route_following_plugin_container, </div>
-<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>        carma_approaching_emergency_vehicle_plugin_container,</div>
-<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        carma_stop_and_wait_plugin_container, </div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>        carma_sci_strategic_plugin_container, </div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>        carma_stop_and_dwell_strategic_plugin_container,</div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>        carma_lci_strategic_plugin_container, </div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>        carma_stop_controlled_intersection_tactical_plugin_container, </div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>        carma_cooperative_lanechange_plugins_container, </div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>        carma_yield_plugin_container, </div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>        carma_light_controlled_intersection_plugins_container, </div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>        carma_pure_pursuit_wrapper_container, </div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>        <span class="comment">#platooning_strategic_plugin_container, </span></div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>        platooning_tactical_plugin_container</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>    ])</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>    intersection_transit_maneuvering_container = ComposableNodeContainer(</div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        name=<span class="stringliteral">&#39;intersection_transit_maneuvering_container&#39;</span>,</div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>        composable_node_descriptions=[</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>            ComposableNode(</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>                package=<span class="stringliteral">&#39;intersection_transit_maneuvering&#39;</span>,</div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>                plugin=<span class="stringliteral">&#39;intersection_transit_maneuvering::IntersectionTransitManeuveringNode&#39;</span>,</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>                name=<span class="stringliteral">&#39;intersection_transit_maneuvering&#39;</span>,</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>                extra_arguments=[</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>}, </div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;intersection_transit_maneuvering&#39;</span>, env_log_levels) }</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>                ],</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>                remappings = [],</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>                parameters=[]     </div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>            ),</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>        ]</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>    )</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>    <span class="keywordflow">return</span> LaunchDescription([    </div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>        carma_inlanecruising_plugin_container, </div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>        carma_route_following_plugin_container, </div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>        carma_approaching_emergency_vehicle_plugin_container,</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>        carma_stop_and_wait_plugin_container, </div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>        carma_sci_strategic_plugin_container, </div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>        carma_stop_and_dwell_strategic_plugin_container,</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>        carma_lci_strategic_plugin_container, </div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>        carma_stop_controlled_intersection_tactical_plugin_container, </div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>        carma_cooperative_lanechange_plugins_container, </div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>        carma_yield_plugin_container, </div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>        carma_light_controlled_intersection_plugins_container, </div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>        carma_pure_pursuit_wrapper_container, </div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>        <span class="comment">#platooning_strategic_plugin_container, </span></div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>        platooning_tactical_plugin_container,</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>        intersection_transit_maneuvering_container</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span> </div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>    ])</div>
 <div class="ttc" id="anamespaceplugins_html_ac3f3c843d1dfcb998c4dbafd7c596419"><div class="ttname"><a href="namespaceplugins.html#ac3f3c843d1dfcb998c4dbafd7c596419">plugins.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="plugins_8launch_8py_source.html#l00036">plugins.launch.py:36</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -666,7 +688,7 @@ $(document).ready(function(){initNavTree('plugins_8launch_8py_source.html',''); 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_65035b4805221094def83884081b1f33.html">carma</a></li><li class="navelem"><a class="el" href="dir_f58cda9f7f9da9aabc437fb1be4786b2.html">launch</a></li><li class="navelem"><a class="el" href="plugins_8launch_8py.html">plugins.launch.py</a></li>
-    <li class="footer">Generated on Tue Apr 18 2023 03:39:45 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 19 2023 15:26:29 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

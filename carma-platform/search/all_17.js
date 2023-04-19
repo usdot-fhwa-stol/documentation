@@ -51,7 +51,7 @@ var searchData=
   ['vehicle_5fpose_5f_48',['vehicle_pose_',['../classroute_1_1RouteGeneratorWorker.html#af6f39379cdc597962f95e6ce49e9eda9',1,'route::RouteGeneratorWorker']]],
   ['vehicle_5fresponse_5flag_49',['vehicle_response_lag',['../structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html#a1e1621bed0e7fc084fd6744a71d747f8',1,'pure_pursuit_wrapper::PurePursuitWrapperConfig']]],
   ['vehicle_5fstate_2ehpp_50',['vehicle_state.hpp',['../vehicle__state_8hpp.html',1,'']]],
-  ['vehicle_5fstate_5f_51',['vehicle_state_',['../classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d',1,'arbitrator::Arbitrator::vehicle_state_()'],['../classintersection__transit__maneuvering_1_1IntersectionTransitManeuvering.html#ad8f4f49efc7628591694e17b67c7ed98',1,'intersection_transit_maneuvering::IntersectionTransitManeuvering::vehicle_state_()']]],
+  ['vehicle_5fstate_5f_51',['vehicle_state_',['../classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d',1,'arbitrator::Arbitrator::vehicle_state_()'],['../classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#ab77f04751b818e4e188c4a4eece5ca5f',1,'intersection_transit_maneuvering::IntersectionTransitManeuveringNode::vehicle_state_()']]],
   ['vehicle_5fstatus_5fcb_52',['vehicle_status_cb',['../classguidance_1_1GuidanceWorker.html#af084c565cf5a06c89e1e8465f92f54f9',1,'guidance::GuidanceWorker']]],
   ['vehicle_5fstatus_5fsubscriber_5f_53',['vehicle_status_subscriber_',['../classguidance_1_1GuidanceWorker.html#a50f344b9ac05093b8aa0b14f1145742a',1,'guidance::GuidanceWorker']]],
   ['vehicle_5ftwist_54',['vehicle_twist',['../classmock__drivers_1_1MockCANDriver.html#a7278e6f3f1c1a24d214f3ba77d2824ac',1,'mock_drivers::MockCANDriver']]],

@@ -20,7 +20,6 @@ var hierarchy =
     [ "lci_strategic_plugin::BoundaryDistances", "structlci__strategic__plugin_1_1BoundaryDistances.html", null ],
     [ "bsm_generator::BSMGeneratorWorker", "classbsm__generator_1_1BSMGeneratorWorker.html", null ],
     [ "CallInterface", "classCallInterface.html", [
-      [ "call_test::CallTest", "classcall__test_1_1CallTest.html", null ],
       [ "intersection_transit_maneuvering::Servicer", "classintersection__transit__maneuvering_1_1Servicer.html", null ]
     ] ],
     [ "arbitrator::CapabilitiesInterface", "classarbitrator_1_1CapabilitiesInterface.html", null ],
@@ -48,6 +47,7 @@ var hierarchy =
           [ "SUB::Node", "classSUB_1_1Node.html", null ],
           [ "cooperative_lanechange::CooperativeLaneChangePlugin", "classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html", null ],
           [ "inlanecruising_plugin::InLaneCruisingPluginNode", "classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html", null ],
+          [ "intersection_transit_maneuvering::IntersectionTransitManeuveringNode", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html", null ],
           [ "light_controlled_intersection_tactical_plugin::LightControlledIntersectionTransitPluginNode", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html", null ],
           [ "platooning_tactical_plugin::Node", "classplatooning__tactical__plugin_1_1Node.html", null ],
           [ "stop_and_wait_plugin::StopandWaitNode", "classstop__and__wait__plugin_1_1StopandWaitNode.html", null ],
@@ -207,8 +207,6 @@ var hierarchy =
     [ "pcl::detail::int_type< 64, true >", "structpcl_1_1detail_1_1int__type_3_0164_00_01true_01_4.html", null ],
     [ "pcl::detail::int_type< 8, false >", "structpcl_1_1detail_1_1int__type_3_018_00_01false_01_4.html", null ],
     [ "pcl::detail::int_type< 8, true >", "structpcl_1_1detail_1_1int__type_3_018_00_01true_01_4.html", null ],
-    [ "intersection_transit_maneuvering::IntersectionTransitManeuvering", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuvering.html", null ],
-    [ "intersection_transit_maneuvering::IntersectionTransitManeuveringNode", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html", null ],
     [ "internal::ISchemaStateFactory< SchemaType >", "classinternal_1_1ISchemaStateFactory.html", null ],
     [ "internal::ISchemaStateFactory< SchemaDocumentType::SchemaType >", "classinternal_1_1ISchemaStateFactory.html", [
       [ "GenericSchemaValidator< SchemaDocumentType, OutputHandler, StateAllocator >", "classGenericSchemaValidator.html", null ]

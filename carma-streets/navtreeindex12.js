@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"functions_func_h.html":[22,3,1,7],
+"functions_func_i.html":[22,3,1,8],
 "functions_func_k.html":[22,3,1,9],
 "functions_func_l.html":[22,3,1,10],
 "functions_func_m.html":[22,3,1,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "intersection__server__api_2src_2models_2OAIHelpers_8cpp.html#a5bbc664627fc766b79dd3917952e8729":[23,0,8,0,1,0,1,1,47],
 "intersection__server__api_2src_2models_2OAIHelpers_8cpp.html#a5ebe0e56a766d2d4cb3d0d494e39e1d3":[23,0,8,0,1,0,1,1,23],
 "intersection__server__api_2src_2models_2OAIHelpers_8cpp.html#a6240bfcafd8856eb3dd93ccfd1243c76":[23,0,8,0,1,0,1,1,22],
-"intersection__server__api_2src_2models_2OAIHelpers_8cpp.html#a630e4fb65133f5c7b49d115c0b9ed900":[23,0,8,0,1,0,1,1,26],
-"intersection__server__api_2src_2models_2OAIHelpers_8cpp.html#a717f525876527251375fa6cb0de0e431":[23,0,8,0,1,0,1,1,25],
-"intersection__server__api_2src_2models_2OAIHelpers_8cpp.html#a72274bf9197aeba74d50f328c357337c":[23,0,8,0,1,0,1,1,15]
+"intersection__server__api_2src_2models_2OAIHelpers_8cpp.html#a630e4fb65133f5c7b49d115c0b9ed900":[23,0,8,0,1,0,1,1,26]
 };

@@ -16,6 +16,7 @@ var classtraffic__signal__controller__service_1_1tsc__service =
     [ "initialize_spat", "classtraffic__signal__controller__service_1_1tsc__service.html#a54e9845c840c058c682e215fe39a6e0c", null ],
     [ "initialize_spat_worker", "classtraffic__signal__controller__service_1_1tsc__service.html#a470c3a6c64e310bc4ac0da205a2aeafb", null ],
     [ "initialize_tsc_state", "classtraffic__signal__controller__service_1_1tsc__service.html#adad711d135587e232d5cd92447b9a5af", null ],
+    [ "log_spat_latency", "classtraffic__signal__controller__service_1_1tsc__service.html#a8aa03811146f8317d56ca5e7870a466e", null ],
     [ "operator=", "classtraffic__signal__controller__service_1_1tsc__service.html#a0d64c3a5157eb5d30cac4e54772e4b90", null ],
     [ "produce_spat_json", "classtraffic__signal__controller__service_1_1tsc__service.html#aa4fb7763e7ae8b9e630fd7fa10bc2479", null ],
     [ "produce_tsc_config_json", "classtraffic__signal__controller__service_1_1tsc__service.html#a5ae2c7b9e7f0ebd7f62be1f5ffccf65e", null ],

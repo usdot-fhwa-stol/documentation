@@ -170,5 +170,6 @@ var hierarchy =
     [ "message_services::services::vehicle_status_intent_service", "classmessage__services_1_1services_1_1vehicle__status__intent__service.html", null ],
     [ "message_services::models::VehicleSize", "structmessage__services_1_1models_1_1VehicleSize.html", null ],
     [ "message_services::services::vsi_message_bucket", "structmessage__services_1_1services_1_1vsi__message__bucket.html", null ],
-    [ "CarmaClock *", "classstatic_01fwha__stol_1_1lib_1_1time_1_1CarmaClock_01_5.html", null ]
+    [ "unique_ptr< fwha_stol::lib::time::CarmaClock >", "classstatic_01std_1_1unique__ptr_3_01fwha__stol_1_1lib_1_1time_1_1CarmaClock_01_4.html", null ],
+    [ "unique_ptr< streets_configuration >", "classstatic_01std_1_1unique__ptr_3_01streets__configuration_01_4.html", null ]
 ];

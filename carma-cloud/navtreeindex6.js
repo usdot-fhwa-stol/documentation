@@ -1,5 +1,8 @@
 var NAVTREEINDEX6 =
 {
+"classcc_1_1util_1_1Geo.html#a1987235a3a4560a291159c7e3ed34467":[3,0,0,5,4,40],
+"classcc_1_1util_1_1Geo.html#a1b5f8a2bf24feb519c9a1634e15401bf":[3,0,0,5,4,20],
+"classcc_1_1util_1_1Geo.html#a1bc460949ee2a5df8525fa6e56e5a512":[3,0,0,5,4,47],
 "classcc_1_1util_1_1Geo.html#a1cb80b67268e839445ca6a8ac0f99c03":[3,0,0,5,4,24],
 "classcc_1_1util_1_1Geo.html#a2241ff39ed721c330abdc7c1b9d90f44":[3,0,0,5,4,5],
 "classcc_1_1util_1_1Geo.html#a22e3855bed06feeb283291c67e329b87":[3,0,0,5,4,49],
@@ -246,8 +249,5 @@ var NAVTREEINDEX6 =
 "classcc_1_1vector__tile_1_1VectorTile_1_1Tile.html#aa909bbb30d59198cab77f213ec156c1c":[3,0,0,6,0,0,30],
 "classcc_1_1vector__tile_1_1VectorTile_1_1Tile.html#ab7d5be1577912d8646a46999c5afce40":[3,0,0,6,0,0,25],
 "classcc_1_1vector__tile_1_1VectorTile_1_1Tile.html#ab7ea24441fec2d5784f1999b9a4ff324":[3,0,0,6,0,0,28],
-"classcc_1_1vector__tile_1_1VectorTile_1_1Tile.html#ab864d4a979ab766a2c207a5d2b8caecc":[3,0,0,6,0,0,12],
-"classcc_1_1vector__tile_1_1VectorTile_1_1Tile.html#ab9ad98914be4eb23557415f727f6c41c":[3,0,0,6,0,0,17],
-"classcc_1_1vector__tile_1_1VectorTile_1_1Tile.html#ac00c21f1066f89712e1307e12b223510":[3,0,0,6,0,0,9],
-"classcc_1_1vector__tile_1_1VectorTile_1_1Tile.html#ac00c21f1066f89712e1307e12b223510":[3,0,0,6,0,0,10]
+"classcc_1_1vector__tile_1_1VectorTile_1_1Tile.html#ab864d4a979ab766a2c207a5d2b8caecc":[3,0,0,6,0,0,12]
 };

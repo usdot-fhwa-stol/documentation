@@ -105,15 +105,15 @@ Collaboration diagram for cc.rsu.RSUIdentificationTask:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcc_1_1rsu_1_1RSUIdentificationTask__coll__graph.png" border="0" usemap="#acc_8rsu_8RSUIdentificationTask_coll__map" alt="Collaboration graph"/></div>
 <map name="acc_8rsu_8RSUIdentificationTask_coll__map" id="acc_8rsu_8RSUIdentificationTask_coll__map">
-<area shape="rect" title=" " alt="" coords="137,605,328,712"/>
-<area shape="rect" title=" " alt="" coords="5,407,121,484"/>
-<area shape="rect" title=" " alt="" coords="145,407,208,484"/>
-<area shape="rect" href="classcc_1_1rsu_1_1BSMRequest.html" title=" " alt="" coords="233,348,382,543"/>
-<area shape="rect" title=" " alt="" coords="255,145,311,223"/>
-<area shape="rect" title=" " alt="" coords="50,145,231,223"/>
-<area shape="rect" title=" " alt="" coords="279,5,354,83"/>
-<area shape="rect" title=" " alt="" coords="432,247,668,324"/>
-<area shape="rect" title=" " alt="" coords="336,145,399,223"/>
+<area shape="rect" title=" " alt="" coords="137,635,328,741"/>
+<area shape="rect" title=" " alt="" coords="5,421,121,499"/>
+<area shape="rect" title=" " alt="" coords="145,421,208,499"/>
+<area shape="rect" href="classcc_1_1rsu_1_1BSMRequest.html" title=" " alt="" coords="233,348,382,572"/>
+<area shape="rect" title=" " alt="" coords="238,145,294,223"/>
+<area shape="rect" title=" " alt="" coords="33,145,214,223"/>
+<area shape="rect" title=" " alt="" coords="278,5,353,83"/>
+<area shape="rect" title=" " alt="" coords="464,247,700,324"/>
+<area shape="rect" title=" " alt="" coords="332,145,395,223"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -267,44 +267,48 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   57</span>        <span class="comment">//NOTE: For the carma-cloud registered RSUs, it needs additional consideration for those RSUs (RSUs, geofences, etc.) in a certain requested region.</span></div>
 <div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#a742e465e3e679c2c19897ba140e760b4">registeredRSUs</a> != <span class="keyword">null</span> &amp;&amp; <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#a742e465e3e679c2c19897ba140e760b4">registeredRSUs</a>.size() &gt; 0) {</div>
 <div class="line"><span class="lineno">   59</span>            ArrayList&lt;RSUBoundingbox&gt; identifiedRSUs = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
-<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">for</span> (RSUBoundingbox rsuBoundingBox : <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#a742e465e3e679c2c19897ba140e760b4">registeredRSUs</a>) {</div>
-<div class="line"><span class="lineno">   61</span>                BoundingBox bBox = rsuBoundingBox.getBoundingBox();</div>
-<div class="line"><span class="lineno">   62</span>                <span class="keywordflow">for</span> (BoundingBox bsmBoxOther : boundingBoxes) {</div>
-<div class="line"><span class="lineno">   63</span>                    <span class="keywordflow">if</span> (bBox.intersects(bsmBoxOther)) {</div>
-<div class="line"><span class="lineno">   64</span>                        identifiedRSUs.add(rsuBoundingBox);</div>
-<div class="line"><span class="lineno">   65</span>                        <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#aee114432e8c9b29d89bd7a4f75776b37">LOGGER</a>.debug(<span class="stringliteral">&quot;Identified RSU location: &quot;</span> + rsuBoundingBox.getCenterLoc().toString());</div>
-<div class="line"><span class="lineno">   66</span>                        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   67</span>                    }</div>
-<div class="line"><span class="lineno">   68</span>                }</div>
-<div class="line"><span class="lineno">   69</span>            }</div>
-<div class="line"><span class="lineno">   70</span>            <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#aee114432e8c9b29d89bd7a4f75776b37">LOGGER</a>.info(<span class="stringliteral">&quot;Identified numbers of RSU: &quot;</span> + identifiedRSUs.size());</div>
-<div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>            <span class="comment">// sent BSM hex to the identified RSUs</span></div>
-<div class="line"><span class="lineno">   73</span>            ExecutorService singleExector = Executors.newSingleThreadExecutor();        </div>
-<div class="line"><span class="lineno">   74</span>            singleExector.submit(<span class="keyword">new</span> HTTPClientTask(identifiedRSUs, <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#a6de0ecbd2825bd4436c561ff6c90c119">incomingBSMReq</a>));   </div>
-<div class="line"><span class="lineno">   75</span>            singleExector.shutdown();</div>
-<div class="line"><span class="lineno">   76</span>            </div>
-<div class="line"><span class="lineno">   77</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   78</span>            <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#aee114432e8c9b29d89bd7a4f75776b37">LOGGER</a>.info(<span class="stringliteral">&quot;No RSU is registered!&quot;</span>);</div>
-<div class="line"><span class="lineno">   79</span>        }</div>
-<div class="line"><span class="lineno">   80</span> </div>
-<div class="line"><span class="lineno">   81</span>        <span class="keywordtype">long</span> end_ts = Instant.now().toEpochMilli();</div>
-<div class="line"><span class="lineno">   82</span>        <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#aee114432e8c9b29d89bd7a4f75776b37">LOGGER</a>.warn(<span class="stringliteral">&quot;TOTAL BSM PROCESS time (ms): &quot;</span> + (end_ts - start_ts) + <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   84</span>    }</div>
-<div class="ttc" id="aclasscc_1_1rsu_1_1BSMRequest_html_a0193b4ffdc3104740467c628a30c0170"><div class="ttname"><a href="classcc_1_1rsu_1_1BSMRequest.html#a0193b4ffdc3104740467c628a30c0170">cc.rsu.BSMRequest.getRoute</a></div><div class="ttdeci">ArrayList&lt; Position &gt; getRoute()</div><div class="ttdef"><b>Definition:</b> <a href="BSMRequest_8java_source.html#l00034">BSMRequest.java:34</a></div></div>
+<div class="line"><span class="lineno">   60</span>            String identifiedRSUNames = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   61</span>            <span class="keywordflow">for</span> (RSUBoundingbox rsuBoundingBox : <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#a742e465e3e679c2c19897ba140e760b4">registeredRSUs</a>) {</div>
+<div class="line"><span class="lineno">   62</span>                BoundingBox bBox = rsuBoundingBox.getBoundingBox();</div>
+<div class="line"><span class="lineno">   63</span>                <span class="keywordflow">for</span> (BoundingBox bsmBoxOther : boundingBoxes) {</div>
+<div class="line"><span class="lineno">   64</span>                    <span class="keywordflow">if</span> (bBox.intersects(bsmBoxOther)) {</div>
+<div class="line"><span class="lineno">   65</span>                        identifiedRSUs.add(rsuBoundingBox);</div>
+<div class="line"><span class="lineno">   66</span>                        identifiedRSUNames += rsuBoundingBox.getCenterLoc().id +<span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><span class="lineno">   67</span>                        <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#aee114432e8c9b29d89bd7a4f75776b37">LOGGER</a>.debug(<span class="stringliteral">&quot;Identified RSU location: &quot;</span> + rsuBoundingBox.getCenterLoc().toString());</div>
+<div class="line"><span class="lineno">   68</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   69</span>                    }</div>
+<div class="line"><span class="lineno">   70</span>                }</div>
+<div class="line"><span class="lineno">   71</span>            }</div>
+<div class="line"><span class="lineno">   72</span>            <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#aee114432e8c9b29d89bd7a4f75776b37">LOGGER</a>.info(<span class="stringliteral">&quot;FER-14: Identified numbers of RSU: &quot;</span> + identifiedRSUs.size() + <span class="stringliteral">&quot;; RSU Names: &quot;</span> + identifiedRSUNames + <span class="stringliteral">&quot;; BSM:&quot;</span> + <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#a6de0ecbd2825bd4436c561ff6c90c119">incomingBSMReq</a>.<a class="code hl_function" href="classcc_1_1rsu_1_1BSMRequest.html#ac8f4cf1ca49e727e179ea916100cecf9">getId</a>());</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>            <span class="comment">// sent BSM hex to the identified RSUs</span></div>
+<div class="line"><span class="lineno">   75</span>            ExecutorService singleExector = Executors.newSingleThreadExecutor();        </div>
+<div class="line"><span class="lineno">   76</span>            singleExector.submit(<span class="keyword">new</span> HTTPClientTask(identifiedRSUs, <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#a6de0ecbd2825bd4436c561ff6c90c119">incomingBSMReq</a>));   </div>
+<div class="line"><span class="lineno">   77</span>            singleExector.shutdown();</div>
+<div class="line"><span class="lineno">   78</span>            </div>
+<div class="line"><span class="lineno">   79</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   80</span>            <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#aee114432e8c9b29d89bd7a4f75776b37">LOGGER</a>.info(<span class="stringliteral">&quot;No RSU is registered!&quot;</span>);</div>
+<div class="line"><span class="lineno">   81</span>        }</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordtype">long</span> end_ts = Instant.now().toEpochMilli();</div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#aee114432e8c9b29d89bd7a4f75776b37">LOGGER</a>.warn(<span class="stringliteral">&quot;FER-13-2: TOTAL BSM PROCESS time (ms): &quot;</span> + (end_ts - start_ts) + <span class="stringliteral">&quot;; BSM:&quot;</span> + <a class="code hl_variable" href="classcc_1_1rsu_1_1RSUIdentificationTask.html#a6de0ecbd2825bd4436c561ff6c90c119">incomingBSMReq</a>.<a class="code hl_function" href="classcc_1_1rsu_1_1BSMRequest.html#ac8f4cf1ca49e727e179ea916100cecf9">getId</a>());</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+<div class="ttc" id="aclasscc_1_1rsu_1_1BSMRequest_html_a0193b4ffdc3104740467c628a30c0170"><div class="ttname"><a href="classcc_1_1rsu_1_1BSMRequest.html#a0193b4ffdc3104740467c628a30c0170">cc.rsu.BSMRequest.getRoute</a></div><div class="ttdeci">ArrayList&lt; Position &gt; getRoute()</div><div class="ttdef"><b>Definition:</b> <a href="BSMRequest_8java_source.html#l00044">BSMRequest.java:44</a></div></div>
+<div class="ttc" id="aclasscc_1_1rsu_1_1BSMRequest_html_ac8f4cf1ca49e727e179ea916100cecf9"><div class="ttname"><a href="classcc_1_1rsu_1_1BSMRequest.html#ac8f4cf1ca49e727e179ea916100cecf9">cc.rsu.BSMRequest.getId</a></div><div class="ttdeci">String getId()</div><div class="ttdef"><b>Definition:</b> <a href="BSMRequest_8java_source.html#l00030">BSMRequest.java:30</a></div></div>
 <div class="ttc" id="aclasscc_1_1rsu_1_1RSUIdentificationTask_html_aee114432e8c9b29d89bd7a4f75776b37"><div class="ttname"><a href="classcc_1_1rsu_1_1RSUIdentificationTask.html#aee114432e8c9b29d89bd7a4f75776b37">cc.rsu.RSUIdentificationTask.LOGGER</a></div><div class="ttdeci">static final Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="RSUIdentificationTask_8java_source.html#l00019">RSUIdentificationTask.java:19</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="GeodesicCartesianConverter_8java_source.html#l00057">cc.rsu.GeodesicCartesianConverter.geodesic2Cartesian()</a>, <a class="el" href="BSMRequest_8java_source.html#l00034">cc.rsu.BSMRequest.getRoute()</a>, <a class="el" href="RSUIdentificationTask_8java_source.html#l00020">cc.rsu.RSUIdentificationTask.incomingBSMReq</a>, <a class="el" href="BoundingBox_8java_source.html#l00026">cc.rsu.BoundingBox.intersects()</a>, <a class="el" href="RSUIdentificationTask_8java_source.html#l00019">cc.rsu.RSUIdentificationTask.LOGGER</a>, and <a class="el" href="RSUIdentificationTask_8java_source.html#l00021">cc.rsu.RSUIdentificationTask.registeredRSUs</a>.</p>
+<p class="reference">References <a class="el" href="GeodesicCartesianConverter_8java_source.html#l00057">cc.rsu.GeodesicCartesianConverter.geodesic2Cartesian()</a>, <a class="el" href="BSMRequest_8java_source.html#l00030">cc.rsu.BSMRequest.getId()</a>, <a class="el" href="BSMRequest_8java_source.html#l00044">cc.rsu.BSMRequest.getRoute()</a>, <a class="el" href="RSUIdentificationTask_8java_source.html#l00020">cc.rsu.RSUIdentificationTask.incomingBSMReq</a>, <a class="el" href="BoundingBox_8java_source.html#l00026">cc.rsu.BoundingBox.intersects()</a>, <a class="el" href="RSUIdentificationTask_8java_source.html#l00019">cc.rsu.RSUIdentificationTask.LOGGER</a>, and <a class="el" href="RSUIdentificationTask_8java_source.html#l00021">cc.rsu.RSUIdentificationTask.registeredRSUs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcc_1_1rsu_1_1RSUIdentificationTask_aa072898435a682242f9218c898676dc5_cgraph.png" border="0" usemap="#aclasscc_1_1rsu_1_1RSUIdentificationTask_aa072898435a682242f9218c898676dc5_cgraph" alt=""/></div>
 <map name="aclasscc_1_1rsu_1_1RSUIdentificationTask_aa072898435a682242f9218c898676dc5_cgraph" id="aclasscc_1_1rsu_1_1RSUIdentificationTask_aa072898435a682242f9218c898676dc5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,107,167,149"/>
+<area shape="rect" title=" " alt="" coords="5,133,167,174"/>
 <area shape="rect" href="classcc_1_1rsu_1_1GeodesicCartesianConverter.html#aa6f2b62d41b9c72cf0bbfdb5056773ac" title=" " alt="" coords="215,49,410,90"/>
-<area shape="rect" href="classcc_1_1rsu_1_1BSMRequest.html#a0193b4ffdc3104740467c628a30c0170" title=" " alt="" coords="217,115,409,141"/>
-<area shape="rect" href="classcc_1_1rsu_1_1BoundingBox.html#ac3fff6469b14108dd48fb9f2f28f05c0" title=" " alt="" coords="215,165,411,192"/>
+<area shape="rect" href="classcc_1_1rsu_1_1BSMRequest.html#ac8f4cf1ca49e727e179ea916100cecf9" title=" " alt="" coords="228,115,397,141"/>
+<area shape="rect" href="classcc_1_1rsu_1_1BSMRequest.html#a0193b4ffdc3104740467c628a30c0170" title=" " alt="" coords="217,165,409,192"/>
+<area shape="rect" href="classcc_1_1rsu_1_1BoundingBox.html#ac3fff6469b14108dd48fb9f2f28f05c0" title=" " alt="" coords="215,216,411,243"/>
 <area shape="rect" href="classcc_1_1rsu_1_1Position.html#a7113c45ec4fc5d41e2e7ad381d1cd0c1" title=" " alt="" coords="463,5,635,32"/>
 <area shape="rect" href="classcc_1_1rsu_1_1Position.html#ab86681533925a39e03e81716912e6a77" title=" " alt="" coords="461,56,636,83"/>
 <area shape="rect" href="classcc_1_1rsu_1_1Position.html#ad164636af0657540c5db7ee6216ec7b5" title=" " alt="" coords="459,107,639,133"/>
@@ -401,7 +405,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>cc</b></li><li class="navelem"><a class="el" href="namespacecc_1_1rsu.html">rsu</a></li><li class="navelem"><a class="el" href="classcc_1_1rsu_1_1RSUIdentificationTask.html">RSUIdentificationTask</a></li>
-    <li class="footer">Generated on Tue Mar 21 2023 18:07:56 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri May 12 2023 18:03:13 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

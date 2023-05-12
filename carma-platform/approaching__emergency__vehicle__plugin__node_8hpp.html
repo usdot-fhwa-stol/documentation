@@ -111,6 +111,8 @@ $(document).ready(function(){initNavTree('approaching__emergency__vehicle__plugi
 <code>#include &lt;lanelet2_extension/io/autoware_osm_parser.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="CARMAWorldModel_8hpp_source.html">carma_wm/CARMAWorldModel.hpp</a>&gt;</code><br />
 <code>#include &lt;boost/format.hpp&gt;</code><br />
+<code>#include &lt;std_msgs/msg/bool.hpp&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;<a class="el" href="strategic__plugin_8hpp_source.html">carma_guidance_plugins/strategic_plugin.hpp</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="approaching__emergency__vehicle__plugin__config_8hpp_source.html">approaching_emergency_vehicle_plugin/approaching_emergency_vehicle_plugin_config.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="approaching__emergency__vehicle__transition__table_8hpp_source.html">approaching_emergency_vehicle_plugin/approaching_emergency_vehicle_transition_table.hpp</a>&quot;</code><br />
@@ -120,95 +122,96 @@ Include dependency graph for approaching_emergency_vehicle_plugin_node.hpp:</div
 <div class="dyncontent">
 <div class="center"><img src="approaching__emergency__vehicle__plugin__node_8hpp__incl.png" border="0" usemap="#aapproaching__emergency__vehicle__plugin_2include_2approaching__emergency__vehicle__plugin_2approaching__emergency__vehicle__plugin__node_8hpp" alt=""/></div>
 <map name="aapproaching__emergency__vehicle__plugin_2include_2approaching__emergency__vehicle__plugin_2approaching__emergency__vehicle__plugin__node_8hpp" id="aapproaching__emergency__vehicle__plugin_2include_2approaching__emergency__vehicle__plugin_2approaching__emergency__vehicle__plugin__node_8hpp">
-<area shape="rect" title=" " alt="" coords="3766,5,4006,91"/>
-<area shape="rect" title=" " alt="" coords="1239,473,1359,499"/>
+<area shape="rect" title=" " alt="" coords="4591,5,4831,91"/>
+<area shape="rect" title=" " alt="" coords="1053,473,1173,499"/>
 <area shape="rect" title=" " alt="" coords="5,473,84,499"/>
-<area shape="rect" title=" " alt="" coords="3709,161,3877,187"/>
-<area shape="rect" title=" " alt="" coords="3901,161,4058,187"/>
-<area shape="rect" title=" " alt="" coords="1158,369,1310,410"/>
-<area shape="rect" title=" " alt="" coords="4083,146,4273,202"/>
-<area shape="rect" title=" " alt="" coords="4298,153,4450,195"/>
-<area shape="rect" title=" " alt="" coords="4475,153,4641,195"/>
-<area shape="rect" title=" " alt="" coords="4665,153,4819,195"/>
-<area shape="rect" title=" " alt="" coords="4843,153,5065,195"/>
-<area shape="rect" title=" " alt="" coords="5089,153,5278,195"/>
-<area shape="rect" title=" " alt="" coords="5303,161,5541,187"/>
-<area shape="rect" title=" " alt="" coords="5565,153,5740,195"/>
-<area shape="rect" href="WMListener_8hpp.html" title=" " alt="" coords="494,376,678,403"/>
-<area shape="rect" href="WorldModel_8hpp.html" title=" " alt="" coords="2501,473,2684,499"/>
-<area shape="rect" title=" " alt="" coords="5764,153,5920,195"/>
-<area shape="rect" title=" " alt="" coords="4036,361,4189,417"/>
-<area shape="rect" title=" " alt="" coords="5945,153,6123,195"/>
-<area shape="rect" href="CARMAWorldModel_8hpp.html" title=" " alt="" coords="3194,161,3423,187"/>
-<area shape="rect" title=" " alt="" coords="6148,161,6267,187"/>
-<area shape="rect" href="strategic__plugin_8hpp.html" title=" " alt="" coords="946,153,1111,195"/>
-<area shape="rect" href="approaching__emergency__vehicle__plugin__config_8hpp.html" title=" " alt="" coords="3499,139,3684,209"/>
-<area shape="rect" href="approaching__emergency__vehicle__transition__table_8hpp.html" title=" " alt="" coords="369,139,569,209"/>
-<area shape="rect" href="approaching__emergency__vehicle__states_8hpp.html" title=" " alt="" coords="251,265,414,306"/>
-<area shape="rect" title=" " alt="" coords="285,473,343,499"/>
-<area shape="rect" title=" " alt="" coords="1225,555,1389,611"/>
-<area shape="rect" title=" " alt="" coords="367,465,528,507"/>
-<area shape="rect" title=" " alt="" coords="552,465,719,507"/>
-<area shape="rect" title=" " alt="" coords="743,473,800,499"/>
-<area shape="rect" title=" " alt="" coords="109,465,261,507"/>
-<area shape="rect" title=" " alt="" coords="876,465,1029,507"/>
-<area shape="rect" title=" " alt="" coords="1053,465,1215,507"/>
-<area shape="rect" title=" " alt="" coords="4111,569,4189,596"/>
-<area shape="rect" title=" " alt="" coords="2360,569,2428,596"/>
-<area shape="rect" title=" " alt="" coords="4213,569,4263,596"/>
-<area shape="rect" title=" " alt="" coords="3511,569,3693,596"/>
-<area shape="rect" title=" " alt="" coords="3328,562,3487,603"/>
-<area shape="rect" title=" " alt="" coords="5087,659,5245,700"/>
-<area shape="rect" title=" " alt="" coords="3837,659,3996,700"/>
-<area shape="rect" title=" " alt="" coords="2452,569,2613,596"/>
-<area shape="rect" title=" " alt="" coords="3717,562,3879,603"/>
-<area shape="rect" title=" " alt="" coords="2029,562,2169,603"/>
-<area shape="rect" title=" " alt="" coords="3954,562,4087,603"/>
-<area shape="rect" title=" " alt="" coords="1465,562,1648,603"/>
-<area shape="rect" title=" " alt="" coords="2740,562,2907,603"/>
-<area shape="rect" title=" " alt="" coords="2931,555,3095,611"/>
-<area shape="rect" title=" " alt="" coords="1672,555,1817,611"/>
-<area shape="rect" title=" " alt="" coords="1842,555,2005,611"/>
-<area shape="rect" title=" " alt="" coords="3119,562,3303,603"/>
-<area shape="rect" href="TrackPos_8hpp.html" title=" " alt="" coords="4471,569,4642,596"/>
-<area shape="rect" title=" " alt="" coords="2193,555,2336,611"/>
-<area shape="rect" title=" " alt="" coords="3549,257,3737,313"/>
-<area shape="rect" title=" " alt="" coords="4367,369,4525,410"/>
-<area shape="rect" href="IndexedDistanceMap_8hpp.html" title=" " alt="" coords="4729,265,4915,306"/>
-<area shape="rect" href="WorldModelUtils_8hpp.html" title=" " alt="" coords="3803,376,4012,403"/>
-<area shape="rect" title=" " alt="" coords="3761,265,3920,306"/>
-<area shape="rect" title=" " alt="" coords="3122,265,3271,306"/>
-<area shape="rect" href="SignalizedIntersectionManager_8hpp.html" title=" " alt="" coords="2365,265,2583,306"/>
-<area shape="rect" title=" " alt="" coords="5125,376,5183,403"/>
-<area shape="rect" title=" " alt="" coords="4732,376,4784,403"/>
-<area shape="rect" title=" " alt="" coords="4808,369,4964,410"/>
-<area shape="rect" title=" " alt="" coords="5072,473,5183,499"/>
-<area shape="rect" title=" " alt="" coords="4989,376,5050,403"/>
-<area shape="rect" title=" " alt="" coords="4288,562,4447,603"/>
-<area shape="rect" title=" " alt="" coords="3829,465,3985,507"/>
-<area shape="rect" title=" " alt="" coords="4009,465,4165,507"/>
-<area shape="rect" title=" " alt="" coords="4189,473,4324,499"/>
-<area shape="rect" title=" " alt="" coords="4349,465,4527,507"/>
-<area shape="rect" href="Geometry_8hpp.html" title=" " alt="" coords="4805,473,4975,499"/>
-<area shape="rect" title=" " alt="" coords="3650,473,3754,499"/>
-<area shape="rect" title=" " alt="" coords="5123,569,5321,596"/>
-<area shape="rect" title=" " alt="" coords="5345,569,5560,596"/>
-<area shape="rect" title=" " alt="" coords="5585,562,5739,603"/>
-<area shape="rect" title=" " alt="" coords="4717,569,4900,596"/>
-<area shape="rect" title=" " alt="" coords="4924,569,5099,596"/>
-<area shape="rect" title=" " alt="" coords="1841,376,1976,403"/>
-<area shape="rect" title=" " alt="" coords="2000,376,2151,403"/>
-<area shape="rect" title=" " alt="" coords="2175,376,2378,403"/>
-<area shape="rect" title=" " alt="" coords="2403,361,2545,417"/>
-<area shape="rect" title=" " alt="" coords="2569,369,2728,410"/>
-<area shape="rect" title=" " alt="" coords="2752,369,2905,410"/>
-<area shape="rect" title=" " alt="" coords="2930,376,3090,403"/>
-<area shape="rect" title=" " alt="" coords="3115,369,3271,410"/>
-<area shape="rect" title=" " alt="" coords="644,265,811,306"/>
-<area shape="rect" href="plugin__base__node_8hpp.html" title=" " alt="" coords="886,265,1051,306"/>
-<area shape="rect" title=" " alt="" coords="804,376,931,403"/>
-<area shape="rect" title=" " alt="" coords="5258,272,5330,299"/>
-<area shape="rect" title=" " alt="" coords="298,376,367,403"/>
+<area shape="rect" title=" " alt="" coords="4534,161,4702,187"/>
+<area shape="rect" title=" " alt="" coords="4726,161,4883,187"/>
+<area shape="rect" title=" " alt="" coords="1110,369,1262,410"/>
+<area shape="rect" title=" " alt="" coords="4908,146,5099,202"/>
+<area shape="rect" title=" " alt="" coords="5123,153,5275,195"/>
+<area shape="rect" title=" " alt="" coords="5300,153,5467,195"/>
+<area shape="rect" title=" " alt="" coords="5491,153,5644,195"/>
+<area shape="rect" title=" " alt="" coords="5669,153,5890,195"/>
+<area shape="rect" title=" " alt="" coords="5914,153,6103,195"/>
+<area shape="rect" title=" " alt="" coords="6128,161,6367,187"/>
+<area shape="rect" title=" " alt="" coords="6391,153,6565,195"/>
+<area shape="rect" href="WMListener_8hpp.html" title=" " alt="" coords="497,376,681,403"/>
+<area shape="rect" href="WorldModel_8hpp.html" title=" " alt="" coords="2989,473,3172,499"/>
+<area shape="rect" title=" " alt="" coords="6589,153,6745,195"/>
+<area shape="rect" title=" " alt="" coords="4139,361,4292,417"/>
+<area shape="rect" title=" " alt="" coords="6770,153,6949,195"/>
+<area shape="rect" href="CARMAWorldModel_8hpp.html" title=" " alt="" coords="3374,161,3603,187"/>
+<area shape="rect" title=" " alt="" coords="5541,473,5652,499"/>
+<area shape="rect" title=" " alt="" coords="6973,161,7092,187"/>
+<area shape="rect" title=" " alt="" coords="7115,161,7275,187"/>
+<area shape="rect" href="strategic__plugin_8hpp.html" title=" " alt="" coords="987,153,1153,195"/>
+<area shape="rect" href="approaching__emergency__vehicle__plugin__config_8hpp.html" title=" " alt="" coords="4273,139,4459,209"/>
+<area shape="rect" href="approaching__emergency__vehicle__transition__table_8hpp.html" title=" " alt="" coords="429,139,629,209"/>
+<area shape="rect" href="approaching__emergency__vehicle__states_8hpp.html" title=" " alt="" coords="259,265,422,306"/>
+<area shape="rect" title=" " alt="" coords="108,473,165,499"/>
+<area shape="rect" title=" " alt="" coords="1319,555,1483,611"/>
+<area shape="rect" title=" " alt="" coords="189,465,351,507"/>
+<area shape="rect" title=" " alt="" coords="375,465,541,507"/>
+<area shape="rect" title=" " alt="" coords="565,473,623,499"/>
+<area shape="rect" title=" " alt="" coords="647,465,799,507"/>
+<area shape="rect" title=" " alt="" coords="875,465,1028,507"/>
+<area shape="rect" title=" " alt="" coords="1197,465,1359,507"/>
+<area shape="rect" title=" " alt="" coords="4206,569,4283,596"/>
+<area shape="rect" title=" " alt="" coords="2849,569,2917,596"/>
+<area shape="rect" title=" " alt="" coords="4502,569,4553,596"/>
+<area shape="rect" title=" " alt="" coords="3423,569,3605,596"/>
+<area shape="rect" title=" " alt="" coords="3629,562,3788,603"/>
+<area shape="rect" title=" " alt="" coords="4633,659,4792,700"/>
+<area shape="rect" title=" " alt="" coords="3932,659,4091,700"/>
+<area shape="rect" title=" " alt="" coords="2333,569,2495,596"/>
+<area shape="rect" title=" " alt="" coords="3812,562,3973,603"/>
+<area shape="rect" title=" " alt="" coords="2519,562,2659,603"/>
+<area shape="rect" title=" " alt="" coords="4049,562,4182,603"/>
+<area shape="rect" title=" " alt="" coords="2127,562,2309,603"/>
+<area shape="rect" title=" " alt="" coords="3044,562,3211,603"/>
+<area shape="rect" title=" " alt="" coords="3235,555,3399,611"/>
+<area shape="rect" title=" " alt="" coords="1769,555,1915,611"/>
+<area shape="rect" title=" " alt="" coords="1939,555,2102,611"/>
+<area shape="rect" title=" " alt="" coords="1561,562,1745,603"/>
+<area shape="rect" href="TrackPos_8hpp.html" title=" " alt="" coords="4307,569,4478,596"/>
+<area shape="rect" title=" " alt="" coords="2683,555,2825,611"/>
+<area shape="rect" title=" " alt="" coords="3552,257,3740,313"/>
+<area shape="rect" title=" " alt="" coords="4316,369,4475,410"/>
+<area shape="rect" href="IndexedDistanceMap_8hpp.html" title=" " alt="" coords="4518,265,4705,306"/>
+<area shape="rect" href="WorldModelUtils_8hpp.html" title=" " alt="" coords="3853,376,4063,403"/>
+<area shape="rect" title=" " alt="" coords="3764,265,3923,306"/>
+<area shape="rect" title=" " alt="" coords="3947,265,4097,306"/>
+<area shape="rect" href="SignalizedIntersectionManager_8hpp.html" title=" " alt="" coords="2267,265,2484,306"/>
+<area shape="rect" title=" " alt="" coords="4943,376,5002,403"/>
+<area shape="rect" title=" " alt="" coords="4585,376,4637,403"/>
+<area shape="rect" title=" " alt="" coords="4661,369,4817,410"/>
+<area shape="rect" title=" " alt="" coords="4499,376,4561,403"/>
+<area shape="rect" title=" " alt="" coords="4577,562,4736,603"/>
+<area shape="rect" title=" " alt="" coords="4136,465,4292,507"/>
+<area shape="rect" title=" " alt="" coords="4316,465,4472,507"/>
+<area shape="rect" title=" " alt="" coords="4496,473,4631,499"/>
+<area shape="rect" title=" " alt="" coords="3602,465,3781,507"/>
+<area shape="rect" href="Geometry_8hpp.html" title=" " alt="" coords="4875,473,5046,499"/>
+<area shape="rect" title=" " alt="" coords="3906,473,4010,499"/>
+<area shape="rect" title=" " alt="" coords="5269,569,5468,596"/>
+<area shape="rect" title=" " alt="" coords="5492,569,5707,596"/>
+<area shape="rect" title=" " alt="" coords="5731,562,5886,603"/>
+<area shape="rect" title=" " alt="" coords="4812,569,4995,596"/>
+<area shape="rect" title=" " alt="" coords="5071,569,5245,596"/>
+<area shape="rect" title=" " alt="" coords="1743,376,1877,403"/>
+<area shape="rect" title=" " alt="" coords="1901,376,2052,403"/>
+<area shape="rect" title=" " alt="" coords="2077,376,2279,403"/>
+<area shape="rect" title=" " alt="" coords="2304,361,2447,417"/>
+<area shape="rect" title=" " alt="" coords="2471,369,2629,410"/>
+<area shape="rect" title=" " alt="" coords="2653,369,2807,410"/>
+<area shape="rect" title=" " alt="" coords="2831,376,2991,403"/>
+<area shape="rect" title=" " alt="" coords="3016,369,3172,410"/>
+<area shape="rect" title=" " alt="" coords="805,265,972,306"/>
+<area shape="rect" href="plugin__base__node_8hpp.html" title=" " alt="" coords="1047,265,1213,306"/>
+<area shape="rect" title=" " alt="" coords="908,376,1035,403"/>
+<area shape="rect" title=" " alt="" coords="4729,272,4801,299"/>
+<area shape="rect" title=" " alt="" coords="306,376,375,403"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -296,7 +299,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Expands to an expression (in the form of chained ternary operators) that evalutes to the desired field </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="approaching__emergency__vehicle__plugin__node_8hpp_source.html#l00052">52</a> of file <a class="el" href="approaching__emergency__vehicle__plugin__node_8hpp_source.html">approaching_emergency_vehicle_plugin_node.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="approaching__emergency__vehicle__plugin__node_8hpp_source.html#l00054">54</a> of file <a class="el" href="approaching__emergency__vehicle__plugin__node_8hpp_source.html">approaching_emergency_vehicle_plugin_node.hpp</a>.</p>
 
 </div>
 </div>
@@ -306,7 +309,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_7026c4de5f5d87920db889333beddb80.html">approaching_emergency_vehicle_plugin</a></li><li class="navelem"><a class="el" href="dir_8407e010f79fdd0c697120bb9a23b03a.html">include</a></li><li class="navelem"><a class="el" href="dir_9f48547c1a73463de0b86f240ff02d0d.html">approaching_emergency_vehicle_plugin</a></li><li class="navelem"><a class="el" href="approaching__emergency__vehicle__plugin__node_8hpp.html">approaching_emergency_vehicle_plugin_node.hpp</a></li>
-    <li class="footer">Generated on Tue Apr 25 2023 20:00:40 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri May 12 2023 22:02:12 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

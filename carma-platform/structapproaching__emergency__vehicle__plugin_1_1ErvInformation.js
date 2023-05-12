@@ -7,6 +7,7 @@ var structapproaching__emergency__vehicle__plugin_1_1ErvInformation =
     [ "intersecting_lanelet", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#ae3384c5e028e78ee1691738c53698e02", null ],
     [ "lane_index", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#ac34d23f97859c1239886108d1e8c7828", null ],
     [ "latest_update_time", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#a6966afb86227f0e5edef2a03b142265a", null ],
+    [ "previous_lane_index", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#a632381dfd37c45c5440d7bbe8ac2b634", null ],
     [ "seconds_until_passing", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#a54055d98a4a44a8b89d7e69b1c161f0b", null ],
     [ "vehicle_id", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#a2d25462696d7933e72bc33239c42287d", null ]
 ];

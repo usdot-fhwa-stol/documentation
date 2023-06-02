@@ -125,6 +125,7 @@ var hierarchy =
     [ "signal_opt_service::signal_opt_processing_worker", "classsignal__opt__service_1_1signal__opt__processing__worker.html", null ],
     [ "signal_opt_service::signal_opt_service", "classsignal__opt__service_1_1signal__opt__service.html", null ],
     [ "intersection_model::signalized_intersection_lanelets", "structintersection__model_1_1signalized__intersection__lanelets.html", null ],
+    [ "dpp_script.SimulationHelper", "classdpp__script_1_1SimulationHelper.html", null ],
     [ "traffic_signal_controller_service::snmp_client", "classtraffic__signal__controller__service_1_1snmp__client.html", [
       [ "traffic_signal_controller_service::mock_snmp_client", "classtraffic__signal__controller__service_1_1mock__snmp__client.html", null ]
     ] ],

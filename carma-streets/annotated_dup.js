@@ -1,5 +1,8 @@
 var annotated_dup =
 [
+    [ "dpp_script", "namespacedpp__script.html", [
+      [ "SimulationHelper", "classdpp__script_1_1SimulationHelper.html", "classdpp__script_1_1SimulationHelper" ]
+    ] ],
     [ "intersection_model", "namespaceintersection__model.html", [
       [ "intersection_info_t", "structintersection__model_1_1intersection__info__t.html", "structintersection__model_1_1intersection__info__t" ],
       [ "intersection_map", "structintersection__model_1_1intersection__map.html", "structintersection__model_1_1intersection__map" ],

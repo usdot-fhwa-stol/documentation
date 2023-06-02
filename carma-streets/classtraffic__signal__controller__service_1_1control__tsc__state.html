@@ -225,30 +225,30 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="control__tsc__state_8cpp_source.html#l00115">115</a> of file <a class="el" href="control__tsc__state_8cpp_source.html">control_tsc_state.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  116</span>    {</div>
-<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">if</span>(!is_reset)</div>
-<div class="line"><span class="lineno">  118</span>        {</div>
-<div class="line"><span class="lineno">  119</span>            uint8_t hold_val = 0;   <span class="comment">//Initialize to 00000000</span></div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span> signal_group : signal_groups)</div>
-<div class="line"><span class="lineno">  122</span>            {</div>
-<div class="line"><span class="lineno">  123</span>                <span class="keywordtype">int</span> phase = <a class="code hl_variable" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a4587ee1f9281ca597fd3c7d73be9a4ae">_tsc_state</a>-&gt;get_phase_number(signal_group);</div>
-<div class="line"><span class="lineno">  124</span>                <span class="comment">// Hold phases in the given movement group</span></div>
-<div class="line"><span class="lineno">  125</span>                <span class="comment">//For Hold only given phase bits are 1. Subtract 1 since phases range from 1-8.</span></div>
-<div class="line"><span class="lineno">  126</span>                hold_val |= (1 &lt;&lt; ( phase - 1));</div>
-<div class="line"><span class="lineno">  127</span>                </div>
-<div class="line"><span class="lineno">  128</span>            }</div>
-<div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>            snmp_cmd_struct command(<a class="code hl_variable" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a8db37201a67bb1413b630566f6bbde30">snmp_client_worker_</a>, start_time, <a class="code hl_enumvalue" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac">snmp_cmd_struct::control_type::Hold</a>, <span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(hold_val));</div>
-<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">return</span> command;</div>
-<div class="line"><span class="lineno">  132</span>        }</div>
-<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  134</span>        {</div>
-<div class="line"><span class="lineno">  135</span>            snmp_cmd_struct command(<a class="code hl_variable" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a8db37201a67bb1413b630566f6bbde30">snmp_client_worker_</a>, start_time, <a class="code hl_enumvalue" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac">snmp_cmd_struct::control_type::Hold</a>, <span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(0));</div>
-<div class="line"><span class="lineno">  136</span>            <span class="keywordflow">return</span> command;</div>
-<div class="line"><span class="lineno">  137</span>        }</div>
-<div class="line"><span class="lineno">  138</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="control__tsc__state_8cpp_source.html#l00114">114</a> of file <a class="el" href="control__tsc__state_8cpp_source.html">control_tsc_state.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>    {</div>
+<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">if</span>(!is_reset)</div>
+<div class="line"><span class="lineno">  117</span>        {</div>
+<div class="line"><span class="lineno">  118</span>            uint8_t hold_val = 0;   <span class="comment">//Initialize to 00000000</span></div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span> signal_group : signal_groups)</div>
+<div class="line"><span class="lineno">  121</span>            {</div>
+<div class="line"><span class="lineno">  122</span>                <span class="keywordtype">int</span> phase = <a class="code hl_variable" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a4587ee1f9281ca597fd3c7d73be9a4ae">_tsc_state</a>-&gt;get_phase_number(signal_group);</div>
+<div class="line"><span class="lineno">  123</span>                <span class="comment">// Hold phases in the given movement group</span></div>
+<div class="line"><span class="lineno">  124</span>                <span class="comment">//For Hold only given phase bits are 1. Subtract 1 since phases range from 1-8.</span></div>
+<div class="line"><span class="lineno">  125</span>                hold_val |= (1 &lt;&lt; ( phase - 1));</div>
+<div class="line"><span class="lineno">  126</span>                </div>
+<div class="line"><span class="lineno">  127</span>            }</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>            snmp_cmd_struct command(<a class="code hl_variable" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a8db37201a67bb1413b630566f6bbde30">snmp_client_worker_</a>, start_time, <a class="code hl_enumvalue" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac">snmp_cmd_struct::control_type::Hold</a>, <span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(hold_val));</div>
+<div class="line"><span class="lineno">  130</span>            <span class="keywordflow">return</span> command;</div>
+<div class="line"><span class="lineno">  131</span>        }</div>
+<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  133</span>        {</div>
+<div class="line"><span class="lineno">  134</span>            snmp_cmd_struct command(<a class="code hl_variable" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a8db37201a67bb1413b630566f6bbde30">snmp_client_worker_</a>, start_time, <a class="code hl_enumvalue" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac">snmp_cmd_struct::control_type::Hold</a>, <span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(0));</div>
+<div class="line"><span class="lineno">  135</span>            <span class="keywordflow">return</span> command;</div>
+<div class="line"><span class="lineno">  136</span>        }</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
 <div class="ttc" id="astructtraffic__signal__controller__service_1_1snmp__cmd__struct_html_a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac"><div class="ttname"><a href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac">traffic_signal_controller_service::snmp_cmd_struct::control_type::Hold</a></div><div class="ttdeci">@ Hold</div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="control__tsc__state_8h_source.html#l00080">_tsc_state</a>, <a class="el" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac">traffic_signal_controller_service::snmp_cmd_struct::Hold</a>, and <a class="el" href="control__tsc__state_8h_source.html#l00078">snmp_client_worker_</a>.</p>
@@ -308,31 +308,31 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="control__tsc__state_8cpp_source.html#l00089">89</a> of file <a class="el" href="control__tsc__state_8cpp_source.html">control_tsc_state.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   90</span>    {</div>
-<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">if</span>(!is_reset)</div>
-<div class="line"><span class="lineno">   92</span>        {</div>
-<div class="line"><span class="lineno">   93</span>            uint8_t omit_val = 255; <span class="comment">//Initialize to 11111111</span></div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span> signal_group : signal_groups)</div>
-<div class="line"><span class="lineno">   96</span>            {</div>
-<div class="line"><span class="lineno">   97</span>                <span class="keywordtype">int</span> phase = <a class="code hl_variable" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a4587ee1f9281ca597fd3c7d73be9a4ae">_tsc_state</a>-&gt;get_phase_number(signal_group);</div>
-<div class="line"><span class="lineno">   98</span>                <span class="comment">// Omit all phases except the ones in the given movement group</span></div>
-<div class="line"><span class="lineno">   99</span>                <span class="comment">// For Omit only given phase bits are 0. Subtract 1 since phases range from 1-8.</span></div>
-<div class="line"><span class="lineno">  100</span>                omit_val &amp;= ~(1 &lt;&lt; (phase - 1));</div>
-<div class="line"><span class="lineno">  101</span>                </div>
-<div class="line"><span class="lineno">  102</span>            }</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>            snmp_cmd_struct command(<a class="code hl_variable" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a8db37201a67bb1413b630566f6bbde30">snmp_client_worker_</a>, start_time, <a class="code hl_enumvalue" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071a3f9823fc8c5bf8d5efbb0ad3be5f16c9">snmp_cmd_struct::control_type::Omit</a>, <span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(omit_val));</div>
-<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">return</span> command;</div>
-<div class="line"><span class="lineno">  106</span>        }</div>
-<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  108</span>        {</div>
-<div class="line"><span class="lineno">  109</span>            snmp_cmd_struct command(<a class="code hl_variable" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a8db37201a67bb1413b630566f6bbde30">snmp_client_worker_</a>, start_time, <a class="code hl_enumvalue" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071a3f9823fc8c5bf8d5efbb0ad3be5f16c9">snmp_cmd_struct::control_type::Omit</a>, <span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(0));</div>
-<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">return</span> command;</div>
-<div class="line"><span class="lineno">  111</span>        }</div>
-<div class="line"><span class="lineno">  112</span> </div>
-<div class="line"><span class="lineno">  113</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="control__tsc__state_8cpp_source.html#l00088">88</a> of file <a class="el" href="control__tsc__state_8cpp_source.html">control_tsc_state.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>    {</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">if</span>(!is_reset)</div>
+<div class="line"><span class="lineno">   91</span>        {</div>
+<div class="line"><span class="lineno">   92</span>            uint8_t omit_val = 255; <span class="comment">//Initialize to 11111111</span></div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span> signal_group : signal_groups)</div>
+<div class="line"><span class="lineno">   95</span>            {</div>
+<div class="line"><span class="lineno">   96</span>                <span class="keywordtype">int</span> phase = <a class="code hl_variable" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a4587ee1f9281ca597fd3c7d73be9a4ae">_tsc_state</a>-&gt;get_phase_number(signal_group);</div>
+<div class="line"><span class="lineno">   97</span>                <span class="comment">// Omit all phases except the ones in the given movement group</span></div>
+<div class="line"><span class="lineno">   98</span>                <span class="comment">// For Omit only given phase bits are 0. Subtract 1 since phases range from 1-8.</span></div>
+<div class="line"><span class="lineno">   99</span>                omit_val &amp;= ~(1 &lt;&lt; (phase - 1));</div>
+<div class="line"><span class="lineno">  100</span>                </div>
+<div class="line"><span class="lineno">  101</span>            }</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>            snmp_cmd_struct command(<a class="code hl_variable" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a8db37201a67bb1413b630566f6bbde30">snmp_client_worker_</a>, start_time, <a class="code hl_enumvalue" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071a3f9823fc8c5bf8d5efbb0ad3be5f16c9">snmp_cmd_struct::control_type::Omit</a>, <span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(omit_val));</div>
+<div class="line"><span class="lineno">  104</span>            <span class="keywordflow">return</span> command;</div>
+<div class="line"><span class="lineno">  105</span>        }</div>
+<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  107</span>        {</div>
+<div class="line"><span class="lineno">  108</span>            snmp_cmd_struct command(<a class="code hl_variable" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a8db37201a67bb1413b630566f6bbde30">snmp_client_worker_</a>, start_time, <a class="code hl_enumvalue" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071a3f9823fc8c5bf8d5efbb0ad3be5f16c9">snmp_cmd_struct::control_type::Omit</a>, <span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(0));</div>
+<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">return</span> command;</div>
+<div class="line"><span class="lineno">  110</span>        }</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>    }</div>
 <div class="ttc" id="astructtraffic__signal__controller__service_1_1snmp__cmd__struct_html_a18fec35a5aaf6bd2a3bdfea9073b8071a3f9823fc8c5bf8d5efbb0ad3be5f16c9"><div class="ttname"><a href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071a3f9823fc8c5bf8d5efbb0ad3be5f16c9">traffic_signal_controller_service::snmp_cmd_struct::control_type::Omit</a></div><div class="ttdeci">@ Omit</div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="control__tsc__state_8h_source.html#l00080">_tsc_state</a>, <a class="el" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071a3f9823fc8c5bf8d5efbb0ad3be5f16c9">traffic_signal_controller_service::snmp_cmd_struct::Omit</a>, and <a class="el" href="control__tsc__state_8h_source.html#l00078">snmp_client_worker_</a>.</p>
@@ -455,16 +455,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   81</span> </div>
 <div class="line"><span class="lineno">   82</span>        hold_execution_time = last_event.end_time;</div>
 <div class="line"><span class="lineno">   83</span>        tsc_command_queue.push(<a class="code hl_function" href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a9da7e785af65a1e9ac4417985c4f67fd">create_hold_command</a>(empty_group, hold_execution_time, <span class="keyword">true</span>));</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>        SPDLOG_DEBUG(<span class="stringliteral">&quot;Updated queue&quot;</span>);</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>    }</div>
+<div class="line"><span class="lineno">   84</span>        SPDLOG_DEBUG(<span class="stringliteral">&quot;Updated queue with front command {0}!&quot;</span>, tsc_command_queue.front().get_cmd_info());</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    }</div>
 <div class="ttc" id="aclassstreets__service_1_1streets__clock__singleton_html_ace444a4a74b0cea211bf89ed89371bae"><div class="ttname"><a href="classstreets__service_1_1streets__clock__singleton.html#ace444a4a74b0cea211bf89ed89371bae">streets_service::streets_clock_singleton::time_in_ms</a></div><div class="ttdeci">static uint64_t time_in_ms()</div><div class="ttdoc">Static access to the CarmaClock timeInMilliseconds method (see https://github.com/usdot-fhwa-stol/car...</div><div class="ttdef"><b>Definition:</b> <a href="streets__clock__singleton_8cpp_source.html#l00011">streets_clock_singleton.cpp:11</a></div></div>
-<div class="ttc" id="aclasstraffic__signal__controller__service_1_1control__tsc__state_html_a9da7e785af65a1e9ac4417985c4f67fd"><div class="ttname"><a href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a9da7e785af65a1e9ac4417985c4f67fd">traffic_signal_controller_service::control_tsc_state::create_hold_command</a></div><div class="ttdeci">snmp_cmd_struct create_hold_command(const std::vector&lt; int &gt; &amp;signal_groups, int64_t start_time, bool is_reset=false) const</div><div class="ttdoc">Method to create command for Hold for provided signal groups, which will result in the traffic signal...</div><div class="ttdef"><b>Definition:</b> <a href="control__tsc__state_8cpp_source.html#l00115">control_tsc_state.cpp:115</a></div></div>
-<div class="ttc" id="aclasstraffic__signal__controller__service_1_1control__tsc__state_html_aa9c4865147fcf9f33da2a8d1c4a630d1"><div class="ttname"><a href="classtraffic__signal__controller__service_1_1control__tsc__state.html#aa9c4865147fcf9f33da2a8d1c4a630d1">traffic_signal_controller_service::control_tsc_state::create_omit_command</a></div><div class="ttdeci">snmp_cmd_struct create_omit_command(const std::vector&lt; int &gt; &amp;signal_groups, int64_t start_time, bool is_reset=false) const</div><div class="ttdoc">Method to create OMIT snmp command for provided signal groups, which will result in the traffic signa...</div><div class="ttdef"><b>Definition:</b> <a href="control__tsc__state_8cpp_source.html#l00089">control_tsc_state.cpp:89</a></div></div>
+<div class="ttc" id="aclasstraffic__signal__controller__service_1_1control__tsc__state_html_a9da7e785af65a1e9ac4417985c4f67fd"><div class="ttname"><a href="classtraffic__signal__controller__service_1_1control__tsc__state.html#a9da7e785af65a1e9ac4417985c4f67fd">traffic_signal_controller_service::control_tsc_state::create_hold_command</a></div><div class="ttdeci">snmp_cmd_struct create_hold_command(const std::vector&lt; int &gt; &amp;signal_groups, int64_t start_time, bool is_reset=false) const</div><div class="ttdoc">Method to create command for Hold for provided signal groups, which will result in the traffic signal...</div><div class="ttdef"><b>Definition:</b> <a href="control__tsc__state_8cpp_source.html#l00114">control_tsc_state.cpp:114</a></div></div>
+<div class="ttc" id="aclasstraffic__signal__controller__service_1_1control__tsc__state_html_aa9c4865147fcf9f33da2a8d1c4a630d1"><div class="ttname"><a href="classtraffic__signal__controller__service_1_1control__tsc__state.html#aa9c4865147fcf9f33da2a8d1c4a630d1">traffic_signal_controller_service::control_tsc_state::create_omit_command</a></div><div class="ttdeci">snmp_cmd_struct create_omit_command(const std::vector&lt; int &gt; &amp;signal_groups, int64_t start_time, bool is_reset=false) const</div><div class="ttdoc">Method to create OMIT snmp command for provided signal groups, which will result in the traffic signa...</div><div class="ttdef"><b>Definition:</b> <a href="control__tsc__state_8cpp_source.html#l00088">control_tsc_state.cpp:88</a></div></div>
 <div class="ttc" id="anamespacesimulate__bsm_html_a29b8e2f01a805057636de5ad54422c21"><div class="ttname"><a href="namespacesimulate__bsm.html#a29b8e2f01a805057636de5ad54422c21">simulate_bsm.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="simulate__bsm_8py_source.html#l00019">simulate_bsm.py:19</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="control__tsc__state_8cpp_source.html#l00115">create_hold_command()</a>, <a class="el" href="control__tsc__state_8cpp_source.html#l00089">create_omit_command()</a>, <a class="el" href="simulate__bsm_8py_source.html#l00019">simulate_bsm::i</a>, and <a class="el" href="streets__clock__singleton_8cpp_source.html#l00011">streets_service::streets_clock_singleton::time_in_ms()</a>.</p>
+<p class="reference">References <a class="el" href="control__tsc__state_8cpp_source.html#l00114">create_hold_command()</a>, <a class="el" href="control__tsc__state_8cpp_source.html#l00088">create_omit_command()</a>, <a class="el" href="simulate__bsm_8py_source.html#l00019">simulate_bsm::i</a>, and <a class="el" href="streets__clock__singleton_8cpp_source.html#l00011">streets_service::streets_clock_singleton::time_in_ms()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -503,7 +502,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="control__tsc__state_8h_source.html#l00080">80</a> of file <a class="el" href="control__tsc__state_8h_source.html">control_tsc_state.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00115">create_hold_command()</a>, and <a class="el" href="control__tsc__state_8cpp_source.html#l00089">create_omit_command()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00114">create_hold_command()</a>, and <a class="el" href="control__tsc__state_8cpp_source.html#l00088">create_omit_command()</a>.</p>
 
 </div>
 </div>
@@ -529,7 +528,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="control__tsc__state_8h_source.html#l00078">78</a> of file <a class="el" href="control__tsc__state_8h_source.html">control_tsc_state.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00115">create_hold_command()</a>, and <a class="el" href="control__tsc__state_8cpp_source.html#l00089">create_omit_command()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00114">create_hold_command()</a>, and <a class="el" href="control__tsc__state_8cpp_source.html#l00088">create_omit_command()</a>.</p>
 
 </div>
 </div>
@@ -543,7 +542,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetraffic__signal__controller__service.html">traffic_signal_controller_service</a></li><li class="navelem"><a class="el" href="classtraffic__signal__controller__service_1_1control__tsc__state.html">control_tsc_state</a></li>
-    <li class="footer">Generated on Wed May 24 2023 22:08:44 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Jun 2 2023 12:27:54 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

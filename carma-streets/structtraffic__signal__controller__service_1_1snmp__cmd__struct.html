@@ -265,24 +265,24 @@ Public Attributes</h2></td></tr>
 <p>Method to return information about the snmp set command. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns string formatted as "control_cmd_type:&lt;HOLD/OMIT&gt;;execution_start_time:&lt;calculated_start_time&gt;;signal_groups_set:&lt;signal groups being set separated by commas&gt;". </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="control__tsc__state_8cpp_source.html#l00140">140</a> of file <a class="el" href="control__tsc__state_8cpp_source.html">control_tsc_state.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  140</span>                                                 {</div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>        std::string command_type;</div>
-<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a42bc93c0f45164999d4e3395e43c444f">control_type_</a> == <a class="code hl_enumvalue" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac">control_type::Hold</a>){</div>
-<div class="line"><span class="lineno">  144</span>            command_type = <span class="stringliteral">&quot;Hold&quot;</span>;</div>
-<div class="line"><span class="lineno">  145</span>        }</div>
-<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  147</span>            command_type = <span class="stringliteral">&quot;Omit&quot;</span>;</div>
-<div class="line"><span class="lineno">  148</span>        }</div>
-<div class="line"><span class="lineno">  149</span>        std::string execution_start_time = <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(<a class="code hl_variable" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#ad6bdc7b343392e7357a7bf4a9c5d58e8">start_time_</a>);</div>
-<div class="line"><span class="lineno">  150</span> </div>
-<div class="line"><span class="lineno">  151</span>        <span class="comment">// Convert value set to phases nums</span></div>
-<div class="line"><span class="lineno">  152</span>        std::string value_set = <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(<a class="code hl_variable" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#ad6de041a8b0f7fe6e16400b3843ca285">set_val_</a>.<a class="code hl_variable" href="structtraffic__signal__controller__service_1_1snmp__response__obj.html#abbd5d90ba42fc8e1c7747f97b965da30">val_int</a>);</div>
-<div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;control_cmd_type:&quot;</span> + command_type + <span class="stringliteral">&quot;;execution_start_time:&quot;</span> + execution_start_time + <span class="stringliteral">&quot;;value_set:&quot;</span> + value_set;</div>
-<div class="line"><span class="lineno">  155</span>        </div>
-<div class="line"><span class="lineno">  156</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="control__tsc__state_8cpp_source.html#l00139">139</a> of file <a class="el" href="control__tsc__state_8cpp_source.html">control_tsc_state.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>                                                 {</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>        std::string command_type;</div>
+<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a42bc93c0f45164999d4e3395e43c444f">control_type_</a> == <a class="code hl_enumvalue" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac">control_type::Hold</a>){</div>
+<div class="line"><span class="lineno">  143</span>            command_type = <span class="stringliteral">&quot;Hold&quot;</span>;</div>
+<div class="line"><span class="lineno">  144</span>        }</div>
+<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  146</span>            command_type = <span class="stringliteral">&quot;Omit&quot;</span>;</div>
+<div class="line"><span class="lineno">  147</span>        }</div>
+<div class="line"><span class="lineno">  148</span>        std::string execution_start_time = <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(<a class="code hl_variable" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#ad6bdc7b343392e7357a7bf4a9c5d58e8">start_time_</a>);</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>        <span class="comment">// Convert value set to phases nums</span></div>
+<div class="line"><span class="lineno">  151</span>        std::string value_set = <a class="code hl_function" href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">std::to_string</a>(<a class="code hl_variable" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#ad6de041a8b0f7fe6e16400b3843ca285">set_val_</a>.<a class="code hl_variable" href="structtraffic__signal__controller__service_1_1snmp__response__obj.html#abbd5d90ba42fc8e1c7747f97b965da30">val_int</a>);</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;control_cmd_type:&quot;</span> + command_type + <span class="stringliteral">&quot;;execution_start_time:&quot;</span> + execution_start_time + <span class="stringliteral">&quot;;value_set:&quot;</span> + value_set;</div>
+<div class="line"><span class="lineno">  154</span>        </div>
+<div class="line"><span class="lineno">  155</span>    }</div>
 <div class="ttc" id="antcip__1202__ext_8h_html_a576de7b60eacee3f1a70393a005502cd"><div class="ttname"><a href="ntcip__1202__ext_8h.html#a576de7b60eacee3f1a70393a005502cd">to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">Returns std::string representation of ntcip_1202_ext message including phase_times array.</div></div>
 <div class="ttc" id="astructtraffic__signal__controller__service_1_1snmp__cmd__struct_html_a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac"><div class="ttname"><a href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac">traffic_signal_controller_service::snmp_cmd_struct::control_type::Hold</a></div><div class="ttdeci">@ Hold</div></div>
 </div><!-- fragment -->
@@ -371,7 +371,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="control__tsc__state_8h_source.html#l00029">29</a> of file <a class="el" href="control__tsc__state_8h_source.html">control_tsc_state.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00140">get_cmd_info()</a>, and <a class="el" href="control__tsc__state_8h_source.html#l00043">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00139">get_cmd_info()</a>, and <a class="el" href="control__tsc__state_8h_source.html#l00043">run()</a>.</p>
 
 </div>
 </div>
@@ -389,7 +389,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="control__tsc__state_8h_source.html#l00025">25</a> of file <a class="el" href="control__tsc__state_8h_source.html">control_tsc_state.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="control__tsc__state_8h_source.html#l00031">snmp_cmd_struct()</a>, <a class="el" href="control__tsc__state_8cpp_source.html#l00140">get_cmd_info()</a>, and <a class="el" href="control__tsc__state_8h_source.html#l00043">run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="control__tsc__state_8h_source.html#l00031">snmp_cmd_struct()</a>, <a class="el" href="control__tsc__state_8cpp_source.html#l00139">get_cmd_info()</a>, and <a class="el" href="control__tsc__state_8h_source.html#l00043">run()</a>.</p>
 
 </div>
 </div>
@@ -425,7 +425,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="control__tsc__state_8h_source.html#l00027">27</a> of file <a class="el" href="control__tsc__state_8h_source.html">control_tsc_state.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00140">get_cmd_info()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00139">get_cmd_info()</a>.</p>
 
 </div>
 </div>
@@ -439,7 +439,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetraffic__signal__controller__service.html">traffic_signal_controller_service</a></li><li class="navelem"><a class="el" href="structtraffic__signal__controller__service_1_1snmp__cmd__struct.html">snmp_cmd_struct</a></li>
-    <li class="footer">Generated on Wed May 24 2023 22:08:44 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Jun 2 2023 12:27:54 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

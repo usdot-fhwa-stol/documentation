@@ -102,6 +102,7 @@ var namespaces_dup =
       [ "vehicle_count", "namespacesimulate__vehicle__status__intent__pub__uc3.html#a54e4157ecd01af809cad2fb13640d16c", null ]
     ] ],
     [ "streets_desired_phase_plan", "namespacestreets__desired__phase__plan.html", "namespacestreets__desired__phase__plan" ],
+    [ "streets_phase_control_schedule", "namespacestreets__phase__control__schedule.html", "namespacestreets__phase__control__schedule" ],
     [ "streets_service", "namespacestreets__service.html", "namespacestreets__service" ],
     [ "streets_signal_optimization", "namespacestreets__signal__optimization.html", "namespacestreets__signal__optimization" ],
     [ "streets_tsc_configuration", "namespacestreets__tsc__configuration.html", "namespacestreets__tsc__configuration" ],

@@ -5,6 +5,7 @@ var classtraffic__signal__controller__service_1_1tsc__service =
     [ "tsc_service", "classtraffic__signal__controller__service_1_1tsc__service.html#af1557609aa8e488d04f646e09cde9414", null ],
     [ "configure_snmp_cmd_logger", "classtraffic__signal__controller__service_1_1tsc__service.html#a4c0e96db941eb4fcd552e8f119a93d48", null ],
     [ "consume_desired_phase_plan", "classtraffic__signal__controller__service_1_1tsc__service.html#aee54b7d1fe61af7a3141f56bf234e91e", null ],
+    [ "consume_phase_control_schedule", "classtraffic__signal__controller__service_1_1tsc__service.html#a9c101262fa4c3fec9cf907b9a1f8ffa4", null ],
     [ "control_tsc_phases", "classtraffic__signal__controller__service_1_1tsc__service.html#a2c68ad9bb9fc1a33029f50872687e87d", null ],
     [ "enable_spat", "classtraffic__signal__controller__service_1_1tsc__service.html#a34c50831f1ed8f48d8123b05b6724b32", null ],
     [ "FRIEND_TEST", "classtraffic__signal__controller__service_1_1tsc__service.html#ad3d153a7741a3162fb7a499cbde14425", null ],
@@ -29,6 +30,8 @@ var classtraffic__signal__controller__service_1_1tsc__service =
     [ "enable_snmp_cmd_logging_", "classtraffic__signal__controller__service_1_1tsc__service.html#a7d7ed6cff78c8b161b71f3cfedabc452", null ],
     [ "intersection_client_ptr", "classtraffic__signal__controller__service_1_1tsc__service.html#ab618504f0fe46fe639c43e48f9d6a264", null ],
     [ "monitor_dpp_ptr", "classtraffic__signal__controller__service_1_1tsc__service.html#ac5cfe48a5c16ff26bbcaf6f5563a0a1a", null ],
+    [ "phase_control_schedule_consumer", "classtraffic__signal__controller__service_1_1tsc__service.html#a1362a53dbc7f4e91fa256a2f4f45c3e0", null ],
+    [ "phase_control_schedule_ptr", "classtraffic__signal__controller__service_1_1tsc__service.html#ae7f73c472c3210f468d0ea451defe4a4", null ],
     [ "snmp_client_ptr", "classtraffic__signal__controller__service_1_1tsc__service.html#a9e901a004e42f8fd670d54e16f4fb3bb", null ],
     [ "spat_producer", "classtraffic__signal__controller__service_1_1tsc__service.html#a1dfbd2157cd62094844fb2e1a6d70711", null ],
     [ "spat_ptr", "classtraffic__signal__controller__service_1_1tsc__service.html#ae77457ef9ea248e80a34a2a145a59096", null ],
@@ -39,5 +42,6 @@ var classtraffic__signal__controller__service_1_1tsc__service =
     [ "tsc_config_state_ptr", "classtraffic__signal__controller__service_1_1tsc__service.html#a365cce2a524c81a204b83a15104b4f4e", null ],
     [ "tsc_set_command_queue_", "classtraffic__signal__controller__service_1_1tsc__service.html#a2534dec3104737df7015c073c7e74359", null ],
     [ "tsc_state_ptr", "classtraffic__signal__controller__service_1_1tsc__service.html#a26027ff7d1a2fdf05a67be10543aa1bd", null ],
-    [ "use_desired_phase_plan_update_", "classtraffic__signal__controller__service_1_1tsc__service.html#a300f229c74720d786252e32af6a5e02f", null ]
+    [ "use_desired_phase_plan_update_", "classtraffic__signal__controller__service_1_1tsc__service.html#a300f229c74720d786252e32af6a5e02f", null ],
+    [ "use_mmitss_mrp", "classtraffic__signal__controller__service_1_1tsc__service.html#ac4be894a6d67bac8bf43ea16b52ca4ea", null ]
 ];

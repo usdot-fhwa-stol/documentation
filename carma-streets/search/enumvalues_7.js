@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['integer_0',['INTEGER',['../structtraffic__signal__controller__service_1_1snmp__response__obj.html#a7379a4a3fcabddd7000d9be76111c38aa5d5cd46919fa987731fb2edefe0f2a0c',1,'traffic_signal_controller_service::snmp_response_obj']]],
-  ['intersection_1',['intersection',['../namespaceintersection__model.html#a9665ff9720af0b25d1c6a216e7bf66b4a26fef4087b2c10cb5ab7e4a5f5436ff4',1,'intersection_model']]]
+  ['hold_0',['Hold',['../structtraffic__signal__controller__service_1_1snmp__cmd__struct.html#a18fec35a5aaf6bd2a3bdfea9073b8071abcd8db575b47c838e5d551e3973db4ac',1,'traffic_signal_controller_service::snmp_cmd_struct']]],
+  ['hold_5fveh_5fphases_1',['HOLD_VEH_PHASES',['../namespacestreets__phase__control__schedule.html#ab17436d7f1daa7794948836ad32f0702a2f788a6ceab230c088b8286b6c50317c',1,'streets_phase_control_schedule']]]
 ];

@@ -116,6 +116,11 @@ var annotated_dup =
       [ "streets_desired_phase_plan", "structstreets__desired__phase__plan_1_1streets__desired__phase__plan.html", "structstreets__desired__phase__plan_1_1streets__desired__phase__plan" ],
       [ "streets_desired_phase_plan_exception", "classstreets__desired__phase__plan_1_1streets__desired__phase__plan__exception.html", "classstreets__desired__phase__plan_1_1streets__desired__phase__plan__exception" ]
     ] ],
+    [ "streets_phase_control_schedule", "namespacestreets__phase__control__schedule.html", [
+      [ "streets_phase_control_command", "structstreets__phase__control__schedule_1_1streets__phase__control__command.html", "structstreets__phase__control__schedule_1_1streets__phase__control__command" ],
+      [ "streets_phase_control_schedule", "structstreets__phase__control__schedule_1_1streets__phase__control__schedule.html", "structstreets__phase__control__schedule_1_1streets__phase__control__schedule" ],
+      [ "streets_phase_control_schedule_exception", "classstreets__phase__control__schedule_1_1streets__phase__control__schedule__exception.html", "classstreets__phase__control__schedule_1_1streets__phase__control__schedule__exception" ]
+    ] ],
     [ "streets_service", "namespacestreets__service.html", [
       [ "simulation", "namespacestreets__service_1_1simulation.html", [
         [ "time_sync_message", "structstreets__service_1_1simulation_1_1time__sync__message.html", "structstreets__service_1_1simulation_1_1time__sync__message" ]

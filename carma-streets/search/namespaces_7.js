@@ -13,9 +13,10 @@ var searchData=
   ['simulate_5fvehicle_5fstatus_5fintent_5fpub_5fuc3_10',['simulate_vehicle_status_intent_pub_uc3',['../namespacesimulate__vehicle__status__intent__pub__uc3.html',1,'']]],
   ['simulation_11',['simulation',['../namespacestreets__service_1_1simulation.html',1,'streets_service']]],
   ['streets_5fdesired_5fphase_5fplan_12',['streets_desired_phase_plan',['../namespacestreets__desired__phase__plan.html',1,'']]],
-  ['streets_5fservice_13',['streets_service',['../namespacestreets__service.html',1,'']]],
-  ['streets_5fsignal_5foptimization_14',['streets_signal_optimization',['../namespacestreets__signal__optimization.html',1,'']]],
-  ['streets_5ftsc_5fconfiguration_15',['streets_tsc_configuration',['../namespacestreets__tsc__configuration.html',1,'']]],
-  ['streets_5fvehicle_5fscheduler_16',['streets_vehicle_scheduler',['../namespacestreets__vehicle__scheduler.html',1,'']]],
-  ['streets_5fvehicles_17',['streets_vehicles',['../namespacestreets__vehicles.html',1,'']]]
+  ['streets_5fphase_5fcontrol_5fschedule_13',['streets_phase_control_schedule',['../namespacestreets__phase__control__schedule.html',1,'']]],
+  ['streets_5fservice_14',['streets_service',['../namespacestreets__service.html',1,'']]],
+  ['streets_5fsignal_5foptimization_15',['streets_signal_optimization',['../namespacestreets__signal__optimization.html',1,'']]],
+  ['streets_5ftsc_5fconfiguration_16',['streets_tsc_configuration',['../namespacestreets__tsc__configuration.html',1,'']]],
+  ['streets_5fvehicle_5fscheduler_17',['streets_vehicle_scheduler',['../namespacestreets__vehicle__scheduler.html',1,'']]],
+  ['streets_5fvehicles_18',['streets_vehicles',['../namespacestreets__vehicles.html',1,'']]]
 ];

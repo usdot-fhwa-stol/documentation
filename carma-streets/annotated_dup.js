@@ -142,6 +142,12 @@ var annotated_dup =
       [ "streets_desired_phase_plan_generator_configuration", "structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html", "structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration" ],
       [ "streets_desired_phase_plan_generator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception.html", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception" ]
     ] ],
+    [ "streets_snmp_cmd", "namespacestreets__snmp__cmd.html", [
+      [ "snmp_cmd_struct", "structstreets__snmp__cmd_1_1snmp__cmd__struct.html", "structstreets__snmp__cmd_1_1snmp__cmd__struct" ],
+      [ "snmp_response_obj", "structstreets__snmp__cmd_1_1snmp__response__obj.html", "structstreets__snmp__cmd_1_1snmp__response__obj" ],
+      [ "streets_snmp_cmd_converter", "classstreets__snmp__cmd_1_1streets__snmp__cmd__converter.html", "classstreets__snmp__cmd_1_1streets__snmp__cmd__converter" ],
+      [ "streets_snmp_cmd_exception", "classstreets__snmp__cmd_1_1streets__snmp__cmd__exception.html", "classstreets__snmp__cmd_1_1streets__snmp__cmd__exception" ]
+    ] ],
     [ "streets_tsc_configuration", "namespacestreets__tsc__configuration.html", [
       [ "signal_group_configuration", "structstreets__tsc__configuration_1_1signal__group__configuration.html", "structstreets__tsc__configuration_1_1signal__group__configuration" ],
       [ "tsc_configuration_state", "structstreets__tsc__configuration_1_1tsc__configuration__state.html", "structstreets__tsc__configuration_1_1tsc__configuration__state" ],
@@ -179,8 +185,6 @@ var annotated_dup =
       [ "signal_group_state", "structtraffic__signal__controller__service_1_1signal__group__state.html", "structtraffic__signal__controller__service_1_1signal__group__state" ],
       [ "snmp_client", "classtraffic__signal__controller__service_1_1snmp__client.html", "classtraffic__signal__controller__service_1_1snmp__client" ],
       [ "snmp_client_exception", "classtraffic__signal__controller__service_1_1snmp__client__exception.html", "classtraffic__signal__controller__service_1_1snmp__client__exception" ],
-      [ "snmp_cmd_struct", "structtraffic__signal__controller__service_1_1snmp__cmd__struct.html", "structtraffic__signal__controller__service_1_1snmp__cmd__struct" ],
-      [ "snmp_response_obj", "structtraffic__signal__controller__service_1_1snmp__response__obj.html", "structtraffic__signal__controller__service_1_1snmp__response__obj" ],
       [ "spat_worker", "classtraffic__signal__controller__service_1_1spat__worker.html", "classtraffic__signal__controller__service_1_1spat__worker" ],
       [ "tsc_service", "classtraffic__signal__controller__service_1_1tsc__service.html", "classtraffic__signal__controller__service_1_1tsc__service" ],
       [ "tsc_state", "classtraffic__signal__controller__service_1_1tsc__state.html", "classtraffic__signal__controller__service_1_1tsc__state" ],

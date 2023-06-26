@@ -19,9 +19,13 @@ var namespaces_dup =
       [ "MAXIMUM_GREEN", "namespacentcip__oids.html#a4affb9d542bfdef8b1a3a2ef06941c7c", null ],
       [ "MINIMUM_GREEN", "namespacentcip__oids.html#a90dca09384bbe13e3ee22c4ba9510079", null ],
       [ "PHASE_CONCURRENCY", "namespacentcip__oids.html#aedc3a19c20b2cd545d70616264b5805d", null ],
+      [ "PHASE_FORCEOFF_CONTROL", "namespacentcip__oids.html#a9754f71216121bb765325cce263dc48e", null ],
       [ "PHASE_HOLD_CONTROL", "namespacentcip__oids.html#aad289043e420893eb52f7595358c8f37", null ],
       [ "PHASE_OMIT_CONTROL", "namespacentcip__oids.html#a7f4c260396ed3a1f385340bd69e67fd7", null ],
+      [ "PHASE_PEDESTRIAN_CALL_CONTROL", "namespacentcip__oids.html#ace43916773a5e0b8c6091a5c342876dd", null ],
+      [ "PHASE_PEDESTRIAN_OMIT_CONTROL", "namespacentcip__oids.html#a1a4d795675aeb4a26f77601304456ff5", null ],
       [ "PHASE_STATUS_GROUP_PHASE_NEXT", "namespacentcip__oids.html#a84cca9aac94935e04813e700bbd36e2f", null ],
+      [ "PHASE_VEHICLE_CALL_CONTROL", "namespacentcip__oids.html#a3e3bc9c22f8201933a64b0e23240b129", null ],
       [ "RED_CLEAR_PARAMETER", "namespacentcip__oids.html#a3ea2c7de3db40c5169671e9c74083bba", null ],
       [ "SEQUENCE_DATA", "namespacentcip__oids.html#aa886cce34306b7d970f546e495a80480", null ],
       [ "YELLOW_CHANGE_PARAMETER", "namespacentcip__oids.html#a8af63441377ae9f0975ef2d6dc2c744e", null ]
@@ -73,6 +77,16 @@ var namespaces_dup =
       [ "timestamp", "namespacesimulate__mobilitypath.html#a27e74cdd3bb1debc34b27c1053b9f42b", null ],
       [ "value", "namespacesimulate__mobilitypath.html#a057f50dd86724ceb90f5ce377a855358", null ]
     ] ],
+    [ "simulate_phase_control_schedule", "namespacesimulate__phase__control__schedule.html", [
+      [ "read_json", "namespacesimulate__phase__control__schedule.html#a53b540c103a695de72131a1f0c123d3f", null ],
+      [ "curr_time", "namespacesimulate__phase__control__schedule.html#a27642444488efc82460f00e8cd30d4fb", null ],
+      [ "data", "namespacesimulate__phase__control__schedule.html#a411a2a61447e7a7933df280c3c1cf406", null ],
+      [ "epoch", "namespacesimulate__phase__control__schedule.html#af3059b4eb36d8ed304bf08da6bcded78", null ],
+      [ "i", "namespacesimulate__phase__control__schedule.html#a1ddd8b18a546d6ecb56e73061d856d1d", null ],
+      [ "obj", "namespacesimulate__phase__control__schedule.html#a17784ce1220bd47891c5f55419e81f98", null ],
+      [ "producer", "namespacesimulate__phase__control__schedule.html#a6500113ff052d4d345c4dd8248e30156", null ],
+      [ "value", "namespacesimulate__phase__control__schedule.html#aa0aeaa4b9672cfd528114b41e068817e", null ]
+    ] ],
     [ "simulate_timestep", "namespacesimulate__timestep.html", [
       [ "count", "namespacesimulate__timestep.html#a987779bb6dbec98ea9a2d66ad97f2b30", null ],
       [ "i", "namespacesimulate__timestep.html#ac7407db88a78b570541ffa140dec337e", null ],
@@ -105,6 +119,7 @@ var namespaces_dup =
     [ "streets_phase_control_schedule", "namespacestreets__phase__control__schedule.html", "namespacestreets__phase__control__schedule" ],
     [ "streets_service", "namespacestreets__service.html", "namespacestreets__service" ],
     [ "streets_signal_optimization", "namespacestreets__signal__optimization.html", "namespacestreets__signal__optimization" ],
+    [ "streets_snmp_cmd", "namespacestreets__snmp__cmd.html", "namespacestreets__snmp__cmd" ],
     [ "streets_tsc_configuration", "namespacestreets__tsc__configuration.html", "namespacestreets__tsc__configuration" ],
     [ "streets_vehicle_scheduler", "namespacestreets__vehicle__scheduler.html", "namespacestreets__vehicle__scheduler" ],
     [ "streets_vehicles", "namespacestreets__vehicles.html", "namespacestreets__vehicles" ],

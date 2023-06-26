@@ -134,62 +134,66 @@ $(document).ready(function(){initNavTree('streets__phase__control__schedule_8cpp
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                std::string command_type_str = command_itr[<span class="stringliteral">&quot;commandType&quot;</span>].GetString();</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                toLowerCaseAndTrim(command_type_str);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <a class="code hl_struct" href="structstreets__phase__control__schedule_1_1streets__phase__control__command.html">streets_phase_control_command</a> command(command_type_str, command_itr[<span class="stringliteral">&quot;commandPhase&quot;</span>].GetInt(), command_itr[<span class="stringliteral">&quot;commandStartTime&quot;</span>].GetUint64(), command_itr[<span class="stringliteral">&quot;commandEndTime&quot;</span>].GetUint64());</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                cmd_v.push_back(command);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="comment">//Display a warning message when receiving two schedules with commands, and there are no clear schedule in between.</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keywordflow">if</span> (!commands.empty())</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                SPDLOG_WARN(<span class="stringliteral">&quot;Current schedule has commands execution, but new schedule is not a clear schedule!&quot;</span>);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="comment">// Always replacing the schedule commands with the latest new schedule.</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            commands = cmd_v;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="comment">// Make sure clear schedule indicator is false when there are commands in schedule</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            is_clear_current_schedule = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (doc.HasMember(<span class="stringliteral">&quot;Schedule&quot;</span>) &amp;&amp; doc.FindMember(<span class="stringliteral">&quot;Schedule&quot;</span>)-&gt;value.IsString())</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            std::string <a class="code hl_variable" href="namespacesimulate__bsm.html#a4e420317ae55cdf52ea0066e7a2b5fba">value</a> = doc[<span class="stringliteral">&quot;Schedule&quot;</span>].GetString();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            toLowerCaseAndTrim(<a class="code hl_variable" href="namespacesimulate__bsm.html#a4e420317ae55cdf52ea0066e7a2b5fba">value</a>);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__bsm.html#a4e420317ae55cdf52ea0066e7a2b5fba">value</a> == <span class="stringliteral">&quot;clear&quot;</span>)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="comment">// Clear the commands from the schedule</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                commands.clear();</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                is_clear_current_schedule = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordflow">throw</span> <a class="code hl_class" href="classstreets__phase__control__schedule_1_1streets__phase__control__schedule__exception.html">streets_phase_control_schedule_exception</a>(<span class="stringliteral">&quot;streets_phase_control_schedule message is Schedule property has invalid value (=&quot;</span> + <a class="code hl_variable" href="namespacesimulate__bsm.html#a4e420317ae55cdf52ea0066e7a2b5fba">value</a> + <span class="stringliteral">&quot;) !&quot;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="keywordflow">if</span>(command_itr[<span class="stringliteral">&quot;commandStartTime&quot;</span>].GetUint64() &gt; command_itr[<span class="stringliteral">&quot;commandEndTime&quot;</span>].GetUint64())</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                    <span class="keywordflow">throw</span> <a class="code hl_class" href="classstreets__phase__control__schedule_1_1streets__phase__control__schedule__exception.html">streets_phase_control_schedule_exception</a>(<span class="stringliteral">&quot;streets_phase_control_schedule message commandStartTime value cannot be greater than commandEndTime value.&quot;</span>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                <a class="code hl_struct" href="structstreets__phase__control__schedule_1_1streets__phase__control__command.html">streets_phase_control_command</a> command(command_type_str, command_itr[<span class="stringliteral">&quot;commandPhase&quot;</span>].GetInt(), command_itr[<span class="stringliteral">&quot;commandStartTime&quot;</span>].GetUint64(), command_itr[<span class="stringliteral">&quot;commandEndTime&quot;</span>].GetUint64());</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                cmd_v.push_back(command);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="comment">//Display a warning message when receiving two schedules with commands, and there are no clear schedule in between.</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">if</span> (!commands.empty())</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                SPDLOG_WARN(<span class="stringliteral">&quot;Current schedule has commands execution, but new schedule is not a clear schedule!&quot;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="comment">// Always replacing the schedule commands with the latest new schedule.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            commands = cmd_v;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="comment">// Make sure clear schedule indicator is false when there are commands in schedule</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            is_clear_current_schedule = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (doc.HasMember(<span class="stringliteral">&quot;Schedule&quot;</span>) &amp;&amp; doc.FindMember(<span class="stringliteral">&quot;Schedule&quot;</span>)-&gt;value.IsString())</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            std::string <a class="code hl_variable" href="namespacesimulate__bsm.html#a4e420317ae55cdf52ea0066e7a2b5fba">value</a> = doc[<span class="stringliteral">&quot;Schedule&quot;</span>].GetString();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            toLowerCaseAndTrim(<a class="code hl_variable" href="namespacesimulate__bsm.html#a4e420317ae55cdf52ea0066e7a2b5fba">value</a>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__bsm.html#a4e420317ae55cdf52ea0066e7a2b5fba">value</a> == <span class="stringliteral">&quot;clear&quot;</span>)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="comment">// Clear the commands from the schedule</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                commands.clear();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                is_clear_current_schedule = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">throw</span> <a class="code hl_class" href="classstreets__phase__control__schedule_1_1streets__phase__control__schedule__exception.html">streets_phase_control_schedule_exception</a>(<span class="stringliteral">&quot;streets_phase_control_schedule message is missing required Schedule property, or schedule value is neither string nor array!&quot;</span>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">throw</span> <a class="code hl_class" href="classstreets__phase__control__schedule_1_1streets__phase__control__schedule__exception.html">streets_phase_control_schedule_exception</a>(<span class="stringliteral">&quot;streets_phase_control_schedule message is Schedule property has invalid value (=&quot;</span> + <a class="code hl_variable" href="namespacesimulate__bsm.html#a4e420317ae55cdf52ea0066e7a2b5fba">value</a> + <span class="stringliteral">&quot;) !&quot;</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            }</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structstreets__phase__control__schedule_1_1streets__phase__control__schedule.html#ae1d72459230a661b7f119d5d897bab04">   83</a></span>    <span class="keywordtype">void</span> streets_phase_control_schedule::toLowerCaseAndTrim(std::string &amp;value_str)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        boost::to_lower(value_str);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        boost::algorithm::trim(value_str);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structstreets__phase__control__schedule_1_1streets__phase__control__schedule.html#a7d30a82d4eeacefac8c73aca00210052">   89</a></span>    std::ostream &amp;<a class="code hl_function" href="namespacestreets__phase__control__schedule.html#acde2f583985f8615e54471d08a9094ec">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code hl_namespace" href="namespacestreets__phase__control__schedule.html">streets_phase_control_schedule</a>&amp; schedule)</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        os &lt;&lt; <span class="stringliteral">&quot;Clear status: &quot;</span> &lt;&lt; (schedule.is_clear_current_schedule ? <span class="stringliteral">&quot;True&quot;</span> : <span class="stringliteral">&quot;False&quot;</span>);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">if</span> (!schedule.is_clear_current_schedule)</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            os &lt;&lt; <span class="stringliteral">&quot;, commands [&quot;</span>;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;command : schedule.commands)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                os &lt;&lt; <span class="stringliteral">&quot;{&quot;</span> &lt;&lt; command &lt;&lt; <span class="stringliteral">&quot;},&quot;</span>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            os &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> os;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">throw</span> <a class="code hl_class" href="classstreets__phase__control__schedule_1_1streets__phase__control__schedule__exception.html">streets_phase_control_schedule_exception</a>(<span class="stringliteral">&quot;streets_phase_control_schedule message is missing required Schedule property, or schedule value is neither string nor array!&quot;</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structstreets__phase__control__schedule_1_1streets__phase__control__schedule.html#ae1d72459230a661b7f119d5d897bab04">   87</a></span>    <span class="keywordtype">void</span> streets_phase_control_schedule::toLowerCaseAndTrim(std::string &amp;value_str)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        boost::to_lower(value_str);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        boost::algorithm::trim(value_str);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="structstreets__phase__control__schedule_1_1streets__phase__control__schedule.html#a7d30a82d4eeacefac8c73aca00210052">   93</a></span>    std::ostream &amp;<a class="code hl_function" href="namespacestreets__phase__control__schedule.html#acde2f583985f8615e54471d08a9094ec">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code hl_namespace" href="namespacestreets__phase__control__schedule.html">streets_phase_control_schedule</a>&amp; schedule)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        os &lt;&lt; <span class="stringliteral">&quot;Clear status: &quot;</span> &lt;&lt; (schedule.is_clear_current_schedule ? <span class="stringliteral">&quot;True&quot;</span> : <span class="stringliteral">&quot;False&quot;</span>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">if</span> (!schedule.is_clear_current_schedule)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            os &lt;&lt; <span class="stringliteral">&quot;, commands [&quot;</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;command : schedule.commands)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                os &lt;&lt; <span class="stringliteral">&quot;{&quot;</span> &lt;&lt; command &lt;&lt; <span class="stringliteral">&quot;},&quot;</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            os &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">return</span> os;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
 <div class="ttc" id="aclassstreets__phase__control__schedule_1_1streets__phase__control__schedule__exception_html"><div class="ttname"><a href="classstreets__phase__control__schedule_1_1streets__phase__control__schedule__exception.html">streets_phase_control_schedule::streets_phase_control_schedule_exception</a></div><div class="ttdoc">Runtime error related to processing desired phase plan.</div><div class="ttdef"><b>Definition:</b> <a href="streets__phase__control__schedule__exception_8h_source.html#l00011">streets_phase_control_schedule_exception.h:11</a></div></div>
 <div class="ttc" id="anamespacesimulate__bsm_html_a4e420317ae55cdf52ea0066e7a2b5fba"><div class="ttname"><a href="namespacesimulate__bsm.html#a4e420317ae55cdf52ea0066e7a2b5fba">simulate_bsm.value</a></div><div class="ttdeci">value</div><div class="ttdef"><b>Definition:</b> <a href="simulate__bsm_8py_source.html#l00024">simulate_bsm.py:24</a></div></div>
 <div class="ttc" id="anamespacestreets__phase__control__schedule_html"><div class="ttname"><a href="namespacestreets__phase__control__schedule.html">streets_phase_control_schedule</a></div><div class="ttdef"><b>Definition:</b> <a href="streets__phase__control__command_8h_source.html#l00008">streets_phase_control_command.h:9</a></div></div>
@@ -202,7 +206,7 @@ $(document).ready(function(){initNavTree('streets__phase__control__schedule_8cpp
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_ae16f81f3adaed1b7f2ce47d60bade96.html">streets_utils</a></li><li class="navelem"><a class="el" href="dir_1a1a5c0a19b8a04495ac147886c92e99.html">streets_phase_control_schedule</a></li><li class="navelem"><a class="el" href="dir_9ff907d594ab1b49f4023f18d741c61a.html">src</a></li><li class="navelem"><a class="el" href="dir_6acf6ba4646ce65bb33b63814cce66c9.html">models</a></li><li class="navelem"><a class="el" href="streets__phase__control__schedule_8cpp.html">streets_phase_control_schedule.cpp</a></li>
-    <li class="footer">Generated on Tue Jun 13 2023 18:44:43 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Jun 26 2023 13:04:49 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

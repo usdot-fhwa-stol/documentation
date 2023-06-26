@@ -18,6 +18,7 @@ var classtraffic__signal__controller__service_1_1tsc__state =
     [ "get_phases_associated_with_channel", "classtraffic__signal__controller__service_1_1tsc__state.html#a74f035567d2d16a8cb75413845bebb68", null ],
     [ "get_red_clearance", "classtraffic__signal__controller__service_1_1tsc__state.html#ae5bfca513648fa55566289fe8a9de750", null ],
     [ "get_red_duration", "classtraffic__signal__controller__service_1_1tsc__state.html#acaee10dcfb57b70be35a81723b21761b", null ],
+    [ "get_signal_group_map", "classtraffic__signal__controller__service_1_1tsc__state.html#a4a5b2b749e82eb670578d63e797de34b", null ],
     [ "get_signal_group_state_map", "classtraffic__signal__controller__service_1_1tsc__state.html#a27876c0c6172cbb37788cadd97bf6ff3", null ],
     [ "get_signal_group_to_ped_phase_map", "classtraffic__signal__controller__service_1_1tsc__state.html#ab8c5b30b02b58f1b0f875c5a2c3eff13", null ],
     [ "get_tsc_config_state", "classtraffic__signal__controller__service_1_1tsc__state.html#a05b2aa1aff298e094fd02d59b067e4e7", null ],

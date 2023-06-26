@@ -21,7 +21,7 @@ var classtraffic__signal__controller__service_1_1tsc__service =
     [ "operator=", "classtraffic__signal__controller__service_1_1tsc__service.html#a0d64c3a5157eb5d30cac4e54772e4b90", null ],
     [ "produce_spat_json", "classtraffic__signal__controller__service_1_1tsc__service.html#aa4fb7763e7ae8b9e630fd7fa10bc2479", null ],
     [ "produce_tsc_config_json", "classtraffic__signal__controller__service_1_1tsc__service.html#a5ae2c7b9e7f0ebd7f62be1f5ffccf65e", null ],
-    [ "set_tsc_hold_and_omit", "classtraffic__signal__controller__service_1_1tsc__service.html#aa8847e5d15fac78c12807cc053dc343b", null ],
+    [ "set_tsc_hold_and_omit_forceoff_call", "classtraffic__signal__controller__service_1_1tsc__service.html#a39fe31f914ae9c860737f5f967aac569", null ],
     [ "start", "classtraffic__signal__controller__service_1_1tsc__service.html#a965dba3d0f0cff4d2a36ecc38d2fed17", null ],
     [ "tsc_service_test", "classtraffic__signal__controller__service_1_1tsc__service.html#a9af1ee4e631bcf1440ea16a87ff8a6c5", null ],
     [ "control_tsc_state_ptr_", "classtraffic__signal__controller__service_1_1tsc__service.html#aca861e53ecc25e0c144e8fff3801bdf0", null ],
@@ -40,7 +40,7 @@ var classtraffic__signal__controller__service_1_1tsc__service =
     [ "tsc_config_producer_counter_", "classtraffic__signal__controller__service_1_1tsc__service.html#ae95f9fb98640cf4121d89518651899f8", null ],
     [ "tsc_config_send_attempts", "classtraffic__signal__controller__service_1_1tsc__service.html#aa5f2c089720e5f28c27dd477933585f8", null ],
     [ "tsc_config_state_ptr", "classtraffic__signal__controller__service_1_1tsc__service.html#a365cce2a524c81a204b83a15104b4f4e", null ],
-    [ "tsc_set_command_queue_", "classtraffic__signal__controller__service_1_1tsc__service.html#a2534dec3104737df7015c073c7e74359", null ],
+    [ "tsc_set_command_queue_", "classtraffic__signal__controller__service_1_1tsc__service.html#ad1f864b59a25ba2c0010be48a5f08c14", null ],
     [ "tsc_state_ptr", "classtraffic__signal__controller__service_1_1tsc__service.html#a26027ff7d1a2fdf05a67be10543aa1bd", null ],
     [ "use_desired_phase_plan_update_", "classtraffic__signal__controller__service_1_1tsc__service.html#a300f229c74720d786252e32af6a5e02f", null ],
     [ "use_mmitss_mrp", "classtraffic__signal__controller__service_1_1tsc__service.html#ac4be894a6d67bac8bf43ea16b52ca4ea", null ]

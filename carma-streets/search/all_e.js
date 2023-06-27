@@ -16,5 +16,6 @@ var searchData=
   ['ntcip_5f1202_5fext_5fphasetime_2eh_13',['ntcip_1202_ext_phasetime.h',['../ntcip__1202__ext__phasetime_8h.html',1,'']]],
   ['ntcip_5foids_14',['ntcip_oids',['../namespacentcip__oids.html',1,'']]],
   ['ntcip_5foids_2eh_15',['ntcip_oids.h',['../ntcip__oids_8h.html',1,'']]],
-  ['num_5fof_5fphases_16',['num_of_phases',['../structntcip_1_1ntcip__1202__ext.html#a962d0f68283af8a02b761ec3cf28e263',1,'ntcip::ntcip_1202_ext::num_of_phases()'],['../ntcip__1202__ext_8h.html#a30753ca578a919a51441d2434e0e4e39',1,'num_of_phases():&#160;ntcip_1202_ext.h']]]
+  ['num_5fof_5fphases_16',['num_of_phases',['../structntcip_1_1ntcip__1202__ext.html#a962d0f68283af8a02b761ec3cf28e263',1,'ntcip::ntcip_1202_ext::num_of_phases()'],['../ntcip__1202__ext_8h.html#a30753ca578a919a51441d2434e0e4e39',1,'num_of_phases():&#160;ntcip_1202_ext.h']]],
+  ['number_5fof_5fphase_17',['number_of_phase',['../structstreets__timing__plan_1_1streets__timing__plan.html#ab9554bb73ac700a6264d52dcef216cd2',1,'streets_timing_plan::streets_timing_plan']]]
 ];

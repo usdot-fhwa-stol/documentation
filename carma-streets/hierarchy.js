@@ -110,6 +110,7 @@ var hierarchy =
       [ "streets_signal_optimization::streets_desired_phase_plan_arbitrator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator__exception.html", null ],
       [ "streets_signal_optimization::streets_desired_phase_plan_generator_exception", "classstreets__signal__optimization_1_1streets__desired__phase__plan__generator__exception.html", null ],
       [ "streets_snmp_cmd::streets_snmp_cmd_exception", "classstreets__snmp__cmd_1_1streets__snmp__cmd__exception.html", null ],
+      [ "streets_timing_plan::streets_timing_plan_exception", "classstreets__timing__plan_1_1streets__timing__plan__exception.html", null ],
       [ "streets_tsc_configuration::tsc_configuration_state_exception", "classstreets__tsc__configuration_1_1tsc__configuration__state__exception.html", null ],
       [ "streets_vehicle_scheduler::scheduling_exception", "classstreets__vehicle__scheduler_1_1scheduling__exception.html", null ],
       [ "streets_vehicles::status_intent_processing_exception", "classstreets__vehicles_1_1status__intent__processing__exception.html", null ],
@@ -157,6 +158,7 @@ var hierarchy =
       [ "streets_service::streets_configuration", "classstreets__service_1_1streets__configuration.html", null ]
     ] ],
     [ "streets_snmp_cmd::streets_snmp_cmd_converter", "classstreets__snmp__cmd_1_1streets__snmp__cmd__converter.html", null ],
+    [ "streets_timing_plan::streets_timing_plan", "structstreets__timing__plan_1_1streets__timing__plan.html", null ],
     [ "signal_phase_and_timing::time_change_details", "structsignal__phase__and__timing_1_1time__change__details.html", null ],
     [ "streets_service::simulation::time_sync_message", "structstreets__service_1_1simulation_1_1time__sync__message.html", null ],
     [ "message_services::models::trajectory", "structmessage__services_1_1models_1_1trajectory.html", null ],

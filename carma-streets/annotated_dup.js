@@ -148,6 +148,10 @@ var annotated_dup =
       [ "streets_snmp_cmd_converter", "classstreets__snmp__cmd_1_1streets__snmp__cmd__converter.html", "classstreets__snmp__cmd_1_1streets__snmp__cmd__converter" ],
       [ "streets_snmp_cmd_exception", "classstreets__snmp__cmd_1_1streets__snmp__cmd__exception.html", "classstreets__snmp__cmd_1_1streets__snmp__cmd__exception" ]
     ] ],
+    [ "streets_timing_plan", "namespacestreets__timing__plan.html", [
+      [ "streets_timing_plan", "structstreets__timing__plan_1_1streets__timing__plan.html", "structstreets__timing__plan_1_1streets__timing__plan" ],
+      [ "streets_timing_plan_exception", "classstreets__timing__plan_1_1streets__timing__plan__exception.html", "classstreets__timing__plan_1_1streets__timing__plan__exception" ]
+    ] ],
     [ "streets_tsc_configuration", "namespacestreets__tsc__configuration.html", [
       [ "signal_group_configuration", "structstreets__tsc__configuration_1_1signal__group__configuration.html", "structstreets__tsc__configuration_1_1signal__group__configuration" ],
       [ "tsc_configuration_state", "structstreets__tsc__configuration_1_1tsc__configuration__state.html", "structstreets__tsc__configuration_1_1tsc__configuration__state" ],

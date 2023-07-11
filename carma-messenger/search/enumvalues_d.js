@@ -100,8 +100,16 @@ var searchData=
   ['restrictionusertype_5fpr_5fbasictype_97',['RestrictionUserType_PR_basicType',['../RestrictionUserType_8h.html#afdff963f9347c9d75c0a267448acd08ea53f08596063e3a9ac776411f15674313',1,'RestrictionUserType.h']]],
   ['restrictionusertype_5fpr_5fnothing_98',['RestrictionUserType_PR_NOTHING',['../RestrictionUserType_8h.html#afdff963f9347c9d75c0a267448acd08eaf2426ff54d992504a1faad248895f9be',1,'RestrictionUserType.h']]],
   ['restrictionusertype_5fpr_5fregional_99',['RestrictionUserType_PR_regional',['../RestrictionUserType_8h.html#afdff963f9347c9d75c0a267448acd08eaa08b6f1d994fc74f3290c78bb3aa3a86',1,'RestrictionUserType.h']]],
-  ['rtcm_5frevision_5freserved_100',['RTCM_Revision_reserved',['../RTCM-Revision_8h.html#a14b1dd14f997d010e44363b3683bf4daa24a0c04c561322581c12a5404adb4222',1,'RTCM-Revision.h']]],
-  ['rtcm_5frevision_5frtcmrev2_101',['RTCM_Revision_rtcmRev2',['../RTCM-Revision_8h.html#a14b1dd14f997d010e44363b3683bf4daafe646df5a9afaca78ac0b095f7502181',1,'RTCM-Revision.h']]],
-  ['rtcm_5frevision_5frtcmrev3_102',['RTCM_Revision_rtcmRev3',['../RTCM-Revision_8h.html#a14b1dd14f997d010e44363b3683bf4daa462871d0a3ab17bd5e63a0ece0129509',1,'RTCM-Revision.h']]],
-  ['rtcm_5frevision_5funknown_103',['RTCM_Revision_unknown',['../RTCM-Revision_8h.html#a14b1dd14f997d010e44363b3683bf4daa3458ce37290da875294ef8d5b18920d9',1,'RTCM-Revision.h']]]
+  ['rollrateconfidence_5fdegsec_5f000_5f01_100',['RollRateConfidence_degSec_000_01',['../RollRateConfidence_8h.html#ad14d113199b195ad015d0e27271d7a0fa55f825c61a4476d2ff8ee511e3f49e44',1,'RollRateConfidence.h']]],
+  ['rollrateconfidence_5fdegsec_5f000_5f05_101',['RollRateConfidence_degSec_000_05',['../RollRateConfidence_8h.html#ad14d113199b195ad015d0e27271d7a0fa9a5e86c480fe9897814a44c467345add',1,'RollRateConfidence.h']]],
+  ['rollrateconfidence_5fdegsec_5f000_5f10_102',['RollRateConfidence_degSec_000_10',['../RollRateConfidence_8h.html#ad14d113199b195ad015d0e27271d7a0fa4518a8da560053478386524613255f53',1,'RollRateConfidence.h']]],
+  ['rollrateconfidence_5fdegsec_5f001_5f00_103',['RollRateConfidence_degSec_001_00',['../RollRateConfidence_8h.html#ad14d113199b195ad015d0e27271d7a0fac41d9dcfba4a3502fd14b06ef4f961bc',1,'RollRateConfidence.h']]],
+  ['rollrateconfidence_5fdegsec_5f005_5f00_104',['RollRateConfidence_degSec_005_00',['../RollRateConfidence_8h.html#ad14d113199b195ad015d0e27271d7a0fafa688a3297695a875ea3749ef80842ca',1,'RollRateConfidence.h']]],
+  ['rollrateconfidence_5fdegsec_5f010_5f00_105',['RollRateConfidence_degSec_010_00',['../RollRateConfidence_8h.html#ad14d113199b195ad015d0e27271d7a0fa2f1e763fb78c30f6433567b092639d88',1,'RollRateConfidence.h']]],
+  ['rollrateconfidence_5fdegsec_5f100_5f00_106',['RollRateConfidence_degSec_100_00',['../RollRateConfidence_8h.html#ad14d113199b195ad015d0e27271d7a0fae9479b21bf6214c1eb790654764a5f5e',1,'RollRateConfidence.h']]],
+  ['rollrateconfidence_5funavailable_107',['RollRateConfidence_unavailable',['../RollRateConfidence_8h.html#ad14d113199b195ad015d0e27271d7a0fa97b8e478c277669be823a8d94a674cdd',1,'RollRateConfidence.h']]],
+  ['rtcm_5frevision_5freserved_108',['RTCM_Revision_reserved',['../RTCM-Revision_8h.html#a14b1dd14f997d010e44363b3683bf4daa24a0c04c561322581c12a5404adb4222',1,'RTCM-Revision.h']]],
+  ['rtcm_5frevision_5frtcmrev2_109',['RTCM_Revision_rtcmRev2',['../RTCM-Revision_8h.html#a14b1dd14f997d010e44363b3683bf4daafe646df5a9afaca78ac0b095f7502181',1,'RTCM-Revision.h']]],
+  ['rtcm_5frevision_5frtcmrev3_110',['RTCM_Revision_rtcmRev3',['../RTCM-Revision_8h.html#a14b1dd14f997d010e44363b3683bf4daa462871d0a3ab17bd5e63a0ece0129509',1,'RTCM-Revision.h']]],
+  ['rtcm_5frevision_5funknown_111',['RTCM_Revision_unknown',['../RTCM-Revision_8h.html#a14b1dd14f997d010e44363b3683bf4daa3458ce37290da875294ef8d5b18920d9',1,'RTCM-Revision.h']]]
 ];

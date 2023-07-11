@@ -3,7 +3,7 @@ var searchData=
   ['radius_2db12_2eh_0',['Radius-B12.h',['../Radius-B12_8h.html',1,'']]],
   ['radiusofcurvature_2eh_1',['RadiusOfCurvature.h',['../RadiusOfCurvature_8h.html',1,'']]],
   ['rainsensor_2eh_2',['RainSensor.h',['../RainSensor_8h.html',1,'']]],
-  ['readme_2emd_3',['README.md',['../README_8md.html',1,'(Global Namespace)'],['../carma-messenger-ui_2website_2thirdparty_2bootstrap-switch-button-1_81_80_2README_8md.html',1,'(Global Namespace)'],['../carma-messenger-core_2truck__inspection__plugin_2README_8md.html',1,'(Global Namespace)'],['../carma-messenger-core_2j2735__convertor_2README_8md.html',1,'(Global Namespace)'],['../carma-messenger-core_2emergency__response__vehicle__plugin_2README_8md.html',1,'(Global Namespace)'],['../carma-messenger-core_2cpp__message_2README_8md.html',1,'(Global Namespace)'],['../carma-messenger-core_2carma-messenger_2README_8md.html',1,'(Global Namespace)']]],
+  ['readme_2emd_3',['README.md',['../carma-messenger-core_2cpp__message_2README_8md.html',1,'(Global Namespace)'],['../carma-messenger-core_2carma-messenger_2README_8md.html',1,'(Global Namespace)'],['../README_8md.html',1,'(Global Namespace)'],['../carma-messenger-core_2truck__inspection__plugin_2README_8md.html',1,'(Global Namespace)'],['../carma-messenger-core_2j2735__convertor_2README_8md.html',1,'(Global Namespace)'],['../carma-messenger-core_2emergency__response__vehicle__plugin_2README_8md.html',1,'(Global Namespace)'],['../carma-messenger-ui_2website_2thirdparty_2bootstrap-switch-button-1_81_80_2README_8md.html',1,'(Global Namespace)']]],
   ['regionalextension_2eh_4',['RegionalExtension.h',['../RegionalExtension_8h.html',1,'']]],
   ['regionid_2eh_5',['RegionId.h',['../RegionId_8h.html',1,'']]],
   ['regionlist_2eh_6',['RegionList.h',['../RegionList_8h.html',1,'']]],
@@ -37,10 +37,13 @@ var searchData=
   ['roadsidealert_2eh_34',['RoadSideAlert.h',['../RoadSideAlert_8h.html',1,'']]],
   ['roadsignid_2eh_35',['RoadSignID.h',['../RoadSignID_8h.html',1,'']]],
   ['roadwaycrownangle_2eh_36',['RoadwayCrownAngle.h',['../RoadwayCrownAngle_8h.html',1,'']]],
-  ['rtcm_2drevision_2eh_37',['RTCM-Revision.h',['../RTCM-Revision_8h.html',1,'']]],
-  ['rtcmcorrections_2eh_38',['RTCMcorrections.h',['../RTCMcorrections_8h.html',1,'']]],
-  ['rtcmheader_2eh_39',['RTCMheader.h',['../RTCMheader_8h.html',1,'']]],
-  ['rtcmmessage_2eh_40',['RTCMmessage.h',['../RTCMmessage_8h.html',1,'']]],
-  ['rtcmmessagelist_2eh_41',['RTCMmessageList.h',['../RTCMmessageList_8h.html',1,'']]],
-  ['rtcmpackage_2eh_42',['RTCMPackage.h',['../RTCMPackage_8h.html',1,'']]]
+  ['rolldetected_2eh_37',['RollDetected.h',['../RollDetected_8h.html',1,'']]],
+  ['rollrate_2eh_38',['RollRate.h',['../RollRate_8h.html',1,'']]],
+  ['rollrateconfidence_2eh_39',['RollRateConfidence.h',['../RollRateConfidence_8h.html',1,'']]],
+  ['rtcm_2drevision_2eh_40',['RTCM-Revision.h',['../RTCM-Revision_8h.html',1,'']]],
+  ['rtcmcorrections_2eh_41',['RTCMcorrections.h',['../RTCMcorrections_8h.html',1,'']]],
+  ['rtcmheader_2eh_42',['RTCMheader.h',['../RTCMheader_8h.html',1,'']]],
+  ['rtcmmessage_2eh_43',['RTCMmessage.h',['../RTCMmessage_8h.html',1,'']]],
+  ['rtcmmessagelist_2eh_44',['RTCMmessageList.h',['../RTCMmessageList_8h.html',1,'']]],
+  ['rtcmpackage_2eh_45',['RTCMPackage.h',['../RTCMPackage_8h.html',1,'']]]
 ];

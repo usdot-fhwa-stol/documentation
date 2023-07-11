@@ -11,6 +11,7 @@ var unionMessageFrame_1_1MessageFrame____value_1_1MessageFrame____value__u =
     [ "ProbeVehicleData", "unionMessageFrame_1_1MessageFrame____value_1_1MessageFrame____value__u.html#a95d2819239d0c65b41891304c7a3318a", null ],
     [ "RoadSideAlert", "unionMessageFrame_1_1MessageFrame____value_1_1MessageFrame____value__u.html#a0be3af60e8bbc3a700e4a54afd4d0c95", null ],
     [ "RTCMcorrections", "unionMessageFrame_1_1MessageFrame____value_1_1MessageFrame____value__u.html#a7b29a4ea4d41fbefae0b25d74bdb91da", null ],
+    [ "SensorDataSharingMessage", "unionMessageFrame_1_1MessageFrame____value_1_1MessageFrame____value__u.html#a8dd97d8f7b212f6e5503f18f456d3109", null ],
     [ "SignalRequestMessage", "unionMessageFrame_1_1MessageFrame____value_1_1MessageFrame____value__u.html#a249964e82ea9306765ffeff06081a09e", null ],
     [ "SignalStatusMessage", "unionMessageFrame_1_1MessageFrame____value_1_1MessageFrame____value__u.html#ac5531c8da3b6c453e9da753fbef1e457", null ],
     [ "SPAT", "unionMessageFrame_1_1MessageFrame____value_1_1MessageFrame____value__u.html#a0a55a0428900688e11423307ec4863ad", null ],

@@ -4,9 +4,17 @@ var searchData=
   ['dataparameters_1',['DataParameters',['../structDataParameters.html',1,'']]],
   ['ddate_2',['DDate',['../structDDate.html',1,'']]],
   ['ddatetime_3',['DDateTime',['../structDDateTime.html',1,'']]],
-  ['dfulltime_4',['DFullTime',['../structDFullTime.html',1,'']]],
-  ['disabledvehicle_5',['DisabledVehicle',['../structDisabledVehicle.html',1,'']]],
-  ['dmonthday_6',['DMonthDay',['../structDMonthDay.html',1,'']]],
-  ['dtime_7',['DTime',['../structDTime.html',1,'']]],
-  ['dyearmonth_8',['DYearMonth',['../structDYearMonth.html',1,'']]]
+  ['detectedobjectcommondata_4',['DetectedObjectCommonData',['../structDetectedObjectCommonData.html',1,'']]],
+  ['detectedobjectdata_5',['DetectedObjectData',['../structDetectedObjectData.html',1,'']]],
+  ['detectedobjectlist_6',['DetectedObjectList',['../structDetectedObjectList.html',1,'']]],
+  ['detectedobjectoptionaldata_7',['DetectedObjectOptionalData',['../structDetectedObjectOptionalData.html',1,'']]],
+  ['detectedobjectoptionaldata_5fu_8',['DetectedObjectOptionalData_u',['../unionDetectedObjectOptionalData_1_1DetectedObjectOptionalData__u.html',1,'DetectedObjectOptionalData']]],
+  ['detectedobstacledata_9',['DetectedObstacleData',['../structDetectedObstacleData.html',1,'']]],
+  ['detectedvehicledata_10',['DetectedVehicleData',['../structDetectedVehicleData.html',1,'']]],
+  ['detectedvrudata_11',['DetectedVRUData',['../structDetectedVRUData.html',1,'']]],
+  ['dfulltime_12',['DFullTime',['../structDFullTime.html',1,'']]],
+  ['disabledvehicle_13',['DisabledVehicle',['../structDisabledVehicle.html',1,'']]],
+  ['dmonthday_14',['DMonthDay',['../structDMonthDay.html',1,'']]],
+  ['dtime_15',['DTime',['../structDTime.html',1,'']]],
+  ['dyearmonth_16',['DYearMonth',['../structDYearMonth.html',1,'']]]
 ];

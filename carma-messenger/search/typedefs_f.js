@@ -38,10 +38,13 @@ var searchData=
   ['roadsidealert_5ft_35',['RoadSideAlert_t',['../RoadSideAlert_8h.html#af5cb74f1153aed52ed1db973174868e7',1,'RoadSideAlert.h']]],
   ['roadsignid_5ft_36',['RoadSignID_t',['../RoadSignID_8h.html#a40baf26b0bb20201d810b9a016f37191',1,'RoadSignID.h']]],
   ['roadwaycrownangle_5ft_37',['RoadwayCrownAngle_t',['../RoadwayCrownAngle_8h.html#a9e4552d2a7d4be4a2bd598e884627a60',1,'RoadwayCrownAngle.h']]],
-  ['rtcm_5frevision_5ft_38',['RTCM_Revision_t',['../RTCM-Revision_8h.html#a991a2640d44caa9c4675795dd340a063',1,'RTCM-Revision.h']]],
-  ['rtcmcorrections_5ft_39',['RTCMcorrections_t',['../RTCMcorrections_8h.html#adc8b7fde6df1e0aa0646ee9ded57050a',1,'RTCMcorrections.h']]],
-  ['rtcmheader_5ft_40',['RTCMheader_t',['../RTCMheader_8h.html#a55747f14b063c21ea038d0ac70a29922',1,'RTCMheader.h']]],
-  ['rtcmmessage_5ft_41',['RTCMmessage_t',['../RTCMmessage_8h.html#abf4e56ee7fe543de69b0fb2c1d3d91a6',1,'RTCMmessage.h']]],
-  ['rtcmmessagelist_5ft_42',['RTCMmessageList_t',['../RTCMmessageList_8h.html#a00997383dc420ae8bcdc9cb960826818',1,'RTCMmessageList.h']]],
-  ['rtcmpackage_5ft_43',['RTCMPackage_t',['../RTCMPackage_8h.html#aeb531e9e5841da13875a5feb3d7c8d69',1,'RTCMPackage.h']]]
+  ['rolldetected_5ft_38',['RollDetected_t',['../RollDetected_8h.html#a91cf4d27101284b3e25379c8d42eebcf',1,'RollDetected.h']]],
+  ['rollrate_5ft_39',['RollRate_t',['../RollRate_8h.html#a5f87c3d5e572e1ae6a7bc55d41d1ede6',1,'RollRate.h']]],
+  ['rollrateconfidence_5ft_40',['RollRateConfidence_t',['../RollRateConfidence_8h.html#afd7ff0664e406b9fa43aa95e77055977',1,'RollRateConfidence.h']]],
+  ['rtcm_5frevision_5ft_41',['RTCM_Revision_t',['../RTCM-Revision_8h.html#a991a2640d44caa9c4675795dd340a063',1,'RTCM-Revision.h']]],
+  ['rtcmcorrections_5ft_42',['RTCMcorrections_t',['../RTCMcorrections_8h.html#adc8b7fde6df1e0aa0646ee9ded57050a',1,'RTCMcorrections.h']]],
+  ['rtcmheader_5ft_43',['RTCMheader_t',['../RTCMheader_8h.html#a55747f14b063c21ea038d0ac70a29922',1,'RTCMheader.h']]],
+  ['rtcmmessage_5ft_44',['RTCMmessage_t',['../RTCMmessage_8h.html#abf4e56ee7fe543de69b0fb2c1d3d91a6',1,'RTCMmessage.h']]],
+  ['rtcmmessagelist_5ft_45',['RTCMmessageList_t',['../RTCMmessageList_8h.html#a00997383dc420ae8bcdc9cb960826818',1,'RTCMmessageList.h']]],
+  ['rtcmpackage_5ft_46',['RTCMPackage_t',['../RTCMPackage_8h.html#aeb531e9e5841da13875a5feb3d7c8d69',1,'RTCMPackage.h']]]
 ];

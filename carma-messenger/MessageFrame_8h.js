@@ -37,7 +37,8 @@ var MessageFrame_8h =
       [ "MessageFrame__value_PR_TestMessage12", "MessageFrame_8h.html#a86d4c60129bda8cf3e86a65cb8d44dd1a7e5a1f4fa16e8d12cf43352a5b7522a7", null ],
       [ "MessageFrame__value_PR_TestMessage13", "MessageFrame_8h.html#a86d4c60129bda8cf3e86a65cb8d44dd1a5ea80f6941ca3ffd9ebf0def0d649e8b", null ],
       [ "MessageFrame__value_PR_TestMessage14", "MessageFrame_8h.html#a86d4c60129bda8cf3e86a65cb8d44dd1a6485b53a680134b3a38fcf55f8c0d13f", null ],
-      [ "MessageFrame__value_PR_TestMessage15", "MessageFrame_8h.html#a86d4c60129bda8cf3e86a65cb8d44dd1a88a91c51da922005a897a0a0b7102d29", null ]
+      [ "MessageFrame__value_PR_TestMessage15", "MessageFrame_8h.html#a86d4c60129bda8cf3e86a65cb8d44dd1a88a91c51da922005a897a0a0b7102d29", null ],
+      [ "MessageFrame__value_PR_SensorDataSharingMessage", "MessageFrame_8h.html#a86d4c60129bda8cf3e86a65cb8d44dd1a85c148281ab9f3b33e13b0f59e48abae", null ]
     ] ],
     [ "asn_DEF_MessageFrame", "MessageFrame_8h.html#ac2fe16169ee58fd67c1e8a773ae61f1f", null ]
 ];

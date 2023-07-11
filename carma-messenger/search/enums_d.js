@@ -9,5 +9,6 @@ var searchData=
   ['responsetype_6',['ResponseType',['../ResponseType_8h.html#af5055605e320b3f9ea9fa330b57604e7',1,'ResponseType.h']]],
   ['restrictionappliesto_7',['RestrictionAppliesTo',['../RestrictionAppliesTo_8h.html#a691a2cda54f5690638b84f011b056965',1,'RestrictionAppliesTo.h']]],
   ['restrictionusertype_5fpr_8',['RestrictionUserType_PR',['../RestrictionUserType_8h.html#afdff963f9347c9d75c0a267448acd08e',1,'RestrictionUserType.h']]],
-  ['rtcm_5frevision_9',['RTCM_Revision',['../RTCM-Revision_8h.html#a14b1dd14f997d010e44363b3683bf4da',1,'RTCM-Revision.h']]]
+  ['rollrateconfidence_9',['RollRateConfidence',['../RollRateConfidence_8h.html#ad14d113199b195ad015d0e27271d7a0f',1,'RollRateConfidence.h']]],
+  ['rtcm_5frevision_10',['RTCM_Revision',['../RTCM-Revision_8h.html#a14b1dd14f997d010e44363b3683bf4da',1,'RTCM-Revision.h']]]
 ];

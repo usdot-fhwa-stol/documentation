@@ -24,6 +24,7 @@ var DSRCmsgID_8h =
     [ "DSRCmsgID_roadSideAlert_D", "DSRCmsgID_8h.html#addfe6f1f2fb4bd16d348c9e67ae8425b", null ],
     [ "DSRCmsgID_rtcmCorrections", "DSRCmsgID_8h.html#ac9ec1b1d1c03fe7f75e20e4c773d9e24", null ],
     [ "DSRCmsgID_rtcmCorrections_D", "DSRCmsgID_8h.html#adcf6e580607b928b53e4a77f8c1082a2", null ],
+    [ "DSRCmsgID_sensorDataSharingMessage", "DSRCmsgID_8h.html#a5e31ae090e5e786782cf18eeab0741bc", null ],
     [ "DSRCmsgID_signalPhaseAndTimingMessage", "DSRCmsgID_8h.html#af8ddd10067a48cae0b1c01ffa2fb8c76", null ],
     [ "DSRCmsgID_signalPhaseAndTimingMessage_D", "DSRCmsgID_8h.html#aec5d98c691e7d26bc413387d7399ba6e", null ],
     [ "DSRCmsgID_signalRequestMessage", "DSRCmsgID_8h.html#af58d4f094b79dfd5a333ecc4a0a16657", null ],

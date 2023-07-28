@@ -80,5 +80,6 @@ var searchData=
   ['humanpropelledtype_5fencode_5fuper_77',['HumanPropelledType_encode_uper',['../HumanPropelledType_8h.html#a646b6e4eb2791a1806c31ff2fc6412be',1,'HumanPropelledType.h']]],
   ['humanpropelledtype_5fencode_5fxer_78',['HumanPropelledType_encode_xer',['../HumanPropelledType_8h.html#a8ac6c1c84288443581ed7b0bf091f64f',1,'HumanPropelledType.h']]],
   ['humanpropelledtype_5ffree_79',['HumanPropelledType_free',['../HumanPropelledType_8h.html#a6aa5fddd323addc22720e8f4fde54603',1,'HumanPropelledType.h']]],
-  ['humanpropelledtype_5fprint_80',['HumanPropelledType_print',['../HumanPropelledType_8h.html#a70d5512dee5c3339dd41d24254de5d8d',1,'HumanPropelledType.h']]]
+  ['humanpropelledtype_5fprint_80',['HumanPropelledType_print',['../HumanPropelledType_8h.html#a70d5512dee5c3339dd41d24254de5d8d',1,'HumanPropelledType.h']]],
+  ['hundredth_5fdeg_5fper_5fs_81',['HUNDREDTH_DEG_PER_S',['../namespacej2735__convertor_1_1units.html#ac9bda4c3e90d7b513640039901a77a60',1,'j2735_convertor::units']]]
 ];

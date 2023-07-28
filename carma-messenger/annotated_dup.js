@@ -24,6 +24,7 @@ var annotated_dup =
       [ "MapConvertor", "classj2735__convertor_1_1MapConvertor.html", "classj2735__convertor_1_1MapConvertor" ],
       [ "Node", "classj2735__convertor_1_1Node.html", "classj2735__convertor_1_1Node" ],
       [ "PSMConvertor", "classj2735__convertor_1_1PSMConvertor.html", "classj2735__convertor_1_1PSMConvertor" ],
+      [ "SDSMConvertor", "classj2735__convertor_1_1SDSMConvertor.html", "classj2735__convertor_1_1SDSMConvertor" ],
       [ "SPATConvertor", "classj2735__convertor_1_1SPATConvertor.html", "classj2735__convertor_1_1SPATConvertor" ],
       [ "ValueConvertor", "classj2735__convertor_1_1ValueConvertor.html", "classj2735__convertor_1_1ValueConvertor" ]
     ] ],

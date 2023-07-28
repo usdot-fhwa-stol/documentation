@@ -308,6 +308,7 @@ var hierarchy =
     [ "RTCMmessageList", "structRTCMmessageList.html", null ],
     [ "RTCMPackage", "structRTCMPackage.html", null ],
     [ "Sample", "structSample.html", null ],
+    [ "j2735_convertor::SDSMConvertor", "classj2735__convertor_1_1SDSMConvertor.html", null ],
     [ "SegmentAttributeLLList", "structSegmentAttributeLLList.html", null ],
     [ "SegmentAttributeXYList", "structSegmentAttributeXYList.html", null ],
     [ "SensorDataSharingMessage", "structSensorDataSharingMessage.html", null ],

@@ -38,6 +38,7 @@ var classcpp__message_1_1Node =
     [ "outbound_mobility_request_message_callback", "classcpp__message_1_1Node.html#aec8052581dac7f303d843de08c90eee9", null ],
     [ "outbound_mobility_response_message_callback", "classcpp__message_1_1Node.html#ad905eebdf817bc21f99ba1180b74231c", null ],
     [ "outbound_psm_message_callback", "classcpp__message_1_1Node.html#a88dc0228d7ea3be17ed9c2a9d8e4758e", null ],
+    [ "outbound_sdsm_message_callback", "classcpp__message_1_1Node.html#a4ccd479d99691c9efde417f31e1cd0a4", null ],
     [ "bsm_message_pub_", "classcpp__message_1_1Node.html#aea8c3ea47f288df42dc67f8e6d2a6990", null ],
     [ "bsm_message_sub_", "classcpp__message_1_1Node.html#a12f1d1771e3e90f287a76b3e6c04b16a", null ],
     [ "emergency_vehicle_ack_message_pub_", "classcpp__message_1_1Node.html#abc9fc4ef55241f65c7a952a3e5e2fea4", null ],
@@ -61,5 +62,7 @@ var classcpp__message_1_1Node =
     [ "outbound_geofence_request_message_sub_", "classcpp__message_1_1Node.html#a1683f3edf798b7f0eda8a669d7408862", null ],
     [ "psm_message_pub_", "classcpp__message_1_1Node.html#a536355a0ebbc9d25d895544d8fdef5b1", null ],
     [ "psm_message_sub_", "classcpp__message_1_1Node.html#a78c34c04a83f4b05e5d949f9a15be542", null ],
+    [ "sdsm_message_pub_", "classcpp__message_1_1Node.html#ac8baef025b4600c7082d20fd55713d83", null ],
+    [ "sdsm_message_sub_", "classcpp__message_1_1Node.html#abef1eeb087b4d416aaa0ab677a932ee0", null ],
     [ "spat_message_pub_", "classcpp__message_1_1Node.html#a57e82b56236f0c155d596f120d6faf8f", null ]
 ];

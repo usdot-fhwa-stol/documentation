@@ -1,5 +1,11 @@
 var NAVTREEINDEX32 =
 {
+"VehicleGroupAffected_8h.html#aa08235327d5e780d32c670dac56d3354a48ca137a1e69ad468f81d04577ec846c":[10,0,1,1,0,1,564,2,5],
+"VehicleGroupAffected_8h.html#aa08235327d5e780d32c670dac56d3354a4c3cb3db4bfc0bf04d4978050ee4005b":[10,0,1,1,0,1,564,2,10],
+"VehicleGroupAffected_8h.html#aa08235327d5e780d32c670dac56d3354a68aa963e291922d341993ce48c157fbe":[10,0,1,1,0,1,564,2,30],
+"VehicleGroupAffected_8h.html#aa08235327d5e780d32c670dac56d3354a6e36ed7236d49008a1eea1717c4e4296":[10,0,1,1,0,1,564,2,6],
+"VehicleGroupAffected_8h.html#aa08235327d5e780d32c670dac56d3354a70cce844649a39c40b9396abdfc2d7b1":[10,0,1,1,0,1,564,2,16],
+"VehicleGroupAffected_8h.html#aa08235327d5e780d32c670dac56d3354a713cbb0aa5a11031cb2d44f9b69aa41e":[10,0,1,1,0,1,564,2,20],
 "VehicleGroupAffected_8h.html#aa08235327d5e780d32c670dac56d3354a72fb80c00c23d2fce5d41bf8f02075f5":[10,0,1,1,0,1,564,2,2],
 "VehicleGroupAffected_8h.html#aa08235327d5e780d32c670dac56d3354a775eb44abdc393071e04f48b45694065":[10,0,1,1,0,1,564,2,26],
 "VehicleGroupAffected_8h.html#aa08235327d5e780d32c670dac56d3354a7d45de61552ad5a3b191baf702495dc2":[10,0,1,1,0,1,564,2,32],
@@ -243,11 +249,5 @@ var NAVTREEINDEX32 =
 "VehicleWidth_8h.html#a70c0151b760bc2fd89f7e7123a533bc9":[10,0,1,1,0,1,580,13],
 "VehicleWidth_8h.html#a8b791762230372c9397137cf2b2d1f17":[10,0,1,1,0,1,580,6],
 "VehicleWidth_8h.html#a8f033dbbe8f7a64e4c7a6878348a40bb":[10,0,1,1,0,1,580,0],
-"VehicleWidth_8h.html#a9a9616a5515324c9b557fd2846442464":[10,0,1,1,0,1,580,7],
-"VehicleWidth_8h.html#aa2a207575d9160be7bb9f530288dc4c8":[10,0,1,1,0,1,580,8],
-"VehicleWidth_8h.html#aa32b6f915625e7563ea98668101ffc84":[10,0,1,1,0,1,580,5],
-"VehicleWidth_8h.html#aabce8aff1e5201c63824a36f2b940617":[10,0,1,1,0,1,580,10],
-"VehicleWidth_8h.html#abc66735d5c9c29bb5c20249dbf2e9c82":[10,0,1,1,0,1,580,3],
-"VehicleWidth_8h.html#acf201e1a1bfdc6b5f1faff8ec720750d":[10,0,1,1,0,1,580,12],
-"VehicleWidth_8h.html#ae7752195c0bcf1a0cb4fa38fffc27ffd":[10,0,1,1,0,1,580,9]
+"VehicleWidth_8h.html#a9a9616a5515324c9b557fd2846442464":[10,0,1,1,0,1,580,7]
 };

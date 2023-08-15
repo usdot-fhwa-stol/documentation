@@ -11,5 +11,6 @@ var dir_b6fe859fd368b947e48460780b422927 =
     [ "MobilityRequest_Message.h", "MobilityRequest__Message_8h.html", "MobilityRequest__Message_8h" ],
     [ "MobilityResponse_Message.h", "MobilityResponse__Message_8h.html", "MobilityResponse__Message_8h" ],
     [ "PSM_Message.h", "PSM__Message_8h.html", "PSM__Message_8h" ],
+    [ "SDSM_Message.h", "SDSM__Message_8h.html", "SDSM__Message_8h" ],
     [ "SPAT_Message.h", "SPAT__Message_8h.html", "SPAT__Message_8h" ]
 ];

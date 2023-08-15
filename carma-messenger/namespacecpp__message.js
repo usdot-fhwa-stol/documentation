@@ -11,6 +11,7 @@ var namespacecpp__message =
     [ "Mobility_Response", "classcpp__message_1_1Mobility__Response.html", "classcpp__message_1_1Mobility__Response" ],
     [ "Node", "classcpp__message_1_1Node.html", "classcpp__message_1_1Node" ],
     [ "PSM_Message", "classcpp__message_1_1PSM__Message.html", "classcpp__message_1_1PSM__Message" ],
+    [ "SDSM_Message", "classcpp__message_1_1SDSM__Message.html", "classcpp__message_1_1SDSM__Message" ],
     [ "SPAT_Message", "classcpp__message_1_1SPAT__Message.html", "classcpp__message_1_1SPAT__Message" ],
     [ "create_store_shared", "namespacecpp__message.html#a33fce4f055513ac329f2ad164873ea84", null ],
     [ "create_store_shared_array", "namespacecpp__message.html#a73483a92fd4303e4c88740078a4e7fc4", null ]

@@ -12,6 +12,7 @@ var annotated_dup =
       [ "Mobility_Response", "classcpp__message_1_1Mobility__Response.html", "classcpp__message_1_1Mobility__Response" ],
       [ "Node", "classcpp__message_1_1Node.html", "classcpp__message_1_1Node" ],
       [ "PSM_Message", "classcpp__message_1_1PSM__Message.html", "classcpp__message_1_1PSM__Message" ],
+      [ "SDSM_Message", "classcpp__message_1_1SDSM__Message.html", "classcpp__message_1_1SDSM__Message" ],
       [ "SPAT_Message", "classcpp__message_1_1SPAT__Message.html", "classcpp__message_1_1SPAT__Message" ]
     ] ],
     [ "emergency_response_vehicle_plugin", "namespaceemergency__response__vehicle__plugin.html", [

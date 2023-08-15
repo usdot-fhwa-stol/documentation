@@ -11,5 +11,6 @@ var dir_ddf1c9bd25f9af928e2e8ff44d83190f =
     [ "MobilityRequest_Message.cpp", "MobilityRequest__Message_8cpp.html", null ],
     [ "MobilityResponse_Message.cpp", "MobilityResponse__Message_8cpp.html", null ],
     [ "PSM_Message.cpp", "PSM__Message_8cpp.html", null ],
+    [ "SDSM_Message.cpp", "SDSM__Message_8cpp.html", null ],
     [ "SPAT_Message.cpp", "SPAT__Message_8cpp.html", null ]
 ];

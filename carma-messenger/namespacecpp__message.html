@@ -114,6 +114,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__message_1_1PSM__Message.html">PSM_Message</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__message_1_1SDSM__Message.html">SDSM_Message</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__message_1_1SPAT__Message.html">SPAT_Message</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -136,6 +138,7 @@ Functions</h2></td></tr>
 <p >CPP File containing Mobility Path <a class="el" href="classMessage.html" title="Is the class responsible for DSRC message encoding and decoding.">Message</a> method implementations</p>
 <p >CPP File containing Mobility Request <a class="el" href="classMessage.html" title="Is the class responsible for DSRC message encoding and decoding.">Message</a> method implementations</p>
 <p >CPP File containing PSM <a class="el" href="classMessage.html" title="Is the class responsible for DSRC message encoding and decoding.">Message</a> method implementations</p>
+<p >CPP File containing SDSM <a class="el" href="classMessage.html" title="Is the class responsible for DSRC message encoding and decoding.">Message</a> method implementations</p>
 <p >CPP File containing <a class="el" href="structSPAT.html">SPAT</a> <a class="el" href="classMessage.html" title="Is the class responsible for DSRC message encoding and decoding.">Message</a> method implementations </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a33fce4f055513ac329f2ad164873ea84" name="a33fce4f055513ac329f2ad164873ea84"></a>
@@ -165,12 +168,12 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>pointer to a new object of type T </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="BSM__Message_8cpp_source.html#l00026">26</a> of file <a class="el" href="BSM__Message_8cpp_source.html">BSM_Message.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span>    {</div>
-<div class="line"><span class="lineno">   28</span>        <span class="keyword">auto</span> obj_shared = std::make_shared&lt;T&gt;();</div>
-<div class="line"><span class="lineno">   29</span>        shared_pointers.push_back(obj_shared);</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">return</span> obj_shared.get();</div>
-<div class="line"><span class="lineno">   31</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="SDSM__Message_8h_source.html#l00024">24</a> of file <a class="el" href="SDSM__Message_8h_source.html">SDSM_Message.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keyword">auto</span> obj_shared = std::make_shared&lt;T&gt;();</div>
+<div class="line"><span class="lineno">   27</span>        shared_pointers.push_back(obj_shared);</div>
+<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">return</span> obj_shared.get();</div>
+<div class="line"><span class="lineno">   29</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -202,12 +205,12 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BSM__Message_8cpp_source.html#l00034">34</a> of file <a class="el" href="BSM__Message_8cpp_source.html">BSM_Message.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>    {</div>
-<div class="line"><span class="lineno">   36</span>        std::shared_ptr&lt;T[]&gt; array_shared(<span class="keyword">new</span> T[size]{0});</div>
-<div class="line"><span class="lineno">   37</span>        shared_pointers.push_back(array_shared);</div>
-<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">return</span> array_shared.get();</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="SDSM__Message_8h_source.html#l00033">33</a> of file <a class="el" href="SDSM__Message_8h_source.html">SDSM_Message.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>    {</div>
+<div class="line"><span class="lineno">   35</span>        std::shared_ptr&lt;T[]&gt; array_shared(<span class="keyword">new</span> T[size]{0});</div>
+<div class="line"><span class="lineno">   36</span>        shared_pointers.push_back(array_shared);</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">return</span> array_shared.get();</div>
+<div class="line"><span class="lineno">   38</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -217,7 +220,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecpp__message.html">cpp_message</a></li>
-    <li class="footer">Generated on Fri Jul 28 2023 20:03:49 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Aug 15 2023 15:53:47 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -11,6 +11,7 @@ var dir_2bd46badae0127ad0e5e6d4f5f9e75d8 =
     [ "ntcip_oids.h", "ntcip__oids_8h.html", "ntcip__oids_8h" ],
     [ "snmp_client.h", "snmp__client_8h.html", "snmp__client_8h" ],
     [ "snmp_client_exception.h", "snmp__client__exception_8h.html", "snmp__client__exception_8h" ],
+    [ "spat_projection_mode.h", "spat__projection__mode_8h.html", "spat__projection__mode_8h" ],
     [ "spat_worker.h", "spat__worker_8h.html", "spat__worker_8h" ],
     [ "tsc_service.h", "tsc__service_8h.html", "tsc__service_8h" ],
     [ "udp_socket_listener.h", "udp__socket__listener_8h.html", "udp__socket__listener_8h" ],

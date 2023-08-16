@@ -136,6 +136,12 @@ Variables</h2></td></tr>
 <tr class="memitem:aad289043e420893eb52f7595358c8f37"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacentcip__oids.html#aad289043e420893eb52f7595358c8f37">PHASE_HOLD_CONTROL</a> = &quot;1.3.6.1.4.1.1206.4.2.1.1.5.1.4.1&quot;</td></tr>
 <tr class="memdesc:aad289043e420893eb52f7595358c8f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Phase Hold Control object is used to Hold Vehicle phases. It takes in a 8 bit argument, one for each phase. When a bit=1 the Traffic Signal Controller will hold that phase when it turns green and keep holding till the bit is set to 0. Values range from 0-255. .1 is needed at the end to set the phase control. NTCIP documentation is unclear about why its required or what it represents.  <a href="namespacentcip__oids.html#aad289043e420893eb52f7595358c8f37">More...</a><br /></td></tr>
 <tr class="separator:aad289043e420893eb52f7595358c8f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93361c6b9cccc4b842b4347d4c03e48"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacentcip__oids.html#ae93361c6b9cccc4b842b4347d4c03e48">PHASE_STATUS_GROUP_VEH_CALLS</a> =&quot;1.3.6.1.4.1.1206.4.2.1.1.4.1.8&quot;</td></tr>
+<tr class="memdesc:ae93361c6b9cccc4b842b4347d4c03e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Phase Vehicle Call Status Mask, when a bit =1, the Phase vehicle currently has a call for service. When a bit = 0, the Phase vehicle currently does NOT have a call for service.  <a href="namespacentcip__oids.html#ae93361c6b9cccc4b842b4347d4c03e48">More...</a><br /></td></tr>
+<tr class="separator:ae93361c6b9cccc4b842b4347d4c03e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e89712aa93deafbd0a0e2e1ad1fc604"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacentcip__oids.html#a8e89712aa93deafbd0a0e2e1ad1fc604">PHASE_STATUS_GROUP_PED_CALLS</a> =&quot;1.3.6.1.4.1.1206.4.2.1.1.4.1.9&quot;</td></tr>
+<tr class="memdesc:a8e89712aa93deafbd0a0e2e1ad1fc604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Phase Pedestrian Call Status Mask, when a bit= 1, the Phase pedestrian currently has a call for service. When a bit = 0, the Phase pedestrian currently does NOT have a call for service.  <a href="namespacentcip__oids.html#a8e89712aa93deafbd0a0e2e1ad1fc604">More...</a><br /></td></tr>
+<tr class="separator:a8e89712aa93deafbd0a0e2e1ad1fc604"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84cca9aac94935e04813e700bbd36e2f"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacentcip__oids.html#a84cca9aac94935e04813e700bbd36e2f">PHASE_STATUS_GROUP_PHASE_NEXT</a> = &quot;1.3.6.1.4.1.1206.4.2.1.1.4.1.11.1&quot;</td></tr>
 <tr class="memdesc:a84cca9aac94935e04813e700bbd36e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Phase Status Group Phase Next object is used to determine whether any vehicle phases are committed by the TSC to be served next. It returns a 8 bit value that represent a state for each of the 8 vehicle phases. When a bit = 1, the corresponding phase is currently commited to be next, when a bit = 0, this phase is NOT commited to be next. The phase commited to be next is determined at the end of each green interval, except if that decision cannot be made. In this case it will wait until all vehicle change and clearance intervales. NOTE: Uses first entry in the phaseStatusGroupTable which is assumed to be the vehicle phase group.  <a href="namespacentcip__oids.html#a84cca9aac94935e04813e700bbd36e2f">More...</a><br /></td></tr>
 <tr class="separator:a84cca9aac94935e04813e700bbd36e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,7 +182,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00041">41</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00273">traffic_signal_controller_service::tsc_state::get_phases_associated_with_channel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00382">traffic_signal_controller_service::tsc_state::get_phases_associated_with_channel()</a>.</p>
 
 </div>
 </div>
@@ -204,7 +210,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00029">29</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00302">traffic_signal_controller_service::tsc_state::get_channels()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00411">traffic_signal_controller_service::tsc_state::get_channels()</a>.</p>
 
 </div>
 </div>
@@ -232,7 +238,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00012">12</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tsc__service_8cpp_source.html#l00149">traffic_signal_controller_service::tsc_service::enable_spat()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tsc__service_8cpp_source.html#l00147">traffic_signal_controller_service::tsc_service::enable_spat()</a>.</p>
 
 </div>
 </div>
@@ -260,7 +266,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00017">17</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00393">traffic_signal_controller_service::tsc_state::get_max_channels()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00502">traffic_signal_controller_service::tsc_state::get_max_channels()</a>.</p>
 
 </div>
 </div>
@@ -288,7 +294,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00022">22</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00380">traffic_signal_controller_service::tsc_state::get_max_rings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00489">traffic_signal_controller_service::tsc_state::get_max_rings()</a>.</p>
 
 </div>
 </div>
@@ -316,7 +322,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00049">49</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00447">traffic_signal_controller_service::tsc_state::get_max_green()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00570">traffic_signal_controller_service::tsc_state::get_max_green()</a>.</p>
 
 </div>
 </div>
@@ -344,7 +350,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00044">44</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00434">traffic_signal_controller_service::tsc_state::get_min_green()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00557">traffic_signal_controller_service::tsc_state::get_min_green()</a>.</p>
 
 </div>
 </div>
@@ -372,7 +378,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00077">77</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00515">traffic_signal_controller_service::tsc_state::get_concurrent_signal_groups()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00638">traffic_signal_controller_service::tsc_state::get_concurrent_signal_groups()</a>.</p>
 
 </div>
 </div>
@@ -398,7 +404,7 @@ Variables</h2></td></tr>
 
 <p>Phase FORCEOFF Control object is used to allow apply force offs on a per phase basis. It takes in a 8 bit argument, one for each phase. When a bit=1 the Traffic Signal Controller will force off that phase, and should not activate the system phase force off control for that phase when the bit is set to 0. Values range from 0-255. When the phase green terminates, the associated bit shall be reset to 0. .1 is needed at the end to set the phase control. NTCIP documentation is unclear about why its required or what it represents. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00123">123</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00134">134</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00153">traffic_signal_controller_service::control_tsc_state::run_snmp_cmd_set_request()</a>.</p>
 
@@ -482,7 +488,7 @@ Variables</h2></td></tr>
 
 <p>The phase pedestrian call control is used to allow a remote entity to place calls for ped service in the device. When a bit = 1, the device shall place a call for ped service on that phase. When a bit = 0, the device shall not place a call for ped service on that phase. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00138">138</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00149">149</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00153">traffic_signal_controller_service::control_tsc_state::run_snmp_cmd_set_request()</a>.</p>
 
@@ -516,6 +522,34 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a8e89712aa93deafbd0a0e2e1ad1fc604" name="a8e89712aa93deafbd0a0e2e1ad1fc604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e89712aa93deafbd0a0e2e1ad1fc604">&#9670;&nbsp;</a></span>PHASE_STATUS_GROUP_PED_CALLS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string ntcip_oids::PHASE_STATUS_GROUP_PED_CALLS =&quot;1.3.6.1.4.1.1206.4.2.1.1.4.1.9&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Phase Pedestrian Call Status Mask, when a bit= 1, the Phase pedestrian currently has a call for service. When a bit = 0, the Phase pedestrian currently does NOT have a call for service. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00114">114</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00164">traffic_signal_controller_service::tsc_state::poll_vehicle_pedestrian_calls()</a>.</p>
+
+</div>
+</div>
 <a id="a84cca9aac94935e04813e700bbd36e2f" name="a84cca9aac94935e04813e700bbd36e2f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84cca9aac94935e04813e700bbd36e2f">&#9670;&nbsp;</a></span>PHASE_STATUS_GROUP_PHASE_NEXT</h2>
 
@@ -538,9 +572,37 @@ Variables</h2></td></tr>
 
 <p>Phase Status Group Phase Next object is used to determine whether any vehicle phases are committed by the TSC to be served next. It returns a 8 bit value that represent a state for each of the 8 vehicle phases. When a bit = 1, the corresponding phase is currently commited to be next, when a bit = 0, this phase is NOT commited to be next. The phase commited to be next is determined at the end of each green interval, except if that decision cannot be made. In this case it will wait until all vehicle change and clearance intervales. NOTE: Uses first entry in the phaseStatusGroupTable which is assumed to be the vehicle phase group. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00114">114</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00125">125</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="monitor__desired__phase__plan_8cpp_source.html#l00086">traffic_signal_controller_service::monitor_desired_phase_plan::fix_upcoming_green()</a>.</p>
+
+</div>
+</div>
+<a id="ae93361c6b9cccc4b842b4347d4c03e48" name="ae93361c6b9cccc4b842b4347d4c03e48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93361c6b9cccc4b842b4347d4c03e48">&#9670;&nbsp;</a></span>PHASE_STATUS_GROUP_VEH_CALLS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string ntcip_oids::PHASE_STATUS_GROUP_VEH_CALLS =&quot;1.3.6.1.4.1.1206.4.2.1.1.4.1.8&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Phase Vehicle Call Status Mask, when a bit =1, the Phase vehicle currently has a call for service. When a bit = 0, the Phase vehicle currently does NOT have a call for service. </p>
+
+<p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00109">109</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00164">traffic_signal_controller_service::tsc_state::poll_vehicle_pedestrian_calls()</a>.</p>
 
 </div>
 </div>
@@ -566,7 +628,7 @@ Variables</h2></td></tr>
 
 <p>Phase vehicle call control object is used to allow a remote entity to place calls for vehicle service in the service. When a bit = 1, the device shall place a call for vehicle service on that phase. When a bit = 0, the device shall not place a call for vehicle service on that phase. .1 is needed at the end to set the phase control. NTCIP documentation is unclear about why its required or what it represents. </p>
 
-<p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00131">131</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00142">142</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="control__tsc__state_8cpp_source.html#l00153">traffic_signal_controller_service::control_tsc_state::run_snmp_cmd_set_request()</a>.</p>
 
@@ -596,7 +658,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00070">70</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00473">traffic_signal_controller_service::tsc_state::get_red_clearance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00596">traffic_signal_controller_service::tsc_state::get_red_clearance()</a>.</p>
 
 </div>
 </div>
@@ -624,7 +686,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00061">61</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00343">traffic_signal_controller_service::tsc_state::get_active_ring_sequences()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00452">traffic_signal_controller_service::tsc_state::get_active_ring_sequences()</a>.</p>
 
 </div>
 </div>
@@ -652,7 +714,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ntcip__oids_8h_source.html#l00054">54</a> of file <a class="el" href="ntcip__oids_8h_source.html">ntcip_oids.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00460">traffic_signal_controller_service::tsc_state::get_yellow_duration()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor__tsc__state_8cpp_source.html#l00583">traffic_signal_controller_service::tsc_state::get_yellow_duration()</a>.</p>
 
 </div>
 </div>
@@ -662,7 +724,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacentcip__oids.html">ntcip_oids</a></li>
-    <li class="footer">Generated on Mon Aug 7 2023 15:01:40 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Aug 16 2023 16:50:22 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

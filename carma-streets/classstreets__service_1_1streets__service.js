@@ -5,7 +5,10 @@ var classstreets__service_1_1streets__service =
     [ "streets_service", "classstreets__service_1_1streets__service.html#a2d9e60feaa48f9b122cdd238de25224a", null ],
     [ "streets_service", "classstreets__service_1_1streets__service.html#a5feb24ff7c195740049989ac4f5bd270", null ],
     [ "consume_time_sync_message", "classstreets__service_1_1streets__service.html#a504f1c93ede0e4a77bf104f0a13c502f", null ],
+    [ "create_daily_logger", "classstreets__service_1_1streets__service.html#a711844530be77c0a19b9cfd999d3cadd", null ],
     [ "FRIEND_TEST", "classstreets__service_1_1streets__service.html#a72076ec35290fc49f45dacaa6094c419", null ],
+    [ "FRIEND_TEST", "classstreets__service_1_1streets__service.html#a73455eb98047d187597fb03328723a3e", null ],
+    [ "FRIEND_TEST", "classstreets__service_1_1streets__service.html#acf0bc23aca99333ae210624792d70540", null ],
     [ "FRIEND_TEST", "classstreets__service_1_1streets__service.html#a3b1cddead85424a26db2b70ecc6c8797", null ],
     [ "FRIEND_TEST", "classstreets__service_1_1streets__service.html#a56f03d9008e953c1b08a41c089157e8e", null ],
     [ "FRIEND_TEST", "classstreets__service_1_1streets__service.html#a4279bd2581cce715780d1b286fb7909b", null ],
@@ -19,6 +22,7 @@ var classstreets__service_1_1streets__service =
     [ "operator=", "classstreets__service_1_1streets__service.html#afbcbf07ceab854f963f5050169ed8725", null ],
     [ "operator=", "classstreets__service_1_1streets__service.html#a11845d5f1691f80860f8fdfac6f54dd3", null ],
     [ "start", "classstreets__service_1_1streets__service.html#ac6754199ebc7f244293b496a2fffd548", null ],
+    [ "_logs_directory", "classstreets__service_1_1streets__service.html#a1f84fca76d06dac6a8c5e75bd2d5e646", null ],
     [ "_service_name", "classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892", null ],
     [ "_simulation_mode", "classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3", null ],
     [ "_time_consumer", "classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669", null ]

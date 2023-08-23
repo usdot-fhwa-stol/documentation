@@ -25,61 +25,62 @@
 var NAVTREE =
 [
   [ "Carma-platform", "index.html", [
+    [ "Example Calibration Folder", "md_carma_messenger_config_example_calibration_folder_README.html", null ],
     [ "carma-messenger", "md_carma_messenger_core_carma_messenger_README.html", null ],
     [ "cpp_message", "md_carma_messenger_core_cpp_message_README.html", null ],
     [ "emergency_response_vehicle_plugin", "md_carma_messenger_core_emergency_response_vehicle_plugin_README.html", null ],
     [ "j2735_convertor", "md_carma_messenger_core_j2735_convertor_README.html", null ],
     [ "truck_inspection_plugin", "md_carma_messenger_core_truck_inspection_plugin_README.html", null ],
     [ "Changelog", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html", [
-      [ "Unreleased", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md6", null ],
-      [ "<a href=\"https://github.com/gitbrent/bootstrap-switch-button/tree/v1.1.0\" >1.1.0</a> 2020-02-16", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md7", [
-        [ "<a href=\"https://github.com/gitbrent/bootstrap-switch-button/compare/v1.0.0...v1.1.0\" >Full Changelog</a>", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md8", null ],
-        [ "Added", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md9", null ],
-        [ "Changed", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md10", null ]
+      [ "Unreleased", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md7", null ],
+      [ "<a href=\"https://github.com/gitbrent/bootstrap-switch-button/tree/v1.1.0\" >1.1.0</a> 2020-02-16", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md8", [
+        [ "<a href=\"https://github.com/gitbrent/bootstrap-switch-button/compare/v1.0.0...v1.1.0\" >Full Changelog</a>", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md9", null ],
+        [ "Added", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md10", null ],
+        [ "Changed", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md11", null ]
       ] ],
-      [ "<a href=\"https://github.com/gitbrent/bootstrap-switch-button/tree/v1.0.0\" >1.0.0</a> 2019-03-05", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md11", [
-        [ "Added", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md12", null ],
-        [ "Changed", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md13", null ]
+      [ "<a href=\"https://github.com/gitbrent/bootstrap-switch-button/tree/v1.0.0\" >1.0.0</a> 2019-03-05", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md12", [
+        [ "Added", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md13", null ],
+        [ "Changed", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_CHANGELOG.html#autotoc_md14", null ]
       ] ]
     ] ],
     [ "README", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html", [
-      [ "Bootstrap Switch Button", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md14", null ],
-      [ "Demos", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md16", null ],
-      [ "Installation", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md17", [
-        [ "CDN", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md18", null ],
-        [ "Download", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md19", null ],
-        [ "NPM", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md20", null ],
-        [ "Yarn", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md21", null ]
+      [ "Bootstrap Switch Button", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md15", null ],
+      [ "Demos", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md17", null ],
+      [ "Installation", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md18", [
+        [ "CDN", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md19", null ],
+        [ "Download", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md20", null ],
+        [ "NPM", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md21", null ],
+        [ "Yarn", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md22", null ]
       ] ],
-      [ "Usage", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md22", [
-        [ "Initialize With HTML", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md23", null ],
-        [ "Initialize With Code", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md24", null ]
+      [ "Usage", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md23", [
+        [ "Initialize With HTML", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md24", null ],
+        [ "Initialize With Code", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md25", null ]
       ] ],
-      [ "API", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md25", [
-        [ "Options", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md26", null ],
-        [ "Methods", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md27", null ]
+      [ "API", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md26", [
+        [ "Options", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md27", null ],
+        [ "Methods", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md28", null ]
       ] ],
-      [ "Events", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md28", [
-        [ "Event Propagation", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md29", null ],
-        [ "API vs Input", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md30", null ]
+      [ "Events", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md29", [
+        [ "Event Propagation", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md30", null ],
+        [ "API vs Input", "md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html#autotoc_md31", null ]
       ] ]
     ] ],
     [ "README", "md_README.html", [
-      [ "DockerHub Release Builds", "md_README.html#autotoc_md31", null ],
-      [ "DockerHub Release Candidate Builds", "md_README.html#autotoc_md32", null ],
-      [ "DockerHub Develop Builds", "md_README.html#autotoc_md33", null ],
-      [ "carma-messenger", "md_README.html#autotoc_md34", [
-        [ "Architecture", "md_README.html#autotoc_md35", null ],
-        [ "System Configuration and Installation", "md_README.html#autotoc_md36", [
-          [ "Example Setup", "md_README.html#autotoc_md37", null ]
+      [ "DockerHub Release Builds", "md_README.html#autotoc_md32", null ],
+      [ "DockerHub Release Candidate Builds", "md_README.html#autotoc_md33", null ],
+      [ "DockerHub Develop Builds", "md_README.html#autotoc_md34", null ],
+      [ "carma-messenger", "md_README.html#autotoc_md35", [
+        [ "Architecture", "md_README.html#autotoc_md36", null ],
+        [ "System Configuration and Installation", "md_README.html#autotoc_md37", [
+          [ "Example Setup", "md_README.html#autotoc_md38", null ]
         ] ]
       ] ],
-      [ "CARMAPlatform", "md_README.html#autotoc_md38", [
-        [ "Contribution", "md_README.html#autotoc_md39", null ],
-        [ "Code of Conduct", "md_README.html#autotoc_md40", null ],
-        [ "Attribution", "md_README.html#autotoc_md41", null ],
-        [ "License", "md_README.html#autotoc_md42", null ],
-        [ "Contact", "md_README.html#autotoc_md43", null ]
+      [ "CARMAPlatform", "md_README.html#autotoc_md39", [
+        [ "Contribution", "md_README.html#autotoc_md40", null ],
+        [ "Code of Conduct", "md_README.html#autotoc_md41", null ],
+        [ "Attribution", "md_README.html#autotoc_md42", null ],
+        [ "License", "md_README.html#autotoc_md43", null ],
+        [ "Contact", "md_README.html#autotoc_md44", null ]
       ] ]
     ] ],
     [ "Namespaces", "namespaces.html", [
@@ -165,17 +166,17 @@ var NAVTREEINDEX =
 "classj2735__convertor_1_1Node.html#a0fc944e84214e3396cec4a4eb096ffc0",
 "classtraffic_1_1TrafficIncidentNode.html#a59269ce7b7cd6670d1073d6f3a3bfb10",
 "constr__TYPE_8h.html#adb14c797f7645e315b65f51aa3bfb5cf",
-"globals_defs_s.html",
-"namespacemembers_vars.html",
-"structConfidenceSet.html#a70b9a94bc8c9b940ca2a9c8b8f67c1c2",
-"structGeographicalPath.html#acced4d8765c465cca95a84f6b7bd13b1",
-"structMovementState_1_1MovementState____regional.html#ae1dd0381a2d30048a86c65b9a3217907",
-"structPosition3D__addGrpC.html",
-"structSensorDataSharingMessage.html#a639cacaea5a342a1c06572f2bf3f8241",
-"structTrafficControlBounds.html#af578d6364870cce1ec6da9fa450a5fb3",
-"structVehicleStatus_1_1VehicleStatus____accelSets.html",
-"structasn__struct__ctx__s.html#a34c3cbadc60f33eddb20095ab397a9c4",
-"unionVerticalOffset_1_1VerticalOffset__u.html"
+"globals_defs_r.html",
+"namespacemembers_eval.html",
+"structConfidenceSet.html#a0673cd28b11ca5d3c8a3037876f4c427",
+"structGeographicalPath.html#a7359bb50f098c73cc0a331c1adebb2b6",
+"structMovementState_1_1MovementState____regional.html",
+"structPosition3D__addGrpB.html#a6ffe8cdf96c7330860a7166b601b4b4a",
+"structSensorDataSharingMessage.html#a4d23f9f0bbe3f0c770efeba0deb7a3b9",
+"structTrafficControlBounds.html#ac09f2e49bd94e3d4e8b42f37d768aa2f",
+"structVehicleStatusRequestList.html#a782da6b308be65bd26bd9a7d71b89289",
+"structasn__random__fill__result__s.html#af148d9fcb73a232e7956c16537abffb8",
+"unionVehicleIdent_1_1VehicleIdent____vehicleClass_1_1VehicleIdent____vehicleClass__u.html#a74f9520fd065b1e7a89db1b52e4a2176"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

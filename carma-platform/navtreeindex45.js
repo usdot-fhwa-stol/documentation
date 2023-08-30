@@ -1,5 +1,12 @@
 var NAVTREEINDEX45 =
 {
+"stop__and__dwell__strategic__plugin_8launch_8py_source.html":[43,0,46,1,0],
+"stop__and__dwell__strategic__plugin__config_8hpp.html":[43,0,46,0,1],
+"stop__and__dwell__strategic__plugin__config_8hpp_source.html":[43,0,46,0,1],
+"stop__and__wait__config_8hpp.html":[43,0,47,0,0],
+"stop__and__wait__config_8hpp_source.html":[43,0,47,0,0],
+"stop__and__wait__node_8hpp.html":[43,0,47,0,1],
+"stop__and__wait__node_8hpp_source.html":[43,0,47,0,1],
 "stop__and__wait__plugin_2src_2main_8cpp.html":[43,0,47,2,0],
 "stop__and__wait__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[43,0,47,2,0,0],
 "stop__and__wait__plugin_2src_2main_8cpp_source.html":[43,0,47,2,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX45 =
 "structMemoryStream.html#a91f0767b4f0ed2476d835e8344848a2f":[42,0,100,10],
 "structMemoryStream.html#ab26a1b5c6d5e8f52c0f6982feba47f36":[42,0,100,12],
 "structMemoryStream.html#ac445f93c23c9e85f1f5381911c4ed870":[42,0,100,5],
-"structNS3Adapter_1_1WaveConfigStruct.html":[42,0,101,0],
-"structNS3Adapter_1_1WaveConfigStruct.html#a02455a7de9f3c9746442e08d66df6cfc":[42,0,101,0,3],
-"structNS3Adapter_1_1WaveConfigStruct.html#a08f8b8dd32bfb77f8f4451a7487f8e93":[42,0,101,0,1],
-"structNS3Adapter_1_1WaveConfigStruct.html#a14e22cf37cb29a02710cf7c85320a845":[42,0,101,0,6],
-"structNS3Adapter_1_1WaveConfigStruct.html#a7db62530a2d2baca58bef4535f7474c9":[42,0,101,0,4],
-"structNS3Adapter_1_1WaveConfigStruct.html#a942bdfdb0e6c0115fe38e19a36bef6fc":[42,0,101,0,0],
-"structNS3Adapter_1_1WaveConfigStruct.html#a99a796304db56ae037f05213da81fa26":[42,0,101,0,5],
-"structNS3Adapter_1_1WaveConfigStruct.html#ae869ac99169e68b8124deb286229f86c":[42,0,101,0,2]
+"structNS3Adapter_1_1WaveConfigStruct.html":[42,0,101,0]
 };

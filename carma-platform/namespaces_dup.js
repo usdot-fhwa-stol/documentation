@@ -168,6 +168,10 @@ var namespaces_dup =
     [ "roadway_objects_launch", "namespaceroadway__objects__launch.html", [
       [ "generate_launch_description", "namespaceroadway__objects__launch.html#a968bec41644500a2281d050e31bcbf01", null ]
     ] ],
+    [ "ros2_rosbag", "namespaceros2__rosbag.html", [
+      [ "generate_launch_description", "namespaceros2__rosbag.html#a34db9f1acdab007c1e2d29c46cff42ec", null ],
+      [ "record_ros2_rosbag", "namespaceros2__rosbag.html#ab62c7d5806d689d49d2434b84544bfbe", null ]
+    ] ],
     [ "route", "namespaceroute.html", "namespaceroute" ],
     [ "route_following_plugin", "namespaceroute__following__plugin.html", "namespaceroute__following__plugin" ],
     [ "route_launch", "namespaceroute__launch.html", [

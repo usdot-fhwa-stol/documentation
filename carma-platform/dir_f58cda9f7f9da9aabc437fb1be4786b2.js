@@ -7,6 +7,7 @@ var dir_f58cda9f7f9da9aabc437fb1be4786b2 =
     [ "localization.launch.py", "localization_8launch_8py.html", "localization_8launch_8py" ],
     [ "message.launch.py", "message_8launch_8py.html", "message_8launch_8py" ],
     [ "plugins.launch.py", "plugins_8launch_8py.html", "plugins_8launch_8py" ],
+    [ "ros2_rosbag.launch.py", "ros2__rosbag_8launch_8py.html", "ros2__rosbag_8launch_8py" ],
     [ "transforms.launch.py", "transforms_8launch_8py.html", "transforms_8launch_8py" ],
     [ "ui.launch.py", "ui_8launch_8py.html", "ui_8launch_8py" ]
 ];

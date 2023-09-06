@@ -31,10 +31,12 @@ var searchData=
   ['posetotf2_28',['PoseToTF2',['../classpose__to__tf_1_1PoseToTF2.html',1,'pose_to_tf']]],
   ['posetotf2config_29',['PoseToTF2Config',['../structpose__to__tf_1_1PoseToTF2Config.html',1,'pose_to_tf']]],
   ['posetotfnode_30',['PoseToTfNode',['../classpose__to__tf_1_1PoseToTfNode.html',1,'pose_to_tf']]],
-  ['prettywriter_31',['PrettyWriter',['../classPrettyWriter.html',1,'']]],
-  ['property_32',['Property',['../structinternal_1_1Schema_1_1Property.html',1,'internal::Schema']]],
-  ['publisherwapper_33',['PublisherWapper',['../structmock__drivers_1_1PublisherWapper.html',1,'mock_drivers']]],
-  ['purepursuit_34',['PurePursuit',['../classplatoon__control_1_1PurePursuit.html',1,'platoon_control::PurePursuit'],['../classplatoon__control__ihp_1_1PurePursuit.html',1,'platoon_control_ihp::PurePursuit']]],
-  ['purepursuitwrapperconfig_35',['PurePursuitWrapperConfig',['../structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html',1,'pure_pursuit_wrapper']]],
-  ['purepursuitwrappernode_36',['PurePursuitWrapperNode',['../classpure__pursuit__wrapper_1_1PurePursuitWrapperNode.html',1,'pure_pursuit_wrapper']]]
+  ['position3d_31',['Position3D',['../structcarma__cooperative__perception_1_1Position3D.html',1,'carma_cooperative_perception']]],
+  ['positionoffsetxyz_32',['PositionOffsetXYZ',['../structcarma__cooperative__perception_1_1PositionOffsetXYZ.html',1,'carma_cooperative_perception']]],
+  ['prettywriter_33',['PrettyWriter',['../classPrettyWriter.html',1,'']]],
+  ['property_34',['Property',['../structinternal_1_1Schema_1_1Property.html',1,'internal::Schema']]],
+  ['publisherwapper_35',['PublisherWapper',['../structmock__drivers_1_1PublisherWapper.html',1,'mock_drivers']]],
+  ['purepursuit_36',['PurePursuit',['../classplatoon__control_1_1PurePursuit.html',1,'platoon_control::PurePursuit'],['../classplatoon__control__ihp_1_1PurePursuit.html',1,'platoon_control_ihp::PurePursuit']]],
+  ['purepursuitwrapperconfig_37',['PurePursuitWrapperConfig',['../structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html',1,'pure_pursuit_wrapper']]],
+  ['purepursuitwrappernode_38',['PurePursuitWrapperNode',['../classpure__pursuit__wrapper_1_1PurePursuitWrapperNode.html',1,'pure_pursuit_wrapper']]]
 ];

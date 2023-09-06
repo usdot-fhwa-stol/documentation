@@ -500,7 +500,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  429</span>    carma_planning_msgs::msg::TrajectoryPlan trajectory_plan;</div>
 <div class="line"><span class="lineno">  430</span>    trajectory_plan.header.frame_id = <span class="stringliteral">&quot;map&quot;</span>;</div>
 <div class="line"><span class="lineno">  431</span>    trajectory_plan.header.stamp = this-&gt;now();</div>
-<div class="line"><span class="lineno">  432</span>    trajectory_plan.trajectory_id = boost::uuids::to_string(boost::uuids::random_generator()());</div>
+<div class="line"><span class="lineno">  432</span>    trajectory_plan.trajectory_id = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">boost::uuids::to_string</a>(boost::uuids::random_generator()());</div>
 <div class="line"><span class="lineno">  433</span> </div>
 <div class="line"><span class="lineno">  434</span>    trajectory_plan.trajectory_points = planned_trajectory_points;</div>
 <div class="line"><span class="lineno">  435</span>    trajectory_plan.initial_longitudinal_velocity = std::max(req-&gt;vehicle_state.longitudinal_vel, <a class="code hl_variable" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#ae890f98aff099f7898fb613e736eed69">config_</a>.<a class="code hl_variable" href="structcooperative__lanechange_1_1Config.html#a0dd99e69e75b8068e5e24ac8d5440351">minimum_speed</a>);</div>
@@ -510,10 +510,20 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  439</span> </div>
 <div class="line"><span class="lineno">  440</span>    resp-&gt;maneuver_status.push_back(carma_planning_msgs::srv::PlanTrajectory::Response::MANEUVER_IN_PROGRESS);</div>
 <div class="line"><span class="lineno">  441</span>  }</div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_a64b708654c8aecb09122d39577df31b5"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">carma_cooperative_perception::to_string</a></div><div class="ttdeci">auto to_string(const UtmZone &amp;zone) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="utm__zone_8cpp_source.html#l00024">utm_zone.cpp:24</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00083">config_</a>, and <a class="el" href="cooperative__lanechange__config_8hpp_source.html#l00032">cooperative_lanechange::Config::minimum_speed</a>.</p>
+<p class="reference">References <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00083">config_</a>, <a class="el" href="cooperative__lanechange__config_8hpp_source.html#l00032">cooperative_lanechange::Config::minimum_speed</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00024">carma_cooperative_perception::to_string()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00262">plan_trajectory_callback()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcooperative__lanechange_1_1CooperativeLaneChangePlugin_a44b0991434aff010ace36990542c9ab5_cgraph.png" border="0" usemap="#aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a44b0991434aff010ace36990542c9ab5_cgraph" alt=""/></div>
+<map name="aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a44b0991434aff010ace36990542c9ab5_cgraph" id="aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a44b0991434aff010ace36990542c9ab5_cgraph">
+<area shape="rect" title="Adds the generated trajectory plan to the service response." alt="" coords="5,22,212,78"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="260,29,459,71"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -616,15 +626,24 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">  640</span>  {</div>
 <div class="line"><span class="lineno">  641</span>    std::string res = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><span class="lineno">  642</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; bsm_core.id.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++){</div>
-<div class="line"><span class="lineno">  643</span>      res += std::to_string(bsm_core.id[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]);</div>
+<div class="line"><span class="lineno">  643</span>      res += <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(bsm_core.id[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]);</div>
 <div class="line"><span class="lineno">  644</span>    }</div>
 <div class="line"><span class="lineno">  645</span>    <span class="keywordflow">return</span> res;</div>
 <div class="line"><span class="lineno">  646</span>  }</div>
 <div class="ttc" id="anamespaceprocess__bag_html_af102a02c97622dd30b0dbf7bafb0d199"><div class="ttname"><a href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">process_bag.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00059">process_bag.py:59</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>.</p>
+<p class="reference">References <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00024">carma_cooperative_perception::to_string()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00443">create_mobility_request()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcooperative__lanechange_1_1CooperativeLaneChangePlugin_a927d4231a180210144c9aef17daee6dc_cgraph.png" border="0" usemap="#aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a927d4231a180210144c9aef17daee6dc_cgraph" alt=""/></div>
+<map name="aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a927d4231a180210144c9aef17daee6dc_cgraph" id="aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a927d4231a180210144c9aef17daee6dc_cgraph">
+<area shape="rect" title="Method for extracting the BSM ID from a BSM Core Data object and converting it to a string." alt="" coords="5,22,212,78"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="260,29,459,71"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -680,7 +699,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  447</span>    header.sender_id = <a class="code hl_variable" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#ae890f98aff099f7898fb613e736eed69">config_</a>.<a class="code hl_variable" href="structcooperative__lanechange_1_1Config.html#a8ce299ee7913ebc1d1e2bf9aaced3ea7">vehicle_id</a>;</div>
 <div class="line"><span class="lineno">  448</span>    header.recipient_id = <a class="code hl_variable" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#aec1a20d35f9a4a0d45440caf099141f4">DEFAULT_STRING_</a>;  </div>
 <div class="line"><span class="lineno">  449</span>    header.sender_bsm_id = <a class="code hl_function" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a927d4231a180210144c9aef17daee6dc">bsmIDtoString</a>(<a class="code hl_variable" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a9fa30650f10c164205903ee0d2f3f439">bsm_core_</a>);</div>
-<div class="line"><span class="lineno">  450</span>    header.plan_id = boost::uuids::to_string(boost::uuids::random_generator()());</div>
+<div class="line"><span class="lineno">  450</span>    header.plan_id = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">boost::uuids::to_string</a>(boost::uuids::random_generator()());</div>
 <div class="line"><span class="lineno">  451</span>    <a class="code hl_variable" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#acedfdef6d802eaa6875a68cf4cdbb9fd">clc_request_id_</a> = header.plan_id;</div>
 <div class="line"><span class="lineno">  452</span>    header.timestamp = rclcpp::Time(trajectory_plan.front().target_time).nanoseconds() * 1000000;</div>
 <div class="line"><span class="lineno">  453</span>    request_msg.m_header = header;</div>
@@ -746,7 +765,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  513</span>        </div>
 <div class="line"><span class="lineno">  514</span>    request_msg.trajectory = trajectory;</div>
 <div class="line"><span class="lineno">  515</span>    request_msg.expiration = rclcpp::Time(trajectory_plan.back().target_time).seconds();</div>
-<div class="line"><span class="lineno">  516</span>    RCLCPP_DEBUG_STREAM(get_logger(), <span class="stringliteral">&quot;request_msg.expiration: &quot;</span> &lt;&lt; request_msg.expiration &lt;&lt; <span class="stringliteral">&quot; of which string size: &quot;</span> &lt;&lt; std::to_string(request_msg.expiration).size());</div>
+<div class="line"><span class="lineno">  516</span>    RCLCPP_DEBUG_STREAM(get_logger(), <span class="stringliteral">&quot;request_msg.expiration: &quot;</span> &lt;&lt; request_msg.expiration &lt;&lt; <span class="stringliteral">&quot; of which string size: &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(request_msg.expiration).size());</div>
 <div class="line"><span class="lineno">  517</span>      </div>
 <div class="line"><span class="lineno">  518</span>    <span class="keywordflow">return</span> request_msg;</div>
 <div class="line"><span class="lineno">  519</span>  }</div>
@@ -759,7 +778,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_html_af52a03fcc4c193952e5541f2aad4638b"><div class="ttname"><a href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#af52a03fcc4c193952e5541f2aad4638b">cooperative_lanechange::CooperativeLaneChangePlugin::trajectory_plan_to_trajectory</a></div><div class="ttdeci">carma_v2x_msgs::msg::Trajectory trajectory_plan_to_trajectory(const std::vector&lt; carma_planning_msgs::msg::TrajectoryPlanPoint &gt; &amp;traj_points) const</div><div class="ttdoc">Converts Trajectory Plan to (Mobility) Trajectory.</div><div class="ttdef"><b>Definition:</b> <a href="cooperative__lanechange__node_8cpp_source.html#l00521">cooperative_lanechange_node.cpp:521</a></div></div>
 <div class="ttc" id="aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_html_af89c7f901e5c0736914999a6db5d198a"><div class="ttname"><a href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#af89c7f901e5c0736914999a6db5d198a">cooperative_lanechange::CooperativeLaneChangePlugin::maneuver_fraction_completed_</a></div><div class="ttdeci">double maneuver_fraction_completed_</div><div class="ttdef"><b>Definition:</b> <a href="cooperative__lanechange__node_8hpp_source.html#l00104">cooperative_lanechange_node.hpp:104</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00113">bsm_core_</a>, <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00639">bsmIDtoString()</a>, <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00110">clc_request_id_</a>, <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00083">config_</a>, <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00095">DEFAULT_STRING_</a>, <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00104">maneuver_fraction_completed_</a>, <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00089">map_projector_</a>, <a class="el" href="cooperative__lanechange__config_8hpp_source.html#l00048">cooperative_lanechange::Config::mid_fraction</a>, <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00149">pose_msg_</a>, <a class="el" href="cooperative__lanechange__config_8hpp_source.html#l00047">cooperative_lanechange::Config::starting_fraction</a>, <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00521">trajectory_plan_to_trajectory()</a>, <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00549">trajectory_point_to_ecef()</a>, and <a class="el" href="cooperative__lanechange__config_8hpp_source.html#l00055">cooperative_lanechange::Config::vehicle_id</a>.</p>
+<p class="reference">References <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00113">bsm_core_</a>, <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00639">bsmIDtoString()</a>, <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00110">clc_request_id_</a>, <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00083">config_</a>, <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00095">DEFAULT_STRING_</a>, <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00104">maneuver_fraction_completed_</a>, <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00089">map_projector_</a>, <a class="el" href="cooperative__lanechange__config_8hpp_source.html#l00048">cooperative_lanechange::Config::mid_fraction</a>, <a class="el" href="cooperative__lanechange__node_8hpp_source.html#l00149">pose_msg_</a>, <a class="el" href="cooperative__lanechange__config_8hpp_source.html#l00047">cooperative_lanechange::Config::starting_fraction</a>, <a class="el" href="utm__zone_8cpp_source.html#l00024">carma_cooperative_perception::to_string()</a>, <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00521">trajectory_plan_to_trajectory()</a>, <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00549">trajectory_point_to_ecef()</a>, and <a class="el" href="cooperative__lanechange__config_8hpp_source.html#l00055">cooperative_lanechange::Config::vehicle_id</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00262">plan_trajectory_callback()</a>.</p>
 <div class="dynheader">
@@ -767,10 +786,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcooperative__lanechange_1_1CooperativeLaneChangePlugin_a20d68c7f1bde0030d7d7bb68957aaada_cgraph.png" border="0" usemap="#aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a20d68c7f1bde0030d7d7bb68957aaada_cgraph" alt=""/></div>
 <map name="aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a20d68c7f1bde0030d7d7bb68957aaada_cgraph" id="aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a20d68c7f1bde0030d7d7bb68957aaada_cgraph">
-<area shape="rect" title="Creates a mobility request message from planned trajectory and requested maneuver info." alt="" coords="5,85,212,141"/>
+<area shape="rect" title="Creates a mobility request message from planned trajectory and requested maneuver info." alt="" coords="5,104,212,160"/>
 <area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a927d4231a180210144c9aef17daee6dc" title="Method for extracting the BSM ID from a BSM Core Data object and converting it to a string." alt="" coords="260,5,467,61"/>
-<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#af52a03fcc4c193952e5541f2aad4638b" title="Converts Trajectory Plan to (Mobility) Trajectory." alt="" coords="260,85,467,141"/>
-<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a05621cd21f1e0073da4a59e7af561021" title="Converts Trajectory Point to ECEF frame using map projection." alt="" coords="515,119,721,175"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="519,61,717,102"/>
+<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#af52a03fcc4c193952e5541f2aad4638b" title="Converts Trajectory Plan to (Mobility) Trajectory." alt="" coords="260,136,467,192"/>
+<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a05621cd21f1e0073da4a59e7af561021" title="Converts Trajectory Point to ECEF frame using map projection." alt="" coords="515,155,721,211"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1475,29 +1495,30 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcooperative__lanechange_1_1CooperativeLaneChangePlugin_a5f0c14a409d58d6b1750c38c6bf1b34a_cgraph.png" border="0" usemap="#aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a5f0c14a409d58d6b1750c38c6bf1b34a_cgraph" alt=""/></div>
 <map name="aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a5f0c14a409d58d6b1750c38c6bf1b34a_cgraph" id="aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a5f0c14a409d58d6b1750c38c6bf1b34a_cgraph">
-<area shape="rect" title="Creates a vector of Trajectory Points from maneuver information in trajectory request." alt="" coords="5,331,212,387"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a8be61ccb69db73e2e70d5e59f88ce446" title=" " alt="" coords="260,217,460,273"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a11b8eae5903a23ecab69c2f814c1bcf8" title=" " alt="" coords="261,297,459,353"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a741942c16ca54212b9adf3ddc2eea66d" title="Method converts a list of lanelet centerline points and current vehicle state into a usable list of t..." alt="" coords="776,256,997,312"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#acdcd3bb44d31aa6405b30f151ea35ae4" title="Creates geometry profile to return a point speed pair struct for LANE FOLLOW and LANE CHANGE maneuver..." alt="" coords="265,464,455,520"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#adf1c6b7f1e33569b45074e4e5bbeff1d" title="Compute the arc length at each point around the curve." alt="" coords="1315,426,1467,467"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04" title="Computes a spline based on the provided points." alt="" coords="1304,491,1477,533"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ad8a3ee0bf06f85a6e7a8b5097251da2b" title="Compute an approximate orientation for the vehicle at each point along the provided centerline." alt="" coords="1049,13,1252,54"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a" title="Returns the nearest &quot;less than&quot; point to the provided vehicle pose in the provided list by utilizing ..." alt="" coords="1064,404,1237,460"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1smoothing.html#afb726e75a21ada8efa3ca5561ffc9984" title="Extremely simplie moving average filter." alt="" coords="1059,78,1242,119"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a0f07faaac8c54cc485f2bb217097326e" title="Helper method to split a list of PointSpeedPair into separate point and speed lists." alt="" coords="1064,143,1237,199"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aba6a29cdaf0c4af10647b59bf6df4e01" title="Method combines input points, times, orientations, and an absolute start time to form a valid carma p..." alt="" coords="1045,223,1256,279"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a4e12c2971926486d1447e44e978f8d4d" title=" " alt="" coords="1539,453,1684,509"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0" title="Compute the Euclidean distance between the two points." alt="" coords="1745,559,1891,615"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a126f739493756f0eb84183ea22912b93" title=" " alt="" coords="1317,5,1464,61"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ae8af6cd9c27d35849c12959ab9f1b9c3" title=" " alt="" coords="1539,5,1684,61"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#ad56958ee3bb11064df00a37cbf948b8d" title="Adds extra centerline points beyond required message length to lane follow maneuver points so that th..." alt="" coords="508,507,728,549"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa3500af9146c0d9c80cb1b4101be01e5" title="Converts a set of requested LANE_FOLLOWING maneuvers to point speed limit pairs." alt="" coords="520,612,716,668"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#af992a6cbbdafd6e86d73976a65164e94" title="Converts a set of requested LANE_CHANGE maneuvers to point speed limit pairs." alt="" coords="525,428,711,484"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ae7d5ca280140dce2bf7bcfb78bdfd55d" title="Helper function to concatenate 2 linestrings together and return the result. Neither LineString is mo..." alt="" coords="1525,602,1697,643"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a2219ab96db87781023137bdb45af1ea2" title="Creates a vector of lane change points using parameters defined." alt="" coords="785,480,989,536"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a924ac023f1b51e791ca1b61b9194f44a" title="Returns the nearest point (in terms of cartesian 2d distance) to the provided vehicle pose in the pro..." alt="" coords="1064,564,1237,620"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a19cf5cf882789e1e9ed3e92d0105a8de" title="Resamples a pair of basicpoint2d lines to get lines of same number of points." alt="" coords="1047,484,1254,540"/>
+<area shape="rect" title="Creates a vector of Trajectory Points from maneuver information in trajectory request." alt="" coords="5,265,212,321"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a8be61ccb69db73e2e70d5e59f88ce446" title=" " alt="" coords="260,151,460,207"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a11b8eae5903a23ecab69c2f814c1bcf8" title=" " alt="" coords="261,231,459,287"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a741942c16ca54212b9adf3ddc2eea66d" title="Method converts a list of lanelet centerline points and current vehicle state into a usable list of t..." alt="" coords="776,251,997,307"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#acdcd3bb44d31aa6405b30f151ea35ae4" title="Creates geometry profile to return a point speed pair struct for LANE FOLLOW and LANE CHANGE maneuver..." alt="" coords="265,483,455,539"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#adf1c6b7f1e33569b45074e4e5bbeff1d" title="Compute the arc length at each point around the curve." alt="" coords="1315,419,1467,460"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04" title="Computes a spline based on the provided points." alt="" coords="1304,484,1477,525"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ad8a3ee0bf06f85a6e7a8b5097251da2b" title="Compute an approximate orientation for the vehicle at each point along the provided centerline." alt="" coords="1049,229,1252,271"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a" title="Returns the nearest &quot;less than&quot; point to the provided vehicle pose in the provided list by utilizing ..." alt="" coords="1064,397,1237,453"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1smoothing.html#afb726e75a21ada8efa3ca5561ffc9984" title="Extremely simplie moving average filter." alt="" coords="1059,5,1242,47"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a0f07faaac8c54cc485f2bb217097326e" title="Helper method to split a list of PointSpeedPair into separate point and speed lists." alt="" coords="1064,70,1237,126"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aba6a29cdaf0c4af10647b59bf6df4e01" title="Method combines input points, times, orientations, and an absolute start time to form a valid carma p..." alt="" coords="1045,150,1256,206"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a4e12c2971926486d1447e44e978f8d4d" title=" " alt="" coords="1539,469,1684,525"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0" title="Compute the Euclidean distance between the two points." alt="" coords="1745,619,1891,675"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a126f739493756f0eb84183ea22912b93" title=" " alt="" coords="1317,222,1464,278"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ae8af6cd9c27d35849c12959ab9f1b9c3" title=" " alt="" coords="1539,222,1684,278"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#ad56958ee3bb11064df00a37cbf948b8d" title="Adds extra centerline points beyond required message length to lane follow maneuver points so that th..." alt="" coords="508,603,728,644"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa3500af9146c0d9c80cb1b4101be01e5" title="Converts a set of requested LANE_FOLLOWING maneuvers to point speed limit pairs." alt="" coords="520,523,716,579"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#af992a6cbbdafd6e86d73976a65164e94" title="Converts a set of requested LANE_CHANGE maneuvers to point speed limit pairs." alt="" coords="525,443,711,499"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ae7d5ca280140dce2bf7bcfb78bdfd55d" title="Helper function to concatenate 2 linestrings together and return the result. Neither LineString is mo..." alt="" coords="1525,663,1697,704"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a2219ab96db87781023137bdb45af1ea2" title="Creates a vector of lane change points using parameters defined." alt="" coords="785,477,989,533"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a924ac023f1b51e791ca1b61b9194f44a" title="Returns the nearest point (in terms of cartesian 2d distance) to the provided vehicle pose in the pro..." alt="" coords="1064,557,1237,613"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a19cf5cf882789e1e9ed3e92d0105a8de" title="Resamples a pair of basicpoint2d lines to get lines of same number of points." alt="" coords="1047,477,1254,533"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="1051,661,1250,703"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1736,36 +1757,37 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcooperative__lanechange_1_1CooperativeLaneChangePlugin_a8913539d8614e509910af225e18bc809_cgraph.png" border="0" usemap="#aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a8913539d8614e509910af225e18bc809_cgraph" alt=""/></div>
 <map name="aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a8913539d8614e509910af225e18bc809_cgraph" id="aclasscooperative__lanechange_1_1CooperativeLaneChangePlugin_a8913539d8614e509910af225e18bc809_cgraph">
-<area shape="rect" title="Extending class provided callback which should return a planned trajectory based on the provided traj..." alt="" coords="5,285,212,341"/>
-<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a44b0991434aff010ace36990542c9ab5" title="Adds the generated trajectory plan to the service response." alt="" coords="260,165,467,221"/>
-<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a20d68c7f1bde0030d7d7bb68957aaada" title="Creates a mobility request message from planned trajectory and requested maneuver info." alt="" coords="260,245,467,301"/>
-<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a88c91153e18edd9d789b9950a7e11094" title="Calculates distance between subject vehicle and vehicle 2." alt="" coords="260,325,467,381"/>
-<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a5f0c14a409d58d6b1750c38c6bf1b34a" title="Creates a vector of Trajectory Points from maneuver information in trajectory request." alt="" coords="260,423,467,479"/>
-<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a927d4231a180210144c9aef17daee6dc" title="Method for extracting the BSM ID from a BSM Core Data object and converting it to a string." alt="" coords="515,292,721,348"/>
-<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#af52a03fcc4c193952e5541f2aad4638b" title="Converts Trajectory Plan to (Mobility) Trajectory." alt="" coords="515,161,721,217"/>
-<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a05621cd21f1e0073da4a59e7af561021" title="Converts Trajectory Point to ECEF frame using map projection." alt="" coords="776,195,983,251"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a8be61ccb69db73e2e70d5e59f88ce446" title=" " alt="" coords="518,503,718,559"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a11b8eae5903a23ecab69c2f814c1bcf8" title=" " alt="" coords="519,583,717,639"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a741942c16ca54212b9adf3ddc2eea66d" title="Method converts a list of lanelet centerline points and current vehicle state into a usable list of t..." alt="" coords="1037,241,1259,297"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#acdcd3bb44d31aa6405b30f151ea35ae4" title="Creates geometry profile to return a point speed pair struct for LANE FOLLOW and LANE CHANGE maneuver..." alt="" coords="523,423,713,479"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#adf1c6b7f1e33569b45074e4e5bbeff1d" title="Compute the arc length at each point around the curve." alt="" coords="1576,419,1728,461"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04" title="Computes a spline based on the provided points." alt="" coords="1565,485,1739,526"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ad8a3ee0bf06f85a6e7a8b5097251da2b" title="Compute an approximate orientation for the vehicle at each point along the provided centerline." alt="" coords="1311,165,1513,206"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a" title="Returns the nearest &quot;less than&quot; point to the provided vehicle pose in the provided list by utilizing ..." alt="" coords="1325,397,1499,453"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1smoothing.html#afb726e75a21ada8efa3ca5561ffc9984" title="Extremely simplie moving average filter." alt="" coords="1321,333,1503,374"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a0f07faaac8c54cc485f2bb217097326e" title="Helper method to split a list of PointSpeedPair into separate point and speed lists." alt="" coords="1325,5,1499,61"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aba6a29cdaf0c4af10647b59bf6df4e01" title="Method combines input points, times, orientations, and an absolute start time to form a valid carma p..." alt="" coords="1307,85,1517,141"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a4e12c2971926486d1447e44e978f8d4d" title=" " alt="" coords="1800,447,1945,503"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0" title="Compute the Euclidean distance between the two points." alt="" coords="2007,552,2152,608"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a126f739493756f0eb84183ea22912b93" title=" " alt="" coords="1579,157,1725,213"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ae8af6cd9c27d35849c12959ab9f1b9c3" title=" " alt="" coords="1800,157,1945,213"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#ad56958ee3bb11064df00a37cbf948b8d" title="Adds extra centerline points beyond required message length to lane follow maneuver points so that th..." alt="" coords="769,502,989,543"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa3500af9146c0d9c80cb1b4101be01e5" title="Converts a set of requested LANE_FOLLOWING maneuvers to point speed limit pairs." alt="" coords="781,604,977,660"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#af992a6cbbdafd6e86d73976a65164e94" title="Converts a set of requested LANE_CHANGE maneuvers to point speed limit pairs." alt="" coords="786,423,973,479"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ae7d5ca280140dce2bf7bcfb78bdfd55d" title="Helper function to concatenate 2 linestrings together and return the result. Neither LineString is mo..." alt="" coords="1787,595,1959,637"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a2219ab96db87781023137bdb45af1ea2" title="Creates a vector of lane change points using parameters defined." alt="" coords="1046,473,1250,529"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a924ac023f1b51e791ca1b61b9194f44a" title="Returns the nearest point (in terms of cartesian 2d distance) to the provided vehicle pose in the pro..." alt="" coords="1325,557,1499,613"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a19cf5cf882789e1e9ed3e92d0105a8de" title="Resamples a pair of basicpoint2d lines to get lines of same number of points." alt="" coords="1309,477,1515,533"/>
+<area shape="rect" title="Extending class provided callback which should return a planned trajectory based on the provided traj..." alt="" coords="5,282,212,338"/>
+<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a44b0991434aff010ace36990542c9ab5" title="Adds the generated trajectory plan to the service response." alt="" coords="260,73,467,129"/>
+<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a20d68c7f1bde0030d7d7bb68957aaada" title="Creates a mobility request message from planned trajectory and requested maneuver info." alt="" coords="769,137,976,193"/>
+<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a88c91153e18edd9d789b9950a7e11094" title="Calculates distance between subject vehicle and vehicle 2." alt="" coords="260,494,467,550"/>
+<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a5f0c14a409d58d6b1750c38c6bf1b34a" title="Creates a vector of Trajectory Points from maneuver information in trajectory request." alt="" coords="260,414,467,470"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="1306,31,1505,72"/>
+<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a927d4231a180210144c9aef17daee6dc" title="Method for extracting the BSM ID from a BSM Core Data object and converting it to a string." alt="" coords="1038,57,1245,113"/>
+<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#af52a03fcc4c193952e5541f2aad4638b" title="Converts Trajectory Plan to (Mobility) Trajectory." alt="" coords="1038,137,1245,193"/>
+<area shape="rect" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a05621cd21f1e0073da4a59e7af561021" title="Converts Trajectory Point to ECEF frame using map projection." alt="" coords="1302,162,1509,218"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a8be61ccb69db73e2e70d5e59f88ce446" title=" " alt="" coords="515,527,715,583"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a11b8eae5903a23ecab69c2f814c1bcf8" title=" " alt="" coords="516,607,713,663"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a741942c16ca54212b9adf3ddc2eea66d" title="Method converts a list of lanelet centerline points and current vehicle state into a usable list of t..." alt="" coords="1031,634,1252,690"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#acdcd3bb44d31aa6405b30f151ea35ae4" title="Creates geometry profile to return a point speed pair struct for LANE FOLLOW and LANE CHANGE maneuver..." alt="" coords="519,361,710,417"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#adf1c6b7f1e33569b45074e4e5bbeff1d" title="Compute the arc length at each point around the curve." alt="" coords="1569,632,1721,673"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04" title="Computes a spline based on the provided points." alt="" coords="1559,431,1732,472"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ad8a3ee0bf06f85a6e7a8b5097251da2b" title="Compute an approximate orientation for the vehicle at each point along the provided centerline." alt="" coords="1304,609,1507,651"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a" title="Returns the nearest &quot;less than&quot; point to the provided vehicle pose in the provided list by utilizing ..." alt="" coords="1319,478,1492,534"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1smoothing.html#afb726e75a21ada8efa3ca5561ffc9984" title="Extremely simplie moving average filter." alt="" coords="1314,675,1497,716"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a0f07faaac8c54cc485f2bb217097326e" title="Helper method to split a list of PointSpeedPair into separate point and speed lists." alt="" coords="1319,739,1492,795"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aba6a29cdaf0c4af10647b59bf6df4e01" title="Method combines input points, times, orientations, and an absolute start time to form a valid carma p..." alt="" coords="1300,819,1511,875"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a4e12c2971926486d1447e44e978f8d4d" title=" " alt="" coords="1793,625,1939,681"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0" title="Compute the Euclidean distance between the two points." alt="" coords="2000,549,2145,605"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a126f739493756f0eb84183ea22912b93" title=" " alt="" coords="1572,549,1719,605"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ae8af6cd9c27d35849c12959ab9f1b9c3" title=" " alt="" coords="1793,545,1939,601"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#ad56958ee3bb11064df00a37cbf948b8d" title="Adds extra centerline points beyond required message length to lane follow maneuver points so that th..." alt="" coords="763,332,983,373"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa3500af9146c0d9c80cb1b4101be01e5" title="Converts a set of requested LANE_FOLLOWING maneuvers to point speed limit pairs." alt="" coords="775,253,971,309"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#af992a6cbbdafd6e86d73976a65164e94" title="Converts a set of requested LANE_CHANGE maneuvers to point speed limit pairs." alt="" coords="779,397,966,453"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ae7d5ca280140dce2bf7bcfb78bdfd55d" title="Helper function to concatenate 2 linestrings together and return the result. Neither LineString is mo..." alt="" coords="1780,345,1952,387"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a2219ab96db87781023137bdb45af1ea2" title="Creates a vector of lane change points using parameters defined." alt="" coords="1039,397,1243,453"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a924ac023f1b51e791ca1b61b9194f44a" title="Returns the nearest point (in terms of cartesian 2d distance) to the provided vehicle pose in the pro..." alt="" coords="1319,398,1492,454"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a19cf5cf882789e1e9ed3e92d0105a8de" title="Resamples a pair of basicpoint2d lines to get lines of same number of points." alt="" coords="1302,318,1509,374"/>
 </map>
 </div>
 
@@ -2592,7 +2614,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecooperative__lanechange.html">cooperative_lanechange</a></li><li class="navelem"><a class="el" href="classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html">CooperativeLaneChangePlugin</a></li>
-    <li class="footer">Generated on Wed Aug 30 2023 16:07:26 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 6 2023 17:59:00 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -627,8 +627,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   64</span>  <span class="keywordflow">if</span> (req-&gt;maneuver_index_to_plan &gt;= req-&gt;maneuver_plan.maneuvers.size())</div>
 <div class="line"><span class="lineno">   65</span>  {</div>
 <div class="line"><span class="lineno">   66</span>    <span class="keywordflow">throw</span> std::invalid_argument(</div>
-<div class="line"><span class="lineno">   67</span>        <span class="stringliteral">&quot;StopAndWait plugin asked to plan invalid maneuver index: &quot;</span> + std::to_string(req-&gt;maneuver_index_to_plan) +</div>
-<div class="line"><span class="lineno">   68</span>        <span class="stringliteral">&quot; for plan of size: &quot;</span> + std::to_string(req-&gt;maneuver_plan.maneuvers.size()));</div>
+<div class="line"><span class="lineno">   67</span>        <span class="stringliteral">&quot;StopAndWait plugin asked to plan invalid maneuver index: &quot;</span> + <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(req-&gt;maneuver_index_to_plan) +</div>
+<div class="line"><span class="lineno">   68</span>        <span class="stringliteral">&quot; for plan of size: &quot;</span> + <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(req-&gt;maneuver_plan.maneuvers.size()));</div>
 <div class="line"><span class="lineno">   69</span>  }</div>
 <div class="line"><span class="lineno">   70</span> </div>
 <div class="line"><span class="lineno">   71</span>  <span class="keywordflow">if</span> (req-&gt;maneuver_plan.maneuvers[req-&gt;maneuver_index_to_plan].type != carma_planning_msgs::msg::Maneuver::STOP_AND_WAIT)</div>
@@ -673,7 +673,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  110</span>  carma_planning_msgs::msg::TrajectoryPlan trajectory;</div>
 <div class="line"><span class="lineno">  111</span>  trajectory.header.frame_id = <span class="stringliteral">&quot;map&quot;</span>;</div>
 <div class="line"><span class="lineno">  112</span>  trajectory.header.stamp = req-&gt;header.stamp;</div>
-<div class="line"><span class="lineno">  113</span>  trajectory.trajectory_id = boost::uuids::to_string(boost::uuids::random_generator()());</div>
+<div class="line"><span class="lineno">  113</span>  trajectory.trajectory_id = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">boost::uuids::to_string</a>(boost::uuids::random_generator()());</div>
 <div class="line"><span class="lineno">  114</span> </div>
 <div class="line"><span class="lineno">  115</span>  <span class="comment">// Extract the stopping buffer used to consider a stopping behavior complete</span></div>
 <div class="line"><span class="lineno">  116</span>  <span class="keywordtype">double</span> stop_location_buffer = <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#aca43edbb1111fbf89bf99f7cbacd6796">default_stopping_buffer</a>;  <span class="comment">// If no maneuver meta data is provided we will use the default buffer</span></div>
@@ -720,23 +720,25 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassstop__and__wait__plugin_1_1StopandWait_html_a85799673152ebcc839e30f3c4a7cc6f8"><div class="ttname"><a href="classstop__and__wait__plugin_1_1StopandWait.html#a85799673152ebcc839e30f3c4a7cc6f8">stop_and_wait_plugin::StopandWait::epsilon_</a></div><div class="ttdeci">double epsilon_</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__plugin_8hpp_source.html#l00114">stop_and_wait_plugin.hpp:114</a></div></div>
 <div class="ttc" id="aclassstop__and__wait__plugin_1_1StopandWait_html_aa9627181b624dc0e6c96ea2255bdf062"><div class="ttname"><a href="classstop__and__wait__plugin_1_1StopandWait.html#aa9627181b624dc0e6c96ea2255bdf062">stop_and_wait_plugin::StopandWait::maneuvers_to_points</a></div><div class="ttdeci">std::vector&lt; PointSpeedPair &gt; maneuvers_to_points(const std::vector&lt; carma_planning_msgs::msg::Maneuver &gt; &amp;maneuvers, const carma_wm::WorldModelConstPtr &amp;wm, const carma_planning_msgs::msg::VehicleState &amp;state)</div><div class="ttdoc">Converts a set of requested STOP_AND_WAIT maneuvers to point speed limit pairs.</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__plugin_8cpp_source.html#l00159">stop_and_wait_plugin.cpp:159</a></div></div>
 <div class="ttc" id="aclassstop__and__wait__plugin_1_1StopandWait_html_ad80a802e059ba3e8a458eb53c0093a0b"><div class="ttname"><a href="classstop__and__wait__plugin_1_1StopandWait.html#ad80a802e059ba3e8a458eb53c0093a0b">stop_and_wait_plugin::StopandWait::compose_trajectory_from_centerline</a></div><div class="ttdeci">std::vector&lt; carma_planning_msgs::msg::TrajectoryPlanPoint &gt; compose_trajectory_from_centerline(const std::vector&lt; PointSpeedPair &gt; &amp;points, double starting_downtrack, double starting_speed, double stop_location, double stop_location_buffer, rclcpp::Time start_time, double stopping_acceleration, double &amp;initial_speed)</div><div class="ttdoc">Method converts a list of lanelet centerline points and current vehicle state into a usable list of t...</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__plugin_8cpp_source.html#l00223">stop_and_wait_plugin.cpp:223</a></div></div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_a64b708654c8aecb09122d39577df31b5"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">carma_cooperative_perception::to_string</a></div><div class="ttdeci">auto to_string(const UtmZone &amp;zone) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="utm__zone_8cpp_source.html#l00024">utm_zone.cpp:24</a></div></div>
 <div class="ttc" id="astructStopandWaitConfig_html_aca43edbb1111fbf89bf99f7cbacd6796"><div class="ttname"><a href="structStopandWaitConfig.html#aca43edbb1111fbf89bf99f7cbacd6796">StopandWaitConfig::default_stopping_buffer</a></div><div class="ttdeci">double default_stopping_buffer</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__wait__config_8hpp_source.html#l00033">stop_and_wait_config.hpp:33</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00223">compose_trajectory_from_centerline()</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00120">config_</a>, <a class="el" href="stop__and__wait__config_8hpp_source.html#l00033">StopandWaitConfig::default_stopping_buffer</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00114">epsilon_</a>, <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00159">maneuvers_to_points()</a>, and <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00119">wm_</a>.</p>
+<p class="reference">References <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00223">compose_trajectory_from_centerline()</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00120">config_</a>, <a class="el" href="stop__and__wait__config_8hpp_source.html#l00033">StopandWaitConfig::default_stopping_buffer</a>, <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00114">epsilon_</a>, <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00159">maneuvers_to_points()</a>, <a class="el" href="utm__zone_8cpp_source.html#l00024">carma_cooperative_perception::to_string()</a>, and <a class="el" href="stop__and__wait__plugin_8hpp_source.html#l00119">wm_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classstop__and__wait__plugin_1_1StopandWait_aacfe3c82e0d7cc47a27c67f7b9f4b83e_cgraph.png" border="0" usemap="#aclassstop__and__wait__plugin_1_1StopandWait_aacfe3c82e0d7cc47a27c67f7b9f4b83e_cgraph" alt=""/></div>
 <map name="aclassstop__and__wait__plugin_1_1StopandWait_aacfe3c82e0d7cc47a27c67f7b9f4b83e_cgraph" id="aclassstop__and__wait__plugin_1_1StopandWait_aacfe3c82e0d7cc47a27c67f7b9f4b83e_cgraph">
-<area shape="rect" title="Service callback for trajectory planning." alt="" coords="5,154,219,195"/>
-<area shape="rect" href="classstop__and__wait__plugin_1_1StopandWait.html#ad80a802e059ba3e8a458eb53c0093a0b" title="Method converts a list of lanelet centerline points and current vehicle state into a usable list of t..." alt="" coords="267,107,445,163"/>
-<area shape="rect" href="classstop__and__wait__plugin_1_1StopandWait.html#aa9627181b624dc0e6c96ea2255bdf062" title="Converts a set of requested STOP_AND_WAIT maneuvers to point speed limit pairs." alt="" coords="270,187,442,243"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ad8a3ee0bf06f85a6e7a8b5097251da2b" title="Compute an approximate orientation for the vehicle at each point along the provided centerline." alt="" coords="497,13,700,54"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1smoothing.html#afb726e75a21ada8efa3ca5561ffc9984" title="Extremely simplie moving average filter." alt="" coords="507,78,690,119"/>
-<area shape="rect" href="classstop__and__wait__plugin_1_1StopandWait.html#a8dc5745955f3c287e4217b20359eb771" title="Helper method to split a list of PointSpeedPair into separate point and speed lists." alt="" coords="499,143,698,199"/>
-<area shape="rect" href="classstop__and__wait__plugin_1_1StopandWait.html#afda81ce6bf1b8913bad9f071b7881790" title=" " alt="" coords="493,223,704,279"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a126f739493756f0eb84183ea22912b93" title=" " alt="" coords="752,5,899,61"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ae8af6cd9c27d35849c12959ab9f1b9c3" title=" " alt="" coords="947,5,1092,61"/>
+<area shape="rect" title="Service callback for trajectory planning." alt="" coords="5,194,219,235"/>
+<area shape="rect" href="classstop__and__wait__plugin_1_1StopandWait.html#ad80a802e059ba3e8a458eb53c0093a0b" title="Method converts a list of lanelet centerline points and current vehicle state into a usable list of t..." alt="" coords="277,107,455,163"/>
+<area shape="rect" href="classstop__and__wait__plugin_1_1StopandWait.html#aa9627181b624dc0e6c96ea2255bdf062" title="Converts a set of requested STOP_AND_WAIT maneuvers to point speed limit pairs." alt="" coords="280,187,452,243"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="267,291,465,333"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ad8a3ee0bf06f85a6e7a8b5097251da2b" title="Compute an approximate orientation for the vehicle at each point along the provided centerline." alt="" coords="517,13,720,54"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1smoothing.html#afb726e75a21ada8efa3ca5561ffc9984" title="Extremely simplie moving average filter." alt="" coords="527,78,710,119"/>
+<area shape="rect" href="classstop__and__wait__plugin_1_1StopandWait.html#a8dc5745955f3c287e4217b20359eb771" title="Helper method to split a list of PointSpeedPair into separate point and speed lists." alt="" coords="519,143,718,199"/>
+<area shape="rect" href="classstop__and__wait__plugin_1_1StopandWait.html#afda81ce6bf1b8913bad9f071b7881790" title=" " alt="" coords="513,223,724,279"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a126f739493756f0eb84183ea22912b93" title=" " alt="" coords="772,5,919,61"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#ae8af6cd9c27d35849c12959ab9f1b9c3" title=" " alt="" coords="967,5,1112,61"/>
 </map>
 </div>
 
@@ -1046,7 +1048,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacestop__and__wait__plugin.html">stop_and_wait_plugin</a></li><li class="navelem"><a class="el" href="classstop__and__wait__plugin_1_1StopandWait.html">StopandWait</a></li>
-    <li class="footer">Generated on Wed Aug 30 2023 16:07:30 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 6 2023 17:59:03 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

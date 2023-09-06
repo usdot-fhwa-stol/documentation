@@ -52,6 +52,21 @@ var annotated_dup =
       [ "CarmaCloudClient", "classcarma__cloud__client_1_1CarmaCloudClient.html", "classcarma__cloud__client_1_1CarmaCloudClient" ],
       [ "Config", "structcarma__cloud__client_1_1Config.html", "structcarma__cloud__client_1_1Config" ]
     ] ],
+    [ "carma_cooperative_perception", "namespacecarma__cooperative__perception.html", [
+      [ "AccelerationSet4Way", "structcarma__cooperative__perception_1_1AccelerationSet4Way.html", "structcarma__cooperative__perception_1_1AccelerationSet4Way" ],
+      [ "DDateTime", "structcarma__cooperative__perception_1_1DDateTime.html", "structcarma__cooperative__perception_1_1DDateTime" ],
+      [ "Heading", "structcarma__cooperative__perception_1_1Heading.html", "structcarma__cooperative__perception_1_1Heading" ],
+      [ "MeasurementTimeOffset", "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html", "structcarma__cooperative__perception_1_1MeasurementTimeOffset" ],
+      [ "Month", "classcarma__cooperative__perception_1_1Month.html", "classcarma__cooperative__perception_1_1Month" ],
+      [ "Position3D", "structcarma__cooperative__perception_1_1Position3D.html", "structcarma__cooperative__perception_1_1Position3D" ],
+      [ "PositionOffsetXYZ", "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html", "structcarma__cooperative__perception_1_1PositionOffsetXYZ" ],
+      [ "SdsmToDetectionListNode", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode" ],
+      [ "Speed", "structcarma__cooperative__perception_1_1Speed.html", "structcarma__cooperative__perception_1_1Speed" ],
+      [ "UtmCoordinate", "structcarma__cooperative__perception_1_1UtmCoordinate.html", "structcarma__cooperative__perception_1_1UtmCoordinate" ],
+      [ "UtmDisplacement", "structcarma__cooperative__perception_1_1UtmDisplacement.html", "structcarma__cooperative__perception_1_1UtmDisplacement" ],
+      [ "UtmZone", "structcarma__cooperative__perception_1_1UtmZone.html", "structcarma__cooperative__perception_1_1UtmZone" ],
+      [ "Wgs84Coordinate", "structcarma__cooperative__perception_1_1Wgs84Coordinate.html", "structcarma__cooperative__perception_1_1Wgs84Coordinate" ]
+    ] ],
     [ "carma_guidance_plugins", "namespacecarma__guidance__plugins.html", [
       [ "ControlPlugin", "classcarma__guidance__plugins_1_1ControlPlugin.html", "classcarma__guidance__plugins_1_1ControlPlugin" ],
       [ "PluginBaseNode", "classcarma__guidance__plugins_1_1PluginBaseNode.html", "classcarma__guidance__plugins_1_1PluginBaseNode" ],

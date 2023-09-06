@@ -11,5 +11,8 @@ var searchData=
   ['utf32_3c_20unsigned_20_3e_8',['UTF32&lt; unsigned &gt;',['../structUTF32.html',1,'']]],
   ['utf32be_9',['UTF32BE',['../structUTF32BE.html',1,'']]],
   ['utf32le_10',['UTF32LE',['../structUTF32LE.html',1,'']]],
-  ['utf8_11',['UTF8',['../structUTF8.html',1,'']]]
+  ['utf8_11',['UTF8',['../structUTF8.html',1,'']]],
+  ['utmcoordinate_12',['UtmCoordinate',['../structcarma__cooperative__perception_1_1UtmCoordinate.html',1,'carma_cooperative_perception']]],
+  ['utmdisplacement_13',['UtmDisplacement',['../structcarma__cooperative__perception_1_1UtmDisplacement.html',1,'carma_cooperative_perception']]],
+  ['utmzone_14',['UtmZone',['../structcarma__cooperative__perception_1_1UtmZone.html',1,'carma_cooperative_perception']]]
 ];

@@ -28,7 +28,8 @@ var searchData=
   ['hashigherpriority_25',['hasHigherPriority',['../classlightbar__manager_1_1LightBarManagerWorker.html#af3d10b2392abae33e33afe5a9bb3a2de',1,'lightbar_manager::LightBarManagerWorker']]],
   ['hasmember_26',['HasMember',['../classGenericObject.html#a996d775e52cc7c5cf2aa308cf5a2b2cf',1,'GenericObject::HasMember(const Ch *name) const'],['../classGenericObject.html#a0b63666ca05c86f9d719350f2302a3f7',1,'GenericObject::HasMember(const GenericValue&lt; EncodingType, SourceAllocator &gt; &amp;name) const']]],
   ['hasparseerror_27',['HasParseError',['../classGenericDocument.html#a510a0588db4eb372f5d81bc3646578fb',1,'GenericDocument::HasParseError()'],['../classGenericReader.html#ac417441794477ea747b63adb6d3653a9',1,'GenericReader::HasParseError()']]],
-  ['headingcallback_28',['headingCallback',['../classbsm__generator_1_1BSMGenerator.html#a71e465312754a33d2a3514b7b91e2de1',1,'bsm_generator::BSMGenerator']]],
-  ['healthmonitor_29',['HealthMonitor',['../classhealth__monitor_1_1HealthMonitor.html#a70067d94dfea37de7120471304846f99',1,'health_monitor::HealthMonitor']]],
-  ['hostmemberupdates_30',['hostMemberUpdates',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#aa09eb8121e30d6ee3517823766dbeea4',1,'platoon_strategic_ihp::PlatoonManager']]]
+  ['heading_5fto_5fenu_5fyaw_28',['heading_to_enu_yaw',['../namespacecarma__cooperative__perception.html#a9e566b257bc0f36b231efe8468bf04fc',1,'carma_cooperative_perception']]],
+  ['headingcallback_29',['headingCallback',['../classbsm__generator_1_1BSMGenerator.html#a71e465312754a33d2a3514b7b91e2de1',1,'bsm_generator::BSMGenerator']]],
+  ['healthmonitor_30',['HealthMonitor',['../classhealth__monitor_1_1HealthMonitor.html#a70067d94dfea37de7120471304846f99',1,'health_monitor::HealthMonitor']]],
+  ['hostmemberupdates_31',['hostMemberUpdates',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#aa09eb8121e30d6ee3517823766dbeea4',1,'platoon_strategic_ihp::PlatoonManager']]]
 ];

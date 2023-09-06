@@ -1772,10 +1772,11 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#af992a6cbbdafd6e86d73976a65164e94" title="Converts a set of requested LANE_CHANGE maneuvers to point speed limit pairs." alt="" coords="261,150,447,206"/>
 <area shape="rect" href="namespacecarma__wm_1_1geometry.html#ae7d5ca280140dce2bf7bcfb78bdfd55d" title="Helper function to concatenate 2 linestrings together and return the result. Neither LineString is mo..." alt="" coords="1240,88,1412,129"/>
 <area shape="rect" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0" title="Compute the Euclidean distance between the two points." alt="" coords="1460,138,1605,194"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a2219ab96db87781023137bdb45af1ea2" title="Creates a vector of lane change points using parameters defined." alt="" coords="512,211,716,267"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a2219ab96db87781023137bdb45af1ea2" title="Creates a vector of lane change points using parameters defined." alt="" coords="512,215,716,271"/>
 <area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a" title="Returns the nearest &quot;less than&quot; point to the provided vehicle pose in the provided list by utilizing ..." alt="" coords="781,135,954,191"/>
 <area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a924ac023f1b51e791ca1b61b9194f44a" title="Returns the nearest point (in terms of cartesian 2d distance) to the provided vehicle pose in the pro..." alt="" coords="781,215,954,271"/>
 <area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a19cf5cf882789e1e9ed3e92d0105a8de" title="Resamples a pair of basicpoint2d lines to get lines of same number of points." alt="" coords="764,295,971,351"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="768,400,967,441"/>
 <area shape="rect" href="namespacecarma__wm_1_1geometry.html#adf1c6b7f1e33569b45074e4e5bbeff1d" title="Compute the arc length at each point around the curve." alt="" coords="1029,225,1181,267"/>
 <area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04" title="Computes a spline based on the provided points." alt="" coords="1019,303,1192,344"/>
 <area shape="rect" href="namespacecarma__wm_1_1geometry.html#a4e12c2971926486d1447e44e978f8d4d" title=" " alt="" coords="1253,174,1399,230"/>
@@ -1889,17 +1890,17 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  327</span>            lanelet::ConstLanelet current_lanelet = starting_lanelet;</div>
 <div class="line"><span class="lineno">  328</span>            reference_centerline.insert(reference_centerline.end(), current_lanelet_centerline.begin(), current_lanelet_centerline.end());</div>
 <div class="line"><span class="lineno">  329</span> </div>
-<div class="line"><span class="lineno">  330</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Searching for shared boundary with starting lanechange lanelet &quot;</span> &lt;&lt; std::to_string(current_lanelet.id()) &lt;&lt; <span class="stringliteral">&quot; and ending lanelet &quot;</span> &lt;&lt; std::to_string(ending_lanelet.id()));</div>
+<div class="line"><span class="lineno">  330</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Searching for shared boundary with starting lanechange lanelet &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(current_lanelet.id()) &lt;&lt; <span class="stringliteral">&quot; and ending lanelet &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(ending_lanelet.id()));</div>
 <div class="line"><span class="lineno">  331</span>            <span class="keywordflow">while</span>(!shared_boundary_found){</div>
 <div class="line"><span class="lineno">  332</span>                <span class="comment">//Assumption- Adjacent lanelets share lane boundary</span></div>
 <div class="line"><span class="lineno">  333</span>                <span class="keywordflow">if</span>(current_lanelet.leftBound() == ending_lanelet.rightBound()){   </div>
-<div class="line"><span class="lineno">  334</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Lanelet &quot;</span> &lt;&lt; std::to_string(current_lanelet.id()) &lt;&lt; <span class="stringliteral">&quot; shares left boundary with &quot;</span> &lt;&lt; std::to_string(ending_lanelet.id()));</div>
+<div class="line"><span class="lineno">  334</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Lanelet &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(current_lanelet.id()) &lt;&lt; <span class="stringliteral">&quot; shares left boundary with &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(ending_lanelet.id()));</div>
 <div class="line"><span class="lineno">  335</span>                    is_lanechange_left = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">  336</span>                    shared_boundary_found = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">  337</span>                }</div>
 <div class="line"><span class="lineno">  338</span> </div>
 <div class="line"><span class="lineno">  339</span>                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(current_lanelet.rightBound() == ending_lanelet.leftBound()){</div>
-<div class="line"><span class="lineno">  340</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Lanelet &quot;</span> &lt;&lt; std::to_string(current_lanelet.id()) &lt;&lt; <span class="stringliteral">&quot; shares right boundary with &quot;</span> &lt;&lt; std::to_string(ending_lanelet.id()));</div>
+<div class="line"><span class="lineno">  340</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Lanelet &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(current_lanelet.id()) &lt;&lt; <span class="stringliteral">&quot; shares right boundary with &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(ending_lanelet.id()));</div>
 <div class="line"><span class="lineno">  341</span>                    shared_boundary_found = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">  342</span>                }</div>
 <div class="line"><span class="lineno">  343</span> </div>
@@ -1918,7 +1919,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  356</span>                        <span class="comment">//Looped back to starting lanelet</span></div>
 <div class="line"><span class="lineno">  357</span>                        <span class="keywordflow">throw</span>(std::invalid_argument(<span class="stringliteral">&quot;No lane change in path&quot;</span>));</div>
 <div class="line"><span class="lineno">  358</span>                    }</div>
-<div class="line"><span class="lineno">  359</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Now checking for shared lane boundary with lanelet &quot;</span> &lt;&lt; std::to_string(current_lanelet.id()) &lt;&lt; <span class="stringliteral">&quot; and ending lanelet &quot;</span> &lt;&lt; std::to_string(ending_lanelet.id()));</div>
+<div class="line"><span class="lineno">  359</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Now checking for shared lane boundary with lanelet &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(current_lanelet.id()) &lt;&lt; <span class="stringliteral">&quot; and ending lanelet &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(ending_lanelet.id()));</div>
 <div class="line"><span class="lineno">  360</span>                    <span class="keyword">auto</span> current_lanelet_linestring = current_lanelet.centerline2d().basicLineString();   </div>
 <div class="line"><span class="lineno">  361</span>                    <span class="comment">//Concatenate linestring starting from + 1 to avoid overlap </span></div>
 <div class="line"><span class="lineno">  362</span>                    reference_centerline.insert(reference_centerline.end(), current_lanelet_linestring.begin() + 1, current_lanelet_linestring.end());</div>
@@ -2029,8 +2030,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  467</span>            <span class="keywordflow">return</span> centerline_points;</div>
 <div class="line"><span class="lineno">  468</span>        }</div>
 <div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_a19cf5cf882789e1e9ed3e92d0105a8de"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#a19cf5cf882789e1e9ed3e92d0105a8de">basic_autonomy::waypoint_generation::resample_linestring_pair_to_same_size</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; lanelet::BasicPoint2d &gt; &gt; resample_linestring_pair_to_same_size(std::vector&lt; lanelet::BasicPoint2d &gt; &amp;line_1, std::vector&lt; lanelet::BasicPoint2d &gt; &amp;line_2)</div><div class="ttdoc">Resamples a pair of basicpoint2d lines to get lines of same number of points.</div><div class="ttdef"><b>Definition:</b> <a href="basic__autonomy_8cpp_source.html#l00470">basic_autonomy.cpp:470</a></div></div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_a64b708654c8aecb09122d39577df31b5"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">carma_cooperative_perception::to_string</a></div><div class="ttdeci">auto to_string(const UtmZone &amp;zone) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="utm__zone_8cpp_source.html#l00024">utm_zone.cpp:24</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="basic__autonomy_8hpp_source.html#l00062">BASIC_AUTONOMY_LOGGER</a>, <a class="el" href="helper__functions_8cpp_source.html#l00065">get_nearest_index_by_downtrack()</a>, <a class="el" href="helper__functions_8cpp_source.html#l00024">get_nearest_point_index()</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, and <a class="el" href="basic__autonomy_8cpp_source.html#l00470">resample_linestring_pair_to_same_size()</a>.</p>
+<p class="reference">References <a class="el" href="basic__autonomy_8hpp_source.html#l00062">BASIC_AUTONOMY_LOGGER</a>, <a class="el" href="helper__functions_8cpp_source.html#l00065">get_nearest_index_by_downtrack()</a>, <a class="el" href="helper__functions_8cpp_source.html#l00024">get_nearest_point_index()</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00470">resample_linestring_pair_to_same_size()</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00024">carma_cooperative_perception::to_string()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="basic__autonomy_8cpp_source.html#l00532">get_lanechange_points_from_maneuver()</a>.</p>
 <div class="dynheader">
@@ -2038,14 +2040,15 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacebasic__autonomy_1_1waypoint__generation_a2219ab96db87781023137bdb45af1ea2_cgraph.png" border="0" usemap="#anamespacebasic__autonomy_1_1waypoint__generation_a2219ab96db87781023137bdb45af1ea2_cgraph" alt=""/></div>
 <map name="anamespacebasic__autonomy_1_1waypoint__generation_a2219ab96db87781023137bdb45af1ea2_cgraph" id="anamespacebasic__autonomy_1_1waypoint__generation_a2219ab96db87781023137bdb45af1ea2_cgraph">
-<area shape="rect" title="Creates a vector of lane change points using parameters defined." alt="" coords="5,85,209,141"/>
+<area shape="rect" title="Creates a vector of lane change points using parameters defined." alt="" coords="5,125,209,181"/>
 <area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a" title="Returns the nearest &quot;less than&quot; point to the provided vehicle pose in the provided list by utilizing ..." alt="" coords="274,5,447,61"/>
 <area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a924ac023f1b51e791ca1b61b9194f44a" title="Returns the nearest point (in terms of cartesian 2d distance) to the provided vehicle pose in the pro..." alt="" coords="274,85,447,141"/>
 <area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a19cf5cf882789e1e9ed3e92d0105a8de" title="Resamples a pair of basicpoint2d lines to get lines of same number of points." alt="" coords="257,165,464,221"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#adf1c6b7f1e33569b45074e4e5bbeff1d" title="Compute the arc length at each point around the curve." alt="" coords="523,139,675,181"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04" title="Computes a spline based on the provided points." alt="" coords="512,205,685,246"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a4e12c2971926486d1447e44e978f8d4d" title=" " alt="" coords="733,132,879,188"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0" title="Compute the Euclidean distance between the two points." alt="" coords="927,132,1072,188"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="261,270,460,311"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#adf1c6b7f1e33569b45074e4e5bbeff1d" title="Compute the arc length at each point around the curve." alt="" coords="523,141,675,182"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04" title="Computes a spline based on the provided points." alt="" coords="512,206,685,247"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a4e12c2971926486d1447e44e978f8d4d" title=" " alt="" coords="733,133,879,189"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0" title="Compute the Euclidean distance between the two points." alt="" coords="927,133,1072,189"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2554,15 +2557,16 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacebasic__autonomy_1_1waypoint__generation_af992a6cbbdafd6e86d73976a65164e94_cgraph.png" border="0" usemap="#anamespacebasic__autonomy_1_1waypoint__generation_af992a6cbbdafd6e86d73976a65164e94_cgraph" alt=""/></div>
 <map name="anamespacebasic__autonomy_1_1waypoint__generation_af992a6cbbdafd6e86d73976a65164e94_cgraph" id="anamespacebasic__autonomy_1_1waypoint__generation_af992a6cbbdafd6e86d73976a65164e94_cgraph">
-<area shape="rect" title="Converts a set of requested LANE_CHANGE maneuvers to point speed limit pairs." alt="" coords="5,47,192,103"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a2219ab96db87781023137bdb45af1ea2" title="Creates a vector of lane change points using parameters defined." alt="" coords="240,79,444,135"/>
+<area shape="rect" title="Converts a set of requested LANE_CHANGE maneuvers to point speed limit pairs." alt="" coords="5,53,192,109"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a2219ab96db87781023137bdb45af1ea2" title="Creates a vector of lane change points using parameters defined." alt="" coords="240,85,444,141"/>
 <area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a" title="Returns the nearest &quot;less than&quot; point to the provided vehicle pose in the provided list by utilizing ..." alt="" coords="509,5,682,61"/>
 <area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a924ac023f1b51e791ca1b61b9194f44a" title="Returns the nearest point (in terms of cartesian 2d distance) to the provided vehicle pose in the pro..." alt="" coords="509,85,682,141"/>
 <area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a19cf5cf882789e1e9ed3e92d0105a8de" title="Resamples a pair of basicpoint2d lines to get lines of same number of points." alt="" coords="492,165,699,221"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#adf1c6b7f1e33569b45074e4e5bbeff1d" title="Compute the arc length at each point around the curve." alt="" coords="757,139,909,181"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04" title="Computes a spline based on the provided points." alt="" coords="747,205,920,246"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a4e12c2971926486d1447e44e978f8d4d" title=" " alt="" coords="968,132,1113,188"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0" title="Compute the Euclidean distance between the two points." alt="" coords="1161,132,1307,188"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="496,270,695,311"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#adf1c6b7f1e33569b45074e4e5bbeff1d" title="Compute the arc length at each point around the curve." alt="" coords="757,141,909,182"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04" title="Computes a spline based on the provided points." alt="" coords="747,206,920,247"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a4e12c2971926486d1447e44e978f8d4d" title=" " alt="" coords="968,133,1113,189"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0" title="Compute the Euclidean distance between the two points." alt="" coords="1161,133,1307,189"/>
 </map>
 </div>
 <div class="dynheader">
@@ -3650,7 +3654,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacebasic__autonomy.html">basic_autonomy</a></li><li class="navelem"><a class="el" href="namespacebasic__autonomy_1_1waypoint__generation.html">waypoint_generation</a></li>
-    <li class="footer">Generated on Wed Aug 30 2023 16:07:24 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 6 2023 17:58:59 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

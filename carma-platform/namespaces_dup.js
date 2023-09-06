@@ -28,6 +28,7 @@ var namespaces_dup =
       [ "generate_launch_description", "namespacecarma__cloud__client__launch.html#a61660dc0389cc0486295cd5ab8c7bfcc", null ],
       [ "open_tunnels", "namespacecarma__cloud__client__launch.html#a197dfe55298d247edddfcd4aa5624d40", null ]
     ] ],
+    [ "carma_cooperative_perception", "namespacecarma__cooperative__perception.html", "namespacecarma__cooperative__perception" ],
     [ "carma_guidance_plugins", "namespacecarma__guidance__plugins.html", "namespacecarma__guidance__plugins" ],
     [ "carma_record", "namespacecarma__record.html", "namespacecarma__record" ],
     [ "carma_src", "namespacecarma__src.html", [
@@ -271,6 +272,17 @@ var namespaces_dup =
     [ "truck_inspection_client", "namespacetruck__inspection__client.html", "namespacetruck__inspection__client" ],
     [ "ui", "namespaceui.html", [
       [ "generate_launch_description", "namespaceui.html#a148c770b4109d293449a5e8d60732081", null ]
+    ] ],
+    [ "units", "namespaceunits.html", [
+      [ "UNIT_ADD", "namespaceunits.html#abbb71236d3e7474602a6c189db7b2d8b", null ],
+      [ "UNIT_ADD", "namespaceunits.html#a6053adda24a11f826d4581cb4ffd78aa", null ],
+      [ "UNIT_ADD", "namespaceunits.html#a4a29524c104d4c62ca6ad389a744f22d", null ],
+      [ "deci_micro_degrees", "namespaceunits.html#a8a42422297e25f62f4c2763a44117389", null ],
+      [ "deci_udeg", "namespaceunits.html#a5c75fc9aededaf050cb34c03b70f022c", null ],
+      [ "two_centi_SG", "namespaceunits.html#a5cba359595c6db0b84c01349d609be2e", null ],
+      [ "two_centi_standard_gravities", "namespaceunits.html#a58ddd0a627bfec960f9b7d2574f77727", null ],
+      [ "two_milli_meters_per_second", "namespaceunits.html#a57df2ddc6d7a9595d08de7253cd3a3ce", null ],
+      [ "two_milli_mps", "namespaceunits.html#a9ee548145713498400d8a4fca8579dfa", null ]
     ] ],
     [ "yield_plugin", "namespaceyield__plugin.html", "namespaceyield__plugin" ]
 ];

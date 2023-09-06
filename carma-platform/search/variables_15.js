@@ -23,5 +23,6 @@ var searchData=
   ['use_5ffixed_5fcosts_20',['use_fixed_costs',['../structarbitrator_1_1Config.html#aba6e22d41904cf47e6bf602d12d39ef3',1,'arbitrator::Config']]],
   ['user_5ffilter_5fvalue_5f_21',['user_filter_value_',['../classpcl_1_1experimental_1_1advanced_1_1FunctorFilter.html#aa5e1b371ea35327ac0f4c630422e7b03',1,'pcl::experimental::advanced::FunctorFilter']]],
   ['user_5frequested_5factivation_5f_22',['user_requested_activation_',['../structsubsystem__controllers_1_1Entry.html#a91c245cbfbc0fb117cfacbc5f16ed3f0',1,'subsystem_controllers::Entry']]],
-  ['userbuffer_5f_23',['userBuffer_',['../classMemoryPoolAllocator.html#aa3c4d2503b12acc7d14e4a5da67ac46e',1,'MemoryPoolAllocator']]]
+  ['userbuffer_5f_23',['userBuffer_',['../classMemoryPoolAllocator.html#aa3c4d2503b12acc7d14e4a5da67ac46e',1,'MemoryPoolAllocator']]],
+  ['utm_5fzone_24',['utm_zone',['../structcarma__cooperative__perception_1_1UtmCoordinate.html#a5aece7021819085fc85d65cf2cc94c72',1,'carma_cooperative_perception::UtmCoordinate']]]
 ];

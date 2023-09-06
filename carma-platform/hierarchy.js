@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "carma_cooperative_perception::AccelerationSet4Way", "structcarma__cooperative__perception_1_1AccelerationSet4Way.html", null ],
     [ "platoon_strategic_ihp::ActionPlan", "structplatoon__strategic__ihp_1_1ActionPlan.html", null ],
     [ "Allocator", "classrapidjson_1_1Allocator.html", null ],
     [ "approaching_emergency_vehicle_plugin::ApproachingEmergencyVehicleTransitionTable", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html", null ],
@@ -29,6 +30,7 @@ var hierarchy =
       [ "bounding_box_to_detected_object::Node", "classbounding__box__to__detected__object_1_1Node.html", null ],
       [ "bsm_generator::BSMGenerator", "classbsm__generator_1_1BSMGenerator.html", null ],
       [ "carma_cloud_client::CarmaCloudClient", "classcarma__cloud__client_1_1CarmaCloudClient.html", null ],
+      [ "carma_cooperative_perception::SdsmToDetectionListNode", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html", null ],
       [ "carma_guidance_plugins::PluginBaseNode", "classcarma__guidance__plugins_1_1PluginBaseNode.html", [
         [ "carma_guidance_plugins::ControlPlugin", "classcarma__guidance__plugins_1_1ControlPlugin.html", [
           [ "SUB::Node", "classSUB_1_1Node.html", null ],
@@ -120,6 +122,7 @@ var hierarchy =
     ] ],
     [ "CrtAllocator", "classCrtAllocator.html", null ],
     [ "GenericValue< Encoding, Allocator >::Data", "unionGenericValue_1_1Data.html", null ],
+    [ "carma_cooperative_perception::DDateTime", "structcarma__cooperative__perception_1_1DDateTime.html", null ],
     [ "internal::DecodedStream< SourceStream, Encoding >", "classinternal_1_1DecodedStream.html", null ],
     [ "basic_autonomy::waypoint_generation::DetailedTrajConfig", "structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html", null ],
     [ "internal::DiyFp", "structinternal_1_1DiyFp.html", null ],
@@ -191,6 +194,7 @@ var hierarchy =
       [ "subsystem_controllers::VectorHash", "structsubsystem__controllers_1_1VectorHash.html", null ]
     ] ],
     [ "internal::Hasher< Encoding, Allocator >", "classinternal_1_1Hasher.html", null ],
+    [ "carma_cooperative_perception::Heading", "structcarma__cooperative__perception_1_1Heading.html", null ],
     [ "health_monitor::HealthMonitor", "classhealth__monitor_1_1HealthMonitor.html", null ],
     [ "GenericValue< Encoding, Allocator >::Number::I", "structGenericValue_1_1Number_1_1I.html", null ],
     [ "IGenericRemoteSchemaDocumentProvider< SchemaDocumentType >", "classIGenericRemoteSchemaDocumentProvider.html", null ],
@@ -236,6 +240,7 @@ var hierarchy =
     [ "approximate_intersection::LookupGrid< PointT >", "classapproximate__intersection_1_1LookupGrid.html", null ],
     [ "carma_wm::test::MapOptions", "structcarma__wm_1_1test_1_1MapOptions.html", null ],
     [ "mobilitypath_visualizer::MarkerColor", "structmobilitypath__visualizer_1_1MarkerColor.html", null ],
+    [ "carma_cooperative_perception::MeasurementTimeOffset", "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html", null ],
     [ "MemoryPoolAllocator< BaseAllocator >", "classMemoryPoolAllocator.html", null ],
     [ "MemoryStream", "structMemoryStream.html", null ],
     [ "mock_drivers::MockDriver", "classmock__drivers_1_1MockDriver.html", [
@@ -251,6 +256,7 @@ var hierarchy =
     ] ],
     [ "mock_drivers::MockDriverNode", "classmock__drivers_1_1MockDriverNode.html", null ],
     [ "mock_drivers::MockLightBarDriver", "classmock__drivers_1_1MockLightBarDriver.html", null ],
+    [ "carma_cooperative_perception::Month", "classcarma__cooperative__perception_1_1Month.html", null ],
     [ "motion_computation::MotionComputationWorker", "classmotion__computation_1_1MotionComputationWorker.html", null ],
     [ "carma_wm::collision_detection::MovingObject", "structcarma__wm_1_1collision__detection_1_1MovingObject.html", null ],
     [ "arbitrator::NeighborGenerator", "classarbitrator_1_1NeighborGenerator.html", [
@@ -308,6 +314,8 @@ var hierarchy =
     [ "port_drayage_plugin::PortDrayageWorker", "classport__drayage__plugin_1_1PortDrayageWorker.html", null ],
     [ "pose_to_tf::PoseToTF2", "classpose__to__tf_1_1PoseToTF2.html", null ],
     [ "pose_to_tf::PoseToTF2Config", "structpose__to__tf_1_1PoseToTF2Config.html", null ],
+    [ "carma_cooperative_perception::Position3D", "structcarma__cooperative__perception_1_1Position3D.html", null ],
+    [ "carma_cooperative_perception::PositionOffsetXYZ", "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html", null ],
     [ "internal::Schema< SchemaDocumentType >::Property", "structinternal_1_1Schema_1_1Property.html", null ],
     [ "mock_drivers::PublisherWapper", "structmock__drivers_1_1PublisherWapper.html", null ],
     [ "platoon_control::PurePursuit", "classplatoon__control_1_1PurePursuit.html", null ],
@@ -338,6 +346,7 @@ var hierarchy =
     ] ],
     [ "GenericValue< Encoding, Allocator >::ShortString", "structGenericValue_1_1ShortString.html", null ],
     [ "carma_wm::SignalizedIntersectionManager", "classcarma__wm_1_1SignalizedIntersectionManager.html", null ],
+    [ "carma_cooperative_perception::Speed", "structcarma__cooperative__perception_1_1Speed.html", null ],
     [ "basic_autonomy::smoothing::SplineI", "classbasic__autonomy_1_1smoothing_1_1SplineI.html", [
       [ "basic_autonomy::smoothing::BSpline", "classbasic__autonomy_1_1smoothing_1_1BSpline.html", null ]
     ] ],
@@ -413,11 +422,15 @@ var hierarchy =
       [ "UTF32LE< CharType >", "structUTF32LE.html", null ]
     ] ],
     [ "UTF8< CharType >", "structUTF8.html", null ],
+    [ "carma_cooperative_perception::UtmCoordinate", "structcarma__cooperative__perception_1_1UtmCoordinate.html", null ],
+    [ "carma_cooperative_perception::UtmDisplacement", "structcarma__cooperative__perception_1_1UtmDisplacement.html", null ],
+    [ "carma_cooperative_perception::UtmZone", "structcarma__cooperative__perception_1_1UtmZone.html", null ],
     [ "arbitrator::VehicleState", "structarbitrator_1_1VehicleState.html", null ],
     [ "lci_strategic_plugin::LCIStrategicPlugin::VehicleState", "structlci__strategic__plugin_1_1LCIStrategicPlugin_1_1VehicleState.html", null ],
     [ "sci_strategic_plugin::SCIStrategicPlugin::VehicleState", "structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html", null ],
     [ "stop_and_dwell_strategic_plugin::VehicleState", "structstop__and__dwell__strategic__plugin_1_1VehicleState.html", null ],
     [ "NS3Adapter::WaveConfigStruct", "structNS3Adapter_1_1WaveConfigStruct.html", null ],
+    [ "carma_cooperative_perception::Wgs84Coordinate", "structcarma__cooperative__perception_1_1Wgs84Coordinate.html", null ],
     [ "carma_wm_ctrl::WMBroadcaster", "classcarma__wm__ctrl_1_1WMBroadcaster.html", null ],
     [ "carma_wm::WMListener", "classcarma__wm_1_1WMListener.html", null ],
     [ "carma_wm::WMListenerWorker", "classcarma__wm_1_1WMListenerWorker.html", null ],

@@ -487,15 +487,25 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  363</span>  maneuver_msg.lane_following_maneuver.start_time = start_time;</div>
 <div class="line"><span class="lineno">  364</span>  maneuver_msg.lane_following_maneuver.end_time =  start_time + rclcpp::Duration(time_to_stop*1e9);</div>
 <div class="line"><span class="lineno">  365</span>  maneuver_msg.lane_following_maneuver.lane_ids =</div>
-<div class="line"><span class="lineno">  366</span>      lanelet::utils::transform(lane_ids, [](<span class="keyword">auto</span> <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> std::to_string(<span class="keywordtype">id</span>); });</div>
+<div class="line"><span class="lineno">  366</span>      lanelet::utils::transform(lane_ids, [](<span class="keyword">auto</span> <span class="keywordtype">id</span>) { <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(<span class="keywordtype">id</span>); });</div>
 <div class="line"><span class="lineno">  367</span> </div>
 <div class="line"><span class="lineno">  368</span>  RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_dwell_strategic_plugin&quot;</span>), <span class="stringliteral">&quot;Creating lane follow start dist: &quot;</span> &lt;&lt; start_dist &lt;&lt; <span class="stringliteral">&quot; end dist: &quot;</span> &lt;&lt; end_dist);</div>
 <div class="line"><span class="lineno">  369</span><span class="keywordflow">return</span> maneuver_msg;</div>
 <div class="line"><span class="lineno">  370</span>}</div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_a64b708654c8aecb09122d39577df31b5"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">carma_cooperative_perception::to_string</a></div><div class="ttdeci">auto to_string(const UtmZone &amp;zone) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="utm__zone_8cpp_source.html#l00024">utm_zone.cpp:24</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00193">config_</a>, <a class="el" href="stop__and__dwell__strategic__plugin__config_8hpp_source.html#l00053">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig::lane_following_plugin_name</a>, and <a class="el" href="stop__and__dwell__strategic__plugin__config_8hpp_source.html#l00050">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig::strategic_plugin_name</a>.</p>
+<p class="reference">References <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00193">config_</a>, <a class="el" href="stop__and__dwell__strategic__plugin__config_8hpp_source.html#l00053">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig::lane_following_plugin_name</a>, <a class="el" href="stop__and__dwell__strategic__plugin__config_8hpp_source.html#l00050">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig::strategic_plugin_name</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00024">carma_cooperative_perception::to_string()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00239">plan_maneuvers_callback()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_ac8c7794810e566e3f2459ad9bc776f1f_cgraph.png" border="0" usemap="#aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_ac8c7794810e566e3f2459ad9bc776f1f_cgraph" alt=""/></div>
+<map name="aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_ac8c7794810e566e3f2459ad9bc776f1f_cgraph" id="aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_ac8c7794810e566e3f2459ad9bc776f1f_cgraph">
+<area shape="rect" title="Compose a lane keeping maneuver message based on input params." alt="" coords="5,15,264,85"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="312,29,511,71"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -584,8 +594,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  401</span>  maneuver_msg.stop_and_wait_maneuver.end_dist = end_dist;</div>
 <div class="line"><span class="lineno">  402</span>  maneuver_msg.stop_and_wait_maneuver.start_time = start_time;</div>
 <div class="line"><span class="lineno">  403</span>  maneuver_msg.stop_and_wait_maneuver.end_time = end_time;</div>
-<div class="line"><span class="lineno">  404</span>  maneuver_msg.stop_and_wait_maneuver.starting_lane_id = std::to_string(starting_lane_id);</div>
-<div class="line"><span class="lineno">  405</span>  maneuver_msg.stop_and_wait_maneuver.ending_lane_id = std::to_string(ending_lane_id);</div>
+<div class="line"><span class="lineno">  404</span>  maneuver_msg.stop_and_wait_maneuver.starting_lane_id = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(starting_lane_id);</div>
+<div class="line"><span class="lineno">  405</span>  maneuver_msg.stop_and_wait_maneuver.ending_lane_id = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(ending_lane_id);</div>
 <div class="line"><span class="lineno">  406</span>  <span class="comment">// Set the meta data for the stop location buffer</span></div>
 <div class="line"><span class="lineno">  407</span>  maneuver_msg.stop_and_wait_maneuver.parameters.float_valued_meta_data.push_back(<a class="code hl_variable" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#aa0540a6bdad706903b5c425b81b084fa">config_</a>.<a class="code hl_variable" href="structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#aca8ecd85a0fcbb55f4046b002b971eb7">stop_line_buffer</a>);</div>
 <div class="line"><span class="lineno">  408</span>  maneuver_msg.stop_and_wait_maneuver.parameters.float_valued_meta_data.push_back(stopping_accel);</div>
@@ -596,9 +606,18 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  413</span>}</div>
 <div class="ttc" id="astructstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig_html_a2b050fd1adafc395d595be4bf59842e5"><div class="ttname"><a href="structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a2b050fd1adafc395d595be4bf59842e5">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig::stop_and_wait_plugin_name</a></div><div class="ttdeci">std::string stop_and_wait_plugin_name</div><div class="ttdoc">The name of the plugin to use for stop and wait trajectory planning.</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__dwell__strategic__plugin__config_8hpp_source.html#l00056">stop_and_dwell_strategic_plugin_config.hpp:56</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00193">config_</a>, <a class="el" href="stop__and__dwell__strategic__plugin__config_8hpp_source.html#l00056">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig::stop_and_wait_plugin_name</a>, <a class="el" href="stop__and__dwell__strategic__plugin__config_8hpp_source.html#l00038">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig::stop_line_buffer</a>, and <a class="el" href="stop__and__dwell__strategic__plugin__config_8hpp_source.html#l00050">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig::strategic_plugin_name</a>.</p>
+<p class="reference">References <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00193">config_</a>, <a class="el" href="stop__and__dwell__strategic__plugin__config_8hpp_source.html#l00056">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig::stop_and_wait_plugin_name</a>, <a class="el" href="stop__and__dwell__strategic__plugin__config_8hpp_source.html#l00038">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig::stop_line_buffer</a>, <a class="el" href="stop__and__dwell__strategic__plugin__config_8hpp_source.html#l00050">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig::strategic_plugin_name</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00024">carma_cooperative_perception::to_string()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00239">plan_maneuvers_callback()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a1a74582fde43af1badd083577fdd6d68_cgraph.png" border="0" usemap="#aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a1a74582fde43af1badd083577fdd6d68_cgraph" alt=""/></div>
+<map name="aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a1a74582fde43af1badd083577fdd6d68_cgraph" id="aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a1a74582fde43af1badd083577fdd6d68_cgraph">
+<area shape="rect" title=" " alt="" coords="5,22,308,78"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="356,29,555,71"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -710,7 +729,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  228</span>    state.speed = req-&gt;veh_logitudinal_velocity;</div>
 <div class="line"><span class="lineno">  229</span>    state.lane_id = stoi(req-&gt;veh_lane_id);</div>
 <div class="line"><span class="lineno">  230</span>  }</div>
-<div class="line"><span class="lineno">  231</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a19aa772658a1c6c2285d09621fe0f077">logger_name_</a>), <span class="stringliteral">&quot;extractInitialState &gt;&gt;&gt;&gt; state.stamp: &quot;</span> &lt;&lt; std::to_string(state.stamp.seconds()));</div>
+<div class="line"><span class="lineno">  231</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a19aa772658a1c6c2285d09621fe0f077">logger_name_</a>), <span class="stringliteral">&quot;extractInitialState &gt;&gt;&gt;&gt; state.stamp: &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(state.stamp.seconds()));</div>
 <div class="line"><span class="lineno">  232</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a19aa772658a1c6c2285d09621fe0f077">logger_name_</a>), <span class="stringliteral">&quot;extractInitialState &gt;&gt;&gt;&gt; state.downtrack : &quot;</span> &lt;&lt; state.downtrack );</div>
 <div class="line"><span class="lineno">  233</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a19aa772658a1c6c2285d09621fe0f077">logger_name_</a>), <span class="stringliteral">&quot;extractInitialState &gt;&gt;&gt;&gt; state.speed: &quot;</span> &lt;&lt; state.speed);</div>
 <div class="line"><span class="lineno">  234</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a19aa772658a1c6c2285d09621fe0f077">logger_name_</a>), <span class="stringliteral">&quot;extractInitialState &gt;&gt;&gt;&gt; state.lane_id: &quot;</span> &lt;&lt; state.lane_id);</div>
@@ -722,15 +741,16 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03_html_af094e7f4040bb805d05e70298ef35cf9"><div class="ttname"><a href="namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html#af094e7f4040bb805d05e70298ef35cf9">stop_and_dwell_strategic_plugin::anonymous_namespace{stop_and_dwell_strategic_plugin.cpp}::getManeuverEndSpeed</a></div><div class="ttdeci">double getManeuverEndSpeed(const carma_planning_msgs::msg::Maneuver &amp;mvr)</div><div class="ttdoc">Anonymous function to extract maneuver end speed which can not be optained with GET_MANEUVER_PROPERY ...</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00041">stop_and_dwell_strategic_plugin.cpp:41</a></div></div>
 <div class="ttc" id="astop__and__dwell__strategic__plugin_8cpp_html_a066f948508e087006568cb6c9b0674a7"><div class="ttname"><a href="stop__and__dwell__strategic__plugin_8cpp.html#a066f948508e087006568cb6c9b0674a7">GET_MANEUVER_PROPERTY</a></div><div class="ttdeci">#define GET_MANEUVER_PROPERTY(mvr, property)</div><div class="ttdef"><b>Definition:</b> <a href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00018">stop_and_dwell_strategic_plugin.cpp:18</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00046">stop_and_dwell_strategic_plugin::VehicleState::downtrack</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00018">GET_MANEUVER_PROPERTY</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00193">getLaneletsBetweenWithException()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00041">stop_and_dwell_strategic_plugin::anonymous_namespace{stop_and_dwell_strategic_plugin.cpp}::getManeuverEndSpeed()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00048">stop_and_dwell_strategic_plugin::VehicleState::lane_id</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00174">logger_name_</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00047">stop_and_dwell_strategic_plugin::VehicleState::speed</a>, and <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00045">stop_and_dwell_strategic_plugin::VehicleState::stamp</a>.</p>
+<p class="reference">References <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00046">stop_and_dwell_strategic_plugin::VehicleState::downtrack</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00018">GET_MANEUVER_PROPERTY</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00193">getLaneletsBetweenWithException()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00041">stop_and_dwell_strategic_plugin::anonymous_namespace{stop_and_dwell_strategic_plugin.cpp}::getManeuverEndSpeed()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00048">stop_and_dwell_strategic_plugin::VehicleState::lane_id</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00174">logger_name_</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00047">stop_and_dwell_strategic_plugin::VehicleState::speed</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00045">stop_and_dwell_strategic_plugin::VehicleState::stamp</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00024">carma_cooperative_perception::to_string()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a1edb20d1694598c825c21ec7e6a50e3d_cgraph.png" border="0" usemap="#aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a1edb20d1694598c825c21ec7e6a50e3d_cgraph" alt=""/></div>
 <map name="aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a1edb20d1694598c825c21ec7e6a50e3d_cgraph" id="aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a1edb20d1694598c825c21ec7e6a50e3d_cgraph">
-<area shape="rect" title="Helper method to extract the initial vehicle state from the planning request method based on if the p..." alt="" coords="5,49,208,105"/>
+<area shape="rect" title="Helper method to extract the initial vehicle state from the planning request method based on if the p..." alt="" coords="5,71,208,127"/>
 <area shape="rect" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#abb5a7fcca9d175ec72c58ca89ddaa240" title="Helper method which calls carma_wm::WorldModel::getLaneletsBetween(start_downtrack,..." alt="" coords="256,5,521,61"/>
-<area shape="rect" href="namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html#af094e7f4040bb805d05e70298ef35cf9" title="Anonymous function to extract maneuver end speed which can not be optained with GET_MANEUVER_PROPERY ..." alt="" coords="281,86,496,157"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="569,46,768,87"/>
+<area shape="rect" href="namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html#af094e7f4040bb805d05e70298ef35cf9" title="Anonymous function to extract maneuver end speed which can not be optained with GET_MANEUVER_PROPERY ..." alt="" coords="281,137,496,207"/>
 </map>
 </div>
 
@@ -782,7 +802,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  165</span>    state.lane_id = stoi(req.veh_lane_id);</div>
 <div class="line"><span class="lineno">  166</span>  }</div>
 <div class="line"><span class="lineno">  167</span>  </div>
-<div class="line"><span class="lineno">  168</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_dwell_strategic_plugin&quot;</span>), <span class="stringliteral">&quot;state.stamp: &quot;</span> &lt;&lt; std::to_string(state.stamp.seconds()));</div>
+<div class="line"><span class="lineno">  168</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_dwell_strategic_plugin&quot;</span>), <span class="stringliteral">&quot;state.stamp: &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(state.stamp.seconds()));</div>
 <div class="line"><span class="lineno">  169</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_dwell_strategic_plugin&quot;</span>), <span class="stringliteral">&quot;state.downtrack : &quot;</span> &lt;&lt; state.downtrack );</div>
 <div class="line"><span class="lineno">  170</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_dwell_strategic_plugin&quot;</span>), <span class="stringliteral">&quot;state.speed: &quot;</span> &lt;&lt; state.speed);</div>
 <div class="line"><span class="lineno">  171</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;stop_and_dwell_strategic_plugin&quot;</span>), <span class="stringliteral">&quot;state.lane_id: &quot;</span> &lt;&lt; state.lane_id);</div>
@@ -790,7 +810,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  173</span>  <span class="keywordflow">return</span> state;</div>
 <div class="line"><span class="lineno">  174</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00046">stop_and_dwell_strategic_plugin::VehicleState::downtrack</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00018">GET_MANEUVER_PROPERTY</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00193">getLaneletsBetweenWithException()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00041">stop_and_dwell_strategic_plugin::anonymous_namespace{stop_and_dwell_strategic_plugin.cpp}::getManeuverEndSpeed()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00048">stop_and_dwell_strategic_plugin::VehicleState::lane_id</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00047">stop_and_dwell_strategic_plugin::VehicleState::speed</a>, and <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00045">stop_and_dwell_strategic_plugin::VehicleState::stamp</a>.</p>
+<p class="reference">References <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00046">stop_and_dwell_strategic_plugin::VehicleState::downtrack</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00018">GET_MANEUVER_PROPERTY</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00193">getLaneletsBetweenWithException()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00041">stop_and_dwell_strategic_plugin::anonymous_namespace{stop_and_dwell_strategic_plugin.cpp}::getManeuverEndSpeed()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00048">stop_and_dwell_strategic_plugin::VehicleState::lane_id</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00047">stop_and_dwell_strategic_plugin::VehicleState::speed</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00045">stop_and_dwell_strategic_plugin::VehicleState::stamp</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00024">carma_cooperative_perception::to_string()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00239">plan_maneuvers_callback()</a>.</p>
 <div class="dynheader">
@@ -798,9 +818,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a65ae1177172951f6764a2b8b248c3a9b_cgraph.png" border="0" usemap="#aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a65ae1177172951f6764a2b8b248c3a9b_cgraph" alt=""/></div>
 <map name="aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a65ae1177172951f6764a2b8b248c3a9b_cgraph" id="aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a65ae1177172951f6764a2b8b248c3a9b_cgraph">
-<area shape="rect" title="Helper method to extract the initial vehicle state from the planning request method based on if the p..." alt="" coords="5,49,208,105"/>
+<area shape="rect" title="Helper method to extract the initial vehicle state from the planning request method based on if the p..." alt="" coords="5,71,208,127"/>
 <area shape="rect" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#abb5a7fcca9d175ec72c58ca89ddaa240" title="Helper method which calls carma_wm::WorldModel::getLaneletsBetween(start_downtrack,..." alt="" coords="256,5,521,61"/>
-<area shape="rect" href="namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html#af094e7f4040bb805d05e70298ef35cf9" title="Anonymous function to extract maneuver end speed which can not be optained with GET_MANEUVER_PROPERY ..." alt="" coords="281,86,496,157"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="569,46,768,87"/>
+<area shape="rect" href="namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html#af094e7f4040bb805d05e70298ef35cf9" title="Anonymous function to extract maneuver end speed which can not be optained with GET_MANEUVER_PROPERY ..." alt="" coords="281,137,496,207"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1096,15 +1117,24 @@ bounds_inclusive) and throws and exception if the returned list of lanelets is e
 <div class="line"><span class="lineno">  202</span>  {</div>
 <div class="line"><span class="lineno">  203</span>    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;getLaneletsBetweenWithException called but inputs do not cross any lanelets going &quot;</span></div>
 <div class="line"><span class="lineno">  204</span>                                <span class="stringliteral">&quot;from: &quot;</span> +</div>
-<div class="line"><span class="lineno">  205</span>                                std::to_string(start_downtrack) + <span class="stringliteral">&quot; to: &quot;</span> + std::to_string(end_downtrack));</div>
+<div class="line"><span class="lineno">  205</span>                                <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(start_downtrack) + <span class="stringliteral">&quot; to: &quot;</span> + <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(end_downtrack));</div>
 <div class="line"><span class="lineno">  206</span>  }</div>
 <div class="line"><span class="lineno">  207</span> </div>
 <div class="line"><span class="lineno">  208</span>  <span class="keywordflow">return</span> crossed_lanelets;</div>
 <div class="line"><span class="lineno">  209</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00190">wm_</a>.</p>
+<p class="reference">References <a class="el" href="utm__zone_8cpp_source.html#l00024">carma_cooperative_perception::to_string()</a>, and <a class="el" href="stop__and__dwell__strategic__plugin_8hpp_source.html#l00190">wm_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00147">extractInitialState()</a>, and <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00239">plan_maneuvers_callback()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_abb5a7fcca9d175ec72c58ca89ddaa240_cgraph.png" border="0" usemap="#aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_abb5a7fcca9d175ec72c58ca89ddaa240_cgraph" alt=""/></div>
+<map name="aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_abb5a7fcca9d175ec72c58ca89ddaa240_cgraph" id="aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_abb5a7fcca9d175ec72c58ca89ddaa240_cgraph">
+<area shape="rect" title="Helper method which calls carma_wm::WorldModel::getLaneletsBetween(start_downtrack,..." alt="" coords="5,22,271,78"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="319,29,517,71"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1514,13 +1544,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a3108c8fdc407e7c8078c36065b04e1e4_cgraph.png" border="0" usemap="#aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a3108c8fdc407e7c8078c36065b04e1e4_cgraph" alt=""/></div>
 <map name="aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a3108c8fdc407e7c8078c36065b04e1e4_cgraph" id="aclassstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin_a3108c8fdc407e7c8078c36065b04e1e4_cgraph">
-<area shape="rect" title="Service callback for arbitrator maneuver planning." alt="" coords="5,166,220,222"/>
-<area shape="rect" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#ac8c7794810e566e3f2459ad9bc776f1f" title="Compose a lane keeping maneuver message based on input params." alt="" coords="290,5,549,76"/>
+<area shape="rect" title="Service callback for arbitrator maneuver planning." alt="" coords="5,202,220,258"/>
+<area shape="rect" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#ac8c7794810e566e3f2459ad9bc776f1f" title="Compose a lane keeping maneuver message based on input params." alt="" coords="622,5,881,76"/>
 <area shape="rect" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a1a74582fde43af1badd083577fdd6d68" title=" " alt="" coords="268,101,571,157"/>
-<area shape="rect" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a65ae1177172951f6764a2b8b248c3a9b" title="Helper method to extract the initial vehicle state from the planning request method based on if the p..." alt="" coords="318,231,521,287"/>
-<area shape="rect" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#abb5a7fcca9d175ec72c58ca89ddaa240" title="Helper method which calls carma_wm::WorldModel::getLaneletsBetween(start_downtrack,..." alt="" coords="619,166,884,222"/>
-<area shape="rect" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a43c4c600dd7067fb0642ed5025b4d3d5" title="Given a Lanelet, find it&#39;s associated Speed Limit." alt="" coords="318,311,521,367"/>
-<area shape="rect" href="namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html#af094e7f4040bb805d05e70298ef35cf9" title="Anonymous function to extract maneuver end speed which can not be optained with GET_MANEUVER_PROPERY ..." alt="" coords="644,247,859,317"/>
+<area shape="rect" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a65ae1177172951f6764a2b8b248c3a9b" title="Helper method to extract the initial vehicle state from the planning request method based on if the p..." alt="" coords="318,202,521,258"/>
+<area shape="rect" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#abb5a7fcca9d175ec72c58ca89ddaa240" title="Helper method which calls carma_wm::WorldModel::getLaneletsBetween(start_downtrack,..." alt="" coords="619,298,884,354"/>
+<area shape="rect" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a43c4c600dd7067fb0642ed5025b4d3d5" title="Given a Lanelet, find it&#39;s associated Speed Limit." alt="" coords="318,333,521,389"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="932,119,1131,160"/>
+<area shape="rect" href="namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html#af094e7f4040bb805d05e70298ef35cf9" title="Anonymous function to extract maneuver end speed which can not be optained with GET_MANEUVER_PROPERY ..." alt="" coords="644,203,859,273"/>
 </map>
 </div>
 
@@ -1898,7 +1929,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacestop__and__dwell__strategic__plugin.html">stop_and_dwell_strategic_plugin</a></li><li class="navelem"><a class="el" href="classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html">StopAndDwellStrategicPlugin</a></li>
-    <li class="footer">Generated on Wed Aug 30 2023 16:07:30 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 6 2023 17:59:03 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

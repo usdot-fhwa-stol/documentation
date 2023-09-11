@@ -101,15 +101,17 @@ Collaboration diagram for subsystem_controllers::PluginManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsubsystem__controllers_1_1PluginManager__coll__graph.png" border="0" usemap="#asubsystem__controllers_1_1PluginManager_coll__map" alt="Collaboration graph"/></div>
 <map name="asubsystem__controllers_1_1PluginManager_coll__map" id="asubsystem__controllers_1_1PluginManager_coll__map">
-<area shape="rect" title="The PluginManager serves as a component to manage CARMA Guidance Plugins via their ros2 lifecycle int..." alt="" coords="608,476,779,832"/>
-<area shape="rect" title=" " alt="" coords="5,211,139,303"/>
-<area shape="rect" title=" " alt="" coords="163,211,413,303"/>
-<area shape="rect" title=" " alt="" coords="437,219,571,296"/>
-<area shape="rect" title=" " alt="" coords="596,182,791,333"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html" title="An entry manager keeps track of the set of entries and makes it easy to add or remove entries." alt="" coords="815,175,969,340"/>
-<area shape="rect" title=" " alt="" coords="822,5,962,112"/>
-<area shape="rect" title=" " alt="" coords="993,219,1092,296"/>
-<area shape="rect" title=" " alt="" coords="1134,219,1189,296"/>
+<area shape="rect" title="The PluginManager serves as a component to manage CARMA Guidance Plugins via their ros2 lifecycle int..." alt="" coords="608,623,779,979"/>
+<area shape="rect" title=" " alt="" coords="5,292,139,384"/>
+<area shape="rect" title=" " alt="" coords="163,292,413,384"/>
+<area shape="rect" title=" " alt="" coords="437,299,571,377"/>
+<area shape="rect" title=" " alt="" coords="596,263,791,413"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html" title="The EntryManager serves as a component to track the status of each required CARMA ROS 1 driver." alt="" coords="815,189,1004,487"/>
+<area shape="rect" title=" " alt="" coords="619,13,818,105"/>
+<area shape="rect" title=" " alt="" coords="841,20,977,97"/>
+<area shape="rect" title=" " alt="" coords="1002,5,1142,112"/>
+<area shape="rect" title=" " alt="" coords="1028,299,1127,377"/>
+<area shape="rect" title=" " alt="" coords="1169,299,1223,377"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -183,7 +185,7 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:ae61f85f1616f342f5b78d3a4a5797172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback to get service names and types for the given node.  <a href="classsubsystem__controllers_1_1PluginManager.html#ae61f85f1616f342f5b78d3a4a5797172">More...</a><br /></td></tr>
 <tr class="separator:ae61f85f1616f342f5b78d3a4a5797172"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af29f37bda09837354ac61e820bec1278"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classsubsystem__controllers_1_1EntryManager.html">EntryManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsubsystem__controllers_1_1PluginManager.html#af29f37bda09837354ac61e820bec1278">em_</a></td></tr>
-<tr class="memdesc:af29f37bda09837354ac61e820bec1278"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structsubsystem__controllers_1_1Entry.html" title="An entry represents a plugins details for the purposes of tracking.">Entry</a> manager to keep track of detected plugins.  <a href="classsubsystem__controllers_1_1PluginManager.html#af29f37bda09837354ac61e820bec1278">More...</a><br /></td></tr>
+<tr class="memdesc:af29f37bda09837354ac61e820bec1278"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structsubsystem__controllers_1_1Entry.html" title="An entry represents a driver details for the purposes of tracking.">Entry</a> manager to keep track of detected plugins.  <a href="classsubsystem__controllers_1_1PluginManager.html#af29f37bda09837354ac61e820bec1278">More...</a><br /></td></tr>
 <tr class="separator:af29f37bda09837354ac61e820bec1278"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa751beb402db0442a24ad5504a0708cb"><td class="memItemLeft" align="right" valign="top">std::chrono::nanoseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsubsystem__controllers_1_1PluginManager.html#aa751beb402db0442a24ad5504a0708cb">service_timeout_</a></td></tr>
 <tr class="memdesc:aa751beb402db0442a24ad5504a0708cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The timeout for services to be available.  <a href="classsubsystem__controllers_1_1PluginManager.html#aa751beb402db0442a24ad5504a0708cb">More...</a><br /></td></tr>
@@ -318,7 +320,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   66</span>                <a class="code hl_variable" href="classsubsystem__controllers_1_1PluginManager.html#a0acf941bd1c859962c39c63bf3aa25b0">plugin_lifecycle_mgr_</a>-&gt;add_managed_node(p);</div>
 <div class="line"><span class="lineno">   67</span>        }</div>
 <div class="line"><span class="lineno">   68</span>    }</div>
-<div class="ttc" id="aclasssubsystem__controllers_1_1EntryManager_html_a657eaee164195d03c44ec660fbc08c3c"><div class="ttname"><a href="classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c">subsystem_controllers::EntryManager::update_entry</a></div><div class="ttdeci">void update_entry(const Entry &amp;entry)</div><div class="ttdoc">Add a new entry if the given name does not exist. Update an existing entry if the given name exists.</div><div class="ttdef"><b>Definition:</b> <a href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00022">entry_manager.cpp:22</a></div></div>
+<div class="ttc" id="aclasssubsystem__controllers_1_1EntryManager_html_a657eaee164195d03c44ec660fbc08c3c"><div class="ttname"><a href="classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c">subsystem_controllers::EntryManager::update_entry</a></div><div class="ttdeci">void update_entry(const Entry &amp;entry)</div><div class="ttdoc">Add a new entry if the given name does not exist. Update an existing entry if the given name exists.</div><div class="ttdef"><b>Definition:</b> <a href="drivers__controller_2entry__manager_8cpp_source.html#l00029">entry_manager.cpp:29</a></div></div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1PluginManager_html_a0acf941bd1c859962c39c63bf3aa25b0"><div class="ttname"><a href="classsubsystem__controllers_1_1PluginManager.html#a0acf941bd1c859962c39c63bf3aa25b0">subsystem_controllers::PluginManager::plugin_lifecycle_mgr_</a></div><div class="ttdeci">std::shared_ptr&lt; ros2_lifecycle_manager::LifecycleManagerInterface &gt; plugin_lifecycle_mgr_</div><div class="ttdoc">Lifecycle Manager which will track the plugin nodes and call their lifecycle services on request.</div><div class="ttdef"><b>Definition:</b> <a href="plugin__manager_8h_source.html#l00203">plugin_manager.h:203</a></div></div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1PluginManager_html_a0fe1f6c54980a8fc6cc48c1be7df66ae"><div class="ttname"><a href="classsubsystem__controllers_1_1PluginManager.html#a0fe1f6c54980a8fc6cc48c1be7df66ae">subsystem_controllers::PluginManager::ros2_initial_plugins_</a></div><div class="ttdeci">std::unordered_set&lt; std::string &gt; ros2_initial_plugins_</div><div class="ttdoc">Set of ROS2 plugins that will be managed initially. In other words, newly detected plugins after init...</div><div class="ttdef"><b>Definition:</b> <a href="plugin__manager_8h_source.html#l00200">plugin_manager.h:200</a></div></div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1PluginManager_html_a53b9c697108c1c0638ec195ff43e2de0"><div class="ttname"><a href="classsubsystem__controllers_1_1PluginManager.html#a53b9c697108c1c0638ec195ff43e2de0">subsystem_controllers::PluginManager::auto_activated_plugins_</a></div><div class="ttdeci">std::unordered_set&lt; std::string &gt; auto_activated_plugins_</div><div class="ttdoc">Set of use specified auto activated plugins which will automatically started without need for user in...</div><div class="ttdef"><b>Definition:</b> <a href="plugin__manager_8h_source.html#l00196">plugin_manager.h:196</a></div></div>
@@ -329,7 +331,7 @@ Protected Attributes</h2></td></tr>
 <div class="ttc" id="aclasssubsystem__controllers_1_1PluginManager_html_ae61f85f1616f342f5b78d3a4a5797172"><div class="ttname"><a href="classsubsystem__controllers_1_1PluginManager.html#ae61f85f1616f342f5b78d3a4a5797172">subsystem_controllers::PluginManager::get_service_names_and_types_func_</a></div><div class="ttdeci">ServiceNamesAndTypesFunc get_service_names_and_types_func_</div><div class="ttdoc">Callback to get service names and types for the given node.</div><div class="ttdef"><b>Definition:</b> <a href="plugin__manager_8h_source.html#l00209">plugin_manager.h:209</a></div></div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1PluginManager_html_af29f37bda09837354ac61e820bec1278"><div class="ttname"><a href="classsubsystem__controllers_1_1PluginManager.html#af29f37bda09837354ac61e820bec1278">subsystem_controllers::PluginManager::em_</a></div><div class="ttdeci">EntryManager em_</div><div class="ttdoc">Entry manager to keep track of detected plugins.</div><div class="ttdef"><b>Definition:</b> <a href="plugin__manager_8h_source.html#l00212">plugin_manager.h:212</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00196">auto_activated_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00192">required_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00200">ros2_initial_plugins_</a>, and <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00022">subsystem_controllers::EntryManager::update_entry()</a>.</p>
+<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00196">auto_activated_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00192">required_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00200">ros2_initial_plugins_</a>, and <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00029">subsystem_controllers::EntryManager::update_entry()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -408,16 +410,16 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  280</span> </div>
 <div class="line"><span class="lineno">  281</span>        <span class="keywordflow">return</span> full_success;</div>
 <div class="line"><span class="lineno">  282</span>    }</div>
-<div class="ttc" id="aclasssubsystem__controllers_1_1EntryManager_html_af5d2082896822651ca7846adf3867e94"><div class="ttname"><a href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94">subsystem_controllers::EntryManager::get_entries</a></div><div class="ttdeci">std::vector&lt; Entry &gt; get_entries() const</div><div class="ttdoc">Get all entries as a list.</div><div class="ttdef"><b>Definition:</b> <a href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00028">entry_manager.cpp:28</a></div></div>
+<div class="ttc" id="aclasssubsystem__controllers_1_1EntryManager_html_af5d2082896822651ca7846adf3867e94"><div class="ttname"><a href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94">subsystem_controllers::EntryManager::get_entries</a></div><div class="ttdeci">std::vector&lt; Entry &gt; get_entries() const</div><div class="ttdoc">Get all registed entries as a list.</div><div class="ttdef"><b>Definition:</b> <a href="drivers__controller_2entry__manager_8cpp_source.html#l00044">entry_manager.cpp:44</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00031">subsystem_controllers::Entry::active_</a>, <a class="el" href="plugin__manager_8h_source.html#l00196">auto_activated_plugins_</a>, <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00029">subsystem_controllers::Entry::available_</a>, <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00028">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00192">required_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00022">subsystem_controllers::EntryManager::update_entry()</a>, and <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00039">subsystem_controllers::Entry::user_requested_activation_</a>.</p>
+<p class="reference">References <a class="el" href="entry_8h_source.html#l00031">subsystem_controllers::Entry::active_</a>, <a class="el" href="plugin__manager_8h_source.html#l00196">auto_activated_plugins_</a>, <a class="el" href="entry_8hpp_source.html#l00029">subsystem_controllers::Entry::available_</a>, <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00044">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00192">required_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00029">subsystem_controllers::EntryManager::update_entry()</a>, and <a class="el" href="entry_8h_source.html#l00039">subsystem_controllers::Entry::user_requested_activation_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsubsystem__controllers_1_1PluginManager_a312b193d3903ed7fe998ac40710f6f1c_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1PluginManager_a312b193d3903ed7fe998ac40710f6f1c_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1PluginManager_a312b193d3903ed7fe998ac40710f6f1c_cgraph" id="aclasssubsystem__controllers_1_1PluginManager_a312b193d3903ed7fe998ac40710f6f1c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,39,172,80"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all entries as a list." alt="" coords="225,5,402,47"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all registed entries as a list." alt="" coords="225,5,402,47"/>
 <area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c" title="Add a new entry if the given name does not exist. Update an existing entry if the given name exists." alt="" coords="220,71,407,112"/>
 </map>
 </div>
@@ -499,9 +501,9 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  436</span> </div>
 <div class="line"><span class="lineno">  437</span>        res-&gt;newstate = activated;</div>
 <div class="line"><span class="lineno">  438</span>    }</div>
-<div class="ttc" id="aclasssubsystem__controllers_1_1EntryManager_html_a4204928cd382c992b11ff3e2b8c0da98"><div class="ttname"><a href="classsubsystem__controllers_1_1EntryManager.html#a4204928cd382c992b11ff3e2b8c0da98">subsystem_controllers::EntryManager::get_entry_by_name</a></div><div class="ttdeci">boost::optional&lt; Entry &gt; get_entry_by_name(const std::string &amp;name) const</div><div class="ttdoc">Get a entry using name as the key.</div><div class="ttdef"><b>Definition:</b> <a href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00057">entry_manager.cpp:57</a></div></div>
+<div class="ttc" id="aclasssubsystem__controllers_1_1EntryManager_html_a4204928cd382c992b11ff3e2b8c0da98"><div class="ttname"><a href="classsubsystem__controllers_1_1EntryManager.html#a4204928cd382c992b11ff3e2b8c0da98">subsystem_controllers::EntryManager::get_entry_by_name</a></div><div class="ttdeci">boost::optional&lt; Entry &gt; get_entry_by_name(const std::string &amp;name) const</div><div class="ttdoc">Get a entry using name as the key.</div><div class="ttdef"><b>Definition:</b> <a href="drivers__controller_2entry__manager_8cpp_source.html#l00062">entry_manager.cpp:62</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00057">subsystem_controllers::EntryManager::get_entry_by_name()</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>, and <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00022">subsystem_controllers::EntryManager::update_entry()</a>.</p>
+<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00062">subsystem_controllers::EntryManager::get_entry_by_name()</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>, and <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00029">subsystem_controllers::EntryManager::update_entry()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="guidance__controller_8cpp_source.html#l00036">subsystem_controllers::GuidanceControllerNode::handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -645,7 +647,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  192</span>    }</div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1PluginManager_html_ae746a83d3ff2ae3985d73d534331f174"><div class="ttname"><a href="classsubsystem__controllers_1_1PluginManager.html#ae746a83d3ff2ae3985d73d534331f174">subsystem_controllers::PluginManager::is_ros2_lifecycle_node</a></div><div class="ttdeci">bool is_ros2_lifecycle_node(const std::string &amp;node)</div><div class="ttdoc">Returns true if the specified fully qualified node name is a ROS2 lifecycle node.</div><div class="ttdef"><b>Definition:</b> <a href="plugin__manager_8cpp_source.html#l00070">plugin_manager.cpp:70</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00031">subsystem_controllers::Entry::active_</a>, <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00029">subsystem_controllers::Entry::available_</a>, <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="plugin__manager_8h_source.html#l00206">get_parent_state_func_</a>, <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00041">subsystem_controllers::Entry::is_ros1_</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00070">is_ros2_lifecycle_node()</a>, <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00033">subsystem_controllers::Entry::name_</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00192">required_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>, and <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00022">subsystem_controllers::EntryManager::update_entry()</a>.</p>
+<p class="reference">References <a class="el" href="entry_8h_source.html#l00031">subsystem_controllers::Entry::active_</a>, <a class="el" href="entry_8hpp_source.html#l00029">subsystem_controllers::Entry::available_</a>, <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="plugin__manager_8h_source.html#l00206">get_parent_state_func_</a>, <a class="el" href="entry_8h_source.html#l00041">subsystem_controllers::Entry::is_ros1_</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00070">is_ros2_lifecycle_node()</a>, <a class="el" href="entry_8hpp_source.html#l00031">subsystem_controllers::Entry::name_</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00192">required_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>, and <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00029">subsystem_controllers::EntryManager::update_entry()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="plugin__manager_8cpp_source.html#l00440">update_plugin_status()</a>.</p>
 <div class="dynheader">
@@ -724,14 +726,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  357</span>        <span class="keywordflow">return</span> full_success;</div>
 <div class="line"><span class="lineno">  358</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00031">subsystem_controllers::Entry::active_</a>, <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00029">subsystem_controllers::Entry::available_</a>, <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00028">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00192">required_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00022">subsystem_controllers::EntryManager::update_entry()</a>, and <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00039">subsystem_controllers::Entry::user_requested_activation_</a>.</p>
+<p class="reference">References <a class="el" href="entry_8h_source.html#l00031">subsystem_controllers::Entry::active_</a>, <a class="el" href="entry_8hpp_source.html#l00029">subsystem_controllers::Entry::available_</a>, <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00044">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00192">required_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00029">subsystem_controllers::EntryManager::update_entry()</a>, and <a class="el" href="entry_8h_source.html#l00039">subsystem_controllers::Entry::user_requested_activation_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsubsystem__controllers_1_1PluginManager_a95f486ab4a95614c6eae4462c9ea1a9b_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1PluginManager_a95f486ab4a95614c6eae4462c9ea1a9b_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1PluginManager_a95f486ab4a95614c6eae4462c9ea1a9b_cgraph" id="aclasssubsystem__controllers_1_1PluginManager_a95f486ab4a95614c6eae4462c9ea1a9b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,39,171,80"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all entries as a list." alt="" coords="223,5,401,47"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all registed entries as a list." alt="" coords="223,5,401,47"/>
 <area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c" title="Add a new entry if the given name does not exist. Update an existing entry if the given name exists." alt="" coords="219,71,405,112"/>
 </map>
 </div>
@@ -800,14 +802,14 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  230</span> </div>
 <div class="line"><span class="lineno">  231</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00031">subsystem_controllers::Entry::active_</a>, <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00029">subsystem_controllers::Entry::available_</a>, <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00028">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00192">required_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00022">subsystem_controllers::EntryManager::update_entry()</a>, and <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00039">subsystem_controllers::Entry::user_requested_activation_</a>.</p>
+<p class="reference">References <a class="el" href="entry_8h_source.html#l00031">subsystem_controllers::Entry::active_</a>, <a class="el" href="entry_8hpp_source.html#l00029">subsystem_controllers::Entry::available_</a>, <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00044">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00192">required_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00029">subsystem_controllers::EntryManager::update_entry()</a>, and <a class="el" href="entry_8h_source.html#l00039">subsystem_controllers::Entry::user_requested_activation_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsubsystem__controllers_1_1PluginManager_aec6e7897fb188f0880cd092b00d7b7a2_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1PluginManager_aec6e7897fb188f0880cd092b00d7b7a2_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1PluginManager_aec6e7897fb188f0880cd092b00d7b7a2_cgraph" id="aclasssubsystem__controllers_1_1PluginManager_aec6e7897fb188f0880cd092b00d7b7a2_cgraph">
 <area shape="rect" title=" " alt="" coords="5,39,177,80"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all entries as a list." alt="" coords="230,5,407,47"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all registed entries as a list." alt="" coords="230,5,407,47"/>
 <area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c" title="Add a new entry if the given name does not exist. Update an existing entry if the given name exists." alt="" coords="225,71,412,112"/>
 </map>
 </div>
@@ -867,14 +869,14 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  319</span>        <span class="keywordflow">return</span> full_success;</div>
 <div class="line"><span class="lineno">  320</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00031">subsystem_controllers::Entry::active_</a>, <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00029">subsystem_controllers::Entry::available_</a>, <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00028">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00192">required_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00022">subsystem_controllers::EntryManager::update_entry()</a>, and <a class="el" href="subsystem__controllers_2include_2subsystem__controllers_2guidance__controller_2entry_8h_source.html#l00039">subsystem_controllers::Entry::user_requested_activation_</a>.</p>
+<p class="reference">References <a class="el" href="entry_8h_source.html#l00031">subsystem_controllers::Entry::active_</a>, <a class="el" href="entry_8hpp_source.html#l00029">subsystem_controllers::Entry::available_</a>, <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00044">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, <a class="el" href="plugin__manager_8h_source.html#l00192">required_plugins_</a>, <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00029">subsystem_controllers::EntryManager::update_entry()</a>, and <a class="el" href="entry_8h_source.html#l00039">subsystem_controllers::Entry::user_requested_activation_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsubsystem__controllers_1_1PluginManager_a28ad99d78439c58b1c598dac44b1c063_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1PluginManager_a28ad99d78439c58b1c598dac44b1c063_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1PluginManager_a28ad99d78439c58b1c598dac44b1c063_cgraph" id="aclasssubsystem__controllers_1_1PluginManager_a28ad99d78439c58b1c598dac44b1c063_cgraph">
 <area shape="rect" title=" " alt="" coords="5,39,185,80"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all entries as a list." alt="" coords="238,5,415,47"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all registed entries as a list." alt="" coords="238,5,415,47"/>
 <area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c" title="Add a new entry if the given name does not exist. Update an existing entry if the given name exists." alt="" coords="233,71,420,112"/>
 </map>
 </div>
@@ -941,7 +943,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  403</span>        }</div>
 <div class="line"><span class="lineno">  404</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, and <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00028">subsystem_controllers::EntryManager::get_entries()</a>.</p>
+<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, and <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00044">subsystem_controllers::EntryManager::get_entries()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="guidance__controller_8cpp_source.html#l00036">subsystem_controllers::GuidanceControllerNode::handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -950,7 +952,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classsubsystem__controllers_1_1PluginManager_aa0a83528b66d35c3cfac1bb2f96a5132_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1PluginManager_aa0a83528b66d35c3cfac1bb2f96a5132_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1PluginManager_aa0a83528b66d35c3cfac1bb2f96a5132_cgraph" id="aclasssubsystem__controllers_1_1PluginManager_aa0a83528b66d35c3cfac1bb2f96a5132_cgraph">
 <area shape="rect" title="Get the list of currently active plugins." alt="" coords="5,5,157,61"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all entries as a list." alt="" coords="205,13,383,54"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all registed entries as a list." alt="" coords="205,13,383,54"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1034,7 +1036,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1PluginManager_html_afb01f05bf210a3c5c7e9f7843e64657e"><div class="ttname"><a href="classsubsystem__controllers_1_1PluginManager.html#afb01f05bf210a3c5c7e9f7843e64657e">subsystem_controllers::PluginManager::control_trajectory_suffix_</a></div><div class="ttdeci">const std::string control_trajectory_suffix_</div><div class="ttdoc">Base topic name of control plugin trajectory input topic.</div><div class="ttdef"><b>Definition:</b> <a href="plugin__manager_8h_source.html#l00227">plugin_manager.h:227</a></div></div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_a3682477a3431f2a4aa182fb9a6439125"><div class="ttname"><a href="namespaceprocess__traj__logs.html#a3682477a3431f2a4aa182fb9a6439125">process_traj_logs.split</a></div><div class="ttdeci">split</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00165">process_traj_logs.py:165</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00227">control_trajectory_suffix_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00028">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00456">matching_capability()</a>, and <a class="el" href="process__traj__logs_8py_source.html#l00165">process_traj_logs::split</a>.</p>
+<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00227">control_trajectory_suffix_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00044">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00456">matching_capability()</a>, and <a class="el" href="process__traj__logs_8py_source.html#l00165">process_traj_logs::split</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="guidance__controller_8cpp_source.html#l00036">subsystem_controllers::GuidanceControllerNode::handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -1043,7 +1045,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classsubsystem__controllers_1_1PluginManager_a273a123b0ce1a5d004c52e2deff69ea4_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1PluginManager_a273a123b0ce1a5d004c52e2deff69ea4_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1PluginManager_a273a123b0ce1a5d004c52e2deff69ea4_cgraph" id="aclasssubsystem__controllers_1_1PluginManager_a273a123b0ce1a5d004c52e2deff69ea4_cgraph">
 <area shape="rect" title="Get control plugins by capability." alt="" coords="5,34,203,90"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all entries as a list." alt="" coords="251,5,428,47"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all registed entries as a list." alt="" coords="251,5,428,47"/>
 <area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a7b5fb468e0d422b8fc47b13103aeaa71" title="Returns true if the provided base capability hierarchy can achieve the requested capability hierarchy..." alt="" coords="253,70,426,126"/>
 </map>
 </div>
@@ -1115,7 +1117,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  385</span>        }</div>
 <div class="line"><span class="lineno">  386</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, and <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00028">subsystem_controllers::EntryManager::get_entries()</a>.</p>
+<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, and <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00044">subsystem_controllers::EntryManager::get_entries()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="guidance__controller_8cpp_source.html#l00036">subsystem_controllers::GuidanceControllerNode::handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -1124,7 +1126,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classsubsystem__controllers_1_1PluginManager_a9676128e1c0d7bb13979e5fabcbf3871_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1PluginManager_a9676128e1c0d7bb13979e5fabcbf3871_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1PluginManager_a9676128e1c0d7bb13979e5fabcbf3871_cgraph" id="aclasssubsystem__controllers_1_1PluginManager_a9676128e1c0d7bb13979e5fabcbf3871_cgraph">
 <area shape="rect" title="Returns the list of known plugins." alt="" coords="5,5,157,61"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all entries as a list." alt="" coords="205,13,383,54"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all registed entries as a list." alt="" coords="205,13,383,54"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1206,7 +1208,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  537</span>    }</div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1PluginManager_html_a5f189aa2046eb52c9b789809155e8660"><div class="ttname"><a href="classsubsystem__controllers_1_1PluginManager.html#a5f189aa2046eb52c9b789809155e8660">subsystem_controllers::PluginManager::plan_maneuvers_suffix_</a></div><div class="ttdeci">const std::string plan_maneuvers_suffix_</div><div class="ttdoc">Base service name of plan_trajectory service.</div><div class="ttdef"><b>Definition:</b> <a href="plugin__manager_8h_source.html#l00221">plugin_manager.h:221</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00028">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00456">matching_capability()</a>, <a class="el" href="plugin__manager_8h_source.html#l00221">plan_maneuvers_suffix_</a>, and <a class="el" href="process__traj__logs_8py_source.html#l00165">process_traj_logs::split</a>.</p>
+<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00044">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00456">matching_capability()</a>, <a class="el" href="plugin__manager_8h_source.html#l00221">plan_maneuvers_suffix_</a>, and <a class="el" href="process__traj__logs_8py_source.html#l00165">process_traj_logs::split</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="guidance__controller_8cpp_source.html#l00036">subsystem_controllers::GuidanceControllerNode::handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -1215,7 +1217,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classsubsystem__controllers_1_1PluginManager_abb246fe8565a91e9890c3639ca333e83_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1PluginManager_abb246fe8565a91e9890c3639ca333e83_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1PluginManager_abb246fe8565a91e9890c3639ca333e83_cgraph" id="aclasssubsystem__controllers_1_1PluginManager_abb246fe8565a91e9890c3639ca333e83_cgraph">
 <area shape="rect" title="Get strategic plugins by capability." alt="" coords="5,27,157,97"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all entries as a list." alt="" coords="205,5,383,47"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all registed entries as a list." alt="" coords="205,5,383,47"/>
 <area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a7b5fb468e0d422b8fc47b13103aeaa71" title="Returns true if the provided base capability hierarchy can achieve the requested capability hierarchy..." alt="" coords="207,70,381,126"/>
 </map>
 </div>
@@ -1298,7 +1300,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  513</span>    }</div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1PluginManager_html_a5db745e7c0511afcc0ea63fae5238a12"><div class="ttname"><a href="classsubsystem__controllers_1_1PluginManager.html#a5db745e7c0511afcc0ea63fae5238a12">subsystem_controllers::PluginManager::plan_trajectory_suffix_</a></div><div class="ttdeci">const std::string plan_trajectory_suffix_</div><div class="ttdoc">Base service name of plan_trajectory service.</div><div class="ttdef"><b>Definition:</b> <a href="plugin__manager_8h_source.html#l00224">plugin_manager.h:224</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00028">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00456">matching_capability()</a>, <a class="el" href="plugin__manager_8h_source.html#l00224">plan_trajectory_suffix_</a>, and <a class="el" href="process__traj__logs_8py_source.html#l00165">process_traj_logs::split</a>.</p>
+<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00044">subsystem_controllers::EntryManager::get_entries()</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00456">matching_capability()</a>, <a class="el" href="plugin__manager_8h_source.html#l00224">plan_trajectory_suffix_</a>, and <a class="el" href="process__traj__logs_8py_source.html#l00165">process_traj_logs::split</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="guidance__controller_8cpp_source.html#l00036">subsystem_controllers::GuidanceControllerNode::handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -1307,7 +1309,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classsubsystem__controllers_1_1PluginManager_ace48d6d87c84f35018389a67a3b886e1_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1PluginManager_ace48d6d87c84f35018389a67a3b886e1_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1PluginManager_ace48d6d87c84f35018389a67a3b886e1_cgraph" id="aclasssubsystem__controllers_1_1PluginManager_ace48d6d87c84f35018389a67a3b886e1_cgraph">
 <area shape="rect" title="Get tactical plugins by capability." alt="" coords="5,34,205,90"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all entries as a list." alt="" coords="253,5,431,47"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all registed entries as a list." alt="" coords="253,5,431,47"/>
 <area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a7b5fb468e0d422b8fc47b13103aeaa71" title="Returns true if the provided base capability hierarchy can achieve the requested capability hierarchy..." alt="" coords="255,70,429,126"/>
 </map>
 </div>
@@ -1520,9 +1522,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  369</span> </div>
 <div class="line"><span class="lineno">  370</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classsubsystem__controllers_1_1PluginManager.html#a0acf941bd1c859962c39c63bf3aa25b0">plugin_lifecycle_mgr_</a>-&gt;shutdown(<a class="code hl_variable" href="classsubsystem__controllers_1_1PluginManager.html#aa751beb402db0442a24ad5504a0708cb">service_timeout_</a>, <a class="code hl_variable" href="classsubsystem__controllers_1_1PluginManager.html#a9249a02dc26c0b088e8d0184ab816746">call_timeout_</a>, <span class="keyword">false</span>, ros2_names).empty();</div>
 <div class="line"><span class="lineno">  371</span>    }</div>
-<div class="ttc" id="aclasssubsystem__controllers_1_1EntryManager_html_a189a4c1457d3df7d64460e8006ea9435"><div class="ttname"><a href="classsubsystem__controllers_1_1EntryManager.html#a189a4c1457d3df7d64460e8006ea9435">subsystem_controllers::EntryManager::get_entry_names</a></div><div class="ttdeci">std::vector&lt; std::string &gt; get_entry_names() const</div><div class="ttdoc">Get all entry names as a list.</div><div class="ttdef"><b>Definition:</b> <a href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00040">entry_manager.cpp:40</a></div></div>
+<div class="ttc" id="aclasssubsystem__controllers_1_1EntryManager_html_a189a4c1457d3df7d64460e8006ea9435"><div class="ttname"><a href="classsubsystem__controllers_1_1EntryManager.html#a189a4c1457d3df7d64460e8006ea9435">subsystem_controllers::EntryManager::get_entry_names</a></div><div class="ttdeci">std::vector&lt; std::string &gt; get_entry_names() const</div><div class="ttdoc">Get all entry names as a list.</div><div class="ttdef"><b>Definition:</b> <a href="guidance__controller_2entry__manager_8cpp_source.html#l00040">entry_manager.cpp:40</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00040">subsystem_controllers::EntryManager::get_entry_names()</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, and <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>.</p>
+<p class="reference">References <a class="el" href="plugin__manager_8h_source.html#l00218">call_timeout_</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="guidance__controller_2entry__manager_8cpp_source.html#l00040">subsystem_controllers::EntryManager::get_entry_names()</a>, <a class="el" href="plugin__manager_8h_source.html#l00203">plugin_lifecycle_mgr_</a>, and <a class="el" href="plugin__manager_8h_source.html#l00215">service_timeout_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1576,7 +1578,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  454</span>    }</div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1PluginManager_html_a1823614749aa3885622ca8fbf499728a"><div class="ttname"><a href="classsubsystem__controllers_1_1PluginManager.html#a1823614749aa3885622ca8fbf499728a">subsystem_controllers::PluginManager::add_plugin</a></div><div class="ttdeci">void add_plugin(const Entry &amp;plugin)</div><div class="ttdoc">Add the specified entry to our plugin management This function will attempt to move the newly detecte...</div><div class="ttdef"><b>Definition:</b> <a href="plugin__manager_8cpp_source.html#l00114">plugin_manager.cpp:114</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="plugin__manager_8cpp_source.html#l00114">add_plugin()</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00057">subsystem_controllers::EntryManager::get_entry_by_name()</a>, and <a class="el" href="subsystem__controllers_2src_2guidance__controller_2entry__manager_8cpp_source.html#l00022">subsystem_controllers::EntryManager::update_entry()</a>.</p>
+<p class="reference">References <a class="el" href="plugin__manager_8cpp_source.html#l00114">add_plugin()</a>, <a class="el" href="plugin__manager_8h_source.html#l00212">em_</a>, <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00062">subsystem_controllers::EntryManager::get_entry_by_name()</a>, and <a class="el" href="drivers__controller_2entry__manager_8cpp_source.html#l00029">subsystem_controllers::EntryManager::update_entry()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="guidance__controller_8cpp_source.html#l00036">subsystem_controllers::GuidanceControllerNode::handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -1708,7 +1710,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="structsubsystem__controllers_1_1Entry.html" title="An entry represents a plugins details for the purposes of tracking.">Entry</a> manager to keep track of detected plugins. </p>
+<p><a class="el" href="structsubsystem__controllers_1_1Entry.html" title="An entry represents a driver details for the purposes of tracking.">Entry</a> manager to keep track of detected plugins. </p>
 
 <p class="definition">Definition at line <a class="el" href="plugin__manager_8h_source.html#l00212">212</a> of file <a class="el" href="plugin__manager_8h_source.html">plugin_manager.h</a>.</p>
 
@@ -1950,7 +1952,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesubsystem__controllers.html">subsystem_controllers</a></li><li class="navelem"><a class="el" href="classsubsystem__controllers_1_1PluginManager.html">PluginManager</a></li>
-    <li class="footer">Generated on Wed Sep 6 2023 17:59:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Sep 11 2023 12:57:35 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -1,15 +1,16 @@
 var searchData=
 [
-  ['anonymous_5fnamespace_7broute_5ffollowing_5fplugin_2ecpp_7d_0',['anonymous_namespace{route_following_plugin.cpp}',['../namespaceroute__following__plugin_1_1anonymous__namespace_02route__following__plugin_8cpp_03.html',1,'route_following_plugin']]],
-  ['rapidjson_1',['rapidjson',['../namespacerapidjson.html',1,'']]],
-  ['reindex_5factive_5frosbags_2',['reindex_active_rosbags',['../namespacereindex__active__rosbags.html',1,'']]],
-  ['reverse_5fwaypoints_3',['reverse_waypoints',['../namespacereverse__waypoints.html',1,'']]],
-  ['roadway_5fobjects_4',['roadway_objects',['../namespaceroadway__objects.html',1,'']]],
-  ['roadway_5fobjects_5flaunch_5',['roadway_objects_launch',['../namespaceroadway__objects__launch.html',1,'']]],
-  ['ros2_5frosbag_6',['ros2_rosbag',['../namespaceros2__rosbag.html',1,'']]],
-  ['route_7',['route',['../namespaceroute.html',1,'']]],
-  ['route_5ffollowing_5fplugin_8',['route_following_plugin',['../namespaceroute__following__plugin.html',1,'']]],
-  ['route_5flaunch_9',['route_launch',['../namespaceroute__launch.html',1,'']]],
-  ['routecreation_5fcsv2yaml_10',['RouteCreation_CSV2Yaml',['../namespaceRouteCreation__CSV2Yaml.html',1,'']]],
-  ['routecreation_5fkml2csv_11',['RouteCreation_KML2CSV',['../namespaceRouteCreation__KML2CSV.html',1,'']]]
+  ['anonymous_5fnamespace_7bsci_5fstrategic_5fplugin_2ecpp_7d_0',['anonymous_namespace{sci_strategic_plugin.cpp}',['../namespacesci__strategic__plugin_1_1anonymous__namespace_02sci__strategic__plugin_8cpp_03.html',1,'sci_strategic_plugin']]],
+  ['anonymous_5fnamespace_7bstop_5fand_5fdwell_5fstrategic_5fplugin_2ecpp_7d_1',['anonymous_namespace{stop_and_dwell_strategic_plugin.cpp}',['../namespacestop__and__dwell__strategic__plugin_1_1anonymous__namespace_02stop__and__dwell__strategic__plugin_8cpp_03.html',1,'stop_and_dwell_strategic_plugin']]],
+  ['sci_5fstrategic_5fplugin_2',['sci_strategic_plugin',['../namespacesci__strategic__plugin.html',1,'']]],
+  ['setup_3',['setup',['../namespacesetup.html',1,'']]],
+  ['speedharm_2dcli_4',['speedharm-cli',['../namespacespeedharm-cli.html',1,'']]],
+  ['speedharm_5fauto_5fconfigure_5',['speedharm_auto_configure',['../namespacespeedharm__auto__configure.html',1,'']]],
+  ['stop_5fand_5fdwell_5fstrategic_5fplugin_6',['stop_and_dwell_strategic_plugin',['../namespacestop__and__dwell__strategic__plugin.html',1,'']]],
+  ['stop_5fand_5fwait_5fplugin_7',['stop_and_wait_plugin',['../namespacestop__and__wait__plugin.html',1,'']]],
+  ['stop_5fand_5fwait_5fplugin_5flaunch_8',['stop_and_wait_plugin_launch',['../namespacestop__and__wait__plugin__launch.html',1,'']]],
+  ['stop_5fcontrolled_5fintersection_5ftactical_5fplugin_9',['stop_controlled_intersection_tactical_plugin',['../namespacestop__controlled__intersection__tactical__plugin.html',1,'']]],
+  ['sub_3c_20package_5fname_20_3e_10',['SUB&lt; package_name &gt;',['../namespaceSUB_3_01package__name_01_4.html',1,'']]],
+  ['subsystem_5fcontrollers_11',['subsystem_controllers',['../namespacesubsystem__controllers.html',1,'']]],
+  ['system_5fcontroller_12',['system_controller',['../namespacesystem__controller.html',1,'']]]
 ];

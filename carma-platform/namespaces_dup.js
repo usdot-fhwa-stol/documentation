@@ -70,7 +70,6 @@ var namespaces_dup =
       [ "generate_launch_description", "namespaceguidance__launch.html#a31ecaa1c58568df959bd3ca5f6b5f37d", null ]
     ] ],
     [ "guidance_plugin_validator", "namespaceguidance__plugin__validator.html", "namespaceguidance__plugin__validator" ],
-    [ "health_monitor", "namespacehealth__monitor.html", "namespacehealth__monitor" ],
     [ "inlanecruising_plugin", "namespaceinlanecruising__plugin.html", "namespaceinlanecruising__plugin" ],
     [ "internal", "namespaceinternal.html", "namespaceinternal" ],
     [ "intersection_transit_maneuvering", "namespaceintersection__transit__maneuvering.html", "namespaceintersection__transit__maneuvering" ],

@@ -8,7 +8,8 @@ var searchData=
   ['diyfp_5',['DiyFp',['../structinternal_1_1DiyFp.html',1,'internal']]],
   ['double_6',['Double',['../classinternal_1_1Double.html',1,'internal']]],
   ['driverapplication_7',['DriverApplication',['../classcav_1_1DriverApplication.html',1,'cav']]],
-  ['drivermanager_8',['DriverManager',['../classhealth__monitor_1_1DriverManager.html',1,'health_monitor']]],
-  ['driverscontrollernode_9',['DriversControllerNode',['../classsubsystem__controllers_1_1DriversControllerNode.html',1,'subsystem_controllers']]],
-  ['driverwrapper_10',['DriverWrapper',['../classcav_1_1DriverWrapper.html',1,'cav']]]
+  ['drivermanager_8',['DriverManager',['../classsubsystem__controllers_1_1DriverManager.html',1,'subsystem_controllers']]],
+  ['driverscontrollerconfig_9',['DriversControllerConfig',['../structsubsystem__controllers_1_1DriversControllerConfig.html',1,'subsystem_controllers']]],
+  ['driverscontrollernode_10',['DriversControllerNode',['../classsubsystem__controllers_1_1DriversControllerNode.html',1,'subsystem_controllers']]],
+  ['driverwrapper_11',['DriverWrapper',['../classcav_1_1DriverWrapper.html',1,'cav']]]
 ];

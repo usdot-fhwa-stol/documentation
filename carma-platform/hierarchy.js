@@ -130,7 +130,8 @@ var hierarchy =
     [ "cav::DriverApplication", "classcav_1_1DriverApplication.html", [
       [ "NS3Adapter", "classNS3Adapter.html", null ]
     ] ],
-    [ "health_monitor::DriverManager", "classhealth__monitor_1_1DriverManager.html", null ],
+    [ "subsystem_controllers::DriverManager", "classsubsystem__controllers_1_1DriverManager.html", null ],
+    [ "subsystem_controllers::DriversControllerConfig", "structsubsystem__controllers_1_1DriversControllerConfig.html", null ],
     [ "cav::DriverWrapper", "classcav_1_1DriverWrapper.html", null ],
     [ "std::enable_shared_from_this", null, [
       [ "cav::UDPListener", "classcav_1_1UDPListener.html", null ]
@@ -139,9 +140,7 @@ var hierarchy =
     [ "EncodedInputStream< UTF8<>, MemoryStream >", "classEncodedInputStream_3_01UTF8_3_4_00_01MemoryStream_01_4.html", null ],
     [ "EncodedOutputStream< Encoding, OutputByteStream >", "classEncodedOutputStream.html", null ],
     [ "Encoding", "classrapidjson_1_1Encoding.html", null ],
-    [ "health_monitor::Entry", "structhealth__monitor_1_1Entry.html", null ],
     [ "subsystem_controllers::Entry", "structsubsystem__controllers_1_1Entry.html", null ],
-    [ "health_monitor::EntryManager", "classhealth__monitor_1_1EntryManager.html", null ],
     [ "subsystem_controllers::EntryManager", "classsubsystem__controllers_1_1EntryManager.html", null ],
     [ "approaching_emergency_vehicle_plugin::ErvInformation", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html", null ],
     [ "std::exception", null, [
@@ -195,7 +194,6 @@ var hierarchy =
     ] ],
     [ "internal::Hasher< Encoding, Allocator >", "classinternal_1_1Hasher.html", null ],
     [ "carma_cooperative_perception::Heading", "structcarma__cooperative__perception_1_1Heading.html", null ],
-    [ "health_monitor::HealthMonitor", "classhealth__monitor_1_1HealthMonitor.html", null ],
     [ "GenericValue< Encoding, Allocator >::Number::I", "structGenericValue_1_1Number_1_1I.html", null ],
     [ "IGenericRemoteSchemaDocumentProvider< SchemaDocumentType >", "classIGenericRemoteSchemaDocumentProvider.html", null ],
     [ "imaxdiv_t", "structimaxdiv__t.html", null ],

@@ -148,12 +148,6 @@ var annotated_dup =
         [ "GuidancePluginValidator", "classguidance__plugin__validator_1_1guidance__plugin__validator_1_1GuidancePluginValidator.html", "classguidance__plugin__validator_1_1guidance__plugin__validator_1_1GuidancePluginValidator" ]
       ] ]
     ] ],
-    [ "health_monitor", "namespacehealth__monitor.html", [
-      [ "DriverManager", "classhealth__monitor_1_1DriverManager.html", "classhealth__monitor_1_1DriverManager" ],
-      [ "Entry", "structhealth__monitor_1_1Entry.html", "structhealth__monitor_1_1Entry" ],
-      [ "EntryManager", "classhealth__monitor_1_1EntryManager.html", "classhealth__monitor_1_1EntryManager" ],
-      [ "HealthMonitor", "classhealth__monitor_1_1HealthMonitor.html", "classhealth__monitor_1_1HealthMonitor" ]
-    ] ],
     [ "inlanecruising_plugin", "namespaceinlanecruising__plugin.html", [
       [ "smoothing", "namespaceinlanecruising__plugin_1_1smoothing.html", [
         [ "BSpline", "classinlanecruising__plugin_1_1smoothing_1_1BSpline.html", "classinlanecruising__plugin_1_1smoothing_1_1BSpline" ],
@@ -386,6 +380,8 @@ var annotated_dup =
     [ "subsystem_controllers", "namespacesubsystem__controllers.html", [
       [ "BaseSubsystemController", "classsubsystem__controllers_1_1BaseSubsystemController.html", "classsubsystem__controllers_1_1BaseSubsystemController" ],
       [ "BaseSubSystemControllerConfig", "structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html", "structsubsystem__controllers_1_1BaseSubSystemControllerConfig" ],
+      [ "DriverManager", "classsubsystem__controllers_1_1DriverManager.html", "classsubsystem__controllers_1_1DriverManager" ],
+      [ "DriversControllerConfig", "structsubsystem__controllers_1_1DriversControllerConfig.html", "structsubsystem__controllers_1_1DriversControllerConfig" ],
       [ "DriversControllerNode", "classsubsystem__controllers_1_1DriversControllerNode.html", "classsubsystem__controllers_1_1DriversControllerNode" ],
       [ "Entry", "structsubsystem__controllers_1_1Entry.html", "structsubsystem__controllers_1_1Entry" ],
       [ "EntryManager", "classsubsystem__controllers_1_1EntryManager.html", "classsubsystem__controllers_1_1EntryManager" ],

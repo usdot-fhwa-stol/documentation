@@ -19,7 +19,6 @@ var files_dup =
     [ "gnss_to_map_convertor", "dir_d953f21fcd55289f5d4ea6178e5fadcc.html", "dir_d953f21fcd55289f5d4ea6178e5fadcc" ],
     [ "guidance", "dir_c80db1300b045222c95dd381e1fbcde9.html", "dir_c80db1300b045222c95dd381e1fbcde9" ],
     [ "guidance_plugin_validator", "dir_c7988fa4a485fc42522fc650eb6f5595.html", "dir_c7988fa4a485fc42522fc650eb6f5595" ],
-    [ "health_monitor", "dir_aaaaa4b640655a9e290ef3a642387713.html", "dir_aaaaa4b640655a9e290ef3a642387713" ],
     [ "inlanecruising_plugin", "dir_78ea214c632a423ec9bf1bd70f445e20.html", "dir_78ea214c632a423ec9bf1bd70f445e20" ],
     [ "intersection_transit_maneuvering", "dir_7ed317c8873f6c93e8915cc18de2b199.html", "dir_7ed317c8873f6c93e8915cc18de2b199" ],
     [ "lci_strategic_plugin", "dir_025bba7f3b4bfda96e9e9e148b07aeef.html", "dir_025bba7f3b4bfda96e9e9e148b07aeef" ],

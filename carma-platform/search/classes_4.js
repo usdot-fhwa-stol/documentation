@@ -7,5 +7,6 @@ var searchData=
   ['entry_4',['Entry',['../structsubsystem__controllers_1_1Entry.html',1,'subsystem_controllers']]],
   ['entrymanager_5',['EntryManager',['../classsubsystem__controllers_1_1EntryManager.html',1,'subsystem_controllers']]],
   ['environmentperceptioncontrollernode_6',['EnvironmentPerceptionControllerNode',['../classsubsystem__controllers_1_1EnvironmentPerceptionControllerNode.html',1,'subsystem_controllers']]],
-  ['ervinformation_7',['ErvInformation',['../structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html',1,'approaching_emergency_vehicle_plugin']]]
+  ['ervinformation_7',['ErvInformation',['../structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html',1,'approaching_emergency_vehicle_plugin']]],
+  ['externalobjectlisttodetectionlistnode_8',['ExternalObjectListToDetectionListNode',['../classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html',1,'carma_cooperative_perception']]]
 ];

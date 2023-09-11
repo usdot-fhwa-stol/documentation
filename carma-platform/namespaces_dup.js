@@ -274,14 +274,17 @@ var namespaces_dup =
     ] ],
     [ "units", "namespaceunits.html", [
       [ "UNIT_ADD", "namespaceunits.html#abbb71236d3e7474602a6c189db7b2d8b", null ],
-      [ "UNIT_ADD", "namespaceunits.html#a6053adda24a11f826d4581cb4ffd78aa", null ],
       [ "UNIT_ADD", "namespaceunits.html#a4a29524c104d4c62ca6ad389a744f22d", null ],
+      [ "UNIT_ADD", "namespaceunits.html#a67351284ba34f44480f337fdfa1a0a20", null ],
+      [ "UNIT_ADD", "namespaceunits.html#a50033eb5f505deb3e3e3505bbf4bf455", null ],
       [ "deci_micro_degrees", "namespaceunits.html#a8a42422297e25f62f4c2763a44117389", null ],
       [ "deci_udeg", "namespaceunits.html#a5c75fc9aededaf050cb34c03b70f022c", null ],
+      [ "eighth_ddeg", "namespaceunits.html#a30f1468aa12460e035c86bf6eef7a871", null ],
+      [ "eighth_deci_degrees", "namespaceunits.html#a341883d4fecaa52d2ee6d3e043851014", null ],
+      [ "two_centi_meters_per_second", "namespaceunits.html#a35984671425a5d2c124e510acb09d4f9", null ],
+      [ "two_centi_mps", "namespaceunits.html#a3982ea1e3f0c9cd83e3fe31d95aa2c91", null ],
       [ "two_centi_SG", "namespaceunits.html#a5cba359595c6db0b84c01349d609be2e", null ],
-      [ "two_centi_standard_gravities", "namespaceunits.html#a58ddd0a627bfec960f9b7d2574f77727", null ],
-      [ "two_milli_meters_per_second", "namespaceunits.html#a57df2ddc6d7a9595d08de7253cd3a3ce", null ],
-      [ "two_milli_mps", "namespaceunits.html#a9ee548145713498400d8a4fca8579dfa", null ]
+      [ "two_centi_standard_gravities", "namespaceunits.html#a58ddd0a627bfec960f9b7d2574f77727", null ]
     ] ],
     [ "yield_plugin", "namespaceyield__plugin.html", "namespaceyield__plugin" ]
 ];

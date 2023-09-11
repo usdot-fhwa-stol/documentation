@@ -55,9 +55,11 @@ var annotated_dup =
     [ "carma_cooperative_perception", "namespacecarma__cooperative__perception.html", [
       [ "AccelerationSet4Way", "structcarma__cooperative__perception_1_1AccelerationSet4Way.html", "structcarma__cooperative__perception_1_1AccelerationSet4Way" ],
       [ "DDateTime", "structcarma__cooperative__perception_1_1DDateTime.html", "structcarma__cooperative__perception_1_1DDateTime" ],
+      [ "ExternalObjectListToDetectionListNode", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode" ],
       [ "Heading", "structcarma__cooperative__perception_1_1Heading.html", "structcarma__cooperative__perception_1_1Heading" ],
       [ "MeasurementTimeOffset", "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html", "structcarma__cooperative__perception_1_1MeasurementTimeOffset" ],
       [ "Month", "classcarma__cooperative__perception_1_1Month.html", "classcarma__cooperative__perception_1_1Month" ],
+      [ "MotionModelMapping", "structcarma__cooperative__perception_1_1MotionModelMapping.html", "structcarma__cooperative__perception_1_1MotionModelMapping" ],
       [ "Position3D", "structcarma__cooperative__perception_1_1Position3D.html", "structcarma__cooperative__perception_1_1Position3D" ],
       [ "PositionOffsetXYZ", "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html", "structcarma__cooperative__perception_1_1PositionOffsetXYZ" ],
       [ "SdsmToDetectionListNode", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode" ],

@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['readme_0',['readme',['../md_carma_cloud_client_launch_scripts_readme.html',1,'']]],
-  ['readme_1',['README',['../md_README.html',1,'']]],
-  ['roadway_5fobjects_2',['roadway_objects',['../md_roadway_objects_README.html',1,'']]],
-  ['rosbag_5fmock_5fdrivers_3',['rosbag_mock_drivers',['../md_mock_drivers_rosbag_mock_drivers_README.html',1,'']]],
-  ['route_4',['route',['../md_route_README.html',1,'']]]
+  ['platoon_5fcontrol_0',['platoon_control',['../md_platooning_control_README.html',1,'']]],
+  ['platoon_5fcontrol_5fihp_1',['platoon_control_ihp',['../md_platooning_control_ihp_README.html',1,'']]],
+  ['platoon_5fstrategic_5fihp_2',['platoon_strategic_ihp',['../md_platooning_strategic_IHP_README.html',1,'']]],
+  ['platooning_5ftactical_5fplugin_3',['platooning_tactical_plugin',['../md_platooning_tactical_plugin_README.html',1,'']]],
+  ['points_5fmap_5ffilter_4',['points_map_filter',['../md_points_map_filter_README.html',1,'']]],
+  ['port_5fdrayage_5fplugin_5',['port_drayage_plugin',['../md_port_drayage_plugin_README.html',1,'']]]
 ];

@@ -30,6 +30,7 @@ var hierarchy =
       [ "bounding_box_to_detected_object::Node", "classbounding__box__to__detected__object_1_1Node.html", null ],
       [ "bsm_generator::BSMGenerator", "classbsm__generator_1_1BSMGenerator.html", null ],
       [ "carma_cloud_client::CarmaCloudClient", "classcarma__cloud__client_1_1CarmaCloudClient.html", null ],
+      [ "carma_cooperative_perception::ExternalObjectListToDetectionListNode", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html", null ],
       [ "carma_cooperative_perception::SdsmToDetectionListNode", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html", null ],
       [ "carma_guidance_plugins::PluginBaseNode", "classcarma__guidance__plugins_1_1PluginBaseNode.html", [
         [ "carma_guidance_plugins::ControlPlugin", "classcarma__guidance__plugins_1_1ControlPlugin.html", [
@@ -256,6 +257,7 @@ var hierarchy =
     [ "mock_drivers::MockLightBarDriver", "classmock__drivers_1_1MockLightBarDriver.html", null ],
     [ "carma_cooperative_perception::Month", "classcarma__cooperative__perception_1_1Month.html", null ],
     [ "motion_computation::MotionComputationWorker", "classmotion__computation_1_1MotionComputationWorker.html", null ],
+    [ "carma_cooperative_perception::MotionModelMapping", "structcarma__cooperative__perception_1_1MotionModelMapping.html", null ],
     [ "carma_wm::collision_detection::MovingObject", "structcarma__wm_1_1collision__detection_1_1MovingObject.html", null ],
     [ "arbitrator::NeighborGenerator", "classarbitrator_1_1NeighborGenerator.html", [
       [ "arbitrator::PluginNeighborGenerator< T >", "classarbitrator_1_1PluginNeighborGenerator.html", null ]

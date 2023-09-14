@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('classroadway__objects_1_1RoadwayObject
 <p>The class responsible for converting detected objects into objects that are mapped onto specific lanelets.  
  <a href="classroadway__objects_1_1RoadwayObjectsNode.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="roadway__objects__node_8hpp_source.html">roadway_objects_node.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="roadway__objects__component_8hpp_source.html">roadway_objects_component.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for roadway_objects::RoadwayObjectsNode:</div>
 <div class="dyncontent">
@@ -143,7 +143,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >The class responsible for converting detected objects into objects that are mapped onto specific lanelets. </p>
 
-<p class="definition">Definition at line <a class="el" href="roadway__objects__node_8hpp_source.html#l00038">38</a> of file <a class="el" href="roadway__objects__node_8hpp_source.html">roadway_objects_node.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="roadway__objects__component_8hpp_source.html#l00036">36</a> of file <a class="el" href="roadway__objects__component_8hpp_source.html">roadway_objects_component.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8b3826a041487fde7ed5c8d101dba885" name="a8b3826a041487fde7ed5c8d101dba885"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8b3826a041487fde7ed5c8d101dba885">&#9670;&nbsp;</a></span>RoadwayObjectsNode()</h2>
@@ -171,10 +171,10 @@ Private Attributes</h2></td></tr>
 
 <p>Node constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="roadway__objects__node_8cpp_source.html#l00022">22</a> of file <a class="el" href="roadway__objects__node_8cpp_source.html">roadway_objects_node.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>      : carma_ros2_utils::CarmaLifecycleNode(options)</div>
-<div class="line"><span class="lineno">   24</span>  {</div>
-<div class="line"><span class="lineno">   25</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="roadway__objects__component_8cpp_source.html#l00023">23</a> of file <a class="el" href="roadway__objects__component_8cpp_source.html">roadway_objects_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>: carma_ros2_utils::CarmaLifecycleNode(options)</div>
+<div class="line"><span class="lineno">   25</span>{</div>
+<div class="line"><span class="lineno">   26</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -195,33 +195,39 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="roadway__objects__node_8cpp_source.html#l00027">27</a> of file <a class="el" href="roadway__objects__node_8cpp_source.html">roadway_objects_node.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>  {</div>
-<div class="line"><span class="lineno">   29</span>    RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;RoadwayObjectsNode trying to configure&quot;</span>);</div>
-<div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a68833a917b702834b0499f72d6dca04b">wm_listener_</a> = std::make_shared&lt;carma_wm::WMListener&gt;(get_node_base_interface(), get_node_logging_interface(), </div>
-<div class="line"><span class="lineno">   32</span>                    get_node_topics_interface(), get_node_parameters_interface());</div>
-<div class="line"><span class="lineno">   33</span>    </div>
-<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#ad71a9a21fa140c6f9c2e9e72218913eb">object_worker_</a> = std::make_shared&lt;RoadwayObjectsWorker&gt;(<a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a68833a917b702834b0499f72d6dca04b">wm_listener_</a>-&gt;getWorldModel(), std::bind(&amp;<a class="code hl_function" href="classroadway__objects_1_1RoadwayObjectsNode.html#a8c558ac39ac8a17b83ee3674a6c41137">RoadwayObjectsNode::publishObstacles</a>, <span class="keyword">this</span>, std_ph::_1), get_node_logging_interface());</div>
-<div class="line"><span class="lineno">   35</span>    </div>
-<div class="line"><span class="lineno">   36</span>    <span class="comment">// Setup publishers</span></div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a83b2647415ecfc83f88cba1c890b4f11">roadway_obs_pub_</a> = create_publisher&lt;carma_perception_msgs::msg::RoadwayObstacleList&gt;(<span class="stringliteral">&quot;roadway_objects&quot;</span>, 10);</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    <span class="comment">// Setup subscribers</span></div>
-<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a6c74891a47c1d81bbedf8a8e69193ae0">external_objects_sub_</a> = create_subscription&lt;carma_perception_msgs::msg::ExternalObjectList&gt;(<span class="stringliteral">&quot;external_objects&quot;</span>, 10,</div>
-<div class="line"><span class="lineno">   41</span>                                                              std::bind(&amp;<a class="code hl_function" href="classroadway__objects_1_1RoadwayObjectsWorker.html#aced2a1ee623db988a52d0b49f2381bed">RoadwayObjectsWorker::externalObjectsCallback</a>, <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#ad71a9a21fa140c6f9c2e9e72218913eb">object_worker_</a>.get(), std_ph::_1));</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    <span class="comment">// Return success if everthing initialized successfully</span></div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
-<div class="line"><span class="lineno">   45</span>  }</div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a68833a917b702834b0499f72d6dca04b"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a68833a917b702834b0499f72d6dca04b">roadway_objects::RoadwayObjectsNode::wm_listener_</a></div><div class="ttdeci">std::shared_ptr&lt; carma_wm::WMListener &gt; wm_listener_</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__node_8hpp_source.html#l00050">roadway_objects_node.hpp:50</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a6c74891a47c1d81bbedf8a8e69193ae0"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a6c74891a47c1d81bbedf8a8e69193ae0">roadway_objects::RoadwayObjectsNode::external_objects_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; carma_perception_msgs::msg::ExternalObjectList &gt; external_objects_sub_</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__node_8hpp_source.html#l00044">roadway_objects_node.hpp:44</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a83b2647415ecfc83f88cba1c890b4f11"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a83b2647415ecfc83f88cba1c890b4f11">roadway_objects::RoadwayObjectsNode::roadway_obs_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; carma_perception_msgs::msg::RoadwayObstacleList &gt; roadway_obs_pub_</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__node_8hpp_source.html#l00047">roadway_objects_node.hpp:47</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a8c558ac39ac8a17b83ee3674a6c41137"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a8c558ac39ac8a17b83ee3674a6c41137">roadway_objects::RoadwayObjectsNode::publishObstacles</a></div><div class="ttdeci">void publishObstacles(const carma_perception_msgs::msg::RoadwayObstacleList &amp;msg)</div><div class="ttdoc">Callback to publish RoadwayObstacleList.</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__node_8cpp_source.html#l00047">roadway_objects_node.cpp:47</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_ad71a9a21fa140c6f9c2e9e72218913eb"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#ad71a9a21fa140c6f9c2e9e72218913eb">roadway_objects::RoadwayObjectsNode::object_worker_</a></div><div class="ttdeci">std::shared_ptr&lt; RoadwayObjectsWorker &gt; object_worker_</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__node_8hpp_source.html#l00053">roadway_objects_node.hpp:53</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsWorker_html_aced2a1ee623db988a52d0b49f2381bed"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsWorker.html#aced2a1ee623db988a52d0b49f2381bed">roadway_objects::RoadwayObjectsWorker::externalObjectsCallback</a></div><div class="ttdeci">void externalObjectsCallback(const carma_perception_msgs::msg::ExternalObjectList::UniquePtr msg)</div><div class="ttdoc">Converts the provided ExternalObjectList to a RoadwayObstacleList and re-publishes it.</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__worker_8cpp_source.html#l00025">roadway_objects_worker.cpp:25</a></div></div>
+<p class="definition">Definition at line <a class="el" href="roadway__objects__component_8cpp_source.html#l00028">28</a> of file <a class="el" href="roadway__objects__component_8cpp_source.html">roadway_objects_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>  RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;RoadwayObjectsNode trying to configure&quot;</span>);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>  <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a68833a917b702834b0499f72d6dca04b">wm_listener_</a> = std::make_shared&lt;carma_wm::WMListener&gt;(</div>
+<div class="line"><span class="lineno">   34</span>    get_node_base_interface(), get_node_logging_interface(), get_node_topics_interface(),</div>
+<div class="line"><span class="lineno">   35</span>    get_node_parameters_interface());</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>  <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#ad71a9a21fa140c6f9c2e9e72218913eb">object_worker_</a> = std::make_shared&lt;RoadwayObjectsWorker&gt;(</div>
+<div class="line"><span class="lineno">   38</span>    <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a68833a917b702834b0499f72d6dca04b">wm_listener_</a>-&gt;getWorldModel(),</div>
+<div class="line"><span class="lineno">   39</span>    std::bind(&amp;<a class="code hl_function" href="classroadway__objects_1_1RoadwayObjectsNode.html#a8c558ac39ac8a17b83ee3674a6c41137">RoadwayObjectsNode::publishObstacles</a>, <span class="keyword">this</span>, std_ph::_1),</div>
+<div class="line"><span class="lineno">   40</span>    get_node_logging_interface());</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>  <span class="comment">// Setup publishers</span></div>
+<div class="line"><span class="lineno">   43</span>  <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a83b2647415ecfc83f88cba1c890b4f11">roadway_obs_pub_</a> =</div>
+<div class="line"><span class="lineno">   44</span>    create_publisher&lt;carma_perception_msgs::msg::RoadwayObstacleList&gt;(<span class="stringliteral">&quot;roadway_objects&quot;</span>, 10);</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>  <span class="comment">// Setup subscribers</span></div>
+<div class="line"><span class="lineno">   47</span>  <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a6c74891a47c1d81bbedf8a8e69193ae0">external_objects_sub_</a> = create_subscription&lt;carma_perception_msgs::msg::ExternalObjectList&gt;(</div>
+<div class="line"><span class="lineno">   48</span>    <span class="stringliteral">&quot;external_objects&quot;</span>, 10,</div>
+<div class="line"><span class="lineno">   49</span>    std::bind(&amp;<a class="code hl_function" href="classroadway__objects_1_1RoadwayObjectsWorker.html#aced2a1ee623db988a52d0b49f2381bed">RoadwayObjectsWorker::externalObjectsCallback</a>, <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#ad71a9a21fa140c6f9c2e9e72218913eb">object_worker_</a>.get(), std_ph::_1));</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>  <span class="comment">// Return success if everthing initialized successfully</span></div>
+<div class="line"><span class="lineno">   52</span>  <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
+<div class="line"><span class="lineno">   53</span>}</div>
+<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a68833a917b702834b0499f72d6dca04b"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a68833a917b702834b0499f72d6dca04b">roadway_objects::RoadwayObjectsNode::wm_listener_</a></div><div class="ttdeci">std::shared_ptr&lt; carma_wm::WMListener &gt; wm_listener_</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8hpp_source.html#l00046">roadway_objects_component.hpp:46</a></div></div>
+<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a6c74891a47c1d81bbedf8a8e69193ae0"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a6c74891a47c1d81bbedf8a8e69193ae0">roadway_objects::RoadwayObjectsNode::external_objects_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; carma_perception_msgs::msg::ExternalObjectList &gt; external_objects_sub_</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8hpp_source.html#l00040">roadway_objects_component.hpp:40</a></div></div>
+<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a83b2647415ecfc83f88cba1c890b4f11"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a83b2647415ecfc83f88cba1c890b4f11">roadway_objects::RoadwayObjectsNode::roadway_obs_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; carma_perception_msgs::msg::RoadwayObstacleList &gt; roadway_obs_pub_</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8hpp_source.html#l00043">roadway_objects_component.hpp:43</a></div></div>
+<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a8c558ac39ac8a17b83ee3674a6c41137"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a8c558ac39ac8a17b83ee3674a6c41137">roadway_objects::RoadwayObjectsNode::publishObstacles</a></div><div class="ttdeci">void publishObstacles(const carma_perception_msgs::msg::RoadwayObstacleList &amp;msg)</div><div class="ttdoc">Callback to publish RoadwayObstacleList.</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8cpp_source.html#l00055">roadway_objects_component.cpp:55</a></div></div>
+<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_ad71a9a21fa140c6f9c2e9e72218913eb"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#ad71a9a21fa140c6f9c2e9e72218913eb">roadway_objects::RoadwayObjectsNode::object_worker_</a></div><div class="ttdeci">std::shared_ptr&lt; RoadwayObjectsWorker &gt; object_worker_</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8hpp_source.html#l00049">roadway_objects_component.hpp:49</a></div></div>
+<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsWorker_html_aced2a1ee623db988a52d0b49f2381bed"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsWorker.html#aced2a1ee623db988a52d0b49f2381bed">roadway_objects::RoadwayObjectsWorker::externalObjectsCallback</a></div><div class="ttdeci">void externalObjectsCallback(const carma_perception_msgs::msg::ExternalObjectList::UniquePtr msg)</div><div class="ttdoc">Converts the provided ExternalObjectList to a RoadwayObstacleList and re-publishes it.</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__worker_8cpp_source.html#l00026">roadway_objects_worker.cpp:26</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="roadway__objects__node_8hpp_source.html#l00044">external_objects_sub_</a>, <a class="el" href="roadway__objects__worker_8cpp_source.html#l00025">roadway_objects::RoadwayObjectsWorker::externalObjectsCallback()</a>, <a class="el" href="roadway__objects__node_8hpp_source.html#l00053">object_worker_</a>, <a class="el" href="roadway__objects__node_8cpp_source.html#l00047">publishObstacles()</a>, <a class="el" href="roadway__objects__node_8hpp_source.html#l00047">roadway_obs_pub_</a>, and <a class="el" href="roadway__objects__node_8hpp_source.html#l00050">wm_listener_</a>.</p>
+<p class="reference">References <a class="el" href="roadway__objects__component_8hpp_source.html#l00040">external_objects_sub_</a>, <a class="el" href="roadway__objects__worker_8cpp_source.html#l00026">roadway_objects::RoadwayObjectsWorker::externalObjectsCallback()</a>, <a class="el" href="roadway__objects__component_8hpp_source.html#l00049">object_worker_</a>, <a class="el" href="roadway__objects__component_8cpp_source.html#l00055">publishObstacles()</a>, <a class="el" href="roadway__objects__component_8hpp_source.html#l00043">roadway_obs_pub_</a>, and <a class="el" href="roadway__objects__component_8hpp_source.html#l00046">wm_listener_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -253,14 +259,14 @@ Here is the call graph for this function:</div>
 
 <p>Callback to publish RoadwayObstacleList. </p>
 
-<p class="definition">Definition at line <a class="el" href="roadway__objects__node_8cpp_source.html#l00047">47</a> of file <a class="el" href="roadway__objects__node_8cpp_source.html">roadway_objects_node.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>  {</div>
-<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a83b2647415ecfc83f88cba1c890b4f11">roadway_obs_pub_</a>-&gt;publish(msg);</div>
-<div class="line"><span class="lineno">   50</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="roadway__objects__component_8cpp_source.html#l00055">55</a> of file <a class="el" href="roadway__objects__component_8cpp_source.html">roadway_objects_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>{</div>
+<div class="line"><span class="lineno">   58</span>  <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a83b2647415ecfc83f88cba1c890b4f11">roadway_obs_pub_</a>-&gt;publish(msg);</div>
+<div class="line"><span class="lineno">   59</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="roadway__objects__node_8hpp_source.html#l00047">roadway_obs_pub_</a>.</p>
+<p class="reference">References <a class="el" href="roadway__objects__component_8hpp_source.html#l00043">roadway_obs_pub_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="roadway__objects__node_8cpp_source.html#l00027">handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="roadway__objects__component_8cpp_source.html#l00028">handle_on_configure()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -294,9 +300,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="roadway__objects__node_8hpp_source.html#l00044">44</a> of file <a class="el" href="roadway__objects__node_8hpp_source.html">roadway_objects_node.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="roadway__objects__component_8hpp_source.html#l00040">40</a> of file <a class="el" href="roadway__objects__component_8hpp_source.html">roadway_objects_component.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="roadway__objects__node_8cpp_source.html#l00027">handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="roadway__objects__component_8cpp_source.html#l00028">handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -320,9 +326,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="roadway__objects__node_8hpp_source.html#l00053">53</a> of file <a class="el" href="roadway__objects__node_8hpp_source.html">roadway_objects_node.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="roadway__objects__component_8hpp_source.html#l00049">49</a> of file <a class="el" href="roadway__objects__component_8hpp_source.html">roadway_objects_component.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="roadway__objects__node_8cpp_source.html#l00027">handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="roadway__objects__component_8cpp_source.html#l00028">handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -346,9 +352,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="roadway__objects__node_8hpp_source.html#l00047">47</a> of file <a class="el" href="roadway__objects__node_8hpp_source.html">roadway_objects_node.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="roadway__objects__component_8hpp_source.html#l00043">43</a> of file <a class="el" href="roadway__objects__component_8hpp_source.html">roadway_objects_component.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="roadway__objects__node_8cpp_source.html#l00027">handle_on_configure()</a>, and <a class="el" href="roadway__objects__node_8cpp_source.html#l00047">publishObstacles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="roadway__objects__component_8cpp_source.html#l00028">handle_on_configure()</a>, and <a class="el" href="roadway__objects__component_8cpp_source.html#l00055">publishObstacles()</a>.</p>
 
 </div>
 </div>
@@ -372,15 +378,15 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="roadway__objects__node_8hpp_source.html#l00050">50</a> of file <a class="el" href="roadway__objects__node_8hpp_source.html">roadway_objects_node.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="roadway__objects__component_8hpp_source.html#l00046">46</a> of file <a class="el" href="roadway__objects__component_8hpp_source.html">roadway_objects_component.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="roadway__objects__node_8cpp_source.html#l00027">handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="roadway__objects__component_8cpp_source.html#l00028">handle_on_configure()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>roadway_objects/include/roadway_objects/<a class="el" href="roadway__objects__node_8hpp_source.html">roadway_objects_node.hpp</a></li>
-<li>roadway_objects/src/<a class="el" href="roadway__objects__node_8cpp_source.html">roadway_objects_node.cpp</a></li>
+<li>roadway_objects/include/roadway_objects/<a class="el" href="roadway__objects__component_8hpp_source.html">roadway_objects_component.hpp</a></li>
+<li>roadway_objects/src/<a class="el" href="roadway__objects__component_8cpp_source.html">roadway_objects_component.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -388,7 +394,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceroadway__objects.html">roadway_objects</a></li><li class="navelem"><a class="el" href="classroadway__objects_1_1RoadwayObjectsNode.html">RoadwayObjectsNode</a></li>
-    <li class="footer">Generated on Tue Sep 12 2023 00:29:41 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Sep 14 2023 14:40:00 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

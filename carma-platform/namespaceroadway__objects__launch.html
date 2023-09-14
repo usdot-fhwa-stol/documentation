@@ -110,40 +110,36 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="roadway__objects__launch_8py_source.html#l00031">31</a> of file <a class="el" href="roadway__objects__launch_8py_source.html">roadway_objects_launch.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span><span class="keyword">def </span><a class="code hl_function" href="namespaceroadway__objects__launch.html#a968bec41644500a2281d050e31bcbf01">generate_launch_description</a>():</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>    <span class="comment"># Declare the log_level launch argument</span></div>
-<div class="line"><span class="lineno">   34</span>    log_level = LaunchConfiguration(<span class="stringliteral">&#39;log_level&#39;</span>)</div>
-<div class="line"><span class="lineno">   35</span>    declare_log_level_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   36</span>        name =<span class="stringliteral">&#39;log_level&#39;</span>, default_value=<span class="stringliteral">&#39;WARN&#39;</span>)</div>
-<div class="line"><span class="lineno">   37</span>        </div>
-<div class="line"><span class="lineno">   38</span>    <span class="comment"># Launch node(s) in a carma container to allow logging to be configured</span></div>
-<div class="line"><span class="lineno">   39</span>    container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">   40</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
-<div class="line"><span class="lineno">   41</span>        name=<span class="stringliteral">&#39;roadway_objects_container&#39;</span>,</div>
-<div class="line"><span class="lineno">   42</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">   43</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">   44</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">   45</span>            </div>
-<div class="line"><span class="lineno">   46</span>            <span class="comment"># Launch the core node(s)</span></div>
-<div class="line"><span class="lineno">   47</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">   48</span>                    package=<span class="stringliteral">&#39;roadway_objects&#39;</span>,</div>
-<div class="line"><span class="lineno">   49</span>                    plugin=<span class="stringliteral">&#39;roadway_objects::RoadwayObjectsNode&#39;</span>,</div>
-<div class="line"><span class="lineno">   50</span>                    name=<span class="stringliteral">&#39;roadway_objects_node&#39;</span>,</div>
-<div class="line"><span class="lineno">   51</span>                    extra_arguments=[</div>
-<div class="line"><span class="lineno">   52</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">   53</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : log_level }</div>
-<div class="line"><span class="lineno">   54</span>                    ],</div>
-<div class="line"><span class="lineno">   55</span>            ),</div>
-<div class="line"><span class="lineno">   56</span>        ]</div>
-<div class="line"><span class="lineno">   57</span>    )</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">   60</span>        declare_log_level_arg,</div>
-<div class="line"><span class="lineno">   61</span>        container</div>
-<div class="line"><span class="lineno">   62</span>    ])</div>
-<div class="ttc" id="anamespaceroadway__objects__launch_html_a968bec41644500a2281d050e31bcbf01"><div class="ttname"><a href="namespaceroadway__objects__launch.html#a968bec41644500a2281d050e31bcbf01">roadway_objects_launch.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__launch_8py_source.html#l00031">roadway_objects_launch.py:31</a></div></div>
+<p class="definition">Definition at line <a class="el" href="roadway__objects__launch_8py_source.html#l00029">29</a> of file <a class="el" href="roadway__objects__launch_8py_source.html">roadway_objects_launch.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span><span class="keyword">def </span><a class="code hl_function" href="namespaceroadway__objects__launch.html#a968bec41644500a2281d050e31bcbf01">generate_launch_description</a>():</div>
+<div class="line"><span class="lineno">   30</span>    <span class="comment"># Declare the log_level launch argument</span></div>
+<div class="line"><span class="lineno">   31</span>    log_level = LaunchConfiguration(<span class="stringliteral">&quot;log_level&quot;</span>)</div>
+<div class="line"><span class="lineno">   32</span>    declare_log_level_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   33</span>        name=<span class="stringliteral">&quot;log_level&quot;</span>, default_value=<span class="stringliteral">&quot;WARN&quot;</span></div>
+<div class="line"><span class="lineno">   34</span>    )</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <span class="comment"># Launch node(s) in a carma container to allow logging to be configured</span></div>
+<div class="line"><span class="lineno">   37</span>    container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">   38</span>        package=<span class="stringliteral">&quot;carma_ros2_utils&quot;</span>,</div>
+<div class="line"><span class="lineno">   39</span>        name=<span class="stringliteral">&quot;roadway_objects_container&quot;</span>,</div>
+<div class="line"><span class="lineno">   40</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">   41</span>        executable=<span class="stringliteral">&quot;carma_component_container_mt&quot;</span>,</div>
+<div class="line"><span class="lineno">   42</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">   43</span>            <span class="comment"># Launch the core node(s)</span></div>
+<div class="line"><span class="lineno">   44</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">   45</span>                package=<span class="stringliteral">&quot;roadway_objects&quot;</span>,</div>
+<div class="line"><span class="lineno">   46</span>                plugin=<span class="stringliteral">&quot;roadway_objects::RoadwayObjectsNode&quot;</span>,</div>
+<div class="line"><span class="lineno">   47</span>                name=<span class="stringliteral">&quot;roadway_objects_node&quot;</span>,</div>
+<div class="line"><span class="lineno">   48</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">   49</span>                    {<span class="stringliteral">&quot;use_intra_process_comms&quot;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">   50</span>                    {<span class="stringliteral">&quot;--log-level&quot;</span>: log_level},</div>
+<div class="line"><span class="lineno">   51</span>                ],</div>
+<div class="line"><span class="lineno">   52</span>            ),</div>
+<div class="line"><span class="lineno">   53</span>        ],</div>
+<div class="line"><span class="lineno">   54</span>    )</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> LaunchDescription([declare_log_level_arg, container])</div>
+<div class="ttc" id="anamespaceroadway__objects__launch_html_a968bec41644500a2281d050e31bcbf01"><div class="ttname"><a href="namespaceroadway__objects__launch.html#a968bec41644500a2281d050e31bcbf01">roadway_objects_launch.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__launch_8py_source.html#l00029">roadway_objects_launch.py:29</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -153,7 +149,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceroadway__objects__launch.html">roadway_objects_launch</a></li>
-    <li class="footer">Generated on Tue Sep 12 2023 00:29:41 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Sep 14 2023 14:40:00 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -18,7 +18,7 @@ var searchData=
   ['publishmapupdatecallback_15',['PublishMapUpdateCallback',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#a7ed209093ad1ddb36c00f97951063f8b',1,'carma_wm_ctrl::WMBroadcaster']]],
   ['publishmobilityoperationcallback_16',['PublishMobilityOperationCallback',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#ac4bb2c122bfd96977dd89b9999a4050d',1,'carma_wm_ctrl::WMBroadcaster']]],
   ['publishobjectcallback_17',['PublishObjectCallback',['../classmotion__computation_1_1MotionComputationWorker.html#a12dae2bfb4d6bfc9f02ebf84fe8cc3be',1,'motion_computation::MotionComputationWorker::PublishObjectCallback()'],['../classobject_1_1ObjectDetectionTrackingWorker.html#acae5834696ba4c2f9d37677bc443895c',1,'object::ObjectDetectionTrackingWorker::PublishObjectCallback()']]],
-  ['publishobstaclescallback_18',['PublishObstaclesCallback',['../classroadway__objects_1_1RoadwayObjectsWorker.html#a61c1a0e6fc71350afdcdf210e75ace05',1,'roadway_objects::RoadwayObjectsWorker']]],
+  ['publishobstaclescallback_18',['PublishObstaclesCallback',['../classroadway__objects_1_1RoadwayObjectsWorker.html#a5ab28d00e5c9bb89c2a34a1614c3ca51',1,'roadway_objects::RoadwayObjectsWorker']]],
   ['publishplugindiscoverycb_19',['PublishPluginDiscoveryCB',['../namespaceinlanecruising__plugin.html#acb051b1744e0113bd257658865e8e9c4',1,'inlanecruising_plugin']]],
   ['publishtrafficcontrolcallback_20',['PublishTrafficControlCallback',['../classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a0dc52dc2423f3d6e74d1c2310a72125a',1,'traffic_incident_parser::TrafficIncidentParserWorker']]],
   ['putfunc_21',['PutFunc',['../classAutoUTFOutputStream.html#a398450792738ee1cb865fc96dfde9e1a',1,'AutoUTFOutputStream']]]

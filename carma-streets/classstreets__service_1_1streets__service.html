@@ -149,9 +149,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a2f290d1c1ac3dd5bc9082333a1956fd1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstreets__service_1_1streets__service.html#a2f290d1c1ac3dd5bc9082333a1956fd1">initialize_kafka_consumer</a> (const std::string &amp;consumer_topic, std::shared_ptr&lt; <a class="el" href="classkafka__clients_1_1kafka__consumer__worker.html">kafka_clients::kafka_consumer_worker</a> &gt; &amp;consumer) const</td></tr>
 <tr class="memdesc:a2f290d1c1ac3dd5bc9082333a1956fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method to initialise Kafka consumer. NOTE: Will assign consumer group id as service_name.  <a href="classstreets__service_1_1streets__service.html#a2f290d1c1ac3dd5bc9082333a1956fd1">More...</a><br /></td></tr>
 <tr class="separator:a2f290d1c1ac3dd5bc9082333a1956fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac935e033b015d15c846604774a5cacf5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstreets__service_1_1streets__service.html#ac935e033b015d15c846604774a5cacf5">get_system_config</a> (const char *config_name) const</td></tr>
-<tr class="memdesc:ac935e033b015d15c846604774a5cacf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns string value of environment variable with given name.  <a href="classstreets__service_1_1streets__service.html#ac935e033b015d15c846604774a5cacf5">More...</a><br /></td></tr>
-<tr class="separator:ac935e033b015d15c846604774a5cacf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0882928966e40628bccfc9504be441f4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a> (const char *config_name, const std::string &amp;default_val) const noexcept</td></tr>
+<tr class="memdesc:a0882928966e40628bccfc9504be441f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns string value of environment variable with given name. If no value is found, returns default.  <a href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">More...</a><br /></td></tr>
+<tr class="separator:a0882928966e40628bccfc9504be441f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a504f1c93ede0e4a77bf104f0a13c502f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstreets__service_1_1streets__service.html#a504f1c93ede0e4a77bf104f0a13c502f">consume_time_sync_message</a> () const</td></tr>
 <tr class="memdesc:a504f1c93ede0e4a77bf104f0a13c502f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to consume continously consume time sync messages from Kafka topic and update <a class="el" href="classstreets__service_1_1streets__clock__singleton.html" title="Streets Clock Singleton is a singleton that manages a CarmaClock object. The CarmaClock object is cre...">streets_clock_singleton</a> with received data.  <a href="classstreets__service_1_1streets__service.html#a504f1c93ede0e4a77bf104f0a13c502f">More...</a><br /></td></tr>
 <tr class="separator:a504f1c93ede0e4a77bf104f0a13c502f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -250,8 +250,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">    8</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a>-&gt;stop();</div>
 <div class="line"><span class="lineno">    9</span>        }</div>
 <div class="line"><span class="lineno">   10</span>    }</div>
-<div class="ttc" id="aclassstreets__service_1_1streets__service_html_a5bf52d2fecae35b2ac5f981f586b2892"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">streets_service::streets_service::_service_name</a></div><div class="ttdeci">std::string _service_name</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00109">streets_service.h:109</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__service_html_a64c7be5428329effb019e1a8a6d7c669"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">streets_service::streets_service::_time_consumer</a></div><div class="ttdeci">std::shared_ptr&lt; kafka_clients::kafka_consumer_worker &gt; _time_consumer</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00113">streets_service.h:113</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__service_html_a5bf52d2fecae35b2ac5f981f586b2892"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">streets_service::streets_service::_service_name</a></div><div class="ttdeci">std::string _service_name</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00110">streets_service.h:110</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__service_html_a64c7be5428329effb019e1a8a6d7c669"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">streets_service::streets_service::_time_consumer</a></div><div class="ttdeci">std::shared_ptr&lt; kafka_clients::kafka_consumer_worker &gt; _time_consumer</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00114">streets_service.h:114</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -443,7 +443,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   52</span>        logger-&gt;flush_on(level);</div>
 <div class="line"><span class="lineno">   53</span>        <span class="keywordflow">return</span> logger;</div>
 <div class="line"><span class="lineno">   54</span>    }</div>
-<div class="ttc" id="aclassstreets__service_1_1streets__service_html_a1f84fca76d06dac6a8c5e75bd2d5e646"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a1f84fca76d06dac6a8c5e75bd2d5e646">streets_service::streets_service::_logs_directory</a></div><div class="ttdeci">std::string _logs_directory</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00115">streets_service.h:115</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__service_html_a1f84fca76d06dac6a8c5e75bd2d5e646"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a1f84fca76d06dac6a8c5e75bd2d5e646">streets_service::streets_service::_logs_directory</a></div><div class="ttdeci">std::string _logs_directory</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00116">streets_service.h:116</a></div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="tsc__service_8cpp_source.html#l00401">traffic_signal_controller_service::tsc_service::configure_snmp_cmd_logger()</a>, and <a class="el" href="tsc__service_8cpp_source.html#l00412">traffic_signal_controller_service::tsc_service::configure_veh_ped_call_logger()</a>.</p>
 <div class="dynheader">
@@ -739,15 +739,15 @@ Here is the caller graph for this function:</div>
 <p>Returns service name set in configuration file. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns service name set in configuration file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00130">130</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  130</span>                                                      {</div>
-<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a>;</div>
-<div class="line"><span class="lineno">  132</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00131">131</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>                                                      {</div>
+<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a>;</div>
+<div class="line"><span class="lineno">  133</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ac935e033b015d15c846604774a5cacf5" name="ac935e033b015d15c846604774a5cacf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac935e033b015d15c846604774a5cacf5">&#9670;&nbsp;</a></span>get_system_config()</h2>
+<a id="a0882928966e40628bccfc9504be441f4" name="a0882928966e40628bccfc9504be441f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0882928966e40628bccfc9504be441f4">&#9670;&nbsp;</a></span>get_system_config()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -759,21 +759,32 @@ Here is the caller graph for this function:</div>
           <td class="memname">std::string streets_service::streets_service::get_system_config </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>config_name</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramname"><em>config_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>default_val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns string value of environment variable with given name. </p>
+<p>Returns string value of environment variable with given name. If no value is found, returns default. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config_name</td><td>name of environment variable. </td></tr>
+    <tr><td class="paramname">default_val</td><td>string default value for environment variable if no value is found. </td></tr>
   </table>
   </dd>
 </dl>
@@ -786,22 +797,23 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>value of environment variable. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00113">113</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  113</span>                                                                              {</div>
-<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">if</span> (config_name) {</div>
-<div class="line"><span class="lineno">  115</span>            <span class="keywordflow">try</span> {</div>
-<div class="line"><span class="lineno">  116</span>                std::string config =  std::getenv(config_name);</div>
-<div class="line"><span class="lineno">  117</span>                SPDLOG_DEBUG(<span class="stringliteral">&quot;Reading system config {0} as : {1}!&quot;</span>, config_name, config);</div>
-<div class="line"><span class="lineno">  118</span>                <span class="keywordflow">return</span> config;</div>
-<div class="line"><span class="lineno">  119</span>            }</div>
-<div class="line"><span class="lineno">  120</span>            <span class="keywordflow">catch</span>(<span class="keyword">const</span> std::logic_error &amp;e) {</div>
-<div class="line"><span class="lineno">  121</span>                std::string config_name_str = config_name;</div>
-<div class="line"><span class="lineno">  122</span>                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;System config &quot;</span> + config_name_str + <span class="stringliteral">&quot; not set!&quot;</span>);</div>
-<div class="line"><span class="lineno">  123</span>            }</div>
-<div class="line"><span class="lineno">  124</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  125</span>            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot; Systme config param name is null pointer!&quot;</span>);</div>
-<div class="line"><span class="lineno">  126</span>        }</div>
-<div class="line"><span class="lineno">  127</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">  128</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>                                                                                                                    {</div>
+<div class="line"><span class="lineno">  114</span>        <span class="comment">// Check for config_name nullptr and use default value</span></div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">if</span> (config_name == <span class="keyword">nullptr</span> ) {</div>
+<div class="line"><span class="lineno">  116</span>            SPDLOG_WARN(<span class="stringliteral">&quot;System config_name was nullptr! Using default value {0}!&quot;</span> , default_val);</div>
+<div class="line"><span class="lineno">  117</span>            <span class="keywordflow">return</span> default_val;</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>        <span class="comment">// If std::getenv(config_name) returns value, use this value</span></div>
+<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> config = std::getenv(config_name)) {</div>
+<div class="line"><span class="lineno">  121</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Reading system config {0} as : {1}!&quot;</span>, config_name, config);</div>
+<div class="line"><span class="lineno">  122</span>            <span class="keywordflow">return</span> config;</div>
+<div class="line"><span class="lineno">  123</span>        }</div>
+<div class="line"><span class="lineno">  124</span>        <span class="comment">// If std::getenv(config_name) returns nullptr, environment variable was not set so use default</span></div>
+<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  126</span>            SPDLOG_WARN(<span class="stringliteral">&quot;System config {0} was not set! Using default value {1}!&quot;</span> ,config_name, default_val);</div>
+<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">return</span> default_val;</div>
+<div class="line"><span class="lineno">  128</span>        }</div>
+<div class="line"><span class="lineno">  129</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -836,20 +848,20 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00012">12</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   12</span>                                     {</div>
 <div class="line"><span class="lineno">   13</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><span class="lineno">   14</span>            std::string config_file_path = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#ac935e033b015d15c846604774a5cacf5">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#aa78c7b5d902871eeee9acb270aaca1fb">CONFIG_FILE_PATH_ENV</a>.c_str());</div>
+<div class="line"><span class="lineno">   14</span>            std::string config_file_path = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#aa78c7b5d902871eeee9acb270aaca1fb">CONFIG_FILE_PATH_ENV</a>.c_str(), <a class="code hl_variable" href="namespacestreets__service.html#a125798b319a95317fa7ea1fcfed3f79b">DEFAULT_CONFIG_FILE_PATH</a>);</div>
 <div class="line"><span class="lineno">   15</span>            <a class="code hl_function" href="classstreets__service_1_1streets__singleton.html#a2661e8317c90be8ba5d18b37b5bc3df8">streets_configuration::create</a>(config_file_path);</div>
-<div class="line"><span class="lineno">   16</span>            std::string sim_mode_string = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#ac935e033b015d15c846604774a5cacf5">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#abb5eaa478d0ccd86b222e1ff69536687">SIMULATION_MODE_ENV</a>.c_str());</div>
+<div class="line"><span class="lineno">   16</span>            std::string sim_mode_string = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#abb5eaa478d0ccd86b222e1ff69536687">SIMULATION_MODE_ENV</a>.c_str(),<a class="code hl_variable" href="namespacestreets__service.html#a9c0e0ab751e88971bb80e84abb89ce75">DEFAULT_SIMULATION_MODE</a>);</div>
 <div class="line"><span class="lineno">   17</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a> = sim_mode_string.compare(<span class="stringliteral">&quot;true&quot;</span>) == 0 || sim_mode_string.compare(<span class="stringliteral">&quot;TRUE&quot;</span>) == 0 ;</div>
 <div class="line"><span class="lineno">   18</span>            <a class="code hl_function" href="classstreets__service_1_1streets__singleton.html#a2661e8317c90be8ba5d18b37b5bc3df8">streets_clock_singleton::create</a>(<a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a>);</div>
 <div class="line"><span class="lineno">   19</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a> = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a24b078c95a66357880bc7c6377d4c84b">streets_configuration::get_service_name</a>();</div>
 <div class="line"><span class="lineno">   20</span>            SPDLOG_INFO(<span class="stringliteral">&quot;Initializing {0} streets service in simulation mode : {1}!&quot;</span>, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a>, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a>);</div>
 <div class="line"><span class="lineno">   21</span>            <span class="keywordflow">if</span> ( <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a> ) {</div>
-<div class="line"><span class="lineno">   22</span>                std::string time_sync_topic = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#ac935e033b015d15c846604774a5cacf5">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#afc65d11b10d09b30901a8f7b412601aa">TIME_SYNC_TOPIC_ENV</a>.c_str());</div>
+<div class="line"><span class="lineno">   22</span>                std::string time_sync_topic = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#afc65d11b10d09b30901a8f7b412601aa">TIME_SYNC_TOPIC_ENV</a>.c_str(), <a class="code hl_variable" href="namespacestreets__service.html#a5ba2e6b968b5f4b1b9e219ad626d3dda">DEFAULT_TIME_SYNC_TOPIC</a>);</div>
 <div class="line"><span class="lineno">   23</span>                <span class="keywordflow">if</span> (!<a class="code hl_function" href="classstreets__service_1_1streets__service.html#a2f290d1c1ac3dd5bc9082333a1956fd1">initialize_kafka_consumer</a>(time_sync_topic, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a>)){</div>
 <div class="line"><span class="lineno">   24</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   25</span>                }</div>
 <div class="line"><span class="lineno">   26</span>            }</div>
-<div class="line"><span class="lineno">   27</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a1f84fca76d06dac6a8c5e75bd2d5e646">_logs_directory</a> = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#ac935e033b015d15c846604774a5cacf5">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#aa2771b5341c756357d8063712e800de1">LOGS_DIRECTORY_ENV</a>.c_str());</div>
+<div class="line"><span class="lineno">   27</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a1f84fca76d06dac6a8c5e75bd2d5e646">_logs_directory</a> = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#aa2771b5341c756357d8063712e800de1">LOGS_DIRECTORY_ENV</a>.c_str(), <a class="code hl_variable" href="namespacestreets__service.html#a5025a5b25d1b34a7c03a801fbc67a53d">DEFAULT_LOGS_DIRECTORY</a>);</div>
 <div class="line"><span class="lineno">   28</span>        } <span class="keywordflow">catch</span>( <span class="keyword">const</span> streets_configuration_exception &amp;e) {</div>
 <div class="line"><span class="lineno">   29</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Exception occured during {0} initialization : {1}&quot;</span> , <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a> , e.what());</div>
 <div class="line"><span class="lineno">   30</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -862,16 +874,20 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   37</span> </div>
 <div class="line"><span class="lineno">   38</span>    }</div>
 <div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a24b078c95a66357880bc7c6377d4c84b"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a24b078c95a66357880bc7c6377d4c84b">streets_service::streets_configuration::get_service_name</a></div><div class="ttdeci">static std::string get_service_name()</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00165">streets_configuration.cpp:165</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__service_html_a0882928966e40628bccfc9504be441f4"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">streets_service::streets_service::get_system_config</a></div><div class="ttdeci">std::string get_system_config(const char *config_name, const std::string &amp;default_val) const noexcept</div><div class="ttdoc">Returns string value of environment variable with given name. If no value is found,...</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8cpp_source.html#l00113">streets_service.cpp:113</a></div></div>
 <div class="ttc" id="aclassstreets__service_1_1streets__service_html_a2f290d1c1ac3dd5bc9082333a1956fd1"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a2f290d1c1ac3dd5bc9082333a1956fd1">streets_service::streets_service::initialize_kafka_consumer</a></div><div class="ttdeci">bool initialize_kafka_consumer(const std::string &amp;consumer_topic, std::shared_ptr&lt; kafka_clients::kafka_consumer_worker &gt; &amp;consumer) const</div><div class="ttdoc">Helper method to initialise Kafka consumer. NOTE: Will assign consumer group id as service_name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8cpp_source.html#l00070">streets_service.cpp:70</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__service_html_ac935e033b015d15c846604774a5cacf5"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#ac935e033b015d15c846604774a5cacf5">streets_service::streets_service::get_system_config</a></div><div class="ttdeci">std::string get_system_config(const char *config_name) const</div><div class="ttdoc">Returns string value of environment variable with given name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8cpp_source.html#l00113">streets_service.cpp:113</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__service_html_afdee88ad9c67fc4a8073c3fd0183c6d3"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">streets_service::streets_service::_simulation_mode</a></div><div class="ttdeci">bool _simulation_mode</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00111">streets_service.h:111</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__service_html_afdee88ad9c67fc4a8073c3fd0183c6d3"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">streets_service::streets_service::_simulation_mode</a></div><div class="ttdeci">bool _simulation_mode</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00112">streets_service.h:112</a></div></div>
 <div class="ttc" id="aclassstreets__service_1_1streets__singleton_html_a2661e8317c90be8ba5d18b37b5bc3df8"><div class="ttname"><a href="classstreets__service_1_1streets__singleton.html#a2661e8317c90be8ba5d18b37b5bc3df8">streets_service::streets_singleton&lt; streets_configuration, std::string &gt;::create</a></div><div class="ttdeci">static streets_configuration &amp; create(Args...args)</div><div class="ttdoc">Method to intialize streets_singleton with constructor params ...Args of templated class.</div></div>
-<div class="ttc" id="anamespacestreets__service_html_aa2771b5341c756357d8063712e800de1"><div class="ttname"><a href="namespacestreets__service.html#aa2771b5341c756357d8063712e800de1">streets_service::LOGS_DIRECTORY_ENV</a></div><div class="ttdeci">static const std::string LOGS_DIRECTORY_ENV</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00007">streets_environment_variables.h:7</a></div></div>
-<div class="ttc" id="anamespacestreets__service_html_aa78c7b5d902871eeee9acb270aaca1fb"><div class="ttname"><a href="namespacestreets__service.html#aa78c7b5d902871eeee9acb270aaca1fb">streets_service::CONFIG_FILE_PATH_ENV</a></div><div class="ttdeci">static const std::string CONFIG_FILE_PATH_ENV</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00011">streets_environment_variables.h:11</a></div></div>
-<div class="ttc" id="anamespacestreets__service_html_abb5eaa478d0ccd86b222e1ff69536687"><div class="ttname"><a href="namespacestreets__service.html#abb5eaa478d0ccd86b222e1ff69536687">streets_service::SIMULATION_MODE_ENV</a></div><div class="ttdeci">static const std::string SIMULATION_MODE_ENV</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00009">streets_environment_variables.h:9</a></div></div>
-<div class="ttc" id="anamespacestreets__service_html_afc65d11b10d09b30901a8f7b412601aa"><div class="ttname"><a href="namespacestreets__service.html#afc65d11b10d09b30901a8f7b412601aa">streets_service::TIME_SYNC_TOPIC_ENV</a></div><div class="ttdeci">static const std::string TIME_SYNC_TOPIC_ENV</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00013">streets_environment_variables.h:13</a></div></div>
+<div class="ttc" id="anamespacestreets__service_html_a125798b319a95317fa7ea1fcfed3f79b"><div class="ttname"><a href="namespacestreets__service.html#a125798b319a95317fa7ea1fcfed3f79b">streets_service::DEFAULT_CONFIG_FILE_PATH</a></div><div class="ttdeci">const std::string DEFAULT_CONFIG_FILE_PATH</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00017">streets_environment_variables.h:17</a></div></div>
+<div class="ttc" id="anamespacestreets__service_html_a5025a5b25d1b34a7c03a801fbc67a53d"><div class="ttname"><a href="namespacestreets__service.html#a5025a5b25d1b34a7c03a801fbc67a53d">streets_service::DEFAULT_LOGS_DIRECTORY</a></div><div class="ttdeci">const std::string DEFAULT_LOGS_DIRECTORY</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00009">streets_environment_variables.h:9</a></div></div>
+<div class="ttc" id="anamespacestreets__service_html_a5ba2e6b968b5f4b1b9e219ad626d3dda"><div class="ttname"><a href="namespacestreets__service.html#a5ba2e6b968b5f4b1b9e219ad626d3dda">streets_service::DEFAULT_TIME_SYNC_TOPIC</a></div><div class="ttdeci">const std::string DEFAULT_TIME_SYNC_TOPIC</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00021">streets_environment_variables.h:21</a></div></div>
+<div class="ttc" id="anamespacestreets__service_html_a9c0e0ab751e88971bb80e84abb89ce75"><div class="ttname"><a href="namespacestreets__service.html#a9c0e0ab751e88971bb80e84abb89ce75">streets_service::DEFAULT_SIMULATION_MODE</a></div><div class="ttdeci">const std::string DEFAULT_SIMULATION_MODE</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00013">streets_environment_variables.h:13</a></div></div>
+<div class="ttc" id="anamespacestreets__service_html_aa2771b5341c756357d8063712e800de1"><div class="ttname"><a href="namespacestreets__service.html#aa2771b5341c756357d8063712e800de1">streets_service::LOGS_DIRECTORY_ENV</a></div><div class="ttdeci">const std::string LOGS_DIRECTORY_ENV</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00007">streets_environment_variables.h:7</a></div></div>
+<div class="ttc" id="anamespacestreets__service_html_aa78c7b5d902871eeee9acb270aaca1fb"><div class="ttname"><a href="namespacestreets__service.html#aa78c7b5d902871eeee9acb270aaca1fb">streets_service::CONFIG_FILE_PATH_ENV</a></div><div class="ttdeci">const std::string CONFIG_FILE_PATH_ENV</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00015">streets_environment_variables.h:15</a></div></div>
+<div class="ttc" id="anamespacestreets__service_html_abb5eaa478d0ccd86b222e1ff69536687"><div class="ttname"><a href="namespacestreets__service.html#abb5eaa478d0ccd86b222e1ff69536687">streets_service::SIMULATION_MODE_ENV</a></div><div class="ttdeci">const std::string SIMULATION_MODE_ENV</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00011">streets_environment_variables.h:11</a></div></div>
+<div class="ttc" id="anamespacestreets__service_html_afc65d11b10d09b30901a8f7b412601aa"><div class="ttname"><a href="namespacestreets__service.html#afc65d11b10d09b30901a8f7b412601aa">streets_service::TIME_SYNC_TOPIC_ENV</a></div><div class="ttdeci">const std::string TIME_SYNC_TOPIC_ENV</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00019">streets_environment_variables.h:19</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="streets__environment__variables_8h_source.html#l00011">streets_service::CONFIG_FILE_PATH_ENV</a>, <a class="el" href="classstreets__service_1_1streets__singleton.html#a2661e8317c90be8ba5d18b37b5bc3df8">streets_service::streets_singleton&lt; fwha_stol::lib::time::CarmaClock, bool &gt;::create()</a>, <a class="el" href="classstreets__service_1_1streets__singleton.html#a2661e8317c90be8ba5d18b37b5bc3df8">streets_service::streets_singleton&lt; streets_configuration, std::string &gt;::create()</a>, <a class="el" href="streets__configuration_8cpp_source.html#l00165">streets_service::streets_configuration::get_service_name()</a>, <a class="el" href="streets__environment__variables_8h_source.html#l00007">streets_service::LOGS_DIRECTORY_ENV</a>, <a class="el" href="streets__environment__variables_8h_source.html#l00009">streets_service::SIMULATION_MODE_ENV</a>, and <a class="el" href="streets__environment__variables_8h_source.html#l00013">streets_service::TIME_SYNC_TOPIC_ENV</a>.</p>
+<p class="reference">References <a class="el" href="streets__environment__variables_8h_source.html#l00015">streets_service::CONFIG_FILE_PATH_ENV</a>, <a class="el" href="classstreets__service_1_1streets__singleton.html#a2661e8317c90be8ba5d18b37b5bc3df8">streets_service::streets_singleton&lt; fwha_stol::lib::time::CarmaClock, bool &gt;::create()</a>, <a class="el" href="classstreets__service_1_1streets__singleton.html#a2661e8317c90be8ba5d18b37b5bc3df8">streets_service::streets_singleton&lt; streets_configuration, std::string &gt;::create()</a>, <a class="el" href="streets__environment__variables_8h_source.html#l00017">streets_service::DEFAULT_CONFIG_FILE_PATH</a>, <a class="el" href="streets__environment__variables_8h_source.html#l00009">streets_service::DEFAULT_LOGS_DIRECTORY</a>, <a class="el" href="streets__environment__variables_8h_source.html#l00013">streets_service::DEFAULT_SIMULATION_MODE</a>, <a class="el" href="streets__environment__variables_8h_source.html#l00021">streets_service::DEFAULT_TIME_SYNC_TOPIC</a>, <a class="el" href="streets__configuration_8cpp_source.html#l00165">streets_service::streets_configuration::get_service_name()</a>, <a class="el" href="streets__environment__variables_8h_source.html#l00007">streets_service::LOGS_DIRECTORY_ENV</a>, <a class="el" href="streets__environment__variables_8h_source.html#l00011">streets_service::SIMULATION_MODE_ENV</a>, and <a class="el" href="streets__environment__variables_8h_source.html#l00019">streets_service::TIME_SYNC_TOPIC_ENV</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tsc__service_8cpp_source.html#l00008">traffic_signal_controller_service::tsc_service::initialize()</a>.</p>
 <div class="dynheader">
@@ -1096,10 +1112,10 @@ Here is the caller graph for this function:</div>
 <p>Returns boolean if service is currently configured to be in simulation_mode. This corresponsds to the value of the environment variable SIMULATION_MODE. Simulation mode indicates whether the <a class="el" href="classstreets__service_1_1streets__clock__singleton.html" title="Streets Clock Singleton is a singleton that manages a CarmaClock object. The CarmaClock object is cre...">streets_clock_singleton</a> uses simulation time for kafka or system time. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if in simulation mode, false if in real time more </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00134">134</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>                                                   {</div>
-<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a>;</div>
-<div class="line"><span class="lineno">  136</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00135">135</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>                                                   {</div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a>;</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="tsc__service_8cpp_source.html#l00008">traffic_signal_controller_service::tsc_service::initialize()</a>, and <a class="el" href="tsc__service_8cpp_source.html#l00190">traffic_signal_controller_service::tsc_service::produce_spat_json()</a>.</p>
 <div class="dynheader">
@@ -1239,7 +1255,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8h_source.html#l00115">115</a> of file <a class="el" href="streets__service_8h_source.html">streets_service.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="streets__service_8h_source.html#l00116">116</a> of file <a class="el" href="streets__service_8h_source.html">streets_service.h</a>.</p>
 
 </div>
 </div>
@@ -1263,7 +1279,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8h_source.html#l00109">109</a> of file <a class="el" href="streets__service_8h_source.html">streets_service.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="streets__service_8h_source.html#l00110">110</a> of file <a class="el" href="streets__service_8h_source.html">streets_service.h</a>.</p>
 
 </div>
 </div>
@@ -1287,7 +1303,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8h_source.html#l00111">111</a> of file <a class="el" href="streets__service_8h_source.html">streets_service.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="streets__service_8h_source.html#l00112">112</a> of file <a class="el" href="streets__service_8h_source.html">streets_service.h</a>.</p>
 
 </div>
 </div>
@@ -1311,7 +1327,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8h_source.html#l00113">113</a> of file <a class="el" href="streets__service_8h_source.html">streets_service.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="streets__service_8h_source.html#l00114">114</a> of file <a class="el" href="streets__service_8h_source.html">streets_service.h</a>.</p>
 
 </div>
 </div>
@@ -1325,7 +1341,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacestreets__service.html">streets_service</a></li><li class="navelem"><a class="el" href="classstreets__service_1_1streets__service.html">streets_service</a></li>
-    <li class="footer">Generated on Wed Aug 16 2023 16:50:23 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Sep 14 2023 18:40:29 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

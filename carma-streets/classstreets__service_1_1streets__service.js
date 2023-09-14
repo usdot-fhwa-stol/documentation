@@ -14,7 +14,7 @@ var classstreets__service_1_1streets__service =
     [ "FRIEND_TEST", "classstreets__service_1_1streets__service.html#a4279bd2581cce715780d1b286fb7909b", null ],
     [ "FRIEND_TEST", "classstreets__service_1_1streets__service.html#aec9e4222a20490b6c829fb7791117541", null ],
     [ "get_service_name", "classstreets__service_1_1streets__service.html#ab1e19b04345061118af95882b2a468be", null ],
-    [ "get_system_config", "classstreets__service_1_1streets__service.html#ac935e033b015d15c846604774a5cacf5", null ],
+    [ "get_system_config", "classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4", null ],
     [ "initialize", "classstreets__service_1_1streets__service.html#a52fb893726747c22c954ff42d4ff873a", null ],
     [ "initialize_kafka_consumer", "classstreets__service_1_1streets__service.html#a2f290d1c1ac3dd5bc9082333a1956fd1", null ],
     [ "initialize_kafka_producer", "classstreets__service_1_1streets__service.html#a7332cb87e8ac37564e09bf33081745b5", null ],

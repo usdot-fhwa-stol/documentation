@@ -1,5 +1,13 @@
 var NAVTREEINDEX21 =
 {
+"structstreets__vehicles_1_1vehicle.html#a21a6378ca2401ac4bc9ca6f6364833fb":[25,0,18,5,6],
+"structstreets__vehicles_1_1vehicle.html#a253341595deb3473620116dcf63d9927":[24,0,29,5,11],
+"structstreets__vehicles_1_1vehicle.html#a253341595deb3473620116dcf63d9927":[25,0,18,5,11],
+"structstreets__vehicles_1_1vehicle.html#a278b51810d25efcfcfb91bb13e43e6f3":[24,0,29,5,10],
+"structstreets__vehicles_1_1vehicle.html#a278b51810d25efcfcfb91bb13e43e6f3":[25,0,18,5,10],
+"structstreets__vehicles_1_1vehicle.html#a3a38a205ab41c1912245c3d2a3b8c907":[25,0,18,5,21],
+"structstreets__vehicles_1_1vehicle.html#a3a38a205ab41c1912245c3d2a3b8c907":[24,0,29,5,21],
+"structstreets__vehicles_1_1vehicle.html#a470605f661a8f625329ebbb10888e2b8":[25,0,18,5,17],
 "structstreets__vehicles_1_1vehicle.html#a470605f661a8f625329ebbb10888e2b8":[24,0,29,5,17],
 "structstreets__vehicles_1_1vehicle.html#a4ef0e2e811b0f5cb00f14b89a353c3b5":[24,0,29,5,14],
 "structstreets__vehicles_1_1vehicle.html#a4ef0e2e811b0f5cb00f14b89a353c3b5":[25,0,18,5,14],

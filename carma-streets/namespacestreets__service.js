@@ -15,6 +15,10 @@ var namespacestreets__service =
       [ "config_bool", "namespacestreets__service.html#a48aeb3058116f112bc1af5e5920548f4a0d0e7ae3046b05f1005df9793dbea92c", null ]
     ] ],
     [ "CONFIG_FILE_PATH_ENV", "namespacestreets__service.html#aa78c7b5d902871eeee9acb270aaca1fb", null ],
+    [ "DEFAULT_CONFIG_FILE_PATH", "namespacestreets__service.html#a125798b319a95317fa7ea1fcfed3f79b", null ],
+    [ "DEFAULT_LOGS_DIRECTORY", "namespacestreets__service.html#a5025a5b25d1b34a7c03a801fbc67a53d", null ],
+    [ "DEFAULT_SIMULATION_MODE", "namespacestreets__service.html#a9c0e0ab751e88971bb80e84abb89ce75", null ],
+    [ "DEFAULT_TIME_SYNC_TOPIC", "namespacestreets__service.html#a5ba2e6b968b5f4b1b9e219ad626d3dda", null ],
     [ "LOGS_DIRECTORY_ENV", "namespacestreets__service.html#aa2771b5341c756357d8063712e800de1", null ],
     [ "SIMULATION_MODE_ENV", "namespacestreets__service.html#abb5eaa478d0ccd86b222e1ff69536687", null ],
     [ "TIME_SYNC_TOPIC_ENV", "namespacestreets__service.html#afc65d11b10d09b30901a8f7b412601aa", null ]

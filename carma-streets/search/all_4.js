@@ -35,7 +35,7 @@ var searchData=
   ['dpp_5fdelay_5ftocsv_32',['dpp_delay_toCSV',['../classstreets__signal__optimization_1_1streets__desired__phase__plan__arbitrator.html#a71bbf65ca83f750b0b95b819a3f0d83d',1,'streets_signal_optimization::streets_desired_phase_plan_arbitrator']]],
   ['dpp_5fgenerator_5fptr_33',['dpp_generator_ptr',['../classsignal__opt__service_1_1signal__opt__processing__worker.html#a412d258ee6cb4fa6c4ddc1109449a4ff',1,'signal_opt_service::signal_opt_processing_worker']]],
   ['dpp_5fmtx_34',['dpp_mtx',['../namespacetraffic__signal__controller__service.html#ac5c3fad3858d8ba9d9fe4d30c1c262a9',1,'traffic_signal_controller_service']]],
-  ['dpp_5fprojection_35',['dpp_projection',['../namespacetraffic__signal__controller__service.html#a67194f91148b7b93b8c58e5ab366cd61a3f6e56f6ed3b8f3aa30cb636853b20ee',1,'traffic_signal_controller_service']]],
+  ['dpp_5fprojection_35',['DPP_PROJECTION',['../namespacetraffic__signal__controller__service.html#a044f1240240fc221c37e0433174c555badd2f610195dfa99706f138dd5d3ea726',1,'traffic_signal_controller_service']]],
   ['dpp_5fscript_36',['dpp_script',['../namespacedpp__script.html',1,'']]],
   ['dpp_5fscript_2epy_37',['dpp_script.py',['../dpp__script_8py.html',1,'']]],
   ['dr_5fcb_38',['dr_cb',['../classkafka__clients_1_1producer__delivery__report__cb.html#a8de5c702a3c32ce270e48f35d1580e1a',1,'kafka_clients::producer_delivery_report_cb']]],

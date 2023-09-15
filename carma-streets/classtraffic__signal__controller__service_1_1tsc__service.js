@@ -38,7 +38,7 @@ var classtraffic__signal__controller__service_1_1tsc__service =
     [ "snmp_client_ptr", "classtraffic__signal__controller__service_1_1tsc__service.html#a9e901a004e42f8fd670d54e16f4fb3bb", null ],
     [ "SNMP_COMMAND_LOGGER_NAME", "classtraffic__signal__controller__service_1_1tsc__service.html#aea16beb57894a8087ca8bd67bb320102", null ],
     [ "spat_producer", "classtraffic__signal__controller__service_1_1tsc__service.html#a1dfbd2157cd62094844fb2e1a6d70711", null ],
-    [ "spat_proj_mode", "classtraffic__signal__controller__service_1_1tsc__service.html#ad884eb57ae592f0c8cecedd3c459da56", null ],
+    [ "spat_proj_mode", "classtraffic__signal__controller__service_1_1tsc__service.html#a251cd72bbcc55b40f7e4fbc78ad81dc4", null ],
     [ "spat_ptr", "classtraffic__signal__controller__service_1_1tsc__service.html#ae77457ef9ea248e80a34a2a145a59096", null ],
     [ "spat_worker_ptr", "classtraffic__signal__controller__service_1_1tsc__service.html#a390a1495b441c84b4ad620113635556f", null ],
     [ "tsc_config_producer", "classtraffic__signal__controller__service_1_1tsc__service.html#a5338cec3c1e2f4012158c1f949a9fa97", null ],

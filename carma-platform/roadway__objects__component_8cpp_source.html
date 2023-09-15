@@ -86,7 +86,7 @@ $(document).ready(function(){initNavTree('roadway__objects__component_8cpp_sourc
   <div class="headertitle"><div class="title">roadway_objects_component.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="roadway__objects__component_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright 2023 Leidos</span></div>
+<a href="roadway__objects__component_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright 2019-2023 Leidos</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// you may not use this file except in compliance with the License.</span></div>
@@ -113,55 +113,80 @@ $(document).ready(function(){initNavTree('roadway__objects__component_8cpp_sourc
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classroadway__objects_1_1RoadwayObjectsNode.html#a729bffe40d05b3ca6df2b0f6c7f1b6f6">   28</a></span>carma_ros2_utils::CallbackReturn <a class="code hl_function" href="classroadway__objects_1_1RoadwayObjectsNode.html#a729bffe40d05b3ca6df2b0f6c7f1b6f6">RoadwayObjectsNode::handle_on_configure</a>(</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">const</span> rclcpp_lifecycle::State &amp;)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classroadway__objects_1_1RoadwayObjectsNode.html#a7007604e1a4302fcc8368fbc94e6e7ff">   28</a></span><span class="keyword">auto</span> <a class="code hl_function" href="classroadway__objects_1_1RoadwayObjectsNode.html#a7007604e1a4302fcc8368fbc94e6e7ff">RoadwayObjectsNode::handle_on_configure</a>(<span class="keyword">const</span> rclcpp_lifecycle::State &amp;)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  -&gt; carma_ros2_utils::CallbackReturn</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;RoadwayObjectsNode trying to configure&quot;</span>);</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a68833a917b702834b0499f72d6dca04b">wm_listener_</a> = std::make_shared&lt;carma_wm::WMListener&gt;(</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  wm_listener_ = std::make_shared&lt;carma_wm::WMListener&gt;(</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    get_node_base_interface(), get_node_logging_interface(), get_node_topics_interface(),</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    get_node_parameters_interface());</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#ad71a9a21fa140c6f9c2e9e72218913eb">object_worker_</a> = std::make_shared&lt;RoadwayObjectsWorker&gt;(</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a68833a917b702834b0499f72d6dca04b">wm_listener_</a>-&gt;getWorldModel(),</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    std::bind(&amp;<a class="code hl_function" href="classroadway__objects_1_1RoadwayObjectsNode.html#a8c558ac39ac8a17b83ee3674a6c41137">RoadwayObjectsNode::publishObstacles</a>, <span class="keyword">this</span>, std_ph::_1),</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    get_node_logging_interface());</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="comment">// Setup publishers</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a83b2647415ecfc83f88cba1c890b4f11">roadway_obs_pub_</a> =</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    create_publisher&lt;carma_perception_msgs::msg::RoadwayObstacleList&gt;(<span class="stringliteral">&quot;roadway_objects&quot;</span>, 10);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  roadway_obs_pub_ =</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    create_publisher&lt;carma_perception_msgs::msg::RoadwayObstacleList&gt;(<span class="stringliteral">&quot;roadway_objects&quot;</span>, 10);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  external_objects_sub_ = create_subscription&lt;carma_perception_msgs::msg::ExternalObjectList&gt;(</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="stringliteral">&quot;external_objects&quot;</span>, 10,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    [<span class="keyword">this</span>](<span class="keyword">const</span> carma_perception_msgs::msg::ExternalObjectList::SharedPtr msg_ptr) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      publish_obstacles(*msg_ptr);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    });</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">// Setup subscribers</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a6c74891a47c1d81bbedf8a8e69193ae0">external_objects_sub_</a> = create_subscription&lt;carma_perception_msgs::msg::ExternalObjectList&gt;(</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="stringliteral">&quot;external_objects&quot;</span>, 10,</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::bind(&amp;<a class="code hl_function" href="classroadway__objects_1_1RoadwayObjectsWorker.html#aced2a1ee623db988a52d0b49f2381bed">RoadwayObjectsWorker::externalObjectsCallback</a>, <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#ad71a9a21fa140c6f9c2e9e72218913eb">object_worker_</a>.get(), std_ph::_1));</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="comment">// Return success if everthing initialized successfully</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classroadway__objects_1_1RoadwayObjectsNode.html#a8c558ac39ac8a17b83ee3674a6c41137">   55</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classroadway__objects_1_1RoadwayObjectsNode.html#a8c558ac39ac8a17b83ee3674a6c41137">RoadwayObjectsNode::publishObstacles</a>(</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">const</span> carma_perception_msgs::msg::RoadwayObstacleList &amp; msg)</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <a class="code hl_variable" href="classroadway__objects_1_1RoadwayObjectsNode.html#a83b2647415ecfc83f88cba1c890b4f11">roadway_obs_pub_</a>-&gt;publish(msg);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classroadway__objects_1_1RoadwayObjectsNode.html#a06031a2089667e9d3c8fcb1d3f30a53c">   49</a></span><span class="keyword">auto</span> <a class="code hl_function" href="classroadway__objects_1_1RoadwayObjectsNode.html#a06031a2089667e9d3c8fcb1d3f30a53c">RoadwayObjectsNode::publish_obstacles</a>(</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">const</span> carma_perception_msgs::msg::ExternalObjectList &amp; msg) -&gt; <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  carma_perception_msgs::msg::RoadwayObstacleList obstacle_list;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">const</span> <span class="keyword">auto</span> map{wm_listener_-&gt;getWorldModel()-&gt;getMap()};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordflow">if</span> (map == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    RCLCPP_WARN(</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      get_logger(),</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="stringliteral">&quot;roadway_objects could not process external objects as no semantic map was available&quot;</span>);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}  <span class="comment">// namespace roadway_objects</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#include &quot;rclcpp_components/register_node_macro.hpp&quot;</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">// Register the component with class_loader</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>RCLCPP_COMPONENTS_REGISTER_NODE(<a class="code hl_class" href="classroadway__objects_1_1RoadwayObjectsNode.html">roadway_objects::RoadwayObjectsNode</a>)</div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html">roadway_objects::RoadwayObjectsNode</a></div><div class="ttdoc">The class responsible for converting detected objects into objects that are mapped onto specific lane...</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8hpp_source.html#l00036">roadway_objects_component.hpp:37</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a68833a917b702834b0499f72d6dca04b"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a68833a917b702834b0499f72d6dca04b">roadway_objects::RoadwayObjectsNode::wm_listener_</a></div><div class="ttdeci">std::shared_ptr&lt; carma_wm::WMListener &gt; wm_listener_</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8hpp_source.html#l00046">roadway_objects_component.hpp:46</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a6c74891a47c1d81bbedf8a8e69193ae0"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a6c74891a47c1d81bbedf8a8e69193ae0">roadway_objects::RoadwayObjectsNode::external_objects_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; carma_perception_msgs::msg::ExternalObjectList &gt; external_objects_sub_</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8hpp_source.html#l00040">roadway_objects_component.hpp:40</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a729bffe40d05b3ca6df2b0f6c7f1b6f6"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a729bffe40d05b3ca6df2b0f6c7f1b6f6">roadway_objects::RoadwayObjectsNode::handle_on_configure</a></div><div class="ttdeci">carma_ros2_utils::CallbackReturn handle_on_configure(const rclcpp_lifecycle::State &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8cpp_source.html#l00028">roadway_objects_component.cpp:28</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a83b2647415ecfc83f88cba1c890b4f11"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a83b2647415ecfc83f88cba1c890b4f11">roadway_objects::RoadwayObjectsNode::roadway_obs_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; carma_perception_msgs::msg::RoadwayObstacleList &gt; roadway_obs_pub_</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8hpp_source.html#l00043">roadway_objects_component.hpp:43</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a8b3826a041487fde7ed5c8d101dba885"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a8b3826a041487fde7ed5c8d101dba885">roadway_objects::RoadwayObjectsNode::RoadwayObjectsNode</a></div><div class="ttdeci">RoadwayObjectsNode(const rclcpp::NodeOptions &amp;)</div><div class="ttdoc">Node constructor.</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8cpp_source.html#l00023">roadway_objects_component.cpp:23</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a8c558ac39ac8a17b83ee3674a6c41137"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a8c558ac39ac8a17b83ee3674a6c41137">roadway_objects::RoadwayObjectsNode::publishObstacles</a></div><div class="ttdeci">void publishObstacles(const carma_perception_msgs::msg::RoadwayObstacleList &amp;msg)</div><div class="ttdoc">Callback to publish RoadwayObstacleList.</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8cpp_source.html#l00055">roadway_objects_component.cpp:55</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_ad71a9a21fa140c6f9c2e9e72218913eb"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#ad71a9a21fa140c6f9c2e9e72218913eb">roadway_objects::RoadwayObjectsNode::object_worker_</a></div><div class="ttdeci">std::shared_ptr&lt; RoadwayObjectsWorker &gt; object_worker_</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8hpp_source.html#l00049">roadway_objects_component.hpp:49</a></div></div>
-<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsWorker_html_aced2a1ee623db988a52d0b49f2381bed"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsWorker.html#aced2a1ee623db988a52d0b49f2381bed">roadway_objects::RoadwayObjectsWorker::externalObjectsCallback</a></div><div class="ttdeci">void externalObjectsCallback(const carma_perception_msgs::msg::ExternalObjectList::UniquePtr msg)</div><div class="ttdoc">Converts the provided ExternalObjectList to a RoadwayObstacleList and re-publishes it.</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__worker_8cpp_source.html#l00026">roadway_objects_worker.cpp:26</a></div></div>
-<div class="ttc" id="anamespaceroadway__objects_html"><div class="ttname"><a href="namespaceroadway__objects.html">roadway_objects</a></div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8hpp_source.html#l00029">roadway_objects_component.hpp:30</a></div></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordflow">if</span> (std::size(map-&gt;laneletLayer) == 0) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    RCLCPP_WARN(</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      get_logger(),</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      <span class="stringliteral">&quot;roadway_objects could not process external objects as the semantic map does not contain any &quot;</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <span class="stringliteral">&quot;lanelets&quot;</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">const</span> <span class="keyword">auto</span> world_model{wm_listener_-&gt;getWorldModel()};</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keywordtype">object</span> : msg.objects) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">const</span> <span class="keyword">auto</span> obstacle{world_model-&gt;toRoadwayObstacle(<span class="keywordtype">object</span>)};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">if</span> (!obstacle.has_value()) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        get_logger(), <span class="stringliteral">&quot;roadway_objects dropping detected object with id: &quot;</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                        &lt;&lt; <span class="keywordtype">object</span>.<span class="keywordtype">id</span> &lt;&lt; <span class="stringliteral">&quot; as it is off the road.&quot;</span>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    obstacle_list.roadway_obstacles.emplace_back(obstacle.get());</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  roadway_obs_pub_-&gt;publish(obstacle_list);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}  <span class="comment">// namespace roadway_objects</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#include &quot;rclcpp_components/register_node_macro.hpp&quot;</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">// Register the component with class_loader</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>RCLCPP_COMPONENTS_REGISTER_NODE(<a class="code hl_class" href="classroadway__objects_1_1RoadwayObjectsNode.html">roadway_objects::RoadwayObjectsNode</a>)</div>
+<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html">roadway_objects::RoadwayObjectsNode</a></div><div class="ttdoc">The class responsible for converting detected objects into objects that are mapped onto specific lane...</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8hpp_source.html#l00035">roadway_objects_component.hpp:36</a></div></div>
+<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a06031a2089667e9d3c8fcb1d3f30a53c"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a06031a2089667e9d3c8fcb1d3f30a53c">roadway_objects::RoadwayObjectsNode::publish_obstacles</a></div><div class="ttdeci">auto publish_obstacles(const carma_perception_msgs::msg::ExternalObjectList &amp;msg) -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8cpp_source.html#l00049">roadway_objects_component.cpp:49</a></div></div>
+<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a7007604e1a4302fcc8368fbc94e6e7ff"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a7007604e1a4302fcc8368fbc94e6e7ff">roadway_objects::RoadwayObjectsNode::handle_on_configure</a></div><div class="ttdeci">auto handle_on_configure(const rclcpp_lifecycle::State &amp;) -&gt; carma_ros2_utils::CallbackReturn override</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8cpp_source.html#l00028">roadway_objects_component.cpp:28</a></div></div>
+<div class="ttc" id="aclassroadway__objects_1_1RoadwayObjectsNode_html_a8b3826a041487fde7ed5c8d101dba885"><div class="ttname"><a href="classroadway__objects_1_1RoadwayObjectsNode.html#a8b3826a041487fde7ed5c8d101dba885">roadway_objects::RoadwayObjectsNode::RoadwayObjectsNode</a></div><div class="ttdeci">RoadwayObjectsNode(const rclcpp::NodeOptions &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8cpp_source.html#l00023">roadway_objects_component.cpp:23</a></div></div>
+<div class="ttc" id="anamespaceroadway__objects_html"><div class="ttname"><a href="namespaceroadway__objects.html">roadway_objects</a></div><div class="ttdef"><b>Definition:</b> <a href="roadway__objects__component_8hpp_source.html#l00027">roadway_objects_component.hpp:28</a></div></div>
 <div class="ttc" id="aroadway__objects__component_8hpp_html"><div class="ttname"><a href="roadway__objects__component_8hpp.html">roadway_objects_component.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -169,7 +194,7 @@ $(document).ready(function(){initNavTree('roadway__objects__component_8cpp_sourc
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_5fbc69dfc9cbf52d4afb98122cc9dcb3.html">roadway_objects</a></li><li class="navelem"><a class="el" href="dir_55dbeba4393ffd73f10695bd439e0739.html">src</a></li><li class="navelem"><a class="el" href="roadway__objects__component_8cpp.html">roadway_objects_component.cpp</a></li>
-    <li class="footer">Generated on Thu Sep 14 2023 14:39:51 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Sep 15 2023 18:26:17 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

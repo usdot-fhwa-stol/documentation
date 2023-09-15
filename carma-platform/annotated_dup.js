@@ -344,8 +344,7 @@ var annotated_dup =
       [ "PurePursuitWrapperNode", "classpure__pursuit__wrapper_1_1PurePursuitWrapperNode.html", "classpure__pursuit__wrapper_1_1PurePursuitWrapperNode" ]
     ] ],
     [ "roadway_objects", "namespaceroadway__objects.html", [
-      [ "RoadwayObjectsNode", "classroadway__objects_1_1RoadwayObjectsNode.html", "classroadway__objects_1_1RoadwayObjectsNode" ],
-      [ "RoadwayObjectsWorker", "classroadway__objects_1_1RoadwayObjectsWorker.html", "classroadway__objects_1_1RoadwayObjectsWorker" ]
+      [ "RoadwayObjectsNode", "classroadway__objects_1_1RoadwayObjectsNode.html", "classroadway__objects_1_1RoadwayObjectsNode" ]
     ] ],
     [ "route", "namespaceroute.html", [
       [ "Config", "structroute_1_1Config.html", "structroute_1_1Config" ],

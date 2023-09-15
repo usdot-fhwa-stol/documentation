@@ -325,7 +325,6 @@ var hierarchy =
     [ "guidance_plugin_validator.guidance_plugin_components.RequiredControlComponents", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1RequiredControlComponents.html", null ],
     [ "guidance_plugin_validator.guidance_plugin_components.RequiredStrategicComponents", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1RequiredStrategicComponents.html", null ],
     [ "guidance_plugin_validator.guidance_plugin_components.RequiredTacticalComponents", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1RequiredTacticalComponents.html", null ],
-    [ "roadway_objects::RoadwayObjectsWorker", "classroadway__objects_1_1RoadwayObjectsWorker.html", null ],
     [ "mock_drivers::ROSComms<... >", "classmock__drivers_1_1ROSComms.html", null ],
     [ "mock_drivers::ROSComms< M, T >", "classmock__drivers_1_1ROSComms_3_01M_00_01T_01_4.html", null ],
     [ "mock_drivers::ROSComms< T >", "classmock__drivers_1_1ROSComms_3_01T_01_4.html", null ],

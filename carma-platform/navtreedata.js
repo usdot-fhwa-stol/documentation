@@ -234,10 +234,26 @@ var NAVTREE =
         [ "Contact", "md_README.html#autotoc_md207", null ]
       ] ]
     ] ],
-    [ "roadway_objects", "md_roadway_objects_README.html", null ],
+    [ "CARMA roadway objects - ROS 2 package design", "md_roadway_objects_docs_package_design.html", [
+      [ "Package Nodes", "md_roadway_objects_docs_package_design.html#autotoc_md209", null ],
+      [ "Package Launch files", "md_roadway_objects_docs_package_design.html#autotoc_md210", null ]
+    ] ],
+    [ "Roadway objects Launch", "md_roadway_objects_docs_roadway_objects_launch.html", [
+      [ "Launch arguments", "md_roadway_objects_docs_roadway_objects_launch.html#autotoc_md212", null ]
+    ] ],
+    [ "Roadway objects Node", "md_roadway_objects_docs_roadway_objects_node.html", [
+      [ "Subscriptions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md214", null ],
+      [ "Publishers", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md215", null ],
+      [ "Parameters", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md216", null ],
+      [ "Services", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md217", null ],
+      [ "Actions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md218", null ]
+    ] ],
+    [ "Roadway objects Package", "md_roadway_objects_README.html", [
+      [ "Documentation", "md_roadway_objects_README.html#autotoc_md220", null ]
+    ] ],
     [ "route", "md_route_README.html", null ],
     [ "template_package", "md_template_package_README.html", [
-      [ "Creating a new ROS2 package for CARMA Platform", "md_template_package_README.html#autotoc_md211", null ]
+      [ "Creating a new ROS2 package for CARMA Platform", "md_template_package_README.html#autotoc_md223", null ]
     ] ],
     [ "<SUB><package_name>", "md_template_package_template_package_README.html", null ],
     [ "traffic_incident_parser", "md_traffic_incident_parser_README.html", null ],
@@ -314,33 +330,33 @@ var NAVTREEINDEX =
 "classplatoon__strategic__ihp_1_1PlatoonManager.html#a5fa3ab8c7c127c9d76f0dce1be59fe80",
 "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#aa2c3c1b6030726c8e1931ea0093dd91d",
 "classport__drayage__plugin_1_1PortDrayageStateMachine.html#aabb4ba38fdd0c1d0b9a9d76bb86037bd",
-"classroute_1_1Route.html#ac2d40d7c49f75d2c764901a6633cb005",
-"classroute__following__plugin_1_1RouteFollowingPlugin.html#a63a313f71c81a7c616b2cdf99278c019",
-"classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#aa2278cc6d5ded30e082907c5607058b1",
-"classsubsystem__controllers_1_1EntryManager.html#af9821d67b65bc10be2557017d58a4d3e",
-"classtrajectory__executor_1_1TrajectoryExecutor.html#a93ca4ba0ce6df88b86bf60f17c13710c",
-"cooperative__lanechange__node_8hpp.html",
-"dir_d9c2ef3140917f67c8d8f66301a402b8.html",
-"functions_vars_t.html",
-"inlanecruising__plugin_2src_2main_8cpp_source.html",
-"lci__states_8hpp.html#a3fc15fb3a695b886bd6f0bb92510b095",
-"md_carma_wm_README.html#autotoc_md48",
-"namespacebasic__autonomy.html#ae8302914f82f374170163619a939ef6b",
-"namespaceinlanecruising__plugin.html#acb051b1744e0113bd257658865e8e9c4",
-"namespacemotion__computation_1_1conversion_1_1impl.html",
-"namespacesystem__controller.html#adf697c738f9ad29713ddc41790f641a1",
-"pointer_8h_source.html",
-"schema_8h.html",
-"strfunc_8h.html",
-"structPlatooningControlIHPPluginConfig.html#acdb1c0eb1b5b84ddf45205b2938e6fa7",
-"structapproximate__intersection_1_1Config.html#a5e300ab5ecc062b4496425c05a3d8582",
-"structcarma__wm_1_1LANE__DIRECTION.html#a14ac92ca89df14012d72b0b9ecf3224f",
-"structinternal_1_1IsGenericValue.html",
-"structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html",
-"structmotion__computation_1_1Config.html#a33cefb9978109a4c501d82e3c930f4fb",
-"structplatooning__tactical__plugin_1_1PointSpeedPair.html#ab7c2a89dd19ee5f393481803374d8779",
-"structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#ace0bd90a50abe3880a97b2ed30797d4e",
-"utm__zone_8hpp.html#a64b708654c8aecb09122d39577df31b5"
+"classroute_1_1RouteGeneratorWorker.html#a0ac499df9ad47fb4c66e7163c9611a6a",
+"classroute__following__plugin_1_1RouteFollowingPlugin.html#a889056a79a669d5de8e1ce1bdb6eba99",
+"classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#ac8c7794810e566e3f2459ad9bc776f1f",
+"classsubsystem__controllers_1_1GuidanceControllerNode.html#a148068683e0f6966d1075c3a250cefe1",
+"classtrajectory__visualizer_1_1TrajectoryVisualizer.html",
+"dir_03206e8a8c2ccff588397bf3ce7f06bd.html",
+"dir_e5ae954fc6b4ec75c1fa15b5d33dc476.html",
+"functor__filter_8h.html#af567e16ca324d91dbfbabfe6b6be25bf",
+"inlanecruising__plugin__node_8cpp.html",
+"lci__strategic__plugin_8hpp.html",
+"md_docs_Release_notes.html#autotoc_md131",
+"namespacebasic__autonomy_1_1log.html#a861a74e9a9a34a655f36c03a72b93dbf",
+"namespaceinlanecruising__plugin_1_1log.html#a5e9bcb5b1e75d11eb4715012cd651e52",
+"namespacemotion__computation_1_1conversion_1_1impl.html#a50c675cb23fd3a743226b22287b32945",
+"namespacetf2.html",
+"points__map__filter_2src_2main_8cpp_source.html",
+"schema_8h.html#a722c98cfe486c35d086ea33144f4a3b8",
+"stringbuffer_8h.html#a2ff92a4ec7c5995738cfaf39fe99f31a",
+"structPlatooningControlIHPPluginConfig.html#af03a987442a669ec504977fd56dfb0d9",
+"structapproximate__intersection_1_1Config.html#aff0ae4c0b55d2ac453b9be29d6f87938",
+"structcarma__wm_1_1collision__detection_1_1MovingObject.html#a20f9370d6c38cc1a8990ec4f2f837a9c",
+"structinternal_1_1SchemaValidationContext.html#a0864c5e8155fe0064f17e8dcb31d93c7",
+"structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a1b6855596f36c0929143bb379c9dc937",
+"structmotion__computation_1_1Config.html#a93e06f16728fd0cc6657f89b507ff623",
+"structpoints__map__filter_1_1Config.html#a9dac0b1b87a14b0aec360df2a3e072de",
+"structsubsystem__controllers_1_1DriversControllerConfig.html#a66491d4f7e7d1f287b09fc27e0ba7a48",
+"v2x__controller__node_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

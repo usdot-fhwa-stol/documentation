@@ -49,7 +49,7 @@ var searchData=
   ['rightarrow_46',['rightArrow',['../classmock__drivers_1_1MockLightBarDriver.html#a59f4c02b8a488ca1bdc991005bcf7502',1,'mock_drivers::MockLightBarDriver']]],
   ['roadway_5fobjects_5f_47',['roadway_objects_',['../classcarma__wm_1_1CARMAWorldModel.html#a03335a60875a9cfe30efa4ca983f54ae',1,'carma_wm::CARMAWorldModel']]],
   ['roadway_5fobjects_5fsub_5f_48',['roadway_objects_sub_',['../classcarma__wm_1_1WMListener.html#aada324812a5f034731b35f42ce4f6fd3',1,'carma_wm::WMListener']]],
-  ['roadway_5fobs_5fpub_5f_49',['roadway_obs_pub_',['../classroadway__objects_1_1RoadwayObjectsNode.html#a83b2647415ecfc83f88cba1c890b4f11',1,'roadway_objects::RoadwayObjectsNode']]],
+  ['roadway_5fobs_5fpub_5f_49',['roadway_obs_pub_',['../classroadway__objects_1_1RoadwayObjectsNode.html#ad487b636c1fa7a44bbc6ad2562617943',1,'roadway_objects::RoadwayObjectsNode']]],
   ['roadway_5fobstacles_5fsub_5f_50',['roadway_obstacles_sub_',['../classobject__visualizer_1_1Node.html#ac3d8c67bdcbead887fc95019179430af',1,'object_visualizer::Node']]],
   ['roadway_5fobstacles_5fviz_5fns_51',['roadway_obstacles_viz_ns',['../structobject__visualizer_1_1Config.html#abf847db863b95a689c661973ed9883ff',1,'object_visualizer::Config']]],
   ['roadway_5fobstacles_5fviz_5fpub_5f_52',['roadway_obstacles_viz_pub_',['../classobject__visualizer_1_1Node.html#a4d7db9afb00a3e793a7b839b4fd8c462',1,'object_visualizer::Node']]],

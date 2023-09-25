@@ -110,46 +110,42 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__launch_8py_source.html#l00031">31</a> of file <a class="el" href="motion__computation__launch_8py_source.html">motion_computation_launch.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span><span class="keyword">def </span><a class="code hl_function" href="namespacemotion__computation__launch.html#a55ceded82280a1b26dd9e38e93304c14">generate_launch_description</a>():</div>
-<div class="line"><span class="lineno">   32</span> </div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__launch_8py_source.html#l00032">32</a> of file <a class="el" href="motion__computation__launch_8py_source.html">motion_computation_launch.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span><span class="keyword">def </span><a class="code hl_function" href="namespacemotion__computation__launch.html#a55ceded82280a1b26dd9e38e93304c14">generate_launch_description</a>():</div>
 <div class="line"><span class="lineno">   33</span>    <span class="comment"># Declare the log_level launch argument</span></div>
-<div class="line"><span class="lineno">   34</span>    log_level = LaunchConfiguration(<span class="stringliteral">&#39;log_level&#39;</span>)</div>
+<div class="line"><span class="lineno">   34</span>    log_level = LaunchConfiguration(<span class="stringliteral">&quot;log_level&quot;</span>)</div>
 <div class="line"><span class="lineno">   35</span>    declare_log_level_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   36</span>        name =<span class="stringliteral">&#39;log_level&#39;</span>, default_value=<span class="stringliteral">&#39;WARN&#39;</span>)</div>
-<div class="line"><span class="lineno">   37</span>    </div>
-<div class="line"><span class="lineno">   38</span>    <span class="comment"># Get parameter file path</span></div>
-<div class="line"><span class="lineno">   39</span>    param_file_path = os.path.join(</div>
-<div class="line"><span class="lineno">   40</span>        get_package_share_directory(<span class="stringliteral">&#39;motion_computation&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>        </div>
-<div class="line"><span class="lineno">   43</span>    <span class="comment"># Launch node(s) in a carma container to allow logging to be configured</span></div>
-<div class="line"><span class="lineno">   44</span>    container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">   45</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
-<div class="line"><span class="lineno">   46</span>        name=<span class="stringliteral">&#39;motion_computation_container&#39;</span>,</div>
-<div class="line"><span class="lineno">   47</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">   48</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">   49</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">   50</span>            </div>
+<div class="line"><span class="lineno">   36</span>        name=<span class="stringliteral">&quot;log_level&quot;</span>, default_value=<span class="stringliteral">&quot;WARN&quot;</span></div>
+<div class="line"><span class="lineno">   37</span>    )</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="comment"># Get parameter file path</span></div>
+<div class="line"><span class="lineno">   40</span>    param_file_path = os.path.join(</div>
+<div class="line"><span class="lineno">   41</span>        get_package_share_directory(<span class="stringliteral">&quot;motion_computation&quot;</span>), <span class="stringliteral">&quot;config/parameters.yaml&quot;</span></div>
+<div class="line"><span class="lineno">   42</span>    )</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>    <span class="comment"># Launch node(s) in a carma container to allow logging to be configured</span></div>
+<div class="line"><span class="lineno">   45</span>    container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">   46</span>        package=<span class="stringliteral">&quot;carma_ros2_utils&quot;</span>,</div>
+<div class="line"><span class="lineno">   47</span>        name=<span class="stringliteral">&quot;motion_computation_container&quot;</span>,</div>
+<div class="line"><span class="lineno">   48</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">   49</span>        executable=<span class="stringliteral">&quot;carma_component_container_mt&quot;</span>,</div>
+<div class="line"><span class="lineno">   50</span>        composable_node_descriptions=[</div>
 <div class="line"><span class="lineno">   51</span>            <span class="comment"># Launch the core node(s)</span></div>
 <div class="line"><span class="lineno">   52</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">   53</span>                    package=<span class="stringliteral">&#39;motion_computation&#39;</span>,</div>
-<div class="line"><span class="lineno">   54</span>                    plugin=<span class="stringliteral">&#39;motion_computation::MotionComputationNode&#39;</span>,</div>
-<div class="line"><span class="lineno">   55</span>                    name=<span class="stringliteral">&#39;motion_computation_node&#39;</span>,</div>
-<div class="line"><span class="lineno">   56</span>                    extra_arguments=[</div>
-<div class="line"><span class="lineno">   57</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">   58</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : log_level }</div>
-<div class="line"><span class="lineno">   59</span>                    ],</div>
-<div class="line"><span class="lineno">   60</span>                    parameters=[ param_file_path ]</div>
+<div class="line"><span class="lineno">   53</span>                package=<span class="stringliteral">&quot;motion_computation&quot;</span>,</div>
+<div class="line"><span class="lineno">   54</span>                plugin=<span class="stringliteral">&quot;motion_computation::MotionComputationNode&quot;</span>,</div>
+<div class="line"><span class="lineno">   55</span>                name=<span class="stringliteral">&quot;motion_computation_node&quot;</span>,</div>
+<div class="line"><span class="lineno">   56</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">   57</span>                    {<span class="stringliteral">&quot;use_intra_process_comms&quot;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">   58</span>                    {<span class="stringliteral">&quot;--log-level&quot;</span>: log_level},</div>
+<div class="line"><span class="lineno">   59</span>                ],</div>
+<div class="line"><span class="lineno">   60</span>                parameters=[param_file_path],</div>
 <div class="line"><span class="lineno">   61</span>            ),</div>
-<div class="line"><span class="lineno">   62</span>        ]</div>
+<div class="line"><span class="lineno">   62</span>        ],</div>
 <div class="line"><span class="lineno">   63</span>    )</div>
 <div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">   66</span>        declare_log_level_arg,</div>
-<div class="line"><span class="lineno">   67</span>        container</div>
-<div class="line"><span class="lineno">   68</span>    ])</div>
-<div class="ttc" id="anamespacemotion__computation__launch_html_a55ceded82280a1b26dd9e38e93304c14"><div class="ttname"><a href="namespacemotion__computation__launch.html#a55ceded82280a1b26dd9e38e93304c14">motion_computation_launch.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__launch_8py_source.html#l00031">motion_computation_launch.py:31</a></div></div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> LaunchDescription([declare_log_level_arg, container])</div>
+<div class="ttc" id="anamespacemotion__computation__launch_html_a55ceded82280a1b26dd9e38e93304c14"><div class="ttname"><a href="namespacemotion__computation__launch.html#a55ceded82280a1b26dd9e38e93304c14">motion_computation_launch.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__launch_8py_source.html#l00032">motion_computation_launch.py:32</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -159,7 +155,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemotion__computation__launch.html">motion_computation_launch</a></li>
-    <li class="footer">Generated on Fri Sep 15 2023 18:26:25 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Sep 25 2023 13:21:07 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

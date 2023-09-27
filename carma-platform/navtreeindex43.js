@@ -1,5 +1,13 @@
 var NAVTREEINDEX43 =
 {
+"namespacestop__controlled__intersection__tactical__plugin.html":[51,0,92],
+"namespacestop__controlled__intersection__tactical__plugin.html#a53f6e30eb04be1818ab30525f205ab6c":[51,0,92,3],
+"namespacestop__controlled__intersection__tactical__plugin.html#afa295d53ae945f3d845e2d9bd4e7a6be":[51,0,92,2],
+"namespacesubsystem__controllers.html":[51,0,94],
+"namespacesubsystem__controllers.html#a90feee896f86cc1ca40fc9e37289a710":[51,0,94,19],
+"namespacesubsystem__controllers.html#a90feee896f86cc1ca40fc9e37289a710ab9e14d9b2886bcff408b85aefa780419":[51,0,94,19,0],
+"namespacesubsystem__controllers.html#a90feee896f86cc1ca40fc9e37289a710ac97e79e14549c9f528427e36c90ae782":[51,0,94,19,1],
+"namespacesubsystem__controllers.html#ab771989d997708ab4746b7c213bd53df":[51,0,94,15],
 "namespacesubsystem__controllers.html#ad76d23e7b761e5a5ddbeb97be389a0db":[51,0,94,16],
 "namespacesubsystem__controllers.html#af3f4eb47c0879b092fe03b2873efa2ae":[51,0,94,17],
 "namespacesubsystem__controllers.html#af9ecb3e0503a503a56026638fc78e7a8":[51,0,94,18],
@@ -241,13 +249,5 @@ var NAVTREEINDEX43 =
 "pointer_8h.html#a7ce0d37e372f630e46e221e45714e84b":[53,0,30,2,0,0,0,14,9],
 "pointer_8h.html#a7eb8633670d0e7df80a9fa3a508dd1d2":[53,0,30,2,0,0,0,14,26],
 "pointer_8h.html#a82e5b3f00a10ab6aaac37af78de4d19d":[53,0,30,2,0,0,0,14,30],
-"pointer_8h.html#a8db3e2eda83fba7d12ee284fff895262":[53,0,30,2,0,0,0,14,4],
-"pointer_8h.html#a8f368fc6d5e55f6f0a5ea5e2af7ea23f":[53,0,30,2,0,0,0,14,42],
-"pointer_8h.html#a916460d6eccdc49ecf85e2e6ab9767a4":[53,0,30,2,0,0,0,14,8],
-"pointer_8h.html#a9c1c1317bc0a138099995ef011f0db3f":[53,0,30,2,0,0,0,14,18],
-"pointer_8h.html#aa818d57b32e8d879ba37871b01a2b9e3":[53,0,30,2,0,0,0,14,16],
-"pointer_8h.html#aaaf14202ae851a7d3c3db56789b9eab4":[53,0,30,2,0,0,0,14,25],
-"pointer_8h.html#aae1f8d263916ad71bd415381591549c0":[53,0,30,2,0,0,0,14,47],
-"pointer_8h.html#abd25c9d96f8e5002f93f998cf11905a3":[53,0,30,2,0,0,0,14,41],
-"pointer_8h.html#ac28f67a837bdead4e9a0b8bd02dbd4d8":[53,0,30,2,0,0,0,14,38]
+"pointer_8h.html#a8db3e2eda83fba7d12ee284fff895262":[53,0,30,2,0,0,0,14,4]
 };

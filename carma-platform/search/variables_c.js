@@ -55,7 +55,7 @@ var searchData=
   ['lbsetlightservice_52',['lbSetLightService',['../classmock__drivers_1_1MockLightBarDriver.html#a842bb5e08bd153a26d99cadf0aef982a',1,'mock_drivers::MockLightBarDriver']]],
   ['lbsm_5f_53',['lbsm_',['../classlightbar__manager_1_1LightBarManagerWorker.html#a9802b2f145a3f39461ecc9bf16757589',1,'lightbar_manager::LightBarManagerWorker']]],
   ['lbstatustopic_54',['lbStatusTopic',['../classmock__drivers_1_1MockLightBarDriver.html#a899749a3c218e3b9a09ea726556f844e',1,'mock_drivers::MockLightBarDriver']]],
-  ['lc_5fstatus_5fpub_5f_55',['lc_status_pub_',['../classyield__plugin_1_1YieldPluginNode.html#a4d7f0b8580e1c581ecec6900e1c2c0b8',1,'yield_plugin::YieldPluginNode']]],
+  ['lc_5fstatus_5fpub_5f_55',['lc_status_pub_',['../classyield__plugin_1_1YieldPluginNode.html#a213c7b6d81fe931580677580d2d0e1bc',1,'yield_plugin::YieldPluginNode']]],
   ['lc_5fstatus_5fpublisher_5f_56',['lc_status_publisher_',['../classyield__plugin_1_1YieldPlugin.html#a274208e09bc96aaef0ba731904aa57de',1,'yield_plugin::YieldPlugin']]],
   ['leader_5ftimeout_5fcounter_5flimit_57',['LEADER_TIMEOUT_COUNTER_LIMIT',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a5873cf01d465c147622626e13bed7df1',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]],
   ['leaderindex_58',['leaderIndex',['../structplatoon__control_1_1PlatoonLeaderInfo.html#a112189e411f6246fa0cbd2eb513a0e52',1,'platoon_control::PlatoonLeaderInfo::leaderIndex()'],['../structplatoon__control__ihp_1_1PlatoonLeaderInfo.html#ac4076e6c75096752648ec9a3b40b7b11',1,'platoon_control_ihp::PlatoonLeaderInfo::leaderIndex()']]],

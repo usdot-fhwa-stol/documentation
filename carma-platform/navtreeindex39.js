@@ -1,5 +1,13 @@
 var NAVTREEINDEX39 =
 {
+"md_docs_Release_notes.html":[21],
+"md_docs_Release_notes.html#autotoc_md123":[21,0],
+"md_docs_Release_notes.html#autotoc_md124":[21,0,0],
+"md_docs_Release_notes.html#autotoc_md125":[21,1],
+"md_docs_Release_notes.html#autotoc_md126":[21,1,0],
+"md_docs_Release_notes.html#autotoc_md127":[21,2],
+"md_docs_Release_notes.html#autotoc_md128":[21,2,0],
+"md_docs_Release_notes.html#autotoc_md129":[21,2,1],
 "md_docs_Release_notes.html#autotoc_md130":[21,2,2],
 "md_docs_Release_notes.html#autotoc_md131":[21,2,3],
 "md_docs_Release_notes.html#autotoc_md132":[21,2,4],
@@ -241,13 +249,5 @@ var NAVTREEINDEX39 =
 "namespacearbitrator.html#a4a07092774e143f298b2e71bd4a710d5a84e0ab34f37317ad1e801a219961657b":[51,0,3,16,1],
 "namespacearbitrator.html#a4a07092774e143f298b2e71bd4a710d5acf69dcf2a9f87626526e68a16d59dd78":[51,0,3,16,5],
 "namespacearbitrator.html#aa0854e246e70d1d9ccd16600ed2fad31":[51,0,3,19],
-"namespacearbitrator.html#ac1913fd40a8e632f18d1360a7b8f24c3":[51,0,3,18],
-"namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22":[51,0,3,17],
-"namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a509dd5d5845726a8d74901a8fdef9024":[51,0,3,17,3],
-"namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a71d9b235fbf749d1bbc5b783898a4211":[51,0,3,17,4],
-"namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a83de702deb045d9e1d5d819ad31fa1e8":[51,0,3,17,2],
-"namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22aa488eda15ebd0c996cbf5c55304fbf3f":[51,0,3,17,1],
-"namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22acd8d977332cd6dc4984380d3df5bd633":[51,0,3,17,0],
-"namespacearbitrator__utils.html":[51,0,4],
-"namespacearbitrator__utils.html#a06e324ed81e5044e09191269407e6869":[51,0,4,7]
+"namespacearbitrator.html#ac1913fd40a8e632f18d1360a7b8f24c3":[51,0,3,18]
 };

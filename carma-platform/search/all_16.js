@@ -79,7 +79,7 @@ var searchData=
   ['update_5fplugin_5fstatus_76',['update_plugin_status',['../classsubsystem__controllers_1_1PluginManager.html#a9f732913ba1f9c7e16986bade344f258',1,'subsystem_controllers::PluginManager']]],
   ['update_5fsub_5f_77',['update_sub_',['../classMapUpdateLogger.html#ae0ad21d1ff208e93c26265ac532e21f5',1,'MapUpdateLogger']]],
   ['update_5ftraj_5ffor_5fcooperative_5fbehavior_78',['update_traj_for_cooperative_behavior',['../classyield__plugin_1_1YieldPlugin.html#ad9c9e0e4278774a519de12a6a5f4398f',1,'yield_plugin::YieldPlugin']]],
-  ['update_5ftraj_5ffor_5fobject_79',['update_traj_for_object',['../classyield__plugin_1_1YieldPlugin.html#a220292dd2a6bebb515e21256ad5b6e9c',1,'yield_plugin::YieldPlugin']]],
+  ['update_5ftraj_5ffor_5fobject_79',['update_traj_for_object',['../classyield__plugin_1_1YieldPlugin.html#ac1c423b99887ccbf945a86da7b7809f6',1,'yield_plugin::YieldPlugin']]],
   ['updatecargoinformationafteractioncompletion_80',['updateCargoInformationAfterActionCompletion',['../classport__drayage__plugin_1_1PortDrayageWorker.html#a6104e30b448bc63f9826dce37e9506e0',1,'port_drayage_plugin::PortDrayageWorker']]],
   ['updateconfigparams_81',['updateConfigParams',['../classplatoon__control__ihp_1_1PlatoonControlIHPWorker.html#aa6311441cb42f4623839d1a33f275128',1,'platoon_control_ihp::PlatoonControlIHPWorker::updateConfigParams()'],['../classplatoon__control_1_1PlatoonControlWorker.html#ac854a0f464eaefbd4d588b6a0e31f8b1',1,'platoon_control::PlatoonControlWorker::updateConfigParams()']]],
   ['updatecurrentstatus_82',['updateCurrentStatus',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a609dc105613d0c6ff89e1e955c8f6487',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]],

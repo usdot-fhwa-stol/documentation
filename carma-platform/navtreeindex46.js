@@ -1,5 +1,13 @@
 var NAVTREEINDEX46 =
 {
+"stop__controlled__intersection__tactical__plugin_8launch_8py_source.html":[53,0,48,1,0],
+"strategic__plugin_8cpp.html":[53,0,8,1,2],
+"strategic__plugin_8cpp_source.html":[53,0,8,1,2],
+"strategic__plugin_8hpp.html":[53,0,8,0,0,2],
+"strategic__plugin_8hpp_source.html":[53,0,8,0,0,2],
+"stream_8h.html":[53,0,30,2,0,0,0,19],
+"stream_8h.html#a269d93f9d27c2dd91bfacac05c478122":[53,0,30,2,0,0,0,19,6],
+"stream_8h.html#a8e02982f60e5b8f697b71640ddaa144c":[53,0,30,2,0,0,0,19,5],
 "stream_8h.html#aa817b00a466bb84d96c5de1616436c95":[53,0,30,2,0,0,0,19,8],
 "stream_8h.html#aacdd569be6f98c9d7d9ef71f79ef0fc0":[53,0,30,2,0,0,0,19,7],
 "stream_8h.html#ad57ba7f2912c5509924b69dec7db4396":[53,0,30,2,0,0,0,19,9],
@@ -241,13 +249,5 @@ var NAVTREEINDEX46 =
 "structPlatooningControlIHPPluginConfig.html#a2cd36e3f0f18224db17ec0f312f50430":[52,0,104,27],
 "structPlatooningControlIHPPluginConfig.html#a32c2376299de91eb63c52bd044eb4a71":[52,0,104,21],
 "structPlatooningControlIHPPluginConfig.html#a3c73af07172352c9dbb2289bb7d0802f":[52,0,104,16],
-"structPlatooningControlIHPPluginConfig.html#a4b1e78e8367519046350b3d2b9588f11":[52,0,104,12],
-"structPlatooningControlIHPPluginConfig.html#a4da0951667b1cee0fbbb769db4b2c29d":[52,0,104,22],
-"structPlatooningControlIHPPluginConfig.html#a54453c0620c4ec33de0907cbeb05211b":[52,0,104,10],
-"structPlatooningControlIHPPluginConfig.html#a7ba9218d8d798352c80df4103b994039":[52,0,104,1],
-"structPlatooningControlIHPPluginConfig.html#a872fcbf896b9d1959f8f1f8000e1b487":[52,0,104,5],
-"structPlatooningControlIHPPluginConfig.html#a907ecd70de545f8badd4035807aa4d40":[52,0,104,6],
-"structPlatooningControlIHPPluginConfig.html#a98eab9d1d94e566c31ac63a1cd9206c1":[52,0,104,2],
-"structPlatooningControlIHPPluginConfig.html#a99005decf3c533c6165ff53de127ed20":[52,0,104,11],
-"structPlatooningControlIHPPluginConfig.html#aa28a5a773589ea6c4606a2997ce612e4":[52,0,104,8]
+"structPlatooningControlIHPPluginConfig.html#a4b1e78e8367519046350b3d2b9588f11":[52,0,104,12]
 };

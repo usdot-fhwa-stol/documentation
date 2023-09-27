@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('yield__plugin_8cpp.html',''); initResi
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;boost/uuid/uuid_generators.hpp&gt;</code><br />
 <code>#include &lt;boost/uuid/uuid_io.hpp&gt;</code><br />
 <code>#include &lt;lanelet2_core/geometry/Point.h&gt;</code><br />
@@ -105,117 +106,120 @@ $(document).ready(function(){initNavTree('yield__plugin_8cpp.html',''); initResi
 <code>#include &lt;Eigen/LU&gt;</code><br />
 <code>#include &lt;Eigen/SVD&gt;</code><br />
 <code>#include &lt;<a class="el" href="yield__plugin_8hpp_source.html">yield_plugin/yield_plugin.hpp</a>&gt;</code><br />
-<code>#include &lt;carma_perception_msgs/msg/roadway_obstacle.hpp&gt;</code><br />
-<code>#include &lt;carma_perception_msgs/msg/roadway_obstacle_list.hpp&gt;</code><br />
 <code>#include &lt;carma_v2x_msgs/msg/location_ecef.hpp&gt;</code><br />
 <code>#include &lt;carma_v2x_msgs/msg/trajectory.hpp&gt;</code><br />
 <code>#include &lt;carma_v2x_msgs/msg/plan_type.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="basic__autonomy_2include_2basic__autonomy_2smoothing_2filters_8hpp_source.html">basic_autonomy/smoothing/filters.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for yield_plugin.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="yield__plugin_8cpp__incl.png" border="0" usemap="#ayield__plugin_2src_2yield__plugin_8cpp" alt=""/></div>
 <map name="ayield__plugin_2src_2yield__plugin_8cpp" id="ayield__plugin_2src_2yield__plugin_8cpp">
-<area shape="rect" title=" " alt="" coords="5996,5,6137,47"/>
-<area shape="rect" title=" " alt="" coords="3591,503,3711,530"/>
-<area shape="rect" title=" " alt="" coords="6105,102,6159,129"/>
-<area shape="rect" title=" " alt="" coords="6184,102,6259,129"/>
-<area shape="rect" title=" " alt="" coords="5518,407,5586,433"/>
-<area shape="rect" title=" " alt="" coords="6345,407,6548,433"/>
-<area shape="rect" title=" " alt="" coords="6170,407,6321,433"/>
-<area shape="rect" title=" " alt="" coords="6283,95,6439,136"/>
-<area shape="rect" title=" " alt="" coords="6464,95,6627,136"/>
-<area shape="rect" title=" " alt="" coords="6651,95,6831,136"/>
-<area shape="rect" title=" " alt="" coords="6856,102,6925,129"/>
-<area shape="rect" title=" " alt="" coords="1946,399,2107,441"/>
-<area shape="rect" title=" " alt="" coords="6949,102,7035,129"/>
-<area shape="rect" title=" " alt="" coords="7059,102,7173,129"/>
-<area shape="rect" title=" " alt="" coords="7198,102,7274,129"/>
-<area shape="rect" title=" " alt="" coords="7299,102,7384,129"/>
-<area shape="rect" href="yield__plugin_8hpp.html" title=" " alt="" coords="2845,95,2963,136"/>
-<area shape="rect" title=" " alt="" coords="3693,399,3875,441"/>
-<area shape="rect" title=" " alt="" coords="1758,392,1922,448"/>
-<area shape="rect" title=" " alt="" coords="4474,191,4627,233"/>
-<area shape="rect" title=" " alt="" coords="4651,191,4805,233"/>
-<area shape="rect" title=" " alt="" coords="4829,191,4982,233"/>
-<area shape="rect" title=" " alt="" coords="101,407,160,433"/>
-<area shape="rect" title=" " alt="" coords="184,399,347,441"/>
-<area shape="rect" title=" " alt="" coords="2475,184,2627,240"/>
-<area shape="rect" title=" " alt="" coords="2651,191,2803,233"/>
-<area shape="rect" title=" " alt="" coords="2827,191,2981,233"/>
-<area shape="rect" title=" " alt="" coords="3107,191,3261,233"/>
-<area shape="rect" title=" " alt="" coords="3286,191,3439,233"/>
-<area shape="rect" title=" " alt="" coords="3464,191,3659,233"/>
-<area shape="rect" title=" " alt="" coords="3683,199,3826,225"/>
-<area shape="rect" title=" " alt="" coords="1930,503,2065,530"/>
-<area shape="rect" href="WMListener_8hpp.html" title=" " alt="" coords="2165,199,2349,225"/>
-<area shape="rect" title=" " alt="" coords="2766,303,2845,329"/>
-<area shape="rect" href="WorldModel_8hpp.html" title=" " alt="" coords="2971,303,3154,329"/>
-<area shape="rect" href="yield__config_8hpp.html" title=" " alt="" coords="465,199,578,225"/>
-<area shape="rect" title=" " alt="" coords="3735,503,3839,530"/>
-<area shape="rect" title=" " alt="" coords="3850,191,4006,233"/>
-<area shape="rect" title=" " alt="" coords="4031,199,4199,225"/>
-<area shape="rect" title=" " alt="" coords="4223,191,4398,233"/>
-<area shape="rect" title=" " alt="" coords="1657,191,1831,233"/>
-<area shape="rect" title=" " alt="" coords="1856,191,1989,233"/>
-<area shape="rect" title=" " alt="" coords="4358,392,4511,448"/>
-<area shape="rect" href="Geometry_8hpp.html" title=" " alt="" coords="1735,503,1905,530"/>
-<area shape="rect" href="collision__detection_8hpp.html" title=" " alt="" coords="994,295,1131,337"/>
-<area shape="rect" href="TrafficControl_8hpp.html" title=" " alt="" coords="5151,199,5342,225"/>
-<area shape="rect" title=" " alt="" coords="2011,303,2069,329"/>
-<area shape="rect" title=" " alt="" coords="2093,295,2254,337"/>
-<area shape="rect" title=" " alt="" coords="3563,295,3730,337"/>
-<area shape="rect" title=" " alt="" coords="2278,303,2335,329"/>
-<area shape="rect" title=" " alt="" coords="2360,295,2512,337"/>
-<area shape="rect" title=" " alt="" coords="2537,295,2690,337"/>
-<area shape="rect" title=" " alt="" coords="3515,593,3592,619"/>
-<area shape="rect" title=" " alt="" coords="2159,593,2209,619"/>
-<area shape="rect" title=" " alt="" coords="5339,503,5520,530"/>
-<area shape="rect" title=" " alt="" coords="3863,496,4022,537"/>
-<area shape="rect" title=" " alt="" coords="2307,675,2466,716"/>
-<area shape="rect" title=" " alt="" coords="4885,675,5043,716"/>
-<area shape="rect" title=" " alt="" coords="2811,407,2973,433"/>
-<area shape="rect" title=" " alt="" coords="4046,496,4207,537"/>
-<area shape="rect" title=" " alt="" coords="2997,399,3137,441"/>
-<area shape="rect" title=" " alt="" coords="2284,585,2417,627"/>
-<area shape="rect" title=" " alt="" coords="3161,399,3327,441"/>
-<area shape="rect" title=" " alt="" coords="3351,392,3515,448"/>
-<area shape="rect" title=" " alt="" coords="4189,392,4334,448"/>
-<area shape="rect" title=" " alt="" coords="4001,392,4164,448"/>
-<area shape="rect" title=" " alt="" coords="2436,399,2620,441"/>
-<area shape="rect" href="TrackPos_8hpp.html" title=" " alt="" coords="2441,593,2612,619"/>
-<area shape="rect" title=" " alt="" coords="2645,392,2787,448"/>
-<area shape="rect" title=" " alt="" coords="5,407,77,433"/>
-<area shape="rect" title=" " alt="" coords="4459,585,4618,627"/>
-<area shape="rect" title=" " alt="" coords="1678,593,1877,619"/>
-<area shape="rect" title=" " alt="" coords="1014,593,1229,619"/>
-<area shape="rect" title=" " alt="" coords="483,585,637,627"/>
-<area shape="rect" title=" " alt="" coords="1901,593,2083,619"/>
-<area shape="rect" title=" " alt="" coords="1429,593,1603,619"/>
-<area shape="rect" title=" " alt="" coords="1177,399,1330,441"/>
-<area shape="rect" title=" " alt="" coords="973,399,1152,441"/>
-<area shape="rect" title=" " alt="" coords="1405,407,1531,433"/>
-<area shape="rect" title=" " alt="" coords="473,407,655,433"/>
-<area shape="rect" title=" " alt="" coords="680,407,747,433"/>
-<area shape="rect" title=" " alt="" coords="771,407,949,433"/>
-<area shape="rect" title=" " alt="" coords="5845,407,5979,433"/>
-<area shape="rect" title=" " alt="" coords="5504,295,5659,337"/>
-<area shape="rect" title=" " alt="" coords="5683,288,5826,344"/>
-<area shape="rect" title=" " alt="" coords="6003,392,6146,448"/>
-<area shape="rect" title=" " alt="" coords="4291,288,4440,344"/>
-<area shape="rect" title=" " alt="" coords="4464,288,4613,344"/>
-<area shape="rect" href="SignalizedIntersectionManager_8hpp.html" title=" " alt="" coords="5211,295,5429,337"/>
-<area shape="rect" title=" " alt="" coords="5662,399,5821,441"/>
-<area shape="rect" title=" " alt="" coords="4637,295,4776,337"/>
-<area shape="rect" title=" " alt="" coords="4800,295,4939,337"/>
-<area shape="rect" title=" " alt="" coords="4963,295,5135,337"/>
-<area shape="rect" href="WorldModelUtils_8hpp.html" title=" " alt="" coords="4587,407,4797,433"/>
-<area shape="rect" title=" " alt="" coords="4923,399,5077,441"/>
-<area shape="rect" title=" " alt="" coords="5101,407,5261,433"/>
-<area shape="rect" title=" " alt="" coords="5286,399,5442,441"/>
-<area shape="rect" title=" " alt="" coords="5055,496,5211,537"/>
-<area shape="rect" title=" " alt="" coords="4435,496,4591,537"/>
-<area shape="rect" title=" " alt="" coords="4717,496,4896,537"/>
-<area shape="rect" title=" " alt="" coords="4921,503,5031,530"/>
+<area shape="rect" title=" " alt="" coords="4264,5,4405,47"/>
+<area shape="rect" title=" " alt="" coords="2991,511,3111,537"/>
+<area shape="rect" title=" " alt="" coords="4373,102,4427,129"/>
+<area shape="rect" title=" " alt="" coords="219,199,293,225"/>
+<area shape="rect" title=" " alt="" coords="5922,511,5990,537"/>
+<area shape="rect" title=" " alt="" coords="4452,102,4505,129"/>
+<area shape="rect" title=" " alt="" coords="4119,407,4321,433"/>
+<area shape="rect" title=" " alt="" coords="3893,407,4043,433"/>
+<area shape="rect" title=" " alt="" coords="4530,95,4686,136"/>
+<area shape="rect" title=" " alt="" coords="4711,95,4873,136"/>
+<area shape="rect" title=" " alt="" coords="4898,95,5078,136"/>
+<area shape="rect" title=" " alt="" coords="5103,102,5172,129"/>
+<area shape="rect" title=" " alt="" coords="2402,399,2563,441"/>
+<area shape="rect" title=" " alt="" coords="5196,102,5281,129"/>
+<area shape="rect" title=" " alt="" coords="5305,102,5420,129"/>
+<area shape="rect" title=" " alt="" coords="5445,102,5521,129"/>
+<area shape="rect" title=" " alt="" coords="5545,102,5631,129"/>
+<area shape="rect" href="yield__plugin_8hpp.html" title=" " alt="" coords="2006,95,2125,136"/>
+<area shape="rect" title=" " alt="" coords="3687,191,3841,233"/>
+<area shape="rect" title=" " alt="" coords="3865,191,4018,233"/>
+<area shape="rect" title=" " alt="" coords="4042,191,4195,233"/>
+<area shape="rect" href="basic__autonomy_2include_2basic__autonomy_2smoothing_2filters_8hpp.html" title=" " alt="" coords="349,95,529,136"/>
+<area shape="rect" title=" " alt="" coords="5,511,64,537"/>
+<area shape="rect" title=" " alt="" coords="1221,503,1384,545"/>
+<area shape="rect" title=" " alt="" coords="1989,184,2141,240"/>
+<area shape="rect" title=" " alt="" coords="2165,191,2317,233"/>
+<area shape="rect" title=" " alt="" coords="2342,191,2495,233"/>
+<area shape="rect" title=" " alt="" coords="2520,191,2675,233"/>
+<area shape="rect" title=" " alt="" coords="2699,191,2853,233"/>
+<area shape="rect" title=" " alt="" coords="2877,191,3072,233"/>
+<area shape="rect" title=" " alt="" coords="3097,199,3239,225"/>
+<area shape="rect" title=" " alt="" coords="1505,511,1639,537"/>
+<area shape="rect" href="WMListener_8hpp.html" title=" " alt="" coords="4668,303,4852,329"/>
+<area shape="rect" title=" " alt="" coords="4537,407,4615,433"/>
+<area shape="rect" href="WorldModel_8hpp.html" title=" " alt="" coords="5443,407,5626,433"/>
+<area shape="rect" href="yield__config_8hpp.html" title=" " alt="" coords="1598,303,1711,329"/>
+<area shape="rect" title=" " alt="" coords="1859,511,1963,537"/>
+<area shape="rect" title=" " alt="" coords="655,191,811,233"/>
+<area shape="rect" title=" " alt="" coords="836,199,1004,225"/>
+<area shape="rect" title=" " alt="" coords="1029,191,1203,233"/>
+<area shape="rect" title=" " alt="" coords="1227,191,1402,233"/>
+<area shape="rect" title=" " alt="" coords="1427,191,1560,233"/>
+<area shape="rect" title=" " alt="" coords="1889,392,2042,448"/>
+<area shape="rect" href="Geometry_8hpp.html" title=" " alt="" coords="1664,511,1835,537"/>
+<area shape="rect" href="collision__detection_8hpp.html" title=" " alt="" coords="1039,399,1177,441"/>
+<area shape="rect" href="TrafficControl_8hpp.html" title=" " alt="" coords="3315,199,3506,225"/>
+<area shape="rect" title=" " alt="" coords="5095,407,5153,433"/>
+<area shape="rect" title=" " alt="" coords="4086,496,4250,552"/>
+<area shape="rect" title=" " alt="" coords="5177,399,5338,441"/>
+<area shape="rect" title=" " alt="" coords="4346,399,4513,441"/>
+<area shape="rect" title=" " alt="" coords="5362,407,5419,433"/>
+<area shape="rect" title=" " alt="" coords="4741,399,4893,441"/>
+<area shape="rect" title=" " alt="" coords="4918,399,5071,441"/>
+<area shape="rect" title=" " alt="" coords="2943,607,3020,634"/>
+<area shape="rect" title=" " alt="" coords="3791,607,3841,634"/>
+<area shape="rect" title=" " alt="" coords="3880,511,4061,537"/>
+<area shape="rect" title=" " alt="" coords="3527,503,3686,545"/>
+<area shape="rect" title=" " alt="" coords="2259,689,2418,731"/>
+<area shape="rect" title=" " alt="" coords="4435,689,4594,731"/>
+<area shape="rect" title=" " alt="" coords="4766,511,4927,537"/>
+<area shape="rect" title=" " alt="" coords="3342,503,3503,545"/>
+<area shape="rect" title=" " alt="" coords="4951,503,5091,545"/>
+<area shape="rect" title=" " alt="" coords="2785,600,2919,641"/>
+<area shape="rect" title=" " alt="" coords="3135,503,3318,545"/>
+<area shape="rect" title=" " alt="" coords="5115,503,5282,545"/>
+<area shape="rect" title=" " alt="" coords="5306,496,5470,552"/>
+<area shape="rect" title=" " alt="" coords="3710,496,3855,552"/>
+<area shape="rect" title=" " alt="" coords="4275,496,4437,552"/>
+<area shape="rect" title=" " alt="" coords="5495,503,5679,545"/>
+<area shape="rect" href="TrackPos_8hpp.html" title=" " alt="" coords="2591,607,2761,634"/>
+<area shape="rect" title=" " alt="" coords="5703,496,5846,552"/>
+<area shape="rect" title=" " alt="" coords="1408,511,1480,537"/>
+<area shape="rect" title=" " alt="" coords="2327,600,2486,641"/>
+<area shape="rect" title=" " alt="" coords="1597,607,1795,634"/>
+<area shape="rect" title=" " alt="" coords="1055,607,1270,634"/>
+<area shape="rect" title=" " alt="" coords="769,600,924,641"/>
+<area shape="rect" title=" " alt="" coords="1819,607,2002,634"/>
+<area shape="rect" title=" " alt="" coords="1347,607,1522,634"/>
+<area shape="rect" title=" " alt="" coords="841,503,994,545"/>
+<area shape="rect" title=" " alt="" coords="1019,503,1197,545"/>
+<area shape="rect" title=" " alt="" coords="88,511,213,537"/>
+<area shape="rect" title=" " alt="" coords="238,511,421,537"/>
+<area shape="rect" title=" " alt="" coords="445,511,512,537"/>
+<area shape="rect" title=" " alt="" coords="536,511,715,537"/>
+<area shape="rect" title=" " alt="" coords="3385,407,3519,433"/>
+<area shape="rect" title=" " alt="" coords="3448,295,3603,337"/>
+<area shape="rect" title=" " alt="" coords="3627,288,3770,344"/>
+<area shape="rect" title=" " alt="" coords="3543,392,3686,448"/>
+<area shape="rect" title=" " alt="" coords="3793,288,3943,344"/>
+<area shape="rect" title=" " alt="" coords="2307,288,2456,344"/>
+<area shape="rect" href="SignalizedIntersectionManager_8hpp.html" title=" " alt="" coords="3105,295,3322,337"/>
+<area shape="rect" title=" " alt="" coords="3710,399,3869,441"/>
+<area shape="rect" title=" " alt="" coords="2480,295,2619,337"/>
+<area shape="rect" title=" " alt="" coords="2643,295,2781,337"/>
+<area shape="rect" title=" " alt="" coords="2857,295,3029,337"/>
+<area shape="rect" href="WorldModelUtils_8hpp.html" title=" " alt="" coords="2066,407,2275,433"/>
+<area shape="rect" title=" " alt="" coords="3054,399,3207,441"/>
+<area shape="rect" title=" " alt="" coords="2689,407,2849,433"/>
+<area shape="rect" title=" " alt="" coords="2874,399,3030,441"/>
+<area shape="rect" title=" " alt="" coords="2038,503,2194,545"/>
+<area shape="rect" title=" " alt="" coords="2218,503,2374,545"/>
+<area shape="rect" title=" " alt="" coords="2399,503,2577,545"/>
+<area shape="rect" title=" " alt="" coords="2602,511,2713,537"/>
+<area shape="rect" title=" " alt="" coords="318,199,375,225"/>
+<area shape="rect" title=" " alt="" coords="399,199,478,225"/>
 </map>
 </div>
 </div>
@@ -254,7 +258,7 @@ Typedefs</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f2ecdaa25f4bea09ca4e467995c3c717.html">yield_plugin</a></li><li class="navelem"><a class="el" href="dir_ef78ea2effe39bb05d8493b9c77dd603.html">src</a></li><li class="navelem"><a class="el" href="yield__plugin_8cpp.html">yield_plugin.cpp</a></li>
-    <li class="footer">Generated on Mon Sep 25 2023 13:21:01 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 27 2023 13:52:10 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

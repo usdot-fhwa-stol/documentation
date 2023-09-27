@@ -1,5 +1,13 @@
 var NAVTREEINDEX38 =
 {
+"lci__states_8hpp.html#ab1592a4c03317796102d8a3f6c98420d":[53,0,21,0,0,1,3],
+"lci__states_8hpp_source.html":[53,0,21,0,0,1],
+"lci__strategic__plugin_2src_2main_8cpp.html":[53,0,21,2,4],
+"lci__strategic__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[53,0,21,2,4,0],
+"lci__strategic__plugin_2src_2main_8cpp_source.html":[53,0,21,2,4],
+"lci__strategic__plugin_8cpp.html":[53,0,21,2,2],
+"lci__strategic__plugin_8cpp.html#a002b2f4894492820fe708b1b7e7c5e70":[53,0,21,2,2,0],
+"lci__strategic__plugin_8cpp.html#a066f948508e087006568cb6c9b0674a7":[53,0,21,2,2,1],
 "lci__strategic__plugin_8cpp_source.html":[53,0,21,2,2],
 "lci__strategic__plugin_8hpp.html":[53,0,21,0,0,2],
 "lci__strategic__plugin_8hpp.html#a1e0201b2cf65a27f7075fd60ce35e2e9":[53,0,21,0,0,2,5],
@@ -241,13 +249,5 @@ var NAVTREEINDEX38 =
 "md_carma_wm_README.html#autotoc_md50":[14,3,0,3],
 "md_carma_wm_ctrl_README.html":[15],
 "md_cooperative_lanechange_README.html":[18],
-"md_docs_License.html":[20],
-"md_docs_Release_notes.html":[21],
-"md_docs_Release_notes.html#autotoc_md123":[21,0],
-"md_docs_Release_notes.html#autotoc_md124":[21,0,0],
-"md_docs_Release_notes.html#autotoc_md125":[21,1],
-"md_docs_Release_notes.html#autotoc_md126":[21,1,0],
-"md_docs_Release_notes.html#autotoc_md127":[21,2],
-"md_docs_Release_notes.html#autotoc_md128":[21,2,0],
-"md_docs_Release_notes.html#autotoc_md129":[21,2,1]
+"md_docs_License.html":[20]
 };

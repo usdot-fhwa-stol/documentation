@@ -64,6 +64,7 @@ var annotated_dup =
       [ "PositionOffsetXYZ", "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html", "structcarma__cooperative__perception_1_1PositionOffsetXYZ" ],
       [ "SdsmToDetectionListNode", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode" ],
       [ "Speed", "structcarma__cooperative__perception_1_1Speed.html", "structcarma__cooperative__perception_1_1Speed" ],
+      [ "TrackListToExternalObjectListNode", "classcarma__cooperative__perception_1_1TrackListToExternalObjectListNode.html", "classcarma__cooperative__perception_1_1TrackListToExternalObjectListNode" ],
       [ "UtmCoordinate", "structcarma__cooperative__perception_1_1UtmCoordinate.html", "structcarma__cooperative__perception_1_1UtmCoordinate" ],
       [ "UtmDisplacement", "structcarma__cooperative__perception_1_1UtmDisplacement.html", "structcarma__cooperative__perception_1_1UtmDisplacement" ],
       [ "UtmZone", "structcarma__cooperative__perception_1_1UtmZone.html", "structcarma__cooperative__perception_1_1UtmZone" ],

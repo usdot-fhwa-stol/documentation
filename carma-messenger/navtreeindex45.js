@@ -1,5 +1,7 @@
 var NAVTREEINDEX45 =
 {
+"structGeographicalPath.html#a5775227e0d76c0639185bcc7cfc85989":[10,0,96,9],
+"structGeographicalPath.html#a5ce8252eb3d420188be8f804e54c074c":[10,0,96,3],
 "structGeographicalPath.html#a7359bb50f098c73cc0a331c1adebb2b6":[10,0,96,11],
 "structGeographicalPath.html#a884df3c5723dd076a5b31d84987fe1ec":[10,0,96,8],
 "structGeographicalPath.html#acced4d8765c465cca95a84f6b7bd13b1":[10,0,96,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX45 =
 "structMovementState.html#a11436ff8f7cdadccaad4357fd12d15f9":[10,0,136,1],
 "structMovementState.html#a127da9bb655d2bc39c00790173327903":[10,0,136,6],
 "structMovementState.html#a2537326f436f65a0656f3e73fa904706":[10,0,136,4],
-"structMovementState.html#aa4e27ff24e198f54f12437c99b9f9be3":[10,0,136,5],
-"structMovementState.html#ac88ae3b37ee2600bb11f85820d7c9165":[10,0,136,2],
-"structMovementState.html#af89e23e4cd2597011503425d4495e7ee":[10,0,136,3]
+"structMovementState.html#aa4e27ff24e198f54f12437c99b9f9be3":[10,0,136,5]
 };

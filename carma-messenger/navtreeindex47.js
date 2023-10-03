@@ -1,5 +1,7 @@
 var NAVTREEINDEX47 =
 {
+"structPosition3D__addGrpB.html#a3f254b155395a7972068ff009a98c3b8":[10,0,181,1],
+"structPosition3D__addGrpB.html#a6db96f18126c35e6e1a874b797e867b9":[10,0,181,2],
 "structPosition3D__addGrpB.html#a6ffe8cdf96c7330860a7166b601b4b4a":[10,0,181,0],
 "structPosition3D__addGrpB.html#a8a10230c7efc9910060b29390ce01b1c":[10,0,181,3],
 "structPosition3D__addGrpC.html":[10,0,182],
@@ -247,7 +249,5 @@ var NAVTREEINDEX47 =
 "structSegmentAttributeLLList.html#ad9897cd9fe2397e0a8d607a2a8922953":[10,0,220,0],
 "structSegmentAttributeXYList.html":[10,0,221],
 "structSegmentAttributeXYList.html#a784696176433a0470a080e88154e637d":[10,0,221,1],
-"structSegmentAttributeXYList.html#af98d78c94465defa7cecbf67a2f5b712":[10,0,221,0],
-"structSensorDataSharingMessage.html":[10,0,222],
-"structSensorDataSharingMessage.html#a442f9038c02e86aab858f2f775a3da9b":[10,0,222,5]
+"structSegmentAttributeXYList.html#af98d78c94465defa7cecbf67a2f5b712":[10,0,221,0]
 };

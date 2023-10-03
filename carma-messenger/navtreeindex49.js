@@ -1,5 +1,7 @@
 var NAVTREEINDEX49 =
 {
+"structTrafficControlBounds.html#a6a860820cd45548bd24fc0adc0d2f1c3":[10,0,268,3],
+"structTrafficControlBounds.html#a7d5c8456d297292374f99393aa0741c3":[10,0,268,2],
 "structTrafficControlBounds.html#ac09f2e49bd94e3d4e8b42f37d768aa2f":[10,0,268,4],
 "structTrafficControlBounds.html#ac3ef35b5db1fd07adaec39ff54260a3f":[10,0,268,1],
 "structTrafficControlBounds.html#af578d6364870cce1ec6da9fa450a5fb3":[10,0,268,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX49 =
 "structVehicleStatusRequest.html#a4c9078a72a827abfa93e883de5546b24":[10,0,296,2],
 "structVehicleStatusRequest.html#a5c1d9e6e6ce7949cd9ab8bf0570dc86f":[10,0,296,5],
 "structVehicleStatusRequest.html#a76d1f4465f7a88b9df0a6c952627698a":[10,0,296,1],
-"structVehicleStatusRequest.html#aace9b00c963740b9295c80d64ba1d40d":[10,0,296,0],
-"structVehicleStatusRequest.html#ab2c15f72280647d9c3877c931e1121e6":[10,0,296,4],
-"structVehicleStatusRequestList.html":[10,0,297]
+"structVehicleStatusRequest.html#aace9b00c963740b9295c80d64ba1d40d":[10,0,296,0]
 };

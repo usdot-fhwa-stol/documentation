@@ -1,5 +1,7 @@
 var NAVTREEINDEX44 =
 {
+"structComputedLane_1_1ComputedLane____regional.html#a6daf9c086abe33a6fe48fc6138b26852":[10,0,59,2,1],
+"structConfidenceSet.html":[10,0,60],
 "structConfidenceSet.html#a0673cd28b11ca5d3c8a3037876f4c427":[10,0,60,6],
 "structConfidenceSet.html#a606fdcff98584c5ef800234feba10c02":[10,0,60,1],
 "structConfidenceSet.html#a70b9a94bc8c9b940ca2a9c8b8f67c1c2":[10,0,60,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX44 =
 "structGeographicalPath.html":[10,0,96],
 "structGeographicalPath.html#a1e7a74fdad7679ac65a05051056c81f9":[10,0,96,5],
 "structGeographicalPath.html#a3956872003baca3d4a72f2e3f3c6b423":[10,0,96,7],
-"structGeographicalPath.html#a492e2a1c5762eb09c5faebebf11564e9":[10,0,96,2],
-"structGeographicalPath.html#a5775227e0d76c0639185bcc7cfc85989":[10,0,96,9],
-"structGeographicalPath.html#a5ce8252eb3d420188be8f804e54c074c":[10,0,96,3]
+"structGeographicalPath.html#a492e2a1c5762eb09c5faebebf11564e9":[10,0,96,2]
 };

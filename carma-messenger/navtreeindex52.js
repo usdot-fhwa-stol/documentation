@@ -1,5 +1,7 @@
 var NAVTREEINDEX52 =
 {
+"unionVehicleIdent_1_1VehicleIdent____vehicleClass_1_1VehicleIdent____vehicleClass__u.html":[10,0,291,0,0],
+"unionVehicleIdent_1_1VehicleIdent____vehicleClass_1_1VehicleIdent____vehicleClass__u.html#a07d55ff826a6dbf0eb057789bfdef8ce":[10,0,291,0,0,1],
 "unionVehicleIdent_1_1VehicleIdent____vehicleClass_1_1VehicleIdent____vehicleClass__u.html#a74f9520fd065b1e7a89db1b52e4a2176":[10,0,291,0,0,2],
 "unionVehicleIdent_1_1VehicleIdent____vehicleClass_1_1VehicleIdent____vehicleClass__u.html#a91e1e9638fe7922d3991df5325ab0f99":[10,0,291,0,0,0],
 "unionVerticalOffset_1_1VerticalOffset__u.html":[10,0,300,0],

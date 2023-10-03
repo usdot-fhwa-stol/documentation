@@ -157,6 +157,11 @@ var annotated_dup =
       [ "tsc_configuration_state", "structstreets__tsc__configuration_1_1tsc__configuration__state.html", "structstreets__tsc__configuration_1_1tsc__configuration__state" ],
       [ "tsc_configuration_state_exception", "classstreets__tsc__configuration_1_1tsc__configuration__state__exception.html", "classstreets__tsc__configuration_1_1tsc__configuration__state__exception" ]
     ] ],
+    [ "streets_utils", "namespacestreets__utils.html", [
+      [ "json_utils", "namespacestreets__utils_1_1json__utils.html", [
+        [ "json_parse_exception", "classstreets__utils_1_1json__utils_1_1json__parse__exception.html", null ]
+      ] ]
+    ] ],
     [ "streets_vehicle_scheduler", "namespacestreets__vehicle__scheduler.html", [
       [ "all_stop_intersection_schedule", "structstreets__vehicle__scheduler_1_1all__stop__intersection__schedule.html", "structstreets__vehicle__scheduler_1_1all__stop__intersection__schedule" ],
       [ "all_stop_vehicle_schedule", "structstreets__vehicle__scheduler_1_1all__stop__vehicle__schedule.html", "structstreets__vehicle__scheduler_1_1all__stop__vehicle__schedule" ],

@@ -124,6 +124,7 @@ var namespaces_dup =
     [ "streets_snmp_cmd", "namespacestreets__snmp__cmd.html", "namespacestreets__snmp__cmd" ],
     [ "streets_timing_plan", "namespacestreets__timing__plan.html", "namespacestreets__timing__plan" ],
     [ "streets_tsc_configuration", "namespacestreets__tsc__configuration.html", "namespacestreets__tsc__configuration" ],
+    [ "streets_utils", "namespacestreets__utils.html", "namespacestreets__utils" ],
     [ "streets_vehicle_scheduler", "namespacestreets__vehicle__scheduler.html", "namespacestreets__vehicle__scheduler" ],
     [ "streets_vehicles", "namespacestreets__vehicles.html", "namespacestreets__vehicles" ],
     [ "traffic_signal_controller_service", "namespacetraffic__signal__controller__service.html", "namespacetraffic__signal__controller__service" ]

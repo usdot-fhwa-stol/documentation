@@ -1,5 +1,7 @@
 var NAVTREEINDEX25 =
 {
+"classplatoon__control__ihp_1_1PlatoonControlIHPPlugin.html#a114528c56e1bbfe7079028c0deeb0fcb":[53,0,36,1,17],
+"classplatoon__control__ihp_1_1PlatoonControlIHPPlugin.html#a114528c56e1bbfe7079028c0deeb0fcb":[52,0,59,1,17],
 "classplatoon__control__ihp_1_1PlatoonControlIHPPlugin.html#a15930aee59acecdf5a44d58ef27b58c2":[52,0,59,1,12],
 "classplatoon__control__ihp_1_1PlatoonControlIHPPlugin.html#a15930aee59acecdf5a44d58ef27b58c2":[53,0,36,1,12],
 "classplatoon__control__ihp_1_1PlatoonControlIHPPlugin.html#a1864eae9061b60713c4e122c6e1f52f7":[52,0,59,1,22],
@@ -247,7 +249,5 @@ var NAVTREEINDEX25 =
 "classplatoon__strategic__ihp_1_1PlatoonManager.html#a29591a8b3c4ca5fc3173a6e4ccb74600":[52,0,60,2,54],
 "classplatoon__strategic__ihp_1_1PlatoonManager.html#a29591a8b3c4ca5fc3173a6e4ccb74600":[53,0,37,2,54],
 "classplatoon__strategic__ihp_1_1PlatoonManager.html#a2ad6021a43c527768c109bbb0421e166":[53,0,37,2,55],
-"classplatoon__strategic__ihp_1_1PlatoonManager.html#a2ad6021a43c527768c109bbb0421e166":[52,0,60,2,55],
-"classplatoon__strategic__ihp_1_1PlatoonManager.html#a32864511884e1475fa1db55bf031d6ec":[52,0,60,2,53],
-"classplatoon__strategic__ihp_1_1PlatoonManager.html#a32864511884e1475fa1db55bf031d6ec":[53,0,37,2,53]
+"classplatoon__strategic__ihp_1_1PlatoonManager.html#a2ad6021a43c527768c109bbb0421e166":[52,0,60,2,55]
 };

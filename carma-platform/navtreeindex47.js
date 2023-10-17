@@ -1,5 +1,7 @@
 var NAVTREEINDEX47 =
 {
+"structNS3Adapter_1_1WaveConfigStruct.html#a02455a7de9f3c9746442e08d66df6cfc":[53,0,101,0,3],
+"structNS3Adapter_1_1WaveConfigStruct.html#a08f8b8dd32bfb77f8f4451a7487f8e93":[53,0,101,0,1],
 "structNS3Adapter_1_1WaveConfigStruct.html#a14e22cf37cb29a02710cf7c85320a845":[53,0,101,0,6],
 "structNS3Adapter_1_1WaveConfigStruct.html#a7db62530a2d2baca58bef4535f7474c9":[53,0,101,0,4],
 "structNS3Adapter_1_1WaveConfigStruct.html#a942bdfdb0e6c0115fe38e19a36bef6fc":[53,0,101,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX47 =
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#ad8731d21c88e346dd0d379680afdde72":[52,0,0,3,14],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#ae1af2f64a5f86e70ea737bb9b0370cdd":[52,0,0,3,15],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#ae1af2f64a5f86e70ea737bb9b0370cdd":[53,0,0,2,15],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#ae64572ff061924d56fa9998852a2a945":[52,0,0,3,19],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#ae64572ff061924d56fa9998852a2a945":[53,0,0,2,19],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#afe9dff631c6c75497bbecfe6f6029753":[52,0,0,3,23]
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#ae64572ff061924d56fa9998852a2a945":[52,0,0,3,19]
 };

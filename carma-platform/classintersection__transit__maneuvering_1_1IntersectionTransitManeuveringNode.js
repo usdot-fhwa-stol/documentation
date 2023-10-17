@@ -6,6 +6,7 @@ var classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNod
     [ "get_version_id", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#aacc78dfefdcca24014bf84583aef5af9", null ],
     [ "on_configure_plugin", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#a977501f970d1e23a90994316cc1b5ba6", null ],
     [ "plan_trajectory_callback", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#acc24418a95203157bde8e0b387bd8298", null ],
+    [ "client_", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#a1a99cc9cd20e4fe8253da48deca1531c", null ],
     [ "converted_maneuvers_", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#a39bd12148b6fc23001b5da0d5918501f", null ],
     [ "object_", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#a9fbeafa486c4ef25ad427540fe7cea78", null ],
     [ "vehicle_state_", "classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#ab77f04751b818e4e188c4a4eece5ca5f", null ]

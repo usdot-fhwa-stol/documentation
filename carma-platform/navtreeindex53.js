@@ -1,5 +1,7 @@
 var NAVTREEINDEX53 =
 {
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a75c1cc22d698c88b0772ffa7c664dd24":[52,0,60,4,10],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a75c1cc22d698c88b0772ffa7c664dd24":[53,0,37,4,10],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a7ebcbd6d830ed897edc245524b9625f9":[52,0,60,4,15],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a7ebcbd6d830ed897edc245524b9625f9":[53,0,37,4,15],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a7f7c75e78767a304bbca12ce49c91cf8":[53,0,37,4,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX53 =
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#ad0b4de41f6b1c2992e62073153a1c91e":[52,0,89,2,5],
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#ad0b4de41f6b1c2992e62073153a1c91e":[53,0,48,1,5],
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#aded01475cf42bc23a27060fc7534c6d4":[53,0,48,1,13],
-"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#aded01475cf42bc23a27060fc7534c6d4":[52,0,89,2,13],
-"structstop__and__dwell__strategic__plugin_1_1VehicleState.html":[53,0,48,2],
-"structstop__and__dwell__strategic__plugin_1_1VehicleState.html":[52,0,89,3]
+"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#aded01475cf42bc23a27060fc7534c6d4":[52,0,89,2,13]
 };

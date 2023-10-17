@@ -1,5 +1,7 @@
 var NAVTREEINDEX46 =
 {
+"stop__and__dwell__strategic__plugin_8launch_8py_source.html":[54,0,46,1,0],
+"stop__and__dwell__strategic__plugin__config_8hpp.html":[54,0,46,0,1],
 "stop__and__dwell__strategic__plugin__config_8hpp_source.html":[54,0,46,0,1],
 "stop__and__wait__config_8hpp.html":[54,0,47,0,0],
 "stop__and__wait__config_8hpp_source.html":[54,0,47,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX46 =
 "structMemoryStream.html#a91f0767b4f0ed2476d835e8344848a2f":[53,0,100,10],
 "structMemoryStream.html#ab26a1b5c6d5e8f52c0f6982feba47f36":[53,0,100,12],
 "structMemoryStream.html#ac445f93c23c9e85f1f5381911c4ed870":[53,0,100,5],
-"structNS3Adapter_1_1WaveConfigStruct.html":[53,0,101,0],
-"structNS3Adapter_1_1WaveConfigStruct.html#a02455a7de9f3c9746442e08d66df6cfc":[53,0,101,0,3],
-"structNS3Adapter_1_1WaveConfigStruct.html#a08f8b8dd32bfb77f8f4451a7487f8e93":[53,0,101,0,1]
+"structNS3Adapter_1_1WaveConfigStruct.html":[53,0,101,0]
 };

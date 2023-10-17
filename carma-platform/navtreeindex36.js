@@ -1,5 +1,7 @@
 var NAVTREEINDEX36 =
 {
+"functions_vars_d.html":[53,3,2,4],
+"functions_vars_e.html":[53,3,2,5],
 "functions_vars_f.html":[53,3,2,6],
 "functions_vars_g.html":[53,3,2,7],
 "functions_vars_h.html":[53,3,2,8],
@@ -60,13 +62,13 @@ var NAVTREEINDEX36 =
 "geodetic_8hpp.html#adddef8d756d8931e2f881725808a270d":[54,0,7,1,0,1,11],
 "geodetic_8hpp.html#afb82365b5a1b4b4b1e89f71c6afb52d0":[54,0,7,1,0,1,9],
 "geodetic_8hpp_source.html":[54,0,7,1,0,1],
-"globals.html":[54,1,0,0],
 "globals.html":[54,1,0],
+"globals.html":[54,1,0,0],
 "globals_a.html":[54,1,0,1],
 "globals_c.html":[54,1,0,2],
 "globals_d.html":[54,1,0,3],
-"globals_defs.html":[54,1,6,0],
 "globals_defs.html":[54,1,6],
+"globals_defs.html":[54,1,6,0],
 "globals_defs_c.html":[54,1,6,1],
 "globals_defs_e.html":[54,1,6,2],
 "globals_defs_g.html":[54,1,6,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX36 =
 "index.html#autotoc_md128":[0,15],
 "inlanecruising__config_8hpp.html":[54,0,19,0,0,2],
 "inlanecruising__config_8hpp_source.html":[54,0,19,0,0,2],
-"inlanecruising__plugin_2include_2inlanecruising__plugin_2log_2log_8hpp.html":[54,0,19,0,0,0,0],
-"inlanecruising__plugin_2include_2inlanecruising__plugin_2log_2log_8hpp.html#a4e946617a591b9e02a1b62f65234b15b":[54,0,19,0,0,0,0,1],
-"inlanecruising__plugin_2include_2inlanecruising__plugin_2log_2log_8hpp.html#a5e9bcb5b1e75d11eb4715012cd651e52":[54,0,19,0,0,0,0,0]
+"inlanecruising__plugin_2include_2inlanecruising__plugin_2log_2log_8hpp.html":[54,0,19,0,0,0,0]
 };

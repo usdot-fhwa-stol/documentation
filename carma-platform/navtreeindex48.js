@@ -1,5 +1,7 @@
 var NAVTREEINDEX48 =
 {
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#ae64572ff061924d56fa9998852a2a945":[53,0,0,2,19],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#afe9dff631c6c75497bbecfe6f6029753":[52,0,0,3,23],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#afe9dff631c6c75497bbecfe6f6029753":[53,0,0,2,23],
 "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html":[53,0,0,3],
 "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html":[52,0,0,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX48 =
 "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#a46035cac5ba17a9d4c42cbe0258a2f0f":[52,0,12,8,1],
 "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#a8a9d970a68a8b4a284f2dcbcbcb3b44b":[52,0,12,8,0],
 "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#a8a9d970a68a8b4a284f2dcbcbcb3b44b":[53,0,7,8,0],
-"structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#ac4c15a3964ed42b4f02069aa78925261":[52,0,12,8,4],
-"structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#ac4c15a3964ed42b4f02069aa78925261":[53,0,7,8,4],
-"structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#ac5cd5516dd68b0438c45fd97b58812cc":[52,0,12,8,2]
+"structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#ac4c15a3964ed42b4f02069aa78925261":[52,0,12,8,4]
 };

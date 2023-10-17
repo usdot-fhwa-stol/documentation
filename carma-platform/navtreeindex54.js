@@ -1,5 +1,7 @@
 var NAVTREEINDEX54 =
 {
+"structstop__and__dwell__strategic__plugin_1_1VehicleState.html":[53,0,48,2],
+"structstop__and__dwell__strategic__plugin_1_1VehicleState.html":[52,0,89,3],
 "structstop__and__dwell__strategic__plugin_1_1VehicleState.html#a3792f7f97699c355c3ee86815c15eb4a":[52,0,89,3,2],
 "structstop__and__dwell__strategic__plugin_1_1VehicleState.html#a3792f7f97699c355c3ee86815c15eb4a":[53,0,48,2,2],
 "structstop__and__dwell__strategic__plugin_1_1VehicleState.html#a3cef5df48fb0c6ff63cd54e2a411b8e9":[52,0,89,3,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX54 =
 "truck__inspection__client_8cpp.html":[54,0,55,1,1],
 "truck__inspection__client_8cpp_source.html":[54,0,55,1,1],
 "truck__inspection__client_8h.html":[54,0,55,0,0],
-"truck__inspection__client_8h_source.html":[54,0,55,0,0],
-"types_8h.html":[54,0,38,2,0,1],
-"types_8h.html#a0d5f9ba23dbec1366c9021dc149c9925":[54,0,38,2,0,1,13]
+"truck__inspection__client_8h_source.html":[54,0,55,0,0]
 };

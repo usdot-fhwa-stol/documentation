@@ -322,12 +322,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00643">643</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  644</span>    {</div>
-<div class="line"><span class="lineno">  645</span>        <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>.clear();</div>
-<div class="line"><span class="lineno">  646</span>        <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#aaec275e8e8b2d9ab62c83f6e04087f15">entering_lanelets_info</a>.clear();</div>
-<div class="line"><span class="lineno">  647</span>        <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a3247132d260b9048c39f51d33d1cb0bb">departure_lanelets_info</a>.clear();</div>
-<div class="line"><span class="lineno">  648</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00640">640</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  641</span>    {</div>
+<div class="line"><span class="lineno">  642</span>        <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>.clear();</div>
+<div class="line"><span class="lineno">  643</span>        <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#aaec275e8e8b2d9ab62c83f6e04087f15">entering_lanelets_info</a>.clear();</div>
+<div class="line"><span class="lineno">  644</span>        <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a3247132d260b9048c39f51d33d1cb0bb">departure_lanelets_info</a>.clear();</div>
+<div class="line"><span class="lineno">  645</span>    }</div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a1032d6ae6000f6ffd2531b82f848464d"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">intersection_model::intersection_model::int_info</a></div><div class="ttdeci">intersection_info_t int_info</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00322">intersection_model.h:322</a></div></div>
 <div class="ttc" id="astructintersection__model_1_1intersection__info__t_html_a3247132d260b9048c39f51d33d1cb0bb"><div class="ttname"><a href="structintersection__model_1_1intersection__info__t.html#a3247132d260b9048c39f51d33d1cb0bb">intersection_model::intersection_info_t::departure_lanelets_info</a></div><div class="ttdeci">std::set&lt; lanelet_info_t &gt; departure_lanelets_info</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00085">intersection_model.h:85</a></div></div>
 <div class="ttc" id="astructintersection__model_1_1intersection__info__t_html_a98ef36c3c2bcb89fe26f277a0e6f13b5"><div class="ttname"><a href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">intersection_model::intersection_info_t::link_lanelets_info</a></div><div class="ttdeci">std::vector&lt; lanelet_info_t &gt; link_lanelets_info</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00076">intersection_model.h:76</a></div></div>
@@ -372,21 +372,21 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The average distance between line and lanelet </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00552">552</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  553</span>    {</div>
-<div class="line"><span class="lineno">  554</span>        <span class="keyword">auto</span> points_num = basic_points.size();</div>
-<div class="line"><span class="lineno">  555</span>        <span class="keywordtype">double</span> distance_sum = 0;</div>
-<div class="line"><span class="lineno">  556</span>        lanelet::ConstLineString2d centerline = subj_lanelet.centerline2d();</div>
-<div class="line"><span class="lineno">  557</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  bp3D: basic_points)</div>
-<div class="line"><span class="lineno">  558</span>        {</div>
-<div class="line"><span class="lineno">  559</span>            <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  bp2d = lanelet::utils::to2D(bp3D);</div>
-<div class="line"><span class="lineno">  560</span>            <span class="keywordtype">double</span> distance = lanelet::geometry::distance2d(bp2d, centerline);</div>
-<div class="line"><span class="lineno">  561</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Point to lanelet id {0} 2D distance {1}&quot;</span>, subj_lanelet.id(), distance);</div>
-<div class="line"><span class="lineno">  562</span>            distance_sum += distance;</div>
-<div class="line"><span class="lineno">  563</span>        }</div>
-<div class="line"><span class="lineno">  564</span>        <span class="keywordtype">double</span> distance_avg = distance_sum/<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(points_num);</div>
-<div class="line"><span class="lineno">  565</span>        <span class="keywordflow">return</span> distance_avg;</div>
-<div class="line"><span class="lineno">  566</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00549">549</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  550</span>    {</div>
+<div class="line"><span class="lineno">  551</span>        <span class="keyword">auto</span> points_num = basic_points.size();</div>
+<div class="line"><span class="lineno">  552</span>        <span class="keywordtype">double</span> distance_sum = 0;</div>
+<div class="line"><span class="lineno">  553</span>        lanelet::ConstLineString2d centerline = subj_lanelet.centerline2d();</div>
+<div class="line"><span class="lineno">  554</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  bp3D: basic_points)</div>
+<div class="line"><span class="lineno">  555</span>        {</div>
+<div class="line"><span class="lineno">  556</span>            <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  bp2d = lanelet::utils::to2D(bp3D);</div>
+<div class="line"><span class="lineno">  557</span>            <span class="keywordtype">double</span> distance = lanelet::geometry::distance2d(bp2d, centerline);</div>
+<div class="line"><span class="lineno">  558</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Point to lanelet id {0} 2D distance {1}&quot;</span>, subj_lanelet.id(), distance);</div>
+<div class="line"><span class="lineno">  559</span>            distance_sum += distance;</div>
+<div class="line"><span class="lineno">  560</span>        }</div>
+<div class="line"><span class="lineno">  561</span>        <span class="keywordtype">double</span> distance_avg = distance_sum/<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(points_num);</div>
+<div class="line"><span class="lineno">  562</span>        <span class="keywordflow">return</span> distance_avg;</div>
+<div class="line"><span class="lineno">  563</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -426,33 +426,33 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The list of lanelet2 map points </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00526">526</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  527</span>    {</div>
-<div class="line"><span class="lineno">  528</span>        std::vector&lt;lanelet::BasicPoint3d&gt; basic_point_v;</div>
-<div class="line"><span class="lineno">  529</span>        <span class="keywordtype">double</span> lat = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(ref_point.latitude) * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#aaa809df3b5cb2dae4e0e69dcff627104">TENTH_TO_ONE</a> * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#adeca1b8be7badffd9608fdca14f594cb">MICRO_DEGREE_TO_DEGREE</a>;</div>
-<div class="line"><span class="lineno">  530</span>        <span class="keywordtype">double</span> lon = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(ref_point.longitude) * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#aaa809df3b5cb2dae4e0e69dcff627104">TENTH_TO_ONE</a> * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#adeca1b8be7badffd9608fdca14f594cb">MICRO_DEGREE_TO_DEGREE</a>; </div>
-<div class="line"><span class="lineno">  531</span>        <span class="keywordtype">double</span> elev = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(ref_point.elevation) * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#afadc8d9da878c2d32160fd20f27203b0">DM_TO_M</a>; </div>
-<div class="line"><span class="lineno">  532</span>        <span class="comment">//ref_point3d is a the reference point from which subsequent data points are offset</span></div>
-<div class="line"><span class="lineno">  533</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  ref_point3d = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a7967e15bbce9062a48c43f82b6d89124">gps_2_map_point</a>(lat, lon, elev);</div>
-<div class="line"><span class="lineno">  534</span>        <span class="keywordtype">double</span> cur_x = ref_point3d.x();</div>
-<div class="line"><span class="lineno">  535</span>        <span class="keywordtype">double</span> cur_y = ref_point3d.y();</div>
-<div class="line"><span class="lineno">  536</span>        <span class="keywordtype">double</span> cur_z = ref_point3d.z();</div>
-<div class="line"><span class="lineno">  537</span>        <span class="comment">//The lane nodes are offsets from the prior node</span></div>
-<div class="line"><span class="lineno">  538</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  node : lane.nodes)</div>
-<div class="line"><span class="lineno">  539</span>        {</div>
-<div class="line"><span class="lineno">  540</span>            cur_x += <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(node.x) * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a2f30ceb399815b78659653156d9146ab">CM_TO_M</a>;</div>
-<div class="line"><span class="lineno">  541</span>            cur_y += <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(node.y) * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a2f30ceb399815b78659653156d9146ab">CM_TO_M</a>;</div>
-<div class="line"><span class="lineno">  542</span> </div>
-<div class="line"><span class="lineno">  543</span>            lanelet::BasicPoint3d basic_point;</div>
-<div class="line"><span class="lineno">  544</span>            basic_point.x() = cur_x;</div>
-<div class="line"><span class="lineno">  545</span>            basic_point.y() = cur_y;</div>
-<div class="line"><span class="lineno">  546</span>            basic_point.z() = cur_z;</div>
-<div class="line"><span class="lineno">  547</span>            basic_point_v.push_back(basic_point);</div>
-<div class="line"><span class="lineno">  548</span>        }</div>
-<div class="line"><span class="lineno">  549</span>        <span class="keywordflow">return</span> basic_point_v;</div>
-<div class="line"><span class="lineno">  550</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00523">523</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  524</span>    {</div>
+<div class="line"><span class="lineno">  525</span>        std::vector&lt;lanelet::BasicPoint3d&gt; basic_point_v;</div>
+<div class="line"><span class="lineno">  526</span>        <span class="keywordtype">double</span> lat = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(ref_point.latitude) * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#aaa809df3b5cb2dae4e0e69dcff627104">TENTH_TO_ONE</a> * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#adeca1b8be7badffd9608fdca14f594cb">MICRO_DEGREE_TO_DEGREE</a>;</div>
+<div class="line"><span class="lineno">  527</span>        <span class="keywordtype">double</span> lon = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(ref_point.longitude) * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#aaa809df3b5cb2dae4e0e69dcff627104">TENTH_TO_ONE</a> * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#adeca1b8be7badffd9608fdca14f594cb">MICRO_DEGREE_TO_DEGREE</a>; </div>
+<div class="line"><span class="lineno">  528</span>        <span class="keywordtype">double</span> elev = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(ref_point.elevation) * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#afadc8d9da878c2d32160fd20f27203b0">DM_TO_M</a>; </div>
+<div class="line"><span class="lineno">  529</span>        <span class="comment">//ref_point3d is a the reference point from which subsequent data points are offset</span></div>
+<div class="line"><span class="lineno">  530</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  ref_point3d = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a7967e15bbce9062a48c43f82b6d89124">gps_2_map_point</a>(lat, lon, elev);</div>
+<div class="line"><span class="lineno">  531</span>        <span class="keywordtype">double</span> cur_x = ref_point3d.x();</div>
+<div class="line"><span class="lineno">  532</span>        <span class="keywordtype">double</span> cur_y = ref_point3d.y();</div>
+<div class="line"><span class="lineno">  533</span>        <span class="keywordtype">double</span> cur_z = ref_point3d.z();</div>
+<div class="line"><span class="lineno">  534</span>        <span class="comment">//The lane nodes are offsets from the prior node</span></div>
+<div class="line"><span class="lineno">  535</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  node : lane.nodes)</div>
+<div class="line"><span class="lineno">  536</span>        {</div>
+<div class="line"><span class="lineno">  537</span>            cur_x += <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(node.x) * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a2f30ceb399815b78659653156d9146ab">CM_TO_M</a>;</div>
+<div class="line"><span class="lineno">  538</span>            cur_y += <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(node.y) * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a2f30ceb399815b78659653156d9146ab">CM_TO_M</a>;</div>
+<div class="line"><span class="lineno">  539</span> </div>
+<div class="line"><span class="lineno">  540</span>            lanelet::BasicPoint3d basic_point;</div>
+<div class="line"><span class="lineno">  541</span>            basic_point.x() = cur_x;</div>
+<div class="line"><span class="lineno">  542</span>            basic_point.y() = cur_y;</div>
+<div class="line"><span class="lineno">  543</span>            basic_point.z() = cur_z;</div>
+<div class="line"><span class="lineno">  544</span>            basic_point_v.push_back(basic_point);</div>
+<div class="line"><span class="lineno">  545</span>        }</div>
+<div class="line"><span class="lineno">  546</span>        <span class="keywordflow">return</span> basic_point_v;</div>
+<div class="line"><span class="lineno">  547</span>    }</div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a2f30ceb399815b78659653156d9146ab"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a2f30ceb399815b78659653156d9146ab">intersection_model::intersection_model::CM_TO_M</a></div><div class="ttdeci">const double CM_TO_M</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00313">intersection_model.h:313</a></div></div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a7967e15bbce9062a48c43f82b6d89124"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a7967e15bbce9062a48c43f82b6d89124">intersection_model::intersection_model::gps_2_map_point</a></div><div class="ttdeci">lanelet::BasicPoint3d gps_2_map_point(double lat, double lon, double elev) const</div><div class="ttdoc">Transform the GPS location into map point using porjector.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00568">intersection_model.cpp:568</a></div></div>
+<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a7967e15bbce9062a48c43f82b6d89124"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a7967e15bbce9062a48c43f82b6d89124">intersection_model::intersection_model::gps_2_map_point</a></div><div class="ttdeci">lanelet::BasicPoint3d gps_2_map_point(double lat, double lon, double elev) const</div><div class="ttdoc">Transform the GPS location into map point using porjector.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00565">intersection_model.cpp:565</a></div></div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_aaa809df3b5cb2dae4e0e69dcff627104"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#aaa809df3b5cb2dae4e0e69dcff627104">intersection_model::intersection_model::TENTH_TO_ONE</a></div><div class="ttdeci">const double TENTH_TO_ONE</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00316">intersection_model.h:316</a></div></div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_adeca1b8be7badffd9608fdca14f594cb"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#adeca1b8be7badffd9608fdca14f594cb">intersection_model::intersection_model::MICRO_DEGREE_TO_DEGREE</a></div><div class="ttdeci">const double MICRO_DEGREE_TO_DEGREE</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00315">intersection_model.h:315</a></div></div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_afadc8d9da878c2d32160fd20f27203b0"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#afadc8d9da878c2d32160fd20f27203b0">intersection_model::intersection_model::DM_TO_M</a></div><div class="ttdeci">const double DM_TO_M</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00314">intersection_model.h:314</a></div></div>
@@ -497,36 +497,36 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The connection/link lanelet id if found. Otherwise return an invalid lanelet id </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00462">462</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  463</span>    {</div>
-<div class="line"><span class="lineno">  464</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  following_enter_lanelets = this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>-&gt;following(<a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a7ff3964a9bf2d85e2223d066cf405bc7">get_enter_lanelet_by_id</a>(enter_lanelet_id), <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  465</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  prev_depart_lanelets =  this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>-&gt;previous(<a class="code hl_function" href="classintersection__model_1_1intersection__model.html#adf6507902505cd058d3756e1a2f9ef80">get_departure_lanelet_by_id</a>(depart_lanelet_id), <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  466</span>        std::vector&lt;lanelet::Id&gt; fel_ids;</div>
-<div class="line"><span class="lineno">  467</span>        std::vector&lt;lanelet::Id&gt; pdl_ids;</div>
-<div class="line"><span class="lineno">  468</span>        std::vector&lt;lanelet::Id&gt; link_lanelet_id_intersect_v;</div>
-<div class="line"><span class="lineno">  469</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  temp_lanelet: following_enter_lanelets)</div>
-<div class="line"><span class="lineno">  470</span>        {</div>
-<div class="line"><span class="lineno">  471</span>            fel_ids.push_back(temp_lanelet.id());</div>
-<div class="line"><span class="lineno">  472</span>        }</div>
-<div class="line"><span class="lineno">  473</span>        std::sort(fel_ids.begin(), fel_ids.end());</div>
-<div class="line"><span class="lineno">  474</span> </div>
-<div class="line"><span class="lineno">  475</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  temp_lanelet: prev_depart_lanelets)</div>
-<div class="line"><span class="lineno">  476</span>        {</div>
-<div class="line"><span class="lineno">  477</span>            pdl_ids.push_back(temp_lanelet.id());</div>
-<div class="line"><span class="lineno">  478</span>        }</div>
-<div class="line"><span class="lineno">  479</span>        std::sort(pdl_ids.begin(), pdl_ids.end());</div>
-<div class="line"><span class="lineno">  480</span>        std::set_intersection(fel_ids.begin(), fel_ids.end(), pdl_ids.begin(), pdl_ids.end(), std::back_inserter(link_lanelet_id_intersect_v));</div>
-<div class="line"><span class="lineno">  481</span>        <span class="keywordflow">if</span>(!link_lanelet_id_intersect_v.empty())</div>
-<div class="line"><span class="lineno">  482</span>        {</div>
-<div class="line"><span class="lineno">  483</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Found matching link lanelet id = {0} for enter lanelet id = {1} and departure lanelet id = {2}&quot;</span>, link_lanelet_id_intersect_v.front(),enter_lanelet_id, depart_lanelet_id);</div>
-<div class="line"><span class="lineno">  484</span>            <span class="keywordflow">return</span> link_lanelet_id_intersect_v.front();</div>
-<div class="line"><span class="lineno">  485</span>        }  </div>
-<div class="line"><span class="lineno">  486</span>        SPDLOG_DEBUG(<span class="stringliteral">&quot;NO matching link lanelet for enter lanelet id = {1} and departure lanelet id = {2}&quot;</span>, link_lanelet_id_intersect_v.front(),enter_lanelet_id, depart_lanelet_id);</div>
-<div class="line"><span class="lineno">  487</span>        <span class="keywordflow">return</span> lanelet::InvalId;</div>
-<div class="line"><span class="lineno">  488</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00459">459</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  460</span>    {</div>
+<div class="line"><span class="lineno">  461</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  following_enter_lanelets = this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>-&gt;following(<a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a7ff3964a9bf2d85e2223d066cf405bc7">get_enter_lanelet_by_id</a>(enter_lanelet_id), <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  462</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  prev_depart_lanelets =  this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>-&gt;previous(<a class="code hl_function" href="classintersection__model_1_1intersection__model.html#adf6507902505cd058d3756e1a2f9ef80">get_departure_lanelet_by_id</a>(depart_lanelet_id), <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  463</span>        std::vector&lt;lanelet::Id&gt; fel_ids;</div>
+<div class="line"><span class="lineno">  464</span>        std::vector&lt;lanelet::Id&gt; pdl_ids;</div>
+<div class="line"><span class="lineno">  465</span>        std::vector&lt;lanelet::Id&gt; link_lanelet_id_intersect_v;</div>
+<div class="line"><span class="lineno">  466</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  temp_lanelet: following_enter_lanelets)</div>
+<div class="line"><span class="lineno">  467</span>        {</div>
+<div class="line"><span class="lineno">  468</span>            fel_ids.push_back(temp_lanelet.id());</div>
+<div class="line"><span class="lineno">  469</span>        }</div>
+<div class="line"><span class="lineno">  470</span>        std::sort(fel_ids.begin(), fel_ids.end());</div>
+<div class="line"><span class="lineno">  471</span> </div>
+<div class="line"><span class="lineno">  472</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  temp_lanelet: prev_depart_lanelets)</div>
+<div class="line"><span class="lineno">  473</span>        {</div>
+<div class="line"><span class="lineno">  474</span>            pdl_ids.push_back(temp_lanelet.id());</div>
+<div class="line"><span class="lineno">  475</span>        }</div>
+<div class="line"><span class="lineno">  476</span>        std::sort(pdl_ids.begin(), pdl_ids.end());</div>
+<div class="line"><span class="lineno">  477</span>        std::set_intersection(fel_ids.begin(), fel_ids.end(), pdl_ids.begin(), pdl_ids.end(), std::back_inserter(link_lanelet_id_intersect_v));</div>
+<div class="line"><span class="lineno">  478</span>        <span class="keywordflow">if</span>(!link_lanelet_id_intersect_v.empty())</div>
+<div class="line"><span class="lineno">  479</span>        {</div>
+<div class="line"><span class="lineno">  480</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Found matching link lanelet id = {0} for enter lanelet id = {1} and departure lanelet id = {2}&quot;</span>, link_lanelet_id_intersect_v.front(),enter_lanelet_id, depart_lanelet_id);</div>
+<div class="line"><span class="lineno">  481</span>            <span class="keywordflow">return</span> link_lanelet_id_intersect_v.front();</div>
+<div class="line"><span class="lineno">  482</span>        }  </div>
+<div class="line"><span class="lineno">  483</span>        SPDLOG_DEBUG(<span class="stringliteral">&quot;NO matching link lanelet for enter lanelet id = {1} and departure lanelet id = {2}&quot;</span>, link_lanelet_id_intersect_v.front(),enter_lanelet_id, depart_lanelet_id);</div>
+<div class="line"><span class="lineno">  484</span>        <span class="keywordflow">return</span> lanelet::InvalId;</div>
+<div class="line"><span class="lineno">  485</span>    }</div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a1753c5644d021007f9ae2fc29209337d"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">intersection_model::intersection_model::vehicleGraph_ptr</a></div><div class="ttdeci">lanelet::routing::RoutingGraphPtr vehicleGraph_ptr</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00319">intersection_model.h:319</a></div></div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a7ff3964a9bf2d85e2223d066cf405bc7"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a7ff3964a9bf2d85e2223d066cf405bc7">intersection_model::intersection_model::get_enter_lanelet_by_id</a></div><div class="ttdeci">lanelet::ConstLanelet get_enter_lanelet_by_id(lanelet::Id id) const</div><div class="ttdoc">Get the enter lanelet by id object from the list of intersection entering lanelets.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00604">intersection_model.cpp:604</a></div></div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_adf6507902505cd058d3756e1a2f9ef80"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#adf6507902505cd058d3756e1a2f9ef80">intersection_model::intersection_model::get_departure_lanelet_by_id</a></div><div class="ttdeci">lanelet::ConstLanelet get_departure_lanelet_by_id(lanelet::Id id) const</div><div class="ttdoc">Get the deaparture lanelet by id object from the list of intersection deaparture lanelets.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00630">intersection_model.cpp:630</a></div></div>
+<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a7ff3964a9bf2d85e2223d066cf405bc7"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a7ff3964a9bf2d85e2223d066cf405bc7">intersection_model::intersection_model::get_enter_lanelet_by_id</a></div><div class="ttdeci">lanelet::ConstLanelet get_enter_lanelet_by_id(lanelet::Id id) const</div><div class="ttdoc">Get the enter lanelet by id object from the list of intersection entering lanelets.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00601">intersection_model.cpp:601</a></div></div>
+<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_adf6507902505cd058d3756e1a2f9ef80"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#adf6507902505cd058d3756e1a2f9ef80">intersection_model::intersection_model::get_departure_lanelet_by_id</a></div><div class="ttdeci">lanelet::ConstLanelet get_departure_lanelet_by_id(lanelet::Id id) const</div><div class="ttdoc">Get the deaparture lanelet by id object from the list of intersection deaparture lanelets.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00627">intersection_model.cpp:627</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -555,57 +555,57 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector of lanelet information struct </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00274">274</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  275</span>    {       </div>
-<div class="line"><span class="lineno">  276</span>        <span class="comment">//Check the subject link_lanelet conflict by comparing it to all link lanelets at the intersection</span></div>
-<div class="line"><span class="lineno">  277</span>        lanelet::Id subject_link_lanelet_id{sub_link_lanelet_id};</div>
-<div class="line"><span class="lineno">  278</span>        lanelet::Points2d intersectionPts;</div>
-<div class="line"><span class="lineno">  279</span>        std::vector&lt;lanelet_info_t&gt; conflict_lanelets;</div>
-<div class="line"><span class="lineno">  280</span> </div>
-<div class="line"><span class="lineno">  281</span>        <span class="keywordflow">if</span> ( !<a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a5de61330c7ff6b874ceea907bdf0a579">is_valid_link_lanelet_id</a>(sub_link_lanelet_id) )</div>
-<div class="line"><span class="lineno">  282</span>        {</div>
-<div class="line"><span class="lineno">  283</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Not a valid input link lanelet id {0}.&quot;</span>, sub_link_lanelet_id);</div>
-<div class="line"><span class="lineno">  284</span>            <span class="keywordflow">return</span> conflict_lanelets;</div>
-<div class="line"><span class="lineno">  285</span>        }</div>
-<div class="line"><span class="lineno">  286</span> </div>
-<div class="line"><span class="lineno">  287</span>        <span class="comment">//Get the vector of link lanelets at the intersection that share the same entry lanelet. </span></div>
-<div class="line"><span class="lineno">  288</span>        <span class="comment">//The vector of link lanelets can be skipped.</span></div>
-<div class="line"><span class="lineno">  289</span>        std::vector&lt;int&gt; lanelet_ids_to_skip = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#aeebb161d09289ec701f6e8a4aec3b7a6">get_shared_entry_link_lanelet_ids</a>(sub_link_lanelet_id);</div>
-<div class="line"><span class="lineno">  290</span> </div>
-<div class="line"><span class="lineno">  291</span>        <span class="comment">//get lanelets from map</span></div>
-<div class="line"><span class="lineno">  292</span>        lanelet::LaneletLayer &amp;lanelets = this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#acd7fb425262d6b03265696f7627e0278">map</a>-&gt;laneletLayer;</div>
-<div class="line"><span class="lineno">  293</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  294</span>        {</div>
-<div class="line"><span class="lineno">  295</span>            <span class="comment">//comparing centerline between subject link lanelet and all other link lanelets at the intersection</span></div>
-<div class="line"><span class="lineno">  296</span>            lanelet::ConstLineString2d subject_centerline_b = lanelets.get(subject_link_lanelet_id).centerline2d();</div>
-<div class="line"><span class="lineno">  297</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; link_lanelet : this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>)</div>
-<div class="line"><span class="lineno">  298</span>            {</div>
-<div class="line"><span class="lineno">  299</span>                <span class="keywordflow">if</span> (std::find(lanelet_ids_to_skip.begin(), lanelet_ids_to_skip.end(), link_lanelet.id) != lanelet_ids_to_skip.end())</div>
-<div class="line"><span class="lineno">  300</span>                {</div>
-<div class="line"><span class="lineno">  301</span>                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  302</span>                }</div>
-<div class="line"><span class="lineno">  303</span>                lanelet::ConstLineString2d centerline_link_lanelet_b = lanelets.get(link_lanelet.id).centerline2d();</div>
-<div class="line"><span class="lineno">  304</span>                lanelet::ConstHybridLineString2d c_sub(centerline_link_lanelet_b);</div>
-<div class="line"><span class="lineno">  305</span>                lanelet::ConstHybridLineString2d c(subject_centerline_b);</div>
-<div class="line"><span class="lineno">  306</span> </div>
-<div class="line"><span class="lineno">  307</span>                boost::geometry::intersection(c, c_sub, intersectionPts);</div>
-<div class="line"><span class="lineno">  308</span>                <span class="keywordflow">if</span> (intersectionPts.size() &gt; 0)</div>
-<div class="line"><span class="lineno">  309</span>                {</div>
-<div class="line"><span class="lineno">  310</span>                    conflict_lanelets.push_back(link_lanelet);</div>
-<div class="line"><span class="lineno">  311</span>                }</div>
-<div class="line"><span class="lineno">  312</span>                intersectionPts.clear();</div>
-<div class="line"><span class="lineno">  313</span>            }</div>
-<div class="line"><span class="lineno">  314</span>        }</div>
-<div class="line"><span class="lineno">  315</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> lanelet::LaneletError &amp;ex)</div>
-<div class="line"><span class="lineno">  316</span>        {</div>
-<div class="line"><span class="lineno">  317</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Failed to lookup element with id {0} : {1} &quot;</span> , ex.what() ,sub_link_lanelet_id);</div>
-<div class="line"><span class="lineno">  318</span>            conflict_lanelets.clear();</div>
-<div class="line"><span class="lineno">  319</span>        }</div>
-<div class="line"><span class="lineno">  320</span>        <span class="keywordflow">return</span> conflict_lanelets;</div>
-<div class="line"><span class="lineno">  321</span>    }</div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a5de61330c7ff6b874ceea907bdf0a579"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a5de61330c7ff6b874ceea907bdf0a579">intersection_model::intersection_model::is_valid_link_lanelet_id</a></div><div class="ttdeci">bool is_valid_link_lanelet_id(int64_t lanelet_id)</div><div class="ttdoc">Comparing the given lanelet id with all link lanelet ids in the current intersection information to d...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00346">intersection_model.cpp:346</a></div></div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00271">271</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  272</span>    {       </div>
+<div class="line"><span class="lineno">  273</span>        <span class="comment">//Check the subject link_lanelet conflict by comparing it to all link lanelets at the intersection</span></div>
+<div class="line"><span class="lineno">  274</span>        lanelet::Id subject_link_lanelet_id{sub_link_lanelet_id};</div>
+<div class="line"><span class="lineno">  275</span>        lanelet::Points2d intersectionPts;</div>
+<div class="line"><span class="lineno">  276</span>        std::vector&lt;lanelet_info_t&gt; conflict_lanelets;</div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>        <span class="keywordflow">if</span> ( !<a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a5de61330c7ff6b874ceea907bdf0a579">is_valid_link_lanelet_id</a>(sub_link_lanelet_id) )</div>
+<div class="line"><span class="lineno">  279</span>        {</div>
+<div class="line"><span class="lineno">  280</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Not a valid input link lanelet id {0}.&quot;</span>, sub_link_lanelet_id);</div>
+<div class="line"><span class="lineno">  281</span>            <span class="keywordflow">return</span> conflict_lanelets;</div>
+<div class="line"><span class="lineno">  282</span>        }</div>
+<div class="line"><span class="lineno">  283</span> </div>
+<div class="line"><span class="lineno">  284</span>        <span class="comment">//Get the vector of link lanelets at the intersection that share the same entry lanelet. </span></div>
+<div class="line"><span class="lineno">  285</span>        <span class="comment">//The vector of link lanelets can be skipped.</span></div>
+<div class="line"><span class="lineno">  286</span>        std::vector&lt;int&gt; lanelet_ids_to_skip = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#aeebb161d09289ec701f6e8a4aec3b7a6">get_shared_entry_link_lanelet_ids</a>(sub_link_lanelet_id);</div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>        <span class="comment">//get lanelets from map</span></div>
+<div class="line"><span class="lineno">  289</span>        lanelet::LaneletLayer &amp;lanelets = this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#acd7fb425262d6b03265696f7627e0278">map</a>-&gt;laneletLayer;</div>
+<div class="line"><span class="lineno">  290</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  291</span>        {</div>
+<div class="line"><span class="lineno">  292</span>            <span class="comment">//comparing centerline between subject link lanelet and all other link lanelets at the intersection</span></div>
+<div class="line"><span class="lineno">  293</span>            lanelet::ConstLineString2d subject_centerline_b = lanelets.get(subject_link_lanelet_id).centerline2d();</div>
+<div class="line"><span class="lineno">  294</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; link_lanelet : this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>)</div>
+<div class="line"><span class="lineno">  295</span>            {</div>
+<div class="line"><span class="lineno">  296</span>                <span class="keywordflow">if</span> (std::find(lanelet_ids_to_skip.begin(), lanelet_ids_to_skip.end(), link_lanelet.id) != lanelet_ids_to_skip.end())</div>
+<div class="line"><span class="lineno">  297</span>                {</div>
+<div class="line"><span class="lineno">  298</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  299</span>                }</div>
+<div class="line"><span class="lineno">  300</span>                lanelet::ConstLineString2d centerline_link_lanelet_b = lanelets.get(link_lanelet.id).centerline2d();</div>
+<div class="line"><span class="lineno">  301</span>                lanelet::ConstHybridLineString2d c_sub(centerline_link_lanelet_b);</div>
+<div class="line"><span class="lineno">  302</span>                lanelet::ConstHybridLineString2d c(subject_centerline_b);</div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>                boost::geometry::intersection(c, c_sub, intersectionPts);</div>
+<div class="line"><span class="lineno">  305</span>                <span class="keywordflow">if</span> (intersectionPts.size() &gt; 0)</div>
+<div class="line"><span class="lineno">  306</span>                {</div>
+<div class="line"><span class="lineno">  307</span>                    conflict_lanelets.push_back(link_lanelet);</div>
+<div class="line"><span class="lineno">  308</span>                }</div>
+<div class="line"><span class="lineno">  309</span>                intersectionPts.clear();</div>
+<div class="line"><span class="lineno">  310</span>            }</div>
+<div class="line"><span class="lineno">  311</span>        }</div>
+<div class="line"><span class="lineno">  312</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> lanelet::LaneletError &amp;ex)</div>
+<div class="line"><span class="lineno">  313</span>        {</div>
+<div class="line"><span class="lineno">  314</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Failed to lookup element with id {0} : {1} &quot;</span> , ex.what() ,sub_link_lanelet_id);</div>
+<div class="line"><span class="lineno">  315</span>            conflict_lanelets.clear();</div>
+<div class="line"><span class="lineno">  316</span>        }</div>
+<div class="line"><span class="lineno">  317</span>        <span class="keywordflow">return</span> conflict_lanelets;</div>
+<div class="line"><span class="lineno">  318</span>    }</div>
+<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a5de61330c7ff6b874ceea907bdf0a579"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a5de61330c7ff6b874ceea907bdf0a579">intersection_model::intersection_model::is_valid_link_lanelet_id</a></div><div class="ttdeci">bool is_valid_link_lanelet_id(int64_t lanelet_id)</div><div class="ttdoc">Comparing the given lanelet id with all link lanelet ids in the current intersection information to d...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00343">intersection_model.cpp:343</a></div></div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_acd7fb425262d6b03265696f7627e0278"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#acd7fb425262d6b03265696f7627e0278">intersection_model::intersection_model::map</a></div><div class="ttdeci">lanelet::LaneletMapPtr map</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00306">intersection_model.h:306</a></div></div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_aeebb161d09289ec701f6e8a4aec3b7a6"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#aeebb161d09289ec701f6e8a4aec3b7a6">intersection_model::intersection_model::get_shared_entry_link_lanelet_ids</a></div><div class="ttdeci">const std::vector&lt; int &gt; get_shared_entry_link_lanelet_ids(int64_t subject_link_lanelet_id)</div><div class="ttdoc">Get the list of link lanelets that has the same entry lanelet as the subject link lanelet.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00323">intersection_model.cpp:323</a></div></div>
+<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_aeebb161d09289ec701f6e8a4aec3b7a6"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#aeebb161d09289ec701f6e8a4aec3b7a6">intersection_model::intersection_model::get_shared_entry_link_lanelet_ids</a></div><div class="ttdeci">const std::vector&lt; int &gt; get_shared_entry_link_lanelet_ids(int64_t subject_link_lanelet_id)</div><div class="ttdoc">Get the list of link lanelets that has the same entry lanelet as the subject link lanelet.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00320">intersection_model.cpp:320</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -634,18 +634,18 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>lanelet::ConstLanelet. If not matching, the it returns invalid lanelet </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00630">630</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  631</span>    {</div>
-<div class="line"><span class="lineno">  632</span>        lanelet::ConstLanelet result;</div>
-<div class="line"><span class="lineno">  633</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  ll : this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a8fc934b7a4f927d12e5cdd1098774be3">departure_lanelets</a>)</div>
-<div class="line"><span class="lineno">  634</span>        {</div>
-<div class="line"><span class="lineno">  635</span>            <span class="keywordflow">if</span>(ll.id() == <span class="keywordtype">id</span>)</div>
-<div class="line"><span class="lineno">  636</span>            {</div>
-<div class="line"><span class="lineno">  637</span>                <span class="keywordflow">return</span> ll;</div>
-<div class="line"><span class="lineno">  638</span>            }</div>
-<div class="line"><span class="lineno">  639</span>        }</div>
-<div class="line"><span class="lineno">  640</span>        <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  641</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00627">627</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  628</span>    {</div>
+<div class="line"><span class="lineno">  629</span>        lanelet::ConstLanelet result;</div>
+<div class="line"><span class="lineno">  630</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  ll : this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a8fc934b7a4f927d12e5cdd1098774be3">departure_lanelets</a>)</div>
+<div class="line"><span class="lineno">  631</span>        {</div>
+<div class="line"><span class="lineno">  632</span>            <span class="keywordflow">if</span>(ll.id() == <span class="keywordtype">id</span>)</div>
+<div class="line"><span class="lineno">  633</span>            {</div>
+<div class="line"><span class="lineno">  634</span>                <span class="keywordflow">return</span> ll;</div>
+<div class="line"><span class="lineno">  635</span>            }</div>
+<div class="line"><span class="lineno">  636</span>        }</div>
+<div class="line"><span class="lineno">  637</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  638</span>    }</div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a8fc934b7a4f927d12e5cdd1098774be3"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a8fc934b7a4f927d12e5cdd1098774be3">intersection_model::intersection_model::departure_lanelets</a></div><div class="ttdeci">std::vector&lt; lanelet::ConstLanelet &gt; departure_lanelets</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00337">intersection_model.h:337</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -668,10 +668,10 @@ Private Attributes</h2></td></tr>
 <p>Get list of departure lanelet ids. </p>
 <dl class="section return"><dt>Returns</dt><dd>A vector of lanelet information struct </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00367">367</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  368</span>    {</div>
-<div class="line"><span class="lineno">  369</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a3247132d260b9048c39f51d33d1cb0bb">departure_lanelets_info</a>;</div>
-<div class="line"><span class="lineno">  370</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00364">364</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  365</span>    {</div>
+<div class="line"><span class="lineno">  366</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a3247132d260b9048c39f51d33d1cb0bb">departure_lanelets_info</a>;</div>
+<div class="line"><span class="lineno">  367</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -700,18 +700,18 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>lanelet::ConstLanelet . If not matching, the it returns invalid lanelet </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00604">604</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  605</span>    {</div>
-<div class="line"><span class="lineno">  606</span>        lanelet::ConstLanelet result;</div>
-<div class="line"><span class="lineno">  607</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  ll : this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a2fa6f1a15d9c4c27443f978cb8fcf0c8">entering_lanelets</a>)</div>
-<div class="line"><span class="lineno">  608</span>        {</div>
-<div class="line"><span class="lineno">  609</span>            <span class="keywordflow">if</span>(ll.id() == <span class="keywordtype">id</span>)</div>
-<div class="line"><span class="lineno">  610</span>            {</div>
-<div class="line"><span class="lineno">  611</span>                <span class="keywordflow">return</span> ll;</div>
-<div class="line"><span class="lineno">  612</span>            }</div>
-<div class="line"><span class="lineno">  613</span>        }</div>
-<div class="line"><span class="lineno">  614</span>        <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  615</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00601">601</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  602</span>    {</div>
+<div class="line"><span class="lineno">  603</span>        lanelet::ConstLanelet result;</div>
+<div class="line"><span class="lineno">  604</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  ll : this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a2fa6f1a15d9c4c27443f978cb8fcf0c8">entering_lanelets</a>)</div>
+<div class="line"><span class="lineno">  605</span>        {</div>
+<div class="line"><span class="lineno">  606</span>            <span class="keywordflow">if</span>(ll.id() == <span class="keywordtype">id</span>)</div>
+<div class="line"><span class="lineno">  607</span>            {</div>
+<div class="line"><span class="lineno">  608</span>                <span class="keywordflow">return</span> ll;</div>
+<div class="line"><span class="lineno">  609</span>            }</div>
+<div class="line"><span class="lineno">  610</span>        }</div>
+<div class="line"><span class="lineno">  611</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  612</span>    }</div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a2fa6f1a15d9c4c27443f978cb8fcf0c8"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a2fa6f1a15d9c4c27443f978cb8fcf0c8">intersection_model::intersection_model::entering_lanelets</a></div><div class="ttdeci">std::vector&lt; lanelet::ConstLanelet &gt; entering_lanelets</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00330">intersection_model.h:330</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -734,10 +734,10 @@ Private Attributes</h2></td></tr>
 <p>Get list of entry lanelet ids. </p>
 <dl class="section return"><dt>Returns</dt><dd>A vector of lanelet information struct </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00235">235</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  236</span>    {</div>
-<div class="line"><span class="lineno">  237</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#aaec275e8e8b2d9ab62c83f6e04087f15">entering_lanelets_info</a>;</div>
-<div class="line"><span class="lineno">  238</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00232">232</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  233</span>    {</div>
+<div class="line"><span class="lineno">  234</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#aaec275e8e8b2d9ab62c83f6e04087f15">entering_lanelets_info</a>;</div>
+<div class="line"><span class="lineno">  235</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="intersection__model_8h_source.html#l00079">intersection_model::intersection_info_t::entering_lanelets_info</a>.</p>
 
@@ -761,10 +761,10 @@ Private Attributes</h2></td></tr>
 <p>Get intersection metadata. </p>
 <dl class="section return"><dt>Returns</dt><dd>intersection information struct </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00230">230</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  231</span>    {</div>
-<div class="line"><span class="lineno">  232</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>;</div>
-<div class="line"><span class="lineno">  233</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00227">227</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  228</span>    {</div>
+<div class="line"><span class="lineno">  229</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>;</div>
+<div class="line"><span class="lineno">  230</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -872,18 +872,18 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>lanelet::ConstLanelet . If not matching, the it returns invalid lanelet </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00617">617</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  618</span>    {</div>
-<div class="line"><span class="lineno">  619</span>        lanelet::ConstLanelet result;</div>
-<div class="line"><span class="lineno">  620</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  ll : this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a78c1fac3bf4bed4ced3a15ce4e4f0dd3">link_lanelets</a>)</div>
-<div class="line"><span class="lineno">  621</span>        {</div>
-<div class="line"><span class="lineno">  622</span>            <span class="keywordflow">if</span>(ll.id() == <span class="keywordtype">id</span>)</div>
-<div class="line"><span class="lineno">  623</span>            {</div>
-<div class="line"><span class="lineno">  624</span>                <span class="keywordflow">return</span> ll;</div>
-<div class="line"><span class="lineno">  625</span>            }</div>
-<div class="line"><span class="lineno">  626</span>        }</div>
-<div class="line"><span class="lineno">  627</span>        <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  628</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00614">614</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  615</span>    {</div>
+<div class="line"><span class="lineno">  616</span>        lanelet::ConstLanelet result;</div>
+<div class="line"><span class="lineno">  617</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  ll : this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a78c1fac3bf4bed4ced3a15ce4e4f0dd3">link_lanelets</a>)</div>
+<div class="line"><span class="lineno">  618</span>        {</div>
+<div class="line"><span class="lineno">  619</span>            <span class="keywordflow">if</span>(ll.id() == <span class="keywordtype">id</span>)</div>
+<div class="line"><span class="lineno">  620</span>            {</div>
+<div class="line"><span class="lineno">  621</span>                <span class="keywordflow">return</span> ll;</div>
+<div class="line"><span class="lineno">  622</span>            }</div>
+<div class="line"><span class="lineno">  623</span>        }</div>
+<div class="line"><span class="lineno">  624</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  625</span>    }</div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a78c1fac3bf4bed4ced3a15ce4e4f0dd3"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a78c1fac3bf4bed4ced3a15ce4e4f0dd3">intersection_model::intersection_model::link_lanelets</a></div><div class="ttdeci">std::vector&lt; lanelet::ConstLanelet &gt; link_lanelets</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00326">intersection_model.h:326</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -906,10 +906,10 @@ Private Attributes</h2></td></tr>
 <p>Get list of link lanelet ids. </p>
 <dl class="section return"><dt>Returns</dt><dd>A vector of lanelet information struct </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00269">269</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  270</span>    {</div>
-<div class="line"><span class="lineno">  271</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>;</div>
-<div class="line"><span class="lineno">  272</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00266">266</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  267</span>    {</div>
+<div class="line"><span class="lineno">  268</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>;</div>
+<div class="line"><span class="lineno">  269</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -932,28 +932,28 @@ Private Attributes</h2></td></tr>
 <p>Get the list of link lanelets that has the same entry lanelet as the subject link lanelet. </p>
 <dl class="section return"><dt>Returns</dt><dd>A vector of link lanelet ids </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00323">323</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  324</span>    {</div>
-<div class="line"><span class="lineno">  325</span>        std::vector&lt;int&gt; lanelet_ids;</div>
-<div class="line"><span class="lineno">  326</span> </div>
-<div class="line"><span class="lineno">  327</span>        <span class="comment">//If routing graph is not initialized, it will return zero number of lanelet ids.</span></div>
-<div class="line"><span class="lineno">  328</span>        <span class="keywordflow">if</span>( !this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a> )</div>
-<div class="line"><span class="lineno">  329</span>        {</div>
-<div class="line"><span class="lineno">  330</span>            <span class="keywordflow">if</span>( !<a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a2356a55b5dd997c37d63e84581f44559">update_vehicle_routing_graph</a>() )</div>
-<div class="line"><span class="lineno">  331</span>            {</div>
-<div class="line"><span class="lineno">  332</span>                <span class="keywordflow">return</span> lanelet_ids;</div>
-<div class="line"><span class="lineno">  333</span>            };</div>
-<div class="line"><span class="lineno">  334</span>        }</div>
-<div class="line"><span class="lineno">  335</span> </div>
-<div class="line"><span class="lineno">  336</span>        lanelet::ConstLanelet  lanelet_entry = this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>-&gt;previous(this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#acd7fb425262d6b03265696f7627e0278">map</a>-&gt;laneletLayer.get(subject_link_lanelet_id)).front();</div>
-<div class="line"><span class="lineno">  337</span>        lanelet::ConstLanelets shared_entry_link_lanelets = <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>-&gt;following(lanelet_entry);</div>
-<div class="line"><span class="lineno">  338</span>        </div>
-<div class="line"><span class="lineno">  339</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> ele_ptr = shared_entry_link_lanelets.begin(); ele_ptr != shared_entry_link_lanelets.end(); ele_ptr++)</div>
-<div class="line"><span class="lineno">  340</span>        {</div>
-<div class="line"><span class="lineno">  341</span>            lanelet_ids.push_back(ele_ptr-&gt;id());</div>
-<div class="line"><span class="lineno">  342</span>        }</div>
-<div class="line"><span class="lineno">  343</span>        <span class="keywordflow">return</span> lanelet_ids;</div>
-<div class="line"><span class="lineno">  344</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00320">320</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  321</span>    {</div>
+<div class="line"><span class="lineno">  322</span>        std::vector&lt;int&gt; lanelet_ids;</div>
+<div class="line"><span class="lineno">  323</span> </div>
+<div class="line"><span class="lineno">  324</span>        <span class="comment">//If routing graph is not initialized, it will return zero number of lanelet ids.</span></div>
+<div class="line"><span class="lineno">  325</span>        <span class="keywordflow">if</span>( !this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a> )</div>
+<div class="line"><span class="lineno">  326</span>        {</div>
+<div class="line"><span class="lineno">  327</span>            <span class="keywordflow">if</span>( !<a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a2356a55b5dd997c37d63e84581f44559">update_vehicle_routing_graph</a>() )</div>
+<div class="line"><span class="lineno">  328</span>            {</div>
+<div class="line"><span class="lineno">  329</span>                <span class="keywordflow">return</span> lanelet_ids;</div>
+<div class="line"><span class="lineno">  330</span>            };</div>
+<div class="line"><span class="lineno">  331</span>        }</div>
+<div class="line"><span class="lineno">  332</span> </div>
+<div class="line"><span class="lineno">  333</span>        lanelet::ConstLanelet  lanelet_entry = this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>-&gt;previous(this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#acd7fb425262d6b03265696f7627e0278">map</a>-&gt;laneletLayer.get(subject_link_lanelet_id)).front();</div>
+<div class="line"><span class="lineno">  334</span>        lanelet::ConstLanelets shared_entry_link_lanelets = <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>-&gt;following(lanelet_entry);</div>
+<div class="line"><span class="lineno">  335</span>        </div>
+<div class="line"><span class="lineno">  336</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> ele_ptr = shared_entry_link_lanelets.begin(); ele_ptr != shared_entry_link_lanelets.end(); ele_ptr++)</div>
+<div class="line"><span class="lineno">  337</span>        {</div>
+<div class="line"><span class="lineno">  338</span>            lanelet_ids.push_back(ele_ptr-&gt;id());</div>
+<div class="line"><span class="lineno">  339</span>        }</div>
+<div class="line"><span class="lineno">  340</span>        <span class="keywordflow">return</span> lanelet_ids;</div>
+<div class="line"><span class="lineno">  341</span>    }</div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a2356a55b5dd997c37d63e84581f44559"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a2356a55b5dd997c37d63e84581f44559">intersection_model::intersection_model::update_vehicle_routing_graph</a></div><div class="ttdeci">bool update_vehicle_routing_graph()</div><div class="ttdoc">Initialize vehicle routing graph.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00077">intersection_model.cpp:77</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -977,34 +977,34 @@ Private Attributes</h2></td></tr>
 <p>Retrieve the speed_limit of the current lanelet. </p>
 <dl class="section return"><dt>Returns</dt><dd>speed_limit regulatory element that is attached to this lanelet </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00240">240</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  241</span>    {</div>
-<div class="line"><span class="lineno">  242</span>        <span class="keywordtype">double</span> speed_limit_result = 0;</div>
-<div class="line"><span class="lineno">  243</span>        std::regex r(<span class="stringliteral">&quot;[0-9]+&quot;</span>);</div>
-<div class="line"><span class="lineno">  244</span>        lanelet::RegulatoryElementConstPtrs reg_elements = subj_lanelet.regulatoryElements();</div>
-<div class="line"><span class="lineno">  245</span> </div>
-<div class="line"><span class="lineno">  246</span><span class="comment">        /***</span></div>
-<div class="line"><span class="lineno">  247</span><span class="comment">         * Identify the speed limit regulatory element by using an attribute with a key value that equals to &#39;limit&#39;.</span></div>
-<div class="line"><span class="lineno">  248</span><span class="comment">         * The value of this attribute stores the speed limit value in unit of measure MPH</span></div>
-<div class="line"><span class="lineno">  249</span><span class="comment">        **/</span></div>
-<div class="line"><span class="lineno">  250</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = reg_elements.begin(); itr != reg_elements.end(); itr++)</div>
-<div class="line"><span class="lineno">  251</span>        {</div>
-<div class="line"><span class="lineno">  252</span>            lanelet::AttributeMap attr_map = itr-&gt;get()-&gt;attributes();</div>
-<div class="line"><span class="lineno">  253</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> inner_itr = attr_map.begin(); inner_itr != attr_map.end(); inner_itr++)</div>
-<div class="line"><span class="lineno">  254</span>            {</div>
-<div class="line"><span class="lineno">  255</span>                <span class="keywordflow">if</span> (inner_itr-&gt;first == lanelet::DigitalSpeedLimit::Limit)</div>
-<div class="line"><span class="lineno">  256</span>                {</div>
-<div class="line"><span class="lineno">  257</span>                    std::string speed_str = inner_itr-&gt;second.value();</div>
-<div class="line"><span class="lineno">  258</span>                    <span class="keywordflow">if</span> (std::regex_search(speed_str, r))</div>
-<div class="line"><span class="lineno">  259</span>                    {</div>
-<div class="line"><span class="lineno">  260</span>                        speed_limit_result = std::stod(std::regex_replace(speed_str, std::regex(<span class="stringliteral">&quot;\\s&quot;</span>), std::string(<span class="stringliteral">&quot;&quot;</span>)));</div>
-<div class="line"><span class="lineno">  261</span>                        speed_limit_result *= <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a568022e2edf49ac2affc4e8afa071a89">MPH_TO_MS</a>; <span class="comment">//MPH to M/S conversion</span></div>
-<div class="line"><span class="lineno">  262</span>                    };</div>
-<div class="line"><span class="lineno">  263</span>                }</div>
-<div class="line"><span class="lineno">  264</span>            }</div>
-<div class="line"><span class="lineno">  265</span>        }</div>
-<div class="line"><span class="lineno">  266</span>        <span class="keywordflow">return</span> speed_limit_result;</div>
-<div class="line"><span class="lineno">  267</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00237">237</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  238</span>    {</div>
+<div class="line"><span class="lineno">  239</span>        <span class="keywordtype">double</span> speed_limit_result = 0;</div>
+<div class="line"><span class="lineno">  240</span>        std::regex r(<span class="stringliteral">&quot;[0-9]+&quot;</span>);</div>
+<div class="line"><span class="lineno">  241</span>        lanelet::RegulatoryElementConstPtrs reg_elements = subj_lanelet.regulatoryElements();</div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span><span class="comment">        /***</span></div>
+<div class="line"><span class="lineno">  244</span><span class="comment">         * Identify the speed limit regulatory element by using an attribute with a key value that equals to &#39;limit&#39;.</span></div>
+<div class="line"><span class="lineno">  245</span><span class="comment">         * The value of this attribute stores the speed limit value in unit of measure MPH</span></div>
+<div class="line"><span class="lineno">  246</span><span class="comment">        **/</span></div>
+<div class="line"><span class="lineno">  247</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = reg_elements.begin(); itr != reg_elements.end(); itr++)</div>
+<div class="line"><span class="lineno">  248</span>        {</div>
+<div class="line"><span class="lineno">  249</span>            lanelet::AttributeMap attr_map = itr-&gt;get()-&gt;attributes();</div>
+<div class="line"><span class="lineno">  250</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> inner_itr = attr_map.begin(); inner_itr != attr_map.end(); inner_itr++)</div>
+<div class="line"><span class="lineno">  251</span>            {</div>
+<div class="line"><span class="lineno">  252</span>                <span class="keywordflow">if</span> (inner_itr-&gt;first == lanelet::DigitalSpeedLimit::Limit)</div>
+<div class="line"><span class="lineno">  253</span>                {</div>
+<div class="line"><span class="lineno">  254</span>                    std::string speed_str = inner_itr-&gt;second.value();</div>
+<div class="line"><span class="lineno">  255</span>                    <span class="keywordflow">if</span> (std::regex_search(speed_str, r))</div>
+<div class="line"><span class="lineno">  256</span>                    {</div>
+<div class="line"><span class="lineno">  257</span>                        speed_limit_result = std::stod(std::regex_replace(speed_str, std::regex(<span class="stringliteral">&quot;\\s&quot;</span>), std::string(<span class="stringliteral">&quot;&quot;</span>)));</div>
+<div class="line"><span class="lineno">  258</span>                        speed_limit_result *= <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a568022e2edf49ac2affc4e8afa071a89">MPH_TO_MS</a>; <span class="comment">//MPH to M/S conversion</span></div>
+<div class="line"><span class="lineno">  259</span>                    };</div>
+<div class="line"><span class="lineno">  260</span>                }</div>
+<div class="line"><span class="lineno">  261</span>            }</div>
+<div class="line"><span class="lineno">  262</span>        }</div>
+<div class="line"><span class="lineno">  263</span>        <span class="keywordflow">return</span> speed_limit_result;</div>
+<div class="line"><span class="lineno">  264</span>    }</div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a568022e2edf49ac2affc4e8afa071a89"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a568022e2edf49ac2affc4e8afa071a89">intersection_model::intersection_model::MPH_TO_MS</a></div><div class="ttdeci">const double MPH_TO_MS</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00312">intersection_model.h:312</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1024,10 +1024,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00372">372</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  373</span>    {</div>
-<div class="line"><span class="lineno">  374</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>;</div>
-<div class="line"><span class="lineno">  375</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00369">369</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  370</span>    {</div>
+<div class="line"><span class="lineno">  371</span>        <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>;</div>
+<div class="line"><span class="lineno">  372</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1074,23 +1074,23 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>lanelet::BasicPoint3d </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00568">568</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  569</span>    {</div>
-<div class="line"><span class="lineno">  570</span>        lanelet::GPSPoint sub_gps;</div>
-<div class="line"><span class="lineno">  571</span>        sub_gps.ele = elev;</div>
-<div class="line"><span class="lineno">  572</span>        sub_gps.lat = lat;</div>
-<div class="line"><span class="lineno">  573</span>        sub_gps.lon = lon;</div>
-<div class="line"><span class="lineno">  574</span>        lanelet::BasicPoint3d basic_point;</div>
-<div class="line"><span class="lineno">  575</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  576</span>        {</div>
-<div class="line"><span class="lineno">  577</span>            basic_point =  <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a977419605570156a8a750c392b4173b1">projector</a>-&gt;forward(sub_gps); </div>
-<div class="line"><span class="lineno">  578</span>        }</div>
-<div class="line"><span class="lineno">  579</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> lanelet::ForwardProjectionError &amp;ex)</div>
-<div class="line"><span class="lineno">  580</span>        {</div>
-<div class="line"><span class="lineno">  581</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Cannot project the GPS position: Latitude: {0} , Longitude: {1}, Elevation: {2}. Error details: {3}&quot;</span>, lat, lon, elev, ex.what());</div>
-<div class="line"><span class="lineno">  582</span>        }</div>
-<div class="line"><span class="lineno">  583</span>        <span class="keywordflow">return</span> basic_point;    </div>
-<div class="line"><span class="lineno">  584</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00565">565</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  566</span>    {</div>
+<div class="line"><span class="lineno">  567</span>        lanelet::GPSPoint sub_gps;</div>
+<div class="line"><span class="lineno">  568</span>        sub_gps.ele = elev;</div>
+<div class="line"><span class="lineno">  569</span>        sub_gps.lat = lat;</div>
+<div class="line"><span class="lineno">  570</span>        sub_gps.lon = lon;</div>
+<div class="line"><span class="lineno">  571</span>        lanelet::BasicPoint3d basic_point;</div>
+<div class="line"><span class="lineno">  572</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  573</span>        {</div>
+<div class="line"><span class="lineno">  574</span>            basic_point =  <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a977419605570156a8a750c392b4173b1">projector</a>-&gt;forward(sub_gps); </div>
+<div class="line"><span class="lineno">  575</span>        }</div>
+<div class="line"><span class="lineno">  576</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> lanelet::ForwardProjectionError &amp;ex)</div>
+<div class="line"><span class="lineno">  577</span>        {</div>
+<div class="line"><span class="lineno">  578</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Cannot project the GPS position: Latitude: {0} , Longitude: {1}, Elevation: {2}. Error details: {3}&quot;</span>, lat, lon, elev, ex.what());</div>
+<div class="line"><span class="lineno">  579</span>        }</div>
+<div class="line"><span class="lineno">  580</span>        <span class="keywordflow">return</span> basic_point;    </div>
+<div class="line"><span class="lineno">  581</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1155,7 +1155,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   34</span>        SPDLOG_INFO(<span class="stringliteral">&quot;Initialization Done!&quot;</span>);  </div>
 <div class="line"><span class="lineno">   35</span>    }</div>
 <div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a96cf039df5fc9902a44258e73e81f67b"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a96cf039df5fc9902a44258e73e81f67b">intersection_model::intersection_model::read_lanelet2_map</a></div><div class="ttdeci">void read_lanelet2_map(std::string filename)</div><div class="ttdoc">Read lanelet2 map.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00038">intersection_model.cpp:38</a></div></div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_aee444e73411f8593b4ad579849fc87b7"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#aee444e73411f8593b4ad579849fc87b7">intersection_model::intersection_model::update_intersection_info</a></div><div class="ttdeci">bool update_intersection_info()</div><div class="ttdoc">Read the OSM map, project the map, and initialize all the intersection related info including: inters...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00097">intersection_model.cpp:97</a></div></div>
+<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_aee444e73411f8593b4ad579849fc87b7"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#aee444e73411f8593b4ad579849fc87b7">intersection_model::intersection_model::update_intersection_info</a></div><div class="ttdeci">bool update_intersection_info()</div><div class="ttdoc">Read the OSM map, project the map, and initialize all the intersection related info including: inters...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00094">intersection_model.cpp:94</a></div></div>
 <div class="ttc" id="astructintersection__model_1_1intersection__info__t_html_a4acc0084181c1fbdb453f5301998a2ed"><div class="ttname"><a href="structintersection__model_1_1intersection__info__t.html#a4acc0084181c1fbdb453f5301998a2ed">intersection_model::intersection_info_t::intersection_id</a></div><div class="ttdeci">std::int64_t intersection_id</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00073">intersection_model.h:73</a></div></div>
 <div class="ttc" id="astructintersection__model_1_1intersection__info__t_html_abcc95c3378f3a915c718e3804315f42b"><div class="ttname"><a href="structintersection__model_1_1intersection__info__t.html#abcc95c3378f3a915c718e3804315f42b">intersection_model::intersection_info_t::intersection_name</a></div><div class="ttdeci">std::string intersection_name</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00072">intersection_model.h:72</a></div></div>
 </div><!-- fragment -->
@@ -1186,26 +1186,26 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the lanelet id belongs to a link lanelet at the intersection </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00346">346</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  347</span>    {</div>
-<div class="line"><span class="lineno">  348</span>        <span class="keywordtype">bool</span> is_link_lanelet_id = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  349</span> </div>
-<div class="line"><span class="lineno">  350</span>        <span class="keywordflow">if</span>(this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>.empty())</div>
-<div class="line"><span class="lineno">  351</span>        {</div>
-<div class="line"><span class="lineno">  352</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Intersection information contains zero number of link lanelets.&quot;</span>);</div>
-<div class="line"><span class="lineno">  353</span>            <span class="keywordflow">return</span> is_link_lanelet_id;</div>
-<div class="line"><span class="lineno">  354</span>        }</div>
-<div class="line"><span class="lineno">  355</span> </div>
-<div class="line"><span class="lineno">  356</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; link_lanelet_info : this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>)</div>
-<div class="line"><span class="lineno">  357</span>        {</div>
-<div class="line"><span class="lineno">  358</span>            <span class="keywordflow">if</span> (lanelet_id == link_lanelet_info.id)</div>
-<div class="line"><span class="lineno">  359</span>            {</div>
-<div class="line"><span class="lineno">  360</span>                is_link_lanelet_id = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  361</span>            }</div>
-<div class="line"><span class="lineno">  362</span>        }</div>
-<div class="line"><span class="lineno">  363</span> </div>
-<div class="line"><span class="lineno">  364</span>        <span class="keywordflow">return</span> is_link_lanelet_id;</div>
-<div class="line"><span class="lineno">  365</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00343">343</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  344</span>    {</div>
+<div class="line"><span class="lineno">  345</span>        <span class="keywordtype">bool</span> is_link_lanelet_id = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  346</span> </div>
+<div class="line"><span class="lineno">  347</span>        <span class="keywordflow">if</span>(this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>.empty())</div>
+<div class="line"><span class="lineno">  348</span>        {</div>
+<div class="line"><span class="lineno">  349</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Intersection information contains zero number of link lanelets.&quot;</span>);</div>
+<div class="line"><span class="lineno">  350</span>            <span class="keywordflow">return</span> is_link_lanelet_id;</div>
+<div class="line"><span class="lineno">  351</span>        }</div>
+<div class="line"><span class="lineno">  352</span> </div>
+<div class="line"><span class="lineno">  353</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; link_lanelet_info : this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>)</div>
+<div class="line"><span class="lineno">  354</span>        {</div>
+<div class="line"><span class="lineno">  355</span>            <span class="keywordflow">if</span> (lanelet_id == link_lanelet_info.id)</div>
+<div class="line"><span class="lineno">  356</span>            {</div>
+<div class="line"><span class="lineno">  357</span>                is_link_lanelet_id = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  358</span>            }</div>
+<div class="line"><span class="lineno">  359</span>        }</div>
+<div class="line"><span class="lineno">  360</span> </div>
+<div class="line"><span class="lineno">  361</span>        <span class="keywordflow">return</span> is_link_lanelet_id;</div>
+<div class="line"><span class="lineno">  362</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1252,23 +1252,23 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>GPS location </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00586">586</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  587</span>    {</div>
-<div class="line"><span class="lineno">  588</span>        lanelet::BasicPoint3d sub_map_point;</div>
-<div class="line"><span class="lineno">  589</span>        sub_map_point.x() = x;</div>
-<div class="line"><span class="lineno">  590</span>        sub_map_point.y() = y;</div>
-<div class="line"><span class="lineno">  591</span>        sub_map_point.z() = z;</div>
-<div class="line"><span class="lineno">  592</span>        lanelet::GPSPoint gps_point;</div>
-<div class="line"><span class="lineno">  593</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  594</span>        {</div>
-<div class="line"><span class="lineno">  595</span>            gps_point =  <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a977419605570156a8a750c392b4173b1">projector</a>-&gt;reverse(sub_map_point); </div>
-<div class="line"><span class="lineno">  596</span>        }</div>
-<div class="line"><span class="lineno">  597</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> lanelet::ReverseProjectionError &amp;ex)</div>
-<div class="line"><span class="lineno">  598</span>        {</div>
-<div class="line"><span class="lineno">  599</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Cannot project (x, y,z) point to geolocation: ({0} ,{1}, {2}). Error {3}&quot;</span>, x, y, z, ex.what());</div>
-<div class="line"><span class="lineno">  600</span>        }</div>
-<div class="line"><span class="lineno">  601</span>        <span class="keywordflow">return</span> gps_point;  </div>
-<div class="line"><span class="lineno">  602</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00583">583</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  584</span>    {</div>
+<div class="line"><span class="lineno">  585</span>        lanelet::BasicPoint3d sub_map_point;</div>
+<div class="line"><span class="lineno">  586</span>        sub_map_point.x() = x;</div>
+<div class="line"><span class="lineno">  587</span>        sub_map_point.y() = y;</div>
+<div class="line"><span class="lineno">  588</span>        sub_map_point.z() = z;</div>
+<div class="line"><span class="lineno">  589</span>        lanelet::GPSPoint gps_point;</div>
+<div class="line"><span class="lineno">  590</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  591</span>        {</div>
+<div class="line"><span class="lineno">  592</span>            gps_point =  <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a977419605570156a8a750c392b4173b1">projector</a>-&gt;reverse(sub_map_point); </div>
+<div class="line"><span class="lineno">  593</span>        }</div>
+<div class="line"><span class="lineno">  594</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> lanelet::ReverseProjectionError &amp;ex)</div>
+<div class="line"><span class="lineno">  595</span>        {</div>
+<div class="line"><span class="lineno">  596</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Cannot project (x, y,z) point to geolocation: ({0} ,{1}, {2}). Error {3}&quot;</span>, x, y, z, ex.what());</div>
+<div class="line"><span class="lineno">  597</span>        }</div>
+<div class="line"><span class="lineno">  598</span>        <span class="keywordflow">return</span> gps_point;  </div>
+<div class="line"><span class="lineno">  599</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1335,37 +1335,37 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00490">490</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  497</span>    {    </div>
-<div class="line"><span class="lineno">  498</span>        std::vector&lt;lanelet::BasicPoint3d&gt; basic_points = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a9dcde064181b3547cf611adf4af8a9da">convert_lane_path_2_basic_points</a>(ref_point, lane);</div>
-<div class="line"><span class="lineno">  499</span>        std::unordered_map&lt;lanelet::Id, double&gt; lanelet2lane_path_distance_m;</div>
-<div class="line"><span class="lineno">  500</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  subj_l: subj_lanelets)</div>
-<div class="line"><span class="lineno">  501</span>        {</div>
-<div class="line"><span class="lineno">  502</span>            <span class="keywordtype">double</span> avg_distance = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#ab9dcb476a9265db49cfdc49fc7c51590">compute_points_2_lanelet_avg_distance</a>(basic_points, subj_l);</div>
-<div class="line"><span class="lineno">  503</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Lanelet id {0} to lane id = {1} path points average distance {2}&quot;</span>, subj_l.id(), lane.lane_id, avg_distance);</div>
-<div class="line"><span class="lineno">  504</span>            lanelet2lane_path_distance_m.insert({subj_l.id(), avg_distance});   </div>
-<div class="line"><span class="lineno">  505</span>        }</div>
-<div class="line"><span class="lineno">  506</span>        <span class="comment">//Find the nearest lanelet from the lane path by shortest average distance</span></div>
-<div class="line"><span class="lineno">  507</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  min_distance_pair = std::min_element(lanelet2lane_path_distance_m.begin(), lanelet2lane_path_distance_m.end(), [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; l, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; r){return l.second &lt; r.second; });</div>
-<div class="line"><span class="lineno">  508</span>        </div>
-<div class="line"><span class="lineno">  509</span>        <span class="keywordtype">double</span> max_lane_width = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(lane_width) * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a2f30ceb399815b78659653156d9146ab">CM_TO_M</a>;</div>
-<div class="line"><span class="lineno">  510</span>        <span class="comment">//Check whether the average distance between points and lanelet is larger than the lane with (defined from MAP message) itself. </span></div>
-<div class="line"><span class="lineno">  511</span>        <span class="keywordflow">if</span>(min_distance_pair-&gt;second &lt; max_lane_width + lane_to_lanelet_corr_thres )</div>
-<div class="line"><span class="lineno">  512</span>        {   </div>
-<div class="line"><span class="lineno">  513</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; subj_l: subj_lanelets)</div>
-<div class="line"><span class="lineno">  514</span>            {</div>
-<div class="line"><span class="lineno">  515</span>                <span class="keywordflow">if</span>(subj_l.id() == min_distance_pair-&gt;first)</div>
-<div class="line"><span class="lineno">  516</span>                {</div>
-<div class="line"><span class="lineno">  517</span>                    lane2lanelet_m.insert({lane.lane_id, subj_l});     </div>
-<div class="line"><span class="lineno">  518</span>                    SPDLOG_DEBUG(<span class="stringliteral">&quot;min_distance_pair lanelet id = {0}, distance = {1}&quot;</span>, min_distance_pair-&gt;first, min_distance_pair-&gt;second);   </div>
-<div class="line"><span class="lineno">  519</span>                }</div>
-<div class="line"><span class="lineno">  520</span>            }</div>
-<div class="line"><span class="lineno">  521</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  522</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;Mapping failure: min_distance_pair distance = {0} is greater than lane width = {1} defined in the MAP message.&quot;</span>, min_distance_pair-&gt;second, max_lane_width);   </div>
-<div class="line"><span class="lineno">  523</span>        }        </div>
-<div class="line"><span class="lineno">  524</span>    }</div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a9dcde064181b3547cf611adf4af8a9da"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a9dcde064181b3547cf611adf4af8a9da">intersection_model::intersection_model::convert_lane_path_2_basic_points</a></div><div class="ttdeci">std::vector&lt; lanelet::BasicPoint3d &gt; convert_lane_path_2_basic_points(const map_referencepoint &amp;ref_point, const map_lane &amp;lane) const</div><div class="ttdoc">Convert the centerline geometry of lane defined in J2735 MAP to a list of lanelet2 points in the OSM ...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00526">intersection_model.cpp:526</a></div></div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_ab9dcb476a9265db49cfdc49fc7c51590"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#ab9dcb476a9265db49cfdc49fc7c51590">intersection_model::intersection_model::compute_points_2_lanelet_avg_distance</a></div><div class="ttdeci">double compute_points_2_lanelet_avg_distance(const std::vector&lt; lanelet::BasicPoint3d &gt; &amp;basic_points, lanelet::ConstLanelet subj_lanelet) const</div><div class="ttdoc">Compute the average distance between a linestring and lanelet.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00552">intersection_model.cpp:552</a></div></div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00487">487</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  494</span>    {    </div>
+<div class="line"><span class="lineno">  495</span>        std::vector&lt;lanelet::BasicPoint3d&gt; basic_points = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a9dcde064181b3547cf611adf4af8a9da">convert_lane_path_2_basic_points</a>(ref_point, lane);</div>
+<div class="line"><span class="lineno">  496</span>        std::unordered_map&lt;lanelet::Id, double&gt; lanelet2lane_path_distance_m;</div>
+<div class="line"><span class="lineno">  497</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp;  subj_l: subj_lanelets)</div>
+<div class="line"><span class="lineno">  498</span>        {</div>
+<div class="line"><span class="lineno">  499</span>            <span class="keywordtype">double</span> avg_distance = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#ab9dcb476a9265db49cfdc49fc7c51590">compute_points_2_lanelet_avg_distance</a>(basic_points, subj_l);</div>
+<div class="line"><span class="lineno">  500</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Lanelet id {0} to lane id = {1} path points average distance {2}&quot;</span>, subj_l.id(), lane.lane_id, avg_distance);</div>
+<div class="line"><span class="lineno">  501</span>            lanelet2lane_path_distance_m.insert({subj_l.id(), avg_distance});   </div>
+<div class="line"><span class="lineno">  502</span>        }</div>
+<div class="line"><span class="lineno">  503</span>        <span class="comment">//Find the nearest lanelet from the lane path by shortest average distance</span></div>
+<div class="line"><span class="lineno">  504</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  min_distance_pair = std::min_element(lanelet2lane_path_distance_m.begin(), lanelet2lane_path_distance_m.end(), [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; l, <span class="keyword">const</span> <span class="keyword">auto</span>&amp; r){return l.second &lt; r.second; });</div>
+<div class="line"><span class="lineno">  505</span>        </div>
+<div class="line"><span class="lineno">  506</span>        <span class="keywordtype">double</span> max_lane_width = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(lane_width) * <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a2f30ceb399815b78659653156d9146ab">CM_TO_M</a>;</div>
+<div class="line"><span class="lineno">  507</span>        <span class="comment">//Check whether the average distance between points and lanelet is larger than the lane with (defined from MAP message) itself. </span></div>
+<div class="line"><span class="lineno">  508</span>        <span class="keywordflow">if</span>(min_distance_pair-&gt;second &lt; max_lane_width + lane_to_lanelet_corr_thres )</div>
+<div class="line"><span class="lineno">  509</span>        {   </div>
+<div class="line"><span class="lineno">  510</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; subj_l: subj_lanelets)</div>
+<div class="line"><span class="lineno">  511</span>            {</div>
+<div class="line"><span class="lineno">  512</span>                <span class="keywordflow">if</span>(subj_l.id() == min_distance_pair-&gt;first)</div>
+<div class="line"><span class="lineno">  513</span>                {</div>
+<div class="line"><span class="lineno">  514</span>                    lane2lanelet_m.insert({lane.lane_id, subj_l});     </div>
+<div class="line"><span class="lineno">  515</span>                    SPDLOG_DEBUG(<span class="stringliteral">&quot;min_distance_pair lanelet id = {0}, distance = {1}&quot;</span>, min_distance_pair-&gt;first, min_distance_pair-&gt;second);   </div>
+<div class="line"><span class="lineno">  516</span>                }</div>
+<div class="line"><span class="lineno">  517</span>            }</div>
+<div class="line"><span class="lineno">  518</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  519</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;Mapping failure: min_distance_pair distance = {0} is greater than lane width = {1} defined in the MAP message.&quot;</span>, min_distance_pair-&gt;second, max_lane_width);   </div>
+<div class="line"><span class="lineno">  520</span>        }        </div>
+<div class="line"><span class="lineno">  521</span>    }</div>
+<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a9dcde064181b3547cf611adf4af8a9da"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a9dcde064181b3547cf611adf4af8a9da">intersection_model::intersection_model::convert_lane_path_2_basic_points</a></div><div class="ttdeci">std::vector&lt; lanelet::BasicPoint3d &gt; convert_lane_path_2_basic_points(const map_referencepoint &amp;ref_point, const map_lane &amp;lane) const</div><div class="ttdoc">Convert the centerline geometry of lane defined in J2735 MAP to a list of lanelet2 points in the OSM ...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00523">intersection_model.cpp:523</a></div></div>
+<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_ab9dcb476a9265db49cfdc49fc7c51590"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#ab9dcb476a9265db49cfdc49fc7c51590">intersection_model::intersection_model::compute_points_2_lanelet_avg_distance</a></div><div class="ttdeci">double compute_points_2_lanelet_avg_distance(const std::vector&lt; lanelet::BasicPoint3d &gt; &amp;basic_points, lanelet::ConstLanelet subj_lanelet) const</div><div class="ttdoc">Compute the average distance between a linestring and lanelet.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00549">intersection_model.cpp:549</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="map_8h_source.html#l00070">intersection_model::map_lane::lane_id</a>.</p>
 
@@ -1471,91 +1471,91 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00377">377</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  378</span>    {</div>
-<div class="line"><span class="lineno">  379</span>        <span class="keywordtype">bool</span> is_updated = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  380</span>        SPDLOG_INFO(<span class="stringliteral">&quot;Intersection id {0} has {1} number of geometries.&quot;</span>, int_map_msg-&gt;intersectionid, int_map_msg-&gt;geometries.size());</div>
-<div class="line"><span class="lineno">  381</span>        <span class="keywordflow">if</span>(int_map_msg-&gt;geometries.empty())</div>
-<div class="line"><span class="lineno">  382</span>        {</div>
-<div class="line"><span class="lineno">  383</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  384</span>        }  </div>
-<div class="line"><span class="lineno">  385</span>        <span class="comment">// Assuming the map msg only has one geometry object</span></div>
-<div class="line"><span class="lineno">  386</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; map_msg_geometry = int_map_msg-&gt;geometries.front();</div>
-<div class="line"><span class="lineno">  387</span>        std::unordered_map&lt;long, lanelet::ConstLanelet&gt; entry_lane2lanelet_m;</div>
-<div class="line"><span class="lineno">  388</span>        std::unordered_map&lt;long, std::vector&lt;map_connection&gt;&gt; entry_lane2connections_m;</div>
-<div class="line"><span class="lineno">  389</span>        std::unordered_map&lt;long, map_lane&gt; link_departure_lanes_m; </div>
-<div class="line"><span class="lineno">  390</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; map_msg_lane: map_msg_geometry.approach.lanes)</div>
-<div class="line"><span class="lineno">  391</span>        {    </div>
-<div class="line"><span class="lineno">  392</span>            <span class="comment">// Lane geometry has to have at least 2 points to form a path/line</span></div>
-<div class="line"><span class="lineno">  393</span>            <span class="keywordflow">if</span>(map_msg_lane.nodes.size() &lt; 2)</div>
-<div class="line"><span class="lineno">  394</span>            {</div>
-<div class="line"><span class="lineno">  395</span>                SPDLOG_CRITICAL(<span class="stringliteral">&quot;Skip processing MAP message lane as lane id: {0} has less than 2 nodes. Connection size = {1}. Node size = {2}.&quot;</span>, map_msg_lane.lane_id, map_msg_lane.connection.size(), map_msg_lane.nodes.size());</div>
-<div class="line"><span class="lineno">  396</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  397</span>            }</div>
-<div class="line"><span class="lineno">  398</span>            <span class="comment">//Entry lane includes connection in MAP message. </span></div>
-<div class="line"><span class="lineno">  399</span>            <span class="keywordflow">if</span>(!map_msg_lane.connection.empty() )</div>
-<div class="line"><span class="lineno">  400</span>            {</div>
-<div class="line"><span class="lineno">  401</span>                <span class="comment">//Mapping MAP message lane id to lanelet id from OSM map</span></div>
-<div class="line"><span class="lineno">  402</span>                <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#aa5492d40b9b896d90c0dc652972bf937">mapping_lane_id_2_lanelet_id</a>(map_msg_geometry.refpoint, map_msg_lane, map_msg_geometry.approach.width, this-&gt;entering_lanelets, entry_lane2lanelet_m, lane_to_lanelet_corr_thres);</div>
-<div class="line"><span class="lineno">  403</span>                entry_lane2connections_m.insert({map_msg_lane.lane_id,  map_msg_lane.connection});</div>
-<div class="line"><span class="lineno">  404</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  405</span>            }</div>
-<div class="line"><span class="lineno">  406</span>            link_departure_lanes_m.insert({map_msg_lane.lane_id, map_msg_lane});</div>
-<div class="line"><span class="lineno">  407</span>        }     </div>
-<div class="line"><span class="lineno">  408</span>        </div>
-<div class="line"><span class="lineno">  409</span>        <span class="comment">//Matching enter lanelet, departure lanelet to signal group id</span></div>
-<div class="line"><span class="lineno">  410</span>        std::vector&lt;signalized_intersection_lanelets&gt; enter_departure_lanelets2SG_id_v;    </div>
-<div class="line"><span class="lineno">  411</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; lane: entry_lane2connections_m)</div>
-<div class="line"><span class="lineno">  412</span>        {</div>
-<div class="line"><span class="lineno">  413</span>            <span class="keywordtype">long</span> lane_id = lane.first;</div>
-<div class="line"><span class="lineno">  414</span>            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; entry_lanelet = entry_lane2lanelet_m[lane_id];</div>
-<div class="line"><span class="lineno">  415</span>            <span class="comment">//Retrieve all connections for the entry lane</span></div>
-<div class="line"><span class="lineno">  416</span>            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; connections = entry_lane2connections_m[lane.first];</div>
-<div class="line"><span class="lineno">  417</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; conn : connections)</div>
-<div class="line"><span class="lineno">  418</span>            {</div>
-<div class="line"><span class="lineno">  419</span>                <span class="comment">//Find each departure lane for the entry lanelet using connections, and mapping the departure lane id to the above departure lanelet id</span></div>
-<div class="line"><span class="lineno">  420</span>                <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  depart_lane = link_departure_lanes_m[conn.lane_id];</div>
-<div class="line"><span class="lineno">  421</span>                std::unordered_map&lt;long, lanelet::ConstLanelet&gt; depart_lane2lanelet_m;                </div>
-<div class="line"><span class="lineno">  422</span>                <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#aa5492d40b9b896d90c0dc652972bf937">mapping_lane_id_2_lanelet_id</a>(map_msg_geometry.refpoint, depart_lane, map_msg_geometry.approach.width, this-&gt;departure_lanelets ,depart_lane2lanelet_m, lane_to_lanelet_corr_thres); </div>
-<div class="line"><span class="lineno">  423</span>                <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  depart_lanelet = depart_lane2lanelet_m[depart_lane.lane_id];</div>
-<div class="line"><span class="lineno">  424</span>                int32_t signal_group_id = conn.signalGroup;</div>
-<div class="line"><span class="lineno">  425</span> </div>
-<div class="line"><span class="lineno">  426</span>                signalized_intersection_lanelets temp_sil; </div>
-<div class="line"><span class="lineno">  427</span>                temp_sil.enter_lanelet_id = entry_lanelet.id();</div>
-<div class="line"><span class="lineno">  428</span>                temp_sil.depart_lanelet_id = depart_lanelet.id();</div>
-<div class="line"><span class="lineno">  429</span>                temp_sil.signal_group_id = signal_group_id;</div>
-<div class="line"><span class="lineno">  430</span>                enter_departure_lanelets2SG_id_v.push_back(temp_sil);</div>
-<div class="line"><span class="lineno">  431</span>                SPDLOG_DEBUG(<span class="stringliteral">&quot;Enter_lanelet_id = {0}, depart_lanelet_id = {1}, signal group_id = {2}.&quot;</span>, temp_sil.enter_lanelet_id, temp_sil.depart_lanelet_id, temp_sil.signal_group_id);</div>
-<div class="line"><span class="lineno">  432</span>            }</div>
-<div class="line"><span class="lineno">  433</span>        }</div>
-<div class="line"><span class="lineno">  434</span> </div>
-<div class="line"><span class="lineno">  435</span>        <span class="comment">//Matching intersection link lanelet_id with signal group id</span></div>
-<div class="line"><span class="lineno">  436</span>        std::unordered_map&lt;lanelet::Id, int32_t&gt; link_lanelet2signal_group_id_m;</div>
-<div class="line"><span class="lineno">  437</span>        std::for_each(enter_departure_lanelets2SG_id_v.begin(), enter_departure_lanelets2SG_id_v.end(),[&amp;](<span class="keyword">auto</span>&amp; ref)</div>
-<div class="line"><span class="lineno">  438</span>        {</div>
-<div class="line"><span class="lineno">  439</span>            const auto&amp;  link_lanelet_id = find_link_lanelet_id_by_enter_depart_lanelet_ids(ref.enter_lanelet_id, ref.depart_lanelet_id);    </div>
-<div class="line"><span class="lineno">  440</span>            if(link_lanelet_id != lanelet::InvalId)</div>
-<div class="line"><span class="lineno">  441</span>            {</div>
-<div class="line"><span class="lineno">  442</span>                ref.link_lanelet_id = link_lanelet_id;</div>
-<div class="line"><span class="lineno">  443</span>                link_lanelet2signal_group_id_m.insert({link_lanelet_id, ref.signal_group_id});</div>
-<div class="line"><span class="lineno">  444</span>            }</div>
-<div class="line"><span class="lineno">  445</span>        });     </div>
-<div class="line"><span class="lineno">  446</span> </div>
-<div class="line"><span class="lineno">  447</span>        <span class="comment">//Update intersection link lanelet info with signal group id</span></div>
-<div class="line"><span class="lineno">  448</span>        <span class="keywordtype">bool</span> is_signal_group_updated = <span class="keyword">false</span>;   </div>
-<div class="line"><span class="lineno">  449</span>        std::for_each(this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>.begin(), this-&gt;int_info.link_lanelets_info.end(), [&amp;](<span class="keyword">auto</span>&amp; ref){</div>
-<div class="line"><span class="lineno">  450</span>            auto find_itr = link_lanelet2signal_group_id_m.find(ref.id);</div>
-<div class="line"><span class="lineno">  451</span>            if(find_itr != link_lanelet2signal_group_id_m.end())</div>
-<div class="line"><span class="lineno">  452</span>            {</div>
-<div class="line"><span class="lineno">  453</span>                ref.signal_group_id = link_lanelet2signal_group_id_m[ref.id];</div>
-<div class="line"><span class="lineno">  454</span>                is_signal_group_updated = true; </div>
-<div class="line"><span class="lineno">  455</span>            }</div>
-<div class="line"><span class="lineno">  456</span>        }); </div>
-<div class="line"><span class="lineno">  457</span>        is_signal_group_updated ? SPDLOG_INFO(<span class="stringliteral">&quot;Intersection info is updated with signal group ids.&quot;</span>) : SPDLOG_INFO(<span class="stringliteral">&quot;Intersection_map message is processed, but intersection information  signal group ids are not updated.&quot;</span>);</div>
-<div class="line"><span class="lineno">  458</span>        is_updated = is_updated || is_signal_group_updated; </div>
-<div class="line"><span class="lineno">  459</span>        <span class="keywordflow">return</span> is_updated;</div>
-<div class="line"><span class="lineno">  460</span>    }</div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_aa5492d40b9b896d90c0dc652972bf937"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#aa5492d40b9b896d90c0dc652972bf937">intersection_model::intersection_model::mapping_lane_id_2_lanelet_id</a></div><div class="ttdeci">void mapping_lane_id_2_lanelet_id(const map_referencepoint &amp;ref_point, const map_lane &amp;lane, const long lane_width, const std::vector&lt; lanelet::ConstLanelet &gt; &amp;subj_lanelets, std::unordered_map&lt; long, lanelet::ConstLanelet &gt; &amp;lane2lanelet_m, const double lane_to_lanelet_corr_thres) const</div><div class="ttdoc">Comparing the geometry between lane in the MAP message and geometry of the list of lanelets to determ...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00490">intersection_model.cpp:490</a></div></div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00374">374</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  375</span>    {</div>
+<div class="line"><span class="lineno">  376</span>        <span class="keywordtype">bool</span> is_updated = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  377</span>        SPDLOG_INFO(<span class="stringliteral">&quot;Intersection id {0} has {1} number of geometries.&quot;</span>, int_map_msg-&gt;intersectionid, int_map_msg-&gt;geometries.size());</div>
+<div class="line"><span class="lineno">  378</span>        <span class="keywordflow">if</span>(int_map_msg-&gt;geometries.empty())</div>
+<div class="line"><span class="lineno">  379</span>        {</div>
+<div class="line"><span class="lineno">  380</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  381</span>        }  </div>
+<div class="line"><span class="lineno">  382</span>        <span class="comment">// Assuming the map msg only has one geometry object</span></div>
+<div class="line"><span class="lineno">  383</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; map_msg_geometry = int_map_msg-&gt;geometries.front();</div>
+<div class="line"><span class="lineno">  384</span>        std::unordered_map&lt;long, lanelet::ConstLanelet&gt; entry_lane2lanelet_m;</div>
+<div class="line"><span class="lineno">  385</span>        std::unordered_map&lt;long, std::vector&lt;map_connection&gt;&gt; entry_lane2connections_m;</div>
+<div class="line"><span class="lineno">  386</span>        std::unordered_map&lt;long, map_lane&gt; link_departure_lanes_m; </div>
+<div class="line"><span class="lineno">  387</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; map_msg_lane: map_msg_geometry.approach.lanes)</div>
+<div class="line"><span class="lineno">  388</span>        {    </div>
+<div class="line"><span class="lineno">  389</span>            <span class="comment">// Lane geometry has to have at least 2 points to form a path/line</span></div>
+<div class="line"><span class="lineno">  390</span>            <span class="keywordflow">if</span>(map_msg_lane.nodes.size() &lt; 2)</div>
+<div class="line"><span class="lineno">  391</span>            {</div>
+<div class="line"><span class="lineno">  392</span>                SPDLOG_CRITICAL(<span class="stringliteral">&quot;Skip processing MAP message lane as lane id: {0} has less than 2 nodes. Connection size = {1}. Node size = {2}.&quot;</span>, map_msg_lane.lane_id, map_msg_lane.connection.size(), map_msg_lane.nodes.size());</div>
+<div class="line"><span class="lineno">  393</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  394</span>            }</div>
+<div class="line"><span class="lineno">  395</span>            <span class="comment">//Entry lane includes connection in MAP message. </span></div>
+<div class="line"><span class="lineno">  396</span>            <span class="keywordflow">if</span>(!map_msg_lane.connection.empty() )</div>
+<div class="line"><span class="lineno">  397</span>            {</div>
+<div class="line"><span class="lineno">  398</span>                <span class="comment">//Mapping MAP message lane id to lanelet id from OSM map</span></div>
+<div class="line"><span class="lineno">  399</span>                <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#aa5492d40b9b896d90c0dc652972bf937">mapping_lane_id_2_lanelet_id</a>(map_msg_geometry.refpoint, map_msg_lane, map_msg_geometry.approach.width, this-&gt;entering_lanelets, entry_lane2lanelet_m, lane_to_lanelet_corr_thres);</div>
+<div class="line"><span class="lineno">  400</span>                entry_lane2connections_m.insert({map_msg_lane.lane_id,  map_msg_lane.connection});</div>
+<div class="line"><span class="lineno">  401</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  402</span>            }</div>
+<div class="line"><span class="lineno">  403</span>            link_departure_lanes_m.insert({map_msg_lane.lane_id, map_msg_lane});</div>
+<div class="line"><span class="lineno">  404</span>        }     </div>
+<div class="line"><span class="lineno">  405</span>        </div>
+<div class="line"><span class="lineno">  406</span>        <span class="comment">//Matching enter lanelet, departure lanelet to signal group id</span></div>
+<div class="line"><span class="lineno">  407</span>        std::vector&lt;signalized_intersection_lanelets&gt; enter_departure_lanelets2SG_id_v;    </div>
+<div class="line"><span class="lineno">  408</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; lane: entry_lane2connections_m)</div>
+<div class="line"><span class="lineno">  409</span>        {</div>
+<div class="line"><span class="lineno">  410</span>            <span class="keywordtype">long</span> lane_id = lane.first;</div>
+<div class="line"><span class="lineno">  411</span>            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; entry_lanelet = entry_lane2lanelet_m[lane_id];</div>
+<div class="line"><span class="lineno">  412</span>            <span class="comment">//Retrieve all connections for the entry lane</span></div>
+<div class="line"><span class="lineno">  413</span>            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; connections = entry_lane2connections_m[lane.first];</div>
+<div class="line"><span class="lineno">  414</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; conn : connections)</div>
+<div class="line"><span class="lineno">  415</span>            {</div>
+<div class="line"><span class="lineno">  416</span>                <span class="comment">//Find each departure lane for the entry lanelet using connections, and mapping the departure lane id to the above departure lanelet id</span></div>
+<div class="line"><span class="lineno">  417</span>                <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  depart_lane = link_departure_lanes_m[conn.lane_id];</div>
+<div class="line"><span class="lineno">  418</span>                std::unordered_map&lt;long, lanelet::ConstLanelet&gt; depart_lane2lanelet_m;                </div>
+<div class="line"><span class="lineno">  419</span>                <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#aa5492d40b9b896d90c0dc652972bf937">mapping_lane_id_2_lanelet_id</a>(map_msg_geometry.refpoint, depart_lane, map_msg_geometry.approach.width, this-&gt;departure_lanelets ,depart_lane2lanelet_m, lane_to_lanelet_corr_thres); </div>
+<div class="line"><span class="lineno">  420</span>                <span class="keyword">const</span> <span class="keyword">auto</span>&amp;  depart_lanelet = depart_lane2lanelet_m[depart_lane.lane_id];</div>
+<div class="line"><span class="lineno">  421</span>                int32_t signal_group_id = conn.signalGroup;</div>
+<div class="line"><span class="lineno">  422</span> </div>
+<div class="line"><span class="lineno">  423</span>                signalized_intersection_lanelets temp_sil; </div>
+<div class="line"><span class="lineno">  424</span>                temp_sil.enter_lanelet_id = entry_lanelet.id();</div>
+<div class="line"><span class="lineno">  425</span>                temp_sil.depart_lanelet_id = depart_lanelet.id();</div>
+<div class="line"><span class="lineno">  426</span>                temp_sil.signal_group_id = signal_group_id;</div>
+<div class="line"><span class="lineno">  427</span>                enter_departure_lanelets2SG_id_v.push_back(temp_sil);</div>
+<div class="line"><span class="lineno">  428</span>                SPDLOG_DEBUG(<span class="stringliteral">&quot;Enter_lanelet_id = {0}, depart_lanelet_id = {1}, signal group_id = {2}.&quot;</span>, temp_sil.enter_lanelet_id, temp_sil.depart_lanelet_id, temp_sil.signal_group_id);</div>
+<div class="line"><span class="lineno">  429</span>            }</div>
+<div class="line"><span class="lineno">  430</span>        }</div>
+<div class="line"><span class="lineno">  431</span> </div>
+<div class="line"><span class="lineno">  432</span>        <span class="comment">//Matching intersection link lanelet_id with signal group id</span></div>
+<div class="line"><span class="lineno">  433</span>        std::unordered_map&lt;lanelet::Id, int32_t&gt; link_lanelet2signal_group_id_m;</div>
+<div class="line"><span class="lineno">  434</span>        std::for_each(enter_departure_lanelets2SG_id_v.begin(), enter_departure_lanelets2SG_id_v.end(),[&amp;](<span class="keyword">auto</span>&amp; ref)</div>
+<div class="line"><span class="lineno">  435</span>        {</div>
+<div class="line"><span class="lineno">  436</span>            const auto&amp;  link_lanelet_id = find_link_lanelet_id_by_enter_depart_lanelet_ids(ref.enter_lanelet_id, ref.depart_lanelet_id);    </div>
+<div class="line"><span class="lineno">  437</span>            if(link_lanelet_id != lanelet::InvalId)</div>
+<div class="line"><span class="lineno">  438</span>            {</div>
+<div class="line"><span class="lineno">  439</span>                ref.link_lanelet_id = link_lanelet_id;</div>
+<div class="line"><span class="lineno">  440</span>                link_lanelet2signal_group_id_m.insert({link_lanelet_id, ref.signal_group_id});</div>
+<div class="line"><span class="lineno">  441</span>            }</div>
+<div class="line"><span class="lineno">  442</span>        });     </div>
+<div class="line"><span class="lineno">  443</span> </div>
+<div class="line"><span class="lineno">  444</span>        <span class="comment">//Update intersection link lanelet info with signal group id</span></div>
+<div class="line"><span class="lineno">  445</span>        <span class="keywordtype">bool</span> is_signal_group_updated = <span class="keyword">false</span>;   </div>
+<div class="line"><span class="lineno">  446</span>        std::for_each(this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>.begin(), this-&gt;int_info.link_lanelets_info.end(), [&amp;](<span class="keyword">auto</span>&amp; ref){</div>
+<div class="line"><span class="lineno">  447</span>            auto find_itr = link_lanelet2signal_group_id_m.find(ref.id);</div>
+<div class="line"><span class="lineno">  448</span>            if(find_itr != link_lanelet2signal_group_id_m.end())</div>
+<div class="line"><span class="lineno">  449</span>            {</div>
+<div class="line"><span class="lineno">  450</span>                ref.signal_group_id = link_lanelet2signal_group_id_m[ref.id];</div>
+<div class="line"><span class="lineno">  451</span>                is_signal_group_updated = true; </div>
+<div class="line"><span class="lineno">  452</span>            }</div>
+<div class="line"><span class="lineno">  453</span>        }); </div>
+<div class="line"><span class="lineno">  454</span>        is_signal_group_updated ? SPDLOG_INFO(<span class="stringliteral">&quot;Intersection info is updated with signal group ids.&quot;</span>) : SPDLOG_INFO(<span class="stringliteral">&quot;Intersection_map message is processed, but intersection information  signal group ids are not updated.&quot;</span>);</div>
+<div class="line"><span class="lineno">  455</span>        is_updated = is_updated || is_signal_group_updated; </div>
+<div class="line"><span class="lineno">  456</span>        <span class="keywordflow">return</span> is_updated;</div>
+<div class="line"><span class="lineno">  457</span>    }</div>
+<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_aa5492d40b9b896d90c0dc652972bf937"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#aa5492d40b9b896d90c0dc652972bf937">intersection_model::intersection_model::mapping_lane_id_2_lanelet_id</a></div><div class="ttdeci">void mapping_lane_id_2_lanelet_id(const map_referencepoint &amp;ref_point, const map_lane &amp;lane, const long lane_width, const std::vector&lt; lanelet::ConstLanelet &gt; &amp;subj_lanelets, std::unordered_map&lt; long, lanelet::ConstLanelet &gt; &amp;lane2lanelet_m, const double lane_to_lanelet_corr_thres) const</div><div class="ttdoc">Comparing the geometry between lane in the MAP message and geometry of the list of lanelets to determ...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00487">intersection_model.cpp:487</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="intersection__model_8h_source.html#l00092">intersection_model::signalized_intersection_lanelets::depart_lanelet_id</a>, <a class="el" href="intersection__model_8h_source.html#l00090">intersection_model::signalized_intersection_lanelets::enter_lanelet_id</a>, and <a class="el" href="intersection__model_8h_source.html#l00093">intersection_model::signalized_intersection_lanelets::signal_group_id</a>.</p>
 
@@ -1579,34 +1579,34 @@ Private Attributes</h2></td></tr>
 <p>Read the OSM map, project the map, and initialize all the intersection related info including: intersection id, intersection name, entry_lanelet_ids, link_lanelet_ids and departure_lanelet_ids. </p>
 <dl class="section return"><dt>Returns</dt><dd>if the intersection information is updated successfully, return true. Otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00097">97</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   98</span>    {</div>
-<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  100</span>        {         </div>
-<div class="line"><span class="lineno">  101</span>            <span class="comment">//Find the all_way_stop regulatory element</span></div>
-<div class="line"><span class="lineno">  102</span>            lanelet::RegulatoryElementLayer &amp;reg_layer = this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#acd7fb425262d6b03265696f7627e0278">map</a>-&gt;regulatoryElementLayer;</div>
-<div class="line"><span class="lineno">  103</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> reg_element_itr = reg_layer.begin(); reg_element_itr != reg_layer.end(); reg_element_itr++)</div>
-<div class="line"><span class="lineno">  104</span>            {</div>
-<div class="line"><span class="lineno">  105</span>                lanelet::RegulatoryElement *reg_element_ptr = reg_element_itr-&gt;get();</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>                <span class="keywordflow">if</span> (reg_element_ptr-&gt;attribute(lanelet::AttributeName::Subtype) == lanelet::AttributeValueString::AllWayStop)</div>
-<div class="line"><span class="lineno">  108</span>                {</div>
-<div class="line"><span class="lineno">  109</span>                    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a2bfd4216fee2946a52babc8eb008c975">update_intersection_info_by_all_way_stop_reg</a>(reg_element_ptr))</div>
-<div class="line"><span class="lineno">  110</span>                    {</div>
-<div class="line"><span class="lineno">  111</span>                         SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to load intersection information based on all_way_stop regulatory element.&quot;</span>);</div>
-<div class="line"><span class="lineno">  112</span>                    };</div>
-<div class="line"><span class="lineno">  113</span>                }</div>
-<div class="line"><span class="lineno">  114</span>            }</div>
-<div class="line"><span class="lineno">  115</span>        }</div>
-<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> lanelet::LaneletError &amp;ex)</div>
-<div class="line"><span class="lineno">  117</span>        {</div>
-<div class="line"><span class="lineno">  118</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Failed to call get_routing_graph() : {0}&quot;</span>, ex.what());</div>
-<div class="line"><span class="lineno">  119</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  120</span>        }</div>
-<div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  123</span>    }</div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a2bfd4216fee2946a52babc8eb008c975"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a2bfd4216fee2946a52babc8eb008c975">intersection_model::intersection_model::update_intersection_info_by_all_way_stop_reg</a></div><div class="ttdeci">bool update_intersection_info_by_all_way_stop_reg(const lanelet::RegulatoryElement *all_way_stop_reg_elem_ptr)</div><div class="ttdoc">Based on the all_way_stop regulatory element and routing graph, it is able to retrieve all the entry ...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00125">intersection_model.cpp:125</a></div></div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00094">94</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>    {</div>
+<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   97</span>        {         </div>
+<div class="line"><span class="lineno">   98</span>            <span class="comment">//Find the all_way_stop regulatory element</span></div>
+<div class="line"><span class="lineno">   99</span>            lanelet::RegulatoryElementLayer &amp;reg_layer = this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#acd7fb425262d6b03265696f7627e0278">map</a>-&gt;regulatoryElementLayer;</div>
+<div class="line"><span class="lineno">  100</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> reg_element_itr = reg_layer.begin(); reg_element_itr != reg_layer.end(); reg_element_itr++)</div>
+<div class="line"><span class="lineno">  101</span>            {</div>
+<div class="line"><span class="lineno">  102</span>                lanelet::RegulatoryElement *reg_element_ptr = reg_element_itr-&gt;get();</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>                <span class="keywordflow">if</span> (reg_element_ptr-&gt;attribute(lanelet::AttributeName::Subtype) == lanelet::AttributeValueString::AllWayStop)</div>
+<div class="line"><span class="lineno">  105</span>                {</div>
+<div class="line"><span class="lineno">  106</span>                    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a2bfd4216fee2946a52babc8eb008c975">update_intersection_info_by_all_way_stop_reg</a>(reg_element_ptr))</div>
+<div class="line"><span class="lineno">  107</span>                    {</div>
+<div class="line"><span class="lineno">  108</span>                         SPDLOG_CRITICAL(<span class="stringliteral">&quot;Failed to load intersection information based on all_way_stop regulatory element.&quot;</span>);</div>
+<div class="line"><span class="lineno">  109</span>                    };</div>
+<div class="line"><span class="lineno">  110</span>                }</div>
+<div class="line"><span class="lineno">  111</span>            }</div>
+<div class="line"><span class="lineno">  112</span>        }</div>
+<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> lanelet::LaneletError &amp;ex)</div>
+<div class="line"><span class="lineno">  114</span>        {</div>
+<div class="line"><span class="lineno">  115</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Failed to call get_routing_graph() : {0}&quot;</span>, ex.what());</div>
+<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  117</span>        }</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  120</span>    }</div>
+<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a2bfd4216fee2946a52babc8eb008c975"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a2bfd4216fee2946a52babc8eb008c975">intersection_model::intersection_model::update_intersection_info_by_all_way_stop_reg</a></div><div class="ttdeci">bool update_intersection_info_by_all_way_stop_reg(const lanelet::RegulatoryElement *all_way_stop_reg_elem_ptr)</div><div class="ttdoc">Based on the all_way_stop regulatory element and routing graph, it is able to retrieve all the entry ...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00122">intersection_model.cpp:122</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1635,52 +1635,52 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the intersection information is updated, otherwise false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00125">125</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  126</span>    {</div>
-<div class="line"><span class="lineno">  127</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  128</span>        {</div>
-<div class="line"><span class="lineno">  129</span>            <span class="comment">//get all entering lanelet based on all_way_stop regulatory elements</span></div>
-<div class="line"><span class="lineno">  130</span>            lanelet::RegulatoryElementDataConstPtr coreData = all_way_stop_reg_elem_ptr-&gt;constData();</div>
-<div class="line"><span class="lineno">  131</span>            lanelet::RuleParameterMap rule_map = coreData-&gt;parameters;</div>
-<div class="line"><span class="lineno">  132</span>            lanelet::RegulatoryElement::iterator rule_map_itr = rule_map.begin();</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00122">122</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>    {</div>
+<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  125</span>        {</div>
+<div class="line"><span class="lineno">  126</span>            <span class="comment">//get all entering lanelet based on all_way_stop regulatory elements</span></div>
+<div class="line"><span class="lineno">  127</span>            lanelet::RegulatoryElementDataConstPtr coreData = all_way_stop_reg_elem_ptr-&gt;constData();</div>
+<div class="line"><span class="lineno">  128</span>            lanelet::RuleParameterMap rule_map = coreData-&gt;parameters;</div>
+<div class="line"><span class="lineno">  129</span>            lanelet::RegulatoryElement::iterator rule_map_itr = rule_map.begin();</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">while</span> (rule_map_itr != rule_map.end())</div>
+<div class="line"><span class="lineno">  132</span>            {</div>
 <div class="line"><span class="lineno">  133</span> </div>
-<div class="line"><span class="lineno">  134</span>            <span class="keywordflow">while</span> (rule_map_itr != rule_map.end())</div>
-<div class="line"><span class="lineno">  135</span>            {</div>
-<div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>                <span class="comment">//Find all entry lanelets participating in the 4-way stop by role=&#39;yield&#39;</span></div>
-<div class="line"><span class="lineno">  138</span>                <span class="keywordflow">if</span> (rule_map_itr-&gt;first == lanelet::RoleNameString::Yield)</div>
-<div class="line"><span class="lineno">  139</span>                {</div>
-<div class="line"><span class="lineno">  140</span>                    lanelet::RuleParameters::iterator rule_params_itr = rule_map_itr-&gt;second.begin();</div>
-<div class="line"><span class="lineno">  141</span>                    <span class="keywordflow">while</span> (rule_params_itr != rule_map_itr-&gt;second.end())</div>
-<div class="line"><span class="lineno">  142</span>                    {</div>
-<div class="line"><span class="lineno">  143</span>                        <span class="keyword">auto</span> lanelet_apply_rule = boost::get&lt;lanelet::WeakLanelet&gt;(*rule_params_itr);</div>
-<div class="line"><span class="lineno">  144</span>                        <span class="keywordflow">if</span> (!lanelet_apply_rule.expired())</div>
-<div class="line"><span class="lineno">  145</span>                        {</div>
-<div class="line"><span class="lineno">  146</span>                            <span class="keyword">auto</span> entry_lanelet = lanelet_apply_rule.lock();</div>
-<div class="line"><span class="lineno">  147</span>                            lanelet_info_t lanelet_info_entry;</div>
-<div class="line"><span class="lineno">  148</span>                            lanelet_info_entry.id           = entry_lanelet.id();</div>
-<div class="line"><span class="lineno">  149</span>                            lanelet_info_entry.speed_limit  = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a480e7966ce3d9bd7422f1d59fcf6bae0">get_speed_limit_by_lanelet</a>(entry_lanelet);</div>
-<div class="line"><span class="lineno">  150</span>                            lanelet_info_entry.length       = lanelet::geometry::length3d(entry_lanelet);</div>
-<div class="line"><span class="lineno">  151</span>                            this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#aaec275e8e8b2d9ab62c83f6e04087f15">entering_lanelets_info</a>.push_back(lanelet_info_entry);</div>
-<div class="line"><span class="lineno">  152</span> </div>
-<div class="line"><span class="lineno">  153</span>                            <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a5cf97605f6557f75d1452da9536e7118">update_link_departure_lanelets_info_by_entry_lanelet</a>(entry_lanelet);</div>
-<div class="line"><span class="lineno">  154</span>                            <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a2fa6f1a15d9c4c27443f978cb8fcf0c8">entering_lanelets</a>.push_back(entry_lanelet);                           </div>
-<div class="line"><span class="lineno">  155</span>                        }</div>
-<div class="line"><span class="lineno">  156</span>                        rule_params_itr++;</div>
-<div class="line"><span class="lineno">  157</span>                    }</div>
-<div class="line"><span class="lineno">  158</span>                }</div>
-<div class="line"><span class="lineno">  159</span>                rule_map_itr++;</div>
-<div class="line"><span class="lineno">  160</span>            }</div>
-<div class="line"><span class="lineno">  161</span>        }</div>
-<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> lanelet::LaneletError &amp;ex)</div>
-<div class="line"><span class="lineno">  163</span>        {</div>
-<div class="line"><span class="lineno">  164</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Failed to call load intersection information: {0}&quot;</span>, ex.what());</div>
-<div class="line"><span class="lineno">  165</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  166</span>        }</div>
-<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  168</span>    }</div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a480e7966ce3d9bd7422f1d59fcf6bae0"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a480e7966ce3d9bd7422f1d59fcf6bae0">intersection_model::intersection_model::get_speed_limit_by_lanelet</a></div><div class="ttdeci">double get_speed_limit_by_lanelet(const lanelet::ConstLanelet &amp;subj_lanelet) const</div><div class="ttdoc">Retrieve the speed_limit of the current lanelet.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00240">intersection_model.cpp:240</a></div></div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a5cf97605f6557f75d1452da9536e7118"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a5cf97605f6557f75d1452da9536e7118">intersection_model::intersection_model::update_link_departure_lanelets_info_by_entry_lanelet</a></div><div class="ttdeci">bool update_link_departure_lanelets_info_by_entry_lanelet(const lanelet::Lanelet &amp;entry_lanelet)</div><div class="ttdoc">Get the following link lanelets information from the entering lanelet. Based on the link lanelets,...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00170">intersection_model.cpp:170</a></div></div>
+<div class="line"><span class="lineno">  134</span>                <span class="comment">//Find all entry lanelets participating in the 4-way stop by role=&#39;yield&#39;</span></div>
+<div class="line"><span class="lineno">  135</span>                <span class="keywordflow">if</span> (rule_map_itr-&gt;first == lanelet::RoleNameString::Yield)</div>
+<div class="line"><span class="lineno">  136</span>                {</div>
+<div class="line"><span class="lineno">  137</span>                    lanelet::RuleParameters::iterator rule_params_itr = rule_map_itr-&gt;second.begin();</div>
+<div class="line"><span class="lineno">  138</span>                    <span class="keywordflow">while</span> (rule_params_itr != rule_map_itr-&gt;second.end())</div>
+<div class="line"><span class="lineno">  139</span>                    {</div>
+<div class="line"><span class="lineno">  140</span>                        <span class="keyword">auto</span> lanelet_apply_rule = boost::get&lt;lanelet::WeakLanelet&gt;(*rule_params_itr);</div>
+<div class="line"><span class="lineno">  141</span>                        <span class="keywordflow">if</span> (!lanelet_apply_rule.expired())</div>
+<div class="line"><span class="lineno">  142</span>                        {</div>
+<div class="line"><span class="lineno">  143</span>                            <span class="keyword">auto</span> entry_lanelet = lanelet_apply_rule.lock();</div>
+<div class="line"><span class="lineno">  144</span>                            lanelet_info_t lanelet_info_entry;</div>
+<div class="line"><span class="lineno">  145</span>                            lanelet_info_entry.id           = entry_lanelet.id();</div>
+<div class="line"><span class="lineno">  146</span>                            lanelet_info_entry.speed_limit  = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a480e7966ce3d9bd7422f1d59fcf6bae0">get_speed_limit_by_lanelet</a>(entry_lanelet);</div>
+<div class="line"><span class="lineno">  147</span>                            lanelet_info_entry.length       = lanelet::geometry::length3d(entry_lanelet);</div>
+<div class="line"><span class="lineno">  148</span>                            this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#aaec275e8e8b2d9ab62c83f6e04087f15">entering_lanelets_info</a>.push_back(lanelet_info_entry);</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>                            <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a5cf97605f6557f75d1452da9536e7118">update_link_departure_lanelets_info_by_entry_lanelet</a>(entry_lanelet);</div>
+<div class="line"><span class="lineno">  151</span>                            <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a2fa6f1a15d9c4c27443f978cb8fcf0c8">entering_lanelets</a>.push_back(entry_lanelet);                           </div>
+<div class="line"><span class="lineno">  152</span>                        }</div>
+<div class="line"><span class="lineno">  153</span>                        rule_params_itr++;</div>
+<div class="line"><span class="lineno">  154</span>                    }</div>
+<div class="line"><span class="lineno">  155</span>                }</div>
+<div class="line"><span class="lineno">  156</span>                rule_map_itr++;</div>
+<div class="line"><span class="lineno">  157</span>            }</div>
+<div class="line"><span class="lineno">  158</span>        }</div>
+<div class="line"><span class="lineno">  159</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> lanelet::LaneletError &amp;ex)</div>
+<div class="line"><span class="lineno">  160</span>        {</div>
+<div class="line"><span class="lineno">  161</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Failed to call load intersection information: {0}&quot;</span>, ex.what());</div>
+<div class="line"><span class="lineno">  162</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  163</span>        }</div>
+<div class="line"><span class="lineno">  164</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  165</span>    }</div>
+<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a480e7966ce3d9bd7422f1d59fcf6bae0"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a480e7966ce3d9bd7422f1d59fcf6bae0">intersection_model::intersection_model::get_speed_limit_by_lanelet</a></div><div class="ttdeci">double get_speed_limit_by_lanelet(const lanelet::ConstLanelet &amp;subj_lanelet) const</div><div class="ttdoc">Retrieve the speed_limit of the current lanelet.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00237">intersection_model.cpp:237</a></div></div>
+<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a5cf97605f6557f75d1452da9536e7118"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a5cf97605f6557f75d1452da9536e7118">intersection_model::intersection_model::update_link_departure_lanelets_info_by_entry_lanelet</a></div><div class="ttdeci">bool update_link_departure_lanelets_info_by_entry_lanelet(const lanelet::Lanelet &amp;entry_lanelet)</div><div class="ttdoc">Get the following link lanelets information from the entering lanelet. Based on the link lanelets,...</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8cpp_source.html#l00167">intersection_model.cpp:167</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="intersection__model_8h_source.html#l00056">intersection_model::lanelet_info_t::id</a>, <a class="el" href="intersection__model_8h_source.html#l00058">intersection_model::lanelet_info_t::length</a>, and <a class="el" href="intersection__model_8h_source.html#l00057">intersection_model::lanelet_info_t::speed_limit</a>.</p>
 
@@ -1705,65 +1705,65 @@ Private Attributes</h2></td></tr>
 <p>Get the following link lanelets information from the entering lanelet. Based on the link lanelets, it retrieves the following depature lanelets. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if the update for intersection model info (link lanelet info and departure lanelet info) is successful. Otherwise, not updated </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00170">170</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  171</span>    {    </div>
-<div class="line"><span class="lineno">  172</span>        <span class="keywordtype">bool</span> is_updated= <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  173</span>        <span class="comment">//making sure the vehicle routing graph is not null</span></div>
-<div class="line"><span class="lineno">  174</span>        <span class="keywordflow">if</span>( !this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a> )</div>
-<div class="line"><span class="lineno">  175</span>        { </div>
-<div class="line"><span class="lineno">  176</span>            <span class="keywordflow">if</span>( !<a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a2356a55b5dd997c37d63e84581f44559">update_vehicle_routing_graph</a>() ) </div>
-<div class="line"><span class="lineno">  177</span>            { </div>
-<div class="line"><span class="lineno">  178</span>                <span class="keywordflow">return</span> is_updated;</div>
-<div class="line"><span class="lineno">  179</span>            }</div>
-<div class="line"><span class="lineno">  180</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="intersection__model_8cpp_source.html#l00167">167</a> of file <a class="el" href="intersection__model_8cpp_source.html">intersection_model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>    {    </div>
+<div class="line"><span class="lineno">  169</span>        <span class="keywordtype">bool</span> is_updated= <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  170</span>        <span class="comment">//making sure the vehicle routing graph is not null</span></div>
+<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">if</span>( !this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a> )</div>
+<div class="line"><span class="lineno">  172</span>        { </div>
+<div class="line"><span class="lineno">  173</span>            <span class="keywordflow">if</span>( !<a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a2356a55b5dd997c37d63e84581f44559">update_vehicle_routing_graph</a>() ) </div>
+<div class="line"><span class="lineno">  174</span>            { </div>
+<div class="line"><span class="lineno">  175</span>                <span class="keywordflow">return</span> is_updated;</div>
+<div class="line"><span class="lineno">  176</span>            }</div>
+<div class="line"><span class="lineno">  177</span>        }</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>        <span class="comment">//Retrieve all the possible link lanelets for the entry lanelet</span></div>
+<div class="line"><span class="lineno">  180</span>        lanelet::ConstLanelets link_lanelets_per_entering_lanelet = this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>-&gt;following(entry_lanelet, <span class="keyword">false</span>);</div>
 <div class="line"><span class="lineno">  181</span> </div>
-<div class="line"><span class="lineno">  182</span>        <span class="comment">//Retrieve all the possible link lanelets for the entry lanelet</span></div>
-<div class="line"><span class="lineno">  183</span>        lanelet::ConstLanelets link_lanelets_per_entering_lanelet = this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>-&gt;following(entry_lanelet, <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  184</span> </div>
-<div class="line"><span class="lineno">  185</span>        <span class="comment">//Every entry lanelet at the intersection has at most three link lanelets</span></div>
-<div class="line"><span class="lineno">  186</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;link_lanelet : link_lanelets_per_entering_lanelet)</div>
-<div class="line"><span class="lineno">  187</span>        {</div>
-<div class="line"><span class="lineno">  188</span>            lanelet_info_t lanelet_info_link;</div>
-<div class="line"><span class="lineno">  189</span>            lanelet_info_link.id = link_lanelet.id();</div>
-<div class="line"><span class="lineno">  190</span>            lanelet_info_link.speed_limit = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a480e7966ce3d9bd7422f1d59fcf6bae0">get_speed_limit_by_lanelet</a>(link_lanelet);</div>
-<div class="line"><span class="lineno">  191</span>            lanelet_info_link.length      = lanelet::geometry::length3d(link_lanelet);</div>
-<div class="line"><span class="lineno">  192</span>            this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>.push_back(lanelet_info_link);</div>
-<div class="line"><span class="lineno">  193</span>            <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a78c1fac3bf4bed4ced3a15ce4e4f0dd3">link_lanelets</a>.push_back(link_lanelet);</div>
-<div class="line"><span class="lineno">  194</span>            </div>
-<div class="line"><span class="lineno">  195</span>            <span class="comment">//Updating connecting lanelet ids for entering lanelet</span></div>
-<div class="line"><span class="lineno">  196</span>            std::for_each(this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#aaec275e8e8b2d9ab62c83f6e04087f15">entering_lanelets_info</a>.begin(), this-&gt;int_info.entering_lanelets_info.end(), [link_lanelet, entry_lanelet](<span class="keyword">auto</span>&amp; ref){</div>
-<div class="line"><span class="lineno">  197</span>                if(ref.id == entry_lanelet.id())</div>
-<div class="line"><span class="lineno">  198</span>                {</div>
-<div class="line"><span class="lineno">  199</span>                    ref.connecting_lanelet_ids.push_back(link_lanelet.id());</div>
-<div class="line"><span class="lineno">  200</span>                }</div>
-<div class="line"><span class="lineno">  201</span>            });</div>
-<div class="line"><span class="lineno">  202</span> </div>
-<div class="line"><span class="lineno">  203</span>            <span class="comment">//Only one departure lanelet per link lanelet</span></div>
-<div class="line"><span class="lineno">  204</span>            lanelet_info_t lanelet_info_depart;</div>
-<div class="line"><span class="lineno">  205</span>            lanelet::ConstLanelet depart_lanelet = this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>-&gt;following(link_lanelet, <span class="keyword">false</span>).front();</div>
-<div class="line"><span class="lineno">  206</span>            lanelet_info_depart.id = depart_lanelet.id();</div>
-<div class="line"><span class="lineno">  207</span>            lanelet_info_depart.speed_limit = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a480e7966ce3d9bd7422f1d59fcf6bae0">get_speed_limit_by_lanelet</a>(depart_lanelet);</div>
-<div class="line"><span class="lineno">  208</span>            lanelet_info_depart.length      = lanelet::geometry::length3d(depart_lanelet);</div>
-<div class="line"><span class="lineno">  209</span>            this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a3247132d260b9048c39f51d33d1cb0bb">departure_lanelets_info</a>.insert(lanelet_info_depart);</div>
-<div class="line"><span class="lineno">  210</span>           </div>
-<div class="line"><span class="lineno">  211</span>            <span class="comment">//If the departure lanelet with the same lanelet id already exist in the list, do not add this lanelet into the list</span></div>
-<div class="line"><span class="lineno">  212</span>            <span class="keywordtype">bool</span> is_exist = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  213</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; subj_dpl: <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a8fc934b7a4f927d12e5cdd1098774be3">departure_lanelets</a>)</div>
-<div class="line"><span class="lineno">  214</span>            {</div>
-<div class="line"><span class="lineno">  215</span>                <span class="keywordflow">if</span>(subj_dpl.id() == depart_lanelet.id())</div>
-<div class="line"><span class="lineno">  216</span>                {</div>
-<div class="line"><span class="lineno">  217</span>                    is_exist = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  218</span>                }</div>
-<div class="line"><span class="lineno">  219</span>            }</div>
-<div class="line"><span class="lineno">  220</span> </div>
-<div class="line"><span class="lineno">  221</span>            <span class="keywordflow">if</span>(!is_exist)</div>
-<div class="line"><span class="lineno">  222</span>            {</div>
-<div class="line"><span class="lineno">  223</span>                <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a8fc934b7a4f927d12e5cdd1098774be3">departure_lanelets</a>.push_back(depart_lanelet);</div>
-<div class="line"><span class="lineno">  224</span>            }</div>
-<div class="line"><span class="lineno">  225</span>            is_updated = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  226</span>        }</div>
-<div class="line"><span class="lineno">  227</span>        <span class="keywordflow">return</span> is_updated;</div>
-<div class="line"><span class="lineno">  228</span>    }</div>
+<div class="line"><span class="lineno">  182</span>        <span class="comment">//Every entry lanelet at the intersection has at most three link lanelets</span></div>
+<div class="line"><span class="lineno">  183</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;link_lanelet : link_lanelets_per_entering_lanelet)</div>
+<div class="line"><span class="lineno">  184</span>        {</div>
+<div class="line"><span class="lineno">  185</span>            lanelet_info_t lanelet_info_link;</div>
+<div class="line"><span class="lineno">  186</span>            lanelet_info_link.id = link_lanelet.id();</div>
+<div class="line"><span class="lineno">  187</span>            lanelet_info_link.speed_limit = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a480e7966ce3d9bd7422f1d59fcf6bae0">get_speed_limit_by_lanelet</a>(link_lanelet);</div>
+<div class="line"><span class="lineno">  188</span>            lanelet_info_link.length      = lanelet::geometry::length3d(link_lanelet);</div>
+<div class="line"><span class="lineno">  189</span>            this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a98ef36c3c2bcb89fe26f277a0e6f13b5">link_lanelets_info</a>.push_back(lanelet_info_link);</div>
+<div class="line"><span class="lineno">  190</span>            <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a78c1fac3bf4bed4ced3a15ce4e4f0dd3">link_lanelets</a>.push_back(link_lanelet);</div>
+<div class="line"><span class="lineno">  191</span>            </div>
+<div class="line"><span class="lineno">  192</span>            <span class="comment">//Updating connecting lanelet ids for entering lanelet</span></div>
+<div class="line"><span class="lineno">  193</span>            std::for_each(this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#aaec275e8e8b2d9ab62c83f6e04087f15">entering_lanelets_info</a>.begin(), this-&gt;int_info.entering_lanelets_info.end(), [link_lanelet, entry_lanelet](<span class="keyword">auto</span>&amp; ref){</div>
+<div class="line"><span class="lineno">  194</span>                if(ref.id == entry_lanelet.id())</div>
+<div class="line"><span class="lineno">  195</span>                {</div>
+<div class="line"><span class="lineno">  196</span>                    ref.connecting_lanelet_ids.push_back(link_lanelet.id());</div>
+<div class="line"><span class="lineno">  197</span>                }</div>
+<div class="line"><span class="lineno">  198</span>            });</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>            <span class="comment">//Only one departure lanelet per link lanelet</span></div>
+<div class="line"><span class="lineno">  201</span>            lanelet_info_t lanelet_info_depart;</div>
+<div class="line"><span class="lineno">  202</span>            lanelet::ConstLanelet depart_lanelet = this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a>-&gt;following(link_lanelet, <span class="keyword">false</span>).front();</div>
+<div class="line"><span class="lineno">  203</span>            lanelet_info_depart.id = depart_lanelet.id();</div>
+<div class="line"><span class="lineno">  204</span>            lanelet_info_depart.speed_limit = <a class="code hl_function" href="classintersection__model_1_1intersection__model.html#a480e7966ce3d9bd7422f1d59fcf6bae0">get_speed_limit_by_lanelet</a>(depart_lanelet);</div>
+<div class="line"><span class="lineno">  205</span>            lanelet_info_depart.length      = lanelet::geometry::length3d(depart_lanelet);</div>
+<div class="line"><span class="lineno">  206</span>            this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1032d6ae6000f6ffd2531b82f848464d">int_info</a>.<a class="code hl_variable" href="structintersection__model_1_1intersection__info__t.html#a3247132d260b9048c39f51d33d1cb0bb">departure_lanelets_info</a>.insert(lanelet_info_depart);</div>
+<div class="line"><span class="lineno">  207</span>           </div>
+<div class="line"><span class="lineno">  208</span>            <span class="comment">//If the departure lanelet with the same lanelet id already exist in the list, do not add this lanelet into the list</span></div>
+<div class="line"><span class="lineno">  209</span>            <span class="keywordtype">bool</span> is_exist = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  210</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; subj_dpl: <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a8fc934b7a4f927d12e5cdd1098774be3">departure_lanelets</a>)</div>
+<div class="line"><span class="lineno">  211</span>            {</div>
+<div class="line"><span class="lineno">  212</span>                <span class="keywordflow">if</span>(subj_dpl.id() == depart_lanelet.id())</div>
+<div class="line"><span class="lineno">  213</span>                {</div>
+<div class="line"><span class="lineno">  214</span>                    is_exist = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  215</span>                }</div>
+<div class="line"><span class="lineno">  216</span>            }</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>            <span class="keywordflow">if</span>(!is_exist)</div>
+<div class="line"><span class="lineno">  219</span>            {</div>
+<div class="line"><span class="lineno">  220</span>                <a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a8fc934b7a4f927d12e5cdd1098774be3">departure_lanelets</a>.push_back(depart_lanelet);</div>
+<div class="line"><span class="lineno">  221</span>            }</div>
+<div class="line"><span class="lineno">  222</span>            is_updated = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  223</span>        }</div>
+<div class="line"><span class="lineno">  224</span>        <span class="keywordflow">return</span> is_updated;</div>
+<div class="line"><span class="lineno">  225</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="intersection__model_8h_source.html#l00056">intersection_model::lanelet_info_t::id</a>, <a class="el" href="intersection__model_8h_source.html#l00058">intersection_model::lanelet_info_t::length</a>, and <a class="el" href="intersection__model_8h_source.html#l00057">intersection_model::lanelet_info_t::speed_limit</a>.</p>
 
@@ -1794,21 +1794,15 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   81</span>            lanelet::traffic_rules::TrafficRulesFactory::create(lanelet::Locations::Germany,</div>
 <div class="line"><span class="lineno">   82</span>                                                        lanelet::Participants::Vehicle,</div>
 <div class="line"><span class="lineno">   83</span>                                                        lanelet::traffic_rules::TrafficRules::Configuration())};</div>
-<div class="line"><span class="lineno">   84</span>        lanelet::routing::RoutingCostPtrs costPtrs{</div>
-<div class="line"><span class="lineno">   85</span>            std::make_shared&lt;lanelet::routing::RoutingCostDistance&gt;(this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a17c468daf3fe3bec06f5ec114ecf407a">laneChangeCost</a>, this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a893f0183442d6cff5cd483f1bb03888e">minLaneChangeLength</a>),</div>
-<div class="line"><span class="lineno">   86</span>            std::make_shared&lt;lanelet::routing::RoutingCostTravelTime&gt;(this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a17c468daf3fe3bec06f5ec114ecf407a">laneChangeCost</a>)};</div>
-<div class="line"><span class="lineno">   87</span>        lanelet::routing::RoutingGraph::Configuration configuration;</div>
-<div class="line"><span class="lineno">   88</span>        configuration.insert(std::make_pair(lanelet::routing::RoutingGraph::ParticipantHeight, this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a05f36d30ef6ee0b983b45694d339c808">participantHeight</a>));</div>
-<div class="line"><span class="lineno">   89</span>        this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a> = lanelet::routing::RoutingGraph::build(*this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#acd7fb425262d6b03265696f7627e0278">map</a>, *trafficRules, costPtrs, configuration);</div>
-<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">if</span> ( !this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a> )</div>
-<div class="line"><span class="lineno">   91</span>        {</div>
-<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   93</span>        }</div>
-<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   95</span>    }</div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a05f36d30ef6ee0b983b45694d339c808"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a05f36d30ef6ee0b983b45694d339c808">intersection_model::intersection_model::participantHeight</a></div><div class="ttdeci">double participantHeight</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00309">intersection_model.h:309</a></div></div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a17c468daf3fe3bec06f5ec114ecf407a"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a17c468daf3fe3bec06f5ec114ecf407a">intersection_model::intersection_model::laneChangeCost</a></div><div class="ttdeci">double laneChangeCost</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00308">intersection_model.h:308</a></div></div>
-<div class="ttc" id="aclassintersection__model_1_1intersection__model_html_a893f0183442d6cff5cd483f1bb03888e"><div class="ttname"><a href="classintersection__model_1_1intersection__model.html#a893f0183442d6cff5cd483f1bb03888e">intersection_model::intersection_model::minLaneChangeLength</a></div><div class="ttdeci">double minLaneChangeLength</div><div class="ttdef"><b>Definition:</b> <a href="intersection__model_8h_source.html#l00310">intersection_model.h:310</a></div></div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>        this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a> = lanelet::routing::RoutingGraph::build(*this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#acd7fb425262d6b03265696f7627e0278">map</a>, *trafficRules);</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">if</span> ( !this-&gt;<a class="code hl_variable" href="classintersection__model_1_1intersection__model.html#a1753c5644d021007f9ae2fc29209337d">vehicleGraph_ptr</a> )</div>
+<div class="line"><span class="lineno">   88</span>        {</div>
+<div class="line"><span class="lineno">   89</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   90</span>        }</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2209,7 +2203,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceintersection__model.html">intersection_model</a></li><li class="navelem"><a class="el" href="classintersection__model_1_1intersection__model.html">intersection_model</a></li>
-    <li class="footer">Generated on Tue Oct 17 2023 19:02:28 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Oct 19 2023 14:30:02 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

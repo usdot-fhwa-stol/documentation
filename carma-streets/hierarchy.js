@@ -1,7 +1,12 @@
 var hierarchy =
 [
+    [ "streets_utils::messages::acceleration_set_4_way", "structstreets__utils_1_1messages_1_1acceleration__set__4__way.html", null ],
     [ "message_services::models::AccelerationSet4Way", "structmessage__services_1_1models_1_1AccelerationSet4Way.html", null ],
     [ "signal_phase_and_timing::advisory_speed", "structsignal__phase__and__timing_1_1advisory__speed.html", null ],
+    [ "streets_utils::messages::angular_velocity_confidence_set", "structstreets__utils_1_1messages_1_1angular__velocity__confidence__set.html", null ],
+    [ "streets_utils::messages::angular_velocity_set", "structstreets__utils_1_1messages_1_1angular__velocity__set.html", null ],
+    [ "streets_utils::messages::attitude", "structstreets__utils_1_1messages_1_1attitude.html", null ],
+    [ "streets_utils::messages::attitude_confidence", "structstreets__utils_1_1messages_1_1attitude__confidence.html", null ],
     [ "message_services::workers::base_worker", "classmessage__services_1_1workers_1_1base__worker.html", [
       [ "message_services::workers::bsm_worker", "classmessage__services_1_1workers_1_1bsm__worker.html", null ],
       [ "message_services::workers::mobilityoperation_worker", "classmessage__services_1_1workers_1_1mobilityoperation__worker.html", null ],
@@ -23,6 +28,11 @@ var hierarchy =
     [ "RdKafka::DeliveryReportCb", null, [
       [ "kafka_clients::producer_delivery_report_cb", "classkafka__clients_1_1producer__delivery__report__cb.html", null ]
     ] ],
+    [ "streets_utils::messages::detected_object_data", "structstreets__utils_1_1messages_1_1detected__object__data.html", null ],
+    [ "streets_utils::messages::detected_object_data_common", "structstreets__utils_1_1messages_1_1detected__object__data__common.html", null ],
+    [ "streets_utils::messages::detected_obstacle_data", "structstreets__utils_1_1messages_1_1detected__obstacle__data.html", null ],
+    [ "streets_utils::messages::detected_vehicle_data", "structstreets__utils_1_1messages_1_1detected__vehicle__data.html", null ],
+    [ "streets_utils::messages::detected_vru_data", "structstreets__utils_1_1messages_1_1detected__vru__data.html", null ],
     [ "message_services::models::est_path", "structmessage__services_1_1models_1_1est__path.html", null ],
     [ "RdKafka::EventCb", null, [
       [ "kafka_clients::consumer_event_cb", "classkafka__clients_1_1consumer__event__cb.html", null ],
@@ -77,7 +87,13 @@ var hierarchy =
     [ "OpenAPI::OAISerializerSettings", "classOpenAPI_1_1OAISerializerSettings.html", null ],
     [ "OpenAPI::OAIServerConfiguration", "classOpenAPI_1_1OAIServerConfiguration.html", null ],
     [ "OpenAPI::OAIServerVariable", "classOpenAPI_1_1OAIServerVariable.html", null ],
+    [ "streets_utils::messages::obstacle_size", "structstreets__utils_1_1messages_1_1obstacle__size.html", null ],
+    [ "streets_utils::messages::obstacle_size_confidence", "structstreets__utils_1_1messages_1_1obstacle__size__confidence.html", null ],
     [ "OpenAPI::OptionalParam< T >", "classOpenAPI_1_1OptionalParam.html", null ],
+    [ "streets_utils::messages::position_3d", "structstreets__utils_1_1messages_1_1position__3d.html", null ],
+    [ "streets_utils::messages::position_confidence_set", "structstreets__utils_1_1messages_1_1position__confidence__set.html", null ],
+    [ "streets_utils::messages::position_offset", "structstreets__utils_1_1messages_1_1position__offset.html", null ],
+    [ "streets_utils::messages::positional_accuracy", "structstreets__utils_1_1messages_1_1positional__accuracy.html", null ],
     [ "message_services::models::PositionalAccuracy", "structmessage__services_1_1models_1_1PositionalAccuracy.html", null ],
     [ "QObject", "classQObject.html", [
       [ "OpenAPI::OAIApiRouter", "classOpenAPI_1_1OAIApiRouter.html", [
@@ -123,6 +139,7 @@ var hierarchy =
     ] ],
     [ "scheduling_service::scheduling_service", "classscheduling__service_1_1scheduling__service.html", null ],
     [ "scheduling_service::scheduling_worker", "classscheduling__service_1_1scheduling__worker.html", null ],
+    [ "streets_utils::messages::sensor_data_sharing_msg", "structstreets__utils_1_1messages_1_1sensor__data__sharing__msg.html", null ],
     [ "streets_desired_phase_plan::signal_group2green_phase_timing", "structstreets__desired__phase__plan_1_1signal__group2green__phase__timing.html", null ],
     [ "streets_tsc_configuration::signal_group_configuration", "structstreets__tsc__configuration_1_1signal__group__configuration.html", null ],
     [ "traffic_signal_controller_service::signal_group_state", "structtraffic__signal__controller__service_1_1signal__group__state.html", null ],
@@ -161,6 +178,7 @@ var hierarchy =
     [ "streets_snmp_cmd::streets_snmp_cmd_converter", "classstreets__snmp__cmd_1_1streets__snmp__cmd__converter.html", null ],
     [ "streets_timing_plan::streets_timing_plan", "structstreets__timing__plan_1_1streets__timing__plan.html", null ],
     [ "signal_phase_and_timing::time_change_details", "structsignal__phase__and__timing_1_1time__change__details.html", null ],
+    [ "streets_utils::messages::time_stamp", "structstreets__utils_1_1messages_1_1time__stamp.html", null ],
     [ "streets_service::simulation::time_sync_message", "structstreets__service_1_1simulation_1_1time__sync__message.html", null ],
     [ "message_services::models::trajectory", "structmessage__services_1_1models_1_1trajectory.html", null ],
     [ "streets_tsc_configuration::tsc_configuration_state", "structstreets__tsc__configuration_1_1tsc__configuration__state.html", null ],
@@ -176,6 +194,8 @@ var hierarchy =
       [ "streets_vehicle_scheduler::all_stop_vehicle_scheduler", "classstreets__vehicle__scheduler_1_1all__stop__vehicle__scheduler.html", null ],
       [ "streets_vehicle_scheduler::signalized_vehicle_scheduler", "classstreets__vehicle__scheduler_1_1signalized__vehicle__scheduler.html", null ]
     ] ],
+    [ "streets_utils::messages::vehicle_size", "structstreets__utils_1_1messages_1_1vehicle__size.html", null ],
+    [ "streets_utils::messages::vehicle_size_confidence", "structstreets__utils_1_1messages_1_1vehicle__size__confidence.html", null ],
     [ "message_services::services::vehicle_status_intent_service", "classmessage__services_1_1services_1_1vehicle__status__intent__service.html", null ],
     [ "message_services::models::VehicleSize", "structmessage__services_1_1models_1_1VehicleSize.html", null ],
     [ "message_services::services::vsi_message_bucket", "structmessage__services_1_1services_1_1vsi__message__bucket.html", null ],

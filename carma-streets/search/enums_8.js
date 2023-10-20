@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['request_5ftype_0',['REQUEST_TYPE',['../namespacestreets__snmp__cmd.html#adc71a58a54cd2d720c4a550635f0eba6',1,'streets_snmp_cmd']]],
-  ['response_5ftype_1',['RESPONSE_TYPE',['../namespacestreets__snmp__cmd.html#a6f3945d9a8ecb3f1265d1b3606b02949',1,'streets_snmp_cmd']]]
+  ['oaicompressiontype_0',['OAICompressionType',['../classOpenAPI_1_1OAIHttpRequestWorker.html#a18d20a87e31b666628237941745a0f45',1,'OpenAPI::OAIHttpRequestWorker']]],
+  ['oaihttprequestvarlayout_1',['OAIHttpRequestVarLayout',['../namespaceOpenAPI.html#a01f5551f0ce7e6159bde77dabe47aebe',1,'OpenAPI']]],
+  ['object_5ftype_2',['object_type',['../namespacestreets__utils_1_1messages.html#a27488b0ff386e35ea9da533b92e694c8',1,'streets_utils::messages']]]
 ];

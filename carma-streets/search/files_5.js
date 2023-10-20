@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['json_5futils_2ecpp_0',['json_utils.cpp',['../json__utils_8cpp.html',1,'']]],
-  ['json_5futils_2ehpp_1',['json_utils.hpp',['../json__utils_8hpp.html',1,'']]],
-  ['json_5futils_5fexception_2ehpp_2',['json_utils_exception.hpp',['../json__utils__exception_8hpp.html',1,'']]]
+  ['heading_5fconfidence_2ehpp_0',['heading_confidence.hpp',['../heading__confidence_8hpp.html',1,'']]],
+  ['human_5fpropelled_5ftype_2ehpp_1',['human_propelled_type.hpp',['../human__propelled__type_8hpp.html',1,'']]]
 ];

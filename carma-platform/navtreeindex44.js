@@ -1,5 +1,7 @@
 var NAVTREEINDEX44 =
 {
+"plugin__manager_8h_source.html":[54,0,49,0,0,3,4],
+"plugin__neighbor__generator_8hpp.html":[54,0,2,0,12],
 "plugin__neighbor__generator_8hpp_source.html":[54,0,2,0,12],
 "plugins_8launch_8py.html":[54,0,5,0,6],
 "plugins_8launch_8py.html#ac3f3c843d1dfcb998c4dbafd7c596419":[54,0,5,0,6,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX44 =
 "reverse__waypoints_8py.html#a40e40026c0463e037fbf9ca29f25e06e":[54,0,14,5,0],
 "reverse__waypoints_8py_source.html":[54,0,14,5],
 "roadway__objects__component_8cpp.html":[54,0,42,3,0],
-"roadway__objects__component_8cpp_source.html":[54,0,42,3,0],
-"roadway__objects__component_8hpp.html":[54,0,42,1,0,0],
-"roadway__objects__component_8hpp_source.html":[54,0,42,1,0,0]
+"roadway__objects__component_8cpp_source.html":[54,0,42,3,0]
 };

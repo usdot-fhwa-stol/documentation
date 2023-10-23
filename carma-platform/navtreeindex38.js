@@ -1,5 +1,7 @@
 var NAVTREEINDEX38 =
 {
+"j3224__types_8cpp_source.html":[54,0,7,2,4],
+"j3224__types_8hpp.html":[54,0,7,1,0,3],
 "j3224__types_8hpp_source.html":[54,0,7,1,0,3],
 "lci__state__transition__table_8cpp.html":[54,0,21,2,0],
 "lci__state__transition__table_8cpp_source.html":[54,0,21,2,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX38 =
 "md_carma_cooperative_perception_docs_package_design.html":[9],
 "md_carma_cooperative_perception_docs_package_design.html#autotoc_md24":[9,0],
 "md_carma_cooperative_perception_docs_package_design.html#autotoc_md25":[9,0,0],
-"md_carma_cooperative_perception_docs_sdsm_to_detection_list_node.html":[10],
-"md_carma_cooperative_perception_docs_sdsm_to_detection_list_node.html#autotoc_md27":[10,0],
-"md_carma_cooperative_perception_docs_sdsm_to_detection_list_node.html#autotoc_md28":[10,1]
+"md_carma_cooperative_perception_docs_sdsm_to_detection_list_node.html":[10]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX45 =
 {
+"roadway__objects__component_8hpp.html":[54,0,42,1,0,0],
+"roadway__objects__component_8hpp_source.html":[54,0,42,1,0,0],
 "roadway__objects__launch_8py.html":[54,0,42,2,0],
 "roadway__objects__launch_8py.html#a968bec41644500a2281d050e31bcbf01":[54,0,42,2,0,0],
 "roadway__objects__launch_8py_source.html":[54,0,42,2,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX45 =
 "stop__and__dwell__strategic__plugin_8cpp.html#af094e7f4040bb805d05e70298ef35cf9":[54,0,46,2,1,1],
 "stop__and__dwell__strategic__plugin_8cpp_source.html":[54,0,46,2,1],
 "stop__and__dwell__strategic__plugin_8hpp.html":[54,0,46,0,0],
-"stop__and__dwell__strategic__plugin_8hpp_source.html":[54,0,46,0,0],
-"stop__and__dwell__strategic__plugin_8launch_8py.html":[54,0,46,1,0],
-"stop__and__dwell__strategic__plugin_8launch_8py.html#a61b457192fe18399ade09573cc61581d":[54,0,46,1,0,0]
+"stop__and__dwell__strategic__plugin_8hpp_source.html":[54,0,46,0,0]
 };

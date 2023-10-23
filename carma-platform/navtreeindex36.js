@@ -1,5 +1,7 @@
 var NAVTREEINDEX36 =
 {
+"functions_vars_b.html":[53,3,2,2],
+"functions_vars_c.html":[53,3,2,3],
 "functions_vars_d.html":[53,3,2,4],
 "functions_vars_e.html":[53,3,2,5],
 "functions_vars_f.html":[53,3,2,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX36 =
 "index.html#autotoc_md126":[0,13],
 "index.html#autotoc_md127":[0,14],
 "index.html#autotoc_md128":[0,15],
-"inlanecruising__config_8hpp.html":[54,0,19,0,0,2],
-"inlanecruising__config_8hpp_source.html":[54,0,19,0,0,2],
-"inlanecruising__plugin_2include_2inlanecruising__plugin_2log_2log_8hpp.html":[54,0,19,0,0,0,0]
+"inlanecruising__config_8hpp.html":[54,0,19,0,0,2]
 };

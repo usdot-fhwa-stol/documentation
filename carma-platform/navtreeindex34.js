@@ -1,5 +1,7 @@
 var NAVTREEINDEX34 =
 {
+"config_8hpp.html":[54,0,1,0,0,0],
+"config_8hpp_source.html":[54,0,1,0,0,0],
 "control__plugin_8cpp.html":[54,0,8,1,0],
 "control__plugin_8cpp_source.html":[54,0,8,1,0],
 "control__plugin_8hpp.html":[54,0,8,0,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX34 =
 "dir_c8ae0f58fe67149d6012f46fc15c9502.html":[54,0,40,2],
 "dir_cb0c021453b129b04d186d0de5682971.html":[54,0,25,2],
 "dir_cb72fb37372011d383a562ed6f456135.html":[54,0,2,0],
-"dir_cd295dcb23c8c1543ab9f12d5ea9f785.html":[54,0,49,0,0,0],
-"dir_cd3f5041b41a115e02a047c90b21f9e0.html":[54,0,4,2],
-"dir_cd6f167b37c29f7c7eb9f38975b914ba.html":[54,0,27]
+"dir_cd295dcb23c8c1543ab9f12d5ea9f785.html":[54,0,49,0,0,0]
 };

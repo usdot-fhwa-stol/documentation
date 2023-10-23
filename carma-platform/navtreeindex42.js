@@ -1,5 +1,7 @@
 var NAVTREEINDEX42 =
 {
+"namespacemembers_func_e.html":[52,1,1,4],
+"namespacemembers_func_f.html":[52,1,1,5],
 "namespacemembers_func_g.html":[52,1,1,6],
 "namespacemembers_func_h.html":[52,1,1,7],
 "namespacemembers_func_i.html":[52,1,1,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX42 =
 "namespacespeedharm-cli.html#a987debee359c2538651ad540914ba3b6":[52,0,87,4],
 "namespacespeedharm-cli.html#a9aa83a2601c836f1cc58c5178abf8d44":[52,0,87,14],
 "namespacespeedharm-cli.html#a9c151ea60260cb5605044f4b94bffa6b":[52,0,87,25],
-"namespacespeedharm-cli.html#aa1fbf10325dd7e906eaf814510446d97":[52,0,87,10],
-"namespacespeedharm-cli.html#aa3c95823a85a6b8b51f2057029d487e4":[52,0,87,21],
-"namespacespeedharm-cli.html#aaa22c7d79eedb5b32df4d323bad514fb":[52,0,87,5]
+"namespacespeedharm-cli.html#aa1fbf10325dd7e906eaf814510446d97":[52,0,87,10]
 };

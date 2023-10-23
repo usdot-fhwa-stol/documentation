@@ -1,5 +1,7 @@
 var NAVTREEINDEX31 =
 {
+"classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a8de0303fc6e7bebecdca01da5c9df5d3":[52,0,89,1,24],
+"classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a8de0303fc6e7bebecdca01da5c9df5d3":[53,0,48,0,24],
 "classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a930d186414dde8774372adff8fffc828":[53,0,48,0,15],
 "classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a930d186414dde8774372adff8fffc828":[52,0,89,1,15],
 "classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html#a9e652441a7f9b97dd5ddaff1d99ff09c":[53,0,48,0,33],
@@ -247,7 +249,5 @@ var NAVTREEINDEX31 =
 "classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c":[52,0,94,6,14],
 "classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c":[52,0,94,6,13],
 "classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c":[53,0,52,6,14],
-"classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c":[53,0,52,6,13],
-"classsubsystem__controllers_1_1EntryManager.html#a84a8f8373e6467478084a1c3490a4889":[53,0,52,6,1],
-"classsubsystem__controllers_1_1EntryManager.html#a84a8f8373e6467478084a1c3490a4889":[52,0,94,6,1]
+"classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c":[53,0,52,6,13]
 };

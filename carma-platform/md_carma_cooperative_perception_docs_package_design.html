@@ -87,11 +87,11 @@ $(document).ready(function(){initNavTree('md_carma_cooperative_perception_docs_p
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p >This package provides the necessary ROS 2 Nodes and Launch files to support cooperative perception within CARMA Platform. Message conversion Nodes allow the stack to ingest heterogeneous data sources by converting unique messages types to a <code>carma_cooperative_perception/DetectionList.msg</code> message, which gets passed into a multiple-object tracking pipeline. On the pipeline's output, more message conversion Nodes adapt the data to a format that is compatible with the rest of CARMA Platform.</p>
-<h1><a class="anchor" id="autotoc_md24"></a>
+<h1><a class="anchor" id="autotoc_md30"></a>
 ROS 2 Nodes</h1>
 <p >This package's ROS 2 Node composition is similar to a micro-services architecture. Let's call it a micro-node architecture. Each Node in the package is responsible for a single task, either adapting a message type or tracking objects. This architecture promotes testability and helps us decouple each concern's implementation. For example, the main pipeline, the <code>multiple_object_tracker_node</code> Node, should not care about how message types get converted. The subsystem's Nodes are managed (i.e., <a href="https://design.ros2.org/articles/node_lifecycle.html">ROS 2 Lifecycle Nodes</a>) and implemented as <a href="https://docs.ros.org/en/rolling/Concepts/Intermediate/About-Composition.html">ROS 2 Components</a>.</p>
 <p >In its full capacity, the cooperative perception stack comprises two concurrent dataflows. One flow is responsible for tracking and fusing object data from incoming basic safety message (BSMs), sensor data sharing messages (SDSMs), and locally-perceived objects. This flow outputs only to the host; it does not share the results with the host’s neighbors. The second dataflow fuses data coming from only locally-perceived objects, and the host shares the outputs from this flow with its neighboring actors (e.g., other connected vehicles or infrastructure).</p>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 Package Nodes</h2>
 <ul>
 <li>Sensor data sharing message (SDSM) to detection list Node: <a class="el" href="md_carma_cooperative_perception_docs_sdsm_to_detection_list_node.html">`sdsm_to_detection_list_node`</a></li>
@@ -104,7 +104,7 @@ Package Nodes</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Oct 23 2023 13:13:28 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Oct 27 2023 15:33:50 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

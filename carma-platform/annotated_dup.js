@@ -56,6 +56,7 @@ var annotated_dup =
       [ "AccelerationSet4Way", "structcarma__cooperative__perception_1_1AccelerationSet4Way.html", "structcarma__cooperative__perception_1_1AccelerationSet4Way" ],
       [ "DDateTime", "structcarma__cooperative__perception_1_1DDateTime.html", "structcarma__cooperative__perception_1_1DDateTime" ],
       [ "ExternalObjectListToDetectionListNode", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode" ],
+      [ "ExternalObjectListToSdsmNode", "classcarma__cooperative__perception_1_1ExternalObjectListToSdsmNode.html", "classcarma__cooperative__perception_1_1ExternalObjectListToSdsmNode" ],
       [ "Heading", "structcarma__cooperative__perception_1_1Heading.html", "structcarma__cooperative__perception_1_1Heading" ],
       [ "MeasurementTimeOffset", "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html", "structcarma__cooperative__perception_1_1MeasurementTimeOffset" ],
       [ "Month", "classcarma__cooperative__perception_1_1Month.html", "classcarma__cooperative__perception_1_1Month" ],

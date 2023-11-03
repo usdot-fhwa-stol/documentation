@@ -61,6 +61,7 @@ var annotated_dup =
       [ "MeasurementTimeOffset", "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html", "structcarma__cooperative__perception_1_1MeasurementTimeOffset" ],
       [ "Month", "classcarma__cooperative__perception_1_1Month.html", "classcarma__cooperative__perception_1_1Month" ],
       [ "MotionModelMapping", "structcarma__cooperative__perception_1_1MotionModelMapping.html", "structcarma__cooperative__perception_1_1MotionModelMapping" ],
+      [ "MultipleObjectTrackerNode", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode" ],
       [ "Position3D", "structcarma__cooperative__perception_1_1Position3D.html", "structcarma__cooperative__perception_1_1Position3D" ],
       [ "PositionOffsetXYZ", "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html", "structcarma__cooperative__perception_1_1PositionOffsetXYZ" ],
       [ "SdsmToDetectionListNode", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode" ],

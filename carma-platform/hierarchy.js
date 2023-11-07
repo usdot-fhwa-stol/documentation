@@ -32,6 +32,7 @@ var hierarchy =
       [ "carma_cloud_client::CarmaCloudClient", "classcarma__cloud__client_1_1CarmaCloudClient.html", null ],
       [ "carma_cooperative_perception::ExternalObjectListToDetectionListNode", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html", null ],
       [ "carma_cooperative_perception::ExternalObjectListToSdsmNode", "classcarma__cooperative__perception_1_1ExternalObjectListToSdsmNode.html", null ],
+      [ "carma_cooperative_perception::HostVehicleFilterNode", "classcarma__cooperative__perception_1_1HostVehicleFilterNode.html", null ],
       [ "carma_cooperative_perception::MultipleObjectTrackerNode", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html", null ],
       [ "carma_cooperative_perception::SdsmToDetectionListNode", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html", null ],
       [ "carma_cooperative_perception::TrackListToExternalObjectListNode", "classcarma__cooperative__perception_1_1TrackListToExternalObjectListNode.html", null ],

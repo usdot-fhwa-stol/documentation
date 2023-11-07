@@ -58,6 +58,7 @@ var annotated_dup =
       [ "ExternalObjectListToDetectionListNode", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode" ],
       [ "ExternalObjectListToSdsmNode", "classcarma__cooperative__perception_1_1ExternalObjectListToSdsmNode.html", "classcarma__cooperative__perception_1_1ExternalObjectListToSdsmNode" ],
       [ "Heading", "structcarma__cooperative__perception_1_1Heading.html", "structcarma__cooperative__perception_1_1Heading" ],
+      [ "HostVehicleFilterNode", "classcarma__cooperative__perception_1_1HostVehicleFilterNode.html", "classcarma__cooperative__perception_1_1HostVehicleFilterNode" ],
       [ "MeasurementTimeOffset", "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html", "structcarma__cooperative__perception_1_1MeasurementTimeOffset" ],
       [ "Month", "classcarma__cooperative__perception_1_1Month.html", "classcarma__cooperative__perception_1_1Month" ],
       [ "MotionModelMapping", "structcarma__cooperative__perception_1_1MotionModelMapping.html", "structcarma__cooperative__perception_1_1MotionModelMapping" ],

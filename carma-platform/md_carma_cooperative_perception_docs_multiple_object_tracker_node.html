@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('md_carma_cooperative_perception_docs_m
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p >This is the main Node in the package; it does the actual object tracking. It wraps the <code>multiple_object_tracking</code> library in a ROS 2 interface and composes the individual tracking steps into a cohesive pipeline. Check out the library's documentation for details on the specific pipeline steps. For our purposes, we need to be concerned only with the node's inputs and outputs. It receives incoming <code>carma_cooperative_perception_interfaces/DetectionList.msg</code> messages from various sources (CARMA Platform and connected remote actors), and sends out <code>carma_cooperative_perception_interfaces/TrackList.msg</code> messages. This Node fuses the data from the incoming <code>DetectionList.msg</code> messages to form the outgoing <code>TrackList.msg</code> messages' data.</p>
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md36"></a>
 Node behavior</h1>
 <p >The <code>multiple_object_tracker_node</code> Node executes a multiple object tracking pipeline at a specific frequency, which the <code>execution_frequency_hz</code> parameter defines. Between executions, the Node listens for incoming <code>DetectionList.msg</code> messages on the <code>~/input/detections</code> topic, queueing received detections for processsing. The tracking pipeline executes the following steps on each iteration:</p>
 <ol type="1">
@@ -99,7 +99,7 @@ Node behavior</h1>
 <li>detection-to-track fusion</li>
 </ol>
 <p >The tracker Node outputs a list of confirmed tracks after executing the pipeline.</p>
-<h1><a class="anchor" id="autotoc_md31"></a>
+<h1><a class="anchor" id="autotoc_md37"></a>
 Subscriptions</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -107,7 +107,7 @@ Subscriptions</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>~/input/detections</code>   </td><td class="markdownTableBodyNone"><a href="https://github.com/usdot-fhwa-stol/carma-msgs/blob/develop/carma_cooperative_perception_interfaces/msg/DetectionList.msg"><code>carma_cooperative_perception_interfaces/DetectionList.msg</code></a>   </td><td class="markdownTableBodyNone">Incoming detections   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md32"></a>
+<h1><a class="anchor" id="autotoc_md38"></a>
 Publishers</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -115,7 +115,7 @@ Publishers</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>~/output/tracks</code>   </td><td class="markdownTableBodyNone"><a href="https://github.com/usdot-fhwa-stol/carma-msgs/blob/develop/carma_cooperative_perception_interfaces/msg/TrackList.msg"><code>carma_cooperative_perception_interfaces/TrackList.msg</code></a>   </td><td class="markdownTableBodyNone">Parameter-defined   </td><td class="markdownTableBodyNone">Tracked objects from the pipeline. <b>Note:</b> The track list contains only <em>confirmed</em> tracks.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md33"></a>
+<h1><a class="anchor" id="autotoc_md39"></a>
 Parameters</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -123,10 +123,10 @@ Parameters</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>~/execution_frequency_hz</code>   </td><td class="markdownTableBodyNone"><code>float</code>   </td><td class="markdownTableBodyNone"><code>2.0</code>   </td><td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">Tracking execution pipeline's execution frequency (in Hertz)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md34"></a>
+<h1><a class="anchor" id="autotoc_md40"></a>
 Services</h1>
 <p >This Node does not provide services.</p>
-<h1><a class="anchor" id="autotoc_md35"></a>
+<h1><a class="anchor" id="autotoc_md41"></a>
 Actions</h1>
 <p >This Node does not provide actions. </p>
 </div></div><!-- contents -->
@@ -135,7 +135,7 @@ Actions</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Nov 3 2023 19:56:32 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Nov 7 2023 14:08:53 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

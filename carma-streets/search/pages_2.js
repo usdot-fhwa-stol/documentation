@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['json_20utility_20library_0',['JSON Utility Library',['../md_streets_utils_json_utils_README.html',1,'']]]
+  ['install_20the_20intersection_20client_20library_20from_20carma_2dutils_0',['Install the intersection client library from carma-utils',['../md_examples_qt_rest_clients_api_intersection_client_README.html',1,'']]],
+  ['intersection_5fmodel_1',['intersection_model',['../md_intersection_model_readme.html',1,'']]]
 ];

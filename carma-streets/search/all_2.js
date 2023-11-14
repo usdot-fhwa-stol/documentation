@@ -40,5 +40,6 @@ var searchData=
   ['bsm_5fworker_2eh_37',['bsm_worker.h',['../bsm__worker_8h.html',1,'']]],
   ['bsmcoredata_38',['bsmCoreData',['../structmessage__services_1_1models_1_1bsmCoreData.html',1,'message_services::models']]],
   ['bsmcoredata_2eh_39',['bsmCoreData.h',['../bsmCoreData_8h.html',1,'']]],
-  ['bsmcoredata_5ft_40',['bsmCoreData_t',['../namespacemessage__services_1_1models.html#a6884453719a02ea5f36d247172195264',1,'message_services::models']]]
+  ['bsmcoredata_5ft_40',['bsmCoreData_t',['../namespacemessage__services_1_1models.html#a6884453719a02ea5f36d247172195264',1,'message_services::models']]],
+  ['build_20scripts_41',['Build Scripts',['../md_build_scripts_README.html',1,'']]]
 ];

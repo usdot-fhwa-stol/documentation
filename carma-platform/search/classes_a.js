@@ -24,6 +24,5 @@ var searchData=
   ['motioncomputationnode_21',['MotionComputationNode',['../classmotion__computation_1_1MotionComputationNode.html',1,'motion_computation']]],
   ['motioncomputationworker_22',['MotionComputationWorker',['../classmotion__computation_1_1MotionComputationWorker.html',1,'motion_computation']]],
   ['motionmodelmapping_23',['MotionModelMapping',['../structcarma__cooperative__perception_1_1MotionModelMapping.html',1,'carma_cooperative_perception']]],
-  ['movingobject_24',['MovingObject',['../structcarma__wm_1_1collision__detection_1_1MovingObject.html',1,'carma_wm::collision_detection']]],
-  ['multipleobjecttrackernode_25',['MultipleObjectTrackerNode',['../classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html',1,'carma_cooperative_perception']]]
+  ['movingobject_24',['MovingObject',['../structcarma__wm_1_1collision__detection_1_1MovingObject.html',1,'carma_wm::collision_detection']]]
 ];

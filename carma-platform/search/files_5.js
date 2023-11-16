@@ -17,9 +17,5 @@ var searchData=
   ['external_5fobject_5flist_5fto_5fdetection_5flist_5fcomponent_2ehpp_14',['external_object_list_to_detection_list_component.hpp',['../external__object__list__to__detection__list__component_8hpp.html',1,'']]],
   ['external_5fobject_5flist_5fto_5fdetection_5flist_5fnode_2ecpp_15',['external_object_list_to_detection_list_node.cpp',['../external__object__list__to__detection__list__node_8cpp.html',1,'']]],
   ['external_5fobject_5flist_5fto_5fdetection_5flist_5fnode_2emd_16',['external_object_list_to_detection_list_node.md',['../external__object__list__to__detection__list__node_8md.html',1,'']]],
-  ['external_5fobject_5flist_5fto_5fsdsm_5fcomponent_2ecpp_17',['external_object_list_to_sdsm_component.cpp',['../external__object__list__to__sdsm__component_8cpp.html',1,'']]],
-  ['external_5fobject_5flist_5fto_5fsdsm_5fcomponent_2ehpp_18',['external_object_list_to_sdsm_component.hpp',['../external__object__list__to__sdsm__component_8hpp.html',1,'']]],
-  ['external_5fobject_5flist_5fto_5fsdsm_5fnode_2ecpp_19',['external_object_list_to_sdsm_node.cpp',['../external__object__list__to__sdsm__node_8cpp.html',1,'']]],
-  ['external_5fobject_5flist_5fto_5fsdsm_5fnode_2emd_20',['external_object_list_to_sdsm_node.md',['../external__object__list__to__sdsm__node_8md.html',1,'']]],
-  ['extract_5frpy_5ffrom_5fquat_2epy_21',['extract_rpy_from_quat.py',['../extract__rpy__from__quat_8py.html',1,'']]]
+  ['extract_5frpy_5ffrom_5fquat_2epy_17',['extract_rpy_from_quat.py',['../extract__rpy__from__quat_8py.html',1,'']]]
 ];

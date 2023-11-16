@@ -44,9 +44,6 @@ var namespaces_dup =
     [ "cooperative_lanechange_launch", "namespacecooperative__lanechange__launch.html", [
       [ "generate_launch_description", "namespacecooperative__lanechange__launch.html#a8eeaf25b9dddf06d79ef0444488cf34a", null ]
     ] ],
-    [ "cooperative_perception_launch", "namespacecooperative__perception__launch.html", [
-      [ "generate_launch_description", "namespacecooperative__perception__launch.html#a401c1d7e5c939ebbc26b7127663b7495", null ]
-    ] ],
     [ "covariance_helper", "namespacecovariance__helper.html", [
       [ "transformCovariance", "namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e", null ]
     ] ],

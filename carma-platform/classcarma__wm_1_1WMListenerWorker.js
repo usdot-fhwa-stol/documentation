@@ -7,6 +7,7 @@ var classcarma__wm_1_1WMListenerWorker =
     [ "getVehicleParticipationType", "classcarma__wm_1_1WMListenerWorker.html#ac0c115081f19ec29b215e6edeb110d4c", null ],
     [ "getWorldModel", "classcarma__wm_1_1WMListenerWorker.html#ad46406f4874729f47b079b52f4ebb213", null ],
     [ "incomingSpatCallback", "classcarma__wm_1_1WMListenerWorker.html#a361dabf49aae12e4fea515da492a4c5b", null ],
+    [ "isUsingSimTime", "classcarma__wm_1_1WMListenerWorker.html#aba49ce4302c5629cc030363e0f0d810d", null ],
     [ "mapCallback", "classcarma__wm_1_1WMListenerWorker.html#ad4490dd5c93ee3ade6e62d5e66dfc3c6", null ],
     [ "mapUpdateCallback", "classcarma__wm_1_1WMListenerWorker.html#a3e2fb75fe96504aa76691cfecd5dd35f", null ],
     [ "newRegemUpdateHelper", "classcarma__wm_1_1WMListenerWorker.html#a5cffb02708d8e8421ad56c4e7dd21b81", null ],
@@ -27,5 +28,6 @@ var classcarma__wm_1_1WMListenerWorker =
     [ "rerouting_flag_", "classcarma__wm_1_1WMListenerWorker.html#a310d6ebc20c42f055541025291337b57", null ],
     [ "route_callback_", "classcarma__wm_1_1WMListenerWorker.html#a8a81ac013a5e920b47e6c12d338446cc", null ],
     [ "route_node_flag_", "classcarma__wm_1_1WMListenerWorker.html#a39cbf05af713a84fb396c36da3551df5", null ],
+    [ "use_sim_time_", "classcarma__wm_1_1WMListenerWorker.html#acab7ad4d3841c78cf96da2deec5c751b", null ],
     [ "world_model_", "classcarma__wm_1_1WMListenerWorker.html#a4ea1ac169b8ba4a72dd72b4e8723257e", null ]
 ];

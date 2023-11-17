@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['license_0',['License',['../md_docs_License.html',1,'']]],
-  ['light_5fcontrolled_5fintersection_5ftactical_5fplugin_1',['light_controlled_intersection_tactical_plugin',['../md_light_controlled_intersection_tactical_plugin_README.html',1,'']]]
+  ['host_20vehicle_20filter_20node_0',['Host vehicle filter Node',['../md_carma_cooperative_perception_docs_host_vehicle_filter_node.html',1,'']]]
 ];

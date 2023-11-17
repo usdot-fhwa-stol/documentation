@@ -280,14 +280,14 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="arbitrator_8hpp_source.html#l00057">57</a> of file <a class="el" href="arbitrator_8hpp_source.html">arbitrator.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>                                              : </div>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>                                              :</div>
 <div class="line"><span class="lineno">   64</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#afa8df447cf2131908b025c19f092ef41">sm_</a>(sm),</div>
 <div class="line"><span class="lineno">   65</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>(nh),</div>
-<div class="line"><span class="lineno">   66</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad5b777ea7efd572afff22a900696efc2">capabilities_interface_</a>(ci),</div>
-<div class="line"><span class="lineno">   67</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ac62099fca7aef7bb1a4db4d65c48f6bf">planning_strategy_</a>(planning_strategy),</div>
-<div class="line"><span class="lineno">   68</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a9325e804ebbbe8d2a5626890e1747b86">initialized_</a>(<span class="keyword">false</span>),</div>
-<div class="line"><span class="lineno">   69</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a2bab24a87a5c8510d90ad004b5d838fa">min_plan_duration_</a>(min_plan_duration),</div>
-<div class="line"><span class="lineno">   70</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a9c450d3d8fe2e1e937be8fb6c3029572">time_between_plans_</a>(planning_period),</div>
+<div class="line"><span class="lineno">   66</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a2bab24a87a5c8510d90ad004b5d838fa">min_plan_duration_</a>(min_plan_duration),</div>
+<div class="line"><span class="lineno">   67</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a9c450d3d8fe2e1e937be8fb6c3029572">time_between_plans_</a>(planning_period),</div>
+<div class="line"><span class="lineno">   68</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad5b777ea7efd572afff22a900696efc2">capabilities_interface_</a>(ci),</div>
+<div class="line"><span class="lineno">   69</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ac62099fca7aef7bb1a4db4d65c48f6bf">planning_strategy_</a>(planning_strategy),</div>
+<div class="line"><span class="lineno">   70</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a9325e804ebbbe8d2a5626890e1747b86">initialized_</a>(<span class="keyword">false</span>),</div>
 <div class="line"><span class="lineno">   71</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a62bc07d37ce53cc5a65d37da43e157d6">wm_</a>(wm),</div>
 <div class="line"><span class="lineno">   72</span>                <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a4f280f42e58722907e29e4b066d4eeae">tf2_buffer_</a>(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_clock()) {};</div>
 <div class="ttc" id="aclassarbitrator_1_1Arbitrator_html_a2bab24a87a5c8510d90ad004b5d838fa"><div class="ttname"><a href="classarbitrator_1_1Arbitrator.html#a2bab24a87a5c8510d90ad004b5d838fa">arbitrator::Arbitrator::min_plan_duration_</a></div><div class="ttdeci">rclcpp::Duration min_plan_duration_</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator_8hpp_source.html#l00139">arbitrator.hpp:139</a></div></div>
@@ -494,7 +494,7 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="arbitrator_8cpp_source.html#l00105">105</a> of file <a class="el" href="arbitrator_8cpp_source.html">arbitrator.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  106</span>    {</div>
 <div class="line"><span class="lineno">  107</span>        <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a9325e804ebbbe8d2a5626890e1747b86">initialized_</a>)</div>
-<div class="line"><span class="lineno">  108</span>        {   </div>
+<div class="line"><span class="lineno">  108</span>        {</div>
 <div class="line"><span class="lineno">  109</span>            RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator initializing on first initial state spin...&quot;</span>);</div>
 <div class="line"><span class="lineno">  110</span>            <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a2c8a30ce598c6957ad2493f82105e21c">final_plan_pub_</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;create_publisher&lt;carma_planning_msgs::msg::ManeuverPlan&gt;(<span class="stringliteral">&quot;final_maneuver_plan&quot;</span>, 5);</div>
 <div class="line"><span class="lineno">  111</span>            <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a5d7780f72648a8ac75598e2c6d0009cc">guidance_state_sub_</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;create_subscription&lt;carma_planning_msgs::msg::GuidanceState&gt;(<span class="stringliteral">&quot;guidance_state&quot;</span>, 5, std::bind(&amp;<a class="code hl_function" href="classarbitrator_1_1Arbitrator.html#ae96a545169e7255dbf8ccd8544b2c01e">Arbitrator::guidance_state_cb</a>, <span class="keyword">this</span>, std::placeholders::_1));</div>
@@ -633,20 +633,20 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">  121</span>    {</div>
 <div class="line"><span class="lineno">  122</span>        RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator beginning planning process!&quot;</span>);</div>
 <div class="line"><span class="lineno">  123</span>        rclcpp::Time planning_process_start = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_clock()-&gt;now();</div>
-<div class="line"><span class="lineno">  124</span>        </div>
+<div class="line"><span class="lineno">  124</span> </div>
 <div class="line"><span class="lineno">  125</span>        carma_planning_msgs::msg::ManeuverPlan plan = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ac62099fca7aef7bb1a4db4d65c48f6bf">planning_strategy_</a>-&gt;generate_plan(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>);</div>
 <div class="line"><span class="lineno">  126</span> </div>
-<div class="line"><span class="lineno">  127</span>        <span class="keywordflow">if</span> (!plan.maneuvers.empty()) </div>
+<div class="line"><span class="lineno">  127</span>        <span class="keywordflow">if</span> (!plan.maneuvers.empty())</div>
 <div class="line"><span class="lineno">  128</span>        {</div>
 <div class="line"><span class="lineno">  129</span>            rclcpp::Time plan_end_time = <a class="code hl_function" href="namespacearbitrator__utils.html#a55b3fb8d1ec0ed202d71a85a7ea098ae">arbitrator_utils::get_plan_end_time</a>(plan);</div>
 <div class="line"><span class="lineno">  130</span>            rclcpp::Time plan_start_time = <a class="code hl_function" href="namespacearbitrator__utils.html#a06e324ed81e5044e09191269407e6869">arbitrator_utils::get_plan_start_time</a>(plan);</div>
 <div class="line"><span class="lineno">  131</span>            rclcpp::Duration plan_duration = plan_end_time - plan_start_time;</div>
 <div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>            <span class="keywordflow">if</span> (plan_duration &lt; <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a2bab24a87a5c8510d90ad004b5d838fa">min_plan_duration_</a>) </div>
+<div class="line"><span class="lineno">  133</span>            <span class="keywordflow">if</span> (plan_duration &lt; <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a2bab24a87a5c8510d90ad004b5d838fa">min_plan_duration_</a>)</div>
 <div class="line"><span class="lineno">  134</span>            {</div>
 <div class="line"><span class="lineno">  135</span>                RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator is unable to generate a plan with minimum plan duration requirement!&quot;</span>);</div>
-<div class="line"><span class="lineno">  136</span>            } </div>
-<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">else</span> </div>
+<div class="line"><span class="lineno">  136</span>            }</div>
+<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  138</span>            {</div>
 <div class="line"><span class="lineno">  139</span>                RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator is publishing plan &quot;</span> &lt;&lt; std::string(plan.maneuver_plan_id) &lt;&lt; <span class="stringliteral">&quot; of duration &quot;</span> &lt;&lt; plan_duration.seconds() &lt;&lt; <span class="stringliteral">&quot; as current maneuver plan&quot;</span>);</div>
 <div class="line"><span class="lineno">  140</span>            }</div>
@@ -716,8 +716,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   29</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a0f8d5860c35f8a848f44b895560335be">planning_in_progress_</a> &amp;&amp; <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_current_state().id() != lifecycle_msgs::msg::State::TRANSITION_STATE_SHUTTINGDOWN)</div>
 <div class="line"><span class="lineno">   30</span>        {</div>
 <div class="line"><span class="lineno">   31</span>            <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a0f8d5860c35f8a848f44b895560335be">planning_in_progress_</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   32</span>            </div>
-<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#afa8df447cf2131908b025c19f092ef41">sm_</a>-&gt;get_state()) </div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#afa8df447cf2131908b025c19f092ef41">sm_</a>-&gt;get_state())</div>
 <div class="line"><span class="lineno">   34</span>            {</div>
 <div class="line"><span class="lineno">   35</span>                <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22acd8d977332cd6dc4984380d3df5bd633">INITIAL</a>:</div>
 <div class="line"><span class="lineno">   36</span>                    RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator spinning in INITIAL state.&quot;</span>);</div>
@@ -746,7 +746,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   59</span>        }</div>
 <div class="line"><span class="lineno">   60</span>        <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">   61</span>        {</div>
-<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">return</span>;    </div>
+<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   63</span>        }</div>
 <div class="line"><span class="lineno">   64</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a0f8d5860c35f8a848f44b895560335be">planning_in_progress_</a> = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   65</span>    }</div>
@@ -1355,7 +1355,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacearbitrator.html">arbitrator</a></li><li class="navelem"><a class="el" href="classarbitrator_1_1Arbitrator.html">Arbitrator</a></li>
-    <li class="footer">Generated on Thu Nov 16 2023 18:21:42 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Nov 17 2023 19:05:25 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

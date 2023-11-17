@@ -117,8 +117,8 @@ $(document).ready(function(){initNavTree('arbitrator_8cpp_source.html',''); init
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a0f8d5860c35f8a848f44b895560335be">planning_in_progress_</a> &amp;&amp; <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_current_state().id() != lifecycle_msgs::msg::State::TRANSITION_STATE_SHUTTINGDOWN)</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a0f8d5860c35f8a848f44b895560335be">planning_in_progress_</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#afa8df447cf2131908b025c19f092ef41">sm_</a>-&gt;get_state()) </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#afa8df447cf2131908b025c19f092ef41">sm_</a>-&gt;get_state())</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22acd8d977332cd6dc4984380d3df5bd633">INITIAL</a>:</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                    RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator spinning in INITIAL state.&quot;</span>);</div>
@@ -147,12 +147,12 @@ $(document).ready(function(){initNavTree('arbitrator_8cpp_source.html',''); init
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">return</span>;    </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a0f8d5860c35f8a848f44b895560335be">planning_in_progress_</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classarbitrator_1_1Arbitrator.html#ae96a545169e7255dbf8ccd8544b2c01e">   67</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classarbitrator_1_1Arbitrator.html#ae96a545169e7255dbf8ccd8544b2c01e">Arbitrator::guidance_state_cb</a>(carma_planning_msgs::msg::GuidanceState::UniquePtr msg) </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classarbitrator_1_1Arbitrator.html#ae96a545169e7255dbf8ccd8544b2c01e">   67</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classarbitrator_1_1Arbitrator.html#ae96a545169e7255dbf8ccd8544b2c01e">Arbitrator::guidance_state_cb</a>(carma_planning_msgs::msg::GuidanceState::UniquePtr msg)</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">switch</span> (msg-&gt;state)</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        {</div>
@@ -193,7 +193,7 @@ $(document).ready(function(){initNavTree('arbitrator_8cpp_source.html',''); init
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classarbitrator_1_1Arbitrator.html#a2762efbdc3a5ce10e89f9d7dcc58afbf">  105</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classarbitrator_1_1Arbitrator.html#a2762efbdc3a5ce10e89f9d7dcc58afbf">Arbitrator::initial_state</a>()</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    {</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a9325e804ebbbe8d2a5626890e1747b86">initialized_</a>)</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        {   </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        {</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator initializing on first initial state spin...&quot;</span>);</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a2c8a30ce598c6957ad2493f82105e21c">final_plan_pub_</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;create_publisher&lt;carma_planning_msgs::msg::ManeuverPlan&gt;(<span class="stringliteral">&quot;final_maneuver_plan&quot;</span>, 5);</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a5d7780f72648a8ac75598e2c6d0009cc">guidance_state_sub_</a> = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;create_subscription&lt;carma_planning_msgs::msg::GuidanceState&gt;(<span class="stringliteral">&quot;guidance_state&quot;</span>, 5, std::bind(&amp;<a class="code hl_function" href="classarbitrator_1_1Arbitrator.html#ae96a545169e7255dbf8ccd8544b2c01e">Arbitrator::guidance_state_cb</a>, <span class="keyword">this</span>, std::placeholders::_1));</div>
@@ -209,20 +209,20 @@ $(document).ready(function(){initNavTree('arbitrator_8cpp_source.html',''); init
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    {</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator beginning planning process!&quot;</span>);</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        rclcpp::Time planning_process_start = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_clock()-&gt;now();</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        carma_planning_msgs::msg::ManeuverPlan plan = <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ac62099fca7aef7bb1a4db4d65c48f6bf">planning_strategy_</a>-&gt;generate_plan(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>);</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">if</span> (!plan.maneuvers.empty()) </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">if</span> (!plan.maneuvers.empty())</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        {</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            rclcpp::Time plan_end_time = <a class="code hl_function" href="namespacearbitrator__utils.html#a55b3fb8d1ec0ed202d71a85a7ea098ae">arbitrator_utils::get_plan_end_time</a>(plan);</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            rclcpp::Time plan_start_time = <a class="code hl_function" href="namespacearbitrator__utils.html#a06e324ed81e5044e09191269407e6869">arbitrator_utils::get_plan_start_time</a>(plan);</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            rclcpp::Duration plan_duration = plan_end_time - plan_start_time;</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <span class="keywordflow">if</span> (plan_duration &lt; <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a2bab24a87a5c8510d90ad004b5d838fa">min_plan_duration_</a>) </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <span class="keywordflow">if</span> (plan_duration &lt; <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a2bab24a87a5c8510d90ad004b5d838fa">min_plan_duration_</a>)</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            {</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                RCLCPP_WARN_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator is unable to generate a plan with minimum plan duration requirement!&quot;</span>);</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            } </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            <span class="keywordflow">else</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            {</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Arbitrator is publishing plan &quot;</span> &lt;&lt; std::string(plan.maneuver_plan_id) &lt;&lt; <span class="stringliteral">&quot; of duration &quot;</span> &lt;&lt; plan_duration.seconds() &lt;&lt; <span class="stringliteral">&quot; as current maneuver plan&quot;</span>);</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            }</div>
@@ -291,17 +291,17 @@ $(document).ready(function(){initNavTree('arbitrator_8cpp_source.html',''); init
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    }</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="classarbitrator_1_1Arbitrator.html#a4667a042a8dea13ca8fa58e0a14caa1e">  206</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classarbitrator_1_1Arbitrator.html#a4667a042a8dea13ca8fa58e0a14caa1e">Arbitrator::twist_cb</a>(geometry_msgs::msg::TwistStamped::UniquePtr msg) </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="classarbitrator_1_1Arbitrator.html#a4667a042a8dea13ca8fa58e0a14caa1e">  206</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classarbitrator_1_1Arbitrator.html#a4667a042a8dea13ca8fa58e0a14caa1e">Arbitrator::twist_cb</a>(geometry_msgs::msg::TwistStamped::UniquePtr msg)</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    {</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#ad619f030d916d0f3d7f800d4a9e9b16d">vehicle_state_</a>.<a class="code hl_variable" href="structarbitrator_1_1VehicleState.html#a0cf1d33be164a8832bcbd54bf123a2e3">velocity</a> = msg-&gt;twist.linear.x;</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    }</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="classarbitrator_1_1Arbitrator.html#ac6d39bb05cc20a9daa0611de2aa1423f">  211</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classarbitrator_1_1Arbitrator.html#ac6d39bb05cc20a9daa0611de2aa1423f">Arbitrator::initializeBumperTransformLookup</a>() </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="classarbitrator_1_1Arbitrator.html#ac6d39bb05cc20a9daa0611de2aa1423f">  211</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classarbitrator_1_1Arbitrator.html#ac6d39bb05cc20a9daa0611de2aa1423f">Arbitrator::initializeBumperTransformLookup</a>()</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    {</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#acaa9d790f9a27d4e7db83d8bb301b886">tf2_listener_</a>.reset(<span class="keyword">new</span> tf2_ros::TransformListener(<a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a4f280f42e58722907e29e4b066d4eeae">tf2_buffer_</a>));</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <a class="code hl_variable" href="classarbitrator_1_1Arbitrator.html#a4f280f42e58722907e29e4b066d4eeae">tf2_buffer_</a>.setUsingDedicatedThread(<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    }</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>};</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>}</div>
 <div class="ttc" id="aarbitrator_8hpp_html"><div class="ttname"><a href="arbitrator_8hpp.html">arbitrator.hpp</a></div></div>
 <div class="ttc" id="aarbitrator__utils_8hpp_html"><div class="ttname"><a href="arbitrator__utils_8hpp.html">arbitrator_utils.hpp</a></div></div>
 <div class="ttc" id="aclassarbitrator_1_1Arbitrator_html_a05eeae03160be1b7d759b220e9ca36fb"><div class="ttname"><a href="classarbitrator_1_1Arbitrator.html#a05eeae03160be1b7d759b220e9ca36fb">arbitrator::Arbitrator::planning_state</a></div><div class="ttdeci">void planning_state()</div><div class="ttdoc">Function to be called when the Arbitrator begins planning.</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator_8cpp_source.html#l00120">arbitrator.cpp:120</a></div></div>
@@ -359,7 +359,7 @@ $(document).ready(function(){initNavTree('arbitrator_8cpp_source.html',''); init
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f133d8f6f41cd9c571dad37b841ce09d.html">arbitrator</a></li><li class="navelem"><a class="el" href="dir_d321a3ae3febe04bfc0e0e616f4eb6c4.html">src</a></li><li class="navelem"><a class="el" href="arbitrator_8cpp.html">arbitrator.cpp</a></li>
-    <li class="footer">Generated on Thu Nov 16 2023 18:21:36 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Nov 17 2023 19:05:19 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

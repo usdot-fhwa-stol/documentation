@@ -47,7 +47,9 @@ var hierarchy =
       [ "streets_vehicle_scheduler::signalized_intersection_schedule", "structstreets__vehicle__scheduler_1_1signalized__intersection__schedule.html", null ]
     ] ],
     [ "signal_phase_and_timing::intersection_state", "structsignal__phase__and__timing_1_1intersection__state.html", null ],
-    [ "kafka_clients::kafka_client", "classkafka__clients_1_1kafka__client.html", null ],
+    [ "kafka_clients::kafka_client", "classkafka__clients_1_1kafka__client.html", [
+      [ "kafka_clients::mock_kafka_client", "classkafka__clients_1_1mock__kafka__client.html", null ]
+    ] ],
     [ "kafka_clients::kafka_consumer_worker", "classkafka__clients_1_1kafka__consumer__worker.html", [
       [ "kafka_clients::mock_kafka_consumer_worker", "classkafka__clients_1_1mock__kafka__consumer__worker.html", null ]
     ] ],

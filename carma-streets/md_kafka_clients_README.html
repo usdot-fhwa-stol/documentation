@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Carma-streets: readme</title>
+<title>Carma-streets: Kafka Clients</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('md_kafka_clients_readme.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md_kafka_clients_README.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -83,42 +83,26 @@ $(document).ready(function(){initNavTree('md_kafka_clients_readme.html',''); ini
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">readme </div></div>
+  <div class="headertitle"><div class="title">Kafka Clients </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="fragment"><div class="line">git clone https://github.com/google/googletest/</div>
-<div class="line">cmake .</div>
-<div class="line">make</div>
-<div class="line">sudo make install</div>
-<div class="line"> </div>
-<div class="line">refer to https://github.com/edenhill/librdkafka</div>
-<div class="line">./configure</div>
-<div class="line">  make</div>
-<div class="line">  sudo make install</div>
-<div class="line"> </div>
-<div class="line">git clone https://github.com/gabime/spdlog.git</div>
-<div class="line">cd spdlog &amp;&amp; mkdir build &amp;&amp; cd build</div>
-<div class="line">cmake .. &amp;&amp; make -j</div>
-<div class="line">sudo make install</div>
-<div class="line"> </div>
-<div class="line">https://github.com/Tencent/rapidjson</div>
-<div class="line">git clone  https://github.com/Tencent/rapidjson</div>
-<div class="line">cd rapidjson &amp;&amp; mkdir build &amp;&amp; cd build</div>
-<div class="line">cmake ..</div>
-<div class="line">make</div>
-<div class="line">sudo make install </div>
-<div class="line"> </div>
-<div class="line">git clone https://github.com/usdot-fhwa-stol/carma-streets</div>
-<div class="line">cd kafka_clients &amp;&amp; mkdir build &amp;&amp; cd build</div>
-<div class="line">cmake .. &amp;&amp; make -j</div>
-<div class="line">sudo make install</div>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md28"></a>
+Introduction</h1>
+<p >This is a library that wraps <a href="https://github.com/confluentinc/librdkafka">librdkafka</a> C++ kafka client library. It consists of three main classes: <code>kafka_client</code>: Class used to setup Kafka connection and create producers and consumers. <code>kafka_producer_worker</code>: Kafka producer. Constructor takes in kafka broker, topic to produce to, and an optional parameter for partition. <code>kafka_consumer_worker</code>: Kafka consumer. Constructor takes in kafka broker, topic to subscribe to, and consumer group to join. More <a href="https://kafka.apache.org/documentation/">Kafka Documentation</a> is avaiable online. </p>
+<h1><a class="anchor" id="autotoc_md29"></a>
+Usage</h1>
+<p >To include in you CMake project simply find the <code>kafka_clients_lib</code> package and link it to your target. Note: this package requires that <a href="https://github.com/confluentinc/librdkafka">librdkafka</a> is installed. It also requires that <a href="https://github.com/gabime/spdlog">spdlog</a> is installed. </p><div class="fragment"><div class="line">find_package(kafka_clients_lib REQUIRED)</div>
+<div class="line">target_link_libraries(&lt;TARGET&gt;</div>
+<div class="line">  PUBLIC</div>
+<div class="line">    kafka_clients_lib::kafka_clients_lib</div>
+<div class="line">)</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Nov 14 2023 21:07:55 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Nov 17 2023 19:58:07 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -86,10 +86,10 @@ $(document).ready(function(){initNavTree('md_streets_utils_streets_signal_optimi
   <div class="headertitle"><div class="title">Streets Signal Optimization Library </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md126"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md129"></a>
 Introduction</h1>
 <p >This library is intended to contain logic for selecting/generating an optimal desired phase plan. This library consists of two main classes: <b>streets_desired_phase_plan_generator</b> and <b>streets_desired_phase_plan_arbitrator</b>. In summary, <b>streets_desired_phase_plan_generator</b> generates a list of candidate desired phase plans where each desired phase plan has one extra fixed future movement group compared with the modified spat. <b>streets_desired_phase_plan_arbitrator</b> selects the one that maximizes/minimizes the objective measure which is a function of vehicle delays.</p>
-<h1><a class="anchor" id="autotoc_md127"></a>
+<h1><a class="anchor" id="autotoc_md130"></a>
 streets_desired_phase_plan_generator</h1>
 <p >The <b>streets_desired_phase_plan_generator</b> generates a list of candidate desired phase plans. Each desired phase plan has a list of movement groups with their start times, end times, and the included signal groups <a class="el" href="streets__utils_2streets__desired__phase__plan_2README_8md.html">streets_desired_phase_plan library documentation</a>.</p>
 <p >The main method is <b>streets_desired_phase_plan_generator::generate_desire_phase_plan_list.()</b> which returns the desired phase plan list and takes the following parameters:</p><ul>
@@ -99,7 +99,7 @@ streets_desired_phase_plan_generator</h1>
 <li>and a list of candidate movement groups (<b><a class="el" href="structstreets__signal__optimization_1_1movement__groups.html">streets_signal_optimization::movement_groups</a></b>). If the returned desired phase plan list is empty, either there are no vehicles that can enter the intersection box during any new fixed future movement group, or the number of fixed future movement groups are greater than or equal to the desired number of fixed futre movement groups.</li>
 </ul>
 <p ><b>streets_desired_phase_plan_generator</b> allows you to configure the <b>streets_desired_phase_plan_generator_configuration</b> parameters and <b>intersection_info_ptrstreets_vehicle_scheduler::signalized_vehicle_scheduler</b> publicly. Note that if the configuration parameters are not set before <b>streets_desired_phase_plan_generator::generate_desire_phase_plan_list.()</b> method, this method will set the configuration parameters to a set of default values.</p>
-<h1><a class="anchor" id="autotoc_md128"></a>
+<h1><a class="anchor" id="autotoc_md131"></a>
 streets_desired phase plan arbitrator</h1>
 <p >The desired phase plan arbitrator include a series of steps to choose the optimzied desired phase plan from a list of orignal candidate desired phase plan.</p>
 <p >The sample data for incoming list of candidate desire phase plan in JSON format is below:</p>
@@ -277,7 +277,7 @@ streets_desired phase plan arbitrator</h1>
 </li>
 <li>Step 5: Find the highest delay measure, its mapping candidate desired phase plan is the chosen desired phase plan.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md129"></a>
+<h2><a class="anchor" id="autotoc_md132"></a>
 Use of desired phase plan arbitrator lib</h2>
 <ul>
 <li>streets_desired_phase_plan_arbitrator class provides algorithm or call other library to determine the optimized desired phase plan.</li>
@@ -317,7 +317,7 @@ Use of desired phase plan arbitrator lib</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Nov 14 2023 21:07:55 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Nov 17 2023 19:58:07 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

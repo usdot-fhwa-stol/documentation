@@ -149,10 +149,10 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">    7</span>{</div>
 <div class="line"><span class="lineno">    8</span>   <a class="code hl_class" href="classkafka__clients_1_1kafka__client.html">kafka_clients::kafka_client</a> *client = <span class="keyword">new</span> <a class="code hl_class" href="classkafka__clients_1_1kafka__client.html">kafka_clients::kafka_client</a>();</div>
 <div class="line"><span class="lineno">    9</span>    std::string file_name= <span class="stringliteral">&quot;../manifest.json&quot;</span>;</div>
-<div class="line"><span class="lineno">   10</span>    rapidjson::Document doc_json = client-&gt;<a class="code hl_function" href="classkafka__clients_1_1kafka__client.html#ab506789cf084a91e0bdf5c80a93d44cb">read_json_file</a>(file_name); </div>
-<div class="line"><span class="lineno">   11</span>    std::string bootstrap_server = client-&gt;<a class="code hl_function" href="classkafka__clients_1_1kafka__client.html#a0d7a56622cdc4f2b2cc20d9bbeee4607">get_value_by_doc</a>(doc_json, <span class="stringliteral">&quot;BOOTSTRAP_SERVER&quot;</span>);</div>
-<div class="line"><span class="lineno">   12</span>    std::string group_id = client-&gt;<a class="code hl_function" href="classkafka__clients_1_1kafka__client.html#a0d7a56622cdc4f2b2cc20d9bbeee4607">get_value_by_doc</a>(doc_json, <span class="stringliteral">&quot;GROUP_ID&quot;</span>);</div>
-<div class="line"><span class="lineno">   13</span>    std::string topic = client-&gt;<a class="code hl_function" href="classkafka__clients_1_1kafka__client.html#a0d7a56622cdc4f2b2cc20d9bbeee4607">get_value_by_doc</a>(doc_json, <span class="stringliteral">&quot;CONSUMER_TOPIC&quot;</span>);</div>
+<div class="line"><span class="lineno">   10</span>    rapidjson::Document doc_json = client-&gt;read_json_file(file_name); </div>
+<div class="line"><span class="lineno">   11</span>    std::string bootstrap_server = client-&gt;get_value_by_doc(doc_json, <span class="stringliteral">&quot;BOOTSTRAP_SERVER&quot;</span>);</div>
+<div class="line"><span class="lineno">   12</span>    std::string group_id = client-&gt;get_value_by_doc(doc_json, <span class="stringliteral">&quot;GROUP_ID&quot;</span>);</div>
+<div class="line"><span class="lineno">   13</span>    std::string topic = client-&gt;get_value_by_doc(doc_json, <span class="stringliteral">&quot;CONSUMER_TOPIC&quot;</span>);</div>
 <div class="line"><span class="lineno">   14</span>    <a class="code hl_class" href="classkafka__clients_1_1kafka__consumer__worker.html">kafka_clients::kafka_consumer_worker</a> *consumer_worker = client-&gt;<a class="code hl_function" href="classkafka__clients_1_1kafka__client.html#a21203d3f95cf68af3d990f1f94fb7422">create_consumer</a>(bootstrap_server,topic,group_id);</div>
 <div class="line"><span class="lineno">   15</span>    <span class="keyword">delete</span> client;</div>
 <div class="line"><span class="lineno">   16</span>    </div>
@@ -183,9 +183,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span>;    </div>
 <div class="line"><span class="lineno">   42</span>}</div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__client_html"><div class="ttname"><a href="classkafka__clients_1_1kafka__client.html">kafka_clients::kafka_client</a></div><div class="ttdef"><b>Definition:</b> <a href="kafka__client_8h_source.html#l00015">kafka_client.h:16</a></div></div>
-<div class="ttc" id="aclasskafka__clients_1_1kafka__client_html_a0d7a56622cdc4f2b2cc20d9bbeee4607"><div class="ttname"><a href="classkafka__clients_1_1kafka__client.html#a0d7a56622cdc4f2b2cc20d9bbeee4607">kafka_clients::kafka_client::get_value_by_doc</a></div><div class="ttdeci">std::string get_value_by_doc(rapidjson::Document &amp;doc, const char *key) const</div></div>
-<div class="ttc" id="aclasskafka__clients_1_1kafka__client_html_a21203d3f95cf68af3d990f1f94fb7422"><div class="ttname"><a href="classkafka__clients_1_1kafka__client.html#a21203d3f95cf68af3d990f1f94fb7422">kafka_clients::kafka_client::create_consumer</a></div><div class="ttdeci">std::shared_ptr&lt; kafka_clients::kafka_consumer_worker &gt; create_consumer(const std::string &amp;broker_str, const std::string &amp;topic_str, const std::string &amp;group_id_str) const</div><div class="ttdef"><b>Definition:</b> <a href="kafka__client_8cpp_source.html#l00005">kafka_client.cpp:5</a></div></div>
-<div class="ttc" id="aclasskafka__clients_1_1kafka__client_html_ab506789cf084a91e0bdf5c80a93d44cb"><div class="ttname"><a href="classkafka__clients_1_1kafka__client.html#ab506789cf084a91e0bdf5c80a93d44cb">kafka_clients::kafka_client::read_json_file</a></div><div class="ttdeci">rapidjson::Document read_json_file(const std::string &amp;json_file) const</div></div>
+<div class="ttc" id="aclasskafka__clients_1_1kafka__client_html_a21203d3f95cf68af3d990f1f94fb7422"><div class="ttname"><a href="classkafka__clients_1_1kafka__client.html#a21203d3f95cf68af3d990f1f94fb7422">kafka_clients::kafka_client::create_consumer</a></div><div class="ttdeci">virtual std::shared_ptr&lt; kafka_clients::kafka_consumer_worker &gt; create_consumer(const std::string &amp;broker_str, const std::string &amp;topic_str, const std::string &amp;group_id_str) const</div><div class="ttdef"><b>Definition:</b> <a href="kafka__client_8cpp_source.html#l00005">kafka_client.cpp:5</a></div></div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__consumer__worker_html"><div class="ttname"><a href="classkafka__clients_1_1kafka__consumer__worker.html">kafka_clients::kafka_consumer_worker</a></div><div class="ttdef"><b>Definition:</b> <a href="kafka__consumer__worker_8h_source.html#l00112">kafka_consumer_worker.h:113</a></div></div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__consumer__worker_html_a3578a2abd82b20715659c9784a43b035"><div class="ttname"><a href="classkafka__clients_1_1kafka__consumer__worker.html#a3578a2abd82b20715659c9784a43b035">kafka_clients::kafka_consumer_worker::consume</a></div><div class="ttdeci">virtual const char * consume(int timeout_ms)</div><div class="ttdoc">Consume from topic.</div><div class="ttdef"><b>Definition:</b> <a href="kafka__consumer__worker_8cpp_source.html#l00119">kafka_consumer_worker.cpp:119</a></div></div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__consumer__worker_html_a4187daea3df819ac26e6efc65da6631d"><div class="ttname"><a href="classkafka__clients_1_1kafka__consumer__worker.html#a4187daea3df819ac26e6efc65da6631d">kafka_clients::kafka_consumer_worker::subscribe</a></div><div class="ttdeci">virtual void subscribe()</div><div class="ttdoc">Subscribe consumer to topic.</div><div class="ttdef"><b>Definition:</b> <a href="kafka__consumer__worker_8cpp_source.html#l00103">kafka_consumer_worker.cpp:103</a></div></div>
@@ -193,7 +191,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__consumer__worker_html_a5e1fa977ccf844b1e8d9df7d45956422"><div class="ttname"><a href="classkafka__clients_1_1kafka__consumer__worker.html#a5e1fa977ccf844b1e8d9df7d45956422">kafka_clients::kafka_consumer_worker::is_running</a></div><div class="ttdeci">virtual bool is_running() const</div><div class="ttdoc">Is kafka_consumer_worker still running?</div><div class="ttdef"><b>Definition:</b> <a href="kafka__consumer__worker_8cpp_source.html#l00127">kafka_consumer_worker.cpp:127</a></div></div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__consumer__worker_html_acf1e722c898d99c45c54cb16ba50d1b0"><div class="ttname"><a href="classkafka__clients_1_1kafka__consumer__worker.html#acf1e722c898d99c45c54cb16ba50d1b0">kafka_clients::kafka_consumer_worker::init</a></div><div class="ttdeci">virtual bool init()</div><div class="ttdoc">Initialize kafka_consumer_worker.</div><div class="ttdef"><b>Definition:</b> <a href="kafka__consumer__worker_8cpp_source.html#l00020">kafka_consumer_worker.cpp:20</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="kafka__consumer__worker_8cpp_source.html#l00119">kafka_clients::kafka_consumer_worker::consume()</a>, <a class="el" href="kafka__client_8cpp_source.html#l00005">kafka_clients::kafka_client::create_consumer()</a>, <a class="el" href="classkafka__clients_1_1kafka__client.html#a0d7a56622cdc4f2b2cc20d9bbeee4607">kafka_clients::kafka_client::get_value_by_doc()</a>, <a class="el" href="kafka__consumer__worker_8cpp_source.html#l00020">kafka_clients::kafka_consumer_worker::init()</a>, <a class="el" href="kafka__consumer__worker_8cpp_source.html#l00127">kafka_clients::kafka_consumer_worker::is_running()</a>, <a class="el" href="classkafka__clients_1_1kafka__client.html#ab506789cf084a91e0bdf5c80a93d44cb">kafka_clients::kafka_client::read_json_file()</a>, <a class="el" href="kafka__consumer__worker_8cpp_source.html#l00096">kafka_clients::kafka_consumer_worker::stop()</a>, and <a class="el" href="kafka__consumer__worker_8cpp_source.html#l00103">kafka_clients::kafka_consumer_worker::subscribe()</a>.</p>
+<p class="reference">References <a class="el" href="kafka__consumer__worker_8cpp_source.html#l00119">kafka_clients::kafka_consumer_worker::consume()</a>, <a class="el" href="kafka__client_8cpp_source.html#l00005">kafka_clients::kafka_client::create_consumer()</a>, <a class="el" href="kafka__consumer__worker_8cpp_source.html#l00020">kafka_clients::kafka_consumer_worker::init()</a>, <a class="el" href="kafka__consumer__worker_8cpp_source.html#l00127">kafka_clients::kafka_consumer_worker::is_running()</a>, <a class="el" href="kafka__consumer__worker_8cpp_source.html#l00096">kafka_clients::kafka_consumer_worker::stop()</a>, and <a class="el" href="kafka__consumer__worker_8cpp_source.html#l00103">kafka_clients::kafka_consumer_worker::subscribe()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="examples_2kafka__examples_2src_2main_8cpp_source.html#l00074">main()</a>.</p>
 <div class="dynheader">
@@ -201,17 +199,15 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="examples_2kafka__examples_2src_2main_8cpp_a6572b0c39967495c61b6a9c29e4ae5b2_cgraph.png" border="0" usemap="#aexamples_2kafka__examples_2src_2main_8cpp_a6572b0c39967495c61b6a9c29e4ae5b2_cgraph" alt=""/></div>
 <map name="aexamples_2kafka__examples_2src_2main_8cpp_a6572b0c39967495c61b6a9c29e4ae5b2_cgraph" id="aexamples_2kafka__examples_2src_2main_8cpp_a6572b0c39967495c61b6a9c29e4ae5b2_cgraph">
-<area shape="rect" title=" " alt="" coords="5,243,155,269"/>
+<area shape="rect" title=" " alt="" coords="5,177,155,204"/>
 <area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a3578a2abd82b20715659c9784a43b035" title="Consume from topic." alt="" coords="205,15,395,57"/>
 <area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a43c96012dc78c2deaf7aad1cf2f7e94c" title="Stop running kafka consumer." alt="" coords="708,46,871,87"/>
 <area shape="rect" href="classkafka__clients_1_1kafka__client.html#a21203d3f95cf68af3d990f1f94fb7422" title=" " alt="" coords="217,137,383,178"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__client.html#a0d7a56622cdc4f2b2cc20d9bbeee4607" title=" " alt="" coords="215,202,385,243"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#acf1e722c898d99c45c54cb16ba50d1b0" title="Initialize kafka_consumer_worker." alt="" coords="223,267,377,309"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a5e1fa977ccf844b1e8d9df7d45956422" title="Is kafka_consumer_worker still running?" alt="" coords="226,332,374,388"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__client.html#ab506789cf084a91e0bdf5c80a93d44cb" title=" " alt="" coords="227,411,373,453"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a4187daea3df819ac26e6efc65da6631d" title="Subscribe consumer to topic." alt="" coords="203,477,397,518"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#acf1e722c898d99c45c54cb16ba50d1b0" title="Initialize kafka_consumer_worker." alt="" coords="223,202,377,243"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a5e1fa977ccf844b1e8d9df7d45956422" title="Is kafka_consumer_worker still running?" alt="" coords="226,267,374,323"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a4187daea3df819ac26e6efc65da6631d" title="Subscribe consumer to topic." alt="" coords="203,346,397,387"/>
 <area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#afe6dbad81e23024916594351983aefc0" title=" " alt="" coords="471,5,634,61"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a9ed1c1586aadc2b41a0d7605f6b90dc9" title="Print current configurations." alt="" coords="445,267,660,309"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a9ed1c1586aadc2b41a0d7605f6b90dc9" title="Print current configurations." alt="" coords="445,202,660,243"/>
 </map>
 </div>
 <div class="dynheader">
@@ -246,9 +242,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   46</span>    <a class="code hl_class" href="classkafka__clients_1_1kafka__client.html">kafka_clients::kafka_client</a> *client = <span class="keyword">new</span> <a class="code hl_class" href="classkafka__clients_1_1kafka__client.html">kafka_clients::kafka_client</a>(); </div>
 <div class="line"><span class="lineno">   47</span>                  </div>
 <div class="line"><span class="lineno">   48</span>    std::string file_name=<span class="stringliteral">&quot;../manifest.json&quot;</span>;</div>
-<div class="line"><span class="lineno">   49</span>    rapidjson::Document doc_json = client-&gt;<a class="code hl_function" href="classkafka__clients_1_1kafka__client.html#ab506789cf084a91e0bdf5c80a93d44cb">read_json_file</a>(file_name);           </div>
-<div class="line"><span class="lineno">   50</span>    std::string bootstrap_server =  client-&gt;<a class="code hl_function" href="classkafka__clients_1_1kafka__client.html#a0d7a56622cdc4f2b2cc20d9bbeee4607">get_value_by_doc</a>(doc_json, <span class="stringliteral">&quot;BOOTSTRAP_SERVER&quot;</span>);</div>
-<div class="line"><span class="lineno">   51</span>    std::string topic = client-&gt;<a class="code hl_function" href="classkafka__clients_1_1kafka__client.html#a0d7a56622cdc4f2b2cc20d9bbeee4607">get_value_by_doc</a>(doc_json, <span class="stringliteral">&quot;PRODUCER_TOPIC&quot;</span>);</div>
+<div class="line"><span class="lineno">   49</span>    rapidjson::Document doc_json = client-&gt;read_json_file(file_name);           </div>
+<div class="line"><span class="lineno">   50</span>    std::string bootstrap_server =  client-&gt;get_value_by_doc(doc_json, <span class="stringliteral">&quot;BOOTSTRAP_SERVER&quot;</span>);</div>
+<div class="line"><span class="lineno">   51</span>    std::string topic = client-&gt;get_value_by_doc(doc_json, <span class="stringliteral">&quot;PRODUCER_TOPIC&quot;</span>);</div>
 <div class="line"><span class="lineno">   52</span>    <a class="code hl_class" href="classkafka__clients_1_1kafka__producer__worker.html">kafka_clients::kafka_producer_worker</a> *producer_worker  = client-&gt;<a class="code hl_function" href="classkafka__clients_1_1kafka__client.html#ae0e5d76c5b916a834b909ca23e657e2a">create_producer</a>(bootstrap_server, topic);</div>
 <div class="line"><span class="lineno">   53</span>    <span class="keyword">delete</span> client;</div>
 <div class="line"><span class="lineno">   54</span> </div>
@@ -270,13 +266,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   70</span>    </div>
 <div class="line"><span class="lineno">   71</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   72</span>}</div>
-<div class="ttc" id="aclasskafka__clients_1_1kafka__client_html_ae0e5d76c5b916a834b909ca23e657e2a"><div class="ttname"><a href="classkafka__clients_1_1kafka__client.html#ae0e5d76c5b916a834b909ca23e657e2a">kafka_clients::kafka_client::create_producer</a></div><div class="ttdeci">std::shared_ptr&lt; kafka_clients::kafka_producer_worker &gt; create_producer(const std::string &amp;broker_str, const std::string &amp;topic_str) const</div><div class="ttdef"><b>Definition:</b> <a href="kafka__client_8cpp_source.html#l00022">kafka_client.cpp:22</a></div></div>
+<div class="ttc" id="aclasskafka__clients_1_1kafka__client_html_ae0e5d76c5b916a834b909ca23e657e2a"><div class="ttname"><a href="classkafka__clients_1_1kafka__client.html#ae0e5d76c5b916a834b909ca23e657e2a">kafka_clients::kafka_client::create_producer</a></div><div class="ttdeci">virtual std::shared_ptr&lt; kafka_clients::kafka_producer_worker &gt; create_producer(const std::string &amp;broker_str, const std::string &amp;topic_str) const</div><div class="ttdef"><b>Definition:</b> <a href="kafka__client_8cpp_source.html#l00022">kafka_client.cpp:22</a></div></div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html">kafka_clients::kafka_producer_worker</a></div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8h_source.html#l00066">kafka_producer_worker.h:67</a></div></div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_a0bc4fc9719a218b561789c217aa8ff80"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#a0bc4fc9719a218b561789c217aa8ff80">kafka_clients::kafka_producer_worker::init</a></div><div class="ttdeci">virtual bool init()</div><div class="ttdoc">Initialize kafka_producer_worker.</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8cpp_source.html#l00020">kafka_producer_worker.cpp:20</a></div></div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_a5df1a42e8557ac55bb60b71fd007dec0"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#a5df1a42e8557ac55bb60b71fd007dec0">kafka_clients::kafka_producer_worker::send</a></div><div class="ttdeci">virtual void send(const std::string &amp;msg)</div><div class="ttdoc">Produce to topic.</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8cpp_source.html#l00080">kafka_producer_worker.cpp:80</a></div></div>
 <div class="ttc" id="aclasskafka__clients_1_1kafka__producer__worker_html_aa980d0bb119c78f73ea9bc1ac3abdd1a"><div class="ttname"><a href="classkafka__clients_1_1kafka__producer__worker.html#aa980d0bb119c78f73ea9bc1ac3abdd1a">kafka_clients::kafka_producer_worker::stop</a></div><div class="ttdeci">virtual void stop()</div><div class="ttdoc">Stop running kafka producer.</div><div class="ttdef"><b>Definition:</b> <a href="kafka__producer__worker_8cpp_source.html#l00143">kafka_producer_worker.cpp:143</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="kafka__client_8cpp_source.html#l00022">kafka_clients::kafka_client::create_producer()</a>, <a class="el" href="classkafka__clients_1_1kafka__client.html#a0d7a56622cdc4f2b2cc20d9bbeee4607">kafka_clients::kafka_client::get_value_by_doc()</a>, <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">kafka_clients::kafka_producer_worker::init()</a>, <a class="el" href="classkafka__clients_1_1kafka__client.html#ab506789cf084a91e0bdf5c80a93d44cb">kafka_clients::kafka_client::read_json_file()</a>, <a class="el" href="kafka__producer__worker_8cpp_source.html#l00080">kafka_clients::kafka_producer_worker::send()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00143">kafka_clients::kafka_producer_worker::stop()</a>.</p>
+<p class="reference">References <a class="el" href="kafka__client_8cpp_source.html#l00022">kafka_clients::kafka_client::create_producer()</a>, <a class="el" href="kafka__producer__worker_8cpp_source.html#l00020">kafka_clients::kafka_producer_worker::init()</a>, <a class="el" href="kafka__producer__worker_8cpp_source.html#l00080">kafka_clients::kafka_producer_worker::send()</a>, and <a class="el" href="kafka__producer__worker_8cpp_source.html#l00143">kafka_clients::kafka_producer_worker::stop()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="examples_2kafka__examples_2src_2main_8cpp_source.html#l00074">main()</a>.</p>
 <div class="dynheader">
@@ -284,14 +280,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="examples_2kafka__examples_2src_2main_8cpp_a0f2d18004edc36135168c1af80fa962c_cgraph.png" border="0" usemap="#aexamples_2kafka__examples_2src_2main_8cpp_a0f2d18004edc36135168c1af80fa962c_cgraph" alt=""/></div>
 <map name="aexamples_2kafka__examples_2src_2main_8cpp_a0f2d18004edc36135168c1af80fa962c_cgraph" id="aexamples_2kafka__examples_2src_2main_8cpp_a0f2d18004edc36135168c1af80fa962c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,177,148,203"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__client.html#ae0e5d76c5b916a834b909ca23e657e2a" title=" " alt="" coords="202,5,361,47"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__client.html#a0d7a56622cdc4f2b2cc20d9bbeee4607" title=" " alt="" coords="196,71,367,112"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#a0bc4fc9719a218b561789c217aa8ff80" title="Initialize kafka_producer_worker." alt="" coords="207,136,355,177"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__client.html#ab506789cf084a91e0bdf5c80a93d44cb" title=" " alt="" coords="209,201,354,243"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#a5df1a42e8557ac55bb60b71fd007dec0" title="Produce to topic." alt="" coords="202,267,361,308"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#aa980d0bb119c78f73ea9bc1ac3abdd1a" title="Stop running kafka producer." alt="" coords="203,332,359,373"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#aaa1ce1c199b4fd69c59dd715294aabb4" title="Print current configurations." alt="" coords="415,136,621,177"/>
+<area shape="rect" title=" " alt="" coords="5,111,148,138"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__client.html#ae0e5d76c5b916a834b909ca23e657e2a" title=" " alt="" coords="196,5,355,47"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#a0bc4fc9719a218b561789c217aa8ff80" title="Initialize kafka_producer_worker." alt="" coords="201,71,349,112"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#a5df1a42e8557ac55bb60b71fd007dec0" title="Produce to topic." alt="" coords="196,136,355,177"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#aa980d0bb119c78f73ea9bc1ac3abdd1a" title="Stop running kafka producer." alt="" coords="197,201,353,243"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#aaa1ce1c199b4fd69c59dd715294aabb4" title="Print current configurations." alt="" coords="403,71,609,112"/>
 </map>
 </div>
 <div class="dynheader">
@@ -348,24 +342,22 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="examples_2kafka__examples_2src_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#aexamples_2kafka__examples_2src_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="aexamples_2kafka__examples_2src_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="aexamples_2kafka__examples_2src_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" title=" " alt="" coords="5,422,56,449"/>
-<area shape="rect" href="examples_2kafka__examples_2src_2main_8cpp.html#a6572b0c39967495c61b6a9c29e4ae5b2" title=" " alt="" coords="104,288,253,314"/>
-<area shape="rect" href="examples_2kafka__examples_2src_2main_8cpp.html#a0f2d18004edc36135168c1af80fa962c" title=" " alt="" coords="107,556,250,582"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a3578a2abd82b20715659c9784a43b035" title="Consume from topic." alt="" coords="303,78,494,119"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a43c96012dc78c2deaf7aad1cf2f7e94c" title="Stop running kafka consumer." alt="" coords="807,50,969,91"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__client.html#a21203d3f95cf68af3d990f1f94fb7422" title=" " alt="" coords="315,143,482,184"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__client.html#a0d7a56622cdc4f2b2cc20d9bbeee4607" title=" " alt="" coords="313,483,484,524"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#acf1e722c898d99c45c54cb16ba50d1b0" title="Initialize kafka_consumer_worker." alt="" coords="321,208,476,250"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a5e1fa977ccf844b1e8d9df7d45956422" title="Is kafka_consumer_worker still running?" alt="" coords="325,273,473,329"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__client.html#ab506789cf084a91e0bdf5c80a93d44cb" title=" " alt="" coords="326,418,471,459"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a4187daea3df819ac26e6efc65da6631d" title="Subscribe consumer to topic." alt="" coords="301,352,496,394"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#afe6dbad81e23024916594351983aefc0" title=" " alt="" coords="570,74,733,130"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a9ed1c1586aadc2b41a0d7605f6b90dc9" title="Print current configurations." alt="" coords="544,208,759,250"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__client.html#ae0e5d76c5b916a834b909ca23e657e2a" title=" " alt="" coords="319,614,478,655"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#a0bc4fc9719a218b561789c217aa8ff80" title="Initialize kafka_producer_worker." alt="" coords="325,679,473,720"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#a5df1a42e8557ac55bb60b71fd007dec0" title="Produce to topic." alt="" coords="319,548,478,590"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#aa980d0bb119c78f73ea9bc1ac3abdd1a" title="Stop running kafka producer." alt="" coords="321,744,477,786"/>
-<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#aaa1ce1c199b4fd69c59dd715294aabb4" title="Print current configurations." alt="" coords="548,679,755,720"/>
+<area shape="rect" title=" " alt="" coords="5,347,56,373"/>
+<area shape="rect" href="examples_2kafka__examples_2src_2main_8cpp.html#a6572b0c39967495c61b6a9c29e4ae5b2" title=" " alt="" coords="104,209,253,236"/>
+<area shape="rect" href="examples_2kafka__examples_2src_2main_8cpp.html#a0f2d18004edc36135168c1af80fa962c" title=" " alt="" coords="107,484,250,511"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a3578a2abd82b20715659c9784a43b035" title="Consume from topic." alt="" coords="303,15,494,57"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a43c96012dc78c2deaf7aad1cf2f7e94c" title="Stop running kafka consumer." alt="" coords="807,46,969,87"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__client.html#a21203d3f95cf68af3d990f1f94fb7422" title=" " alt="" coords="315,137,482,178"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#acf1e722c898d99c45c54cb16ba50d1b0" title="Initialize kafka_consumer_worker." alt="" coords="321,202,476,243"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a5e1fa977ccf844b1e8d9df7d45956422" title="Is kafka_consumer_worker still running?" alt="" coords="325,267,473,323"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a4187daea3df819ac26e6efc65da6631d" title="Subscribe consumer to topic." alt="" coords="301,346,496,387"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#afe6dbad81e23024916594351983aefc0" title=" " alt="" coords="570,5,733,61"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__consumer__worker.html#a9ed1c1586aadc2b41a0d7605f6b90dc9" title="Print current configurations." alt="" coords="544,202,759,243"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__client.html#ae0e5d76c5b916a834b909ca23e657e2a" title=" " alt="" coords="319,411,478,453"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#a0bc4fc9719a218b561789c217aa8ff80" title="Initialize kafka_producer_worker." alt="" coords="325,477,473,518"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#a5df1a42e8557ac55bb60b71fd007dec0" title="Produce to topic." alt="" coords="319,542,478,583"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#aa980d0bb119c78f73ea9bc1ac3abdd1a" title="Stop running kafka producer." alt="" coords="321,607,477,649"/>
+<area shape="rect" href="classkafka__clients_1_1kafka__producer__worker.html#aaa1ce1c199b4fd69c59dd715294aabb4" title="Print current configurations." alt="" coords="548,477,755,518"/>
 </map>
 </div>
 
@@ -377,7 +369,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_584c4b371eda549899e60ff7f418e429.html">kafka_examples</a></li><li class="navelem"><a class="el" href="dir_c329b8eaabeaf47f0c20ab65090510b4.html">src</a></li><li class="navelem"><a class="el" href="examples_2kafka__examples_2src_2main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Tue Nov 14 2023 21:07:55 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Nov 17 2023 19:58:07 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -28,9 +28,9 @@ var searchData=
   ['entry_5flanelets_25',['entry_lanelets',['../classOpenAPI_1_1OAIIntersection__info.html#a297bb46319fb33ce6c60af4a2777efcf',1,'OpenAPI::OAIIntersection_info']]],
   ['eof_5fcnt_26',['eof_cnt',['../namespacekafka__clients.html#ae4fbee381b5cbd9bdd27b0e738566d85',1,'kafka_clients']]],
   ['epoch_27',['epoch',['../namespacesimulate__phase__control__schedule.html#af3059b4eb36d8ed304bf08da6bcded78',1,'simulate_phase_control_schedule']]],
-  ['equipment_5ftype_28',['equipment_type',['../namespacestreets__utils_1_1messages.html#a8139c3a44bec551d4be0429a41d91501',1,'streets_utils::messages']]],
+  ['equipment_5ftype_28',['equipment_type',['../namespacestreets__utils_1_1messages_1_1sdsm.html#aa24486a9dec512c10445823444908d6e',1,'streets_utils::messages::sdsm']]],
   ['equipment_5ftype_2ehpp_29',['equipment_type.hpp',['../equipment__type_8hpp.html',1,'']]],
-  ['equipment_5ftype_5ffrom_5fint_30',['equipment_type_from_int',['../namespacestreets__utils_1_1messages.html#a895f42c8d945add883e3c320411121b1',1,'streets_utils::messages']]],
+  ['equipment_5ftype_5ffrom_5fint_30',['equipment_type_from_int',['../namespacestreets__utils_1_1messages_1_1sdsm.html#ad2dc1b9bd220c70a4147bd089eadef2c',1,'streets_utils::messages::sdsm']]],
   ['error_5fstr_31',['error_str',['../classOpenAPI_1_1OAIHttpRequestWorker.html#a094214d8718ee8f0e8bcd41e1b19ae2b',1,'OpenAPI::OAIHttpRequestWorker']]],
   ['error_5ftype_32',['error_type',['../classOpenAPI_1_1OAIHttpRequestWorker.html#a3efd6243071ccbef5c9312d4db124e9d',1,'OpenAPI::OAIHttpRequestWorker']]],
   ['est_33',['est',['../structstreets__vehicle__scheduler_1_1all__stop__vehicle__schedule.html#aa0731dcf4322f99d8793262aee907147',1,'streets_vehicle_scheduler::all_stop_vehicle_schedule']]],
@@ -47,9 +47,9 @@ var searchData=
   ['et_5fcomparator_44',['et_comparator',['../namespacestreets__vehicle__scheduler.html#acd0cc54330a871634259b2815cc7750d',1,'streets_vehicle_scheduler']]],
   ['et_5finaccuracy_5fbuffer_45',['et_inaccuracy_buffer',['../structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html#ad447f7868e4487368649402881e975af',1,'streets_signal_optimization::streets_desired_phase_plan_generator_configuration']]],
   ['ev_46',['EV',['../namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca834d41112f2943c357f660165b6eb6de',1,'streets_vehicles']]],
-  ['event_5fcb_47',['event_cb',['../classkafka__clients_1_1producer__event__cb.html#af5f5fccf06ef48c54c557ddac68d009b',1,'kafka_clients::producer_event_cb::event_cb()'],['../classkafka__clients_1_1consumer__event__cb.html#aa550098445e8249fb8ec232dedcae1fd',1,'kafka_clients::consumer_event_cb::event_cb()']]],
-  ['event_5fcb_48',['EVENT_CB',['../classkafka__clients_1_1kafka__producer__worker.html#a12fac0bb7e9d9fe2425ff506948c51ea',1,'kafka_clients::kafka_producer_worker::EVENT_CB()'],['../classkafka__clients_1_1kafka__consumer__worker.html#af4035adb29186d82e02a421f60e6c20c',1,'kafka_clients::kafka_consumer_worker::EVENT_CB()']]],
+  ['event_5fcb_47',['EVENT_CB',['../classkafka__clients_1_1kafka__producer__worker.html#a12fac0bb7e9d9fe2425ff506948c51ea',1,'kafka_clients::kafka_producer_worker::EVENT_CB()'],['../classkafka__clients_1_1kafka__consumer__worker.html#af4035adb29186d82e02a421f60e6c20c',1,'kafka_clients::kafka_consumer_worker::EVENT_CB()']]],
+  ['event_5fcb_48',['event_cb',['../classkafka__clients_1_1producer__event__cb.html#af5f5fccf06ef48c54c557ddac68d009b',1,'kafka_clients::producer_event_cb::event_cb()'],['../classkafka__clients_1_1consumer__event__cb.html#aa550098445e8249fb8ec232dedcae1fd',1,'kafka_clients::consumer_event_cb::event_cb()']]],
   ['event_5fstate_49',['event_state',['../structsignal__phase__and__timing_1_1movement__event.html#a6915afd2a08ca17039c92830ee633a30',1,'signal_phase_and_timing::movement_event']]],
   ['execute_50',['execute',['../classOpenAPI_1_1OAIHttpRequestWorker.html#a241304dc9d0548df76510834b44617fe',1,'OpenAPI::OAIHttpRequestWorker']]],
-  ['exterior_5flights_51',['exterior_lights',['../structstreets__utils_1_1messages_1_1detected__vehicle__data.html#a90b01c8a8694686bd946af4c5c79976d',1,'streets_utils::messages::detected_vehicle_data']]]
+  ['exterior_5flights_51',['exterior_lights',['../structstreets__utils_1_1messages_1_1sdsm_1_1detected__vehicle__data.html#a459f67eb3c20bd5d6a37cb2cb826e157',1,'streets_utils::messages::sdsm::detected_vehicle_data']]]
 ];

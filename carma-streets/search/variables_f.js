@@ -1,7 +1,7 @@
 var searchData=
 [
   ['obj_0',['obj',['../namespacesimulate__phase__control__schedule.html#a17784ce1220bd47891c5f55419e81f98',1,'simulate_phase_control_schedule']]],
-  ['offset_1',['offset',['../structstreets__utils_1_1messages_1_1time__stamp.html#a45c3dee7859d19867c91f99cfcbfcfcc',1,'streets_utils::messages::time_stamp']]],
+  ['offset_1',['offset',['../structstreets__utils_1_1messages_1_1sdsm_1_1time__stamp.html#a4850c981931b95b3a466746daf0532bb',1,'streets_utils::messages::sdsm::time_stamp']]],
   ['offset_5fx_2',['offset_x',['../structmessage__services_1_1models_1_1locationOffsetECEF.html#a08c0450efb48028a6d04455ddb54814b',1,'message_services::models::locationOffsetECEF']]],
   ['offset_5fy_3',['offset_y',['../structmessage__services_1_1models_1_1locationOffsetECEF.html#aa9374a90bfef197209b9fb8f9c7c9bcf',1,'message_services::models::locationOffsetECEF']]],
   ['offset_5fz_4',['offset_z',['../structmessage__services_1_1models_1_1locationOffsetECEF.html#ae551a65028e66d83c8f17222a35b90cc',1,'message_services::models::locationOffsetECEF']]],

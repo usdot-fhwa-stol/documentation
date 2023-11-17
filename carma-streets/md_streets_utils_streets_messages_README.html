@@ -86,18 +86,18 @@ $(document).ready(function(){initNavTree('md_streets_utils_streets_messages_READ
   <div class="headertitle"><div class="title">Streets Messages Library </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md104"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md107"></a>
 Introduction</h1>
-<p >This CARMA-Streets library will be the new location for storing both CARMA Streets message data types as well as the logic to serialize and deserialize these messages. Message data types will be stored in directories with the message name as the directory name similar to the current <code>sensor_data_sharing_msg</code>. Then functions will hold the JSON serialization and deserialization logic for each message to seperate concerns betweening message serialization and message data. </p><blockquote class="doxtable">
-<p >&zwj;[!IMPORTANT]\ Currently this library only contains the sensor_data sharing message and its JSON serialization logic. Will attempt to part existing and future messages into this library. </p>
+<p >This CARMA-Streets library will be the new location for storing both CARMA Streets message data types as well as the logic to serialize and deserialize these messages. Message data types will be stored in directories with the message name as the directory name similar to the current <code>sensor_data_sharing_msg</code>. Then functions will hold the JSON serialization and deserialization logic for each message to seperate concerns between message serialization and message data. </p><blockquote class="doxtable">
+<p >&zwj;[!IMPORTANT]\ Currently this library only contains the sensor_data sharing message and the detected objects message, with their JSON serialization logic. Will attempt to part existing and future messages into this library. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md105"></a>
+<h1><a class="anchor" id="autotoc_md108"></a>
 Messages</h1>
-<p ><b><a class="el" href="md_streets_utils_streets_messages_SensorDataSharingMessage.html">Sensor Data Sharing Message</a></b> : J3224 Message used for sharing detection level data between vehicles and infrastructure. </p>
-<h1><a class="anchor" id="autotoc_md106"></a>
+<p ><b><a class="el" href="md_streets_utils_streets_messages_SensorDataSharingMessage.html">Sensor Data Sharing Message</a></b> : J3224 Message used for sharing detection level data between vehicles and infrastructure. <b><a class="el" href="md_streets_utils_streets_messages_DetectedObjectsMessage.html">Detected Objects Message</a></b> : Custom Message used for sharing object detection information between sensors and ITS actors </p>
+<h1><a class="anchor" id="autotoc_md109"></a>
 Serialization and Deserialization</h1>
 <p >CARMA Streets messages are currently all using JSON for serialization for sending via a Apache Kafka broker. To parse or write the JSON we are currently using the <a href="https://github.com/Tencent/rapidjson">rapidjson library</a>. In addition, we have implemented some helper functions to parse optional fields from JSON using the <a href="https://en.cppreference.com/w/cpp/utility/optional">std::optional</a> class template implemented in our <a href="https://github.com/usdot-fhwa-stol/carma-streets/tree/develop/streets_utils/json_utils">json_utils library</a>.</p>
-<h1><a class="anchor" id="autotoc_md107"></a>
+<h1><a class="anchor" id="autotoc_md110"></a>
 Some future planned improvements to this library include:</h1>
 <ul>
 <li>Porting existing CARMA Streets message JSON serialization/deserialization into library functions and out of message data type definitions</li>
@@ -106,7 +106,7 @@ Some future planned improvements to this library include:</h1>
 <blockquote class="doxtable">
 <p >&zwj;[!IMPORTANT]\ This is an improvement but also a deviation from how messages were previously processed in which message data types were couple to serialization. To remove this coupling new library will separate message data types from functions that serialize/deserialize them. This provides multiple benefits. By separating the logic the serialization logic from the message data types this improves maintainability by allowing us to potentially change serialization without any direct impact on message types or logic using message data. It also reduces the number of packages dependent on external libraries related to serialization like rapidjson. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md108"></a>
+<h1><a class="anchor" id="autotoc_md111"></a>
 Installation</h1>
 <p >This library includes a CMake install target that will attempt to install this library, including CMake configuration files under the following general path:</p>
 <p ><code><a class="el" href="namespacestreets__utils.html">streets_utils</a>\streets_messages_lib</code></p>
@@ -116,7 +116,7 @@ Installation</h1>
 <p ><code>cmake\streets_messages_lib\</code></p>
 <p >And the library binary will be installed under the CMake default Library directory</p>
 <p ><code>lib\<a class="el" href="namespacestreets__utils.html">streets_utils</a>\</code></p>
-<h1><a class="anchor" id="autotoc_md109"></a>
+<h1><a class="anchor" id="autotoc_md112"></a>
 Using Library</h1>
 <p >To incorporate this library into a CARMA Streets Service simply install the library using <code>make install</code> and then use the CMake <code>find_package(streets_messages REQUIRED)</code> call to find the install package. To link this library include the streets utils namespace as follows: </p><div class="fragment"><div class="line">target_link_libraries(&lt;targetname&gt; PUBLIC streets_utils::streets_messages)</div>
 </div><!-- fragment --> </div></div><!-- contents -->
@@ -125,7 +125,7 @@ Using Library</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Nov 17 2023 19:58:07 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Nov 17 2023 21:41:06 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

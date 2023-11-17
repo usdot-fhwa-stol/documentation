@@ -30,5 +30,5 @@ var searchData=
   ['et_5finaccuracy_5fbuffer_27',['et_inaccuracy_buffer',['../structstreets__signal__optimization_1_1streets__desired__phase__plan__generator__configuration.html#ad447f7868e4487368649402881e975af',1,'streets_signal_optimization::streets_desired_phase_plan_generator_configuration']]],
   ['event_5fcb_28',['EVENT_CB',['../classkafka__clients_1_1kafka__consumer__worker.html#af4035adb29186d82e02a421f60e6c20c',1,'kafka_clients::kafka_consumer_worker::EVENT_CB()'],['../classkafka__clients_1_1kafka__producer__worker.html#a12fac0bb7e9d9fe2425ff506948c51ea',1,'kafka_clients::kafka_producer_worker::EVENT_CB()']]],
   ['event_5fstate_29',['event_state',['../structsignal__phase__and__timing_1_1movement__event.html#a6915afd2a08ca17039c92830ee633a30',1,'signal_phase_and_timing::movement_event']]],
-  ['exterior_5flights_30',['exterior_lights',['../structstreets__utils_1_1messages_1_1detected__vehicle__data.html#a90b01c8a8694686bd946af4c5c79976d',1,'streets_utils::messages::detected_vehicle_data']]]
+  ['exterior_5flights_30',['exterior_lights',['../structstreets__utils_1_1messages_1_1sdsm_1_1detected__vehicle__data.html#a459f67eb3c20bd5d6a37cb2cb826e157',1,'streets_utils::messages::sdsm::detected_vehicle_data']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['install_20the_20intersection_20client_20library_20from_20carma_2dutils_0',['Install the intersection client library from carma-utils',['../md_examples_qt_rest_clients_api_intersection_client_README.html',1,'']]],
-  ['intersection_5fmodel_1',['intersection_model',['../md_intersection_model_readme.html',1,'']]]
+  ['detected_20objects_20message_0',['Detected Objects Message',['../md_streets_utils_streets_messages_DetectedObjectsMessage.html',1,'']]]
 ];

@@ -163,26 +163,34 @@ var annotated_dup =
         [ "json_parse_exception", "classstreets__utils_1_1json__utils_1_1json__parse__exception.html", null ]
       ] ],
       [ "messages", "namespacestreets__utils_1_1messages.html", [
-        [ "acceleration_set_4_way", "structstreets__utils_1_1messages_1_1acceleration__set__4__way.html", "structstreets__utils_1_1messages_1_1acceleration__set__4__way" ],
-        [ "angular_velocity_confidence_set", "structstreets__utils_1_1messages_1_1angular__velocity__confidence__set.html", "structstreets__utils_1_1messages_1_1angular__velocity__confidence__set" ],
-        [ "angular_velocity_set", "structstreets__utils_1_1messages_1_1angular__velocity__set.html", "structstreets__utils_1_1messages_1_1angular__velocity__set" ],
-        [ "attitude", "structstreets__utils_1_1messages_1_1attitude.html", "structstreets__utils_1_1messages_1_1attitude" ],
-        [ "attitude_confidence", "structstreets__utils_1_1messages_1_1attitude__confidence.html", "structstreets__utils_1_1messages_1_1attitude__confidence" ],
-        [ "detected_object_data", "structstreets__utils_1_1messages_1_1detected__object__data.html", "structstreets__utils_1_1messages_1_1detected__object__data" ],
-        [ "detected_object_data_common", "structstreets__utils_1_1messages_1_1detected__object__data__common.html", "structstreets__utils_1_1messages_1_1detected__object__data__common" ],
-        [ "detected_obstacle_data", "structstreets__utils_1_1messages_1_1detected__obstacle__data.html", "structstreets__utils_1_1messages_1_1detected__obstacle__data" ],
-        [ "detected_vehicle_data", "structstreets__utils_1_1messages_1_1detected__vehicle__data.html", "structstreets__utils_1_1messages_1_1detected__vehicle__data" ],
-        [ "detected_vru_data", "structstreets__utils_1_1messages_1_1detected__vru__data.html", "structstreets__utils_1_1messages_1_1detected__vru__data" ],
-        [ "obstacle_size", "structstreets__utils_1_1messages_1_1obstacle__size.html", "structstreets__utils_1_1messages_1_1obstacle__size" ],
-        [ "obstacle_size_confidence", "structstreets__utils_1_1messages_1_1obstacle__size__confidence.html", "structstreets__utils_1_1messages_1_1obstacle__size__confidence" ],
-        [ "position_3d", "structstreets__utils_1_1messages_1_1position__3d.html", "structstreets__utils_1_1messages_1_1position__3d" ],
-        [ "position_confidence_set", "structstreets__utils_1_1messages_1_1position__confidence__set.html", "structstreets__utils_1_1messages_1_1position__confidence__set" ],
-        [ "position_offset", "structstreets__utils_1_1messages_1_1position__offset.html", "structstreets__utils_1_1messages_1_1position__offset" ],
-        [ "positional_accuracy", "structstreets__utils_1_1messages_1_1positional__accuracy.html", "structstreets__utils_1_1messages_1_1positional__accuracy" ],
-        [ "sensor_data_sharing_msg", "structstreets__utils_1_1messages_1_1sensor__data__sharing__msg.html", "structstreets__utils_1_1messages_1_1sensor__data__sharing__msg" ],
-        [ "time_stamp", "structstreets__utils_1_1messages_1_1time__stamp.html", "structstreets__utils_1_1messages_1_1time__stamp" ],
-        [ "vehicle_size", "structstreets__utils_1_1messages_1_1vehicle__size.html", "structstreets__utils_1_1messages_1_1vehicle__size" ],
-        [ "vehicle_size_confidence", "structstreets__utils_1_1messages_1_1vehicle__size__confidence.html", "structstreets__utils_1_1messages_1_1vehicle__size__confidence" ]
+        [ "detected_objects_msg", "namespacestreets__utils_1_1messages_1_1detected__objects__msg.html", [
+          [ "cartesian_point", "structstreets__utils_1_1messages_1_1detected__objects__msg_1_1cartesian__point.html", "structstreets__utils_1_1messages_1_1detected__objects__msg_1_1cartesian__point" ],
+          [ "detected_objects_msg", "structstreets__utils_1_1messages_1_1detected__objects__msg_1_1detected__objects__msg.html", "structstreets__utils_1_1messages_1_1detected__objects__msg_1_1detected__objects__msg" ],
+          [ "size", "structstreets__utils_1_1messages_1_1detected__objects__msg_1_1size.html", "structstreets__utils_1_1messages_1_1detected__objects__msg_1_1size" ],
+          [ "vector_3d", "structstreets__utils_1_1messages_1_1detected__objects__msg_1_1vector__3d.html", "structstreets__utils_1_1messages_1_1detected__objects__msg_1_1vector__3d" ]
+        ] ],
+        [ "sdsm", "namespacestreets__utils_1_1messages_1_1sdsm.html", [
+          [ "acceleration_set_4_way", "structstreets__utils_1_1messages_1_1sdsm_1_1acceleration__set__4__way.html", "structstreets__utils_1_1messages_1_1sdsm_1_1acceleration__set__4__way" ],
+          [ "angular_velocity_confidence_set", "structstreets__utils_1_1messages_1_1sdsm_1_1angular__velocity__confidence__set.html", "structstreets__utils_1_1messages_1_1sdsm_1_1angular__velocity__confidence__set" ],
+          [ "angular_velocity_set", "structstreets__utils_1_1messages_1_1sdsm_1_1angular__velocity__set.html", "structstreets__utils_1_1messages_1_1sdsm_1_1angular__velocity__set" ],
+          [ "attitude", "structstreets__utils_1_1messages_1_1sdsm_1_1attitude.html", "structstreets__utils_1_1messages_1_1sdsm_1_1attitude" ],
+          [ "attitude_confidence", "structstreets__utils_1_1messages_1_1sdsm_1_1attitude__confidence.html", "structstreets__utils_1_1messages_1_1sdsm_1_1attitude__confidence" ],
+          [ "detected_object_data", "structstreets__utils_1_1messages_1_1sdsm_1_1detected__object__data.html", "structstreets__utils_1_1messages_1_1sdsm_1_1detected__object__data" ],
+          [ "detected_object_data_common", "structstreets__utils_1_1messages_1_1sdsm_1_1detected__object__data__common.html", "structstreets__utils_1_1messages_1_1sdsm_1_1detected__object__data__common" ],
+          [ "detected_obstacle_data", "structstreets__utils_1_1messages_1_1sdsm_1_1detected__obstacle__data.html", "structstreets__utils_1_1messages_1_1sdsm_1_1detected__obstacle__data" ],
+          [ "detected_vehicle_data", "structstreets__utils_1_1messages_1_1sdsm_1_1detected__vehicle__data.html", "structstreets__utils_1_1messages_1_1sdsm_1_1detected__vehicle__data" ],
+          [ "detected_vru_data", "structstreets__utils_1_1messages_1_1sdsm_1_1detected__vru__data.html", "structstreets__utils_1_1messages_1_1sdsm_1_1detected__vru__data" ],
+          [ "obstacle_size", "structstreets__utils_1_1messages_1_1sdsm_1_1obstacle__size.html", "structstreets__utils_1_1messages_1_1sdsm_1_1obstacle__size" ],
+          [ "obstacle_size_confidence", "structstreets__utils_1_1messages_1_1sdsm_1_1obstacle__size__confidence.html", "structstreets__utils_1_1messages_1_1sdsm_1_1obstacle__size__confidence" ],
+          [ "position_3d", "structstreets__utils_1_1messages_1_1sdsm_1_1position__3d.html", "structstreets__utils_1_1messages_1_1sdsm_1_1position__3d" ],
+          [ "position_confidence_set", "structstreets__utils_1_1messages_1_1sdsm_1_1position__confidence__set.html", "structstreets__utils_1_1messages_1_1sdsm_1_1position__confidence__set" ],
+          [ "position_offset", "structstreets__utils_1_1messages_1_1sdsm_1_1position__offset.html", "structstreets__utils_1_1messages_1_1sdsm_1_1position__offset" ],
+          [ "positional_accuracy", "structstreets__utils_1_1messages_1_1sdsm_1_1positional__accuracy.html", "structstreets__utils_1_1messages_1_1sdsm_1_1positional__accuracy" ],
+          [ "sensor_data_sharing_msg", "structstreets__utils_1_1messages_1_1sdsm_1_1sensor__data__sharing__msg.html", "structstreets__utils_1_1messages_1_1sdsm_1_1sensor__data__sharing__msg" ],
+          [ "time_stamp", "structstreets__utils_1_1messages_1_1sdsm_1_1time__stamp.html", "structstreets__utils_1_1messages_1_1sdsm_1_1time__stamp" ],
+          [ "vehicle_size", "structstreets__utils_1_1messages_1_1sdsm_1_1vehicle__size.html", "structstreets__utils_1_1messages_1_1sdsm_1_1vehicle__size" ],
+          [ "vehicle_size_confidence", "structstreets__utils_1_1messages_1_1sdsm_1_1vehicle__size__confidence.html", "structstreets__utils_1_1messages_1_1sdsm_1_1vehicle__size__confidence" ]
+        ] ]
       ] ]
     ] ],
     [ "streets_vehicle_scheduler", "namespacestreets__vehicle__scheduler.html", [

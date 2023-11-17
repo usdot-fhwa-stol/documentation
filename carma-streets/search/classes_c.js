@@ -15,7 +15,7 @@ var searchData=
   ['oaiserializersettings_12',['OAISerializerSettings',['../classOpenAPI_1_1OAISerializerSettings.html',1,'OpenAPI']]],
   ['oaiserverconfiguration_13',['OAIServerConfiguration',['../classOpenAPI_1_1OAIServerConfiguration.html',1,'OpenAPI']]],
   ['oaiservervariable_14',['OAIServerVariable',['../classOpenAPI_1_1OAIServerVariable.html',1,'OpenAPI']]],
-  ['obstacle_5fsize_15',['obstacle_size',['../structstreets__utils_1_1messages_1_1obstacle__size.html',1,'streets_utils::messages']]],
-  ['obstacle_5fsize_5fconfidence_16',['obstacle_size_confidence',['../structstreets__utils_1_1messages_1_1obstacle__size__confidence.html',1,'streets_utils::messages']]],
+  ['obstacle_5fsize_15',['obstacle_size',['../structstreets__utils_1_1messages_1_1sdsm_1_1obstacle__size.html',1,'streets_utils::messages::sdsm']]],
+  ['obstacle_5fsize_5fconfidence_16',['obstacle_size_confidence',['../structstreets__utils_1_1messages_1_1sdsm_1_1obstacle__size__confidence.html',1,'streets_utils::messages::sdsm']]],
   ['optionalparam_17',['OptionalParam',['../classOpenAPI_1_1OptionalParam.html',1,'OpenAPI']]]
 ];

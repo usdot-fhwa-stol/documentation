@@ -2,7 +2,7 @@ var searchData=
 [
   ['data_0',['data',['../namespacesimulate__mobilitypath.html#a88b8809aa0b7d5a0e3a23f06489ecd83',1,'simulate_mobilitypath.data()'],['../namespacesimulate__mobilityoperation.html#a19549c30f68d13d8870bc2875a0ef26e',1,'simulate_mobilityoperation.data()'],['../namespacesimulate__bsm.html#a2aaf0142837b674c6cfa6006cf335bc7',1,'simulate_bsm.data()'],['../namespacesimulate__phase__control__schedule.html#a411a2a61447e7a7933df280c3c1cf406',1,'simulate_phase_control_schedule.data()'],['../namespacesimulate__vehicle__status__intent__pub__uc1.html#adcba9eef7411863ea7607ccc2e42a7ee',1,'simulate_vehicle_status_intent_pub_uc1.data()'],['../namespacesimulate__vehicle__status__intent__pub__uc3.html#aad21e72adb50641c1c10009351d89fdf',1,'simulate_vehicle_status_intent_pub_uc3.data()']]],
   ['datetimeformat_1',['dateTimeFormat',['../classOpenAPI_1_1OAISerializerSettings.html#aee44b2a07c3ac3882e8268be09fde023',1,'OpenAPI::OAISerializerSettings']]],
-  ['day_2',['day',['../structstreets__utils_1_1messages_1_1time__stamp.html#a25f8da6188d5ed9875f31eb94f253a61',1,'streets_utils::messages::time_stamp']]],
+  ['day_2',['day',['../structstreets__utils_1_1messages_1_1sdsm_1_1time__stamp.html#a86131c4012d6b7d2a3b6a3ca4812d22c',1,'streets_utils::messages::sdsm::time_stamp']]],
   ['default_5fconfig_5ffile_5fpath_3',['DEFAULT_CONFIG_FILE_PATH',['../namespacestreets__service.html#a125798b319a95317fa7ea1fcfed3f79b',1,'streets_service']]],
   ['default_5flogs_5fdirectory_4',['DEFAULT_LOGS_DIRECTORY',['../namespacestreets__service.html#a5025a5b25d1b34a7c03a801fbc67a53d',1,'streets_service']]],
   ['default_5fsimulation_5fmode_5',['DEFAULT_SIMULATION_MODE',['../namespacestreets__service.html#a9c0e0ab751e88971bb80e84abb89ce75',1,'streets_service']]],

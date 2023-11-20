@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"classinternal_1_1BigInteger.html#a0ffe0c4c762312682d60e82c38b38c45":[55,0,36,0,17],
 "classinternal_1_1BigInteger.html#a1310812fca26ebae77594ba08678fc4c":[56,0,20,0,0],
 "classinternal_1_1BigInteger.html#a1310812fca26ebae77594ba08678fc4c":[55,0,36,0,0],
 "classinternal_1_1BigInteger.html#a18a4939a983f296085fed6bc5b56d5c1":[56,0,20,0,21],
@@ -248,6 +249,5 @@ var NAVTREEINDEX16 =
 "classinternal_1_1GenericRegexSearch.html#ad204164a20e3ac403b405683b51c2d0b":[56,0,20,5,9],
 "classinternal_1_1Hasher.html":[55,0,36,6],
 "classinternal_1_1Hasher.html":[56,0,20,6],
-"classinternal_1_1Hasher.html#a028d5bf406cea4ae85678f454aacc6ee":[55,0,36,6,20],
-"classinternal_1_1Hasher.html#a028d5bf406cea4ae85678f454aacc6ee":[56,0,20,6,20]
+"classinternal_1_1Hasher.html#a028d5bf406cea4ae85678f454aacc6ee":[55,0,36,6,20]
 };

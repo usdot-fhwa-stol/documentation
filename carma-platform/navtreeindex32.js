@@ -1,5 +1,6 @@
 var NAVTREEINDEX32 =
 {
+"classsubsystem__controllers_1_1BaseSubsystemController.html#a8087facfdc76c599d690bf3b4ebba0cc":[55,0,95,0,11],
 "classsubsystem__controllers_1_1BaseSubsystemController.html#a909d81779dd87c3837a328cbcada7082":[55,0,95,0,2],
 "classsubsystem__controllers_1_1BaseSubsystemController.html#a909d81779dd87c3837a328cbcada7082":[56,0,52,0,2],
 "classsubsystem__controllers_1_1BaseSubsystemController.html#a98837f5beef889c21ebca4cc2f2d6228":[55,0,95,0,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX32 =
 "classsystem__controller_1_1SystemControllerNode.html#a06f42e979495208a98f726db50e04473":[56,0,53,0,7],
 "classsystem__controller_1_1SystemControllerNode.html#a0b3c5d90bfcc1e434119ca7747398bc2":[56,0,53,0,0],
 "classsystem__controller_1_1SystemControllerNode.html#a0b3c5d90bfcc1e434119ca7747398bc2":[55,0,96,0,0],
-"classsystem__controller_1_1SystemControllerNode.html#a1e149d6be07e6d593a6f3b7cbb039b02":[55,0,96,0,8],
-"classsystem__controller_1_1SystemControllerNode.html#a1e149d6be07e6d593a6f3b7cbb039b02":[56,0,53,0,8]
+"classsystem__controller_1_1SystemControllerNode.html#a1e149d6be07e6d593a6f3b7cbb039b02":[55,0,96,0,8]
 };

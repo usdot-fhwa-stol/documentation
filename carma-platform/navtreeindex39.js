@@ -1,5 +1,6 @@
 var NAVTREEINDEX39 =
 {
+"lightbar__manager__sm_8hpp.html#adceb65c2a950c18cf2b4178b3bf97138a53042c961c9e5fd8dca57e773f819250":[57,0,23,0,0,1,7,2],
 "lightbar__manager__sm_8hpp.html#adceb65c2a950c18cf2b4178b3bf97138a77787d07592c4a4a325207de2195c29f":[57,0,23,0,0,1,7,3],
 "lightbar__manager__sm_8hpp.html#adceb65c2a950c18cf2b4178b3bf97138a903f302a0aac0cfcaa649c8009e4a2af":[57,0,23,0,0,1,7,1],
 "lightbar__manager__sm_8hpp.html#adceb65c2a950c18cf2b4178b3bf97138abdebb707d7a27d1be9266ad9a3ff6e2b":[57,0,23,0,0,1,7,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX39 =
 "md_port_drayage_plugin_README.html":[43],
 "md_roadway_objects_README.html":[48],
 "md_roadway_objects_README.html#autotoc_md255":[48,0],
-"md_roadway_objects_docs_package_design.html":[45],
-"md_roadway_objects_docs_package_design.html#autotoc_md244":[45,0]
+"md_roadway_objects_docs_package_design.html":[45]
 };

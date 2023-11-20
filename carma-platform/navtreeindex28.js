@@ -1,5 +1,6 @@
 var NAVTREEINDEX28 =
 {
+"classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#a6181d82c0b0413741c3f220b74e890ec":[55,0,63,1,8],
 "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#a71df867bef8a958103682f428a59d2a2":[56,0,38,1,5],
 "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#a71df867bef8a958103682f428a59d2a2":[55,0,63,1,5],
 "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#ab72eb60e53ecf14dd3a27e0ccac03dda":[56,0,38,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX28 =
 "classpose__to__tf_1_1PoseToTfNode.html#aa50b4658f8ec22c13d6fe233b68140ce":[56,0,41,2,3],
 "classpose__to__tf_1_1PoseToTfNode.html#abccb0a53d4c0040a93f77e347abe5e94":[55,0,70,2,4],
 "classpose__to__tf_1_1PoseToTfNode.html#abccb0a53d4c0040a93f77e347abe5e94":[56,0,41,2,4],
-"classpose__to__tf_1_1PoseToTfNode.html#acf02b55086726d5079e08c72fd432a37":[55,0,70,2,1],
-"classpose__to__tf_1_1PoseToTfNode.html#acf02b55086726d5079e08c72fd432a37":[56,0,41,2,1]
+"classpose__to__tf_1_1PoseToTfNode.html#acf02b55086726d5079e08c72fd432a37":[55,0,70,2,1]
 };

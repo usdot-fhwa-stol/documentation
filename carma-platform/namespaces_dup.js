@@ -32,6 +32,7 @@ var namespaces_dup =
     [ "carma_guidance_plugins", "namespacecarma__guidance__plugins.html", "namespacecarma__guidance__plugins" ],
     [ "carma_record", "namespacecarma__record.html", "namespacecarma__record" ],
     [ "carma_src", "namespacecarma__src.html", [
+      [ "create_ros2_tracing_action", "namespacecarma__src.html#a9c61779e545502538d8f7cb27d18fe10", null ],
       [ "generate_launch_description", "namespacecarma__src.html#af9b310123d70f1b0131bc831678af1b1", null ]
     ] ],
     [ "carma_wm", "namespacecarma__wm.html", "namespacecarma__wm" ],

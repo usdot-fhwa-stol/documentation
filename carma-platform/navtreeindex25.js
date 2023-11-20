@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"classplatoon__control_1_1PlatoonControlWorker.html#a276ee057fe00c91cefe15889de518066":[56,0,35,2,1],
 "classplatoon__control_1_1PlatoonControlWorker.html#a2b42872511c0d8b7855b3efe29162bd2":[55,0,59,2,9],
 "classplatoon__control_1_1PlatoonControlWorker.html#a2b42872511c0d8b7855b3efe29162bd2":[56,0,35,2,9],
 "classplatoon__control_1_1PlatoonControlWorker.html#a366e3f9f4b7733bba2d9e454a06eb323":[55,0,59,2,24],
@@ -248,6 +249,5 @@ var NAVTREEINDEX25 =
 "classplatoon__control__ihp_1_1PurePursuit.html#a30689282ed86326a724db963446f258e":[56,0,36,4,8],
 "classplatoon__control__ihp_1_1PurePursuit.html#a3a4c56c2f0549da8c6d71ef390491ae0":[55,0,60,4,3],
 "classplatoon__control__ihp_1_1PurePursuit.html#a3a4c56c2f0549da8c6d71ef390491ae0":[56,0,36,4,3],
-"classplatoon__control__ihp_1_1PurePursuit.html#a3b3c71963379fcd294bff6612e1c2400":[56,0,36,4,2],
-"classplatoon__control__ihp_1_1PurePursuit.html#a3b3c71963379fcd294bff6612e1c2400":[55,0,60,4,2]
+"classplatoon__control__ihp_1_1PurePursuit.html#a3b3c71963379fcd294bff6612e1c2400":[56,0,36,4,2]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX47 =
 {
+"stringbuffer_8h.html#a2ff92a4ec7c5995738cfaf39fe99f31a":[57,0,30,2,0,0,0,20,4],
+"stringbuffer_8h.html#a4bcf83273503d7b834ec530e84914f8c":[57,0,30,2,0,0,0,20,2],
 "stringbuffer_8h.html#a76f1b69abd71a248a55c8a55792dfd69":[57,0,30,2,0,0,0,20,3],
 "stringbuffer_8h.html#a88f2d61781c8daefde48a81bdeac6ecd":[57,0,30,2,0,0,0,20,1],
 "stringbuffer_8h_source.html":[57,0,30,2,0,0,0,20],
@@ -247,7 +249,5 @@ var NAVTREEINDEX47 =
 "structPlatooningControlIHPPluginConfig.html#ae9536a454b3c7aaae8da47725a7d7b06":[56,0,104,20],
 "structPlatooningControlIHPPluginConfig.html#aeaa6d71bb2b3750d9ab6432ce1aa3caf":[56,0,104,18],
 "structPlatooningControlIHPPluginConfig.html#aec890440287b7b19cef2a6d45bf53f93":[56,0,104,14],
-"structPlatooningControlIHPPluginConfig.html#aeedbabef189672c123acc060d69cf28e":[56,0,104,17],
-"structPlatooningControlIHPPluginConfig.html#af03a987442a669ec504977fd56dfb0d9":[56,0,104,7],
-"structPlatooningControlIHPPluginConfig.html#af27c07bb02aa92180efa6c9b3732e51b":[56,0,104,0]
+"structPlatooningControlIHPPluginConfig.html#aeedbabef189672c123acc060d69cf28e":[56,0,104,17]
 };

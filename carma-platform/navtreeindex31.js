@@ -1,5 +1,6 @@
 var NAVTREEINDEX31 =
 {
+"classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a77fc0c0d0dc9dba9176284c86f7f148e":[55,0,86,1,28],
 "classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a7b28bc9f89c73c6746eece5b01d49783":[55,0,86,1,25],
 "classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a7b28bc9f89c73c6746eece5b01d49783":[56,0,47,0,25],
 "classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a7d9ce4c3b1c5ac30cede1f56e8eca61b":[56,0,47,0,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX31 =
 "classsubsystem__controllers_1_1BaseSubsystemController.html#a6d1d4481a799c7fe259e39976cdeccb0":[56,0,52,0,17],
 "classsubsystem__controllers_1_1BaseSubsystemController.html#a77559069f98099588596debefb943433":[56,0,52,0,5],
 "classsubsystem__controllers_1_1BaseSubsystemController.html#a77559069f98099588596debefb943433":[55,0,95,0,5],
-"classsubsystem__controllers_1_1BaseSubsystemController.html#a8087facfdc76c599d690bf3b4ebba0cc":[56,0,52,0,11],
-"classsubsystem__controllers_1_1BaseSubsystemController.html#a8087facfdc76c599d690bf3b4ebba0cc":[55,0,95,0,11]
+"classsubsystem__controllers_1_1BaseSubsystemController.html#a8087facfdc76c599d690bf3b4ebba0cc":[56,0,52,0,11]
 };

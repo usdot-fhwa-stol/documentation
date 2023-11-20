@@ -1,5 +1,6 @@
 var NAVTREEINDEX19 =
 {
+"classlci__strategic__plugin_1_1LCIStrategicPlugin.html#a71eb5d63d2d1338440cb2da3dec5a45f":[56,0,22,1,2],
 "classlci__strategic__plugin_1_1LCIStrategicPlugin.html#a733ee3426af2de05ab01a787e6d7ab76":[55,0,40,1,95],
 "classlci__strategic__plugin_1_1LCIStrategicPlugin.html#a733ee3426af2de05ab01a787e6d7ab76":[56,0,22,1,95],
 "classlci__strategic__plugin_1_1LCIStrategicPlugin.html#a739ee8e685d7d651c2c3826df0a43496":[55,0,40,1,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html#a3c09ec804e1f503a3261e0e0e0a34c62":[56,0,23,2,1],
 "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html#a657704a425cfb49677f23d842d6a8c4d":[55,0,41,2,5],
 "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html#a657704a425cfb49677f23d842d6a8c4d":[56,0,23,2,5],
-"classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html#a8ff3b10f6527b512d881e1f668b61c5d":[56,0,23,2,2],
-"classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html#a8ff3b10f6527b512d881e1f668b61c5d":[55,0,41,2,2]
+"classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html#a8ff3b10f6527b512d881e1f668b61c5d":[56,0,23,2,2]
 };

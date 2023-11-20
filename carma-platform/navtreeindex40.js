@@ -1,5 +1,6 @@
 var NAVTREEINDEX40 =
 {
+"md_roadway_objects_docs_package_design.html#autotoc_md244":[45,0],
 "md_roadway_objects_docs_package_design.html#autotoc_md245":[45,1],
 "md_roadway_objects_docs_roadway_objects_launch.html":[46],
 "md_roadway_objects_docs_roadway_objects_launch.html#autotoc_md247":[46,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX40 =
 "namespacebasic__autonomy_1_1waypoint__generation.html#a8be61ccb69db73e2e70d5e59f88ce446":[55,0,5,2,7],
 "namespacebasic__autonomy_1_1waypoint__generation.html#a924ac023f1b51e791ca1b61b9194f44a":[55,0,5,2,24],
 "namespacebasic__autonomy_1_1waypoint__generation.html#a9876518513a13a569a63f225013b686f":[55,0,5,2,19],
-"namespacebasic__autonomy_1_1waypoint__generation.html#a9dd6a1f0fa9c6f6590b83a7cc2e0d118":[55,0,5,2,26],
-"namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04":[55,0,5,2,12]
+"namespacebasic__autonomy_1_1waypoint__generation.html#a9dd6a1f0fa9c6f6590b83a7cc2e0d118":[55,0,5,2,26]
 };

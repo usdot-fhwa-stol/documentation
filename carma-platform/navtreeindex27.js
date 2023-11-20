@@ -1,5 +1,6 @@
 var NAVTREEINDEX27 =
 {
+"classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a243c9d3b652447765feab04517074520":[56,0,37,5,110],
 "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a274f5abfcee68012ec00bfe4f8a7c21e":[55,0,61,5,47],
 "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a274f5abfcee68012ec00bfe4f8a7c21e":[56,0,37,5,47],
 "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a283186f2bbb98f5f85b5486e365bb4b8":[55,0,61,5,123],
@@ -248,6 +249,5 @@ var NAVTREEINDEX27 =
 "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#a0ebc68efe3283d185e613f6dd2404bfd":[56,0,38,1,7],
 "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#a18c17a3da563d1866ea33e9c550cb7e0":[56,0,38,1,4],
 "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#a18c17a3da563d1866ea33e9c550cb7e0":[55,0,63,1,4],
-"classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#a6181d82c0b0413741c3f220b74e890ec":[56,0,38,1,8],
-"classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#a6181d82c0b0413741c3f220b74e890ec":[55,0,63,1,8]
+"classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html#a6181d82c0b0413741c3f220b74e890ec":[56,0,38,1,8]
 };

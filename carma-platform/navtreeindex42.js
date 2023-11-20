@@ -1,5 +1,7 @@
 var NAVTREEINDEX42 =
 {
+"namespaceinlanecruising__plugin_1_1log.html#a5e9bcb5b1e75d11eb4715012cd651e52":[55,0,35,0,0],
+"namespaceinlanecruising__plugin_1_1log.html#a6a334b025039babfc527007d0049f7b7":[55,0,35,0,3],
 "namespaceinlanecruising__plugin_1_1log.html#aecd98b8769a9e1d7aff5dfc764a24819":[55,0,35,0,2],
 "namespaceinlanecruising__plugin_1_1log.html#af628be8974dd62bc4beebef64b06911a":[55,0,35,0,4],
 "namespaceinlanecruising__plugin_1_1smoothing.html":[55,0,35,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX42 =
 "namespacemotion__computation_1_1conversion.html#ac015baeed44f7d5fbf23e8a71bb12876":[55,0,51,0,2],
 "namespacemotion__computation_1_1conversion_1_1impl.html":[55,0,51,0,0],
 "namespacemotion__computation_1_1conversion_1_1impl.html#a3dcbeb3180ab008815e6e7749796d147":[55,0,51,0,0,3],
-"namespacemotion__computation_1_1conversion_1_1impl.html#a48389a44ecd9e272dbbcdebea32601fb":[55,0,51,0,0,7],
-"namespacemotion__computation_1_1conversion_1_1impl.html#a50c675cb23fd3a743226b22287b32945":[55,0,51,0,0,4],
-"namespacemotion__computation_1_1conversion_1_1impl.html#a7cf9dd84c4528278ce20562def3047c3":[55,0,51,0,0,5]
+"namespacemotion__computation_1_1conversion_1_1impl.html#a48389a44ecd9e272dbbcdebea32601fb":[55,0,51,0,0,7]
 };

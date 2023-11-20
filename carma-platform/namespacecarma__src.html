@@ -91,10 +91,77 @@ $(document).ready(function(){initNavTree('namespacecarma__src.html',''); initRes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a9c61779e545502538d8f7cb27d18fe10"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__src.html#a9c61779e545502538d8f7cb27d18fe10">create_ros2_tracing_action</a> (context, *args, **kwargs)</td></tr>
+<tr class="separator:a9c61779e545502538d8f7cb27d18fe10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9b310123d70f1b0131bc831678af1b1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__src.html#af9b310123d70f1b0131bc831678af1b1">generate_launch_description</a> ()</td></tr>
 <tr class="separator:af9b310123d70f1b0131bc831678af1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a9c61779e545502538d8f7cb27d18fe10" name="a9c61779e545502538d8f7cb27d18fe10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c61779e545502538d8f7cb27d18fe10">&#9670;&nbsp;</a></span>create_ros2_tracing_action()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def carma_src.create_ros2_tracing_action </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">*&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">**&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Opaque Function for generating a 'Trace' ROS 2 launch action, which is dependent on the
+'ROS_LOG_DIR' EnvironmentVariable and the 'is_ros2_tracing_enabled' LaunchConfiguration.
+
+NOTE: This Opaque Function is required in order to evaluate the 'ROS_LOG_DIR' environment
+variable as a string.
+</pre> 
+<p class="definition">Definition at line <a class="el" href="carma__src_8launch_8py_source.html#l00037">37</a> of file <a class="el" href="carma__src_8launch_8py_source.html">carma_src.launch.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span><span class="keyword">def </span><a class="code hl_function" href="namespacecarma__src.html#a9c61779e545502538d8f7cb27d18fe10">create_ros2_tracing_action</a>(context, *args, **kwargs):</div>
+<div class="line"><span class="lineno">   38</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   39</span><span class="stringliteral">    Opaque Function </span><span class="keywordflow">for</span> generating a <span class="stringliteral">&#39;Trace&#39;</span> ROS 2 launch action, which <span class="keywordflow">is</span> dependent on the</div>
+<div class="line"><span class="lineno">   40</span>    <span class="stringliteral">&#39;ROS_LOG_DIR&#39;</span> EnvironmentVariable <span class="keywordflow">and</span> the <span class="stringliteral">&#39;is_ros2_tracing_enabled&#39;</span> LaunchConfiguration.</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    NOTE: This Opaque Function <span class="keywordflow">is</span> required <span class="keywordflow">in</span> order to evaluate the <span class="stringliteral">&#39;ROS_LOG_DIR&#39;</span> environment</div>
+<div class="line"><span class="lineno">   43</span>    variable <span class="keyword">as</span> a string.</div>
+<div class="line"><span class="lineno">   44</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   45</span><span class="stringliteral">    log_directory_string = launch.substitutions.EnvironmentVariable(&#39;ROS_LOG_DIR&#39;</span>).perform(context)</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    trace = GroupAction( </div>
+<div class="line"><span class="lineno">   48</span>        condition=IfCondition(LaunchConfiguration(<span class="stringliteral">&#39;is_ros2_tracing_enabled&#39;</span>)),</div>
+<div class="line"><span class="lineno">   49</span>        actions=[</div>
+<div class="line"><span class="lineno">   50</span>            Trace(</div>
+<div class="line"><span class="lineno">   51</span>                base_path = log_directory_string,</div>
+<div class="line"><span class="lineno">   52</span>                session_name=<span class="stringliteral">&#39;my-tracing-session-&#39;</span> + str(datetime.now().strftime(<span class="stringliteral">&#39;%Y-%m-%d_%H%M%S&#39;</span>)),</div>
+<div class="line"><span class="lineno">   53</span>                events_kernel = [], <span class="comment"># Empty since kernel tracing is not enabled for CARMA Platform</span></div>
+<div class="line"><span class="lineno">   54</span>            )</div>
+<div class="line"><span class="lineno">   55</span>        ]</div>
+<div class="line"><span class="lineno">   56</span>    )</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span> [trace]</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="ttc" id="anamespacecarma__src_html_a9c61779e545502538d8f7cb27d18fe10"><div class="ttname"><a href="namespacecarma__src.html#a9c61779e545502538d8f7cb27d18fe10">carma_src.create_ros2_tracing_action</a></div><div class="ttdeci">def create_ros2_tracing_action(context, *args, **kwargs)</div><div class="ttdef"><b>Definition:</b> <a href="carma__src_8launch_8py_source.html#l00037">carma_src.launch.py:37</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="af9b310123d70f1b0131bc831678af1b1" name="af9b310123d70f1b0131bc831678af1b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9b310123d70f1b0131bc831678af1b1">&#9670;&nbsp;</a></span>generate_launch_description()</h2>
 
@@ -111,279 +178,287 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <pre class="fragment">Launch CARMA System.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="carma__src_8launch_8py_source.html#l00032">32</a> of file <a class="el" href="carma__src_8launch_8py_source.html">carma_src.launch.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span><span class="keyword">def </span><a class="code hl_function" href="namespacecarma__src.html#af9b310123d70f1b0131bc831678af1b1">generate_launch_description</a>():</div>
-<div class="line"><span class="lineno">   33</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   34</span><span class="stringliteral">    Launch CARMA System.</span></div>
-<div class="line"><span class="lineno">   35</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   36</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">   37</span><span class="stringliteral">    system_controller_param_file = os.path.join(</span></div>
-<div class="line"><span class="lineno">   38</span><span class="stringliteral">        get_package_share_directory(&#39;system_controller&#39;</span>), <span class="stringliteral">&#39;config/config.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   39</span> </div>
-<div class="line"><span class="lineno">   40</span>    env_log_levels = EnvironmentVariable(<span class="stringliteral">&#39;CARMA_ROS_LOGGING_CONFIG&#39;</span>, default_value=<span class="stringliteral">&#39;{ &quot;default_level&quot; : &quot;WARN&quot; }&#39;</span>)</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <span class="comment"># Declare the vehicle_calibration_dir launch argument</span></div>
-<div class="line"><span class="lineno">   43</span>    vehicle_calibration_dir = LaunchConfiguration(<span class="stringliteral">&#39;vehicle_calibration_dir&#39;</span>)</div>
-<div class="line"><span class="lineno">   44</span>    declare_vehicle_calibration_dir_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   45</span>        name = <span class="stringliteral">&#39;vehicle_calibration_dir&#39;</span>, </div>
-<div class="line"><span class="lineno">   46</span>        default_value = <span class="stringliteral">&quot;/opt/carma/vehicle/calibration&quot;</span>,</div>
-<div class="line"><span class="lineno">   47</span>        description = <span class="stringliteral">&quot;Path to folder containing vehicle calibration directories&quot;</span></div>
-<div class="line"><span class="lineno">   48</span>    )</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>    vehicle_config_dir = LaunchConfiguration(<span class="stringliteral">&#39;vehicle_config_dir&#39;</span>)</div>
-<div class="line"><span class="lineno">   51</span>    declare_vehicle_config_dir_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   52</span>        name = <span class="stringliteral">&#39;vehicle_config_dir&#39;</span>, </div>
-<div class="line"><span class="lineno">   53</span>        default_value = <span class="stringliteral">&quot;/opt/carma/vehicle/config&quot;</span>,</div>
-<div class="line"><span class="lineno">   54</span>        description = <span class="stringliteral">&quot;Path to file containing vehicle config directories&quot;</span></div>
-<div class="line"><span class="lineno">   55</span>    )</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>    vehicle_characteristics_param_file = LaunchConfiguration(<span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span>)</div>
-<div class="line"><span class="lineno">   58</span>    declare_vehicle_characteristics_param_file_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   59</span>        name = <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span>, </div>
-<div class="line"><span class="lineno">   60</span>        default_value = [vehicle_calibration_dir, <span class="stringliteral">&quot;/identifiers/UniqueVehicleParams.yaml&quot;</span>],</div>
-<div class="line"><span class="lineno">   61</span>        description = <span class="stringliteral">&quot;Path to file containing unique vehicle characteristics&quot;</span></div>
-<div class="line"><span class="lineno">   62</span>    )</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>    <span class="comment"># Declare the vehicle_config_param_file launch argument</span></div>
-<div class="line"><span class="lineno">   65</span>    vehicle_config_param_file = LaunchConfiguration(<span class="stringliteral">&#39;vehicle_config_param_file&#39;</span>)</div>
-<div class="line"><span class="lineno">   66</span>    declare_vehicle_config_param_file_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   67</span>        name = <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span>,</div>
-<div class="line"><span class="lineno">   68</span>        default_value = [vehicle_config_dir, <span class="stringliteral">&quot;/VehicleConfigParams.yaml&quot;</span>],</div>
-<div class="line"><span class="lineno">   69</span>        description = <span class="stringliteral">&quot;Path to file contain vehicle configuration parameters&quot;</span></div>
-<div class="line"><span class="lineno">   70</span>    )</div>
-<div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>    <span class="comment">#Declare the route file folder launch argument</span></div>
-<div class="line"><span class="lineno">   73</span>    route_file_folder = LaunchConfiguration(<span class="stringliteral">&#39;route_file_folder&#39;</span>)</div>
-<div class="line"><span class="lineno">   74</span>    declare_route_file_folder = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   75</span>        name = <span class="stringliteral">&#39;route_file_folder&#39;</span>,</div>
-<div class="line"><span class="lineno">   76</span>        default_value=<span class="stringliteral">&#39;/opt/carma/routes/&#39;</span>,</div>
-<div class="line"><span class="lineno">   77</span>        description = <span class="stringliteral">&#39;Path of folder containing routes to load&#39;</span></div>
-<div class="line"><span class="lineno">   78</span>    )</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>    <span class="comment"># Declare enable_guidance_plugin_validate</span></div>
-<div class="line"><span class="lineno">   81</span>    enable_guidance_plugin_validator = LaunchConfiguration(<span class="stringliteral">&#39;enable_guidance_plugin_validator&#39;</span>)</div>
-<div class="line"><span class="lineno">   82</span>    declare_enable_guidance_plugin_validator = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   83</span>        name = <span class="stringliteral">&#39;enable_guidance_plugin_validator&#39;</span>, </div>
-<div class="line"><span class="lineno">   84</span>        default_value=<span class="stringliteral">&#39;false&#39;</span>, </div>
-<div class="line"><span class="lineno">   85</span>        description=<span class="stringliteral">&#39;Flag indicating whether the Guidance Plugin Validator node will actively validate guidance strategic, tactical, and control plugins&#39;</span></div>
-<div class="line"><span class="lineno">   86</span>    )</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>    <span class="comment"># Declare strategic_plugins_to_validate</span></div>
-<div class="line"><span class="lineno">   89</span>    strategic_plugins_to_validate = LaunchConfiguration(<span class="stringliteral">&#39;strategic_plugins_to_validate&#39;</span>)</div>
-<div class="line"><span class="lineno">   90</span>    declare_strategic_plugins_to_validate = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   91</span>        name = <span class="stringliteral">&#39;strategic_plugins_to_validate&#39;</span>,</div>
-<div class="line"><span class="lineno">   92</span>        default_value = <span class="stringliteral">&#39;[]&#39;</span>,</div>
-<div class="line"><span class="lineno">   93</span>        description = <span class="stringliteral">&#39;List of String: Guidance Strategic Plugins that will be validated by the Guidance Plugin Validator Node if enabled&#39;</span></div>
-<div class="line"><span class="lineno">   94</span>    )</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>    <span class="comment"># Declare tactical_plugins_to_validate</span></div>
-<div class="line"><span class="lineno">   97</span>    tactical_plugins_to_validate = LaunchConfiguration(<span class="stringliteral">&#39;tactical_plugins_to_validate&#39;</span>)</div>
-<div class="line"><span class="lineno">   98</span>    declare_tactical_plugins_to_validate = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   99</span>        name = <span class="stringliteral">&#39;tactical_plugins_to_validate&#39;</span>,</div>
-<div class="line"><span class="lineno">  100</span>        default_value=<span class="stringliteral">&#39;[]&#39;</span>,</div>
-<div class="line"><span class="lineno">  101</span>        description=<span class="stringliteral">&#39;List of String: Guidance Tactical Plugins that will be validated by the Guidance Plugin Validator Node if enabled&#39;</span></div>
-<div class="line"><span class="lineno">  102</span>    )</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>    <span class="comment"># Declare control_plugins_to_validate</span></div>
-<div class="line"><span class="lineno">  105</span>    control_plugins_to_validate = LaunchConfiguration(<span class="stringliteral">&#39;control_plugins_to_validate&#39;</span>)</div>
-<div class="line"><span class="lineno">  106</span>    declare_control_plugins_to_validate = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">  107</span>        name = <span class="stringliteral">&#39;control_plugins_to_validate&#39;</span>,</div>
-<div class="line"><span class="lineno">  108</span>        default_value= <span class="stringliteral">&#39;[]&#39;</span>,</div>
-<div class="line"><span class="lineno">  109</span>        description=<span class="stringliteral">&#39;List of String: Guidance Control Plugins that will be validated by the Guidance Plugin Validator Node if enabled&#39;</span></div>
-<div class="line"><span class="lineno">  110</span>    )</div>
-<div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>    <span class="comment"># Declare enable_opening_tunnels</span></div>
-<div class="line"><span class="lineno">  113</span>    enable_opening_tunnels = LaunchConfiguration(<span class="stringliteral">&#39;enable_opening_tunnels&#39;</span>)</div>
-<div class="line"><span class="lineno">  114</span>    declare_enable_opening_tunnels = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">  115</span>        name = <span class="stringliteral">&#39;enable_opening_tunnels&#39;</span>,</div>
-<div class="line"><span class="lineno">  116</span>        default_value= <span class="stringliteral">&#39;False&#39;</span>,</div>
-<div class="line"><span class="lineno">  117</span>        description=<span class="stringliteral">&#39;Flag to enable opening http tunnesl to CARMA Cloud&#39;</span></div>
-<div class="line"><span class="lineno">  118</span>    )</div>
-<div class="line"><span class="lineno">  119</span>    </div>
-<div class="line"><span class="lineno">  120</span>    <span class="comment"># Declare port</span></div>
-<div class="line"><span class="lineno">  121</span>    port = LaunchConfiguration(<span class="stringliteral">&#39;port&#39;</span>)</div>
-<div class="line"><span class="lineno">  122</span>    declare_port = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">  123</span>        name = <span class="stringliteral">&#39;port&#39;</span>,</div>
-<div class="line"><span class="lineno">  124</span>        default_value= <span class="stringliteral">&quot;9090&quot;</span>,</div>
-<div class="line"><span class="lineno">  125</span>        description=<span class="stringliteral">&#39;The default port for rosbridge is 909&#39;</span></div>
-<div class="line"><span class="lineno">  126</span>    )</div>
-<div class="line"><span class="lineno">  127</span> </div>
-<div class="line"><span class="lineno">  128</span>    <span class="comment"># Declare launch arguments for points_map_loader</span></div>
-<div class="line"><span class="lineno">  129</span>    load_type = LaunchConfiguration(<span class="stringliteral">&#39;load_type&#39;</span>)</div>
-<div class="line"><span class="lineno">  130</span>    declare_load_type= DeclareLaunchArgument(name = <span class="stringliteral">&#39;load_type&#39;</span>, default_value = <span class="stringliteral">&quot;noupdate&quot;</span>)</div>
+<p class="definition">Definition at line <a class="el" href="carma__src_8launch_8py_source.html#l00060">60</a> of file <a class="el" href="carma__src_8launch_8py_source.html">carma_src.launch.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span><span class="keyword">def </span><a class="code hl_function" href="namespacecarma__src.html#af9b310123d70f1b0131bc831678af1b1">generate_launch_description</a>():</div>
+<div class="line"><span class="lineno">   61</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   62</span><span class="stringliteral">    Launch CARMA System.</span></div>
+<div class="line"><span class="lineno">   63</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   64</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   65</span><span class="stringliteral">    system_controller_param_file = os.path.join(</span></div>
+<div class="line"><span class="lineno">   66</span><span class="stringliteral">        get_package_share_directory(&#39;system_controller&#39;</span>), <span class="stringliteral">&#39;config/config.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    env_log_levels = EnvironmentVariable(<span class="stringliteral">&#39;CARMA_ROS_LOGGING_CONFIG&#39;</span>, default_value=<span class="stringliteral">&#39;{ &quot;default_level&quot; : &quot;WARN&quot; }&#39;</span>)</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    <span class="comment"># Declare the vehicle_calibration_dir launch argument</span></div>
+<div class="line"><span class="lineno">   71</span>    vehicle_calibration_dir = LaunchConfiguration(<span class="stringliteral">&#39;vehicle_calibration_dir&#39;</span>)</div>
+<div class="line"><span class="lineno">   72</span>    declare_vehicle_calibration_dir_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   73</span>        name = <span class="stringliteral">&#39;vehicle_calibration_dir&#39;</span>, </div>
+<div class="line"><span class="lineno">   74</span>        default_value = <span class="stringliteral">&quot;/opt/carma/vehicle/calibration&quot;</span>,</div>
+<div class="line"><span class="lineno">   75</span>        description = <span class="stringliteral">&quot;Path to folder containing vehicle calibration directories&quot;</span></div>
+<div class="line"><span class="lineno">   76</span>    )</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    vehicle_config_dir = LaunchConfiguration(<span class="stringliteral">&#39;vehicle_config_dir&#39;</span>)</div>
+<div class="line"><span class="lineno">   79</span>    declare_vehicle_config_dir_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   80</span>        name = <span class="stringliteral">&#39;vehicle_config_dir&#39;</span>, </div>
+<div class="line"><span class="lineno">   81</span>        default_value = <span class="stringliteral">&quot;/opt/carma/vehicle/config&quot;</span>,</div>
+<div class="line"><span class="lineno">   82</span>        description = <span class="stringliteral">&quot;Path to file containing vehicle config directories&quot;</span></div>
+<div class="line"><span class="lineno">   83</span>    )</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    vehicle_characteristics_param_file = LaunchConfiguration(<span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span>)</div>
+<div class="line"><span class="lineno">   86</span>    declare_vehicle_characteristics_param_file_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   87</span>        name = <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span>, </div>
+<div class="line"><span class="lineno">   88</span>        default_value = [vehicle_calibration_dir, <span class="stringliteral">&quot;/identifiers/UniqueVehicleParams.yaml&quot;</span>],</div>
+<div class="line"><span class="lineno">   89</span>        description = <span class="stringliteral">&quot;Path to file containing unique vehicle characteristics&quot;</span></div>
+<div class="line"><span class="lineno">   90</span>    )</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <span class="comment"># Declare the vehicle_config_param_file launch argument</span></div>
+<div class="line"><span class="lineno">   93</span>    vehicle_config_param_file = LaunchConfiguration(<span class="stringliteral">&#39;vehicle_config_param_file&#39;</span>)</div>
+<div class="line"><span class="lineno">   94</span>    declare_vehicle_config_param_file_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   95</span>        name = <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span>,</div>
+<div class="line"><span class="lineno">   96</span>        default_value = [vehicle_config_dir, <span class="stringliteral">&quot;/VehicleConfigParams.yaml&quot;</span>],</div>
+<div class="line"><span class="lineno">   97</span>        description = <span class="stringliteral">&quot;Path to file contain vehicle configuration parameters&quot;</span></div>
+<div class="line"><span class="lineno">   98</span>    )</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="comment">#Declare the route file folder launch argument</span></div>
+<div class="line"><span class="lineno">  101</span>    route_file_folder = LaunchConfiguration(<span class="stringliteral">&#39;route_file_folder&#39;</span>)</div>
+<div class="line"><span class="lineno">  102</span>    declare_route_file_folder = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">  103</span>        name = <span class="stringliteral">&#39;route_file_folder&#39;</span>,</div>
+<div class="line"><span class="lineno">  104</span>        default_value=<span class="stringliteral">&#39;/opt/carma/routes/&#39;</span>,</div>
+<div class="line"><span class="lineno">  105</span>        description = <span class="stringliteral">&#39;Path of folder containing routes to load&#39;</span></div>
+<div class="line"><span class="lineno">  106</span>    )</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>    <span class="comment"># Declare enable_guidance_plugin_validate</span></div>
+<div class="line"><span class="lineno">  109</span>    enable_guidance_plugin_validator = LaunchConfiguration(<span class="stringliteral">&#39;enable_guidance_plugin_validator&#39;</span>)</div>
+<div class="line"><span class="lineno">  110</span>    declare_enable_guidance_plugin_validator = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">  111</span>        name = <span class="stringliteral">&#39;enable_guidance_plugin_validator&#39;</span>, </div>
+<div class="line"><span class="lineno">  112</span>        default_value=<span class="stringliteral">&#39;false&#39;</span>, </div>
+<div class="line"><span class="lineno">  113</span>        description=<span class="stringliteral">&#39;Flag indicating whether the Guidance Plugin Validator node will actively validate guidance strategic, tactical, and control plugins&#39;</span></div>
+<div class="line"><span class="lineno">  114</span>    )</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    <span class="comment"># Declare strategic_plugins_to_validate</span></div>
+<div class="line"><span class="lineno">  117</span>    strategic_plugins_to_validate = LaunchConfiguration(<span class="stringliteral">&#39;strategic_plugins_to_validate&#39;</span>)</div>
+<div class="line"><span class="lineno">  118</span>    declare_strategic_plugins_to_validate = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">  119</span>        name = <span class="stringliteral">&#39;strategic_plugins_to_validate&#39;</span>,</div>
+<div class="line"><span class="lineno">  120</span>        default_value = <span class="stringliteral">&#39;[]&#39;</span>,</div>
+<div class="line"><span class="lineno">  121</span>        description = <span class="stringliteral">&#39;List of String: Guidance Strategic Plugins that will be validated by the Guidance Plugin Validator Node if enabled&#39;</span></div>
+<div class="line"><span class="lineno">  122</span>    )</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <span class="comment"># Declare tactical_plugins_to_validate</span></div>
+<div class="line"><span class="lineno">  125</span>    tactical_plugins_to_validate = LaunchConfiguration(<span class="stringliteral">&#39;tactical_plugins_to_validate&#39;</span>)</div>
+<div class="line"><span class="lineno">  126</span>    declare_tactical_plugins_to_validate = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">  127</span>        name = <span class="stringliteral">&#39;tactical_plugins_to_validate&#39;</span>,</div>
+<div class="line"><span class="lineno">  128</span>        default_value=<span class="stringliteral">&#39;[]&#39;</span>,</div>
+<div class="line"><span class="lineno">  129</span>        description=<span class="stringliteral">&#39;List of String: Guidance Tactical Plugins that will be validated by the Guidance Plugin Validator Node if enabled&#39;</span></div>
+<div class="line"><span class="lineno">  130</span>    )</div>
 <div class="line"><span class="lineno">  131</span> </div>
-<div class="line"><span class="lineno">  132</span>    single_pcd_path = LaunchConfiguration(<span class="stringliteral">&#39;single_pcd_path&#39;</span>)</div>
-<div class="line"><span class="lineno">  133</span>    declare_single_pcd_path = DeclareLaunchArgument(name=<span class="stringliteral">&#39;single_pcd_path&#39;</span>, default_value=<span class="stringliteral">&quot;[&#39;/opt/carma/maps/pcd_map.pcd&#39;]&quot;</span>)</div>
-<div class="line"><span class="lineno">  134</span> </div>
-<div class="line"><span class="lineno">  135</span>    area = LaunchConfiguration(<span class="stringliteral">&#39;area&#39;</span>)</div>
-<div class="line"><span class="lineno">  136</span>    declare_area = DeclareLaunchArgument(name=<span class="stringliteral">&#39;area&#39;</span>, default_value=<span class="stringliteral">&quot;1x1&quot;</span>)</div>
-<div class="line"><span class="lineno">  137</span> </div>
-<div class="line"><span class="lineno">  138</span>    arealist_path = LaunchConfiguration(<span class="stringliteral">&#39;arealist_path&#39;</span>)</div>
-<div class="line"><span class="lineno">  139</span>    declare_arealist_path = DeclareLaunchArgument(name=<span class="stringliteral">&#39;arealist_path&#39;</span>, default_value=<span class="stringliteral">&quot;/opt/carma/maps/arealist.txt&quot;</span>)</div>
-<div class="line"><span class="lineno">  140</span> </div>
-<div class="line"><span class="lineno">  141</span>    vector_map_file = LaunchConfiguration(<span class="stringliteral">&#39;vector_map_file&#39;</span>)</div>
-<div class="line"><span class="lineno">  142</span>    declare_vector_map_file = DeclareLaunchArgument(name=<span class="stringliteral">&#39;vector_map_file&#39;</span>, default_value=<span class="stringliteral">&#39;/opt/carma/maps/vector_map.osm&#39;</span>)</div>
-<div class="line"><span class="lineno">  143</span> </div>
-<div class="line"><span class="lineno">  144</span>    simulation_mode = LaunchConfiguration(<span class="stringliteral">&#39;simulation_mode&#39;</span>)</div>
-<div class="line"><span class="lineno">  145</span>    declare_simulation_mode = DeclareLaunchArgument(name=<span class="stringliteral">&#39;simulation_mode&#39;</span>, default_value = <span class="stringliteral">&#39;False&#39;</span>, description = <span class="stringliteral">&#39;True if CARMA Platform is launched with CARLA Simulator&#39;</span>)</div>
-<div class="line"><span class="lineno">  146</span> </div>
-<div class="line"><span class="lineno">  147</span>    <span class="comment"># Launch ROS2 rosbag logging</span></div>
-<div class="line"><span class="lineno">  148</span>    ros2_rosbag_launch = GroupAction(</div>
-<div class="line"><span class="lineno">  149</span>        actions=[</div>
-<div class="line"><span class="lineno">  150</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  151</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/ros2_rosbag.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  152</span>                launch_arguments = {</div>
-<div class="line"><span class="lineno">  153</span>                    <span class="stringliteral">&#39;vehicle_config_dir&#39;</span> : vehicle_config_dir,</div>
-<div class="line"><span class="lineno">  154</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file</div>
-<div class="line"><span class="lineno">  155</span>                    }.items()</div>
-<div class="line"><span class="lineno">  156</span>            )</div>
-<div class="line"><span class="lineno">  157</span>        ]</div>
-<div class="line"><span class="lineno">  158</span>    )</div>
+<div class="line"><span class="lineno">  132</span>    <span class="comment"># Declare control_plugins_to_validate</span></div>
+<div class="line"><span class="lineno">  133</span>    control_plugins_to_validate = LaunchConfiguration(<span class="stringliteral">&#39;control_plugins_to_validate&#39;</span>)</div>
+<div class="line"><span class="lineno">  134</span>    declare_control_plugins_to_validate = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">  135</span>        name = <span class="stringliteral">&#39;control_plugins_to_validate&#39;</span>,</div>
+<div class="line"><span class="lineno">  136</span>        default_value= <span class="stringliteral">&#39;[]&#39;</span>,</div>
+<div class="line"><span class="lineno">  137</span>        description=<span class="stringliteral">&#39;List of String: Guidance Control Plugins that will be validated by the Guidance Plugin Validator Node if enabled&#39;</span></div>
+<div class="line"><span class="lineno">  138</span>    )</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>    <span class="comment"># Declare enable_opening_tunnels</span></div>
+<div class="line"><span class="lineno">  141</span>    enable_opening_tunnels = LaunchConfiguration(<span class="stringliteral">&#39;enable_opening_tunnels&#39;</span>)</div>
+<div class="line"><span class="lineno">  142</span>    declare_enable_opening_tunnels = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">  143</span>        name = <span class="stringliteral">&#39;enable_opening_tunnels&#39;</span>,</div>
+<div class="line"><span class="lineno">  144</span>        default_value= <span class="stringliteral">&#39;False&#39;</span>,</div>
+<div class="line"><span class="lineno">  145</span>        description=<span class="stringliteral">&#39;Flag to enable opening http tunnesl to CARMA Cloud&#39;</span></div>
+<div class="line"><span class="lineno">  146</span>    )</div>
+<div class="line"><span class="lineno">  147</span>    </div>
+<div class="line"><span class="lineno">  148</span>    <span class="comment"># Declare port</span></div>
+<div class="line"><span class="lineno">  149</span>    port = LaunchConfiguration(<span class="stringliteral">&#39;port&#39;</span>)</div>
+<div class="line"><span class="lineno">  150</span>    declare_port = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">  151</span>        name = <span class="stringliteral">&#39;port&#39;</span>,</div>
+<div class="line"><span class="lineno">  152</span>        default_value= <span class="stringliteral">&quot;9090&quot;</span>,</div>
+<div class="line"><span class="lineno">  153</span>        description=<span class="stringliteral">&#39;The default port for rosbridge is 909&#39;</span></div>
+<div class="line"><span class="lineno">  154</span>    )</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <span class="comment"># Declare launch arguments for points_map_loader</span></div>
+<div class="line"><span class="lineno">  157</span>    load_type = LaunchConfiguration(<span class="stringliteral">&#39;load_type&#39;</span>)</div>
+<div class="line"><span class="lineno">  158</span>    declare_load_type= DeclareLaunchArgument(name = <span class="stringliteral">&#39;load_type&#39;</span>, default_value = <span class="stringliteral">&quot;noupdate&quot;</span>)</div>
 <div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>    <span class="comment"># Nodes</span></div>
-<div class="line"><span class="lineno">  161</span> </div>
-<div class="line"><span class="lineno">  162</span>    transform_group = GroupAction(</div>
-<div class="line"><span class="lineno">  163</span>        actions=[</div>
-<div class="line"><span class="lineno">  164</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_TF_NS&#39;</span>, default_value=<span class="stringliteral">&#39;/&#39;</span>)),</div>
-<div class="line"><span class="lineno">  165</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  166</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/transforms.launch.py&#39;</span>])</div>
-<div class="line"><span class="lineno">  167</span>            ),</div>
-<div class="line"><span class="lineno">  168</span>        ]</div>
-<div class="line"><span class="lineno">  169</span>    )</div>
-<div class="line"><span class="lineno">  170</span> </div>
-<div class="line"><span class="lineno">  171</span>    environment_group = GroupAction(</div>
-<div class="line"><span class="lineno">  172</span>        actions=[</div>
-<div class="line"><span class="lineno">  173</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_ENV_NS&#39;</span>, default_value=<span class="stringliteral">&#39;environment&#39;</span>)),</div>
-<div class="line"><span class="lineno">  174</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  175</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/environment.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  176</span>                launch_arguments = { </div>
-<div class="line"><span class="lineno">  177</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
-<div class="line"><span class="lineno">  178</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
-<div class="line"><span class="lineno">  179</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file,</div>
-<div class="line"><span class="lineno">  180</span>                    <span class="stringliteral">&#39;vector_map_file&#39;</span> : vector_map_file</div>
-<div class="line"><span class="lineno">  181</span>                    }.items()</div>
-<div class="line"><span class="lineno">  182</span>            ),</div>
-<div class="line"><span class="lineno">  183</span>        ]</div>
-<div class="line"><span class="lineno">  184</span>    )</div>
-<div class="line"><span class="lineno">  185</span> </div>
-<div class="line"><span class="lineno">  186</span>    localization_group = GroupAction(</div>
-<div class="line"><span class="lineno">  187</span>        actions=[</div>
-<div class="line"><span class="lineno">  188</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;localization&#39;</span>)),</div>
-<div class="line"><span class="lineno">  189</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  190</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/localization.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  191</span>                launch_arguments = { </div>
-<div class="line"><span class="lineno">  192</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
-<div class="line"><span class="lineno">  193</span>                    <span class="stringliteral">&#39;load_type&#39;</span> : load_type,</div>
-<div class="line"><span class="lineno">  194</span>                    <span class="stringliteral">&#39;single_pcd_path&#39;</span> : single_pcd_path,</div>
-<div class="line"><span class="lineno">  195</span>                    <span class="stringliteral">&#39;area&#39;</span> : area,</div>
-<div class="line"><span class="lineno">  196</span>                    <span class="stringliteral">&#39;arealist_path&#39;</span> : arealist_path,</div>
-<div class="line"><span class="lineno">  197</span>                    <span class="stringliteral">&#39;vector_map_file&#39;</span> : vector_map_file,</div>
-<div class="line"><span class="lineno">  198</span>                    <span class="stringliteral">&#39;vehicle_calibration_dir&#39;</span>: vehicle_calibration_dir,</div>
-<div class="line"><span class="lineno">  199</span>                    <span class="stringliteral">&#39;simulation_mode&#39;</span>: simulation_mode,</div>
-<div class="line"><span class="lineno">  200</span>                }.items()</div>
-<div class="line"><span class="lineno">  201</span>            )</div>
+<div class="line"><span class="lineno">  160</span>    single_pcd_path = LaunchConfiguration(<span class="stringliteral">&#39;single_pcd_path&#39;</span>)</div>
+<div class="line"><span class="lineno">  161</span>    declare_single_pcd_path = DeclareLaunchArgument(name=<span class="stringliteral">&#39;single_pcd_path&#39;</span>, default_value=<span class="stringliteral">&quot;[&#39;/opt/carma/maps/pcd_map.pcd&#39;]&quot;</span>)</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    area = LaunchConfiguration(<span class="stringliteral">&#39;area&#39;</span>)</div>
+<div class="line"><span class="lineno">  164</span>    declare_area = DeclareLaunchArgument(name=<span class="stringliteral">&#39;area&#39;</span>, default_value=<span class="stringliteral">&quot;1x1&quot;</span>)</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>    arealist_path = LaunchConfiguration(<span class="stringliteral">&#39;arealist_path&#39;</span>)</div>
+<div class="line"><span class="lineno">  167</span>    declare_arealist_path = DeclareLaunchArgument(name=<span class="stringliteral">&#39;arealist_path&#39;</span>, default_value=<span class="stringliteral">&quot;/opt/carma/maps/arealist.txt&quot;</span>)</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>    vector_map_file = LaunchConfiguration(<span class="stringliteral">&#39;vector_map_file&#39;</span>)</div>
+<div class="line"><span class="lineno">  170</span>    declare_vector_map_file = DeclareLaunchArgument(name=<span class="stringliteral">&#39;vector_map_file&#39;</span>, default_value=<span class="stringliteral">&#39;/opt/carma/maps/vector_map.osm&#39;</span>)</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>    simulation_mode = LaunchConfiguration(<span class="stringliteral">&#39;simulation_mode&#39;</span>)</div>
+<div class="line"><span class="lineno">  173</span>    declare_simulation_mode = DeclareLaunchArgument(name=<span class="stringliteral">&#39;simulation_mode&#39;</span>, default_value = <span class="stringliteral">&#39;False&#39;</span>, description = <span class="stringliteral">&#39;True if CARMA Platform is launched with CARLA Simulator&#39;</span>)</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>    is_ros2_tracing_enabled = LaunchConfiguration(<span class="stringliteral">&#39;is_ros2_tracing_enabled&#39;</span>)</div>
+<div class="line"><span class="lineno">  176</span>    declare_is_ros2_tracing_enabled = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">  177</span>        name=<span class="stringliteral">&#39;is_ros2_tracing_enabled&#39;</span>, </div>
+<div class="line"><span class="lineno">  178</span>        default_value = <span class="stringliteral">&#39;False&#39;</span>, </div>
+<div class="line"><span class="lineno">  179</span>        description = <span class="stringliteral">&#39;True if user wants ROS 2 Tracing logs to be generated from CARMA Platform.&#39;</span>)</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>    <span class="comment"># Launch ROS2 rosbag logging</span></div>
+<div class="line"><span class="lineno">  182</span>    ros2_rosbag_launch = GroupAction(</div>
+<div class="line"><span class="lineno">  183</span>        actions=[</div>
+<div class="line"><span class="lineno">  184</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  185</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/ros2_rosbag.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  186</span>                launch_arguments = {</div>
+<div class="line"><span class="lineno">  187</span>                    <span class="stringliteral">&#39;vehicle_config_dir&#39;</span> : vehicle_config_dir,</div>
+<div class="line"><span class="lineno">  188</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file</div>
+<div class="line"><span class="lineno">  189</span>                    }.items()</div>
+<div class="line"><span class="lineno">  190</span>            )</div>
+<div class="line"><span class="lineno">  191</span>        ]</div>
+<div class="line"><span class="lineno">  192</span>    )</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>    <span class="comment"># Nodes</span></div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>    transform_group = GroupAction(</div>
+<div class="line"><span class="lineno">  197</span>        actions=[</div>
+<div class="line"><span class="lineno">  198</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_TF_NS&#39;</span>, default_value=<span class="stringliteral">&#39;/&#39;</span>)),</div>
+<div class="line"><span class="lineno">  199</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  200</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/transforms.launch.py&#39;</span>])</div>
+<div class="line"><span class="lineno">  201</span>            ),</div>
 <div class="line"><span class="lineno">  202</span>        ]</div>
 <div class="line"><span class="lineno">  203</span>    )</div>
 <div class="line"><span class="lineno">  204</span> </div>
-<div class="line"><span class="lineno">  205</span>    v2x_group = GroupAction(</div>
+<div class="line"><span class="lineno">  205</span>    environment_group = GroupAction(</div>
 <div class="line"><span class="lineno">  206</span>        actions=[</div>
-<div class="line"><span class="lineno">  207</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;message&#39;</span>)),</div>
+<div class="line"><span class="lineno">  207</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_ENV_NS&#39;</span>, default_value=<span class="stringliteral">&#39;environment&#39;</span>)),</div>
 <div class="line"><span class="lineno">  208</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  209</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/message.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  209</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/environment.launch.py&#39;</span>]),</div>
 <div class="line"><span class="lineno">  210</span>                launch_arguments = { </div>
-<div class="line"><span class="lineno">  211</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file,</div>
+<div class="line"><span class="lineno">  211</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
 <div class="line"><span class="lineno">  212</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
-<div class="line"><span class="lineno">  213</span>                    <span class="stringliteral">&#39;enable_opening_tunnels&#39;</span>  : enable_opening_tunnels,</div>
-<div class="line"><span class="lineno">  214</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>]</div>
-<div class="line"><span class="lineno">  215</span>                }.items()</div>
+<div class="line"><span class="lineno">  213</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file,</div>
+<div class="line"><span class="lineno">  214</span>                    <span class="stringliteral">&#39;vector_map_file&#39;</span> : vector_map_file</div>
+<div class="line"><span class="lineno">  215</span>                    }.items()</div>
 <div class="line"><span class="lineno">  216</span>            ),</div>
 <div class="line"><span class="lineno">  217</span>        ]</div>
 <div class="line"><span class="lineno">  218</span>    )</div>
 <div class="line"><span class="lineno">  219</span> </div>
-<div class="line"><span class="lineno">  220</span>    guidance_group = GroupAction(</div>
+<div class="line"><span class="lineno">  220</span>    localization_group = GroupAction(</div>
 <div class="line"><span class="lineno">  221</span>        actions=[</div>
-<div class="line"><span class="lineno">  222</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_GUIDE_NS&#39;</span>, default_value=<span class="stringliteral">&#39;guidance&#39;</span>)),</div>
-<div class="line"><span class="lineno">  223</span>            </div>
-<div class="line"><span class="lineno">  224</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  225</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/guidance.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  226</span>                launch_arguments={</div>
-<div class="line"><span class="lineno">  227</span>                    <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder,</div>
-<div class="line"><span class="lineno">  228</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file, </div>
-<div class="line"><span class="lineno">  229</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
-<div class="line"><span class="lineno">  230</span>                    <span class="stringliteral">&#39;enable_guidance_plugin_validator&#39;</span> : enable_guidance_plugin_validator,</div>
-<div class="line"><span class="lineno">  231</span>                    <span class="stringliteral">&#39;strategic_plugins_to_validate&#39;</span> : strategic_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  232</span>                    <span class="stringliteral">&#39;tactical_plugins_to_validate&#39;</span> : tactical_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  233</span>                    <span class="stringliteral">&#39;control_plugins_to_validate&#39;</span> : control_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  234</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
-<div class="line"><span class="lineno">  235</span>                }.items()</div>
-<div class="line"><span class="lineno">  236</span>            ),</div>
-<div class="line"><span class="lineno">  237</span>        ]</div>
-<div class="line"><span class="lineno">  238</span>    )</div>
-<div class="line"><span class="lineno">  239</span> </div>
-<div class="line"><span class="lineno">  240</span>    drivers_group = GroupAction(</div>
-<div class="line"><span class="lineno">  241</span>        actions=[</div>
-<div class="line"><span class="lineno">  242</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;hardware_interface&#39;</span>)),</div>
-<div class="line"><span class="lineno">  243</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  244</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/drivers.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  245</span>                launch_arguments = { </div>
+<div class="line"><span class="lineno">  222</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;localization&#39;</span>)),</div>
+<div class="line"><span class="lineno">  223</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  224</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/localization.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  225</span>                launch_arguments = { </div>
+<div class="line"><span class="lineno">  226</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
+<div class="line"><span class="lineno">  227</span>                    <span class="stringliteral">&#39;load_type&#39;</span> : load_type,</div>
+<div class="line"><span class="lineno">  228</span>                    <span class="stringliteral">&#39;single_pcd_path&#39;</span> : single_pcd_path,</div>
+<div class="line"><span class="lineno">  229</span>                    <span class="stringliteral">&#39;area&#39;</span> : area,</div>
+<div class="line"><span class="lineno">  230</span>                    <span class="stringliteral">&#39;arealist_path&#39;</span> : arealist_path,</div>
+<div class="line"><span class="lineno">  231</span>                    <span class="stringliteral">&#39;vector_map_file&#39;</span> : vector_map_file,</div>
+<div class="line"><span class="lineno">  232</span>                    <span class="stringliteral">&#39;vehicle_calibration_dir&#39;</span>: vehicle_calibration_dir,</div>
+<div class="line"><span class="lineno">  233</span>                    <span class="stringliteral">&#39;simulation_mode&#39;</span>: simulation_mode,</div>
+<div class="line"><span class="lineno">  234</span>                }.items()</div>
+<div class="line"><span class="lineno">  235</span>            )</div>
+<div class="line"><span class="lineno">  236</span>        ]</div>
+<div class="line"><span class="lineno">  237</span>    )</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>    v2x_group = GroupAction(</div>
+<div class="line"><span class="lineno">  240</span>        actions=[</div>
+<div class="line"><span class="lineno">  241</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;message&#39;</span>)),</div>
+<div class="line"><span class="lineno">  242</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  243</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/message.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  244</span>                launch_arguments = { </div>
+<div class="line"><span class="lineno">  245</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file,</div>
 <div class="line"><span class="lineno">  246</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
-<div class="line"><span class="lineno">  247</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
-<div class="line"><span class="lineno">  248</span>                }.items()</div>
-<div class="line"><span class="lineno">  249</span>            ),</div>
-<div class="line"><span class="lineno">  250</span>        ]</div>
-<div class="line"><span class="lineno">  251</span>    )</div>
-<div class="line"><span class="lineno">  252</span> </div>
-<div class="line"><span class="lineno">  253</span>    system_controller = Node(</div>
-<div class="line"><span class="lineno">  254</span>        package=<span class="stringliteral">&#39;system_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  255</span>        name=<span class="stringliteral">&#39;system_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  256</span>        executable=<span class="stringliteral">&#39;system_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  257</span>        parameters=[ system_controller_param_file ],</div>
-<div class="line"><span class="lineno">  258</span>        on_exit = Shutdown(), <span class="comment"># Mark the subsystem controller as required for segfaults</span></div>
-<div class="line"><span class="lineno">  259</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;system_controller&#39;</span>, env_log_levels)]</div>
-<div class="line"><span class="lineno">  260</span>    )</div>
-<div class="line"><span class="lineno">  261</span> </div>
-<div class="line"><span class="lineno">  262</span>    ui_group = GroupAction(</div>
-<div class="line"><span class="lineno">  263</span>        actions=[</div>
-<div class="line"><span class="lineno">  264</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_UI_NS&#39;</span>, default_value=<span class="stringliteral">&#39;ui&#39;</span>)),</div>
-<div class="line"><span class="lineno">  265</span>            </div>
-<div class="line"><span class="lineno">  266</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  267</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/ui.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  268</span>                launch_arguments={</div>
-<div class="line"><span class="lineno">  269</span>                <span class="stringliteral">&#39;port&#39;</span> : port</div>
-<div class="line"><span class="lineno">  270</span>                }.items()</div>
-<div class="line"><span class="lineno">  271</span>            ),</div>
-<div class="line"><span class="lineno">  272</span>        ]</div>
-<div class="line"><span class="lineno">  273</span>    )</div>
-<div class="line"><span class="lineno">  274</span> </div>
-<div class="line"><span class="lineno">  275</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">  276</span>        declare_vehicle_calibration_dir_arg,</div>
-<div class="line"><span class="lineno">  277</span>        declare_vehicle_config_dir_arg,</div>
-<div class="line"><span class="lineno">  278</span>        declare_vehicle_characteristics_param_file_arg,</div>
-<div class="line"><span class="lineno">  279</span>        declare_vehicle_config_param_file_arg,</div>
-<div class="line"><span class="lineno">  280</span>        declare_route_file_folder,</div>
-<div class="line"><span class="lineno">  281</span>        declare_enable_guidance_plugin_validator,</div>
-<div class="line"><span class="lineno">  282</span>        declare_strategic_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  283</span>        declare_tactical_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  284</span>        declare_control_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  285</span>        declare_enable_opening_tunnels,</div>
-<div class="line"><span class="lineno">  286</span>        declare_port,</div>
-<div class="line"><span class="lineno">  287</span>        declare_load_type,</div>
-<div class="line"><span class="lineno">  288</span>        declare_single_pcd_path,</div>
-<div class="line"><span class="lineno">  289</span>        declare_area,</div>
-<div class="line"><span class="lineno">  290</span>        declare_arealist_path,</div>
-<div class="line"><span class="lineno">  291</span>        declare_vector_map_file,</div>
-<div class="line"><span class="lineno">  292</span>        declare_simulation_mode,</div>
-<div class="line"><span class="lineno">  293</span>        drivers_group,</div>
-<div class="line"><span class="lineno">  294</span>        transform_group,</div>
-<div class="line"><span class="lineno">  295</span>        environment_group,</div>
-<div class="line"><span class="lineno">  296</span>        localization_group,</div>
-<div class="line"><span class="lineno">  297</span>        v2x_group,</div>
-<div class="line"><span class="lineno">  298</span>        guidance_group, </div>
-<div class="line"><span class="lineno">  299</span>        ros2_rosbag_launch,</div>
-<div class="line"><span class="lineno">  300</span>        ui_group,</div>
-<div class="line"><span class="lineno">  301</span>        system_controller</div>
-<div class="line"><span class="lineno">  302</span>    ])</div>
-<div class="ttc" id="anamespacecarma__src_html_af9b310123d70f1b0131bc831678af1b1"><div class="ttname"><a href="namespacecarma__src.html#af9b310123d70f1b0131bc831678af1b1">carma_src.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="carma__src_8launch_8py_source.html#l00032">carma_src.launch.py:32</a></div></div>
+<div class="line"><span class="lineno">  247</span>                    <span class="stringliteral">&#39;enable_opening_tunnels&#39;</span>  : enable_opening_tunnels,</div>
+<div class="line"><span class="lineno">  248</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>]</div>
+<div class="line"><span class="lineno">  249</span>                }.items()</div>
+<div class="line"><span class="lineno">  250</span>            ),</div>
+<div class="line"><span class="lineno">  251</span>        ]</div>
+<div class="line"><span class="lineno">  252</span>    )</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>    guidance_group = GroupAction(</div>
+<div class="line"><span class="lineno">  255</span>        actions=[</div>
+<div class="line"><span class="lineno">  256</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_GUIDE_NS&#39;</span>, default_value=<span class="stringliteral">&#39;guidance&#39;</span>)),</div>
+<div class="line"><span class="lineno">  257</span>            </div>
+<div class="line"><span class="lineno">  258</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  259</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/guidance.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  260</span>                launch_arguments={</div>
+<div class="line"><span class="lineno">  261</span>                    <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder,</div>
+<div class="line"><span class="lineno">  262</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file, </div>
+<div class="line"><span class="lineno">  263</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
+<div class="line"><span class="lineno">  264</span>                    <span class="stringliteral">&#39;enable_guidance_plugin_validator&#39;</span> : enable_guidance_plugin_validator,</div>
+<div class="line"><span class="lineno">  265</span>                    <span class="stringliteral">&#39;strategic_plugins_to_validate&#39;</span> : strategic_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  266</span>                    <span class="stringliteral">&#39;tactical_plugins_to_validate&#39;</span> : tactical_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  267</span>                    <span class="stringliteral">&#39;control_plugins_to_validate&#39;</span> : control_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  268</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
+<div class="line"><span class="lineno">  269</span>                }.items()</div>
+<div class="line"><span class="lineno">  270</span>            ),</div>
+<div class="line"><span class="lineno">  271</span>        ]</div>
+<div class="line"><span class="lineno">  272</span>    )</div>
+<div class="line"><span class="lineno">  273</span> </div>
+<div class="line"><span class="lineno">  274</span>    drivers_group = GroupAction(</div>
+<div class="line"><span class="lineno">  275</span>        actions=[</div>
+<div class="line"><span class="lineno">  276</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;hardware_interface&#39;</span>)),</div>
+<div class="line"><span class="lineno">  277</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  278</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/drivers.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  279</span>                launch_arguments = { </div>
+<div class="line"><span class="lineno">  280</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
+<div class="line"><span class="lineno">  281</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
+<div class="line"><span class="lineno">  282</span>                }.items()</div>
+<div class="line"><span class="lineno">  283</span>            ),</div>
+<div class="line"><span class="lineno">  284</span>        ]</div>
+<div class="line"><span class="lineno">  285</span>    )</div>
+<div class="line"><span class="lineno">  286</span> </div>
+<div class="line"><span class="lineno">  287</span>    system_controller = Node(</div>
+<div class="line"><span class="lineno">  288</span>        package=<span class="stringliteral">&#39;system_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  289</span>        name=<span class="stringliteral">&#39;system_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  290</span>        executable=<span class="stringliteral">&#39;system_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  291</span>        parameters=[ system_controller_param_file ],</div>
+<div class="line"><span class="lineno">  292</span>        on_exit = Shutdown(), <span class="comment"># Mark the subsystem controller as required for segfaults</span></div>
+<div class="line"><span class="lineno">  293</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;system_controller&#39;</span>, env_log_levels)]</div>
+<div class="line"><span class="lineno">  294</span>    )</div>
+<div class="line"><span class="lineno">  295</span> </div>
+<div class="line"><span class="lineno">  296</span>    ui_group = GroupAction(</div>
+<div class="line"><span class="lineno">  297</span>        actions=[</div>
+<div class="line"><span class="lineno">  298</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_UI_NS&#39;</span>, default_value=<span class="stringliteral">&#39;ui&#39;</span>)),</div>
+<div class="line"><span class="lineno">  299</span>            </div>
+<div class="line"><span class="lineno">  300</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  301</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/ui.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  302</span>                launch_arguments={</div>
+<div class="line"><span class="lineno">  303</span>                <span class="stringliteral">&#39;port&#39;</span> : port</div>
+<div class="line"><span class="lineno">  304</span>                }.items()</div>
+<div class="line"><span class="lineno">  305</span>            ),</div>
+<div class="line"><span class="lineno">  306</span>        ]</div>
+<div class="line"><span class="lineno">  307</span>    )</div>
+<div class="line"><span class="lineno">  308</span> </div>
+<div class="line"><span class="lineno">  309</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><span class="lineno">  310</span>        declare_vehicle_calibration_dir_arg,</div>
+<div class="line"><span class="lineno">  311</span>        declare_vehicle_config_dir_arg,</div>
+<div class="line"><span class="lineno">  312</span>        declare_vehicle_characteristics_param_file_arg,</div>
+<div class="line"><span class="lineno">  313</span>        declare_vehicle_config_param_file_arg,</div>
+<div class="line"><span class="lineno">  314</span>        declare_route_file_folder,</div>
+<div class="line"><span class="lineno">  315</span>        declare_enable_guidance_plugin_validator,</div>
+<div class="line"><span class="lineno">  316</span>        declare_strategic_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  317</span>        declare_tactical_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  318</span>        declare_control_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  319</span>        declare_enable_opening_tunnels,</div>
+<div class="line"><span class="lineno">  320</span>        declare_port,</div>
+<div class="line"><span class="lineno">  321</span>        declare_load_type,</div>
+<div class="line"><span class="lineno">  322</span>        declare_single_pcd_path,</div>
+<div class="line"><span class="lineno">  323</span>        declare_area,</div>
+<div class="line"><span class="lineno">  324</span>        declare_arealist_path,</div>
+<div class="line"><span class="lineno">  325</span>        declare_vector_map_file,</div>
+<div class="line"><span class="lineno">  326</span>        declare_simulation_mode,</div>
+<div class="line"><span class="lineno">  327</span>        declare_is_ros2_tracing_enabled,</div>
+<div class="line"><span class="lineno">  328</span>        drivers_group,</div>
+<div class="line"><span class="lineno">  329</span>        transform_group,</div>
+<div class="line"><span class="lineno">  330</span>        environment_group,</div>
+<div class="line"><span class="lineno">  331</span>        localization_group,</div>
+<div class="line"><span class="lineno">  332</span>        v2x_group,</div>
+<div class="line"><span class="lineno">  333</span>        guidance_group, </div>
+<div class="line"><span class="lineno">  334</span>        ros2_rosbag_launch,</div>
+<div class="line"><span class="lineno">  335</span>        ui_group,</div>
+<div class="line"><span class="lineno">  336</span>        system_controller,</div>
+<div class="line"><span class="lineno">  337</span>        OpaqueFunction(function=create_ros2_tracing_action)</div>
+<div class="line"><span class="lineno">  338</span>    ])</div>
+<div class="ttc" id="anamespacecarma__src_html_af9b310123d70f1b0131bc831678af1b1"><div class="ttname"><a href="namespacecarma__src.html#af9b310123d70f1b0131bc831678af1b1">carma_src.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="carma__src_8launch_8py_source.html#l00060">carma_src.launch.py:60</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -393,7 +468,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__src.html">carma_src</a></li>
-    <li class="footer">Generated on Fri Nov 17 2023 19:05:25 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Nov 20 2023 19:38:22 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

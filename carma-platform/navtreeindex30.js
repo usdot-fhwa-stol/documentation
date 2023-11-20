@@ -1,5 +1,6 @@
 var NAVTREEINDEX30 =
 {
+"classroute_1_1RouteGeneratorWorker.html#af67153a36940ea3e4dda5e90101f5b2d":[56,0,45,2,4],
 "classroute_1_1RouteGeneratorWorker.html#af6f39379cdc597962f95e6ce49e9eda9":[55,0,81,2,67],
 "classroute_1_1RouteGeneratorWorker.html#af6f39379cdc597962f95e6ce49e9eda9":[56,0,45,2,67],
 "classroute_1_1RouteGeneratorWorker.html#afa38ea39324bfd7de79382ebdfaa3b79":[56,0,45,2,53],
@@ -248,6 +249,5 @@ var NAVTREEINDEX30 =
 "classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a703cd636be3fd1f27eb3b9657bc202a6":[55,0,86,1,56],
 "classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a73ea9b2c2ea976535498c11894cd9498":[55,0,86,1,67],
 "classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a73ea9b2c2ea976535498c11894cd9498":[56,0,47,0,67],
-"classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a77fc0c0d0dc9dba9176284c86f7f148e":[56,0,47,0,28],
-"classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a77fc0c0d0dc9dba9176284c86f7f148e":[55,0,86,1,28]
+"classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a77fc0c0d0dc9dba9176284c86f7f148e":[56,0,47,0,28]
 };

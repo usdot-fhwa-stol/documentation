@@ -1,5 +1,6 @@
 var NAVTREEINDEX41 =
 {
+"namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04":[55,0,5,2,12],
 "namespacebasic__autonomy_1_1waypoint__generation.html#a9ef24fc9ed2fb1aeccb039313bdf858c":[55,0,5,2,25],
 "namespacebasic__autonomy_1_1waypoint__generation.html#aa1466a3966dee2e7bfb71ac6f7e62e5b":[55,0,5,2,17],
 "namespacebasic__autonomy_1_1waypoint__generation.html#aa3500af9146c0d9c80cb1b4101be01e5":[55,0,5,2,18],
@@ -94,7 +95,8 @@ var NAVTREEINDEX41 =
 "namespacecarma__guidance__plugins.html":[55,0,13],
 "namespacecarma__record.html":[55,0,14],
 "namespacecarma__src.html":[55,0,15],
-"namespacecarma__src.html#af9b310123d70f1b0131bc831678af1b1":[55,0,15,0],
+"namespacecarma__src.html#a9c61779e545502538d8f7cb27d18fe10":[55,0,15,0],
+"namespacecarma__src.html#af9b310123d70f1b0131bc831678af1b1":[55,0,15,1],
 "namespacecarma__wm.html":[55,0,16],
 "namespacecarma__wm.html#a22efdd09d9c9896b39281abfc5b9e9bb":[55,0,16,20],
 "namespacecarma__wm.html#a23411d3d299da623ec379efbc1a5b14a":[55,0,16,21],
@@ -247,7 +249,5 @@ var NAVTREEINDEX41 =
 "namespaceinlanecruising__plugin.html#a620c303e874dba7cab87460f35b35155":[55,0,35,8],
 "namespaceinlanecruising__plugin.html#acb051b1744e0113bd257658865e8e9c4":[55,0,35,6],
 "namespaceinlanecruising__plugin_1_1log.html":[55,0,35,0],
-"namespaceinlanecruising__plugin_1_1log.html#a4e946617a591b9e02a1b62f65234b15b":[55,0,35,0,1],
-"namespaceinlanecruising__plugin_1_1log.html#a5e9bcb5b1e75d11eb4715012cd651e52":[55,0,35,0,0],
-"namespaceinlanecruising__plugin_1_1log.html#a6a334b025039babfc527007d0049f7b7":[55,0,35,0,3]
+"namespaceinlanecruising__plugin_1_1log.html#a4e946617a591b9e02a1b62f65234b15b":[55,0,35,0,1]
 };

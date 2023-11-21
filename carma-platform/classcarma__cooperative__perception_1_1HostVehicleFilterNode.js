@@ -12,5 +12,5 @@ var classcarma__cooperative__perception_1_1HostVehicleFilterNode =
     [ "host_vehicle_pose_", "classcarma__cooperative__perception_1_1HostVehicleFilterNode.html#a493c2ab1aa2c17348af76e2b3472d888", null ],
     [ "host_vehicle_pose_sub_", "classcarma__cooperative__perception_1_1HostVehicleFilterNode.html#acfe122bd3a61db4d940ed41ab365c74e", null ],
     [ "on_set_parameters_callback_", "classcarma__cooperative__perception_1_1HostVehicleFilterNode.html#a29ecd66115f12aaaf81e8dce8f9aa5a3", null ],
-    [ "squared_distance_threshold_", "classcarma__cooperative__perception_1_1HostVehicleFilterNode.html#af0e950d684219b4c470ecb856f18edb8", null ]
+    [ "squared_distance_threshold_meters_", "classcarma__cooperative__perception_1_1HostVehicleFilterNode.html#af5c0622fb376070f26ea10765f5d73e2", null ]
 ];

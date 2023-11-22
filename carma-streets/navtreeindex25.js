@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"time__confidence_8hpp_source.html":[33,0,11,3,0,2,19],
 "time__stamp_8hpp.html":[33,0,11,3,0,2,20],
 "time__stamp_8hpp_source.html":[33,0,11,3,0,2,20],
 "time__sync__message_8cpp.html":[33,0,11,5,1,2],

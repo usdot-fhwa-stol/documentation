@@ -86,7 +86,7 @@ $(document).ready(function(){initNavTree('md_streets_utils_streets_signal_phase_
   <div class="headertitle"><div class="title">Streets Signal Phase and Timing Library </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md137"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md138"></a>
 Introduction</h1>
 <p >This CARMA-Streets library is meant to handle JSON serialization and deserialization for the CARMA-Streets internal SPaT JSON message. The message structure is heavily based on the J2735 SPaT message but does not contain any regional extension data since we are currently not using it. Below is a sample SPaT JSON message created by this library. </p><div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;time_stamp&quot;:130,</div>
@@ -143,7 +143,7 @@ Introduction</h1>
 <div class="line">                    }]</div>
 <div class="line">        }]</div>
 <div class="line">}</div>
-</div><!-- fragment --> <h1><a class="anchor" id="autotoc_md138"></a>
+</div><!-- fragment --> <h1><a class="anchor" id="autotoc_md139"></a>
 SPaT Traffic Signal State Information</h1>
 <p >The two relevant portions of the SPaT JSON message for managing traffic signal <b>states</b> MovementList and the <b>state-time-speed</b> MovementEventList. The <b>states</b> MovementList is a list of MovementStates. Each describes the state of a particular movement in the intersection. These can be identified by their <b>signal_group_id</b> which is the unique identifier for the signal group that controls this movement. Inside each MovementState there is a <b>state-time-speed</b> MovementEventList. This is a list of MovementEvents. Each MovementEvent has information about the phase as a MovementPhaseState enumeration and timing information about the start and end time of the described phase. Each MovementEventList can hold 16 possible MovementEvents (limitation of J2735 not this data type) to describe a current phase and up to 15 future phases. Each MovementEvent contains <b>timing</b> information which will include at minimum, <b>start_time</b> and <b>min_end_time</b>. These fields will represent the start and end time for each phase and are represented as tenths of a second in the current or next hour in units of 1/10th second from UTC time.A range of 0~36000 covers one hour.The values 35991..35999 are used when a leap second occurs.The value 36000 is used to indicate time &gt;3600 seconds. 36001 is to be used when value undefined or unknown. Note that this is NOT expressed in GPS time or in local time Below is an example JSON for the described objects.(J2735 TimeMark definition). </p><div class="fragment"><div class="line">&quot;states&quot;:[</div>
 <div class="line">    {</div>
@@ -197,12 +197,12 @@ SPaT Traffic Signal State Information</h1>
 <div class="line">            }]</div>
 <div class="line">    }</div>
 <div class="line">]</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md139"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md140"></a>
 Including Library</h1>
 <p >To include this library in your CARMA-Streets service simply add the following to your CMakeList.txt. </p><div class="fragment"><div class="line">find_package( streets_signal_phase_and_timing_lib REQUIRED )</div>
 <div class="line">...</div>
 <div class="line">target_link_libraries( &lt;target&gt; PUBLIC streets_signal_phase_and_timing_lib )</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md140"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md141"></a>
 Initializing SPaT Object for consuming NTCIP UDP data</h1>
 <p >This <code>spat</code> object contains methods to update based on json SPaT updates or ntcip_1202_ext UDP data. For updating using JSON SPaT messages no initialization is required since each update will contain all the required information. Below is an example of how to consume an update. </p><div class="fragment"><div class="line">std::string json; // This string needs to be populated with JSON spat update.</div>
 <div class="line">auto spat_ptr = std::make_shared&lt;signal_phase_and_timing::spat&gt;();</div>
@@ -226,7 +226,7 @@ Initializing SPaT Object for consuming NTCIP UDP data</h1>
 <div class="line">spat_ptr-&gt;update(ntcip_1202_data, _use_msg_timestamp);  // use struct to update spat, bool flag controls whether to use </div>
 <div class="line">                                                        // host machine unix time(if false) or NTCIP UDP message timestamp </div>
 <div class="line">                                                        // (if true) </div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md141"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md142"></a>
 Modifying SPaT Object</h1>
 <p >The <code>spat</code> object has been made thread safe using a internal <code>shared_mutex</code> for <b>read/write</b> locking behavior. Currently the lock allows concurrent access for <b>read</b> (copy constructor) operatons and exclusive access for <b>write</b> (changing <code>spat</code> object data) operations.</p>
 <p >All fields of <code>spat</code> have been made private so to <b>read</b> the data inside the <code>spat</code> object use the <code>get_intersection_state()</code> method which will return and copy of the internal <code>intersection_state</code> object that represents the state of the spat at the time this method is called. Since this is a copy of the current state, it will not remain current with the spat data so this method should be called when the data is being used and should be called repeatedly for any calculations that happen on an interval.</p>
@@ -241,7 +241,7 @@ Modifying SPaT Object</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Nov 21 2023 18:12:46 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Nov 22 2023 15:34:43 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -97,6 +97,9 @@ var annotated_dup =
       [ "scheduling_service", "classscheduling__service_1_1scheduling__service.html", "classscheduling__service_1_1scheduling__service" ],
       [ "scheduling_worker", "classscheduling__service_1_1scheduling__worker.html", "classscheduling__service_1_1scheduling__worker" ]
     ] ],
+    [ "sensor_data_sharing_service", "namespacesensor__data__sharing__service.html", [
+      [ "sds_service", "classsensor__data__sharing__service_1_1sds__service.html", "classsensor__data__sharing__service_1_1sds__service" ]
+    ] ],
     [ "signal_opt_service", "namespacesignal__opt__service.html", [
       [ "signal_opt_messages_worker", "classsignal__opt__service_1_1signal__opt__messages__worker.html", "classsignal__opt__service_1_1signal__opt__messages__worker" ],
       [ "signal_opt_processing_worker", "classsignal__opt__service_1_1signal__opt__processing__worker.html", "classsignal__opt__service_1_1signal__opt__processing__worker" ],

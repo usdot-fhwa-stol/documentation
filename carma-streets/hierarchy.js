@@ -171,6 +171,7 @@ var hierarchy =
     [ "streets_phase_control_schedule::streets_phase_control_command", "structstreets__phase__control__schedule_1_1streets__phase__control__command.html", null ],
     [ "streets_phase_control_schedule::streets_phase_control_schedule", "structstreets__phase__control__schedule_1_1streets__phase__control__schedule.html", null ],
     [ "streets_service::streets_service", "classstreets__service_1_1streets__service.html", [
+      [ "sensor_data_sharing_service::sds_service", "classsensor__data__sharing__service_1_1sds__service.html", null ],
       [ "traffic_signal_controller_service::tsc_service", "classtraffic__signal__controller__service_1_1tsc__service.html", null ]
     ] ],
     [ "streets_service::streets_singleton< T, Args >", "classstreets__service_1_1streets__singleton.html", null ],

@@ -34,6 +34,7 @@ var namespaces_dup =
     ] ],
     [ "OpenAPI", "namespaceOpenAPI.html", "namespaceOpenAPI" ],
     [ "scheduling_service", "namespacescheduling__service.html", "namespacescheduling__service" ],
+    [ "sensor_data_sharing_service", "namespacesensor__data__sharing__service.html", "namespacesensor__data__sharing__service" ],
     [ "signal_opt_service", "namespacesignal__opt__service.html", "namespacesignal__opt__service" ],
     [ "signal_phase_and_timing", "namespacesignal__phase__and__timing.html", "namespacesignal__phase__and__timing" ],
     [ "simulate_bsm", "namespacesimulate__bsm.html", [
@@ -59,6 +60,15 @@ var namespaces_dup =
       [ "bsm_th", "namespacesimulate__bsm__mobilityPath__mobilityoperation.html#a01ce012224c75a31e9efeb106395a031", null ],
       [ "mobility_operation_th", "namespacesimulate__bsm__mobilityPath__mobilityoperation.html#a9ab26a9c67d2b0141fe16cd492b41c23", null ],
       [ "mobility_path_th", "namespacesimulate__bsm__mobilityPath__mobilityoperation.html#afc26138a5b4ec3d97c5f38c082ff41dc", null ]
+    ] ],
+    [ "simulate_detected_object", "namespacesimulate__detected__object.html", [
+      [ "read_json", "namespacesimulate__detected__object.html#a96523c5dc3e24e735685b9bf7b413972", null ],
+      [ "curr_time", "namespacesimulate__detected__object.html#afee5081259a913fd0827be78cc014c83", null ],
+      [ "data", "namespacesimulate__detected__object.html#a9b04bfa809322b8aff6565dfcb8c0715", null ],
+      [ "epoch", "namespacesimulate__detected__object.html#a7ff3adfebd4544d0a05b004d94309def", null ],
+      [ "obj", "namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3", null ],
+      [ "producer", "namespacesimulate__detected__object.html#a068b850b81fa3f7d2ea448a3a72b0c76", null ],
+      [ "value", "namespacesimulate__detected__object.html#a0b7b7253fcc087b25ede4ea7f5c24128", null ]
     ] ],
     [ "simulate_mobilityoperation", "namespacesimulate__mobilityoperation.html", [
       [ "read_json", "namespacesimulate__mobilityoperation.html#acf408b61066fdf6b4ee4737e568dc5ba", null ],

@@ -21,7 +21,7 @@ var searchData=
   ['entry_5flane_18',['entry_lane',['../structstreets__vehicle__scheduler_1_1vehicle__schedule.html#a84fbf12e6e10638b71247bb9435aa3a5',1,'streets_vehicle_scheduler::vehicle_schedule']]],
   ['entry_5flanelets_19',['entry_lanelets',['../classOpenAPI_1_1OAIIntersection__info.html#a297bb46319fb33ce6c60af4a2777efcf',1,'OpenAPI::OAIIntersection_info']]],
   ['eof_5fcnt_20',['eof_cnt',['../namespacekafka__clients.html#ae4fbee381b5cbd9bdd27b0e738566d85',1,'kafka_clients']]],
-  ['epoch_21',['epoch',['../namespacesimulate__phase__control__schedule.html#af3059b4eb36d8ed304bf08da6bcded78',1,'simulate_phase_control_schedule']]],
+  ['epoch_21',['epoch',['../namespacesimulate__phase__control__schedule.html#af3059b4eb36d8ed304bf08da6bcded78',1,'simulate_phase_control_schedule.epoch()'],['../namespacesimulate__detected__object.html#a7ff3adfebd4544d0a05b004d94309def',1,'simulate_detected_object.epoch()']]],
   ['error_5fstr_22',['error_str',['../classOpenAPI_1_1OAIHttpRequestWorker.html#a094214d8718ee8f0e8bcd41e1b19ae2b',1,'OpenAPI::OAIHttpRequestWorker']]],
   ['error_5ftype_23',['error_type',['../classOpenAPI_1_1OAIHttpRequestWorker.html#a3efd6243071ccbef5c9312d4db124e9d',1,'OpenAPI::OAIHttpRequestWorker']]],
   ['est_24',['est',['../structstreets__vehicle__scheduler_1_1all__stop__vehicle__schedule.html#aa0731dcf4322f99d8793262aee907147',1,'streets_vehicle_scheduler::all_stop_vehicle_schedule']]],

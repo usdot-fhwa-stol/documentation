@@ -33,6 +33,6 @@ var searchData=
   ['cur_5flanelet_5fid_30',['cur_lanelet_id',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#a429cef22eb0dfc9cedb43a179b7234dd',1,'message_services::models::vehicle_status_intent']]],
   ['cur_5fspeed_31',['cur_speed',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#aaa49104e45f29a668a373e44963213c7',1,'message_services::models::vehicle_status_intent']]],
   ['cur_5ftimestamp_32',['cur_timestamp',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#ae46520705399ceffd6333d0070ccd607',1,'message_services::models::vehicle_status_intent']]],
-  ['curr_5ftime_33',['curr_time',['../namespacesimulate__phase__control__schedule.html#a27642444488efc82460f00e8cd30d4fb',1,'simulate_phase_control_schedule']]],
+  ['curr_5ftime_33',['curr_time',['../namespacesimulate__detected__object.html#afee5081259a913fd0827be78cc014c83',1,'simulate_detected_object.curr_time()'],['../namespacesimulate__phase__control__schedule.html#a27642444488efc82460f00e8cd30d4fb',1,'simulate_phase_control_schedule.curr_time()']]],
   ['customdatetimeformat_34',['customDateTimeFormat',['../classOpenAPI_1_1OAISerializerSettings.html#a40ca47d1213337184303c8d079af1181',1,'OpenAPI::OAISerializerSettings']]]
 ];

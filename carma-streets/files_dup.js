@@ -8,6 +8,7 @@ var files_dup =
     [ "message_services", "dir_0f47383552e941d1a48947ea6fd366b6.html", "dir_0f47383552e941d1a48947ea6fd366b6" ],
     [ "scheduling_service", "dir_0a5dd744e173470e5673b2d7425b82fe.html", "dir_0a5dd744e173470e5673b2d7425b82fe" ],
     [ "scripts", "dir_53e6fa9553ac22a5646d2a2b2d7b97a1.html", "dir_53e6fa9553ac22a5646d2a2b2d7b97a1" ],
+    [ "sensor_data_sharing_service", "dir_f247774313515005ce6eeb99113d77b1.html", "dir_f247774313515005ce6eeb99113d77b1" ],
     [ "signal_opt_service", "dir_f45123e60d40f0f466503f4a9cc2129d.html", "dir_f45123e60d40f0f466503f4a9cc2129d" ],
     [ "streets_service_base", "dir_bf613ef15ee5fcdcc29895339d53fd33.html", null ],
     [ "streets_service_base_lanelet_aware", "dir_8e9c17ccc7b8873011e9c1b9b9a266de.html", null ],

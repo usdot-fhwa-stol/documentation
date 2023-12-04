@@ -1082,7 +1082,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  112</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a386ce9d94003c9140d097eec456477c6">make_ctra_detection</a>(msg);</div>
 <div class="line"><span class="lineno">  113</span> </div>
 <div class="line"><span class="lineno">  114</span>    <span class="keywordflow">case</span> msg.MOTION_MODEL_CV:</div>
-<div class="line"><span class="lineno">  115</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  115</span>      <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;unsupported motion model type &#39;3: constant velocity (CV)&#39;&quot;</span>);</div>
 <div class="line"><span class="lineno">  116</span>  }</div>
 <div class="line"><span class="lineno">  117</span> </div>
 <div class="line"><span class="lineno">  118</span>  <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;unkown motion model type &#39;&quot;</span> + <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(msg.motion_model) + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
@@ -2238,7 +2238,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="msg__conversion_8cpp_source.html#l00064">calc_detection_time_stamp()</a>, <a class="el" href="geodetic_8cpp_source.html#l00093">calculate_grid_convergence()</a>, <a class="el" href="j2735__types_8cpp_source.html#l00055">carma_cooperative_perception::AccelerationSet4Way::from_msg()</a>, <a class="el" href="j2735__types_8cpp_source.html#l00019">carma_cooperative_perception::DDateTime::from_msg()</a>, <a class="el" href="j2735__types_8cpp_source.html#l00101">carma_cooperative_perception::Heading::from_msg()</a>, <a class="el" href="j2735__types_8cpp_source.html#l00075">carma_cooperative_perception::Position3D::from_msg()</a>, <a class="el" href="j2735__types_8cpp_source.html#l00111">carma_cooperative_perception::Speed::from_msg()</a>, <a class="el" href="j3224__types_8cpp_source.html#l00047">carma_cooperative_perception::MeasurementTimeOffset::from_msg()</a>, <a class="el" href="j3224__types_8cpp_source.html#l00019">carma_cooperative_perception::PositionOffsetXYZ::from_msg()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00141">heading_to_enu_yaw()</a>, <a class="el" href="geodetic_8hpp_source.html#l00034">carma_cooperative_perception::Wgs84Coordinate::latitude</a>, <a class="el" href="geodetic_8cpp_source.html#l00055">project_to_utm()</a>, <a class="el" href="units__extensions_8hpp_source.html#l00025">remove_units()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00130">to_position_msg()</a>, <a class="el" href="utm__zone_8cpp_source.html#l00021">to_string()</a>, and <a class="el" href="msg__conversion_8cpp_source.html#l00051">to_time_msg()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00190">carma_cooperative_perception::ExternalObjectListToDetectionListNode::publish_as_detection_list()</a>, and <a class="el" href="sdsm__to__detection__list__component_8hpp_source.html#l00042">carma_cooperative_perception::SdsmToDetectionListNode::sdsm_msg_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00183">carma_cooperative_perception::ExternalObjectListToDetectionListNode::publish_as_detection_list()</a>, and <a class="el" href="sdsm__to__detection__list__component_8hpp_source.html#l00042">carma_cooperative_perception::SdsmToDetectionListNode::sdsm_msg_callback()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3207,7 +3207,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="geodetic_8cpp_source.html#l00027">calculate_utm_zone()</a>, <a class="el" href="geodetic_8cpp_source.html#l00055">project_to_utm()</a>, <a class="el" href="units__extensions_8hpp_source.html#l00025">remove_units()</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00021">to_string()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00190">carma_cooperative_perception::ExternalObjectListToDetectionListNode::publish_as_detection_list()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00183">carma_cooperative_perception::ExternalObjectListToDetectionListNode::publish_as_detection_list()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3591,7 +3591,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></li>
-    <li class="footer">Generated on Tue Nov 21 2023 21:48:49 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Dec 4 2023 18:10:13 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

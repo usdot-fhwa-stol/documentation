@@ -295,14 +295,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00170">170</a> of file <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html">external_object_list_to_detection_list_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  172</span>{</div>
-<div class="line"><span class="lineno">  173</span>  <span class="comment">// CarmaLifecycleNode does not handle subscriber pointer reseting for us</span></div>
-<div class="line"><span class="lineno">  174</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#ad24798f9166132a8eefbe3880aa923f1">external_objects_subscription_</a>.reset();</div>
-<div class="line"><span class="lineno">  175</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aabefd49e91ca96b2e46ab4ada39bdaeb">georeference_subscription_</a>.reset();</div>
-<div class="line"><span class="lineno">  176</span> </div>
-<div class="line"><span class="lineno">  177</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
-<div class="line"><span class="lineno">  178</span>}</div>
+<p class="definition">Definition at line <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00163">163</a> of file <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html">external_object_list_to_detection_list_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>{</div>
+<div class="line"><span class="lineno">  166</span>  <span class="comment">// CarmaLifecycleNode does not handle subscriber pointer reseting for us</span></div>
+<div class="line"><span class="lineno">  167</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#ad24798f9166132a8eefbe3880aa923f1">external_objects_subscription_</a>.reset();</div>
+<div class="line"><span class="lineno">  168</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aabefd49e91ca96b2e46ab4ada39bdaeb">georeference_subscription_</a>.reset();</div>
+<div class="line"><span class="lineno">  169</span> </div>
+<div class="line"><span class="lineno">  170</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
+<div class="line"><span class="lineno">  171</span>}</div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode_html_aabefd49e91ca96b2e46ab4ada39bdaeb"><div class="ttname"><a href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aabefd49e91ca96b2e46ab4ada39bdaeb">carma_cooperative_perception::ExternalObjectListToDetectionListNode::georeference_subscription_</a></div><div class="ttdeci">rclcpp::Subscription&lt; std_msgs::msg::String &gt;::SharedPtr georeference_subscription_</div><div class="ttdef"><b>Definition:</b> <a href="external__object__list__to__detection__list__component_8hpp_source.html#l00063">external_object_list_to_detection_list_component.hpp:63</a></div></div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode_html_ad24798f9166132a8eefbe3880aa923f1"><div class="ttname"><a href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#ad24798f9166132a8eefbe3880aa923f1">carma_cooperative_perception::ExternalObjectListToDetectionListNode::external_objects_subscription_</a></div><div class="ttdeci">rclcpp::Subscription&lt; input_msg_type &gt;::SharedPtr external_objects_subscription_</div><div class="ttdef"><b>Definition:</b> <a href="external__object__list__to__detection__list__component_8hpp_source.html#l00062">external_object_list_to_detection_list_component.hpp:62</a></div></div>
 </div><!-- fragment -->
@@ -366,61 +366,60 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  114</span>      }</div>
 <div class="line"><span class="lineno">  115</span>    });</div>
 <div class="line"><span class="lineno">  116</span> </div>
-<div class="line"><span class="lineno">  117</span>  declare_parameter(</div>
-<div class="line"><span class="lineno">  118</span>    <span class="stringliteral">&quot;small_vehicle_motion_model&quot;</span>,</div>
-<div class="line"><span class="lineno">  119</span>    carma_cooperative_perception_interfaces::msg::Detection::MOTION_MODEL_CTRV);</div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>  declare_parameter(</div>
-<div class="line"><span class="lineno">  122</span>    <span class="stringliteral">&quot;large_vehicle_motion_model&quot;</span>,</div>
-<div class="line"><span class="lineno">  123</span>    carma_cooperative_perception_interfaces::msg::Detection::MOTION_MODEL_CTRV);</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>  declare_parameter(</div>
-<div class="line"><span class="lineno">  126</span>    <span class="stringliteral">&quot;motorcycle_motion_model&quot;</span>,</div>
-<div class="line"><span class="lineno">  127</span>    carma_cooperative_perception_interfaces::msg::Detection::MOTION_MODEL_CTRA);</div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>  declare_parameter(</div>
-<div class="line"><span class="lineno">  130</span>    <span class="stringliteral">&quot;pedestrian_motion_model&quot;</span>,</div>
-<div class="line"><span class="lineno">  131</span>    carma_cooperative_perception_interfaces::msg::Detection::MOTION_MODEL_CV);</div>
-<div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>  declare_parameter(</div>
-<div class="line"><span class="lineno">  134</span>    <span class="stringliteral">&quot;unknown_motion_model&quot;</span>,</div>
-<div class="line"><span class="lineno">  135</span>    carma_cooperative_perception_interfaces::msg::Detection::MOTION_MODEL_CV);</div>
-<div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#a888894d26c2d2af1520899984707c587">on_set_parameters_callback_</a> =</div>
-<div class="line"><span class="lineno">  138</span>    add_on_set_parameters_callback([<span class="keyword">this</span>](<span class="keyword">const</span> std::vector&lt;rclcpp::Parameter&gt; &amp; parameters) {</div>
-<div class="line"><span class="lineno">  139</span>      rcl_interfaces::msg::SetParametersResult result;</div>
-<div class="line"><span class="lineno">  140</span>      result.successful = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  141</span>      result.reason = <span class="stringliteral">&quot;success&quot;</span>;</div>
-<div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; parameter : parameters) {</div>
-<div class="line"><span class="lineno">  144</span>        <span class="keywordflow">if</span> (parameter.get_name() == <span class="stringliteral">&quot;small_vehicle_motion_model&quot;</span>) {</div>
-<div class="line"><span class="lineno">  145</span>          this-&gt;motion_model_mapping_.small_vehicle_model =</div>
-<div class="line"><span class="lineno">  146</span>            static_cast&lt;std::uint8_t&gt;(parameter.as_int());</div>
-<div class="line"><span class="lineno">  147</span>        } <span class="keywordflow">else</span> if (parameter.get_name() == <span class="stringliteral">&quot;large_vehicle_motion_model&quot;</span>) {</div>
-<div class="line"><span class="lineno">  148</span>          this-&gt;motion_model_mapping_.large_vehicle_model =</div>
-<div class="line"><span class="lineno">  149</span>            static_cast&lt;std::uint8_t&gt;(parameter.as_int());</div>
-<div class="line"><span class="lineno">  150</span>        } <span class="keywordflow">else</span> if (parameter.get_name() == <span class="stringliteral">&quot;motorcycle_motion_model&quot;</span>) {</div>
-<div class="line"><span class="lineno">  151</span>          this-&gt;motion_model_mapping_.motorcycle_model =</div>
-<div class="line"><span class="lineno">  152</span>            static_cast&lt;std::uint8_t&gt;(parameter.as_int());</div>
-<div class="line"><span class="lineno">  153</span>        } <span class="keywordflow">else</span> if (parameter.get_name() == <span class="stringliteral">&quot;pedestrian_motion_model&quot;</span>) {</div>
-<div class="line"><span class="lineno">  154</span>          this-&gt;motion_model_mapping_.pedestrian_model =</div>
-<div class="line"><span class="lineno">  155</span>            static_cast&lt;std::uint8_t&gt;(parameter.as_int());</div>
-<div class="line"><span class="lineno">  156</span>        } <span class="keywordflow">else</span> if (parameter.get_name() == <span class="stringliteral">&quot;unknown_motion_model&quot;</span>) {</div>
-<div class="line"><span class="lineno">  157</span>          this-&gt;motion_model_mapping_.unknown_model = static_cast&lt;std::uint8_t&gt;(parameter.as_int());</div>
-<div class="line"><span class="lineno">  158</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  159</span>          result.successful = false;</div>
-<div class="line"><span class="lineno">  160</span>          result.reason = <span class="stringliteral">&quot;Unexpected parameter name &#39;&quot;</span> + parameter.get_name() + <span class="stringliteral">&#39;\&#39;&#39;</span>;</div>
-<div class="line"><span class="lineno">  161</span>        }</div>
-<div class="line"><span class="lineno">  162</span>      }</div>
-<div class="line"><span class="lineno">  163</span> </div>
-<div class="line"><span class="lineno">  164</span>      <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  165</span>    });</div>
-<div class="line"><span class="lineno">  166</span> </div>
-<div class="line"><span class="lineno">  167</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
-<div class="line"><span class="lineno">  168</span>}</div>
+<div class="line"><span class="lineno">  117</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#a888894d26c2d2af1520899984707c587">on_set_parameters_callback_</a> =</div>
+<div class="line"><span class="lineno">  118</span>    add_on_set_parameters_callback([<span class="keyword">this</span>](<span class="keyword">const</span> std::vector&lt;rclcpp::Parameter&gt; &amp; parameters) {</div>
+<div class="line"><span class="lineno">  119</span>      rcl_interfaces::msg::SetParametersResult result;</div>
+<div class="line"><span class="lineno">  120</span>      result.successful = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  121</span>      result.reason = <span class="stringliteral">&quot;success&quot;</span>;</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; parameter : parameters) {</div>
+<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">if</span> (parameter.get_name() == <span class="stringliteral">&quot;small_vehicle_motion_model&quot;</span>) {</div>
+<div class="line"><span class="lineno">  125</span>          this-&gt;motion_model_mapping_.small_vehicle_model =</div>
+<div class="line"><span class="lineno">  126</span>            static_cast&lt;std::uint8_t&gt;(parameter.as_int());</div>
+<div class="line"><span class="lineno">  127</span>        } <span class="keywordflow">else</span> if (parameter.get_name() == <span class="stringliteral">&quot;large_vehicle_motion_model&quot;</span>) {</div>
+<div class="line"><span class="lineno">  128</span>          this-&gt;motion_model_mapping_.large_vehicle_model =</div>
+<div class="line"><span class="lineno">  129</span>            static_cast&lt;std::uint8_t&gt;(parameter.as_int());</div>
+<div class="line"><span class="lineno">  130</span>        } <span class="keywordflow">else</span> if (parameter.get_name() == <span class="stringliteral">&quot;motorcycle_motion_model&quot;</span>) {</div>
+<div class="line"><span class="lineno">  131</span>          this-&gt;motion_model_mapping_.motorcycle_model =</div>
+<div class="line"><span class="lineno">  132</span>            static_cast&lt;std::uint8_t&gt;(parameter.as_int());</div>
+<div class="line"><span class="lineno">  133</span>        } <span class="keywordflow">else</span> if (parameter.get_name() == <span class="stringliteral">&quot;pedestrian_motion_model&quot;</span>) {</div>
+<div class="line"><span class="lineno">  134</span>          this-&gt;motion_model_mapping_.pedestrian_model =</div>
+<div class="line"><span class="lineno">  135</span>            static_cast&lt;std::uint8_t&gt;(parameter.as_int());</div>
+<div class="line"><span class="lineno">  136</span>        } <span class="keywordflow">else</span> if (parameter.get_name() == <span class="stringliteral">&quot;unknown_motion_model&quot;</span>) {</div>
+<div class="line"><span class="lineno">  137</span>          this-&gt;motion_model_mapping_.unknown_model = static_cast&lt;std::uint8_t&gt;(parameter.as_int());</div>
+<div class="line"><span class="lineno">  138</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  139</span>          result.successful = false;</div>
+<div class="line"><span class="lineno">  140</span>          result.reason = <span class="stringliteral">&quot;Unexpected parameter name &#39;&quot;</span> + parameter.get_name() + <span class="stringliteral">&#39;\&#39;&#39;</span>;</div>
+<div class="line"><span class="lineno">  141</span>        }</div>
+<div class="line"><span class="lineno">  142</span>      }</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  145</span>    });</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>  <span class="comment">// TODO(Adam Morrissett): Look into how the motion model mapping can be re-architected</span></div>
+<div class="line"><span class="lineno">  148</span>  <span class="comment">// to avoid requiring this sequence. Maybe something like a mapping class that calls the</span></div>
+<div class="line"><span class="lineno">  149</span>  <span class="comment">// declared parameters. Then the to_detected_object() function could be templated on a</span></div>
+<div class="line"><span class="lineno">  150</span>  <span class="comment">// mapping strategy.</span></div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>  <span class="comment">// Declarations must come after on_set_parameters_callback_ assignment because the ROS</span></div>
+<div class="line"><span class="lineno">  153</span>  <span class="comment">// runtime will call the callback if declare_parameter() succeeds.</span></div>
+<div class="line"><span class="lineno">  154</span>  declare_parameter(<span class="stringliteral">&quot;small_vehicle_motion_model&quot;</span>, <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aebd67f936e7de2a880a1c0a806256bb1">motion_model_mapping_</a>.<a class="code hl_variable" href="structcarma__cooperative__perception_1_1MotionModelMapping.html#aecba4e9aca4ba8e68c14c24bf38f6bb5">small_vehicle_model</a>);</div>
+<div class="line"><span class="lineno">  155</span>  declare_parameter(<span class="stringliteral">&quot;large_vehicle_motion_model&quot;</span>, <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aebd67f936e7de2a880a1c0a806256bb1">motion_model_mapping_</a>.<a class="code hl_variable" href="structcarma__cooperative__perception_1_1MotionModelMapping.html#a6e79320a73bbffa2b908a1f662e27cbb">large_vehicle_model</a>);</div>
+<div class="line"><span class="lineno">  156</span>  declare_parameter(<span class="stringliteral">&quot;motorcycle_motion_model&quot;</span>, <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aebd67f936e7de2a880a1c0a806256bb1">motion_model_mapping_</a>.<a class="code hl_variable" href="structcarma__cooperative__perception_1_1MotionModelMapping.html#ad6a0527ed5c7d516f500332f6e2a621a">motorcycle_model</a>);</div>
+<div class="line"><span class="lineno">  157</span>  declare_parameter(<span class="stringliteral">&quot;pedestrian_motion_model&quot;</span>, <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aebd67f936e7de2a880a1c0a806256bb1">motion_model_mapping_</a>.<a class="code hl_variable" href="structcarma__cooperative__perception_1_1MotionModelMapping.html#a9b13f2c2e00f95a6671e2346f3c2c63e">pedestrian_model</a>);</div>
+<div class="line"><span class="lineno">  158</span>  declare_parameter(<span class="stringliteral">&quot;unknown_motion_model&quot;</span>, <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aebd67f936e7de2a880a1c0a806256bb1">motion_model_mapping_</a>.<a class="code hl_variable" href="structcarma__cooperative__perception_1_1MotionModelMapping.html#a6fa6e026e49bd0fb9946398d32e15007">unknown_model</a>);</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
+<div class="line"><span class="lineno">  161</span>}</div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode_html_a948c41e668aa87638466797aef7914bf"><div class="ttname"><a href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#a948c41e668aa87638466797aef7914bf">carma_cooperative_perception::ExternalObjectListToDetectionListNode::input_msg_shared_pointer</a></div><div class="ttdeci">typename input_msg_type::SharedPtr input_msg_shared_pointer</div><div class="ttdef"><b>Definition:</b> <a href="external__object__list__to__detection__list__component_8hpp_source.html#l00041">external_object_list_to_detection_list_component.hpp:41</a></div></div>
-<div class="ttc" id="aclasscarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode_html_abe3eae03f13bc35d1a8a584003a9af51"><div class="ttname"><a href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#abe3eae03f13bc35d1a8a584003a9af51">carma_cooperative_perception::ExternalObjectListToDetectionListNode::update_georeference</a></div><div class="ttdeci">auto update_georeference(const std_msgs::msg::String &amp;msg) noexcept -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="external__object__list__to__detection__list__component_8cpp_source.html#l00204">external_object_list_to_detection_list_component.cpp:204</a></div></div>
-<div class="ttc" id="aclasscarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode_html_af4110e586c68bb118d12854d950f9bde"><div class="ttname"><a href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#af4110e586c68bb118d12854d950f9bde">carma_cooperative_perception::ExternalObjectListToDetectionListNode::publish_as_detection_list</a></div><div class="ttdeci">auto publish_as_detection_list(const input_msg_type &amp;msg) const -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="external__object__list__to__detection__list__component_8cpp_source.html#l00190">external_object_list_to_detection_list_component.cpp:190</a></div></div>
+<div class="ttc" id="aclasscarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode_html_abe3eae03f13bc35d1a8a584003a9af51"><div class="ttname"><a href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#abe3eae03f13bc35d1a8a584003a9af51">carma_cooperative_perception::ExternalObjectListToDetectionListNode::update_georeference</a></div><div class="ttdeci">auto update_georeference(const std_msgs::msg::String &amp;msg) noexcept -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="external__object__list__to__detection__list__component_8cpp_source.html#l00197">external_object_list_to_detection_list_component.cpp:197</a></div></div>
+<div class="ttc" id="aclasscarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode_html_aebd67f936e7de2a880a1c0a806256bb1"><div class="ttname"><a href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aebd67f936e7de2a880a1c0a806256bb1">carma_cooperative_perception::ExternalObjectListToDetectionListNode::motion_model_mapping_</a></div><div class="ttdeci">MotionModelMapping motion_model_mapping_</div><div class="ttdef"><b>Definition:</b> <a href="external__object__list__to__detection__list__component_8hpp_source.html#l00065">external_object_list_to_detection_list_component.hpp:65</a></div></div>
+<div class="ttc" id="aclasscarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode_html_af4110e586c68bb118d12854d950f9bde"><div class="ttname"><a href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#af4110e586c68bb118d12854d950f9bde">carma_cooperative_perception::ExternalObjectListToDetectionListNode::publish_as_detection_list</a></div><div class="ttdeci">auto publish_as_detection_list(const input_msg_type &amp;msg) const -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="external__object__list__to__detection__list__component_8cpp_source.html#l00183">external_object_list_to_detection_list_component.cpp:183</a></div></div>
+<div class="ttc" id="astructcarma__cooperative__perception_1_1MotionModelMapping_html_a6e79320a73bbffa2b908a1f662e27cbb"><div class="ttname"><a href="structcarma__cooperative__perception_1_1MotionModelMapping.html#a6e79320a73bbffa2b908a1f662e27cbb">carma_cooperative_perception::MotionModelMapping::large_vehicle_model</a></div><div class="ttdeci">std::uint8_t large_vehicle_model</div><div class="ttdef"><b>Definition:</b> <a href="msg__conversion_8hpp_source.html#l00076">msg_conversion.hpp:76</a></div></div>
+<div class="ttc" id="astructcarma__cooperative__perception_1_1MotionModelMapping_html_a6fa6e026e49bd0fb9946398d32e15007"><div class="ttname"><a href="structcarma__cooperative__perception_1_1MotionModelMapping.html#a6fa6e026e49bd0fb9946398d32e15007">carma_cooperative_perception::MotionModelMapping::unknown_model</a></div><div class="ttdeci">std::uint8_t unknown_model</div><div class="ttdef"><b>Definition:</b> <a href="msg__conversion_8hpp_source.html#l00079">msg_conversion.hpp:79</a></div></div>
+<div class="ttc" id="astructcarma__cooperative__perception_1_1MotionModelMapping_html_a9b13f2c2e00f95a6671e2346f3c2c63e"><div class="ttname"><a href="structcarma__cooperative__perception_1_1MotionModelMapping.html#a9b13f2c2e00f95a6671e2346f3c2c63e">carma_cooperative_perception::MotionModelMapping::pedestrian_model</a></div><div class="ttdeci">std::uint8_t pedestrian_model</div><div class="ttdef"><b>Definition:</b> <a href="msg__conversion_8hpp_source.html#l00078">msg_conversion.hpp:78</a></div></div>
+<div class="ttc" id="astructcarma__cooperative__perception_1_1MotionModelMapping_html_ad6a0527ed5c7d516f500332f6e2a621a"><div class="ttname"><a href="structcarma__cooperative__perception_1_1MotionModelMapping.html#ad6a0527ed5c7d516f500332f6e2a621a">carma_cooperative_perception::MotionModelMapping::motorcycle_model</a></div><div class="ttdeci">std::uint8_t motorcycle_model</div><div class="ttdef"><b>Definition:</b> <a href="msg__conversion_8hpp_source.html#l00077">msg_conversion.hpp:77</a></div></div>
+<div class="ttc" id="astructcarma__cooperative__perception_1_1MotionModelMapping_html_aecba4e9aca4ba8e68c14c24bf38f6bb5"><div class="ttname"><a href="structcarma__cooperative__perception_1_1MotionModelMapping.html#aecba4e9aca4ba8e68c14c24bf38f6bb5">carma_cooperative_perception::MotionModelMapping::small_vehicle_model</a></div><div class="ttdeci">std::uint8_t small_vehicle_model</div><div class="ttdef"><b>Definition:</b> <a href="msg__conversion_8hpp_source.html#l00075">msg_conversion.hpp:75</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -448,14 +447,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00180">180</a> of file <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html">external_object_list_to_detection_list_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  182</span>{</div>
-<div class="line"><span class="lineno">  183</span>  <span class="comment">// CarmaLifecycleNode does not handle subscriber pointer reseting for us</span></div>
-<div class="line"><span class="lineno">  184</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#ad24798f9166132a8eefbe3880aa923f1">external_objects_subscription_</a>.reset();</div>
-<div class="line"><span class="lineno">  185</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aabefd49e91ca96b2e46ab4ada39bdaeb">georeference_subscription_</a>.reset();</div>
-<div class="line"><span class="lineno">  186</span> </div>
-<div class="line"><span class="lineno">  187</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
-<div class="line"><span class="lineno">  188</span>}</div>
+<p class="definition">Definition at line <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00173">173</a> of file <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html">external_object_list_to_detection_list_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  175</span>{</div>
+<div class="line"><span class="lineno">  176</span>  <span class="comment">// CarmaLifecycleNode does not handle subscriber pointer reseting for us</span></div>
+<div class="line"><span class="lineno">  177</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#ad24798f9166132a8eefbe3880aa923f1">external_objects_subscription_</a>.reset();</div>
+<div class="line"><span class="lineno">  178</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aabefd49e91ca96b2e46ab4ada39bdaeb">georeference_subscription_</a>.reset();</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
+<div class="line"><span class="lineno">  181</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -475,20 +474,19 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00190">190</a> of file <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html">external_object_list_to_detection_list_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  192</span>{</div>
-<div class="line"><span class="lineno">  193</span>  <span class="keywordflow">try</span> {</div>
-<div class="line"><span class="lineno">  194</span>    <span class="keyword">const</span> <span class="keyword">auto</span> detection_list{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a19c676dcb9a973ab02f86acfa150c341">transform_from_map_to_utm</a>(</div>
-<div class="line"><span class="lineno">  195</span>      <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a3be2cbccb4ff82219174cf394ae8a670">to_detection_list_msg</a>(msg, <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aebd67f936e7de2a880a1c0a806256bb1">motion_model_mapping_</a>), <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aad38382f4121e1483a399a64798c12a9">map_georeference_</a>)};</div>
-<div class="line"><span class="lineno">  196</span> </div>
-<div class="line"><span class="lineno">  197</span>    <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#a9a473f2f570308095c184c59faefeabd">publisher_</a>-&gt;publish(detection_list);</div>
-<div class="line"><span class="lineno">  198</span>  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::invalid_argument &amp; e) {</div>
-<div class="line"><span class="lineno">  199</span>    RCLCPP_ERROR(</div>
-<div class="line"><span class="lineno">  200</span>      this-&gt;get_logger(), <span class="stringliteral">&quot;Could not convert external object list to detection list: %s&quot;</span>, e.what());</div>
-<div class="line"><span class="lineno">  201</span>  }</div>
-<div class="line"><span class="lineno">  202</span>}</div>
+<p class="definition">Definition at line <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00183">183</a> of file <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html">external_object_list_to_detection_list_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>{</div>
+<div class="line"><span class="lineno">  186</span>  <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">  187</span>    <span class="keyword">const</span> <span class="keyword">auto</span> detection_list{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a19c676dcb9a973ab02f86acfa150c341">transform_from_map_to_utm</a>(</div>
+<div class="line"><span class="lineno">  188</span>      <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a3be2cbccb4ff82219174cf394ae8a670">to_detection_list_msg</a>(msg, <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aebd67f936e7de2a880a1c0a806256bb1">motion_model_mapping_</a>), <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aad38382f4121e1483a399a64798c12a9">map_georeference_</a>)};</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#a9a473f2f570308095c184c59faefeabd">publisher_</a>-&gt;publish(detection_list);</div>
+<div class="line"><span class="lineno">  191</span>  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::invalid_argument &amp; e) {</div>
+<div class="line"><span class="lineno">  192</span>    RCLCPP_ERROR(</div>
+<div class="line"><span class="lineno">  193</span>      this-&gt;get_logger(), <span class="stringliteral">&quot;Could not convert external object list to detection list: %s&quot;</span>, e.what());</div>
+<div class="line"><span class="lineno">  194</span>  }</div>
+<div class="line"><span class="lineno">  195</span>}</div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode_html_aad38382f4121e1483a399a64798c12a9"><div class="ttname"><a href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aad38382f4121e1483a399a64798c12a9">carma_cooperative_perception::ExternalObjectListToDetectionListNode::map_georeference_</a></div><div class="ttdeci">std::string map_georeference_</div><div class="ttdef"><b>Definition:</b> <a href="external__object__list__to__detection__list__component_8hpp_source.html#l00064">external_object_list_to_detection_list_component.hpp:64</a></div></div>
-<div class="ttc" id="aclasscarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode_html_aebd67f936e7de2a880a1c0a806256bb1"><div class="ttname"><a href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aebd67f936e7de2a880a1c0a806256bb1">carma_cooperative_perception::ExternalObjectListToDetectionListNode::motion_model_mapping_</a></div><div class="ttdeci">MotionModelMapping motion_model_mapping_</div><div class="ttdef"><b>Definition:</b> <a href="external__object__list__to__detection__list__component_8hpp_source.html#l00065">external_object_list_to_detection_list_component.hpp:65</a></div></div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_a19c676dcb9a973ab02f86acfa150c341"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a19c676dcb9a973ab02f86acfa150c341">carma_cooperative_perception::transform_from_map_to_utm</a></div><div class="ttdeci">auto transform_from_map_to_utm(carma_cooperative_perception_interfaces::msg::DetectionList detection_list, const std::string &amp;map_origin) -&gt; carma_cooperative_perception_interfaces::msg::DetectionList</div><div class="ttdef"><b>Definition:</b> <a href="external__object__list__to__detection__list__component_8cpp_source.html#l00027">external_object_list_to_detection_list_component.cpp:27</a></div></div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_a3be2cbccb4ff82219174cf394ae8a670"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a3be2cbccb4ff82219174cf394ae8a670">carma_cooperative_perception::to_detection_list_msg</a></div><div class="ttdeci">auto to_detection_list_msg(const carma_v2x_msgs::msg::SensorDataSharingMessage &amp;sdsm) noexcept -&gt; carma_cooperative_perception_interfaces::msg::DetectionList</div><div class="ttdef"><b>Definition:</b> <a href="msg__conversion_8cpp_source.html#l00210">msg_conversion.cpp:210</a></div></div>
 </div><!-- fragment -->
@@ -546,10 +544,10 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00204">204</a> of file <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html">external_object_list_to_detection_list_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  206</span>{</div>
-<div class="line"><span class="lineno">  207</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aad38382f4121e1483a399a64798c12a9">map_georeference_</a> = msg.data;</div>
-<div class="line"><span class="lineno">  208</span>}</div>
+<p class="definition">Definition at line <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00197">197</a> of file <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html">external_object_list_to_detection_list_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>{</div>
+<div class="line"><span class="lineno">  200</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aad38382f4121e1483a399a64798c12a9">map_georeference_</a> = msg.data;</div>
+<div class="line"><span class="lineno">  201</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -712,7 +710,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html">ExternalObjectListToDetectionListNode</a></li>
-    <li class="footer">Generated on Tue Nov 21 2023 21:48:49 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Dec 4 2023 18:10:13 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

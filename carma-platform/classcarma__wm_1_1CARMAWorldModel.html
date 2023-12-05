@@ -567,7 +567,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  699</span>          <span class="comment">// Append distance to current centerline</span></div>
 <div class="line"><span class="lineno">  700</span>          <span class="keywordtype">size_t</span> offset =</div>
 <div class="line"><span class="lineno">  701</span>              lineStrings.size() == 0 || lineStrings.back().size() == 0 ?</div>
-<div class="line"><span class="lineno">  702</span>                0 : </div>
+<div class="line"><span class="lineno">  702</span>                0 :</div>
 <div class="line"><span class="lineno">  703</span>                1;  <span class="comment">// Prevent duplicate points when concatenating. Not clear if causes an issue at lane changes</span></div>
 <div class="line"><span class="lineno">  704</span>          <span class="keywordflow">if</span> ((nextCenterline.size() &lt;= 1) || (nextCenterline.size() &lt;= 2 &amp;&amp; offset == 1))</div>
 <div class="line"><span class="lineno">  705</span>          {</div>
@@ -873,15 +873,15 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  133</span>    std::vector&lt;lanelet::BusStopRulePtr&gt; bus_stop_list;</div>
 <div class="line"><span class="lineno">  134</span>    <span class="keyword">auto</span> curr_downtrack = <a class="code hl_function" href="classcarma__wm_1_1CARMAWorldModel.html#a18e3077b7673f2f92fd71eeea955a597">routeTrackPos</a>(loc).downtrack;</div>
 <div class="line"><span class="lineno">  135</span>    <span class="comment">// shortpath is already sorted by distance</span></div>
-<div class="line"><span class="lineno">  136</span>    </div>
+<div class="line"><span class="lineno">  136</span> </div>
 <div class="line"><span class="lineno">  137</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;ll : <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a690740a182ab45ac2232da7d1b5edff8">route_</a>-&gt;shortestPath())</div>
 <div class="line"><span class="lineno">  138</span>    {</div>
 <div class="line"><span class="lineno">  139</span>      <span class="keyword">auto</span> bus_stops = <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a>-&gt;laneletLayer.get(ll.id()).regulatoryElementsAs&lt;lanelet::BusStopRule&gt;();</div>
-<div class="line"><span class="lineno">  140</span>      <span class="keywordflow">if</span> (bus_stops.empty())  </div>
+<div class="line"><span class="lineno">  140</span>      <span class="keywordflow">if</span> (bus_stops.empty())</div>
 <div class="line"><span class="lineno">  141</span>      {</div>
 <div class="line"><span class="lineno">  142</span>        <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">  143</span>      }</div>
-<div class="line"><span class="lineno">  144</span>      </div>
+<div class="line"><span class="lineno">  144</span> </div>
 <div class="line"><span class="lineno">  145</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> bus_stop : bus_stops)</div>
 <div class="line"><span class="lineno">  146</span>      {</div>
 <div class="line"><span class="lineno">  147</span>        <span class="keyword">auto</span> stop_line = bus_stop-&gt;stopAndWaitLine();</div>
@@ -1580,7 +1580,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  335</span> </div>
 <div class="line"><span class="lineno">  336</span>      <span class="keywordflow">if</span> (!bounds_inclusive) <span class="comment">// reduce bounds slightly to avoid including exact bounds</span></div>
 <div class="line"><span class="lineno">  337</span>      {</div>
-<div class="line"><span class="lineno">  338</span>        <span class="keywordflow">if</span> (std::max(min.downtrack, start + 0.00001) &gt; std::min(max.downtrack, end - 0.00001) </div>
+<div class="line"><span class="lineno">  338</span>        <span class="keywordflow">if</span> (std::max(min.downtrack, start + 0.00001) &gt; std::min(max.downtrack, end - 0.00001)</div>
 <div class="line"><span class="lineno">  339</span>          || (start == end &amp;&amp; (min.downtrack &gt;= start || max.downtrack &lt;= end)))</div>
 <div class="line"><span class="lineno">  340</span>        {  <span class="comment">// Check for 1d intersection</span></div>
 <div class="line"><span class="lineno">  341</span>          <span class="comment">// No intersection so continue</span></div>
@@ -1589,7 +1589,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  344</span>      }</div>
 <div class="line"><span class="lineno">  345</span>      <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  346</span>      {</div>
-<div class="line"><span class="lineno">  347</span>        <span class="keywordflow">if</span> (std::max(min.downtrack, start) &gt; std::min(max.downtrack, end) </div>
+<div class="line"><span class="lineno">  347</span>        <span class="keywordflow">if</span> (std::max(min.downtrack, start) &gt; std::min(max.downtrack, end)</div>
 <div class="line"><span class="lineno">  348</span>          || (start == end &amp;&amp; (min.downtrack &gt; start || max.downtrack &lt; end)))</div>
 <div class="line"><span class="lineno">  349</span>        {  <span class="comment">// Check for 1d intersection</span></div>
 <div class="line"><span class="lineno">  350</span>          <span class="comment">// No intersection so continue</span></div>
@@ -2431,7 +2431,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno"> 1222</span>    std::vector&lt;lanelet::CarmaTrafficSignalPtr&gt; light_list;</div>
 <div class="line"><span class="lineno"> 1223</span>    <span class="keyword">auto</span> curr_downtrack = <a class="code hl_function" href="classcarma__wm_1_1CARMAWorldModel.html#a18e3077b7673f2f92fd71eeea955a597">routeTrackPos</a>(loc).downtrack;</div>
 <div class="line"><span class="lineno"> 1224</span>    <span class="comment">// shortpath is already sorted by distance</span></div>
-<div class="line"><span class="lineno"> 1225</span>    </div>
+<div class="line"><span class="lineno"> 1225</span> </div>
 <div class="line"><span class="lineno"> 1226</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;ll : <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a690740a182ab45ac2232da7d1b5edff8">route_</a>-&gt;shortestPath())</div>
 <div class="line"><span class="lineno"> 1227</span>    {</div>
 <div class="line"><span class="lineno"> 1228</span>      <span class="keyword">auto</span> lights = <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a>-&gt;laneletLayer.get(ll.id()).regulatoryElementsAs&lt;lanelet::CarmaTrafficSignal&gt;();</div>
@@ -2439,7 +2439,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno"> 1230</span>      {</div>
 <div class="line"><span class="lineno"> 1231</span>        <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno"> 1232</span>      }</div>
-<div class="line"><span class="lineno"> 1233</span>      </div>
+<div class="line"><span class="lineno"> 1233</span> </div>
 <div class="line"><span class="lineno"> 1234</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> light : lights)</div>
 <div class="line"><span class="lineno"> 1235</span>      {</div>
 <div class="line"><span class="lineno"> 1236</span>        <span class="keyword">auto</span> stop_line = light-&gt;getStopLine(ll);</div>
@@ -2620,7 +2620,7 @@ Here is the caller graph for this function:</div>
 <p>helper for getting traffic signal with given lanelet::Id </p>
 
 <p class="definition">Definition at line <a class="el" href="CARMAWorldModel_8cpp_source.html#l01382">1382</a> of file <a class="el" href="CARMAWorldModel_8cpp_source.html">CARMAWorldModel.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1383</span>  {    </div>
+<div class="fragment"><div class="line"><span class="lineno"> 1383</span>  {</div>
 <div class="line"><span class="lineno"> 1384</span>    <span class="keyword">auto</span> general_regem = <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a>-&gt;regulatoryElementLayer.get(<span class="keywordtype">id</span>);</div>
 <div class="line"><span class="lineno"> 1385</span> </div>
 <div class="line"><span class="lineno"> 1386</span>    <span class="keyword">auto</span> lanelets_general = <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a>-&gt;laneletLayer.findUsages(general_regem);</div>
@@ -2701,10 +2701,10 @@ Here is the caller graph for this function:</div>
 <p>helper for traffic signal Id </p>
 
 <p class="definition">Definition at line <a class="el" href="CARMAWorldModel_8cpp_source.html#l00084">84</a> of file <a class="el" href="CARMAWorldModel_8cpp_source.html">CARMAWorldModel.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>  {    </div>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>  {</div>
 <div class="line"><span class="lineno">   86</span>    lanelet::Id inter_id = lanelet::InvalId;</div>
 <div class="line"><span class="lineno">   87</span>    lanelet::Id signal_id = lanelet::InvalId;</div>
-<div class="line"><span class="lineno">   88</span>  </div>
+<div class="line"><span class="lineno">   88</span> </div>
 <div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ab26aab58d8e779dd198396c111c29eb8">sim_</a>.<a class="code hl_variable" href="classcarma__wm_1_1SignalizedIntersectionManager.html#a561c5f21f1c07c80e13bdc3c29fa70fe">intersection_id_to_regem_id_</a>.find(intersection_id) != <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ab26aab58d8e779dd198396c111c29eb8">sim_</a>.<a class="code hl_variable" href="classcarma__wm_1_1SignalizedIntersectionManager.html#a561c5f21f1c07c80e13bdc3c29fa70fe">intersection_id_to_regem_id_</a>.end())</div>
 <div class="line"><span class="lineno">   90</span>    {</div>
 <div class="line"><span class="lineno">   91</span>      inter_id = <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ab26aab58d8e779dd198396c111c29eb8">sim_</a>.<a class="code hl_variable" href="classcarma__wm_1_1SignalizedIntersectionManager.html#a561c5f21f1c07c80e13bdc3c29fa70fe">intersection_id_to_regem_id_</a>[intersection_id];</div>
@@ -2714,7 +2714,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   95</span>    {</div>
 <div class="line"><span class="lineno">   96</span>      signal_id = <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ab26aab58d8e779dd198396c111c29eb8">sim_</a>.<a class="code hl_variable" href="classcarma__wm_1_1SignalizedIntersectionManager.html#ac6d373cd4a78ed384153d43836031b03">signal_group_to_traffic_light_id_</a>[signal_group_id];</div>
 <div class="line"><span class="lineno">   97</span>    }</div>
-<div class="line"><span class="lineno">   98</span>    </div>
+<div class="line"><span class="lineno">   98</span> </div>
 <div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> signal_id;</div>
 <div class="line"><span class="lineno">  100</span>  }</div>
 <div class="ttc" id="aclasscarma__wm_1_1CARMAWorldModel_html_ab26aab58d8e779dd198396c111c29eb8"><div class="ttname"><a href="classcarma__wm_1_1CARMAWorldModel.html#ab26aab58d8e779dd198396c111c29eb8">carma_wm::CARMAWorldModel::sim_</a></div><div class="ttdeci">carma_wm::SignalizedIntersectionManager sim_</div><div class="ttdef"><b>Definition:</b> <a href="CARMAWorldModel_8hpp_source.html#l00262">CARMAWorldModel.hpp:262</a></div></div>
@@ -3371,9 +3371,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1464</span>      RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;No intersection_state_list in the newly received SPAT msg. Returning...&quot;</span>);</div>
 <div class="line"><span class="lineno"> 1465</span>      <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno"> 1466</span>    }</div>
-<div class="line"><span class="lineno"> 1467</span>    </div>
+<div class="line"><span class="lineno"> 1467</span> </div>
 <div class="line"><span class="lineno"> 1468</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; curr_intersection : spat_msg.intersection_state_list)</div>
-<div class="line"><span class="lineno"> 1469</span>    {      </div>
+<div class="line"><span class="lineno"> 1469</span>    {</div>
 <div class="line"><span class="lineno"> 1470</span> </div>
 <div class="line"><span class="lineno"> 1471</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; current_movement_state : curr_intersection.movement_list)</div>
 <div class="line"><span class="lineno"> 1472</span>      {</div>
@@ -3385,7 +3385,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1478</span>        }</div>
 <div class="line"><span class="lineno"> 1479</span> </div>
 <div class="line"><span class="lineno"> 1480</span>        lanelet::CarmaTrafficSignalPtr curr_light = <a class="code hl_function" href="classcarma__wm_1_1CARMAWorldModel.html#a65df34058ada8f5a64a7abd1a6e2afae">getTrafficSignal</a>(curr_light_id);</div>
-<div class="line"><span class="lineno"> 1481</span>        </div>
+<div class="line"><span class="lineno"> 1481</span> </div>
 <div class="line"><span class="lineno"> 1482</span>        <span class="keywordflow">if</span> (curr_light == <span class="keyword">nullptr</span>)</div>
 <div class="line"><span class="lineno"> 1483</span>        {</div>
 <div class="line"><span class="lineno"> 1484</span>          <span class="keywordflow">continue</span>;</div>
@@ -3425,11 +3425,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1518</span>          start_time_dynamic=<a class="code hl_function" href="classcarma__wm_1_1CARMAWorldModel.html#abf9dbca253d5b1ac3d65c6f4c4d4e134">min_end_time_converter_minute_of_year</a>(start_time_dynamic,curr_intersection.moy_exists,curr_intersection.moy, use_sim_time); <span class="comment">// Accounting minute of the year</span></div>
 <div class="line"><span class="lineno"> 1519</span> </div>
 <div class="line"><span class="lineno"> 1520</span>          <span class="keyword">auto</span> received_state_dynamic = <span class="keyword">static_cast&lt;</span>lanelet::CarmaTrafficSignalState<span class="keyword">&gt;</span>(current_movement_event.event_state.movement_phase_state);</div>
-<div class="line"><span class="lineno"> 1521</span>          </div>
+<div class="line"><span class="lineno"> 1521</span> </div>
 <div class="line"><span class="lineno"> 1522</span>          <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ab26aab58d8e779dd198396c111c29eb8">sim_</a>.<a class="code hl_variable" href="classcarma__wm_1_1SignalizedIntersectionManager.html#ab6edbe8b6abcc5862c8e887c19807771">traffic_signal_states_</a>[curr_intersection.id.id][current_movement_state.signal_group].push_back(std::make_pair(min_end_time_dynamic, received_state_dynamic));</div>
 <div class="line"><span class="lineno"> 1523</span>          <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ab26aab58d8e779dd198396c111c29eb8">sim_</a>.<a class="code hl_variable" href="classcarma__wm_1_1SignalizedIntersectionManager.html#a6e678b2acdd60b34035053d02e203d11">traffic_signal_start_times_</a>[curr_intersection.id.id][current_movement_state.signal_group].push_back(</div>
 <div class="line"><span class="lineno"> 1524</span>                              start_time_dynamic);</div>
-<div class="line"><span class="lineno"> 1525</span>            </div>
+<div class="line"><span class="lineno"> 1525</span> </div>
 <div class="line"><span class="lineno"> 1526</span>          RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;intersection id: &quot;</span> &lt;&lt; (<span class="keywordtype">int</span>)curr_intersection.id.id &lt;&lt; <span class="stringliteral">&quot;, signal: &quot;</span> &lt;&lt; (<span class="keywordtype">int</span>)current_movement_state.signal_group</div>
 <div class="line"><span class="lineno"> 1527</span>            &lt;&lt; <span class="stringliteral">&quot;, start_time: &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(lanelet::time::toSec(start_time_dynamic))</div>
 <div class="line"><span class="lineno"> 1528</span>            &lt;&lt; <span class="stringliteral">&quot;, end_time: &quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(lanelet::time::toSec(min_end_time_dynamic))</div>
@@ -4909,7 +4909,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm.html">carma_wm</a></li><li class="navelem"><a class="el" href="classcarma__wm_1_1CARMAWorldModel.html">CARMAWorldModel</a></li>
-    <li class="footer">Generated on Tue Dec 5 2023 08:18:30 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Dec 5 2023 19:36:08 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

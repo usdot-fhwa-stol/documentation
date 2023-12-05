@@ -9,5 +9,6 @@ var classstop__and__wait__plugin_1_1StopandWaitNode =
     [ "config_", "classstop__and__wait__plugin_1_1StopandWaitNode.html#afcdf000fe99a5566afede379036dec48", null ],
     [ "plugin_", "classstop__and__wait__plugin_1_1StopandWaitNode.html#a0b5985a942dec73eff544372f8bd745c", null ],
     [ "plugin_name_", "classstop__and__wait__plugin_1_1StopandWaitNode.html#a79497ba9b4ea9c79f70dff06e94bc8e5", null ],
-    [ "version_id_", "classstop__and__wait__plugin_1_1StopandWaitNode.html#accf5e2a7f964a4b3efde1876f2321951", null ]
+    [ "version_id_", "classstop__and__wait__plugin_1_1StopandWaitNode.html#accf5e2a7f964a4b3efde1876f2321951", null ],
+    [ "yield_client_", "classstop__and__wait__plugin_1_1StopandWaitNode.html#a492397fb85ba5dc5434ae869250c1af1", null ]
 ];

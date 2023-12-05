@@ -14,6 +14,7 @@ var structInLaneCruisingPluginConfig =
     [ "minimum_speed", "structInLaneCruisingPluginConfig.html#a490836cc7661d9cb699b713a73c7ea24", null ],
     [ "publish_debug", "structInLaneCruisingPluginConfig.html#a06115bd8158f805bce4f09d03e647a8b", null ],
     [ "speed_moving_average_window_size", "structInLaneCruisingPluginConfig.html#a19ce2db6348670a2056357389b0fd564", null ],
+    [ "tactical_plugin_service_call_timeout", "structInLaneCruisingPluginConfig.html#ade9a8d8330afea4a8a0562ed1b5d4555", null ],
     [ "trajectory_time_length", "structInLaneCruisingPluginConfig.html#a64210b3e520043278df883e7eaf098a3", null ],
     [ "turn_downsample_ratio", "structInLaneCruisingPluginConfig.html#a1a4f2e081adb191eaf3b9e5fe5c1f867", null ]
 ];

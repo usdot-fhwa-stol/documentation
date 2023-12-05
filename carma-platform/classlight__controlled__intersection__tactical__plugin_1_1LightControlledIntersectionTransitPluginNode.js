@@ -7,5 +7,6 @@ var classlight__controlled__intersection__tactical__plugin_1_1LightControlledInt
     [ "parameter_update_callback", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html#a14d9d45180091d876edd3f2a0b45e68f", null ],
     [ "plan_trajectory_callback", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html#a657704a425cfb49677f23d842d6a8c4d", null ],
     [ "config_", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html#a1f08c0e8d21e3844435eb720918e4fb6", null ],
-    [ "worker_", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html#a90e9fda798e1a533c989e7497a82d284", null ]
+    [ "worker_", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html#a90e9fda798e1a533c989e7497a82d284", null ],
+    [ "yield_client_", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html#a51f8e2fcb6d39092206bd47fd787d3f7", null ]
 ];

@@ -14,6 +14,6 @@ var classcarma__cooperative__perception_1_1MultipleObjectTrackerNode =
     [ "on_set_parameters_callback_", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#ac8a3259d02ed908acbd4766e5d1395d4", null ],
     [ "pipeline_execution_timer_", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a5f545d436b318f6412fce909bb7b78c8", null ],
     [ "track_list_pub_", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a26cbf0e3ab19976facea28a47bccefaf", null ],
-    [ "track_manager_", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#ad2e5bd48091c37a6487da50aa5b49597", null ],
-    [ "uuid_index_map_", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#af76e410941f32932285a01975bd71b7a", null ]
+    [ "track_manager_", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316", null ],
+    [ "uuid_index_map_", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a868421b28207e15914b83e31c00c68fb", null ]
 ];

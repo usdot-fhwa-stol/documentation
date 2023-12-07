@@ -19,8 +19,8 @@ var namespacecarma__cooperative__perception =
     [ "UtmDisplacement", "structcarma__cooperative__perception_1_1UtmDisplacement.html", "structcarma__cooperative__perception_1_1UtmDisplacement" ],
     [ "UtmZone", "structcarma__cooperative__perception_1_1UtmZone.html", "structcarma__cooperative__perception_1_1UtmZone" ],
     [ "Wgs84Coordinate", "structcarma__cooperative__perception_1_1Wgs84Coordinate.html", "structcarma__cooperative__perception_1_1Wgs84Coordinate" ],
-    [ "Detection", "namespacecarma__cooperative__perception.html#a04fbd24e313ebe276b3c50a86862af70", null ],
-    [ "Track", "namespacecarma__cooperative__perception.html#abe751c0c7b188654f617e2eee8940d60", null ],
+    [ "Detection", "namespacecarma__cooperative__perception.html#a5e779cee7548e2a337b47a4d41dbb7c1", null ],
+    [ "Track", "namespacecarma__cooperative__perception.html#aedfce236df3f84ec5ebc8b4013798808", null ],
     [ "Hemisphere", "namespacecarma__cooperative__perception.html#a022345575eaee624c48c9c248598b0da", [
       [ "kNorth", "namespacecarma__cooperative__perception.html#a022345575eaee624c48c9c248598b0daac1079db2ce4428bb7b1f7ce7288c887c", null ],
       [ "kSouth", "namespacecarma__cooperative__perception.html#a022345575eaee624c48c9c248598b0daaa71b63644c9f83d8f5a14cce40f0e53c", null ]

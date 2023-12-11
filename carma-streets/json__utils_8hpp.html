@@ -97,23 +97,29 @@ $(document).ready(function(){initNavTree('json__utils_8hpp.html',''); initResiza
 <code>#include &lt;rapidjson/writer.h&gt;</code><br />
 <code>#include &lt;rapidjson/stringbuffer.h&gt;</code><br />
 <code>#include &lt;spdlog/spdlog.h&gt;</code><br />
+<code>#include &lt;rapidjson/istreamwrapper.h&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
 <code>#include &quot;<a class="el" href="json__utils__exception_8hpp_source.html">json_utils_exception.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="json__document__parse__error_8hpp_source.html">json_document_parse_error.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for json_utils.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="json__utils_8hpp__incl.png" border="0" usemap="#astreets__utils_2json__utils_2include_2json__utils_8hpp" alt=""/></div>
 <map name="astreets__utils_2json__utils_2include_2json__utils_8hpp" id="astreets__utils_2json__utils_2include_2json__utils_8hpp">
-<area shape="rect" title=" " alt="" coords="475,5,601,61"/>
-<area shape="rect" title=" " alt="" coords="5,109,68,136"/>
-<area shape="rect" title=" " alt="" coords="92,109,147,136"/>
-<area shape="rect" title=" " alt="" coords="171,109,311,136"/>
-<area shape="rect" title=" " alt="" coords="335,109,480,136"/>
-<area shape="rect" title=" " alt="" coords="505,109,571,136"/>
-<area shape="rect" title=" " alt="" coords="595,109,715,136"/>
-<area shape="rect" title=" " alt="" coords="739,109,891,136"/>
-<area shape="rect" title=" " alt="" coords="915,109,1027,136"/>
-<area shape="rect" href="json__utils__exception_8hpp.html" title=" " alt="" coords="1051,109,1214,136"/>
-<area shape="rect" title=" " alt="" coords="1093,184,1172,211"/>
+<area shape="rect" title=" " alt="" coords="553,5,680,61"/>
+<area shape="rect" title=" " alt="" coords="5,117,68,143"/>
+<area shape="rect" title=" " alt="" coords="92,117,147,143"/>
+<area shape="rect" title=" " alt="" coords="171,117,311,143"/>
+<area shape="rect" title=" " alt="" coords="773,199,919,225"/>
+<area shape="rect" title=" " alt="" coords="386,117,453,143"/>
+<area shape="rect" title=" " alt="" coords="477,117,597,143"/>
+<area shape="rect" title=" " alt="" coords="621,117,773,143"/>
+<area shape="rect" title=" " alt="" coords="797,117,909,143"/>
+<area shape="rect" title=" " alt="" coords="933,117,1111,143"/>
+<area shape="rect" title=" " alt="" coords="1135,117,1202,143"/>
+<area shape="rect" href="json__utils__exception_8hpp.html" title=" " alt="" coords="1399,117,1562,143"/>
+<area shape="rect" href="json__document__parse__error_8hpp.html" title=" " alt="" coords="1226,109,1375,151"/>
+<area shape="rect" title=" " alt="" coords="1351,199,1429,225"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -140,6 +146,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a335001d2292296212bfffd23f6975a19"><td class="memItemLeft" align="right" valign="top">rapidjson::Document&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestreets__utils_1_1json__utils.html#a335001d2292296212bfffd23f6975a19">streets_utils::json_utils::parse_json</a> (const std::string &amp;json)</td></tr>
 <tr class="memdesc:a335001d2292296212bfffd23f6975a19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to parse <code>std::string</code> JSON with <a href="https://miloyip.github.io/rapidjson/index.html">RapidJSON</a> with <a href="https://miloyip.github.io/rapidjson/md_obj_dom.html">DOM parsing</a>. Throws <code><a class="el" href="classstreets__utils_1_1json__utils_1_1json__parse__exception.html" title="Runtime exception related to json_utils functions. Thrown when :">json_parse_exception</a></code> if string is not valid json. Otherwise returns <code>rapidjson::Document</code>  <a href="namespacestreets__utils_1_1json__utils.html#a335001d2292296212bfffd23f6975a19">More...</a><br /></td></tr>
 <tr class="separator:a335001d2292296212bfffd23f6975a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165a7a77f0cb0c5699eeeb6194a7afec"><td class="memItemLeft" align="right" valign="top">rapidjson::Document&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestreets__utils_1_1json__utils.html#a165a7a77f0cb0c5699eeeb6194a7afec">streets_utils::json_utils::parse_json_file</a> (const std::string &amp;filepath)</td></tr>
+<tr class="memdesc:a165a7a77f0cb0c5699eeeb6194a7afec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to parse file containing JSON with <a href="https://miloyip.github.io/rapidjson/index.html">RapidJSON</a> with <a href="https://miloyip.github.io/rapidjson/md_obj_dom.html">DOM parsing</a>. Throws <code><a class="el" href="classstreets__utils_1_1json__utils_1_1json__parse__exception.html" title="Runtime exception related to json_utils functions. Thrown when :">json_parse_exception</a></code> if string is not valid json. Otherwise returns <code>rapidjson::Document</code>  <a href="namespacestreets__utils_1_1json__utils.html#a165a7a77f0cb0c5699eeeb6194a7afec">More...</a><br /></td></tr>
+<tr class="separator:a165a7a77f0cb0c5699eeeb6194a7afec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc89cfb2948b6cbff345a480632e252e"><td class="memItemLeft" align="right" valign="top">std::optional&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestreets__utils_1_1json__utils.html#acc89cfb2948b6cbff345a480632e252e">streets_utils::json_utils::parse_int_member</a> (const std::string &amp;member_name, const rapidjson::Value &amp;obj, bool required)</td></tr>
 <tr class="memdesc:acc89cfb2948b6cbff345a480632e252e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions to retrieve int member values from JSON object <a href="https://miloyip.github.io/rapidjson/index.html">RapidJSON</a> with <a href="https://miloyip.github.io/rapidjson/md_doc_dom.html">DOM parsing</a>. Functions will return unintialized <code>std::optional</code> for optional members that are not found in JSON object and will throw <code><a class="el" href="classstreets__utils_1_1json__utils_1_1json__parse__exception.html" title="Runtime exception related to json_utils functions. Thrown when :">json_parse_exception</a></code>. for required members that are not found in JSON object.  <a href="namespacestreets__utils_1_1json__utils.html#acc89cfb2948b6cbff345a480632e252e">More...</a><br /></td></tr>
 <tr class="separator:acc89cfb2948b6cbff345a480632e252e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,7 +177,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_ae16f81f3adaed1b7f2ce47d60bade96.html">streets_utils</a></li><li class="navelem"><a class="el" href="dir_b9001446b6455e5b159312bdbc5ed8a6.html">json_utils</a></li><li class="navelem"><a class="el" href="dir_e20a18e014b58e9ea34dfd9ce957e4e4.html">include</a></li><li class="navelem"><a class="el" href="json__utils_8hpp.html">json_utils.hpp</a></li>
-    <li class="footer">Generated on Fri Dec 1 2023 14:45:01 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Dec 11 2023 22:18:02 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

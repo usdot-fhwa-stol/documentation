@@ -132,6 +132,7 @@ var hierarchy =
       [ "streets_snmp_cmd::streets_snmp_cmd_exception", "classstreets__snmp__cmd_1_1streets__snmp__cmd__exception.html", null ],
       [ "streets_timing_plan::streets_timing_plan_exception", "classstreets__timing__plan_1_1streets__timing__plan__exception.html", null ],
       [ "streets_tsc_configuration::tsc_configuration_state_exception", "classstreets__tsc__configuration_1_1tsc__configuration__state__exception.html", null ],
+      [ "streets_utils::json_utils::json_document_parse_error", "classstreets__utils_1_1json__utils_1_1json__document__parse__error.html", null ],
       [ "streets_utils::json_utils::json_parse_exception", "classstreets__utils_1_1json__utils_1_1json__parse__exception.html", null ],
       [ "streets_vehicle_scheduler::scheduling_exception", "classstreets__vehicle__scheduler_1_1scheduling__exception.html", null ],
       [ "streets_vehicles::status_intent_processing_exception", "classstreets__vehicles_1_1status__intent__processing__exception.html", null ],

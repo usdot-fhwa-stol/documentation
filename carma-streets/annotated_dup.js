@@ -163,6 +163,7 @@ var annotated_dup =
     ] ],
     [ "streets_utils", "namespacestreets__utils.html", [
       [ "json_utils", "namespacestreets__utils_1_1json__utils.html", [
+        [ "json_document_parse_error", "classstreets__utils_1_1json__utils_1_1json__document__parse__error.html", "classstreets__utils_1_1json__utils_1_1json__document__parse__error" ],
         [ "json_parse_exception", "classstreets__utils_1_1json__utils_1_1json__parse__exception.html", null ]
       ] ],
       [ "messages", "namespacestreets__utils_1_1messages.html", [

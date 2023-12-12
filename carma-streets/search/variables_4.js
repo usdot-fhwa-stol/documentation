@@ -17,7 +17,7 @@ var searchData=
   ['desired_5fphase_5fplan_5fconsumer_14',['desired_phase_plan_consumer',['../classtraffic__signal__controller__service_1_1tsc__service.html#a5b452ea6a57d91e96ea8c6d30937828d',1,'traffic_signal_controller_service::tsc_service']]],
   ['desired_5fphase_5fplan_5fptr_15',['desired_phase_plan_ptr',['../classtraffic__signal__controller__service_1_1monitor__desired__phase__plan.html#ae6b65664bfddcfb561e83b33cc6bec27',1,'traffic_signal_controller_service::monitor_desired_phase_plan']]],
   ['dest_5flanelet_5fid_16',['dest_lanelet_id',['../classmessage__services_1_1models_1_1vehicle__status__intent.html#a517e3b0ccc21bda529cc6c4ada23572a',1,'message_services::models::vehicle_status_intent']]],
-  ['detected_5fobjects_17',['detected_objects',['../classsensor__data__sharing__service_1_1sds__service.html#a4d2d4a0283ab2fb725ea88cb7aa53ab5',1,'sensor_data_sharing_service::sds_service']]],
+  ['detected_5fobjects_17',['detected_objects',['../classsensor__data__sharing__service_1_1sds__service.html#a2027fade87b66fafa401d7ec0ef2cbc6',1,'sensor_data_sharing_service::sds_service']]],
   ['detected_5fobjects_5flock_18',['detected_objects_lock',['../classsensor__data__sharing__service_1_1sds__service.html#a002cd2d22aad2d3c69a996042b5d0f44',1,'sensor_data_sharing_service::sds_service']]],
   ['detection_5fconsumer_19',['detection_consumer',['../classsensor__data__sharing__service_1_1sds__service.html#a8ef1019adaccf1a536736e395fee1b76',1,'sensor_data_sharing_service::sds_service']]],
   ['disable_5fest_5fpath_20',['disable_est_path',['../classmessage__services_1_1services_1_1vehicle__status__intent__service.html#a489996d8e9d01a5562c94c02e37c7584',1,'message_services::services::vehicle_status_intent_service']]],

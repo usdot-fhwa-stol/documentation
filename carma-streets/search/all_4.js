@@ -42,7 +42,7 @@ var searchData=
   ['detected_5fobject_5fmsg_2ehpp_39',['detected_object_msg.hpp',['../detected__object__msg_8hpp.html',1,'']]],
   ['detected_5fobject_5fto_5fsdsm_5fconverter_2ecpp_40',['detected_object_to_sdsm_converter.cpp',['../detected__object__to__sdsm__converter_8cpp.html',1,'']]],
   ['detected_5fobject_5fto_5fsdsm_5fconverter_2ehpp_41',['detected_object_to_sdsm_converter.hpp',['../detected__object__to__sdsm__converter_8hpp.html',1,'']]],
-  ['detected_5fobjects_42',['detected_objects',['../classsensor__data__sharing__service_1_1sds__service.html#a4d2d4a0283ab2fb725ea88cb7aa53ab5',1,'sensor_data_sharing_service::sds_service']]],
+  ['detected_5fobjects_42',['detected_objects',['../classsensor__data__sharing__service_1_1sds__service.html#a2027fade87b66fafa401d7ec0ef2cbc6',1,'sensor_data_sharing_service::sds_service']]],
   ['detected_5fobjects_5flock_43',['detected_objects_lock',['../classsensor__data__sharing__service_1_1sds__service.html#a002cd2d22aad2d3c69a996042b5d0f44',1,'sensor_data_sharing_service::sds_service']]],
   ['detected_5fobjects_5fmsg_44',['detected_objects_msg',['../structstreets__utils_1_1messages_1_1detected__objects__msg_1_1detected__objects__msg.html',1,'streets_utils::messages::detected_objects_msg']]],
   ['detected_5fobstacle_5fdata_45',['detected_obstacle_data',['../structstreets__utils_1_1messages_1_1sdsm_1_1detected__obstacle__data.html',1,'streets_utils::messages::sdsm']]],
@@ -67,8 +67,8 @@ var searchData=
   ['dpp_5fprojection_64',['DPP_PROJECTION',['../namespacetraffic__signal__controller__service.html#a044f1240240fc221c37e0433174c555badd2f610195dfa99706f138dd5d3ea726',1,'traffic_signal_controller_service']]],
   ['dpp_5fscript_65',['dpp_script',['../namespacedpp__script.html',1,'']]],
   ['dpp_5fscript_2epy_66',['dpp_script.py',['../dpp__script_8py.html',1,'']]],
-  ['dr_5fcb_67',['DR_CB',['../classkafka__clients_1_1kafka__consumer__worker.html#a6278195651df7246924b50f25be2bdb9',1,'kafka_clients::kafka_consumer_worker::DR_CB()'],['../classkafka__clients_1_1kafka__producer__worker.html#a15f3f181dd5c04c64d04bb6473ae2cac',1,'kafka_clients::kafka_producer_worker::DR_CB()']]],
-  ['dr_5fcb_68',['dr_cb',['../classkafka__clients_1_1producer__delivery__report__cb.html#a8de5c702a3c32ce270e48f35d1580e1a',1,'kafka_clients::producer_delivery_report_cb']]],
+  ['dr_5fcb_67',['dr_cb',['../classkafka__clients_1_1producer__delivery__report__cb.html#a8de5c702a3c32ce270e48f35d1580e1a',1,'kafka_clients::producer_delivery_report_cb']]],
+  ['dr_5fcb_68',['DR_CB',['../classkafka__clients_1_1kafka__consumer__worker.html#a6278195651df7246924b50f25be2bdb9',1,'kafka_clients::kafka_consumer_worker::DR_CB()'],['../classkafka__clients_1_1kafka__producer__worker.html#a15f3f181dd5c04c64d04bb6473ae2cac',1,'kafka_clients::kafka_producer_worker::DR_CB()']]],
   ['dt_69',['dt',['../structstreets__vehicle__scheduler_1_1signalized__vehicle__schedule.html#a4e258c3309f6d86f85f5fb36e801ee5d',1,'streets_vehicle_scheduler::signalized_vehicle_schedule::dt()'],['../structstreets__vehicle__scheduler_1_1all__stop__vehicle__schedule.html#ab735125526f509961867602dc459f8e6',1,'streets_vehicle_scheduler::all_stop_vehicle_schedule::dt()']]],
   ['dv_70',['DV',['../namespacestreets__vehicles.html#a41f5c896d8020c141aa96235cf1405aca58d6a88f13e2db7f5059c41047876f00',1,'streets_vehicles']]]
 ];

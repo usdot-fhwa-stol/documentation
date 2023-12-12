@@ -14,7 +14,7 @@ var classsensor__data__sharing__service_1_1sds__service =
     [ "start", "classsensor__data__sharing__service_1_1sds__service.html#a9ee2b8ce146ec179703350d609652785", null ],
     [ "_infrastructure_id", "classsensor__data__sharing__service_1_1sds__service.html#a2f08026097619c3bf16559d3a27bd618", null ],
     [ "_message_count", "classsensor__data__sharing__service_1_1sds__service.html#afb45be20aa336a614493a0f543b5fb52", null ],
-    [ "detected_objects", "classsensor__data__sharing__service_1_1sds__service.html#a4d2d4a0283ab2fb725ea88cb7aa53ab5", null ],
+    [ "detected_objects", "classsensor__data__sharing__service_1_1sds__service.html#a2027fade87b66fafa401d7ec0ef2cbc6", null ],
     [ "detected_objects_lock", "classsensor__data__sharing__service_1_1sds__service.html#a002cd2d22aad2d3c69a996042b5d0f44", null ],
     [ "detection_consumer", "classsensor__data__sharing__service_1_1sds__service.html#a8ef1019adaccf1a536736e395fee1b76", null ],
     [ "map_projector", "classsensor__data__sharing__service_1_1sds__service.html#aa65d437c629584aa6f71b455de086c31", null ],

@@ -44,10 +44,12 @@ var classcarma__wm_1_1CARMAWorldModel =
     [ "setConfigSpeedLimit", "classcarma__wm_1_1CARMAWorldModel.html#a4b8724211cdcce8e28ca16ca83e5ec92", null ],
     [ "setMap", "classcarma__wm_1_1CARMAWorldModel.html#a5fe3b961294db12603fe8eb5e7d2ea70", null ],
     [ "setRoadwayObjects", "classcarma__wm_1_1CARMAWorldModel.html#ad9d136b72adf2a85ffd8c2698711673e", null ],
+    [ "setRos1Clock", "classcarma__wm_1_1CARMAWorldModel.html#ace9e44476724127bcb9a40685918d58f", null ],
     [ "setRoute", "classcarma__wm_1_1CARMAWorldModel.html#ad4d9510c892eb9f19f462e0576317a69", null ],
     [ "setRouteEndPoint", "classcarma__wm_1_1CARMAWorldModel.html#a7d69105950322b5a8d09f1cefb099459", null ],
     [ "setRouteName", "classcarma__wm_1_1CARMAWorldModel.html#a790185986312133fea831ba82200ac65", null ],
     [ "setRoutingGraph", "classcarma__wm_1_1CARMAWorldModel.html#a6c42204d5a7de0cbd8e713ce49aded7f", null ],
+    [ "setSimulationClock", "classcarma__wm_1_1CARMAWorldModel.html#a8dade7ea04a9e813db50ff6f7db963f4", null ],
     [ "setTrafficLightIds", "classcarma__wm_1_1CARMAWorldModel.html#a0707c34b5e4278d809a2a5a53fe456bb", null ],
     [ "setVehicleParticipationType", "classcarma__wm_1_1CARMAWorldModel.html#a43ac7e19c2edeff50638ace0aedb94e6", null ],
     [ "toRoadwayObstacle", "classcarma__wm_1_1CARMAWorldModel.html#aef70965ad3260671c52a1985bb2e6ce1", null ],
@@ -58,6 +60,7 @@ var classcarma__wm_1_1CARMAWorldModel =
     [ "participant_type_", "classcarma__wm_1_1CARMAWorldModel.html#a3fec9f047a6a79e5271dc3547769c9ab", null ],
     [ "RED_LIGHT_DURATION", "classcarma__wm_1_1CARMAWorldModel.html#afa590ef709e46e6b569030ea71cb74f4", null ],
     [ "roadway_objects_", "classcarma__wm_1_1CARMAWorldModel.html#a03335a60875a9cfe30efa4ca983f54ae", null ],
+    [ "ros1_clock_", "classcarma__wm_1_1CARMAWorldModel.html#a255353f016ca62c487b554b4ffcfbf40", null ],
     [ "route_", "classcarma__wm_1_1CARMAWorldModel.html#a690740a182ab45ac2232da7d1b5edff8", null ],
     [ "route_length_", "classcarma__wm_1_1CARMAWorldModel.html#a6f380415bf80871a93e50f91a63c1e55", null ],
     [ "route_name_", "classcarma__wm_1_1CARMAWorldModel.html#ae7c61e95776f7c1d84517fa83c725129", null ],
@@ -67,6 +70,7 @@ var classcarma__wm_1_1CARMAWorldModel =
     [ "shortest_path_filtered_centerline_view_", "classcarma__wm_1_1CARMAWorldModel.html#ac0cbb7d3d6ae82f6d3ce39b6dcb1bcf6", null ],
     [ "shortest_path_view_", "classcarma__wm_1_1CARMAWorldModel.html#a638d41483eda68460147b65bf43d119c", null ],
     [ "sim_", "classcarma__wm_1_1CARMAWorldModel.html#ab26aab58d8e779dd198396c111c29eb8", null ],
+    [ "simulation_clock_", "classcarma__wm_1_1CARMAWorldModel.html#a768977187d806491ba0fc8f267f73a15", null ],
     [ "traffic_light_ids_", "classcarma__wm_1_1CARMAWorldModel.html#a787c5285a6c73566c11a09e108eeb1be", null ],
     [ "YELLOW_LIGHT_DURATION", "classcarma__wm_1_1CARMAWorldModel.html#a78ccc3564961689a86c66886aaf3de05", null ]
 ];

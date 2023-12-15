@@ -19,7 +19,9 @@ var classcarma__wm_1_1WMListener =
     [ "node_params_", "classcarma__wm_1_1WMListener.html#aa7447636b88f59b01d98af44d4af6bd4", null ],
     [ "node_topics_", "classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957", null ],
     [ "roadway_objects_sub_", "classcarma__wm_1_1WMListener.html#aada324812a5f034731b35f42ce4f6fd3", null ],
+    [ "ros1_clock_sub_", "classcarma__wm_1_1WMListener.html#a73b3f70df6e8482014c6472a933088ac", null ],
     [ "route_sub_", "classcarma__wm_1_1WMListener.html#ace5cd54811579062ed2f935d4bd75149", null ],
+    [ "sim_clock_sub_", "classcarma__wm_1_1WMListener.html#a5e7187062001c287df4d7008d3534676", null ],
     [ "traffic_spat_sub_", "classcarma__wm_1_1WMListener.html#aff83f0063e8358859b5c18f2c53581fa", null ],
     [ "worker_", "classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215", null ]
 ];

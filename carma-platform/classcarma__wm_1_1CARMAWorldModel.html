@@ -190,12 +190,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a790185986312133fea831ba82200ac65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1CARMAWorldModel.html#a790185986312133fea831ba82200ac65">setRouteName</a> (const std::string &amp;route_name)</td></tr>
 <tr class="memdesc:a790185986312133fea831ba82200ac65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of the route.  <a href="classcarma__wm_1_1CARMAWorldModel.html#a790185986312133fea831ba82200ac65">More...</a><br /></td></tr>
 <tr class="separator:a790185986312133fea831ba82200ac65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace9e44476724127bcb9a40685918d58f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1CARMAWorldModel.html#ace9e44476724127bcb9a40685918d58f">setRos1Clock</a> (rclcpp::Time time_now)</td></tr>
-<tr class="memdesc:ace9e44476724127bcb9a40685918d58f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set current Ros1 clock (only used in simulation runs)  <a href="classcarma__wm_1_1CARMAWorldModel.html#ace9e44476724127bcb9a40685918d58f">More...</a><br /></td></tr>
-<tr class="separator:ace9e44476724127bcb9a40685918d58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dade7ea04a9e813db50ff6f7db963f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1CARMAWorldModel.html#a8dade7ea04a9e813db50ff6f7db963f4">setSimulationClock</a> (rclcpp::Time time_now)</td></tr>
-<tr class="memdesc:a8dade7ea04a9e813db50ff6f7db963f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set simulation clock clock (only used in simulation runs)  <a href="classcarma__wm_1_1CARMAWorldModel.html#a8dade7ea04a9e813db50ff6f7db963f4">More...</a><br /></td></tr>
-<tr class="separator:a8dade7ea04a9e813db50ff6f7db963f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a8f89b9bec31f780a7ad1b9b5f82b31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1CARMAWorldModel.html#a9a8f89b9bec31f780a7ad1b9b5f82b31">setRos1Clock</a> (const rclcpp::Time &amp;time_now)</td></tr>
+<tr class="memdesc:a9a8f89b9bec31f780a7ad1b9b5f82b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set current Ros1 clock (only used in simulation runs)  <a href="classcarma__wm_1_1CARMAWorldModel.html#a9a8f89b9bec31f780a7ad1b9b5f82b31">More...</a><br /></td></tr>
+<tr class="separator:a9a8f89b9bec31f780a7ad1b9b5f82b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c64cfd0308ca0db427f6b2a63de0f6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1CARMAWorldModel.html#a7c64cfd0308ca0db427f6b2a63de0f6b">setSimulationClock</a> (const rclcpp::Time &amp;time_now)</td></tr>
+<tr class="memdesc:a7c64cfd0308ca0db427f6b2a63de0f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set simulation clock clock (only used in simulation runs)  <a href="classcarma__wm_1_1CARMAWorldModel.html#a7c64cfd0308ca0db427f6b2a63de0f6b">More...</a><br /></td></tr>
+<tr class="separator:a7c64cfd0308ca0db427f6b2a63de0f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3beafa813c6efd889c0e1eaabdf0a6f8"><td class="memItemLeft" align="right" valign="top">lanelet::Id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1CARMAWorldModel.html#a3beafa813c6efd889c0e1eaabdf0a6f8">getTrafficSignalId</a> (<a class="el" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> intersection_id, <a class="el" href="stdint_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> signal_id)</td></tr>
 <tr class="memdesc:a3beafa813c6efd889c0e1eaabdf0a6f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">helper for traffic signal Id  <a href="classcarma__wm_1_1CARMAWorldModel.html#a3beafa813c6efd889c0e1eaabdf0a6f8">More...</a><br /></td></tr>
 <tr class="separator:a3beafa813c6efd889c0e1eaabdf0a6f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2828,7 +2828,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1434</span>    <span class="comment">// NOTE: In simulation, ROS1 clock (often coming from CARLA) can have a large time ahead.</span></div>
 <div class="line"><span class="lineno"> 1435</span>    <span class="comment">// the timing calculated here is in Simulation time, which is behind. Therefore, the world model adds the offset to make it meaningful to carma-platform:</span></div>
 <div class="line"><span class="lineno"> 1436</span>    <span class="comment">// https://github.com/usdot-fhwa-stol/carma-platform/issues/2217</span></div>
-<div class="line"><span class="lineno"> 1437</span>    <span class="keywordflow">if</span> (is_simulation &amp;&amp; <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a255353f016ca62c487b554b4ffcfbf40">ros1_clock_</a>.has_value() &amp;&amp; <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a768977187d806491ba0fc8f267f73a15">simulation_clock_</a>.has_value())</div>
+<div class="line"><span class="lineno"> 1437</span>    <span class="keywordflow">if</span> (is_simulation &amp;&amp; <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a255353f016ca62c487b554b4ffcfbf40">ros1_clock_</a> &amp;&amp; <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a768977187d806491ba0fc8f267f73a15">simulation_clock_</a>)</div>
 <div class="line"><span class="lineno"> 1438</span>    {</div>
 <div class="line"><span class="lineno"> 1439</span>      simulation_time_difference_in_seconds = <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a255353f016ca62c487b554b4ffcfbf40">ros1_clock_</a>.value().seconds() - <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a768977187d806491ba0fc8f267f73a15">simulation_clock_</a>.value().seconds();</div>
 <div class="line"><span class="lineno"> 1440</span>    }</div>
@@ -4123,8 +4123,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ace9e44476724127bcb9a40685918d58f" name="ace9e44476724127bcb9a40685918d58f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace9e44476724127bcb9a40685918d58f">&#9670;&nbsp;</a></span>setRos1Clock()</h2>
+<a id="a9a8f89b9bec31f780a7ad1b9b5f82b31" name="a9a8f89b9bec31f780a7ad1b9b5f82b31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a8f89b9bec31f780a7ad1b9b5f82b31">&#9670;&nbsp;</a></span>setRos1Clock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4132,7 +4132,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void carma_wm::CARMAWorldModel::setRos1Clock </td>
           <td>(</td>
-          <td class="paramtype">rclcpp::Time&#160;</td>
+          <td class="paramtype">const rclcpp::Time &amp;&#160;</td>
           <td class="paramname"><em>time_now</em></td><td>)</td>
           <td></td>
         </tr>
@@ -4318,8 +4318,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a8dade7ea04a9e813db50ff6f7db963f4" name="a8dade7ea04a9e813db50ff6f7db963f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dade7ea04a9e813db50ff6f7db963f4">&#9670;&nbsp;</a></span>setSimulationClock()</h2>
+<a id="a7c64cfd0308ca0db427f6b2a63de0f6b" name="a7c64cfd0308ca0db427f6b2a63de0f6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c64cfd0308ca0db427f6b2a63de0f6b">&#9670;&nbsp;</a></span>setSimulationClock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4327,7 +4327,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void carma_wm::CARMAWorldModel::setSimulationClock </td>
           <td>(</td>
-          <td class="paramtype">rclcpp::Time&#160;</td>
+          <td class="paramtype">const rclcpp::Time &amp;&#160;</td>
           <td class="paramname"><em>time_now</em></td><td>)</td>
           <td></td>
         </tr>
@@ -5040,7 +5040,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm.html">carma_wm</a></li><li class="navelem"><a class="el" href="classcarma__wm_1_1CARMAWorldModel.html">CARMAWorldModel</a></li>
-    <li class="footer">Generated on Sat Dec 16 2023 02:26:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sun Dec 17 2023 17:46:32 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

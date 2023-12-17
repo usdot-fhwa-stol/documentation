@@ -6,7 +6,7 @@ var classcarma__wm_1_1WMListener =
     [ "enableUpdatesWithoutRouteWL", "classcarma__wm_1_1WMListener.html#a9fd81c1eba4beba6c3f49ba32b964b62", null ],
     [ "getLock", "classcarma__wm_1_1WMListener.html#afe0ece8678ffa70b00bb10a66ee534b5", null ],
     [ "getWorldModel", "classcarma__wm_1_1WMListener.html#a5411799ba7df224f9ad4bbb2fad008a9", null ],
-    [ "mapUpdateCallback", "classcarma__wm_1_1WMListener.html#af38a2ddc117d1d3061e5d6a9c4afb054", null ],
+    [ "mapUpdateCallback", "classcarma__wm_1_1WMListener.html#a31207012049fb42b13ebabc5aaabd1d1", null ],
     [ "setConfigSpeedLimit", "classcarma__wm_1_1WMListener.html#a32d00d4cd06bc8accbd2d201cb7a063b", null ],
     [ "setMapCallback", "classcarma__wm_1_1WMListener.html#a479ebd3a763998e2a357a7105c47e5ee", null ],
     [ "setRouteCallback", "classcarma__wm_1_1WMListener.html#ac2ee54a08021c241f455e6a7b177930f", null ],

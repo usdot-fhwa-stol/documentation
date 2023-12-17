@@ -1955,13 +1955,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  472</span>  }</div>
 <div class="line"><span class="lineno">  473</span> </div>
 <div class="line"><span class="lineno">  474</span>  <span class="comment">// speed/speed_z - convert vector velocity to scalar speed val given x/y components</span></div>
-<div class="line"><span class="lineno">  475</span>  <span class="keywordflow">if</span> (<a class="code hl_namespace" href="namespaceexternal__object.html">external_object</a>.presence_vector &amp; <a class="code hl_namespace" href="namespaceexternal__object.html">external_object</a>.VELOCITY_INST_PRESENCE_VECTOR) {</div>
+<div class="line"><span class="lineno">  475</span>  <span class="keywordflow">if</span> (<a class="code hl_namespace" href="namespaceexternal__object.html">external_object</a>.presence_vector &amp; <a class="code hl_namespace" href="namespaceexternal__object.html">external_object</a>.VELOCITY_PRESENCE_VECTOR) {</div>
 <div class="line"><span class="lineno">  476</span>    detected_object_common_data.speed.speed = std::hypot(</div>
-<div class="line"><span class="lineno">  477</span>      <a class="code hl_namespace" href="namespaceexternal__object.html">external_object</a>.velocity_inst.twist.linear.x, <a class="code hl_namespace" href="namespaceexternal__object.html">external_object</a>.velocity_inst.twist.linear.y);</div>
+<div class="line"><span class="lineno">  477</span>      <a class="code hl_namespace" href="namespaceexternal__object.html">external_object</a>.velocity.twist.linear.x, <a class="code hl_namespace" href="namespaceexternal__object.html">external_object</a>.velocity.twist.linear.y);</div>
 <div class="line"><span class="lineno">  478</span> </div>
 <div class="line"><span class="lineno">  479</span>    detected_object_common_data.presence_vector |=</div>
 <div class="line"><span class="lineno">  480</span>      carma_v2x_msgs::msg::DetectedObjectCommonData::HAS_SPEED_Z;</div>
-<div class="line"><span class="lineno">  481</span>    detected_object_common_data.speed_z.speed = <a class="code hl_namespace" href="namespaceexternal__object.html">external_object</a>.velocity_inst.twist.linear.z;</div>
+<div class="line"><span class="lineno">  481</span>    detected_object_common_data.speed_z.speed = <a class="code hl_namespace" href="namespaceexternal__object.html">external_object</a>.velocity.twist.linear.z;</div>
 <div class="line"><span class="lineno">  482</span> </div>
 <div class="line"><span class="lineno">  483</span>    <span class="comment">// heading - convert ang vel to scale heading</span></div>
 <div class="line"><span class="lineno">  484</span>    lanelet::BasicPoint3d external_object_position{</div>
@@ -2343,8 +2343,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  314</span>    detection.pose = <span class="keywordtype">object</span>.pose;</div>
 <div class="line"><span class="lineno">  315</span>  }</div>
 <div class="line"><span class="lineno">  316</span> </div>
-<div class="line"><span class="lineno">  317</span>  <span class="keywordflow">if</span> (<span class="keywordtype">object</span>.presence_vector &amp; <span class="keywordtype">object</span>.VELOCITY_INST_PRESENCE_VECTOR) {</div>
-<div class="line"><span class="lineno">  318</span>    detection.twist = <span class="keywordtype">object</span>.velocity_inst;</div>
+<div class="line"><span class="lineno">  317</span>  <span class="keywordflow">if</span> (<span class="keywordtype">object</span>.presence_vector &amp; <span class="keywordtype">object</span>.VELOCITY_PRESENCE_VECTOR) {</div>
+<div class="line"><span class="lineno">  318</span>    detection.twist = <span class="keywordtype">object</span>.velocity;</div>
 <div class="line"><span class="lineno">  319</span>  }</div>
 <div class="line"><span class="lineno">  320</span> </div>
 <div class="line"><span class="lineno">  321</span>  <span class="keywordflow">if</span> (<span class="keywordtype">object</span>.presence_vector &amp; <span class="keywordtype">object</span>.OBJECT_TYPE_PRESENCE_VECTOR) {</div>
@@ -3591,7 +3591,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></li>
-    <li class="footer">Generated on Sat Dec 16 2023 02:26:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sun Dec 17 2023 17:46:31 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

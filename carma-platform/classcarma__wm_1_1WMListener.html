@@ -149,8 +149,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:af38a2ddc117d1d3061e5d6a9c4afb054"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1WMListener.html#af38a2ddc117d1d3061e5d6a9c4afb054">mapUpdateCallback</a> (autoware_lanelet2_msgs::msg::MapBin::UniquePtr geofence_msg)</td></tr>
-<tr class="separator:af38a2ddc117d1d3061e5d6a9c4afb054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31207012049fb42b13ebabc5aaabd1d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1WMListener.html#a31207012049fb42b13ebabc5aaabd1d1">mapUpdateCallback</a> (autoware_lanelet2_msgs::msg::MapBin::SharedPtr geofence_msg)</td></tr>
+<tr class="separator:a31207012049fb42b13ebabc5aaabd1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -295,72 +295,87 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   80</span>  {</div>
 <div class="line"><span class="lineno">   81</span>    RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a0ec94c580be459dd06af2f2b039b74da">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;WMListener: Using a multi-threaded subscription&quot;</span>);</div>
 <div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>    <span class="keyword">auto</span> map_update_cb_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
-<div class="line"><span class="lineno">   84</span>    map_update_options.callback_group = map_update_cb_group;</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>    <span class="keyword">auto</span> map_cb_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
-<div class="line"><span class="lineno">   87</span>    map_options.callback_group = map_cb_group;</div>
+<div class="line"><span class="lineno">   83</span>    map_update_options.callback_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    map_options.callback_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    route_options.callback_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
 <div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>    <span class="keyword">auto</span> route_cb_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
-<div class="line"><span class="lineno">   90</span>    route_options.callback_group = route_cb_group;</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>    <span class="keyword">auto</span> roadway_objects_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
-<div class="line"><span class="lineno">   93</span>    roadway_objects_options.callback_group = roadway_objects_group;</div>
+<div class="line"><span class="lineno">   89</span>    roadway_objects_options.callback_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    traffic_spat_options.callback_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    ros1_clock_options.callback_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
 <div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>    <span class="keyword">auto</span> traffic_spat_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
-<div class="line"><span class="lineno">   96</span>    traffic_spat_options.callback_group = traffic_spat_group;</div>
+<div class="line"><span class="lineno">   95</span>    sim_clock_options.callback_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
+<div class="line"><span class="lineno">   96</span>  }</div>
 <div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>    <span class="keyword">auto</span> ros1_clock_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
-<div class="line"><span class="lineno">   99</span>    ros1_clock_options.callback_group = ros1_clock_group;</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>    <span class="keyword">auto</span> sim_clock_group = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">node_base_</a>-&gt;create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);</div>
-<div class="line"><span class="lineno">  102</span>    sim_clock_options.callback_group = sim_clock_group;</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>  }</div>
+<div class="line"><span class="lineno">   98</span>  <span class="comment">// Setup subscribers</span></div>
+<div class="line"><span class="lineno">   99</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#ace5cd54811579062ed2f935d4bd75149">route_sub_</a> = rclcpp::create_subscription&lt;carma_planning_msgs::msg::Route&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;route&quot;</span>, 1,</div>
+<div class="line"><span class="lineno">  100</span>                                  [<span class="keyword">this</span>](<span class="keyword">const</span> carma_planning_msgs::msg::Route::SharedPtr msg)</div>
+<div class="line"><span class="lineno">  101</span>                                  {</div>
+<div class="line"><span class="lineno">  102</span>                                    this-&gt;<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;routeCallback(msg);</div>
+<div class="line"><span class="lineno">  103</span>                                  }</div>
+<div class="line"><span class="lineno">  104</span>                                  , route_options);</div>
 <div class="line"><span class="lineno">  105</span> </div>
-<div class="line"><span class="lineno">  106</span>  <span class="comment">// Setup subscribers</span></div>
-<div class="line"><span class="lineno">  107</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#ace5cd54811579062ed2f935d4bd75149">route_sub_</a> = rclcpp::create_subscription&lt;carma_planning_msgs::msg::Route&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;route&quot;</span>, 1,</div>
-<div class="line"><span class="lineno">  108</span>                                  std::bind(&amp;<a class="code hl_function" href="classcarma__wm_1_1WMListenerWorker.html#ad441355e4885986b80ebf067d8b704c0">WMListenerWorker::routeCallback</a>, <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>.get(), std::placeholders::_1), route_options);</div>
-<div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a73b3f70df6e8482014c6472a933088ac">ros1_clock_sub_</a> = rclcpp::create_subscription&lt;rosgraph_msgs::msg::Clock&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;/clock&quot;</span>, 1,</div>
-<div class="line"><span class="lineno">  111</span>                                  std::bind(&amp;<a class="code hl_function" href="classcarma__wm_1_1WMListenerWorker.html#ac5991aada04fdb3bb2dfb7b96706493e">WMListenerWorker::ros1ClockCallback</a>, <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>.get(), std::placeholders::_1), ros1_clock_options);</div>
+<div class="line"><span class="lineno">  106</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a73b3f70df6e8482014c6472a933088ac">ros1_clock_sub_</a> = rclcpp::create_subscription&lt;rosgraph_msgs::msg::Clock&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;/clock&quot;</span>, 1,</div>
+<div class="line"><span class="lineno">  107</span>                                  [<span class="keyword">this</span>](<span class="keyword">const</span> rosgraph_msgs::msg::Clock::SharedPtr msg)</div>
+<div class="line"><span class="lineno">  108</span>                                  {</div>
+<div class="line"><span class="lineno">  109</span>                                    this-&gt;<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;ros1ClockCallback(msg);</div>
+<div class="line"><span class="lineno">  110</span>                                  }</div>
+<div class="line"><span class="lineno">  111</span>                                  , ros1_clock_options);</div>
 <div class="line"><span class="lineno">  112</span> </div>
 <div class="line"><span class="lineno">  113</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a5e7187062001c287df4d7008d3534676">sim_clock_sub_</a> = rclcpp::create_subscription&lt;rosgraph_msgs::msg::Clock&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;/sim_clock&quot;</span>, 1,</div>
-<div class="line"><span class="lineno">  114</span>                                  std::bind(&amp;<a class="code hl_function" href="classcarma__wm_1_1WMListenerWorker.html#ada2f6dc3ca253e7f3af0661733a11846">WMListenerWorker::simClockCallback</a>, <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>.get(), std::placeholders::_1), sim_clock_options);</div>
-<div class="line"><span class="lineno">  115</span> </div>
-<div class="line"><span class="lineno">  116</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aada324812a5f034731b35f42ce4f6fd3">roadway_objects_sub_</a> = rclcpp::create_subscription&lt;carma_perception_msgs::msg::RoadwayObstacleList&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;roadway_objects&quot;</span>, 1,</div>
-<div class="line"><span class="lineno">  117</span>                                  std::bind(&amp;<a class="code hl_function" href="classcarma__wm_1_1WMListenerWorker.html#a38932f2ab0756134602631ebbbd4d2a2">WMListenerWorker::roadwayObjectListCallback</a>, <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>.get(), std::placeholders::_1), roadway_objects_options);</div>
-<div class="line"><span class="lineno">  118</span> </div>
-<div class="line"><span class="lineno">  119</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aff83f0063e8358859b5c18f2c53581fa">traffic_spat_sub_</a> = rclcpp::create_subscription&lt;carma_v2x_msgs::msg::SPAT&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;incoming_spat&quot;</span>, 1,</div>
-<div class="line"><span class="lineno">  120</span>                                  std::bind(&amp;<a class="code hl_function" href="classcarma__wm_1_1WMListenerWorker.html#a361dabf49aae12e4fea515da492a4c5b">WMListenerWorker::incomingSpatCallback</a>, <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>.get(), std::placeholders::_1), traffic_spat_options);</div>
-<div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>  <span class="comment">// NOTE: Currently, intra-process comms must be disabled for subscribers that are transient_local: https://github.com/ros2/rclcpp/issues/1753</span></div>
-<div class="line"><span class="lineno">  123</span>  map_update_options.use_intra_process_comm = rclcpp::IntraProcessSetting::Disable; <span class="comment">// Disable intra-process comms for the map update subscriber</span></div>
-<div class="line"><span class="lineno">  124</span>  <span class="keyword">auto</span> map_update_sub_qos = rclcpp::QoS(rclcpp::KeepLast(10)); <span class="comment">// Set the queue size for the map update subscriber</span></div>
-<div class="line"><span class="lineno">  125</span>  map_update_sub_qos.transient_local();  <span class="comment">// If it is possible that this node is a late-joiner to its topic, it must be set to transient_local to receive earlier messages that were missed.</span></div>
-<div class="line"><span class="lineno">  126</span>                                         <span class="comment">// NOTE: The publisher&#39;s QoS must be set to transisent_local() as well for earlier messages to be resent to this later-joiner.</span></div>
-<div class="line"><span class="lineno">  127</span> </div>
-<div class="line"><span class="lineno">  128</span>  <span class="comment">// Create map update subscriber that will receive earlier messages that were missed ONLY if the publisher is transient_local too</span></div>
-<div class="line"><span class="lineno">  129</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a39cd3e9e22fc611eaf4dba2260671ad7">map_update_sub_</a> = rclcpp::create_subscription&lt;autoware_lanelet2_msgs::msg::MapBin&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;map_update&quot;</span>, map_update_sub_qos,</div>
-<div class="line"><span class="lineno">  130</span>                  std::bind(&amp;<a class="code hl_function" href="classcarma__wm_1_1WMListener.html#af38a2ddc117d1d3061e5d6a9c4afb054">WMListener::mapUpdateCallback</a>, <span class="keyword">this</span>, std::placeholders::_1), map_update_options);</div>
-<div class="line"><span class="lineno">  131</span> </div>
-<div class="line"><span class="lineno">  132</span>  map_options.use_intra_process_comm = rclcpp::IntraProcessSetting::Disable; <span class="comment">// Disable intra-process comms for the semantic map subscriber</span></div>
-<div class="line"><span class="lineno">  133</span>  <span class="keyword">auto</span> map_sub_qos = rclcpp::QoS(rclcpp::KeepLast(2)); <span class="comment">// Set the queue size for the semantic map subscriber</span></div>
-<div class="line"><span class="lineno">  134</span>  map_sub_qos.transient_local();  <span class="comment">// If it is possible that this node is a late-joiner to its topic, it must be set to transient_local to receive earlier messages that were missed.</span></div>
-<div class="line"><span class="lineno">  135</span>                                  <span class="comment">// NOTE: The publisher&#39;s QoS must be set to transisent_local() as well for earlier messages to be resent to this later-joiner.</span></div>
-<div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>  <span class="comment">// Create semantic mab subscriber that will receive earlier messages that were missed ONLY if the publisher is transient_local too</span></div>
-<div class="line"><span class="lineno">  138</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a88e286ef0c45800c1bca965fc6ad3a91">map_sub_</a> = rclcpp::create_subscription&lt;autoware_lanelet2_msgs::msg::MapBin&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;semantic_map&quot;</span>, map_sub_qos,</div>
-<div class="line"><span class="lineno">  139</span>                                  std::bind(&amp;<a class="code hl_function" href="classcarma__wm_1_1WMListenerWorker.html#ad4490dd5c93ee3ade6e62d5e66dfc3c6">WMListenerWorker::mapCallback</a>, <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>.get(), std::placeholders::_1), map_options);</div>
-<div class="line"><span class="lineno">  140</span>}</div>
-<div class="ttc" id="aclasscarma__wm_1_1WMListenerWorker_html_a361dabf49aae12e4fea515da492a4c5b"><div class="ttname"><a href="classcarma__wm_1_1WMListenerWorker.html#a361dabf49aae12e4fea515da492a4c5b">carma_wm::WMListenerWorker::incomingSpatCallback</a></div><div class="ttdeci">void incomingSpatCallback(const carma_v2x_msgs::msg::SPAT::UniquePtr spat_msg)</div><div class="ttdoc">incoming spat message</div><div class="ttdef"><b>Definition:</b> <a href="WMListenerWorker_8cpp_source.html#l00104">WMListenerWorker.cpp:104</a></div></div>
-<div class="ttc" id="aclasscarma__wm_1_1WMListenerWorker_html_a38932f2ab0756134602631ebbbd4d2a2"><div class="ttname"><a href="classcarma__wm_1_1WMListenerWorker.html#a38932f2ab0756134602631ebbbd4d2a2">carma_wm::WMListenerWorker::roadwayObjectListCallback</a></div><div class="ttdeci">void roadwayObjectListCallback(const carma_perception_msgs::msg::RoadwayObstacleList::UniquePtr msg)</div><div class="ttdoc">Callback for roadway objects msg.</div><div class="ttdef"><b>Definition:</b> <a href="WMListenerWorker_8cpp_source.html#l00573">WMListenerWorker.cpp:573</a></div></div>
-<div class="ttc" id="aclasscarma__wm_1_1WMListenerWorker_html_ac5991aada04fdb3bb2dfb7b96706493e"><div class="ttname"><a href="classcarma__wm_1_1WMListenerWorker.html#ac5991aada04fdb3bb2dfb7b96706493e">carma_wm::WMListenerWorker::ros1ClockCallback</a></div><div class="ttdeci">void ros1ClockCallback(const rosgraph_msgs::msg::Clock::UniquePtr clock_msg)</div><div class="ttdoc">Callback for ROS1 clock message (used in Simulation runs)</div><div class="ttdef"><b>Definition:</b> <a href="WMListenerWorker_8cpp_source.html#l00579">WMListenerWorker.cpp:579</a></div></div>
-<div class="ttc" id="aclasscarma__wm_1_1WMListenerWorker_html_ad441355e4885986b80ebf067d8b704c0"><div class="ttname"><a href="classcarma__wm_1_1WMListenerWorker.html#ad441355e4885986b80ebf067d8b704c0">carma_wm::WMListenerWorker::routeCallback</a></div><div class="ttdeci">void routeCallback(const carma_planning_msgs::msg::Route::UniquePtr route_msg)</div><div class="ttdoc">Callback for route message.</div><div class="ttdef"><b>Definition:</b> <a href="WMListenerWorker_8cpp_source.html#l00589">WMListenerWorker.cpp:589</a></div></div>
-<div class="ttc" id="aclasscarma__wm_1_1WMListenerWorker_html_ad4490dd5c93ee3ade6e62d5e66dfc3c6"><div class="ttname"><a href="classcarma__wm_1_1WMListenerWorker.html#ad4490dd5c93ee3ade6e62d5e66dfc3c6">carma_wm::WMListenerWorker::mapCallback</a></div><div class="ttdeci">void mapCallback(const autoware_lanelet2_msgs::msg::MapBin::UniquePtr map_msg)</div><div class="ttdoc">Callback for new map messages. Updates the underlying map.</div><div class="ttdef"><b>Definition:</b> <a href="WMListenerWorker_8cpp_source.html#l00056">WMListenerWorker.cpp:56</a></div></div>
-<div class="ttc" id="aclasscarma__wm_1_1WMListenerWorker_html_ada2f6dc3ca253e7f3af0661733a11846"><div class="ttname"><a href="classcarma__wm_1_1WMListenerWorker.html#ada2f6dc3ca253e7f3af0661733a11846">carma_wm::WMListenerWorker::simClockCallback</a></div><div class="ttdeci">void simClockCallback(const rosgraph_msgs::msg::Clock::UniquePtr clock_msg)</div><div class="ttdoc">Callback for Simulation clock message (used in Simulation runs)</div><div class="ttdef"><b>Definition:</b> <a href="WMListenerWorker_8cpp_source.html#l00584">WMListenerWorker.cpp:584</a></div></div>
+<div class="line"><span class="lineno">  114</span>                                  [<span class="keyword">this</span>](<span class="keyword">const</span> rosgraph_msgs::msg::Clock::SharedPtr msg)</div>
+<div class="line"><span class="lineno">  115</span>                                  {</div>
+<div class="line"><span class="lineno">  116</span>                                    this-&gt;<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;simClockCallback(msg);</div>
+<div class="line"><span class="lineno">  117</span>                                  }</div>
+<div class="line"><span class="lineno">  118</span>                                  , sim_clock_options);</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aada324812a5f034731b35f42ce4f6fd3">roadway_objects_sub_</a> = rclcpp::create_subscription&lt;carma_perception_msgs::msg::RoadwayObstacleList&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;roadway_objects&quot;</span>, 1,</div>
+<div class="line"><span class="lineno">  121</span>                                  [<span class="keyword">this</span>](<span class="keyword">const</span> carma_perception_msgs::msg::RoadwayObstacleList::SharedPtr msg)</div>
+<div class="line"><span class="lineno">  122</span>                                  {</div>
+<div class="line"><span class="lineno">  123</span>                                    this-&gt;<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;roadwayObjectListCallback(msg);</div>
+<div class="line"><span class="lineno">  124</span>                                  }</div>
+<div class="line"><span class="lineno">  125</span>                                  , roadway_objects_options);</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aff83f0063e8358859b5c18f2c53581fa">traffic_spat_sub_</a> = rclcpp::create_subscription&lt;carma_v2x_msgs::msg::SPAT&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;incoming_spat&quot;</span>, 1,</div>
+<div class="line"><span class="lineno">  128</span>                                  [<span class="keyword">this</span>](<span class="keyword">const</span> carma_v2x_msgs::msg::SPAT::SharedPtr msg)</div>
+<div class="line"><span class="lineno">  129</span>                                  {</div>
+<div class="line"><span class="lineno">  130</span>                                    this-&gt;<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;incomingSpatCallback(msg);</div>
+<div class="line"><span class="lineno">  131</span>                                  }</div>
+<div class="line"><span class="lineno">  132</span>                                  , traffic_spat_options);</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>  <span class="comment">// NOTE: Currently, intra-process comms must be disabled for subscribers that are transient_local: https://github.com/ros2/rclcpp/issues/1753</span></div>
+<div class="line"><span class="lineno">  135</span>  map_update_options.use_intra_process_comm = rclcpp::IntraProcessSetting::Disable; <span class="comment">// Disable intra-process comms for the map update subscriber</span></div>
+<div class="line"><span class="lineno">  136</span>  <span class="keyword">auto</span> map_update_sub_qos = rclcpp::QoS(rclcpp::KeepLast(10)); <span class="comment">// Set the queue size for the map update subscriber</span></div>
+<div class="line"><span class="lineno">  137</span>  map_update_sub_qos.transient_local();  <span class="comment">// If it is possible that this node is a late-joiner to its topic, it must be set to transient_local to receive earlier messages that were missed.</span></div>
+<div class="line"><span class="lineno">  138</span>                                         <span class="comment">// NOTE: The publisher&#39;s QoS must be set to transisent_local() as well for earlier messages to be resent to this later-joiner.</span></div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>  <span class="comment">// Create map update subscriber that will receive earlier messages that were missed ONLY if the publisher is transient_local too</span></div>
+<div class="line"><span class="lineno">  141</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a39cd3e9e22fc611eaf4dba2260671ad7">map_update_sub_</a> = rclcpp::create_subscription&lt;autoware_lanelet2_msgs::msg::MapBin&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;map_update&quot;</span>, map_update_sub_qos,</div>
+<div class="line"><span class="lineno">  142</span>                  [<span class="keyword">this</span>](<span class="keyword">const</span> autoware_lanelet2_msgs::msg::MapBin::SharedPtr msg)</div>
+<div class="line"><span class="lineno">  143</span>                  {</div>
+<div class="line"><span class="lineno">  144</span>                    this-&gt;<a class="code hl_function" href="classcarma__wm_1_1WMListener.html#a31207012049fb42b13ebabc5aaabd1d1">mapUpdateCallback</a>(msg);</div>
+<div class="line"><span class="lineno">  145</span>                  }</div>
+<div class="line"><span class="lineno">  146</span>                  , map_update_options);</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>  map_options.use_intra_process_comm = rclcpp::IntraProcessSetting::Disable; <span class="comment">// Disable intra-process comms for the semantic map subscriber</span></div>
+<div class="line"><span class="lineno">  149</span>  <span class="keyword">auto</span> map_sub_qos = rclcpp::QoS(rclcpp::KeepLast(2)); <span class="comment">// Set the queue size for the semantic map subscriber</span></div>
+<div class="line"><span class="lineno">  150</span>  map_sub_qos.transient_local();  <span class="comment">// If it is possible that this node is a late-joiner to its topic, it must be set to transient_local to receive earlier messages that were missed.</span></div>
+<div class="line"><span class="lineno">  151</span>                                  <span class="comment">// NOTE: The publisher&#39;s QoS must be set to transisent_local() as well for earlier messages to be resent to this later-joiner.</span></div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>  <span class="comment">// Create semantic mab subscriber that will receive earlier messages that were missed ONLY if the publisher is transient_local too</span></div>
+<div class="line"><span class="lineno">  154</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a88e286ef0c45800c1bca965fc6ad3a91">map_sub_</a> = rclcpp::create_subscription&lt;autoware_lanelet2_msgs::msg::MapBin&gt;(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957">node_topics_</a>, <span class="stringliteral">&quot;semantic_map&quot;</span>, map_sub_qos,</div>
+<div class="line"><span class="lineno">  155</span>                  [<span class="keyword">this</span>](<span class="keyword">const</span> autoware_lanelet2_msgs::msg::MapBin::SharedPtr msg)</div>
+<div class="line"><span class="lineno">  156</span>                  {</div>
+<div class="line"><span class="lineno">  157</span>                    this-&gt;<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;mapCallback(msg);</div>
+<div class="line"><span class="lineno">  158</span>                  }</div>
+<div class="line"><span class="lineno">  159</span>                  , map_options);</div>
+<div class="line"><span class="lineno">  160</span>}</div>
 <div class="ttc" id="aclasscarma__wm_1_1WMListener_html_a0ec94c580be459dd06af2f2b039b74da"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#a0ec94c580be459dd06af2f2b039b74da">carma_wm::WMListener::node_logging_</a></div><div class="ttdeci">rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr node_logging_</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8hpp_source.html#l00136">WMListener.hpp:136</a></div></div>
-<div class="ttc" id="aclasscarma__wm_1_1WMListener_html_a32d00d4cd06bc8accbd2d201cb7a063b"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#a32d00d4cd06bc8accbd2d201cb7a063b">carma_wm::WMListener::setConfigSpeedLimit</a></div><div class="ttdeci">void setConfigSpeedLimit(double config_lim) const</div><div class="ttdoc">Allows user to set a callback to be triggered when a route update is received NOTE: If operating in m...</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8cpp_source.html#l00194">WMListener.cpp:194</a></div></div>
+<div class="ttc" id="aclasscarma__wm_1_1WMListener_html_a31207012049fb42b13ebabc5aaabd1d1"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#a31207012049fb42b13ebabc5aaabd1d1">carma_wm::WMListener::mapUpdateCallback</a></div><div class="ttdeci">void mapUpdateCallback(autoware_lanelet2_msgs::msg::MapBin::SharedPtr geofence_msg)</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8cpp_source.html#l00182">WMListener.cpp:182</a></div></div>
+<div class="ttc" id="aclasscarma__wm_1_1WMListener_html_a32d00d4cd06bc8accbd2d201cb7a063b"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#a32d00d4cd06bc8accbd2d201cb7a063b">carma_wm::WMListener::setConfigSpeedLimit</a></div><div class="ttdeci">void setConfigSpeedLimit(double config_lim) const</div><div class="ttdoc">Allows user to set a callback to be triggered when a route update is received NOTE: If operating in m...</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8cpp_source.html#l00214">WMListener.cpp:214</a></div></div>
 <div class="ttc" id="aclasscarma__wm_1_1WMListener_html_a39cd3e9e22fc611eaf4dba2260671ad7"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#a39cd3e9e22fc611eaf4dba2260671ad7">carma_wm::WMListener::map_update_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; autoware_lanelet2_msgs::msg::MapBin &gt; map_update_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8hpp_source.html#l00133">WMListener.hpp:133</a></div></div>
 <div class="ttc" id="aclasscarma__wm_1_1WMListener_html_a5e7187062001c287df4d7008d3534676"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#a5e7187062001c287df4d7008d3534676">carma_wm::WMListener::sim_clock_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; rosgraph_msgs::msg::Clock &gt; sim_clock_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8hpp_source.html#l00145">WMListener.hpp:145</a></div></div>
 <div class="ttc" id="aclasscarma__wm_1_1WMListener_html_a73b3f70df6e8482014c6472a933088ac"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#a73b3f70df6e8482014c6472a933088ac">carma_wm::WMListener::ros1_clock_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; rosgraph_msgs::msg::Clock &gt; ros1_clock_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8hpp_source.html#l00146">WMListener.hpp:146</a></div></div>
@@ -372,31 +387,17 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclasscarma__wm_1_1WMListener_html_abc445211616e5362c017be32a00b746d"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#abc445211616e5362c017be32a00b746d">carma_wm::WMListener::node_base_</a></div><div class="ttdeci">rclcpp::node_interfaces::NodeBaseInterface::SharedPtr node_base_</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8hpp_source.html#l00135">WMListener.hpp:135</a></div></div>
 <div class="ttc" id="aclasscarma__wm_1_1WMListener_html_ace5cd54811579062ed2f935d4bd75149"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#ace5cd54811579062ed2f935d4bd75149">carma_wm::WMListener::route_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; carma_planning_msgs::msg::Route &gt; route_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8hpp_source.html#l00143">WMListener.hpp:143</a></div></div>
 <div class="ttc" id="aclasscarma__wm_1_1WMListener_html_ae9c82fd7cf08e5d9d062d4340d388863"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#ae9c82fd7cf08e5d9d062d4340d388863">carma_wm::WMListener::multi_threaded_</a></div><div class="ttdeci">const bool multi_threaded_</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8hpp_source.html#l00147">WMListener.hpp:147</a></div></div>
-<div class="ttc" id="aclasscarma__wm_1_1WMListener_html_af38a2ddc117d1d3061e5d6a9c4afb054"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#af38a2ddc117d1d3061e5d6a9c4afb054">carma_wm::WMListener::mapUpdateCallback</a></div><div class="ttdeci">void mapUpdateCallback(autoware_lanelet2_msgs::msg::MapBin::UniquePtr geofence_msg)</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8cpp_source.html#l00162">WMListener.cpp:162</a></div></div>
 <div class="ttc" id="aclasscarma__wm_1_1WMListener_html_aff83f0063e8358859b5c18f2c53581fa"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#aff83f0063e8358859b5c18f2c53581fa">carma_wm::WMListener::traffic_spat_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; carma_v2x_msgs::msg::SPAT &gt; traffic_spat_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8hpp_source.html#l00144">WMListener.hpp:144</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WMListenerWorker_8cpp_source.html#l00104">carma_wm::WMListenerWorker::incomingSpatCallback()</a>, <a class="el" href="WMListener_8hpp_source.html#l00142">map_sub_</a>, <a class="el" href="WMListener_8hpp_source.html#l00133">map_update_sub_</a>, <a class="el" href="WMListenerWorker_8cpp_source.html#l00056">carma_wm::WMListenerWorker::mapCallback()</a>, <a class="el" href="WMListener_8cpp_source.html#l00162">mapUpdateCallback()</a>, <a class="el" href="WMListener_8hpp_source.html#l00147">multi_threaded_</a>, <a class="el" href="WMListener_8hpp_source.html#l00135">node_base_</a>, <a class="el" href="WMListener_8hpp_source.html#l00136">node_logging_</a>, <a class="el" href="WMListener_8hpp_source.html#l00138">node_params_</a>, <a class="el" href="WMListener_8hpp_source.html#l00137">node_topics_</a>, <a class="el" href="WMListener_8hpp_source.html#l00132">roadway_objects_sub_</a>, <a class="el" href="WMListenerWorker_8cpp_source.html#l00573">carma_wm::WMListenerWorker::roadwayObjectListCallback()</a>, <a class="el" href="WMListener_8hpp_source.html#l00146">ros1_clock_sub_</a>, <a class="el" href="WMListenerWorker_8cpp_source.html#l00579">carma_wm::WMListenerWorker::ros1ClockCallback()</a>, <a class="el" href="WMListener_8hpp_source.html#l00143">route_sub_</a>, <a class="el" href="WMListenerWorker_8cpp_source.html#l00589">carma_wm::WMListenerWorker::routeCallback()</a>, <a class="el" href="WMListener_8cpp_source.html#l00194">setConfigSpeedLimit()</a>, <a class="el" href="WMListener_8hpp_source.html#l00145">sim_clock_sub_</a>, <a class="el" href="WMListenerWorker_8cpp_source.html#l00584">carma_wm::WMListenerWorker::simClockCallback()</a>, <a class="el" href="WMListener_8hpp_source.html#l00144">traffic_spat_sub_</a>, and <a class="el" href="WMListener_8hpp_source.html#l00140">worker_</a>.</p>
+<p class="reference">References <a class="el" href="WMListener_8hpp_source.html#l00142">map_sub_</a>, <a class="el" href="WMListener_8hpp_source.html#l00133">map_update_sub_</a>, <a class="el" href="WMListener_8cpp_source.html#l00182">mapUpdateCallback()</a>, <a class="el" href="WMListener_8hpp_source.html#l00147">multi_threaded_</a>, <a class="el" href="WMListener_8hpp_source.html#l00135">node_base_</a>, <a class="el" href="WMListener_8hpp_source.html#l00136">node_logging_</a>, <a class="el" href="WMListener_8hpp_source.html#l00138">node_params_</a>, <a class="el" href="WMListener_8hpp_source.html#l00137">node_topics_</a>, <a class="el" href="WMListener_8hpp_source.html#l00132">roadway_objects_sub_</a>, <a class="el" href="WMListener_8hpp_source.html#l00146">ros1_clock_sub_</a>, <a class="el" href="WMListener_8hpp_source.html#l00143">route_sub_</a>, <a class="el" href="WMListener_8cpp_source.html#l00214">setConfigSpeedLimit()</a>, <a class="el" href="WMListener_8hpp_source.html#l00145">sim_clock_sub_</a>, <a class="el" href="WMListener_8hpp_source.html#l00144">traffic_spat_sub_</a>, and <a class="el" href="WMListener_8hpp_source.html#l00140">worker_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm_1_1WMListener_ae8f498999a2d8365543b153d7b536e38_cgraph.png" border="0" usemap="#aclasscarma__wm_1_1WMListener_ae8f498999a2d8365543b153d7b536e38_cgraph" alt=""/></div>
 <map name="aclasscarma__wm_1_1WMListener_ae8f498999a2d8365543b153d7b536e38_cgraph" id="aclasscarma__wm_1_1WMListener_ae8f498999a2d8365543b153d7b536e38_cgraph">
-<area shape="rect" title="Constructor which can be used to specify threading behavior of this class." alt="" coords="5,221,168,263"/>
-<area shape="rect" href="classcarma__wm_1_1WMListenerWorker.html#a361dabf49aae12e4fea515da492a4c5b" title="incoming spat message" alt="" coords="216,5,419,47"/>
-<area shape="rect" href="classcarma__wm_1_1WMListenerWorker.html#ad4490dd5c93ee3ade6e62d5e66dfc3c6" title="Callback for new map messages. Updates the underlying map." alt="" coords="216,71,419,112"/>
-<area shape="rect" href="classcarma__wm_1_1WMListenerWorker.html#ad441355e4885986b80ebf067d8b704c0" title="Callback for route message." alt="" coords="467,129,669,171"/>
-<area shape="rect" href="classcarma__wm_1_1WMListener.html#af38a2ddc117d1d3061e5d6a9c4afb054" title=" " alt="" coords="236,188,399,229"/>
-<area shape="rect" href="classcarma__wm_1_1WMListenerWorker.html#a38932f2ab0756134602631ebbbd4d2a2" title="Callback for roadway objects msg." alt="" coords="216,253,419,295"/>
-<area shape="rect" href="classcarma__wm_1_1WMListenerWorker.html#ac5991aada04fdb3bb2dfb7b96706493e" title="Callback for ROS1 clock message (used in Simulation runs)" alt="" coords="216,319,419,360"/>
-<area shape="rect" href="classcarma__wm_1_1WMListener.html#a32d00d4cd06bc8accbd2d201cb7a063b" title="Allows user to set a callback to be triggered when a route update is received NOTE: If operating in m..." alt="" coords="236,384,399,425"/>
-<area shape="rect" href="classcarma__wm_1_1WMListenerWorker.html#ada2f6dc3ca253e7f3af0661733a11846" title="Callback for Simulation clock message (used in Simulation runs)" alt="" coords="216,449,419,491"/>
-<area shape="rect" href="namespacecarma__wm.html#a3c6c82d3e0fcfc7dd50176a453598911" title=" " alt="" coords="1005,27,1167,54"/>
-<area shape="rect" href="classcarma__wm_1_1WMListenerWorker.html#a3e2fb75fe96504aa76691cfecd5dd35f" title="Callback for new map update messages (geofence). Updates the underlying map." alt="" coords="717,104,920,145"/>
-<area shape="rect" href="namespacecarma__wm.html#aae8a9e16b161a8edf05ca9df4307a5ec" title=" " alt="" coords="968,79,1204,120"/>
-<area shape="rect" href="classcarma__wm_1_1WMListenerWorker.html#a5cffb02708d8e8421ad56c4e7dd21b81" title="This is a helper function updates the parent_llt with specified regem. This function is needed as we ..." alt="" coords="985,144,1187,185"/>
-<area shape="rect" href="classcarma__wm_1_1WMListenerWorker.html#a614654b7b374ed1d24537e347d49389f" title="Helper function to convert a routing graph message into a actual RoutingGraph object." alt="" coords="985,209,1187,251"/>
-<area shape="rect" href="namespacecarma__wm.html#a4c3b7aaa05aea0c95189c98c5d902cf8" title=" " alt="" coords="1252,151,1471,178"/>
-<area shape="rect" href="classcarma__wm_1_1WMListenerWorker.html#ac0c115081f19ec29b215e6edeb110d4c" title="Returns the Vehicle Participation Type value." alt="" coords="1260,209,1463,251"/>
+<area shape="rect" title="Constructor which can be used to specify threading behavior of this class." alt="" coords="5,39,168,80"/>
+<area shape="rect" href="classcarma__wm_1_1WMListener.html#a31207012049fb42b13ebabc5aaabd1d1" title=" " alt="" coords="216,5,379,47"/>
+<area shape="rect" href="classcarma__wm_1_1WMListener.html#a32d00d4cd06bc8accbd2d201cb7a063b" title="Allows user to set a callback to be triggered when a route update is received NOTE: If operating in m..." alt="" coords="216,71,379,112"/>
 </map>
 </div>
 
@@ -419,8 +420,8 @@ Here is the call graph for this function:</div>
 
 <p>Destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00142">142</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  142</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00162">162</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -443,11 +444,11 @@ Here is the call graph for this function:</div>
 <p>Returns true if a map update has been processed which requires rerouting. This method is meant to be used by routing components. </p>
 <dl class="section return"><dt>Returns</dt><dd>True is rerouting is needed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00150">150</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  151</span>{</div>
-<div class="line"><span class="lineno">  152</span>  <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);</div>
-<div class="line"><span class="lineno">  153</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;checkIfReRoutingNeeded();</div>
-<div class="line"><span class="lineno">  154</span>}</div>
+<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00170">170</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>{</div>
+<div class="line"><span class="lineno">  172</span>  <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);</div>
+<div class="line"><span class="lineno">  173</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;checkIfReRoutingNeeded();</div>
+<div class="line"><span class="lineno">  174</span>}</div>
 <div class="ttc" id="aclasscarma__wm_1_1WMListener_html_a647c80e521e01ef6fc9384b3329270ec"><div class="ttname"><a href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">carma_wm::WMListener::mw_mutex_</a></div><div class="ttdeci">std::mutex mw_mutex_</div><div class="ttdef"><b>Definition:</b> <a href="WMListener_8hpp_source.html#l00148">WMListener.hpp:148</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="WMListener_8hpp_source.html#l00148">mw_mutex_</a>, and <a class="el" href="WMListener_8hpp_source.html#l00140">worker_</a>.</p>
@@ -482,11 +483,11 @@ Here is the caller graph for this function:</div>
 
 <p>Use to allow updates to occur even if they invalidate the current route. This is only meant to be used by components which generate the route. </p>
 
-<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00144">144</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  145</span>{</div>
-<div class="line"><span class="lineno">  146</span>  <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);</div>
-<div class="line"><span class="lineno">  147</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;enableUpdatesWithoutRoute();</div>
-<div class="line"><span class="lineno">  148</span>}</div>
+<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00164">164</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>{</div>
+<div class="line"><span class="lineno">  166</span>  <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);</div>
+<div class="line"><span class="lineno">  167</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;enableUpdatesWithoutRoute();</div>
+<div class="line"><span class="lineno">  168</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="WMListener_8hpp_source.html#l00148">mw_mutex_</a>, and <a class="el" href="WMListener_8hpp_source.html#l00140">worker_</a>.</p>
 
@@ -528,16 +529,16 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::unique_lock for thread safe access to world model data </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00183">183</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  184</span>{</div>
-<div class="line"><span class="lineno">  185</span>  <span class="keywordflow">if</span> (pre_locked)</div>
-<div class="line"><span class="lineno">  186</span>  {</div>
-<div class="line"><span class="lineno">  187</span>    std::unique_lock&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);  <span class="comment">// Create movable lock</span></div>
-<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">return</span> lock;</div>
-<div class="line"><span class="lineno">  189</span>  }</div>
-<div class="line"><span class="lineno">  190</span>  std::unique_lock&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>, std::defer_lock);  <span class="comment">// Create movable deferred lock</span></div>
-<div class="line"><span class="lineno">  191</span>  <span class="keywordflow">return</span> lock;</div>
-<div class="line"><span class="lineno">  192</span>}</div>
+<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00203">203</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  204</span>{</div>
+<div class="line"><span class="lineno">  205</span>  <span class="keywordflow">if</span> (pre_locked)</div>
+<div class="line"><span class="lineno">  206</span>  {</div>
+<div class="line"><span class="lineno">  207</span>    std::unique_lock&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);  <span class="comment">// Create movable lock</span></div>
+<div class="line"><span class="lineno">  208</span>    <span class="keywordflow">return</span> lock;</div>
+<div class="line"><span class="lineno">  209</span>  }</div>
+<div class="line"><span class="lineno">  210</span>  std::unique_lock&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>, std::defer_lock);  <span class="comment">// Create movable deferred lock</span></div>
+<div class="line"><span class="lineno">  211</span>  <span class="keywordflow">return</span> lock;</div>
+<div class="line"><span class="lineno">  212</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="WMListener_8hpp_source.html#l00148">mw_mutex_</a>.</p>
 
@@ -561,11 +562,11 @@ Here is the caller graph for this function:</div>
 <p>Returns a pointer to an intialized world model instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>Const pointer to a world model object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00156">156</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  157</span>{</div>
-<div class="line"><span class="lineno">  158</span>  <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);</div>
-<div class="line"><span class="lineno">  159</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;getWorldModel();</div>
-<div class="line"><span class="lineno">  160</span>}</div>
+<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00176">176</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>{</div>
+<div class="line"><span class="lineno">  178</span>  <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);</div>
+<div class="line"><span class="lineno">  179</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;getWorldModel();</div>
+<div class="line"><span class="lineno">  180</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="WMListener_8hpp_source.html#l00148">mw_mutex_</a>, and <a class="el" href="WMListener_8hpp_source.html#l00140">worker_</a>.</p>
 
@@ -583,8 +584,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="af38a2ddc117d1d3061e5d6a9c4afb054" name="af38a2ddc117d1d3061e5d6a9c4afb054"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af38a2ddc117d1d3061e5d6a9c4afb054">&#9670;&nbsp;</a></span>mapUpdateCallback()</h2>
+<a id="a31207012049fb42b13ebabc5aaabd1d1" name="a31207012049fb42b13ebabc5aaabd1d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31207012049fb42b13ebabc5aaabd1d1">&#9670;&nbsp;</a></span>mapUpdateCallback()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -595,7 +596,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void carma_wm::WMListener::mapUpdateCallback </td>
           <td>(</td>
-          <td class="paramtype">autoware_lanelet2_msgs::msg::MapBin::UniquePtr&#160;</td>
+          <td class="paramtype">autoware_lanelet2_msgs::msg::MapBin::SharedPtr&#160;</td>
           <td class="paramname"><em>geofence_msg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -607,14 +608,14 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00162">162</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  163</span>{</div>
-<div class="line"><span class="lineno">  164</span>  <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);</div>
-<div class="line"><span class="lineno">  165</span> </div>
-<div class="line"><span class="lineno">  166</span>  RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a0ec94c580be459dd06af2f2b039b74da">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;New Map Update Received. SeqNum: &quot;</span> &lt;&lt; geofence_msg-&gt;seq_id);</div>
-<div class="line"><span class="lineno">  167</span> </div>
-<div class="line"><span class="lineno">  168</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;mapUpdateCallback(std::move(geofence_msg));</div>
-<div class="line"><span class="lineno">  169</span>}</div>
+<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00182">182</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  183</span>{</div>
+<div class="line"><span class="lineno">  184</span>  <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>  RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a0ec94c580be459dd06af2f2b039b74da">node_logging_</a>-&gt;get_logger(), <span class="stringliteral">&quot;New Map Update Received. SeqNum: &quot;</span> &lt;&lt; geofence_msg-&gt;seq_id);</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;mapUpdateCallback(geofence_msg);</div>
+<div class="line"><span class="lineno">  189</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="WMListener_8hpp_source.html#l00148">mw_mutex_</a>, <a class="el" href="WMListener_8hpp_source.html#l00136">node_logging_</a>, and <a class="el" href="WMListener_8hpp_source.html#l00140">worker_</a>.</p>
 
@@ -622,8 +623,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classcarma__wm_1_1WMListener_af38a2ddc117d1d3061e5d6a9c4afb054_icgraph.png" border="0" usemap="#aclasscarma__wm_1_1WMListener_af38a2ddc117d1d3061e5d6a9c4afb054_icgraph" alt=""/></div>
-<map name="aclasscarma__wm_1_1WMListener_af38a2ddc117d1d3061e5d6a9c4afb054_icgraph" id="aclasscarma__wm_1_1WMListener_af38a2ddc117d1d3061e5d6a9c4afb054_icgraph">
+<div class="center"><img src="classcarma__wm_1_1WMListener_a31207012049fb42b13ebabc5aaabd1d1_icgraph.png" border="0" usemap="#aclasscarma__wm_1_1WMListener_a31207012049fb42b13ebabc5aaabd1d1_icgraph" alt=""/></div>
+<map name="aclasscarma__wm_1_1WMListener_a31207012049fb42b13ebabc5aaabd1d1_icgraph" id="aclasscarma__wm_1_1WMListener_a31207012049fb42b13ebabc5aaabd1d1_icgraph">
 <area shape="rect" title=" " alt="" coords="216,5,379,47"/>
 <area shape="rect" href="classcarma__wm_1_1WMListener.html#ae8f498999a2d8365543b153d7b536e38" title="Constructor which can be used to specify threading behavior of this class." alt="" coords="5,5,168,47"/>
 </map>
@@ -655,10 +656,10 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00194">194</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  195</span>{</div>
-<div class="line"><span class="lineno">  196</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;setConfigSpeedLimit(config_lim);</div>
-<div class="line"><span class="lineno">  197</span>}</div>
+<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00214">214</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  215</span>{</div>
+<div class="line"><span class="lineno">  216</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;setConfigSpeedLimit(config_lim);</div>
+<div class="line"><span class="lineno">  217</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="WMListener_8hpp_source.html#l00140">worker_</a>.</p>
 
@@ -699,11 +700,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00171">171</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  172</span>{</div>
-<div class="line"><span class="lineno">  173</span>  <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);</div>
-<div class="line"><span class="lineno">  174</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;setMapCallback(<a class="code hl_function" href="helper_8cpp.html#ac0f7f7ec5375e47d4c681359431356b9">callback</a>);</div>
-<div class="line"><span class="lineno">  175</span>}</div>
+<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00191">191</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  192</span>{</div>
+<div class="line"><span class="lineno">  193</span>  <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);</div>
+<div class="line"><span class="lineno">  194</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;setMapCallback(<a class="code hl_function" href="helper_8cpp.html#ac0f7f7ec5375e47d4c681359431356b9">callback</a>);</div>
+<div class="line"><span class="lineno">  195</span>}</div>
 <div class="ttc" id="ahelper_8cpp_html_ac0f7f7ec5375e47d4c681359431356b9"><div class="ttname"><a href="helper_8cpp.html#ac0f7f7ec5375e47d4c681359431356b9">callback</a></div><div class="ttdeci">bool callback(cav_srvs::PlanTrajectory::Request &amp;req, cav_srvs::PlanTrajectory::Response &amp;res)</div><div class="ttdef"><b>Definition:</b> <a href="helper_8cpp_source.html#l00021">helper.cpp:21</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="helper_8cpp_source.html#l00021">callback()</a>, <a class="el" href="WMListener_8hpp_source.html#l00148">mw_mutex_</a>, and <a class="el" href="WMListener_8hpp_source.html#l00140">worker_</a>.</p>
@@ -743,11 +744,11 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00177">177</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  178</span>{</div>
-<div class="line"><span class="lineno">  179</span>  <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);</div>
-<div class="line"><span class="lineno">  180</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;setRouteCallback(<a class="code hl_function" href="helper_8cpp.html#ac0f7f7ec5375e47d4c681359431356b9">callback</a>);</div>
-<div class="line"><span class="lineno">  181</span>}</div>
+<p class="definition">Definition at line <a class="el" href="WMListener_8cpp_source.html#l00197">197</a> of file <a class="el" href="WMListener_8cpp_source.html">WMListener.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  198</span>{</div>
+<div class="line"><span class="lineno">  199</span>  <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a647c80e521e01ef6fc9384b3329270ec">mw_mutex_</a>);</div>
+<div class="line"><span class="lineno">  200</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;setRouteCallback(<a class="code hl_function" href="helper_8cpp.html#ac0f7f7ec5375e47d4c681359431356b9">callback</a>);</div>
+<div class="line"><span class="lineno">  201</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="helper_8cpp_source.html#l00021">callback()</a>, <a class="el" href="WMListener_8hpp_source.html#l00148">mw_mutex_</a>, and <a class="el" href="WMListener_8hpp_source.html#l00140">worker_</a>.</p>
 <div class="dynheader">
@@ -863,7 +864,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMListener_8hpp_source.html#l00148">148</a> of file <a class="el" href="WMListener_8hpp_source.html">WMListener.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMListener_8cpp_source.html#l00150">checkIfReRoutingNeededWL()</a>, <a class="el" href="WMListener_8cpp_source.html#l00144">enableUpdatesWithoutRouteWL()</a>, <a class="el" href="WMListener_8cpp_source.html#l00183">getLock()</a>, <a class="el" href="WMListener_8cpp_source.html#l00156">getWorldModel()</a>, <a class="el" href="WMListener_8cpp_source.html#l00162">mapUpdateCallback()</a>, <a class="el" href="WMListener_8cpp_source.html#l00171">setMapCallback()</a>, and <a class="el" href="WMListener_8cpp_source.html#l00177">setRouteCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMListener_8cpp_source.html#l00170">checkIfReRoutingNeededWL()</a>, <a class="el" href="WMListener_8cpp_source.html#l00164">enableUpdatesWithoutRouteWL()</a>, <a class="el" href="WMListener_8cpp_source.html#l00203">getLock()</a>, <a class="el" href="WMListener_8cpp_source.html#l00176">getWorldModel()</a>, <a class="el" href="WMListener_8cpp_source.html#l00182">mapUpdateCallback()</a>, <a class="el" href="WMListener_8cpp_source.html#l00191">setMapCallback()</a>, and <a class="el" href="WMListener_8cpp_source.html#l00197">setRouteCallback()</a>.</p>
 
 </div>
 </div>
@@ -915,7 +916,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMListener_8hpp_source.html#l00136">136</a> of file <a class="el" href="WMListener_8hpp_source.html">WMListener.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMListener_8cpp_source.html#l00025">WMListener()</a>, and <a class="el" href="WMListener_8cpp_source.html#l00162">mapUpdateCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMListener_8cpp_source.html#l00025">WMListener()</a>, and <a class="el" href="WMListener_8cpp_source.html#l00182">mapUpdateCallback()</a>.</p>
 
 </div>
 </div>
@@ -1123,7 +1124,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMListener_8hpp_source.html#l00140">140</a> of file <a class="el" href="WMListener_8hpp_source.html">WMListener.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMListener_8cpp_source.html#l00025">WMListener()</a>, <a class="el" href="WMListener_8cpp_source.html#l00150">checkIfReRoutingNeededWL()</a>, <a class="el" href="WMListener_8cpp_source.html#l00144">enableUpdatesWithoutRouteWL()</a>, <a class="el" href="WMListener_8cpp_source.html#l00156">getWorldModel()</a>, <a class="el" href="WMListener_8cpp_source.html#l00162">mapUpdateCallback()</a>, <a class="el" href="WMListener_8cpp_source.html#l00194">setConfigSpeedLimit()</a>, <a class="el" href="WMListener_8cpp_source.html#l00171">setMapCallback()</a>, and <a class="el" href="WMListener_8cpp_source.html#l00177">setRouteCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMListener_8cpp_source.html#l00025">WMListener()</a>, <a class="el" href="WMListener_8cpp_source.html#l00170">checkIfReRoutingNeededWL()</a>, <a class="el" href="WMListener_8cpp_source.html#l00164">enableUpdatesWithoutRouteWL()</a>, <a class="el" href="WMListener_8cpp_source.html#l00176">getWorldModel()</a>, <a class="el" href="WMListener_8cpp_source.html#l00182">mapUpdateCallback()</a>, <a class="el" href="WMListener_8cpp_source.html#l00214">setConfigSpeedLimit()</a>, <a class="el" href="WMListener_8cpp_source.html#l00191">setMapCallback()</a>, and <a class="el" href="WMListener_8cpp_source.html#l00197">setRouteCallback()</a>.</p>
 
 </div>
 </div>
@@ -1137,7 +1138,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm.html">carma_wm</a></li><li class="navelem"><a class="el" href="classcarma__wm_1_1WMListener.html">WMListener</a></li>
-    <li class="footer">Generated on Sat Dec 16 2023 02:26:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Sun Dec 17 2023 17:46:32 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

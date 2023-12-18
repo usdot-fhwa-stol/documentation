@@ -103,38 +103,51 @@ $(document).ready(function(){initNavTree('transforms_8launch_8py_source.html',''
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">from</span> launch <span class="keyword">import</span> LaunchDescription</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">from</span> launch_ros.actions <span class="keyword">import</span> Node</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">from</span> carma_ros2_utils.launch.get_current_namespace <span class="keyword">import</span> GetCurrentNamespace</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">import</span> os</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">from</span> launch.substitutions <span class="keyword">import</span> LaunchConfiguration</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">from</span> launch.actions <span class="keyword">import</span> DeclareLaunchArgument</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespacetransforms.html#a13fd6834bb02a04f4c2dcf48fcd2cd5a">   21</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacetransforms.html#a13fd6834bb02a04f4c2dcf48fcd2cd5a">generate_launch_description</a>():</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="stringliteral">    Launch robot_state_publisher to read </span><span class="keywordflow">in</span> URDF file</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="stringliteral"></span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="stringliteral">    </span><span class="comment"># Since the file needs to be actually read a substition does not work here</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment"># For now the path must be hardcoded so it can be read into a string and passed as a parameter</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">with</span> open(<span class="stringliteral">&#39;/opt/carma/vehicle/calibration/urdf/carma.urdf&#39;</span>, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> in_file:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        robot_description = in_file.read()</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    start_robot_state_publisher_cmd = Node(</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        package=<span class="stringliteral">&#39;robot_state_publisher&#39;</span>,</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        executable=<span class="stringliteral">&#39;robot_state_publisher&#39;</span>,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        name=<span class="stringliteral">&#39;robot_state_publisher&#39;</span>,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        parameters=[{<span class="stringliteral">&#39;robot_description&#39;</span>: robot_description}]</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    )</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        start_robot_state_publisher_cmd</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    ])</div>
-<div class="ttc" id="anamespacetransforms_html_a13fd6834bb02a04f4c2dcf48fcd2cd5a"><div class="ttname"><a href="namespacetransforms.html#a13fd6834bb02a04f4c2dcf48fcd2cd5a">transforms.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="transforms_8launch_8py_source.html#l00021">transforms.launch.py:21</a></div></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">import</span> os</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespacetransforms.html#a13fd6834bb02a04f4c2dcf48fcd2cd5a">   24</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacetransforms.html#a13fd6834bb02a04f4c2dcf48fcd2cd5a">generate_launch_description</a>():</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="stringliteral">    Launch robot_state_publisher to read </span><span class="keywordflow">in</span> URDF file</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="stringliteral">    use_sim_time = LaunchConfiguration(&#39;use_sim_time&#39;</span>)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    declare_use_sim_time_arg = DeclareLaunchArgument(</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        name = <span class="stringliteral">&#39;use_sim_time&#39;</span>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        default_value = <span class="stringliteral">&quot;False&quot;</span>,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        description = <span class="stringliteral">&quot;True if simulation mode is on&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    )</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment"># Since the file needs to be actually read a substition does not work here</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment"># For now the path must be hardcoded so it can be read into a string and passed as a parameter</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">with</span> open(<span class="stringliteral">&#39;/opt/carma/vehicle/calibration/urdf/carma.urdf&#39;</span>, <span class="stringliteral">&#39;r&#39;</span>) <span class="keyword">as</span> in_file:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        robot_description = in_file.read()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    start_robot_state_publisher_cmd = Node(</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        package=<span class="stringliteral">&#39;robot_state_publisher&#39;</span>,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        executable=<span class="stringliteral">&#39;robot_state_publisher&#39;</span>,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        name=<span class="stringliteral">&#39;robot_state_publisher&#39;</span>,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        parameters=[</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            {<span class="stringliteral">&#39;robot_description&#39;</span>: robot_description},</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            {<span class="stringliteral">&quot;use_sim_time&quot;</span> : use_sim_time}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            ]</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    )</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        start_robot_state_publisher_cmd,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        declare_use_sim_time_arg</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    ])</div>
+<div class="ttc" id="anamespacetransforms_html_a13fd6834bb02a04f4c2dcf48fcd2cd5a"><div class="ttname"><a href="namespacetransforms.html#a13fd6834bb02a04f4c2dcf48fcd2cd5a">transforms.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="transforms_8launch_8py_source.html#l00024">transforms.launch.py:24</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_65035b4805221094def83884081b1f33.html">carma</a></li><li class="navelem"><a class="el" href="dir_f58cda9f7f9da9aabc437fb1be4786b2.html">launch</a></li><li class="navelem"><a class="el" href="transforms_8launch_8py.html">transforms.launch.py</a></li>
-    <li class="footer">Generated on Sun Dec 17 2023 17:46:25 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Dec 18 2023 15:06:14 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

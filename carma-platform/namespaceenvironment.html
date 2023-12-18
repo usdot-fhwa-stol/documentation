@@ -124,499 +124,520 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   39</span>        description = <span class="stringliteral">&quot;Path to file contain vehicle configuration parameters&quot;</span></div>
 <div class="line"><span class="lineno">   40</span>    )</div>
 <div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    vehicle_characteristics_param_file = LaunchConfiguration(<span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span>)</div>
-<div class="line"><span class="lineno">   43</span>    declare_vehicle_characteristics_param_file_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   44</span>        name = <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span>,</div>
-<div class="line"><span class="lineno">   45</span>        default_value = <span class="stringliteral">&quot;/opt/carma/vehicle/calibration/identifiers/UniqueVehicleParams.yaml&quot;</span>,</div>
-<div class="line"><span class="lineno">   46</span>        description = <span class="stringliteral">&quot;Path to file containing unique vehicle calibrations&quot;</span></div>
+<div class="line"><span class="lineno">   42</span>    use_sim_time = LaunchConfiguration(<span class="stringliteral">&#39;use_sim_time&#39;</span>)</div>
+<div class="line"><span class="lineno">   43</span>    declare_use_sim_time_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   44</span>        name = <span class="stringliteral">&#39;use_sim_time&#39;</span>,</div>
+<div class="line"><span class="lineno">   45</span>        default_value = <span class="stringliteral">&quot;False&quot;</span>,</div>
+<div class="line"><span class="lineno">   46</span>        description = <span class="stringliteral">&quot;True if simulation mode is on&quot;</span></div>
 <div class="line"><span class="lineno">   47</span>    )</div>
 <div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    vector_map_file = LaunchConfiguration(<span class="stringliteral">&#39;vector_map_file&#39;</span>)</div>
-<div class="line"><span class="lineno">   50</span>    declare_vector_map_file = DeclareLaunchArgument(name=<span class="stringliteral">&#39;vector_map_file&#39;</span>, default_value = <span class="stringliteral">&#39;vector_map.osm&#39;</span>, description = <span class="stringliteral">&quot;Path to the map osm file if using the noupdate load type&quot;</span>)</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    autoware_auto_launch_pkg_prefix = get_package_share_directory(</div>
-<div class="line"><span class="lineno">   53</span>        <span class="stringliteral">&#39;autoware_auto_launch&#39;</span>)</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>    euclidean_cluster_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   56</span>        autoware_auto_launch_pkg_prefix, <span class="stringliteral">&#39;param/component_style/euclidean_cluster.param.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>    ray_ground_classifier_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   59</span>        autoware_auto_launch_pkg_prefix, <span class="stringliteral">&#39;param/component_style/ray_ground_classifier.param.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>    tracking_nodes_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   62</span>        autoware_auto_launch_pkg_prefix, <span class="stringliteral">&#39;param/component_style/tracking_nodes.param.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>    object_detection_tracking_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   65</span>        get_package_share_directory(<span class="stringliteral">&#39;object_detection_tracking&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>    subsystem_controller_default_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   68</span>        get_package_share_directory(<span class="stringliteral">&#39;subsystem_controllers&#39;</span>), <span class="stringliteral">&#39;config/environment_perception_controller_config.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>    subsystem_controller_param_file = LaunchConfiguration(<span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span>)</div>
-<div class="line"><span class="lineno">   71</span>    declare_subsystem_controller_param_file_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   72</span>        name = <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span>,</div>
-<div class="line"><span class="lineno">   73</span>        default_value = subsystem_controller_default_param_file,</div>
-<div class="line"><span class="lineno">   74</span>        description = <span class="stringliteral">&quot;Path to file containing override parameters for the subsystem controller&quot;</span></div>
-<div class="line"><span class="lineno">   75</span>    )</div>
+<div class="line"><span class="lineno">   49</span>    vehicle_characteristics_param_file = LaunchConfiguration(<span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span>)</div>
+<div class="line"><span class="lineno">   50</span>    declare_vehicle_characteristics_param_file_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   51</span>        name = <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span>,</div>
+<div class="line"><span class="lineno">   52</span>        default_value = <span class="stringliteral">&quot;/opt/carma/vehicle/calibration/identifiers/UniqueVehicleParams.yaml&quot;</span>,</div>
+<div class="line"><span class="lineno">   53</span>        description = <span class="stringliteral">&quot;Path to file containing unique vehicle calibrations&quot;</span></div>
+<div class="line"><span class="lineno">   54</span>    )</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>    vector_map_file = LaunchConfiguration(<span class="stringliteral">&#39;vector_map_file&#39;</span>)</div>
+<div class="line"><span class="lineno">   57</span>    declare_vector_map_file = DeclareLaunchArgument(name=<span class="stringliteral">&#39;vector_map_file&#39;</span>, default_value = <span class="stringliteral">&#39;vector_map.osm&#39;</span>, description = <span class="stringliteral">&quot;Path to the map osm file if using the noupdate load type&quot;</span>)</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    autoware_auto_launch_pkg_prefix = get_package_share_directory(</div>
+<div class="line"><span class="lineno">   60</span>        <span class="stringliteral">&#39;autoware_auto_launch&#39;</span>)</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>    euclidean_cluster_param_file = os.path.join(</div>
+<div class="line"><span class="lineno">   63</span>        autoware_auto_launch_pkg_prefix, <span class="stringliteral">&#39;param/component_style/euclidean_cluster.param.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    ray_ground_classifier_param_file = os.path.join(</div>
+<div class="line"><span class="lineno">   66</span>        autoware_auto_launch_pkg_prefix, <span class="stringliteral">&#39;param/component_style/ray_ground_classifier.param.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>    tracking_nodes_param_file = os.path.join(</div>
+<div class="line"><span class="lineno">   69</span>        autoware_auto_launch_pkg_prefix, <span class="stringliteral">&#39;param/component_style/tracking_nodes.param.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    object_detection_tracking_param_file = os.path.join(</div>
+<div class="line"><span class="lineno">   72</span>        get_package_share_directory(<span class="stringliteral">&#39;object_detection_tracking&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    subsystem_controller_default_param_file = os.path.join(</div>
+<div class="line"><span class="lineno">   75</span>        get_package_share_directory(<span class="stringliteral">&#39;subsystem_controllers&#39;</span>), <span class="stringliteral">&#39;config/environment_perception_controller_config.yaml&#39;</span>)</div>
 <div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>    frame_transformer_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   78</span>        get_package_share_directory(<span class="stringliteral">&#39;frame_transformer&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>    object_visualizer_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   81</span>        get_package_share_directory(<span class="stringliteral">&#39;object_visualizer&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>    points_map_filter_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   84</span>        get_package_share_directory(<span class="stringliteral">&#39;points_map_filter&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>    motion_computation_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   87</span>        get_package_share_directory(<span class="stringliteral">&#39;motion_computation&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>    env_log_levels = EnvironmentVariable(<span class="stringliteral">&#39;CARMA_ROS_LOGGING_CONFIG&#39;</span>, default_value=<span class="stringliteral">&#39;{ &quot;default_level&quot; : &quot;WARN&quot; }&#39;</span>)</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>    carma_wm_ctrl_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   92</span>        get_package_share_directory(<span class="stringliteral">&#39;carma_wm_ctrl&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>    cp_multiple_object_tracker_node_file = str(PurePath(get_package_share_directory(<span class="stringliteral">&quot;carma_cooperative_perception&quot;</span>), <span class="stringliteral">&quot;config/cp_multiple_object_tracker_node.yaml&quot;</span>))</div>
-<div class="line"><span class="lineno">   95</span>    cp_host_vehicle_filter_node_file = str(PurePath(get_package_share_directory(<span class="stringliteral">&quot;carma_cooperative_perception&quot;</span>), <span class="stringliteral">&quot;config/cp_host_vehicle_filter_node.yaml&quot;</span>))</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>    <span class="comment"># lidar_perception_container contains all nodes for lidar based object perception</span></div>
-<div class="line"><span class="lineno">   98</span>    <span class="comment"># a failure in any one node in the chain would invalidate the rest of it, so they can all be</span></div>
-<div class="line"><span class="lineno">   99</span>    <span class="comment"># placed in the same container without reducing fault tolerance</span></div>
-<div class="line"><span class="lineno">  100</span>    <span class="comment"># a lifecycle wrapper container is used to ensure autoware.auto nodes adhere to the subsystem_controller&#39;s signals</span></div>
-<div class="line"><span class="lineno">  101</span>    lidar_perception_container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">  102</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>, <span class="comment"># rclcpp_components</span></div>
-<div class="line"><span class="lineno">  103</span>        name=<span class="stringliteral">&#39;perception_points_filter_container&#39;</span>,</div>
-<div class="line"><span class="lineno">  104</span>        executable=<span class="stringliteral">&#39;lifecycle_component_wrapper_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">  105</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">  106</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">  107</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  108</span>                package=<span class="stringliteral">&#39;frame_transformer&#39;</span>,</div>
-<div class="line"><span class="lineno">  109</span>                plugin=<span class="stringliteral">&#39;frame_transformer::Node&#39;</span>,</div>
-<div class="line"><span class="lineno">  110</span>                name=<span class="stringliteral">&#39;lidar_to_map_frame_transformer&#39;</span>,</div>
-<div class="line"><span class="lineno">  111</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  112</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  113</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;frame_transformer&#39;</span>, env_log_levels) },</div>
-<div class="line"><span class="lineno">  114</span>                    {<span class="stringliteral">&#39;is_lifecycle_node&#39;</span>: <span class="keyword">True</span>} <span class="comment"># Flag to allow lifecycle node loading in lifecycle wrapper</span></div>
-<div class="line"><span class="lineno">  115</span>                ],</div>
-<div class="line"><span class="lineno">  116</span>                remappings=[</div>
-<div class="line"><span class="lineno">  117</span>                    (<span class="stringliteral">&quot;input&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/lidar/points_raw&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  118</span>                    (<span class="stringliteral">&quot;output&quot;</span>, <span class="stringliteral">&quot;points_in_map&quot;</span>),</div>
-<div class="line"><span class="lineno">  119</span>                    (<span class="stringliteral">&quot;change_state&quot;</span>, <span class="stringliteral">&quot;disabled_change_state&quot;</span>), <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
-<div class="line"><span class="lineno">  120</span>                    (<span class="stringliteral">&quot;get_state&quot;</span>, <span class="stringliteral">&quot;disabled_get_state&quot;</span>)        <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
-<div class="line"><span class="lineno">  121</span>                ],</div>
-<div class="line"><span class="lineno">  122</span>                parameters=[</div>
-<div class="line"><span class="lineno">  123</span>                    { <span class="stringliteral">&quot;target_frame&quot;</span> : <span class="stringliteral">&quot;map&quot;</span>},</div>
-<div class="line"><span class="lineno">  124</span>                    { <span class="stringliteral">&quot;message_type&quot;</span> : <span class="stringliteral">&quot;sensor_msgs/PointCloud2&quot;</span>},</div>
-<div class="line"><span class="lineno">  125</span>                    { <span class="stringliteral">&quot;queue_size&quot;</span> : 1},</div>
-<div class="line"><span class="lineno">  126</span>                    { <span class="stringliteral">&quot;timeout&quot;</span> : 50 },</div>
-<div class="line"><span class="lineno">  127</span>                ]</div>
-<div class="line"><span class="lineno">  128</span>            ),</div>
-<div class="line"><span class="lineno">  129</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  130</span>                package=<span class="stringliteral">&#39;points_map_filter&#39;</span>,</div>
-<div class="line"><span class="lineno">  131</span>                plugin=<span class="stringliteral">&#39;points_map_filter::Node&#39;</span>,</div>
-<div class="line"><span class="lineno">  132</span>                name=<span class="stringliteral">&#39;points_map_filter&#39;</span>,</div>
-<div class="line"><span class="lineno">  133</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  134</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  135</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;points_map_filter&#39;</span>, env_log_levels) },</div>
-<div class="line"><span class="lineno">  136</span>                    {<span class="stringliteral">&#39;is_lifecycle_node&#39;</span>: <span class="keyword">True</span>} <span class="comment"># Flag to allow lifecycle node loading in lifecycle wrapper</span></div>
-<div class="line"><span class="lineno">  137</span>                ],</div>
-<div class="line"><span class="lineno">  138</span>                remappings=[</div>
-<div class="line"><span class="lineno">  139</span>                    (<span class="stringliteral">&quot;points_raw&quot;</span>, <span class="stringliteral">&quot;points_in_map&quot;</span> ),</div>
-<div class="line"><span class="lineno">  140</span>                    (<span class="stringliteral">&quot;filtered_points&quot;</span>, <span class="stringliteral">&quot;map_filtered_points&quot;</span>),</div>
-<div class="line"><span class="lineno">  141</span>                    (<span class="stringliteral">&quot;lanelet2_map&quot;</span>, <span class="stringliteral">&quot;semantic_map&quot;</span>),</div>
-<div class="line"><span class="lineno">  142</span>                    (<span class="stringliteral">&quot;change_state&quot;</span>, <span class="stringliteral">&quot;disabled_change_state&quot;</span>), <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
-<div class="line"><span class="lineno">  143</span>                    (<span class="stringliteral">&quot;get_state&quot;</span>, <span class="stringliteral">&quot;disabled_get_state&quot;</span>)        <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
-<div class="line"><span class="lineno">  144</span>                ],</div>
-<div class="line"><span class="lineno">  145</span>                parameters=[ points_map_filter_param_file ]</div>
-<div class="line"><span class="lineno">  146</span>            ),</div>
-<div class="line"><span class="lineno">  147</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  148</span>                package=<span class="stringliteral">&#39;frame_transformer&#39;</span>,</div>
-<div class="line"><span class="lineno">  149</span>                plugin=<span class="stringliteral">&#39;frame_transformer::Node&#39;</span>,</div>
-<div class="line"><span class="lineno">  150</span>                name=<span class="stringliteral">&#39;lidar_frame_transformer&#39;</span>,</div>
-<div class="line"><span class="lineno">  151</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  152</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  153</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;frame_transformer&#39;</span>, env_log_levels) },</div>
-<div class="line"><span class="lineno">  154</span>                    {<span class="stringliteral">&#39;is_lifecycle_node&#39;</span>: <span class="keyword">True</span>} <span class="comment"># Flag to allow lifecycle node loading in lifecycle wrapper</span></div>
-<div class="line"><span class="lineno">  155</span>                ],</div>
-<div class="line"><span class="lineno">  156</span>                remappings=[</div>
-<div class="line"><span class="lineno">  157</span>                    (<span class="stringliteral">&quot;input&quot;</span>, <span class="stringliteral">&quot;map_filtered_points&quot;</span> ),</div>
-<div class="line"><span class="lineno">  158</span>                    (<span class="stringliteral">&quot;output&quot;</span>, <span class="stringliteral">&quot;points_in_base_link&quot;</span>),</div>
-<div class="line"><span class="lineno">  159</span>                    (<span class="stringliteral">&quot;change_state&quot;</span>, <span class="stringliteral">&quot;disabled_change_state&quot;</span>), <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
-<div class="line"><span class="lineno">  160</span>                    (<span class="stringliteral">&quot;get_state&quot;</span>, <span class="stringliteral">&quot;disabled_get_state&quot;</span>)        <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
-<div class="line"><span class="lineno">  161</span>                ],</div>
-<div class="line"><span class="lineno">  162</span>                parameters=[ frame_transformer_param_file ]</div>
-<div class="line"><span class="lineno">  163</span>            ),</div>
-<div class="line"><span class="lineno">  164</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  165</span>                package=<span class="stringliteral">&#39;ray_ground_classifier_nodes&#39;</span>,</div>
-<div class="line"><span class="lineno">  166</span>                name=<span class="stringliteral">&#39;ray_ground_filter&#39;</span>,</div>
-<div class="line"><span class="lineno">  167</span>                plugin=<span class="stringliteral">&#39;autoware::perception::filters::ray_ground_classifier_nodes::RayGroundClassifierCloudNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  168</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  169</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  170</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;ray_ground_classifier_nodes&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  171</span>                ],</div>
-<div class="line"><span class="lineno">  172</span>                remappings=[</div>
-<div class="line"><span class="lineno">  173</span>                    (<span class="stringliteral">&quot;points_in&quot;</span>, <span class="stringliteral">&quot;points_in_base_link&quot;</span>),</div>
-<div class="line"><span class="lineno">  174</span>                    (<span class="stringliteral">&quot;points_nonground&quot;</span>, <span class="stringliteral">&quot;points_no_ground&quot;</span>)</div>
-<div class="line"><span class="lineno">  175</span>                ],</div>
-<div class="line"><span class="lineno">  176</span>                parameters=[ ray_ground_classifier_param_file]</div>
-<div class="line"><span class="lineno">  177</span>            ),</div>
-<div class="line"><span class="lineno">  178</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  179</span>                package=<span class="stringliteral">&#39;euclidean_cluster_nodes&#39;</span>,</div>
-<div class="line"><span class="lineno">  180</span>                name=<span class="stringliteral">&#39;euclidean_cluster&#39;</span>,</div>
-<div class="line"><span class="lineno">  181</span>                plugin=<span class="stringliteral">&#39;autoware::perception::segmentation::euclidean_cluster_nodes::EuclideanClusterNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  182</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  183</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  184</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;euclidean_cluster_nodes&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  185</span>                ],</div>
-<div class="line"><span class="lineno">  186</span>                remappings=[</div>
-<div class="line"><span class="lineno">  187</span>                    (<span class="stringliteral">&quot;points_in&quot;</span>, <span class="stringliteral">&quot;points_no_ground&quot;</span>)</div>
-<div class="line"><span class="lineno">  188</span>                ],</div>
-<div class="line"><span class="lineno">  189</span>                parameters=[ euclidean_cluster_param_file ]</div>
-<div class="line"><span class="lineno">  190</span>            ),</div>
-<div class="line"><span class="lineno">  191</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  192</span>                package=<span class="stringliteral">&#39;object_detection_tracking&#39;</span>,</div>
-<div class="line"><span class="lineno">  193</span>                plugin=<span class="stringliteral">&#39;bounding_box_to_detected_object::Node&#39;</span>,</div>
-<div class="line"><span class="lineno">  194</span>                name=<span class="stringliteral">&#39;bounding_box_converter&#39;</span>,</div>
-<div class="line"><span class="lineno">  195</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  196</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  197</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;object_detection_tracking&#39;</span>, env_log_levels) },</div>
-<div class="line"><span class="lineno">  198</span>                    {<span class="stringliteral">&#39;is_lifecycle_node&#39;</span>: <span class="keyword">True</span>} <span class="comment"># Flag to allow lifecycle node loading in lifecycle wrapper</span></div>
-<div class="line"><span class="lineno">  199</span>                ],</div>
-<div class="line"><span class="lineno">  200</span>                remappings=[</div>
-<div class="line"><span class="lineno">  201</span>                    (<span class="stringliteral">&quot;bounding_boxes&quot;</span>, <span class="stringliteral">&quot;lidar_bounding_boxes&quot;</span>),</div>
-<div class="line"><span class="lineno">  202</span>                    (<span class="stringliteral">&quot;lidar_detected_objects&quot;</span>, <span class="stringliteral">&quot;detected_objects&quot;</span>),</div>
-<div class="line"><span class="lineno">  203</span>                ]</div>
-<div class="line"><span class="lineno">  204</span>            ),</div>
-<div class="line"><span class="lineno">  205</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  206</span>                    package=<span class="stringliteral">&#39;tracking_nodes&#39;</span>,</div>
-<div class="line"><span class="lineno">  207</span>                    plugin=<span class="stringliteral">&#39;autoware::tracking_nodes::MultiObjectTrackerNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  208</span>                    name=<span class="stringliteral">&#39;tracking_nodes_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  209</span>                    extra_arguments=[</div>
-<div class="line"><span class="lineno">  210</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  211</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;tracking_nodes&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  212</span>                    ],</div>
-<div class="line"><span class="lineno">  213</span>                    remappings=[</div>
-<div class="line"><span class="lineno">  214</span>                        (<span class="stringliteral">&quot;ego_state&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/current_pose_with_covariance&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  215</span>                        <span class="comment"># TODO note classified_rois1 is the default single camera input topic</span></div>
-<div class="line"><span class="lineno">  216</span>                        <span class="comment"># TODO when camera detection is added, we will wan to separate this node into a different component to preserve fault tolerance</span></div>
-<div class="line"><span class="lineno">  217</span>                    ],</div>
-<div class="line"><span class="lineno">  218</span>                    parameters=[ tracking_nodes_param_file ]</div>
-<div class="line"><span class="lineno">  219</span>            )</div>
-<div class="line"><span class="lineno">  220</span>        ]</div>
-<div class="line"><span class="lineno">  221</span>    )</div>
-<div class="line"><span class="lineno">  222</span> </div>
-<div class="line"><span class="lineno">  223</span>    <span class="comment"># carma_external_objects_container contains nodes for object detection and tracking</span></div>
-<div class="line"><span class="lineno">  224</span>    <span class="comment"># since these nodes can use different object inputs they are a separate container from the lidar_perception_container</span></div>
-<div class="line"><span class="lineno">  225</span>    <span class="comment"># to preserve fault tolerance</span></div>
-<div class="line"><span class="lineno">  226</span>    carma_external_objects_container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">  227</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
-<div class="line"><span class="lineno">  228</span>        name=<span class="stringliteral">&#39;external_objects_container&#39;</span>,</div>
-<div class="line"><span class="lineno">  229</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">  230</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">  231</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">  232</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  233</span>                package=<span class="stringliteral">&#39;carma_wm_ctrl&#39;</span>,</div>
-<div class="line"><span class="lineno">  234</span>                plugin=<span class="stringliteral">&#39;carma_wm_ctrl::WMBroadcasterNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  235</span>                name=<span class="stringliteral">&#39;carma_wm_broadcaster&#39;</span>,</div>
-<div class="line"><span class="lineno">  236</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  237</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  238</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;carma_wm_ctrl&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  239</span>                ],</div>
-<div class="line"><span class="lineno">  240</span>                remappings=[</div>
-<div class="line"><span class="lineno">  241</span>                    (<span class="stringliteral">&quot;georeference&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  242</span>                    (<span class="stringliteral">&quot;geofence&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_geofence_control&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  243</span>                    (<span class="stringliteral">&quot;incoming_map&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_map&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  244</span>                    (<span class="stringliteral">&quot;current_pose&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/current_pose&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  245</span>                    (<span class="stringliteral">&quot;route&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_GUIDE_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/route&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  246</span>                    (<span class="stringliteral">&quot;outgoing_geofence_ack&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/outgoing_mobility_operation&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  247</span>                    (<span class="stringliteral">&quot;outgoing_geofence_request&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/outgoing_geofence_request&quot;</span> ] )</div>
+<div class="line"><span class="lineno">   77</span>    subsystem_controller_param_file = LaunchConfiguration(<span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span>)</div>
+<div class="line"><span class="lineno">   78</span>    declare_subsystem_controller_param_file_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   79</span>        name = <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span>,</div>
+<div class="line"><span class="lineno">   80</span>        default_value = subsystem_controller_default_param_file,</div>
+<div class="line"><span class="lineno">   81</span>        description = <span class="stringliteral">&quot;Path to file containing override parameters for the subsystem controller&quot;</span></div>
+<div class="line"><span class="lineno">   82</span>    )</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    frame_transformer_param_file = os.path.join(</div>
+<div class="line"><span class="lineno">   85</span>        get_package_share_directory(<span class="stringliteral">&#39;frame_transformer&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    object_visualizer_param_file = os.path.join(</div>
+<div class="line"><span class="lineno">   88</span>        get_package_share_directory(<span class="stringliteral">&#39;object_visualizer&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    points_map_filter_param_file = os.path.join(</div>
+<div class="line"><span class="lineno">   91</span>        get_package_share_directory(<span class="stringliteral">&#39;points_map_filter&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    motion_computation_param_file = os.path.join(</div>
+<div class="line"><span class="lineno">   94</span>        get_package_share_directory(<span class="stringliteral">&#39;motion_computation&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    env_log_levels = EnvironmentVariable(<span class="stringliteral">&#39;CARMA_ROS_LOGGING_CONFIG&#39;</span>, default_value=<span class="stringliteral">&#39;{ &quot;default_level&quot; : &quot;WARN&quot; }&#39;</span>)</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    carma_wm_ctrl_param_file = os.path.join(</div>
+<div class="line"><span class="lineno">   99</span>        get_package_share_directory(<span class="stringliteral">&#39;carma_wm_ctrl&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    cp_multiple_object_tracker_node_file = str(PurePath(get_package_share_directory(<span class="stringliteral">&quot;carma_cooperative_perception&quot;</span>), <span class="stringliteral">&quot;config/cp_multiple_object_tracker_node.yaml&quot;</span>))</div>
+<div class="line"><span class="lineno">  102</span>    cp_host_vehicle_filter_node_file = str(PurePath(get_package_share_directory(<span class="stringliteral">&quot;carma_cooperative_perception&quot;</span>), <span class="stringliteral">&quot;config/cp_host_vehicle_filter_node.yaml&quot;</span>))</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>    <span class="comment"># lidar_perception_container contains all nodes for lidar based object perception</span></div>
+<div class="line"><span class="lineno">  105</span>    <span class="comment"># a failure in any one node in the chain would invalidate the rest of it, so they can all be</span></div>
+<div class="line"><span class="lineno">  106</span>    <span class="comment"># placed in the same container without reducing fault tolerance</span></div>
+<div class="line"><span class="lineno">  107</span>    <span class="comment"># a lifecycle wrapper container is used to ensure autoware.auto nodes adhere to the subsystem_controller&#39;s signals</span></div>
+<div class="line"><span class="lineno">  108</span>    lidar_perception_container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">  109</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>, <span class="comment"># rclcpp_components</span></div>
+<div class="line"><span class="lineno">  110</span>        name=<span class="stringliteral">&#39;perception_points_filter_container&#39;</span>,</div>
+<div class="line"><span class="lineno">  111</span>        executable=<span class="stringliteral">&#39;lifecycle_component_wrapper_mt&#39;</span>,</div>
+<div class="line"><span class="lineno">  112</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">  113</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">  114</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  115</span>                package=<span class="stringliteral">&#39;frame_transformer&#39;</span>,</div>
+<div class="line"><span class="lineno">  116</span>                plugin=<span class="stringliteral">&#39;frame_transformer::Node&#39;</span>,</div>
+<div class="line"><span class="lineno">  117</span>                name=<span class="stringliteral">&#39;lidar_to_map_frame_transformer&#39;</span>,</div>
+<div class="line"><span class="lineno">  118</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  119</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  120</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;frame_transformer&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  121</span>                    {<span class="stringliteral">&#39;is_lifecycle_node&#39;</span>: <span class="keyword">True</span>} <span class="comment"># Flag to allow lifecycle node loading in lifecycle wrapper</span></div>
+<div class="line"><span class="lineno">  122</span>                ],</div>
+<div class="line"><span class="lineno">  123</span>                remappings=[</div>
+<div class="line"><span class="lineno">  124</span>                    (<span class="stringliteral">&quot;input&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/lidar/points_raw&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  125</span>                    (<span class="stringliteral">&quot;output&quot;</span>, <span class="stringliteral">&quot;points_in_map&quot;</span>),</div>
+<div class="line"><span class="lineno">  126</span>                    (<span class="stringliteral">&quot;change_state&quot;</span>, <span class="stringliteral">&quot;disabled_change_state&quot;</span>), <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
+<div class="line"><span class="lineno">  127</span>                    (<span class="stringliteral">&quot;get_state&quot;</span>, <span class="stringliteral">&quot;disabled_get_state&quot;</span>)        <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
+<div class="line"><span class="lineno">  128</span>                ],</div>
+<div class="line"><span class="lineno">  129</span>                parameters=[</div>
+<div class="line"><span class="lineno">  130</span>                    { <span class="stringliteral">&quot;target_frame&quot;</span> : <span class="stringliteral">&quot;map&quot;</span>},</div>
+<div class="line"><span class="lineno">  131</span>                    { <span class="stringliteral">&quot;message_type&quot;</span> : <span class="stringliteral">&quot;sensor_msgs/PointCloud2&quot;</span>},</div>
+<div class="line"><span class="lineno">  132</span>                    { <span class="stringliteral">&quot;queue_size&quot;</span> : 1},</div>
+<div class="line"><span class="lineno">  133</span>                    { <span class="stringliteral">&quot;timeout&quot;</span> : 50 },</div>
+<div class="line"><span class="lineno">  134</span>                    vehicle_config_param_file</div>
+<div class="line"><span class="lineno">  135</span>                ]</div>
+<div class="line"><span class="lineno">  136</span>            ),</div>
+<div class="line"><span class="lineno">  137</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  138</span>                package=<span class="stringliteral">&#39;points_map_filter&#39;</span>,</div>
+<div class="line"><span class="lineno">  139</span>                plugin=<span class="stringliteral">&#39;points_map_filter::Node&#39;</span>,</div>
+<div class="line"><span class="lineno">  140</span>                name=<span class="stringliteral">&#39;points_map_filter&#39;</span>,</div>
+<div class="line"><span class="lineno">  141</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  142</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  143</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;points_map_filter&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  144</span>                    {<span class="stringliteral">&#39;is_lifecycle_node&#39;</span>: <span class="keyword">True</span>} <span class="comment"># Flag to allow lifecycle node loading in lifecycle wrapper</span></div>
+<div class="line"><span class="lineno">  145</span>                ],</div>
+<div class="line"><span class="lineno">  146</span>                remappings=[</div>
+<div class="line"><span class="lineno">  147</span>                    (<span class="stringliteral">&quot;points_raw&quot;</span>, <span class="stringliteral">&quot;points_in_map&quot;</span> ),</div>
+<div class="line"><span class="lineno">  148</span>                    (<span class="stringliteral">&quot;filtered_points&quot;</span>, <span class="stringliteral">&quot;map_filtered_points&quot;</span>),</div>
+<div class="line"><span class="lineno">  149</span>                    (<span class="stringliteral">&quot;lanelet2_map&quot;</span>, <span class="stringliteral">&quot;semantic_map&quot;</span>),</div>
+<div class="line"><span class="lineno">  150</span>                    (<span class="stringliteral">&quot;change_state&quot;</span>, <span class="stringliteral">&quot;disabled_change_state&quot;</span>), <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
+<div class="line"><span class="lineno">  151</span>                    (<span class="stringliteral">&quot;get_state&quot;</span>, <span class="stringliteral">&quot;disabled_get_state&quot;</span>)        <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
+<div class="line"><span class="lineno">  152</span>                ],</div>
+<div class="line"><span class="lineno">  153</span>                parameters=[ points_map_filter_param_file, vehicle_config_param_file ]</div>
+<div class="line"><span class="lineno">  154</span>            ),</div>
+<div class="line"><span class="lineno">  155</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  156</span>                package=<span class="stringliteral">&#39;frame_transformer&#39;</span>,</div>
+<div class="line"><span class="lineno">  157</span>                plugin=<span class="stringliteral">&#39;frame_transformer::Node&#39;</span>,</div>
+<div class="line"><span class="lineno">  158</span>                name=<span class="stringliteral">&#39;lidar_frame_transformer&#39;</span>,</div>
+<div class="line"><span class="lineno">  159</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  160</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  161</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;frame_transformer&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  162</span>                    {<span class="stringliteral">&#39;is_lifecycle_node&#39;</span>: <span class="keyword">True</span>} <span class="comment"># Flag to allow lifecycle node loading in lifecycle wrapper</span></div>
+<div class="line"><span class="lineno">  163</span>                ],</div>
+<div class="line"><span class="lineno">  164</span>                remappings=[</div>
+<div class="line"><span class="lineno">  165</span>                    (<span class="stringliteral">&quot;input&quot;</span>, <span class="stringliteral">&quot;map_filtered_points&quot;</span> ),</div>
+<div class="line"><span class="lineno">  166</span>                    (<span class="stringliteral">&quot;output&quot;</span>, <span class="stringliteral">&quot;points_in_base_link&quot;</span>),</div>
+<div class="line"><span class="lineno">  167</span>                    (<span class="stringliteral">&quot;change_state&quot;</span>, <span class="stringliteral">&quot;disabled_change_state&quot;</span>), <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
+<div class="line"><span class="lineno">  168</span>                    (<span class="stringliteral">&quot;get_state&quot;</span>, <span class="stringliteral">&quot;disabled_get_state&quot;</span>)        <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
+<div class="line"><span class="lineno">  169</span>                ],</div>
+<div class="line"><span class="lineno">  170</span>                parameters=[ frame_transformer_param_file, vehicle_config_param_file ]</div>
+<div class="line"><span class="lineno">  171</span>            ),</div>
+<div class="line"><span class="lineno">  172</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  173</span>                package=<span class="stringliteral">&#39;ray_ground_classifier_nodes&#39;</span>,</div>
+<div class="line"><span class="lineno">  174</span>                name=<span class="stringliteral">&#39;ray_ground_filter&#39;</span>,</div>
+<div class="line"><span class="lineno">  175</span>                plugin=<span class="stringliteral">&#39;autoware::perception::filters::ray_ground_classifier_nodes::RayGroundClassifierCloudNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  176</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  177</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  178</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;ray_ground_classifier_nodes&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  179</span>                ],</div>
+<div class="line"><span class="lineno">  180</span>                remappings=[</div>
+<div class="line"><span class="lineno">  181</span>                    (<span class="stringliteral">&quot;points_in&quot;</span>, <span class="stringliteral">&quot;points_in_base_link&quot;</span>),</div>
+<div class="line"><span class="lineno">  182</span>                    (<span class="stringliteral">&quot;points_nonground&quot;</span>, <span class="stringliteral">&quot;points_no_ground&quot;</span>)</div>
+<div class="line"><span class="lineno">  183</span>                ],</div>
+<div class="line"><span class="lineno">  184</span>                parameters=[ ray_ground_classifier_param_file, vehicle_config_param_file]</div>
+<div class="line"><span class="lineno">  185</span>            ),</div>
+<div class="line"><span class="lineno">  186</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  187</span>                package=<span class="stringliteral">&#39;euclidean_cluster_nodes&#39;</span>,</div>
+<div class="line"><span class="lineno">  188</span>                name=<span class="stringliteral">&#39;euclidean_cluster&#39;</span>,</div>
+<div class="line"><span class="lineno">  189</span>                plugin=<span class="stringliteral">&#39;autoware::perception::segmentation::euclidean_cluster_nodes::EuclideanClusterNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  190</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  191</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  192</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;euclidean_cluster_nodes&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  193</span>                ],</div>
+<div class="line"><span class="lineno">  194</span>                remappings=[</div>
+<div class="line"><span class="lineno">  195</span>                    (<span class="stringliteral">&quot;points_in&quot;</span>, <span class="stringliteral">&quot;points_no_ground&quot;</span>)</div>
+<div class="line"><span class="lineno">  196</span>                ],</div>
+<div class="line"><span class="lineno">  197</span>                parameters=[ euclidean_cluster_param_file, vehicle_config_param_file]</div>
+<div class="line"><span class="lineno">  198</span>            ),</div>
+<div class="line"><span class="lineno">  199</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  200</span>                package=<span class="stringliteral">&#39;object_detection_tracking&#39;</span>,</div>
+<div class="line"><span class="lineno">  201</span>                plugin=<span class="stringliteral">&#39;bounding_box_to_detected_object::Node&#39;</span>,</div>
+<div class="line"><span class="lineno">  202</span>                name=<span class="stringliteral">&#39;bounding_box_converter&#39;</span>,</div>
+<div class="line"><span class="lineno">  203</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  204</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  205</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;object_detection_tracking&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  206</span>                    {<span class="stringliteral">&#39;is_lifecycle_node&#39;</span>: <span class="keyword">True</span>} <span class="comment"># Flag to allow lifecycle node loading in lifecycle wrapper</span></div>
+<div class="line"><span class="lineno">  207</span>                ],</div>
+<div class="line"><span class="lineno">  208</span>                remappings=[</div>
+<div class="line"><span class="lineno">  209</span>                    (<span class="stringliteral">&quot;bounding_boxes&quot;</span>, <span class="stringliteral">&quot;lidar_bounding_boxes&quot;</span>),</div>
+<div class="line"><span class="lineno">  210</span>                    (<span class="stringliteral">&quot;lidar_detected_objects&quot;</span>, <span class="stringliteral">&quot;detected_objects&quot;</span>),</div>
+<div class="line"><span class="lineno">  211</span>                ],</div>
+<div class="line"><span class="lineno">  212</span>                parameters=[vehicle_config_param_file]</div>
+<div class="line"><span class="lineno">  213</span>            ),</div>
+<div class="line"><span class="lineno">  214</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  215</span>                    package=<span class="stringliteral">&#39;tracking_nodes&#39;</span>,</div>
+<div class="line"><span class="lineno">  216</span>                    plugin=<span class="stringliteral">&#39;autoware::tracking_nodes::MultiObjectTrackerNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  217</span>                    name=<span class="stringliteral">&#39;tracking_nodes_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  218</span>                    extra_arguments=[</div>
+<div class="line"><span class="lineno">  219</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  220</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;tracking_nodes&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  221</span>                    ],</div>
+<div class="line"><span class="lineno">  222</span>                    remappings=[</div>
+<div class="line"><span class="lineno">  223</span>                        (<span class="stringliteral">&quot;ego_state&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/current_pose_with_covariance&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  224</span>                        <span class="comment"># TODO note classified_rois1 is the default single camera input topic</span></div>
+<div class="line"><span class="lineno">  225</span>                        <span class="comment"># TODO when camera detection is added, we will wan to separate this node into a different component to preserve fault tolerance</span></div>
+<div class="line"><span class="lineno">  226</span>                    ],</div>
+<div class="line"><span class="lineno">  227</span>                    parameters=[ tracking_nodes_param_file, vehicle_config_param_file]</div>
+<div class="line"><span class="lineno">  228</span>            )</div>
+<div class="line"><span class="lineno">  229</span>        ]</div>
+<div class="line"><span class="lineno">  230</span>    )</div>
+<div class="line"><span class="lineno">  231</span> </div>
+<div class="line"><span class="lineno">  232</span>    <span class="comment"># carma_external_objects_container contains nodes for object detection and tracking</span></div>
+<div class="line"><span class="lineno">  233</span>    <span class="comment"># since these nodes can use different object inputs they are a separate container from the lidar_perception_container</span></div>
+<div class="line"><span class="lineno">  234</span>    <span class="comment"># to preserve fault tolerance</span></div>
+<div class="line"><span class="lineno">  235</span>    carma_external_objects_container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">  236</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
+<div class="line"><span class="lineno">  237</span>        name=<span class="stringliteral">&#39;external_objects_container&#39;</span>,</div>
+<div class="line"><span class="lineno">  238</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
+<div class="line"><span class="lineno">  239</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">  240</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">  241</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  242</span>                package=<span class="stringliteral">&#39;carma_wm_ctrl&#39;</span>,</div>
+<div class="line"><span class="lineno">  243</span>                plugin=<span class="stringliteral">&#39;carma_wm_ctrl::WMBroadcasterNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  244</span>                name=<span class="stringliteral">&#39;carma_wm_broadcaster&#39;</span>,</div>
+<div class="line"><span class="lineno">  245</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  246</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  247</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;carma_wm_ctrl&#39;</span>, env_log_levels) }</div>
 <div class="line"><span class="lineno">  248</span>                ],</div>
-<div class="line"><span class="lineno">  249</span>                parameters=[ carma_wm_ctrl_param_file, vehicle_config_param_file, vehicle_characteristics_param_file ]</div>
-<div class="line"><span class="lineno">  250</span>            ),</div>
-<div class="line"><span class="lineno">  251</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  252</span>                    package=<span class="stringliteral">&#39;object_detection_tracking&#39;</span>,</div>
-<div class="line"><span class="lineno">  253</span>                    plugin=<span class="stringliteral">&#39;object::ObjectDetectionTrackingNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  254</span>                    name=<span class="stringliteral">&#39;external_object&#39;</span>,</div>
-<div class="line"><span class="lineno">  255</span>                    extra_arguments=[</div>
-<div class="line"><span class="lineno">  256</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  257</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;object_detection_tracking&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  258</span>                    ],</div>
-<div class="line"><span class="lineno">  259</span>                    remappings=[</div>
-<div class="line"><span class="lineno">  260</span>                        (<span class="stringliteral">&quot;detected_objects&quot;</span>, <span class="stringliteral">&quot;tracked_objects&quot;</span>),</div>
-<div class="line"><span class="lineno">  261</span>                    ],</div>
-<div class="line"><span class="lineno">  262</span>                    parameters=[ object_detection_tracking_param_file ]</div>
-<div class="line"><span class="lineno">  263</span>            ),</div>
-<div class="line"><span class="lineno">  264</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  265</span>                    package=<span class="stringliteral">&#39;object_visualizer&#39;</span>,</div>
-<div class="line"><span class="lineno">  266</span>                    plugin=<span class="stringliteral">&#39;object_visualizer::Node&#39;</span>,</div>
-<div class="line"><span class="lineno">  267</span>                    name=<span class="stringliteral">&#39;object_visualizer_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  268</span>                    extra_arguments=[</div>
-<div class="line"><span class="lineno">  269</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  270</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;object_visualizer&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  271</span>                    ],</div>
-<div class="line"><span class="lineno">  272</span>                    remappings=[</div>
-<div class="line"><span class="lineno">  273</span>                        (<span class="stringliteral">&quot;external_objects&quot;</span>, <span class="stringliteral">&quot;external_object_predictions&quot;</span>),</div>
-<div class="line"><span class="lineno">  274</span>                    ],</div>
-<div class="line"><span class="lineno">  275</span>                    parameters=[ object_visualizer_param_file ]</div>
-<div class="line"><span class="lineno">  276</span>            ),</div>
-<div class="line"><span class="lineno">  277</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  278</span>                package=<span class="stringliteral">&#39;motion_computation&#39;</span>,</div>
-<div class="line"><span class="lineno">  279</span>                plugin=<span class="stringliteral">&#39;motion_computation::MotionComputationNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  280</span>                name=<span class="stringliteral">&#39;motion_computation_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  281</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  282</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  283</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;motion_computation&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  284</span>                ],</div>
-<div class="line"><span class="lineno">  285</span>                remappings=[</div>
-<div class="line"><span class="lineno">  286</span>                    (<span class="stringliteral">&quot;incoming_mobility_path&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_mobility_path&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  287</span>                    (<span class="stringliteral">&quot;incoming_psm&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_psm&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  288</span>                    (<span class="stringliteral">&quot;incoming_bsm&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_bsm&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  289</span>                    (<span class="stringliteral">&quot;georeference&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  290</span>                    (<span class="stringliteral">&quot;external_objects&quot;</span>, <span class="stringliteral">&quot;fused_external_objects&quot;</span>)</div>
-<div class="line"><span class="lineno">  291</span>                ],</div>
-<div class="line"><span class="lineno">  292</span>                parameters=[</div>
-<div class="line"><span class="lineno">  293</span>                    motion_computation_param_file,</div>
-<div class="line"><span class="lineno">  294</span>                ]</div>
-<div class="line"><span class="lineno">  295</span>            ),</div>
-<div class="line"><span class="lineno">  296</span>            ComposableNode( <span class="comment">#CARMA Motion Prediction Visualizer Node</span></div>
-<div class="line"><span class="lineno">  297</span>                    package=<span class="stringliteral">&#39;motion_prediction_visualizer&#39;</span>,</div>
-<div class="line"><span class="lineno">  298</span>                    plugin=<span class="stringliteral">&#39;motion_prediction_visualizer::Node&#39;</span>,</div>
-<div class="line"><span class="lineno">  299</span>                    name=<span class="stringliteral">&#39;motion_prediction_visualizer&#39;</span>,</div>
-<div class="line"><span class="lineno">  300</span>                    extra_arguments=[</div>
-<div class="line"><span class="lineno">  301</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  302</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;motion_prediction_visualizer&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  303</span>                    ],</div>
-<div class="line"><span class="lineno">  304</span>                    remappings=[</div>
-<div class="line"><span class="lineno">  305</span>                        (<span class="stringliteral">&quot;external_objects&quot;</span>, <span class="stringliteral">&quot;external_object_predictions&quot;</span> ),</div>
-<div class="line"><span class="lineno">  306</span>                    ]</div>
-<div class="line"><span class="lineno">  307</span>            ),</div>
-<div class="line"><span class="lineno">  308</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  309</span>                    package=<span class="stringliteral">&#39;roadway_objects&#39;</span>,</div>
-<div class="line"><span class="lineno">  310</span>                    plugin=<span class="stringliteral">&#39;roadway_objects::RoadwayObjectsNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  311</span>                    name=<span class="stringliteral">&#39;roadway_objects_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  312</span>                    extra_arguments=[</div>
-<div class="line"><span class="lineno">  313</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  314</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;roadway_objects&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  249</span>                remappings=[</div>
+<div class="line"><span class="lineno">  250</span>                    (<span class="stringliteral">&quot;georeference&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  251</span>                    (<span class="stringliteral">&quot;geofence&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_geofence_control&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  252</span>                    (<span class="stringliteral">&quot;incoming_map&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_map&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  253</span>                    (<span class="stringliteral">&quot;current_pose&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/current_pose&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  254</span>                    (<span class="stringliteral">&quot;route&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_GUIDE_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/route&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  255</span>                    (<span class="stringliteral">&quot;outgoing_geofence_ack&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/outgoing_mobility_operation&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  256</span>                    (<span class="stringliteral">&quot;outgoing_geofence_request&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/outgoing_geofence_request&quot;</span> ] )</div>
+<div class="line"><span class="lineno">  257</span>                ],</div>
+<div class="line"><span class="lineno">  258</span>                parameters=[ carma_wm_ctrl_param_file, vehicle_config_param_file, vehicle_characteristics_param_file ]</div>
+<div class="line"><span class="lineno">  259</span>            ),</div>
+<div class="line"><span class="lineno">  260</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  261</span>                    package=<span class="stringliteral">&#39;object_detection_tracking&#39;</span>,</div>
+<div class="line"><span class="lineno">  262</span>                    plugin=<span class="stringliteral">&#39;object::ObjectDetectionTrackingNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  263</span>                    name=<span class="stringliteral">&#39;external_object&#39;</span>,</div>
+<div class="line"><span class="lineno">  264</span>                    extra_arguments=[</div>
+<div class="line"><span class="lineno">  265</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  266</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;object_detection_tracking&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  267</span>                    ],</div>
+<div class="line"><span class="lineno">  268</span>                    remappings=[</div>
+<div class="line"><span class="lineno">  269</span>                        (<span class="stringliteral">&quot;detected_objects&quot;</span>, <span class="stringliteral">&quot;tracked_objects&quot;</span>),</div>
+<div class="line"><span class="lineno">  270</span>                    ],</div>
+<div class="line"><span class="lineno">  271</span>                    parameters=[ object_detection_tracking_param_file, vehicle_config_param_file]</div>
+<div class="line"><span class="lineno">  272</span>            ),</div>
+<div class="line"><span class="lineno">  273</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  274</span>                    package=<span class="stringliteral">&#39;object_visualizer&#39;</span>,</div>
+<div class="line"><span class="lineno">  275</span>                    plugin=<span class="stringliteral">&#39;object_visualizer::Node&#39;</span>,</div>
+<div class="line"><span class="lineno">  276</span>                    name=<span class="stringliteral">&#39;object_visualizer_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  277</span>                    extra_arguments=[</div>
+<div class="line"><span class="lineno">  278</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  279</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;object_visualizer&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  280</span>                    ],</div>
+<div class="line"><span class="lineno">  281</span>                    remappings=[</div>
+<div class="line"><span class="lineno">  282</span>                        (<span class="stringliteral">&quot;external_objects&quot;</span>, <span class="stringliteral">&quot;external_object_predictions&quot;</span>),</div>
+<div class="line"><span class="lineno">  283</span>                    ],</div>
+<div class="line"><span class="lineno">  284</span>                    parameters=[ object_visualizer_param_file, vehicle_config_param_file ]</div>
+<div class="line"><span class="lineno">  285</span>            ),</div>
+<div class="line"><span class="lineno">  286</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  287</span>                package=<span class="stringliteral">&#39;motion_computation&#39;</span>,</div>
+<div class="line"><span class="lineno">  288</span>                plugin=<span class="stringliteral">&#39;motion_computation::MotionComputationNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  289</span>                name=<span class="stringliteral">&#39;motion_computation_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  290</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  291</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  292</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;motion_computation&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  293</span>                ],</div>
+<div class="line"><span class="lineno">  294</span>                remappings=[</div>
+<div class="line"><span class="lineno">  295</span>                    (<span class="stringliteral">&quot;incoming_mobility_path&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_mobility_path&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  296</span>                    (<span class="stringliteral">&quot;incoming_psm&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_psm&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  297</span>                    (<span class="stringliteral">&quot;incoming_bsm&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_bsm&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  298</span>                    (<span class="stringliteral">&quot;georeference&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  299</span>                    (<span class="stringliteral">&quot;external_objects&quot;</span>, <span class="stringliteral">&quot;fused_external_objects&quot;</span>)</div>
+<div class="line"><span class="lineno">  300</span>                ],</div>
+<div class="line"><span class="lineno">  301</span>                parameters=[</div>
+<div class="line"><span class="lineno">  302</span>                    motion_computation_param_file, vehicle_config_param_file</div>
+<div class="line"><span class="lineno">  303</span>                ]</div>
+<div class="line"><span class="lineno">  304</span>            ),</div>
+<div class="line"><span class="lineno">  305</span>            ComposableNode( <span class="comment">#CARMA Motion Prediction Visualizer Node</span></div>
+<div class="line"><span class="lineno">  306</span>                    package=<span class="stringliteral">&#39;motion_prediction_visualizer&#39;</span>,</div>
+<div class="line"><span class="lineno">  307</span>                    plugin=<span class="stringliteral">&#39;motion_prediction_visualizer::Node&#39;</span>,</div>
+<div class="line"><span class="lineno">  308</span>                    name=<span class="stringliteral">&#39;motion_prediction_visualizer&#39;</span>,</div>
+<div class="line"><span class="lineno">  309</span>                    extra_arguments=[</div>
+<div class="line"><span class="lineno">  310</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  311</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;motion_prediction_visualizer&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  312</span>                    ],</div>
+<div class="line"><span class="lineno">  313</span>                    remappings=[</div>
+<div class="line"><span class="lineno">  314</span>                        (<span class="stringliteral">&quot;external_objects&quot;</span>, <span class="stringliteral">&quot;external_object_predictions&quot;</span> ),</div>
 <div class="line"><span class="lineno">  315</span>                    ],</div>
-<div class="line"><span class="lineno">  316</span>                    remappings=[</div>
-<div class="line"><span class="lineno">  317</span>                        (<span class="stringliteral">&quot;external_objects&quot;</span>, <span class="stringliteral">&quot;external_object_predictions&quot;</span>),</div>
-<div class="line"><span class="lineno">  318</span>                        (<span class="stringliteral">&quot;incoming_spat&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_spat&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  319</span>                        (<span class="stringliteral">&quot;route&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_GUIDE_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/route&quot;</span> ] )</div>
-<div class="line"><span class="lineno">  320</span>                    ],</div>
-<div class="line"><span class="lineno">  321</span>                    parameters = [</div>
-<div class="line"><span class="lineno">  322</span>                        vehicle_config_param_file</div>
-<div class="line"><span class="lineno">  323</span>                    ]</div>
-<div class="line"><span class="lineno">  324</span> </div>
-<div class="line"><span class="lineno">  325</span>            ),</div>
-<div class="line"><span class="lineno">  326</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  327</span>                    package=<span class="stringliteral">&#39;traffic_incident_parser&#39;</span>,</div>
-<div class="line"><span class="lineno">  328</span>                    plugin=<span class="stringliteral">&#39;traffic_incident_parser::TrafficIncidentParserNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  329</span>                    name=<span class="stringliteral">&#39;traffic_incident_parser_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  330</span>                    extra_arguments=[</div>
-<div class="line"><span class="lineno">  331</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  332</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;traffic_incident_parser&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  333</span>                    ],</div>
-<div class="line"><span class="lineno">  334</span>                    remappings=[</div>
-<div class="line"><span class="lineno">  335</span>                        (<span class="stringliteral">&quot;georeference&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  336</span>                        (<span class="stringliteral">&quot;geofence&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_geofence_control&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  337</span>                        (<span class="stringliteral">&quot;incoming_mobility_operation&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_mobility_operation&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  338</span>                        (<span class="stringliteral">&quot;incoming_spat&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_spat&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  339</span>                        (<span class="stringliteral">&quot;route&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_GUIDE_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/route&quot;</span> ] )</div>
-<div class="line"><span class="lineno">  340</span>                    ],</div>
-<div class="line"><span class="lineno">  341</span>                    parameters = [</div>
-<div class="line"><span class="lineno">  342</span>                        vehicle_config_param_file</div>
-<div class="line"><span class="lineno">  343</span>                    ]</div>
-<div class="line"><span class="lineno">  344</span> </div>
-<div class="line"><span class="lineno">  345</span>            ),</div>
-<div class="line"><span class="lineno">  346</span>        ]</div>
-<div class="line"><span class="lineno">  347</span>    )</div>
-<div class="line"><span class="lineno">  348</span> </div>
-<div class="line"><span class="lineno">  349</span>    <span class="comment"># Vector map loader</span></div>
-<div class="line"><span class="lineno">  350</span>    lanelet2_map_loader_container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">  351</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>, <span class="comment"># rclcpp_components</span></div>
-<div class="line"><span class="lineno">  352</span>        name=<span class="stringliteral">&#39;lanelet2_map_loader_container&#39;</span>,</div>
-<div class="line"><span class="lineno">  353</span>        executable=<span class="stringliteral">&#39;lifecycle_component_wrapper_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">  354</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">  355</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">  356</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  357</span>                package=<span class="stringliteral">&#39;map_file_ros2&#39;</span>,</div>
-<div class="line"><span class="lineno">  358</span>                plugin=<span class="stringliteral">&#39;lanelet2_map_loader::Lanelet2MapLoader&#39;</span>,</div>
-<div class="line"><span class="lineno">  359</span>                name=<span class="stringliteral">&#39;lanelet2_map_loader&#39;</span>,</div>
-<div class="line"><span class="lineno">  360</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  361</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  362</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;lanelet2_map_loader&#39;</span>, env_log_levels) },</div>
-<div class="line"><span class="lineno">  363</span>                    {<span class="stringliteral">&#39;is_lifecycle_node&#39;</span>: <span class="keyword">True</span>} <span class="comment"># Flag to allow lifecycle node loading in lifecycle wrapper</span></div>
-<div class="line"><span class="lineno">  364</span>                ],</div>
-<div class="line"><span class="lineno">  365</span>                remappings=[</div>
-<div class="line"><span class="lineno">  366</span>                    (<span class="stringliteral">&quot;lanelet_map_bin&quot;</span>, <span class="stringliteral">&quot;base_map&quot;</span>),</div>
-<div class="line"><span class="lineno">  367</span>                    (<span class="stringliteral">&quot;change_state&quot;</span>, <span class="stringliteral">&quot;disabled_change_state&quot;</span>), <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
-<div class="line"><span class="lineno">  368</span>                    (<span class="stringliteral">&quot;get_state&quot;</span>, <span class="stringliteral">&quot;disabled_get_state&quot;</span>)        <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
-<div class="line"><span class="lineno">  369</span>                ],</div>
-<div class="line"><span class="lineno">  370</span>                parameters=[</div>
-<div class="line"><span class="lineno">  371</span>                    { <span class="stringliteral">&quot;lanelet2_filename&quot;</span> : vector_map_file}</div>
-<div class="line"><span class="lineno">  372</span>                ]</div>
-<div class="line"><span class="lineno">  373</span>            )</div>
-<div class="line"><span class="lineno">  374</span>        ]</div>
-<div class="line"><span class="lineno">  375</span>    )</div>
-<div class="line"><span class="lineno">  376</span> </div>
-<div class="line"><span class="lineno">  377</span> </div>
-<div class="line"><span class="lineno">  378</span>    <span class="comment"># Vector map visualization</span></div>
-<div class="line"><span class="lineno">  379</span>    lanelet2_map_visualization_container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">  380</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>, <span class="comment"># rclcpp_components</span></div>
-<div class="line"><span class="lineno">  381</span>        name=<span class="stringliteral">&#39;lanelet2_map_visualization_container&#39;</span>,</div>
-<div class="line"><span class="lineno">  382</span>        executable=<span class="stringliteral">&#39;lifecycle_component_wrapper_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">  383</span>        namespace= GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">  384</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">  385</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  386</span>                package=<span class="stringliteral">&#39;map_file_ros2&#39;</span>,</div>
-<div class="line"><span class="lineno">  387</span>                plugin=<span class="stringliteral">&#39;lanelet2_map_visualization::Lanelet2MapVisualization&#39;</span>,</div>
-<div class="line"><span class="lineno">  388</span>                name=<span class="stringliteral">&#39;lanelet2_map_visualization&#39;</span>,</div>
-<div class="line"><span class="lineno">  389</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  390</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  391</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;lanelet2_map_visualization&#39;</span>, env_log_levels) },</div>
-<div class="line"><span class="lineno">  392</span>                    {<span class="stringliteral">&#39;is_lifecycle_node&#39;</span>: <span class="keyword">True</span>} <span class="comment"># Flag to allow lifecycle node loading in lifecycle wrapper</span></div>
-<div class="line"><span class="lineno">  393</span>                ],</div>
-<div class="line"><span class="lineno">  394</span>                remappings=[</div>
-<div class="line"><span class="lineno">  395</span>                    (<span class="stringliteral">&quot;lanelet_map_bin&quot;</span>, <span class="stringliteral">&quot;semantic_map&quot;</span>),</div>
-<div class="line"><span class="lineno">  396</span>                    (<span class="stringliteral">&quot;change_state&quot;</span>, <span class="stringliteral">&quot;disabled_change_state&quot;</span>), <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
-<div class="line"><span class="lineno">  397</span>                    (<span class="stringliteral">&quot;get_state&quot;</span>, <span class="stringliteral">&quot;disabled_get_state&quot;</span>)        <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
-<div class="line"><span class="lineno">  398</span>                ],</div>
-<div class="line"><span class="lineno">  399</span>                parameters=[</div>
-<div class="line"><span class="lineno">  400</span> </div>
-<div class="line"><span class="lineno">  401</span>                ]</div>
-<div class="line"><span class="lineno">  402</span>            )</div>
-<div class="line"><span class="lineno">  403</span>        ]</div>
-<div class="line"><span class="lineno">  404</span>    )</div>
-<div class="line"><span class="lineno">  405</span> </div>
-<div class="line"><span class="lineno">  406</span>    <span class="comment"># Cooperative Perception Stack</span></div>
-<div class="line"><span class="lineno">  407</span>    carma_cooperative_perception_container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">  408</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>, <span class="comment"># rclcpp_components</span></div>
-<div class="line"><span class="lineno">  409</span>        name=<span class="stringliteral">&#39;carma_cooperative_perception_container&#39;</span>,</div>
-<div class="line"><span class="lineno">  410</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">  411</span>        namespace= GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">  412</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">  413</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  414</span>                package=<span class="stringliteral">&#39;carma_cooperative_perception&#39;</span>,</div>
-<div class="line"><span class="lineno">  415</span>                plugin=<span class="stringliteral">&#39;carma_cooperative_perception::ExternalObjectListToDetectionListNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  416</span>                name=<span class="stringliteral">&#39;cp_external_object_list_to_detection_list_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  417</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  418</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  419</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cp_external_object_list_to_detection_list_node&#39;</span>, env_log_levels) },</div>
-<div class="line"><span class="lineno">  420</span>                ],</div>
-<div class="line"><span class="lineno">  421</span>                remappings=[</div>
-<div class="line"><span class="lineno">  422</span>                    (<span class="stringliteral">&quot;input/georeference&quot;</span>, [EnvironmentVariable(<span class="stringliteral">&quot;CARMA_LOCZ_NS&quot;</span>, default_value=<span class="stringliteral">&quot;&quot;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span>]),</div>
-<div class="line"><span class="lineno">  423</span>                    (<span class="stringliteral">&quot;output/detections&quot;</span>, <span class="stringliteral">&quot;full_detection_list&quot;</span>),</div>
-<div class="line"><span class="lineno">  424</span>                    (<span class="stringliteral">&quot;input/external_objects&quot;</span>, <span class="stringliteral">&quot;external_objects&quot;</span>),</div>
-<div class="line"><span class="lineno">  425</span>                ],</div>
-<div class="line"><span class="lineno">  426</span>                parameters=[</div>
-<div class="line"><span class="lineno">  427</span>                ]</div>
-<div class="line"><span class="lineno">  428</span>            ),</div>
-<div class="line"><span class="lineno">  429</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  430</span>                package=<span class="stringliteral">&#39;carma_cooperative_perception&#39;</span>,</div>
-<div class="line"><span class="lineno">  431</span>                plugin=<span class="stringliteral">&#39;carma_cooperative_perception::ExternalObjectListToSdsmNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  432</span>                name=<span class="stringliteral">&#39;cp_external_object_list_to_sdsm_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  433</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  434</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  435</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cp_external_object_list_to_sdsm_node&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  316</span>                    parameters=[ vehicle_config_param_file ]</div>
+<div class="line"><span class="lineno">  317</span>            ),</div>
+<div class="line"><span class="lineno">  318</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  319</span>                    package=<span class="stringliteral">&#39;roadway_objects&#39;</span>,</div>
+<div class="line"><span class="lineno">  320</span>                    plugin=<span class="stringliteral">&#39;roadway_objects::RoadwayObjectsNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  321</span>                    name=<span class="stringliteral">&#39;roadway_objects_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  322</span>                    extra_arguments=[</div>
+<div class="line"><span class="lineno">  323</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  324</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;roadway_objects&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  325</span>                    ],</div>
+<div class="line"><span class="lineno">  326</span>                    remappings=[</div>
+<div class="line"><span class="lineno">  327</span>                        (<span class="stringliteral">&quot;external_objects&quot;</span>, <span class="stringliteral">&quot;external_object_predictions&quot;</span>),</div>
+<div class="line"><span class="lineno">  328</span>                        (<span class="stringliteral">&quot;incoming_spat&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_spat&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  329</span>                        (<span class="stringliteral">&quot;route&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_GUIDE_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/route&quot;</span> ] )</div>
+<div class="line"><span class="lineno">  330</span>                    ],</div>
+<div class="line"><span class="lineno">  331</span>                    parameters = [</div>
+<div class="line"><span class="lineno">  332</span>                        vehicle_config_param_file</div>
+<div class="line"><span class="lineno">  333</span>                    ]</div>
+<div class="line"><span class="lineno">  334</span> </div>
+<div class="line"><span class="lineno">  335</span>            ),</div>
+<div class="line"><span class="lineno">  336</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  337</span>                    package=<span class="stringliteral">&#39;traffic_incident_parser&#39;</span>,</div>
+<div class="line"><span class="lineno">  338</span>                    plugin=<span class="stringliteral">&#39;traffic_incident_parser::TrafficIncidentParserNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  339</span>                    name=<span class="stringliteral">&#39;traffic_incident_parser_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  340</span>                    extra_arguments=[</div>
+<div class="line"><span class="lineno">  341</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  342</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;traffic_incident_parser&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  343</span>                    ],</div>
+<div class="line"><span class="lineno">  344</span>                    remappings=[</div>
+<div class="line"><span class="lineno">  345</span>                        (<span class="stringliteral">&quot;georeference&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  346</span>                        (<span class="stringliteral">&quot;geofence&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_geofence_control&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  347</span>                        (<span class="stringliteral">&quot;incoming_mobility_operation&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_mobility_operation&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  348</span>                        (<span class="stringliteral">&quot;incoming_spat&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_spat&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  349</span>                        (<span class="stringliteral">&quot;route&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_GUIDE_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/route&quot;</span> ] )</div>
+<div class="line"><span class="lineno">  350</span>                    ],</div>
+<div class="line"><span class="lineno">  351</span>                    parameters = [</div>
+<div class="line"><span class="lineno">  352</span>                        vehicle_config_param_file</div>
+<div class="line"><span class="lineno">  353</span>                    ]</div>
+<div class="line"><span class="lineno">  354</span> </div>
+<div class="line"><span class="lineno">  355</span>            ),</div>
+<div class="line"><span class="lineno">  356</span>        ]</div>
+<div class="line"><span class="lineno">  357</span>    )</div>
+<div class="line"><span class="lineno">  358</span> </div>
+<div class="line"><span class="lineno">  359</span>    <span class="comment"># Vector map loader</span></div>
+<div class="line"><span class="lineno">  360</span>    lanelet2_map_loader_container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">  361</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>, <span class="comment"># rclcpp_components</span></div>
+<div class="line"><span class="lineno">  362</span>        name=<span class="stringliteral">&#39;lanelet2_map_loader_container&#39;</span>,</div>
+<div class="line"><span class="lineno">  363</span>        executable=<span class="stringliteral">&#39;lifecycle_component_wrapper_mt&#39;</span>,</div>
+<div class="line"><span class="lineno">  364</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">  365</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">  366</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  367</span>                package=<span class="stringliteral">&#39;map_file_ros2&#39;</span>,</div>
+<div class="line"><span class="lineno">  368</span>                plugin=<span class="stringliteral">&#39;lanelet2_map_loader::Lanelet2MapLoader&#39;</span>,</div>
+<div class="line"><span class="lineno">  369</span>                name=<span class="stringliteral">&#39;lanelet2_map_loader&#39;</span>,</div>
+<div class="line"><span class="lineno">  370</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  371</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  372</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;lanelet2_map_loader&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  373</span>                    {<span class="stringliteral">&#39;is_lifecycle_node&#39;</span>: <span class="keyword">True</span>} <span class="comment"># Flag to allow lifecycle node loading in lifecycle wrapper</span></div>
+<div class="line"><span class="lineno">  374</span>                ],</div>
+<div class="line"><span class="lineno">  375</span>                remappings=[</div>
+<div class="line"><span class="lineno">  376</span>                    (<span class="stringliteral">&quot;lanelet_map_bin&quot;</span>, <span class="stringliteral">&quot;base_map&quot;</span>),</div>
+<div class="line"><span class="lineno">  377</span>                    (<span class="stringliteral">&quot;change_state&quot;</span>, <span class="stringliteral">&quot;disabled_change_state&quot;</span>), <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
+<div class="line"><span class="lineno">  378</span>                    (<span class="stringliteral">&quot;get_state&quot;</span>, <span class="stringliteral">&quot;disabled_get_state&quot;</span>)        <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
+<div class="line"><span class="lineno">  379</span>                ],</div>
+<div class="line"><span class="lineno">  380</span>                parameters=[</div>
+<div class="line"><span class="lineno">  381</span>                    { <span class="stringliteral">&quot;lanelet2_filename&quot;</span> : vector_map_file},</div>
+<div class="line"><span class="lineno">  382</span>                    vehicle_config_param_file</div>
+<div class="line"><span class="lineno">  383</span>                ]</div>
+<div class="line"><span class="lineno">  384</span>            )</div>
+<div class="line"><span class="lineno">  385</span>        ]</div>
+<div class="line"><span class="lineno">  386</span>    )</div>
+<div class="line"><span class="lineno">  387</span> </div>
+<div class="line"><span class="lineno">  388</span> </div>
+<div class="line"><span class="lineno">  389</span>    <span class="comment"># Vector map visualization</span></div>
+<div class="line"><span class="lineno">  390</span>    lanelet2_map_visualization_container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">  391</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>, <span class="comment"># rclcpp_components</span></div>
+<div class="line"><span class="lineno">  392</span>        name=<span class="stringliteral">&#39;lanelet2_map_visualization_container&#39;</span>,</div>
+<div class="line"><span class="lineno">  393</span>        executable=<span class="stringliteral">&#39;lifecycle_component_wrapper_mt&#39;</span>,</div>
+<div class="line"><span class="lineno">  394</span>        namespace= GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">  395</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">  396</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  397</span>                package=<span class="stringliteral">&#39;map_file_ros2&#39;</span>,</div>
+<div class="line"><span class="lineno">  398</span>                plugin=<span class="stringliteral">&#39;lanelet2_map_visualization::Lanelet2MapVisualization&#39;</span>,</div>
+<div class="line"><span class="lineno">  399</span>                name=<span class="stringliteral">&#39;lanelet2_map_visualization&#39;</span>,</div>
+<div class="line"><span class="lineno">  400</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  401</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  402</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;lanelet2_map_visualization&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  403</span>                    {<span class="stringliteral">&#39;is_lifecycle_node&#39;</span>: <span class="keyword">True</span>} <span class="comment"># Flag to allow lifecycle node loading in lifecycle wrapper</span></div>
+<div class="line"><span class="lineno">  404</span>                ],</div>
+<div class="line"><span class="lineno">  405</span>                remappings=[</div>
+<div class="line"><span class="lineno">  406</span>                    (<span class="stringliteral">&quot;lanelet_map_bin&quot;</span>, <span class="stringliteral">&quot;semantic_map&quot;</span>),</div>
+<div class="line"><span class="lineno">  407</span>                    (<span class="stringliteral">&quot;change_state&quot;</span>, <span class="stringliteral">&quot;disabled_change_state&quot;</span>), <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
+<div class="line"><span class="lineno">  408</span>                    (<span class="stringliteral">&quot;get_state&quot;</span>, <span class="stringliteral">&quot;disabled_get_state&quot;</span>)        <span class="comment"># Disable lifecycle topics since this is a lifecycle wrapper container</span></div>
+<div class="line"><span class="lineno">  409</span>                ],</div>
+<div class="line"><span class="lineno">  410</span>                parameters=[</div>
+<div class="line"><span class="lineno">  411</span>                    vehicle_config_param_file</div>
+<div class="line"><span class="lineno">  412</span>                ]</div>
+<div class="line"><span class="lineno">  413</span>            )</div>
+<div class="line"><span class="lineno">  414</span>        ]</div>
+<div class="line"><span class="lineno">  415</span>    )</div>
+<div class="line"><span class="lineno">  416</span> </div>
+<div class="line"><span class="lineno">  417</span>    <span class="comment"># Cooperative Perception Stack</span></div>
+<div class="line"><span class="lineno">  418</span>    carma_cooperative_perception_container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">  419</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>, <span class="comment"># rclcpp_components</span></div>
+<div class="line"><span class="lineno">  420</span>        name=<span class="stringliteral">&#39;carma_cooperative_perception_container&#39;</span>,</div>
+<div class="line"><span class="lineno">  421</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
+<div class="line"><span class="lineno">  422</span>        namespace= GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">  423</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">  424</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  425</span>                package=<span class="stringliteral">&#39;carma_cooperative_perception&#39;</span>,</div>
+<div class="line"><span class="lineno">  426</span>                plugin=<span class="stringliteral">&#39;carma_cooperative_perception::ExternalObjectListToDetectionListNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  427</span>                name=<span class="stringliteral">&#39;cp_external_object_list_to_detection_list_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  428</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  429</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  430</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cp_external_object_list_to_detection_list_node&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  431</span>                ],</div>
+<div class="line"><span class="lineno">  432</span>                remappings=[</div>
+<div class="line"><span class="lineno">  433</span>                    (<span class="stringliteral">&quot;input/georeference&quot;</span>, [EnvironmentVariable(<span class="stringliteral">&quot;CARMA_LOCZ_NS&quot;</span>, default_value=<span class="stringliteral">&quot;&quot;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span>]),</div>
+<div class="line"><span class="lineno">  434</span>                    (<span class="stringliteral">&quot;output/detections&quot;</span>, <span class="stringliteral">&quot;full_detection_list&quot;</span>),</div>
+<div class="line"><span class="lineno">  435</span>                    (<span class="stringliteral">&quot;input/external_objects&quot;</span>, <span class="stringliteral">&quot;external_objects&quot;</span>),</div>
 <div class="line"><span class="lineno">  436</span>                ],</div>
-<div class="line"><span class="lineno">  437</span>                remappings=[</div>
-<div class="line"><span class="lineno">  438</span>                    (<span class="stringliteral">&quot;input/georeference&quot;</span>, [EnvironmentVariable(<span class="stringliteral">&quot;CARMA_LOCZ_NS&quot;</span>, default_value=<span class="stringliteral">&quot;&quot;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span>]),</div>
-<div class="line"><span class="lineno">  439</span>                    (<span class="stringliteral">&quot;output/sdsms&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/outgoing_sdsm&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  440</span>                    (<span class="stringliteral">&quot;input/pose_stamped&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/current_pose&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  441</span>                    (<span class="stringliteral">&quot;input/external_objects&quot;</span>, <span class="stringliteral">&quot;external_objects&quot;</span>),</div>
-<div class="line"><span class="lineno">  442</span>                ],</div>
-<div class="line"><span class="lineno">  443</span>                parameters=[</div>
-<div class="line"><span class="lineno">  444</span>                ]</div>
-<div class="line"><span class="lineno">  445</span>            ),</div>
-<div class="line"><span class="lineno">  446</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  447</span>                package=<span class="stringliteral">&#39;carma_cooperative_perception&#39;</span>,</div>
-<div class="line"><span class="lineno">  448</span>                plugin=<span class="stringliteral">&#39;carma_cooperative_perception::HostVehicleFilterNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  449</span>                name=<span class="stringliteral">&#39;cp_host_vehicle_filter_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  450</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  451</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  452</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cp_host_vehicle_filter_node&#39;</span>, env_log_levels) },</div>
-<div class="line"><span class="lineno">  453</span>                ],</div>
-<div class="line"><span class="lineno">  454</span>                remappings=[</div>
-<div class="line"><span class="lineno">  455</span>                    (<span class="stringliteral">&quot;input/host_vehicle_pose&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/current_pose&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  456</span>                    (<span class="stringliteral">&quot;input/detection_list&quot;</span>, <span class="stringliteral">&quot;full_detection_list&quot;</span>),</div>
-<div class="line"><span class="lineno">  457</span>                    (<span class="stringliteral">&quot;output/detection_list&quot;</span>, <span class="stringliteral">&quot;filtered_detection_list&quot;</span>)</div>
-<div class="line"><span class="lineno">  458</span>                ],</div>
-<div class="line"><span class="lineno">  459</span>                parameters=[</div>
-<div class="line"><span class="lineno">  460</span>                    cp_host_vehicle_filter_node_file</div>
-<div class="line"><span class="lineno">  461</span>                ]</div>
-<div class="line"><span class="lineno">  462</span>            ),</div>
-<div class="line"><span class="lineno">  463</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  464</span>                package=<span class="stringliteral">&#39;carma_cooperative_perception&#39;</span>,</div>
-<div class="line"><span class="lineno">  465</span>                plugin=<span class="stringliteral">&#39;carma_cooperative_perception::SdsmToDetectionListNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  466</span>                name=<span class="stringliteral">&#39;cp_sdsm_to_detection_list_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  467</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  468</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  469</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cp_sdsm_to_detection_list_node&#39;</span>, env_log_levels) },</div>
-<div class="line"><span class="lineno">  470</span>                ],</div>
-<div class="line"><span class="lineno">  471</span>                remappings=[</div>
-<div class="line"><span class="lineno">  472</span>                    (<span class="stringliteral">&quot;input/sdsm&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_sdsm&quot;</span> ] ),</div>
-<div class="line"><span class="lineno">  473</span>                    (<span class="stringliteral">&quot;output/detections&quot;</span>, <span class="stringliteral">&quot;full_detection_list&quot;</span>),</div>
-<div class="line"><span class="lineno">  474</span>                ],</div>
-<div class="line"><span class="lineno">  475</span>                parameters=[</div>
-<div class="line"><span class="lineno">  476</span>                ]</div>
-<div class="line"><span class="lineno">  477</span>            ),</div>
-<div class="line"><span class="lineno">  478</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  479</span>                package=<span class="stringliteral">&#39;carma_cooperative_perception&#39;</span>,</div>
-<div class="line"><span class="lineno">  480</span>                plugin=<span class="stringliteral">&#39;carma_cooperative_perception::TrackListToExternalObjectListNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  481</span>                name=<span class="stringliteral">&#39;cp_track_list_to_external_object_list_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  482</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  483</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  484</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cp_track_list_to_external_object_list_node&#39;</span>, env_log_levels) },</div>
-<div class="line"><span class="lineno">  485</span>                ],</div>
-<div class="line"><span class="lineno">  486</span>                remappings=[</div>
-<div class="line"><span class="lineno">  487</span>                    (<span class="stringliteral">&quot;input/track_list&quot;</span>, <span class="stringliteral">&quot;cooperative_perception_track_list&quot;</span>),</div>
-<div class="line"><span class="lineno">  488</span>                    (<span class="stringliteral">&quot;output/external_object_list&quot;</span>, <span class="stringliteral">&quot;fused_external_objects&quot;</span>),</div>
-<div class="line"><span class="lineno">  489</span>                ],</div>
-<div class="line"><span class="lineno">  490</span>                parameters=[</div>
+<div class="line"><span class="lineno">  437</span>                parameters=[</div>
+<div class="line"><span class="lineno">  438</span>                    vehicle_config_param_file</div>
+<div class="line"><span class="lineno">  439</span>                ]</div>
+<div class="line"><span class="lineno">  440</span>            ),</div>
+<div class="line"><span class="lineno">  441</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  442</span>                package=<span class="stringliteral">&#39;carma_cooperative_perception&#39;</span>,</div>
+<div class="line"><span class="lineno">  443</span>                plugin=<span class="stringliteral">&#39;carma_cooperative_perception::ExternalObjectListToSdsmNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  444</span>                name=<span class="stringliteral">&#39;cp_external_object_list_to_sdsm_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  445</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  446</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  447</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cp_external_object_list_to_sdsm_node&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  448</span>                ],</div>
+<div class="line"><span class="lineno">  449</span>                remappings=[</div>
+<div class="line"><span class="lineno">  450</span>                    (<span class="stringliteral">&quot;input/georeference&quot;</span>, [EnvironmentVariable(<span class="stringliteral">&quot;CARMA_LOCZ_NS&quot;</span>, default_value=<span class="stringliteral">&quot;&quot;</span>), <span class="stringliteral">&quot;/map_param_loader/georeference&quot;</span>]),</div>
+<div class="line"><span class="lineno">  451</span>                    (<span class="stringliteral">&quot;output/sdsms&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/outgoing_sdsm&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  452</span>                    (<span class="stringliteral">&quot;input/pose_stamped&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/current_pose&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  453</span>                    (<span class="stringliteral">&quot;input/external_objects&quot;</span>, <span class="stringliteral">&quot;external_objects&quot;</span>),</div>
+<div class="line"><span class="lineno">  454</span>                ],</div>
+<div class="line"><span class="lineno">  455</span>                parameters=[</div>
+<div class="line"><span class="lineno">  456</span>                    vehicle_config_param_file</div>
+<div class="line"><span class="lineno">  457</span>                ]</div>
+<div class="line"><span class="lineno">  458</span>            ),</div>
+<div class="line"><span class="lineno">  459</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  460</span>                package=<span class="stringliteral">&#39;carma_cooperative_perception&#39;</span>,</div>
+<div class="line"><span class="lineno">  461</span>                plugin=<span class="stringliteral">&#39;carma_cooperative_perception::HostVehicleFilterNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  462</span>                name=<span class="stringliteral">&#39;cp_host_vehicle_filter_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  463</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  464</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  465</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cp_host_vehicle_filter_node&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  466</span>                ],</div>
+<div class="line"><span class="lineno">  467</span>                remappings=[</div>
+<div class="line"><span class="lineno">  468</span>                    (<span class="stringliteral">&quot;input/host_vehicle_pose&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/current_pose&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  469</span>                    (<span class="stringliteral">&quot;input/detection_list&quot;</span>, <span class="stringliteral">&quot;full_detection_list&quot;</span>),</div>
+<div class="line"><span class="lineno">  470</span>                    (<span class="stringliteral">&quot;output/detection_list&quot;</span>, <span class="stringliteral">&quot;filtered_detection_list&quot;</span>)</div>
+<div class="line"><span class="lineno">  471</span>                ],</div>
+<div class="line"><span class="lineno">  472</span>                parameters=[</div>
+<div class="line"><span class="lineno">  473</span>                    cp_host_vehicle_filter_node_file,</div>
+<div class="line"><span class="lineno">  474</span>                    vehicle_config_param_file</div>
+<div class="line"><span class="lineno">  475</span>                ]</div>
+<div class="line"><span class="lineno">  476</span>            ),</div>
+<div class="line"><span class="lineno">  477</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  478</span>                package=<span class="stringliteral">&#39;carma_cooperative_perception&#39;</span>,</div>
+<div class="line"><span class="lineno">  479</span>                plugin=<span class="stringliteral">&#39;carma_cooperative_perception::SdsmToDetectionListNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  480</span>                name=<span class="stringliteral">&#39;cp_sdsm_to_detection_list_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  481</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  482</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  483</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cp_sdsm_to_detection_list_node&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  484</span>                ],</div>
+<div class="line"><span class="lineno">  485</span>                remappings=[</div>
+<div class="line"><span class="lineno">  486</span>                    (<span class="stringliteral">&quot;input/sdsm&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/incoming_sdsm&quot;</span> ] ),</div>
+<div class="line"><span class="lineno">  487</span>                    (<span class="stringliteral">&quot;output/detections&quot;</span>, <span class="stringliteral">&quot;full_detection_list&quot;</span>),</div>
+<div class="line"><span class="lineno">  488</span>                ],</div>
+<div class="line"><span class="lineno">  489</span>                parameters=[</div>
+<div class="line"><span class="lineno">  490</span>                    vehicle_config_param_file</div>
 <div class="line"><span class="lineno">  491</span>                ]</div>
 <div class="line"><span class="lineno">  492</span>            ),</div>
 <div class="line"><span class="lineno">  493</span>            ComposableNode(</div>
 <div class="line"><span class="lineno">  494</span>                package=<span class="stringliteral">&#39;carma_cooperative_perception&#39;</span>,</div>
-<div class="line"><span class="lineno">  495</span>                plugin=<span class="stringliteral">&#39;carma_cooperative_perception::MultipleObjectTrackerNode&#39;</span>,</div>
-<div class="line"><span class="lineno">  496</span>                name=<span class="stringliteral">&#39;cp_multiple_object_tracker_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  495</span>                plugin=<span class="stringliteral">&#39;carma_cooperative_perception::TrackListToExternalObjectListNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  496</span>                name=<span class="stringliteral">&#39;cp_track_list_to_external_object_list_node&#39;</span>,</div>
 <div class="line"><span class="lineno">  497</span>                extra_arguments=[</div>
 <div class="line"><span class="lineno">  498</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  499</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cp_multiple_object_tracker_node&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  499</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cp_track_list_to_external_object_list_node&#39;</span>, env_log_levels) },</div>
 <div class="line"><span class="lineno">  500</span>                ],</div>
 <div class="line"><span class="lineno">  501</span>                remappings=[</div>
-<div class="line"><span class="lineno">  502</span>                    (<span class="stringliteral">&quot;output/track_list&quot;</span>, <span class="stringliteral">&quot;cooperative_perception_track_list&quot;</span>),</div>
-<div class="line"><span class="lineno">  503</span>                    (<span class="stringliteral">&quot;input/detection_list&quot;</span>, <span class="stringliteral">&quot;filtered_detection_list&quot;</span>),</div>
+<div class="line"><span class="lineno">  502</span>                    (<span class="stringliteral">&quot;input/track_list&quot;</span>, <span class="stringliteral">&quot;cooperative_perception_track_list&quot;</span>),</div>
+<div class="line"><span class="lineno">  503</span>                    (<span class="stringliteral">&quot;output/external_object_list&quot;</span>, <span class="stringliteral">&quot;fused_external_objects&quot;</span>),</div>
 <div class="line"><span class="lineno">  504</span>                ],</div>
 <div class="line"><span class="lineno">  505</span>                parameters=[</div>
-<div class="line"><span class="lineno">  506</span>                    cp_multiple_object_tracker_node_file</div>
+<div class="line"><span class="lineno">  506</span>                    vehicle_config_param_file</div>
 <div class="line"><span class="lineno">  507</span>                ]</div>
 <div class="line"><span class="lineno">  508</span>            ),</div>
-<div class="line"><span class="lineno">  509</span> </div>
-<div class="line"><span class="lineno">  510</span>        ]</div>
-<div class="line"><span class="lineno">  511</span>    )</div>
-<div class="line"><span class="lineno">  512</span> </div>
-<div class="line"><span class="lineno">  513</span>    <span class="comment"># subsystem_controller which orchestrates the lifecycle of this subsystem&#39;s components</span></div>
-<div class="line"><span class="lineno">  514</span>    subsystem_controller = Node(</div>
-<div class="line"><span class="lineno">  515</span>        package=<span class="stringliteral">&#39;subsystem_controllers&#39;</span>,</div>
-<div class="line"><span class="lineno">  516</span>        name=<span class="stringliteral">&#39;environment_perception_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  517</span>        executable=<span class="stringliteral">&#39;environment_perception_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  518</span>        parameters=[ subsystem_controller_default_param_file, subsystem_controller_param_file ],</div>
-<div class="line"><span class="lineno">  519</span>        on_exit= Shutdown(), <span class="comment"># Mark the subsystem controller as required</span></div>
-<div class="line"><span class="lineno">  520</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;subsystem_controllers&#39;</span>, env_log_levels)]</div>
-<div class="line"><span class="lineno">  521</span>    )</div>
-<div class="line"><span class="lineno">  522</span> </div>
-<div class="line"><span class="lineno">  523</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">  524</span>        declare_vehicle_characteristics_param_file_arg,</div>
-<div class="line"><span class="lineno">  525</span>        declare_vehicle_config_param_file_arg,</div>
-<div class="line"><span class="lineno">  526</span>        declare_subsystem_controller_param_file_arg,</div>
-<div class="line"><span class="lineno">  527</span>        declare_vector_map_file,</div>
-<div class="line"><span class="lineno">  528</span>        lidar_perception_container,</div>
-<div class="line"><span class="lineno">  529</span>        carma_external_objects_container,</div>
-<div class="line"><span class="lineno">  530</span>        lanelet2_map_loader_container,</div>
-<div class="line"><span class="lineno">  531</span>        lanelet2_map_visualization_container,</div>
-<div class="line"><span class="lineno">  532</span>        carma_cooperative_perception_container,</div>
-<div class="line"><span class="lineno">  533</span>        subsystem_controller</div>
-<div class="line"><span class="lineno">  534</span>    ])</div>
+<div class="line"><span class="lineno">  509</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  510</span>                package=<span class="stringliteral">&#39;carma_cooperative_perception&#39;</span>,</div>
+<div class="line"><span class="lineno">  511</span>                plugin=<span class="stringliteral">&#39;carma_cooperative_perception::MultipleObjectTrackerNode&#39;</span>,</div>
+<div class="line"><span class="lineno">  512</span>                name=<span class="stringliteral">&#39;cp_multiple_object_tracker_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  513</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  514</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  515</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;cp_multiple_object_tracker_node&#39;</span>, env_log_levels) },</div>
+<div class="line"><span class="lineno">  516</span>                ],</div>
+<div class="line"><span class="lineno">  517</span>                remappings=[</div>
+<div class="line"><span class="lineno">  518</span>                    (<span class="stringliteral">&quot;output/track_list&quot;</span>, <span class="stringliteral">&quot;cooperative_perception_track_list&quot;</span>),</div>
+<div class="line"><span class="lineno">  519</span>                    (<span class="stringliteral">&quot;input/detection_list&quot;</span>, <span class="stringliteral">&quot;filtered_detection_list&quot;</span>),</div>
+<div class="line"><span class="lineno">  520</span>                ],</div>
+<div class="line"><span class="lineno">  521</span>                parameters=[</div>
+<div class="line"><span class="lineno">  522</span>                    cp_multiple_object_tracker_node_file,</div>
+<div class="line"><span class="lineno">  523</span>                    vehicle_config_param_file</div>
+<div class="line"><span class="lineno">  524</span>                ]</div>
+<div class="line"><span class="lineno">  525</span>            ),</div>
+<div class="line"><span class="lineno">  526</span> </div>
+<div class="line"><span class="lineno">  527</span>        ]</div>
+<div class="line"><span class="lineno">  528</span>    )</div>
+<div class="line"><span class="lineno">  529</span> </div>
+<div class="line"><span class="lineno">  530</span>    <span class="comment"># subsystem_controller which orchestrates the lifecycle of this subsystem&#39;s components</span></div>
+<div class="line"><span class="lineno">  531</span>    subsystem_controller = Node(</div>
+<div class="line"><span class="lineno">  532</span>        package=<span class="stringliteral">&#39;subsystem_controllers&#39;</span>,</div>
+<div class="line"><span class="lineno">  533</span>        name=<span class="stringliteral">&#39;environment_perception_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  534</span>        executable=<span class="stringliteral">&#39;environment_perception_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  535</span>        parameters=[</div>
+<div class="line"><span class="lineno">  536</span>            subsystem_controller_default_param_file,</div>
+<div class="line"><span class="lineno">  537</span>            subsystem_controller_param_file,</div>
+<div class="line"><span class="lineno">  538</span>            {<span class="stringliteral">&quot;use_sim_time&quot;</span> : use_sim_time}],</div>
+<div class="line"><span class="lineno">  539</span>        on_exit= Shutdown(), <span class="comment"># Mark the subsystem controller as required</span></div>
+<div class="line"><span class="lineno">  540</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;subsystem_controllers&#39;</span>, env_log_levels)]</div>
+<div class="line"><span class="lineno">  541</span>    )</div>
+<div class="line"><span class="lineno">  542</span> </div>
+<div class="line"><span class="lineno">  543</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><span class="lineno">  544</span>        declare_vehicle_characteristics_param_file_arg,</div>
+<div class="line"><span class="lineno">  545</span>        declare_vehicle_config_param_file_arg,</div>
+<div class="line"><span class="lineno">  546</span>        declare_use_sim_time_arg,</div>
+<div class="line"><span class="lineno">  547</span>        declare_subsystem_controller_param_file_arg,</div>
+<div class="line"><span class="lineno">  548</span>        declare_vector_map_file,</div>
+<div class="line"><span class="lineno">  549</span>        lidar_perception_container,</div>
+<div class="line"><span class="lineno">  550</span>        carma_external_objects_container,</div>
+<div class="line"><span class="lineno">  551</span>        lanelet2_map_loader_container,</div>
+<div class="line"><span class="lineno">  552</span>        lanelet2_map_visualization_container,</div>
+<div class="line"><span class="lineno">  553</span>        carma_cooperative_perception_container,</div>
+<div class="line"><span class="lineno">  554</span>        subsystem_controller</div>
+<div class="line"><span class="lineno">  555</span>    ])</div>
 <div class="ttc" id="anamespaceenvironment_html_ac630a9fb9e42d12d3392617989850c73"><div class="ttname"><a href="namespaceenvironment.html#ac630a9fb9e42d12d3392617989850c73">environment.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="environment_8launch_8py_source.html#l00030">environment.launch.py:30</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -627,7 +648,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceenvironment.html">environment</a></li>
-    <li class="footer">Generated on Sun Dec 17 2023 17:46:32 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Dec 18 2023 15:06:21 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

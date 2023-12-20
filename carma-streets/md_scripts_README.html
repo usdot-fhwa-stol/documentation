@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Carma-streets: readme</title>
+<title>Carma-streets: Testing Scripts</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('md_scripts_readme.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md_scripts_README.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -83,10 +83,22 @@ $(document).ready(function(){initNavTree('md_scripts_readme.html',''); initResiz
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">readme </div></div>
+  <div class="headertitle"><div class="title">Testing Scripts </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p >Requirements: pip3 install -r requirements.txt</p>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md86"></a>
+Introduction</h1>
+<p >The python scripts and json files in this directory are used for mocking message communication to provide an environment in which CARMA Streets Service functionality can be integration tested in isolation. Directions for using the scripts should be included below under the appropriate heading.</p>
+<h1><a class="anchor" id="autotoc_md87"></a>
+Prerequisites</h1>
+<p >Please add any script dependencies into requirements.txt so that they can be easily installed using </p><div class="fragment"><div class="line">pip3 install -r requirements.txt</div>
+</div><!-- fragment --> <h1><a class="anchor" id="autotoc_md88"></a>
+simulate_detections.py</h1>
+<h2><a class="anchor" id="autotoc_md89"></a>
+Description</h2>
+<p >This script is used to mock Detected Object message sent from sensor integrated with CARMA Streets. Currently this only includes CARLA Lidar sensor integrated under the Vunerable Road User Use Case 1 project. It will currently read <code>detected_cyclist.json</code>, <code>detected_pedestrian.json</code>, and <code>detected_truck.json</code> and publish those messages at 10 hz to the detections kafka topic. This script is used to provide input to the <b>Sensor Data Sharing Service</b> to generate J2735 SDSMs. To add new detections, create a new json file and update the script to send its content on a given interval. For json format of the <a class="el" href="md_streets_utils_streets_messages_DetectedObjectsMessage.html">Detected Object Message</a>. </p>
+<h1><a class="anchor" id="autotoc_md90"></a>
+simulate_vehicle_status_intent_pub_uc1.py</h1>
 <p >Instructions for sending sample status and intent messages for UC1 scheduling logic: </p><pre class="fragment">- In the simulate_vehicle_status_intent_pub_uc1.py, change the input of the read_json() method on line 23 to 
     vehicle_status_intent_test_uc1.json (or any other json message that you have prepared).
 - The current sample status and intent message (vehicle_status_intent_test_uc1.json) includes 6 updates for 
@@ -100,7 +112,9 @@ $(document).ready(function(){initNavTree('md_scripts_readme.html',''); initResiz
 * Note: The current timestamp and the future timestamps of the updates will updated automatically before the message is published.
 * Note: One of the limitation of the python script is that the number of vehicles in each set of updates shall be the same.
     Otherwise, the time gap between two set of updates will not be correctly applied. 
-</pre><p >Instructions for sending sample status and intent messages for UC3 scheduling logic: </p><pre class="fragment">- In the simulate_vehicle_status_intent_pub_uc3.py, change the input of the read_json() method on line 23 to 
+</pre> <h1><a class="anchor" id="autotoc_md91"></a>
+simulate_vehicle_status_intent_pub_uc3.py</h1>
+<p >Instructions for sending sample status and intent messages for UC3 scheduling logic: </p><pre class="fragment">- In the simulate_vehicle_status_intent_pub_uc3.py, change the input of the read_json() method on line 23 to 
     vehicle_status_intent_test_uc3.json (or any other json message that you have prepared).
 - The current sample status and intent message (vehicle_status_intent_test_uc3.json) includes 5 updates for 
     9 vehicles.
@@ -119,7 +133,7 @@ $(document).ready(function(){initNavTree('md_scripts_readme.html',''); initResiz
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Dec 19 2023 19:18:54 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Dec 20 2023 20:39:45 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

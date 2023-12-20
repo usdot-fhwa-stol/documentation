@@ -86,10 +86,10 @@ $(document).ready(function(){initNavTree('md_streets_utils_streets_service_confi
   <div class="headertitle"><div class="title">Streets Service <a class="el" href="structConfiguration.html">Configuration</a> Library </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md131"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md138"></a>
 Introduction</h1>
 <p >This is the <code>streets_service_configuration</code> library meant to provide of each new CARMA-Streets service with utility methods to load configurations. It contains a extensible templated singleton implementation that allows for the creation of singleton scoped objects in CARMA-Streets services with static access. This means that by extending this class you can implement a class of which there can only ever be a single instance and which is statically retrievable using the <code>streets_singleton::get_singleton()</code> method. This library also includes an implemented singleton <code>streets_configuration</code> class which standardizes how CARMA-Streets services will read configuration parameters from <code>manifest.json</code> configuration files. This <code>streets_configuration</code> singleton parses the <code>manifest.json</code> configuration file and then allows for static retrieval of configuration parameters using the <code>get_int_config()</code>,<code>get_double_config</code>,<code>get_string_config()</code>, and <code>get_bool_config()</code> methods.</p>
-<h1><a class="anchor" id="autotoc_md132"></a>
+<h1><a class="anchor" id="autotoc_md139"></a>
 Streets Singleton</h1>
 <p >Library offers access to the <code>streets_singleton</code> class. This is a templated, extensible class that stores and offers static retrieval of a single instance of itself. To ensure that new instances of this class can not be created the copy and assignment constructors are deleted and the regular constructor is hidden using protected access. Before accessing this object using the static <code>streets_singleton::get_singleton()</code> method, it must first be initialized using the <code>streets_singleon::create( Args ...)</code> method. Args should be the constructor parameter of the class which the singleton will manage an instance of. When implementating a new singleton it is recommended to separately create a class to manage the data and logic and then add this class and it's constructor parameters as the types for the singleton as shown below: <br  />
  </p><div class="fragment"><div class="line">class example_data{</div>
@@ -117,7 +117,7 @@ Streets Singleton</h1>
 <div class="line">example_singleton::create(&quot;something&quot;, 3);</div>
 <div class="line">// Call any singleton method</div>
 <div class="line">example_singleton::method_1();</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md133"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md140"></a>
 Streets Configuration</h1>
 <p >Library creates <code>streets_configuration</code> singleton which standardizes the <code>manifest.json</code> configuration file parsing and configuration parameter retrieval. Extending <code>streets_singleton</code> allows <code>streets_configuration</code> to be limited to singleton scope ( single instance ) and offer static methods for configuration parameter retrieval. <code>streets_configuration</code> also parses some service required configurations like <b>loglevel</b> and <b>service_name</b> to create and configure a <code>spdlog::async_loggerr</code> with a <code>spdlog::sinks::daily_file_sink_mt</code> and a <code>spdlog::sinks::stdout_color_sink_mt</code>.</p>
 <p >Example <code>manifest.json</code> configuration file. </p><div class="fragment"><div class="line">{</div>
@@ -150,7 +150,7 @@ Streets Configuration</h1>
 <div class="line">        }</div>
 <div class="line">    ]</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md134"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md141"></a>
 Include streets_service_configuration_lib::streets_service_configuration_lib</h1>
 <p >Streets Service Base <code>CMakeList.txt</code> includes an install target which will install this library as a CMake package. The library along with it's dependencies can then be included by simply using the find_package() instruction.</p>
 <div class="fragment"><div class="line">find_package(streets_service_configuration_lib COMPONENT streets_service_configuration_lib)</div>
@@ -162,7 +162,7 @@ Include streets_service_configuration_lib::streets_service_configuration_lib</h1
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Dec 19 2023 19:18:54 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Dec 20 2023 20:39:45 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

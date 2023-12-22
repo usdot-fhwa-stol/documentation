@@ -1,5 +1,9 @@
 var NAVTREEINDEX55 =
 {
+"structstop__and__dwell__strategic__plugin_1_1VehicleState.html#a8146aeaa91bb88d296a100021142f0c6":[55,0,90,3,1],
+"structstop__and__dwell__strategic__plugin_1_1VehicleState.html#a8146aeaa91bb88d296a100021142f0c6":[56,0,48,2,1],
+"structstop__and__dwell__strategic__plugin_1_1VehicleState.html#ab1751fef1061e35e7a4edf659c18d382":[55,0,90,3,0],
+"structstop__and__dwell__strategic__plugin_1_1VehicleState.html#ab1751fef1061e35e7a4edf659c18d382":[56,0,48,2,0],
 "structstop__and__wait__plugin_1_1PointSpeedPair.html":[56,0,49,0],
 "structstop__and__wait__plugin_1_1PointSpeedPair.html":[55,0,91,0],
 "structstop__and__wait__plugin_1_1PointSpeedPair.html#a3d257f2cca23d430a1d2e9aba23bc4ad":[55,0,91,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX55 =
 "types_8h.html#a1b98b7f9535916d9dffec6d425d2eed9":[57,0,38,2,0,1,12],
 "types_8h.html#a3f3400ba40ee203c842481cfbb716900":[57,0,38,2,0,1,11],
 "types_8h.html#a45edbae979af563e6a1e39fd1aad3911":[57,0,38,2,0,1,10],
-"types_8h.html#a485d0d8c7a7b9981ac9e76ab821a38e4":[57,0,38,2,0,1,14],
-"types_8h.html#aa5434fd063eddf84cffedf0cfb265af2":[57,0,38,2,0,1,9],
-"types_8h_source.html":[57,0,38,2,0,1],
-"udp__listener_8h.html":[57,0,30,0,4],
-"udp__listener_8h_source.html":[57,0,30,0,4]
+"types_8h.html#a485d0d8c7a7b9981ac9e76ab821a38e4":[57,0,38,2,0,1,14]
 };

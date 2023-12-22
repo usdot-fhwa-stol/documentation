@@ -1,5 +1,9 @@
 var NAVTREEINDEX54 =
 {
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a823eb5a9395a9700d16b465e52d1eb6e":[55,0,61,4,1],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a823eb5a9395a9700d16b465e52d1eb6e":[56,0,37,4,1],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a86f41d2a717f645e273182875afee435":[56,0,37,4,9],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a86f41d2a717f645e273182875afee435":[55,0,61,4,9],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a8e7cb3b897a42f85cf6afcb38b6accb6":[55,0,61,4,12],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a8e7cb3b897a42f85cf6afcb38b6accb6":[56,0,37,4,12],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#aa23d94451fa3943965ecf4a42cb47f87":[56,0,37,4,33],
@@ -245,9 +249,5 @@ var NAVTREEINDEX54 =
 "structstop__and__dwell__strategic__plugin_1_1VehicleState.html#a3792f7f97699c355c3ee86815c15eb4a":[55,0,90,3,2],
 "structstop__and__dwell__strategic__plugin_1_1VehicleState.html#a3792f7f97699c355c3ee86815c15eb4a":[56,0,48,2,2],
 "structstop__and__dwell__strategic__plugin_1_1VehicleState.html#a3cef5df48fb0c6ff63cd54e2a411b8e9":[55,0,90,3,3],
-"structstop__and__dwell__strategic__plugin_1_1VehicleState.html#a3cef5df48fb0c6ff63cd54e2a411b8e9":[56,0,48,2,3],
-"structstop__and__dwell__strategic__plugin_1_1VehicleState.html#a8146aeaa91bb88d296a100021142f0c6":[55,0,90,3,1],
-"structstop__and__dwell__strategic__plugin_1_1VehicleState.html#a8146aeaa91bb88d296a100021142f0c6":[56,0,48,2,1],
-"structstop__and__dwell__strategic__plugin_1_1VehicleState.html#ab1751fef1061e35e7a4edf659c18d382":[55,0,90,3,0],
-"structstop__and__dwell__strategic__plugin_1_1VehicleState.html#ab1751fef1061e35e7a4edf659c18d382":[56,0,48,2,0]
+"structstop__and__dwell__strategic__plugin_1_1VehicleState.html#a3cef5df48fb0c6ff63cd54e2a411b8e9":[56,0,48,2,3]
 };

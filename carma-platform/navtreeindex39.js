@@ -1,5 +1,9 @@
 var NAVTREEINDEX39 =
 {
+"lightbar__manager_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,23,2,3,0],
+"lightbar__manager_2src_2main_8cpp_source.html":[57,0,23,2,3],
+"lightbar__manager_8launch_8py.html":[57,0,23,1,0],
+"lightbar__manager_8launch_8py.html#a0849256af7c08fdc308b7d9dab5cd8d1":[57,0,23,1,0,0],
 "lightbar__manager_8launch_8py_source.html":[57,0,23,1,0],
 "lightbar__manager__node_8cpp.html":[57,0,23,2,0],
 "lightbar__manager__node_8cpp_source.html":[57,0,23,2,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX39 =
 "md_docs_Release_notes.html#autotoc_md187":[25,25],
 "md_docs_Release_notes.html#autotoc_md188":[25,26],
 "md_docs_Release_notes.html#autotoc_md189":[25,27],
-"md_docs_Release_notes.html#autotoc_md190":[25,28],
-"md_docs_Release_notes.html#autotoc_md191":[25,29],
-"md_docs_Release_notes.html#autotoc_md192":[25,30],
-"md_docs_System_description.html":[26],
-"md_engineering_tools_BagProcessor_READMe.html":[27]
+"md_docs_Release_notes.html#autotoc_md190":[25,28]
 };

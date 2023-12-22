@@ -1,5 +1,9 @@
 var NAVTREEINDEX47 =
 {
+"stop__and__wait__plugin__launch_8py_source.html":[57,0,47,1,0],
+"stop__and__wait__plugin__node_8cpp.html":[57,0,47,2,2],
+"stop__and__wait__plugin__node_8cpp_source.html":[57,0,47,2,2],
+"stop__controlled__intersection__config_8hpp.html":[57,0,48,0,0],
 "stop__controlled__intersection__config_8hpp_source.html":[57,0,48,0,0],
 "stop__controlled__intersection__plugin_8hpp.html":[57,0,48,0,1],
 "stop__controlled__intersection__plugin_8hpp.html#a066f948508e087006568cb6c9b0674a7":[57,0,48,0,1,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX47 =
 "structParseResult.html#a4d98465a5dc6055e367a7ea7089fc73d":[54,0,0,10],
 "structParseResult.html#a58c9982e833d1c74686506ac7449200c":[54,0,0,14],
 "structParseResult.html#a6de18a7e43013b2defc51d892c2cf90f":[54,0,0,11],
-"structParseResult.html#a88b6d44f052a19e6436ae6aadc2c40b4":[54,0,0,3],
-"structParseResult.html#a991cd2759ba802bdb5e960d40890e874":[54,0,0,0],
-"structParseResult.html#aa1fcc912cede0ef0526e0cbfcb14e4c2":[54,0,0,8],
-"structParseResult.html#aa30a53c4b7452efb82baf4767cda33fb":[54,0,0,15],
-"structParseResult.html#aa81b4a7b776b77216cb752385203a8c1":[54,0,0,12]
+"structParseResult.html#a88b6d44f052a19e6436ae6aadc2c40b4":[54,0,0,3]
 };

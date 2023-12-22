@@ -1,5 +1,9 @@
 var NAVTREEINDEX46 =
 {
+"route__following__plugin_2src_2main_8cpp_source.html":[57,0,44,2,0],
+"route__following__plugin_8cpp.html":[57,0,44,2,1],
+"route__following__plugin_8cpp.html#a69b9c9bf1a2410dfb992ec9874073e4e":[57,0,44,2,1,1],
+"route__following__plugin_8cpp.html#a9b29dd085f9f59d468b1c9320f0b5102":[57,0,44,2,1,0],
 "route__following__plugin_8cpp_source.html":[57,0,44,2,1],
 "route__following__plugin_8hpp.html":[57,0,44,0,0],
 "route__following__plugin_8hpp.html#a066f948508e087006568cb6c9b0674a7":[57,0,44,0,0,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX46 =
 "stop__and__wait__plugin_8hpp.html":[57,0,47,0,2],
 "stop__and__wait__plugin_8hpp_source.html":[57,0,47,0,2],
 "stop__and__wait__plugin__launch_8py.html":[57,0,47,1,0],
-"stop__and__wait__plugin__launch_8py.html#a71b7537661a2bcfa3c3a5b99addf4f1d":[57,0,47,1,0,0],
-"stop__and__wait__plugin__launch_8py_source.html":[57,0,47,1,0],
-"stop__and__wait__plugin__node_8cpp.html":[57,0,47,2,2],
-"stop__and__wait__plugin__node_8cpp_source.html":[57,0,47,2,2],
-"stop__controlled__intersection__config_8hpp.html":[57,0,48,0,0]
+"stop__and__wait__plugin__launch_8py.html#a71b7537661a2bcfa3c3a5b99addf4f1d":[57,0,47,1,0,0]
 };

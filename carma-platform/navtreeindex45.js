@@ -1,5 +1,9 @@
 var NAVTREEINDEX45 =
 {
+"pointer_8h.html#a3f324884650614ca6b0ef4765566bc9d":[57,0,30,2,0,0,0,14,14],
+"pointer_8h.html#a409f561a9f9a793f7032b50536f8c526":[57,0,30,2,0,0,0,14,24],
+"pointer_8h.html#a41a691f733d842ff55465842e33c9bd3":[57,0,30,2,0,0,0,14,17],
+"pointer_8h.html#a4623bdd62153e95fdfac34c3af92a654":[57,0,30,2,0,0,0,14,33],
 "pointer_8h.html#a46da885c093bb294a323e4c144449d2e":[57,0,30,2,0,0,0,14,28],
 "pointer_8h.html#a51a45d6a8d97468b650fc275255b7504":[57,0,30,2,0,0,0,14,29],
 "pointer_8h.html#a542981a8bdcf3bc3c701c7eff39648ac":[57,0,30,2,0,0,0,14,43],
@@ -245,9 +249,5 @@ var NAVTREEINDEX45 =
 "route__config_8hpp.html":[57,0,43,0,0,0],
 "route__config_8hpp_source.html":[57,0,43,0,0,0],
 "route__following__plugin_2src_2main_8cpp.html":[57,0,44,2,0],
-"route__following__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,44,2,0,0],
-"route__following__plugin_2src_2main_8cpp_source.html":[57,0,44,2,0],
-"route__following__plugin_8cpp.html":[57,0,44,2,1],
-"route__following__plugin_8cpp.html#a69b9c9bf1a2410dfb992ec9874073e4e":[57,0,44,2,1,1],
-"route__following__plugin_8cpp.html#a9b29dd085f9f59d468b1c9320f0b5102":[57,0,44,2,1,0]
+"route__following__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,44,2,0,0]
 };

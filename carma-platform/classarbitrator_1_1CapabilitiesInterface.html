@@ -101,11 +101,12 @@ Collaboration diagram for arbitrator::CapabilitiesInterface:</div>
 <div class="dyncontent">
 <div class="center"><img src="classarbitrator_1_1CapabilitiesInterface__coll__graph.png" border="0" usemap="#aarbitrator_1_1CapabilitiesInterface_coll__map" alt="Collaboration graph"/></div>
 <map name="aarbitrator_1_1CapabilitiesInterface_coll__map" id="aarbitrator_1_1CapabilitiesInterface_coll__map">
-<area shape="rect" title="Generic interface for interacting with Plugins via their capabilities instead of directly by their to..." alt="" coords="265,160,449,296"/>
-<area shape="rect" title=" " alt="" coords="5,13,60,90"/>
-<area shape="rect" title=" " alt="" coords="132,5,323,97"/>
-<area shape="rect" title=" " alt="" coords="347,5,526,97"/>
-<area shape="rect" title=" " alt="" coords="550,5,683,97"/>
+<area shape="rect" title="Generic interface for interacting with Plugins via their capabilities instead of directly by their to..." alt="" coords="385,204,569,340"/>
+<area shape="rect" title=" " alt="" coords="5,27,60,105"/>
+<area shape="rect" title=" " alt="" coords="132,20,323,112"/>
+<area shape="rect" title=" " alt="" coords="347,5,606,127"/>
+<area shape="rect" title=" " alt="" coords="630,20,809,112"/>
+<area shape="rect" title=" " alt="" coords="833,20,966,112"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -131,6 +132,8 @@ Static Public Attributes</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a3fbdab950adb45a102abc751ccddfdcf"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; carma_ros2_utils::CarmaLifecycleNode &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarbitrator_1_1CapabilitiesInterface.html#a3fbdab950adb45a102abc751ccddfdcf">nh_</a></td></tr>
 <tr class="separator:a3fbdab950adb45a102abc751ccddfdcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13c393afc8e57b1d6c50f3e26167593"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, carma_ros2_utils::ClientPtr&lt; carma_planning_msgs::srv::PlanManeuvers &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarbitrator_1_1CapabilitiesInterface.html#ab13c393afc8e57b1d6c50f3e26167593">registered_strategic_plugins_</a></td></tr>
+<tr class="separator:ab13c393afc8e57b1d6c50f3e26167593"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45881b40e8c87e89837dbfae37d44451"><td class="memItemLeft" align="right" valign="top">carma_ros2_utils::ClientPtr&lt; carma_planning_msgs::srv::GetPluginApi &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarbitrator_1_1CapabilitiesInterface.html#a45881b40e8c87e89837dbfae37d44451">sc_s_</a></td></tr>
 <tr class="separator:a45881b40e8c87e89837dbfae37d44451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafb7da2aa8800f2b722d335a48dc0e47"><td class="memItemLeft" align="right" valign="top">std::unordered_set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarbitrator_1_1CapabilitiesInterface.html#aafb7da2aa8800f2b722d335a48dc0e47">capabilities_</a></td></tr>
@@ -139,7 +142,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Generic interface for interacting with Plugins via their capabilities instead of directly by their topics. </p>
 
-<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00036">36</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00038">38</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae9f2e813588d51bd81546c32bb9946e8" name="ae9f2e813588d51bd81546c32bb9946e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9f2e813588d51bd81546c32bb9946e8">&#9670;&nbsp;</a></span>CapabilitiesInterface()</h2>
@@ -173,14 +176,14 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00043">43</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                                                       : <a class="code hl_variable" href="classarbitrator_1_1CapabilitiesInterface.html#a3fbdab950adb45a102abc751ccddfdcf">nh_</a>(nh) {</div>
-<div class="line"><span class="lineno">   44</span>                <a class="code hl_variable" href="classarbitrator_1_1CapabilitiesInterface.html#a45881b40e8c87e89837dbfae37d44451">sc_s_</a> = <a class="code hl_variable" href="classarbitrator_1_1CapabilitiesInterface.html#a3fbdab950adb45a102abc751ccddfdcf">nh_</a>-&gt;create_client&lt;carma_planning_msgs::srv::GetPluginApi&gt;(<span class="stringliteral">&quot;plugins/get_strategic_plugins_by_capability&quot;</span>);</div>
-<div class="line"><span class="lineno">   45</span>            };</div>
-<div class="ttc" id="aclassarbitrator_1_1CapabilitiesInterface_html_a3fbdab950adb45a102abc751ccddfdcf"><div class="ttname"><a href="classarbitrator_1_1CapabilitiesInterface.html#a3fbdab950adb45a102abc751ccddfdcf">arbitrator::CapabilitiesInterface::nh_</a></div><div class="ttdeci">std::shared_ptr&lt; carma_ros2_utils::CarmaLifecycleNode &gt; nh_</div><div class="ttdef"><b>Definition:</b> <a href="capabilities__interface_8hpp_source.html#l00082">capabilities_interface.hpp:82</a></div></div>
-<div class="ttc" id="aclassarbitrator_1_1CapabilitiesInterface_html_a45881b40e8c87e89837dbfae37d44451"><div class="ttname"><a href="classarbitrator_1_1CapabilitiesInterface.html#a45881b40e8c87e89837dbfae37d44451">arbitrator::CapabilitiesInterface::sc_s_</a></div><div class="ttdeci">carma_ros2_utils::ClientPtr&lt; carma_planning_msgs::srv::GetPluginApi &gt; sc_s_</div><div class="ttdef"><b>Definition:</b> <a href="capabilities__interface_8hpp_source.html#l00084">capabilities_interface.hpp:84</a></div></div>
+<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00045">45</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>                                                                                       : <a class="code hl_variable" href="classarbitrator_1_1CapabilitiesInterface.html#a3fbdab950adb45a102abc751ccddfdcf">nh_</a>(nh) {</div>
+<div class="line"><span class="lineno">   46</span>                <a class="code hl_variable" href="classarbitrator_1_1CapabilitiesInterface.html#a45881b40e8c87e89837dbfae37d44451">sc_s_</a> = <a class="code hl_variable" href="classarbitrator_1_1CapabilitiesInterface.html#a3fbdab950adb45a102abc751ccddfdcf">nh_</a>-&gt;create_client&lt;carma_planning_msgs::srv::GetPluginApi&gt;(<span class="stringliteral">&quot;plugins/get_strategic_plugins_by_capability&quot;</span>);</div>
+<div class="line"><span class="lineno">   47</span>            };</div>
+<div class="ttc" id="aclassarbitrator_1_1CapabilitiesInterface_html_a3fbdab950adb45a102abc751ccddfdcf"><div class="ttname"><a href="classarbitrator_1_1CapabilitiesInterface.html#a3fbdab950adb45a102abc751ccddfdcf">arbitrator::CapabilitiesInterface::nh_</a></div><div class="ttdeci">std::shared_ptr&lt; carma_ros2_utils::CarmaLifecycleNode &gt; nh_</div><div class="ttdef"><b>Definition:</b> <a href="capabilities__interface_8hpp_source.html#l00084">capabilities_interface.hpp:84</a></div></div>
+<div class="ttc" id="aclassarbitrator_1_1CapabilitiesInterface_html_a45881b40e8c87e89837dbfae37d44451"><div class="ttname"><a href="classarbitrator_1_1CapabilitiesInterface.html#a45881b40e8c87e89837dbfae37d44451">arbitrator::CapabilitiesInterface::sc_s_</a></div><div class="ttdeci">carma_ros2_utils::ClientPtr&lt; carma_planning_msgs::srv::GetPluginApi &gt; sc_s_</div><div class="ttdef"><b>Definition:</b> <a href="capabilities__interface_8hpp_source.html#l00087">capabilities_interface.hpp:87</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="capabilities__interface_8hpp_source.html#l00082">nh_</a>, and <a class="el" href="capabilities__interface_8hpp_source.html#l00084">sc_s_</a>.</p>
+<p class="reference">References <a class="el" href="capabilities__interface_8hpp_source.html#l00084">nh_</a>, and <a class="el" href="capabilities__interface_8hpp_source.html#l00087">sc_s_</a>.</p>
 
 </div>
 </div>
@@ -244,11 +247,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   56</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="namespaceprocess__bag.html#afc7d568ed280f8ac9034d0038e1d8fce">topics</a>;</div>
 <div class="line"><span class="lineno">   57</span> </div>
 <div class="line"><span class="lineno">   58</span>    }</div>
-<div class="ttc" id="aclassarbitrator_1_1CapabilitiesInterface_html_a29bdc37a5f80b31a107e142f98bad910"><div class="ttname"><a href="classarbitrator_1_1CapabilitiesInterface.html#a29bdc37a5f80b31a107e142f98bad910">arbitrator::CapabilitiesInterface::STRATEGIC_PLAN_CAPABILITY</a></div><div class="ttdeci">static const std::string STRATEGIC_PLAN_CAPABILITY</div><div class="ttdef"><b>Definition:</b> <a href="capabilities__interface_8hpp_source.html#l00079">capabilities_interface.hpp:79</a></div></div>
+<div class="ttc" id="aclassarbitrator_1_1CapabilitiesInterface_html_a29bdc37a5f80b31a107e142f98bad910"><div class="ttname"><a href="classarbitrator_1_1CapabilitiesInterface.html#a29bdc37a5f80b31a107e142f98bad910">arbitrator::CapabilitiesInterface::STRATEGIC_PLAN_CAPABILITY</a></div><div class="ttdeci">static const std::string STRATEGIC_PLAN_CAPABILITY</div><div class="ttdef"><b>Definition:</b> <a href="capabilities__interface_8hpp_source.html#l00081">capabilities_interface.hpp:81</a></div></div>
 <div class="ttc" id="acomm__types_8h_html_a1e7c51636d3896b55ca0813f2396a7dba254d290cd568731c37ba45103c16c22d"><div class="ttname"><a href="comm__types_8h.html#a1e7c51636d3896b55ca0813f2396a7dba254d290cd568731c37ba45103c16c22d">CommTypes::srv</a></div><div class="ttdeci">@ srv</div></div>
 <div class="ttc" id="anamespaceprocess__bag_html_afc7d568ed280f8ac9034d0038e1d8fce"><div class="ttname"><a href="namespaceprocess__bag.html#afc7d568ed280f8ac9034d0038e1d8fce">process_bag.topics</a></div><div class="ttdeci">topics</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00038">process_bag.py:38</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="capabilities__interface_8hpp_source.html#l00082">nh_</a>, <a class="el" href="capabilities__interface_8hpp_source.html#l00084">sc_s_</a>, <a class="el" href="comm__types_8h.html#a1e7c51636d3896b55ca0813f2396a7dba254d290cd568731c37ba45103c16c22d">srv</a>, <a class="el" href="capabilities__interface_8hpp_source.html#l00079">STRATEGIC_PLAN_CAPABILITY</a>, and <a class="el" href="process__bag_8py_source.html#l00038">process_bag::topics</a>.</p>
+<p class="reference">References <a class="el" href="capabilities__interface_8hpp_source.html#l00084">nh_</a>, <a class="el" href="capabilities__interface_8hpp_source.html#l00087">sc_s_</a>, <a class="el" href="comm__types_8h.html#a1e7c51636d3896b55ca0813f2396a7dba254d290cd568731c37ba45103c16c22d">srv</a>, <a class="el" href="capabilities__interface_8hpp_source.html#l00081">STRATEGIC_PLAN_CAPABILITY</a>, and <a class="el" href="process__bag_8py_source.html#l00038">process_bag::topics</a>.</p>
 
 </div>
 </div>
@@ -320,7 +323,7 @@ template&lt;typename MSrvReq , typename MSrvRes &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00085">85</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00088">88</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
 
 </div>
 </div>
@@ -344,9 +347,33 @@ template&lt;typename MSrvReq , typename MSrvRes &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00082">82</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00084">84</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="capabilities__interface_8hpp_source.html#l00043">CapabilitiesInterface()</a>, and <a class="el" href="capabilities__interface_8cpp_source.html#l00026">get_topics_for_capability()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="capabilities__interface_8hpp_source.html#l00045">CapabilitiesInterface()</a>, and <a class="el" href="capabilities__interface_8cpp_source.html#l00026">get_topics_for_capability()</a>.</p>
+
+</div>
+</div>
+<a id="ab13c393afc8e57b1d6c50f3e26167593" name="ab13c393afc8e57b1d6c50f3e26167593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab13c393afc8e57b1d6c50f3e26167593">&#9670;&nbsp;</a></span>registered_strategic_plugins_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string,carma_ros2_utils::ClientPtr&lt;carma_planning_msgs::srv::PlanManeuvers&gt; &gt; arbitrator::CapabilitiesInterface::registered_strategic_plugins_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00085">85</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
 
 </div>
 </div>
@@ -370,9 +397,9 @@ template&lt;typename MSrvReq , typename MSrvRes &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00084">84</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00087">87</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="capabilities__interface_8hpp_source.html#l00043">CapabilitiesInterface()</a>, and <a class="el" href="capabilities__interface_8cpp_source.html#l00026">get_topics_for_capability()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="capabilities__interface_8hpp_source.html#l00045">CapabilitiesInterface()</a>, and <a class="el" href="capabilities__interface_8cpp_source.html#l00026">get_topics_for_capability()</a>.</p>
 
 </div>
 </div>
@@ -396,7 +423,7 @@ template&lt;typename MSrvReq , typename MSrvRes &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00079">79</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="capabilities__interface_8hpp_source.html#l00081">81</a> of file <a class="el" href="capabilities__interface_8hpp_source.html">capabilities_interface.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="capabilities__interface_8cpp_source.html#l00026">get_topics_for_capability()</a>.</p>
 
@@ -412,7 +439,7 @@ template&lt;typename MSrvReq , typename MSrvRes &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacearbitrator.html">arbitrator</a></li><li class="navelem"><a class="el" href="classarbitrator_1_1CapabilitiesInterface.html">CapabilitiesInterface</a></li>
-    <li class="footer">Generated on Sun Dec 24 2023 15:17:23 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Dec 26 2023 14:50:39 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

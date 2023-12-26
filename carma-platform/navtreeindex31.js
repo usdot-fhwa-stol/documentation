@@ -1,5 +1,7 @@
 var NAVTREEINDEX31 =
 {
+"classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a337c52f147aa8c717b4f962c5f3e0f06":[55,0,86,1,63],
+"classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a37a01eb0bb691159208aa47852a828a8":[56,0,47,0,55],
 "classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a37a01eb0bb691159208aa47852a828a8":[55,0,86,1,55],
 "classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a398111f0b81cfe0db237368358c316fa":[55,0,86,1,20],
 "classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a398111f0b81cfe0db237368358c316fa":[56,0,47,0,20],
@@ -247,7 +249,5 @@ var NAVTREEINDEX31 =
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#aa5f0a6401736cd8f388b5b73a104df9d":[56,0,50,0,4],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#ab0bf4a699bff521ffe56736d78880926":[56,0,50,0,13],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#ab0bf4a699bff521ffe56736d78880926":[55,0,93,0,13],
-"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#abbcab2cf32b229cd2938dd63afb3e09d":[56,0,50,0,6],
-"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#abbcab2cf32b229cd2938dd63afb3e09d":[55,0,93,0,6],
-"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#ac2b69a37cb6376fb4bbab8d85c921c64":[55,0,93,0,11]
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#abbcab2cf32b229cd2938dd63afb3e09d":[56,0,50,0,6]
 };

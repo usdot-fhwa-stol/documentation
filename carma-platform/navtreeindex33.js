@@ -1,5 +1,7 @@
 var NAVTREEINDEX33 =
 {
+"classsubsystem__controllers_1_1PluginManager.html#a9f732913ba1f9c7e16986bade344f258":[56,0,52,12,15],
+"classsubsystem__controllers_1_1PluginManager.html#aa0a83528b66d35c3cfac1bb2f96a5132":[56,0,52,12,7],
 "classsubsystem__controllers_1_1PluginManager.html#aa0a83528b66d35c3cfac1bb2f96a5132":[55,0,95,12,7],
 "classsubsystem__controllers_1_1PluginManager.html#aa751beb402db0442a24ad5504a0708cb":[56,0,52,12,27],
 "classsubsystem__controllers_1_1PluginManager.html#aa751beb402db0442a24ad5504a0708cb":[55,0,95,12,27],
@@ -247,7 +249,5 @@ var NAVTREEINDEX33 =
 "classtruck__inspection__client_1_1TruckInspectionClient.html#afb1c11def79647b098014c51fb010abe":[56,0,57,0,26],
 "classtruck__inspection__client_1_1TruckInspectionClient.html#afc9993b73914f6ab940bb6ec9ad21211":[55,0,106,0,10],
 "classtruck__inspection__client_1_1TruckInspectionClient.html#afc9993b73914f6ab940bb6ec9ad21211":[56,0,57,0,10],
-"classyield__plugin_1_1YieldPlugin.html":[55,0,109,1],
-"classyield__plugin_1_1YieldPlugin.html":[56,0,58,1],
-"classyield__plugin_1_1YieldPlugin.html#a0309a7c183f392157ced2123df038ffb":[56,0,58,1,6]
+"classyield__plugin_1_1YieldPlugin.html":[55,0,109,1]
 };

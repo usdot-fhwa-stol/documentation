@@ -5,6 +5,7 @@ var classarbitrator_1_1CapabilitiesInterface =
     [ "multiplex_service_call_for_capability", "classarbitrator_1_1CapabilitiesInterface.html#a4d0d90a47d3a8732e59bb636bf5a2a88", null ],
     [ "capabilities_", "classarbitrator_1_1CapabilitiesInterface.html#aafb7da2aa8800f2b722d335a48dc0e47", null ],
     [ "nh_", "classarbitrator_1_1CapabilitiesInterface.html#a3fbdab950adb45a102abc751ccddfdcf", null ],
+    [ "registered_strategic_plugins_", "classarbitrator_1_1CapabilitiesInterface.html#ab13c393afc8e57b1d6c50f3e26167593", null ],
     [ "sc_s_", "classarbitrator_1_1CapabilitiesInterface.html#a45881b40e8c87e89837dbfae37d44451", null ],
     [ "STRATEGIC_PLAN_CAPABILITY", "classarbitrator_1_1CapabilitiesInterface.html#a29bdc37a5f80b31a107e142f98bad910", null ]
 ];

@@ -1,5 +1,7 @@
 var NAVTREEINDEX52 =
 {
+"structinternal_1_1TypeHelper_3_01ValueType_00_01typename_01ValueType_1_1Object_01_4.html#ac5d59bffe76792786fd5f1ba4da94dd9":[56,0,20,30,0],
+"structinternal_1_1TypeHelper_3_01ValueType_00_01typename_01ValueType_1_1Object_01_4.html#ac5d59bffe76792786fd5f1ba4da94dd9":[55,0,36,30,0],
 "structinternal_1_1TypeHelper_3_01ValueType_00_01typename_01ValueType_1_1Object_01_4.html#ae1debd6b9c125d4206e43a74ddbd0795":[56,0,20,30,1],
 "structinternal_1_1TypeHelper_3_01ValueType_00_01typename_01ValueType_1_1Object_01_4.html#ae1debd6b9c125d4206e43a74ddbd0795":[55,0,36,30,1],
 "structinternal_1_1TypeHelper_3_01ValueType_00_01typename_01ValueType_1_1Object_01_4.html#aff688acbadc1888b8886a4d9b0753864":[56,0,20,30,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX52 =
 "structlocalization__manager_1_1LocalizationManagerConfig.html#ae0ca2842f7b10c7af545b5d3d16e87fc":[56,0,25,1,8],
 "structlocalization__manager_1_1LocalizationManagerConfig.html#ae0ca2842f7b10c7af545b5d3d16e87fc":[55,0,45,1,8],
 "structlocalization__manager_1_1LocalizationManagerConfig.html#ae10dc543a160a4932983ca4fb8770dac":[55,0,45,1,7],
-"structlocalization__manager_1_1LocalizationManagerConfig.html#ae10dc543a160a4932983ca4fb8770dac":[56,0,25,1,7],
-"structlocalization__manager_1_1LocalizationManagerConfig.html#aed78bd42d681c0ace463dddc4dbf36f1":[56,0,25,1,10],
-"structlocalization__manager_1_1LocalizationManagerConfig.html#aed78bd42d681c0ace463dddc4dbf36f1":[55,0,45,1,10]
+"structlocalization__manager_1_1LocalizationManagerConfig.html#ae10dc543a160a4932983ca4fb8770dac":[56,0,25,1,7]
 };

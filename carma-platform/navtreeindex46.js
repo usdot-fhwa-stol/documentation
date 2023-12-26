@@ -1,5 +1,7 @@
 var NAVTREEINDEX46 =
 {
+"route_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,43,2,0,0],
+"route_2src_2main_8cpp_source.html":[57,0,43,2,0],
 "route__config_8hpp.html":[57,0,43,0,0,0],
 "route__config_8hpp_source.html":[57,0,43,0,0,0],
 "route__following__plugin_2src_2main_8cpp.html":[57,0,44,2,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX46 =
 "stop__and__wait__plugin_2src_2main_8cpp.html":[57,0,47,2,0],
 "stop__and__wait__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,47,2,0,0],
 "stop__and__wait__plugin_2src_2main_8cpp_source.html":[57,0,47,2,0],
-"stop__and__wait__plugin_8cpp.html":[57,0,47,2,1],
-"stop__and__wait__plugin_8cpp.html#a8212f1302ee6736745dc97bb5b3caaf5":[57,0,47,2,1,0],
-"stop__and__wait__plugin_8cpp_source.html":[57,0,47,2,1]
+"stop__and__wait__plugin_8cpp.html":[57,0,47,2,1]
 };

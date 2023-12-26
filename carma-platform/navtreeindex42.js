@@ -1,5 +1,7 @@
 var NAVTREEINDEX42 =
 {
+"namespacecav.html#a9b3114e36c8c8b79f993a2e4cd591b68":[55,0,19,3],
+"namespacecooperative__lanechange.html":[55,0,20],
 "namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67":[55,0,20,3],
 "namespacecooperative__lanechange__launch.html":[55,0,21],
 "namespacecooperative__lanechange__launch.html#a8eeaf25b9dddf06d79ef0444488cf34a":[55,0,21,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX42 =
 "namespacemembers_func_p.html":[55,1,1,13],
 "namespacemembers_func_r.html":[55,1,1,14],
 "namespacemembers_func_s.html":[55,1,1,15],
-"namespacemembers_func_t.html":[55,1,1,16],
-"namespacemembers_func_u.html":[55,1,1,17],
-"namespacemembers_func_v.html":[55,1,1,18]
+"namespacemembers_func_t.html":[55,1,1,16]
 };

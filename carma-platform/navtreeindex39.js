@@ -1,5 +1,7 @@
 var NAVTREEINDEX39 =
 {
+"light__controlled__intersection__tactical__plugin__node_8hpp_source.html":[57,0,22,0,0,2],
+"lightbar__manager_2src_2main_8cpp.html":[57,0,23,2,3],
 "lightbar__manager_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,23,2,3,0],
 "lightbar__manager_2src_2main_8cpp_source.html":[57,0,23,2,3],
 "lightbar__manager_8launch_8py.html":[57,0,23,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX39 =
 "md_docs_Release_notes.html#autotoc_md185":[25,23],
 "md_docs_Release_notes.html#autotoc_md186":[25,24],
 "md_docs_Release_notes.html#autotoc_md187":[25,25],
-"md_docs_Release_notes.html#autotoc_md188":[25,26],
-"md_docs_Release_notes.html#autotoc_md189":[25,27],
-"md_docs_Release_notes.html#autotoc_md190":[25,28]
+"md_docs_Release_notes.html#autotoc_md188":[25,26]
 };

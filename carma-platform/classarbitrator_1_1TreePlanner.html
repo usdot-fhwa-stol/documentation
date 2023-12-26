@@ -267,7 +267,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   33</span> </div>
 <div class="line"><span class="lineno">   34</span>        carma_planning_msgs::msg::ManeuverPlan longest_plan = root; <span class="comment">// Track longest plan in case target length is never reached</span></div>
 <div class="line"><span class="lineno">   35</span>        rclcpp::Duration longest_plan_duration = rclcpp::Duration(0);</div>
-<div class="line"><span class="lineno">   36</span>        </div>
+<div class="line"><span class="lineno">   36</span> </div>
 <div class="line"><span class="lineno">   37</span> </div>
 <div class="line"><span class="lineno">   38</span>        <span class="keywordflow">while</span> (!open_list_to_evaluate.empty())</div>
 <div class="line"><span class="lineno">   39</span>        {</div>
@@ -279,39 +279,39 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   45</span>                carma_planning_msgs::msg::ManeuverPlan cur_plan = it-&gt;first;</div>
 <div class="line"><span class="lineno">   46</span> </div>
 <div class="line"><span class="lineno">   47</span>                RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;arbitrator&quot;</span>), <span class="stringliteral">&quot;START&quot;</span>);</div>
-<div class="line"><span class="lineno">   48</span>                </div>
+<div class="line"><span class="lineno">   48</span> </div>
 <div class="line"><span class="lineno">   49</span>                <span class="keywordflow">for</span> (<span class="keyword">auto</span> mvr : cur_plan.maneuvers)</div>
 <div class="line"><span class="lineno">   50</span>                {</div>
 <div class="line"><span class="lineno">   51</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;arbitrator&quot;</span>), <span class="stringliteral">&quot;Printing cur_plan: mvr: &quot;</span>&lt;&lt; (<span class="keywordtype">int</span>)mvr.type);</div>
-<div class="line"><span class="lineno">   52</span>                }   </div>
+<div class="line"><span class="lineno">   52</span>                }</div>
 <div class="line"><span class="lineno">   53</span> </div>
 <div class="line"><span class="lineno">   54</span>                RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;arbitrator&quot;</span>), <span class="stringliteral">&quot;PRINT END&quot;</span>);</div>
 <div class="line"><span class="lineno">   55</span> </div>
 <div class="line"><span class="lineno">   56</span>                <span class="keyword">auto</span> plan_duration = rclcpp::Duration(0, 0); <span class="comment">// zero duration</span></div>
 <div class="line"><span class="lineno">   57</span> </div>
 <div class="line"><span class="lineno">   58</span>                <span class="comment">// If we&#39;re not at the root, plan_duration is nonzero (our plan should have maneuvers)</span></div>
-<div class="line"><span class="lineno">   59</span>                <span class="keywordflow">if</span> (!cur_plan.maneuvers.empty()) </div>
+<div class="line"><span class="lineno">   59</span>                <span class="keywordflow">if</span> (!cur_plan.maneuvers.empty())</div>
 <div class="line"><span class="lineno">   60</span>                {</div>
 <div class="line"><span class="lineno">   61</span>                    <span class="comment">// get plan duration</span></div>
-<div class="line"><span class="lineno">   62</span>                    plan_duration = <a class="code hl_function" href="namespacearbitrator__utils.html#a55b3fb8d1ec0ed202d71a85a7ea098ae">arbitrator_utils::get_plan_end_time</a>(cur_plan) - <a class="code hl_function" href="namespacearbitrator__utils.html#a06e324ed81e5044e09191269407e6869">arbitrator_utils::get_plan_start_time</a>(cur_plan); </div>
+<div class="line"><span class="lineno">   62</span>                    plan_duration = <a class="code hl_function" href="namespacearbitrator__utils.html#a55b3fb8d1ec0ed202d71a85a7ea098ae">arbitrator_utils::get_plan_end_time</a>(cur_plan) - <a class="code hl_function" href="namespacearbitrator__utils.html#a06e324ed81e5044e09191269407e6869">arbitrator_utils::get_plan_start_time</a>(cur_plan);</div>
 <div class="line"><span class="lineno">   63</span>                }</div>
-<div class="line"><span class="lineno">   64</span>                </div>
+<div class="line"><span class="lineno">   64</span> </div>
 <div class="line"><span class="lineno">   65</span>                <span class="comment">// save longest if none of the plans have enough target duration</span></div>
-<div class="line"><span class="lineno">   66</span>                <span class="keywordflow">if</span> (plan_duration &gt; longest_plan_duration) </div>
+<div class="line"><span class="lineno">   66</span>                <span class="keywordflow">if</span> (plan_duration &gt; longest_plan_duration)</div>
 <div class="line"><span class="lineno">   67</span>                {</div>
 <div class="line"><span class="lineno">   68</span>                    longest_plan_duration = plan_duration;</div>
 <div class="line"><span class="lineno">   69</span>                    longest_plan = cur_plan;</div>
 <div class="line"><span class="lineno">   70</span>                }</div>
 <div class="line"><span class="lineno">   71</span> </div>
 <div class="line"><span class="lineno">   72</span>                <span class="comment">// Evaluate plan_duration is sufficient do not expand more</span></div>
-<div class="line"><span class="lineno">   73</span>                <span class="keywordflow">if</span> (plan_duration &gt;= <a class="code hl_variable" href="classarbitrator_1_1TreePlanner.html#a29b70484621a565bf99744dbb24e0f20">target_plan_duration_</a>) </div>
+<div class="line"><span class="lineno">   73</span>                <span class="keywordflow">if</span> (plan_duration &gt;= <a class="code hl_variable" href="classarbitrator_1_1TreePlanner.html#a29b70484621a565bf99744dbb24e0f20">target_plan_duration_</a>)</div>
 <div class="line"><span class="lineno">   74</span>                {</div>
 <div class="line"><span class="lineno">   75</span>                    final_open_list.push_back((*it));</div>
 <div class="line"><span class="lineno">   76</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;arbitrator&quot;</span>), <span class="stringliteral">&quot;Has enough duration, skipping that which has following mvrs..:&quot;</span>);</div>
 <div class="line"><span class="lineno">   77</span>                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> mvr : it-&gt;first.maneuvers)</div>
 <div class="line"><span class="lineno">   78</span>                    {</div>
 <div class="line"><span class="lineno">   79</span>                        RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;arbitrator&quot;</span>), <span class="stringliteral">&quot;Printing mvr: &quot;</span>&lt;&lt; (<span class="keywordtype">int</span>)mvr.type);</div>
-<div class="line"><span class="lineno">   80</span>                    }  </div>
+<div class="line"><span class="lineno">   80</span>                    }</div>
 <div class="line"><span class="lineno">   81</span>                    <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">   82</span>                }</div>
 <div class="line"><span class="lineno">   83</span> </div>
@@ -321,42 +321,48 @@ Protected Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   87</span>                <span class="comment">// Compute cost for each child and store in open list</span></div>
 <div class="line"><span class="lineno">   88</span>                <span class="keywordflow">for</span> (<span class="keyword">auto</span> child = children.begin(); child != children.end(); child++)</div>
 <div class="line"><span class="lineno">   89</span>                {</div>
-<div class="line"><span class="lineno">   90</span>                    </div>
+<div class="line"><span class="lineno">   90</span> </div>
 <div class="line"><span class="lineno">   91</span>                    <span class="keywordflow">if</span> (child-&gt;maneuvers.empty())</div>
 <div class="line"><span class="lineno">   92</span>                    {</div>
 <div class="line"><span class="lineno">   93</span>                        RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;arbitrator&quot;</span>), <span class="stringliteral">&quot;Child was empty for id: &quot;</span> &lt;&lt; std::string(child-&gt;maneuver_plan_id));</div>
-<div class="line"><span class="lineno">   94</span>                        <span class="keywordflow">continue</span>;   </div>
+<div class="line"><span class="lineno">   94</span>                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">   95</span>                    }</div>
 <div class="line"><span class="lineno">   96</span> </div>
 <div class="line"><span class="lineno">   97</span>                    temp_open_list.push_back(std::make_pair(*child, <a class="code hl_variable" href="classarbitrator_1_1TreePlanner.html#ae35e763940f0ad5225e6bc50e28d2b42">cost_function_</a>-&gt;compute_cost_per_unit_distance(*child)));</div>
 <div class="line"><span class="lineno">   98</span>                }</div>
 <div class="line"><span class="lineno">   99</span>            }</div>
-<div class="line"><span class="lineno">  100</span>            </div>
+<div class="line"><span class="lineno">  100</span> </div>
 <div class="line"><span class="lineno">  101</span>            open_list_to_evaluate = temp_open_list;</div>
 <div class="line"><span class="lineno">  102</span>        }</div>
 <div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>        final_open_list = <a class="code hl_variable" href="classarbitrator_1_1TreePlanner.html#a853fa99a75be2cfeaa86fced969cc17a">search_strategy_</a>-&gt;prioritize_plans(final_open_list);</div>
-<div class="line"><span class="lineno">  105</span> </div>
-<div class="line"><span class="lineno">  106</span>        <span class="comment">// now every plan has enough duration if possible and prioritized</span></div>
-<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> pair : final_open_list)</div>
-<div class="line"><span class="lineno">  108</span>        {</div>
-<div class="line"><span class="lineno">  109</span>            <span class="comment">// Pop the first element off the open list</span></div>
-<div class="line"><span class="lineno">  110</span>            carma_planning_msgs::msg::ManeuverPlan cur_plan = pair.first;</div>
-<div class="line"><span class="lineno">  111</span>            rclcpp::Duration plan_duration(0,0); <span class="comment">// zero duration</span></div>
-<div class="line"><span class="lineno">  112</span> </div>
-<div class="line"><span class="lineno">  113</span>            <span class="comment">// get plan duration</span></div>
-<div class="line"><span class="lineno">  114</span>            plan_duration = <a class="code hl_function" href="namespacearbitrator__utils.html#a55b3fb8d1ec0ed202d71a85a7ea098ae">arbitrator_utils::get_plan_end_time</a>(cur_plan) - <a class="code hl_function" href="namespacearbitrator__utils.html#a06e324ed81e5044e09191269407e6869">arbitrator_utils::get_plan_start_time</a>(cur_plan); </div>
-<div class="line"><span class="lineno">  115</span> </div>
-<div class="line"><span class="lineno">  116</span>            <span class="comment">// Evaluate plan_duration is sufficient do not expand more</span></div>
-<div class="line"><span class="lineno">  117</span>            <span class="keywordflow">if</span> (plan_duration &gt;= <a class="code hl_variable" href="classarbitrator_1_1TreePlanner.html#a29b70484621a565bf99744dbb24e0f20">target_plan_duration_</a>) </div>
-<div class="line"><span class="lineno">  118</span>            {</div>
-<div class="line"><span class="lineno">  119</span>                <span class="keywordflow">return</span> cur_plan;</div>
-<div class="line"><span class="lineno">  120</span>            }</div>
-<div class="line"><span class="lineno">  121</span>        }</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>        <span class="comment">// If no perfect match is found, return the longest plan that fit the criteria</span></div>
-<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">return</span> longest_plan;</div>
-<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">if</span> (final_open_list.empty())</div>
+<div class="line"><span class="lineno">  105</span>        {</div>
+<div class="line"><span class="lineno">  106</span>            RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;arbitrator&quot;</span>), <span class="stringliteral">&quot;None of the strategic plugins generated any valid plans! Please check if any is turned and returning valid maneuvers...&quot;</span>);</div>
+<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;None of the strategic plugins generated any valid plans! Please check if any is turned and returning valid maneuvers...&quot;</span>);</div>
+<div class="line"><span class="lineno">  108</span>        }</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>        final_open_list = <a class="code hl_variable" href="classarbitrator_1_1TreePlanner.html#a853fa99a75be2cfeaa86fced969cc17a">search_strategy_</a>-&gt;prioritize_plans(final_open_list);</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>        <span class="comment">// now every plan has enough duration if possible and prioritized</span></div>
+<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> pair : final_open_list)</div>
+<div class="line"><span class="lineno">  114</span>        {</div>
+<div class="line"><span class="lineno">  115</span>            <span class="comment">// Pop the first element off the open list</span></div>
+<div class="line"><span class="lineno">  116</span>            carma_planning_msgs::msg::ManeuverPlan cur_plan = pair.first;</div>
+<div class="line"><span class="lineno">  117</span>            rclcpp::Duration plan_duration(0,0); <span class="comment">// zero duration</span></div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>            <span class="comment">// get plan duration</span></div>
+<div class="line"><span class="lineno">  120</span>            plan_duration = <a class="code hl_function" href="namespacearbitrator__utils.html#a55b3fb8d1ec0ed202d71a85a7ea098ae">arbitrator_utils::get_plan_end_time</a>(cur_plan) - <a class="code hl_function" href="namespacearbitrator__utils.html#a06e324ed81e5044e09191269407e6869">arbitrator_utils::get_plan_start_time</a>(cur_plan);</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>            <span class="comment">// Evaluate plan_duration is sufficient do not expand more</span></div>
+<div class="line"><span class="lineno">  123</span>            <span class="keywordflow">if</span> (plan_duration &gt;= <a class="code hl_variable" href="classarbitrator_1_1TreePlanner.html#a29b70484621a565bf99744dbb24e0f20">target_plan_duration_</a>)</div>
+<div class="line"><span class="lineno">  124</span>            {</div>
+<div class="line"><span class="lineno">  125</span>                <span class="keywordflow">return</span> cur_plan;</div>
+<div class="line"><span class="lineno">  126</span>            }</div>
+<div class="line"><span class="lineno">  127</span>        }</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>        <span class="comment">// If no perfect match is found, return the longest plan that fit the criteria</span></div>
+<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">return</span> longest_plan;</div>
+<div class="line"><span class="lineno">  131</span>    }</div>
 <div class="ttc" id="anamespacearbitrator__utils_html_a06e324ed81e5044e09191269407e6869"><div class="ttname"><a href="namespacearbitrator__utils.html#a06e324ed81e5044e09191269407e6869">arbitrator_utils::get_plan_start_time</a></div><div class="ttdeci">rclcpp::Time get_plan_start_time(const carma_planning_msgs::msg::ManeuverPlan &amp;)</div><div class="ttdoc">Get the start time of the first maneuver in the plan.</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator__utils_8cpp_source.html#l00047">arbitrator_utils.cpp:47</a></div></div>
 <div class="ttc" id="anamespacearbitrator__utils_html_a55b3fb8d1ec0ed202d71a85a7ea098ae"><div class="ttname"><a href="namespacearbitrator__utils.html#a55b3fb8d1ec0ed202d71a85a7ea098ae">arbitrator_utils::get_plan_end_time</a></div><div class="ttdeci">rclcpp::Time get_plan_end_time(const carma_planning_msgs::msg::ManeuverPlan &amp;)</div><div class="ttdoc">Get the end time of the first maneuver in the plan.</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator__utils_8cpp_source.html#l00024">arbitrator_utils.cpp:24</a></div></div>
 </div><!-- fragment -->
@@ -491,7 +497,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacearbitrator.html">arbitrator</a></li><li class="navelem"><a class="el" href="classarbitrator_1_1TreePlanner.html">TreePlanner</a></li>
-    <li class="footer">Generated on Sun Dec 24 2023 15:17:23 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Dec 26 2023 14:50:39 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

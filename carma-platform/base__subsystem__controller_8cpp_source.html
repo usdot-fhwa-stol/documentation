@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('base__subsystem__controller_8cpp_sourc
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesubsystem__controllers.html">subsystem_controllers</a></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a437e25316b7d6576b26fb6dfa47f2c9c">   27</a></span>  <a class="code hl_function" href="classsubsystem__controllers_1_1BaseSubsystemController.html#ae6375c66e0a5620d1538b34092f7b0e5">BaseSubsystemController::BaseSubsystemController</a>(<span class="keyword">const</span> rclcpp::NodeOptions &amp;options)</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      : CarmaLifecycleNode(options), </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      : CarmaLifecycleNode(options),</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      lifecycle_mgr_(get_node_base_interface(), get_node_graph_interface(), get_node_logging_interface(), get_node_services_interface())</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// Declare parameters</span></div>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('base__subsystem__controller_8cpp_sourc
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_variable" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a09c5bf5bac9f1cb35edfb160f1426e07">base_config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#a64e2532f8c029a31dd92ca840111b178">subsystem_namespace</a> = this-&gt;declare_parameter&lt;std::string&gt;(<span class="stringliteral">&quot;subsystem_namespace&quot;</span>, <a class="code hl_variable" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a09c5bf5bac9f1cb35edfb160f1426e07">base_config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#a64e2532f8c029a31dd92ca840111b178">subsystem_namespace</a>);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_variable" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a09c5bf5bac9f1cb35edfb160f1426e07">base_config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#a463ae44c8c7bdd68db622e2dea34b0f6">full_subsystem_required</a> = this-&gt;declare_parameter&lt;bool&gt;(<span class="stringliteral">&quot;full_subsystem_required&quot;</span>, <a class="code hl_variable" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a09c5bf5bac9f1cb35edfb160f1426e07">base_config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#a463ae44c8c7bdd68db622e2dea34b0f6">full_subsystem_required</a>);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_variable" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a09c5bf5bac9f1cb35edfb160f1426e07">base_config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#ad5a33979c79070d1b9e08f29bfbc37f2">unmanaged_required_nodes</a> = this-&gt;declare_parameter&lt;std::vector&lt;std::string&gt;&gt;(<span class="stringliteral">&quot;unmanaged_required_nodes&quot;</span>, <a class="code hl_variable" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a09c5bf5bac9f1cb35edfb160f1426e07">base_config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#ad5a33979c79070d1b9e08f29bfbc37f2">unmanaged_required_nodes</a>);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// Handle fact that parameter vectors cannot be empty</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a09c5bf5bac9f1cb35edfb160f1426e07">base_config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#a429da4228eaeee909637c3f9a120e086">required_subsystem_nodes</a>.size() == 1 &amp;&amp; <a class="code hl_variable" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a09c5bf5bac9f1cb35edfb160f1426e07">base_config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#a429da4228eaeee909637c3f9a120e086">required_subsystem_nodes</a>[0].empty()) {</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <a class="code hl_variable" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a09c5bf5bac9f1cb35edfb160f1426e07">base_config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#a429da4228eaeee909637c3f9a120e086">required_subsystem_nodes</a>.clear();</div>
@@ -166,7 +166,7 @@ $(document).ready(function(){initNavTree('base__subsystem__controller_8cpp_sourc
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        alert.source_node =  get_node_base_interface()-&gt;get_fully_qualified_name();</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        publish_system_alert(alert);</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="comment">// TODO: It might be worth trying to deactivate or shutdown after alerting the larger system, </span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="comment">// TODO: It might be worth trying to deactivate or shutdown after alerting the larger system,</span></div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="comment">//       but not clear on if that will increase instability of shutdown process</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      }</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      <span class="keywordflow">else</span></div>
@@ -181,7 +181,7 @@ $(document).ready(function(){initNavTree('base__subsystem__controller_8cpp_sourc
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  {</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Subsystem trying to configure&quot;</span>);</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">// Reset config </span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">// Reset config</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <a class="code hl_variable" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a09c5bf5bac9f1cb35edfb160f1426e07">base_config_</a> = <a class="code hl_struct" href="structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html">BaseSubSystemControllerConfig</a>();</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="comment">// Load Parameters</span></div>
@@ -229,7 +229,7 @@ $(document).ready(function(){initNavTree('base__subsystem__controller_8cpp_sourc
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;New config: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a09c5bf5bac9f1cb35edfb160f1426e07">base_config_</a>);</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    }</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classsubsystem__controllers_1_1BaseSubsystemController.html#aa289b4265da2ec5f863529abf3a8488c">trigger_managed_nodes_configure_from_base_class_</a>) {</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
@@ -367,7 +367,7 @@ $(document).ready(function(){initNavTree('base__subsystem__controller_8cpp_sourc
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a418affcaec63b88abe092d10b248054b">  279</a></span>  std::vector&lt;std::string&gt; <a class="code hl_function" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a418affcaec63b88abe092d10b248054b">BaseSubsystemController::get_nodes_in_namespace</a>(<span class="keyword">const</span> std::string &amp;node_namespace)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="keyword">  </span>{</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="comment">// These two services are exposed by lifecycle nodes. </span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="comment">// These two services are exposed by lifecycle nodes.</span></div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="keyword">static</span> <span class="keyword">const</span> std::string CHANGE_STATE_SRV = <span class="stringliteral">&quot;/change_state&quot;</span>;</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <span class="keyword">static</span> <span class="keyword">const</span> std::string GET_STATE_SRV = <span class="stringliteral">&quot;/get_state&quot;</span>;</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
@@ -394,8 +394,8 @@ $(document).ready(function(){initNavTree('base__subsystem__controller_8cpp_sourc
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        <span class="comment">// In the following section of code we check if the current node in the target namespace is actually a lifecycle node</span></div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        <span class="comment">// This check is done by evaluating if that nodes exposes the change_state and get_state lifecycle services. </span></div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        <span class="comment">// If the node does not expose these services then it cannot be managed by this component. </span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        <span class="comment">// This check is done by evaluating if that nodes exposes the change_state and get_state lifecycle services.</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        <span class="comment">// If the node does not expose these services then it cannot be managed by this component.</span></div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        <span class="comment">// However, this does not result in an error as the node could be wrapped by a lifecycle component wrapper</span></div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="comment"></span> </div>
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        <span class="comment">// First extract the service names and types for the current node. This requires seperating the node base name and namespace</span></div>
@@ -418,7 +418,7 @@ $(document).ready(function(){initNavTree('base__subsystem__controller_8cpp_sourc
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        <span class="keyword">const</span> std::string cs_srv = node + CHANGE_STATE_SRV;</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        <span class="keyword">const</span> std::string gs_srv = node + GET_STATE_SRV;</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        <span class="keywordflow">if</span> (services_and_types.find(cs_srv) != services_and_types.end() </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        <span class="keywordflow">if</span> (services_and_types.find(cs_srv) != services_and_types.end()</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>          &amp;&amp; services_and_types.find(gs_srv) != services_and_types.end()</div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>          &amp;&amp; std::find(services_and_types.at(cs_srv).begin(), services_and_types.at(cs_srv).end(), CHANGE_STATE_TYPE) != services_and_types.at(cs_srv).end()</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>          &amp;&amp; std::find(services_and_types.at(gs_srv).begin(), services_and_types.at(gs_srv).end(), GET_STATE_TYPE) != services_and_types.at(gs_srv).end())</div>
@@ -429,7 +429,7 @@ $(document).ready(function(){initNavTree('base__subsystem__controller_8cpp_sourc
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>          <span class="comment">// Current node is not a lifecycle node so log a warning</span></div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>          RCLCPP_WARN_STREAM(get_logger(), <span class="stringliteral">&quot;Failed to find lifecycle services for node: &quot;</span> &lt;&lt; node &lt;&lt; <span class="stringliteral">&quot; this node will not be managed. NOTE: If this node is wrapped by a lifecycle component that is managed then this is not an issue.&quot;</span>);</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>          </div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>          <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        }</div>
@@ -498,7 +498,7 @@ $(document).ready(function(){initNavTree('base__subsystem__controller_8cpp_sourc
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_604f13b711db50b6c389bf80ae8bec2f.html">subsystem_controllers</a></li><li class="navelem"><a class="el" href="dir_86d3eee28f93d1332a09fe3ce633ec2c.html">src</a></li><li class="navelem"><a class="el" href="dir_b6ff4ec606ee012b14f3f22b620c0d23.html">base_subsystem_controller</a></li><li class="navelem"><a class="el" href="base__subsystem__controller_8cpp.html">base_subsystem_controller.cpp</a></li>
-    <li class="footer">Generated on Tue Dec 26 2023 14:50:36 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Dec 27 2023 20:51:52 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

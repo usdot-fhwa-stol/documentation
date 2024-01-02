@@ -252,35 +252,39 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  497</span>    <span class="keywordflow">if</span> (has_association(track)) {</div>
 <div class="line"><span class="lineno">  498</span>      <span class="keyword">const</span> <span class="keyword">auto</span> detection_uuids{associations.at(get_uuid(track))};</div>
 <div class="line"><span class="lineno">  499</span>      <span class="keyword">const</span> <span class="keyword">auto</span> first_detection{detection_map[detection_uuids.at(0)]};</div>
-<div class="line"><span class="lineno">  500</span>      track = std::visit(mot::covariance_intersection_visitor, track, first_detection);</div>
-<div class="line"><span class="lineno">  501</span>    }</div>
-<div class="line"><span class="lineno">  502</span>  }</div>
-<div class="line"><span class="lineno">  503</span> </div>
-<div class="line"><span class="lineno">  504</span>  <span class="comment">// Unassociated detections don&#39;t influence the tracking pipeline, so we can add</span></div>
-<div class="line"><span class="lineno">  505</span>  <span class="comment">// them to the tracker at the end.</span></div>
-<div class="line"><span class="lineno">  506</span>  std::vector&lt;Detection&gt; unassociated_detections;</div>
-<div class="line"><span class="lineno">  507</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; [uuid, detection] : detection_map) {</div>
-<div class="line"><span class="lineno">  508</span>    <span class="keywordflow">if</span> (!has_association(detection)) {</div>
-<div class="line"><span class="lineno">  509</span>      unassociated_detections.push_back(detection);</div>
-<div class="line"><span class="lineno">  510</span>    }</div>
-<div class="line"><span class="lineno">  511</span>  }</div>
-<div class="line"><span class="lineno">  512</span> </div>
-<div class="line"><span class="lineno">  513</span>  <span class="keyword">const</span> <span class="keyword">auto</span> clusters{mot::cluster_detections(unassociated_detections, 0.75)};</div>
-<div class="line"><span class="lineno">  514</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; cluster : clusters) {</div>
-<div class="line"><span class="lineno">  515</span>    <span class="keyword">const</span> <span class="keyword">auto</span> detection{std::cbegin(cluster.get_detections())-&gt;second};</div>
-<div class="line"><span class="lineno">  516</span>    <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.add_tentative_track(std::visit(make_track_visitor, detection));</div>
-<div class="line"><span class="lineno">  517</span>  }</div>
-<div class="line"><span class="lineno">  518</span> </div>
-<div class="line"><span class="lineno">  519</span>  carma_cooperative_perception_interfaces::msg::TrackList track_list;</div>
-<div class="line"><span class="lineno">  520</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; track : <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.get_confirmed_tracks()) {</div>
-<div class="line"><span class="lineno">  521</span>    track_list.tracks.push_back(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a40e5fc920cabfb291beedb726bc2081f">to_ros_msg</a>(track));</div>
-<div class="line"><span class="lineno">  522</span>  }</div>
-<div class="line"><span class="lineno">  523</span> </div>
-<div class="line"><span class="lineno">  524</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a26cbf0e3ab19976facea28a47bccefaf">track_list_pub_</a>-&gt;publish(track_list);</div>
-<div class="line"><span class="lineno">  525</span> </div>
-<div class="line"><span class="lineno">  526</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6d0a748ec549a5c3e5acc6b0da5ce322">detections_</a>.clear();</div>
-<div class="line"><span class="lineno">  527</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a868421b28207e15914b83e31c00c68fb">uuid_index_map_</a>.clear();</div>
-<div class="line"><span class="lineno">  528</span>}</div>
+<div class="line"><span class="lineno">  500</span>      <span class="keyword">auto</span> predicted_track{track};</div>
+<div class="line"><span class="lineno">  501</span>      mot::propagate_to_time(predicted_track, current_time, mot::UnscentedTransform{1.0, 2.0, 0.0});</div>
+<div class="line"><span class="lineno">  502</span>      <span class="keyword">const</span> <span class="keyword">auto</span> fused_track{</div>
+<div class="line"><span class="lineno">  503</span>        std::visit(mot::covariance_intersection_visitor, track, first_detection)};</div>
+<div class="line"><span class="lineno">  504</span>      <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.update_track(mot::get_uuid(track), fused_track);</div>
+<div class="line"><span class="lineno">  505</span>    }</div>
+<div class="line"><span class="lineno">  506</span>  }</div>
+<div class="line"><span class="lineno">  507</span> </div>
+<div class="line"><span class="lineno">  508</span>  <span class="comment">// Unassociated detections don&#39;t influence the tracking pipeline, so we can add</span></div>
+<div class="line"><span class="lineno">  509</span>  <span class="comment">// them to the tracker at the end.</span></div>
+<div class="line"><span class="lineno">  510</span>  std::vector&lt;Detection&gt; unassociated_detections;</div>
+<div class="line"><span class="lineno">  511</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; [uuid, detection] : detection_map) {</div>
+<div class="line"><span class="lineno">  512</span>    <span class="keywordflow">if</span> (!has_association(detection)) {</div>
+<div class="line"><span class="lineno">  513</span>      unassociated_detections.push_back(detection);</div>
+<div class="line"><span class="lineno">  514</span>    }</div>
+<div class="line"><span class="lineno">  515</span>  }</div>
+<div class="line"><span class="lineno">  516</span> </div>
+<div class="line"><span class="lineno">  517</span>  <span class="keyword">const</span> <span class="keyword">auto</span> clusters{mot::cluster_detections(unassociated_detections, 0.75)};</div>
+<div class="line"><span class="lineno">  518</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; cluster : clusters) {</div>
+<div class="line"><span class="lineno">  519</span>    <span class="keyword">const</span> <span class="keyword">auto</span> detection{std::cbegin(cluster.get_detections())-&gt;second};</div>
+<div class="line"><span class="lineno">  520</span>    <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.add_tentative_track(std::visit(make_track_visitor, detection));</div>
+<div class="line"><span class="lineno">  521</span>  }</div>
+<div class="line"><span class="lineno">  522</span> </div>
+<div class="line"><span class="lineno">  523</span>  carma_cooperative_perception_interfaces::msg::TrackList track_list;</div>
+<div class="line"><span class="lineno">  524</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; track : <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.get_confirmed_tracks()) {</div>
+<div class="line"><span class="lineno">  525</span>    track_list.tracks.push_back(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a40e5fc920cabfb291beedb726bc2081f">to_ros_msg</a>(track));</div>
+<div class="line"><span class="lineno">  526</span>  }</div>
+<div class="line"><span class="lineno">  527</span> </div>
+<div class="line"><span class="lineno">  528</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a26cbf0e3ab19976facea28a47bccefaf">track_list_pub_</a>-&gt;publish(track_list);</div>
+<div class="line"><span class="lineno">  529</span> </div>
+<div class="line"><span class="lineno">  530</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6d0a748ec549a5c3e5acc6b0da5ce322">detections_</a>.clear();</div>
+<div class="line"><span class="lineno">  531</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a868421b28207e15914b83e31c00c68fb">uuid_index_map_</a>.clear();</div>
+<div class="line"><span class="lineno">  532</span>}</div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a26cbf0e3ab19976facea28a47bccefaf"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a26cbf0e3ab19976facea28a47bccefaf">carma_cooperative_perception::MultipleObjectTrackerNode::track_list_pub_</a></div><div class="ttdeci">rclcpp_lifecycle::LifecyclePublisher&lt; carma_cooperative_perception_interfaces::msg::TrackList &gt;::SharedPtr track_list_pub_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00071">multiple_object_tracker_component.hpp:71</a></div></div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a6ace10f7fd3588582ea94e4b1f9b0316"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">carma_cooperative_perception::MultipleObjectTrackerNode::track_manager_</a></div><div class="ttdeci">multiple_object_tracking::FixedThresholdTrackManager&lt; Track &gt; track_manager_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00077">multiple_object_tracker_component.hpp:77</a></div></div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a6d0a748ec549a5c3e5acc6b0da5ce322"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6d0a748ec549a5c3e5acc6b0da5ce322">carma_cooperative_perception::MultipleObjectTrackerNode::detections_</a></div><div class="ttdeci">std::vector&lt; Detection &gt; detections_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00075">multiple_object_tracker_component.hpp:75</a></div></div>
@@ -892,7 +896,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html">MultipleObjectTrackerNode</a></li>
-    <li class="footer">Generated on Tue Jan 2 2024 16:06:08 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Jan 2 2024 17:38:54 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -2382,7 +2382,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="msg__conversion_8cpp_source.html#l00064">calc_detection_time_stamp()</a>, <a class="el" href="geodetic_8cpp_source.html#l00093">calculate_grid_convergence()</a>, <a class="el" href="j2735__types_8cpp_source.html#l00055">carma_cooperative_perception::AccelerationSet4Way::from_msg()</a>, <a class="el" href="j2735__types_8cpp_source.html#l00019">carma_cooperative_perception::DDateTime::from_msg()</a>, <a class="el" href="j2735__types_8cpp_source.html#l00101">carma_cooperative_perception::Heading::from_msg()</a>, <a class="el" href="j2735__types_8cpp_source.html#l00075">carma_cooperative_perception::Position3D::from_msg()</a>, <a class="el" href="j2735__types_8cpp_source.html#l00111">carma_cooperative_perception::Speed::from_msg()</a>, <a class="el" href="j3224__types_8cpp_source.html#l00047">carma_cooperative_perception::MeasurementTimeOffset::from_msg()</a>, <a class="el" href="j3224__types_8cpp_source.html#l00019">carma_cooperative_perception::PositionOffsetXYZ::from_msg()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00141">heading_to_enu_yaw()</a>, <a class="el" href="geodetic_8hpp_source.html#l00034">carma_cooperative_perception::Wgs84Coordinate::latitude</a>, <a class="el" href="geodetic_8cpp_source.html#l00055">project_to_utm()</a>, <a class="el" href="units__extensions_8hpp_source.html#l00025">remove_units()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00130">to_position_msg()</a>, <a class="el" href="utm__zone_8cpp_source.html#l00021">to_string()</a>, and <a class="el" href="msg__conversion_8cpp_source.html#l00051">to_time_msg()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00183">carma_cooperative_perception::ExternalObjectListToDetectionListNode::publish_as_detection_list()</a>, and <a class="el" href="sdsm__to__detection__list__component_8hpp_source.html#l00042">carma_cooperative_perception::SdsmToDetectionListNode::sdsm_msg_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00184">carma_cooperative_perception::ExternalObjectListToDetectionListNode::publish_as_detection_list()</a>, and <a class="el" href="sdsm__to__detection__list__component_8hpp_source.html#l00042">carma_cooperative_perception::SdsmToDetectionListNode::sdsm_msg_callback()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3350,36 +3350,37 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   40</span> </div>
 <div class="line"><span class="lineno">   41</span>  <span class="keywordflow">if</span> (map_transformation == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><span class="lineno">   42</span>    <span class="keyword">const</span> std::string error_string{proj_errno_string(proj_context_errno(context))};</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Could not create PROJ transform: &quot;</span> + error_string + <span class="charliteral">&#39;.&#39;</span>);</div>
-<div class="line"><span class="lineno">   44</span>  }</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>  std::vector&lt;carma_cooperative_perception_interfaces::msg::Detection&gt; new_detections;</div>
-<div class="line"><span class="lineno">   47</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> detection : detection_list.detections) {</div>
-<div class="line"><span class="lineno">   48</span>    <span class="comment">// Coordinate order is easting (meters), northing (meters)</span></div>
-<div class="line"><span class="lineno">   49</span>    <span class="keyword">const</span> <span class="keyword">auto</span> position_planar{</div>
-<div class="line"><span class="lineno">   50</span>      proj_coord(detection.pose.pose.position.x, detection.pose.pose.position.y, 0, 0)};</div>
-<div class="line"><span class="lineno">   51</span>    <span class="keyword">const</span> <span class="keyword">auto</span> proj_inverse{proj_trans(map_transformation, PJ_DIRECTION::PJ_INV, position_planar)};</div>
-<div class="line"><span class="lineno">   52</span>    <span class="keyword">const</span> Wgs84Coordinate position_wgs84{</div>
-<div class="line"><span class="lineno">   53</span>      units::angle::radian_t{proj_inverse.lp.phi}, units::angle::radian_t{proj_inverse.lp.lam},</div>
-<div class="line"><span class="lineno">   54</span>      units::length::meter_t{detection.pose.pose.position.z}};</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>    <span class="keyword">const</span> <span class="keyword">auto</span> utm_zone{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a899d167068fbc97fdfa3ea07f299e65f">calculate_utm_zone</a>(position_wgs84)};</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keyword">const</span> <span class="keyword">auto</span> position_utm{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adddef8d756d8931e2f881725808a270d">project_to_utm</a>(position_wgs84)};</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>    detection.header.frame_id = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">to_string</a>(utm_zone);</div>
-<div class="line"><span class="lineno">   60</span>    detection.pose.pose.position.x = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb">remove_units</a>(position_utm.easting);</div>
-<div class="line"><span class="lineno">   61</span>    detection.pose.pose.position.y = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb">remove_units</a>(position_utm.northing);</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>    new_detections.push_back(std::move(detection));</div>
-<div class="line"><span class="lineno">   64</span>  }</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>  std::swap(detection_list.detections, new_detections);</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>  proj_destroy(map_transformation);</div>
-<div class="line"><span class="lineno">   69</span>  proj_context_destroy(context);</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>  <span class="keywordflow">return</span> detection_list;</div>
-<div class="line"><span class="lineno">   72</span>}</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">throw</span> std::invalid_argument(</div>
+<div class="line"><span class="lineno">   44</span>      <span class="stringliteral">&quot;Could not create PROJ transform to origin &#39;&quot;</span> + map_origin + <span class="stringliteral">&quot;&#39;: &quot;</span> + error_string + <span class="charliteral">&#39;.&#39;</span>);</div>
+<div class="line"><span class="lineno">   45</span>  }</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>  std::vector&lt;carma_cooperative_perception_interfaces::msg::Detection&gt; new_detections;</div>
+<div class="line"><span class="lineno">   48</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> detection : detection_list.detections) {</div>
+<div class="line"><span class="lineno">   49</span>    <span class="comment">// Coordinate order is easting (meters), northing (meters)</span></div>
+<div class="line"><span class="lineno">   50</span>    <span class="keyword">const</span> <span class="keyword">auto</span> position_planar{</div>
+<div class="line"><span class="lineno">   51</span>      proj_coord(detection.pose.pose.position.x, detection.pose.pose.position.y, 0, 0)};</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keyword">const</span> <span class="keyword">auto</span> proj_inverse{proj_trans(map_transformation, PJ_DIRECTION::PJ_INV, position_planar)};</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keyword">const</span> Wgs84Coordinate position_wgs84{</div>
+<div class="line"><span class="lineno">   54</span>      units::angle::radian_t{proj_inverse.lp.phi}, units::angle::radian_t{proj_inverse.lp.lam},</div>
+<div class="line"><span class="lineno">   55</span>      units::length::meter_t{detection.pose.pose.position.z}};</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <span class="keyword">const</span> <span class="keyword">auto</span> utm_zone{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a899d167068fbc97fdfa3ea07f299e65f">calculate_utm_zone</a>(position_wgs84)};</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keyword">const</span> <span class="keyword">auto</span> position_utm{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adddef8d756d8931e2f881725808a270d">project_to_utm</a>(position_wgs84)};</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>    detection.header.frame_id = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">to_string</a>(utm_zone);</div>
+<div class="line"><span class="lineno">   61</span>    detection.pose.pose.position.x = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb">remove_units</a>(position_utm.easting);</div>
+<div class="line"><span class="lineno">   62</span>    detection.pose.pose.position.y = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb">remove_units</a>(position_utm.northing);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>    new_detections.push_back(std::move(detection));</div>
+<div class="line"><span class="lineno">   65</span>  }</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>  std::swap(detection_list.detections, new_detections);</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>  proj_destroy(map_transformation);</div>
+<div class="line"><span class="lineno">   70</span>  proj_context_destroy(context);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>  <span class="keywordflow">return</span> detection_list;</div>
+<div class="line"><span class="lineno">   73</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="geodetic_8cpp_source.html#l00027">calculate_utm_zone()</a>, <a class="el" href="geodetic_8cpp_source.html#l00055">project_to_utm()</a>, <a class="el" href="units__extensions_8hpp_source.html#l00025">remove_units()</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00021">to_string()</a>.</p>
 <div class="dynheader">
@@ -3756,7 +3757,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></li>
-    <li class="footer">Generated on Tue Jan 2 2024 14:41:42 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Jan 2 2024 15:54:02 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

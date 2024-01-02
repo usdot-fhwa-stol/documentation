@@ -246,7 +246,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   85</span>                tmp_marker_array.markers.push_back(marker);</div>
 <div class="line"><span class="lineno">   86</span>                <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">   87</span>            }</div>
-<div class="line"><span class="lineno">   88</span>            </div>
+<div class="line"><span class="lineno">   88</span> </div>
 <div class="line"><span class="lineno">   89</span>            <span class="keywordtype">double</span> max_speed = <a class="code hl_variable" href="classtrajectory__visualizer_1_1TrajectoryVisualizer.html#ad0680da61edd01f200b659dfc7a79be5">config_</a>.<a class="code hl_variable" href="structtrajectory__visualizer_1_1Config.html#a81cb3558a1cb850ac485a1f420b122f1">max_speed</a> * <a class="code hl_variable" href="namespacetrajectory__visualizer.html#ab3a24592b4ac0358ba66a82f80bcab84">MPH_TO_MS</a>;</div>
 <div class="line"><span class="lineno">   90</span>            <span class="keywordtype">double</span> speed = max_speed;</div>
 <div class="line"><span class="lineno">   91</span> </div>
@@ -255,7 +255,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   94</span> </div>
 <div class="line"><span class="lineno">   95</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetrajectory__visualizer.html#a985abb360dc4536c2a9fbb3f5245035b">validateTime</a>(t2) &amp;&amp; <a class="code hl_function" href="namespacetrajectory__visualizer.html#a985abb360dc4536c2a9fbb3f5245035b">validateTime</a>(t1) &amp;&amp; t2 &gt; t1 ) {</div>
 <div class="line"><span class="lineno">   96</span>                rclcpp::Duration dt = t2 - t1;</div>
-<div class="line"><span class="lineno">   97</span>                </div>
+<div class="line"><span class="lineno">   97</span> </div>
 <div class="line"><span class="lineno">   98</span>                <span class="keywordtype">double</span> dx = msg-&gt;trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].x - msg-&gt;trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>-1].x;</div>
 <div class="line"><span class="lineno">   99</span>                <span class="keywordtype">double</span> dy = msg-&gt;trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].y - msg-&gt;trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>-1].y;</div>
 <div class="line"><span class="lineno">  100</span>                <span class="keywordtype">double</span> dist = sqrt(dx * dx + dy * dy);</div>
@@ -267,9 +267,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  106</span> </div>
 <div class="line"><span class="lineno">  107</span>            <span class="comment">// map color to the scale of the speed</span></div>
 <div class="line"><span class="lineno">  108</span>            <span class="comment">// red being the highest, green being the lowest (0ms)</span></div>
-<div class="line"><span class="lineno">  109</span>            </div>
+<div class="line"><span class="lineno">  109</span> </div>
 <div class="line"><span class="lineno">  110</span>            RCLCPP_DEBUG_STREAM(this-&gt;get_logger(),<span class="stringliteral">&quot;Speed:&quot;</span> &lt;&lt; speed &lt;&lt; <span class="stringliteral">&quot;ms, max_speed:&quot;</span> &lt;&lt; max_speed &lt;&lt; <span class="stringliteral">&quot;ms&quot;</span>);</div>
-<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">if</span> (speed &gt; max_speed) </div>
+<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">if</span> (speed &gt; max_speed)</div>
 <div class="line"><span class="lineno">  112</span>            {</div>
 <div class="line"><span class="lineno">  113</span>                RCLCPP_DEBUG_STREAM(this-&gt;get_logger(),<span class="stringliteral">&quot;Speed was big, so capped at &quot;</span> &lt;&lt; max_speed &lt;&lt; <span class="stringliteral">&quot;ms&quot;</span>);</div>
 <div class="line"><span class="lineno">  114</span>                speed = max_speed;</div>
@@ -301,23 +301,31 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  140</span>                marker.color.g = 1.0f;</div>
 <div class="line"><span class="lineno">  141</span>            }</div>
 <div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span>            marker.points = {};</div>
-<div class="line"><span class="lineno">  144</span>            geometry_msgs::msg::Point start;</div>
-<div class="line"><span class="lineno">  145</span>            start.x = msg-&gt;trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>-1].x;</div>
-<div class="line"><span class="lineno">  146</span>            start.y = msg-&gt;trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>-1].y;</div>
-<div class="line"><span class="lineno">  147</span> </div>
-<div class="line"><span class="lineno">  148</span>            geometry_msgs::msg::Point end;</div>
-<div class="line"><span class="lineno">  149</span>            end.x = msg-&gt;trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].x;</div>
-<div class="line"><span class="lineno">  150</span>            end.y = msg-&gt;trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].y;</div>
-<div class="line"><span class="lineno">  151</span>            marker.points.push_back(start);</div>
-<div class="line"><span class="lineno">  152</span>            marker.points.push_back(end);</div>
-<div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>            tmp_marker_array.markers.push_back(marker);</div>
-<div class="line"><span class="lineno">  155</span>        }</div>
-<div class="line"><span class="lineno">  156</span> </div>
-<div class="line"><span class="lineno">  157</span>        <a class="code hl_variable" href="classtrajectory__visualizer_1_1TrajectoryVisualizer.html#ae6e51b2f0f60ee165a9b2ca8a67405c6">prev_marker_list_size_</a> = msg-&gt;trajectory_points.size();</div>
-<div class="line"><span class="lineno">  158</span>        <a class="code hl_variable" href="classtrajectory__visualizer_1_1TrajectoryVisualizer.html#ae4ef3a9de913b50481244c9a6a81c2c7">traj_marker_pub_</a>-&gt;publish(tmp_marker_array);</div>
-<div class="line"><span class="lineno">  159</span>    }</div>
+<div class="line"><span class="lineno">  143</span>            <span class="keywordflow">if</span> (speed &lt; 1.0) <span class="comment">// Less than 2.5 mph is usually stopping</span></div>
+<div class="line"><span class="lineno">  144</span>            {</div>
+<div class="line"><span class="lineno">  145</span>                <span class="comment">// Gray</span></div>
+<div class="line"><span class="lineno">  146</span>                marker.color.r = 0.5f;</div>
+<div class="line"><span class="lineno">  147</span>                marker.color.g = 0.5f;</div>
+<div class="line"><span class="lineno">  148</span>                marker.color.b = 0.5f;</div>
+<div class="line"><span class="lineno">  149</span>            }</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>            marker.points = {};</div>
+<div class="line"><span class="lineno">  152</span>            geometry_msgs::msg::Point start;</div>
+<div class="line"><span class="lineno">  153</span>            start.x = msg-&gt;trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>-1].x;</div>
+<div class="line"><span class="lineno">  154</span>            start.y = msg-&gt;trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>-1].y;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>            geometry_msgs::msg::Point end;</div>
+<div class="line"><span class="lineno">  157</span>            end.x = msg-&gt;trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].x;</div>
+<div class="line"><span class="lineno">  158</span>            end.y = msg-&gt;trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].y;</div>
+<div class="line"><span class="lineno">  159</span>            marker.points.push_back(start);</div>
+<div class="line"><span class="lineno">  160</span>            marker.points.push_back(end);</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>            tmp_marker_array.markers.push_back(marker);</div>
+<div class="line"><span class="lineno">  163</span>        }</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>        <a class="code hl_variable" href="classtrajectory__visualizer_1_1TrajectoryVisualizer.html#ae6e51b2f0f60ee165a9b2ca8a67405c6">prev_marker_list_size_</a> = msg-&gt;trajectory_points.size();</div>
+<div class="line"><span class="lineno">  166</span>        <a class="code hl_variable" href="classtrajectory__visualizer_1_1TrajectoryVisualizer.html#ae4ef3a9de913b50481244c9a6a81c2c7">traj_marker_pub_</a>-&gt;publish(tmp_marker_array);</div>
+<div class="line"><span class="lineno">  167</span>    }</div>
 <div class="ttc" id="aclasstrajectory__visualizer_1_1TrajectoryVisualizer_html_ae4ef3a9de913b50481244c9a6a81c2c7"><div class="ttname"><a href="classtrajectory__visualizer_1_1TrajectoryVisualizer.html#ae4ef3a9de913b50481244c9a6a81c2c7">trajectory_visualizer::TrajectoryVisualizer::traj_marker_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; visualization_msgs::msg::MarkerArray &gt; traj_marker_pub_</div><div class="ttdef"><b>Definition:</b> <a href="trajectory__visualizer_8hpp_source.html#l00043">trajectory_visualizer.hpp:43</a></div></div>
 <div class="ttc" id="aclasstrajectory__visualizer_1_1TrajectoryVisualizer_html_ae6e51b2f0f60ee165a9b2ca8a67405c6"><div class="ttname"><a href="classtrajectory__visualizer_1_1TrajectoryVisualizer.html#ae6e51b2f0f60ee165a9b2ca8a67405c6">trajectory_visualizer::TrajectoryVisualizer::prev_marker_list_size_</a></div><div class="ttdeci">size_t prev_marker_list_size_</div><div class="ttdef"><b>Definition:</b> <a href="trajectory__visualizer_8hpp_source.html#l00054">trajectory_visualizer.hpp:54</a></div></div>
 <div class="ttc" id="anamespaceprocess__bag_html_af102a02c97622dd30b0dbf7bafb0d199"><div class="ttname"><a href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">process_bag.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00059">process_bag.py:59</a></div></div>
@@ -530,7 +538,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetrajectory__visualizer.html">trajectory_visualizer</a></li><li class="navelem"><a class="el" href="classtrajectory__visualizer_1_1TrajectoryVisualizer.html">TrajectoryVisualizer</a></li>
-    <li class="footer">Generated on Tue Jan 2 2024 15:54:07 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Jan 2 2024 16:06:13 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

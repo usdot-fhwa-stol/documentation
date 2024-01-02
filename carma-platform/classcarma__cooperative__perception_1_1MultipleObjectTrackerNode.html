@@ -455,78 +455,78 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  265</span>      }</div>
 <div class="line"><span class="lineno">  266</span>    });</div>
 <div class="line"><span class="lineno">  267</span> </div>
-<div class="line"><span class="lineno">  268</span>  declare_parameter(</div>
-<div class="line"><span class="lineno">  269</span>    <span class="stringliteral">&quot;execution_frequency_hz&quot;</span>, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb">mot::remove_units</a>(units::frequency::hertz_t{1 / <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a271c7b6d7f832a15e4b33b54c854607d">execution_period_</a>}));</div>
-<div class="line"><span class="lineno">  270</span> </div>
-<div class="line"><span class="lineno">  271</span>  declare_parameter(</div>
-<div class="line"><span class="lineno">  272</span>    <span class="stringliteral">&quot;track_promotion_threshold&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.get_promotion_threshold().value));</div>
+<div class="line"><span class="lineno">  268</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#ac8a3259d02ed908acbd4766e5d1395d4">on_set_parameters_callback_</a> =</div>
+<div class="line"><span class="lineno">  269</span>    add_on_set_parameters_callback([<span class="keyword">this</span>](<span class="keyword">const</span> std::vector&lt;rclcpp::Parameter&gt; &amp; parameters) {</div>
+<div class="line"><span class="lineno">  270</span>      rcl_interfaces::msg::SetParametersResult result;</div>
+<div class="line"><span class="lineno">  271</span>      result.successful = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  272</span>      result.reason = <span class="stringliteral">&quot;success&quot;</span>;</div>
 <div class="line"><span class="lineno">  273</span> </div>
-<div class="line"><span class="lineno">  274</span>  declare_parameter(</div>
-<div class="line"><span class="lineno">  275</span>    <span class="stringliteral">&quot;track_removal_threshold&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.get_promotion_threshold().value));</div>
-<div class="line"><span class="lineno">  276</span> </div>
-<div class="line"><span class="lineno">  277</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#ac8a3259d02ed908acbd4766e5d1395d4">on_set_parameters_callback_</a> =</div>
-<div class="line"><span class="lineno">  278</span>    add_on_set_parameters_callback([<span class="keyword">this</span>](<span class="keyword">const</span> std::vector&lt;rclcpp::Parameter&gt; &amp; parameters) {</div>
-<div class="line"><span class="lineno">  279</span>      rcl_interfaces::msg::SetParametersResult result;</div>
-<div class="line"><span class="lineno">  280</span>      result.successful = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  281</span>      result.reason = <span class="stringliteral">&quot;success&quot;</span>;</div>
+<div class="line"><span class="lineno">  274</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; parameter : parameters) {</div>
+<div class="line"><span class="lineno">  275</span>        <span class="keywordflow">if</span> (parameter.get_name() == <span class="stringliteral">&quot;execution_frequency_hz&quot;</span>) {</div>
+<div class="line"><span class="lineno">  276</span>          if (this-&gt;get_current_state().label() == <span class="stringliteral">&quot;active&quot;</span>) {</div>
+<div class="line"><span class="lineno">  277</span>            result.successful = false;</div>
+<div class="line"><span class="lineno">  278</span>            result.reason = <span class="stringliteral">&quot;parameter is read-only while node is in &#39;Active&#39; state&quot;</span>;</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>            RCLCPP_ERROR(</div>
+<div class="line"><span class="lineno">  281</span>              get_logger(), <span class="stringliteral">&quot;Cannot change parameter &#39;execution_frequency_hz&#39;: &quot;</span> + result.reason);</div>
 <div class="line"><span class="lineno">  282</span> </div>
-<div class="line"><span class="lineno">  283</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; parameter : parameters) {</div>
-<div class="line"><span class="lineno">  284</span>        <span class="keywordflow">if</span> (parameter.get_name() == <span class="stringliteral">&quot;execution_frequency_hz&quot;</span>) {</div>
-<div class="line"><span class="lineno">  285</span>          if (this-&gt;get_current_state().label() == <span class="stringliteral">&quot;active&quot;</span>) {</div>
-<div class="line"><span class="lineno">  286</span>            result.successful = false;</div>
-<div class="line"><span class="lineno">  287</span>            result.reason = <span class="stringliteral">&quot;parameter is read-only while node is in &#39;Active&#39; state&quot;</span>;</div>
-<div class="line"><span class="lineno">  288</span> </div>
-<div class="line"><span class="lineno">  289</span>            RCLCPP_ERROR(</div>
-<div class="line"><span class="lineno">  290</span>              get_logger(), <span class="stringliteral">&quot;Cannot change parameter &#39;execution_frequency_hz&#39;: &quot;</span> + result.reason);</div>
+<div class="line"><span class="lineno">  283</span>            break;</div>
+<div class="line"><span class="lineno">  284</span>          } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  285</span>            this-&gt;execution_period_ = 1 / units::frequency::hertz_t{parameter.as_double()};</div>
+<div class="line"><span class="lineno">  286</span>          }</div>
+<div class="line"><span class="lineno">  287</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (parameter.get_name() == <span class="stringliteral">&quot;track_promotion_threshold&quot;</span>) {</div>
+<div class="line"><span class="lineno">  288</span>          if (this-&gt;get_current_state().label() == <span class="stringliteral">&quot;active&quot;</span>) {</div>
+<div class="line"><span class="lineno">  289</span>            result.successful = false;</div>
+<div class="line"><span class="lineno">  290</span>            result.reason = <span class="stringliteral">&quot;parameter is read-only while node is in &#39;Active&#39; state&quot;</span>;</div>
 <div class="line"><span class="lineno">  291</span> </div>
-<div class="line"><span class="lineno">  292</span>            break;</div>
-<div class="line"><span class="lineno">  293</span>          } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  294</span>            this-&gt;execution_period_ = 1 / units::frequency::hertz_t{parameter.as_double()};</div>
-<div class="line"><span class="lineno">  295</span>          }</div>
-<div class="line"><span class="lineno">  296</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (parameter.get_name() == <span class="stringliteral">&quot;track_promotion_threshold&quot;</span>) {</div>
-<div class="line"><span class="lineno">  297</span>          if (this-&gt;get_current_state().label() == <span class="stringliteral">&quot;active&quot;</span>) {</div>
-<div class="line"><span class="lineno">  298</span>            result.successful = false;</div>
-<div class="line"><span class="lineno">  299</span>            result.reason = <span class="stringliteral">&quot;parameter is read-only while node is in &#39;Active&#39; state&quot;</span>;</div>
-<div class="line"><span class="lineno">  300</span> </div>
-<div class="line"><span class="lineno">  301</span>            RCLCPP_ERROR(</div>
-<div class="line"><span class="lineno">  302</span>              get_logger(), <span class="stringliteral">&quot;Cannot change parameter &#39;execution_frequency_hz&#39;: &quot;</span> + result.reason);</div>
-<div class="line"><span class="lineno">  303</span> </div>
-<div class="line"><span class="lineno">  304</span>            break;</div>
-<div class="line"><span class="lineno">  305</span>          } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  306</span>            if (const auto value{parameter.as_int()}; <a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a> &lt; 0) {</div>
-<div class="line"><span class="lineno">  307</span>              result.successful = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  308</span>              result.reason = <span class="stringliteral">&quot;parameter must be nonnegative&quot;</span>;</div>
-<div class="line"><span class="lineno">  309</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  310</span>              this-&gt;<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.set_promotion_threshold_and_update(</div>
-<div class="line"><span class="lineno">  311</span>                mot::PromotionThreshold{<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>)});</div>
-<div class="line"><span class="lineno">  312</span>            }</div>
-<div class="line"><span class="lineno">  313</span>          }</div>
-<div class="line"><span class="lineno">  314</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (parameter.get_name() == <span class="stringliteral">&quot;track_removal_threshold&quot;</span>) {</div>
-<div class="line"><span class="lineno">  315</span>          <span class="keywordflow">if</span> (this-&gt;get_current_state().label() == <span class="stringliteral">&quot;active&quot;</span>) {</div>
-<div class="line"><span class="lineno">  316</span>            result.successful = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  317</span>            result.reason = <span class="stringliteral">&quot;parameter is read-only while node is in &#39;Active&#39; state&quot;</span>;</div>
-<div class="line"><span class="lineno">  318</span> </div>
-<div class="line"><span class="lineno">  319</span>            RCLCPP_ERROR(</div>
-<div class="line"><span class="lineno">  320</span>              get_logger(), <span class="stringliteral">&quot;Cannot change parameter &#39;execution_frequency_hz&#39;: &quot;</span> + result.reason);</div>
-<div class="line"><span class="lineno">  321</span> </div>
-<div class="line"><span class="lineno">  322</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  323</span>          } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  324</span>            <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>{parameter.as_int()}; <a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a> &lt; 0) {</div>
-<div class="line"><span class="lineno">  325</span>              result.successful = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  326</span>              result.reason = <span class="stringliteral">&quot;parameter must be nonnegative&quot;</span>;</div>
-<div class="line"><span class="lineno">  327</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  328</span>              this-&gt;<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.set_removal_threshold_and_update(</div>
-<div class="line"><span class="lineno">  329</span>                mot::RemovalThreshold{<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>)});</div>
-<div class="line"><span class="lineno">  330</span>            }</div>
-<div class="line"><span class="lineno">  331</span>          }</div>
-<div class="line"><span class="lineno">  332</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  333</span>          result.successful = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  334</span>          result.reason = <span class="stringliteral">&quot;Unexpected parameter name &#39;&quot;</span> + parameter.get_name() + <span class="charliteral">&#39;\&#39;&#39;</span>;</div>
-<div class="line"><span class="lineno">  335</span>        }</div>
-<div class="line"><span class="lineno">  336</span>      }</div>
+<div class="line"><span class="lineno">  292</span>            RCLCPP_ERROR(</div>
+<div class="line"><span class="lineno">  293</span>              get_logger(), <span class="stringliteral">&quot;Cannot change parameter &#39;execution_frequency_hz&#39;: &quot;</span> + result.reason);</div>
+<div class="line"><span class="lineno">  294</span> </div>
+<div class="line"><span class="lineno">  295</span>            break;</div>
+<div class="line"><span class="lineno">  296</span>          } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  297</span>            if (const auto value{parameter.as_int()}; <a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a> &lt; 0) {</div>
+<div class="line"><span class="lineno">  298</span>              result.successful = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  299</span>              result.reason = <span class="stringliteral">&quot;parameter must be nonnegative&quot;</span>;</div>
+<div class="line"><span class="lineno">  300</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  301</span>              this-&gt;<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.set_promotion_threshold_and_update(</div>
+<div class="line"><span class="lineno">  302</span>                mot::PromotionThreshold{<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>)});</div>
+<div class="line"><span class="lineno">  303</span>            }</div>
+<div class="line"><span class="lineno">  304</span>          }</div>
+<div class="line"><span class="lineno">  305</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (parameter.get_name() == <span class="stringliteral">&quot;track_removal_threshold&quot;</span>) {</div>
+<div class="line"><span class="lineno">  306</span>          <span class="keywordflow">if</span> (this-&gt;get_current_state().label() == <span class="stringliteral">&quot;active&quot;</span>) {</div>
+<div class="line"><span class="lineno">  307</span>            result.successful = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  308</span>            result.reason = <span class="stringliteral">&quot;parameter is read-only while node is in &#39;Active&#39; state&quot;</span>;</div>
+<div class="line"><span class="lineno">  309</span> </div>
+<div class="line"><span class="lineno">  310</span>            RCLCPP_ERROR(</div>
+<div class="line"><span class="lineno">  311</span>              get_logger(), <span class="stringliteral">&quot;Cannot change parameter &#39;execution_frequency_hz&#39;: &quot;</span> + result.reason);</div>
+<div class="line"><span class="lineno">  312</span> </div>
+<div class="line"><span class="lineno">  313</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  314</span>          } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  315</span>            <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>{parameter.as_int()}; <a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a> &lt; 0) {</div>
+<div class="line"><span class="lineno">  316</span>              result.successful = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  317</span>              result.reason = <span class="stringliteral">&quot;parameter must be nonnegative&quot;</span>;</div>
+<div class="line"><span class="lineno">  318</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  319</span>              this-&gt;<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.set_removal_threshold_and_update(</div>
+<div class="line"><span class="lineno">  320</span>                mot::RemovalThreshold{<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>)});</div>
+<div class="line"><span class="lineno">  321</span>            }</div>
+<div class="line"><span class="lineno">  322</span>          }</div>
+<div class="line"><span class="lineno">  323</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  324</span>          result.successful = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  325</span>          result.reason = <span class="stringliteral">&quot;Unexpected parameter name &#39;&quot;</span> + parameter.get_name() + <span class="charliteral">&#39;\&#39;&#39;</span>;</div>
+<div class="line"><span class="lineno">  326</span>        }</div>
+<div class="line"><span class="lineno">  327</span>      }</div>
+<div class="line"><span class="lineno">  328</span> </div>
+<div class="line"><span class="lineno">  329</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  330</span>    });</div>
+<div class="line"><span class="lineno">  331</span> </div>
+<div class="line"><span class="lineno">  332</span>  declare_parameter(</div>
+<div class="line"><span class="lineno">  333</span>    <span class="stringliteral">&quot;execution_frequency_hz&quot;</span>, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb">mot::remove_units</a>(units::frequency::hertz_t{1 / <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a271c7b6d7f832a15e4b33b54c854607d">execution_period_</a>}));</div>
+<div class="line"><span class="lineno">  334</span> </div>
+<div class="line"><span class="lineno">  335</span>  declare_parameter(</div>
+<div class="line"><span class="lineno">  336</span>    <span class="stringliteral">&quot;track_promotion_threshold&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.get_promotion_threshold().value));</div>
 <div class="line"><span class="lineno">  337</span> </div>
-<div class="line"><span class="lineno">  338</span>      <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">  339</span>    });</div>
+<div class="line"><span class="lineno">  338</span>  declare_parameter(</div>
+<div class="line"><span class="lineno">  339</span>    <span class="stringliteral">&quot;track_removal_threshold&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.get_promotion_threshold().value));</div>
 <div class="line"><span class="lineno">  340</span> </div>
 <div class="line"><span class="lineno">  341</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: successfully configured&quot;</span>);</div>
 <div class="line"><span class="lineno">  342</span> </div>
@@ -535,16 +535,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a1e6cd46185a3d33f7756244dfc89a20d"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a1e6cd46185a3d33f7756244dfc89a20d">carma_cooperative_perception::MultipleObjectTrackerNode::store_new_detections</a></div><div class="ttdeci">auto store_new_detections(const carma_cooperative_perception_interfaces::msg::DetectionList &amp;msg) noexcept -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00407">multiple_object_tracker_component.cpp:407</a></div></div>
 <div class="ttc" id="apointer_8h_html_a32aff7c6c4cd253fdf6563677afab5ce"><div class="ttname"><a href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a></div><div class="ttdeci">const GenericPointer&lt; typename T::ValueType &gt; T2 value</div><div class="ttdef"><b>Definition:</b> <a href="pointer_8h_source.html#l01222">pointer.h:1222</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="units__extensions_8hpp_source.html#l00025">carma_cooperative_perception::remove_units()</a>, and <a class="el" href="pointer_8h_source.html#l01222">value</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode_a1c77c58bdbbfe1ba4d075c7fc0e5e2f4_cgraph.png" border="0" usemap="#aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_a1c77c58bdbbfe1ba4d075c7fc0e5e2f4_cgraph" alt=""/></div>
-<map name="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_a1c77c58bdbbfe1ba4d075c7fc0e5e2f4_cgraph" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_a1c77c58bdbbfe1ba4d075c7fc0e5e2f4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,204,61"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb" title=" " alt="" coords="252,13,451,54"/>
-</map>
-</div>
+<p class="reference">References <a class="el" href="pointer_8h_source.html#l01222">value</a>.</p>
 
 </div>
 </div>
@@ -901,7 +892,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html">MultipleObjectTrackerNode</a></li>
-    <li class="footer">Generated on Wed Dec 27 2023 20:51:55 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Jan 2 2024 14:33:49 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -1,5 +1,7 @@
 var NAVTREEINDEX56 =
 {
+"types_8h.html#a1b98b7f9535916d9dffec6d425d2eed9":[57,0,38,2,0,1,12],
+"types_8h.html#a3f3400ba40ee203c842481cfbb716900":[57,0,38,2,0,1,11],
 "types_8h.html#a45edbae979af563e6a1e39fd1aad3911":[57,0,38,2,0,1,10],
 "types_8h.html#a485d0d8c7a7b9981ac9e76ab821a38e4":[57,0,38,2,0,1,14],
 "types_8h.html#aa5434fd063eddf84cffedf0cfb265af2":[57,0,38,2,0,1,9],

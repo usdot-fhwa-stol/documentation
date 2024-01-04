@@ -1,6 +1,6 @@
 var units__extensions_8hpp =
 [
-    [ "remove_units", "units__extensions_8hpp.html#ae26de0c1ea2d1d0d95eee4e6f897bffb", null ],
+    [ "remove_units", "units__extensions_8hpp.html#adab0ef7041c6108afdad006aa2c59c2f", null ],
     [ "UNIT_ADD", "units__extensions_8hpp.html#abbb71236d3e7474602a6c189db7b2d8b", null ],
     [ "UNIT_ADD", "units__extensions_8hpp.html#a4a29524c104d4c62ca6ad389a744f22d", null ],
     [ "UNIT_ADD", "units__extensions_8hpp.html#a67351284ba34f44480f337fdfa1a0a20", null ],

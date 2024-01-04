@@ -15,7 +15,7 @@ var searchData=
   ['releasecontrol_12',['releaseControl',['../classlightbar__manager_1_1LightBarManagerWorker.html#a82bb65255d8dba00ae624d7e41b2643b',1,'lightbar_manager::LightBarManagerWorker']]],
   ['releasecontrolcallback_13',['releaseControlCallBack',['../classlightbar__manager_1_1LightBarManager.html#aa6509436cf337efa3ac9ea8efdaf50a9',1,'lightbar_manager::LightBarManager']]],
   ['remove_5frepeated_5ftimestamps_14',['remove_repeated_timestamps',['../classpure__pursuit__wrapper_1_1PurePursuitWrapperNode.html#aa79117bf40bf99047742ed67710406de',1,'pure_pursuit_wrapper::PurePursuitWrapperNode']]],
-  ['remove_5funits_15',['remove_units',['../namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb',1,'carma_cooperative_perception']]],
+  ['remove_5funits_15',['remove_units',['../namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f',1,'carma_cooperative_perception']]],
   ['removeallmembers_16',['RemoveAllMembers',['../classGenericObject.html#a129ce3843a6658e620a7f740d9f44ee1',1,'GenericObject']]],
   ['removegeofence_17',['removeGeofence',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#a3751e2e2dc4455fc7e3e80f1ae2c672e',1,'carma_wm_ctrl::WMBroadcaster']]],
   ['removegeofencehelper_18',['removeGeofenceHelper',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#a0a119e3571ef94545fc979ca3190c5f1',1,'carma_wm_ctrl::WMBroadcaster']]],

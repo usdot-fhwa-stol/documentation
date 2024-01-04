@@ -8,7 +8,7 @@ var classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode
     [ "handle_on_configure", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#a3a7bddf8a726516eb01f136522a24f08", null ],
     [ "handle_on_shutdown", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#a6b6165197a1b325315917463c4cf41c1", null ],
     [ "publish_as_detection_list", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#af4110e586c68bb118d12854d950f9bde", null ],
-    [ "update_georeference", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#abe3eae03f13bc35d1a8a584003a9af51", null ],
+    [ "update_georeference", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#a43dfc7de7353241424cbcff60b46f184", null ],
     [ "external_objects_subscription_", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#ad24798f9166132a8eefbe3880aa923f1", null ],
     [ "georeference_subscription_", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aabefd49e91ca96b2e46ab4ada39bdaeb", null ],
     [ "map_georeference_", "classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#aad38382f4121e1483a399a64798c12a9", null ],

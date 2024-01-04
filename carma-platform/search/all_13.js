@@ -112,7 +112,7 @@ var searchData=
   ['remoteprovider_5f_109',['remoteProvider_',['../classGenericSchemaDocument.html#ae71c9925eaf2f51f26ce1083d3f4edf4',1,'GenericSchemaDocument']]],
   ['remove_5flist_5f_110',['remove_list_',['../classcarma__wm__ctrl_1_1Geofence.html#a7c40f591c9a018021d980e96ac8cd3a6',1,'carma_wm_ctrl::Geofence::remove_list_()'],['../classcarma__wm_1_1TrafficControl.html#a8137ecfe5124fac5b8760faf9e957270',1,'carma_wm::TrafficControl::remove_list_()']]],
   ['remove_5frepeated_5ftimestamps_111',['remove_repeated_timestamps',['../classpure__pursuit__wrapper_1_1PurePursuitWrapperNode.html#aa79117bf40bf99047742ed67710406de',1,'pure_pursuit_wrapper::PurePursuitWrapperNode']]],
-  ['remove_5funits_112',['remove_units',['../namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb',1,'carma_cooperative_perception']]],
+  ['remove_5funits_112',['remove_units',['../namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f',1,'carma_cooperative_perception']]],
   ['removeallmembers_113',['RemoveAllMembers',['../classGenericObject.html#a129ce3843a6658e620a7f740d9f44ee1',1,'GenericObject']]],
   ['removegeofence_114',['removeGeofence',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#a3751e2e2dc4455fc7e3e80f1ae2c672e',1,'carma_wm_ctrl::WMBroadcaster']]],
   ['removegeofencehelper_115',['removeGeofenceHelper',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#a0a119e3571ef94545fc979ca3190c5f1',1,'carma_wm_ctrl::WMBroadcaster']]],

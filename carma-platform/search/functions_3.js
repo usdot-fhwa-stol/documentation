@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['calc_5fdetection_5ftime_5fstamp_0',['calc_detection_time_stamp',['../namespacecarma__cooperative__perception.html#a1ab460c5794bb9bba2c284886d1e3b40',1,'carma_cooperative_perception']]],
+  ['calc_5fdetection_5ftime_5fstamp_0',['calc_detection_time_stamp',['../namespacecarma__cooperative__perception.html#a5cff4b79b8e989798643db61de547f33',1,'carma_cooperative_perception']]],
   ['calc_5festimated_5fentry_5ftime_5fleft_1',['calc_estimated_entry_time_left',['../classlci__strategic__plugin_1_1LCIStrategicPlugin.html#a3f6a47bf53ae1095e72df145bf6903d3',1,'lci_strategic_plugin::LCIStrategicPlugin']]],
-  ['calc_5frelative_5fposition_2',['calc_relative_position',['../namespacecarma__cooperative__perception.html#a763fc3f7b9c3165a0b316890c0c83e01',1,'carma_cooperative_perception']]],
-  ['calc_5fsdsm_5ftime_5foffset_3',['calc_sdsm_time_offset',['../namespacecarma__cooperative__perception.html#a4640da6239389fbbfe6f6a39f1f44533',1,'carma_cooperative_perception']]],
+  ['calc_5frelative_5fposition_2',['calc_relative_position',['../namespacecarma__cooperative__perception.html#aa241195bfca659e39d36f0c72cbe7dde',1,'carma_cooperative_perception']]],
+  ['calc_5fsdsm_5ftime_5foffset_3',['calc_sdsm_time_offset',['../namespacecarma__cooperative__perception.html#a1af75f3bf9d8fb2977056c0f870374d4',1,'carma_cooperative_perception']]],
   ['calc_5fspeed_5fbefore_5fdecel_4',['calc_speed_before_decel',['../classsci__strategic__plugin_1_1SCIStrategicPlugin.html#aaf728e798283e618eeba6aa3ba94bb73',1,'sci_strategic_plugin::SCIStrategicPlugin']]],
   ['calcestimatedstoptime_5',['calcEstimatedStopTime',['../classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a0a17b477f6f28bf53fdf0e034172334c',1,'sci_strategic_plugin::SCIStrategicPlugin']]],
   ['calculate_6',['calculate',['../classplatoon__control__ihp_1_1PIDController.html#af9b7b91c33f93f5f94d5394818f6a173',1,'platoon_control_ihp::PIDController::calculate()'],['../classplatoon__control_1_1PIDController.html#a4444983fb0ab556bf64bd78465b14410',1,'platoon_control::PIDController::calculate()']]],

@@ -131,8 +131,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a15da32cc742eb606e05bea4623c9213e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76e2c9adadcf7fc0a701dab903775037"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a76e2c9adadcf7fc0a701dab903775037">handle_on_shutdown</a> (const rclcpp_lifecycle::State &amp;) -&gt; carma_ros2_utils::CallbackReturn override</td></tr>
 <tr class="separator:a76e2c9adadcf7fc0a701dab903775037"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e6cd46185a3d33f7756244dfc89a20d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a1e6cd46185a3d33f7756244dfc89a20d">store_new_detections</a> (const carma_cooperative_perception_interfaces::msg::DetectionList &amp;msg) noexcept -&gt; void</td></tr>
-<tr class="separator:a1e6cd46185a3d33f7756244dfc89a20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac589e80fc3d047d98d8341547b14b334"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#ac589e80fc3d047d98d8341547b14b334">store_new_detections</a> (const carma_cooperative_perception_interfaces::msg::DetectionList &amp;msg) -&gt; void</td></tr>
+<tr class="separator:ac589e80fc3d047d98d8341547b14b334"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25d32adfecd223998cc98d99488aa532"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a25d32adfecd223998cc98d99488aa532">execute_pipeline</a> () -&gt; void</td></tr>
 <tr class="separator:a25d32adfecd223998cc98d99488aa532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -157,7 +157,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00041">41</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00042">42</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a031c2bba273373d9b7b7bc47b4c4d377" name="a031c2bba273373d9b7b7bc47b4c4d377"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a031c2bba273373d9b7b7bc47b4c4d377">&#9670;&nbsp;</a></span>MultipleObjectTrackerNode()</h2>
@@ -233,9 +233,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  478</span> </div>
 <div class="line"><span class="lineno">  479</span>  <span class="keyword">const</span> units::time::second_t current_time{this-&gt;now().seconds()};</div>
 <div class="line"><span class="lineno">  480</span> </div>
-<div class="line"><span class="lineno">  481</span>  <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a2d513f7dcd34191020f517b1e4e13a58">temporally_align_detections</a>(<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6d0a748ec549a5c3e5acc6b0da5ce322">detections_</a>, current_time);</div>
+<div class="line"><span class="lineno">  481</span>  <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a15cb67e02f6f82074e6766be6bc0ba4a">temporally_align_detections</a>(<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6d0a748ec549a5c3e5acc6b0da5ce322">detections_</a>, current_time);</div>
 <div class="line"><span class="lineno">  482</span> </div>
-<div class="line"><span class="lineno">  483</span>  <span class="keyword">const</span> <span class="keyword">auto</span> predicted_tracks{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#ac400888c15773662bff628c9405d4b18">predict_track_states</a>(<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.get_all_tracks(), current_time)};</div>
+<div class="line"><span class="lineno">  483</span>  <span class="keyword">const</span> <span class="keyword">auto</span> predicted_tracks{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a669575db946436c8a91bcbbc79c6a6b4">predict_track_states</a>(<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.get_all_tracks(), current_time)};</div>
 <div class="line"><span class="lineno">  484</span>  <span class="keyword">const</span> <span class="keyword">auto</span> scores{</div>
 <div class="line"><span class="lineno">  485</span>    mot::score_tracks_and_detections(predicted_tracks, <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6d0a748ec549a5c3e5acc6b0da5ce322">detections_</a>, mot::euclidean_distance_score)};</div>
 <div class="line"><span class="lineno">  486</span> </div>
@@ -277,7 +277,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  522</span> </div>
 <div class="line"><span class="lineno">  523</span>  carma_cooperative_perception_interfaces::msg::TrackList track_list;</div>
 <div class="line"><span class="lineno">  524</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; track : <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.get_confirmed_tracks()) {</div>
-<div class="line"><span class="lineno">  525</span>    track_list.tracks.push_back(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a40e5fc920cabfb291beedb726bc2081f">to_ros_msg</a>(track));</div>
+<div class="line"><span class="lineno">  525</span>    track_list.tracks.push_back(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#afafce497a83114fd1423a389b6e11b5c">to_ros_msg</a>(track));</div>
 <div class="line"><span class="lineno">  526</span>  }</div>
 <div class="line"><span class="lineno">  527</span> </div>
 <div class="line"><span class="lineno">  528</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a26cbf0e3ab19976facea28a47bccefaf">track_list_pub_</a>-&gt;publish(track_list);</div>
@@ -285,14 +285,14 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  530</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6d0a748ec549a5c3e5acc6b0da5ce322">detections_</a>.clear();</div>
 <div class="line"><span class="lineno">  531</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a868421b28207e15914b83e31c00c68fb">uuid_index_map_</a>.clear();</div>
 <div class="line"><span class="lineno">  532</span>}</div>
-<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a26cbf0e3ab19976facea28a47bccefaf"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a26cbf0e3ab19976facea28a47bccefaf">carma_cooperative_perception::MultipleObjectTrackerNode::track_list_pub_</a></div><div class="ttdeci">rclcpp_lifecycle::LifecyclePublisher&lt; carma_cooperative_perception_interfaces::msg::TrackList &gt;::SharedPtr track_list_pub_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00071">multiple_object_tracker_component.hpp:71</a></div></div>
-<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a6ace10f7fd3588582ea94e4b1f9b0316"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">carma_cooperative_perception::MultipleObjectTrackerNode::track_manager_</a></div><div class="ttdeci">multiple_object_tracking::FixedThresholdTrackManager&lt; Track &gt; track_manager_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00077">multiple_object_tracker_component.hpp:77</a></div></div>
-<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a6d0a748ec549a5c3e5acc6b0da5ce322"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6d0a748ec549a5c3e5acc6b0da5ce322">carma_cooperative_perception::MultipleObjectTrackerNode::detections_</a></div><div class="ttdeci">std::vector&lt; Detection &gt; detections_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00075">multiple_object_tracker_component.hpp:75</a></div></div>
-<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a868421b28207e15914b83e31c00c68fb"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a868421b28207e15914b83e31c00c68fb">carma_cooperative_perception::MultipleObjectTrackerNode::uuid_index_map_</a></div><div class="ttdeci">std::unordered_map&lt; multiple_object_tracking::Uuid, std::size_t &gt; uuid_index_map_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00076">multiple_object_tracker_component.hpp:76</a></div></div>
-<div class="ttc" id="anamespacecarma__cooperative__perception_html_a2d513f7dcd34191020f517b1e4e13a58"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a2d513f7dcd34191020f517b1e4e13a58">carma_cooperative_perception::temporally_align_detections</a></div><div class="ttdeci">static auto temporally_align_detections(std::vector&lt; Detection &gt; &amp;detections, units::time::second_t end_time) noexcept -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00437">multiple_object_tracker_component.cpp:437</a></div></div>
-<div class="ttc" id="anamespacecarma__cooperative__perception_html_a40e5fc920cabfb291beedb726bc2081f"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a40e5fc920cabfb291beedb726bc2081f">carma_cooperative_perception::to_ros_msg</a></div><div class="ttdeci">static auto to_ros_msg(const mot::CtraTrack &amp;track) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00170">multiple_object_tracker_component.cpp:170</a></div></div>
-<div class="ttc" id="anamespacecarma__cooperative__perception_html_ac400888c15773662bff628c9405d4b18"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#ac400888c15773662bff628c9405d4b18">carma_cooperative_perception::predict_track_states</a></div><div class="ttdeci">static auto predict_track_states(std::vector&lt; Track &gt; tracks, units::time::second_t end_time) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00445">multiple_object_tracker_component.cpp:445</a></div></div>
-<div class="ttc" id="anamespacecarma__cooperative__perception_html_aedfce236df3f84ec5ebc8b4013798808"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#aedfce236df3f84ec5ebc8b4013798808">carma_cooperative_perception::Track</a></div><div class="ttdeci">std::variant&lt; multiple_object_tracking::CtrvTrack, multiple_object_tracking::CtraTrack &gt; Track</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00036">multiple_object_tracker_component.hpp:36</a></div></div>
+<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a26cbf0e3ab19976facea28a47bccefaf"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a26cbf0e3ab19976facea28a47bccefaf">carma_cooperative_perception::MultipleObjectTrackerNode::track_list_pub_</a></div><div class="ttdeci">rclcpp_lifecycle::LifecyclePublisher&lt; carma_cooperative_perception_interfaces::msg::TrackList &gt;::SharedPtr track_list_pub_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00072">multiple_object_tracker_component.hpp:72</a></div></div>
+<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a6ace10f7fd3588582ea94e4b1f9b0316"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">carma_cooperative_perception::MultipleObjectTrackerNode::track_manager_</a></div><div class="ttdeci">multiple_object_tracking::FixedThresholdTrackManager&lt; Track &gt; track_manager_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00078">multiple_object_tracker_component.hpp:78</a></div></div>
+<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a6d0a748ec549a5c3e5acc6b0da5ce322"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6d0a748ec549a5c3e5acc6b0da5ce322">carma_cooperative_perception::MultipleObjectTrackerNode::detections_</a></div><div class="ttdeci">std::vector&lt; Detection &gt; detections_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00076">multiple_object_tracker_component.hpp:76</a></div></div>
+<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a868421b28207e15914b83e31c00c68fb"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a868421b28207e15914b83e31c00c68fb">carma_cooperative_perception::MultipleObjectTrackerNode::uuid_index_map_</a></div><div class="ttdeci">std::unordered_map&lt; multiple_object_tracking::Uuid, std::size_t &gt; uuid_index_map_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00077">multiple_object_tracker_component.hpp:77</a></div></div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_a15cb67e02f6f82074e6766be6bc0ba4a"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a15cb67e02f6f82074e6766be6bc0ba4a">carma_cooperative_perception::temporally_align_detections</a></div><div class="ttdeci">static auto temporally_align_detections(std::vector&lt; Detection &gt; &amp;detections, units::time::second_t end_time) -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00437">multiple_object_tracker_component.cpp:437</a></div></div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_a669575db946436c8a91bcbbc79c6a6b4"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a669575db946436c8a91bcbbc79c6a6b4">carma_cooperative_perception::predict_track_states</a></div><div class="ttdeci">static auto predict_track_states(std::vector&lt; Track &gt; tracks, units::time::second_t end_time)</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00445">multiple_object_tracker_component.cpp:445</a></div></div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_aedfce236df3f84ec5ebc8b4013798808"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#aedfce236df3f84ec5ebc8b4013798808">carma_cooperative_perception::Track</a></div><div class="ttdeci">std::variant&lt; multiple_object_tracking::CtrvTrack, multiple_object_tracking::CtraTrack &gt; Track</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00036">multiple_object_tracker_component.hpp:37</a></div></div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_afafce497a83114fd1423a389b6e11b5c"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#afafce497a83114fd1423a389b6e11b5c">carma_cooperative_perception::to_ros_msg</a></div><div class="ttdeci">static auto to_ros_msg(const mot::CtraTrack &amp;track)</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00170">multiple_object_tracker_component.cpp:170</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00445">carma_cooperative_perception::predict_track_states()</a>, <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00437">carma_cooperative_perception::temporally_align_detections()</a>, and <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00230">carma_cooperative_perception::to_ros_msg()</a>.</p>
 <div class="dynheader">
@@ -301,11 +301,11 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode_a25d32adfecd223998cc98d99488aa532_cgraph.png" border="0" usemap="#aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_a25d32adfecd223998cc98d99488aa532_cgraph" alt=""/></div>
 <map name="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_a25d32adfecd223998cc98d99488aa532_cgraph" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_a25d32adfecd223998cc98d99488aa532_cgraph">
 <area shape="rect" title=" " alt="" coords="5,63,204,119"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#ac400888c15773662bff628c9405d4b18" title=" " alt="" coords="252,5,451,47"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a2d513f7dcd34191020f517b1e4e13a58" title=" " alt="" coords="252,71,451,112"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a669575db946436c8a91bcbbc79c6a6b4" title=" " alt="" coords="252,5,451,47"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a15cb67e02f6f82074e6766be6bc0ba4a" title=" " alt="" coords="252,71,451,112"/>
 <area shape="rect" href="namespacecarma__cooperative__perception.html#a6972022e649c8122cb8eec43651b7726" title=" " alt="" coords="252,136,451,177"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a40e5fc920cabfb291beedb726bc2081f" title=" " alt="" coords="499,136,697,177"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb" title=" " alt="" coords="760,103,959,144"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#afafce497a83114fd1423a389b6e11b5c" title=" " alt="" coords="499,136,697,177"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f" title=" " alt="" coords="760,103,959,144"/>
 <area shape="rect" href="namespacecarma__cooperative__perception.html#a311208d76f15c87cdc235e4e8fab719a" title=" " alt="" coords="745,168,973,209"/>
 </map>
 </div>
@@ -345,7 +345,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  353</span>    <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a5f545d436b318f6412fce909bb7b78c8">pipeline_execution_timer_</a>-&gt;reset();</div>
 <div class="line"><span class="lineno">  354</span>  }</div>
 <div class="line"><span class="lineno">  355</span> </div>
-<div class="line"><span class="lineno">  356</span>  <span class="keyword">const</span> std::chrono::duration&lt;double, std::nano&gt; period_ns{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb">mot::remove_units</a>(<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a271c7b6d7f832a15e4b33b54c854607d">execution_period_</a>)};</div>
+<div class="line"><span class="lineno">  356</span>  <span class="keyword">const</span> std::chrono::duration&lt;double, std::nano&gt; period_ns{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a271c7b6d7f832a15e4b33b54c854607d">execution_period_</a>)};</div>
 <div class="line"><span class="lineno">  357</span>  <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a5f545d436b318f6412fce909bb7b78c8">pipeline_execution_timer_</a> = create_wall_timer(period_ns, [<span class="keyword">this</span>] { <a class="code hl_function" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a25d32adfecd223998cc98d99488aa532">execute_pipeline</a>(); });</div>
 <div class="line"><span class="lineno">  358</span> </div>
 <div class="line"><span class="lineno">  359</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: successfully activated&quot;</span>);</div>
@@ -353,9 +353,9 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  361</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><span class="lineno">  362</span>}</div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a25d32adfecd223998cc98d99488aa532"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a25d32adfecd223998cc98d99488aa532">carma_cooperative_perception::MultipleObjectTrackerNode::execute_pipeline</a></div><div class="ttdeci">auto execute_pipeline() -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00454">multiple_object_tracker_component.cpp:454</a></div></div>
-<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a271c7b6d7f832a15e4b33b54c854607d"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a271c7b6d7f832a15e4b33b54c854607d">carma_cooperative_perception::MultipleObjectTrackerNode::execution_period_</a></div><div class="ttdeci">units::time::nanosecond_t execution_period_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00079">multiple_object_tracker_component.hpp:79</a></div></div>
-<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a5f545d436b318f6412fce909bb7b78c8"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a5f545d436b318f6412fce909bb7b78c8">carma_cooperative_perception::MultipleObjectTrackerNode::pipeline_execution_timer_</a></div><div class="ttdeci">rclcpp::TimerBase::SharedPtr pipeline_execution_timer_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00073">multiple_object_tracker_component.hpp:73</a></div></div>
-<div class="ttc" id="anamespacecarma__cooperative__perception_html_ae26de0c1ea2d1d0d95eee4e6f897bffb"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb">carma_cooperative_perception::remove_units</a></div><div class="ttdeci">constexpr auto remove_units(const T &amp;value) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="units__extensions_8hpp_source.html#l00025">units_extensions.hpp:25</a></div></div>
+<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a271c7b6d7f832a15e4b33b54c854607d"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a271c7b6d7f832a15e4b33b54c854607d">carma_cooperative_perception::MultipleObjectTrackerNode::execution_period_</a></div><div class="ttdeci">units::time::nanosecond_t execution_period_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00081">multiple_object_tracker_component.hpp:81</a></div></div>
+<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a5f545d436b318f6412fce909bb7b78c8"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a5f545d436b318f6412fce909bb7b78c8">carma_cooperative_perception::MultipleObjectTrackerNode::pipeline_execution_timer_</a></div><div class="ttdeci">rclcpp::TimerBase::SharedPtr pipeline_execution_timer_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00074">multiple_object_tracker_component.hpp:74</a></div></div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_adab0ef7041c6108afdad006aa2c59c2f"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">carma_cooperative_perception::remove_units</a></div><div class="ttdeci">constexpr auto remove_units(const T &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="units__extensions_8hpp_source.html#l00025">units_extensions.hpp:25</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="units__extensions_8hpp_source.html#l00025">carma_cooperative_perception::remove_units()</a>.</p>
 <div class="dynheader">
@@ -364,7 +364,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode_a4d9d931a84b9f67e2e4ed86f04369e44_cgraph.png" border="0" usemap="#aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_a4d9d931a84b9f67e2e4ed86f04369e44_cgraph" alt=""/></div>
 <map name="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_a4d9d931a84b9f67e2e4ed86f04369e44_cgraph" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_a4d9d931a84b9f67e2e4ed86f04369e44_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,204,61"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb" title=" " alt="" coords="252,13,451,54"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f" title=" " alt="" coords="252,13,451,54"/>
 </map>
 </div>
 
@@ -408,8 +408,8 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  390</span> </div>
 <div class="line"><span class="lineno">  391</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><span class="lineno">  392</span>}</div>
-<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a4c5b4b5da225a6a46fc70f57528732da"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a4c5b4b5da225a6a46fc70f57528732da">carma_cooperative_perception::MultipleObjectTrackerNode::detection_list_sub_</a></div><div class="ttdeci">rclcpp::Subscription&lt; carma_cooperative_perception_interfaces::msg::DetectionList &gt;::SharedPtr detection_list_sub_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00068">multiple_object_tracker_component.hpp:68</a></div></div>
-<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_ac8a3259d02ed908acbd4766e5d1395d4"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#ac8a3259d02ed908acbd4766e5d1395d4">carma_cooperative_perception::MultipleObjectTrackerNode::on_set_parameters_callback_</a></div><div class="ttdeci">OnSetParametersCallbackHandle::SharedPtr on_set_parameters_callback_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00080">multiple_object_tracker_component.hpp:80</a></div></div>
+<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a4c5b4b5da225a6a46fc70f57528732da"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a4c5b4b5da225a6a46fc70f57528732da">carma_cooperative_perception::MultipleObjectTrackerNode::detection_list_sub_</a></div><div class="ttdeci">rclcpp::Subscription&lt; carma_cooperative_perception_interfaces::msg::DetectionList &gt;::SharedPtr detection_list_sub_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00069">multiple_object_tracker_component.hpp:69</a></div></div>
+<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_ac8a3259d02ed908acbd4766e5d1395d4"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#ac8a3259d02ed908acbd4766e5d1395d4">carma_cooperative_perception::MultipleObjectTrackerNode::on_set_parameters_callback_</a></div><div class="ttdeci">OnSetParametersCallbackHandle::SharedPtr on_set_parameters_callback_</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00082">multiple_object_tracker_component.hpp:82</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -449,7 +449,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  255</span>    <span class="stringliteral">&quot;input/detection_list&quot;</span>, 1,</div>
 <div class="line"><span class="lineno">  256</span>    [<span class="keyword">this</span>](<span class="keyword">const</span> carma_cooperative_perception_interfaces::msg::DetectionList::SharedPtr msg_ptr) {</div>
 <div class="line"><span class="lineno">  257</span>      <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> current_state{this-&gt;get_current_state().label()}; current_state == <span class="stringliteral">&quot;active&quot;</span>) {</div>
-<div class="line"><span class="lineno">  258</span>        this-&gt;<a class="code hl_function" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a1e6cd46185a3d33f7756244dfc89a20d">store_new_detections</a>(*msg_ptr);</div>
+<div class="line"><span class="lineno">  258</span>        this-&gt;<a class="code hl_function" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#ac589e80fc3d047d98d8341547b14b334">store_new_detections</a>(*msg_ptr);</div>
 <div class="line"><span class="lineno">  259</span>      } <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">  260</span>        RCLCPP_WARN(</div>
 <div class="line"><span class="lineno">  261</span>          this-&gt;get_logger(),</div>
@@ -524,7 +524,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  330</span>    });</div>
 <div class="line"><span class="lineno">  331</span> </div>
 <div class="line"><span class="lineno">  332</span>  declare_parameter(</div>
-<div class="line"><span class="lineno">  333</span>    <span class="stringliteral">&quot;execution_frequency_hz&quot;</span>, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#ae26de0c1ea2d1d0d95eee4e6f897bffb">mot::remove_units</a>(units::frequency::hertz_t{1 / <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a271c7b6d7f832a15e4b33b54c854607d">execution_period_</a>}));</div>
+<div class="line"><span class="lineno">  333</span>    <span class="stringliteral">&quot;execution_frequency_hz&quot;</span>, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(units::frequency::hertz_t{1 / <a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a271c7b6d7f832a15e4b33b54c854607d">execution_period_</a>}));</div>
 <div class="line"><span class="lineno">  334</span> </div>
 <div class="line"><span class="lineno">  335</span>  declare_parameter(</div>
 <div class="line"><span class="lineno">  336</span>    <span class="stringliteral">&quot;track_promotion_threshold&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.get_promotion_threshold().value));</div>
@@ -536,7 +536,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  342</span> </div>
 <div class="line"><span class="lineno">  343</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><span class="lineno">  344</span>}</div>
-<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a1e6cd46185a3d33f7756244dfc89a20d"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a1e6cd46185a3d33f7756244dfc89a20d">carma_cooperative_perception::MultipleObjectTrackerNode::store_new_detections</a></div><div class="ttdeci">auto store_new_detections(const carma_cooperative_perception_interfaces::msg::DetectionList &amp;msg) noexcept -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00407">multiple_object_tracker_component.cpp:407</a></div></div>
+<div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_ac589e80fc3d047d98d8341547b14b334"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#ac589e80fc3d047d98d8341547b14b334">carma_cooperative_perception::MultipleObjectTrackerNode::store_new_detections</a></div><div class="ttdeci">auto store_new_detections(const carma_cooperative_perception_interfaces::msg::DetectionList &amp;msg) -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00407">multiple_object_tracker_component.cpp:407</a></div></div>
 <div class="ttc" id="apointer_8h_html_a32aff7c6c4cd253fdf6563677afab5ce"><div class="ttname"><a href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a></div><div class="ttdeci">const GenericPointer&lt; typename T::ValueType &gt; T2 value</div><div class="ttdef"><b>Definition:</b> <a href="pointer_8h_source.html#l01222">pointer.h:1222</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="pointer_8h_source.html#l01222">value</a>.</p>
@@ -620,14 +620,11 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a1e6cd46185a3d33f7756244dfc89a20d" name="a1e6cd46185a3d33f7756244dfc89a20d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e6cd46185a3d33f7756244dfc89a20d">&#9670;&nbsp;</a></span>store_new_detections()</h2>
+<a id="ac589e80fc3d047d98d8341547b14b334" name="ac589e80fc3d047d98d8341547b14b334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac589e80fc3d047d98d8341547b14b334">&#9670;&nbsp;</a></span>store_new_detections()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto carma_cooperative_perception::MultipleObjectTrackerNode::store_new_detections </td>
@@ -637,11 +634,6 @@ Here is the call graph for this function:</div>
           <td> -&gt; void</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00407">407</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
@@ -678,12 +670,12 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode_a1e6cd46185a3d33f7756244dfc89a20d_cgraph.png" border="0" usemap="#aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_a1e6cd46185a3d33f7756244dfc89a20d_cgraph" alt=""/></div>
-<map name="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_a1e6cd46185a3d33f7756244dfc89a20d_cgraph" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_a1e6cd46185a3d33f7756244dfc89a20d_cgraph">
+<div class="center"><img src="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode_ac589e80fc3d047d98d8341547b14b334_cgraph.png" border="0" usemap="#aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_ac589e80fc3d047d98d8341547b14b334_cgraph" alt=""/></div>
+<map name="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_ac589e80fc3d047d98d8341547b14b334_cgraph" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_ac589e80fc3d047d98d8341547b14b334_cgraph">
 <area shape="rect" title=" " alt="" coords="5,63,204,119"/>
 <area shape="rect" href="namespacecarma__cooperative__perception.html#ab68cb3662b89674f355b7c638a1c287c" title=" " alt="" coords="252,71,451,112"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a386ce9d94003c9140d097eec456477c6" title=" " alt="" coords="499,5,697,47"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#ae31f1290da17918fa2aa990a08d44029" title=" " alt="" coords="499,71,697,112"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a219bbbe418d854cb95f4872622ac8c76" title=" " alt="" coords="499,5,697,47"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a7f86904480653897489d01ba2dcaacfa" title=" " alt="" coords="499,71,697,112"/>
 <area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="499,160,697,201"/>
 <area shape="rect" href="namespacecarma__cooperative__perception.html#a6bf0c5a6ef7e96f554b6d1bdc8b96123" title=" " alt="" coords="745,39,944,80"/>
 </map>
@@ -712,7 +704,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00068">68</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00069">69</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
 
 </div>
 </div>
@@ -736,7 +728,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00075">75</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00076">76</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
 
 </div>
 </div>
@@ -760,7 +752,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00079">79</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00081">81</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
 
 </div>
 </div>
@@ -784,7 +776,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00080">80</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00082">82</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
 
 </div>
 </div>
@@ -808,7 +800,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00073">73</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00074">74</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
 
 </div>
 </div>
@@ -832,7 +824,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00071">71</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00072">72</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
 
 </div>
 </div>
@@ -856,9 +848,10 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    multiple_object_tracking::PromotionThreshold{3U}, multiple_object_tracking::RemovalThreshold{0U}}</div>
+<div class="line">    multiple_object_tracking::PromotionThreshold{3U},</div>
+<div class="line">    multiple_object_tracking::RemovalThreshold{0U}}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00077">77</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00078">78</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
 
 </div>
 </div>
@@ -882,7 +875,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00076">76</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8hpp_source.html#l00077">77</a> of file <a class="el" href="multiple__object__tracker__component_8hpp_source.html">multiple_object_tracker_component.hpp</a>.</p>
 
 </div>
 </div>
@@ -896,7 +889,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html">MultipleObjectTrackerNode</a></li>
-    <li class="footer">Generated on Wed Jan 3 2024 19:45:57 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Jan 4 2024 19:44:20 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

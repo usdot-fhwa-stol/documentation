@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"namespacestreets__utils_1_1messages_1_1sdsm.html#a75cfe5232616c7f2c1059d34c38d104d":[32,0,30,1,1,48],
 "namespacestreets__utils_1_1messages_1_1sdsm.html#a7769bce0ecb379caf82bd1ad7f9217c1":[32,0,30,1,1,85],
 "namespacestreets__utils_1_1messages_1_1sdsm.html#a7a756bd97d39b653122d4397aad8bfa6":[32,0,30,1,1,45],
 "namespacestreets__utils_1_1messages_1_1sdsm.html#a7d75a6e200bc175dffa56f5b08ed6b4d":[32,0,30,1,1,53],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "personal__device__user__type_8hpp.html#adacfbef3c71d9ee8b55346133ace590cafb97c381a019025eba60f0fbd236197c":[34,0,12,3,0,2,2,5,0,1],
 "personal__device__user__type_8hpp_source.html":[34,0,12,3,0,2,2,5],
 "position__3d_8hpp.html":[34,0,12,3,0,2,11],
-"position__3d_8hpp_source.html":[34,0,12,3,0,2,11],
-"position__confidence_8hpp.html":[34,0,12,3,0,2,12]
+"position__3d_8hpp_source.html":[34,0,12,3,0,2,11]
 };

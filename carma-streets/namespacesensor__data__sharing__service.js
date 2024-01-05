@@ -6,6 +6,7 @@ var namespacesensor__data__sharing__service =
     [ "to_detected_object_data", "namespacesensor__data__sharing__service.html#ad4810255fb495c8f408ba46a62273b37", null ],
     [ "to_heading", "namespacesensor__data__sharing__service.html#a69f88b750e17c2825a61d30f1adb6539", null ],
     [ "to_object_type", "namespacesensor__data__sharing__service.html#a5038fb2ec7890722ef91b8c4c31c5f56", null ],
+    [ "to_position_3d", "namespacesensor__data__sharing__service.html#a657d68b2284fbd94b8dfc151e5e6c9b1", null ],
     [ "to_position_confidence", "namespacesensor__data__sharing__service.html#a763a8955d99dac5e8b3b10c2b449c73b", null ],
     [ "to_position_confidence_set", "namespacesensor__data__sharing__service.html#a5a0bdc838c1fb4813d401db5e7e73958", null ],
     [ "to_sdsm_timestamp", "namespacesensor__data__sharing__service.html#a7e0352682211a7cc66a62cc93274a82a", null ],

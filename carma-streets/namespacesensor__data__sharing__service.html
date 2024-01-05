@@ -137,6 +137,8 @@ Functions</h2></td></tr>
 <tr class="memitem:ad7f7b7b70fe0f7b7357aa4cae820ff5f"><td class="memItemLeft" align="right" valign="top">lanelet::BasicPoint3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesensor__data__sharing__service.html#ad7f7b7b70fe0f7b7357aa4cae820ff5f">parse_sensor_location</a> (const std::string &amp;filepath, const std::string &amp;sensor_id)</td></tr>
 <tr class="memdesc:ad7f7b7b70fe0f7b7357aa4cae820ff5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to parse sensor configuration json file.  <a href="namespacesensor__data__sharing__service.html#ad7f7b7b70fe0f7b7357aa4cae820ff5f">More...</a><br /></td></tr>
 <tr class="separator:ad7f7b7b70fe0f7b7357aa4cae820ff5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a657d68b2284fbd94b8dfc151e5e6c9b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structstreets__utils_1_1messages_1_1sdsm_1_1position__3d.html">streets_utils::messages::sdsm::position_3d</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesensor__data__sharing__service.html#a657d68b2284fbd94b8dfc151e5e6c9b1">to_position_3d</a> (const lanelet::GPSPoint &amp;ref_position)</td></tr>
+<tr class="separator:a657d68b2284fbd94b8dfc151e5e6c9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -621,6 +623,56 @@ Here is the caller graph for this function:</div>
 <map name="anamespacesensor__data__sharing__service_a5038fb2ec7890722ef91b8c4c31c5f56_icgraph" id="anamespacesensor__data__sharing__service_a5038fb2ec7890722ef91b8c4c31c5f56_icgraph">
 <area shape="rect" title="convert string detection type to sdsm object_type." alt="" coords="881,13,1043,54"/>
 <area shape="rect" href="namespacesensor__data__sharing__service.html#ad4810255fb495c8f408ba46a62273b37" title="convert detected_object_msg to sdsm detection_object_data." alt="" coords="688,5,833,61"/>
+<area shape="rect" href="classsensor__data__sharing__service_1_1sds__service.html#a49b81dd177ed2ea506fac8f3a9a7b273" title="Method to create SDSM from detected objects." alt="" coords="493,5,640,61"/>
+<area shape="rect" href="classsensor__data__sharing__service_1_1sds__service.html#a784bcc97ce58546f2d5a172c96ba7e8f" title="Loop to produce sensor data sharing messages from detected_objects. Loop will populate sensor data sh..." alt="" coords="299,5,445,61"/>
+<area shape="rect" href="classsensor__data__sharing__service_1_1sds__service.html#a9ee2b8ce146ec179703350d609652785" title="Method to start all threads included in the tsc_service." alt="" coords="104,5,251,61"/>
+<area shape="rect" href="sensor__data__sharing__service_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,20,56,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a657d68b2284fbd94b8dfc151e5e6c9b1" name="a657d68b2284fbd94b8dfc151e5e6c9b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a657d68b2284fbd94b8dfc151e5e6c9b1">&#9670;&nbsp;</a></span>to_position_3d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structstreets__utils_1_1messages_1_1sdsm_1_1position__3d.html">streets_utils::messages::sdsm::position_3d</a> sensor_data_sharing_service::to_position_3d </td>
+          <td>(</td>
+          <td class="paramtype">const lanelet::GPSPoint &amp;&#160;</td>
+          <td class="paramname"><em>ref_position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="sensor__data__sharing__service_8cpp_source.html#l00177">177</a> of file <a class="el" href="sensor__data__sharing__service_8cpp_source.html">sensor_data_sharing_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>                                                                                             {</div>
+<div class="line"><span class="lineno">  178</span>        <a class="code hl_struct" href="structstreets__utils_1_1messages_1_1sdsm_1_1position__3d.html">streets_utils::messages::sdsm::position_3d</a> position;</div>
+<div class="line"><span class="lineno">  179</span>        <span class="comment">// Convert to 1/10 of microdegrees</span></div>
+<div class="line"><span class="lineno">  180</span>        position.<a class="code hl_variable" href="structstreets__utils_1_1messages_1_1sdsm_1_1position__3d.html#a0feca4bf31e3df6692289e58614794e0">_longitude</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ref_position.lon * 1e7);</div>
+<div class="line"><span class="lineno">  181</span>        position.<a class="code hl_variable" href="structstreets__utils_1_1messages_1_1sdsm_1_1position__3d.html#a7c0a032d2a38bd4ad7c430e471c55744">_latitude</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ref_position.lat *1e7);</div>
+<div class="line"><span class="lineno">  182</span>        <span class="comment">// Convert 0.1 meters</span></div>
+<div class="line"><span class="lineno">  183</span>        position.<a class="code hl_variable" href="structstreets__utils_1_1messages_1_1sdsm_1_1position__3d.html#ac6c4f5215d39ed9e74378bb2c36d8f5c">_elevation</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ref_position.ele * 10);</div>
+<div class="line"><span class="lineno">  184</span>        <span class="keywordflow">return</span> position;</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>    }</div>
+<div class="ttc" id="astructstreets__utils_1_1messages_1_1sdsm_1_1position__3d_html"><div class="ttname"><a href="structstreets__utils_1_1messages_1_1sdsm_1_1position__3d.html">streets_utils::messages::sdsm::position_3d</a></div><div class="ttdef"><b>Definition:</b> <a href="position__3d_8hpp_source.html#l00020">position_3d.hpp:20</a></div></div>
+<div class="ttc" id="astructstreets__utils_1_1messages_1_1sdsm_1_1position__3d_html_a0feca4bf31e3df6692289e58614794e0"><div class="ttname"><a href="structstreets__utils_1_1messages_1_1sdsm_1_1position__3d.html#a0feca4bf31e3df6692289e58614794e0">streets_utils::messages::sdsm::position_3d::_longitude</a></div><div class="ttdeci">int _longitude</div><div class="ttdoc">LSB = 1/10 micro degree Providing a range of plus-minus 180 degrees[-1799999999, 1800000001].</div><div class="ttdef"><b>Definition:</b> <a href="position__3d_8hpp_source.html#l00025">position_3d.hpp:25</a></div></div>
+<div class="ttc" id="astructstreets__utils_1_1messages_1_1sdsm_1_1position__3d_html_a7c0a032d2a38bd4ad7c430e471c55744"><div class="ttname"><a href="structstreets__utils_1_1messages_1_1sdsm_1_1position__3d.html#a7c0a032d2a38bd4ad7c430e471c55744">streets_utils::messages::sdsm::position_3d::_latitude</a></div><div class="ttdeci">int _latitude</div><div class="ttdoc">LSB = 1/10 micro degree Providing a range of plus-minus 90 degrees[-900000000, 900000001].</div><div class="ttdef"><b>Definition:</b> <a href="position__3d_8hpp_source.html#l00030">position_3d.hpp:30</a></div></div>
+<div class="ttc" id="astructstreets__utils_1_1messages_1_1sdsm_1_1position__3d_html_ac6c4f5215d39ed9e74378bb2c36d8f5c"><div class="ttname"><a href="structstreets__utils_1_1messages_1_1sdsm_1_1position__3d.html#ac6c4f5215d39ed9e74378bb2c36d8f5c">streets_utils::messages::sdsm::position_3d::_elevation</a></div><div class="ttdeci">std::optional&lt; int &gt; _elevation</div><div class="ttdoc">Signed units of 0.1m (10cm), in 2 octets the value 32767 (0x7FFF) shall indicate an invalid value [-3...</div><div class="ttdef"><b>Definition:</b> <a href="position__3d_8hpp_source.html#l00035">position_3d.hpp:35</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="position__3d_8hpp_source.html#l00035">streets_utils::messages::sdsm::position_3d::_elevation</a>, <a class="el" href="position__3d_8hpp_source.html#l00030">streets_utils::messages::sdsm::position_3d::_latitude</a>, and <a class="el" href="position__3d_8hpp_source.html#l00025">streets_utils::messages::sdsm::position_3d::_longitude</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="sensor__data__sharing__service_8cpp_source.html#l00144">sensor_data_sharing_service::sds_service::create_sdsm()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacesensor__data__sharing__service_a657d68b2284fbd94b8dfc151e5e6c9b1_icgraph.png" border="0" usemap="#anamespacesensor__data__sharing__service_a657d68b2284fbd94b8dfc151e5e6c9b1_icgraph" alt=""/></div>
+<map name="anamespacesensor__data__sharing__service_a657d68b2284fbd94b8dfc151e5e6c9b1_icgraph" id="anamespacesensor__data__sharing__service_a657d68b2284fbd94b8dfc151e5e6c9b1_icgraph">
+<area shape="rect" title=" " alt="" coords="688,13,849,54"/>
 <area shape="rect" href="classsensor__data__sharing__service_1_1sds__service.html#a49b81dd177ed2ea506fac8f3a9a7b273" title="Method to create SDSM from detected objects." alt="" coords="493,5,640,61"/>
 <area shape="rect" href="classsensor__data__sharing__service_1_1sds__service.html#a784bcc97ce58546f2d5a172c96ba7e8f" title="Loop to produce sensor data sharing messages from detected_objects. Loop will populate sensor data sh..." alt="" coords="299,5,445,61"/>
 <area shape="rect" href="classsensor__data__sharing__service_1_1sds__service.html#a9ee2b8ce146ec179703350d609652785" title="Method to start all threads included in the tsc_service." alt="" coords="104,5,251,61"/>
@@ -1401,7 +1453,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesensor__data__sharing__service.html">sensor_data_sharing_service</a></li>
-    <li class="footer">Generated on Fri Dec 29 2023 18:17:50 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Jan 5 2024 14:01:20 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -246,6 +246,7 @@ var hierarchy =
     [ "carma_cooperative_perception::MeasurementTimeOffset", "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html", null ],
     [ "MemoryPoolAllocator< BaseAllocator >", "classMemoryPoolAllocator.html", null ],
     [ "MemoryStream", "structMemoryStream.html", null ],
+    [ "carma_cooperative_perception::MetricSe2", "structcarma__cooperative__perception_1_1MetricSe2.html", null ],
     [ "mock_drivers::MockDriver", "classmock__drivers_1_1MockDriver.html", [
       [ "mock_drivers::MockCANDriver", "classmock__drivers_1_1MockCANDriver.html", null ],
       [ "mock_drivers::MockCameraDriver", "classmock__drivers_1_1MockCameraDriver.html", null ],
@@ -347,6 +348,7 @@ var hierarchy =
     [ "arbitrator::SearchStrategy", "classarbitrator_1_1SearchStrategy.html", [
       [ "arbitrator::BeamSearchStrategy", "classarbitrator_1_1BeamSearchStrategy.html", null ]
     ] ],
+    [ "carma_cooperative_perception::SemanticDistance2dScore", "structcarma__cooperative__perception_1_1SemanticDistance2dScore.html", null ],
     [ "GenericValue< Encoding, Allocator >::ShortString", "structGenericValue_1_1ShortString.html", null ],
     [ "carma_wm::SignalizedIntersectionManager", "classcarma__wm_1_1SignalizedIntersectionManager.html", null ],
     [ "carma_cooperative_perception::Speed", "structcarma__cooperative__perception_1_1Speed.html", null ],

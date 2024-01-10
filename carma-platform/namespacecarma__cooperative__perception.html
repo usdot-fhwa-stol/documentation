@@ -109,6 +109,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarma__cooperative__perception_1_1MeasurementTimeOffset.html">MeasurementTimeOffset</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarma__cooperative__perception_1_1MetricSe2.html">MetricSe2</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates distance between a point and detection in SE(2) (special Euclidean) space.  <a href="structcarma__cooperative__perception_1_1MetricSe2.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__cooperative__perception_1_1Month.html">Month</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarma__cooperative__perception_1_1MotionModelMapping.html">MotionModelMapping</a></td></tr>
@@ -120,6 +123,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarma__cooperative__perception_1_1PositionOffsetXYZ.html">PositionOffsetXYZ</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html">SdsmToDetectionListNode</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarma__cooperative__perception_1_1SemanticDistance2dScore.html">SemanticDistance2dScore</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate 2D Euclidean distance between track and detection.  <a href="structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarma__cooperative__perception_1_1Speed.html">Speed</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -888,49 +894,49 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00113">113</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>{</div>
-<div class="line"><span class="lineno">  116</span>  <span class="keyword">const</span> <span class="keyword">auto</span> timestamp{</div>
-<div class="line"><span class="lineno">  117</span>    units::time::second_t{<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(msg.header.stamp.sec)} +</div>
-<div class="line"><span class="lineno">  118</span>    units::time::nanosecond_t{<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(msg.header.stamp.nanosec)}};</div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>  tf2::Quaternion orientation;</div>
-<div class="line"><span class="lineno">  121</span>  orientation.setX(msg.pose.pose.orientation.x);</div>
-<div class="line"><span class="lineno">  122</span>  orientation.setY(msg.pose.pose.orientation.y);</div>
-<div class="line"><span class="lineno">  123</span>  orientation.setZ(msg.pose.pose.orientation.z);</div>
-<div class="line"><span class="lineno">  124</span>  orientation.setW(msg.pose.pose.orientation.w);</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>  <span class="keywordtype">double</span> roll{0.0};</div>
-<div class="line"><span class="lineno">  127</span>  <span class="keywordtype">double</span> pitch{0.0};</div>
-<div class="line"><span class="lineno">  128</span>  <span class="keywordtype">double</span> yaw{0.0};</div>
-<div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>  tf2::Matrix3x3 matrix{orientation};</div>
-<div class="line"><span class="lineno">  131</span>  matrix.getRPY(roll, pitch, yaw);</div>
-<div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>  <span class="keyword">const</span> mot::CtraState state{</div>
-<div class="line"><span class="lineno">  134</span>    units::length::meter_t{msg.pose.pose.position.x},</div>
-<div class="line"><span class="lineno">  135</span>    units::length::meter_t{msg.pose.pose.position.y},</div>
-<div class="line"><span class="lineno">  136</span>    units::velocity::meters_per_second_t{msg.twist.twist.linear.x},</div>
-<div class="line"><span class="lineno">  137</span>    mot::Angle{units::angle::radian_t{yaw}},</div>
-<div class="line"><span class="lineno">  138</span>    units::angular_velocity::radians_per_second_t{msg.twist.twist.angular.z},</div>
-<div class="line"><span class="lineno">  139</span>    units::acceleration::meters_per_second_squared_t{msg.accel.accel.linear.x}};</div>
-<div class="line"><span class="lineno">  140</span> </div>
-<div class="line"><span class="lineno">  141</span>  mot::CtraStateCovariance covariance = mot::CtraStateCovariance::Zero();</div>
-<div class="line"><span class="lineno">  142</span>  covariance(0, 0) = msg.pose.covariance.at(0);</div>
-<div class="line"><span class="lineno">  143</span>  covariance(1, 1) = msg.pose.covariance.at(7);</div>
-<div class="line"><span class="lineno">  144</span>  covariance(2, 2) = msg.twist.covariance.at(0);</div>
-<div class="line"><span class="lineno">  145</span>  covariance(3, 3) = msg.pose.covariance.at(35);</div>
-<div class="line"><span class="lineno">  146</span>  covariance(4, 4) = msg.twist.covariance.at(35);</div>
-<div class="line"><span class="lineno">  147</span>  covariance(5, 5) = msg.accel.covariance.at(0);</div>
-<div class="line"><span class="lineno">  148</span> </div>
-<div class="line"><span class="lineno">  149</span>  <span class="keywordflow">return</span> mot::CtraDetection{</div>
-<div class="line"><span class="lineno">  150</span>    timestamp, state, covariance, mot::Uuid{msg.id}, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a6bf0c5a6ef7e96f554b6d1bdc8b96123">make_semantic_class</a>(msg.semantic_class)};</div>
-<div class="line"><span class="lineno">  151</span>}</div>
-<div class="ttc" id="anamespacecarma__cooperative__perception_html_a6bf0c5a6ef7e96f554b6d1bdc8b96123"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a6bf0c5a6ef7e96f554b6d1bdc8b96123">carma_cooperative_perception::make_semantic_class</a></div><div class="ttdeci">auto make_semantic_class(std::size_t numeric_value)</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00039">multiple_object_tracker_component.cpp:39</a></div></div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00114">114</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>{</div>
+<div class="line"><span class="lineno">  117</span>  <span class="keyword">const</span> <span class="keyword">auto</span> timestamp{</div>
+<div class="line"><span class="lineno">  118</span>    units::time::second_t{<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(msg.header.stamp.sec)} +</div>
+<div class="line"><span class="lineno">  119</span>    units::time::nanosecond_t{<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(msg.header.stamp.nanosec)}};</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>  tf2::Quaternion orientation;</div>
+<div class="line"><span class="lineno">  122</span>  orientation.setX(msg.pose.pose.orientation.x);</div>
+<div class="line"><span class="lineno">  123</span>  orientation.setY(msg.pose.pose.orientation.y);</div>
+<div class="line"><span class="lineno">  124</span>  orientation.setZ(msg.pose.pose.orientation.z);</div>
+<div class="line"><span class="lineno">  125</span>  orientation.setW(msg.pose.pose.orientation.w);</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>  <span class="keywordtype">double</span> roll{0.0};</div>
+<div class="line"><span class="lineno">  128</span>  <span class="keywordtype">double</span> pitch{0.0};</div>
+<div class="line"><span class="lineno">  129</span>  <span class="keywordtype">double</span> yaw{0.0};</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>  tf2::Matrix3x3 matrix{orientation};</div>
+<div class="line"><span class="lineno">  132</span>  matrix.getRPY(roll, pitch, yaw);</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>  <span class="keyword">const</span> mot::CtraState state{</div>
+<div class="line"><span class="lineno">  135</span>    units::length::meter_t{msg.pose.pose.position.x},</div>
+<div class="line"><span class="lineno">  136</span>    units::length::meter_t{msg.pose.pose.position.y},</div>
+<div class="line"><span class="lineno">  137</span>    units::velocity::meters_per_second_t{msg.twist.twist.linear.x},</div>
+<div class="line"><span class="lineno">  138</span>    mot::Angle{units::angle::radian_t{yaw}},</div>
+<div class="line"><span class="lineno">  139</span>    units::angular_velocity::radians_per_second_t{msg.twist.twist.angular.z},</div>
+<div class="line"><span class="lineno">  140</span>    units::acceleration::meters_per_second_squared_t{msg.accel.accel.linear.x}};</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>  mot::CtraStateCovariance covariance = mot::CtraStateCovariance::Zero();</div>
+<div class="line"><span class="lineno">  143</span>  covariance(0, 0) = msg.pose.covariance.at(0);</div>
+<div class="line"><span class="lineno">  144</span>  covariance(1, 1) = msg.pose.covariance.at(7);</div>
+<div class="line"><span class="lineno">  145</span>  covariance(2, 2) = msg.twist.covariance.at(0);</div>
+<div class="line"><span class="lineno">  146</span>  covariance(3, 3) = msg.pose.covariance.at(35);</div>
+<div class="line"><span class="lineno">  147</span>  covariance(4, 4) = msg.twist.covariance.at(35);</div>
+<div class="line"><span class="lineno">  148</span>  covariance(5, 5) = msg.accel.covariance.at(0);</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>  <span class="keywordflow">return</span> mot::CtraDetection{</div>
+<div class="line"><span class="lineno">  151</span>    timestamp, state, covariance, mot::Uuid{msg.id}, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a6bf0c5a6ef7e96f554b6d1bdc8b96123">make_semantic_class</a>(msg.semantic_class)};</div>
+<div class="line"><span class="lineno">  152</span>}</div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_a6bf0c5a6ef7e96f554b6d1bdc8b96123"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a6bf0c5a6ef7e96f554b6d1bdc8b96123">carma_cooperative_perception::make_semantic_class</a></div><div class="ttdeci">auto make_semantic_class(std::size_t numeric_value)</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00040">multiple_object_tracker_component.cpp:40</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00039">make_semantic_class()</a>.</p>
+<p class="reference">References <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00040">make_semantic_class()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00153">make_detection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00154">make_detection()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -970,46 +976,46 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00075">75</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>{</div>
-<div class="line"><span class="lineno">   78</span>  <span class="keyword">const</span> <span class="keyword">auto</span> timestamp{</div>
-<div class="line"><span class="lineno">   79</span>    units::time::second_t{<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(msg.header.stamp.sec)} +</div>
-<div class="line"><span class="lineno">   80</span>    units::time::nanosecond_t{<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(msg.header.stamp.nanosec)}};</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>  tf2::Quaternion orientation;</div>
-<div class="line"><span class="lineno">   83</span>  orientation.setX(msg.pose.pose.orientation.x);</div>
-<div class="line"><span class="lineno">   84</span>  orientation.setY(msg.pose.pose.orientation.y);</div>
-<div class="line"><span class="lineno">   85</span>  orientation.setZ(msg.pose.pose.orientation.z);</div>
-<div class="line"><span class="lineno">   86</span>  orientation.setW(msg.pose.pose.orientation.w);</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>  <span class="keywordtype">double</span> roll{0.0};</div>
-<div class="line"><span class="lineno">   89</span>  <span class="keywordtype">double</span> pitch{0.0};</div>
-<div class="line"><span class="lineno">   90</span>  <span class="keywordtype">double</span> yaw{0.0};</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>  tf2::Matrix3x3 matrix{orientation};</div>
-<div class="line"><span class="lineno">   93</span>  matrix.getRPY(roll, pitch, yaw);</div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="line"><span class="lineno">   95</span>  <span class="keyword">const</span> mot::CtrvState state{</div>
-<div class="line"><span class="lineno">   96</span>    units::length::meter_t{msg.pose.pose.position.x},</div>
-<div class="line"><span class="lineno">   97</span>    units::length::meter_t{msg.pose.pose.position.y},</div>
-<div class="line"><span class="lineno">   98</span>    units::velocity::meters_per_second_t{msg.twist.twist.linear.x},</div>
-<div class="line"><span class="lineno">   99</span>    mot::Angle{units::angle::radian_t{yaw}},</div>
-<div class="line"><span class="lineno">  100</span>    units::angular_velocity::radians_per_second_t{msg.twist.twist.angular.z}};</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>  mot::CtrvStateCovariance covariance = mot::CtrvStateCovariance::Zero();</div>
-<div class="line"><span class="lineno">  103</span>  covariance(0, 0) = msg.pose.covariance.at(0);</div>
-<div class="line"><span class="lineno">  104</span>  covariance(1, 1) = msg.pose.covariance.at(7);</div>
-<div class="line"><span class="lineno">  105</span>  covariance(2, 2) = msg.twist.covariance.at(0);</div>
-<div class="line"><span class="lineno">  106</span>  covariance(3, 3) = msg.pose.covariance.at(35);</div>
-<div class="line"><span class="lineno">  107</span>  covariance(4, 4) = msg.twist.covariance.at(35);</div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>  <span class="keywordflow">return</span> mot::CtrvDetection{</div>
-<div class="line"><span class="lineno">  110</span>    timestamp, state, covariance, mot::Uuid{msg.id}, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a6bf0c5a6ef7e96f554b6d1bdc8b96123">make_semantic_class</a>(msg.semantic_class)};</div>
-<div class="line"><span class="lineno">  111</span>}</div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00076">76</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>{</div>
+<div class="line"><span class="lineno">   79</span>  <span class="keyword">const</span> <span class="keyword">auto</span> timestamp{</div>
+<div class="line"><span class="lineno">   80</span>    units::time::second_t{<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(msg.header.stamp.sec)} +</div>
+<div class="line"><span class="lineno">   81</span>    units::time::nanosecond_t{<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(msg.header.stamp.nanosec)}};</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>  tf2::Quaternion orientation;</div>
+<div class="line"><span class="lineno">   84</span>  orientation.setX(msg.pose.pose.orientation.x);</div>
+<div class="line"><span class="lineno">   85</span>  orientation.setY(msg.pose.pose.orientation.y);</div>
+<div class="line"><span class="lineno">   86</span>  orientation.setZ(msg.pose.pose.orientation.z);</div>
+<div class="line"><span class="lineno">   87</span>  orientation.setW(msg.pose.pose.orientation.w);</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>  <span class="keywordtype">double</span> roll{0.0};</div>
+<div class="line"><span class="lineno">   90</span>  <span class="keywordtype">double</span> pitch{0.0};</div>
+<div class="line"><span class="lineno">   91</span>  <span class="keywordtype">double</span> yaw{0.0};</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>  tf2::Matrix3x3 matrix{orientation};</div>
+<div class="line"><span class="lineno">   94</span>  matrix.getRPY(roll, pitch, yaw);</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>  <span class="keyword">const</span> mot::CtrvState state{</div>
+<div class="line"><span class="lineno">   97</span>    units::length::meter_t{msg.pose.pose.position.x},</div>
+<div class="line"><span class="lineno">   98</span>    units::length::meter_t{msg.pose.pose.position.y},</div>
+<div class="line"><span class="lineno">   99</span>    units::velocity::meters_per_second_t{msg.twist.twist.linear.x},</div>
+<div class="line"><span class="lineno">  100</span>    mot::Angle{units::angle::radian_t{yaw}},</div>
+<div class="line"><span class="lineno">  101</span>    units::angular_velocity::radians_per_second_t{msg.twist.twist.angular.z}};</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>  mot::CtrvStateCovariance covariance = mot::CtrvStateCovariance::Zero();</div>
+<div class="line"><span class="lineno">  104</span>  covariance(0, 0) = msg.pose.covariance.at(0);</div>
+<div class="line"><span class="lineno">  105</span>  covariance(1, 1) = msg.pose.covariance.at(7);</div>
+<div class="line"><span class="lineno">  106</span>  covariance(2, 2) = msg.twist.covariance.at(0);</div>
+<div class="line"><span class="lineno">  107</span>  covariance(3, 3) = msg.pose.covariance.at(35);</div>
+<div class="line"><span class="lineno">  108</span>  covariance(4, 4) = msg.twist.covariance.at(35);</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>  <span class="keywordflow">return</span> mot::CtrvDetection{</div>
+<div class="line"><span class="lineno">  111</span>    timestamp, state, covariance, mot::Uuid{msg.id}, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a6bf0c5a6ef7e96f554b6d1bdc8b96123">make_semantic_class</a>(msg.semantic_class)};</div>
+<div class="line"><span class="lineno">  112</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00039">make_semantic_class()</a>.</p>
+<p class="reference">References <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00040">make_semantic_class()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00153">make_detection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00154">make_detection()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1048,27 +1054,27 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00153">153</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  155</span>{</div>
-<div class="line"><span class="lineno">  156</span>  <span class="keywordflow">switch</span> (msg.motion_model) {</div>
-<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">case</span> msg.MOTION_MODEL_CTRV:</div>
-<div class="line"><span class="lineno">  158</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a7f86904480653897489d01ba2dcaacfa">make_ctrv_detection</a>(msg);</div>
-<div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">case</span> msg.MOTION_MODEL_CTRA:</div>
-<div class="line"><span class="lineno">  161</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a219bbbe418d854cb95f4872622ac8c76">make_ctra_detection</a>(msg);</div>
-<div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">case</span> msg.MOTION_MODEL_CV:</div>
-<div class="line"><span class="lineno">  164</span>      <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;unsupported motion model type &#39;3: constant velocity (CV)&#39;&quot;</span>);</div>
-<div class="line"><span class="lineno">  165</span>  }</div>
-<div class="line"><span class="lineno">  166</span> </div>
-<div class="line"><span class="lineno">  167</span>  <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;unkown motion model type &#39;&quot;</span> + <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(msg.motion_model) + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><span class="lineno">  168</span>}</div>
-<div class="ttc" id="anamespacecarma__cooperative__perception_html_a219bbbe418d854cb95f4872622ac8c76"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a219bbbe418d854cb95f4872622ac8c76">carma_cooperative_perception::make_ctra_detection</a></div><div class="ttdeci">auto make_ctra_detection(const carma_cooperative_perception_interfaces::msg::Detection &amp;msg) -&gt; Detection</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00113">multiple_object_tracker_component.cpp:113</a></div></div>
-<div class="ttc" id="anamespacecarma__cooperative__perception_html_a7f86904480653897489d01ba2dcaacfa"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a7f86904480653897489d01ba2dcaacfa">carma_cooperative_perception::make_ctrv_detection</a></div><div class="ttdeci">auto make_ctrv_detection(const carma_cooperative_perception_interfaces::msg::Detection &amp;msg) -&gt; Detection</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00075">multiple_object_tracker_component.cpp:75</a></div></div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00154">154</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  156</span>{</div>
+<div class="line"><span class="lineno">  157</span>  <span class="keywordflow">switch</span> (msg.motion_model) {</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">case</span> msg.MOTION_MODEL_CTRV:</div>
+<div class="line"><span class="lineno">  159</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a7f86904480653897489d01ba2dcaacfa">make_ctrv_detection</a>(msg);</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">case</span> msg.MOTION_MODEL_CTRA:</div>
+<div class="line"><span class="lineno">  162</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a219bbbe418d854cb95f4872622ac8c76">make_ctra_detection</a>(msg);</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">case</span> msg.MOTION_MODEL_CV:</div>
+<div class="line"><span class="lineno">  165</span>      <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;unsupported motion model type &#39;3: constant velocity (CV)&#39;&quot;</span>);</div>
+<div class="line"><span class="lineno">  166</span>  }</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>  <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;unkown motion model type &#39;&quot;</span> + <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(msg.motion_model) + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><span class="lineno">  169</span>}</div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_a219bbbe418d854cb95f4872622ac8c76"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a219bbbe418d854cb95f4872622ac8c76">carma_cooperative_perception::make_ctra_detection</a></div><div class="ttdeci">auto make_ctra_detection(const carma_cooperative_perception_interfaces::msg::Detection &amp;msg) -&gt; Detection</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00114">multiple_object_tracker_component.cpp:114</a></div></div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_a7f86904480653897489d01ba2dcaacfa"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a7f86904480653897489d01ba2dcaacfa">carma_cooperative_perception::make_ctrv_detection</a></div><div class="ttdeci">auto make_ctrv_detection(const carma_cooperative_perception_interfaces::msg::Detection &amp;msg) -&gt; Detection</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00076">multiple_object_tracker_component.cpp:76</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00113">make_ctra_detection()</a>, <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00075">make_ctrv_detection()</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00021">to_string()</a>.</p>
+<p class="reference">References <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00114">make_ctra_detection()</a>, <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00076">make_ctrv_detection()</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00021">to_string()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00408">carma_cooperative_perception::MultipleObjectTrackerNode::store_new_detections()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00412">carma_cooperative_perception::MultipleObjectTrackerNode::store_new_detections()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1109,25 +1115,25 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00039">39</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>{</div>
-<div class="line"><span class="lineno">   41</span>  <span class="keywordflow">switch</span> (numeric_value) {</div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">case</span> 0:</div>
-<div class="line"><span class="lineno">   43</span>      <span class="keywordflow">return</span> mot::SemanticClass::kUnknown;</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">case</span> 1:</div>
-<div class="line"><span class="lineno">   45</span>      <span class="keywordflow">return</span> mot::SemanticClass::kSmallVehicle;</div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">case</span> 2:</div>
-<div class="line"><span class="lineno">   47</span>      <span class="keywordflow">return</span> mot::SemanticClass::kLargeVehicle;</div>
-<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">case</span> 3:</div>
-<div class="line"><span class="lineno">   49</span>      <span class="keywordflow">return</span> mot::SemanticClass::kPedestrian;</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">case</span> 4:</div>
-<div class="line"><span class="lineno">   51</span>      <span class="keywordflow">return</span> mot::SemanticClass::kMotorcycle;</div>
-<div class="line"><span class="lineno">   52</span>  }</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>  <span class="keywordflow">return</span> mot::SemanticClass::kUnknown;</div>
-<div class="line"><span class="lineno">   55</span>}</div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00040">40</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>{</div>
+<div class="line"><span class="lineno">   42</span>  <span class="keywordflow">switch</span> (numeric_value) {</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">   44</span>      <span class="keywordflow">return</span> mot::SemanticClass::kUnknown;</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">   46</span>      <span class="keywordflow">return</span> mot::SemanticClass::kSmallVehicle;</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">   48</span>      <span class="keywordflow">return</span> mot::SemanticClass::kLargeVehicle;</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">   50</span>      <span class="keywordflow">return</span> mot::SemanticClass::kPedestrian;</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">case</span> 4:</div>
+<div class="line"><span class="lineno">   52</span>      <span class="keywordflow">return</span> mot::SemanticClass::kMotorcycle;</div>
+<div class="line"><span class="lineno">   53</span>  }</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>  <span class="keywordflow">return</span> mot::SemanticClass::kUnknown;</div>
+<div class="line"><span class="lineno">   56</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00113">make_ctra_detection()</a>, and <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00075">make_ctrv_detection()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00114">make_ctra_detection()</a>, and <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00076">make_ctrv_detection()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1591,16 +1597,16 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00446">446</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  447</span>{</div>
-<div class="line"><span class="lineno">  448</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; track : tracks) {</div>
-<div class="line"><span class="lineno">  449</span>    mot::propagate_to_time(track, end_time, mot::default_unscented_transform);</div>
-<div class="line"><span class="lineno">  450</span>  }</div>
-<div class="line"><span class="lineno">  451</span> </div>
-<div class="line"><span class="lineno">  452</span>  <span class="keywordflow">return</span> tracks;</div>
-<div class="line"><span class="lineno">  453</span>}</div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00450">450</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  451</span>{</div>
+<div class="line"><span class="lineno">  452</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; track : tracks) {</div>
+<div class="line"><span class="lineno">  453</span>    mot::propagate_to_time(track, end_time, mot::default_unscented_transform);</div>
+<div class="line"><span class="lineno">  454</span>  }</div>
+<div class="line"><span class="lineno">  455</span> </div>
+<div class="line"><span class="lineno">  456</span>  <span class="keywordflow">return</span> tracks;</div>
+<div class="line"><span class="lineno">  457</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00455">carma_cooperative_perception::MultipleObjectTrackerNode::execute_pipeline()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00559">carma_cooperative_perception::MultipleObjectTrackerNode::execute_pipeline()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1742,31 +1748,33 @@ template&lt;typename T &gt; </div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="pointer_8h_source.html#l01222">value</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="geodetic_8cpp_source.html#l00093">calculate_grid_convergence()</a>, <a class="el" href="geodetic_8cpp_source.html#l00027">calculate_utm_zone()</a>, <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00346">carma_cooperative_perception::MultipleObjectTrackerNode::handle_on_activate()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00141">heading_to_enu_yaw()</a>, <a class="el" href="geodetic_8cpp_source.html#l00055">project_to_utm()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00476">to_detected_object_data_msg()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00210">to_detection_list_msg()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00130">to_position_msg()</a>, <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00170">to_ros_msg()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00051">to_time_msg()</a>, and <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00027">transform_from_map_to_utm()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="geodetic_8cpp_source.html#l00093">calculate_grid_convergence()</a>, <a class="el" href="geodetic_8cpp_source.html#l00027">calculate_utm_zone()</a>, <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00350">carma_cooperative_perception::MultipleObjectTrackerNode::handle_on_activate()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00141">heading_to_enu_yaw()</a>, <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00529">carma_cooperative_perception::MetricSe2::operator()()</a>, <a class="el" href="geodetic_8cpp_source.html#l00055">project_to_utm()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00476">to_detected_object_data_msg()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00210">to_detection_list_msg()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00130">to_position_msg()</a>, <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00171">to_ros_msg()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00051">to_time_msg()</a>, <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00027">transform_from_map_to_utm()</a>, and <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00500">carma_cooperative_perception::SemanticDistance2dScore::two_dimensional_distance()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacecarma__cooperative__perception_adab0ef7041c6108afdad006aa2c59c2f_icgraph.png" border="0" usemap="#anamespacecarma__cooperative__perception_adab0ef7041c6108afdad006aa2c59c2f_icgraph" alt=""/></div>
 <map name="anamespacecarma__cooperative__perception_adab0ef7041c6108afdad006aa2c59c2f_icgraph" id="anamespacecarma__cooperative__perception_adab0ef7041c6108afdad006aa2c59c2f_icgraph">
-<area shape="rect" title=" " alt="" coords="1287,313,1485,355"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a3bd1f30dbbb27e495fb1733fe2133e3a" title="Calculate grid convergence at a given position." alt="" coords="789,349,988,391"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a89d133d080e321b19c8e4863517ed8db" title=" " alt="" coords="535,305,733,347"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a899d167068fbc97fdfa3ea07f299e65f" title="Get the UTM zone number from a WGS&#45;84 coordinate." alt="" coords="1038,72,1237,113"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#adddef8d756d8931e2f881725808a270d" title="Projects a Wgs84Coordinate to its corresponding UTM zone." alt="" coords="789,131,988,172"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a19c676dcb9a973ab02f86acfa150c341" title=" " alt="" coords="535,72,733,113"/>
-<area shape="rect" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a4d9d931a84b9f67e2e4ed86f04369e44" title=" " alt="" coords="1038,306,1237,362"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#aa0ac6f02134ae7a4a1909c51c4ba6d2e" title=" " alt="" coords="789,480,988,521"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a7d047352f180efa034647181b142049f" title=" " alt="" coords="1036,543,1239,584"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#ae31d51adeb5455f98be9395fb9d863a9" title=" " alt="" coords="1038,189,1237,231"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#afafce497a83114fd1423a389b6e11b5c" title=" " alt="" coords="1038,609,1237,651"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a93be41b790d86ff89621727ece68aee0" title=" " alt="" coords="789,260,988,301"/>
-<area shape="rect" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#af4110e586c68bb118d12854d950f9bde" title=" " alt="" coords="252,258,479,314"/>
-<area shape="rect" href="classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html#ab1ccd1fce20e48eba6c2cbf53ae6fd67" title=" " alt="" coords="266,338,465,394"/>
-<area shape="rect" href="classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html#a76ba7ec2617b615c169feb511f10eebb" title=" " alt="" coords="5,338,204,394"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#ab6036e69ab09cb1c6fe0512e8e704c92" title=" " alt="" coords="789,545,988,587"/>
-<area shape="rect" href="classcarma__cooperative__perception_1_1ExternalObjectListToSdsmNode.html#a5e9b0d56b35252af79c3fc07876f0bbd" title=" " alt="" coords="527,533,741,589"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a6972022e649c8122cb8eec43651b7726" title=" " alt="" coords="789,613,988,655"/>
-<area shape="rect" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a25d32adfecd223998cc98d99488aa532" title=" " alt="" coords="535,613,733,669"/>
+<area shape="rect" title=" " alt="" coords="1287,366,1485,407"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a3bd1f30dbbb27e495fb1733fe2133e3a" title="Calculate grid convergence at a given position." alt="" coords="789,361,988,402"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a89d133d080e321b19c8e4863517ed8db" title=" " alt="" coords="535,319,733,361"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a899d167068fbc97fdfa3ea07f299e65f" title="Get the UTM zone number from a WGS&#45;84 coordinate." alt="" coords="1038,75,1237,117"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#adddef8d756d8931e2f881725808a270d" title="Projects a Wgs84Coordinate to its corresponding UTM zone." alt="" coords="789,134,988,175"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a19c676dcb9a973ab02f86acfa150c341" title=" " alt="" coords="535,75,733,117"/>
+<area shape="rect" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a4d9d931a84b9f67e2e4ed86f04369e44" title=" " alt="" coords="1038,293,1237,349"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#aa0ac6f02134ae7a4a1909c51c4ba6d2e" title=" " alt="" coords="789,534,988,575"/>
+<area shape="rect" href="structcarma__cooperative__perception_1_1MetricSe2.html#a032b673c7b269cf416b9e4b073db0be4" title=" " alt="" coords="1038,425,1237,466"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a7d047352f180efa034647181b142049f" title=" " alt="" coords="1036,593,1239,634"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#ae31d51adeb5455f98be9395fb9d863a9" title=" " alt="" coords="789,203,988,245"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#afafce497a83114fd1423a389b6e11b5c" title=" " alt="" coords="1038,658,1237,699"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a93be41b790d86ff89621727ece68aee0" title=" " alt="" coords="789,278,988,319"/>
+<area shape="rect" href="structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#a887e7440d07c013139def1a5af49ee1a" title=" " alt="" coords="1038,723,1237,779"/>
+<area shape="rect" href="classcarma__cooperative__perception_1_1ExternalObjectListToDetectionListNode.html#af4110e586c68bb118d12854d950f9bde" title=" " alt="" coords="252,272,479,328"/>
+<area shape="rect" href="classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html#ab1ccd1fce20e48eba6c2cbf53ae6fd67" title=" " alt="" coords="266,352,465,408"/>
+<area shape="rect" href="classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html#a76ba7ec2617b615c169feb511f10eebb" title=" " alt="" coords="5,352,204,408"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#ab6036e69ab09cb1c6fe0512e8e704c92" title=" " alt="" coords="789,599,988,641"/>
+<area shape="rect" href="classcarma__cooperative__perception_1_1ExternalObjectListToSdsmNode.html#a5e9b0d56b35252af79c3fc07876f0bbd" title=" " alt="" coords="527,588,741,644"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a6972022e649c8122cb8eec43651b7726" title=" " alt="" coords="789,669,988,710"/>
+<area shape="rect" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a25d32adfecd223998cc98d99488aa532" title=" " alt="" coords="535,668,733,724"/>
 </map>
 </div>
 
@@ -1788,25 +1796,25 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00057">57</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>{</div>
-<div class="line"><span class="lineno">   59</span>  <span class="keywordflow">switch</span> (semantic_class) {</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">case</span> mot::SemanticClass::kUnknown:</div>
-<div class="line"><span class="lineno">   61</span>      <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">case</span> mot::SemanticClass::kSmallVehicle:</div>
-<div class="line"><span class="lineno">   63</span>      <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">case</span> mot::SemanticClass::kLargeVehicle:</div>
-<div class="line"><span class="lineno">   65</span>      <span class="keywordflow">return</span> 2;</div>
-<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">case</span> mot::SemanticClass::kPedestrian:</div>
-<div class="line"><span class="lineno">   67</span>      <span class="keywordflow">return</span> 3;</div>
-<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">case</span> mot::SemanticClass::kMotorcycle:</div>
-<div class="line"><span class="lineno">   69</span>      <span class="keywordflow">return</span> 4;</div>
-<div class="line"><span class="lineno">   70</span>  }</div>
-<div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   73</span>}</div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00058">58</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
+<div class="line"><span class="lineno">   60</span>  <span class="keywordflow">switch</span> (semantic_class) {</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">case</span> mot::SemanticClass::kUnknown:</div>
+<div class="line"><span class="lineno">   62</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">case</span> mot::SemanticClass::kSmallVehicle:</div>
+<div class="line"><span class="lineno">   64</span>      <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">case</span> mot::SemanticClass::kLargeVehicle:</div>
+<div class="line"><span class="lineno">   66</span>      <span class="keywordflow">return</span> 2;</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">case</span> mot::SemanticClass::kPedestrian:</div>
+<div class="line"><span class="lineno">   68</span>      <span class="keywordflow">return</span> 3;</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">case</span> mot::SemanticClass::kMotorcycle:</div>
+<div class="line"><span class="lineno">   70</span>      <span class="keywordflow">return</span> 4;</div>
+<div class="line"><span class="lineno">   71</span>  }</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   74</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00170">to_ros_msg()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00171">to_ros_msg()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1856,14 +1864,14 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00438">438</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  440</span>{</div>
-<div class="line"><span class="lineno">  441</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; detection : detections) {</div>
-<div class="line"><span class="lineno">  442</span>    mot::propagate_to_time(detection, end_time, mot::default_unscented_transform);</div>
-<div class="line"><span class="lineno">  443</span>  }</div>
-<div class="line"><span class="lineno">  444</span>}</div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00442">442</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  444</span>{</div>
+<div class="line"><span class="lineno">  445</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; detection : detections) {</div>
+<div class="line"><span class="lineno">  446</span>    mot::propagate_to_time(detection, end_time, mot::default_unscented_transform);</div>
+<div class="line"><span class="lineno">  447</span>  }</div>
+<div class="line"><span class="lineno">  448</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00455">carma_cooperative_perception::MultipleObjectTrackerNode::execute_pipeline()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00559">carma_cooperative_perception::MultipleObjectTrackerNode::execute_pipeline()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2643,42 +2651,42 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00170">170</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  171</span>{</div>
-<div class="line"><span class="lineno">  172</span>  <a class="code hl_typedef" href="namespacecarma__cooperative__perception.html#aedfce236df3f84ec5ebc8b4013798808">carma_cooperative_perception_interfaces::msg::Track</a> msg;</div>
-<div class="line"><span class="lineno">  173</span> </div>
-<div class="line"><span class="lineno">  174</span>  msg.header.stamp.sec = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(units::math::floor(track.timestamp));</div>
-<div class="line"><span class="lineno">  175</span>  msg.header.stamp.nanosec = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(</div>
-<div class="line"><span class="lineno">  176</span>    units::time::nanosecond_t{units::math::fmod(track.timestamp, units::time::second_t{1.0})});</div>
-<div class="line"><span class="lineno">  177</span>  msg.header.frame_id = <span class="stringliteral">&quot;map&quot;</span>;</div>
-<div class="line"><span class="lineno">  178</span> </div>
-<div class="line"><span class="lineno">  179</span>  msg.id = track.uuid.value();</div>
-<div class="line"><span class="lineno">  180</span>  msg.motion_model = msg.MOTION_MODEL_CTRA;</div>
-<div class="line"><span class="lineno">  181</span>  msg.pose.pose.position.x = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.position_x);</div>
-<div class="line"><span class="lineno">  182</span>  msg.pose.pose.position.y = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.position_y);</div>
-<div class="line"><span class="lineno">  183</span> </div>
-<div class="line"><span class="lineno">  184</span>  tf2::Quaternion orientation;</div>
-<div class="line"><span class="lineno">  185</span>  orientation.setRPY(0, 0, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.yaw.get_angle()));</div>
-<div class="line"><span class="lineno">  186</span>  msg.pose.pose.orientation.x = orientation.getX();</div>
-<div class="line"><span class="lineno">  187</span>  msg.pose.pose.orientation.y = orientation.getY();</div>
-<div class="line"><span class="lineno">  188</span>  msg.pose.pose.orientation.z = orientation.getZ();</div>
-<div class="line"><span class="lineno">  189</span>  msg.pose.pose.orientation.w = orientation.getW();</div>
-<div class="line"><span class="lineno">  190</span> </div>
-<div class="line"><span class="lineno">  191</span>  msg.twist.twist.linear.x = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.velocity);</div>
-<div class="line"><span class="lineno">  192</span>  msg.twist.twist.angular.z = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.yaw_rate);</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>  msg.accel.accel.linear.x = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.acceleration);</div>
-<div class="line"><span class="lineno">  195</span> </div>
-<div class="line"><span class="lineno">  196</span>  msg.semantic_class = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a311208d76f15c87cdc235e4e8fab719a">semantic_class_to_numeric_value</a>(mot::get_semantic_class(track));</div>
-<div class="line"><span class="lineno">  197</span> </div>
-<div class="line"><span class="lineno">  198</span>  <span class="keywordflow">return</span> msg;</div>
-<div class="line"><span class="lineno">  199</span>}</div>
-<div class="ttc" id="anamespacecarma__cooperative__perception_html_a311208d76f15c87cdc235e4e8fab719a"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a311208d76f15c87cdc235e4e8fab719a">carma_cooperative_perception::semantic_class_to_numeric_value</a></div><div class="ttdeci">auto semantic_class_to_numeric_value(mot::SemanticClass semantic_class)</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00057">multiple_object_tracker_component.cpp:57</a></div></div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00171">171</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>{</div>
+<div class="line"><span class="lineno">  173</span>  <a class="code hl_typedef" href="namespacecarma__cooperative__perception.html#aedfce236df3f84ec5ebc8b4013798808">carma_cooperative_perception_interfaces::msg::Track</a> msg;</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>  msg.header.stamp.sec = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(units::math::floor(track.timestamp));</div>
+<div class="line"><span class="lineno">  176</span>  msg.header.stamp.nanosec = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(</div>
+<div class="line"><span class="lineno">  177</span>    units::time::nanosecond_t{units::math::fmod(track.timestamp, units::time::second_t{1.0})});</div>
+<div class="line"><span class="lineno">  178</span>  msg.header.frame_id = <span class="stringliteral">&quot;map&quot;</span>;</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>  msg.id = track.uuid.value();</div>
+<div class="line"><span class="lineno">  181</span>  msg.motion_model = msg.MOTION_MODEL_CTRA;</div>
+<div class="line"><span class="lineno">  182</span>  msg.pose.pose.position.x = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.position_x);</div>
+<div class="line"><span class="lineno">  183</span>  msg.pose.pose.position.y = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.position_y);</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>  tf2::Quaternion orientation;</div>
+<div class="line"><span class="lineno">  186</span>  orientation.setRPY(0, 0, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.yaw.get_angle()));</div>
+<div class="line"><span class="lineno">  187</span>  msg.pose.pose.orientation.x = orientation.getX();</div>
+<div class="line"><span class="lineno">  188</span>  msg.pose.pose.orientation.y = orientation.getY();</div>
+<div class="line"><span class="lineno">  189</span>  msg.pose.pose.orientation.z = orientation.getZ();</div>
+<div class="line"><span class="lineno">  190</span>  msg.pose.pose.orientation.w = orientation.getW();</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>  msg.twist.twist.linear.x = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.velocity);</div>
+<div class="line"><span class="lineno">  193</span>  msg.twist.twist.angular.z = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.yaw_rate);</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>  msg.accel.accel.linear.x = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.acceleration);</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>  msg.semantic_class = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a311208d76f15c87cdc235e4e8fab719a">semantic_class_to_numeric_value</a>(mot::get_semantic_class(track));</div>
+<div class="line"><span class="lineno">  198</span> </div>
+<div class="line"><span class="lineno">  199</span>  <span class="keywordflow">return</span> msg;</div>
+<div class="line"><span class="lineno">  200</span>}</div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_a311208d76f15c87cdc235e4e8fab719a"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a311208d76f15c87cdc235e4e8fab719a">carma_cooperative_perception::semantic_class_to_numeric_value</a></div><div class="ttdeci">auto semantic_class_to_numeric_value(mot::SemanticClass semantic_class)</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00058">multiple_object_tracker_component.cpp:58</a></div></div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_aedfce236df3f84ec5ebc8b4013798808"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#aedfce236df3f84ec5ebc8b4013798808">carma_cooperative_perception::Track</a></div><div class="ttdeci">std::variant&lt; multiple_object_tracking::CtrvTrack, multiple_object_tracking::CtraTrack &gt; Track</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00036">multiple_object_tracker_component.hpp:37</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="units__extensions_8hpp_source.html#l00025">remove_units()</a>, and <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00057">semantic_class_to_numeric_value()</a>.</p>
+<p class="reference">References <a class="el" href="units__extensions_8hpp_source.html#l00025">remove_units()</a>, and <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00058">semantic_class_to_numeric_value()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00230">to_ros_msg()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00231">to_ros_msg()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2726,36 +2734,36 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00201">201</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  202</span>{</div>
-<div class="line"><span class="lineno">  203</span>  <a class="code hl_typedef" href="namespacecarma__cooperative__perception.html#aedfce236df3f84ec5ebc8b4013798808">carma_cooperative_perception_interfaces::msg::Track</a> msg;</div>
-<div class="line"><span class="lineno">  204</span> </div>
-<div class="line"><span class="lineno">  205</span>  msg.header.stamp.sec = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(units::math::floor(track.timestamp));</div>
-<div class="line"><span class="lineno">  206</span>  msg.header.stamp.nanosec = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(</div>
-<div class="line"><span class="lineno">  207</span>    units::time::nanosecond_t{units::math::fmod(track.timestamp, units::time::second_t{1.0})});</div>
-<div class="line"><span class="lineno">  208</span>  msg.header.frame_id = <span class="stringliteral">&quot;map&quot;</span>;</div>
-<div class="line"><span class="lineno">  209</span> </div>
-<div class="line"><span class="lineno">  210</span>  msg.id = track.uuid.value();</div>
-<div class="line"><span class="lineno">  211</span>  msg.motion_model = msg.MOTION_MODEL_CTRV;</div>
-<div class="line"><span class="lineno">  212</span>  msg.pose.pose.position.x = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.position_x);</div>
-<div class="line"><span class="lineno">  213</span>  msg.pose.pose.position.y = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.position_y);</div>
-<div class="line"><span class="lineno">  214</span> </div>
-<div class="line"><span class="lineno">  215</span>  tf2::Quaternion orientation;</div>
-<div class="line"><span class="lineno">  216</span>  orientation.setRPY(0, 0, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.yaw.get_angle()));</div>
-<div class="line"><span class="lineno">  217</span>  msg.pose.pose.orientation.x = orientation.getX();</div>
-<div class="line"><span class="lineno">  218</span>  msg.pose.pose.orientation.y = orientation.getY();</div>
-<div class="line"><span class="lineno">  219</span>  msg.pose.pose.orientation.z = orientation.getZ();</div>
-<div class="line"><span class="lineno">  220</span>  msg.pose.pose.orientation.w = orientation.getW();</div>
-<div class="line"><span class="lineno">  221</span> </div>
-<div class="line"><span class="lineno">  222</span>  msg.twist.twist.linear.x = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.velocity);</div>
-<div class="line"><span class="lineno">  223</span>  msg.twist.twist.angular.z = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.yaw_rate);</div>
-<div class="line"><span class="lineno">  224</span> </div>
-<div class="line"><span class="lineno">  225</span>  msg.semantic_class = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a311208d76f15c87cdc235e4e8fab719a">semantic_class_to_numeric_value</a>(mot::get_semantic_class(track));</div>
-<div class="line"><span class="lineno">  226</span> </div>
-<div class="line"><span class="lineno">  227</span>  <span class="keywordflow">return</span> msg;</div>
-<div class="line"><span class="lineno">  228</span>}</div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00202">202</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  203</span>{</div>
+<div class="line"><span class="lineno">  204</span>  <a class="code hl_typedef" href="namespacecarma__cooperative__perception.html#aedfce236df3f84ec5ebc8b4013798808">carma_cooperative_perception_interfaces::msg::Track</a> msg;</div>
+<div class="line"><span class="lineno">  205</span> </div>
+<div class="line"><span class="lineno">  206</span>  msg.header.stamp.sec = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(units::math::floor(track.timestamp));</div>
+<div class="line"><span class="lineno">  207</span>  msg.header.stamp.nanosec = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(</div>
+<div class="line"><span class="lineno">  208</span>    units::time::nanosecond_t{units::math::fmod(track.timestamp, units::time::second_t{1.0})});</div>
+<div class="line"><span class="lineno">  209</span>  msg.header.frame_id = <span class="stringliteral">&quot;map&quot;</span>;</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>  msg.id = track.uuid.value();</div>
+<div class="line"><span class="lineno">  212</span>  msg.motion_model = msg.MOTION_MODEL_CTRV;</div>
+<div class="line"><span class="lineno">  213</span>  msg.pose.pose.position.x = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.position_x);</div>
+<div class="line"><span class="lineno">  214</span>  msg.pose.pose.position.y = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.position_y);</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>  tf2::Quaternion orientation;</div>
+<div class="line"><span class="lineno">  217</span>  orientation.setRPY(0, 0, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.yaw.get_angle()));</div>
+<div class="line"><span class="lineno">  218</span>  msg.pose.pose.orientation.x = orientation.getX();</div>
+<div class="line"><span class="lineno">  219</span>  msg.pose.pose.orientation.y = orientation.getY();</div>
+<div class="line"><span class="lineno">  220</span>  msg.pose.pose.orientation.z = orientation.getZ();</div>
+<div class="line"><span class="lineno">  221</span>  msg.pose.pose.orientation.w = orientation.getW();</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>  msg.twist.twist.linear.x = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.velocity);</div>
+<div class="line"><span class="lineno">  224</span>  msg.twist.twist.angular.z = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(track.state.yaw_rate);</div>
+<div class="line"><span class="lineno">  225</span> </div>
+<div class="line"><span class="lineno">  226</span>  msg.semantic_class = <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a311208d76f15c87cdc235e4e8fab719a">semantic_class_to_numeric_value</a>(mot::get_semantic_class(track));</div>
+<div class="line"><span class="lineno">  227</span> </div>
+<div class="line"><span class="lineno">  228</span>  <span class="keywordflow">return</span> msg;</div>
+<div class="line"><span class="lineno">  229</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="units__extensions_8hpp_source.html#l00025">remove_units()</a>, and <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00057">semantic_class_to_numeric_value()</a>.</p>
+<p class="reference">References <a class="el" href="units__extensions_8hpp_source.html#l00025">remove_units()</a>, and <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00058">semantic_class_to_numeric_value()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2793,20 +2801,23 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00230">230</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  231</span>{</div>
-<div class="line"><span class="lineno">  232</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> mot::Visitor visitor{</div>
-<div class="line"><span class="lineno">  233</span>    [](<span class="keyword">const</span> mot::CtrvTrack &amp; t) { <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a6972022e649c8122cb8eec43651b7726">to_ros_msg</a>(t); },</div>
-<div class="line"><span class="lineno">  234</span>    [](<span class="keyword">const</span> mot::CtraTrack &amp; t) { <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a6972022e649c8122cb8eec43651b7726">to_ros_msg</a>(t); },</div>
-<div class="line"><span class="lineno">  235</span>    [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;) { <span class="keywordflow">throw</span> std::runtime_error{<span class="stringliteral">&quot;cannot make ROS 2 message from track type&quot;</span>}; }};</div>
-<div class="line"><span class="lineno">  236</span> </div>
-<div class="line"><span class="lineno">  237</span>  <span class="keywordflow">return</span> std::visit(visitor, track);</div>
-<div class="line"><span class="lineno">  238</span>}</div>
-<div class="ttc" id="anamespacecarma__cooperative__perception_html_a6972022e649c8122cb8eec43651b7726"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a6972022e649c8122cb8eec43651b7726">carma_cooperative_perception::to_ros_msg</a></div><div class="ttdeci">static auto to_ros_msg(const Track &amp;track)</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00230">multiple_object_tracker_component.cpp:230</a></div></div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00231">231</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  232</span>{</div>
+<div class="line"><span class="lineno">  233</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> mot::Visitor visitor{</div>
+<div class="line"><span class="lineno">  234</span>    [](<span class="keyword">const</span> mot::CtrvTrack &amp; t) { <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a6972022e649c8122cb8eec43651b7726">to_ros_msg</a>(t); },</div>
+<div class="line"><span class="lineno">  235</span>    [](<span class="keyword">const</span> mot::CtraTrack &amp; t) { <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a6972022e649c8122cb8eec43651b7726">to_ros_msg</a>(t); },</div>
+<div class="line"><span class="lineno">  236</span>    [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;) {</div>
+<div class="line"><span class="lineno">  237</span>      <span class="comment">// Currently on support CTRV and CTRA</span></div>
+<div class="line"><span class="lineno">  238</span>      <span class="keywordflow">throw</span> std::runtime_error{<span class="stringliteral">&quot;cannot make ROS 2 message from track type&quot;</span>};</div>
+<div class="line"><span class="lineno">  239</span>    }};</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>  <span class="keywordflow">return</span> std::visit(visitor, track);</div>
+<div class="line"><span class="lineno">  242</span>}</div>
+<div class="ttc" id="anamespacecarma__cooperative__perception_html_a6972022e649c8122cb8eec43651b7726"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a6972022e649c8122cb8eec43651b7726">carma_cooperative_perception::to_ros_msg</a></div><div class="ttdeci">static auto to_ros_msg(const Track &amp;track)</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00231">multiple_object_tracker_component.cpp:231</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00170">to_ros_msg()</a>.</p>
+<p class="reference">References <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00171">to_ros_msg()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00455">carma_cooperative_perception::MultipleObjectTrackerNode::execute_pipeline()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00559">carma_cooperative_perception::MultipleObjectTrackerNode::execute_pipeline()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2952,7 +2963,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="namespacecarma__cooperative__perception.html#a022345575eaee624c48c9c248598b0daac1079db2ce4428bb7b1f7ce7288c887c">kNorth</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00021">to_string()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00425">cooperative_lanechange::CooperativeLaneChangePlugin::add_trajectory_to_response()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00117">carma_wm_ctrl::WMBroadcaster::addScheduleFromMsg()</a>, <a class="el" href="route__following__plugin_8cpp_source.html#l00265">route_following_plugin::RouteFollowingPlugin::addStopAndWaitAtRouteEnd()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l01077">lci_strategic_plugin::LCIStrategicPlugin::boundary_accel_nocruise_maxspeed_decel()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l01128">lci_strategic_plugin::LCIStrategicPlugin::boundary_accel_or_decel_complete_upper()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l01222">lci_strategic_plugin::LCIStrategicPlugin::boundary_decel_nocruise_minspeed_accel_complete()</a>, <a class="el" href="truck__inspection__client_8cpp_source.html#l00089">truck_inspection_client::TruckInspectionClient::bsmCallback()</a>, <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00639">cooperative_lanechange::CooperativeLaneChangePlugin::bsmIDtoString()</a>, <a class="el" href="yield__plugin_8hpp_source.html#l00271">yield_plugin::YieldPlugin::bsmIDtoString()</a>, <a class="el" href="geodetic_8cpp_source.html#l00093">calculate_grid_convergence()</a>, <a class="el" href="mobilitypath__visualizer_8cpp_source.html#l00124">mobilitypath_visualizer::MobilityPathVisualizer::callbackMobilityPath()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00298">lci_strategic_plugin::LCIStrategicPlugin::canArriveAtGreenWithCertainty()</a>, <a class="el" href="platoon__manager__ihp_8cpp_source.html#l00672">platoon_strategic_ihp::PlatoonManager::changeFromFollowerToLeader()</a>, <a class="el" href="mobilitypath__publisher_8cpp_source.html#l00141">mobilitypath_publisher::MobilityPathPublication::compose_mobility_header()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01503">lci_strategic_plugin::LCIStrategicPlugin::composeIntersectionTransitMessage()</a>, <a class="el" href="sci__strategic__plugin_8cpp_source.html#l00858">sci_strategic_plugin::SCIStrategicPlugin::composeIntersectionTransitMessage()</a>, <a class="el" href="mobilitypath__visualizer_8cpp_source.html#l00276">mobilitypath_visualizer::MobilityPathVisualizer::composeLabelMarker()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l03162">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::composeLaneChangeManeuverMessage()</a>, <a class="el" href="route__following__plugin_8cpp_source.html#l00753">route_following_plugin::RouteFollowingPlugin::composeLaneChangeManeuverMessage()</a>, <a class="el" href="approaching__emergency__vehicle__plugin__node_8cpp_source.html#l01080">approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin::composeLaneChangeManeuverMessage()</a>, <a class="el" href="route__following__plugin_8cpp_source.html#l00724">route_following_plugin::RouteFollowingPlugin::composeLaneFollowingManeuverMessage()</a>, <a class="el" href="approaching__emergency__vehicle__plugin__node_8cpp_source.html#l01053">approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin::composeLaneFollowingManeuverMessage()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00346">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPlugin::composeLaneFollowingManeuverMessage()</a>, <a class="el" href="sci__strategic__plugin_8cpp_source.html#l00731">sci_strategic_plugin::SCIStrategicPlugin::composeLaneFollowingManeuverMessage()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l03122">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::composeManeuverMessage()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00414">plan_delegator::PlanDelegator::composePlanTrajectoryRequest()</a>, <a class="el" href="sci__strategic__plugin_8cpp_source.html#l00829">sci_strategic_plugin::SCIStrategicPlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00386">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01470">lci_strategic_plugin::LCIStrategicPlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="route__following__plugin_8cpp_source.html#l00784">route_following_plugin::RouteFollowingPlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="approaching__emergency__vehicle__plugin__node_8cpp_source.html#l01116">approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01792">carma_wm_ctrl::WMBroadcaster::composeTCRStatus()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01419">lci_strategic_plugin::LCIStrategicPlugin::composeTrajectorySmoothingManeuverMessage()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01641">carma_wm_ctrl::WMBroadcaster::controlRequestFromRoute()</a>, <a class="el" href="pure__pursuit__wrapper_8cpp_source.html#l00114">pure_pursuit_wrapper::PurePursuitWrapperNode::convert_cmd()</a>, <a class="el" href="SignalizedIntersectionManager_8cpp_source.html#l00058">carma_wm::SignalizedIntersectionManager::convertLaneToLaneletId()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00307">basic_autonomy::waypoint_generation::create_lanechange_geometry()</a>, <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00443">cooperative_lanechange::CooperativeLaneChangePlugin::create_mobility_request()</a>, <a class="el" href="yield__plugin_8cpp_source.html#l00423">yield_plugin::YieldPlugin::detect_collision_time()</a>, <a class="el" href="object__visualizer__node_8cpp_source.html#l00094">object_visualizer::Node::external_objects_callback()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00236">lci_strategic_plugin::LCIStrategicPlugin::extractInitialState()</a>, <a class="el" href="sci__strategic__plugin_8cpp_source.html#l00170">sci_strategic_plugin::SCIStrategicPlugin::extractInitialState()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00147">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPlugin::extractInitialState()</a>, <a class="el" href="yield__plugin_8cpp_source.html#l00349">yield_plugin::YieldPlugin::generate_JMT_trajectory()</a>, <a class="el" href="approaching__emergency__vehicle__plugin__node_8cpp_source.html#l00280">approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin::generateApproachingErvStatusMessage()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01197">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="sci__strategic__plugin_8cpp_source.html#l00794">sci_strategic_plugin::SCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01077">carma_wm_ctrl::WMBroadcaster::geofenceCallback()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00052">lci_strategic_plugin::LCIStrategicPlugin::get_eet_or_tbd()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00254">lci_strategic_plugin::LCIStrategicPlugin::get_final_entry_time_and_conditions()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00066">lci_strategic_plugin::LCIStrategicPlugin::get_nearest_green_entry_time()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00579">lci_strategic_plugin::LCIStrategicPlugin::get_ts_case()</a>, <a class="el" href="IndexedDistanceMap_8cpp_source.html#l00044">carma_wm::IndexedDistanceMap::getElementIndexByDistance()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00255">plan_delegator::PlanDelegator::getLaneChangeInformation()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00341">lci_strategic_plugin::LCIStrategicPlugin::getLaneletsBetweenWithException()</a>, <a class="el" href="sci__strategic__plugin_8cpp_source.html#l00331">sci_strategic_plugin::SCIStrategicPlugin::getLaneletsBetweenWithException()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00193">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPlugin::getLaneletsBetweenWithException()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00521">lci_strategic_plugin::LCIStrategicPlugin::handleFailureCaseHelper()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00476">lci_strategic_plugin::LCIStrategicPlugin::handleGreenSignalScenario()</a>, <a class="el" href="truck__inspection__client_8cpp_source.html#l00023">truck_inspection_client::TruckInspectionClient::initialize()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l03472">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::is_lanechange_possible()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00403">plan_delegator::PlanDelegator::isManeuverExpired()</a>, <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00153">make_detection()</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l01430">carma_wm::CARMAWorldModel::min_end_time_converter_minute_of_year()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l00954">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::mob_op_cb_leader()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l01244">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::mob_op_cb_preparetojoin()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l01870">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::mob_req_cb_leadwithoperation()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l02455">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::mob_resp_cb_preparetojoin()</a>, <a class="el" href="WorldModelUtils_8cpp_source.html#l00079">carma_wm::query::nonConnectedAdjacentLeft()</a>, <a class="el" href="route__state__worker_8cpp_source.html#l00025">route::RouteStateWorker::onRouteEvent()</a>, <a class="el" href="intersection__transit__maneuvering_8cpp_source.html#l00052">intersection_transit_maneuvering::operator&lt;&lt;()</a>, <a class="el" href="ns-3__adapter_8cpp_source.html#l00138">NS3Adapter::packMessage()</a>, <a class="el" href="route__following__plugin_8cpp_source.html#l00413">route_following_plugin::RouteFollowingPlugin::plan_maneuvers_callback()</a>, <a class="el" href="inlanecruising__plugin_8cpp_source.html#l00049">inlanecruising_plugin::InLaneCruisingPlugin::plan_trajectory_callback()</a>, <a class="el" href="yield__plugin_8cpp_source.html#l00230">yield_plugin::YieldPlugin::plan_trajectory_callback()</a>, <a class="el" href="stop__controlled__intersection__tactical__plugin_8cpp_source.html#l00111">stop_controlled_intersection_tactical_plugin::StopControlledIntersectionTacticalPlugin::plan_trajectory_callback()</a>, <a class="el" href="platooning__tactical__plugin_8cpp_source.html#l00044">platooning_tactical_plugin::PlatooningTacticalPlugin::plan_trajectory_cb()</a>, <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00059">stop_and_wait_plugin::StopandWait::plan_trajectory_cb()</a>, <a class="el" href="light__controlled__intersection__tactical__plugin_8cpp_source.html#l00029">light_controlled_intersection_tactical_plugin::LightControlledIntersectionTacticalPlugin::planTrajectoryCB()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00812">lci_strategic_plugin::LCIStrategicPlugin::planWhenAPPROACHING()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01055">lci_strategic_plugin::LCIStrategicPlugin::planWhenWAITING()</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00430">carma_wm::CARMAWorldModel::pointFromRouteTrackPos()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00469">lci_strategic_plugin::LCIStrategicPlugin::print_params()</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l01476">carma_wm::CARMAWorldModel::processSpatFromMsg()</a>, <a class="el" href="geodetic_8cpp_source.html#l00055">project_to_utm()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l02722">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::run_candidate_follower()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l02822">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::run_leader_aborting()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l02977">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::run_prepare_to_join()</a>, <a class="el" href="TrafficControl_8hpp_source.html#l00109">boost::serialization::save()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00061">plan_delegator::anonymous_namespace{plan_delegator.cpp}::setManeuverEndingLaneletId()</a>, <a class="el" href="route__following__plugin_8cpp_source.html#l00058">route_following_plugin::anonymous_namespace{route_following_plugin.cpp}::setManeuverLaneletIds()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00032">plan_delegator::anonymous_namespace{plan_delegator.cpp}::setManeuverStartingLaneletId()</a>, <a class="el" href="truck__inspection__client_8cpp_source.html#l00101">truck_inspection_client::TruckInspectionClient::systemAlertsCallback()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00210">to_detection_list_msg()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00298">to_detection_msg()</a>, <a class="el" href="utm__zone_8cpp_source.html#l00021">to_string()</a>, <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00027">transform_from_map_to_utm()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00656">lci_strategic_plugin::LCIStrategicPlugin::ts_case1()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00705">lci_strategic_plugin::LCIStrategicPlugin::ts_case2()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00759">lci_strategic_plugin::LCIStrategicPlugin::ts_case3()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00803">lci_strategic_plugin::LCIStrategicPlugin::ts_case4()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00885">lci_strategic_plugin::LCIStrategicPlugin::ts_case6()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00927">lci_strategic_plugin::LCIStrategicPlugin::ts_case7()</a>, <a class="el" href="yield__plugin_8cpp_source.html#l00530">yield_plugin::YieldPlugin::update_traj_for_object()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00461">plan_delegator::PlanDelegator::updateManeuverParameters()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00277">lci_strategic_plugin::LCIStrategicPlugin::validLightState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00425">cooperative_lanechange::CooperativeLaneChangePlugin::add_trajectory_to_response()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00117">carma_wm_ctrl::WMBroadcaster::addScheduleFromMsg()</a>, <a class="el" href="route__following__plugin_8cpp_source.html#l00265">route_following_plugin::RouteFollowingPlugin::addStopAndWaitAtRouteEnd()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l01077">lci_strategic_plugin::LCIStrategicPlugin::boundary_accel_nocruise_maxspeed_decel()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l01128">lci_strategic_plugin::LCIStrategicPlugin::boundary_accel_or_decel_complete_upper()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l01222">lci_strategic_plugin::LCIStrategicPlugin::boundary_decel_nocruise_minspeed_accel_complete()</a>, <a class="el" href="truck__inspection__client_8cpp_source.html#l00089">truck_inspection_client::TruckInspectionClient::bsmCallback()</a>, <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00639">cooperative_lanechange::CooperativeLaneChangePlugin::bsmIDtoString()</a>, <a class="el" href="yield__plugin_8hpp_source.html#l00271">yield_plugin::YieldPlugin::bsmIDtoString()</a>, <a class="el" href="geodetic_8cpp_source.html#l00093">calculate_grid_convergence()</a>, <a class="el" href="mobilitypath__visualizer_8cpp_source.html#l00124">mobilitypath_visualizer::MobilityPathVisualizer::callbackMobilityPath()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00298">lci_strategic_plugin::LCIStrategicPlugin::canArriveAtGreenWithCertainty()</a>, <a class="el" href="platoon__manager__ihp_8cpp_source.html#l00672">platoon_strategic_ihp::PlatoonManager::changeFromFollowerToLeader()</a>, <a class="el" href="mobilitypath__publisher_8cpp_source.html#l00141">mobilitypath_publisher::MobilityPathPublication::compose_mobility_header()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01503">lci_strategic_plugin::LCIStrategicPlugin::composeIntersectionTransitMessage()</a>, <a class="el" href="sci__strategic__plugin_8cpp_source.html#l00858">sci_strategic_plugin::SCIStrategicPlugin::composeIntersectionTransitMessage()</a>, <a class="el" href="mobilitypath__visualizer_8cpp_source.html#l00276">mobilitypath_visualizer::MobilityPathVisualizer::composeLabelMarker()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l03162">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::composeLaneChangeManeuverMessage()</a>, <a class="el" href="route__following__plugin_8cpp_source.html#l00753">route_following_plugin::RouteFollowingPlugin::composeLaneChangeManeuverMessage()</a>, <a class="el" href="approaching__emergency__vehicle__plugin__node_8cpp_source.html#l01080">approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin::composeLaneChangeManeuverMessage()</a>, <a class="el" href="route__following__plugin_8cpp_source.html#l00724">route_following_plugin::RouteFollowingPlugin::composeLaneFollowingManeuverMessage()</a>, <a class="el" href="approaching__emergency__vehicle__plugin__node_8cpp_source.html#l01053">approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin::composeLaneFollowingManeuverMessage()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00346">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPlugin::composeLaneFollowingManeuverMessage()</a>, <a class="el" href="sci__strategic__plugin_8cpp_source.html#l00731">sci_strategic_plugin::SCIStrategicPlugin::composeLaneFollowingManeuverMessage()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l03122">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::composeManeuverMessage()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00414">plan_delegator::PlanDelegator::composePlanTrajectoryRequest()</a>, <a class="el" href="sci__strategic__plugin_8cpp_source.html#l00829">sci_strategic_plugin::SCIStrategicPlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00386">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01470">lci_strategic_plugin::LCIStrategicPlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="route__following__plugin_8cpp_source.html#l00784">route_following_plugin::RouteFollowingPlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="approaching__emergency__vehicle__plugin__node_8cpp_source.html#l01116">approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01792">carma_wm_ctrl::WMBroadcaster::composeTCRStatus()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01419">lci_strategic_plugin::LCIStrategicPlugin::composeTrajectorySmoothingManeuverMessage()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01641">carma_wm_ctrl::WMBroadcaster::controlRequestFromRoute()</a>, <a class="el" href="pure__pursuit__wrapper_8cpp_source.html#l00114">pure_pursuit_wrapper::PurePursuitWrapperNode::convert_cmd()</a>, <a class="el" href="SignalizedIntersectionManager_8cpp_source.html#l00058">carma_wm::SignalizedIntersectionManager::convertLaneToLaneletId()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00307">basic_autonomy::waypoint_generation::create_lanechange_geometry()</a>, <a class="el" href="cooperative__lanechange__node_8cpp_source.html#l00443">cooperative_lanechange::CooperativeLaneChangePlugin::create_mobility_request()</a>, <a class="el" href="yield__plugin_8cpp_source.html#l00423">yield_plugin::YieldPlugin::detect_collision_time()</a>, <a class="el" href="object__visualizer__node_8cpp_source.html#l00094">object_visualizer::Node::external_objects_callback()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00236">lci_strategic_plugin::LCIStrategicPlugin::extractInitialState()</a>, <a class="el" href="sci__strategic__plugin_8cpp_source.html#l00170">sci_strategic_plugin::SCIStrategicPlugin::extractInitialState()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00147">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPlugin::extractInitialState()</a>, <a class="el" href="yield__plugin_8cpp_source.html#l00349">yield_plugin::YieldPlugin::generate_JMT_trajectory()</a>, <a class="el" href="approaching__emergency__vehicle__plugin__node_8cpp_source.html#l00280">approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin::generateApproachingErvStatusMessage()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01197">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="sci__strategic__plugin_8cpp_source.html#l00794">sci_strategic_plugin::SCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01077">carma_wm_ctrl::WMBroadcaster::geofenceCallback()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00052">lci_strategic_plugin::LCIStrategicPlugin::get_eet_or_tbd()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00254">lci_strategic_plugin::LCIStrategicPlugin::get_final_entry_time_and_conditions()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00066">lci_strategic_plugin::LCIStrategicPlugin::get_nearest_green_entry_time()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00579">lci_strategic_plugin::LCIStrategicPlugin::get_ts_case()</a>, <a class="el" href="IndexedDistanceMap_8cpp_source.html#l00044">carma_wm::IndexedDistanceMap::getElementIndexByDistance()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00255">plan_delegator::PlanDelegator::getLaneChangeInformation()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00341">lci_strategic_plugin::LCIStrategicPlugin::getLaneletsBetweenWithException()</a>, <a class="el" href="sci__strategic__plugin_8cpp_source.html#l00331">sci_strategic_plugin::SCIStrategicPlugin::getLaneletsBetweenWithException()</a>, <a class="el" href="stop__and__dwell__strategic__plugin_8cpp_source.html#l00193">stop_and_dwell_strategic_plugin::StopAndDwellStrategicPlugin::getLaneletsBetweenWithException()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00521">lci_strategic_plugin::LCIStrategicPlugin::handleFailureCaseHelper()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00476">lci_strategic_plugin::LCIStrategicPlugin::handleGreenSignalScenario()</a>, <a class="el" href="truck__inspection__client_8cpp_source.html#l00023">truck_inspection_client::TruckInspectionClient::initialize()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l03472">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::is_lanechange_possible()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00403">plan_delegator::PlanDelegator::isManeuverExpired()</a>, <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00154">make_detection()</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l01430">carma_wm::CARMAWorldModel::min_end_time_converter_minute_of_year()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l00954">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::mob_op_cb_leader()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l01244">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::mob_op_cb_preparetojoin()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l01870">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::mob_req_cb_leadwithoperation()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l02455">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::mob_resp_cb_preparetojoin()</a>, <a class="el" href="WorldModelUtils_8cpp_source.html#l00079">carma_wm::query::nonConnectedAdjacentLeft()</a>, <a class="el" href="route__state__worker_8cpp_source.html#l00025">route::RouteStateWorker::onRouteEvent()</a>, <a class="el" href="intersection__transit__maneuvering_8cpp_source.html#l00052">intersection_transit_maneuvering::operator&lt;&lt;()</a>, <a class="el" href="ns-3__adapter_8cpp_source.html#l00138">NS3Adapter::packMessage()</a>, <a class="el" href="route__following__plugin_8cpp_source.html#l00413">route_following_plugin::RouteFollowingPlugin::plan_maneuvers_callback()</a>, <a class="el" href="inlanecruising__plugin_8cpp_source.html#l00049">inlanecruising_plugin::InLaneCruisingPlugin::plan_trajectory_callback()</a>, <a class="el" href="yield__plugin_8cpp_source.html#l00230">yield_plugin::YieldPlugin::plan_trajectory_callback()</a>, <a class="el" href="stop__controlled__intersection__tactical__plugin_8cpp_source.html#l00111">stop_controlled_intersection_tactical_plugin::StopControlledIntersectionTacticalPlugin::plan_trajectory_callback()</a>, <a class="el" href="platooning__tactical__plugin_8cpp_source.html#l00044">platooning_tactical_plugin::PlatooningTacticalPlugin::plan_trajectory_cb()</a>, <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00059">stop_and_wait_plugin::StopandWait::plan_trajectory_cb()</a>, <a class="el" href="light__controlled__intersection__tactical__plugin_8cpp_source.html#l00029">light_controlled_intersection_tactical_plugin::LightControlledIntersectionTacticalPlugin::planTrajectoryCB()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00812">lci_strategic_plugin::LCIStrategicPlugin::planWhenAPPROACHING()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01055">lci_strategic_plugin::LCIStrategicPlugin::planWhenWAITING()</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00430">carma_wm::CARMAWorldModel::pointFromRouteTrackPos()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00469">lci_strategic_plugin::LCIStrategicPlugin::print_params()</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l01476">carma_wm::CARMAWorldModel::processSpatFromMsg()</a>, <a class="el" href="geodetic_8cpp_source.html#l00055">project_to_utm()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l02722">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::run_candidate_follower()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l02822">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::run_leader_aborting()</a>, <a class="el" href="platoon__strategic__ihp_8cpp_source.html#l02977">platoon_strategic_ihp::PlatoonStrategicIHPPlugin::run_prepare_to_join()</a>, <a class="el" href="TrafficControl_8hpp_source.html#l00109">boost::serialization::save()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00061">plan_delegator::anonymous_namespace{plan_delegator.cpp}::setManeuverEndingLaneletId()</a>, <a class="el" href="route__following__plugin_8cpp_source.html#l00058">route_following_plugin::anonymous_namespace{route_following_plugin.cpp}::setManeuverLaneletIds()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00032">plan_delegator::anonymous_namespace{plan_delegator.cpp}::setManeuverStartingLaneletId()</a>, <a class="el" href="truck__inspection__client_8cpp_source.html#l00101">truck_inspection_client::TruckInspectionClient::systemAlertsCallback()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00210">to_detection_list_msg()</a>, <a class="el" href="msg__conversion_8cpp_source.html#l00298">to_detection_msg()</a>, <a class="el" href="utm__zone_8cpp_source.html#l00021">to_string()</a>, <a class="el" href="external__object__list__to__detection__list__component_8cpp_source.html#l00027">transform_from_map_to_utm()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00656">lci_strategic_plugin::LCIStrategicPlugin::ts_case1()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00705">lci_strategic_plugin::LCIStrategicPlugin::ts_case2()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00759">lci_strategic_plugin::LCIStrategicPlugin::ts_case3()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00803">lci_strategic_plugin::LCIStrategicPlugin::ts_case4()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00885">lci_strategic_plugin::LCIStrategicPlugin::ts_case6()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00927">lci_strategic_plugin::LCIStrategicPlugin::ts_case7()</a>, <a class="el" href="yield__plugin_8cpp_source.html#l00530">yield_plugin::YieldPlugin::update_traj_for_object()</a>, <a class="el" href="plan__delegator_8cpp_source.html#l00461">plan_delegator::PlanDelegator::updateManeuverParameters()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00277">lci_strategic_plugin::LCIStrategicPlugin::validLightState()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3618,7 +3629,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></li>
-    <li class="footer">Generated on Fri Jan 5 2024 19:29:52 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Jan 10 2024 16:08:54 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

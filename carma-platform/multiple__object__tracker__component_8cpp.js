@@ -1,5 +1,7 @@
 var multiple__object__tracker__component_8cpp =
 [
+    [ "carma_cooperative_perception::SemanticDistance2dScore", "structcarma__cooperative__perception_1_1SemanticDistance2dScore.html", "structcarma__cooperative__perception_1_1SemanticDistance2dScore" ],
+    [ "carma_cooperative_perception::MetricSe2", "structcarma__cooperative__perception_1_1MetricSe2.html", "structcarma__cooperative__perception_1_1MetricSe2" ],
     [ "make_ctra_detection", "multiple__object__tracker__component_8cpp.html#a219bbbe418d854cb95f4872622ac8c76", null ],
     [ "make_ctrv_detection", "multiple__object__tracker__component_8cpp.html#a7f86904480653897489d01ba2dcaacfa", null ],
     [ "make_detection", "multiple__object__tracker__component_8cpp.html#ab68cb3662b89674f355b7c638a1c287c", null ],

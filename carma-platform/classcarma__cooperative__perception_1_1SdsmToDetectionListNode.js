@@ -5,6 +5,8 @@ var classcarma__cooperative__perception_1_1SdsmToDetectionListNode =
     [ "output_msg_type", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html#a2c9b21fb758871fbf868d154a25398c5", null ],
     [ "SdsmToDetectionListNode", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html#a76ba7ec2617b615c169feb511f10eebb", null ],
     [ "sdsm_msg_callback", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html#ab1ccd1fce20e48eba6c2cbf53ae6fd67", null ],
+    [ "georeference_", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html#a8c8f67d76543f3e554ba010c1ffa9697", null ],
+    [ "georeference_subscription_", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html#a5e41f09d21fdfdd0af693dcdb631f94f", null ],
     [ "publisher_", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html#a7e60fe79f951acb2d2f64044aa81a0c6", null ],
     [ "subscription_", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html#a08b3ba442343dcaed8e67bda2c6594f7", null ]
 ];

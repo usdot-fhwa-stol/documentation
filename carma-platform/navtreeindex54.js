@@ -1,5 +1,9 @@
 var NAVTREEINDEX54 =
 {
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a4286c4fbb2a6d0f34ff38ae89d78a53d":[55,0,61,4,19],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a4286c4fbb2a6d0f34ff38ae89d78a53d":[56,0,37,4,19],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a473bcce97d7c50beaab678372a354c0d":[55,0,61,4,38],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a473bcce97d7c50beaab678372a354c0d":[56,0,37,4,38],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a48ef7a059feb15a64cb77e29b76eb2b1":[55,0,61,4,26],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a48ef7a059feb15a64cb77e29b76eb2b1":[56,0,37,4,26],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a52907b228ff49305bd3c1e6977a1dac4":[55,0,61,4,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX54 =
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a571872bd00307722a2fd9c5089b5e517":[55,0,90,2,7],
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a571872bd00307722a2fd9c5089b5e517":[56,0,48,1,7],
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a661e0284bed5a74fa8ffdca6261d7a18":[56,0,48,1,3],
-"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a661e0284bed5a74fa8ffdca6261d7a18":[55,0,90,2,3],
-"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a6d402ec9cd086e233e586f6382c85083":[56,0,48,1,15],
-"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a6d402ec9cd086e233e586f6382c85083":[55,0,90,2,15],
-"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a6edc1ff71e24c7ed4a1037cd769b8994":[55,0,90,2,4],
-"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a6edc1ff71e24c7ed4a1037cd769b8994":[56,0,48,1,4]
+"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a661e0284bed5a74fa8ffdca6261d7a18":[55,0,90,2,3]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX55 =
 {
+"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a6d402ec9cd086e233e586f6382c85083":[56,0,48,1,15],
+"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a6d402ec9cd086e233e586f6382c85083":[55,0,90,2,15],
+"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a6edc1ff71e24c7ed4a1037cd769b8994":[55,0,90,2,4],
+"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a6edc1ff71e24c7ed4a1037cd769b8994":[56,0,48,1,4],
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a7e2d1fd6b27b36849e66b9acbc444425":[56,0,48,1,12],
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a7e2d1fd6b27b36849e66b9acbc444425":[55,0,90,2,12],
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a8e4f4801a5cca9adc3e4c7f18568f16a":[56,0,48,1,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX55 =
 "trajectory__visualizer_8hpp.html":[57,0,54,0,0],
 "trajectory__visualizer_8hpp.html#ab3a24592b4ac0358ba66a82f80bcab84":[57,0,54,0,0,1],
 "trajectory__visualizer_8hpp_source.html":[57,0,54,0,0],
-"trajectory__visualizer__config_8hpp.html":[57,0,54,0,1],
-"trajectory__visualizer__config_8hpp_source.html":[57,0,54,0,1],
-"trajectory__visualizer__launch_8py.html":[57,0,54,1,0],
-"trajectory__visualizer__launch_8py.html#a99ec886d3cc21e7bad2f210f0d2f2ca6":[57,0,54,1,0,0],
-"trajectory__visualizer__launch_8py_source.html":[57,0,54,1,0]
+"trajectory__visualizer__config_8hpp.html":[57,0,54,0,1]
 };

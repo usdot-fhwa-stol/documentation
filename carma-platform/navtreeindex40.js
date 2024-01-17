@@ -1,5 +1,9 @@
 var NAVTREEINDEX40 =
 {
+"md_docs_Release_notes.html#autotoc_md185":[25,23],
+"md_docs_Release_notes.html#autotoc_md186":[25,24],
+"md_docs_Release_notes.html#autotoc_md187":[25,25],
+"md_docs_Release_notes.html#autotoc_md188":[25,26],
 "md_docs_Release_notes.html#autotoc_md189":[25,27],
 "md_docs_Release_notes.html#autotoc_md190":[25,28],
 "md_docs_Release_notes.html#autotoc_md191":[25,29],
@@ -245,9 +249,5 @@ var NAVTREEINDEX40 =
 "namespacearbitrator.html#a4a07092774e143f298b2e71bd4a710d5a84e0ab34f37317ad1e801a219961657b":[55,0,3,16,1],
 "namespacearbitrator.html#a4a07092774e143f298b2e71bd4a710d5acf69dcf2a9f87626526e68a16d59dd78":[55,0,3,16,5],
 "namespacearbitrator.html#aa0854e246e70d1d9ccd16600ed2fad31":[55,0,3,19],
-"namespacearbitrator.html#ac1913fd40a8e632f18d1360a7b8f24c3":[55,0,3,18],
-"namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22":[55,0,3,17],
-"namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a509dd5d5845726a8d74901a8fdef9024":[55,0,3,17,3],
-"namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a71d9b235fbf749d1bbc5b783898a4211":[55,0,3,17,4],
-"namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a83de702deb045d9e1d5d819ad31fa1e8":[55,0,3,17,2]
+"namespacearbitrator.html#ac1913fd40a8e632f18d1360a7b8f24c3":[55,0,3,18]
 };

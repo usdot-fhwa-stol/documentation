@@ -1,5 +1,9 @@
 var NAVTREEINDEX32 =
 {
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#aa5f0a6401736cd8f388b5b73a104df9d":[56,0,50,0,4],
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#ab0bf4a699bff521ffe56736d78880926":[56,0,50,0,13],
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#ab0bf4a699bff521ffe56736d78880926":[55,0,93,0,13],
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#abbcab2cf32b229cd2938dd63afb3e09d":[55,0,93,0,6],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#abbcab2cf32b229cd2938dd63afb3e09d":[56,0,50,0,6],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#ac2b69a37cb6376fb4bbab8d85c921c64":[55,0,93,0,11],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#ac2b69a37cb6376fb4bbab8d85c921c64":[56,0,50,0,11],
@@ -245,9 +249,5 @@ var NAVTREEINDEX32 =
 "classsubsystem__controllers_1_1PluginManager.html#a9442d176f289fdc7dcd75228a3f4d5ed":[55,0,95,12,14],
 "classsubsystem__controllers_1_1PluginManager.html#a95f486ab4a95614c6eae4462c9ea1a9b":[55,0,95,12,4],
 "classsubsystem__controllers_1_1PluginManager.html#a95f486ab4a95614c6eae4462c9ea1a9b":[56,0,52,12,4],
-"classsubsystem__controllers_1_1PluginManager.html#a9676128e1c0d7bb13979e5fabcbf3871":[56,0,52,12,9],
-"classsubsystem__controllers_1_1PluginManager.html#a9676128e1c0d7bb13979e5fabcbf3871":[55,0,95,12,9],
-"classsubsystem__controllers_1_1PluginManager.html#a993d958574dddef33cb7f6d16cfcae22":[56,0,52,12,20],
-"classsubsystem__controllers_1_1PluginManager.html#a993d958574dddef33cb7f6d16cfcae22":[55,0,95,12,20],
-"classsubsystem__controllers_1_1PluginManager.html#a9f732913ba1f9c7e16986bade344f258":[56,0,52,12,15]
+"classsubsystem__controllers_1_1PluginManager.html#a9676128e1c0d7bb13979e5fabcbf3871":[56,0,52,12,9]
 };

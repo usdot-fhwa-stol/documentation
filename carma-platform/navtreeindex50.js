@@ -1,5 +1,9 @@
 var NAVTREEINDEX50 =
 {
+"structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#aa3dcb323ffb16e05709b2ecef6b8ec93":[55,0,12,12,0],
+"structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#ac4c15a3964ed42b4f02069aa78925261":[56,0,7,12,4],
+"structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#ac4c15a3964ed42b4f02069aa78925261":[55,0,12,12,4],
+"structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#ac5cd5516dd68b0438c45fd97b58812cc":[56,0,7,12,2],
 "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#ac5cd5516dd68b0438c45fd97b58812cc":[55,0,12,12,2],
 "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#ad12359ebcf7f368a167018c9f29558bf":[55,0,12,12,3],
 "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#ad12359ebcf7f368a167018c9f29558bf":[56,0,7,12,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX50 =
 "structinternal_1_1DiyFp.html#a841ef0ae29ccd2889e7f96aad76b0179":[55,0,36,2,18],
 "structinternal_1_1DiyFp.html#a841ef0ae29ccd2889e7f96aad76b0179":[56,0,20,2,18],
 "structinternal_1_1DiyFp.html#a9868841f824924cc385ad5163c9c85b3":[56,0,20,2,6],
-"structinternal_1_1DiyFp.html#a9868841f824924cc385ad5163c9c85b3":[55,0,36,2,6],
-"structinternal_1_1DiyFp.html#a994f16a1247a290cfc3a875715e3a92b":[55,0,36,2,12],
-"structinternal_1_1DiyFp.html#a994f16a1247a290cfc3a875715e3a92b":[56,0,20,2,12],
-"structinternal_1_1DiyFp.html#a9a8f2f5c49dfa0dee4a527f0829cc2e5":[56,0,20,2,1],
-"structinternal_1_1DiyFp.html#a9a8f2f5c49dfa0dee4a527f0829cc2e5":[55,0,36,2,1]
+"structinternal_1_1DiyFp.html#a9868841f824924cc385ad5163c9c85b3":[55,0,36,2,6]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX44 =
 {
+"namespacespeedharm-cli.html#ae3283b5b50d02d422aaf0584367ea48c":[55,0,88,7],
+"namespacespeedharm-cli.html#ae94d6c2182463d52815559149151af66":[55,0,88,27],
+"namespacespeedharm-cli.html#af4598cb5dd3794aace29acec1846292d":[55,0,88,20],
+"namespacespeedharm__auto__configure.html":[55,0,89],
 "namespacespeedharm__auto__configure.html#a1159b6aa7098b9103843a3f8a69f2712":[55,0,89,15],
 "namespacespeedharm__auto__configure.html#a31b982974bd247ed15eb169f0fbb7ee9":[55,0,89,4],
 "namespacespeedharm__auto__configure.html#a51ef3bb0779c361ebdb3f94e6614005a":[55,0,89,14],
@@ -245,9 +249,5 @@ var NAVTREEINDEX44 =
 "plugins_8launch_8py_source.html":[57,0,5,0,6],
 "pointer_8h.html":[57,0,30,2,0,0,0,14],
 "pointer_8h.html#a04e7d4fa9f18bae987e39e6c1045ae70":[57,0,30,2,0,0,0,14,21],
-"pointer_8h.html#a057fa4cef0e9df7176cfdc87ed895f34":[57,0,30,2,0,0,0,14,35],
-"pointer_8h.html#a25951a749a68964998983a6b4fbebf07":[57,0,30,2,0,0,0,14,20],
-"pointer_8h.html#a2683bf19840749f07ceaf659b4cee6d9":[57,0,30,2,0,0,0,14,12],
-"pointer_8h.html#a2e3bd9cdb4a8dc98aaf0580dee70f264":[57,0,30,2,0,0,0,14,34],
-"pointer_8h.html#a2fc4c2e668dd4e16063d596b2b9b61a3":[57,0,30,2,0,0,0,14,32]
+"pointer_8h.html#a057fa4cef0e9df7176cfdc87ed895f34":[57,0,30,2,0,0,0,14,35]
 };

@@ -132,6 +132,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarma__cooperative__perception_1_1Wgs84Coordinate.html">carma_cooperative_perception::Wgs84Coordinate</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a position using WGS-84 coordinates.  <a href="structcarma__cooperative__perception_1_1Wgs84Coordinate.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarma__cooperative__perception_1_1MapCoordinate.html">carma_cooperative_perception::MapCoordinate</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcarma__cooperative__perception_1_1UtmCoordinate.html">carma_cooperative_perception::UtmCoordinate</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a position using UTM coordinates.  <a href="structcarma__cooperative__perception_1_1UtmCoordinate.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,12 +169,16 @@ Functions</h2></td></tr>
 <tr class="memitem:a899d167068fbc97fdfa3ea07f299e65f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__cooperative__perception.html#a899d167068fbc97fdfa3ea07f299e65f">carma_cooperative_perception::calculate_utm_zone</a> (const Wgs84Coordinate &amp;coordinate) -&gt; UtmZone</td></tr>
 <tr class="memdesc:a899d167068fbc97fdfa3ea07f299e65f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the UTM zone number from a WGS-84 coordinate.  <a href="namespacecarma__cooperative__perception.html#a899d167068fbc97fdfa3ea07f299e65f">More...</a><br /></td></tr>
 <tr class="separator:a899d167068fbc97fdfa3ea07f299e65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62911a303fe3652fb937a2503b563e21"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__cooperative__perception.html#a62911a303fe3652fb937a2503b563e21">carma_cooperative_perception::project_to_carma_map</a> (const Wgs84Coordinate &amp;coordinate, std::string_view proj_string) -&gt; MapCoordinate</td></tr>
+<tr class="separator:a62911a303fe3652fb937a2503b563e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adddef8d756d8931e2f881725808a270d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__cooperative__perception.html#adddef8d756d8931e2f881725808a270d">carma_cooperative_perception::project_to_utm</a> (const Wgs84Coordinate &amp;coordinate) -&gt; UtmCoordinate</td></tr>
 <tr class="memdesc:adddef8d756d8931e2f881725808a270d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects a <a class="el" href="structcarma__cooperative__perception_1_1Wgs84Coordinate.html" title="Represents a position using WGS-84 coordinates.">Wgs84Coordinate</a> to its corresponding UTM zone.  <a href="namespacecarma__cooperative__perception.html#adddef8d756d8931e2f881725808a270d">More...</a><br /></td></tr>
 <tr class="separator:adddef8d756d8931e2f881725808a270d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bd1f30dbbb27e495fb1733fe2133e3a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__cooperative__perception.html#a3bd1f30dbbb27e495fb1733fe2133e3a">carma_cooperative_perception::calculate_grid_convergence</a> (const Wgs84Coordinate &amp;position, const UtmZone &amp;zone) -&gt; units::angle::degree_t</td></tr>
 <tr class="memdesc:a3bd1f30dbbb27e495fb1733fe2133e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate grid convergence at a given position.  <a href="namespacecarma__cooperative__perception.html#a3bd1f30dbbb27e495fb1733fe2133e3a">More...</a><br /></td></tr>
 <tr class="separator:a3bd1f30dbbb27e495fb1733fe2133e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a641db16f67bcf1129161f9416af62e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__cooperative__perception.html#a6a641db16f67bcf1129161f9416af62e">carma_cooperative_perception::calculate_grid_convergence</a> (const Wgs84Coordinate &amp;position, std::string_view georeference) -&gt; units::angle::degree_t</td></tr>
+<tr class="separator:a6a641db16f67bcf1129161f9416af62e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -180,7 +186,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_de73b34821d297bc7072366944012629.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="dir_3fba266a42436cc083b1c223e557c51b.html">include</a></li><li class="navelem"><a class="el" href="dir_d4bf3d2c81a2894e3c7695c1e85ac8af.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="geodetic_8hpp.html">geodetic.hpp</a></li>
-    <li class="footer">Generated on Wed Jan 17 2024 18:23:32 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Jan 18 2024 16:49:33 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

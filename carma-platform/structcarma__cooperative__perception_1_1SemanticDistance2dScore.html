@@ -122,7 +122,7 @@ Static Private Member Functions</h2></td></tr>
 <div class="textblock"><p >Calculate 2D Euclidean distance between track and detection. </p>
 <p >If both the track and detection semantic classes are known, this function object returns the 2D Euclidean distance between their states. Otherwise, it returns std::nullopt. </p>
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00466">466</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00467">467</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab9154be5337c7d5cab55f8b05bfb57a8" name="ab9154be5337c7d5cab55f8b05bfb57a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9154be5337c7d5cab55f8b05bfb57a8">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
@@ -161,11 +161,11 @@ template&lt;typename... TrackAlternatives, typename... DetectionAlternatives&gt;
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00491">491</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  494</span>  {</div>
-<div class="line"><span class="lineno">  495</span>    <span class="keywordflow">return</span> std::visit(</div>
-<div class="line"><span class="lineno">  496</span>      [<span class="keyword">this</span>](<span class="keyword">const</span> <span class="keyword">auto</span> &amp; t, <span class="keyword">const</span> <span class="keyword">auto</span> &amp; d) { <span class="keywordflow">return</span> (*<span class="keyword">this</span>)(t, d); }, track, detection);</div>
-<div class="line"><span class="lineno">  497</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00492">492</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  495</span>  {</div>
+<div class="line"><span class="lineno">  496</span>    <span class="keywordflow">return</span> std::visit(</div>
+<div class="line"><span class="lineno">  497</span>      [<span class="keyword">this</span>](<span class="keyword">const</span> <span class="keyword">auto</span> &amp; t, <span class="keyword">const</span> <span class="keyword">auto</span> &amp; d) { <span class="keywordflow">return</span> (*<span class="keyword">this</span>)(t, d); }, track, detection);</div>
+<div class="line"><span class="lineno">  498</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -206,27 +206,27 @@ template&lt;typename <a class="el" href="namespacecarma__cooperative__perception
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00469">469</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  470</span>  {</div>
-<div class="line"><span class="lineno">  471</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;<span class="keyword">decltype</span>(track.state), <span class="keyword">decltype</span>(detection.state)&gt;) {</div>
-<div class="line"><span class="lineno">  472</span>      <span class="keyword">const</span> <span class="keyword">auto</span> dist{<a class="code hl_function" href="structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#a887e7440d07c013139def1a5af49ee1a">two_dimensional_distance</a>(track.state, detection.state)};</div>
-<div class="line"><span class="lineno">  473</span> </div>
-<div class="line"><span class="lineno">  474</span>      <span class="comment">// Fall back to 2D Euclidean distance if either semantic class if unknown. The unknown</span></div>
-<div class="line"><span class="lineno">  475</span>      <span class="comment">// track/detection may actually be the same other track/detection we are scoring against.</span></div>
-<div class="line"><span class="lineno">  476</span>      <span class="keywordflow">if</span> (</div>
-<div class="line"><span class="lineno">  477</span>        track.semantic_class == mot::SemanticClass::kUnknown ||</div>
-<div class="line"><span class="lineno">  478</span>        detection.semantic_class == mot::SemanticClass::kUnknown) {</div>
-<div class="line"><span class="lineno">  479</span>        <span class="keywordflow">return</span> dist;</div>
-<div class="line"><span class="lineno">  480</span>      }</div>
-<div class="line"><span class="lineno">  481</span> </div>
-<div class="line"><span class="lineno">  482</span>      <span class="keywordflow">if</span> (track.semantic_class == detection.semantic_class) {</div>
-<div class="line"><span class="lineno">  483</span>        <span class="keywordflow">return</span> dist;</div>
-<div class="line"><span class="lineno">  484</span>      }</div>
-<div class="line"><span class="lineno">  485</span>    }</div>
-<div class="line"><span class="lineno">  486</span> </div>
-<div class="line"><span class="lineno">  487</span>    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">  488</span>  }</div>
-<div class="ttc" id="astructcarma__cooperative__perception_1_1SemanticDistance2dScore_html_a887e7440d07c013139def1a5af49ee1a"><div class="ttname"><a href="structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#a887e7440d07c013139def1a5af49ee1a">carma_cooperative_perception::SemanticDistance2dScore::two_dimensional_distance</a></div><div class="ttdeci">static auto two_dimensional_distance(const mot::CtrvState &amp;lhs, const mot::CtrvState &amp;rhs) -&gt; float</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00500">multiple_object_tracker_component.cpp:500</a></div></div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00470">470</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  471</span>  {</div>
+<div class="line"><span class="lineno">  472</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;<span class="keyword">decltype</span>(track.state), <span class="keyword">decltype</span>(detection.state)&gt;) {</div>
+<div class="line"><span class="lineno">  473</span>      <span class="keyword">const</span> <span class="keyword">auto</span> dist{<a class="code hl_function" href="structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#a887e7440d07c013139def1a5af49ee1a">two_dimensional_distance</a>(track.state, detection.state)};</div>
+<div class="line"><span class="lineno">  474</span> </div>
+<div class="line"><span class="lineno">  475</span>      <span class="comment">// Fall back to 2D Euclidean distance if either semantic class if unknown. The unknown</span></div>
+<div class="line"><span class="lineno">  476</span>      <span class="comment">// track/detection may actually be the same other track/detection we are scoring against.</span></div>
+<div class="line"><span class="lineno">  477</span>      <span class="keywordflow">if</span> (</div>
+<div class="line"><span class="lineno">  478</span>        track.semantic_class == mot::SemanticClass::kUnknown ||</div>
+<div class="line"><span class="lineno">  479</span>        detection.semantic_class == mot::SemanticClass::kUnknown) {</div>
+<div class="line"><span class="lineno">  480</span>        <span class="keywordflow">return</span> dist;</div>
+<div class="line"><span class="lineno">  481</span>      }</div>
+<div class="line"><span class="lineno">  482</span> </div>
+<div class="line"><span class="lineno">  483</span>      <span class="keywordflow">if</span> (track.semantic_class == detection.semantic_class) {</div>
+<div class="line"><span class="lineno">  484</span>        <span class="keywordflow">return</span> dist;</div>
+<div class="line"><span class="lineno">  485</span>      }</div>
+<div class="line"><span class="lineno">  486</span>    }</div>
+<div class="line"><span class="lineno">  487</span> </div>
+<div class="line"><span class="lineno">  488</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  489</span>  }</div>
+<div class="ttc" id="astructcarma__cooperative__perception_1_1SemanticDistance2dScore_html_a887e7440d07c013139def1a5af49ee1a"><div class="ttname"><a href="structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#a887e7440d07c013139def1a5af49ee1a">carma_cooperative_perception::SemanticDistance2dScore::two_dimensional_distance</a></div><div class="ttdeci">static auto two_dimensional_distance(const mot::CtrvState &amp;lhs, const mot::CtrvState &amp;rhs) -&gt; float</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00501">multiple_object_tracker_component.cpp:501</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -265,15 +265,15 @@ template&lt;typename <a class="el" href="namespacecarma__cooperative__perception
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00511">511</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  513</span>  {</div>
-<div class="line"><span class="lineno">  514</span>    <span class="keyword">const</span> <span class="keyword">auto</span> x_diff_sq{</div>
-<div class="line"><span class="lineno">  515</span>      std::pow(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(lhs.position_x) - <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(rhs.position_x), 2)};</div>
-<div class="line"><span class="lineno">  516</span>    <span class="keyword">const</span> <span class="keyword">auto</span> y_diff_sq{</div>
-<div class="line"><span class="lineno">  517</span>      std::pow(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(lhs.position_y) - <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(rhs.position_y), 2)};</div>
-<div class="line"><span class="lineno">  518</span> </div>
-<div class="line"><span class="lineno">  519</span>    <span class="keywordflow">return</span> std::sqrt(x_diff_sq + y_diff_sq);</div>
-<div class="line"><span class="lineno">  520</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00512">512</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  514</span>  {</div>
+<div class="line"><span class="lineno">  515</span>    <span class="keyword">const</span> <span class="keyword">auto</span> x_diff_sq{</div>
+<div class="line"><span class="lineno">  516</span>      std::pow(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(lhs.position_x) - <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(rhs.position_x), 2)};</div>
+<div class="line"><span class="lineno">  517</span>    <span class="keyword">const</span> <span class="keyword">auto</span> y_diff_sq{</div>
+<div class="line"><span class="lineno">  518</span>      std::pow(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(lhs.position_y) - <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(rhs.position_y), 2)};</div>
+<div class="line"><span class="lineno">  519</span> </div>
+<div class="line"><span class="lineno">  520</span>    <span class="keywordflow">return</span> std::sqrt(x_diff_sq + y_diff_sq);</div>
+<div class="line"><span class="lineno">  521</span>  }</div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_adab0ef7041c6108afdad006aa2c59c2f"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">carma_cooperative_perception::remove_units</a></div><div class="ttdeci">constexpr auto remove_units(const T &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="units__extensions_8hpp_source.html#l00025">units_extensions.hpp:25</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="units__extensions_8hpp_source.html#l00025">carma_cooperative_perception::remove_units()</a>.</p>
@@ -324,15 +324,15 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00500">500</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  502</span>  {</div>
-<div class="line"><span class="lineno">  503</span>    <span class="keyword">const</span> <span class="keyword">auto</span> x_diff_sq{</div>
-<div class="line"><span class="lineno">  504</span>      std::pow(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(lhs.position_x) - <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(rhs.position_x), 2)};</div>
-<div class="line"><span class="lineno">  505</span>    <span class="keyword">const</span> <span class="keyword">auto</span> y_diff_sq{</div>
-<div class="line"><span class="lineno">  506</span>      std::pow(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(lhs.position_y) - <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(rhs.position_y), 2)};</div>
-<div class="line"><span class="lineno">  507</span> </div>
-<div class="line"><span class="lineno">  508</span>    <span class="keywordflow">return</span> std::sqrt(x_diff_sq + y_diff_sq);</div>
-<div class="line"><span class="lineno">  509</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00501">501</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  503</span>  {</div>
+<div class="line"><span class="lineno">  504</span>    <span class="keyword">const</span> <span class="keyword">auto</span> x_diff_sq{</div>
+<div class="line"><span class="lineno">  505</span>      std::pow(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(lhs.position_x) - <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(rhs.position_x), 2)};</div>
+<div class="line"><span class="lineno">  506</span>    <span class="keyword">const</span> <span class="keyword">auto</span> y_diff_sq{</div>
+<div class="line"><span class="lineno">  507</span>      std::pow(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(lhs.position_y) - <a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(rhs.position_y), 2)};</div>
+<div class="line"><span class="lineno">  508</span> </div>
+<div class="line"><span class="lineno">  509</span>    <span class="keywordflow">return</span> std::sqrt(x_diff_sq + y_diff_sq);</div>
+<div class="line"><span class="lineno">  510</span>  }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="units__extensions_8hpp_source.html#l00025">carma_cooperative_perception::remove_units()</a>.</p>
 <div class="dynheader">
@@ -356,7 +356,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="structcarma__cooperative__perception_1_1SemanticDistance2dScore.html">SemanticDistance2dScore</a></li>
-    <li class="footer">Generated on Wed Jan 17 2024 18:23:35 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Jan 18 2024 16:49:37 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

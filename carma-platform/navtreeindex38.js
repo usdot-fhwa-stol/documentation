@@ -1,5 +1,9 @@
 var NAVTREEINDEX38 =
 {
+"inttypes_8h.html#a251936e4d698e68846c0917270b5f8a5":[57,0,30,2,0,0,0,2,0,156],
+"inttypes_8h.html#a253d5fe947676317064837c266c8f724":[57,0,30,2,0,0,0,2,0,159],
+"inttypes_8h.html#a2a2d9ca0555230eab89e52e442bea64c":[57,0,30,2,0,0,0,2,0,92],
+"inttypes_8h.html#a2b6b3cb28cd86580d999fa4f44f490d5":[57,0,30,2,0,0,0,2,0,124],
 "inttypes_8h.html#a2b7ab77ff6ede9c3c285b714496f77e2":[57,0,30,2,0,0,0,2,0,87],
 "inttypes_8h.html#a2f7190d383e2382085b27ffc8ac5a089":[57,0,30,2,0,0,0,2,0,112],
 "inttypes_8h.html#a32b0c8a04aae5d4454d15e6cbe109f64":[57,0,30,2,0,0,0,2,0,61],
@@ -245,9 +249,5 @@ var NAVTREEINDEX38 =
 "light__controlled__intersection__tactical__plugin_8hpp.html#a4c20dbb679334f4929694a86232c3298":[57,0,22,0,0,0,5],
 "light__controlled__intersection__tactical__plugin_8hpp.html#acc59b09f334e43f0170c7b026974af91":[57,0,22,0,0,0,3],
 "light__controlled__intersection__tactical__plugin_8hpp.html#afa903fb319bfe3921e659ccba5535a88":[57,0,22,0,0,0,4],
-"light__controlled__intersection__tactical__plugin_8hpp_source.html":[57,0,22,0,0,0],
-"light__controlled__intersection__tactical__plugin__config_8hpp.html":[57,0,22,0,0,1],
-"light__controlled__intersection__tactical__plugin__config_8hpp_source.html":[57,0,22,0,0,1],
-"light__controlled__intersection__tactical__plugin__launch_8py.html":[57,0,22,1,0],
-"light__controlled__intersection__tactical__plugin__launch_8py.html#a052d7f17d8d4fecf89e8c0de2eaeb5fe":[57,0,22,1,0,0]
+"light__controlled__intersection__tactical__plugin_8hpp_source.html":[57,0,22,0,0,0]
 };

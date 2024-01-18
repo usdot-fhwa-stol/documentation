@@ -1,5 +1,9 @@
 var NAVTREEINDEX39 =
 {
+"light__controlled__intersection__tactical__plugin__config_8hpp.html":[57,0,22,0,0,1],
+"light__controlled__intersection__tactical__plugin__config_8hpp_source.html":[57,0,22,0,0,1],
+"light__controlled__intersection__tactical__plugin__launch_8py.html":[57,0,22,1,0],
+"light__controlled__intersection__tactical__plugin__launch_8py.html#a052d7f17d8d4fecf89e8c0de2eaeb5fe":[57,0,22,1,0,0],
 "light__controlled__intersection__tactical__plugin__launch_8py_source.html":[57,0,22,1,0],
 "light__controlled__intersection__tactical__plugin__node_8cpp.html":[57,0,22,2,1],
 "light__controlled__intersection__tactical__plugin__node_8cpp_source.html":[57,0,22,2,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX39 =
 "md_docs_Release_notes.html#autotoc_md177":[25,15],
 "md_docs_Release_notes.html#autotoc_md178":[25,16],
 "md_docs_Release_notes.html#autotoc_md179":[25,17],
-"md_docs_Release_notes.html#autotoc_md180":[25,18],
-"md_docs_Release_notes.html#autotoc_md181":[25,19],
-"md_docs_Release_notes.html#autotoc_md182":[25,20],
-"md_docs_Release_notes.html#autotoc_md183":[25,21],
-"md_docs_Release_notes.html#autotoc_md184":[25,22]
+"md_docs_Release_notes.html#autotoc_md180":[25,18]
 };

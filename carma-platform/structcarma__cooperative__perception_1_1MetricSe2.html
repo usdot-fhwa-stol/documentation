@@ -113,7 +113,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Calculates distance between a point and detection in SE(2) (special Euclidean) space. </p>
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00526">526</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00527">527</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a032b673c7b269cf416b9e4b073db0be4" name="a032b673c7b269cf416b9e4b073db0be4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a032b673c7b269cf416b9e4b073db0be4">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
@@ -152,20 +152,20 @@ template&lt;typename <a class="el" href="namespacecarma__cooperative__perception
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00529">529</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  530</span>  {</div>
-<div class="line"><span class="lineno">  531</span>    <span class="keywordtype">double</span> sum{0};</div>
-<div class="line"><span class="lineno">  532</span> </div>
-<div class="line"><span class="lineno">  533</span>    sum += std::pow(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.position_x - detection.state.position_x), 2);</div>
-<div class="line"><span class="lineno">  534</span>    sum += std::pow(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.position_y - detection.state.position_y), 2);</div>
-<div class="line"><span class="lineno">  535</span> </div>
-<div class="line"><span class="lineno">  536</span>    <span class="keyword">const</span> <span class="keyword">auto</span> p_yaw_rad{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.yaw.get_angle())};</div>
-<div class="line"><span class="lineno">  537</span>    <span class="keyword">const</span> <span class="keyword">auto</span> d_yaw_rad{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(detection.state.yaw.get_angle())};</div>
-<div class="line"><span class="lineno">  538</span>    <span class="keyword">const</span> <span class="keyword">auto</span> abs_diff{std::abs(p_yaw_rad - d_yaw_rad)};</div>
-<div class="line"><span class="lineno">  539</span>    sum += std::min(abs_diff, 2 * 3.14159265359 - abs_diff);</div>
-<div class="line"><span class="lineno">  540</span> </div>
-<div class="line"><span class="lineno">  541</span>    <span class="keywordflow">return</span> sum;</div>
-<div class="line"><span class="lineno">  542</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00530">530</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  531</span>  {</div>
+<div class="line"><span class="lineno">  532</span>    <span class="keywordtype">double</span> sum{0};</div>
+<div class="line"><span class="lineno">  533</span> </div>
+<div class="line"><span class="lineno">  534</span>    sum += std::pow(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.position_x - detection.state.position_x), 2);</div>
+<div class="line"><span class="lineno">  535</span>    sum += std::pow(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.position_y - detection.state.position_y), 2);</div>
+<div class="line"><span class="lineno">  536</span> </div>
+<div class="line"><span class="lineno">  537</span>    <span class="keyword">const</span> <span class="keyword">auto</span> p_yaw_rad{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.yaw.get_angle())};</div>
+<div class="line"><span class="lineno">  538</span>    <span class="keyword">const</span> <span class="keyword">auto</span> d_yaw_rad{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">mot::remove_units</a>(detection.state.yaw.get_angle())};</div>
+<div class="line"><span class="lineno">  539</span>    <span class="keyword">const</span> <span class="keyword">auto</span> abs_diff{std::abs(p_yaw_rad - d_yaw_rad)};</div>
+<div class="line"><span class="lineno">  540</span>    sum += std::min(abs_diff, 2 * 3.14159265359 - abs_diff);</div>
+<div class="line"><span class="lineno">  541</span> </div>
+<div class="line"><span class="lineno">  542</span>    <span class="keywordflow">return</span> sum;</div>
+<div class="line"><span class="lineno">  543</span>  }</div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_adab0ef7041c6108afdad006aa2c59c2f"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#adab0ef7041c6108afdad006aa2c59c2f">carma_cooperative_perception::remove_units</a></div><div class="ttdeci">constexpr auto remove_units(const T &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="units__extensions_8hpp_source.html#l00025">units_extensions.hpp:25</a></div></div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_ab81a05c3d1d100117b6781d7dedf8a29"><div class="ttname"><a href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">process_traj_logs.point</a></div><div class="ttdeci">point</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00126">process_traj_logs.py:126</a></div></div>
 </div><!-- fragment -->
@@ -219,19 +219,19 @@ template&lt;typename... Alternatives&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00545">545</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  546</span>  {</div>
-<div class="line"><span class="lineno">  547</span>    <span class="keyword">const</span> mot::Visitor visitor{</div>
-<div class="line"><span class="lineno">  548</span>      [<span class="keyword">this</span>](<span class="keyword">const</span> mot::Point &amp; p, <span class="keyword">const</span> mot::CtrvDetection &amp; d) { <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="structcarma__cooperative__perception_1_1MetricSe2.html#a032b673c7b269cf416b9e4b073db0be4">operator()</a>(p, d); },</div>
-<div class="line"><span class="lineno">  549</span>      [<span class="keyword">this</span>](<span class="keyword">const</span> mot::Point &amp; p, <span class="keyword">const</span> mot::CtraDetection &amp; d) { <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="structcarma__cooperative__perception_1_1MetricSe2.html#a032b673c7b269cf416b9e4b073db0be4">operator()</a>(p, d); },</div>
-<div class="line"><span class="lineno">  550</span>      [](<span class="keyword">const</span> mot::Point &amp;, <span class="keyword">const</span> <span class="keyword">auto</span> &amp;) {</div>
-<div class="line"><span class="lineno">  551</span>        <span class="comment">// Currently on support CTRV and CTRA</span></div>
-<div class="line"><span class="lineno">  552</span>        <span class="keywordflow">return</span> std::numeric_limits&lt;double&gt;::max();</div>
-<div class="line"><span class="lineno">  553</span>      }};</div>
-<div class="line"><span class="lineno">  554</span> </div>
-<div class="line"><span class="lineno">  555</span>    <span class="keywordflow">return</span> std::visit(visitor, std::variant&lt;mot::Point&gt;{<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>}, detection);</div>
-<div class="line"><span class="lineno">  556</span>  }</div>
-<div class="ttc" id="astructcarma__cooperative__perception_1_1MetricSe2_html_a032b673c7b269cf416b9e4b073db0be4"><div class="ttname"><a href="structcarma__cooperative__perception_1_1MetricSe2.html#a032b673c7b269cf416b9e4b073db0be4">carma_cooperative_perception::MetricSe2::operator()</a></div><div class="ttdeci">auto operator()(const mot::Point &amp;point, const Detection &amp;detection) const -&gt; double</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00529">multiple_object_tracker_component.cpp:529</a></div></div>
+<p class="definition">Definition at line <a class="el" href="multiple__object__tracker__component_8cpp_source.html#l00546">546</a> of file <a class="el" href="multiple__object__tracker__component_8cpp_source.html">multiple_object_tracker_component.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  547</span>  {</div>
+<div class="line"><span class="lineno">  548</span>    <span class="keyword">const</span> mot::Visitor visitor{</div>
+<div class="line"><span class="lineno">  549</span>      [<span class="keyword">this</span>](<span class="keyword">const</span> mot::Point &amp; p, <span class="keyword">const</span> mot::CtrvDetection &amp; d) { <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="structcarma__cooperative__perception_1_1MetricSe2.html#a032b673c7b269cf416b9e4b073db0be4">operator()</a>(p, d); },</div>
+<div class="line"><span class="lineno">  550</span>      [<span class="keyword">this</span>](<span class="keyword">const</span> mot::Point &amp; p, <span class="keyword">const</span> mot::CtraDetection &amp; d) { <span class="keywordflow">return</span> this-&gt;<a class="code hl_function" href="structcarma__cooperative__perception_1_1MetricSe2.html#a032b673c7b269cf416b9e4b073db0be4">operator()</a>(p, d); },</div>
+<div class="line"><span class="lineno">  551</span>      [](<span class="keyword">const</span> mot::Point &amp;, <span class="keyword">const</span> <span class="keyword">auto</span> &amp;) {</div>
+<div class="line"><span class="lineno">  552</span>        <span class="comment">// Currently on support CTRV and CTRA</span></div>
+<div class="line"><span class="lineno">  553</span>        <span class="keywordflow">return</span> std::numeric_limits&lt;double&gt;::max();</div>
+<div class="line"><span class="lineno">  554</span>      }};</div>
+<div class="line"><span class="lineno">  555</span> </div>
+<div class="line"><span class="lineno">  556</span>    <span class="keywordflow">return</span> std::visit(visitor, std::variant&lt;mot::Point&gt;{<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>}, detection);</div>
+<div class="line"><span class="lineno">  557</span>  }</div>
+<div class="ttc" id="astructcarma__cooperative__perception_1_1MetricSe2_html_a032b673c7b269cf416b9e4b073db0be4"><div class="ttname"><a href="structcarma__cooperative__perception_1_1MetricSe2.html#a032b673c7b269cf416b9e4b073db0be4">carma_cooperative_perception::MetricSe2::operator()</a></div><div class="ttdeci">auto operator()(const mot::Point &amp;point, const Detection &amp;detection) const -&gt; double</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00530">multiple_object_tracker_component.cpp:530</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="process__traj__logs_8py_source.html#l00126">process_traj_logs::point</a>.</p>
 
@@ -246,7 +246,7 @@ template&lt;typename... Alternatives&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="structcarma__cooperative__perception_1_1MetricSe2.html">MetricSe2</a></li>
-    <li class="footer">Generated on Wed Jan 17 2024 18:23:35 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Jan 18 2024 16:49:37 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

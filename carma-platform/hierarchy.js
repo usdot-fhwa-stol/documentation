@@ -241,6 +241,7 @@ var hierarchy =
     [ "localization_manager::LocalizationManagerConfig", "structlocalization__manager_1_1LocalizationManagerConfig.html", null ],
     [ "localization_manager::LocalizationTransitionTable", "classlocalization__manager_1_1LocalizationTransitionTable.html", null ],
     [ "approximate_intersection::LookupGrid< PointT >", "classapproximate__intersection_1_1LookupGrid.html", null ],
+    [ "carma_cooperative_perception::MapCoordinate", "structcarma__cooperative__perception_1_1MapCoordinate.html", null ],
     [ "carma_wm::test::MapOptions", "structcarma__wm_1_1test_1_1MapOptions.html", null ],
     [ "mobilitypath_visualizer::MarkerColor", "structmobilitypath__visualizer_1_1MarkerColor.html", null ],
     [ "carma_cooperative_perception::MeasurementTimeOffset", "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html", null ],

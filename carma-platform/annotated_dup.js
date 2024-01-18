@@ -59,6 +59,7 @@ var annotated_dup =
       [ "ExternalObjectListToSdsmNode", "classcarma__cooperative__perception_1_1ExternalObjectListToSdsmNode.html", "classcarma__cooperative__perception_1_1ExternalObjectListToSdsmNode" ],
       [ "Heading", "structcarma__cooperative__perception_1_1Heading.html", "structcarma__cooperative__perception_1_1Heading" ],
       [ "HostVehicleFilterNode", "classcarma__cooperative__perception_1_1HostVehicleFilterNode.html", "classcarma__cooperative__perception_1_1HostVehicleFilterNode" ],
+      [ "MapCoordinate", "structcarma__cooperative__perception_1_1MapCoordinate.html", "structcarma__cooperative__perception_1_1MapCoordinate" ],
       [ "MeasurementTimeOffset", "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html", "structcarma__cooperative__perception_1_1MeasurementTimeOffset" ],
       [ "MetricSe2", "structcarma__cooperative__perception_1_1MetricSe2.html", "structcarma__cooperative__perception_1_1MetricSe2" ],
       [ "Month", "classcarma__cooperative__perception_1_1Month.html", "classcarma__cooperative__perception_1_1Month" ],

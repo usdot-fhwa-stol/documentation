@@ -9,7 +9,7 @@ var msg__conversion_8hpp =
     [ "to_ddate_time_msg", "msg__conversion_8hpp.html#a474b64d6a2ea8e06828f03e3aca6dccb", null ],
     [ "to_detected_object_data_msg", "msg__conversion_8hpp.html#a7d047352f180efa034647181b142049f", null ],
     [ "to_detection_list_msg", "msg__conversion_8hpp.html#ac8158101b15237e9b566a2d1b5129a02", null ],
-    [ "to_detection_list_msg", "msg__conversion_8hpp.html#a89d133d080e321b19c8e4863517ed8db", null ],
+    [ "to_detection_list_msg", "msg__conversion_8hpp.html#a0744e4e2672612a387326dbef5e5b632", null ],
     [ "to_detection_msg", "msg__conversion_8hpp.html#a69f997a3745c682c72182bae54fa09cb", null ],
     [ "to_external_object_list_msg", "msg__conversion_8hpp.html#a13db834a01ebe6cd88589a6c69f86934", null ],
     [ "to_external_object_msg", "msg__conversion_8hpp.html#a9cabc2246eeda1223c88e5933da6a021", null ],

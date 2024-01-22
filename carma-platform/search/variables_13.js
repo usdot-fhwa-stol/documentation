@@ -2,7 +2,7 @@ var searchData=
 [
   ['s_0',['s',['../unionGenericValue_1_1Data.html#a6872a4b93763944063b425e6c001ed2b',1,'GenericValue::Data::s()'],['../structGenericStringRef.html#ac555994afd329bc9bc1780acf2f9d9be',1,'GenericStringRef::s()'],['../classinternal_1_1StreamLocalCopy_3_01Stream_00_010_01_4.html#ad31147888384f4bd51eabc2d7acdc4b6',1,'internal::StreamLocalCopy&lt; Stream, 0 &gt;::s()'],['../classinternal_1_1StreamLocalCopy_3_01Stream_00_011_01_4.html#a1d3e8ae8756325df25715d4ffb9c1b44',1,'internal::StreamLocalCopy&lt; Stream, 1 &gt;::s()']]],
   ['safetolanechange_5f_1',['safeToLaneChange_',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a2bc77445cdb4c025344024395fa94607',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]],
-  ['safety_5fcollision_5ftime_5fgap_2',['safety_collision_time_gap',['../structYieldPluginConfig.html#a46c0037e6fd49123fbd17f54f464560d',1,'YieldPluginConfig']]],
+  ['safety_5fcollision_5ftime_5fgap_5fin_5fs_2',['safety_collision_time_gap_in_s',['../structYieldPluginConfig.html#affc7ab1122ea90f3bd0b377f5ec4af49',1,'YieldPluginConfig']]],
   ['sample_5fid_5fidx_3',['SAMPLE_ID_IDX',['../classmock__drivers_1_1MockLightBarDriver.html#ab945d49970bfc95c0b55ce9558b067c4',1,'mock_drivers::MockLightBarDriver']]],
   ['sampled_5fpoints_4',['SAMPLED_POINTS',['../classprocess__traj__logs_1_1DataSource.html#a50d67219b3f02bfd066a07e2bf57aa41',1,'process_traj_logs::DataSource']]],
   ['sc_5fs_5f_5',['sc_s_',['../classarbitrator_1_1CapabilitiesInterface.html#a45881b40e8c87e89837dbfae37d44451',1,'arbitrator::CapabilitiesInterface']]],

@@ -1,5 +1,13 @@
 var NAVTREEINDEX47 =
 {
+"stop__and__dwell__strategic__plugin_2src_2main_8cpp_source.html":[57,0,46,2,0],
+"stop__and__dwell__strategic__plugin_8cpp.html":[57,0,46,2,1],
+"stop__and__dwell__strategic__plugin_8cpp.html#a066f948508e087006568cb6c9b0674a7":[57,0,46,2,1,0],
+"stop__and__dwell__strategic__plugin_8cpp.html#af094e7f4040bb805d05e70298ef35cf9":[57,0,46,2,1,1],
+"stop__and__dwell__strategic__plugin_8cpp_source.html":[57,0,46,2,1],
+"stop__and__dwell__strategic__plugin_8hpp.html":[57,0,46,0,0],
+"stop__and__dwell__strategic__plugin_8hpp_source.html":[57,0,46,0,0],
+"stop__and__dwell__strategic__plugin_8launch_8py.html":[57,0,46,1,0],
 "stop__and__dwell__strategic__plugin_8launch_8py.html#a61b457192fe18399ade09573cc61581d":[57,0,46,1,0,0],
 "stop__and__dwell__strategic__plugin_8launch_8py_source.html":[57,0,46,1,0],
 "stop__and__dwell__strategic__plugin__config_8hpp.html":[57,0,46,0,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX47 =
 "structMemoryStream.html#a2472317ef00fcd44e5cc209e04c49756":[56,0,100,1],
 "structMemoryStream.html#a2de1486742f0d44decda90a56bc43268":[56,0,100,9],
 "structMemoryStream.html#a305e141314ae0e3afacb04aaf2d8bcc6":[56,0,100,2],
-"structMemoryStream.html#a4fd6e7a293bd3ec76e649d8e853dd38f":[56,0,100,6],
-"structMemoryStream.html#a55fb302ba0492419757e3ba318c8c654":[56,0,100,11],
-"structMemoryStream.html#a57cf6cb5766e931a62928b9f92507443":[56,0,100,13],
-"structMemoryStream.html#a62a1cbd052c325c83dbdb387d2f89088":[56,0,100,0],
-"structMemoryStream.html#a707014bbfd303838b6a7b90be24f6adc":[56,0,100,3],
-"structMemoryStream.html#a74fb36c1f6f95d189502cf7a6be79135":[56,0,100,7],
-"structMemoryStream.html#a81dd4a86148b0af9527083cdef3d31d8":[56,0,100,4],
-"structMemoryStream.html#a91f0767b4f0ed2476d835e8344848a2f":[56,0,100,10],
-"structMemoryStream.html#ab26a1b5c6d5e8f52c0f6982feba47f36":[56,0,100,12]
+"structMemoryStream.html#a4fd6e7a293bd3ec76e649d8e853dd38f":[56,0,100,6]
 };

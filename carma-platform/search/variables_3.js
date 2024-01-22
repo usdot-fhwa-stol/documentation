@@ -56,7 +56,7 @@ var searchData=
   ['code_5f_53',['code_',['../structParseResult.html#aa30a53c4b7452efb82baf4767cda33fb',1,'ParseResult']]],
   ['codepoint_54',['codepoint',['../structinternal_1_1GenericRegex_1_1State.html#ab085a481f7a18c4a70d4cc534a72a23e',1,'internal::GenericRegex::State']]],
   ['codepoint_5f_55',['codepoint_',['../classinternal_1_1DecodedStream.html#ab2d66695cea627ac0b2a53a5ff8d5526',1,'internal::DecodedStream']]],
-  ['collision_5fcheck_5fradius_56',['collision_check_radius',['../structYieldPluginConfig.html#a46471fc5873f0404dfb1202f96c18d66',1,'YieldPluginConfig']]],
+  ['collision_5fcheck_5fradius_5fin_5fm_56',['collision_check_radius_in_m',['../structYieldPluginConfig.html#a1e7bba4a59d1301d477e64ad1a403cee',1,'YieldPluginConfig']]],
   ['comm_5ftype_5f_57',['comm_type_',['../classmock__drivers_1_1ROSComms_3_01T_01_4.html#a835076255b610765e3a8569ff1002a17',1,'mock_drivers::ROSComms&lt; T &gt;::comm_type_()'],['../classmock__drivers_1_1ROSComms_3_01M_00_01T_01_4.html#af2a309f936a82b55d98edb253fb58b21',1,'mock_drivers::ROSComms&lt; M, T &gt;::comm_type_()']]],
   ['command_5ftimer_5f_58',['command_timer_',['../classcarma__guidance__plugins_1_1ControlPlugin.html#a076c5d1f52f0bf9b2952af428c5259fd',1,'carma_guidance_plugins::ControlPlugin']]],
   ['commandspeed_59',['commandSpeed',['../structplatoon__control__ihp_1_1PlatoonLeaderInfo.html#a824f1538ffd9fa238fdc928c98a9361b',1,'platoon_control_ihp::PlatoonLeaderInfo::commandSpeed()'],['../structplatoon__strategic__ihp_1_1PlatoonMember.html#a7f24ed171fba110bb4c057c476cac218',1,'platoon_strategic_ihp::PlatoonMember::commandSpeed()'],['../structplatoon__control_1_1PlatoonLeaderInfo.html#ac5c3615ac27ef2cd5173967a2be71b48',1,'platoon_control::PlatoonLeaderInfo::commandSpeed()']]],

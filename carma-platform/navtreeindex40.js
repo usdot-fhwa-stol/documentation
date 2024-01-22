@@ -1,5 +1,11 @@
 var NAVTREEINDEX40 =
 {
+"md_docs_Release_notes.html#autotoc_md175":[25,13],
+"md_docs_Release_notes.html#autotoc_md176":[25,14],
+"md_docs_Release_notes.html#autotoc_md177":[25,15],
+"md_docs_Release_notes.html#autotoc_md178":[25,16],
+"md_docs_Release_notes.html#autotoc_md179":[25,17],
+"md_docs_Release_notes.html#autotoc_md180":[25,18],
 "md_docs_Release_notes.html#autotoc_md181":[25,19],
 "md_docs_Release_notes.html#autotoc_md182":[25,20],
 "md_docs_Release_notes.html#autotoc_md183":[25,21],
@@ -243,11 +249,5 @@ var NAVTREEINDEX40 =
 "namespaceapproaching__emergency__vehicle__plugin_1_1anonymous__namespace_02approaching__emergenc6b477e4cfd274375085cbaf134e12178.html":[55,0,0,0],
 "namespaceapproaching__emergency__vehicle__plugin_1_1anonymous__namespace_02approaching__emergenc6b477e4cfd274375085cbaf134e12178.html#a824526918073d730865d3616fded75c4":[55,0,0,0,0],
 "namespaceapproaching__emergency__vehicle__plugin__launch.html":[55,0,1],
-"namespaceapproaching__emergency__vehicle__plugin__launch.html#aa525cb3a0dd835adb215b6bd4ca803b0":[55,0,1,0],
-"namespaceapproximate__intersection.html":[55,0,2],
-"namespacearbitrator.html":[55,0,3],
-"namespacearbitrator.html#a4a07092774e143f298b2e71bd4a710d5":[55,0,3,16],
-"namespacearbitrator.html#a4a07092774e143f298b2e71bd4a710d5a1683199350dcc5335e36916bbe5bd811":[55,0,3,16,3],
-"namespacearbitrator.html#a4a07092774e143f298b2e71bd4a710d5a1a1190e083ae434632d030c876ee97d0":[55,0,3,16,0],
-"namespacearbitrator.html#a4a07092774e143f298b2e71bd4a710d5a32c2e630a76ab42fffc5d1040f32f462":[55,0,3,16,4]
+"namespaceapproaching__emergency__vehicle__plugin__launch.html#aa525cb3a0dd835adb215b6bd4ca803b0":[55,0,1,0]
 };

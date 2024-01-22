@@ -166,7 +166,7 @@ var searchData=
   ['code_5fof_5fconduct_2emd_163',['Code_of_Conduct.md',['../Code__of__Conduct_8md.html',1,'']]],
   ['codepoint_164',['codepoint',['../structinternal_1_1GenericRegex_1_1State.html#ab085a481f7a18c4a70d4cc534a72a23e',1,'internal::GenericRegex::State']]],
   ['codepoint_5f_165',['codepoint_',['../classinternal_1_1DecodedStream.html#ab2d66695cea627ac0b2a53a5ff8d5526',1,'internal::DecodedStream']]],
-  ['collision_5fcheck_5fradius_166',['collision_check_radius',['../structYieldPluginConfig.html#a46471fc5873f0404dfb1202f96c18d66',1,'YieldPluginConfig']]],
+  ['collision_5fcheck_5fradius_5fin_5fm_166',['collision_check_radius_in_m',['../structYieldPluginConfig.html#a1e7bba4a59d1301d477e64ad1a403cee',1,'YieldPluginConfig']]],
   ['collision_5fdetection_167',['collision_detection',['../namespacecarma__wm_1_1collision__detection.html',1,'carma_wm']]],
   ['collision_5fdetection_2ecpp_168',['collision_detection.cpp',['../collision__detection_8cpp.html',1,'']]],
   ['collision_5fdetection_2ehpp_169',['collision_detection.hpp',['../collision__detection_8hpp.html',1,'']]],

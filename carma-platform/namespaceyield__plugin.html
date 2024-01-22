@@ -114,6 +114,10 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a996079f9d61f6758a8f8579a2e932ab6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyield__plugin.html#a996079f9d61f6758a8f8579a2e932ab6">generate_launch_description</a> ()</td></tr>
 <tr class="separator:a996079f9d61f6758a8f8579a2e932ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b2a694528d42a4af068732befca882"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyield__plugin.html#a82b2a694528d42a4af068732befca882">get_trajectory_end_time</a> (const carma_planning_msgs::msg::TrajectoryPlan &amp;trajectory)</td></tr>
+<tr class="separator:a82b2a694528d42a4af068732befca882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754c9aebad547b09cdeff7080a639bd3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceyield__plugin.html#a754c9aebad547b09cdeff7080a639bd3">get_trajectory_start_time</a> (const carma_planning_msgs::msg::TrajectoryPlan &amp;trajectory)</td></tr>
+<tr class="separator:a754c9aebad547b09cdeff7080a639bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a508edd284962f40938944f9304e66263" name="a508edd284962f40938944f9304e66263"></a>
@@ -206,13 +210,86 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a82b2a694528d42a4af068732befca882" name="a82b2a694528d42a4af068732befca882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b2a694528d42a4af068732befca882">&#9670;&nbsp;</a></span>get_trajectory_end_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double yield_plugin::get_trajectory_end_time </td>
+          <td>(</td>
+          <td class="paramtype">const carma_planning_msgs::msg::TrajectoryPlan &amp;&#160;</td>
+          <td class="paramname"><em>trajectory</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="yield__plugin_8cpp_source.html#l00230">230</a> of file <a class="el" href="yield__plugin_8cpp_source.html">yield_plugin.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  231</span>  {</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">return</span> rclcpp::Time(trajectory.trajectory_points.back().target_time).seconds();</div>
+<div class="line"><span class="lineno">  233</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="yield__plugin_8cpp_source.html#l00621">yield_plugin::YieldPlugin::get_predicted_velocity_at_time()</a>, <a class="el" href="yield__plugin_8cpp_source.html#l00241">yield_plugin::YieldPlugin::plan_trajectory_callback()</a>, <a class="el" href="yield__plugin_8cpp_source.html#l00297">yield_plugin::YieldPlugin::update_traj_for_cooperative_behavior()</a>, and <a class="el" href="yield__plugin_8cpp_source.html#l00663">yield_plugin::YieldPlugin::update_traj_for_object()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceyield__plugin_a82b2a694528d42a4af068732befca882_icgraph.png" border="0" usemap="#anamespaceyield__plugin_a82b2a694528d42a4af068732befca882_icgraph" alt=""/></div>
+<map name="anamespaceyield__plugin_a82b2a694528d42a4af068732befca882_icgraph" id="anamespaceyield__plugin_a82b2a694528d42a4af068732befca882_icgraph">
+<area shape="rect" title=" " alt="" coords="664,103,837,145"/>
+<area shape="rect" href="classyield__plugin_1_1YieldPlugin.html#a378558cb2b27d8337d980150543d447d" title="Given the object velocity in map frame with x,y components, this function returns the projected veloc..." alt="" coords="456,5,616,61"/>
+<area shape="rect" href="classyield__plugin_1_1YieldPlugin.html#ac1c423b99887ccbf945a86da7b7809f6" title="trajectory is modified to safely avoid obstacles on the road" alt="" coords="234,70,394,111"/>
+<area shape="rect" href="classyield__plugin_1_1YieldPlugin.html#a0fd790e287683a2ef404e16a15e0ea29" title="Service callback for trajectory planning." alt="" coords="5,129,172,170"/>
+<area shape="rect" href="classyield__plugin_1_1YieldPlugin.html#ad9c9e0e4278774a519de12a6a5f4398f" title="update trajectory for yielding to an incoming cooperative behavior" alt="" coords="220,187,408,243"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a754c9aebad547b09cdeff7080a639bd3" name="a754c9aebad547b09cdeff7080a639bd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a754c9aebad547b09cdeff7080a639bd3">&#9670;&nbsp;</a></span>get_trajectory_start_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double yield_plugin::get_trajectory_start_time </td>
+          <td>(</td>
+          <td class="paramtype">const carma_planning_msgs::msg::TrajectoryPlan &amp;&#160;</td>
+          <td class="paramname"><em>trajectory</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="yield__plugin_8cpp_source.html#l00235">235</a> of file <a class="el" href="yield__plugin_8cpp_source.html">yield_plugin.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  236</span>  {</div>
+<div class="line"><span class="lineno">  237</span>    <span class="keywordflow">return</span> rclcpp::Time(trajectory.trajectory_points.front().target_time).seconds();</div>
+<div class="line"><span class="lineno">  238</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="yield__plugin_8cpp_source.html#l00552">yield_plugin::YieldPlugin::get_collision_time()</a>, and <a class="el" href="yield__plugin_8cpp_source.html#l00663">yield_plugin::YieldPlugin::update_traj_for_object()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceyield__plugin_a754c9aebad547b09cdeff7080a639bd3_icgraph.png" border="0" usemap="#anamespaceyield__plugin_a754c9aebad547b09cdeff7080a639bd3_icgraph" alt=""/></div>
+<map name="anamespaceyield__plugin_a754c9aebad547b09cdeff7080a639bd3_icgraph" id="anamespaceyield__plugin_a754c9aebad547b09cdeff7080a639bd3_icgraph">
+<area shape="rect" title=" " alt="" coords="428,39,601,80"/>
+<area shape="rect" href="classyield__plugin_1_1YieldPlugin.html#a13588c272f90864dfa53c17a815e857a" title="Return collision time given two trajectories with one being external object with predicted steps." alt="" coords="220,5,380,47"/>
+<area shape="rect" href="classyield__plugin_1_1YieldPlugin.html#ac1c423b99887ccbf945a86da7b7809f6" title="trajectory is modified to safely avoid obstacles on the road" alt="" coords="220,71,380,112"/>
+<area shape="rect" href="classyield__plugin_1_1YieldPlugin.html#a0fd790e287683a2ef404e16a15e0ea29" title="Service callback for trajectory planning." alt="" coords="5,71,172,112"/>
+</map>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceyield__plugin.html">yield_plugin</a></li>
-    <li class="footer">Generated on Fri Jan 19 2024 18:52:44 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Jan 22 2024 14:05:16 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

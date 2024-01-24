@@ -1,5 +1,7 @@
 var NAVTREEINDEX46 =
 {
+"reindex__active__rosbags_8py.html":[57,0,14,4],
+"reindex__active__rosbags_8py.html#a1785876f05e3d4be9940d810642656d8":[57,0,14,4,1],
 "reindex__active__rosbags_8py.html#ab1a72370720c2c6ea079e177e005f6c7":[57,0,14,4,0],
 "reindex__active__rosbags_8py_source.html":[57,0,14,4],
 "reverse__waypoints_8py.html":[57,0,14,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX46 =
 "stdint_8h.html#aed28ca63d9b222f6f1377358fe73a183":[57,0,30,2,0,0,0,2,1,47],
 "stdint_8h.html#aef44329758059c91c76d334e8fc09700":[57,0,30,2,0,0,0,2,1,65],
 "stdint_8h.html#afd072b9a94c14417246175f6442422ae":[57,0,30,2,0,0,0,2,1,68],
-"stdint_8h_source.html":[57,0,30,2,0,0,0,2,1],
-"stop__and__dwell__strategic__plugin_2src_2main_8cpp.html":[57,0,46,2,0],
-"stop__and__dwell__strategic__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,46,2,0,0]
+"stdint_8h_source.html":[57,0,30,2,0,0,0,2,1]
 };

@@ -98,10 +98,12 @@ var NAVTREEINDEX44 =
 "namespaceunits.html#abbb71236d3e7474602a6c189db7b2d8b":[55,0,108,0],
 "namespaceyield__plugin.html":[55,0,109],
 "namespaceyield__plugin.html#a508edd284962f40938944f9304e66263":[55,0,109,3],
-"namespaceyield__plugin.html#a754c9aebad547b09cdeff7080a639bd3":[55,0,109,7],
-"namespaceyield__plugin.html#a82b2a694528d42a4af068732befca882":[55,0,109,6],
+"namespaceyield__plugin.html#a6685355374aa80334c267d788788cb2f":[55,0,109,6],
+"namespaceyield__plugin.html#a754c9aebad547b09cdeff7080a639bd3":[55,0,109,9],
+"namespaceyield__plugin.html#a82b2a694528d42a4af068732befca882":[55,0,109,8],
 "namespaceyield__plugin.html#a996079f9d61f6758a8f8579a2e932ab6":[55,0,109,5],
 "namespaceyield__plugin.html#aa28c9381b8df2f7fdf3e7870bc5c2866":[55,0,109,4],
+"namespaceyield__plugin.html#ad78fa1e6a7a22eff6b76dd32700fc55f":[55,0,109,7],
 "neighbor__generator_8hpp.html":[57,0,2,0,10],
 "neighbor__generator_8hpp_source.html":[57,0,2,0,10],
 "ns-3__adapter_2src_2main_8cpp.html":[57,0,30,1,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX44 =
 "platooning__tactical__plugin__node_8h.html":[57,0,37,0,0,2],
 "platooning__tactical__plugin__node_8h_source.html":[57,0,37,0,0,2],
 "plugin__base__node_8cpp.html":[57,0,8,1,1],
-"plugin__base__node_8cpp_source.html":[57,0,8,1,1],
-"plugin__base__node_8hpp.html":[57,0,8,0,0,1],
-"plugin__base__node_8hpp_source.html":[57,0,8,0,0,1]
+"plugin__base__node_8cpp_source.html":[57,0,8,1,1]
 };

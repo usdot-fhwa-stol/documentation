@@ -1,5 +1,7 @@
 var NAVTREEINDEX45 =
 {
+"plugin__base__node_8hpp.html":[57,0,8,0,0,1],
+"plugin__base__node_8hpp_source.html":[57,0,8,0,0,1],
 "plugin__manager_8cpp.html":[57,0,49,1,3,3],
 "plugin__manager_8cpp.html#a62dd517df963e28756f2926290347218":[57,0,49,1,3,3,0],
 "plugin__manager_8cpp_source.html":[57,0,49,1,3,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX45 =
 "regex_8h.html#add4f406439cd2c04f128814e72ae9064":[57,0,30,2,0,0,0,1,7,6],
 "regex_8h.html#ae7fc20c6ee680ae3ba16ae16b4bd5e16":[57,0,30,2,0,0,0,1,7,7],
 "regex_8h.html#afc9153a9f72e57e5184d5c54562fa8f7":[57,0,30,2,0,0,0,1,7,9],
-"regex_8h_source.html":[57,0,30,2,0,0,0,1,7],
-"reindex__active__rosbags_8py.html":[57,0,14,4],
-"reindex__active__rosbags_8py.html#a1785876f05e3d4be9940d810642656d8":[57,0,14,4,1]
+"regex_8h_source.html":[57,0,30,2,0,0,0,1,7]
 };

@@ -1,6 +1,7 @@
 var namespacesensor__data__sharing__service =
 [
     [ "sds_service", "classsensor__data__sharing__service_1_1sds__service.html", "classsensor__data__sharing__service_1_1sds__service" ],
+    [ "detected_object_enu_to_ned", "namespacesensor__data__sharing__service.html#a536a528bd908691171dcb85db713fb7a", null ],
     [ "parse_sensor_location", "namespacesensor__data__sharing__service.html#ad7f7b7b70fe0f7b7357aa4cae820ff5f", null ],
     [ "to_angular_velocity_confidence", "namespacesensor__data__sharing__service.html#a45b012119c686e006cfb3330ea6e0a69", null ],
     [ "to_detected_object_data", "namespacesensor__data__sharing__service.html#ad4810255fb495c8f408ba46a62273b37", null ],

@@ -270,6 +270,7 @@ var hierarchy =
     ] ],
     [ "rclcpp::Node", null, [
       [ "MapUpdateLogger", "classMapUpdateLogger.html", null ],
+      [ "carma_cooperative_perception::DetectionListVizNode", "classcarma__cooperative__perception_1_1DetectionListVizNode.html", null ],
       [ "system_controller::SystemControllerNode", "classsystem__controller_1_1SystemControllerNode.html", null ]
     ] ],
     [ "NS3Client", "classNS3Client.html", null ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX47 =
 {
+"stdint_8h.html#ad0d744f05898e32d01f73f8af3cd2071":[57,0,30,2,0,0,0,2,1,8],
+"stdint_8h.html#ad0fca8b15c218d2c687f8c373a71d228":[57,0,30,2,0,0,0,2,1,83],
 "stdint_8h.html#ad3f7b6bb8aa7d619017a91d3b2edc1ee":[57,0,30,2,0,0,0,2,1,60],
 "stdint_8h.html#ad4e9955955b27624963643eac448118a":[57,0,30,2,0,0,0,2,1,3],
 "stdint_8h.html#ad51246a178143208b2db3315efd21c45":[57,0,30,2,0,0,0,2,1,48],
@@ -247,7 +249,5 @@ var NAVTREEINDEX47 =
 "structInLaneCruisingPluginConfig.html#a2f55227f7a78d52d1759cbbacc044ac1":[56,0,96,1],
 "structInLaneCruisingPluginConfig.html#a30a27bf3689ebd7690eacd357f6aa939":[56,0,96,8],
 "structInLaneCruisingPluginConfig.html#a490836cc7661d9cb699b713a73c7ea24":[56,0,96,11],
-"structInLaneCruisingPluginConfig.html#a4b2fc462e5aaaa3dda3c2edd764f4c90":[56,0,96,7],
-"structInLaneCruisingPluginConfig.html#a64210b3e520043278df883e7eaf098a3":[56,0,96,15],
-"structInLaneCruisingPluginConfig.html#a75502c29c82cec188f865b22ca5bf936":[56,0,96,4]
+"structInLaneCruisingPluginConfig.html#a4b2fc462e5aaaa3dda3c2edd764f4c90":[56,0,96,7]
 };

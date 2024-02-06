@@ -1,5 +1,7 @@
 var NAVTREEINDEX44 =
 {
+"namespacesetup.html":[55,0,87],
+"namespacesetup.html#a504ffa482edfe0eff08f64b2f5dff0e9":[55,0,87,0],
 "namespacespeedharm-cli.html":[55,0,88],
 "namespacespeedharm-cli.html#a09947dc7d5d8c90d5cc681609d9cfb0b":[55,0,88,23],
 "namespacespeedharm-cli.html#a169cca60eaa47b1d657a20fec5efa69d":[55,0,88,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX44 =
 "platooning__strategic__IHP_2src_2main_8cpp_source.html":[57,0,36,2,0],
 "platooning__tactical__plugin_2src_2main_8cpp.html":[57,0,37,2,0],
 "platooning__tactical__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,37,2,0,0],
-"platooning__tactical__plugin_2src_2main_8cpp_source.html":[57,0,37,2,0],
-"platooning__tactical__plugin_8cpp.html":[57,0,37,2,1],
-"platooning__tactical__plugin_8cpp.html#a8212f1302ee6736745dc97bb5b3caaf5":[57,0,37,2,1,0]
+"platooning__tactical__plugin_2src_2main_8cpp_source.html":[57,0,37,2,0]
 };

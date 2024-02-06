@@ -5,6 +5,7 @@ var msg__conversion_8cpp =
     [ "calc_sdsm_time_offset", "msg__conversion_8cpp.html#a1af75f3bf9d8fb2977056c0f870374d4", null ],
     [ "enu_orientation_to_true_heading", "msg__conversion_8cpp.html#a067dbaa6dc9efb21503e30ac03908c7d", null ],
     [ "heading_to_enu_yaw", "msg__conversion_8cpp.html#aa0ac6f02134ae7a4a1909c51c4ba6d2e", null ],
+    [ "ned_to_enu", "msg__conversion_8cpp.html#a7a17e53626d5605eac626f1865b50bbc", null ],
     [ "to_ddate_time_msg", "msg__conversion_8cpp.html#a474b64d6a2ea8e06828f03e3aca6dccb", null ],
     [ "to_detected_object_data_msg", "msg__conversion_8cpp.html#a7d047352f180efa034647181b142049f", null ],
     [ "to_detection_list_msg", "msg__conversion_8cpp.html#ac8158101b15237e9b566a2d1b5129a02", null ],

@@ -42,6 +42,7 @@ var namespacecarma__cooperative__perception =
     [ "make_ctrv_detection", "namespacecarma__cooperative__perception.html#a7f86904480653897489d01ba2dcaacfa", null ],
     [ "make_detection", "namespacecarma__cooperative__perception.html#ab68cb3662b89674f355b7c638a1c287c", null ],
     [ "make_semantic_class", "namespacecarma__cooperative__perception.html#a6bf0c5a6ef7e96f554b6d1bdc8b96123", null ],
+    [ "ned_to_enu", "namespacecarma__cooperative__perception.html#a7a17e53626d5605eac626f1865b50bbc", null ],
     [ "operator!=", "namespacecarma__cooperative__perception.html#ac813742b03054ca191ebc044cedf618e", null ],
     [ "operator+", "namespacecarma__cooperative__perception.html#ae0a8306b504ee28c043bad85e3515be7", null ],
     [ "operator+", "namespacecarma__cooperative__perception.html#a6acaf058a97e61c7d1d57cf7fbd6634a", null ],

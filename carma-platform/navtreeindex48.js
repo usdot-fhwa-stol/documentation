@@ -1,5 +1,7 @@
 var NAVTREEINDEX48 =
 {
+"structInLaneCruisingPluginConfig.html#a64210b3e520043278df883e7eaf098a3":[56,0,96,15],
+"structInLaneCruisingPluginConfig.html#a75502c29c82cec188f865b22ca5bf936":[56,0,96,4],
 "structInLaneCruisingPluginConfig.html#a7ac7cbee199f26215c5a2a894236e20f":[56,0,96,3],
 "structInLaneCruisingPluginConfig.html#a903f4efb3c01f8fee57377f0e44ce2f8":[56,0,96,10],
 "structInLaneCruisingPluginConfig.html#a9816e6e5d54265b90ef6362cd4c7dcf2":[56,0,96,5],
@@ -234,20 +236,18 @@ var NAVTREEINDEX48 =
 "structapproaching__emergency__vehicle__plugin_1_1Config.html":[55,0,0,3],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a021c15bd670c461bd74b23f40ce28594":[56,0,0,2,20],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a021c15bd670c461bd74b23f40ce28594":[55,0,0,3,20],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a0bacd4168f75ca1d5c784847ebf52598":[55,0,0,3,24],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a0bacd4168f75ca1d5c784847ebf52598":[56,0,0,2,24],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a0bacd4168f75ca1d5c784847ebf52598":[55,0,0,3,24],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a1b30e6e0c5ce1e2eefa70b1af6e941eb":[55,0,0,3,21],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a1b30e6e0c5ce1e2eefa70b1af6e941eb":[56,0,0,2,21],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2617bd4b6850d11f938dfd39efb0ad1c":[55,0,0,3,10],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a2617bd4b6850d11f938dfd39efb0ad1c":[56,0,0,2,10],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2bad9c38f2c863cb52ce08c89c2ed0f8":[56,0,0,2,8],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2617bd4b6850d11f938dfd39efb0ad1c":[55,0,0,3,10],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a2bad9c38f2c863cb52ce08c89c2ed0f8":[55,0,0,3,8],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2bad9c38f2c863cb52ce08c89c2ed0f8":[56,0,0,2,8],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a2e6f2566571a01c095800f712e8ee183":[56,0,0,2,3],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a2e6f2566571a01c095800f712e8ee183":[55,0,0,3,3],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a357d49d8f1e6e554bf550a1f873c63bc":[56,0,0,2,9],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a357d49d8f1e6e554bf550a1f873c63bc":[55,0,0,3,9],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a3f55d992021d18a02478cbc07ef0bb25":[55,0,0,3,13],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a3f55d992021d18a02478cbc07ef0bb25":[56,0,0,2,13],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a64b3bef57508c81e9403778f1415d3be":[56,0,0,2,5],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a64b3bef57508c81e9403778f1415d3be":[55,0,0,3,5]
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a3f55d992021d18a02478cbc07ef0bb25":[56,0,0,2,13]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX42 =
 {
+"namespacecarma__wm_1_1geometry.html#aec227caee1708506f7fec3561538ef38":[55,0,16,1,21],
+"namespacecarma__wm_1_1geometry.html#aef0b6f2362a5ebbf0d5dcb3b7ff78619":[55,0,16,1,7],
 "namespacecarma__wm_1_1geometry.html#afad31f5a6dcbee8828814d406384635f":[55,0,16,1,11],
 "namespacecarma__wm_1_1query.html":[55,0,16,2],
 "namespacecarma__wm_1_1query.html#a382665a2ddc42be06fca9c1f8dfd0489":[55,0,16,2,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX42 =
 "namespacelocalization__manager.html#a9b86b848ab2c2216f0987be7c5007b70a97e522fbd57b52270c50555c686efdf3":[55,0,45,6,2],
 "namespacelocalization__manager.html#a9b86b848ab2c2216f0987be7c5007b70adc1e96828d7a795f30bc61df37d31c6a":[55,0,45,6,3],
 "namespacelocalization__manager.html#af0908d28de11af937153aa4d8408691c":[55,0,45,9],
-"namespacelocalization__manager.html#af61876be3f0f4998db813dd549c8bf4a":[55,0,45,4],
-"namespacelocalization__manager.html#af61876be3f0f4998db813dd549c8bf4aa070a0fb40f6c308ab544b227660aadff":[55,0,45,4,4],
-"namespacelocalization__manager.html#af61876be3f0f4998db813dd549c8bf4aa30b13d34b135451276460125d3bebae5":[55,0,45,4,2]
+"namespacelocalization__manager.html#af61876be3f0f4998db813dd549c8bf4a":[55,0,45,4]
 };

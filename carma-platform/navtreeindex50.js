@@ -1,5 +1,9 @@
 var NAVTREEINDEX50 =
 {
+"structcarma__cooperative__perception_1_1MapCoordinate.html#a75d58f8b2f07906b853d210ba9c8ea18":[55,0,12,7,1],
+"structcarma__cooperative__perception_1_1MapCoordinate.html#a75d58f8b2f07906b853d210ba9c8ea18":[56,0,7,7,1],
+"structcarma__cooperative__perception_1_1MapCoordinate.html#ad11f056648e665a8d89a7a1b8f9bbe04":[55,0,12,7,2],
+"structcarma__cooperative__perception_1_1MapCoordinate.html#ad11f056648e665a8d89a7a1b8f9bbe04":[56,0,7,7,2],
 "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html":[55,0,12,8],
 "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html":[56,0,7,8],
 "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html#a0820c7b605ed0293419b10b8f7eee715":[55,0,12,8,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX50 =
 "structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#afa8579ffe0f7f10358b9ca5df5352a4a":[55,0,20,2,0],
 "structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#afa8579ffe0f7f10358b9ca5df5352a4a":[56,0,13,2,0],
 "structframe__transformer_1_1Config.html":[56,0,15,0],
-"structframe__transformer_1_1Config.html":[55,0,28,0],
-"structframe__transformer_1_1Config.html#a39530e42dc3878ebdd99f5b4dfb944ef":[56,0,15,0,4],
-"structframe__transformer_1_1Config.html#a39530e42dc3878ebdd99f5b4dfb944ef":[55,0,28,0,4],
-"structframe__transformer_1_1Config.html#a69b003c0637b1335e150cb28469f9a1c":[55,0,28,0,3],
-"structframe__transformer_1_1Config.html#a69b003c0637b1335e150cb28469f9a1c":[56,0,15,0,3]
+"structframe__transformer_1_1Config.html":[55,0,28,0]
 };

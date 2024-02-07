@@ -1,5 +1,9 @@
 var NAVTREEINDEX49 =
 {
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a357d49d8f1e6e554bf550a1f873c63bc":[56,0,0,2,9],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a357d49d8f1e6e554bf550a1f873c63bc":[55,0,0,3,9],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a3f55d992021d18a02478cbc07ef0bb25":[55,0,0,3,13],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a3f55d992021d18a02478cbc07ef0bb25":[56,0,0,2,13],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a64b3bef57508c81e9403778f1415d3be":[55,0,0,3,5],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a64b3bef57508c81e9403778f1415d3be":[56,0,0,2,5],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a6dd3156876736b67368486db8f4fcc7f":[55,0,0,3,7],
@@ -245,9 +249,5 @@ var NAVTREEINDEX49 =
 "structcarma__cooperative__perception_1_1MapCoordinate.html":[56,0,7,7],
 "structcarma__cooperative__perception_1_1MapCoordinate.html":[55,0,12,7],
 "structcarma__cooperative__perception_1_1MapCoordinate.html#a70ca6b501f497dba865ea4b3333b04da":[55,0,12,7,0],
-"structcarma__cooperative__perception_1_1MapCoordinate.html#a70ca6b501f497dba865ea4b3333b04da":[56,0,7,7,0],
-"structcarma__cooperative__perception_1_1MapCoordinate.html#a75d58f8b2f07906b853d210ba9c8ea18":[55,0,12,7,1],
-"structcarma__cooperative__perception_1_1MapCoordinate.html#a75d58f8b2f07906b853d210ba9c8ea18":[56,0,7,7,1],
-"structcarma__cooperative__perception_1_1MapCoordinate.html#ad11f056648e665a8d89a7a1b8f9bbe04":[55,0,12,7,2],
-"structcarma__cooperative__perception_1_1MapCoordinate.html#ad11f056648e665a8d89a7a1b8f9bbe04":[56,0,7,7,2]
+"structcarma__cooperative__perception_1_1MapCoordinate.html#a70ca6b501f497dba865ea4b3333b04da":[56,0,7,7,0]
 };

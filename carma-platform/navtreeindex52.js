@@ -1,5 +1,9 @@
 var NAVTREEINDEX52 =
 {
+"structinternal_1_1TypeHelper_3_01ValueType_00_01double_01_4.html#abb797ba373c4f7c72e6ef2500c4dff92":[55,0,36,23,2],
+"structinternal_1_1TypeHelper_3_01ValueType_00_01double_01_4.html#ac55a96d2abd1dd6718a6cb3d6690aa38":[55,0,36,23,0],
+"structinternal_1_1TypeHelper_3_01ValueType_00_01double_01_4.html#ac55a96d2abd1dd6718a6cb3d6690aa38":[56,0,20,23,0],
+"structinternal_1_1TypeHelper_3_01ValueType_00_01float_01_4.html":[56,0,20,24],
 "structinternal_1_1TypeHelper_3_01ValueType_00_01float_01_4.html":[55,0,36,24],
 "structinternal_1_1TypeHelper_3_01ValueType_00_01float_01_4.html#a1108488a02868bb91c3c14f4598bbebc":[56,0,20,24,1],
 "structinternal_1_1TypeHelper_3_01ValueType_00_01float_01_4.html#a1108488a02868bb91c3c14f4598bbebc":[55,0,36,24,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX52 =
 "structlight__controlled__intersection__tactical__plugin_1_1Config.html#af534741dfc39a77abc5c1fa071d03786":[56,0,23,0,21],
 "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html":[56,0,23,3],
 "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html":[55,0,41,3],
-"structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a07bc6d717956031df679241735706cc1":[55,0,41,3,6],
-"structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a07bc6d717956031df679241735706cc1":[56,0,23,3,6],
-"structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a094c7655f2d53eccd10b3a3af578b727":[55,0,41,3,5],
-"structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a094c7655f2d53eccd10b3a3af578b727":[56,0,23,3,5],
-"structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a6d0a0bd9f28f2ce68f422fb33697e861":[56,0,23,3,1]
+"structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a07bc6d717956031df679241735706cc1":[55,0,41,3,6]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX55 =
 {
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a617d379b5f70ba29205714781cb0581a":[55,0,86,2,13],
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a6685e36b86fac17ff20c6e389afc0ce0":[56,0,47,1,15],
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a6685e36b86fac17ff20c6e389afc0ce0":[55,0,86,2,15],
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a70c1c665328617502a7d71dfb92b927d":[56,0,47,1,11],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a70c1c665328617502a7d71dfb92b927d":[55,0,86,2,11],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a824aa99bf3c580e2fb312111499c3c51":[56,0,47,1,14],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a824aa99bf3c580e2fb312111499c3c51":[55,0,86,2,14],
@@ -245,9 +249,5 @@ var NAVTREEINDEX55 =
 "template__strategic__plugin__node_8cpp_source.html":[57,0,51,2,3],
 "template__strategic__plugin__node_8hpp.html":[57,0,51,0,0,3],
 "template__strategic__plugin__node_8hpp_source.html":[57,0,51,0,0,3],
-"template__tactical__plugin__node_8cpp.html":[57,0,51,2,4],
-"template__tactical__plugin__node_8cpp_source.html":[57,0,51,2,4],
-"template__tactical__plugin__node_8hpp.html":[57,0,51,0,0,4],
-"template__tactical__plugin__node_8hpp_source.html":[57,0,51,0,0,4],
-"track__list__to__external__object__list__component_8cpp.html":[57,0,7,3,15]
+"template__tactical__plugin__node_8cpp.html":[57,0,51,2,4]
 };

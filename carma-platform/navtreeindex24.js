@@ -1,5 +1,9 @@
 var NAVTREEINDEX24 =
 {
+"classobject_1_1ObjectDetectionTrackingNode.html":[56,0,31,0],
+"classobject_1_1ObjectDetectionTrackingNode.html#a0240654d7143b08b1205ae6a8df4cc92":[56,0,31,0,9],
+"classobject_1_1ObjectDetectionTrackingNode.html#a0240654d7143b08b1205ae6a8df4cc92":[55,0,54,0,9],
+"classobject_1_1ObjectDetectionTrackingNode.html#a219de8091ceb60a98637e9f6409afb05":[55,0,54,0,8],
 "classobject_1_1ObjectDetectionTrackingNode.html#a219de8091ceb60a98637e9f6409afb05":[56,0,31,0,8],
 "classobject_1_1ObjectDetectionTrackingNode.html#a2cd709b10fab3f0e4a615ed2cb81ee03":[55,0,54,0,4],
 "classobject_1_1ObjectDetectionTrackingNode.html#a2cd709b10fab3f0e4a615ed2cb81ee03":[56,0,31,0,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX24 =
 "classplatoon__control_1_1PlatoonControlPlugin.html#a8463fb1360a54eed7b6bfeeb77ad67f6":[55,0,59,1,27],
 "classplatoon__control_1_1PlatoonControlPlugin.html#a8528986b8598a306f0d63d965e711e1a":[55,0,59,1,32],
 "classplatoon__control_1_1PlatoonControlPlugin.html#a8528986b8598a306f0d63d965e711e1a":[56,0,35,1,32],
-"classplatoon__control_1_1PlatoonControlPlugin.html#a85479b30a54d08b0e11657028b573505":[56,0,35,1,22],
-"classplatoon__control_1_1PlatoonControlPlugin.html#a85479b30a54d08b0e11657028b573505":[55,0,59,1,22],
-"classplatoon__control_1_1PlatoonControlPlugin.html#a898665c1f4ac536808e9e33455916b01":[55,0,59,1,4],
-"classplatoon__control_1_1PlatoonControlPlugin.html#a898665c1f4ac536808e9e33455916b01":[56,0,35,1,4],
-"classplatoon__control_1_1PlatoonControlPlugin.html#a978f691be847519d5819ab96a8261bc2":[55,0,59,1,3]
+"classplatoon__control_1_1PlatoonControlPlugin.html#a85479b30a54d08b0e11657028b573505":[56,0,35,1,22]
 };

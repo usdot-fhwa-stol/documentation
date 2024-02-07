@@ -1,5 +1,9 @@
 var NAVTREEINDEX53 =
 {
+"structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a07bc6d717956031df679241735706cc1":[56,0,23,3,6],
+"structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a094c7655f2d53eccd10b3a3af578b727":[55,0,41,3,5],
+"structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a094c7655f2d53eccd10b3a3af578b727":[56,0,23,3,5],
+"structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a6d0a0bd9f28f2ce68f422fb33697e861":[56,0,23,3,1],
 "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a6d0a0bd9f28f2ce68f422fb33697e861":[55,0,41,3,1],
 "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a75efaab5375dd874efdf8ded31a1a354":[56,0,23,3,0],
 "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a75efaab5375dd874efdf8ded31a1a354":[55,0,41,3,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX53 =
 "structplatoon__strategic__ihp_1_1ActionPlan.html#a2449343f22536e0c075a95005479ac83":[55,0,61,0,0],
 "structplatoon__strategic__ihp_1_1ActionPlan.html#a34c7e7384914852c5549e8d2a14dc6e9":[55,0,61,0,3],
 "structplatoon__strategic__ihp_1_1ActionPlan.html#a34c7e7384914852c5549e8d2a14dc6e9":[56,0,37,0,3],
-"structplatoon__strategic__ihp_1_1ActionPlan.html#a38851b8c1a54cc039c86fa3576c940e4":[55,0,61,0,2],
-"structplatoon__strategic__ihp_1_1ActionPlan.html#a38851b8c1a54cc039c86fa3576c940e4":[56,0,37,0,2],
-"structplatoon__strategic__ihp_1_1ActionPlan.html#a4b43d9a607f76a48b4023fbd9dd3e3e3":[56,0,37,0,4],
-"structplatoon__strategic__ihp_1_1ActionPlan.html#a4b43d9a607f76a48b4023fbd9dd3e3e3":[55,0,61,0,4],
-"structplatoon__strategic__ihp_1_1ActionPlan.html#a9474313cd68557978e8dbd481d0408bc":[56,0,37,0,5]
+"structplatoon__strategic__ihp_1_1ActionPlan.html#a38851b8c1a54cc039c86fa3576c940e4":[55,0,61,0,2]
 };

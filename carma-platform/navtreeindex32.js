@@ -1,5 +1,9 @@
 var NAVTREEINDEX32 =
 {
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a6a405fc50eabdd2a8178be55e6edda1b":[55,0,93,0,0],
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a71768458026f7c917572a504323b64d4":[55,0,93,0,5],
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a71768458026f7c917572a504323b64d4":[56,0,50,0,5],
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a8a23ee599faf6a127eae7ba077c38080":[55,0,93,0,14],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a8a23ee599faf6a127eae7ba077c38080":[56,0,50,0,14],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a8ee60c46909b98f73c316f268d53dc09":[55,0,93,0,10],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a8ee60c46909b98f73c316f268d53dc09":[56,0,50,0,10],
@@ -245,9 +249,5 @@ var NAVTREEINDEX32 =
 "classsubsystem__controllers_1_1PluginManager.html#a5db745e7c0511afcc0ea63fae5238a12":[56,0,52,12,23],
 "classsubsystem__controllers_1_1PluginManager.html#a5f0ab0911506fc80fc363e7911ec3e72":[55,0,95,12,25],
 "classsubsystem__controllers_1_1PluginManager.html#a5f0ab0911506fc80fc363e7911ec3e72":[56,0,52,12,25],
-"classsubsystem__controllers_1_1PluginManager.html#a5f189aa2046eb52c9b789809155e8660":[56,0,52,12,22],
-"classsubsystem__controllers_1_1PluginManager.html#a5f189aa2046eb52c9b789809155e8660":[55,0,95,12,22],
-"classsubsystem__controllers_1_1PluginManager.html#a6cad9b30b4f2e7cecf4a2726944310fd":[56,0,52,12,0],
-"classsubsystem__controllers_1_1PluginManager.html#a6cad9b30b4f2e7cecf4a2726944310fd":[55,0,95,12,0],
-"classsubsystem__controllers_1_1PluginManager.html#a7b5fb468e0d422b8fc47b13103aeaa71":[55,0,95,12,13]
+"classsubsystem__controllers_1_1PluginManager.html#a5f189aa2046eb52c9b789809155e8660":[56,0,52,12,22]
 };

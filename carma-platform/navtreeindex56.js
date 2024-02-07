@@ -1,5 +1,9 @@
 var NAVTREEINDEX56 =
 {
+"template__tactical__plugin__node_8cpp_source.html":[57,0,51,2,4],
+"template__tactical__plugin__node_8hpp.html":[57,0,51,0,0,4],
+"template__tactical__plugin__node_8hpp_source.html":[57,0,51,0,0,4],
+"track__list__to__external__object__list__component_8cpp.html":[57,0,7,3,15],
 "track__list__to__external__object__list__component_8cpp_source.html":[57,0,7,3,15],
 "track__list__to__external__object__list__component_8hpp.html":[57,0,7,1,0,11],
 "track__list__to__external__object__list__component_8hpp_source.html":[57,0,7,1,0,11],

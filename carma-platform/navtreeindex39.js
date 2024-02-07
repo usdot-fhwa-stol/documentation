@@ -1,5 +1,9 @@
 var NAVTREEINDEX39 =
 {
+"lci__strategic__plugin__config_8hpp.html":[57,0,21,0,0,3],
+"lci__strategic__plugin__config_8hpp_source.html":[57,0,21,0,0,3],
+"lifecycle__main_8cpp.html":[57,0,15,2,2],
+"lifecycle__main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,15,2,2,0],
 "lifecycle__main_8cpp_source.html":[57,0,15,2,2],
 "light__controlled__intersection__tactical__plugin_2src_2main_8cpp.html":[57,0,22,2,2],
 "light__controlled__intersection__tactical__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,22,2,2,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX39 =
 "md_docs_Release_notes.html#autotoc_md152":[25,2],
 "md_docs_Release_notes.html#autotoc_md153":[25,2,0],
 "md_docs_Release_notes.html#autotoc_md154":[25,2,1],
-"md_docs_Release_notes.html#autotoc_md155":[25,2,2],
-"md_docs_Release_notes.html#autotoc_md156":[25,2,3],
-"md_docs_Release_notes.html#autotoc_md157":[25,2,4],
-"md_docs_Release_notes.html#autotoc_md158":[25,2,5],
-"md_docs_Release_notes.html#autotoc_md159":[25,2,6]
+"md_docs_Release_notes.html#autotoc_md155":[25,2,2]
 };

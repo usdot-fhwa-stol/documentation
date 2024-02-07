@@ -1,5 +1,9 @@
 var NAVTREEINDEX41 =
 {
+"namespaceSUB_3_01package__name_01_4.html":[55,0,94],
+"namespaceapproaching__emergency__vehicle__plugin.html":[55,0,0],
+"namespaceapproaching__emergency__vehicle__plugin.html#a2dbb3f37c243c291470089b3d68d82e4":[55,0,0,10],
+"namespaceapproaching__emergency__vehicle__plugin.html#aa1f0528bd901591593adb2c34b007b57":[55,0,0,8],
 "namespaceapproaching__emergency__vehicle__plugin.html#aa31226cb1566974b18d04bbc9ec559d2":[55,0,0,9],
 "namespaceapproaching__emergency__vehicle__plugin.html#ae26e1cd128942ddf2ca8eccadb66a6ca":[55,0,0,6],
 "namespaceapproaching__emergency__vehicle__plugin.html#ae26e1cd128942ddf2ca8eccadb66a6caa1b555c5c3c8561a37b426da3055c0a40":[55,0,0,6,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX41 =
 "namespacecarma__wm_1_1geometry.html#adb8e11194693e77d9be753dd84d15524":[55,0,16,1,18],
 "namespacecarma__wm_1_1geometry.html#adebf4a245f31404e822133b23e061ed3":[55,0,16,1,34],
 "namespacecarma__wm_1_1geometry.html#adf1c6b7f1e33569b45074e4e5bbeff1d":[55,0,16,1,5],
-"namespacecarma__wm_1_1geometry.html#ae0a06818149f7430fee80e295ef04548":[55,0,16,1,33],
-"namespacecarma__wm_1_1geometry.html#ae7d5ca280140dce2bf7bcfb78bdfd55d":[55,0,16,1,19],
-"namespacecarma__wm_1_1geometry.html#ae8af6cd9c27d35849c12959ab9f1b9c3":[55,0,16,1,15],
-"namespacecarma__wm_1_1geometry.html#aeaa3d6346b083b5fd1b7c699fab5bb5a":[55,0,16,1,17],
-"namespacecarma__wm_1_1geometry.html#aebce986f21c117983313292d5e82b50a":[55,0,16,1,36]
+"namespacecarma__wm_1_1geometry.html#ae0a06818149f7430fee80e295ef04548":[55,0,16,1,33]
 };

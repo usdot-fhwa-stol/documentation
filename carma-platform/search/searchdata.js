@@ -12,7 +12,7 @@ var indexSectionsWithContent =
   9: "gios",
   10: "_cegiprstuwz",
   11: "r",
-  12: "<abcdefghlmoprst"
+  12: "<abcdefghilmoprst"
 };
 
 var indexSectionNames =

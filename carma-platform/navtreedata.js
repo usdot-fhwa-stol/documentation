@@ -166,6 +166,7 @@ var NAVTREE =
         [ "Software Detailed Design Documents", "md_Detail_Design.html#autotoc_md105", null ]
       ] ]
     ] ],
+    [ "index", "md_docs_index.html", null ],
     [ "License", "md_docs_License.html", null ],
     [ "CARMA Platform Release Notes", "md_docs_Release_notes.html", [
       [ "Version 4.4.2, released May 10th, 2023", "md_docs_Release_notes.html#autotoc_md148", [
@@ -384,22 +385,22 @@ var NAVTREEINDEX =
 "inttypes_8h.html#a08353b6536336d5eb4ea354af8dd30c4",
 "lci__strategic__plugin__config_8hpp.html",
 "md_docs_Release_notes.html#autotoc_md156",
-"namespaceSUB_3_01package__name_01_4.html",
-"namespacecarma__wm_1_1geometry.html#ae7d5ca280140dce2bf7bcfb78bdfd55d",
-"namespacelocalization__manager.html#a9b86b848ab2c2216f0987be7c5007b70a97e522fbd57b52270c50555c686efdf3",
-"namespacesci__strategic__plugin.html#a566a001705be58d1fa9b8b13ba6e3677ae56f9187e18e7976a4565df987d0962e",
-"platooning__strategic__IHP_2src_2main_8cpp_source.html",
-"reader_8h.html#ab7be7dabe6ffcba60fad441505583450",
-"stdint_8h.html#ac8ab4bd1a0343acea9b7ed3e05c5ad13",
-"structInLaneCruisingPluginConfig.html#a2f55227f7a78d52d1759cbbacc044ac1",
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a357d49d8f1e6e554bf550a1f873c63bc",
-"structcarma__cooperative__perception_1_1MapCoordinate.html#a75d58f8b2f07906b853d210ba9c8ea18",
-"structframe__transformer_1_1Config.html#a39530e42dc3878ebdd99f5b4dfb944ef",
+"namespaceRouteCreation__KML2CSV.html#ab83033c194f79816a6e88149fb1d134d",
+"namespacecarma__wm_1_1geometry.html#ae0a06818149f7430fee80e295ef04548",
+"namespacelocalization__manager.html#a9b86b848ab2c2216f0987be7c5007b70a90db69d58f7274bfad34570f2fdce99c",
+"namespacesci__strategic__plugin.html#a566a001705be58d1fa9b8b13ba6e3677aa3ecbb35a47d32c1522462f894760117",
+"platooning__strategic__IHP_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",
+"reader_8h.html#a84f3b66a66647f4ac4267078359188ba",
+"stdint_8h.html#ac76e2383debd5a3b100514044828961a",
+"structInLaneCruisingPluginConfig.html#a1a4f2e081adb191eaf3b9e5fe5c1f867",
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2e6f2566571a01c095800f712e8ee183",
+"structcarma__cooperative__perception_1_1MapCoordinate.html#a70ca6b501f497dba865ea4b3333b04da",
+"structframe__transformer_1_1Config.html",
 "structinternal_1_1TypeHelper_3_01ValueType_00_01double_01_4.html#abb797ba373c4f7c72e6ef2500c4dff92",
 "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a07bc6d717956031df679241735706cc1",
 "structplatoon__strategic__ihp_1_1ActionPlan.html#a38851b8c1a54cc039c86fa3576c940e4",
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a617d379b5f70ba29205714781cb0581a",
-"template__tactical__plugin__node_8cpp_source.html"
+"template__tactical__plugin__node_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

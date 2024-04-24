@@ -4,7 +4,7 @@ var namespacesensor__data__sharing__service =
     [ "detected_object_enu_to_ned", "namespacesensor__data__sharing__service.html#a536a528bd908691171dcb85db713fb7a", null ],
     [ "parse_sensor_location", "namespacesensor__data__sharing__service.html#ad7f7b7b70fe0f7b7357aa4cae820ff5f", null ],
     [ "to_angular_velocity_confidence", "namespacesensor__data__sharing__service.html#a45b012119c686e006cfb3330ea6e0a69", null ],
-    [ "to_detected_object_data", "namespacesensor__data__sharing__service.html#ad4810255fb495c8f408ba46a62273b37", null ],
+    [ "to_detected_object_data", "namespacesensor__data__sharing__service.html#ac7883e0c836f56838d524ba13cbea5e7", null ],
     [ "to_heading", "namespacesensor__data__sharing__service.html#a69f88b750e17c2825a61d30f1adb6539", null ],
     [ "to_object_type", "namespacesensor__data__sharing__service.html#a5038fb2ec7890722ef91b8c4c31c5f56", null ],
     [ "to_position_3d", "namespacesensor__data__sharing__service.html#a657d68b2284fbd94b8dfc151e5e6c9b1", null ],

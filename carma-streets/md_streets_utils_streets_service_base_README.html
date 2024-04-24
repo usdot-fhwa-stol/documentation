@@ -86,18 +86,18 @@ $(document).ready(function(){initNavTree('md_streets_utils_streets_service_base_
   <div class="headertitle"><div class="title">Streets Service Base Library </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md134"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md137"></a>
 Introduction</h1>
 <p >This is the <code>streets_service_base</code> library meant to be the base of each new CARMA-Streets service. This library exposes two major classes. The first is <code>streets_clock_singleton</code>, which is a <code>streets_singleton</code> that manages as instance of CarmaClock (see <a href="https://github.com/usdot-fhwa-stol/carma-time-lib">https://github.com/usdot-fhwa-stol/carma-time-lib</a> ). The second is <code><a class="el" href="namespacestreets__service.html">streets_service</a></code>, which is meant to be a base class for all CARMA-Streets services that offers a framework for standing up new CARMA-Streets services. <br  />
 </p>
-<h1><a class="anchor" id="autotoc_md135"></a>
+<h1><a class="anchor" id="autotoc_md138"></a>
 streets_clock_singleton</h1>
 <p >The streets_clock_singleton is a streets_singleton which manages and instance of CarmaClock (see <a href="https://github.com/usdot-fhwa-stol/carma-time-lib">https://github.com/usdot-fhwa-stol/carma-time-lib</a> ). It offers static access to the CarmaClock time wrapper, which is meant to allow CARMA-Streets services to configurable use system time or an external source for time.</p>
-<h1><a class="anchor" id="autotoc_md136"></a>
+<h1><a class="anchor" id="autotoc_md139"></a>
 streets_service</h1>
 <p >The street_service class is a base class that sets up method to help standup new CARMA-Streets Services. This includes protected methods to initialize kafka consumers and producers, methods to start service threads and methods to intialize service members. The virtual <code>initialize</code> method initializes streets_singletons streets_clock_singleton and streets_configuration based on environment variables: <b>SIMULATION_MODE</b>: TRUE will initialize streets_clock_singleton in simulation mode which will allow for time updating from external source via static update() method.FALSE will initialize streets_clock_singleton in realtime mode which will make streets_clock_singleton call system time. <b>CONFIG_FILE_PATH</b> : String relative path from executable or absolute path to JSON configuration file. This is used to initialize streets_configuration singleton. The initialize() and <a class="el" href="namespacesimulate__timestep.html#a8e36b14ddff8cbf3161ee536e30711f5">start()</a> methods is meant to be overriden as follows: protected: bool initialize() override { // Initializes streets_clock singleton, streets_configuration singleton and kafka consumer for simulation time streets_service::initialize(); }</p>
 <p >void <a class="el" href="namespacesimulate__timestep.html#a8e36b14ddff8cbf3161ee536e30711f5">start()</a> override { // Starts thread to use kafka time consumer to consume time sync messages and update streets_clock_singleton <a class="el" href="namespacesimulate__timestep.html#a8e36b14ddff8cbf3161ee536e30711f5">streets_service::start()</a>; }</p>
-<h1><a class="anchor" id="autotoc_md137"></a>
+<h1><a class="anchor" id="autotoc_md140"></a>
 Include streets_service_base_lib</h1>
 <p >Streets Service Base <code>CMakeList.txt</code> includes an install target which will install this library as a CMake package. The library along with it's dependencies can then be included by simply using the find_package() instruction.</p>
 <div class="fragment"><div class="line">find_package(streets_service_base_lib COMPONENT streets_service_base_lib)</div>
@@ -109,7 +109,7 @@ Include streets_service_base_lib</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Feb 7 2024 13:52:55 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 24 2024 22:55:58 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

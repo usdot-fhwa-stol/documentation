@@ -255,13 +255,13 @@ Private Attributes</h2></td></tr>
 
 <p>Destructor stop time_consumer kafka producer if not null. </p>
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00005">5</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    5</span>                                      {</div>
-<div class="line"><span class="lineno">    6</span>        SPDLOG_INFO(<span class="stringliteral">&quot;Destructor called for streets service {0}!&quot;</span>, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a>);</div>
-<div class="line"><span class="lineno">    7</span>        <span class="keywordflow">if</span> ( <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a> ) {</div>
-<div class="line"><span class="lineno">    8</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a>-&gt;stop();</div>
-<div class="line"><span class="lineno">    9</span>        }</div>
-<div class="line"><span class="lineno">   10</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00006">6</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>                                      {</div>
+<div class="line"><span class="lineno">    7</span>        SPDLOG_INFO(<span class="stringliteral">&quot;Destructor called for streets service {0}!&quot;</span>, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a>);</div>
+<div class="line"><span class="lineno">    8</span>        <span class="keywordflow">if</span> ( <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a> ) {</div>
+<div class="line"><span class="lineno">    9</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a>-&gt;stop();</div>
+<div class="line"><span class="lineno">   10</span>        }</div>
+<div class="line"><span class="lineno">   11</span>    }</div>
 <div class="ttc" id="aclassstreets__service_1_1streets__service_html_a5bf52d2fecae35b2ac5f981f586b2892"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">streets_service::streets_service::_service_name</a></div><div class="ttdeci">std::string _service_name</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00111">streets_service.h:111</a></div></div>
 <div class="ttc" id="aclassstreets__service_1_1streets__service_html_a64c7be5428329effb019e1a8a6d7c669"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">streets_service::streets_service::_time_consumer</a></div><div class="ttdeci">std::shared_ptr&lt; kafka_clients::kafka_consumer_worker &gt; _time_consumer</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00117">streets_service.h:117</a></div></div>
 </div><!-- fragment -->
@@ -345,31 +345,42 @@ Private Attributes</h2></td></tr>
 
 <p>Method to consume continously consume time sync messages from Kafka topic and update <a class="el" href="classstreets__service_1_1streets__clock__singleton.html" title="Streets Clock Singleton is a singleton that manages a CarmaClock object. The CarmaClock object is cre...">streets_clock_singleton</a> with received data. </p>
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00087">87</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   87</span>                                                           {</div>
-<div class="line"><span class="lineno">   88</span>        <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a>-&gt;subscribe();</div>
-<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">while</span> (<a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a>-&gt;is_running())</div>
-<div class="line"><span class="lineno">   90</span>        {   </div>
-<div class="line"><span class="lineno">   91</span>            <span class="keyword">const</span> std::string payload = <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a>-&gt;consume(1000);</div>
-<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">if</span> (payload.length() != 0)</div>
-<div class="line"><span class="lineno">   93</span>            {</div>
-<div class="line"><span class="lineno">   94</span>                <span class="keywordflow">try</span> {</div>
-<div class="line"><span class="lineno">   95</span>                    SPDLOG_DEBUG(<span class="stringliteral">&quot;Consumed: {0}&quot;</span>, payload);</div>
-<div class="line"><span class="lineno">   96</span>                    simulation::time_sync_message msg;</div>
-<div class="line"><span class="lineno">   97</span>                    msg.fromJson(payload);</div>
-<div class="line"><span class="lineno">   98</span>                    <a class="code hl_function" href="classstreets__service_1_1streets__clock__singleton.html#a3817316b869ea2e4e813e1da3a347340">streets_clock_singleton::update</a>(msg.timestep);</div>
-<div class="line"><span class="lineno">   99</span>                }</div>
-<div class="line"><span class="lineno">  100</span>                <span class="keywordflow">catch</span>( <span class="keyword">const</span> std::runtime_error &amp;e) {</div>
-<div class="line"><span class="lineno">  101</span>                    SPDLOG_WARN( <span class="stringliteral">&quot;{0} exception occured will consuming {1} msg! Skipping message!&quot;</span>, e.what(), payload);</div>
-<div class="line"><span class="lineno">  102</span>                }</div>
-<div class="line"><span class="lineno">  103</span>                </div>
-<div class="line"><span class="lineno">  104</span>            }</div>
-<div class="line"><span class="lineno">  105</span> </div>
-<div class="line"><span class="lineno">  106</span>        }        </div>
-<div class="line"><span class="lineno">  107</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00088">88</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>                                                           {</div>
+<div class="line"><span class="lineno">   89</span>        <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a>-&gt;subscribe();</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">while</span> (<a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a>-&gt;is_running())</div>
+<div class="line"><span class="lineno">   91</span>        {</div>
+<div class="line"><span class="lineno">   92</span>            <span class="keyword">const</span> std::string payload = <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a>-&gt;consume(1000);</div>
+<div class="line"><span class="lineno">   93</span>            <span class="keywordflow">if</span> (payload.length() != 0)</div>
+<div class="line"><span class="lineno">   94</span>            {</div>
+<div class="line"><span class="lineno">   95</span>                <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">   96</span>                    SPDLOG_DEBUG(<span class="stringliteral">&quot;Consumed: {0}&quot;</span>, payload);</div>
+<div class="line"><span class="lineno">   97</span>                    simulation::time_sync_message msg;</div>
+<div class="line"><span class="lineno">   98</span>                    msg.fromJson(payload);</div>
+<div class="line"><span class="lineno">   99</span>                    <a class="code hl_function" href="classstreets__service_1_1streets__clock__singleton.html#a3817316b869ea2e4e813e1da3a347340">streets_clock_singleton::update</a>(msg.timestep);</div>
+<div class="line"><span class="lineno">  100</span>                    <span class="comment">// A script to validate time synchronization of tools in CDASim currently relies on the following</span></div>
+<div class="line"><span class="lineno">  101</span>                    <span class="comment">// log line. TODO: This line is meant to be removed in the future upon completion of this work:</span></div>
+<div class="line"><span class="lineno">  102</span>                    <span class="comment">// https://github.com/usdot-fhwa-stol/carma-analytics-fotda/pull/43</span></div>
+<div class="line"><span class="lineno">  103</span>                    <span class="keywordflow">if</span> (spdlog::get_level() == spdlog::level::debug)</div>
+<div class="line"><span class="lineno">  104</span>                    {</div>
+<div class="line"><span class="lineno">  105</span>                        <span class="keyword">auto</span> time_now = std::chrono::system_clock::now();</div>
+<div class="line"><span class="lineno">  106</span>                        <span class="keyword">auto</span> <a class="code hl_variable" href="namespacesimulate__detected__object.html#a7ff3adfebd4544d0a05b004d94309def">epoch</a> = time_now.time_since_epoch();</div>
+<div class="line"><span class="lineno">  107</span>                        <span class="keyword">auto</span> milliseconds = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(<a class="code hl_variable" href="namespacesimulate__detected__object.html#a7ff3adfebd4544d0a05b004d94309def">epoch</a>);</div>
+<div class="line"><span class="lineno">  108</span>                        SPDLOG_DEBUG(<span class="stringliteral">&quot;Simulation Time: {0} where current system time is: {1}&quot;</span>, msg.timestep, milliseconds.count());</div>
+<div class="line"><span class="lineno">  109</span>                    }</div>
+<div class="line"><span class="lineno">  110</span>                }</div>
+<div class="line"><span class="lineno">  111</span>                <span class="keywordflow">catch</span>( <span class="keyword">const</span> std::runtime_error &amp;e) {</div>
+<div class="line"><span class="lineno">  112</span>                    SPDLOG_WARN( <span class="stringliteral">&quot;{0} exception occured will consuming {1} msg! Skipping message!&quot;</span>, e.what(), payload);</div>
+<div class="line"><span class="lineno">  113</span>                }</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>            }</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>        }</div>
+<div class="line"><span class="lineno">  118</span>    }</div>
 <div class="ttc" id="aclassstreets__service_1_1streets__clock__singleton_html_a3817316b869ea2e4e813e1da3a347340"><div class="ttname"><a href="classstreets__service_1_1streets__clock__singleton.html#a3817316b869ea2e4e813e1da3a347340">streets_service::streets_clock_singleton::update</a></div><div class="ttdeci">static void update(uint64_t time)</div><div class="ttdoc">Static access to the CarmaClock update method (see https://github.com/usdot-fhwa-stol/carma-time-lib)...</div><div class="ttdef"><b>Definition:</b> <a href="streets__clock__singleton_8cpp_source.html#l00005">streets_clock_singleton.cpp:5</a></div></div>
+<div class="ttc" id="anamespacesimulate__detected__object_html_a7ff3adfebd4544d0a05b004d94309def"><div class="ttname"><a href="namespacesimulate__detected__object.html#a7ff3adfebd4544d0a05b004d94309def">simulate_detected_object.epoch</a></div><div class="ttdeci">epoch</div><div class="ttdef"><b>Definition:</b> <a href="simulate__detected__object_8py_source.html#l00019">simulate_detected_object.py:19</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="time__sync__message_8cpp_source.html#l00005">streets_service::simulation::time_sync_message::fromJson()</a>, <a class="el" href="time__sync__message_8h_source.html#l00019">streets_service::simulation::time_sync_message::timestep</a>, and <a class="el" href="streets__clock__singleton_8cpp_source.html#l00005">streets_service::streets_clock_singleton::update()</a>.</p>
+<p class="reference">References <a class="el" href="simulate__detected__object_8py_source.html#l00019">simulate_detected_object::epoch</a>, <a class="el" href="time__sync__message_8cpp_source.html#l00005">streets_service::simulation::time_sync_message::fromJson()</a>, <a class="el" href="time__sync__message_8h_source.html#l00019">streets_service::simulation::time_sync_message::timestep</a>, and <a class="el" href="streets__clock__singleton_8cpp_source.html#l00005">streets_service::streets_clock_singleton::update()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -441,20 +452,20 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00040">40</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>    {</div>
-<div class="line"><span class="lineno">   43</span>        <span class="keyword">auto</span> logger  = spdlog::daily_logger_mt&lt;spdlog::async_factory&gt;(</div>
-<div class="line"><span class="lineno">   44</span>                name,  <span class="comment">// logger name</span></div>
-<div class="line"><span class="lineno">   45</span>                <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a1f84fca76d06dac6a8c5e75bd2d5e646">_logs_directory</a> +name + extension,  <span class="comment">// log file name and path</span></div>
-<div class="line"><span class="lineno">   46</span>                23, <span class="comment">// hours to rotate</span></div>
-<div class="line"><span class="lineno">   47</span>                59 <span class="comment">// minutes to rotate</span></div>
-<div class="line"><span class="lineno">   48</span>            );</div>
-<div class="line"><span class="lineno">   49</span>        <span class="comment">// Only log log statement content</span></div>
-<div class="line"><span class="lineno">   50</span>        logger-&gt;set_pattern(pattern);</div>
-<div class="line"><span class="lineno">   51</span>        logger-&gt;set_level(level);</div>
-<div class="line"><span class="lineno">   52</span>        logger-&gt;flush_on(level);</div>
-<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">return</span> logger;</div>
-<div class="line"><span class="lineno">   54</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00041">41</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>    {</div>
+<div class="line"><span class="lineno">   44</span>        <span class="keyword">auto</span> logger  = spdlog::daily_logger_mt&lt;spdlog::async_factory&gt;(</div>
+<div class="line"><span class="lineno">   45</span>                name,  <span class="comment">// logger name</span></div>
+<div class="line"><span class="lineno">   46</span>                <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a1f84fca76d06dac6a8c5e75bd2d5e646">_logs_directory</a> +name + extension,  <span class="comment">// log file name and path</span></div>
+<div class="line"><span class="lineno">   47</span>                23, <span class="comment">// hours to rotate</span></div>
+<div class="line"><span class="lineno">   48</span>                59 <span class="comment">// minutes to rotate</span></div>
+<div class="line"><span class="lineno">   49</span>            );</div>
+<div class="line"><span class="lineno">   50</span>        <span class="comment">// Only log log statement content</span></div>
+<div class="line"><span class="lineno">   51</span>        logger-&gt;set_pattern(pattern);</div>
+<div class="line"><span class="lineno">   52</span>        logger-&gt;set_level(level);</div>
+<div class="line"><span class="lineno">   53</span>        logger-&gt;flush_on(level);</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">return</span> logger;</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
 <div class="ttc" id="aclassstreets__service_1_1streets__service_html_a1f84fca76d06dac6a8c5e75bd2d5e646"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a1f84fca76d06dac6a8c5e75bd2d5e646">streets_service::streets_service::_logs_directory</a></div><div class="ttdeci">std::string _logs_directory</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00119">streets_service.h:119</a></div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="tsc__service_8cpp_source.html#l00408">traffic_signal_controller_service::tsc_service::configure_snmp_cmd_logger()</a>, and <a class="el" href="tsc__service_8cpp_source.html#l00419">traffic_signal_controller_service::tsc_service::configure_veh_ped_call_logger()</a>.</p>
@@ -895,10 +906,10 @@ Here is the caller graph for this function:</div>
 <p>Returns service name set in configuration file. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns service name set in configuration file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00135">135</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>                                                      {</div>
-<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a>;</div>
-<div class="line"><span class="lineno">  137</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00146">146</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>                                                      {</div>
+<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a>;</div>
+<div class="line"><span class="lineno">  148</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -952,24 +963,24 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>value of environment variable. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00117">117</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  117</span>                                                                                                                    {</div>
-<div class="line"><span class="lineno">  118</span>        <span class="comment">// Check for config_name nullptr and use default value</span></div>
-<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">if</span> (config_name == <span class="keyword">nullptr</span> ) {</div>
-<div class="line"><span class="lineno">  120</span>            SPDLOG_WARN(<span class="stringliteral">&quot;System config_name was nullptr! Using default value {0}!&quot;</span> , default_val);</div>
-<div class="line"><span class="lineno">  121</span>            <span class="keywordflow">return</span> default_val;</div>
-<div class="line"><span class="lineno">  122</span>        }</div>
-<div class="line"><span class="lineno">  123</span>        <span class="comment">// If std::getenv(config_name) returns value, use this value</span></div>
-<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> config = std::getenv(config_name)) {</div>
-<div class="line"><span class="lineno">  125</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Reading system config {0} as : {1}!&quot;</span>, config_name, config);</div>
-<div class="line"><span class="lineno">  126</span>            <span class="keywordflow">return</span> config;</div>
-<div class="line"><span class="lineno">  127</span>        }</div>
-<div class="line"><span class="lineno">  128</span>        <span class="comment">// If std::getenv(config_name) returns nullptr, environment variable was not set so use default</span></div>
-<div class="line"><span class="lineno">  129</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  130</span>            SPDLOG_WARN(<span class="stringliteral">&quot;System config {0} was not set! Using default value {1}!&quot;</span> ,config_name, default_val);</div>
-<div class="line"><span class="lineno">  131</span>            <span class="keywordflow">return</span> default_val;</div>
-<div class="line"><span class="lineno">  132</span>        }</div>
-<div class="line"><span class="lineno">  133</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00128">128</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>                                                                                                                    {</div>
+<div class="line"><span class="lineno">  129</span>        <span class="comment">// Check for config_name nullptr and use default value</span></div>
+<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">if</span> (config_name == <span class="keyword">nullptr</span> ) {</div>
+<div class="line"><span class="lineno">  131</span>            SPDLOG_WARN(<span class="stringliteral">&quot;System config_name was nullptr! Using default value {0}!&quot;</span> , default_val);</div>
+<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">return</span> default_val;</div>
+<div class="line"><span class="lineno">  133</span>        }</div>
+<div class="line"><span class="lineno">  134</span>        <span class="comment">// If std::getenv(config_name) returns value, use this value</span></div>
+<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> config = std::getenv(config_name)) {</div>
+<div class="line"><span class="lineno">  136</span>            SPDLOG_DEBUG(<span class="stringliteral">&quot;Reading system config {0} as : {1}!&quot;</span>, config_name, config);</div>
+<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">return</span> config;</div>
+<div class="line"><span class="lineno">  138</span>        }</div>
+<div class="line"><span class="lineno">  139</span>        <span class="comment">// If std::getenv(config_name) returns nullptr, environment variable was not set so use default</span></div>
+<div class="line"><span class="lineno">  140</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  141</span>            SPDLOG_WARN(<span class="stringliteral">&quot;System config {0} was not set! Using default value {1}!&quot;</span> ,config_name, default_val);</div>
+<div class="line"><span class="lineno">  142</span>            <span class="keywordflow">return</span> default_val;</div>
+<div class="line"><span class="lineno">  143</span>        }</div>
+<div class="line"><span class="lineno">  144</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1001,37 +1012,37 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classsensor__data__sharing__service_1_1sds__service.html#ad049a28687f840e20c26913d4ad7e053">sensor_data_sharing_service::sds_service</a>, and <a class="el" href="classtraffic__signal__controller__service_1_1tsc__service.html#abb944363e0d001e15e5a515da611d452">traffic_signal_controller_service::tsc_service</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00012">12</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>                                     {</div>
-<div class="line"><span class="lineno">   13</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><span class="lineno">   14</span>            std::string config_file_path = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#aa78c7b5d902871eeee9acb270aaca1fb">CONFIG_FILE_PATH_ENV</a>.c_str(), <a class="code hl_variable" href="namespacestreets__service.html#a125798b319a95317fa7ea1fcfed3f79b">DEFAULT_CONFIG_FILE_PATH</a>);</div>
-<div class="line"><span class="lineno">   15</span>            <a class="code hl_function" href="classstreets__service_1_1streets__singleton.html#a2661e8317c90be8ba5d18b37b5bc3df8">streets_configuration::create</a>(config_file_path);</div>
-<div class="line"><span class="lineno">   16</span>            std::string sim_mode_string = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#abb5eaa478d0ccd86b222e1ff69536687">SIMULATION_MODE_ENV</a>.c_str(),<a class="code hl_variable" href="namespacestreets__service.html#a9c0e0ab751e88971bb80e84abb89ce75">DEFAULT_SIMULATION_MODE</a>);</div>
-<div class="line"><span class="lineno">   17</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a> = sim_mode_string.compare(<span class="stringliteral">&quot;true&quot;</span>) == 0 || sim_mode_string.compare(<span class="stringliteral">&quot;TRUE&quot;</span>) == 0 ;</div>
-<div class="line"><span class="lineno">   18</span>            <a class="code hl_function" href="classstreets__service_1_1streets__singleton.html#a2661e8317c90be8ba5d18b37b5bc3df8">streets_clock_singleton::create</a>(<a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a>);</div>
-<div class="line"><span class="lineno">   19</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a> = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a24b078c95a66357880bc7c6377d4c84b">streets_configuration::get_service_name</a>();</div>
-<div class="line"><span class="lineno">   20</span>            SPDLOG_INFO(<span class="stringliteral">&quot;Initializing {0} streets service in simulation mode : {1}!&quot;</span>, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a>, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a>);</div>
-<div class="line"><span class="lineno">   21</span>            <span class="keywordflow">if</span> ( <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a> ) {</div>
-<div class="line"><span class="lineno">   22</span>                std::string time_sync_topic = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#afc65d11b10d09b30901a8f7b412601aa">TIME_SYNC_TOPIC_ENV</a>.c_str(), <a class="code hl_variable" href="namespacestreets__service.html#a5ba2e6b968b5f4b1b9e219ad626d3dda">DEFAULT_TIME_SYNC_TOPIC</a>);</div>
-<div class="line"><span class="lineno">   23</span>                <span class="keywordflow">if</span> (!<a class="code hl_function" href="classstreets__service_1_1streets__service.html#aab4cb4106faf5524004ba6a19d110acc">initialize_kafka_consumer</a>(time_sync_topic, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a>)){</div>
-<div class="line"><span class="lineno">   24</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   25</span>                }</div>
-<div class="line"><span class="lineno">   26</span>            }</div>
-<div class="line"><span class="lineno">   27</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a1f84fca76d06dac6a8c5e75bd2d5e646">_logs_directory</a> = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#aa2771b5341c756357d8063712e800de1">LOGS_DIRECTORY_ENV</a>.c_str(), <a class="code hl_variable" href="namespacestreets__service.html#a5025a5b25d1b34a7c03a801fbc67a53d">DEFAULT_LOGS_DIRECTORY</a>);</div>
-<div class="line"><span class="lineno">   28</span>        } <span class="keywordflow">catch</span>( <span class="keyword">const</span> streets_configuration_exception &amp;e) {</div>
-<div class="line"><span class="lineno">   29</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Exception occured during {0} initialization : {1}&quot;</span> , <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a> , e.what());</div>
-<div class="line"><span class="lineno">   30</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   31</span>        }</div>
-<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">catch</span> ( <span class="keyword">const</span> std::runtime_error &amp;e ) {</div>
-<div class="line"><span class="lineno">   33</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Exception occured during {0} initialization : {1}&quot;</span> , <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a> , e.what());</div>
-<div class="line"><span class="lineno">   34</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   35</span>        }</div>
-<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00013">13</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span>                                     {</div>
+<div class="line"><span class="lineno">   14</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">   15</span>            std::string config_file_path = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#aa78c7b5d902871eeee9acb270aaca1fb">CONFIG_FILE_PATH_ENV</a>.c_str(), <a class="code hl_variable" href="namespacestreets__service.html#a125798b319a95317fa7ea1fcfed3f79b">DEFAULT_CONFIG_FILE_PATH</a>);</div>
+<div class="line"><span class="lineno">   16</span>            <a class="code hl_function" href="classstreets__service_1_1streets__singleton.html#a2661e8317c90be8ba5d18b37b5bc3df8">streets_configuration::create</a>(config_file_path);</div>
+<div class="line"><span class="lineno">   17</span>            std::string sim_mode_string = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#abb5eaa478d0ccd86b222e1ff69536687">SIMULATION_MODE_ENV</a>.c_str(),<a class="code hl_variable" href="namespacestreets__service.html#a9c0e0ab751e88971bb80e84abb89ce75">DEFAULT_SIMULATION_MODE</a>);</div>
+<div class="line"><span class="lineno">   18</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a> = sim_mode_string.compare(<span class="stringliteral">&quot;true&quot;</span>) == 0 || sim_mode_string.compare(<span class="stringliteral">&quot;TRUE&quot;</span>) == 0 ;</div>
+<div class="line"><span class="lineno">   19</span>            <a class="code hl_function" href="classstreets__service_1_1streets__singleton.html#a2661e8317c90be8ba5d18b37b5bc3df8">streets_clock_singleton::create</a>(<a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a>);</div>
+<div class="line"><span class="lineno">   20</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a> = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a24b078c95a66357880bc7c6377d4c84b">streets_configuration::get_service_name</a>();</div>
+<div class="line"><span class="lineno">   21</span>            SPDLOG_INFO(<span class="stringliteral">&quot;Initializing {0} streets service in simulation mode : {1}!&quot;</span>, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a>, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a>);</div>
+<div class="line"><span class="lineno">   22</span>            <span class="keywordflow">if</span> ( <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a> ) {</div>
+<div class="line"><span class="lineno">   23</span>                std::string time_sync_topic = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#afc65d11b10d09b30901a8f7b412601aa">TIME_SYNC_TOPIC_ENV</a>.c_str(), <a class="code hl_variable" href="namespacestreets__service.html#a5ba2e6b968b5f4b1b9e219ad626d3dda">DEFAULT_TIME_SYNC_TOPIC</a>);</div>
+<div class="line"><span class="lineno">   24</span>                <span class="keywordflow">if</span> (!<a class="code hl_function" href="classstreets__service_1_1streets__service.html#aab4cb4106faf5524004ba6a19d110acc">initialize_kafka_consumer</a>(time_sync_topic, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a64c7be5428329effb019e1a8a6d7c669">_time_consumer</a>)){</div>
+<div class="line"><span class="lineno">   25</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   26</span>                }</div>
+<div class="line"><span class="lineno">   27</span>            }</div>
+<div class="line"><span class="lineno">   28</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a1f84fca76d06dac6a8c5e75bd2d5e646">_logs_directory</a> = <a class="code hl_function" href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">get_system_config</a>(<a class="code hl_variable" href="namespacestreets__service.html#aa2771b5341c756357d8063712e800de1">LOGS_DIRECTORY_ENV</a>.c_str(), <a class="code hl_variable" href="namespacestreets__service.html#a5025a5b25d1b34a7c03a801fbc67a53d">DEFAULT_LOGS_DIRECTORY</a>);</div>
+<div class="line"><span class="lineno">   29</span>        } <span class="keywordflow">catch</span>( <span class="keyword">const</span> streets_configuration_exception &amp;e) {</div>
+<div class="line"><span class="lineno">   30</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Exception occured during {0} initialization : {1}&quot;</span> , <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a> , e.what());</div>
+<div class="line"><span class="lineno">   31</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   32</span>        }</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">catch</span> ( <span class="keyword">const</span> std::runtime_error &amp;e ) {</div>
+<div class="line"><span class="lineno">   34</span>            SPDLOG_ERROR(<span class="stringliteral">&quot;Exception occured during {0} initialization : {1}&quot;</span> , <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a> , e.what());</div>
+<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   36</span>        }</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    }</div>
 <div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a24b078c95a66357880bc7c6377d4c84b"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a24b078c95a66357880bc7c6377d4c84b">streets_service::streets_configuration::get_service_name</a></div><div class="ttdeci">static std::string get_service_name()</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00165">streets_configuration.cpp:165</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__service_html_a0882928966e40628bccfc9504be441f4"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">streets_service::streets_service::get_system_config</a></div><div class="ttdeci">std::string get_system_config(const char *config_name, const std::string &amp;default_val) const noexcept</div><div class="ttdoc">Returns string value of environment variable with given name. If no value is found,...</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8cpp_source.html#l00117">streets_service.cpp:117</a></div></div>
-<div class="ttc" id="aclassstreets__service_1_1streets__service_html_aab4cb4106faf5524004ba6a19d110acc"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#aab4cb4106faf5524004ba6a19d110acc">streets_service::streets_service::initialize_kafka_consumer</a></div><div class="ttdeci">bool initialize_kafka_consumer(const std::string &amp;consumer_topic, std::shared_ptr&lt; kafka_clients::kafka_consumer_worker &gt; &amp;consumer)</div><div class="ttdoc">Helper method to initialise Kafka consumer. NOTE: Will assign consumer group id as service_name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8cpp_source.html#l00072">streets_service.cpp:72</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__service_html_a0882928966e40628bccfc9504be441f4"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#a0882928966e40628bccfc9504be441f4">streets_service::streets_service::get_system_config</a></div><div class="ttdeci">std::string get_system_config(const char *config_name, const std::string &amp;default_val) const noexcept</div><div class="ttdoc">Returns string value of environment variable with given name. If no value is found,...</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8cpp_source.html#l00128">streets_service.cpp:128</a></div></div>
+<div class="ttc" id="aclassstreets__service_1_1streets__service_html_aab4cb4106faf5524004ba6a19d110acc"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#aab4cb4106faf5524004ba6a19d110acc">streets_service::streets_service::initialize_kafka_consumer</a></div><div class="ttdeci">bool initialize_kafka_consumer(const std::string &amp;consumer_topic, std::shared_ptr&lt; kafka_clients::kafka_consumer_worker &gt; &amp;consumer)</div><div class="ttdoc">Helper method to initialise Kafka consumer. NOTE: Will assign consumer group id as service_name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8cpp_source.html#l00073">streets_service.cpp:73</a></div></div>
 <div class="ttc" id="aclassstreets__service_1_1streets__service_html_afdee88ad9c67fc4a8073c3fd0183c6d3"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">streets_service::streets_service::_simulation_mode</a></div><div class="ttdeci">bool _simulation_mode</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00113">streets_service.h:113</a></div></div>
 <div class="ttc" id="aclassstreets__service_1_1streets__singleton_html_a2661e8317c90be8ba5d18b37b5bc3df8"><div class="ttname"><a href="classstreets__service_1_1streets__singleton.html#a2661e8317c90be8ba5d18b37b5bc3df8">streets_service::streets_singleton&lt; streets_configuration, std::string &gt;::create</a></div><div class="ttdeci">static streets_configuration &amp; create(Args...args)</div><div class="ttdoc">Method to intialize streets_singleton with constructor params ...Args of templated class.</div></div>
 <div class="ttc" id="anamespacestreets__service_html_a125798b319a95317fa7ea1fcfed3f79b"><div class="ttname"><a href="namespacestreets__service.html#a125798b319a95317fa7ea1fcfed3f79b">streets_service::DEFAULT_CONFIG_FILE_PATH</a></div><div class="ttdeci">const std::string DEFAULT_CONFIG_FILE_PATH</div><div class="ttdef"><b>Definition:</b> <a href="streets__environment__variables_8h_source.html#l00017">streets_environment_variables.h:17</a></div></div>
@@ -1114,21 +1125,21 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if initialization is successful and false if initialization fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00072">72</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>                                                                                                                                                      {</div>
-<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">if</span> ( !<a class="code hl_variable" href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">_kafka_client</a> ) {</div>
-<div class="line"><span class="lineno">   74</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">_kafka_client</a> = std::make_unique&lt;kafka_clients::kafka_client&gt;();</div>
-<div class="line"><span class="lineno">   75</span>        }        </div>
-<div class="line"><span class="lineno">   76</span>        std::string bootstrap_server = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;bootstrap_server&quot;</span>);</div>
-<div class="line"><span class="lineno">   77</span>        kafka_consumer = <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">_kafka_client</a>-&gt;create_consumer(bootstrap_server, consumer_topic, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a>);</div>
-<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">if</span> (!kafka_consumer-&gt;init())</div>
-<div class="line"><span class="lineno">   79</span>        {</div>
-<div class="line"><span class="lineno">   80</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;Kafka initialize error&quot;</span>);</div>
-<div class="line"><span class="lineno">   81</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   82</span>        }</div>
-<div class="line"><span class="lineno">   83</span>        SPDLOG_DEBUG(<span class="stringliteral">&quot;Initialized Kafka consumer!&quot;</span>);</div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   85</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00073">73</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>                                                                                                                                                      {</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">if</span> ( !<a class="code hl_variable" href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">_kafka_client</a> ) {</div>
+<div class="line"><span class="lineno">   75</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">_kafka_client</a> = std::make_unique&lt;kafka_clients::kafka_client&gt;();</div>
+<div class="line"><span class="lineno">   76</span>        }</div>
+<div class="line"><span class="lineno">   77</span>        std::string bootstrap_server = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;bootstrap_server&quot;</span>);</div>
+<div class="line"><span class="lineno">   78</span>        kafka_consumer = <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">_kafka_client</a>-&gt;create_consumer(bootstrap_server, consumer_topic, <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#a5bf52d2fecae35b2ac5f981f586b2892">_service_name</a>);</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span> (!kafka_consumer-&gt;init())</div>
+<div class="line"><span class="lineno">   80</span>        {</div>
+<div class="line"><span class="lineno">   81</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;Kafka initialize error&quot;</span>);</div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   83</span>        }</div>
+<div class="line"><span class="lineno">   84</span>        SPDLOG_DEBUG(<span class="stringliteral">&quot;Initialized Kafka consumer!&quot;</span>);</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
 <div class="ttc" id="aclassstreets__service_1_1streets__configuration_html_a03603871626201e07690effb9f2440bf"><div class="ttname"><a href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_service::streets_configuration::get_string_config</a></div><div class="ttdeci">static std::string get_string_config(const std::string &amp;config_param_name)</div><div class="ttdoc">Retreive configuration parameter string value with provided name.</div><div class="ttdef"><b>Definition:</b> <a href="streets__configuration_8cpp_source.html#l00104">streets_configuration.cpp:104</a></div></div>
 <div class="ttc" id="aclassstreets__service_1_1streets__service_html_adc480ded469d85b795595edd98607760"><div class="ttname"><a href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">streets_service::streets_service::_kafka_client</a></div><div class="ttdeci">std::unique_ptr&lt; kafka_clients::kafka_client &gt; _kafka_client</div><div class="ttdef"><b>Definition:</b> <a href="streets__service_8h_source.html#l00115">streets_service.h:115</a></div></div>
 </div><!-- fragment -->
@@ -1204,23 +1215,23 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if initialization is successful and false if initialization fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00055">55</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span>                                                                                                                                                  {</div>
-<div class="line"><span class="lineno">   56</span>        </div>
-<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">if</span> ( !<a class="code hl_variable" href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">_kafka_client</a> ) {</div>
-<div class="line"><span class="lineno">   58</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">_kafka_client</a> = std::make_unique&lt;kafka_clients::kafka_client&gt;();</div>
-<div class="line"><span class="lineno">   59</span>        }</div>
-<div class="line"><span class="lineno">   60</span>        std::string bootstrap_server = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;bootstrap_server&quot;</span>);</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>        <a class="code hl_variable" href="namespacesimulate__bsm.html#a88896685ca027b80cae5cd3cca4003ea">producer</a> = <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">_kafka_client</a>-&gt;create_producer(bootstrap_server, producer_topic);</div>
-<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="namespacesimulate__bsm.html#a88896685ca027b80cae5cd3cca4003ea">producer</a>-&gt;init())</div>
-<div class="line"><span class="lineno">   64</span>        {</div>
-<div class="line"><span class="lineno">   65</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;Kafka producer initialize error on topic {0}&quot;</span>, producer_topic);</div>
-<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   67</span>        }</div>
-<div class="line"><span class="lineno">   68</span>        SPDLOG_DEBUG(<span class="stringliteral">&quot;Initialized Kafka producer on topic {0}!&quot;</span>, producer_topic);</div>
-<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   70</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00056">56</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>                                                                                                                                                  {</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span> ( !<a class="code hl_variable" href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">_kafka_client</a> ) {</div>
+<div class="line"><span class="lineno">   59</span>            <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">_kafka_client</a> = std::make_unique&lt;kafka_clients::kafka_client&gt;();</div>
+<div class="line"><span class="lineno">   60</span>        }</div>
+<div class="line"><span class="lineno">   61</span>        std::string bootstrap_server = <a class="code hl_function" href="classstreets__service_1_1streets__configuration.html#a03603871626201e07690effb9f2440bf">streets_configuration::get_string_config</a>(<span class="stringliteral">&quot;bootstrap_server&quot;</span>);</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>        <a class="code hl_variable" href="namespacesimulate__bsm.html#a88896685ca027b80cae5cd3cca4003ea">producer</a> = <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#adc480ded469d85b795595edd98607760">_kafka_client</a>-&gt;create_producer(bootstrap_server, producer_topic);</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="namespacesimulate__bsm.html#a88896685ca027b80cae5cd3cca4003ea">producer</a>-&gt;init())</div>
+<div class="line"><span class="lineno">   65</span>        {</div>
+<div class="line"><span class="lineno">   66</span>            SPDLOG_CRITICAL(<span class="stringliteral">&quot;Kafka producer initialize error on topic {0}&quot;</span>, producer_topic);</div>
+<div class="line"><span class="lineno">   67</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="line"><span class="lineno">   69</span>        SPDLOG_DEBUG(<span class="stringliteral">&quot;Initialized Kafka producer on topic {0}!&quot;</span>, producer_topic);</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
 <div class="ttc" id="anamespacesimulate__bsm_html_a88896685ca027b80cae5cd3cca4003ea"><div class="ttname"><a href="namespacesimulate__bsm.html#a88896685ca027b80cae5cd3cca4003ea">simulate_bsm.producer</a></div><div class="ttdeci">producer</div><div class="ttdef"><b>Definition:</b> <a href="simulate__bsm_8py_source.html#l00016">simulate_bsm.py:16</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="streets__configuration_8cpp_source.html#l00104">streets_service::streets_configuration::get_string_config()</a>, and <a class="el" href="simulate__bsm_8py_source.html#l00016">simulate_bsm::producer</a>.</p>
@@ -1277,22 +1288,25 @@ Here is the caller graph for this function:</div>
 <p>Returns boolean if service is currently configured to be in simulation_mode. This corresponsds to the value of the environment variable SIMULATION_MODE. Simulation mode indicates whether the <a class="el" href="classstreets__service_1_1streets__clock__singleton.html" title="Streets Clock Singleton is a singleton that manages a CarmaClock object. The CarmaClock object is cre...">streets_clock_singleton</a> uses simulation time for kafka or system time. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if in simulation mode, false if in real time more </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00139">139</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>                                                   {</div>
-<div class="line"><span class="lineno">  140</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a>;</div>
-<div class="line"><span class="lineno">  141</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00150">150</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>                                                   {</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a>;</div>
+<div class="line"><span class="lineno">  152</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="tsc__service_8cpp_source.html#l00008">traffic_signal_controller_service::tsc_service::initialize()</a>, and <a class="el" href="tsc__service_8cpp_source.html#l00196">traffic_signal_controller_service::tsc_service::produce_spat_json()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="sensor__data__sharing__service_8cpp_source.html#l00087">sensor_data_sharing_service::sds_service::consume_detections()</a>, <a class="el" href="tsc__service_8cpp_source.html#l00008">traffic_signal_controller_service::tsc_service::initialize()</a>, and <a class="el" href="tsc__service_8cpp_source.html#l00196">traffic_signal_controller_service::tsc_service::produce_spat_json()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classstreets__service_1_1streets__service_a545456534674e7026082f1585391bc7e_icgraph.png" border="0" usemap="#aclassstreets__service_1_1streets__service_a545456534674e7026082f1585391bc7e_icgraph" alt=""/></div>
 <map name="aclassstreets__service_1_1streets__service_a545456534674e7026082f1585391bc7e_icgraph" id="aclassstreets__service_1_1streets__service_a545456534674e7026082f1585391bc7e_icgraph">
-<area shape="rect" title="Returns boolean if service is currently configured to be in simulation_mode. This corresponsds to the..." alt="" coords="531,50,723,91"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__service.html#abb944363e0d001e15e5a515da611d452" title="Method to initialize the tsc_service." alt="" coords="115,5,269,61"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__service.html#aa4fb7763e7ae8b9e630fd7fa10bc2479" title="Method to receive UDP data from traffic signal controller and broadcast spat JSON data to the carma&#45;s..." alt="" coords="328,75,483,131"/>
-<area shape="rect" href="tsc__client__service_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,56,56,83"/>
-<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__service.html#a965dba3d0f0cff4d2a36ecc38d2fed17" title="Method to start all threads included in the tsc_service." alt="" coords="104,85,280,126"/>
+<area shape="rect" title="Returns boolean if service is currently configured to be in simulation_mode. This corresponsds to the..." alt="" coords="531,93,723,134"/>
+<area shape="rect" href="classsensor__data__sharing__service_1_1sds__service.html#ae1c6b5529f6d39f6baebe028179cb3b2" title="Loop to consume detections from kafka detection consumer. Will terminate if kafka consumer is no long..." alt="" coords="331,13,479,69"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__service.html#abb944363e0d001e15e5a515da611d452" title="Method to initialize the tsc_service." alt="" coords="115,85,269,141"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__service.html#aa4fb7763e7ae8b9e630fd7fa10bc2479" title="Method to receive UDP data from traffic signal controller and broadcast spat JSON data to the carma&#45;s..." alt="" coords="328,153,483,209"/>
+<area shape="rect" href="classsensor__data__sharing__service_1_1sds__service.html#a9ee2b8ce146ec179703350d609652785" title="Method to start all threads included in the tsc_service." alt="" coords="119,5,265,61"/>
+<area shape="rect" href="sensor__data__sharing__service_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,20,56,47"/>
+<area shape="rect" href="tsc__client__service_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,136,56,163"/>
+<area shape="rect" href="classtraffic__signal__controller__service_1_1tsc__service.html#a965dba3d0f0cff4d2a36ecc38d2fed17" title="Method to start all threads included in the tsc_service." alt="" coords="104,165,280,206"/>
 </map>
 </div>
 
@@ -1377,13 +1391,13 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classsensor__data__sharing__service_1_1sds__service.html#a9ee2b8ce146ec179703350d609652785">sensor_data_sharing_service::sds_service</a>, and <a class="el" href="classtraffic__signal__controller__service_1_1tsc__service.html#a965dba3d0f0cff4d2a36ecc38d2fed17">traffic_signal_controller_service::tsc_service</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00110">110</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  110</span>                                {</div>
-<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">if</span> ( <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a> ) {</div>
-<div class="line"><span class="lineno">  112</span>            std::thread time_sync_thread(&amp;streets_service::consume_time_sync_message, <span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  113</span>            time_sync_thread.detach();</div>
-<div class="line"><span class="lineno">  114</span>        }</div>
-<div class="line"><span class="lineno">  115</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="streets__service_8cpp_source.html#l00121">121</a> of file <a class="el" href="streets__service_8cpp_source.html">streets_service.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>                                {</div>
+<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">if</span> ( <a class="code hl_variable" href="classstreets__service_1_1streets__service.html#afdee88ad9c67fc4a8073c3fd0183c6d3">_simulation_mode</a> ) {</div>
+<div class="line"><span class="lineno">  123</span>            std::thread time_sync_thread(&amp;streets_service::consume_time_sync_message, <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  124</span>            time_sync_thread.detach();</div>
+<div class="line"><span class="lineno">  125</span>        }</div>
+<div class="line"><span class="lineno">  126</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="tsc__service_8cpp_source.html#l00448">traffic_signal_controller_service::tsc_service::start()</a>.</p>
 <div class="dynheader">
@@ -1530,7 +1544,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacestreets__service.html">streets_service</a></li><li class="navelem"><a class="el" href="classstreets__service_1_1streets__service.html">streets_service</a></li>
-    <li class="footer">Generated on Wed Feb 7 2024 13:52:56 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 24 2024 22:55:59 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

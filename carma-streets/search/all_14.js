@@ -64,7 +64,7 @@ var searchData=
   ['timing_61',['timing',['../structsignal__phase__and__timing_1_1movement__event.html#a6250e85c7ca1b039806b6326812648d3',1,'signal_phase_and_timing::movement_event']]],
   ['timing_5fplan_5fmsg_5ftype_62',['TIMING_PLAN_MSG_TYPE',['../structstreets__timing__plan_1_1streets__timing__plan.html#acf37487f3220818bedbbe2df8e80fb97',1,'streets_timing_plan::streets_timing_plan']]],
   ['to_5fangular_5fvelocity_5fconfidence_63',['to_angular_velocity_confidence',['../namespacesensor__data__sharing__service.html#a45b012119c686e006cfb3330ea6e0a69',1,'sensor_data_sharing_service']]],
-  ['to_5fdetected_5fobject_5fdata_64',['to_detected_object_data',['../namespacesensor__data__sharing__service.html#ad4810255fb495c8f408ba46a62273b37',1,'sensor_data_sharing_service']]],
+  ['to_5fdetected_5fobject_5fdata_64',['to_detected_object_data',['../namespacesensor__data__sharing__service.html#ac7883e0c836f56838d524ba13cbea5e7',1,'sensor_data_sharing_service']]],
   ['to_5fheading_65',['to_heading',['../namespacesensor__data__sharing__service.html#a69f88b750e17c2825a61d30f1adb6539',1,'sensor_data_sharing_service']]],
   ['to_5fjson_66',['to_json',['../namespacestreets__utils_1_1messages_1_1sdsm.html#adc633a14b3b5d78e9a8e7a477f80867b',1,'streets_utils::messages::sdsm']]],
   ['to_5fobject_5ftype_67',['to_object_type',['../namespacesensor__data__sharing__service.html#a5038fb2ec7890722ef91b8c4c31c5f56',1,'sensor_data_sharing_service']]],

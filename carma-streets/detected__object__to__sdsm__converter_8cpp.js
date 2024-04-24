@@ -1,7 +1,7 @@
 var detected__object__to__sdsm__converter_8cpp =
 [
     [ "to_angular_velocity_confidence", "detected__object__to__sdsm__converter_8cpp.html#a45b012119c686e006cfb3330ea6e0a69", null ],
-    [ "to_detected_object_data", "detected__object__to__sdsm__converter_8cpp.html#ad4810255fb495c8f408ba46a62273b37", null ],
+    [ "to_detected_object_data", "detected__object__to__sdsm__converter_8cpp.html#ac7883e0c836f56838d524ba13cbea5e7", null ],
     [ "to_heading", "detected__object__to__sdsm__converter_8cpp.html#a69f88b750e17c2825a61d30f1adb6539", null ],
     [ "to_object_type", "detected__object__to__sdsm__converter_8cpp.html#a5038fb2ec7890722ef91b8c4c31c5f56", null ],
     [ "to_position_confidence", "detected__object__to__sdsm__converter_8cpp.html#a763a8955d99dac5e8b3b10c2b449c73b", null ],

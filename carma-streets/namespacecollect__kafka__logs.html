@@ -113,81 +113,83 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="collect__kafka__logs_8py_source.html#l00071">71</a> of file <a class="el" href="collect__kafka__logs_8py_source.html">collect_kafka_logs.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span><span class="keyword">def </span><a class="code hl_function" href="namespacecollect__kafka__logs.html#a5624652a60794ffc2b2a80698361b335">main</a>():</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>    <span class="comment"># Default list of topics, aka all topics from https://usdot-carma.atlassian.net/wiki/spaces/CRMSRT/pages/2317549999/CARMA-Streets+Messaging</span></div>
-<div class="line"><span class="lineno">   74</span>    <span class="comment"># topic desire_phase_plan is in the list from confluence, but doesn&#39;t exist in kafka as of 2022/12/05</span></div>
-<div class="line"><span class="lineno">   75</span>    topics = [<span class="stringliteral">&#39;v2xhub_scheduling_plan_sub&#39;</span> ,<span class="stringliteral">&#39;v2xhub_bsm_in&#39;</span>, <span class="stringliteral">&#39;v2xhub_mobility_operation_in&#39;</span>, <span class="stringliteral">&#39;v2xhub_mobility_path_in&#39;</span>,</div>
-<div class="line"><span class="lineno">   76</span>              <span class="stringliteral">&#39;vehicle_status_intent_output&#39;</span>, <span class="stringliteral">&#39;v2xhub_map_msg_in&#39;</span>, <span class="stringliteral">&#39;modified_spat&#39;</span>, <span class="stringliteral">&#39;tsc_config_state&#39;</span>, <span class="stringliteral">&#39;desired_phase_plan&#39;</span>]</div>
-<div class="line"><span class="lineno">   77</span>    timeout = 5</div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>    <span class="comment"># Get arguments</span></div>
-<div class="line"><span class="lineno">   80</span>    <span class="comment"># The idea here was to give the user the bare minimum options, and make the default condition the most used.</span></div>
-<div class="line"><span class="lineno">   81</span>    parser = argparse.ArgumentParser(description=<span class="stringliteral">&#39;Script to grab data from kafka&#39;</span>)</div>
-<div class="line"><span class="lineno">   82</span>    parser.add_argument(<span class="stringliteral">&#39;outfile&#39;</span>, help=<span class="stringliteral">&#39;Filename for the resulting zip file&#39;</span>, type=str)  <span class="comment"># Required argument</span></div>
-<div class="line"><span class="lineno">   83</span>    start_group = parser.add_mutually_exclusive_group()</div>
-<div class="line"><span class="lineno">   84</span>    end_group = parser.add_mutually_exclusive_group()</div>
-<div class="line"><span class="lineno">   85</span>    start_group.add_argument(<span class="stringliteral">&#39;--start_timestamp&#39;</span>, help=<span class="stringliteral">&#39;Unix timestamp (seconds) for the first message to grab. Exclusive with start_hours_ago. &#39;</span>, type=int)</div>
-<div class="line"><span class="lineno">   86</span>    end_group.add_argument(<span class="stringliteral">&#39;--end_timestamp&#39;</span>, help=<span class="stringliteral">&#39;Unix timestamp (seconds) for the last message to grab. Exclusive with end_hours_ago. &#39;</span>, type=int)</div>
-<div class="line"><span class="lineno">   87</span>    start_group.add_argument(<span class="stringliteral">&#39;--start_hours_ago&#39;</span>, help=<span class="stringliteral">&#39;float hours before current time to grab first message. Exclusive with start_timestamp. &#39;</span>, type=float)</div>
-<div class="line"><span class="lineno">   88</span>    end_group.add_argument(<span class="stringliteral">&#39;--end_hours_ago&#39;</span>, help=<span class="stringliteral">&#39;float hours before current time to grab last message. Exclusive with start_timestamp. &#39;</span>, type=float)</div>
-<div class="line"><span class="lineno">   89</span>    parser.add_argument(<span class="stringliteral">&#39;--topics&#39;</span>, type=str, nargs=<span class="stringliteral">&#39;+&#39;</span>, help=f<span class="stringliteral">&#39;list of topics to grab data from&#39;</span>)</div>
-<div class="line"><span class="lineno">   90</span>    parser.add_argument(<span class="stringliteral">&#39;--timeout&#39;</span>, type=float, help=f<span class="stringliteral">&#39;timeout for receiving messages on a topic, default is 5 seconds&#39;</span>)</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>    args = parser.parse_args()</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>    <span class="comment"># Correct and validate outfile name</span></div>
-<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">if</span> args.outfile[-4:] == <span class="stringliteral">&#39;.zip&#39;</span>:</div>
-<div class="line"><span class="lineno">   96</span>        outfile = args.outfile[:-4]</div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   98</span>        outfile = args.outfile</div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span> os.path.isdir(f<span class="stringliteral">&#39;{os.getcwd()}/{outfile}&#39;</span>):</div>
-<div class="line"><span class="lineno">  101</span>        print(f<span class="stringliteral">&#39;folder {outfile} exists, please remove or rename&#39;</span>)</div>
-<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">return</span></div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">elif</span> os.path.isfile(f<span class="stringliteral">&#39;{os.getcwd()}/{outfile}.zip&#39;</span>):</div>
-<div class="line"><span class="lineno">  104</span>        print(f<span class="stringliteral">&#39;zip file {outfile}.zip exists, please remove or rename&#39;</span>)</div>
-<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">return</span></div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>    <span class="comment"># Convert given time to unix timestamp (in ms)</span></div>
-<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">if</span> args.start_timestamp:</div>
-<div class="line"><span class="lineno">  109</span>        start_time = args.start_timestamp * 1000</div>
-<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">elif</span> args.start_hours_ago:</div>
-<div class="line"><span class="lineno">  111</span>        start_time = int(time.time() - 3600 * args.start_hours_ago) * 1000</div>
-<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  113</span>        start_time = 0</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">if</span> args.end_timestamp:</div>
-<div class="line"><span class="lineno">  116</span>        end_time = args.end_timestamp * 1000</div>
-<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">elif</span> args.end_hours_ago:</div>
-<div class="line"><span class="lineno">  118</span>        end_time = int(time.time() - 3600 * args.end_hours_ago) * 1000</div>
-<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">  120</span>        end_time = int(time.time()) * 1000</div>
-<div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">if</span> args.topics:</div>
-<div class="line"><span class="lineno">  123</span>        topics = args.topics</div>
-<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">if</span> args.timeout:</div>
-<div class="line"><span class="lineno">  125</span>        timeout = args.timeout</div>
-<div class="line"><span class="lineno">  126</span> </div>
-<div class="line"><span class="lineno">  127</span>    os.system(f<span class="stringliteral">&#39;mkdir {outfile}&#39;</span>)</div>
-<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">for</span> topic <span class="keywordflow">in</span> topics:</div>
-<div class="line"><span class="lineno">  129</span>        ret = <a class="code hl_function" href="namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1">store_kafka_topic</a>(topic, outfile, timeout, start_time, end_time)</div>
-<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">if</span> ret != 0:</div>
-<div class="line"><span class="lineno">  131</span>            print(<span class="stringliteral">&#39;received error, stopping execution&#39;</span>)</div>
-<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">return</span></div>
-<div class="line"><span class="lineno">  133</span> </div>
-<div class="line"><span class="lineno">  134</span>    print(<span class="stringliteral">&#39;Available logs collected, zipping and removing the temporary folder&#39;</span>)</div>
-<div class="line"><span class="lineno">  135</span>    os.system(f<span class="stringliteral">&#39;zip -r {outfile}.zip {outfile}&#39;</span>)</div>
-<div class="line"><span class="lineno">  136</span>    os.system(f<span class="stringliteral">&#39;rm -r {outfile}&#39;</span>)</div>
-<div class="line"><span class="lineno">  137</span> </div>
-<div class="line"><span class="lineno">  138</span> </div>
-<div class="ttc" id="anamespacecollect__kafka__logs_html_a5624652a60794ffc2b2a80698361b335"><div class="ttname"><a href="namespacecollect__kafka__logs.html#a5624652a60794ffc2b2a80698361b335">collect_kafka_logs.main</a></div><div class="ttdeci">def main()</div><div class="ttdef"><b>Definition:</b> <a href="collect__kafka__logs_8py_source.html#l00071">collect_kafka_logs.py:71</a></div></div>
-<div class="ttc" id="anamespacecollect__kafka__logs_html_a865d902d44390655d826670cfa2bd8c1"><div class="ttname"><a href="namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1">collect_kafka_logs.store_kafka_topic</a></div><div class="ttdeci">def store_kafka_topic(topic, dir, timeout, start_time, end_time)</div><div class="ttdoc">Python script to download and store kafka logs Opens the kafka docker container, then uses the exampl...</div><div class="ttdef"><b>Definition:</b> <a href="collect__kafka__logs_8py_source.html#l00018">collect_kafka_logs.py:18</a></div></div>
+<p class="definition">Definition at line <a class="el" href="collect__kafka__logs_8py_source.html#l00087">87</a> of file <a class="el" href="collect__kafka__logs_8py_source.html">collect_kafka_logs.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span><span class="keyword">def </span><a class="code hl_function" href="namespacecollect__kafka__logs.html#a5624652a60794ffc2b2a80698361b335">main</a>():</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    <span class="comment"># Default list of topics, aka all topics from https://usdot-carma.atlassian.net/wiki/spaces/CRMSRT/pages/2317549999/CARMA-Streets+Messaging</span></div>
+<div class="line"><span class="lineno">   90</span>    topics = [<span class="stringliteral">&#39;v2xhub_scheduling_plan_sub&#39;</span> ,<span class="stringliteral">&#39;v2xhub_bsm_in&#39;</span>, <span class="stringliteral">&#39;v2xhub_mobility_operation_in&#39;</span>, <span class="stringliteral">&#39;v2xhub_mobility_path_in&#39;</span>,</div>
+<div class="line"><span class="lineno">   91</span>              <span class="stringliteral">&#39;vehicle_status_intent_output&#39;</span>, <span class="stringliteral">&#39;v2xhub_map_msg_in&#39;</span>, <span class="stringliteral">&#39;modified_spat&#39;</span>, <span class="stringliteral">&#39;tsc_config_state&#39;</span>, <span class="stringliteral">&#39;desired_phase_plan&#39;</span>,</div>
+<div class="line"><span class="lineno">   92</span>              <span class="stringliteral">&#39;v2xhub_sdsm_sub&#39;</span>, <span class="stringliteral">&#39;v2xhub_sim_sensor_detected_object&#39;</span>, <span class="stringliteral">&#39;v2xhub_sdsm_tra&#39;</span>, <span class="stringliteral">&#39;desire_phase_plan&#39;</span>, <span class="stringliteral">&#39;time_sync&#39;</span>]</div>
+<div class="line"><span class="lineno">   93</span>    timeout = 5</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <span class="comment"># Get arguments</span></div>
+<div class="line"><span class="lineno">   96</span>    <span class="comment"># The idea here was to give the user the bare minimum options, and make the default condition the most used.</span></div>
+<div class="line"><span class="lineno">   97</span>    parser = argparse.ArgumentParser(description=<span class="stringliteral">&#39;Script to grab data from kafka&#39;</span>)</div>
+<div class="line"><span class="lineno">   98</span>    parser.add_argument(<span class="stringliteral">&#39;outdir&#39;</span>, help=<span class="stringliteral">&#39;Folder name for the resulting folder logs are placed in&#39;</span>, type=str)  <span class="comment"># Required argument</span></div>
+<div class="line"><span class="lineno">   99</span>    start_group = parser.add_mutually_exclusive_group()</div>
+<div class="line"><span class="lineno">  100</span>    end_group = parser.add_mutually_exclusive_group()</div>
+<div class="line"><span class="lineno">  101</span>    start_group.add_argument(<span class="stringliteral">&#39;--start_timestamp&#39;</span>, help=<span class="stringliteral">&#39;Unix timestamp (seconds) for the first message to grab. Exclusive with start_hours_ago. &#39;</span>, type=int)</div>
+<div class="line"><span class="lineno">  102</span>    end_group.add_argument(<span class="stringliteral">&#39;--end_timestamp&#39;</span>, help=<span class="stringliteral">&#39;Unix timestamp (seconds) for the last message to grab. Exclusive with end_hours_ago. &#39;</span>, type=int)</div>
+<div class="line"><span class="lineno">  103</span>    start_group.add_argument(<span class="stringliteral">&#39;--start_hours_ago&#39;</span>, help=<span class="stringliteral">&#39;float hours before current time to grab first message. Exclusive with start_timestamp. &#39;</span>, type=float)</div>
+<div class="line"><span class="lineno">  104</span>    end_group.add_argument(<span class="stringliteral">&#39;--end_hours_ago&#39;</span>, help=<span class="stringliteral">&#39;float hours before current time to grab last message. Exclusive with start_timestamp. &#39;</span>, type=float)</div>
+<div class="line"><span class="lineno">  105</span>    parser.add_argument(<span class="stringliteral">&#39;--topics&#39;</span>, type=str, nargs=<span class="stringliteral">&#39;+&#39;</span>, help=<span class="stringliteral">&#39;list of topics to grab data from&#39;</span>)</div>
+<div class="line"><span class="lineno">  106</span>    parser.add_argument(<span class="stringliteral">&#39;--timeout&#39;</span>, type=float, help=<span class="stringliteral">&#39;timeout for receiving messages on a topic, default is 5 seconds&#39;</span>)</div>
+<div class="line"><span class="lineno">  107</span>    parser.add_argument(<span class="stringliteral">&#39;--zip&#39;</span>, type=bool,help=<span class="stringliteral">&#39;bool flag. When set to true, folder is compressed into a zip file.&#39;</span>, default=<span class="keyword">False</span>)</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    args = parser.parse_args()</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>    <span class="comment"># Correct and validate outfile name</span></div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">if</span> args.outdir[-4:] == <span class="stringliteral">&#39;.zip&#39;</span>:</div>
+<div class="line"><span class="lineno">  113</span>        outdir = args.outdir[:-4]</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  115</span>        outdir = args.outdir</div>
+<div class="line"><span class="lineno">  116</span>    <span class="comment"># Check if output directory already exists</span></div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">if</span> Path(Path.cwd()/outdir).is_dir():</div>
+<div class="line"><span class="lineno">  118</span>        print(f<span class="stringliteral">&#39;folder {outdir} exists, please remove or rename&#39;</span>)</div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">return</span></div>
+<div class="line"><span class="lineno">  120</span>    <span class="comment"># Check if zip file already exists</span></div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">elif</span> Path(Path.cwd()/f<span class="stringliteral">&#39;{outdir}.zip&#39;</span>).is_file():</div>
+<div class="line"><span class="lineno">  122</span>        print(f<span class="stringliteral">&#39;zip file {outdir}.zip exists, please remove or rename&#39;</span>)</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">return</span></div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    <span class="comment"># Convert given time to unix timestamp (in ms)</span></div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">if</span> args.start_timestamp:</div>
+<div class="line"><span class="lineno">  127</span>        start_time = args.start_timestamp * 1000</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">elif</span> args.start_hours_ago:</div>
+<div class="line"><span class="lineno">  129</span>        start_time = int(time.time() - 3600 * args.start_hours_ago) * 1000</div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  131</span>        start_time = 0</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">if</span> args.end_timestamp:</div>
+<div class="line"><span class="lineno">  134</span>        end_time = args.end_timestamp * 1000</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">elif</span> args.end_hours_ago:</div>
+<div class="line"><span class="lineno">  136</span>        end_time = int(time.time() - 3600 * args.end_hours_ago) * 1000</div>
+<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">  138</span>        end_time = int(time.time()) * 1000</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">if</span> args.topics:</div>
+<div class="line"><span class="lineno">  141</span>        topics = args.topics</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">if</span> args.timeout:</div>
+<div class="line"><span class="lineno">  143</span>        timeout = args.timeout</div>
+<div class="line"><span class="lineno">  144</span>    Path(outdir).mkdir(exist_ok=<span class="keyword">False</span>)</div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">for</span> topic <span class="keywordflow">in</span> topics:</div>
+<div class="line"><span class="lineno">  146</span>        ret = <a class="code hl_function" href="namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1">store_kafka_topic</a>(topic, outdir, timeout, start_time, end_time)</div>
+<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">if</span> ret != 0:</div>
+<div class="line"><span class="lineno">  148</span>            print(f<span class="stringliteral">&#39;received error on topic {topic}, going to next topic&#39;</span>)</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>    print(<span class="stringliteral">&#39;Available logs collected&#39;</span>)</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">if</span> args.zip:</div>
+<div class="line"><span class="lineno">  152</span>        print(<span class="stringliteral">&#39;Zipping and removing the temporary folder&#39;</span>)</div>
+<div class="line"><span class="lineno">  153</span>        shutil.make_archive(base_name=outdir, format=<span class="stringliteral">&#39;zip&#39;</span>, root_dir=outdir)</div>
+<div class="line"><span class="lineno">  154</span>        shutil.rmtree(path=outdir)</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="ttc" id="anamespacecollect__kafka__logs_html_a5624652a60794ffc2b2a80698361b335"><div class="ttname"><a href="namespacecollect__kafka__logs.html#a5624652a60794ffc2b2a80698361b335">collect_kafka_logs.main</a></div><div class="ttdeci">def main()</div><div class="ttdef"><b>Definition:</b> <a href="collect__kafka__logs_8py_source.html#l00087">collect_kafka_logs.py:87</a></div></div>
+<div class="ttc" id="anamespacecollect__kafka__logs_html_a865d902d44390655d826670cfa2bd8c1"><div class="ttname"><a href="namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1">collect_kafka_logs.store_kafka_topic</a></div><div class="ttdeci">def store_kafka_topic(topic, dir, timeout, start_time, end_time)</div><div class="ttdoc">Python script to download and store kafka logs Opens the kafka docker container, then uses the exampl...</div><div class="ttdef"><b>Definition:</b> <a href="collect__kafka__logs_8py_source.html#l00034">collect_kafka_logs.py:34</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="collect__kafka__logs_8py_source.html#l00071">main()</a>, and <a class="el" href="collect__kafka__logs_8py_source.html#l00018">store_kafka_topic()</a>.</p>
+<p class="reference">References <a class="el" href="collect__kafka__logs_8py_source.html#l00087">main()</a>, and <a class="el" href="collect__kafka__logs_8py_source.html#l00034">store_kafka_topic()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="collect__kafka__logs_8py_source.html#l00071">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="collect__kafka__logs_8py_source.html#l00087">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -255,62 +257,62 @@ Here is the caller graph for this function:</div>
 <p>Python script to download and store kafka logs Opens the kafka docker container, then uses the example script kafka-console-consumer.sh to grab messages. </p>
 <p >Creates a local folder with given name For each specified topic (default is all): downloads all messages between the given times (default is all) stores these messages to a file named .log Then once all topics are downloaded, zips up the folder </p>
 
-<p class="definition">Definition at line <a class="el" href="collect__kafka__logs_8py_source.html#l00018">18</a> of file <a class="el" href="collect__kafka__logs_8py_source.html">collect_kafka_logs.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span><span class="keyword">def </span><a class="code hl_function" href="namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1">store_kafka_topic</a>(topic, dir, timeout, start_time, end_time):</div>
-<div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span>    timestamp_regex = <span class="stringliteral">&#39;CreateTime:(\d+)\t{&#39;</span></div>
-<div class="line"><span class="lineno">   21</span>    filename = f<span class="stringliteral">&#39;{dir}/{topic}.log&#39;</span></div>
-<div class="line"><span class="lineno">   22</span> </div>
-<div class="line"><span class="lineno">   23</span>    <span class="comment"># Command to get messages from specified topic, from https://usdot-carma.atlassian.net/wiki/spaces/CRMSRT/pages/2317549999/CARMA-Streets+Messaging</span></div>
-<div class="line"><span class="lineno">   24</span>    command = f<span class="stringliteral">&#39;docker exec kafka timeout {timeout} kafka-console-consumer.sh --topic {topic} --property print.timestamp=true --from-beginning --bootstrap-server localhost:9092&#39;</span></div>
-<div class="line"><span class="lineno">   25</span>    result = subprocess.check_output(f<span class="stringliteral">&#39;docker exec kafka kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9092 --topic {topic} | awk -F \&quot;:\&quot; \&#39;{{sum += $3}} END {{print sum}}\&#39;&#39;</span>, shell=<span class="keyword">True</span>)</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> result == b<span class="stringliteral">&#39;\n&#39;</span>:</div>
-<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">return</span> 1</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   29</span>        num_msgs = int(result)</div>
-<div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>    line_count = 0</div>
-<div class="line"><span class="lineno">   32</span>    <span class="keyword">with</span> open(filename, <span class="stringliteral">&#39;w+&#39;</span>) <span class="keyword">as</span> outfile:</div>
-<div class="line"><span class="lineno">   33</span>        <span class="comment"># Popen returns a generator containing the command output line by line</span></div>
-<div class="line"><span class="lineno">   34</span>        process = subprocess.Popen(command, stdout=subprocess.PIPE, shell=<span class="keyword">True</span>, universal_newlines=<span class="keyword">True</span>, preexec_fn=os.setsid)</div>
-<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">while</span> line_count &lt; num_msgs:</div>
-<div class="line"><span class="lineno">   36</span>            line = process.stdout.readline()</div>
-<div class="line"><span class="lineno">   37</span>            <span class="keywordflow">if</span> line == <span class="stringliteral">&#39;&#39;</span> <span class="keywordflow">and</span> process.poll() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
-<div class="line"><span class="lineno">   38</span>                print(f<span class="stringliteral">&#39;got {line_count} messages from {topic}&#39;</span>)</div>
-<div class="line"><span class="lineno">   39</span>                <span class="keywordflow">return</span> 0</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>            <span class="comment"># We have a valid line of output, find timestamp</span></div>
-<div class="line"><span class="lineno">   42</span>            match = re.search(timestamp_regex, line)</div>
-<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> match:</div>
-<div class="line"><span class="lineno">   44</span>                <span class="comment"># Some topics have multiple lines. For those, store each line that doesn&#39;t have a timestamp,</span></div>
-<div class="line"><span class="lineno">   45</span>                <span class="comment"># and therefore is part of the &#39;current&#39; message</span></div>
-<div class="line"><span class="lineno">   46</span>                <span class="keywordflow">if</span> topic == <span class="stringliteral">&#39;v2xhub_map_msg_in&#39;</span> <span class="keywordflow">or</span> topic == <span class="stringliteral">&#39;v2xhub_bsm_in&#39;</span> \</div>
-<div class="line"><span class="lineno">   47</span>                        <span class="keywordflow">or</span> topic == <span class="stringliteral">&#39;v2xhub_mobility_operation_in&#39;</span> <span class="keywordflow">or</span> topic == <span class="stringliteral">&#39;v2xhub_mobility_path_in&#39;</span>:</div>
-<div class="line"><span class="lineno">   48</span>                    outfile.write(line)</div>
-<div class="line"><span class="lineno">   49</span>                <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   50</span>                    print(f<span class="stringliteral">&#39;got {line_count} messages from {topic}&#39;</span>)</div>
-<div class="line"><span class="lineno">   51</span>                    print(<span class="stringliteral">&#39;no timestamp, exiting&#39;</span>)</div>
-<div class="line"><span class="lineno">   52</span>                    os.killpg(os.getpgid(process.pid), signal.SIGTERM)</div>
-<div class="line"><span class="lineno">   53</span>                    <span class="keywordflow">return</span> 1</div>
-<div class="line"><span class="lineno">   54</span>            <span class="keywordflow">else</span>:</div>
-<div class="line"><span class="lineno">   55</span>                timestamp = int(match.group()[11:-1])</div>
+<p class="definition">Definition at line <a class="el" href="collect__kafka__logs_8py_source.html#l00034">34</a> of file <a class="el" href="collect__kafka__logs_8py_source.html">collect_kafka_logs.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span><span class="keyword">def </span><a class="code hl_function" href="namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1">store_kafka_topic</a>(topic, dir, timeout, start_time, end_time):</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    timestamp_regex = <span class="stringliteral">&#39;CreateTime:(\d+)\t{&#39;</span></div>
+<div class="line"><span class="lineno">   37</span>    filename = f<span class="stringliteral">&#39;{dir}/{topic}.log&#39;</span></div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="comment"># Command to get messages from specified topic, from https://usdot-carma.atlassian.net/wiki/spaces/CRMSRT/pages/2317549999/CARMA-Streets+Messaging</span></div>
+<div class="line"><span class="lineno">   40</span>    command = f<span class="stringliteral">&#39;docker exec kafka timeout {timeout} kafka-console-consumer.sh --topic {topic} --property print.timestamp=true --from-beginning --bootstrap-server localhost:9092&#39;</span></div>
+<div class="line"><span class="lineno">   41</span>    result = subprocess.check_output(f<span class="stringliteral">&#39;docker exec kafka kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9092 --topic {topic} | awk -F \&quot;:\&quot; \&#39;{{sum += $3}} END {{print sum}}\&#39;&#39;</span>, shell=<span class="keyword">True</span>)</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">if</span> result == b<span class="stringliteral">&#39;\n&#39;</span>:</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">return</span> 1</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">   45</span>        num_msgs = int(result)</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    line_count = 0</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keyword">with</span> open(filename, <span class="stringliteral">&#39;w+&#39;</span>) <span class="keyword">as</span> outfile:</div>
+<div class="line"><span class="lineno">   49</span>        <span class="comment"># Popen returns a generator containing the command output line by line</span></div>
+<div class="line"><span class="lineno">   50</span>        process = subprocess.Popen(command, stdout=subprocess.PIPE, shell=<span class="keyword">True</span>, universal_newlines=<span class="keyword">True</span>, preexec_fn=os.setsid)</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">while</span> line_count &lt; num_msgs:</div>
+<div class="line"><span class="lineno">   52</span>            line = process.stdout.readline()</div>
+<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">if</span> line == <span class="stringliteral">&#39;&#39;</span> <span class="keywordflow">and</span> process.poll() <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><span class="lineno">   54</span>                print(f<span class="stringliteral">&#39;got {line_count} messages from {topic}&#39;</span>)</div>
+<div class="line"><span class="lineno">   55</span>                <span class="keywordflow">return</span> 0</div>
 <div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>                <span class="comment"># If we receive a message past the end time, we are done</span></div>
-<div class="line"><span class="lineno">   58</span>                <span class="keywordflow">if</span> timestamp &gt; end_time:</div>
-<div class="line"><span class="lineno">   59</span>                    os.killpg(os.getpgid(process.pid), signal.SIGTERM)</div>
-<div class="line"><span class="lineno">   60</span>                    print(f<span class="stringliteral">&#39;got {line_count} messages from {topic}&#39;</span>)</div>
-<div class="line"><span class="lineno">   61</span>                    <span class="keywordflow">return</span> 0</div>
-<div class="line"><span class="lineno">   62</span>                <span class="comment"># If we receive a message between the start and end times, store it</span></div>
-<div class="line"><span class="lineno">   63</span>                <span class="keywordflow">if</span> timestamp &gt; start_time:</div>
+<div class="line"><span class="lineno">   57</span>            <span class="comment"># We have a valid line of output, find timestamp</span></div>
+<div class="line"><span class="lineno">   58</span>            match = re.search(timestamp_regex, line)</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">if</span> <span class="keywordflow">not</span> match:</div>
+<div class="line"><span class="lineno">   60</span>                <span class="comment"># Some topics have multiple lines. For those, store each line that doesn&#39;t have a timestamp,</span></div>
+<div class="line"><span class="lineno">   61</span>                <span class="comment"># and therefore is part of the &#39;current&#39; message</span></div>
+<div class="line"><span class="lineno">   62</span>                <span class="keywordflow">if</span> topic == <span class="stringliteral">&#39;v2xhub_map_msg_in&#39;</span> <span class="keywordflow">or</span> topic == <span class="stringliteral">&#39;v2xhub_bsm_in&#39;</span> \</div>
+<div class="line"><span class="lineno">   63</span>                        <span class="keywordflow">or</span> topic == <span class="stringliteral">&#39;v2xhub_mobility_operation_in&#39;</span> <span class="keywordflow">or</span> topic == <span class="stringliteral">&#39;v2xhub_mobility_path_in&#39;</span>:</div>
 <div class="line"><span class="lineno">   64</span>                    outfile.write(line)</div>
-<div class="line"><span class="lineno">   65</span>                    line_count += 1</div>
-<div class="line"><span class="lineno">   66</span>        print(f<span class="stringliteral">&#39;got all {num_msgs} expected messages from {topic}&#39;</span>)</div>
-<div class="line"><span class="lineno">   67</span>        os.killpg(os.getpgid(process.pid), signal.SIGTERM)</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span> 0</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   65</span>                <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">   66</span>                    print(f<span class="stringliteral">&#39;got {line_count} messages from {topic}&#39;</span>)</div>
+<div class="line"><span class="lineno">   67</span>                    print(<span class="stringliteral">&#39;no timestamp, exiting&#39;</span>)</div>
+<div class="line"><span class="lineno">   68</span>                    os.killpg(os.getpgid(process.pid), signal.SIGTERM)</div>
+<div class="line"><span class="lineno">   69</span>                    <span class="keywordflow">return</span> 1</div>
+<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">else</span>:</div>
+<div class="line"><span class="lineno">   71</span>                timestamp = int(match.group()[11:-1])</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>                <span class="comment"># If we receive a message past the end time, we are done</span></div>
+<div class="line"><span class="lineno">   74</span>                <span class="keywordflow">if</span> timestamp &gt; end_time:</div>
+<div class="line"><span class="lineno">   75</span>                    os.killpg(os.getpgid(process.pid), signal.SIGTERM)</div>
+<div class="line"><span class="lineno">   76</span>                    print(f<span class="stringliteral">&#39;got {line_count} messages from {topic}&#39;</span>)</div>
+<div class="line"><span class="lineno">   77</span>                    <span class="keywordflow">return</span> 0</div>
+<div class="line"><span class="lineno">   78</span>                <span class="comment"># If we receive a message between the start and end times, store it</span></div>
+<div class="line"><span class="lineno">   79</span>                <span class="keywordflow">if</span> timestamp &gt; start_time:</div>
+<div class="line"><span class="lineno">   80</span>                    outfile.write(line)</div>
+<div class="line"><span class="lineno">   81</span>                    line_count += 1</div>
+<div class="line"><span class="lineno">   82</span>        print(f<span class="stringliteral">&#39;got all {num_msgs} expected messages from {topic}&#39;</span>)</div>
+<div class="line"><span class="lineno">   83</span>        os.killpg(os.getpgid(process.pid), signal.SIGTERM)</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">return</span> 0</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span> </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="collect__kafka__logs_8py_source.html#l00071">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="collect__kafka__logs_8py_source.html#l00087">main()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -329,7 +331,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecollect__kafka__logs.html">collect_kafka_logs</a></li>
-    <li class="footer">Generated on Wed Feb 7 2024 13:52:55 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 24 2024 22:55:58 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

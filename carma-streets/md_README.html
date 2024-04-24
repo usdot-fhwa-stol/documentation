@@ -104,9 +104,9 @@ DockerHub Release Builds</h1>
 DockerHub Release Candidate Builds</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Scheduling Service   </th><th class="markdownTableHeadNone">Message Services   </th><th class="markdownTableHeadNone">Intersection Model   </th><th class="markdownTableHeadNone">Signal Opt Service   </th><th class="markdownTableHeadNone">Tsc Service    </th></tr>
+<th class="markdownTableHeadNone">Scheduling Service   </th><th class="markdownTableHeadNone">Message Services   </th><th class="markdownTableHeadNone">Intersection Model   </th><th class="markdownTableHeadNone">Signal Opt Service   </th><th class="markdownTableHeadNone">Tsc Service   </th><th class="markdownTableHeadNone">Sensor Data Sharing Service    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a href="https://hub.docker.com/repository/docker/usdotfhwastolcandidate/scheduling_service"><img src="https://img.shields.io/docker/cloud/build/usdotfhwastolcandidate/scheduling_service?label=tsc%20service&amp;logoColor=%232496ED" alt="Docker Cloud Build Status" class="inline"/></a>   </td><td class="markdownTableBodyNone"><a href="https://hub.docker.com/repository/docker/usdotfhwastolcandidate/message_services"><img src="https://img.shields.io/docker/cloud/build/usdotfhwastolcandidate/message_services?label=message%20services" alt="Docker Cloud Build Status" class="inline"/></a>   </td><td class="markdownTableBodyNone"><a href="https://hub.docker.com/repository/docker/usdotfhwastolcandidate/intersection_model"><img src="https://img.shields.io/docker/cloud/build/usdotfhwastolcandidate/intersection_model?label=intersection%20model" alt="Docker Cloud Build Status" class="inline"/></a>   </td><td class="markdownTableBodyNone"><a href="https://hub.docker.com/repository/docker/usdotfhwastolcandidate/signal_opt_service"><img src="https://img.shields.io/docker/cloud/build/usdotfhwastolcandidate/signal_opt_service?label=signal%20opt%20service" alt="Docker Cloud Build Status" class="inline"/></a>   </td><td class="markdownTableBodyNone"><a href="https://hub.docker.com/repository/docker/usdotfhwastolcandidate/tsc_service"><img src="https://img.shields.io/docker/cloud/build/usdotfhwastolcandidate/tsc_service?label=tsc%20service&amp;logoColor=%232496ED" alt="Docker Cloud Build Status" class="inline"/></a>   </td></tr>
+<td class="markdownTableBodyNone"><a href="https://hub.docker.com/repository/docker/usdotfhwastolcandidate/scheduling_service"><img src="https://img.shields.io/docker/cloud/build/usdotfhwastolcandidate/scheduling_service?label=tsc%20service&amp;logoColor=%232496ED" alt="Docker Cloud Build Status" class="inline"/></a>   </td><td class="markdownTableBodyNone"><a href="https://hub.docker.com/repository/docker/usdotfhwastolcandidate/message_services"><img src="https://img.shields.io/docker/cloud/build/usdotfhwastolcandidate/message_services?label=message%20services" alt="Docker Cloud Build Status" class="inline"/></a>   </td><td class="markdownTableBodyNone"><a href="https://hub.docker.com/repository/docker/usdotfhwastolcandidate/intersection_model"><img src="https://img.shields.io/docker/cloud/build/usdotfhwastolcandidate/intersection_model?label=intersection%20model" alt="Docker Cloud Build Status" class="inline"/></a>   </td><td class="markdownTableBodyNone"><a href="https://hub.docker.com/repository/docker/usdotfhwastolcandidate/signal_opt_service"><img src="https://img.shields.io/docker/cloud/build/usdotfhwastolcandidate/signal_opt_service?label=signal%20opt%20service" alt="Docker Cloud Build Status" class="inline"/></a>   </td><td class="markdownTableBodyNone"><a href="https://hub.docker.com/repository/docker/usdotfhwastolcandidate/tsc_service"><img src="https://img.shields.io/docker/cloud/build/usdotfhwastolcandidate/tsc_service?label=tsc%20service&amp;logoColor=%232496ED" alt="Docker Cloud Build Status" class="inline"/></a>   </td><td class="markdownTableBodyNone"><img src="https://img.shields.io/docker/cloud/build/usdotfhwastolcandidate/sensor_data_sharing_service?label=sensor_data_sharing_%20service&amp;logoColor=%232496ED" alt="Docker Cloud Build Status" class="inline"/>   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md72"></a>
 DockerHub Develop Builds</h1>
@@ -136,18 +136,55 @@ Base Images</h2>
 CARMAStreets</h1>
 <p >The primary carma-streets repository can be found <a href="https://github.com/usdot-fhwa-stol/carma-streets">here</a> and is part of the <a href="https://github.com/usdot-fhwa-stol/">USDOT FHWA STOL</a> github organization. Documentation on how the carma-streets functions, how it will evolve over time, and how you can contribute can be found at the above links, as well as on the <a href="https://usdot-fhwa-stol.github.io/documentation/carma-streets/">Doxygen Source Code Documentation</a>.</p>
 <h2><a class="anchor" id="autotoc_md79"></a>
+Data Collection</h2>
+<p ><b>CARMA Streets</b> services have several source from which data about usecase performance can be pulled. <b>Kafka Message Topics</b> can be pulled using the <code><a class="el" href="collect__kafka__logs_8py.html">collect_kafka_logs.py</a></code> script and includes message traffic on a configurable list of topics. Service log files can be found in a given <b>CARMA Streets</b> service <code>logs/</code> directory. The <code>collect_service_logs.sh</code> adds all log files in this directory to a zip file and then deletes the originals. Some <b>CARMA Streets</b> services can configurable log performance in <code>.csv</code> file in the <code>logs/</code> directory.</p>
+<h3><a class="anchor" id="autotoc_md80"></a>
+Collect Kafka Logs</h3>
+<p >This script uses <code>docker exec</code> to ssh into a running kafka container. Then using kafka container scripts to read all kafka data from a list of provided topics. </p><div class="fragment"><div class="line">usage: collect_kafka_logs.py [-h] [--start_timestamp START_TIMESTAMP] [--end_timestamp END_TIMESTAMP] [--start_hours_ago START_HOURS_AGO] [--end_hours_ago END_HOURS_AGO]</div>
+<div class="line">                             [--topics TOPICS [TOPICS ...]] [--timeout TIMEOUT] [--zip ZIP]</div>
+<div class="line">                             outdir</div>
+<div class="line"> </div>
+<div class="line">Script to grab data from kafka</div>
+<div class="line"> </div>
+<div class="line">positional arguments:</div>
+<div class="line">  outdir                Folder name for the resulting folder logs are placed in</div>
+<div class="line"> </div>
+<div class="line">options:</div>
+<div class="line">  -h, --help            show this help message and exit</div>
+<div class="line">  --start_timestamp START_TIMESTAMP</div>
+<div class="line">                        Unix timestamp (seconds) for the first message to grab. Exclusive with start_hours_ago.</div>
+<div class="line">  --end_timestamp END_TIMESTAMP</div>
+<div class="line">                        Unix timestamp (seconds) for the last message to grab. Exclusive with end_hours_ago.</div>
+<div class="line">  --start_hours_ago START_HOURS_AGO</div>
+<div class="line">                        float hours before current time to grab first message. Exclusive with start_timestamp.</div>
+<div class="line">  --end_hours_ago END_HOURS_AGO</div>
+<div class="line">                        float hours before current time to grab last message. Exclusive with start_timestamp.</div>
+<div class="line">  --topics TOPICS [TOPICS ...]</div>
+<div class="line">                        list of topics to grab data from</div>
+<div class="line">  --timeout TIMEOUT     timeout for receiving messages on a topic, default is 5 seconds</div>
+<div class="line">  --zip ZIP             bool flag. When set to true, folder is compressed into a zip file.</div>
+</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md81"></a>
+Collection Service Logs</h3>
+<p >This script collects all <b>CARMA Streets</b> service log files, adds them to a zip file. </p><div class="fragment"><div class="line">usage: collect_service_logs.sh [-h | --help] [--output &lt;zip_file_name&gt;.zip]</div>
+<div class="line">                                     [-c | --clear]</div>
+<div class="line"> </div>
+<div class="line">options:</div>
+<div class="line">-h, --help                Show usage</div>
+<div class="line">--output, -o              Name of the resulting zip file container CARMA Streets Service logs</div>
+<div class="line">--clear, -c               Adding this flag will delete log directories after creating zip.</div>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md82"></a>
 Contribution</h2>
 <p >Welcome to the CARMA contributing guide. Please read this guide to learn about our development process, how to propose pull requests and improvements, and how to build and test your changes to this project. <a href="https://github.com/usdot-fhwa-stol/carma-platform/blob/develop/Contributing.md">CARMA Contributing Guide</a></p>
-<h2><a class="anchor" id="autotoc_md80"></a>
+<h2><a class="anchor" id="autotoc_md83"></a>
 Code of Conduct</h2>
 <p >Please read our <a href="https://github.com/usdot-fhwa-stol/carma-platform/blob/develop/Code_of_Conduct.md">CARMA Code of Conduct</a> which outlines our expectations for participants within the CARMA community, as well as steps to reporting unacceptable behavior. We are committed to providing a welcoming and inspiring community for all and expect our code of conduct to be honored. Anyone who violates this code of conduct may be banned from the community.</p>
-<h2><a class="anchor" id="autotoc_md81"></a>
+<h2><a class="anchor" id="autotoc_md84"></a>
 Attribution</h2>
 <p >The development team would like to acknowledge the people who have made direct contributions to the design and code in this repository. <a href="https://github.com/usdot-fhwa-stol/carma-platform/blob/develop/ATTRIBUTION.md">CARMA Attribution</a></p>
-<h2><a class="anchor" id="autotoc_md82"></a>
+<h2><a class="anchor" id="autotoc_md85"></a>
 License</h2>
 <p >By contributing to the Federal Highway Administration (FHWA) Connected Automated Research Mobility Applications (CARMA), you agree that your contributions will be licensed under its Apache License 2.0 license. <a href="https://github.com/usdot-fhwa-stol/carma-platform/blob/develop/docs/License.md">CARMA License</a></p>
-<h2><a class="anchor" id="autotoc_md83"></a>
+<h2><a class="anchor" id="autotoc_md86"></a>
 Contact</h2>
 <p >Please click on the CARMA logo below to visit the Federal Highway Adminstration(FHWA) CARMA website.</p>
 <p ><a href="https://highways.dot.gov/research/research-programs/operations/CARMA"><img src="https://raw.githubusercontent.com/usdot-fhwa-stol/CARMAPlatform/develop/docs/image/CARMA_icon.png" alt="CARMA Image" class="inline"/></a> </p>
@@ -157,7 +194,7 @@ Contact</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Feb 7 2024 13:52:55 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 24 2024 22:55:57 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

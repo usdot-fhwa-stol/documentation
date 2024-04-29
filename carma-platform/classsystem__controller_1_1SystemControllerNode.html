@@ -329,38 +329,47 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   45</span>          <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af985e5f84a3ba14eee0c4c3c13ce3a31">system_alert_topic_</a>, 100,</div>
 <div class="line"><span class="lineno">   46</span>          std::bind(&amp;<a class="code hl_function" href="classsystem__controller_1_1SystemControllerNode.html#ab245ad238728ecf3d614d7d8ada28737">SystemControllerNode::on_system_alert</a>, <span class="keyword">this</span>, std::placeholders::_1));</div>
 <div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a5aa6ae1c97b71ef5259cdc67bdf9aaac">system_alert_pub_</a> = create_publisher&lt;carma_msgs::msg::SystemAlert&gt;(</div>
-<div class="line"><span class="lineno">   49</span>        <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af985e5f84a3ba14eee0c4c3c13ce3a31">system_alert_topic_</a>, 10);</div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9762f353b24aa045cfaf14e0af41d409">signal_configure_delay</a> = this-&gt;declare_parameter&lt;double&gt;(<span class="stringliteral">&quot;signal_configure_delay&quot;</span>, <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9762f353b24aa045cfaf14e0af41d409">signal_configure_delay</a>);</div>
-<div class="line"><span class="lineno">   52</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a> = this-&gt;declare_parameter&lt;int64_t&gt;(<span class="stringliteral">&quot;service_timeout_ms&quot;</span>, <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>);</div>
-<div class="line"><span class="lineno">   53</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a> = this-&gt;declare_parameter&lt;int64_t&gt;(<span class="stringliteral">&quot;call_timeout_ms&quot;</span>, <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>);</div>
-<div class="line"><span class="lineno">   54</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">required_subsystem_nodes</a> = this-&gt;declare_parameter&lt;std::vector&lt;std::string&gt;&gt;(<span class="stringliteral">&quot;required_subsystem_nodes&quot;</span>, <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">required_subsystem_nodes</a>);</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Config: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>);</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.set_managed_nodes(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">required_subsystem_nodes</a>);</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>      <span class="comment">// NOTE: Currently, intra-process comms must be disabled for a publisher that is transient_local: https://github.com/ros2/rclcpp/issues/1753</span></div>
+<div class="line"><span class="lineno">   50</span>      rclcpp::PublisherOptions intra_proc_disabled; </div>
+<div class="line"><span class="lineno">   51</span>      intra_proc_disabled.use_intra_process_comm = rclcpp::IntraProcessSetting::Disable;</div>
+<div class="line"><span class="lineno">   52</span>      </div>
+<div class="line"><span class="lineno">   53</span>      <span class="comment">// Create a publisher that will send all previously published messages to late-joining subscribers ONLY If the subscriber is transient_local too</span></div>
+<div class="line"><span class="lineno">   54</span>      <span class="keyword">auto</span> pub_qos_transient_local = rclcpp::QoS(rclcpp::KeepLast(5)); <span class="comment">// A publisher with this QoS will store the last 5 messages that it has sent on the topic</span></div>
+<div class="line"><span class="lineno">   55</span>      pub_qos_transient_local.transient_local();</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a5aa6ae1c97b71ef5259cdc67bdf9aaac">system_alert_pub_</a> = create_publisher&lt;carma_msgs::msg::SystemAlert&gt;(</div>
+<div class="line"><span class="lineno">   58</span>        <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af985e5f84a3ba14eee0c4c3c13ce3a31">system_alert_topic_</a>, pub_qos_transient_local, intra_proc_disabled);</div>
 <div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>      <span class="comment">// Create startup timer</span></div>
-<div class="line"><span class="lineno">   61</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a8077feae86d8d791e1169e6185dacdd8">startup_timer_</a> = rclcpp::create_timer(</div>
-<div class="line"><span class="lineno">   62</span>          <span class="keyword">this</span>,</div>
-<div class="line"><span class="lineno">   63</span>          get_clock(),</div>
-<div class="line"><span class="lineno">   64</span>          std::chrono::milliseconds(<span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9762f353b24aa045cfaf14e0af41d409">signal_configure_delay</a> * 1000)),</div>
-<div class="line"><span class="lineno">   65</span>          std::bind(&amp;<a class="code hl_function" href="classsystem__controller_1_1SystemControllerNode.html#a1e149d6be07e6d593a6f3b7cbb039b02">SystemControllerNode::startup_delay_callback</a>, <span class="keyword">this</span>));</div>
+<div class="line"><span class="lineno">   60</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9762f353b24aa045cfaf14e0af41d409">signal_configure_delay</a> = this-&gt;declare_parameter&lt;double&gt;(<span class="stringliteral">&quot;signal_configure_delay&quot;</span>, <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9762f353b24aa045cfaf14e0af41d409">signal_configure_delay</a>);</div>
+<div class="line"><span class="lineno">   61</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a> = this-&gt;declare_parameter&lt;int64_t&gt;(<span class="stringliteral">&quot;service_timeout_ms&quot;</span>, <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>);</div>
+<div class="line"><span class="lineno">   62</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a> = this-&gt;declare_parameter&lt;int64_t&gt;(<span class="stringliteral">&quot;call_timeout_ms&quot;</span>, <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>);</div>
+<div class="line"><span class="lineno">   63</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">required_subsystem_nodes</a> = this-&gt;declare_parameter&lt;std::vector&lt;std::string&gt;&gt;(<span class="stringliteral">&quot;required_subsystem_nodes&quot;</span>, <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">required_subsystem_nodes</a>);</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Config: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>);</div>
 <div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>    }</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
-<div class="line"><span class="lineno">   70</span>    {</div>
-<div class="line"><span class="lineno">   71</span>      <a class="code hl_function" href="classsystem__controller_1_1SystemControllerNode.html#add1da8b573598b344db3512a8e87d1ee">on_error</a>(e);</div>
-<div class="line"><span class="lineno">   72</span>    }</div>
-<div class="line"><span class="lineno">   73</span>  }</div>
-<div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_a1e149d6be07e6d593a6f3b7cbb039b02"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#a1e149d6be07e6d593a6f3b7cbb039b02">system_controller::SystemControllerNode::startup_delay_callback</a></div><div class="ttdeci">void startup_delay_callback()</div><div class="ttdoc">Callback to be triggered when the startup delay has passed.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8cpp_source.html#l00096">system_controller_node.cpp:96</a></div></div>
+<div class="line"><span class="lineno">   67</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.set_managed_nodes(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">required_subsystem_nodes</a>);</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>      <span class="comment">// Create startup timer</span></div>
+<div class="line"><span class="lineno">   70</span>      <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a8077feae86d8d791e1169e6185dacdd8">startup_timer_</a> = rclcpp::create_timer(</div>
+<div class="line"><span class="lineno">   71</span>          <span class="keyword">this</span>,</div>
+<div class="line"><span class="lineno">   72</span>          get_clock(),</div>
+<div class="line"><span class="lineno">   73</span>          std::chrono::milliseconds(<span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9762f353b24aa045cfaf14e0af41d409">signal_configure_delay</a> * 1000)),</div>
+<div class="line"><span class="lineno">   74</span>          std::bind(&amp;<a class="code hl_function" href="classsystem__controller_1_1SystemControllerNode.html#a1e149d6be07e6d593a6f3b7cbb039b02">SystemControllerNode::startup_delay_callback</a>, <span class="keyword">this</span>));</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">   79</span>    {</div>
+<div class="line"><span class="lineno">   80</span>      <a class="code hl_function" href="classsystem__controller_1_1SystemControllerNode.html#add1da8b573598b344db3512a8e87d1ee">on_error</a>(e);</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
+<div class="line"><span class="lineno">   82</span>  }</div>
+<div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_a1e149d6be07e6d593a6f3b7cbb039b02"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#a1e149d6be07e6d593a6f3b7cbb039b02">system_controller::SystemControllerNode::startup_delay_callback</a></div><div class="ttdeci">void startup_delay_callback()</div><div class="ttdoc">Callback to be triggered when the startup delay has passed.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8cpp_source.html#l00105">system_controller_node.cpp:105</a></div></div>
 <div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_a5aa6ae1c97b71ef5259cdc67bdf9aaac"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#a5aa6ae1c97b71ef5259cdc67bdf9aaac">system_controller::SystemControllerNode::system_alert_pub_</a></div><div class="ttdeci">std::shared_ptr&lt; rclcpp::Publisher&lt; carma_msgs::msg::SystemAlert &gt; &gt; system_alert_pub_</div><div class="ttdoc">System alert publisher.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8hpp_source.html#l00090">system_controller_node.hpp:90</a></div></div>
 <div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_a8077feae86d8d791e1169e6185dacdd8"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#a8077feae86d8d791e1169e6185dacdd8">system_controller::SystemControllerNode::startup_timer_</a></div><div class="ttdeci">rclcpp::TimerBase::SharedPtr startup_timer_</div><div class="ttdoc">Timer which triggers when the startup delay has passed.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8hpp_source.html#l00096">system_controller_node.hpp:96</a></div></div>
 <div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_aa0ed86c20daf31abc67dcf0041984f21"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#aa0ed86c20daf31abc67dcf0041984f21">system_controller::SystemControllerNode::system_alert_sub_</a></div><div class="ttdeci">rclcpp::Subscription&lt; carma_msgs::msg::SystemAlert &gt;::SharedPtr system_alert_sub_</div><div class="ttdoc">The subscriber for the system alert topic.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8hpp_source.html#l00087">system_controller_node.hpp:87</a></div></div>
-<div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_ab245ad238728ecf3d614d7d8ada28737"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#ab245ad238728ecf3d614d7d8ada28737">system_controller::SystemControllerNode::on_system_alert</a></div><div class="ttdeci">void on_system_alert(const carma_msgs::msg::SystemAlert::UniquePtr msg)</div><div class="ttdoc">Callback for system alert messages used to evaluate system fault handling.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8cpp_source.html#l00149">system_controller_node.cpp:149</a></div></div>
-<div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_add1da8b573598b344db3512a8e87d1ee"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#add1da8b573598b344db3512a8e87d1ee">system_controller::SystemControllerNode::on_error</a></div><div class="ttdeci">void on_error(const std::exception &amp;e)</div><div class="ttdoc">Exception handling method for processing all internal exceptions;.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8cpp_source.html#l00080">system_controller_node.cpp:80</a></div></div>
+<div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_ab245ad238728ecf3d614d7d8ada28737"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#ab245ad238728ecf3d614d7d8ada28737">system_controller::SystemControllerNode::on_system_alert</a></div><div class="ttdeci">void on_system_alert(const carma_msgs::msg::SystemAlert::UniquePtr msg)</div><div class="ttdoc">Callback for system alert messages used to evaluate system fault handling.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8cpp_source.html#l00158">system_controller_node.cpp:158</a></div></div>
+<div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_add1da8b573598b344db3512a8e87d1ee"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#add1da8b573598b344db3512a8e87d1ee">system_controller::SystemControllerNode::on_error</a></div><div class="ttdeci">void on_error(const std::exception &amp;e)</div><div class="ttdoc">Exception handling method for processing all internal exceptions;.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8cpp_source.html#l00089">system_controller_node.cpp:89</a></div></div>
 <div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_af0b0c99c2cbb58828f55e240f5b770db"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">system_controller::SystemControllerNode::config_</a></div><div class="ttdeci">SystemControllerConfig config_</div><div class="ttdoc">The configuration of this node.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8hpp_source.html#l00099">system_controller_node.hpp:99</a></div></div>
 <div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_af985e5f84a3ba14eee0c4c3c13ce3a31"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#af985e5f84a3ba14eee0c4c3c13ce3a31">system_controller::SystemControllerNode::system_alert_topic_</a></div><div class="ttdeci">const std::string system_alert_topic_</div><div class="ttdoc">The default topic name for the system alert topic.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8hpp_source.html#l00084">system_controller_node.hpp:84</a></div></div>
 <div class="ttc" id="astructSystemControllerConfig_html_a091d8425b37976b1c7853996775fc308"><div class="ttname"><a href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">SystemControllerConfig::service_timeout_ms</a></div><div class="ttdeci">uint64_t service_timeout_ms</div><div class="ttdoc">Timeout in ms for service availability.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__config_8hpp_source.html#l00034">system_controller_config.hpp:34</a></div></div>
@@ -368,7 +377,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="astructSystemControllerConfig_html_a9762f353b24aa045cfaf14e0af41d409"><div class="ttname"><a href="structSystemControllerConfig.html#a9762f353b24aa045cfaf14e0af41d409">SystemControllerConfig::signal_configure_delay</a></div><div class="ttdeci">double signal_configure_delay</div><div class="ttdoc">Time in seconds to wait before telling all nodes to configure.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__config_8hpp_source.html#l00031">system_controller_config.hpp:31</a></div></div>
 <div class="ttc" id="astructSystemControllerConfig_html_a9de6a90acf9c6b9d8b79c23fc27d9431"><div class="ttname"><a href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">SystemControllerConfig::required_subsystem_nodes</a></div><div class="ttdeci">std::vector&lt; std::string &gt; required_subsystem_nodes</div><div class="ttdoc">List of nodes to consider required and who's failure shall result in system shutdown.</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__config_8hpp_source.html#l00028">system_controller_config.hpp:28</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="system__controller__config_8hpp_source.html#l00037">SystemControllerConfig::call_timeout_ms</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00099">config_</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00093">lifecycle_mgr_</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00080">on_error()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00149">on_system_alert()</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00028">SystemControllerConfig::required_subsystem_nodes</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00034">SystemControllerConfig::service_timeout_ms</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00031">SystemControllerConfig::signal_configure_delay</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00096">startup_delay_callback()</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00096">startup_timer_</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00090">system_alert_pub_</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00087">system_alert_sub_</a>, and <a class="el" href="system__controller__node_8hpp_source.html#l00084">system_alert_topic_</a>.</p>
+<p class="reference">References <a class="el" href="system__controller__config_8hpp_source.html#l00037">SystemControllerConfig::call_timeout_ms</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00099">config_</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00093">lifecycle_mgr_</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00089">on_error()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00158">on_system_alert()</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00028">SystemControllerConfig::required_subsystem_nodes</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00034">SystemControllerConfig::service_timeout_ms</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00031">SystemControllerConfig::signal_configure_delay</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00105">startup_delay_callback()</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00096">startup_timer_</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00090">system_alert_pub_</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00087">system_alert_sub_</a>, and <a class="el" href="system__controller__node_8hpp_source.html#l00084">system_alert_topic_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00025">SystemControllerNode()</a>.</p>
 <div class="dynheader">
@@ -421,27 +430,27 @@ Here is the caller graph for this function:</div>
 
 <p>Exception handling method for processing all internal exceptions;. </p>
 
-<p class="definition">Definition at line <a class="el" href="system__controller__node_8cpp_source.html#l00080">80</a> of file <a class="el" href="system__controller__node_8cpp_source.html">system_controller_node.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>  {</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a8077feae86d8d791e1169e6185dacdd8">startup_timer_</a>)</div>
-<div class="line"><span class="lineno">   84</span>        <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a8077feae86d8d791e1169e6185dacdd8">startup_timer_</a>-&gt;cancel(); <span class="comment">// Cancel the timer to ensure we are not interrupted </span></div>
-<div class="line"><span class="lineno">   85</span>    </div>
-<div class="line"><span class="lineno">   86</span>    std::string reason = <span class="stringliteral">&quot;Uncaught exception: &quot;</span> + std::string(e.what());</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>    RCLCPP_ERROR_STREAM(</div>
-<div class="line"><span class="lineno">   89</span>        get_logger(), reason); <span class="comment">// Log error</span></div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>    <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.shutdown(<a class="code hl_typedef" href="namespacesystem__controller.html#adf697c738f9ad29713ddc41790f641a1">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>), <a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>), <span class="keyword">false</span>); <span class="comment">// Trigger shutdown when internal error occurs</span></div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>    rclcpp::shutdown(<span class="keyword">nullptr</span>, reason); <span class="comment">// Fully shutdown this node</span></div>
-<div class="line"><span class="lineno">   94</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="system__controller__node_8cpp_source.html#l00089">89</a> of file <a class="el" href="system__controller__node_8cpp_source.html">system_controller_node.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>  {</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a8077feae86d8d791e1169e6185dacdd8">startup_timer_</a>)</div>
+<div class="line"><span class="lineno">   93</span>        <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a8077feae86d8d791e1169e6185dacdd8">startup_timer_</a>-&gt;cancel(); <span class="comment">// Cancel the timer to ensure we are not interrupted </span></div>
+<div class="line"><span class="lineno">   94</span>    </div>
+<div class="line"><span class="lineno">   95</span>    std::string reason = <span class="stringliteral">&quot;Uncaught exception: &quot;</span> + std::string(e.what());</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    RCLCPP_ERROR_STREAM(</div>
+<div class="line"><span class="lineno">   98</span>        get_logger(), reason); <span class="comment">// Log error</span></div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.shutdown(<a class="code hl_typedef" href="namespacesystem__controller.html#adf697c738f9ad29713ddc41790f641a1">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>), <a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>), <span class="keyword">false</span>); <span class="comment">// Trigger shutdown when internal error occurs</span></div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    rclcpp::shutdown(<span class="keyword">nullptr</span>, reason); <span class="comment">// Fully shutdown this node</span></div>
+<div class="line"><span class="lineno">  103</span>  }</div>
 <div class="ttc" id="abase__subsystem__controller_8cpp_html_a62dd517df963e28756f2926290347218"><div class="ttname"><a href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a></div><div class="ttdeci">std::chrono::milliseconds std_msec</div><div class="ttdef"><b>Definition:</b> <a href="base__subsystem__controller_8cpp_source.html#l00023">base_subsystem_controller.cpp:23</a></div></div>
 <div class="ttc" id="anamespacesystem__controller_html_adf697c738f9ad29713ddc41790f641a1"><div class="ttname"><a href="namespacesystem__controller.html#adf697c738f9ad29713ddc41790f641a1">system_controller::std_msec</a></div><div class="ttdeci">std::chrono::milliseconds std_msec</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8cpp_source.html#l00023">system_controller_node.cpp:23</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="system__controller__config_8hpp_source.html#l00037">SystemControllerConfig::call_timeout_ms</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00099">config_</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00093">lifecycle_mgr_</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00034">SystemControllerConfig::service_timeout_ms</a>, and <a class="el" href="system__controller__node_8hpp_source.html#l00096">startup_timer_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00036">initialize()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00149">on_system_alert()</a>, and <a class="el" href="system__controller__node_8cpp_source.html#l00096">startup_delay_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00036">initialize()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00158">on_system_alert()</a>, and <a class="el" href="system__controller__node_8cpp_source.html#l00105">startup_delay_callback()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -489,47 +498,47 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="system__controller__node_8cpp_source.html#l00149">149</a> of file <a class="el" href="system__controller__node_8cpp_source.html">system_controller_node.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  150</span>  {</div>
-<div class="line"><span class="lineno">  151</span> </div>
-<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  153</span>    {</div>
-<div class="line"><span class="lineno">  154</span> </div>
-<div class="line"><span class="lineno">  155</span>      RCLCPP_INFO_STREAM(</div>
-<div class="line"><span class="lineno">  156</span>          get_logger(), <span class="stringliteral">&quot;Received SystemAlert message of type: &quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(msg-&gt;type) &lt;&lt; <span class="stringliteral">&quot; with message: &quot;</span> &lt;&lt; msg-&gt;description);</div>
-<div class="line"><span class="lineno">  157</span> </div>
-<div class="line"><span class="lineno">  158</span>      </div>
-<div class="line"><span class="lineno">  159</span>      <span class="keywordflow">if</span> (msg-&gt;type == <a class="code hl_enumvalue" href="namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a71d9b235fbf749d1bbc5b783898a4211">carma_msgs::msg::SystemAlert::SHUTDOWN</a> <span class="comment">// If a SHUTDOWN signal was received</span></div>
-<div class="line"><span class="lineno">  160</span>          || ( msg-&gt;type == carma_msgs::msg::SystemAlert::FATAL <span class="comment">// OR if a required node notified FATAL</span></div>
-<div class="line"><span class="lineno">  161</span>              &amp;&amp; std::find(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">required_subsystem_nodes</a>.begin(), <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">required_subsystem_nodes</a>.end(), msg-&gt;source_node)</div>
-<div class="line"><span class="lineno">  162</span>                != <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">required_subsystem_nodes</a>.end() ) )</div>
-<div class="line"><span class="lineno">  163</span>      { </div>
-<div class="line"><span class="lineno">  164</span>        <span class="comment">// TODO might make more sense for external shutdown to be a service call and remove SHUTDOWN from system alert entirely</span></div>
-<div class="line"><span class="lineno">  165</span>       RCLCPP_INFO_STREAM( get_logger(), <span class="stringliteral">&quot;Shutting down&quot;</span>);</div>
+<p class="definition">Definition at line <a class="el" href="system__controller__node_8cpp_source.html#l00158">158</a> of file <a class="el" href="system__controller__node_8cpp_source.html">system_controller_node.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  159</span>  {</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  162</span>    {</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>      RCLCPP_INFO_STREAM(</div>
+<div class="line"><span class="lineno">  165</span>          get_logger(), <span class="stringliteral">&quot;Received SystemAlert message of type: &quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(msg-&gt;type) &lt;&lt; <span class="stringliteral">&quot; with message: &quot;</span> &lt;&lt; msg-&gt;description);</div>
 <div class="line"><span class="lineno">  166</span> </div>
-<div class="line"><span class="lineno">  167</span>       <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.shutdown(<a class="code hl_typedef" href="namespacesystem__controller.html#adf697c738f9ad29713ddc41790f641a1">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>), <a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>), <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  168</span> </div>
-<div class="line"><span class="lineno">  169</span>       carma_msgs::msg::SystemAlert shutdown_msg; <span class="comment">// Notify ros1 nodes of shutdown</span></div>
-<div class="line"><span class="lineno">  170</span> </div>
-<div class="line"><span class="lineno">  171</span>       shutdown_msg.type = <a class="code hl_enumvalue" href="namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a71d9b235fbf749d1bbc5b783898a4211">carma_msgs::msg::SystemAlert::SHUTDOWN</a>;</div>
-<div class="line"><span class="lineno">  172</span>       shutdown_msg.description = <span class="stringliteral">&quot;SHUTDOWN &quot;</span> + msg-&gt;description;</div>
-<div class="line"><span class="lineno">  173</span> </div>
-<div class="line"><span class="lineno">  174</span>       <a class="code hl_function" href="classsystem__controller_1_1SystemControllerNode.html#acecf27e4f5120641c2e0fb335091a5cb">publish_system_alert</a>(shutdown_msg);</div>
+<div class="line"><span class="lineno">  167</span>      </div>
+<div class="line"><span class="lineno">  168</span>      <span class="keywordflow">if</span> (msg-&gt;type == <a class="code hl_enumvalue" href="namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a71d9b235fbf749d1bbc5b783898a4211">carma_msgs::msg::SystemAlert::SHUTDOWN</a> <span class="comment">// If a SHUTDOWN signal was received</span></div>
+<div class="line"><span class="lineno">  169</span>          || ( msg-&gt;type == carma_msgs::msg::SystemAlert::FATAL <span class="comment">// OR if a required node notified FATAL</span></div>
+<div class="line"><span class="lineno">  170</span>              &amp;&amp; std::find(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">required_subsystem_nodes</a>.begin(), <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">required_subsystem_nodes</a>.end(), msg-&gt;source_node)</div>
+<div class="line"><span class="lineno">  171</span>                != <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431">required_subsystem_nodes</a>.end() ) )</div>
+<div class="line"><span class="lineno">  172</span>      { </div>
+<div class="line"><span class="lineno">  173</span>        <span class="comment">// TODO might make more sense for external shutdown to be a service call and remove SHUTDOWN from system alert entirely</span></div>
+<div class="line"><span class="lineno">  174</span>       RCLCPP_INFO_STREAM( get_logger(), <span class="stringliteral">&quot;Shutting down&quot;</span>);</div>
 <div class="line"><span class="lineno">  175</span> </div>
-<div class="line"><span class="lineno">  176</span>       std::this_thread::sleep_for(std::chrono::milliseconds(5)); <span class="comment">// Add a bit of sleep to allow message publication</span></div>
+<div class="line"><span class="lineno">  176</span>       <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.shutdown(<a class="code hl_typedef" href="namespacesystem__controller.html#adf697c738f9ad29713ddc41790f641a1">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>), <a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>), <span class="keyword">false</span>);</div>
 <div class="line"><span class="lineno">  177</span> </div>
-<div class="line"><span class="lineno">  178</span>       rclcpp::shutdown(<span class="keyword">nullptr</span>, <span class="stringliteral">&quot;System Alert requested shutdown&quot;</span>); <span class="comment">// Fully shutdown this node</span></div>
-<div class="line"><span class="lineno">  179</span>      }</div>
-<div class="line"><span class="lineno">  180</span>    }</div>
-<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
-<div class="line"><span class="lineno">  182</span>    {</div>
-<div class="line"><span class="lineno">  183</span>      <a class="code hl_function" href="classsystem__controller_1_1SystemControllerNode.html#add1da8b573598b344db3512a8e87d1ee">on_error</a>(e);</div>
-<div class="line"><span class="lineno">  184</span>    }</div>
-<div class="line"><span class="lineno">  185</span>  }</div>
-<div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_acecf27e4f5120641c2e0fb335091a5cb"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#acecf27e4f5120641c2e0fb335091a5cb">system_controller::SystemControllerNode::publish_system_alert</a></div><div class="ttdeci">void publish_system_alert(carma_msgs::msg::SystemAlert msg)</div><div class="ttdoc">Publishes a SystemAlert message to the rest of the carma-platform system. NOTE: This callback will au...</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8cpp_source.html#l00138">system_controller_node.cpp:138</a></div></div>
+<div class="line"><span class="lineno">  178</span>       carma_msgs::msg::SystemAlert shutdown_msg; <span class="comment">// Notify ros1 nodes of shutdown</span></div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>       shutdown_msg.type = <a class="code hl_enumvalue" href="namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a71d9b235fbf749d1bbc5b783898a4211">carma_msgs::msg::SystemAlert::SHUTDOWN</a>;</div>
+<div class="line"><span class="lineno">  181</span>       shutdown_msg.description = <span class="stringliteral">&quot;SHUTDOWN &quot;</span> + msg-&gt;description;</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>       <a class="code hl_function" href="classsystem__controller_1_1SystemControllerNode.html#acecf27e4f5120641c2e0fb335091a5cb">publish_system_alert</a>(shutdown_msg);</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>       std::this_thread::sleep_for(std::chrono::milliseconds(5)); <span class="comment">// Add a bit of sleep to allow message publication</span></div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>       rclcpp::shutdown(<span class="keyword">nullptr</span>, <span class="stringliteral">&quot;System Alert requested shutdown&quot;</span>); <span class="comment">// Fully shutdown this node</span></div>
+<div class="line"><span class="lineno">  188</span>      }</div>
+<div class="line"><span class="lineno">  189</span>    }</div>
+<div class="line"><span class="lineno">  190</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  191</span>    {</div>
+<div class="line"><span class="lineno">  192</span>      <a class="code hl_function" href="classsystem__controller_1_1SystemControllerNode.html#add1da8b573598b344db3512a8e87d1ee">on_error</a>(e);</div>
+<div class="line"><span class="lineno">  193</span>    }</div>
+<div class="line"><span class="lineno">  194</span>  }</div>
+<div class="ttc" id="aclasssystem__controller_1_1SystemControllerNode_html_acecf27e4f5120641c2e0fb335091a5cb"><div class="ttname"><a href="classsystem__controller_1_1SystemControllerNode.html#acecf27e4f5120641c2e0fb335091a5cb">system_controller::SystemControllerNode::publish_system_alert</a></div><div class="ttdeci">void publish_system_alert(carma_msgs::msg::SystemAlert msg)</div><div class="ttdoc">Publishes a SystemAlert message to the rest of the carma-platform system. NOTE: This callback will au...</div><div class="ttdef"><b>Definition:</b> <a href="system__controller__node_8cpp_source.html#l00147">system_controller_node.cpp:147</a></div></div>
 <div class="ttc" id="anamespacearbitrator_html_ac55e5abbc531a17975af03c6b0868a22a71d9b235fbf749d1bbc5b783898a4211"><div class="ttname"><a href="namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a71d9b235fbf749d1bbc5b783898a4211">arbitrator::SHUTDOWN</a></div><div class="ttdeci">@ SHUTDOWN</div><div class="ttdef"><b>Definition:</b> <a href="arbitrator__state__machine_8hpp_source.html#l00037">arbitrator_state_machine.hpp:36</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="system__controller__config_8hpp_source.html#l00037">SystemControllerConfig::call_timeout_ms</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00099">config_</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00093">lifecycle_mgr_</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00080">on_error()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00138">publish_system_alert()</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00028">SystemControllerConfig::required_subsystem_nodes</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00034">SystemControllerConfig::service_timeout_ms</a>, and <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00036">arbitrator::SHUTDOWN</a>.</p>
+<p class="reference">References <a class="el" href="system__controller__config_8hpp_source.html#l00037">SystemControllerConfig::call_timeout_ms</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00099">config_</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00093">lifecycle_mgr_</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00089">on_error()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00147">publish_system_alert()</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00028">SystemControllerConfig::required_subsystem_nodes</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00034">SystemControllerConfig::service_timeout_ms</a>, and <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00036">arbitrator::SHUTDOWN</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00036">initialize()</a>.</p>
 <div class="dynheader">
@@ -587,20 +596,20 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="system__controller__node_8cpp_source.html#l00138">138</a> of file <a class="el" href="system__controller__node_8cpp_source.html">system_controller_node.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>  {</div>
-<div class="line"><span class="lineno">  140</span> </div>
-<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">if</span> (!get_node_base_interface())</div>
-<div class="line"><span class="lineno">  142</span>      <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;get_node_base_interface() returned null pointer. May indicate ROS2 bug.&quot;</span>);</div>
-<div class="line"><span class="lineno">  143</span> </div>
-<div class="line"><span class="lineno">  144</span>    msg.source_node = get_node_base_interface()-&gt;get_fully_qualified_name(); <span class="comment">// The the source name for the message</span></div>
-<div class="line"><span class="lineno">  145</span> </div>
-<div class="line"><span class="lineno">  146</span>    <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a5aa6ae1c97b71ef5259cdc67bdf9aaac">system_alert_pub_</a>-&gt;publish(msg); </div>
-<div class="line"><span class="lineno">  147</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="system__controller__node_8cpp_source.html#l00147">147</a> of file <a class="el" href="system__controller__node_8cpp_source.html">system_controller_node.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>  {</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span> (!get_node_base_interface())</div>
+<div class="line"><span class="lineno">  151</span>      <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;get_node_base_interface() returned null pointer. May indicate ROS2 bug.&quot;</span>);</div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>    msg.source_node = get_node_base_interface()-&gt;get_fully_qualified_name(); <span class="comment">// The the source name for the message</span></div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a5aa6ae1c97b71ef5259cdc67bdf9aaac">system_alert_pub_</a>-&gt;publish(msg); </div>
+<div class="line"><span class="lineno">  156</span>  }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="system__controller__node_8hpp_source.html#l00090">system_alert_pub_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00149">on_system_alert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00158">on_system_alert()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -639,10 +648,10 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="system__controller__node_8cpp_source.html#l00075">75</a> of file <a class="el" href="system__controller__node_8cpp_source.html">system_controller_node.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   76</span>  {</div>
-<div class="line"><span class="lineno">   77</span>    <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a> = config;</div>
-<div class="line"><span class="lineno">   78</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="system__controller__node_8cpp_source.html#l00084">84</a> of file <a class="el" href="system__controller__node_8cpp_source.html">system_controller_node.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>  {</div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a> = config;</div>
+<div class="line"><span class="lineno">   87</span>  }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="system__controller__node_8hpp_source.html#l00099">config_</a>.</p>
 
@@ -673,49 +682,49 @@ Here is the caller graph for this function:</div>
 
 <p>Callback to be triggered when the startup delay has passed. </p>
 
-<p class="definition">Definition at line <a class="el" href="system__controller__node_8cpp_source.html#l00096">96</a> of file <a class="el" href="system__controller__node_8cpp_source.html">system_controller_node.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   97</span>  {</div>
-<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   99</span>    {</div>
-<div class="line"><span class="lineno">  100</span>      RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Attempting to configure system...&quot;</span>);</div>
-<div class="line"><span class="lineno">  101</span>      </div>
-<div class="line"><span class="lineno">  102</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a8077feae86d8d791e1169e6185dacdd8">startup_timer_</a>)</div>
-<div class="line"><span class="lineno">  103</span>        <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a8077feae86d8d791e1169e6185dacdd8">startup_timer_</a>-&gt;cancel(); <span class="comment">// Cancel the timer as this callback should only trigger once</span></div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>      <span class="comment">// Walk the managed nodes through their lifecycle</span></div>
-<div class="line"><span class="lineno">  106</span>      <span class="comment">// First we configure the nodes</span></div>
-<div class="line"><span class="lineno">  107</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.configure(<a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>), <a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>)).empty())</div>
-<div class="line"><span class="lineno">  108</span>      {</div>
-<div class="line"><span class="lineno">  109</span>        <span class="comment">// If some nodes failed to configure then we will shutdown the system</span></div>
-<div class="line"><span class="lineno">  110</span>        RCLCPP_ERROR_STREAM(</div>
-<div class="line"><span class="lineno">  111</span>            get_logger(), <span class="stringliteral">&quot;System could not be configured on startup. Shutting down.&quot;</span>);</div>
-<div class="line"><span class="lineno">  112</span> </div>
-<div class="line"><span class="lineno">  113</span>        <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.shutdown(<a class="code hl_typedef" href="namespacesystem__controller.html#adf697c738f9ad29713ddc41790f641a1">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>), <a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>), <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  114</span>        rclcpp::shutdown(<span class="keyword">nullptr</span>, <span class="stringliteral">&quot;System could not be configured on startup. Shutting down.&quot;</span>);</div>
-<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  116</span>      }</div>
-<div class="line"><span class="lineno">  117</span> </div>
-<div class="line"><span class="lineno">  118</span>      <span class="comment">// Second we activate the nodes</span></div>
-<div class="line"><span class="lineno">  119</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.activate(<a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>), <a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>)).empty())</div>
-<div class="line"><span class="lineno">  120</span>      {</div>
+<p class="definition">Definition at line <a class="el" href="system__controller__node_8cpp_source.html#l00105">105</a> of file <a class="el" href="system__controller__node_8cpp_source.html">system_controller_node.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>  {</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  108</span>    {</div>
+<div class="line"><span class="lineno">  109</span>      RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Attempting to configure system...&quot;</span>);</div>
+<div class="line"><span class="lineno">  110</span>      </div>
+<div class="line"><span class="lineno">  111</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a8077feae86d8d791e1169e6185dacdd8">startup_timer_</a>)</div>
+<div class="line"><span class="lineno">  112</span>        <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#a8077feae86d8d791e1169e6185dacdd8">startup_timer_</a>-&gt;cancel(); <span class="comment">// Cancel the timer as this callback should only trigger once</span></div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>      <span class="comment">// Walk the managed nodes through their lifecycle</span></div>
+<div class="line"><span class="lineno">  115</span>      <span class="comment">// First we configure the nodes</span></div>
+<div class="line"><span class="lineno">  116</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.configure(<a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>), <a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>)).empty())</div>
+<div class="line"><span class="lineno">  117</span>      {</div>
+<div class="line"><span class="lineno">  118</span>        <span class="comment">// If some nodes failed to configure then we will shutdown the system</span></div>
+<div class="line"><span class="lineno">  119</span>        RCLCPP_ERROR_STREAM(</div>
+<div class="line"><span class="lineno">  120</span>            get_logger(), <span class="stringliteral">&quot;System could not be configured on startup. Shutting down.&quot;</span>);</div>
 <div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>        RCLCPP_ERROR_STREAM(</div>
-<div class="line"><span class="lineno">  123</span>            get_logger(), <span class="stringliteral">&quot;System could not be activated. Shutting down.&quot;</span>);</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>        <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.shutdown(<a class="code hl_typedef" href="namespacesystem__controller.html#adf697c738f9ad29713ddc41790f641a1">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>), <a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>), <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  126</span>        rclcpp::shutdown(<span class="keyword">nullptr</span>, <span class="stringliteral">&quot;System could not be activated. Shutting down.&quot;</span>);</div>
-<div class="line"><span class="lineno">  127</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  128</span>      }</div>
-<div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>      RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;System configured successfully&quot;</span>);</div>
-<div class="line"><span class="lineno">  131</span>    }</div>
-<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
-<div class="line"><span class="lineno">  133</span>    {</div>
-<div class="line"><span class="lineno">  134</span>      <a class="code hl_function" href="classsystem__controller_1_1SystemControllerNode.html#add1da8b573598b344db3512a8e87d1ee">on_error</a>(e);</div>
-<div class="line"><span class="lineno">  135</span>    }</div>
-<div class="line"><span class="lineno">  136</span>  }</div>
+<div class="line"><span class="lineno">  122</span>        <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.shutdown(<a class="code hl_typedef" href="namespacesystem__controller.html#adf697c738f9ad29713ddc41790f641a1">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>), <a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>), <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  123</span>        rclcpp::shutdown(<span class="keyword">nullptr</span>, <span class="stringliteral">&quot;System could not be configured on startup. Shutting down.&quot;</span>);</div>
+<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  125</span>      }</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>      <span class="comment">// Second we activate the nodes</span></div>
+<div class="line"><span class="lineno">  128</span>      <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.activate(<a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>), <a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>)).empty())</div>
+<div class="line"><span class="lineno">  129</span>      {</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>        RCLCPP_ERROR_STREAM(</div>
+<div class="line"><span class="lineno">  132</span>            get_logger(), <span class="stringliteral">&quot;System could not be activated. Shutting down.&quot;</span>);</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>        <a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#abdd4298b98893c0e00dd058dd10657e5">lifecycle_mgr_</a>.shutdown(<a class="code hl_typedef" href="namespacesystem__controller.html#adf697c738f9ad29713ddc41790f641a1">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308">service_timeout_ms</a>), <a class="code hl_typedef" href="base__subsystem__controller_8cpp.html#a62dd517df963e28756f2926290347218">std_msec</a>(<a class="code hl_variable" href="classsystem__controller_1_1SystemControllerNode.html#af0b0c99c2cbb58828f55e240f5b770db">config_</a>.<a class="code hl_variable" href="structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65">call_timeout_ms</a>), <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  135</span>        rclcpp::shutdown(<span class="keyword">nullptr</span>, <span class="stringliteral">&quot;System could not be activated. Shutting down.&quot;</span>);</div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  137</span>      }</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>      RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;System configured successfully&quot;</span>);</div>
+<div class="line"><span class="lineno">  140</span>    }</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  142</span>    {</div>
+<div class="line"><span class="lineno">  143</span>      <a class="code hl_function" href="classsystem__controller_1_1SystemControllerNode.html#add1da8b573598b344db3512a8e87d1ee">on_error</a>(e);</div>
+<div class="line"><span class="lineno">  144</span>    }</div>
+<div class="line"><span class="lineno">  145</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="system__controller__config_8hpp_source.html#l00037">SystemControllerConfig::call_timeout_ms</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00099">config_</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00093">lifecycle_mgr_</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00080">on_error()</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00034">SystemControllerConfig::service_timeout_ms</a>, and <a class="el" href="system__controller__node_8hpp_source.html#l00096">startup_timer_</a>.</p>
+<p class="reference">References <a class="el" href="system__controller__config_8hpp_source.html#l00037">SystemControllerConfig::call_timeout_ms</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00099">config_</a>, <a class="el" href="system__controller__node_8hpp_source.html#l00093">lifecycle_mgr_</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00089">on_error()</a>, <a class="el" href="system__controller__config_8hpp_source.html#l00034">SystemControllerConfig::service_timeout_ms</a>, and <a class="el" href="system__controller__node_8hpp_source.html#l00096">startup_timer_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00036">initialize()</a>.</p>
 <div class="dynheader">
@@ -765,7 +774,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="system__controller__node_8hpp_source.html#l00099">99</a> of file <a class="el" href="system__controller__node_8hpp_source.html">system_controller_node.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00036">initialize()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00080">on_error()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00149">on_system_alert()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00075">set_config()</a>, and <a class="el" href="system__controller__node_8cpp_source.html#l00096">startup_delay_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00036">initialize()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00089">on_error()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00158">on_system_alert()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00084">set_config()</a>, and <a class="el" href="system__controller__node_8cpp_source.html#l00105">startup_delay_callback()</a>.</p>
 
 </div>
 </div>
@@ -793,7 +802,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="system__controller__node_8hpp_source.html#l00093">93</a> of file <a class="el" href="system__controller__node_8hpp_source.html">system_controller_node.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00036">initialize()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00080">on_error()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00149">on_system_alert()</a>, and <a class="el" href="system__controller__node_8cpp_source.html#l00096">startup_delay_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00036">initialize()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00089">on_error()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00158">on_system_alert()</a>, and <a class="el" href="system__controller__node_8cpp_source.html#l00105">startup_delay_callback()</a>.</p>
 
 </div>
 </div>
@@ -821,7 +830,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="system__controller__node_8hpp_source.html#l00096">96</a> of file <a class="el" href="system__controller__node_8hpp_source.html">system_controller_node.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00036">initialize()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00080">on_error()</a>, and <a class="el" href="system__controller__node_8cpp_source.html#l00096">startup_delay_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00036">initialize()</a>, <a class="el" href="system__controller__node_8cpp_source.html#l00089">on_error()</a>, and <a class="el" href="system__controller__node_8cpp_source.html#l00105">startup_delay_callback()</a>.</p>
 
 </div>
 </div>
@@ -849,7 +858,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="system__controller__node_8hpp_source.html#l00090">90</a> of file <a class="el" href="system__controller__node_8hpp_source.html">system_controller_node.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00036">initialize()</a>, and <a class="el" href="system__controller__node_8cpp_source.html#l00138">publish_system_alert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="system__controller__node_8cpp_source.html#l00036">initialize()</a>, and <a class="el" href="system__controller__node_8cpp_source.html#l00147">publish_system_alert()</a>.</p>
 
 </div>
 </div>
@@ -919,7 +928,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesystem__controller.html">system_controller</a></li><li class="navelem"><a class="el" href="classsystem__controller_1_1SystemControllerNode.html">SystemControllerNode</a></li>
-    <li class="footer">Generated on Fri Apr 19 2024 14:28:03 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Apr 29 2024 14:33:15 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

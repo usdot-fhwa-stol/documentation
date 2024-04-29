@@ -87,24 +87,300 @@ $(document).ready(function(){initNavTree('md_docs_Release_notes.html',''); initR
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md148"></a>
-Version 4.4.2, released May 10th, 2023</h1>
+Version 4.5.0, released April 10th, 2024</h1>
 <h2><a class="anchor" id="autotoc_md149"></a>
+&lt;strong&gt;Summary&lt;/strong&gt;</h2>
+<p >This release represents a significant advancement in utilizing cooperative perception and cooperative driving automation (CDA) to enhance the safety of Vulnerable Road Users (VRU) at signalized intersections, as demonstrated with CDASim. Key features include the implementation of cooperative perception using both infrastructure and vehicle sensors, along with data fusion (DF) and the encoding and decoding of sensor data sharing messages (SDSM). These advancements facilitate the effective sharing of VRU state information, collected by infrastructure sensors, with nearby connected road users, particularly those in CDA-equipped vehicles. This establishes a state of Cooperative Perception (CP). The primary goal is to improve overall road safety, especially by reducing the risk of collisions between vehicles and VRUs such as pedestrians and cyclists. It is important to note that the functionalities developed in this release were only tested in a simulation environment, and not all of them are currently directly portable to a real-life environment.</p>
+<h2><a class="anchor" id="autotoc_md150"></a>
+&lt;strong&gt;CDA Sim&lt;/strong&gt;</h2>
+<p >This release introduces new functionalities of CDASim, including the ability to spawn sensors in CARLA and transmit detection data to vehicle and infrastructure actors. It also introduces a new functionality of the CARLA Scenario Runner, allowing for the configuration of CARLA scenarios and the collection of scenario metrics.</p>
+<p >Enhancements in this release:</p>
+<ul>
+<li>Issue 211: CARLA Sensor Integration: This enhancement adds functionality to CDASim to create and poll detection data from sensors deployed in CARLA. Currently, Lidar is the only supported sensor type integrated with CARLA. The update includes the development of CARLA Ambassador functionality, which requests the creation of sensors based on received SensorRegistration Interactions and publishes Detection Interactions for each detection from the created sensor.</li>
+<li>PR 164: Updated logback settings to include fully qualified class name and line number to log statements.</li>
+<li>PR 170: Added cfg that the carma-config is configured to look for at the moment. This is sumo intersection 916 fixed signal configuration.</li>
+<li>PR 182: Enhanced behavior of the sumo traffic light for TRB scenario.</li>
+<li>PR 183: Added new infrastructure ambassador config and logging.</li>
+<li>PR 186: Updated CARMA Ambassador to forward time sync messages to CARMA Platform.</li>
+<li>PR 191: Updated docker build to allow for caching of installed dependencies to improve the time it takes to rebuild CDASim.</li>
+<li>PR 193: Removed EVC Sumo from the CDASim repository and moved to its own repository <a href="https://github.com/usdot-fhwa-stol/evc-sumo">https://github.com/usdot-fhwa-stol/evc-sumo</a>.</li>
+<li>PR 205: Added time sync logs for VRU data analysis.</li>
+</ul>
+<p >Fixes in this release:</p>
+<ul>
+<li>PR 151: The current CDASim can synchronize vehicle positions and orientations between Carla and SUMO simulations. Fixed the issue with the correct synchronization of SUMO IDs and Carla role names.</li>
+<li>PR 154: Added configuration files for sumo GUI settings to avoid.</li>
+<li>Issue 540: Set delay to 1000 ms per second to startup SUMO running at approximately real-time to avoid time sync issues with simulation and infrastructure</li>
+<li>PR 171: Update GitHub action workflows to avoid duplicate or unnecessary actions.</li>
+</ul>
+<p >Known Issues related to this release:</p>
+<ul>
+<li>CARMA Platform Issue 2117: Data analysis revealed that commanded acceleration exceeded anticipated value range.</li>
+<li>CARMA Platform Issue 2118: Vehicle command frequency varies unexpectedly from target 30Hz.</li>
+<li>CARMA Platform Issue 2119: CARLA initialization causes random time offset from CDASim provided simulation time.</li>
+<li>CARMA Platform Issue 2323: Yield plugin can sometimes detect vehicle is passed but can detect collision again.</li>
+<li>CARMA Platform Issue 2345: Yield is not decelerating at comfortable rate even with CP enabled.</li>
+<li>CARMA Streets Issue 409: Inaccurate minimum end time in SPaT received from EVC.</li>
+<li>CARLA Sensor Lib Issue 16: Sensorlib is dropping some detections sometimes once per 3-5 second window.</li>
+<li>Multiple Object Tracking Issue 145: Angle values do not wrap properly. Revisited orientation representation. When averaging or otherwise working with angular values, the library does not properly handle wrapped values.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md151"></a>
+&lt;strong&gt;CARMA-CARLA Integration Tool&lt;/strong&gt;</h2>
+<p >This release introduces CARLA Sensor Integration on object-level data using the carla-sensor-lib library (new repository in this release as well) for CARMA vehicles. It also updates outdated packages, adapts to the ROS2 naming convention in line with the CARMA Platform's updates, and improves the stability of the tool. This enhancement leverages scripts to wait for CARLA, eliminating the need for fine-tuned sleep commands.</p>
+<p >Enhancement in this release:</p>
+<ul>
+<li>Issue 38 / PR 40: Renamed plugins to accommodate ROS2 naming convention in carma-platform</li>
+<li>Issue 39 / PR 40: Added a configurable start delay for the carma-platform's system to be fully ready - route is selected and semantic map is available in all plugins/nodes. Without it, the carma-platform shuts down automatically almost half of the time.</li>
+<li>PR 41: Added detection node that leverages carla-sensor-lib to publish object level detection data, replacing the current external objects node</li>
+<li>PR 44: Ackermann controller was throwing a KeyError when carma-base image version was changed to develop from 4.2.0. To fix this issue, the install.sh was modified to include specific version 1.0.1 of "simple-pid" package and the carma_carla_agent.launch was updated to include the newly added start delay parameter</li>
+<li>PR 58: Adjusted config to use map centric instead of sensor centric object detection</li>
+<li>PR 67: Added script to wait for CARLA. This script can replace sleep commands that were environment specific</li>
+<li>PR 68: Added workflow dispatch as carma-carla-integration tool depends on libraries in carla-sensor-lib. It should trigger rebuild if carla-sensorl-lib repo has new changes pushed.</li>
+</ul>
+<p >Fixes in this release:</p><ul>
+<li>PR 64: Fixed error log statements caused by incorrect syntax in launch file.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md152"></a>
+&lt;strong&gt;CARMA NS3 Adapter&lt;/strong&gt;</h2>
+<p >Enhancement in the release:</p><ul>
+<li>PR 11: Added udp listener to listen to time sync messages from CDASim and broadcast it in rostopic as /sim_clock.</li>
+<li>PR 13: Added wave JSON configurations for SDSM.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md153"></a>
+&lt;strong&gt;CARLA Sensor Library&lt;/strong&gt;</h2>
+<p >The carla-sensor-lib is a new repository introduced in this release, housing a wrapper library for CARLA sensors along with a Docker image. This library provides functions for creating CARLA sensors with noise modeling and retrieving object-level detection information from these sensors. The CARLA CARMA Integration tool utilizes this library to feed object-level data to the CARMA Platform. Additionally, this repository generates a Docker image that deploys an XML RPC server, enabling clients to create sensors in CARLA and poll their detections. This feature is designed to facilitate object-level detection for CDASim deployment, making the data available to other integrated simulators or software systems under test.</p>
+<h2><a class="anchor" id="autotoc_md154"></a>
+&lt;strong&gt;CARLA ScenarioRunner&lt;/strong&gt;</h2>
+<p >The scenario-runner is a new repository and Docker image introduced in this release. This directory contains custom ScenarioRunner scenario configurations designed to facilitate integration testing interactions between CARMA vehicles and Vulnerable Road Users (VRU) in a signalized intersection. These scenarios primarily serve as example references. The code for ScenarioRunner is housed in the srunner Python package, with the scenario_runner.py script responsible for launching the scenarios.</p>
+<h2><a class="anchor" id="autotoc_md155"></a>
+&lt;strong&gt;EVC-SUMO (New Private Repository)&lt;/strong&gt;</h2>
+<p >EVC-sumo is a new private repository featuring the Econolite Virtual Controller (EVC)-SUMO bridge tool, part of the XiL co-simulation toolset. This bridge acts as a mediator between EVC, accessed via the PyEOS Python package, and SUMO, facilitating the integration of traffic light and detector status exchanges.</p>
+<p >Currently, building and using the Docker image for this tool requires a proprietary GitHub token, accessible only to members of the USDOT-FHWA-STOL organization, due to licensing restrictions imposed by Econolite.</p>
+<h2><a class="anchor" id="autotoc_md156"></a>
+&lt;strong&gt;Multiple Object Tracking&lt;/strong&gt;</h2>
+<p >The Multiple Object Tracking repository introduces a new library designed to support cooperative perception. This library is tailored for tracking multiple objects from various sources, utilizing a standard cooperative perception object tracking interface. Inputs can include object-level data from diverse sources such as the J2334 Sensor Data Sharing Message, Basic Safety Message, or local perception. This versatility allows the library to be deployed across different road actors, such as C-ADS equipped vehicles or infrastructure, using message adapters appropriate for the respective middleware.</p>
+<p >The library features multiple submodules and functionalities that leverage architectural and algorithmic advancements from the sensor fusion community. An example of how this library can be implemented to execute a complete multiple object tracking pipeline is demonstrated in the CARMA Platform.</p>
+<h2><a class="anchor" id="autotoc_md157"></a>
+&lt;strong&gt;CARMA Builds&lt;/strong&gt;</h2>
+<p >CARMA Builds is a new addition to the CARMA ecosystem, designed to facilitate Docker image build coordination among various transportation users. This component provides essential Docker images for building other projects within CARMA, streamlining the development process and enhancing collaboration across different transportation initiatives.</p>
+<h2><a class="anchor" id="autotoc_md158"></a>
+&lt;strong&gt;CARMA Streets&lt;/strong&gt;</h2>
+<p >The main new functionality in CARMA Streets is its ability to generate J2334 Sensor Data Sharing Messages from object-level data detected by simulation sensors. Additionally, it has received further enhancements, including a new dependency on CARMA Builds, which allows for efficient pulling from common base images. There are also minor improvements in time synchronization, data collection, and JSON parsing, enhancing the overall functionality and efficiency of the system.</p>
+<p >Enhancements in this release:</p>
+<ul>
+<li>PR 341: Added functionality to the TSC Service to periodically log vehicle and pedestrian call information in easily processable format for the Intersection Safety Challenge (ISC) data collection. Added a logger to log pedestrian and vehicle information in the following csv format.</li>
+<li>PR 352: Added new json utility library to CARMA Streets.</li>
+<li>PR 353: Added streets_messages library which will house JSON serialization and deserialization functions as well as carma-streets messages.</li>
+<li>PR 361: Created base image for CARMA Streets services like Message Service, Intersection Model, and future Sensor Data Sharing Service that includes lanelet2 dependency</li>
+<li>Issue 408: CARMA Streets SDSM functionality. Added Sensor Data Sharing Service to consume detection data and produce SDSMs.</li>
+<li>PR 390: Added pip3 dependencies</li>
+<li>PR 399: Added time sync topic to default list of topics for Kafka data collection script</li>
+<li>PR 403: Added time sync logs</li>
+</ul>
+<p >Fixes in this release:</p>
+<ul>
+<li>PR 332: Fixing docker builds for all XIL Release unused CARMA-Streets services.</li>
+<li>PR 349: Updated build_scripts/install_dependencies.sh STOL APT functionality. STOL APT Debian packages including carma-clock-1 are not pushed to AWS bucket (repository) based on ubuntu distribution. Added functionality in script to get ubuntu distribution codename and use it for STOL APT repository path. See carma builds and actions repository for more information about s3 push workflows.</li>
+<li>PR 397: Fixed Kafka data collection script</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md159"></a>
+&lt;strong&gt;CARMA Platform&lt;/strong&gt;</h2>
+<p >The main improvements for CARMA Platform in this release include a new package callled, <a class="el" href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a>, that can process both object list data from local perception and from J2334 SDSM, providing enhanced multiple object tracking functionality. Additionally, there have been further improvements to its world model and motion prediction stack, enabling it to recognize and respond to more objects than just vehicles (such as pedestrians), including movements not along the road (such as pedestrians moving on crosswalks). This feature has been tested at a signalized intersection in CARLA, incorporating traffic signal following behaviors using J2735 SPAT and MAP, demonstrating significant safety advancements in its operational capabilities.</p>
+<p >Enhancements in this release:</p>
+<ul>
+<li>Issue 2007 / PR 2008: To properly integrate with the CARMA Platform’s communications stack, the CARMA Ambassador component responsible for receiving and transmitting messages through NS-3 on behalf of the CARMA Platform needs to know each vehicle’s ID within the CARLA environment. Added an initial “handshake” that must take place between the simulation comms driver and the simulation CARMA Ambassador.</li>
+<li>PR 2144: Update <a class="el" href="namespaceroadway__objects.html">roadway_objects</a> package structure</li>
+<li>Issue 2151 / PR 2152: Added component tests for <a class="el" href="namespacemotion__computation.html">motion_computation</a> package</li>
+<li>PR 2242: Increased predicton period so that <a class="el" href="namespaceyield__plugin.html">yield_plugin</a> has enough data for VRU crossing pedestrian.</li>
+<li>PR 2320: Added the visualization of fused objects and its motion prediction to rviz so the user can see it live.</li>
+<li>Issue 2347: Add cooperative perception stack.</li>
+<li>Issue 2153 / PR 2154: Improved <a class="el" href="namespaceyield__plugin.html">yield_plugin</a> functionality to consider objects' predicted_states, instead of assuming the roadway_object is moving along the route</li>
+<li>PR 2313: Improve yield plugin performance to parallel process objects and optimize objects with cv prediction</li>
+</ul>
+<p >Fixes in this release:</p>
+<ul>
+<li>PR 2091: Fixed sed regex in cloudscript, previously only filtered the first instance of each pattern matched</li>
+<li>PR 2131: Removed the localization launch file and updates the ros2 launch file with the required simulation mode launch argument</li>
+</ul>
+<p >Other Enhancements:</p>
+<ul>
+<li>Continuation of porting ROS1 to ROS2:<ul>
+<li>Issue 2090 / PR 2089: Ported the <a class="el" href="namespaceintersection__transit__maneuvering.html">intersection_transit_maneuvering</a> node from ROS1 to ROS2</li>
+<li>PR 2109: Ported vector and pcd map loader node launchers to ros2. The nodes themselves are defined in autoware.ai under the package map_file_ros2</li>
+<li>PR 2115: Ported dead reckoner to ROS2</li>
+<li>PR 2121: Ported random filter and voxel grid filter points downsampled to ROS2</li>
+<li>PR 2125: Ported ndt_matching to ROS2</li>
+<li>PR 2127: Ported ekf localizer to ROS2</li>
+<li>PR 2133: Enabled ROS2 rosbag logging.</li>
+<li>PR 2134: Ported the health monitor's driver functionality to ROS2.</li>
+<li>PR 2173: Modified the CI build to skip the novatel_oem7_msgs and novatel_oem7_driver packages from the ros1 build.</li>
+</ul>
+</li>
+<li>PR 2160: Updated the cloud-sim deployment to allow multiple users to start cloud sessions for XiL.</li>
+<li>PR 2132: Updated the install-docker.sh script (which is used as part of the process for setting up a new PC for CARMA and/or CARMA Messenger) to remove additional necessary docker packages</li>
+</ul>
+<p >Fixes in the release:</p>
+<ul>
+<li>PR 2350: UI is not able to select route due to system_alert publisher QoS type</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md160"></a>
+&lt;strong&gt;CARMA Base&lt;/strong&gt;</h2>
+<p >Fixes outside of this release:</p><ul>
+<li>PR 180: Installed four new packages within the carma-base, all of which are required for packages built as part of carma-platform:<ul>
+<li>nmea-msgs and gps-tools are dependencies for the novatel_oem7_driver and novatel_oem7_msgs packages built in carma-platform.</li>
+<li>pybind11 and test-msgs are dependencies for building foxy-future rosbag2 overlay packages, which contain backported fixes that are not contained within the default foxy rosbag2 implementation.</li>
+</ul>
+</li>
+<li>PR 178: Added the velodyne pointcloud as a ros foxy dependency. The package is required for the lidar_localizer_ros2 package recently ported to ros2.</li>
+<li>PR 184: Added the foxy mcap storage plugin required to store the recorded rosbag in mcap format. </li>
+</ul>
+<h2><a class="anchor" id="autotoc_md161"></a>
+&lt;strong&gt;CARMA Messenger&lt;/strong&gt;</h2>
+<p >Enhancements in this release:</p>
+<ul>
+<li>Issue 205: Adds support for encoding/decoding J2334 SDSM and necessary message types. Other Fixes:</li>
+<li>PR 204: Added volume to the messenger ros2 container, allowing the container to access the vehicle calibration. </li>
+</ul>
+<h2><a class="anchor" id="autotoc_md162"></a>
+&lt;strong&gt;CARMA Msgs&lt;/strong&gt;</h2>
+<p >Enhancements in this release:</p>
+<ul>
+<li>Issue 205 / PR 208: Added new ROS message definitions for the SensorDataSharingMessage (SDSM) and its nested data frames and data elements according to the 2020 SAE J3224 specification.</li>
+<li>Issue 215: Added new message types and rules to support the CARMA cooperative perception stack.</li>
+<li>PR 226: Added some convenience functions to convert the SAE confidence enumerated values to floating point equivalents</li>
+<li>PR 221: Added a new ROS package with some Python functions to load ROS messages from YAML strings and files</li>
+</ul>
+<p >Other Fixes:</p>
+<ul>
+<li>PR 211: Added Github Actions CI workflows</li>
+<li>PR 214: Fixed missing SKATEBOARD value type. Both SAE J2735 messages for HumanPropelledType were missing the "SKATEBOARD" value type which resulted in following types being off by a value of 1.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md163"></a>
+&lt;strong&gt;CARMA Torc Pinpoint Driver&lt;/strong&gt;</h2>
+<p >Other Fixes:</p>
+<p >• PR 39: Fixed lat and lon truncation from being converted to a float.</p>
+<h2><a class="anchor" id="autotoc_md164"></a>
+&lt;strong&gt;CARMA Time Library&lt;/strong&gt;</h2>
+<p >Other Fixes:</p>
+<p >• Issue 10 / PR 12: Fixed carma-clock object to support multiple threads waiting on initialization </p>
+<h2><a class="anchor" id="autotoc_md165"></a>
+&lt;strong&gt;CARMA Velodyne Lidar Driver&lt;/strong&gt;</h2>
+<p >Other Enhancements:</p>
+<p >• PR 110: The timestamp of the data from the sensor’s clock is used for point cloud ROS Message timestamps published by the velodyne driver.</p>
+<p >Other Fixes</p>
+<p >• PR 106: Replace CircleCI with GitHub Actions workflow • PR 109: Removed installation of the velodyne_pointcloud package from this image.</p>
+<h1><a class="anchor" id="autotoc_md166"></a>
+Version 4.4.3, released June 21st, 2023</h1>
+<h2><a class="anchor" id="autotoc_md167"></a>
+&lt;strong&gt;Summary&lt;/strong&gt;</h2>
+<p >This release adds functionality for the integration of CARMA Streets and V2X Hub to CDASim. Notable features of this integration include time synchronization of CARMA Streets and V2X Hub with CDASim via a newly developed time synchronization library, full integration of the NS-3 network simulator to simulate the transmission of DSRC messages to and from CARMA Streets/V2X Hub and CARMA Platform, and integration of the Econolite Virtual Controller module to provide an NTCIP-compatible interface between CARMA Streets/V2X Hub and the SUMO traffic simulator.</p>
+<h2><a class="anchor" id="autotoc_md168"></a>
+&lt;strong&gt;CDA Simulation&lt;/strong&gt;</h2>
+<p >The CDASim repository was previously called carma-simulation. This package name update has been applied to the GitHub repository and Docker Hub repository and images and will be the name for this package going forward.</p>
+<p >This release for CDASim adds the necessary software components to register and communicate with one or more infrastructure software (V2X Hub and/or CARMA Streets) instances and fixes issues with the configuration and usage of the NS-3 simulator to simulate the transmission and reception of DSRC messages by simulation participants (both vehicle and infrastructure). This release also adds the necessary interfaces to support integration with the Econolite Virtual Controller, however the Econolite Virtual Controller itself is not distributed with this release. In addition, please note that this release of CDASim has been integration and verification tested with CARMA Platform 4.2.0, though the interfaces used should support all ROS2 versions of the CARMA Platform.</p>
+<p >Enhancements in this release:</p><ul>
+<li>PR 108: Added SUMO multi-client feature for EVC integration.</li>
+<li>PR 109: Added EVC-SUMO bridge.</li>
+<li>PR 110: Added GitHub actions workflows for CI/CD <br  />
+</li>
+<li>PR 114: Setup shell structure for infrastructure ambassador. currently this design mainly followed Carma ambassador implementation.</li>
+<li>PR 115: Implement Loop Detector Functionality in EVC-SUMO Bridge</li>
+<li>PR 120: Updated install.sh script by removing unused code.</li>
+<li>PR 121: The implementation of Infrastructure Time Interface class which includes encoding time message and updating to registered instances.</li>
+<li>PR 122: Added functionality to enable the handshake between CARMA simulation and CARMA street. The data flow of the handshake is as follows:<ol type="1">
+<li>CARMA Streets sends an infrastructure registration message to mosaic-infrastructure.</li>
+<li>The infrastructure Registration Receiver receives the registration message from CARMA street and converts it to an infrastructure Registration Message object.</li>
+<li>The Infrastructure Registration Receiver stores the infrastructure Registration Message object in a queue.</li>
+<li>The Infrastructure Message Ambassador runs in a loop and checks the queue for any new messages while processing time advance grants.</li>
+<li>When a new message is found in the queue, the Infrastructure Message Ambassador creates an RSU with its DSRC configuration and sends the registration message to the MOSAIC RTI.</li>
+<li>These created RSUs are stored in the Infrastructure Instance Manager with the type of Infrastructure Instance.</li>
+</ol>
+</li>
+<li>PR 124: Added Build status checks in readme markdown page for CI and Docker hub.</li>
+<li>PR 125: Added an NS3 docker build process and GitHub actions to build and run sonar analysis. Additionally, Upgraded SUMO version to 1.15.0, which now supports 'induction loop' for the purpose to test EVC-SUMO integration.</li>
+<li>PR 126: Added new scenario files for EVC and fix a function call in bridge to get traffic light state from sumo.</li>
+<li>PR 127: Refactored existing v2x-message reception logic into a new maven module to be easily incorporated into the infrastructure ambassador without code duplication.</li>
+<li>PR 133: Added TraCI IP argument for EVC-Sumo connection.</li>
+<li>PR 118: Updated Java version to 11 for maven sonar scanner plugin</li>
+</ul>
+<p >Known Issues in this release:</p>
+<ul>
+<li>CARMA Platform Issue #2117 Data analysis revealed that commanded acceleration exceeded anticipated value range.</li>
+<li>CARMA Platform Issue #2118 Vehicle command frequency varies unexpectedly from target 30Hz</li>
+<li>CARMA Platform Issue #2119 CARLA Initialization causes random time offset from CDASim provided simulation time.</li>
+</ul>
+<p >Fixes in this release:</p>
+<ul>
+<li>PR 128: Fixed the simulation freezing issue that occurs when NS3 and infrastructure ambassador are enabled and running in the MOSAIC scenario Tiergarten which needs infrastructure ambassador to successfully register RSU and DSRC to NS3 and store the new registration in the infrastructure Instance Manager.</li>
+<li>PR 129: Updated infrastructure time message to use millisecond timestep instead of nanosecond time stamp since nanosecond level logic is not supported on infrastructure.</li>
+<li>PR 130: Resolved an error with the tokenizer in the CarmaV2xMessage class which causing it to incorrectly bundle tokens together and parse failure for valid message.</li>
+<li>PR 132: Fixed Parser error in mosaic Carma-utils to avoid parsing after reading the final field. This will ignore any potential junk data after the end of the payload field.</li>
+<li>PR: 135: Fixed a variety of issues related to NS-3 integration with CARMA Streets and platform. Integration is not functional to the point that messages from streets and platform can enter NS-3 and be simulated, and then exit NS-3 and be received by their respective systems.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md169"></a>
+&lt;strong&gt;CARMA NS3 Adapter&lt;/strong&gt;</h2>
+<p >The carma-ns3-adapter is a new repository and docker image for this release, which came from an existing package that has been refactored out of the carma-platform repository to better match the structure used by other CARMA Platform drivers.</p>
+<p >Enhancements in this release:</p><ul>
+<li>PR 1: Implemented new feature to send the registration message each timestep by using two sockets in parallel.</li>
+<li>PR 3: Added configuration parameters in NS3 adapter for host IP address in registration message.</li>
+<li>PR 5: Updated NS3 adapter mode to load the parameters at launch and changed the IP address values for XIL testing.</li>
+<li>PR 4: Added GitHub actions workflows and configured Docker Hub repositories for NS3 adapter.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md170"></a>
+&lt;strong&gt;CARMA Streets&lt;/strong&gt;</h2>
+<p >CARMA Streets Traffic Signal Control (TSC) service has been integrated with CDASim in this release. This includes the necessary input data flows (from MOSAIC and from the Econolite Virtual Controller) as well as time synchronization and output data flows in the form of V2X messages.</p>
+<p >Enhancements in this release:</p>
+<ul>
+<li>Issue 331: Added new functionality for CARMA-Streets to consume Multi-Modal Intelligent Traffic Signal System (MMITSS) phase control message.</li>
+</ul>
+<p >Fixes in this release:</p>
+<ul>
+<li>PR 328: Fixed time sync segfault when attempting to call start on the service since the time consumer had not been properly initialized after leaving TIME_SYNC_TOPIC configuration.</li>
+<li>PR 329 &amp; 333: Fixed Carma-clock functionality related to a bug fix in Carma-time-lib when multiple threads call the streets clock singleton method for incoming messages to initialize the clock time.</li>
+<li>PR 332: Fixed docker builds for all XIL Release CARMA-Streets services.</li>
+<li>PR 333: Fixed TSC service in non-simulation mode which has and exception from the Carma-clock object when trying to update its time to 0. Where this calls to Carma clock is valid only in simulation mode.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md171"></a>
+&lt;strong&gt;CARMA-CARLA Integration Tool&lt;/strong&gt;</h2>
+<p >There are no significant changes to this package as part of the release. Only minor build system and CI issues have been addressed so that this package continues to function.</p>
+<p >Enhancements in this release:</p>
+<ul>
+<li>Issue 28: Add CI workflows for Sonar scan which scans the source code and captures code quality reports on sonar cloud.</li>
+</ul>
+<p >Fixes in this release:</p>
+<ul>
+<li>Issue 27: Fixed Docker file that manually downloads and installs CMake 3.13. This is no longer needed Carma-base ships with Ubuntu's CMake 3.16.x package.</li>
+<li>Issue 31: Fixed Carma-Carla-integration ROS launch errors that shuts down on startup of system.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md172"></a>
+&lt;strong&gt;CARMA Time Library&lt;/strong&gt;</h2>
+<p >The carma-time-lib repository is new repository that adds a library containing logic for managing the real- and simulation time in software that uses it. It provides an interface to useful time functions (such as getting the current time and sleeping until a specified time) that can be swapped between using the system clock and using an externally supplied time source (such as a simulator). This package has been modeled on the ROS time system in terms of general functionality but is able to integrate into software that is not ROS-enabled (such as CARMA Streets and V2X Hub).</p>
+<p >Enhancements in this release:</p>
+<ul>
+<li>PR 3&amp;4: Added CI workflows and setup build arm64.</li>
+<li>PR 6: Updated Carma-clock class files with time stamp to test in seconds.</li>
+<li>PR 8: Updated Carma-clock method that throws exception when trying to update the time on Realtime clock.</li>
+<li>PR 11: Updated CMake version and Debian packages for focal and Jammy distributions of ubuntu.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md173"></a>
+Version 4.4.2, released May 10th, 2023</h1>
+<h2><a class="anchor" id="autotoc_md174"></a>
 &lt;strong&gt;Summary&lt;/strong&gt;</h2>
 <p >Carma-platform release version 4.4.2 is a hotfix release for 4.4.0.</p>
 <p >Fixes in this release:</p><ul>
 <li>PR 2105: Fixed Light Controlled Intersection (LCI) strategic plugin where the node fails to load parameters from the vehicle calibration directory.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md150"></a>
+<h1><a class="anchor" id="autotoc_md175"></a>
 Version 4.4.1, released May 9th, 2023</h1>
-<h2><a class="anchor" id="autotoc_md151"></a>
+<h2><a class="anchor" id="autotoc_md176"></a>
 &lt;strong&gt;Summary&lt;/strong&gt;</h2>
 <p >Carma-platform release version 4.4.1 is a hotfix release for 4.4.0.</p>
 <p >Fixes in this release:</p><ul>
 <li>Issue 2104: Fixed an exception that can occurs in rare circumstances when the <a class="el" href="namespaceapproaching__emergency__vehicle__plugin.html">approaching_emergency_vehicle_plugin</a> cannot process all received BSMs from an active ERV at ~10 Hz. Received BSMs that are processed by the <a class="el" href="namespaceapproaching__emergency__vehicle__plugin.html">approaching_emergency_vehicle_plugin</a> should not result in any exception.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md152"></a>
+<h1><a class="anchor" id="autotoc_md177"></a>
 Version 4.4.0, released May 5th, 2023</h1>
-<h2><a class="anchor" id="autotoc_md153"></a>
+<h2><a class="anchor" id="autotoc_md178"></a>
 &lt;strong&gt;Summary&lt;/strong&gt;</h2>
 <p >CARMA system release version 4.4.0 is comprised of new features in CARMA Cloud, CARMA Messenger, and CARMA Platform to support Freight Emergency Response functionality; a newly created Workforce Development (WFD) CDA telematics tool; and CARMA Platform Robotics Operating System 2 (ROS2) upgrades; Along with the above enhancements, several bug fixes and CI related enhancements are included in this release.</p>
 <ul>
@@ -119,7 +395,7 @@ Version 4.4.0, released May 5th, 2023</h1>
 <li>**<ins>Workforce Development (WFD) CDA-Telematics tool (NEW)</ins>** - This is first release of CDA-Telematics tool. CDA-Telematics Tool is an open-source web-based tool that allows near real-time data collection and streaming from vehicles and infrastructure (entities) for situational awareness during testing or demonstrations. This enables the users to monitor and analyze the behavior of entities via a dynamic and easy-to-use dashboard where users can visualize and plot any data generated from these entities. The tool has both hardware and software components. The hardware includes an edge device or computer connected physically to the entity to collect the data and a cellular network provider to stream the data. The software component includes a data processing server to process the data, a time-series database to store collected data, and a user-interface to visualize and analyze the data. The end-result provides quick and easy analysis of data, collected from an entire fleet and/or region, in near-real-time.</li>
 <li>**<ins>CARMA Platform Robotics Operating System 2 (ROS2) upgrades</ins>** – In this release, the ROS2 migration of the CARMA Platform guidance subsystem’s has been completed. As part of this, the ROS1 versions of the <a class="el" href="namespacebasic__autonomy.html">basic_autonomy</a> and <a class="el" href="namespacecarma__wm.html">carma_wm</a> libraries have been removed, as they have been fully replaced by their ROS2 versions in CARMA Platform.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md154"></a>
+<h2><a class="anchor" id="autotoc_md179"></a>
 &lt;strong&gt;CARMA Platform&lt;/strong&gt;</h2>
 <p >**<ins> Freight Emergency Response Functionalities</ins>** <br  />
 </p>
@@ -157,7 +433,7 @@ Version 4.4.0, released May 5th, 2023</h1>
 <li>PR 2080: Fixed unit tests that are failing for the LCI (Light controlled intersection) strategic plugin package in CARMA Platform.</li>
 <li>Issue 2093: Fixed Plan Delegator's update Maneuver Parameters function to avoid delay which is approximately 0.3-0.8 seconds for each received maneuver plan. This is a significant amount of delay and can contribute to CARMA control issues, especially at high (30+ mph) speeds.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md155"></a>
+<h2><a class="anchor" id="autotoc_md180"></a>
 &lt;strong&gt;CDA-Telematics&lt;/strong&gt;</h2>
 <p >The first release includes the several features related to WFD CDA-Telematics tool:</p>
 <ul>
@@ -184,7 +460,7 @@ Version 4.4.0, released May 5th, 2023</h1>
 <li>Issue 138 &amp; 145: There are two anomalies that the team discovered during integration testing that are documented on Github and the links are provided below. These are not issues as they’ve been fixed but the fix is a workaround due to the limitations that were discovered on InfluxDB (the database that we are using). We have kept them open as anomalies, so we can revisit and try to find a more robust fix for those, after meeting with the InfluxDB development team (third-party). <br  />
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md156"></a>
+<h2><a class="anchor" id="autotoc_md181"></a>
 &lt;strong&gt;CARMA Messenger&lt;/strong&gt;</h2>
 <p >**<ins>Freight Emergency Response Functionalities</ins>**</p>
 <p >Enhancements in this release related to Freight Emergency Response:</p>
@@ -210,7 +486,7 @@ Version 4.4.0, released May 5th, 2023</h1>
 <li>PR 108: Adds cyclone DDS configuration for the Ford Fusion, Silver Lexus and Blue Lexus.</li>
 <li>PR 107: Adds cyclone DDS configuration for the Fusion.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md157"></a>
+<h2><a class="anchor" id="autotoc_md182"></a>
 &lt;strong&gt;CARMA Web UI&lt;/strong&gt;</h2>
 <p >**<ins>Freight Emergency Response Functionalities</ins>**</p>
 <p >Enhancements in this release related to Freight Emergency Response:</p>
@@ -223,27 +499,27 @@ Version 4.4.0, released May 5th, 2023</h1>
 <li>Issue 162: Fixed CARMA Web UI which does not subscribe to /guidance/route event and notifications are not displayed to the driver.</li>
 <li>Issue 151: Fixed base image errors by changing it from Debian Jessie to Debian buster due to Debian Jessie was EOL.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md158"></a>
+<h2><a class="anchor" id="autotoc_md183"></a>
 &lt;strong&gt;CARMA Cloud&lt;/strong&gt;</h2>
 <p >**<ins>Freight Emergency Response Functionalities</ins>**</p>
 <p >Enhancements in this release related to Freight Emergency Response:</p>
 <ul>
 <li>Issue 45: The creation of a new RSU software package, which enables V2X Hub instances connected to an RSU to register their location information with CARMA Cloud. Additionally, this software package is responsible for processing ERV BSMs received from V2X Hub instances, identifying other V2X Hub instances connected to RSUs (Roadside Units) along the ERV’s future route, and forwarding the ERV BSMs to those applicable V2X Hubs.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md159"></a>
+<h2><a class="anchor" id="autotoc_md184"></a>
 &lt;strong&gt;CARMA Torc Pinpoint Driver&lt;/strong&gt;</h2>
 <p >Enhancements in this release:</p>
 <ul>
 <li>Issue 35: URDF information should be removed and placed in a vehicle-specific configuration repository.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md160"></a>
+<h2><a class="anchor" id="autotoc_md185"></a>
 &lt;strong&gt;CARMA Cohda DSRC Driver&lt;/strong&gt;</h2>
 <p >**<ins>Freight Emergency Response Functionalities</ins>**</p>
 <p >Enhancements in this release related to Freight Emergency Response:</p>
 <ul>
 <li>Issue 111: Driver now supports receiving and broadcasting EmergencyVehicleResponse and EmergencyVehicleAck messages.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md161"></a>
+<h2><a class="anchor" id="autotoc_md186"></a>
 &lt;strong&gt;CARMA Analytics&lt;/strong&gt;</h2>
 <p >**<ins>Freight Emergency Response Functionalities</ins>**</p>
 <p >Enhancements in this release related to Freight Emergency Response:</p>
@@ -251,9 +527,9 @@ Version 4.4.0, released May 5th, 2023</h1>
 <li>PR 15: Developed analysis scripts to generate Emergency Response use case verification metrics for V2X Hub and CARMA Cloud.</li>
 <li>PR 14: Developed analysis scripts to generate Emergency Response use case verification metrics from CARMA Messenger and CARMA Platform rosbags.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md162"></a>
+<h1><a class="anchor" id="autotoc_md187"></a>
 Version 4.3.0, released Feb 10th, 2023</h1>
-<h2><a class="anchor" id="autotoc_md163"></a>
+<h2><a class="anchor" id="autotoc_md188"></a>
 &lt;strong&gt;Summary&lt;/strong&gt;</h2>
 <p >CARMA system release version 4.3.0 is comprised of new features in both CARMA Streets and CARMA Platform to support Adaptive Traffic Signal Optimization in a cooperative driving automation (CDA) environment; a new feature in CARMA Platform to support Cellular Traffic Control Messages; CARMA Platform ROS upgrades; and an upgraded CARMA XiL Co-simulation tool to support CARMA Platform Robotics Operating System 2 (ROS2) implementation. Along with the above enhancements, several bug fixes and CI related enhancements are included in this release.</p>
 <ul>
@@ -272,7 +548,7 @@ Version 4.3.0, released Feb 10th, 2023</h1>
 </li>
 <li>**<ins>Integrated Highway Prototype 2 (IHP2) Cellular Traffic Control Messages</ins>** - CARMA Platform is updated to communicate with CARMA Cloud through cellular communication. In this feature, the platform submits a Traffic Control Request (TCR) directly to CARMA Cloud and receives all corresponding Traffic Control Messages (TCMs). As a result, communication with CARMA Cloud is no longer dependent on short range communication (e.g., DSRC or C-V2X) and V2XHub. Currently CARMA Cloud is only configured to directly communicate with a single entity. The TCM returned from CARMA Cloud over cellular communications may contain a single message or multiple messages.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md164"></a>
+<h2><a class="anchor" id="autotoc_md189"></a>
 &lt;strong&gt;CARMA Platform&lt;/strong&gt;</h2>
 <p >**<ins>TSMO UC3 Functionalities</ins>**</p>
 <p >To enable the vehicle-side functionalities designed for TSMO UC3, <br  />
@@ -352,7 +628,7 @@ Version 4.3.0, released Feb 10th, 2023</h1>
 <li>Issue 2035: During testing in the CARMA XIL cosimulation tool to evaluate basic vehicle control capabilities, it was observed that CARMA Platform planning and control was unable to complete an initial lane change and right turn in the default CARLA Town4 map.</li>
 <li>Issue 2034: During testing in the CARMA XIL cosimulation tool to evaluate advanced vehicle control capabilities, it was observed that CARMA Platform Yield Plugin implementation was not aggressive enough in resolving detected conflicts.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md165"></a>
+<h2><a class="anchor" id="autotoc_md190"></a>
 &lt;strong&gt;CARMA-Streets&lt;/strong&gt;</h2>
 <p >**<ins>TSMO UC3 Functionalities</ins>**</p>
 <p >To enable the infrastructure-side functionalities designed for TSMO UC3,</p>
@@ -393,7 +669,7 @@ Version 4.3.0, released Feb 10th, 2023</h1>
 <li>Issue 290: Added named Docker volume for MySQL database to allow for V2X-Hub Plugin configurations and users to persist between Docker-compose up and down calls</li>
 <li>Issue 299: Updated Docker ignore file to ignore log directories for Docker build context to speed up builds. Docker-compose updates to persist Kafka volume between Docker-compose up and down redeployments.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md166"></a>
+<h1><a class="anchor" id="autotoc_md191"></a>
 Version 4.2.0, released July 29th, 2022</h1>
 <p ><b>Summary:</b> Carma-platform release version 4.2.0 is comprised of three major enhancements. First, Cooperative Traffic Management (CTM) Speed harmonization. Second, Cooperative Lane Follow (CLF) - Platoon Formation, Operation, Dissolution. Third, Cooperative Lane Coordination (CLC), cooperative lane merge. Along with the above enhancements, several bug fixes and CI related enhancements are included in this release.</p>
 <p >Carma Platform:</p>
@@ -430,7 +706,7 @@ Version 4.2.0, released July 29th, 2022</h1>
 <ul>
 <li>Issue 27: Fixed intermittent large delay experienced between CARMA Cloud receiving a TCR from V2XHub and CARMA Cloud sending all corresponding TCMs to V2XHub.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md167"></a>
+<h1><a class="anchor" id="autotoc_md192"></a>
 Version 4.1.0, released June 1st, 2022</h1>
 <p ><b>Summary:</b> CARMA Platform release version 4.1.0 adds Personal Safety Message (PSM) support to CARMA Platform and CARMA Messenger along with updates to several CARMA Plugins to support ROS2 compatibility. Along with the aforementioned enhancements, several bug fixes and CI related enhancements are included in this release.</p>
 <p >CARMA Platform:</p>
@@ -457,7 +733,7 @@ Version 4.1.0, released June 1st, 2022</h1>
 <p >Fixes in this release:</p><ul>
 <li>Issue 220: Fixed the Georeference Topic that has to be published as a timer (every 2 seconds) so that the ROS Bridge can successfully publish the message.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md168"></a>
+<h1><a class="anchor" id="autotoc_md193"></a>
 Version 4.0.3, released May 10th, 2022</h1>
 <p ><b>Summary:</b> Carma-platform release version 4.0.0 is first version that starts of the transition of system to ROS2 with V2X, Object Perception and some driver nodes transitioned to ROS2 and others still using ROS1 with communication enabled using ROS bridge. This release includes feature enhancements in support of the following proof-of-concept applications to demonstrate the following TSMO use cases:</p><ul>
 <li>Cooperative Traffic Signaling (CTS), fixed signal traversal.</li>
@@ -499,7 +775,7 @@ Version 4.0.3, released May 10th, 2022</h1>
 <ul>
 <li>PR 12: CARMA Cloud sets up Lane Use Restriction to add, remove and update a lane use restriction for vehicles in a work zone area. Enhancement also has been made to receive TCM acknowledgement via the REST interface and log it in the logs.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md169"></a>
+<h1><a class="anchor" id="autotoc_md194"></a>
 Version 3.11.0, released Feb 3rd, 2022</h1>
 <p ><b>Summary:</b> Carma-platform release version 3.11.0 is the final version which is exclusively ROS1. It has one major enhancement which is to enable Cooperative Right-of-Way (CRW), stop sign intersection traversal.This release also includes new enhancements in Carma-streets, as listed below, to aid with the stop sign intersection traversal.Subsequent versions will contain both ROS1 and ROS2 code as the system is transitioned from the former to the latter. In addition to the stop sign intersection traversal enhancements, several bug fixes are included in this release.</p>
 <p >Note: V2X Hub release 7.1.0 includes a CARMA streets plugin for the following operations:</p><ul>
@@ -534,7 +810,7 @@ Version 3.11.0, released Feb 3rd, 2022</h1>
 <li>Issue 88: Removed two Kafka topics v2xhub_in and v2xhub_out initially created to demo the CARMA-Streets V2X-Hub plugin’s capability to transmit J2735 messages to a CARMA-Streets deployment via Kafka.</li>
 <li>Issue 92: Fixed Min 300 to max 900 milliseconds delay in these lanelet2 related functions for one vehicle testing. When one or more vehicles sends a message concurrently, the delay can be incrementally larger.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md170"></a>
+<h1><a class="anchor" id="autotoc_md195"></a>
 Version 3.10.0, released Dec 17th, 2021</h1>
 <p ><b>Summary:</b> Carma-platform release version 3.10.0 is comprised of two major enhancements. First, ROS1 Noetic (Updating the underlying ROS version from ROS Kinetic to ROS Noetic). Second updating the underlying OS from Ubuntu 16.04 to Ubuntu 20.04 to support the ROS2 migration which will use Ubuntu 20.04. Along with the above enhancements, several bug fixes and CI related enhancements are included in this release.</p>
 <p >Enhancements in this release:</p><ul>
@@ -561,7 +837,7 @@ Version 3.10.0, released Dec 17th, 2021</h1>
 <li>Issue 1477: Fixed Noetic version of carma-ssc-interface-wrapper-driver does not contain pacmod3 and kvaser_interface</li>
 <li>Issue 1436: Fixed Mock Controller Driver Dropping Connection Due to Message md5sum Mismatch.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md171"></a>
+<h1><a class="anchor" id="autotoc_md196"></a>
 Version 3.9.0, released Dec 5th, 2021</h1>
 <p ><b>Summary:</b> Carma-platform release version 3.9.0 is comprised of one major enhancements. First, Updated Carma Freight Port Drayage plugin web service integration. Along with the above enhancement, several bug fixes and CI related enhancements are included in this release.</p>
 <p >Enhancements in this release:</p><ul>
@@ -581,7 +857,7 @@ Version 3.9.0, released Dec 5th, 2021</h1>
 -   Issue 91: Fixed strategy params parsing issues in carma-platform with replacing encoded quotation marks in received Mobility Operation message's strategy params field.
 
 
-@section autotoc_md172 Version 3.8.2, released Oct 22nd, 2021
+@section autotoc_md197 Version 3.8.2, released Oct 22nd, 2021
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt; 
@@ -593,7 +869,7 @@ Fixes in this release:
 -   Issue 75: Fixed two LiDAR’s which were not calibrated on the carma white truck during verification testing.
 
 
-@section autotoc_md173 Version 3.8.1, released Oct 15th, 2021
+@section autotoc_md198 Version 3.8.1, released Oct 15th, 2021
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt; 
@@ -604,7 +880,7 @@ Fixes in this release:
 - Issue 1446: Fixed the work zone plugin by updating vehicle length parameter and modifying traffic light downtrack calculations to ensure that the target stopping location would be shifted backward by vehicle length.
 - Issue 1475 &amp; 139: Fixed carma-platform and carma-config by carma-docker.launch file for each freightliner to pass in the correct LiDAR frame and fixed IP address of the front left camera in the blue truck.
 
-@section autotoc_md174 Version 3.8.0, released Sep 24th, 2021
+@section autotoc_md199 Version 3.8.0, released Sep 24th, 2021
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt;
@@ -622,7 +898,7 @@ Fixes in this release:
 -   Issue 1461: Fixed basic autonomy introduces errors in in lane-cruising
 -   Issue 1420: Fixed Platform and UI need to process/display the SPAT correctly and distinguish which SPAT is from the approaching traffic signal controller for the SV as traffic signal intersection ID and group ID that are not available.
 
-@section autotoc_md175 Version 3.7.2, released Sep 1st, 2021
+@section autotoc_md200 Version 3.7.2, released Sep 1st, 2021
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt; 
@@ -633,7 +909,7 @@ Fixes in this release:
 -   Issue 1427: Rerouting triggered multiple time from TIM geofence.
 -   Issue 1428: Excessive steering during lane change along curve at ACM 
 
-@section autotoc_md176 Version 3.7.0, released Aug 10th, 2021
+@section autotoc_md201 Version 3.7.0, released Aug 10th, 2021
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt; 
@@ -651,7 +927,7 @@ Fixes in this release:
 -   Issue 1364: Fixed Platoon gap control by adding last speed command as current speed for smooth speed transition.
 -   Issue 1227: Fixed cooperative lane change functionality by adding necessary components relates to yield plugin and fixed few other issues for CLC and integration tested.
 
-@section autotoc_md177 Version 3.6.0, released June 29th, 2021
+@section autotoc_md202 Version 3.6.0, released June 29th, 2021
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt;
@@ -680,7 +956,7 @@ Fixes in this release:
 -   Issue 1270: TIM scenario vehicle speed up to configured limit instead of slowing down when in Geofence region.
 -   Issue 1283: Fixed TCR timer after selecting a route, the WMB should broadcast constantly every 10 seconds.
 
-@section autotoc_md178 Version 3.5.3, released April 9th, 2021
+@section autotoc_md203 Version 3.5.3, released April 9th, 2021
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt;
@@ -711,7 +987,7 @@ Fixes in this release:
 -   Issue 1130: Fixed the required plugins configuration file to fix the UI display of required plugins to have Route Following, InLane Cruising Plugin, Stop and Wait Plugin, Pure Pursuit.
 -   Issue 1160&amp;1164: The predicted and current velocities of the roadway obstacle when detected on the /environment/roadway objects topic is always zero.
 
-@section autotoc_md179 Version 3.4.2, released December 15th, 2020
+@section autotoc_md204 Version 3.4.2, released December 15th, 2020
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt;
@@ -720,7 +996,7 @@ carma-platform rlease version 3.4.2 is a hotfix to update platform with the most
 Fixes in this release:
 -   Issue 948: The carma user interface dispalys "NULL" instead of the current version number.
 
-@section autotoc_md180 Version 3.4.1, released December 11th, 2020
+@section autotoc_md205 Version 3.4.1, released December 11th, 2020
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt;
@@ -729,7 +1005,7 @@ carma-platform release version 3.4.1 is a hotfix release to address the issue of
 Fixes in this release:
 -   Issue 1005: The gnss_ndt_selector would cause lidar to gps failover in the event of an ndt timeout and vice versa regardless of the    operational mode (NDT only, GNSS only, AUTO score based switch).
 
-@section autotoc_md181 Version 3.4.0, released December 9th, 2020
+@section autotoc_md206 Version 3.4.0, released December 9th, 2020
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt;
@@ -757,7 +1033,7 @@ Fixes in this release:
 - Issue 1002: Rosbridge crashes at startup due to vtk package update.
 
 
-@section autotoc_md182 Version 3.3.0, released February 7th, 2020
+@section autotoc_md207 Version 3.3.0, released February 7th, 2020
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt;
@@ -781,7 +1057,7 @@ Fixes in this release:
 - Issue 517: Load vector map to be loaded when carma is launched
 
 
-@section autotoc_md183 Version 3.2.0, released December 23rd, 2019
+@section autotoc_md208 Version 3.2.0, released December 23rd, 2019
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt;
@@ -808,7 +1084,7 @@ Fixes in this release:  &lt;br&gt;
 - Issue 452: Pure pursuit wrapper does not convert trajectory into waypoints under new CARMA planning stack
 
 
-@section autotoc_md184 Version 3.1.0, released 18 October 2019 
+@section autotoc_md209 Version 3.1.0, released 18 October 2019 
 
 
 &lt;strong&gt;Summary:&lt;/strong&gt;
@@ -938,7 +1214,7 @@ Below are the highlights of the issues and pull requests (PRs) that have been ad
 <li>PR 18: Update CircleCI For CARMA 3</li>
 <li>PR 19: Add -Wall flag to C/C++ build args</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md185"></a>
+<h1><a class="anchor" id="autotoc_md210"></a>
 Pre-Release Version 3.0.0, released 15 July 2019</h1>
 <p ><b>Summary:</b> CARMAPlatform pre-release version 3.0.0 is the first step to integrating Autoware and its components, specifically NDT matching and pure pursuit. CARMAPlatform now includes both lateral (steering) control and longitudinal (speed) control for full SAE level 2 autonomy. GNSS initialization of NDT matching has been added in order to localize the vehicle’s position on the 3D Point Cloud Map with LiDAR scan. A temporary UI integration has been included for minimum viable functionality while awaiting further development of CARMA guidance node. Other highlights of this release are the new drivers (e.g. Velodyne LiDAR, Novatel GPS), conforming to the new CARMA3 API, Docker updates, and adding code coverage metrics to Sonar Cloud. <br  />
  <b>Repository: CARMAPlatform</b> <br  />
@@ -1148,7 +1424,7 @@ Pre-Release Version 3.0.0, released 15 July 2019</h1>
  -PR 2: Add ECEF map TF broadcaster. <br  />
  -PR 1: Adds the deadreckoner node from the AStuff fork of Autoware. <br  />
 </p>
-<h1><a class="anchor" id="autotoc_md186"></a>
+<h1><a class="anchor" id="autotoc_md211"></a>
 Version 2.9.0, released 15 May 2019</h1>
 <p >-PR 199, ignore raw CAN data in rosbags <br  />
  -PR 201, fix speed limit handling <br  />
@@ -1166,7 +1442,7 @@ Version 2.9.0, released 15 May 2019</h1>
  -PR 232, fix dockerfile version metadata <br  />
  -PR 233, fix test coverage metrics <br  />
  -PR 236, add SonarCloud status reporting to README</p>
-<h1><a class="anchor" id="autotoc_md187"></a>
+<h1><a class="anchor" id="autotoc_md212"></a>
 Version 2.8.4, released 04 March 2019</h1>
 <p >-PR 10, add NCV handling to traffic signal plugin <br  />
  -PR 12, fix obstacle subscriber to traffic signal plugin <br  />
@@ -1211,10 +1487,10 @@ Version 2.8.4, released 04 March 2019</h1>
  -PR 191, fix docker command error <br  />
  -PR 196, added light bar indicator to UI <br  />
 </p>
-<h1><a class="anchor" id="autotoc_md188"></a>
+<h1><a class="anchor" id="autotoc_md213"></a>
 Version 2.8.1, released 15 November 2018</h1>
 <p >-Issue #51 fixed to prevent platooning plugin from failing on startup. -Updates to several administrative documents.</p>
-<h1><a class="anchor" id="autotoc_md189"></a>
+<h1><a class="anchor" id="autotoc_md214"></a>
 Version 2.8.0, released 31 October 2018</h1>
 <p >-Added traffic signal plugin that provides GlidePath functionality (eco-approach and departure at a signalized intersection) for one or more fixed phase plan traffic signals in the planned route. <br  />
  -Issue 1015, fixed UI to use Interface Manager for all driver topics and sensor fusion for source of vehicle speed <br  />
@@ -1222,10 +1498,10 @@ Version 2.8.0, released 31 October 2018</h1>
  -Issue 1031, gave plugins access to ROS time <br  />
  -Issue 1078, allowed traffic signal popup for operator confirmation to appear earlier <br  />
 </p>
-<h1><a class="anchor" id="autotoc_md190"></a>
+<h1><a class="anchor" id="autotoc_md215"></a>
 Version 2.7.4, released 22 October 2018</h1>
 <p >Redacted files with sensitive data that cannot be publicly distributed.</p>
-<h1><a class="anchor" id="autotoc_md191"></a>
+<h1><a class="anchor" id="autotoc_md216"></a>
 Version 2.7.3, released 09 October 2018</h1>
 <p >Material changes to the software in this version are:</p>
 <p >-PR 982, fixed unit tests <br  />
@@ -1244,7 +1520,7 @@ Version 2.7.3, released 09 October 2018</h1>
  -PR 1035, added UI widget for traffic signal plugin <br  />
  -PR 1036, allow guidance plugins to set up ROS service servers <br  />
 </p>
-<h1><a class="anchor" id="autotoc_md192"></a>
+<h1><a class="anchor" id="autotoc_md217"></a>
 Version 2.7.2, released 17 July 2018</h1>
 <p >This is the first public release of the CARMA platform (internally known as Prototype I).</p>
 <p >Installation must be performed from a development computer. Once the system is built locally on that computer, the remote installer tool, found in the engineering_tools directory, can be run to transfer the executable and configuration files to the target vehicle computer in a directory named /opt/carma. Please see the User Guide in the docs folder for more details.</p>
@@ -1256,7 +1532,7 @@ Version 2.7.2, released 17 July 2018</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Apr 19 2024 14:27:57 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Apr 29 2024 14:33:08 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

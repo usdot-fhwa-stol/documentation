@@ -169,55 +169,82 @@ var NAVTREE =
     [ "index", "md_docs_index.html", null ],
     [ "License", "md_docs_License.html", null ],
     [ "CARMA Platform Release Notes", "md_docs_Release_notes.html", [
-      [ "Version 4.4.2, released May 10th, 2023", "md_docs_Release_notes.html#autotoc_md148", [
-        [ "<strong>Summary</strong>", "md_docs_Release_notes.html#autotoc_md149", null ]
+      [ "Version 4.5.0, released April 10th, 2024", "md_docs_Release_notes.html#autotoc_md148", [
+        [ "<strong>Summary</strong>", "md_docs_Release_notes.html#autotoc_md149", null ],
+        [ "<strong>CDA Sim</strong>", "md_docs_Release_notes.html#autotoc_md150", null ],
+        [ "<strong>CARMA-CARLA Integration Tool</strong>", "md_docs_Release_notes.html#autotoc_md151", null ],
+        [ "<strong>CARMA NS3 Adapter</strong>", "md_docs_Release_notes.html#autotoc_md152", null ],
+        [ "<strong>CARLA Sensor Library</strong>", "md_docs_Release_notes.html#autotoc_md153", null ],
+        [ "<strong>CARLA ScenarioRunner</strong>", "md_docs_Release_notes.html#autotoc_md154", null ],
+        [ "<strong>EVC-SUMO (New Private Repository)</strong>", "md_docs_Release_notes.html#autotoc_md155", null ],
+        [ "<strong>Multiple Object Tracking</strong>", "md_docs_Release_notes.html#autotoc_md156", null ],
+        [ "<strong>CARMA Builds</strong>", "md_docs_Release_notes.html#autotoc_md157", null ],
+        [ "<strong>CARMA Streets</strong>", "md_docs_Release_notes.html#autotoc_md158", null ],
+        [ "<strong>CARMA Platform</strong>", "md_docs_Release_notes.html#autotoc_md159", null ],
+        [ "<strong>CARMA Base</strong>", "md_docs_Release_notes.html#autotoc_md160", null ],
+        [ "<strong>CARMA Messenger</strong>", "md_docs_Release_notes.html#autotoc_md161", null ],
+        [ "<strong>CARMA Msgs</strong>", "md_docs_Release_notes.html#autotoc_md162", null ],
+        [ "<strong>CARMA Torc Pinpoint Driver</strong>", "md_docs_Release_notes.html#autotoc_md163", null ],
+        [ "<strong>CARMA Time Library</strong>", "md_docs_Release_notes.html#autotoc_md164", null ],
+        [ "<strong>CARMA Velodyne Lidar Driver</strong>", "md_docs_Release_notes.html#autotoc_md165", null ]
       ] ],
-      [ "Version 4.4.1, released May 9th, 2023", "md_docs_Release_notes.html#autotoc_md150", [
-        [ "<strong>Summary</strong>", "md_docs_Release_notes.html#autotoc_md151", null ]
+      [ "Version 4.4.3, released June 21st, 2023", "md_docs_Release_notes.html#autotoc_md166", [
+        [ "<strong>Summary</strong>", "md_docs_Release_notes.html#autotoc_md167", null ],
+        [ "<strong>CDA Simulation</strong>", "md_docs_Release_notes.html#autotoc_md168", null ],
+        [ "<strong>CARMA NS3 Adapter</strong>", "md_docs_Release_notes.html#autotoc_md169", null ],
+        [ "<strong>CARMA Streets</strong>", "md_docs_Release_notes.html#autotoc_md170", null ],
+        [ "<strong>CARMA-CARLA Integration Tool</strong>", "md_docs_Release_notes.html#autotoc_md171", null ],
+        [ "<strong>CARMA Time Library</strong>", "md_docs_Release_notes.html#autotoc_md172", null ]
       ] ],
-      [ "Version 4.4.0, released May 5th, 2023", "md_docs_Release_notes.html#autotoc_md152", [
-        [ "<strong>Summary</strong>", "md_docs_Release_notes.html#autotoc_md153", null ],
-        [ "<strong>CARMA Platform</strong>", "md_docs_Release_notes.html#autotoc_md154", null ],
-        [ "<strong>CDA-Telematics</strong>", "md_docs_Release_notes.html#autotoc_md155", null ],
-        [ "<strong>CARMA Messenger</strong>", "md_docs_Release_notes.html#autotoc_md156", null ],
-        [ "<strong>CARMA Web UI</strong>", "md_docs_Release_notes.html#autotoc_md157", null ],
-        [ "<strong>CARMA Cloud</strong>", "md_docs_Release_notes.html#autotoc_md158", null ],
-        [ "<strong>CARMA Torc Pinpoint Driver</strong>", "md_docs_Release_notes.html#autotoc_md159", null ],
-        [ "<strong>CARMA Cohda DSRC Driver</strong>", "md_docs_Release_notes.html#autotoc_md160", null ],
-        [ "<strong>CARMA Analytics</strong>", "md_docs_Release_notes.html#autotoc_md161", null ]
+      [ "Version 4.4.2, released May 10th, 2023", "md_docs_Release_notes.html#autotoc_md173", [
+        [ "<strong>Summary</strong>", "md_docs_Release_notes.html#autotoc_md174", null ]
       ] ],
-      [ "Version 4.3.0, released Feb 10th, 2023", "md_docs_Release_notes.html#autotoc_md162", [
-        [ "<strong>Summary</strong>", "md_docs_Release_notes.html#autotoc_md163", null ],
-        [ "<strong>CARMA Platform</strong>", "md_docs_Release_notes.html#autotoc_md164", null ],
-        [ "<strong>CARMA-Streets</strong>", "md_docs_Release_notes.html#autotoc_md165", null ]
+      [ "Version 4.4.1, released May 9th, 2023", "md_docs_Release_notes.html#autotoc_md175", [
+        [ "<strong>Summary</strong>", "md_docs_Release_notes.html#autotoc_md176", null ]
       ] ],
-      [ "Version 4.2.0, released July 29th, 2022", "md_docs_Release_notes.html#autotoc_md166", null ],
-      [ "Version 4.1.0, released June 1st, 2022", "md_docs_Release_notes.html#autotoc_md167", null ],
-      [ "Version 4.0.3, released May 10th, 2022", "md_docs_Release_notes.html#autotoc_md168", null ],
-      [ "Version 3.11.0, released Feb 3rd, 2022", "md_docs_Release_notes.html#autotoc_md169", null ],
-      [ "Version 3.10.0, released Dec 17th, 2021", "md_docs_Release_notes.html#autotoc_md170", null ],
-      [ "Version 3.9.0, released Dec 5th, 2021", "md_docs_Release_notes.html#autotoc_md171", null ],
-      [ "Version 3.8.2, released Oct 22nd, 2021", "md_docs_Release_notes.html#autotoc_md172", null ],
-      [ "Version 3.8.1, released Oct 15th, 2021", "md_docs_Release_notes.html#autotoc_md173", null ],
-      [ "Version 3.8.0, released Sep 24th, 2021", "md_docs_Release_notes.html#autotoc_md174", null ],
-      [ "Version 3.7.2, released Sep 1st, 2021", "md_docs_Release_notes.html#autotoc_md175", null ],
-      [ "Version 3.7.0, released Aug 10th, 2021", "md_docs_Release_notes.html#autotoc_md176", null ],
-      [ "Version 3.6.0, released June 29th, 2021", "md_docs_Release_notes.html#autotoc_md177", null ],
-      [ "Version 3.5.3, released April 9th, 2021", "md_docs_Release_notes.html#autotoc_md178", null ],
-      [ "Version 3.4.2, released December 15th, 2020", "md_docs_Release_notes.html#autotoc_md179", null ],
-      [ "Version 3.4.1, released December 11th, 2020", "md_docs_Release_notes.html#autotoc_md180", null ],
-      [ "Version 3.4.0, released December 9th, 2020", "md_docs_Release_notes.html#autotoc_md181", null ],
-      [ "Version 3.3.0, released February 7th, 2020", "md_docs_Release_notes.html#autotoc_md182", null ],
-      [ "Version 3.2.0, released December 23rd, 2019", "md_docs_Release_notes.html#autotoc_md183", null ],
-      [ "Version 3.1.0, released 18 October 2019", "md_docs_Release_notes.html#autotoc_md184", null ],
-      [ "Pre-Release Version 3.0.0, released 15 July 2019", "md_docs_Release_notes.html#autotoc_md185", null ],
-      [ "Version 2.9.0, released 15 May 2019", "md_docs_Release_notes.html#autotoc_md186", null ],
-      [ "Version 2.8.4, released 04 March 2019", "md_docs_Release_notes.html#autotoc_md187", null ],
-      [ "Version 2.8.1, released 15 November 2018", "md_docs_Release_notes.html#autotoc_md188", null ],
-      [ "Version 2.8.0, released 31 October 2018", "md_docs_Release_notes.html#autotoc_md189", null ],
-      [ "Version 2.7.4, released 22 October 2018", "md_docs_Release_notes.html#autotoc_md190", null ],
-      [ "Version 2.7.3, released 09 October 2018", "md_docs_Release_notes.html#autotoc_md191", null ],
-      [ "Version 2.7.2, released 17 July 2018", "md_docs_Release_notes.html#autotoc_md192", null ]
+      [ "Version 4.4.0, released May 5th, 2023", "md_docs_Release_notes.html#autotoc_md177", [
+        [ "<strong>Summary</strong>", "md_docs_Release_notes.html#autotoc_md178", null ],
+        [ "<strong>CARMA Platform</strong>", "md_docs_Release_notes.html#autotoc_md179", null ],
+        [ "<strong>CDA-Telematics</strong>", "md_docs_Release_notes.html#autotoc_md180", null ],
+        [ "<strong>CARMA Messenger</strong>", "md_docs_Release_notes.html#autotoc_md181", null ],
+        [ "<strong>CARMA Web UI</strong>", "md_docs_Release_notes.html#autotoc_md182", null ],
+        [ "<strong>CARMA Cloud</strong>", "md_docs_Release_notes.html#autotoc_md183", null ],
+        [ "<strong>CARMA Torc Pinpoint Driver</strong>", "md_docs_Release_notes.html#autotoc_md184", null ],
+        [ "<strong>CARMA Cohda DSRC Driver</strong>", "md_docs_Release_notes.html#autotoc_md185", null ],
+        [ "<strong>CARMA Analytics</strong>", "md_docs_Release_notes.html#autotoc_md186", null ]
+      ] ],
+      [ "Version 4.3.0, released Feb 10th, 2023", "md_docs_Release_notes.html#autotoc_md187", [
+        [ "<strong>Summary</strong>", "md_docs_Release_notes.html#autotoc_md188", null ],
+        [ "<strong>CARMA Platform</strong>", "md_docs_Release_notes.html#autotoc_md189", null ],
+        [ "<strong>CARMA-Streets</strong>", "md_docs_Release_notes.html#autotoc_md190", null ]
+      ] ],
+      [ "Version 4.2.0, released July 29th, 2022", "md_docs_Release_notes.html#autotoc_md191", null ],
+      [ "Version 4.1.0, released June 1st, 2022", "md_docs_Release_notes.html#autotoc_md192", null ],
+      [ "Version 4.0.3, released May 10th, 2022", "md_docs_Release_notes.html#autotoc_md193", null ],
+      [ "Version 3.11.0, released Feb 3rd, 2022", "md_docs_Release_notes.html#autotoc_md194", null ],
+      [ "Version 3.10.0, released Dec 17th, 2021", "md_docs_Release_notes.html#autotoc_md195", null ],
+      [ "Version 3.9.0, released Dec 5th, 2021", "md_docs_Release_notes.html#autotoc_md196", null ],
+      [ "Version 3.8.2, released Oct 22nd, 2021", "md_docs_Release_notes.html#autotoc_md197", null ],
+      [ "Version 3.8.1, released Oct 15th, 2021", "md_docs_Release_notes.html#autotoc_md198", null ],
+      [ "Version 3.8.0, released Sep 24th, 2021", "md_docs_Release_notes.html#autotoc_md199", null ],
+      [ "Version 3.7.2, released Sep 1st, 2021", "md_docs_Release_notes.html#autotoc_md200", null ],
+      [ "Version 3.7.0, released Aug 10th, 2021", "md_docs_Release_notes.html#autotoc_md201", null ],
+      [ "Version 3.6.0, released June 29th, 2021", "md_docs_Release_notes.html#autotoc_md202", null ],
+      [ "Version 3.5.3, released April 9th, 2021", "md_docs_Release_notes.html#autotoc_md203", null ],
+      [ "Version 3.4.2, released December 15th, 2020", "md_docs_Release_notes.html#autotoc_md204", null ],
+      [ "Version 3.4.1, released December 11th, 2020", "md_docs_Release_notes.html#autotoc_md205", null ],
+      [ "Version 3.4.0, released December 9th, 2020", "md_docs_Release_notes.html#autotoc_md206", null ],
+      [ "Version 3.3.0, released February 7th, 2020", "md_docs_Release_notes.html#autotoc_md207", null ],
+      [ "Version 3.2.0, released December 23rd, 2019", "md_docs_Release_notes.html#autotoc_md208", null ],
+      [ "Version 3.1.0, released 18 October 2019", "md_docs_Release_notes.html#autotoc_md209", null ],
+      [ "Pre-Release Version 3.0.0, released 15 July 2019", "md_docs_Release_notes.html#autotoc_md210", null ],
+      [ "Version 2.9.0, released 15 May 2019", "md_docs_Release_notes.html#autotoc_md211", null ],
+      [ "Version 2.8.4, released 04 March 2019", "md_docs_Release_notes.html#autotoc_md212", null ],
+      [ "Version 2.8.1, released 15 November 2018", "md_docs_Release_notes.html#autotoc_md213", null ],
+      [ "Version 2.8.0, released 31 October 2018", "md_docs_Release_notes.html#autotoc_md214", null ],
+      [ "Version 2.7.4, released 22 October 2018", "md_docs_Release_notes.html#autotoc_md215", null ],
+      [ "Version 2.7.3, released 09 October 2018", "md_docs_Release_notes.html#autotoc_md216", null ],
+      [ "Version 2.7.2, released 17 July 2018", "md_docs_Release_notes.html#autotoc_md217", null ]
     ] ],
     [ "System_description", "md_docs_System_description.html", null ],
     [ "Bag Processor", "md_engineering_tools_BagProcessor_READMe.html", null ],
@@ -227,23 +254,23 @@ var NAVTREE =
     [ "light_controlled_intersection_tactical_plugin", "md_light_controlled_intersection_tactical_plugin_README.html", null ],
     [ "mobilitypath_publisher", "md_mobilitypath_publisher_README.html", null ],
     [ "rosbag_mock_drivers", "md_mock_drivers_rosbag_mock_drivers_README.html", [
-      [ "Input Data", "md_mock_drivers_rosbag_mock_drivers_README.html#autotoc_md200", null ],
-      [ "Creating new mock drivers", "md_mock_drivers_rosbag_mock_drivers_README.html#autotoc_md201", null ],
-      [ "Testing", "md_mock_drivers_rosbag_mock_drivers_README.html#autotoc_md202", null ]
+      [ "Input Data", "md_mock_drivers_rosbag_mock_drivers_README.html#autotoc_md225", null ],
+      [ "Creating new mock drivers", "md_mock_drivers_rosbag_mock_drivers_README.html#autotoc_md226", null ],
+      [ "Testing", "md_mock_drivers_rosbag_mock_drivers_README.html#autotoc_md227", null ]
     ] ],
     [ "Motion computation Launch", "md_motion_computation_docs_motion_computation_launch.html", [
-      [ "Launch arguments", "md_motion_computation_docs_motion_computation_launch.html#autotoc_md204", null ]
+      [ "Launch arguments", "md_motion_computation_docs_motion_computation_launch.html#autotoc_md229", null ]
     ] ],
     [ "Motion computation Node", "md_motion_computation_docs_motion_computation_node.html", [
-      [ "Subscriptions", "md_motion_computation_docs_motion_computation_node.html#autotoc_md206", null ],
-      [ "Publishers", "md_motion_computation_docs_motion_computation_node.html#autotoc_md207", null ],
-      [ "Parameters", "md_motion_computation_docs_motion_computation_node.html#autotoc_md208", null ],
-      [ "Services", "md_motion_computation_docs_motion_computation_node.html#autotoc_md209", null ],
-      [ "Actions", "md_motion_computation_docs_motion_computation_node.html#autotoc_md210", null ]
+      [ "Subscriptions", "md_motion_computation_docs_motion_computation_node.html#autotoc_md231", null ],
+      [ "Publishers", "md_motion_computation_docs_motion_computation_node.html#autotoc_md232", null ],
+      [ "Parameters", "md_motion_computation_docs_motion_computation_node.html#autotoc_md233", null ],
+      [ "Services", "md_motion_computation_docs_motion_computation_node.html#autotoc_md234", null ],
+      [ "Actions", "md_motion_computation_docs_motion_computation_node.html#autotoc_md235", null ]
     ] ],
     [ "CARMA motion computation package", "md_motion_computation_README.html", [
-      [ "Package Nodes", "md_motion_computation_README.html#autotoc_md212", null ],
-      [ "Package Launch files", "md_motion_computation_README.html#autotoc_md213", null ]
+      [ "Package Nodes", "md_motion_computation_README.html#autotoc_md237", null ],
+      [ "Package Launch files", "md_motion_computation_README.html#autotoc_md238", null ]
     ] ],
     [ "object_visualizer", "md_object_visualizer_README.html", null ],
     [ "platoon_control", "md_platooning_control_README.html", null ],
@@ -253,50 +280,50 @@ var NAVTREE =
     [ "points_map_filter", "md_points_map_filter_README.html", null ],
     [ "port_drayage_plugin", "md_port_drayage_plugin_README.html", null ],
     [ "README", "md_README.html", [
-      [ "CARMA", "md_README.html#autotoc_md221", [
-        [ "What Is CARMA Platform", "md_README.html#autotoc_md222", null ],
-        [ "Documentation", "md_README.html#autotoc_md223", null ],
-        [ "Release Notes", "md_README.html#autotoc_md225", null ],
-        [ "Roadmap", "md_README.html#autotoc_md226", null ],
-        [ "Architecture Guide", "md_README.html#autotoc_md227", null ],
-        [ "Detailed Design Documents", "md_README.html#autotoc_md228", null ],
-        [ "Developers Guide", "md_README.html#autotoc_md229", null ],
-        [ "Users Guide", "md_README.html#autotoc_md230", null ],
-        [ "Administrator Guide", "md_README.html#autotoc_md231", null ],
-        [ "Other CARMA Packages", "md_README.html#autotoc_md232", [
-          [ "Vehicle Controller Interface Drivers", "md_README.html#autotoc_md233", null ],
-          [ "Sensor Drivers", "md_README.html#autotoc_md234", null ],
-          [ "General System Utilites", "md_README.html#autotoc_md235", null ],
-          [ "Vehicle Configurations", "md_README.html#autotoc_md236", null ]
+      [ "CARMA", "md_README.html#autotoc_md246", [
+        [ "What Is CARMA Platform", "md_README.html#autotoc_md247", null ],
+        [ "Documentation", "md_README.html#autotoc_md248", null ],
+        [ "Release Notes", "md_README.html#autotoc_md250", null ],
+        [ "Roadmap", "md_README.html#autotoc_md251", null ],
+        [ "Architecture Guide", "md_README.html#autotoc_md252", null ],
+        [ "Detailed Design Documents", "md_README.html#autotoc_md253", null ],
+        [ "Developers Guide", "md_README.html#autotoc_md254", null ],
+        [ "Users Guide", "md_README.html#autotoc_md255", null ],
+        [ "Administrator Guide", "md_README.html#autotoc_md256", null ],
+        [ "Other CARMA Packages", "md_README.html#autotoc_md257", [
+          [ "Vehicle Controller Interface Drivers", "md_README.html#autotoc_md258", null ],
+          [ "Sensor Drivers", "md_README.html#autotoc_md259", null ],
+          [ "General System Utilites", "md_README.html#autotoc_md260", null ],
+          [ "Vehicle Configurations", "md_README.html#autotoc_md261", null ]
         ] ],
-        [ "Contribution", "md_README.html#autotoc_md237", null ],
-        [ "Code of Conduct", "md_README.html#autotoc_md238", null ],
-        [ "Attribution", "md_README.html#autotoc_md239", null ],
-        [ "License", "md_README.html#autotoc_md240", null ],
-        [ "Code.gov Registration Info", "md_README.html#autotoc_md241", null ],
-        [ "Contact", "md_README.html#autotoc_md242", null ]
+        [ "Contribution", "md_README.html#autotoc_md262", null ],
+        [ "Code of Conduct", "md_README.html#autotoc_md263", null ],
+        [ "Attribution", "md_README.html#autotoc_md264", null ],
+        [ "License", "md_README.html#autotoc_md265", null ],
+        [ "Code.gov Registration Info", "md_README.html#autotoc_md266", null ],
+        [ "Contact", "md_README.html#autotoc_md267", null ]
       ] ]
     ] ],
     [ "CARMA roadway objects - ROS 2 package design", "md_roadway_objects_docs_package_design.html", [
-      [ "Package Nodes", "md_roadway_objects_docs_package_design.html#autotoc_md244", null ],
-      [ "Package Launch files", "md_roadway_objects_docs_package_design.html#autotoc_md245", null ]
+      [ "Package Nodes", "md_roadway_objects_docs_package_design.html#autotoc_md269", null ],
+      [ "Package Launch files", "md_roadway_objects_docs_package_design.html#autotoc_md270", null ]
     ] ],
     [ "Roadway objects Launch", "md_roadway_objects_docs_roadway_objects_launch.html", [
-      [ "Launch arguments", "md_roadway_objects_docs_roadway_objects_launch.html#autotoc_md247", null ]
+      [ "Launch arguments", "md_roadway_objects_docs_roadway_objects_launch.html#autotoc_md272", null ]
     ] ],
     [ "Roadway objects Node", "md_roadway_objects_docs_roadway_objects_node.html", [
-      [ "Subscriptions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md249", null ],
-      [ "Publishers", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md250", null ],
-      [ "Parameters", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md251", null ],
-      [ "Services", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md252", null ],
-      [ "Actions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md253", null ]
+      [ "Subscriptions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md274", null ],
+      [ "Publishers", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md275", null ],
+      [ "Parameters", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md276", null ],
+      [ "Services", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md277", null ],
+      [ "Actions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md278", null ]
     ] ],
     [ "Roadway objects Package", "md_roadway_objects_README.html", [
-      [ "Documentation", "md_roadway_objects_README.html#autotoc_md255", null ]
+      [ "Documentation", "md_roadway_objects_README.html#autotoc_md280", null ]
     ] ],
     [ "route", "md_route_README.html", null ],
     [ "template_package", "md_template_package_README.html", [
-      [ "Creating a new ROS2 package for CARMA Platform", "md_template_package_README.html#autotoc_md258", null ]
+      [ "Creating a new ROS2 package for CARMA Platform", "md_template_package_README.html#autotoc_md283", null ]
     ] ],
     [ "<SUB><package_name>", "md_template_package_template_package_README.html", null ],
     [ "traffic_incident_parser", "md_traffic_incident_parser_README.html", null ],
@@ -354,53 +381,53 @@ var NAVTREEINDEX =
 "classarbitrator_1_1Arbitrator.html#a5f57ba9f27837cb7cd04eb424200a2d0",
 "classbsm__generator_1_1BSMGenerator.html#ad8356a752b985fea5cf466085037bed3",
 "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a4d9d931a84b9f67e2e4ed86f04369e44",
-"classcarma__wm_1_1CARMAWorldModel.html#a2c46116ef711d1e03298f9efd57f2bdd",
-"classcarma__wm_1_1WMListener.html#a31207012049fb42b13ebabc5aaabd1d1",
-"classcarma__wm__ctrl_1_1GeofenceScheduler.html#a25cf6d0585adc5532044638ab6cf1547",
-"classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a2ec0c26ff0bced4e2b8ccb18c693c6ab",
-"classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#af89c7f901e5c0736914999a6db5d198a",
-"classguidance__plugin__validator_1_1guidance__plugin__components_1_1ControlPluginResults.html#a97ad77261ff323edb6940707d12b6d33",
-"classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#ac775fb30be0276437e00953de7d6016e",
-"classinternal_1_1GenericRegexSearch.html#a1a9c7b4f977805912d1c1f1866442fbe",
-"classinternal_1_1Schema.html#ad6cb5137e20f36267efc52373ffcd53c",
-"classlci__strategic__plugin_1_1LCIStrategicPlugin.html#a4778775fa282372e99b562a78d1c505e",
-"classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#a92268360afb77f2032d6dd97f086f795",
-"classlocalization__manager_1_1LocalizationManager.html#a852f8fa433424784ce64e712a5f1a9e6",
-"classmock__drivers_1_1MockCameraDriver.html#a2fb5b30131aca0f03ff4404f42cc4b35",
-"classmock__drivers_1_1MockLightBarDriver.html#a6afdd50a6ad9d338be191bdd879eb7c4",
-"classobject_1_1ObjectDetectionTrackingNode.html",
-"classplatoon__control_1_1PlatoonControlPlugin.html#a85479b30a54d08b0e11657028b573505",
-"classplatoon__control__ihp_1_1PlatoonControlIHPWorker.html#a6470892465347494a4e0bec63880eff8",
-"classplatoon__strategic__ihp_1_1PlatoonManager.html#ae696d79ca33f496082ef462fdc9ba53b",
-"classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#ae65a18d1f14ecdfae3409e47e59a1031",
-"classport__drayage__plugin_1_1PortDrayageWorker.html#ae0295dde7b85f62b05e363df48926f67",
-"classroute_1_1RouteGeneratorWorker.html#ab6bc2462403bfe98ea151323c80bb365",
-"classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a19636fe288ef84a67d302e02921817a1",
-"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a6a405fc50eabdd2a8178be55e6edda1b",
-"classsubsystem__controllers_1_1PluginManager.html#a5f189aa2046eb52c9b789809155e8660",
-"classtruck__inspection__client_1_1TruckInspectionClient.html#ae08722bf93419ef6b4f9f2f3a2050af5",
-"dir_38911a9f1c8ff95ace45ca6f13fc0453.html",
-"driver__application_8cpp.html",
-"globals_c.html",
-"inttypes_8h.html#a08353b6536336d5eb4ea354af8dd30c4",
-"lci__strategic__plugin__config_8hpp.html",
-"md_docs_Release_notes.html#autotoc_md156",
-"namespaceRouteCreation__KML2CSV.html#ab83033c194f79816a6e88149fb1d134d",
-"namespacecarma__wm_1_1geometry.html#ae0a06818149f7430fee80e295ef04548",
-"namespacelocalization__manager.html#a9b86b848ab2c2216f0987be7c5007b70a90db69d58f7274bfad34570f2fdce99c",
-"namespacesci__strategic__plugin.html#a566a001705be58d1fa9b8b13ba6e3677aa3ecbb35a47d32c1522462f894760117",
-"platooning__strategic__IHP_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",
-"reader_8h.html#a84f3b66a66647f4ac4267078359188ba",
-"stdint_8h.html#ac76e2383debd5a3b100514044828961a",
-"structInLaneCruisingPluginConfig.html#a1a4f2e081adb191eaf3b9e5fe5c1f867",
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2e6f2566571a01c095800f712e8ee183",
-"structcarma__cooperative__perception_1_1MapCoordinate.html#a70ca6b501f497dba865ea4b3333b04da",
-"structframe__transformer_1_1Config.html",
-"structinternal_1_1TypeHelper_3_01ValueType_00_01double_01_4.html#abb797ba373c4f7c72e6ef2500c4dff92",
-"structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html#a07bc6d717956031df679241735706cc1",
-"structplatoon__strategic__ihp_1_1ActionPlan.html#a38851b8c1a54cc039c86fa3576c940e4",
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a617d379b5f70ba29205714781cb0581a",
-"template__tactical__plugin__node_8cpp.html"
+"classcarma__wm_1_1CARMAWorldModel.html#a255353f016ca62c487b554b4ffcfbf40",
+"classcarma__wm_1_1WMListener.html#a0ec94c580be459dd06af2f2b039b74da",
+"classcarma__wm__ctrl_1_1GeofenceScheduler.html#a2042b25ec29dafe31e07bdd6de53cc33",
+"classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a25335e1d0f13808c0d2fbfd3148c7b0b",
+"classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#af52a03fcc4c193952e5541f2aad4638b",
+"classguidance__plugin__validator_1_1guidance__plugin__components_1_1ControlPluginResults.html#a8b6c8269f0b5afce9ecb746fd6aae6aa",
+"classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#ac559a3df1886d533005c29d2e1f4f119",
+"classinternal_1_1GenericRegexSearch.html#a12ddb6629c0be52801d291a8e5005c06",
+"classinternal_1_1Schema.html#ad0deaa0bc5e23815d1e5d937694d110a",
+"classlci__strategic__plugin_1_1LCIStrategicPlugin.html#a45ac425c5eb670f465aa8ab46fdc56f0",
+"classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html#a8b2cbd2dec45b257a1c94c5311ebe5ad",
+"classlocalization__manager_1_1LocalizationManager.html#a83866ff4e7229989b0a265a98e3d50b4",
+"classmock__drivers_1_1MockCameraDriver.html#a2128c1bb56baa59dd329e9a317281522",
+"classmock__drivers_1_1MockLightBarDriver.html#a621a3fb9b5cbe666ae992eac81033754",
+"classmotion__prediction__visualizer_1_1Node.html#ab82782363f0bae411e2dc18920292ad8",
+"classplatoon__control_1_1PlatoonControlPlugin.html#a8528986b8598a306f0d63d965e711e1a",
+"classplatoon__control__ihp_1_1PlatoonControlIHPWorker.html#a63d59315d9eb64c5401fb16c36a9848e",
+"classplatoon__strategic__ihp_1_1PlatoonManager.html#ae067830e0351c8ba271b00cb4a6f15c1",
+"classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#ae54ec36efc19b9c2edc90148ac10b4e0",
+"classport__drayage__plugin_1_1PortDrayageWorker.html#adde3df89de4705812d1e9b958908441e",
+"classroute_1_1RouteGeneratorWorker.html#ab491a71c75d615cca99c396c27835097",
+"classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a17b4358c9ab9ca716cd31a98da0653c2",
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a66e90efcb3f741ceaa62dbe78eb4d6d8",
+"classsubsystem__controllers_1_1PluginManager.html#a5f0ab0911506fc80fc363e7911ec3e72",
+"classtruck__inspection__client_1_1TruckInspectionClient.html#adb8ebfb396802b640c12261b0e9b5b61",
+"dir_2eaf594ff7421bb5142ba384ddf90655.html",
+"diyfp_8h.html#a3e95f043ed6c40cda1c1bc33c2f0ece2",
+"geodetic_8hpp.html#a6acaf058a97e61c7d1d57cf7fbd6634a",
+"intersection__transit__maneuvering_8cpp_source.html",
+"lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273bacfe02bba2d0d58f65b97219819aa9013",
+"md_docs_License.html",
+"msg__conversion_8hpp.html#a7d047352f180efa034647181b142049f",
+"namespacecarma__wm_1_1collision__detection.html#a8f119b1433d2e72efa49c08a7abe140d",
+"namespacelightbar__manager.html#ad65e92a99b6a98bdd0f10d921e9df5a5",
+"namespaceprocess__traj__logs.html#adf4b40c94f3b3119d553d71dbfe695a7",
+"platoon__manager__ihp_8h.html#a20539b6c81ea3b1868c7ca5d7c403dafa0d2c16ab07ed24865f7ba27ad8a83dc0",
+"pure__pursuit__wrapper_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",
+"stdint_8h.html#a4f3f6e6631cb4aaeadf1c59ff597b2fb",
+"structGenericStringStream.html#a546c370fa1ea14a89a0bd717e1932c06",
+"structWriter_1_1Level.html#aa009a2d675e98757c2997072aad78789",
+"structcarma__cooperative__perception_1_1AccelerationSet4Way.html#a552c462dcbdd63119bd4505953ebbab1",
+"structcooperative__lanechange_1_1Config.html#aa287593d22173b82310ee395853cdce1",
+"structinternal_1_1TokenHelper.html",
+"structlight__controlled__intersection__tactical__plugin_1_1Config.html#a264b9760f9bf6971615a0814b370ad7f",
+"structplatoon__control_1_1PlatoonLeaderInfo.html#a2c1872390d2c34185c5514e4c59a22b0",
+"structroute__following__plugin_1_1Config.html#a0cbb8bef75d40988a712e401a69fca1d",
+"subsystem__controllers_2src_2guidance__controller_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

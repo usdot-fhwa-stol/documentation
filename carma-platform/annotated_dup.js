@@ -422,6 +422,7 @@ var annotated_dup =
       [ "TruckInspectionClient", "classtruck__inspection__client_1_1TruckInspectionClient.html", "classtruck__inspection__client_1_1TruckInspectionClient" ]
     ] ],
     [ "yield_plugin", "namespaceyield__plugin.html", [
+      [ "GetCollisionResult", "structyield__plugin_1_1GetCollisionResult.html", "structyield__plugin_1_1GetCollisionResult" ],
       [ "PointSpeedPair", "structyield__plugin_1_1PointSpeedPair.html", "structyield__plugin_1_1PointSpeedPair" ],
       [ "YieldPlugin", "classyield__plugin_1_1YieldPlugin.html", "classyield__plugin_1_1YieldPlugin" ],
       [ "YieldPluginNode", "classyield__plugin_1_1YieldPluginNode.html", "classyield__plugin_1_1YieldPluginNode" ]

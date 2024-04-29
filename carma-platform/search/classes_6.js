@@ -25,10 +25,11 @@ var searchData=
   ['geofence_22',['Geofence',['../classcarma__wm__ctrl_1_1Geofence.html',1,'carma_wm_ctrl']]],
   ['geofenceschedule_23',['GeofenceSchedule',['../classcarma__wm__ctrl_1_1GeofenceSchedule.html',1,'carma_wm_ctrl']]],
   ['geofencescheduler_24',['GeofenceScheduler',['../classcarma__wm__ctrl_1_1GeofenceScheduler.html',1,'carma_wm_ctrl']]],
-  ['gnsstomapconvertor_25',['GNSSToMapConvertor',['../classgnss__to__map__convertor_1_1GNSSToMapConvertor.html',1,'gnss_to_map_convertor::GNSSToMapConvertor'],['../classGNSSToMapConvertor.html',1,'GNSSToMapConvertor']]],
-  ['guidancecontrollerconfig_26',['GuidanceControllerConfig',['../structsubsystem__controllers_1_1GuidanceControllerConfig.html',1,'subsystem_controllers']]],
-  ['guidancecontrollernode_27',['GuidanceControllerNode',['../classsubsystem__controllers_1_1GuidanceControllerNode.html',1,'subsystem_controllers']]],
-  ['guidancepluginvalidator_28',['GuidancePluginValidator',['../classguidance__plugin__validator_1_1guidance__plugin__validator_1_1GuidancePluginValidator.html',1,'guidance_plugin_validator::guidance_plugin_validator']]],
-  ['guidancestatemachine_29',['GuidanceStateMachine',['../classguidance_1_1GuidanceStateMachine.html',1,'guidance']]],
-  ['guidanceworker_30',['GuidanceWorker',['../classguidance_1_1GuidanceWorker.html',1,'guidance']]]
+  ['getcollisionresult_25',['GetCollisionResult',['../structyield__plugin_1_1GetCollisionResult.html',1,'yield_plugin']]],
+  ['gnsstomapconvertor_26',['GNSSToMapConvertor',['../classgnss__to__map__convertor_1_1GNSSToMapConvertor.html',1,'gnss_to_map_convertor::GNSSToMapConvertor'],['../classGNSSToMapConvertor.html',1,'GNSSToMapConvertor']]],
+  ['guidancecontrollerconfig_27',['GuidanceControllerConfig',['../structsubsystem__controllers_1_1GuidanceControllerConfig.html',1,'subsystem_controllers']]],
+  ['guidancecontrollernode_28',['GuidanceControllerNode',['../classsubsystem__controllers_1_1GuidanceControllerNode.html',1,'subsystem_controllers']]],
+  ['guidancepluginvalidator_29',['GuidancePluginValidator',['../classguidance__plugin__validator_1_1guidance__plugin__validator_1_1GuidancePluginValidator.html',1,'guidance_plugin_validator::guidance_plugin_validator']]],
+  ['guidancestatemachine_30',['GuidanceStateMachine',['../classguidance_1_1GuidanceStateMachine.html',1,'guidance']]],
+  ['guidanceworker_31',['GuidanceWorker',['../classguidance_1_1GuidanceWorker.html',1,'guidance']]]
 ];

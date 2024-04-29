@@ -188,6 +188,7 @@ var hierarchy =
     [ "carma_wm_ctrl::Geofence", "classcarma__wm__ctrl_1_1Geofence.html", null ],
     [ "carma_wm_ctrl::GeofenceSchedule", "classcarma__wm__ctrl_1_1GeofenceSchedule.html", null ],
     [ "carma_wm_ctrl::GeofenceScheduler", "classcarma__wm__ctrl_1_1GeofenceScheduler.html", null ],
+    [ "yield_plugin::GetCollisionResult", "structyield__plugin_1_1GetCollisionResult.html", null ],
     [ "gnss_to_map_convertor::GNSSToMapConvertor", "classgnss__to__map__convertor_1_1GNSSToMapConvertor.html", null ],
     [ "GNSSToMapConvertor", "classGNSSToMapConvertor.html", null ],
     [ "subsystem_controllers::GuidanceControllerConfig", "structsubsystem__controllers_1_1GuidanceControllerConfig.html", null ],

@@ -1,5 +1,15 @@
 var NAVTREEINDEX38 =
 {
+"intersection__transit__maneuvering_8cpp_source.html":[58,0,20,2,0],
+"intersection__transit__maneuvering__launch_8py.html":[58,0,20,1,0],
+"intersection__transit__maneuvering__launch_8py.html#aa38d5dd626bf05b88edb595c264791cf":[58,0,20,1,0,0],
+"intersection__transit__maneuvering__launch_8py_source.html":[58,0,20,1,0],
+"intersection__transit__maneuvering__node_8hpp.html":[58,0,20,0,0,1],
+"intersection__transit__maneuvering__node_8hpp_source.html":[58,0,20,0,0,1],
+"inttypes_8h.html":[58,0,30,2,0,0,0,2,0],
+"inttypes_8h.html#a01b368195aa26130d44bf0efe07833fd":[58,0,30,2,0,0,0,2,0,135],
+"inttypes_8h.html#a020c0b541836e741e0c88bc36fcf25f1":[58,0,30,2,0,0,0,2,0,154],
+"inttypes_8h.html#a021e130b06fc46198c71dca0fdf89788":[58,0,30,2,0,0,0,2,0,118],
 "inttypes_8h.html#a08353b6536336d5eb4ea354af8dd30c4":[58,0,30,2,0,0,0,2,0,153],
 "inttypes_8h.html#a087e50fe0283aacc71d7138d13e91939":[58,0,30,2,0,0,0,2,0,2],
 "inttypes_8h.html#a09c9f36f654aa50a548d7820421cdc57":[58,0,30,2,0,0,0,2,0,90],
@@ -239,15 +249,5 @@ var NAVTREEINDEX38 =
 "lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273baa710074ef98a151c530aad972bd47779":[58,0,21,0,0,2,4,4],
 "lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273baa8604bf7512e9d512e65ffab0b7f4b8f":[58,0,21,0,0,2,4,3],
 "lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273bab3a92d4f4f925b8c566bd63101cf412f":[58,0,21,0,0,2,4,7],
-"lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273bab7d0527f72b2019a46ec64928c7f2063":[58,0,21,0,0,2,4,9],
-"lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273bacfe02bba2d0d58f65b97219819aa9013":[58,0,21,0,0,2,4,10],
-"lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273bad59e0be375c22f4c11ffc34adf7a2df6":[58,0,21,0,0,2,4,2],
-"lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273badd0a350fa9aa0480df27d0db9e960964":[58,0,21,0,0,2,4,8],
-"lci__strategic__plugin_8hpp_source.html":[58,0,21,0,0,2],
-"lci__strategic__plugin_8launch_8py.html":[58,0,21,1,0],
-"lci__strategic__plugin_8launch_8py.html#aad04e8c64222c6172863fa4d5d3af0f0":[58,0,21,1,0,0],
-"lci__strategic__plugin_8launch_8py_source.html":[58,0,21,1,0],
-"lci__strategic__plugin__algo_8cpp.html":[58,0,21,2,3],
-"lci__strategic__plugin__algo_8cpp.html#a002b2f4894492820fe708b1b7e7c5e70":[58,0,21,2,3,0],
-"lci__strategic__plugin__algo_8cpp_source.html":[58,0,21,2,3]
+"lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273bab7d0527f72b2019a46ec64928c7f2063":[58,0,21,0,0,2,4,9]
 };

@@ -168,7 +168,7 @@ var NAVTREE =
     ] ],
     [ "index", "md_docs_index.html", null ],
     [ "License", "md_docs_License.html", null ],
-    [ "CARMA Platform Release Notes", "md_docs_Release_notes.html", [
+    [ "CARMA System Release Notes", "md_docs_Release_notes.html", [
       [ "Version 4.5.0, released April 10th, 2024", "md_docs_Release_notes.html#autotoc_md148", [
         [ "<strong>Summary</strong>", "md_docs_Release_notes.html#autotoc_md149", null ],
         [ "<strong>CDA Sim</strong>", "md_docs_Release_notes.html#autotoc_md150", null ],

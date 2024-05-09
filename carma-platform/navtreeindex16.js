@@ -1,5 +1,9 @@
 var NAVTREEINDEX16 =
 {
+"classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#aa65728c83629770ba10f028d5ae66776":[57,0,19,2,11],
+"classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#ab5572f2b69d55e5556cf9acea522c976":[56,0,35,3,10],
+"classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#ab5572f2b69d55e5556cf9acea522c976":[57,0,19,2,10],
+"classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#ac559a3df1886d533005c29d2e1f4f119":[57,0,19,2,8],
 "classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#ac559a3df1886d533005c29d2e1f4f119":[56,0,35,3,8],
 "classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#ac775fb30be0276437e00953de7d6016e":[56,0,35,3,2],
 "classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#ac775fb30be0276437e00953de7d6016e":[57,0,19,2,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX16 =
 "classinternal_1_1GenericRegex.html#af94c64023502147345303d70ff594140":[56,0,36,4,35],
 "classinternal_1_1GenericRegexSearch.html":[56,0,36,5],
 "classinternal_1_1GenericRegexSearch.html":[57,0,20,5],
-"classinternal_1_1GenericRegexSearch.html#a029a67ab36e5cb1b1394fc7a688c7cda":[57,0,20,5,18],
-"classinternal_1_1GenericRegexSearch.html#a029a67ab36e5cb1b1394fc7a688c7cda":[56,0,36,5,18],
-"classinternal_1_1GenericRegexSearch.html#a0586261735313d8cf20042e50ee75c92":[57,0,20,5,3],
-"classinternal_1_1GenericRegexSearch.html#a0586261735313d8cf20042e50ee75c92":[56,0,36,5,3],
-"classinternal_1_1GenericRegexSearch.html#a12ddb6629c0be52801d291a8e5005c06":[57,0,20,5,7]
+"classinternal_1_1GenericRegexSearch.html#a029a67ab36e5cb1b1394fc7a688c7cda":[57,0,20,5,18]
 };

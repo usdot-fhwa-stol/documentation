@@ -1,5 +1,9 @@
 var NAVTREEINDEX37 =
 {
+"geodetic_8hpp.html#a47bc0e5dddad8cfbe1df8f9f67ba546c":[58,0,7,1,0,3,12],
+"geodetic_8hpp.html#a62911a303fe3652fb937a2503b563e21":[58,0,7,1,0,3,13],
+"geodetic_8hpp.html#a6381dff10b3bc8cca0ae3fbb6f1acd15":[58,0,7,1,0,3,9],
+"geodetic_8hpp.html#a6a641db16f67bcf1129161f9416af62e":[58,0,7,1,0,3,5],
 "geodetic_8hpp.html#a6acaf058a97e61c7d1d57cf7fbd6634a":[58,0,7,1,0,3,8],
 "geodetic_8hpp.html#a7f4b896fba23fb72de3433de1f03e264":[58,0,7,1,0,3,11],
 "geodetic_8hpp.html#a899d167068fbc97fdfa3ea07f299e65f":[58,0,7,1,0,3,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX37 =
 "intersection__transit__maneuvering_8cpp.html":[58,0,20,2,0],
 "intersection__transit__maneuvering_8cpp.html#a0a1c421fe60acc2ce59c8da1c642d60b":[58,0,20,2,0,1],
 "intersection__transit__maneuvering_8cpp.html#a8212f1302ee6736745dc97bb5b3caaf5":[58,0,20,2,0,0],
-"intersection__transit__maneuvering_8cpp.html#a8a97ee793a4f8ddc4acbd53d1acd8753":[58,0,20,2,0,6],
-"intersection__transit__maneuvering_8cpp.html#ab6541699f47c70666e4534fcf4275cec":[58,0,20,2,0,4],
-"intersection__transit__maneuvering_8cpp.html#aca1bfbfd4824b20240d584bfd3ae870d":[58,0,20,2,0,5],
-"intersection__transit__maneuvering_8cpp.html#adde2ca5a1abb75b94d8dd6207ddac5b8":[58,0,20,2,0,3],
-"intersection__transit__maneuvering_8cpp.html#af1f6470235f2f8dd77bcaf594ab166a1":[58,0,20,2,0,2]
+"intersection__transit__maneuvering_8cpp.html#a8a97ee793a4f8ddc4acbd53d1acd8753":[58,0,20,2,0,6]
 };

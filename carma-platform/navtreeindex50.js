@@ -1,5 +1,9 @@
 var NAVTREEINDEX50 =
 {
+"structcarma__cooperative__perception_1_1AccelerationSet4Way.html#a14edd98c25bf9b758ed41400ee1fb157":[56,0,12,0,1],
+"structcarma__cooperative__perception_1_1AccelerationSet4Way.html#a14edd98c25bf9b758ed41400ee1fb157":[57,0,7,0,1],
+"structcarma__cooperative__perception_1_1AccelerationSet4Way.html#a197507555a57fd39e13d726681b3cd40":[57,0,7,0,2],
+"structcarma__cooperative__perception_1_1AccelerationSet4Way.html#a197507555a57fd39e13d726681b3cd40":[56,0,12,0,2],
 "structcarma__cooperative__perception_1_1AccelerationSet4Way.html#a552c462dcbdd63119bd4505953ebbab1":[56,0,12,0,3],
 "structcarma__cooperative__perception_1_1AccelerationSet4Way.html#a552c462dcbdd63119bd4505953ebbab1":[57,0,7,0,3],
 "structcarma__cooperative__perception_1_1AccelerationSet4Way.html#ab717d6399272e2d3d9beeba3772a06ac":[56,0,12,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX50 =
 "structcooperative__lanechange_1_1Config.html#a8685792a6eed92c54a13d63bc92bb02b":[57,0,13,0,19],
 "structcooperative__lanechange_1_1Config.html#a8685792a6eed92c54a13d63bc92bb02b":[56,0,20,0,19],
 "structcooperative__lanechange_1_1Config.html#a8ce299ee7913ebc1d1e2bf9aaced3ea7":[56,0,20,0,26],
-"structcooperative__lanechange_1_1Config.html#a8ce299ee7913ebc1d1e2bf9aaced3ea7":[57,0,13,0,26],
-"structcooperative__lanechange_1_1Config.html#a99819048b5d432de4e30773cf5de8679":[57,0,13,0,9],
-"structcooperative__lanechange_1_1Config.html#a99819048b5d432de4e30773cf5de8679":[56,0,20,0,9],
-"structcooperative__lanechange_1_1Config.html#a9b91e72297129b223a1dc5a3b634c815":[56,0,20,0,23],
-"structcooperative__lanechange_1_1Config.html#a9b91e72297129b223a1dc5a3b634c815":[57,0,13,0,23]
+"structcooperative__lanechange_1_1Config.html#a8ce299ee7913ebc1d1e2bf9aaced3ea7":[57,0,13,0,26]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX31 =
 {
+"classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a16d353d1135dd8b869322242479f634b":[57,0,47,0,12],
+"classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a16e8aa121e36bdaaeb5ab4ffb9e780ef":[57,0,47,0,66],
+"classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a16e8aa121e36bdaaeb5ab4ffb9e780ef":[56,0,86,1,66],
+"classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a17b4358c9ab9ca716cd31a98da0653c2":[56,0,86,1,49],
 "classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a17b4358c9ab9ca716cd31a98da0653c2":[57,0,47,0,49],
 "classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a19636fe288ef84a67d302e02921817a1":[56,0,86,1,61],
 "classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a19636fe288ef84a67d302e02921817a1":[57,0,47,0,61],
@@ -245,9 +249,5 @@ var NAVTREEINDEX31 =
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html":[57,0,50,0],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a0e01c19708de3a3c34e7e5cff2f77bab":[57,0,50,0,12],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a0e01c19708de3a3c34e7e5cff2f77bab":[56,0,93,0,12],
-"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a1e13ef6139d129ef4c0aa6fce0ab97b2":[56,0,93,0,16],
-"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a1e13ef6139d129ef4c0aa6fce0ab97b2":[57,0,50,0,16],
-"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a2c0e327945d690c6232287497fa8b896":[56,0,93,0,8],
-"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a2c0e327945d690c6232287497fa8b896":[57,0,50,0,8],
-"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a66e90efcb3f741ceaa62dbe78eb4d6d8":[56,0,93,0,17]
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a1e13ef6139d129ef4c0aa6fce0ab97b2":[56,0,93,0,16]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX55 =
 {
+"structroute_1_1Config.html#ad49e1199f6ce12de6cac8ef26f43fea2":[56,0,81,0,3],
+"structroute__following__plugin_1_1Config.html":[57,0,46,0],
+"structroute__following__plugin_1_1Config.html":[56,0,82,1],
+"structroute__following__plugin_1_1Config.html#a0cbb8bef75d40988a712e401a69fca1d":[56,0,82,1,6],
 "structroute__following__plugin_1_1Config.html#a0cbb8bef75d40988a712e401a69fca1d":[57,0,46,0,6],
 "structroute__following__plugin_1_1Config.html#a0fdf01f60fdb0678d9fda3d7d2e38291":[57,0,46,0,3],
 "structroute__following__plugin_1_1Config.html#a0fdf01f60fdb0678d9fda3d7d2e38291":[56,0,82,1,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX55 =
 "structyield__plugin_1_1PointSpeedPair.html#afa2521ce4f3b3160472913de6b4e8300":[56,0,109,1,1],
 "subsystem__controllers_2src_2drivers__controller_2main_8cpp.html":[58,0,49,1,1,3],
 "subsystem__controllers_2src_2drivers__controller_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[58,0,49,1,1,3,0],
-"subsystem__controllers_2src_2drivers__controller_2main_8cpp_source.html":[58,0,49,1,1,3],
-"subsystem__controllers_2src_2environment__perception__controller_2main_8cpp.html":[58,0,49,1,2,1],
-"subsystem__controllers_2src_2environment__perception__controller_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[58,0,49,1,2,1,0],
-"subsystem__controllers_2src_2environment__perception__controller_2main_8cpp_source.html":[58,0,49,1,2,1],
-"subsystem__controllers_2src_2guidance__controller_2main_8cpp.html":[58,0,49,1,3,2]
+"subsystem__controllers_2src_2drivers__controller_2main_8cpp_source.html":[58,0,49,1,1,3]
 };

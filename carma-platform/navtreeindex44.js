@@ -1,5 +1,9 @@
 var NAVTREEINDEX44 =
 {
+"namespaceprocess__traj__logs.html#ab2945bef6d9b162f6f44d8316c2fada9":[56,0,73,15],
+"namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29":[56,0,73,25],
+"namespaceprocess__traj__logs.html#ac075f4b77336738ae13056c4d4fc350d":[56,0,73,18],
+"namespaceprocess__traj__logs.html#ac70c24fdb487f1aed5b846490501b5f1":[56,0,73,6],
 "namespaceprocess__traj__logs.html#adf4b40c94f3b3119d553d71dbfe695a7":[56,0,73,2],
 "namespaceprocess__traj__logs.html#ae0d2bd83fa196566a340bdd5a6ba3ac5":[56,0,73,16],
 "namespaceprocess__traj__logs.html#aeb4b8281cb3c4eecc6eae0130adfa807":[56,0,73,22],
@@ -245,9 +249,5 @@ var NAVTREEINDEX44 =
 "platoon__control__worker_8cpp.html":[58,0,34,1,3],
 "platoon__control__worker_8cpp_source.html":[58,0,34,1,3],
 "platoon__control__worker_8h.html":[58,0,34,0,3],
-"platoon__control__worker_8h_source.html":[58,0,34,0,3],
-"platoon__manager__ihp_8cpp.html":[58,0,36,2,1],
-"platoon__manager__ihp_8cpp_source.html":[58,0,36,2,1],
-"platoon__manager__ihp_8h.html":[58,0,36,0,0,1],
-"platoon__manager__ihp_8h.html#a20539b6c81ea3b1868c7ca5d7c403daf":[58,0,36,0,0,1,4]
+"platoon__control__worker_8h_source.html":[58,0,34,0,3]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX32 =
 {
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a1e13ef6139d129ef4c0aa6fce0ab97b2":[57,0,50,0,16],
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a2c0e327945d690c6232287497fa8b896":[56,0,93,0,8],
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a2c0e327945d690c6232287497fa8b896":[57,0,50,0,8],
+"classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a66e90efcb3f741ceaa62dbe78eb4d6d8":[56,0,93,0,17],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a66e90efcb3f741ceaa62dbe78eb4d6d8":[57,0,50,0,17],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a6a405fc50eabdd2a8178be55e6edda1b":[56,0,93,0,0],
 "classstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPlugin.html#a6a405fc50eabdd2a8178be55e6edda1b":[57,0,50,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX32 =
 "classsubsystem__controllers_1_1PluginManager.html#a28ad99d78439c58b1c598dac44b1c063":[56,0,95,12,6],
 "classsubsystem__controllers_1_1PluginManager.html#a312b193d3903ed7fe998ac40710f6f1c":[57,0,52,12,1],
 "classsubsystem__controllers_1_1PluginManager.html#a312b193d3903ed7fe998ac40710f6f1c":[56,0,95,12,1],
-"classsubsystem__controllers_1_1PluginManager.html#a53b9c697108c1c0638ec195ff43e2de0":[56,0,95,12,16],
-"classsubsystem__controllers_1_1PluginManager.html#a53b9c697108c1c0638ec195ff43e2de0":[57,0,52,12,16],
-"classsubsystem__controllers_1_1PluginManager.html#a5db745e7c0511afcc0ea63fae5238a12":[56,0,95,12,23],
-"classsubsystem__controllers_1_1PluginManager.html#a5db745e7c0511afcc0ea63fae5238a12":[57,0,52,12,23],
-"classsubsystem__controllers_1_1PluginManager.html#a5f0ab0911506fc80fc363e7911ec3e72":[56,0,95,12,25]
+"classsubsystem__controllers_1_1PluginManager.html#a53b9c697108c1c0638ec195ff43e2de0":[56,0,95,12,16]
 };

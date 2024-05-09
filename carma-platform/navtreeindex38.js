@@ -1,5 +1,9 @@
 var NAVTREEINDEX38 =
 {
+"intersection__transit__maneuvering_8cpp.html#ab6541699f47c70666e4534fcf4275cec":[58,0,20,2,0,4],
+"intersection__transit__maneuvering_8cpp.html#aca1bfbfd4824b20240d584bfd3ae870d":[58,0,20,2,0,5],
+"intersection__transit__maneuvering_8cpp.html#adde2ca5a1abb75b94d8dd6207ddac5b8":[58,0,20,2,0,3],
+"intersection__transit__maneuvering_8cpp.html#af1f6470235f2f8dd77bcaf594ab166a1":[58,0,20,2,0,2],
 "intersection__transit__maneuvering_8cpp_source.html":[58,0,20,2,0],
 "intersection__transit__maneuvering__launch_8py.html":[58,0,20,1,0],
 "intersection__transit__maneuvering__launch_8py.html#aa38d5dd626bf05b88edb595c264791cf":[58,0,20,1,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX38 =
 "lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273ba2e962f86afb4c45a2b1939726a663a65":[58,0,21,0,0,2,4,11],
 "lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273ba4fd308faeca0a68a10f65685126fb7d7":[58,0,21,0,0,2,4,1],
 "lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273ba661114f6c92a700e6573ec5fc67e60d6":[58,0,21,0,0,2,4,5],
-"lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273ba68d989babe6297b5f85a05a94cd056c5":[58,0,21,0,0,2,4,0],
-"lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273baa710074ef98a151c530aad972bd47779":[58,0,21,0,0,2,4,4],
-"lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273baa8604bf7512e9d512e65ffab0b7f4b8f":[58,0,21,0,0,2,4,3],
-"lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273bab3a92d4f4f925b8c566bd63101cf412f":[58,0,21,0,0,2,4,7],
-"lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273bab7d0527f72b2019a46ec64928c7f2063":[58,0,21,0,0,2,4,9]
+"lci__strategic__plugin_8hpp.html#a8c6e35d446c028b1e38bd354bb3a273ba68d989babe6297b5f85a05a94cd056c5":[58,0,21,0,0,2,4,0]
 };

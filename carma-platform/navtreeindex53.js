@@ -1,5 +1,9 @@
 var NAVTREEINDEX53 =
 {
+"structlight__controlled__intersection__tactical__plugin_1_1Config.html#a1556a8e4c6b0ac673f47b15d50414dc2":[57,0,23,0,11],
+"structlight__controlled__intersection__tactical__plugin_1_1Config.html#a1aaf3d928efe6fe94553c70934b3cb63":[57,0,23,0,4],
+"structlight__controlled__intersection__tactical__plugin_1_1Config.html#a1aaf3d928efe6fe94553c70934b3cb63":[56,0,41,0,4],
+"structlight__controlled__intersection__tactical__plugin_1_1Config.html#a264b9760f9bf6971615a0814b370ad7f":[56,0,41,0,7],
 "structlight__controlled__intersection__tactical__plugin_1_1Config.html#a264b9760f9bf6971615a0814b370ad7f":[57,0,23,0,7],
 "structlight__controlled__intersection__tactical__plugin_1_1Config.html#a3381107336ccfa3637a96e432eefa8f4":[57,0,23,0,10],
 "structlight__controlled__intersection__tactical__plugin_1_1Config.html#a3381107336ccfa3637a96e432eefa8f4":[56,0,41,0,10],
@@ -245,9 +249,5 @@ var NAVTREEINDEX53 =
 "structplan__delegator_1_1LaneChangeInformation.html#a53d04c665e138441a95ab4af95869a4b":[56,0,58,2,0],
 "structplan__delegator_1_1LaneChangeInformation.html#adca700f1f67f06e9a15affbeb3aa737a":[56,0,58,2,1],
 "structplan__delegator_1_1LaneChangeInformation.html#adca700f1f67f06e9a15affbeb3aa737a":[57,0,34,1,1],
-"structplatoon__control_1_1PlatoonLeaderInfo.html":[57,0,35,3],
-"structplatoon__control_1_1PlatoonLeaderInfo.html":[56,0,59,3],
-"structplatoon__control_1_1PlatoonLeaderInfo.html#a112189e411f6246fa0cbd2eb513a0e52":[57,0,35,3,2],
-"structplatoon__control_1_1PlatoonLeaderInfo.html#a112189e411f6246fa0cbd2eb513a0e52":[56,0,59,3,2],
-"structplatoon__control_1_1PlatoonLeaderInfo.html#a2c1872390d2c34185c5514e4c59a22b0":[57,0,35,3,7]
+"structplatoon__control_1_1PlatoonLeaderInfo.html":[57,0,35,3]
 };

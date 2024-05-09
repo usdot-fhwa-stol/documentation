@@ -77,11 +77,12 @@ var searchData=
   ['is_5fros1_5f_74',['is_ros1_',['../structsubsystem__controllers_1_1Entry.html#a2f5b7dce1b68eb209b39cf500548a213',1,'subsystem_controllers::Entry']]],
   ['is_5fsame_5fdirection_5f_75',['is_same_direction_',['../classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin.html#a89890b783f6dd3f5f943b7308afb5ca2',1,'approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin']]],
   ['is_5fsequential_5f_76',['is_sequential_',['../classlocalization__manager_1_1LocalizationManager.html#a39c9636657b5d522204253456836b13b',1,'localization_manager::LocalizationManager']]],
-  ['iscreategap_77',['isCreateGap',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a0dfb4a15be2cf69ca770fcde1bdf65f5',1,'platoon_strategic_ihp::PlatoonManager']]],
-  ['isfollower_78',['isFollower',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a9fb744eaf988b3082397c736de1006ab',1,'platoon_strategic_ihp::PlatoonManager']]],
-  ['iss_5fscore_5f_79',['iss_score_',['../classtruck__inspection__client_1_1TruckInspectionClient.html#a0b47f2e04113913893ce17f18ca97d69',1,'truck_inspection_client::TruckInspectionClient']]],
-  ['isvalid_5f_80',['isValid_',['../classSchemaValidatingReader.html#a4e0dcf24425a3ac3954ac08bb5f9823c',1,'SchemaValidatingReader']]],
-  ['itemslist_5f_81',['itemsList_',['../classinternal_1_1Schema.html#af6c4e6c38199aaf9d63bca9fc4f2c211',1,'internal::Schema']]],
-  ['itemstuple_5f_82',['itemsTuple_',['../classinternal_1_1Schema.html#ab4071c6507dc111c8041e66e744e2267',1,'internal::Schema']]],
-  ['itemstuplecount_5f_83',['itemsTupleCount_',['../classinternal_1_1Schema.html#ad043d5e6e6221e007ea308bb7187eb62',1,'internal::Schema']]]
+  ['is_5fspat_5fwall_5ftime_5f_77',['is_spat_wall_time_',['../classcarma__wm_1_1WMListenerWorker.html#a7c30c45e3da523c1ef5a0b279c164b4d',1,'carma_wm::WMListenerWorker']]],
+  ['iscreategap_78',['isCreateGap',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a0dfb4a15be2cf69ca770fcde1bdf65f5',1,'platoon_strategic_ihp::PlatoonManager']]],
+  ['isfollower_79',['isFollower',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a9fb744eaf988b3082397c736de1006ab',1,'platoon_strategic_ihp::PlatoonManager']]],
+  ['iss_5fscore_5f_80',['iss_score_',['../classtruck__inspection__client_1_1TruckInspectionClient.html#a0b47f2e04113913893ce17f18ca97d69',1,'truck_inspection_client::TruckInspectionClient']]],
+  ['isvalid_5f_81',['isValid_',['../classSchemaValidatingReader.html#a4e0dcf24425a3ac3954ac08bb5f9823c',1,'SchemaValidatingReader']]],
+  ['itemslist_5f_82',['itemsList_',['../classinternal_1_1Schema.html#af6c4e6c38199aaf9d63bca9fc4f2c211',1,'internal::Schema']]],
+  ['itemstuple_5f_83',['itemsTuple_',['../classinternal_1_1Schema.html#ab4071c6507dc111c8041e66e744e2267',1,'internal::Schema']]],
+  ['itemstuplecount_5f_84',['itemsTupleCount_',['../classinternal_1_1Schema.html#ad043d5e6e6221e007ea308bb7187eb62',1,'internal::Schema']]]
 ];

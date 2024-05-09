@@ -1,5 +1,9 @@
 var NAVTREEINDEX54 =
 {
+"structplatoon__control_1_1PlatoonLeaderInfo.html":[56,0,59,3],
+"structplatoon__control_1_1PlatoonLeaderInfo.html#a112189e411f6246fa0cbd2eb513a0e52":[57,0,35,3,2],
+"structplatoon__control_1_1PlatoonLeaderInfo.html#a112189e411f6246fa0cbd2eb513a0e52":[56,0,59,3,2],
+"structplatoon__control_1_1PlatoonLeaderInfo.html#a2c1872390d2c34185c5514e4c59a22b0":[57,0,35,3,7],
 "structplatoon__control_1_1PlatoonLeaderInfo.html#a2c1872390d2c34185c5514e4c59a22b0":[56,0,59,3,7],
 "structplatoon__control_1_1PlatoonLeaderInfo.html#a81f0b7ff8c280bf44ea8bce7ac233b52":[57,0,35,3,4],
 "structplatoon__control_1_1PlatoonLeaderInfo.html#a81f0b7ff8c280bf44ea8bce7ac233b52":[56,0,59,3,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX54 =
 "structroute_1_1Config.html#ac250fde286ceda036865ff24a142ef9c":[56,0,81,0,1],
 "structroute_1_1Config.html#ac3a86376c6fdcb8005fbcbc445141e6e":[57,0,45,0,5],
 "structroute_1_1Config.html#ac3a86376c6fdcb8005fbcbc445141e6e":[56,0,81,0,5],
-"structroute_1_1Config.html#ad49e1199f6ce12de6cac8ef26f43fea2":[57,0,45,0,3],
-"structroute_1_1Config.html#ad49e1199f6ce12de6cac8ef26f43fea2":[56,0,81,0,3],
-"structroute__following__plugin_1_1Config.html":[57,0,46,0],
-"structroute__following__plugin_1_1Config.html":[56,0,82,1],
-"structroute__following__plugin_1_1Config.html#a0cbb8bef75d40988a712e401a69fca1d":[56,0,82,1,6]
+"structroute_1_1Config.html#ad49e1199f6ce12de6cac8ef26f43fea2":[57,0,45,0,3]
 };

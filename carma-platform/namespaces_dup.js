@@ -105,6 +105,11 @@ var namespaces_dup =
       [ "generate_launch_description", "namespacemotion__computation__launch.html#a55ceded82280a1b26dd9e38e93304c14", null ]
     ] ],
     [ "motion_prediction_visualizer", "namespacemotion__prediction__visualizer.html", "namespacemotion__prediction__visualizer" ],
+    [ "msgIntersect", "namespacemsgIntersect.html", [
+      [ "listen", "namespacemsgIntersect.html#a1403c56f2531b38dcb55ba5f65451348", null ],
+      [ "main", "namespacemsgIntersect.html#aa2345adc1b3feaedb7306e5d32bbe40d", null ],
+      [ "send", "namespacemsgIntersect.html#aeaddbce1be2d8e5fb7a1f36a76ca2fd1", null ]
+    ] ],
     [ "object", "namespaceobject.html", "namespaceobject" ],
     [ "object_visualizer", "namespaceobject__visualizer.html", "namespaceobject__visualizer" ],
     [ "object_visualizer_launch", "namespaceobject__visualizer__launch.html", [

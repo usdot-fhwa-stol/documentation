@@ -10,5 +10,6 @@ var searchData=
   ['mock_5fdrivers_7',['mock_drivers',['../namespacemock__drivers.html',1,'']]],
   ['motion_5fcomputation_8',['motion_computation',['../namespacemotion__computation.html',1,'']]],
   ['motion_5fcomputation_5flaunch_9',['motion_computation_launch',['../namespacemotion__computation__launch.html',1,'']]],
-  ['motion_5fprediction_5fvisualizer_10',['motion_prediction_visualizer',['../namespacemotion__prediction__visualizer.html',1,'']]]
+  ['motion_5fprediction_5fvisualizer_10',['motion_prediction_visualizer',['../namespacemotion__prediction__visualizer.html',1,'']]],
+  ['msgintersect_11',['msgIntersect',['../namespacemsgIntersect.html',1,'']]]
 ];

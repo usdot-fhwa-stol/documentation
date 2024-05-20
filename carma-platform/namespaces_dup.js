@@ -270,6 +270,10 @@ var namespaces_dup =
     [ "trajectory_executor_launch", "namespacetrajectory__executor__launch.html", [
       [ "generate_launch_description", "namespacetrajectory__executor__launch.html#a514445949eec3209d62b31f2f34b4f4e", null ]
     ] ],
+    [ "trajectory_follower_wrapper", "namespacetrajectory__follower__wrapper.html", "namespacetrajectory__follower__wrapper" ],
+    [ "trajectory_follower_wrapper_launch", "namespacetrajectory__follower__wrapper__launch.html", [
+      [ "generate_launch_description", "namespacetrajectory__follower__wrapper__launch.html#aac85a3818572c35e46a3926ed7689326", null ]
+    ] ],
     [ "trajectory_visualizer", "namespacetrajectory__visualizer.html", "namespacetrajectory__visualizer" ],
     [ "trajectory_visualizer_launch", "namespacetrajectory__visualizer__launch.html", [
       [ "generate_launch_description", "namespacetrajectory__visualizer__launch.html#a99ec886d3cc21e7bad2f210f0d2f2ca6", null ]

@@ -414,6 +414,10 @@ var annotated_dup =
       [ "Config", "structtrajectory__executor_1_1Config.html", "structtrajectory__executor_1_1Config" ],
       [ "TrajectoryExecutor", "classtrajectory__executor_1_1TrajectoryExecutor.html", "classtrajectory__executor_1_1TrajectoryExecutor" ]
     ] ],
+    [ "trajectory_follower_wrapper", "namespacetrajectory__follower__wrapper.html", [
+      [ "TrajectoryFollowerWrapperConfig", "structtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperConfig.html", "structtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperConfig" ],
+      [ "TrajectoryFollowerWrapperNode", "classtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperNode.html", "classtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperNode" ]
+    ] ],
     [ "trajectory_visualizer", "namespacetrajectory__visualizer.html", [
       [ "Config", "structtrajectory__visualizer_1_1Config.html", "structtrajectory__visualizer_1_1Config" ],
       [ "TrajectoryVisualizer", "classtrajectory__visualizer_1_1TrajectoryVisualizer.html", "classtrajectory__visualizer_1_1TrajectoryVisualizer" ]

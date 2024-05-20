@@ -39,7 +39,8 @@ var hierarchy =
       [ "carma_guidance_plugins::PluginBaseNode", "classcarma__guidance__plugins_1_1PluginBaseNode.html", [
         [ "carma_guidance_plugins::ControlPlugin", "classcarma__guidance__plugins_1_1ControlPlugin.html", [
           [ "SUB::Node", "classSUB_1_1Node.html", null ],
-          [ "pure_pursuit_wrapper::PurePursuitWrapperNode", "classpure__pursuit__wrapper_1_1PurePursuitWrapperNode.html", null ]
+          [ "pure_pursuit_wrapper::PurePursuitWrapperNode", "classpure__pursuit__wrapper_1_1PurePursuitWrapperNode.html", null ],
+          [ "trajectory_follower_wrapper::TrajectoryFollowerWrapperNode", "classtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperNode.html", null ]
         ] ],
         [ "carma_guidance_plugins::StrategicPlugin", "classcarma__guidance__plugins_1_1StrategicPlugin.html", [
           [ "SUB::Node", "classSUB_1_1Node.html", null ],
@@ -389,6 +390,7 @@ var hierarchy =
     [ "carma_wm::TrackPos", "classcarma__wm_1_1TrackPos.html", null ],
     [ "carma_wm::TrafficControl", "classcarma__wm_1_1TrafficControl.html", null ],
     [ "traffic_incident_parser::TrafficIncidentParserWorker", "classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html", null ],
+    [ "trajectory_follower_wrapper::TrajectoryFollowerWrapperConfig", "structtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperConfig.html", null ],
     [ "lci_strategic_plugin::TrajectoryParams", "structlci__strategic__plugin_1_1TrajectoryParams.html", null ],
     [ "light_controlled_intersection_tactical_plugin::TrajectoryParams", "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html", null ],
     [ "Transcoder< SourceEncoding, TargetEncoding >", "structTranscoder.html", null ],

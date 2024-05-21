@@ -117,12 +117,14 @@ var namespaces_dup =
     ] ],
     [ "pcl", "namespacepcl.html", "namespacepcl" ],
     [ "plan_delegator", "namespaceplan__delegator.html", "namespaceplan__delegator" ],
-    [ "platoon_control", "namespaceplatoon__control.html", "namespaceplatoon__control" ],
-    [ "platoon_control_ihp", "namespaceplatoon__control__ihp.html", "namespaceplatoon__control__ihp" ],
+    [ "platoon_control", "namespaceplatoon__control.html", [
+      [ "generate_launch_description", "namespaceplatoon__control.html#aa1236e257737a743b9f4977fb878d6f6", null ]
+    ] ],
     [ "platoon_strategic_ihp", "namespaceplatoon__strategic__ihp.html", "namespaceplatoon__strategic__ihp" ],
     [ "platoon_strategic_ihp_launch", "namespaceplatoon__strategic__ihp__launch.html", [
       [ "generate_launch_description", "namespaceplatoon__strategic__ihp__launch.html#ae0a9a9afb68d9777e81d8c40e3ddbfc3", null ]
     ] ],
+    [ "platooning_control", "namespaceplatooning__control.html", "namespaceplatooning__control" ],
     [ "platooning_tactical_plugin", "namespaceplatooning__tactical__plugin.html", "namespaceplatooning__tactical__plugin" ],
     [ "platooning_tactical_plugin_launch", "namespaceplatooning__tactical__plugin__launch.html", [
       [ "generate_launch_description", "namespaceplatooning__tactical__plugin__launch.html#a8353def0af6696af7eac7ed07e9be333", null ]

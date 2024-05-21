@@ -299,20 +299,6 @@ var annotated_dup =
       [ "LaneChangeInformation", "structplan__delegator_1_1LaneChangeInformation.html", "structplan__delegator_1_1LaneChangeInformation" ],
       [ "PlanDelegator", "classplan__delegator_1_1PlanDelegator.html", "classplan__delegator_1_1PlanDelegator" ]
     ] ],
-    [ "platoon_control", "namespaceplatoon__control.html", [
-      [ "PIDController", "classplatoon__control_1_1PIDController.html", "classplatoon__control_1_1PIDController" ],
-      [ "PlatoonControlPlugin", "classplatoon__control_1_1PlatoonControlPlugin.html", "classplatoon__control_1_1PlatoonControlPlugin" ],
-      [ "PlatoonControlWorker", "classplatoon__control_1_1PlatoonControlWorker.html", "classplatoon__control_1_1PlatoonControlWorker" ],
-      [ "PlatoonLeaderInfo", "structplatoon__control_1_1PlatoonLeaderInfo.html", "structplatoon__control_1_1PlatoonLeaderInfo" ],
-      [ "PurePursuit", "classplatoon__control_1_1PurePursuit.html", "classplatoon__control_1_1PurePursuit" ]
-    ] ],
-    [ "platoon_control_ihp", "namespaceplatoon__control__ihp.html", [
-      [ "PIDController", "classplatoon__control__ihp_1_1PIDController.html", "classplatoon__control__ihp_1_1PIDController" ],
-      [ "PlatoonControlIHPPlugin", "classplatoon__control__ihp_1_1PlatoonControlIHPPlugin.html", "classplatoon__control__ihp_1_1PlatoonControlIHPPlugin" ],
-      [ "PlatoonControlIHPWorker", "classplatoon__control__ihp_1_1PlatoonControlIHPWorker.html", "classplatoon__control__ihp_1_1PlatoonControlIHPWorker" ],
-      [ "PlatoonLeaderInfo", "structplatoon__control__ihp_1_1PlatoonLeaderInfo.html", "structplatoon__control__ihp_1_1PlatoonLeaderInfo" ],
-      [ "PurePursuit", "classplatoon__control__ihp_1_1PurePursuit.html", "classplatoon__control__ihp_1_1PurePursuit" ]
-    ] ],
     [ "platoon_strategic_ihp", "namespaceplatoon__strategic__ihp.html", [
       [ "ActionPlan", "structplatoon__strategic__ihp_1_1ActionPlan.html", "structplatoon__strategic__ihp_1_1ActionPlan" ],
       [ "Node", "classplatoon__strategic__ihp_1_1Node.html", "classplatoon__strategic__ihp_1_1Node" ],
@@ -320,6 +306,13 @@ var annotated_dup =
       [ "PlatoonMember", "structplatoon__strategic__ihp_1_1PlatoonMember.html", "structplatoon__strategic__ihp_1_1PlatoonMember" ],
       [ "PlatoonPluginConfig", "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html", "structplatoon__strategic__ihp_1_1PlatoonPluginConfig" ],
       [ "PlatoonStrategicIHPPlugin", "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html", "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin" ]
+    ] ],
+    [ "platooning_control", "namespaceplatooning__control.html", [
+      [ "PIDController", "classplatooning__control_1_1PIDController.html", "classplatooning__control_1_1PIDController" ],
+      [ "PlatooningControlPlugin", "classplatooning__control_1_1PlatooningControlPlugin.html", "classplatooning__control_1_1PlatooningControlPlugin" ],
+      [ "PlatooningControlPluginConfig", "structplatooning__control_1_1PlatooningControlPluginConfig.html", "structplatooning__control_1_1PlatooningControlPluginConfig" ],
+      [ "PlatooningControlWorker", "classplatooning__control_1_1PlatooningControlWorker.html", "classplatooning__control_1_1PlatooningControlWorker" ],
+      [ "PlatoonLeaderInfo", "structplatooning__control_1_1PlatoonLeaderInfo.html", "structplatooning__control_1_1PlatoonLeaderInfo" ]
     ] ],
     [ "platooning_tactical_plugin", "namespaceplatooning__tactical__plugin.html", [
       [ "Node", "classplatooning__tactical__plugin_1_1Node.html", "classplatooning__tactical__plugin_1_1Node" ],
@@ -476,8 +469,6 @@ var annotated_dup =
     [ "NS3Adapter", "classNS3Adapter.html", "classNS3Adapter" ],
     [ "NS3Client", "classNS3Client.html", "classNS3Client" ],
     [ "ParseResult", "structParseResult.html", "structParseResult" ],
-    [ "PlatooningControlIHPPluginConfig", "structPlatooningControlIHPPluginConfig.html", "structPlatooningControlIHPPluginConfig" ],
-    [ "PlatooningControlPluginConfig", "structPlatooningControlPluginConfig.html", "structPlatooningControlPluginConfig" ],
     [ "PlatooningTacticalPluginConfig", "structPlatooningTacticalPluginConfig.html", "structPlatooningTacticalPluginConfig" ],
     [ "PrettyWriter", "classPrettyWriter.html", "classPrettyWriter" ],
     [ "RoutingGraphAccessor", "classRoutingGraphAccessor.html", "classRoutingGraphAccessor" ],

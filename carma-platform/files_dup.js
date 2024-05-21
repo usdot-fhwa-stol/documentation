@@ -35,7 +35,6 @@ var files_dup =
     [ "object_visualizer", "dir_b449c3d5b8d47e9e0b202a493469f302.html", "dir_b449c3d5b8d47e9e0b202a493469f302" ],
     [ "plan_delegator", "dir_d710a7fa5a044dfe5a073f69014868e3.html", "dir_d710a7fa5a044dfe5a073f69014868e3" ],
     [ "platooning_control", "dir_ad77897b1ccd4abcbd6dd417d098445b.html", "dir_ad77897b1ccd4abcbd6dd417d098445b" ],
-    [ "platooning_control_ihp", "dir_fd41c6d0c991c1fea2bd7eb0e0a38d6f.html", "dir_fd41c6d0c991c1fea2bd7eb0e0a38d6f" ],
     [ "platooning_strategic_IHP", "dir_0d280ea680cb3816dd23904a40b97608.html", "dir_0d280ea680cb3816dd23904a40b97608" ],
     [ "platooning_tactical_plugin", "dir_d2404bbdd96252d96dc5c9d8a98a0dc0.html", "dir_d2404bbdd96252d96dc5c9d8a98a0dc0" ],
     [ "points_map_filter", "dir_dffd8d85dea2c56e102f96f6de0dc4a7.html", "dir_dffd8d85dea2c56e102f96f6de0dc4a7" ],

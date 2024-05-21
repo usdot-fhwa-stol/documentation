@@ -39,6 +39,7 @@ var hierarchy =
       [ "carma_guidance_plugins::PluginBaseNode", "classcarma__guidance__plugins_1_1PluginBaseNode.html", [
         [ "carma_guidance_plugins::ControlPlugin", "classcarma__guidance__plugins_1_1ControlPlugin.html", [
           [ "SUB::Node", "classSUB_1_1Node.html", null ],
+          [ "platooning_control::PlatooningControlPlugin", "classplatooning__control_1_1PlatooningControlPlugin.html", null ],
           [ "pure_pursuit_wrapper::PurePursuitWrapperNode", "classpure__pursuit__wrapper_1_1PurePursuitWrapperNode.html", null ],
           [ "trajectory_follower_wrapper::TrajectoryFollowerWrapperNode", "classtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperNode.html", null ]
         ] ],
@@ -294,21 +295,15 @@ var hierarchy =
     [ "internal::Schema< SchemaDocumentType >::PatternProperty", "structinternal_1_1Schema_1_1PatternProperty.html", null ],
     [ "GenericPointer< ValueType, Allocator >::PercentDecodeStream", "classGenericPointer_1_1PercentDecodeStream.html", null ],
     [ "GenericPointer< ValueType, Allocator >::PercentEncodeStream< OutputStream >", "classGenericPointer_1_1PercentEncodeStream.html", null ],
-    [ "platoon_control::PIDController", "classplatoon__control_1_1PIDController.html", null ],
-    [ "platoon_control_ihp::PIDController", "classplatoon__control__ihp_1_1PIDController.html", null ],
+    [ "platooning_control::PIDController", "classplatooning__control_1_1PIDController.html", null ],
     [ "arbitrator::PlanningStrategy", "classarbitrator_1_1PlanningStrategy.html", [
       [ "arbitrator::TreePlanner", "classarbitrator_1_1TreePlanner.html", null ]
     ] ],
-    [ "platoon_control_ihp::PlatoonControlIHPPlugin", "classplatoon__control__ihp_1_1PlatoonControlIHPPlugin.html", null ],
-    [ "platoon_control_ihp::PlatoonControlIHPWorker", "classplatoon__control__ihp_1_1PlatoonControlIHPWorker.html", null ],
-    [ "platoon_control::PlatoonControlPlugin", "classplatoon__control_1_1PlatoonControlPlugin.html", null ],
-    [ "platoon_control::PlatoonControlWorker", "classplatoon__control_1_1PlatoonControlWorker.html", null ],
-    [ "PlatooningControlIHPPluginConfig", "structPlatooningControlIHPPluginConfig.html", null ],
-    [ "PlatooningControlPluginConfig", "structPlatooningControlPluginConfig.html", null ],
+    [ "platooning_control::PlatooningControlPluginConfig", "structplatooning__control_1_1PlatooningControlPluginConfig.html", null ],
+    [ "platooning_control::PlatooningControlWorker", "classplatooning__control_1_1PlatooningControlWorker.html", null ],
     [ "platooning_tactical_plugin::PlatooningTacticalPlugin", "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html", null ],
     [ "PlatooningTacticalPluginConfig", "structPlatooningTacticalPluginConfig.html", null ],
-    [ "platoon_control::PlatoonLeaderInfo", "structplatoon__control_1_1PlatoonLeaderInfo.html", null ],
-    [ "platoon_control_ihp::PlatoonLeaderInfo", "structplatoon__control__ihp_1_1PlatoonLeaderInfo.html", null ],
+    [ "platooning_control::PlatoonLeaderInfo", "structplatooning__control_1_1PlatoonLeaderInfo.html", null ],
     [ "platoon_strategic_ihp::PlatoonManager", "classplatoon__strategic__ihp_1_1PlatoonManager.html", null ],
     [ "platoon_strategic_ihp::PlatoonMember", "structplatoon__strategic__ihp_1_1PlatoonMember.html", null ],
     [ "platoon_strategic_ihp::PlatoonPluginConfig", "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html", null ],
@@ -327,8 +322,6 @@ var hierarchy =
     [ "carma_cooperative_perception::PositionOffsetXYZ", "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html", null ],
     [ "internal::Schema< SchemaDocumentType >::Property", "structinternal_1_1Schema_1_1Property.html", null ],
     [ "mock_drivers::PublisherWapper", "structmock__drivers_1_1PublisherWapper.html", null ],
-    [ "platoon_control::PurePursuit", "classplatoon__control_1_1PurePursuit.html", null ],
-    [ "platoon_control_ihp::PurePursuit", "classplatoon__control__ihp_1_1PurePursuit.html", null ],
     [ "pure_pursuit_wrapper::PurePursuitWrapperConfig", "structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html", null ],
     [ "internal::GenericRegex< Encoding, Allocator >::Range", "structinternal_1_1GenericRegex_1_1Range.html", null ],
     [ "guidance_plugin_validator.guidance_plugin_components.RequiredControlComponents", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1RequiredControlComponents.html", null ],

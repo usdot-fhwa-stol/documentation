@@ -140,6 +140,7 @@ var hierarchy =
       [ "cc.ws.GeoSvc", "classcc_1_1ws_1_1GeoSvc.html", null ],
       [ "cc.ws.ReplayMgr", "classcc_1_1ws_1_1ReplayMgr.html", null ],
       [ "cc.ws.RopMgr", "classcc_1_1ws_1_1RopMgr.html", null ],
+      [ "cc.ws.SimFederate", "classcc_1_1ws_1_1SimFederate.html", null ],
       [ "cc.ws.TcmReqServlet", "classcc_1_1ws_1_1TcmReqServlet.html", null ]
     ] ],
     [ "cc.ws.GeoSvc.SimWay", "classcc_1_1ws_1_1GeoSvc_1_1SimWay.html", null ],
@@ -151,6 +152,7 @@ var hierarchy =
     [ "cc.util.Text", "classcc_1_1util_1_1Text.html", null ],
     [ "cc.util.TileLayerBuilder", "classcc_1_1util_1_1TileLayerBuilder.html", null ],
     [ "cc.util.TileUtil", "classcc_1_1util_1_1TileUtil.html", null ],
+    [ "cc.ws.TimeSource", "classcc_1_1ws_1_1TimeSource.html", null ],
     [ "cc.ctrl.TrafCtrlEnums", "classcc_1_1ctrl_1_1TrafCtrlEnums.html", null ],
     [ "cc.ctrl.TrafCtrlPt", "classcc_1_1ctrl_1_1TrafCtrlPt.html", null ],
     [ "cc.vector_tile.VectorTile", "classcc_1_1vector__tile_1_1VectorTile.html", null ],
@@ -214,6 +216,7 @@ var hierarchy =
       [ "cc.ws.ReplayMgr", "classcc_1_1ws_1_1ReplayMgr.html", null ],
       [ "cc.ws.RsmServlet", "classcc_1_1ws_1_1RsmServlet.html", null ],
       [ "cc.ws.SessMgr", "classcc_1_1ws_1_1SessMgr.html", null ],
+      [ "cc.ws.SimFederate", "classcc_1_1ws_1_1SimFederate.html", null ],
       [ "cc.ws.TcmAckServlet", "classcc_1_1ws_1_1TcmAckServlet.html", null ],
       [ "cc.ws.TcmReplyServlet", "classcc_1_1ws_1_1TcmReplyServlet.html", null ],
       [ "cc.ws.TcmReqServlet", "classcc_1_1ws_1_1TcmReqServlet.html", null ],

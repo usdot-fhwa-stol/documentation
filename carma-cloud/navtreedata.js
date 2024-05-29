@@ -41,7 +41,11 @@ var NAVTREE =
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", null ]
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -66,16 +70,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Arrays_8java.html",
-"classcc_1_1ctrl_1_1CtrlLineArcs.html#ac8a3030a0c02b2808565119dcd0f289e",
-"classcc_1_1ctrl_1_1proc_1_1ProcPavement.html#a674149a76eed77ff6b053c4e858a4cd7",
-"classcc_1_1geosrv_1_1xodr_1_1geo_1_1LaneOffset.html#a88ce23ac8330a38f49f87d300f4abae5",
-"classcc_1_1geosrv_1_1xodr_1_1rdmk_1_1Lane.html",
-"classcc_1_1rsm_1_1RsmParser.html#a4ab5b8abd85b3c267cc42c6118a40737",
-"classcc_1_1util_1_1Geo.html#a1987235a3a4560a291159c7e3ed34467",
-"classcc_1_1vector__tile_1_1VectorTile_1_1Tile.html#ab9ad98914be4eb23557415f727f6c41c",
-"classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer_1_1Builder.html#aeb53aecd3f86948c7f9de9d55138b371",
-"classcc_1_1ws_1_1SessMgr.html",
-"interfacecc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1LayerOrBuilder.html#a7ded4923cf3fb5665c6e38422797cc67"
+"classcc_1_1ctrl_1_1CtrlLineArcs.html#a5c54929139627765f1fd236e7815265b",
+"classcc_1_1ctrl_1_1proc_1_1ProcMinPlatoonHdwy.html#a9a5532224fbd5ade9559ae12c4911389",
+"classcc_1_1geosrv_1_1xodr_1_1geo_1_1Lane.html#ad0c9454576127b4ef64bff69a7c45db6",
+"classcc_1_1geosrv_1_1xodr_1_1rdmk_1_1Geometry.html#a4e7bd168f104cfc7b807fa4c74188bd3",
+"classcc_1_1rsm_1_1RsmCollect_1_1RsmRecord.html#a9ff928ca24834d702572b38fe454ecca",
+"classcc_1_1util_1_1FileUtil.html#a4851735818a10ad019323f7912fe3c74",
+"classcc_1_1vector__tile_1_1VectorTile_1_1Tile.html#a7b01d1fbce91377f6e7ac15b0e52a862",
+"classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer_1_1Builder.html#aa7b174609b6080a1c746298ad8a0167b",
+"classcc_1_1ws_1_1RopMgr.html#a87fae2b5e44baf7066536b03a14b119d",
+"globals.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

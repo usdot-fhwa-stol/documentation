@@ -231,16 +231,17 @@ Here is the call graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="TcmReqServlet_8java_source.html#l00089">89</a> of file <a class="el" href="TcmReqServlet_8java_source.html">TcmReqServlet.java</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   91</span>    {</div>
 <div class="line"><span class="lineno">   92</span>        StringBuilder sReq = <span class="keyword">new</span> StringBuilder(1024);</div>
-<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">try</span> (BufferedInputStream oIn = <span class="keyword">new</span> BufferedInputStream(oReq.getInputStream()))</div>
-<div class="line"><span class="lineno">   94</span>        {</div>
-<div class="line"><span class="lineno">   95</span>            <span class="keywordtype">int</span> nByte;</div>
-<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">while</span> ((nByte = oIn.read()) &gt;= 0)</div>
-<div class="line"><span class="lineno">   97</span>                sReq.append((<span class="keywordtype">char</span>)nByte);</div>
-<div class="line"><span class="lineno">   98</span>        }</div>
-<div class="line"><span class="lineno">   99</span>        </div>
-<div class="line"><span class="lineno">  100</span>        <span class="keyword">new</span> Thread(<span class="keyword">this</span>, sReq.toString()).start();</div>
-<div class="line"><span class="lineno">  101</span>        <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#ac04055041222ebb3353181e7d1d4f356">LOGGER</a>.debug(sReq);</div>
-<div class="line"><span class="lineno">  102</span>    }</div>
+<div class="line"><span class="lineno">   93</span>        sReq.append(oReq.getRemoteAddr());</div>
+<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">try</span> (BufferedInputStream oIn = <span class="keyword">new</span> BufferedInputStream(oReq.getInputStream()))</div>
+<div class="line"><span class="lineno">   95</span>        {</div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordtype">int</span> nByte;</div>
+<div class="line"><span class="lineno">   97</span>            <span class="keywordflow">while</span> ((nByte = oIn.read()) &gt;= 0)</div>
+<div class="line"><span class="lineno">   98</span>                sReq.append((<span class="keywordtype">char</span>)nByte);</div>
+<div class="line"><span class="lineno">   99</span>        }</div>
+<div class="line"><span class="lineno">  100</span>        </div>
+<div class="line"><span class="lineno">  101</span>        <span class="keyword">new</span> Thread(<span class="keyword">this</span>, sReq.toString()).start();</div>
+<div class="line"><span class="lineno">  102</span>        <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#ac04055041222ebb3353181e7d1d4f356">LOGGER</a>.debug(sReq);</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
 <div class="ttc" id="aclasscc_1_1ws_1_1TcmReqServlet_html_ac04055041222ebb3353181e7d1d4f356"><div class="ttname"><a href="classcc_1_1ws_1_1TcmReqServlet.html#ac04055041222ebb3353181e7d1d4f356">cc.ws.TcmReqServlet.LOGGER</a></div><div class="ttdeci">static final Logger LOGGER</div><div class="ttdef"><b>Definition:</b> <a href="TcmReqServlet_8java_source.html#l00051">TcmReqServlet.java:51</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="TcmReqServlet_8java_source.html#l00051">cc.ws.TcmReqServlet.LOGGER</a>.</p>
@@ -323,243 +324,250 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TcmReqServlet_8java_source.html#l00106">106</a> of file <a class="el" href="TcmReqServlet_8java_source.html">TcmReqServlet.java</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  107</span>    {</div>
-<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  109</span>        {</div>
-<div class="line"><span class="lineno">  110</span>            <span class="keywordtype">long</span> lNow = System.currentTimeMillis();</div>
-<div class="line"><span class="lineno">  111</span>            String sReq = Thread.currentThread().getName();</div>
-<div class="line"><span class="lineno">  112</span>            TcmReqParser oReqParser;</div>
-<div class="line"><span class="lineno">  113</span>            <span class="keywordflow">if</span> (sReq.indexOf(<span class="stringliteral">&quot;&lt;tcrV01&gt;&quot;</span>) &gt;= 0)</div>
-<div class="line"><span class="lineno">  114</span>                oReqParser = <span class="keyword">new</span> TcmReqParser();</div>
-<div class="line"><span class="lineno">  115</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  116</span>                oReqParser = <span class="keyword">new</span> TcmReqParser2();</div>
-<div class="line"><span class="lineno">  117</span> </div>
-<div class="line"><span class="lineno">  118</span>            TcmReq oTcmReq = oReqParser.parseRequest(<span class="keyword">new</span> ByteArrayInputStream(sReq.getBytes(StandardCharsets.UTF_8)));</div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>            ArrayList&lt;TrafCtrl&gt; oResCtrls = <span class="keyword">new</span> ArrayList();</div>
-<div class="line"><span class="lineno">  121</span>            ArrayList&lt;TileIds&gt; oTiles = <span class="keyword">new</span> ArrayList(50);</div>
-<div class="line"><span class="lineno">  122</span>            ArrayList&lt;byte[]&gt; oProcessed = <span class="keyword">new</span> ArrayList(1000);</div>
-<div class="line"><span class="lineno">  123</span>            TrafCtrl oTrafCtrlSearch = <span class="keyword">new</span> TrafCtrl();</div>
-<div class="line"><span class="lineno">  124</span>            oTrafCtrlSearch.m_yId = <span class="keyword">new</span> <span class="keywordtype">byte</span>[16];</div>
-<div class="line"><span class="lineno">  125</span>            TileIds oTileIdsSearch = <span class="keyword">new</span> TileIds();</div>
-<div class="line"><span class="lineno">  126</span>            <span class="keywordtype">int</span> nMsgTot = 0;</div>
-<div class="line"><span class="lineno">  127</span>            <span class="keywordflow">for</span> (TcBounds oBounds : oTcmReq.m_oBounds)</div>
-<div class="line"><span class="lineno">  128</span>            {</div>
-<div class="line"><span class="lineno">  129</span>                <span class="keywordtype">double</span>[] dTcMercBounds = <span class="keyword">new</span> <span class="keywordtype">double</span>[]{Double.MAX_VALUE, Double.MAX_VALUE, -Double.MAX_VALUE, -Double.MAX_VALUE};</div>
-<div class="line"><span class="lineno">  130</span>                <span class="keywordtype">double</span>[] dCorners = <span class="keyword">new</span> <span class="keywordtype">double</span>[oBounds.m_nCorners.length];</div>
-<div class="line"><span class="lineno">  131</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nIndex = 0; nIndex &lt; oBounds.m_nCorners.length;)</div>
-<div class="line"><span class="lineno">  132</span>                {</div>
-<div class="line"><span class="lineno">  133</span>                    <span class="keywordtype">double</span> dX = Mercator.lonToMeters(Geo.fromIntDeg(oBounds.m_nCorners[nIndex]));</div>
-<div class="line"><span class="lineno">  134</span>                    dCorners[nIndex++] = dX;</div>
-<div class="line"><span class="lineno">  135</span>                    <span class="keywordtype">double</span> dY = Mercator.latToMeters(Geo.fromIntDeg(oBounds.m_nCorners[nIndex]));</div>
-<div class="line"><span class="lineno">  136</span>                    dCorners[nIndex++] = dY;</div>
-<div class="line"><span class="lineno">  137</span>                    <span class="keywordflow">if</span> (dX &lt; dTcMercBounds[0])</div>
-<div class="line"><span class="lineno">  138</span>                        dTcMercBounds[0] = dX;</div>
-<div class="line"><span class="lineno">  139</span>                    <span class="keywordflow">if</span> (dY &lt; dTcMercBounds[1])</div>
-<div class="line"><span class="lineno">  140</span>                        dTcMercBounds[1] = dY;</div>
-<div class="line"><span class="lineno">  141</span>                    <span class="keywordflow">if</span> (dX &gt; dTcMercBounds[2])</div>
-<div class="line"><span class="lineno">  142</span>                        dTcMercBounds[2] = dX;</div>
-<div class="line"><span class="lineno">  143</span>                    <span class="keywordflow">if</span> (dY &gt; dTcMercBounds[3])</div>
-<div class="line"><span class="lineno">  144</span>                        dTcMercBounds[3] = dY;</div>
-<div class="line"><span class="lineno">  145</span>                }</div>
-<div class="line"><span class="lineno">  146</span>                Geo.untwist(dCorners);</div>
-<div class="line"><span class="lineno">  147</span>                Mercator oM = Mercator.getInstance();</div>
-<div class="line"><span class="lineno">  148</span>                <span class="keywordtype">int</span>[] nTiles = <span class="keyword">new</span> <span class="keywordtype">int</span>[2];</div>
-<div class="line"><span class="lineno">  149</span>                <span class="keywordtype">int</span>[] nTileIndices = <span class="keyword">new</span> <span class="keywordtype">int</span>[4];</div>
-<div class="line"><span class="lineno">  150</span>                oM.metersToTile(dTcMercBounds[0], dTcMercBounds[3], CtrlTiles.g_nZoom, nTiles); <span class="comment">// determine the tiles the bounds intersect</span></div>
-<div class="line"><span class="lineno">  151</span>                nTileIndices[0] = nTiles[0];</div>
-<div class="line"><span class="lineno">  152</span>                nTileIndices[1] = nTiles[1];</div>
-<div class="line"><span class="lineno">  153</span>                oM.metersToTile(dTcMercBounds[2], dTcMercBounds[1], CtrlTiles.g_nZoom, nTiles);</div>
-<div class="line"><span class="lineno">  154</span>                nTileIndices[2] = nTiles[0];</div>
-<div class="line"><span class="lineno">  155</span>                nTileIndices[3] = nTiles[1];</div>
-<div class="line"><span class="lineno">  156</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nTileX = nTileIndices[0]; nTileX &lt;= nTileIndices[2]; nTileX++) <span class="comment">// for each tile</span></div>
-<div class="line"><span class="lineno">  157</span>                {</div>
-<div class="line"><span class="lineno">  158</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nTileY = nTileIndices[1]; nTileY &lt;= nTileIndices[3]; nTileY++)</div>
-<div class="line"><span class="lineno">  159</span>                    {</div>
-<div class="line"><span class="lineno">  160</span>                        Path oIndexFile = Paths.get(String.format(CtrlTiles.g_sTdFileFormat, nTileX, CtrlTiles.g_nZoom, nTileX, nTileY) + <span class="stringliteral">&quot;.ndx&quot;</span>);</div>
-<div class="line"><span class="lineno">  161</span>                        <span class="keywordflow">if</span> (!Files.exists(oIndexFile)) <span class="comment">// check if the index file exists</span></div>
-<div class="line"><span class="lineno">  162</span>                            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  163</span> </div>
-<div class="line"><span class="lineno">  164</span>                        oTileIdsSearch.setIndices(nTileX, nTileY);</div>
-<div class="line"><span class="lineno">  165</span>                        <span class="keywordtype">int</span> nIndex = Collections.binarySearch(oTiles, oTileIdsSearch);</div>
-<div class="line"><span class="lineno">  166</span>                        <span class="keywordflow">if</span> (nIndex &lt; 0) <span class="comment">// if the tile index file has not been loaded</span></div>
-<div class="line"><span class="lineno">  167</span>                        {</div>
-<div class="line"><span class="lineno">  168</span>                            TileIds oTile = <span class="keyword">new</span> TileIds(nTileX, nTileY, 1000);</div>
-<div class="line"><span class="lineno">  169</span>                            nIndex = ~nIndex;</div>
-<div class="line"><span class="lineno">  170</span>                            oTiles.add(nIndex, oTile);</div>
-<div class="line"><span class="lineno">  171</span>                            <span class="keywordflow">try</span> (DataInputStream oIn = <span class="keyword">new</span> DataInputStream(<span class="keyword">new</span> BufferedInputStream(FileUtil.newInputStream(oIndexFile)))) <span class="comment">// read the index file to find which controls are in the tile</span></div>
-<div class="line"><span class="lineno">  172</span>                            {</div>
-<div class="line"><span class="lineno">  173</span>                                <span class="keywordflow">while</span> (oIn.available() &gt; 0)</div>
-<div class="line"><span class="lineno">  174</span>                                {</div>
-<div class="line"><span class="lineno">  175</span>                                    CtrlIndex oIndex = <span class="keyword">new</span> CtrlIndex(oIn);</div>
-<div class="line"><span class="lineno">  176</span>                                    <span class="keywordflow">if</span> (oBounds.m_lOldest &lt;= oIndex.m_lStart &amp;&amp; oIndex.m_lEnd &gt; lNow &amp;&amp; java.util.Arrays.binarySearch(<a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#a5cdf610b37710d47eaa98c5428823a1e">IGNORE_CTRLS</a>, oIndex.m_nType) &lt; 0 &amp;&amp; Geo.boundingBoxesIntersect(dTcMercBounds, oIndex.m_dBB)) <span class="comment">// skip out controls and control types to ignore</span></div>
-<div class="line"><span class="lineno">  177</span>                                        oTile.add(oIndex.m_yId);</div>
-<div class="line"><span class="lineno">  178</span>                                }</div>
-<div class="line"><span class="lineno">  179</span>                            }</div>
-<div class="line"><span class="lineno">  180</span>                        }</div>
-<div class="line"><span class="lineno">  181</span> </div>
-<div class="line"><span class="lineno">  182</span>                        TileIds oTile = oTiles.get(nIndex);</div>
-<div class="line"><span class="lineno">  183</span>                        oResCtrls.ensureCapacity(oResCtrls.size() + oTile.size());</div>
-<div class="line"><span class="lineno">  184</span>                        <span class="keywordflow">for</span> (<span class="keywordtype">byte</span>[] yId : oTile)</div>
-<div class="line"><span class="lineno">  185</span>                        {</div>
-<div class="line"><span class="lineno">  186</span>                            <span class="keywordtype">int</span> nProcessIndex = Collections.binarySearch(oProcessed, yId, TrafCtrl.ID_COMP);</div>
-<div class="line"><span class="lineno">  187</span>                            <span class="keywordflow">if</span> (nProcessIndex &lt; 0)</div>
-<div class="line"><span class="lineno">  188</span>                                oProcessed.add(~nProcessIndex, yId);</div>
-<div class="line"><span class="lineno">  189</span>                            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  190</span>                                <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  191</span>                            </div>
-<div class="line"><span class="lineno">  192</span>                            String sFile = CtrlTiles.g_sCtrlDir + TrafCtrl.getId(yId) + <span class="stringliteral">&quot;.bin&quot;</span>;</div>
-<div class="line"><span class="lineno">  193</span>                            Path oCtrlFile = Paths.get(sFile);</div>
-<div class="line"><span class="lineno">  194</span>    </div>
-<div class="line"><span class="lineno">  195</span>                            <span class="keywordflow">if</span> (!Files.exists(oCtrlFile))</div>
-<div class="line"><span class="lineno">  196</span>                                <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  197</span>                            TrafCtrl oCtrl;</div>
-<div class="line"><span class="lineno">  198</span>                            <span class="keywordflow">try</span> (DataInputStream oIn = <span class="keyword">new</span> DataInputStream(<span class="keyword">new</span> BufferedInputStream(FileUtil.newInputStream(oCtrlFile))))</div>
-<div class="line"><span class="lineno">  199</span>                            {</div>
-<div class="line"><span class="lineno">  200</span>                                oCtrl = <span class="keyword">new</span> TrafCtrl(oIn, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  201</span>                            }</div>
-<div class="line"><span class="lineno">  202</span>                            </div>
-<div class="line"><span class="lineno">  203</span>                            <span class="keywordflow">if</span> (Geo.ctrlIntersectBounds(dCorners, oCtrl, <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#a371dd948263ff5a5a7592a1082614dbb">m_nPolyStep</a>))</div>
+<p class="definition">Definition at line <a class="el" href="TcmReqServlet_8java_source.html#l00107">107</a> of file <a class="el" href="TcmReqServlet_8java_source.html">TcmReqServlet.java</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>    {</div>
+<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  110</span>        {</div>
+<div class="line"><span class="lineno">  111</span>            <span class="keywordtype">long</span> lNow = TimeSource.getInstance().currentTimeMillis();</div>
+<div class="line"><span class="lineno">  112</span>            String sReq = Thread.currentThread().getName();</div>
+<div class="line"><span class="lineno">  113</span>            <span class="keywordtype">int</span> nPos = sReq.indexOf(<span class="charliteral">&#39;&lt;&#39;</span>);</div>
+<div class="line"><span class="lineno">  114</span>            String sHost = sReq.substring(0, nPos);</div>
+<div class="line"><span class="lineno">  115</span>            sReq = sReq.substring(nPos);</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>            TcmReqParser oReqParser;</div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">if</span> (sReq.contains(<span class="stringliteral">&quot;&lt;tcrV01&gt;&quot;</span>))</div>
+<div class="line"><span class="lineno">  119</span>                oReqParser = <span class="keyword">new</span> TcmReqParser();</div>
+<div class="line"><span class="lineno">  120</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  121</span>                oReqParser = <span class="keyword">new</span> TcmReqParser2();</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>            TcmReq oTcmReq = oReqParser.parseRequest(<span class="keyword">new</span> ByteArrayInputStream(sReq.getBytes(StandardCharsets.UTF_8)));</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>            ArrayList&lt;TrafCtrl&gt; oResCtrls = <span class="keyword">new</span> ArrayList();</div>
+<div class="line"><span class="lineno">  126</span>            ArrayList&lt;TileIds&gt; oTiles = <span class="keyword">new</span> ArrayList(50);</div>
+<div class="line"><span class="lineno">  127</span>            ArrayList&lt;byte[]&gt; oProcessed = <span class="keyword">new</span> ArrayList(1000);</div>
+<div class="line"><span class="lineno">  128</span>            TrafCtrl oTrafCtrlSearch = <span class="keyword">new</span> TrafCtrl();</div>
+<div class="line"><span class="lineno">  129</span>            oTrafCtrlSearch.m_yId = <span class="keyword">new</span> <span class="keywordtype">byte</span>[16];</div>
+<div class="line"><span class="lineno">  130</span>            TileIds oTileIdsSearch = <span class="keyword">new</span> TileIds();</div>
+<div class="line"><span class="lineno">  131</span>            <span class="keywordtype">int</span> nMsgTot = 0;</div>
+<div class="line"><span class="lineno">  132</span>            <span class="keywordflow">for</span> (TcBounds oBounds : oTcmReq.m_oBounds)</div>
+<div class="line"><span class="lineno">  133</span>            {</div>
+<div class="line"><span class="lineno">  134</span>                <span class="keywordtype">double</span>[] dTcMercBounds = <span class="keyword">new</span> <span class="keywordtype">double</span>[]{Double.MAX_VALUE, Double.MAX_VALUE, -Double.MAX_VALUE, -Double.MAX_VALUE};</div>
+<div class="line"><span class="lineno">  135</span>                <span class="keywordtype">double</span>[] dCorners = <span class="keyword">new</span> <span class="keywordtype">double</span>[oBounds.m_nCorners.length];</div>
+<div class="line"><span class="lineno">  136</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nIndex = 0; nIndex &lt; oBounds.m_nCorners.length;)</div>
+<div class="line"><span class="lineno">  137</span>                {</div>
+<div class="line"><span class="lineno">  138</span>                    <span class="keywordtype">double</span> dX = Mercator.lonToMeters(Geo.fromIntDeg(oBounds.m_nCorners[nIndex]));</div>
+<div class="line"><span class="lineno">  139</span>                    dCorners[nIndex++] = dX;</div>
+<div class="line"><span class="lineno">  140</span>                    <span class="keywordtype">double</span> dY = Mercator.latToMeters(Geo.fromIntDeg(oBounds.m_nCorners[nIndex]));</div>
+<div class="line"><span class="lineno">  141</span>                    dCorners[nIndex++] = dY;</div>
+<div class="line"><span class="lineno">  142</span>                    <span class="keywordflow">if</span> (dX &lt; dTcMercBounds[0])</div>
+<div class="line"><span class="lineno">  143</span>                        dTcMercBounds[0] = dX;</div>
+<div class="line"><span class="lineno">  144</span>                    <span class="keywordflow">if</span> (dY &lt; dTcMercBounds[1])</div>
+<div class="line"><span class="lineno">  145</span>                        dTcMercBounds[1] = dY;</div>
+<div class="line"><span class="lineno">  146</span>                    <span class="keywordflow">if</span> (dX &gt; dTcMercBounds[2])</div>
+<div class="line"><span class="lineno">  147</span>                        dTcMercBounds[2] = dX;</div>
+<div class="line"><span class="lineno">  148</span>                    <span class="keywordflow">if</span> (dY &gt; dTcMercBounds[3])</div>
+<div class="line"><span class="lineno">  149</span>                        dTcMercBounds[3] = dY;</div>
+<div class="line"><span class="lineno">  150</span>                }</div>
+<div class="line"><span class="lineno">  151</span>                Geo.untwist(dCorners);</div>
+<div class="line"><span class="lineno">  152</span>                Mercator oM = Mercator.getInstance();</div>
+<div class="line"><span class="lineno">  153</span>                <span class="keywordtype">int</span>[] nTiles = <span class="keyword">new</span> <span class="keywordtype">int</span>[2];</div>
+<div class="line"><span class="lineno">  154</span>                <span class="keywordtype">int</span>[] nTileIndices = <span class="keyword">new</span> <span class="keywordtype">int</span>[4];</div>
+<div class="line"><span class="lineno">  155</span>                oM.metersToTile(dTcMercBounds[0], dTcMercBounds[3], CtrlTiles.g_nZoom, nTiles); <span class="comment">// determine the tiles the bounds intersect</span></div>
+<div class="line"><span class="lineno">  156</span>                nTileIndices[0] = nTiles[0];</div>
+<div class="line"><span class="lineno">  157</span>                nTileIndices[1] = nTiles[1];</div>
+<div class="line"><span class="lineno">  158</span>                oM.metersToTile(dTcMercBounds[2], dTcMercBounds[1], CtrlTiles.g_nZoom, nTiles);</div>
+<div class="line"><span class="lineno">  159</span>                nTileIndices[2] = nTiles[0];</div>
+<div class="line"><span class="lineno">  160</span>                nTileIndices[3] = nTiles[1];</div>
+<div class="line"><span class="lineno">  161</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nTileX = nTileIndices[0]; nTileX &lt;= nTileIndices[2]; nTileX++) <span class="comment">// for each tile</span></div>
+<div class="line"><span class="lineno">  162</span>                {</div>
+<div class="line"><span class="lineno">  163</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nTileY = nTileIndices[1]; nTileY &lt;= nTileIndices[3]; nTileY++)</div>
+<div class="line"><span class="lineno">  164</span>                    {</div>
+<div class="line"><span class="lineno">  165</span>                        Path oIndexFile = Paths.get(String.format(CtrlTiles.g_sTdFileFormat, nTileX, CtrlTiles.g_nZoom, nTileX, nTileY) + <span class="stringliteral">&quot;.ndx&quot;</span>);</div>
+<div class="line"><span class="lineno">  166</span>                        <span class="keywordflow">if</span> (!Files.exists(oIndexFile)) <span class="comment">// check if the index file exists</span></div>
+<div class="line"><span class="lineno">  167</span>                            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>                        oTileIdsSearch.setIndices(nTileX, nTileY);</div>
+<div class="line"><span class="lineno">  170</span>                        <span class="keywordtype">int</span> nIndex = Collections.binarySearch(oTiles, oTileIdsSearch);</div>
+<div class="line"><span class="lineno">  171</span>                        <span class="keywordflow">if</span> (nIndex &lt; 0) <span class="comment">// if the tile index file has not been loaded</span></div>
+<div class="line"><span class="lineno">  172</span>                        {</div>
+<div class="line"><span class="lineno">  173</span>                            TileIds oTile = <span class="keyword">new</span> TileIds(nTileX, nTileY, 1000);</div>
+<div class="line"><span class="lineno">  174</span>                            nIndex = ~nIndex;</div>
+<div class="line"><span class="lineno">  175</span>                            oTiles.add(nIndex, oTile);</div>
+<div class="line"><span class="lineno">  176</span>                            <span class="keywordflow">try</span> (DataInputStream oIn = <span class="keyword">new</span> DataInputStream(<span class="keyword">new</span> BufferedInputStream(FileUtil.newInputStream(oIndexFile)))) <span class="comment">// read the index file to find which controls are in the tile</span></div>
+<div class="line"><span class="lineno">  177</span>                            {</div>
+<div class="line"><span class="lineno">  178</span>                                <span class="keywordflow">while</span> (oIn.available() &gt; 0)</div>
+<div class="line"><span class="lineno">  179</span>                                {</div>
+<div class="line"><span class="lineno">  180</span>                                    CtrlIndex oIndex = <span class="keyword">new</span> CtrlIndex(oIn);</div>
+<div class="line"><span class="lineno">  181</span>                                    <span class="keywordflow">if</span> (oBounds.m_lOldest &lt;= oIndex.m_lStart &amp;&amp; oIndex.m_lEnd &gt; lNow &amp;&amp; java.util.Arrays.binarySearch(<a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#a5cdf610b37710d47eaa98c5428823a1e">IGNORE_CTRLS</a>, oIndex.m_nType) &lt; 0 &amp;&amp; Geo.boundingBoxesIntersect(dTcMercBounds, oIndex.m_dBB)) <span class="comment">// skip out controls and control types to ignore</span></div>
+<div class="line"><span class="lineno">  182</span>                                        oTile.add(oIndex.m_yId);</div>
+<div class="line"><span class="lineno">  183</span>                                }</div>
+<div class="line"><span class="lineno">  184</span>                            }</div>
+<div class="line"><span class="lineno">  185</span>                        }</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>                        TileIds oTile = oTiles.get(nIndex);</div>
+<div class="line"><span class="lineno">  188</span>                        oResCtrls.ensureCapacity(oResCtrls.size() + oTile.size());</div>
+<div class="line"><span class="lineno">  189</span>                        <span class="keywordflow">for</span> (<span class="keywordtype">byte</span>[] yId : oTile)</div>
+<div class="line"><span class="lineno">  190</span>                        {</div>
+<div class="line"><span class="lineno">  191</span>                            <span class="keywordtype">int</span> nProcessIndex = Collections.binarySearch(oProcessed, yId, TrafCtrl.ID_COMP);</div>
+<div class="line"><span class="lineno">  192</span>                            <span class="keywordflow">if</span> (nProcessIndex &lt; 0)</div>
+<div class="line"><span class="lineno">  193</span>                                oProcessed.add(~nProcessIndex, yId);</div>
+<div class="line"><span class="lineno">  194</span>                            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  195</span>                                <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  196</span>                            </div>
+<div class="line"><span class="lineno">  197</span>                            String sFile = CtrlTiles.g_sCtrlDir + TrafCtrl.getId(yId) + <span class="stringliteral">&quot;.bin&quot;</span>;</div>
+<div class="line"><span class="lineno">  198</span>                            Path oCtrlFile = Paths.get(sFile);</div>
+<div class="line"><span class="lineno">  199</span>    </div>
+<div class="line"><span class="lineno">  200</span>                            <span class="keywordflow">if</span> (!Files.exists(oCtrlFile))</div>
+<div class="line"><span class="lineno">  201</span>                                <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  202</span>                            TrafCtrl oCtrl;</div>
+<div class="line"><span class="lineno">  203</span>                            <span class="keywordflow">try</span> (DataInputStream oIn = <span class="keyword">new</span> DataInputStream(<span class="keyword">new</span> BufferedInputStream(FileUtil.newInputStream(oCtrlFile))))</div>
 <div class="line"><span class="lineno">  204</span>                            {</div>
-<div class="line"><span class="lineno">  205</span>                                oResCtrls.add(oCtrl);</div>
-<div class="line"><span class="lineno">  206</span>                                oCtrl.preparePoints(<a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#aabde3995c6925fb307599da65a5deac7">m_nExplodeDistForXml</a>);</div>
-<div class="line"><span class="lineno">  207</span>                                nMsgTot += (oCtrl.size() / 256 + 1);</div>
-<div class="line"><span class="lineno">  208</span>                            }</div>
-<div class="line"><span class="lineno">  209</span>                        }</div>
-<div class="line"><span class="lineno">  210</span>                    }</div>
-<div class="line"><span class="lineno">  211</span>                }</div>
-<div class="line"><span class="lineno">  212</span>            }           </div>
-<div class="line"><span class="lineno">  213</span> </div>
-<div class="line"><span class="lineno">  214</span>            <span class="keywordtype">int</span> nMsgCount = 1;</div>
-<div class="line"><span class="lineno">  215</span>            <span class="keywordflow">if</span> (oReqParser.m_bList)</div>
-<div class="line"><span class="lineno">  216</span>                nMsgTot = oResCtrls.size();</div>
-<div class="line"><span class="lineno">  217</span>            </div>
-<div class="line"><span class="lineno">  218</span>            StringBuilder sBuf = <span class="keyword">new</span> StringBuilder(nMsgTot * 2048);</div>
-<div class="line"><span class="lineno">  219</span> </div>
-<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nCtrlIndex = 0; nCtrlIndex &lt; oResCtrls.size(); nCtrlIndex++)</div>
-<div class="line"><span class="lineno">  221</span>            {</div>
-<div class="line"><span class="lineno">  222</span>                TrafCtrl oCtrl = oResCtrls.get(nCtrlIndex);</div>
-<div class="line"><span class="lineno">  223</span>                <span class="keywordtype">int</span> nParts = oCtrl.size() / 256 + 1;</div>
-<div class="line"><span class="lineno">  224</span>                <span class="keywordflow">if</span> (oReqParser.m_bList)</div>
-<div class="line"><span class="lineno">  225</span>                    nParts = 1;</div>
-<div class="line"><span class="lineno">  226</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nIndex = 0; nIndex &lt; nParts; nIndex++)</div>
-<div class="line"><span class="lineno">  227</span>                {</div>
-<div class="line"><span class="lineno">  228</span>                    <span class="keywordflow">if</span> (nIndex == 0)</div>
-<div class="line"><span class="lineno">  229</span>                        oCtrl.getXml(sBuf, oTcmReq.m_sReqId, oTcmReq.m_nReqSeq, nMsgCount, nMsgTot, oTcmReq.m_sVersion, <span class="keyword">true</span>, 0, <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#a0e8674c6fbe4cc5d04d2da4da32a86bf">m_bRemoveWidth</a>, oReqParser.m_bList);</div>
-<div class="line"><span class="lineno">  230</span>                    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  231</span>                        oCtrl.getXml(sBuf, oTcmReq.m_sReqId, oTcmReq.m_nReqSeq, nMsgCount, nMsgTot, oTcmReq.m_sVersion, <span class="keyword">false</span>, nIndex * 256 - 1, <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#a0e8674c6fbe4cc5d04d2da4da32a86bf">m_bRemoveWidth</a>, oReqParser.m_bList);</div>
-<div class="line"><span class="lineno">  232</span>                    ++nMsgCount;</div>
-<div class="line"><span class="lineno">  233</span> </div>
-<div class="line"><span class="lineno">  234</span>                    <span class="keywordflow">if</span> (!oReqParser.m_bList)</div>
-<div class="line"><span class="lineno">  235</span>                    {</div>
-<div class="line"><span class="lineno">  236</span>                        HttpURLConnection oHttpClient = (HttpURLConnection)<span class="keyword">new</span> URL(String.format(<span class="stringliteral">&quot;http://tcmreplyhost:%d/tcmreply&quot;</span>, oReqParser.m_nPort)).openConnection();</div>
-<div class="line"><span class="lineno">  237</span>                        oHttpClient.setFixedLengthStreamingMode(sBuf.length());</div>
-<div class="line"><span class="lineno">  238</span>                        oHttpClient.setRequestProperty(<span class="stringliteral">&quot;Content-Type&quot;</span>, <span class="stringliteral">&quot;application/x-www-form-urlencoded&quot;</span>);</div>
-<div class="line"><span class="lineno">  239</span>                        oHttpClient.setDoOutput(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  240</span>                        oHttpClient.setRequestMethod(<span class="stringliteral">&quot;POST&quot;</span>);</div>
-<div class="line"><span class="lineno">  241</span>                        oHttpClient.setConnectTimeout(1000);</div>
-<div class="line"><span class="lineno">  242</span> </div>
-<div class="line"><span class="lineno">  243</span>                        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  244</span>                        {</div>
-<div class="line"><span class="lineno">  245</span>                            oHttpClient.connect(); <span class="comment">// send post request</span></div>
-<div class="line"><span class="lineno">  246</span> </div>
-<div class="line"><span class="lineno">  247</span>                            <span class="keywordflow">try</span> (BufferedWriter oOut = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(oHttpClient.getOutputStream())))</div>
-<div class="line"><span class="lineno">  248</span>                            {</div>
-<div class="line"><span class="lineno">  249</span>                                oOut.append(sBuf);</div>
-<div class="line"><span class="lineno">  250</span>                            }</div>
+<div class="line"><span class="lineno">  205</span>                                oCtrl = <span class="keyword">new</span> TrafCtrl(oIn, <span class="keyword">true</span>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  206</span>                            }</div>
+<div class="line"><span class="lineno">  207</span>                            </div>
+<div class="line"><span class="lineno">  208</span>                            <span class="keywordflow">if</span> (Geo.ctrlIntersectBounds(dCorners, oCtrl, <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#a371dd948263ff5a5a7592a1082614dbb">m_nPolyStep</a>))</div>
+<div class="line"><span class="lineno">  209</span>                            {</div>
+<div class="line"><span class="lineno">  210</span>                                oResCtrls.add(oCtrl);</div>
+<div class="line"><span class="lineno">  211</span>                                oCtrl.preparePoints(<a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#aabde3995c6925fb307599da65a5deac7">m_nExplodeDistForXml</a>);</div>
+<div class="line"><span class="lineno">  212</span>                                nMsgTot += (oCtrl.size() / 256 + 1);</div>
+<div class="line"><span class="lineno">  213</span>                            }</div>
+<div class="line"><span class="lineno">  214</span>                        }</div>
+<div class="line"><span class="lineno">  215</span>                    }</div>
+<div class="line"><span class="lineno">  216</span>                }</div>
+<div class="line"><span class="lineno">  217</span>            }           </div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>            <span class="keywordtype">int</span> nMsgCount = 1;</div>
+<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">if</span> (oReqParser.m_bList)</div>
+<div class="line"><span class="lineno">  221</span>                nMsgTot = oResCtrls.size();</div>
+<div class="line"><span class="lineno">  222</span>            </div>
+<div class="line"><span class="lineno">  223</span>            StringBuilder sBuf = <span class="keyword">new</span> StringBuilder(nMsgTot * 2048);</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nCtrlIndex = 0; nCtrlIndex &lt; oResCtrls.size(); nCtrlIndex++)</div>
+<div class="line"><span class="lineno">  226</span>            {</div>
+<div class="line"><span class="lineno">  227</span>                TrafCtrl oCtrl = oResCtrls.get(nCtrlIndex);</div>
+<div class="line"><span class="lineno">  228</span>                <span class="keywordtype">int</span> nParts = oCtrl.size() / 256 + 1;</div>
+<div class="line"><span class="lineno">  229</span>                <span class="keywordflow">if</span> (oReqParser.m_bList)</div>
+<div class="line"><span class="lineno">  230</span>                    nParts = 1;</div>
+<div class="line"><span class="lineno">  231</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nIndex = 0; nIndex &lt; nParts; nIndex++)</div>
+<div class="line"><span class="lineno">  232</span>                {</div>
+<div class="line"><span class="lineno">  233</span>                    <span class="keywordflow">if</span> (nIndex == 0)</div>
+<div class="line"><span class="lineno">  234</span>                        oCtrl.getXml(sBuf, oTcmReq.m_sReqId, oTcmReq.m_nReqSeq, nMsgCount, nMsgTot, oTcmReq.m_sVersion, <span class="keyword">true</span>, 0, <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#a0e8674c6fbe4cc5d04d2da4da32a86bf">m_bRemoveWidth</a>, oReqParser.m_bList);</div>
+<div class="line"><span class="lineno">  235</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  236</span>                        oCtrl.getXml(sBuf, oTcmReq.m_sReqId, oTcmReq.m_nReqSeq, nMsgCount, nMsgTot, oTcmReq.m_sVersion, <span class="keyword">false</span>, nIndex * 256 - 1, <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#a0e8674c6fbe4cc5d04d2da4da32a86bf">m_bRemoveWidth</a>, oReqParser.m_bList);</div>
+<div class="line"><span class="lineno">  237</span>                    ++nMsgCount;</div>
+<div class="line"><span class="lineno">  238</span> </div>
+<div class="line"><span class="lineno">  239</span>                    <span class="keywordflow">if</span> (!oReqParser.m_bList)</div>
+<div class="line"><span class="lineno">  240</span>                    {</div>
+<div class="line"><span class="lineno">  241</span>                        HttpURLConnection oHttpClient = (HttpURLConnection)<span class="keyword">new</span> URL(String.format(<span class="stringliteral">&quot;http://%s:%d/tcmreply&quot;</span>, sHost, oReqParser.m_nPort)).openConnection();</div>
+<div class="line"><span class="lineno">  242</span>                        oHttpClient.setFixedLengthStreamingMode(sBuf.length());</div>
+<div class="line"><span class="lineno">  243</span>                        oHttpClient.setRequestProperty(<span class="stringliteral">&quot;Content-Type&quot;</span>, <span class="stringliteral">&quot;application/x-www-form-urlencoded&quot;</span>);</div>
+<div class="line"><span class="lineno">  244</span>                        oHttpClient.setDoOutput(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  245</span>                        oHttpClient.setRequestMethod(<span class="stringliteral">&quot;POST&quot;</span>);</div>
+<div class="line"><span class="lineno">  246</span>                        oHttpClient.setConnectTimeout(1000);</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>                        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  249</span>                        {</div>
+<div class="line"><span class="lineno">  250</span>                            oHttpClient.connect(); <span class="comment">// send post request</span></div>
 <div class="line"><span class="lineno">  251</span> </div>
-<div class="line"><span class="lineno">  252</span>                            oHttpClient.disconnect();</div>
-<div class="line"><span class="lineno">  253</span>                        }</div>
-<div class="line"><span class="lineno">  254</span>                        <span class="keywordflow">catch</span> (Exception oEx)</div>
-<div class="line"><span class="lineno">  255</span>                        {</div>
-<div class="line"><span class="lineno">  256</span>                            oEx.printStackTrace();</div>
-<div class="line"><span class="lineno">  257</span>                        }</div>
-<div class="line"><span class="lineno">  258</span>                        <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#ac04055041222ebb3353181e7d1d4f356">LOGGER</a>.debug(sBuf);</div>
-<div class="line"><span class="lineno">  259</span>                    }</div>
-<div class="line"><span class="lineno">  260</span>                }</div>
-<div class="line"><span class="lineno">  261</span>            }</div>
-<div class="line"><span class="lineno">  262</span>            </div>
-<div class="line"><span class="lineno">  263</span>            <span class="keywordflow">if</span> (oReqParser.m_bList)</div>
-<div class="line"><span class="lineno">  264</span>            {</div>
-<div class="line"><span class="lineno">  265</span>                HttpURLConnection oHttpClient = (HttpURLConnection)<span class="keyword">new</span> URL(String.format(<span class="stringliteral">&quot;http://tcmreplyhost:%d/tcmreply&quot;</span>, oReqParser.m_nPort)).openConnection();</div>
-<div class="line"><span class="lineno">  266</span>                oHttpClient.setRequestProperty(<span class="stringliteral">&quot;Content-Encoding&quot;</span>, <span class="stringliteral">&quot;gzip&quot;</span>);</div>
-<div class="line"><span class="lineno">  267</span>                oHttpClient.setRequestProperty(<span class="stringliteral">&quot;Content-Type&quot;</span>, <span class="stringliteral">&quot;application/x-www-form-urlencoded&quot;</span>);</div>
-<div class="line"><span class="lineno">  268</span>                oHttpClient.setDoOutput(<span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  269</span>                oHttpClient.setRequestMethod(<span class="stringliteral">&quot;POST&quot;</span>);</div>
-<div class="line"><span class="lineno">  270</span>                oHttpClient.setConnectTimeout(1000);</div>
-<div class="line"><span class="lineno">  271</span>                <span class="keywordflow">try</span> (ByteArrayOutputStream oBaos = <span class="keyword">new</span> ByteArrayOutputStream(sBuf.length()))</div>
-<div class="line"><span class="lineno">  272</span>                {</div>
-<div class="line"><span class="lineno">  273</span>                    <span class="keywordflow">try</span> (BufferedWriter oOut = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(<span class="keyword">new</span> GZIPOutputStream(oBaos))))</div>
-<div class="line"><span class="lineno">  274</span>                    {</div>
-<div class="line"><span class="lineno">  275</span>                        oOut.append(<span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&lt;TrafficControlMessageList&gt;&quot;</span>).append(sBuf).append(<span class="stringliteral">&quot;&lt;/TrafficControlMessageList&gt;&quot;</span>);</div>
-<div class="line"><span class="lineno">  276</span>                    }</div>
-<div class="line"><span class="lineno">  277</span>                    oHttpClient.setFixedLengthStreamingMode(oBaos.size());</div>
-<div class="line"><span class="lineno">  278</span>                    <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  279</span>                    {</div>
-<div class="line"><span class="lineno">  280</span>                        oHttpClient.connect(); <span class="comment">// send post request</span></div>
-<div class="line"><span class="lineno">  281</span>                        <span class="keywordflow">try</span> (BufferedOutputStream oOut = <span class="keyword">new</span> BufferedOutputStream(oHttpClient.getOutputStream()))</div>
-<div class="line"><span class="lineno">  282</span>                        {</div>
-<div class="line"><span class="lineno">  283</span>                            oOut.write(oBaos.toByteArray());</div>
-<div class="line"><span class="lineno">  284</span>                        }</div>
-<div class="line"><span class="lineno">  285</span>                        </div>
-<div class="line"><span class="lineno">  286</span>                        oHttpClient.disconnect();</div>
-<div class="line"><span class="lineno">  287</span>                    }</div>
-<div class="line"><span class="lineno">  288</span>                    <span class="keywordflow">catch</span> (Exception oEx)</div>
-<div class="line"><span class="lineno">  289</span>                    {</div>
-<div class="line"><span class="lineno">  290</span>                        oEx.printStackTrace();</div>
-<div class="line"><span class="lineno">  291</span>                    }</div>
-<div class="line"><span class="lineno">  292</span>                }</div>
-<div class="line"><span class="lineno">  293</span>                sBuf.insert(0, <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&lt;TrafficControlMessageList&gt;&quot;</span>);</div>
-<div class="line"><span class="lineno">  294</span>                sBuf.append(<span class="stringliteral">&quot;&lt;/TrafficControlMessageList&gt;&quot;</span>);</div>
-<div class="line"><span class="lineno">  295</span>                <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#ac04055041222ebb3353181e7d1d4f356">LOGGER</a>.debug(sBuf);</div>
-<div class="line"><span class="lineno">  296</span>            }</div>
-<div class="line"><span class="lineno">  297</span>        }</div>
-<div class="line"><span class="lineno">  298</span>        <span class="keywordflow">catch</span> (Exception oEx)</div>
-<div class="line"><span class="lineno">  299</span>        {</div>
-<div class="line"><span class="lineno">  300</span>            <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#ac04055041222ebb3353181e7d1d4f356">LOGGER</a>.error(oEx, oEx);</div>
-<div class="line"><span class="lineno">  301</span>        }</div>
-<div class="line"><span class="lineno">  302</span>    }</div>
+<div class="line"><span class="lineno">  252</span>                            <span class="keywordflow">try</span> (BufferedWriter oOut = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(oHttpClient.getOutputStream())))</div>
+<div class="line"><span class="lineno">  253</span>                            {</div>
+<div class="line"><span class="lineno">  254</span>                                oOut.append(sBuf);</div>
+<div class="line"><span class="lineno">  255</span>                            }</div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>                            oHttpClient.disconnect();</div>
+<div class="line"><span class="lineno">  258</span>                        }</div>
+<div class="line"><span class="lineno">  259</span>                        <span class="keywordflow">catch</span> (Exception oEx)</div>
+<div class="line"><span class="lineno">  260</span>                        {</div>
+<div class="line"><span class="lineno">  261</span>                            oEx.printStackTrace();</div>
+<div class="line"><span class="lineno">  262</span>                        }</div>
+<div class="line"><span class="lineno">  263</span>                        <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#ac04055041222ebb3353181e7d1d4f356">LOGGER</a>.debug(sBuf);</div>
+<div class="line"><span class="lineno">  264</span>                    }</div>
+<div class="line"><span class="lineno">  265</span>                }</div>
+<div class="line"><span class="lineno">  266</span>            }</div>
+<div class="line"><span class="lineno">  267</span>            </div>
+<div class="line"><span class="lineno">  268</span>            <span class="keywordflow">if</span> (oReqParser.m_bList)</div>
+<div class="line"><span class="lineno">  269</span>            {</div>
+<div class="line"><span class="lineno">  270</span>                String sUrl = String.format(<span class="stringliteral">&quot;http://%s:%d/tcmreply&quot;</span>, sHost, oReqParser.m_nPort);</div>
+<div class="line"><span class="lineno">  271</span>                HttpURLConnection oHttpClient = (HttpURLConnection)<span class="keyword">new</span> URL(sUrl).openConnection();</div>
+<div class="line"><span class="lineno">  272</span>                oHttpClient.setRequestProperty(<span class="stringliteral">&quot;Content-Encoding&quot;</span>, <span class="stringliteral">&quot;gzip&quot;</span>);</div>
+<div class="line"><span class="lineno">  273</span>                oHttpClient.setRequestProperty(<span class="stringliteral">&quot;Content-Type&quot;</span>, <span class="stringliteral">&quot;application/x-www-form-urlencoded&quot;</span>);</div>
+<div class="line"><span class="lineno">  274</span>                oHttpClient.setDoOutput(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  275</span>                oHttpClient.setRequestMethod(<span class="stringliteral">&quot;POST&quot;</span>);</div>
+<div class="line"><span class="lineno">  276</span>                oHttpClient.setConnectTimeout(1000);</div>
+<div class="line"><span class="lineno">  277</span>                <span class="keywordflow">try</span> (ByteArrayOutputStream oBaos = <span class="keyword">new</span> ByteArrayOutputStream(sBuf.length()))</div>
+<div class="line"><span class="lineno">  278</span>                {</div>
+<div class="line"><span class="lineno">  279</span>                    <span class="keywordflow">try</span> (BufferedWriter oOut = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(<span class="keyword">new</span> GZIPOutputStream(oBaos))))</div>
+<div class="line"><span class="lineno">  280</span>                    {</div>
+<div class="line"><span class="lineno">  281</span>                        oOut.append(<span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&lt;TrafficControlMessageList&gt;&quot;</span>).append(sBuf).append(<span class="stringliteral">&quot;&lt;/TrafficControlMessageList&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">  282</span>                    }</div>
+<div class="line"><span class="lineno">  283</span>                    oHttpClient.setFixedLengthStreamingMode(oBaos.size());</div>
+<div class="line"><span class="lineno">  284</span>                    <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  285</span>                    {</div>
+<div class="line"><span class="lineno">  286</span>                        oHttpClient.connect(); <span class="comment">// send post request</span></div>
+<div class="line"><span class="lineno">  287</span>                        <span class="keywordflow">try</span> (BufferedOutputStream oOut = <span class="keyword">new</span> BufferedOutputStream(oHttpClient.getOutputStream()))</div>
+<div class="line"><span class="lineno">  288</span>                        {</div>
+<div class="line"><span class="lineno">  289</span>                            oOut.write(oBaos.toByteArray());</div>
+<div class="line"><span class="lineno">  290</span>                        }</div>
+<div class="line"><span class="lineno">  291</span>                        </div>
+<div class="line"><span class="lineno">  292</span>                        oHttpClient.disconnect();</div>
+<div class="line"><span class="lineno">  293</span>                    }</div>
+<div class="line"><span class="lineno">  294</span>                    <span class="keywordflow">catch</span> (Exception oEx)</div>
+<div class="line"><span class="lineno">  295</span>                    {</div>
+<div class="line"><span class="lineno">  296</span>                        <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#ac04055041222ebb3353181e7d1d4f356">LOGGER</a>.error(sUrl, oEx);</div>
+<div class="line"><span class="lineno">  297</span>                    }</div>
+<div class="line"><span class="lineno">  298</span>                }</div>
+<div class="line"><span class="lineno">  299</span>                sBuf.insert(0, <span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&lt;TrafficControlMessageList&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">  300</span>                sBuf.append(<span class="stringliteral">&quot;&lt;/TrafficControlMessageList&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">  301</span>                <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#ac04055041222ebb3353181e7d1d4f356">LOGGER</a>.debug(sBuf);</div>
+<div class="line"><span class="lineno">  302</span>            }</div>
+<div class="line"><span class="lineno">  303</span>        }</div>
+<div class="line"><span class="lineno">  304</span>        <span class="keywordflow">catch</span> (Exception oEx)</div>
+<div class="line"><span class="lineno">  305</span>        {</div>
+<div class="line"><span class="lineno">  306</span>            <a class="code hl_variable" href="classcc_1_1ws_1_1TcmReqServlet.html#ac04055041222ebb3353181e7d1d4f356">LOGGER</a>.error(oEx, oEx);</div>
+<div class="line"><span class="lineno">  307</span>        }</div>
+<div class="line"><span class="lineno">  308</span>    }</div>
 <div class="ttc" id="aclasscc_1_1ws_1_1TcmReqServlet_html_a5cdf610b37710d47eaa98c5428823a1e"><div class="ttname"><a href="classcc_1_1ws_1_1TcmReqServlet.html#a5cdf610b37710d47eaa98c5428823a1e">cc.ws.TcmReqServlet.IGNORE_CTRLS</a></div><div class="ttdeci">static int[] IGNORE_CTRLS</div><div class="ttdef"><b>Definition:</b> <a href="TcmReqServlet_8java_source.html#l00056">TcmReqServlet.java:56</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Geo_8java_source.html#l00097">cc.util.Geo.boundingBoxesIntersect()</a>, <a class="el" href="Geo_8java_source.html#l01230">cc.util.Geo.ctrlIntersectBounds()</a>, <a class="el" href="Geo_8java_source.html#l00053">cc.util.Geo.fromIntDeg()</a>, <a class="el" href="CtrlTiles_8java_source.html#l00066">cc.ws.CtrlTiles.g_nZoom</a>, <a class="el" href="CtrlTiles_8java_source.html#l00067">cc.ws.CtrlTiles.g_sTdFileFormat</a>, <a class="el" href="TrafCtrl_8java_source.html#l00662">cc.ctrl.TrafCtrl.getId()</a>, <a class="el" href="Mercator_8java_source.html#l00073">cc.geosrv.Mercator.getInstance()</a>, <a class="el" href="TrafCtrl_8java_source.html#l00521">cc.ctrl.TrafCtrl.getXml()</a>, <a class="el" href="TrafCtrl_8java_source.html#l00057">cc.ctrl.TrafCtrl.ID_COMP</a>, <a class="el" href="TcmReqServlet_8java_source.html#l00056">cc.ws.TcmReqServlet.IGNORE_CTRLS</a>, <a class="el" href="Mercator_8java_source.html#l00092">cc.geosrv.Mercator.latToMeters()</a>, <a class="el" href="TcmReqServlet_8java_source.html#l00051">cc.ws.TcmReqServlet.LOGGER</a>, <a class="el" href="Mercator_8java_source.html#l00086">cc.geosrv.Mercator.lonToMeters()</a>, <a class="el" href="TcmReqParser_8java_source.html#l00031">cc.ctrl.TcmReqParser.m_bList</a>, <a class="el" href="TcmReqServlet_8java_source.html#l00054">cc.ws.TcmReqServlet.m_bRemoveWidth</a>, <a class="el" href="CtrlIndex_8java_source.html#l00021">cc.ctrl.CtrlIndex.m_dBB</a>, <a class="el" href="CtrlIndex_8java_source.html#l00020">cc.ctrl.CtrlIndex.m_lEnd</a>, <a class="el" href="TcBounds_8java_source.html#l00017">cc.ctrl.TcBounds.m_lOldest</a>, <a class="el" href="CtrlIndex_8java_source.html#l00019">cc.ctrl.CtrlIndex.m_lStart</a>, <a class="el" href="TcBounds_8java_source.html#l00018">cc.ctrl.TcBounds.m_nCorners</a>, <a class="el" href="TcmReqServlet_8java_source.html#l00053">cc.ws.TcmReqServlet.m_nExplodeDistForXml</a>, <a class="el" href="TcmReqServlet_8java_source.html#l00055">cc.ws.TcmReqServlet.m_nPolyStep</a>, <a class="el" href="TcmReqParser_8java_source.html#l00030">cc.ctrl.TcmReqParser.m_nPort</a>, <a class="el" href="TcmReq_8java_source.html#l00018">cc.ctrl.TcmReq.m_nReqSeq</a>, <a class="el" href="CtrlIndex_8java_source.html#l00018">cc.ctrl.CtrlIndex.m_nType</a>, <a class="el" href="TcmReq_8java_source.html#l00020">cc.ctrl.TcmReq.m_oBounds</a>, <a class="el" href="TcmReq_8java_source.html#l00017">cc.ctrl.TcmReq.m_sReqId</a>, <a class="el" href="TcmReq_8java_source.html#l00016">cc.ctrl.TcmReq.m_sVersion</a>, <a class="el" href="CtrlIndex_8java_source.html#l00017">cc.ctrl.CtrlIndex.m_yId</a>, <a class="el" href="Mercator_8java_source.html#l00208">cc.geosrv.Mercator.metersToTile()</a>, <a class="el" href="FileUtil_8java_source.html#l00053">cc.util.FileUtil.newInputStream()</a>, <a class="el" href="TcmReqParser_8java_source.html#l00153">cc.ctrl.TcmReqParser.parseRequest()</a>, <a class="el" href="TrafCtrl_8java_source.html#l00710">cc.ctrl.TrafCtrl.preparePoints()</a>, <a class="el" href="TcmReqServlet_8java_source.html#l00323">cc.ws.TcmReqServlet.TileIds.setIndices()</a>, and <a class="el" href="Geo_8java_source.html#l01082">cc.util.Geo.untwist()</a>.</p>
+<p class="reference">References <a class="el" href="Geo_8java_source.html#l00097">cc.util.Geo.boundingBoxesIntersect()</a>, <a class="el" href="Geo_8java_source.html#l01230">cc.util.Geo.ctrlIntersectBounds()</a>, <a class="el" href="TimeSource_8java_source.html#l00030">cc.ws.TimeSource.currentTimeMillis()</a>, <a class="el" href="Geo_8java_source.html#l00053">cc.util.Geo.fromIntDeg()</a>, <a class="el" href="CtrlTiles_8java_source.html#l00066">cc.ws.CtrlTiles.g_nZoom</a>, <a class="el" href="CtrlTiles_8java_source.html#l00067">cc.ws.CtrlTiles.g_sTdFileFormat</a>, <a class="el" href="TrafCtrl_8java_source.html#l00662">cc.ctrl.TrafCtrl.getId()</a>, <a class="el" href="Mercator_8java_source.html#l00073">cc.geosrv.Mercator.getInstance()</a>, <a class="el" href="TimeSource_8java_source.html#l00024">cc.ws.TimeSource.getInstance()</a>, <a class="el" href="TrafCtrl_8java_source.html#l00521">cc.ctrl.TrafCtrl.getXml()</a>, <a class="el" href="TrafCtrl_8java_source.html#l00057">cc.ctrl.TrafCtrl.ID_COMP</a>, <a class="el" href="TcmReqServlet_8java_source.html#l00056">cc.ws.TcmReqServlet.IGNORE_CTRLS</a>, <a class="el" href="Mercator_8java_source.html#l00092">cc.geosrv.Mercator.latToMeters()</a>, <a class="el" href="TcmReqServlet_8java_source.html#l00051">cc.ws.TcmReqServlet.LOGGER</a>, <a class="el" href="Mercator_8java_source.html#l00086">cc.geosrv.Mercator.lonToMeters()</a>, <a class="el" href="TcmReqParser_8java_source.html#l00031">cc.ctrl.TcmReqParser.m_bList</a>, <a class="el" href="TcmReqServlet_8java_source.html#l00054">cc.ws.TcmReqServlet.m_bRemoveWidth</a>, <a class="el" href="CtrlIndex_8java_source.html#l00021">cc.ctrl.CtrlIndex.m_dBB</a>, <a class="el" href="CtrlIndex_8java_source.html#l00020">cc.ctrl.CtrlIndex.m_lEnd</a>, <a class="el" href="TcBounds_8java_source.html#l00017">cc.ctrl.TcBounds.m_lOldest</a>, <a class="el" href="CtrlIndex_8java_source.html#l00019">cc.ctrl.CtrlIndex.m_lStart</a>, <a class="el" href="TcBounds_8java_source.html#l00018">cc.ctrl.TcBounds.m_nCorners</a>, <a class="el" href="TcmReqServlet_8java_source.html#l00053">cc.ws.TcmReqServlet.m_nExplodeDistForXml</a>, <a class="el" href="TcmReqServlet_8java_source.html#l00055">cc.ws.TcmReqServlet.m_nPolyStep</a>, <a class="el" href="TcmReqParser_8java_source.html#l00030">cc.ctrl.TcmReqParser.m_nPort</a>, <a class="el" href="TcmReq_8java_source.html#l00018">cc.ctrl.TcmReq.m_nReqSeq</a>, <a class="el" href="CtrlIndex_8java_source.html#l00018">cc.ctrl.CtrlIndex.m_nType</a>, <a class="el" href="TcmReq_8java_source.html#l00020">cc.ctrl.TcmReq.m_oBounds</a>, <a class="el" href="TcmReq_8java_source.html#l00017">cc.ctrl.TcmReq.m_sReqId</a>, <a class="el" href="TcmReq_8java_source.html#l00016">cc.ctrl.TcmReq.m_sVersion</a>, <a class="el" href="CtrlIndex_8java_source.html#l00017">cc.ctrl.CtrlIndex.m_yId</a>, <a class="el" href="Mercator_8java_source.html#l00208">cc.geosrv.Mercator.metersToTile()</a>, <a class="el" href="FileUtil_8java_source.html#l00053">cc.util.FileUtil.newInputStream()</a>, <a class="el" href="TcmReqParser_8java_source.html#l00153">cc.ctrl.TcmReqParser.parseRequest()</a>, <a class="el" href="TrafCtrl_8java_source.html#l00710">cc.ctrl.TrafCtrl.preparePoints()</a>, <a class="el" href="TcmReqServlet_8java_source.html#l00329">cc.ws.TcmReqServlet.TileIds.setIndices()</a>, and <a class="el" href="Geo_8java_source.html#l01082">cc.util.Geo.untwist()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcc_1_1ws_1_1TcmReqServlet_ad68505f7a35ff53e0cb2635d1d43135f_cgraph.png" border="0" usemap="#aclasscc_1_1ws_1_1TcmReqServlet_ad68505f7a35ff53e0cb2635d1d43135f_cgraph" alt=""/></div>
 <map name="aclasscc_1_1ws_1_1TcmReqServlet_ad68505f7a35ff53e0cb2635d1d43135f_cgraph" id="aclasscc_1_1ws_1_1TcmReqServlet_ad68505f7a35ff53e0cb2635d1d43135f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,505,176,532"/>
-<area shape="rect" href="classcc_1_1util_1_1Geo.html#a2241ff39ed721c330abdc7c1b9d90f44" title=" " alt="" coords="238,54,413,95"/>
-<area shape="rect" href="classcc_1_1util_1_1Geo.html#a035e90caf38f17d0c9a3e81267d92b5f" title=" " alt="" coords="248,469,403,510"/>
-<area shape="rect" href="classcc_1_1util_1_1Geo.html#abbc3e354353e76ffca34289e46067553" title=" " alt="" coords="498,556,649,583"/>
-<area shape="rect" href="classcc_1_1ctrl_1_1TrafCtrl.html#ada6cc53215b6f0c03f48c857ed62be43" title=" " alt="" coords="258,171,393,197"/>
-<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#aabe972c17d1057379e7914a2e34a6693" title=" " alt="" coords="224,120,427,147"/>
-<area shape="rect" href="classcc_1_1ctrl_1_1TrafCtrl.html#ada6319d2c17e71c57beedea609e8c3c0" title=" " alt="" coords="252,221,399,248"/>
-<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a8e3d97064f85859c1eab5be32d496284" title=" " alt="" coords="733,498,897,539"/>
-<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a9ea08b43e7884424f8836100eaf4d1c9" title=" " alt="" coords="732,779,899,821"/>
-<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a897385b9eaa9258399b9b84c7f4843ca" title=" " alt="" coords="238,338,413,379"/>
-<area shape="rect" href="classcc_1_1util_1_1FileUtil.html#a28dcd177ce710068183b63672dd8d34e" title=" " alt="" coords="247,651,403,693"/>
-<area shape="rect" href="classcc_1_1ctrl_1_1TcmReqParser.html#a8ccc9cb146b59f591d61560a85c5ceb1" title=" " alt="" coords="234,717,417,758"/>
-<area shape="rect" href="classcc_1_1ctrl_1_1TrafCtrl.html#a07b2b85932c927ea2e91d581dd1ab0a9" title=" " alt="" coords="251,586,400,627"/>
-<area shape="rect" href="classcc_1_1ws_1_1TcmReqServlet_1_1TileIds.html#a8abe6e5247bb4930b2bf9609cd4cdda9" title=" " alt="" coords="239,885,412,926"/>
-<area shape="rect" href="classcc_1_1util_1_1Geo.html#aee2673774f1418e64c0c95a7d7b0aaa2" title=" " alt="" coords="261,951,389,977"/>
-<area shape="rect" href="classcc_1_1util_1_1Geo.html#a0e6a43a63d8127a8bd1ebe1536e5b7a7" title=" " alt="" coords="485,455,662,481"/>
-<area shape="rect" href="classcc_1_1util_1_1Arrays.html#af509524ed51a0b33daf14ca461f5e376" title=" " alt="" coords="512,505,635,532"/>
-<area shape="rect" href="classcc_1_1util_1_1Text.html#a9b7dd03037c22c2cc0ca511d6623e800" title=" " alt="" coords="496,80,651,107"/>
-<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a0f6f5813f72ec98f00726f03f62270ac" title=" " alt="" coords="480,5,667,32"/>
-<area shape="rect" href="classcc_1_1ctrl_1_1TrafCtrlEnums.html#a95aae0a9f7c7ee60b735b506b4907f5f" title=" " alt="" coords="491,155,655,197"/>
-<area shape="rect" href="classcc_1_1util_1_1Text.html#acbc1576128ade541c8a2bbeed4fea5e8" title=" " alt="" coords="506,221,641,248"/>
-<area shape="rect" href="classcc_1_1ctrl_1_1TrafCtrlEnums.html#a492b8381a1eb62aee9eaeb81888a83de" title=" " alt="" coords="723,163,907,189"/>
-<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a12dfd03cde8e76b757d0ba535186d43a" title=" " alt="" coords="486,273,661,314"/>
-<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a1c0c9d4ac165094c323436e2047b759e" title=" " alt="" coords="489,338,657,379"/>
-<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a12287382f28763590928f95ed9c81ae4" title=" " alt="" coords="720,280,911,307"/>
-<area shape="rect" href="classcc_1_1util_1_1Geo.html#ad077e6e88ca11094a491a0502e0a833b" title=" " alt="" coords="506,681,641,708"/>
-<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a3b523bf4ea1f16429f44914535443ab6" title=" " alt="" coords="481,607,665,633"/>
-<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#ada94f93145e167cbf44605cc55afa569" title=" " alt="" coords="480,732,667,759"/>
-<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#ad285464444eb00788156d796e999686d" title=" " alt="" coords="483,783,664,809"/>
-<area shape="rect" href="classcc_1_1util_1_1Geo.html#a7e92758a1d96179668521360b1524949" title=" " alt="" coords="747,681,884,708"/>
-<area shape="rect" href="classcc_1_1util_1_1MathUtil.html#a09126966cc0b5b37ad022e290f2aeaab" title=" " alt="" coords="475,951,672,977"/>
-<area shape="rect" href="classcc_1_1util_1_1MathUtil.html#a210e792c302f47cbd0078087a6ccfcb6" title=" " alt="" coords="744,951,887,977"/>
+<area shape="rect" title=" " alt="" coords="5,609,176,635"/>
+<area shape="rect" href="classcc_1_1util_1_1Geo.html#a2241ff39ed721c330abdc7c1b9d90f44" title=" " alt="" coords="238,29,413,71"/>
+<area shape="rect" href="classcc_1_1util_1_1Geo.html#a035e90caf38f17d0c9a3e81267d92b5f" title=" " alt="" coords="248,95,403,136"/>
+<area shape="rect" href="classcc_1_1ws_1_1TimeSource.html#ada4ba8cfab46b554360897c045e9de4f" title=" " alt="" coords="239,517,411,559"/>
+<area shape="rect" href="classcc_1_1util_1_1Geo.html#abbc3e354353e76ffca34289e46067553" title=" " alt="" coords="498,138,649,165"/>
+<area shape="rect" href="classcc_1_1ctrl_1_1TrafCtrl.html#ada6cc53215b6f0c03f48c857ed62be43" title=" " alt="" coords="258,583,393,610"/>
+<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#aabe972c17d1057379e7914a2e34a6693" title=" " alt="" coords="224,685,427,711"/>
+<area shape="rect" href="classcc_1_1ws_1_1TimeSource.html#aaf726dc9e050a1ac0f02c8ce427cfddd" title=" " alt="" coords="225,735,425,762"/>
+<area shape="rect" href="classcc_1_1ctrl_1_1TrafCtrl.html#ada6319d2c17e71c57beedea609e8c3c0" title=" " alt="" coords="252,634,399,661"/>
+<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a8e3d97064f85859c1eab5be32d496284" title=" " alt="" coords="733,328,897,369"/>
+<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a9ea08b43e7884424f8836100eaf4d1c9" title=" " alt="" coords="732,427,899,468"/>
+<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a897385b9eaa9258399b9b84c7f4843ca" title=" " alt="" coords="238,787,413,828"/>
+<area shape="rect" href="classcc_1_1util_1_1FileUtil.html#a28dcd177ce710068183b63672dd8d34e" title=" " alt="" coords="247,852,403,893"/>
+<area shape="rect" href="classcc_1_1ctrl_1_1TcmReqParser.html#a8ccc9cb146b59f591d61560a85c5ceb1" title=" " alt="" coords="234,917,417,959"/>
+<area shape="rect" href="classcc_1_1ctrl_1_1TrafCtrl.html#a07b2b85932c927ea2e91d581dd1ab0a9" title=" " alt="" coords="251,256,400,297"/>
+<area shape="rect" href="classcc_1_1ws_1_1TcmReqServlet_1_1TileIds.html#a8abe6e5247bb4930b2bf9609cd4cdda9" title=" " alt="" coords="239,983,412,1024"/>
+<area shape="rect" href="classcc_1_1util_1_1Geo.html#aee2673774f1418e64c0c95a7d7b0aaa2" title=" " alt="" coords="261,1049,389,1075"/>
+<area shape="rect" href="classcc_1_1util_1_1Geo.html#a0e6a43a63d8127a8bd1ebe1536e5b7a7" title=" " alt="" coords="485,37,662,63"/>
+<area shape="rect" href="classcc_1_1util_1_1Arrays.html#af509524ed51a0b33daf14ca461f5e376" title=" " alt="" coords="512,87,635,114"/>
+<area shape="rect" href="classcc_1_1util_1_1Text.html#a9b7dd03037c22c2cc0ca511d6623e800" title=" " alt="" coords="496,543,651,570"/>
+<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a0f6f5813f72ec98f00726f03f62270ac" title=" " alt="" coords="480,735,667,762"/>
+<area shape="rect" href="classcc_1_1ctrl_1_1TrafCtrlEnums.html#a95aae0a9f7c7ee60b735b506b4907f5f" title=" " alt="" coords="491,619,655,660"/>
+<area shape="rect" href="classcc_1_1util_1_1Text.html#acbc1576128ade541c8a2bbeed4fea5e8" title=" " alt="" coords="506,685,641,711"/>
+<area shape="rect" href="classcc_1_1ctrl_1_1TrafCtrlEnums.html#a492b8381a1eb62aee9eaeb81888a83de" title=" " alt="" coords="723,626,907,653"/>
+<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a12dfd03cde8e76b757d0ba535186d43a" title=" " alt="" coords="486,787,661,828"/>
+<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a1c0c9d4ac165094c323436e2047b759e" title=" " alt="" coords="489,852,657,893"/>
+<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a12287382f28763590928f95ed9c81ae4" title=" " alt="" coords="720,794,911,821"/>
+<area shape="rect" href="classcc_1_1util_1_1Geo.html#ad077e6e88ca11094a491a0502e0a833b" title=" " alt="" coords="506,213,641,239"/>
+<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#a3b523bf4ea1f16429f44914535443ab6" title=" " alt="" coords="481,263,665,290"/>
+<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#ada94f93145e167cbf44605cc55afa569" title=" " alt="" coords="480,365,667,391"/>
+<area shape="rect" href="classcc_1_1geosrv_1_1Mercator.html#ad285464444eb00788156d796e999686d" title=" " alt="" coords="483,314,664,341"/>
+<area shape="rect" href="classcc_1_1util_1_1Geo.html#a7e92758a1d96179668521360b1524949" title=" " alt="" coords="747,213,884,239"/>
+<area shape="rect" href="classcc_1_1util_1_1MathUtil.html#a09126966cc0b5b37ad022e290f2aeaab" title=" " alt="" coords="475,1049,672,1075"/>
+<area shape="rect" href="classcc_1_1util_1_1MathUtil.html#a210e792c302f47cbd0078087a6ccfcb6" title=" " alt="" coords="744,1049,887,1075"/>
 </map>
 </div>
 
@@ -588,7 +596,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="TcmReqServlet_8java_source.html#l00056">56</a> of file <a class="el" href="TcmReqServlet_8java_source.html">TcmReqServlet.java</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classcc_1_1ws_1_1TcmReqServlet.html#a38cdbe4d245b9ad7f13e63a7c4496ce8">cc.ws.TcmReqServlet.[static initializer]()</a>, and <a class="el" href="TcmReqServlet_8java_source.html#l00106">cc.ws.TcmReqServlet.run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classcc_1_1ws_1_1TcmReqServlet.html#a38cdbe4d245b9ad7f13e63a7c4496ce8">cc.ws.TcmReqServlet.[static initializer]()</a>, and <a class="el" href="TcmReqServlet_8java_source.html#l00107">cc.ws.TcmReqServlet.run()</a>.</p>
 
 </div>
 </div>
@@ -614,7 +622,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="TcmReqServlet_8java_source.html#l00051">51</a> of file <a class="el" href="TcmReqServlet_8java_source.html">TcmReqServlet.java</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TcmReqServlet_8java_source.html#l00089">cc.ws.TcmReqServlet.doPost()</a>, and <a class="el" href="TcmReqServlet_8java_source.html#l00106">cc.ws.TcmReqServlet.run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TcmReqServlet_8java_source.html#l00089">cc.ws.TcmReqServlet.doPost()</a>, and <a class="el" href="TcmReqServlet_8java_source.html#l00107">cc.ws.TcmReqServlet.run()</a>.</p>
 
 </div>
 </div>
@@ -640,7 +648,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="TcmReqServlet_8java_source.html#l00054">54</a> of file <a class="el" href="TcmReqServlet_8java_source.html">TcmReqServlet.java</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TcmReqServlet_8java_source.html#l00065">cc.ws.TcmReqServlet.init()</a>, and <a class="el" href="TcmReqServlet_8java_source.html#l00106">cc.ws.TcmReqServlet.run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TcmReqServlet_8java_source.html#l00065">cc.ws.TcmReqServlet.init()</a>, and <a class="el" href="TcmReqServlet_8java_source.html#l00107">cc.ws.TcmReqServlet.run()</a>.</p>
 
 </div>
 </div>
@@ -666,7 +674,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="TcmReqServlet_8java_source.html#l00053">53</a> of file <a class="el" href="TcmReqServlet_8java_source.html">TcmReqServlet.java</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TcmReqServlet_8java_source.html#l00065">cc.ws.TcmReqServlet.init()</a>, and <a class="el" href="TcmReqServlet_8java_source.html#l00106">cc.ws.TcmReqServlet.run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TcmReqServlet_8java_source.html#l00065">cc.ws.TcmReqServlet.init()</a>, and <a class="el" href="TcmReqServlet_8java_source.html#l00107">cc.ws.TcmReqServlet.run()</a>.</p>
 
 </div>
 </div>
@@ -692,7 +700,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="TcmReqServlet_8java_source.html#l00055">55</a> of file <a class="el" href="TcmReqServlet_8java_source.html">TcmReqServlet.java</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TcmReqServlet_8java_source.html#l00065">cc.ws.TcmReqServlet.init()</a>, and <a class="el" href="TcmReqServlet_8java_source.html#l00106">cc.ws.TcmReqServlet.run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TcmReqServlet_8java_source.html#l00065">cc.ws.TcmReqServlet.init()</a>, and <a class="el" href="TcmReqServlet_8java_source.html#l00107">cc.ws.TcmReqServlet.run()</a>.</p>
 
 </div>
 </div>
@@ -705,7 +713,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>cc</b></li><li class="navelem"><a class="el" href="namespacecc_1_1ws.html">ws</a></li><li class="navelem"><a class="el" href="classcc_1_1ws_1_1TcmReqServlet.html">TcmReqServlet</a></li>
-    <li class="footer">Generated on Wed Dec 20 2023 14:23:10 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed May 29 2024 19:38:44 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

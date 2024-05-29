@@ -14,6 +14,7 @@ var searchData=
   ['con_5ftend_5fostart_11',['CON_TEND_OSTART',['../classcc_1_1ctrl_1_1CtrlLineArcs.html#ac8a3030a0c02b2808565119dcd0f289e',1,'cc::ctrl::CtrlLineArcs']]],
   ['con_5ftstart_5foend_12',['CON_TSTART_OEND',['../classcc_1_1ctrl_1_1CtrlLineArcs.html#ab5c2c0b6e939723c4d52f4400db8afe0',1,'cc::ctrl::CtrlLineArcs']]],
   ['con_5ftstart_5fostart_13',['CON_TSTART_OSTART',['../classcc_1_1ctrl_1_1CtrlLineArcs.html#ae1b33ffcbac6329c096d7e5e5004ea26',1,'cc::ctrl::CtrlLineArcs']]],
-  ['count_14',['COUNT',['../classcc_1_1geosrv_1_1xodr_1_1geo_1_1Geometry.html#afa75061a80d1d7010d2d6151759cc885',1,'cc::geosrv::xodr::geo::Geometry']]],
-  ['ctrls_15',['CTRLS',['../classcc_1_1ctrl_1_1TrafCtrlEnums.html#a5276d6942a00729ebc0c500a706f6347',1,'cc::ctrl::TrafCtrlEnums']]]
+  ['connection_14',['connection',['../namespaceSendTimeSyncMessage.html#a324ecf2dff3a1acd77b22ecbde1f76ac',1,'SendTimeSyncMessage']]],
+  ['count_15',['COUNT',['../classcc_1_1geosrv_1_1xodr_1_1geo_1_1Geometry.html#afa75061a80d1d7010d2d6151759cc885',1,'cc::geosrv::xodr::geo::Geometry']]],
+  ['ctrls_16',['CTRLS',['../classcc_1_1ctrl_1_1TrafCtrlEnums.html#a5276d6942a00729ebc0c500a706f6347',1,'cc::ctrl::TrafCtrlEnums']]]
 ];

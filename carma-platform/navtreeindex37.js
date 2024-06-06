@@ -1,5 +1,17 @@
 var NAVTREEINDEX37 =
 {
+"inlanecruising__plugin_8cpp.html#a8212f1302ee6736745dc97bb5b3caaf5":[58,0,19,2,2,0],
+"inlanecruising__plugin_8cpp_source.html":[58,0,19,2,2],
+"inlanecruising__plugin_8hpp.html":[58,0,19,0,0,3],
+"inlanecruising__plugin_8hpp.html#a2db6b939afc2965cea1af8ae4def7a1b":[58,0,19,0,0,3,2],
+"inlanecruising__plugin_8hpp.html#a5dd735de6d7c43798367c6318694982f":[58,0,19,0,0,3,1],
+"inlanecruising__plugin_8hpp.html#a620c303e874dba7cab87460f35b35155":[58,0,19,0,0,3,4],
+"inlanecruising__plugin_8hpp.html#acb051b1744e0113bd257658865e8e9c4":[58,0,19,0,0,3,3],
+"inlanecruising__plugin_8hpp_source.html":[58,0,19,0,0,3],
+"inlanecruising__plugin_8launch_8py.html":[58,0,19,1,0],
+"inlanecruising__plugin_8launch_8py.html#a39e2ce861dd14142c3f0fbb3d1b7fd46":[58,0,19,1,0,0],
+"inlanecruising__plugin_8launch_8py_source.html":[58,0,19,1,0],
+"inlanecruising__plugin__node_8cpp.html":[58,0,19,2,3],
 "inlanecruising__plugin__node_8cpp_source.html":[58,0,19,2,3],
 "inlanecruising__plugin__node_8hpp.html":[58,0,19,0,0,4],
 "inlanecruising__plugin__node_8hpp_source.html":[58,0,19,0,0,4],
@@ -237,17 +249,5 @@ var NAVTREEINDEX37 =
 "lci__states_8hpp.html#a3fc15fb3a695b886bd6f0bb92510b095":[58,0,21,0,0,1,2],
 "lci__states_8hpp.html#a4fe72a2d01efe2944d2a4cf06a6058c0":[58,0,21,0,0,1,1],
 "lci__states_8hpp.html#a4fe72a2d01efe2944d2a4cf06a6058c0a084f4ca2c0fe703e46514a144b4d6ead":[58,0,21,0,0,1,1,0],
-"lci__states_8hpp.html#a4fe72a2d01efe2944d2a4cf06a6058c0a1869d56535e8b1449a6da54ff5e11f50":[58,0,21,0,0,1,1,2],
-"lci__states_8hpp.html#a4fe72a2d01efe2944d2a4cf06a6058c0a2b848128bb8786c999e137b1d94d93f8":[58,0,21,0,0,1,1,3],
-"lci__states_8hpp.html#a4fe72a2d01efe2944d2a4cf06a6058c0a4c260d6101d1401c17ed75443624e59b":[58,0,21,0,0,1,1,1],
-"lci__states_8hpp.html#ab1592a4c03317796102d8a3f6c98420d":[58,0,21,0,0,1,3],
-"lci__states_8hpp_source.html":[58,0,21,0,0,1],
-"lci__strategic__plugin_2src_2main_8cpp.html":[58,0,21,2,4],
-"lci__strategic__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[58,0,21,2,4,0],
-"lci__strategic__plugin_2src_2main_8cpp_source.html":[58,0,21,2,4],
-"lci__strategic__plugin_8cpp.html":[58,0,21,2,2],
-"lci__strategic__plugin_8cpp.html#a002b2f4894492820fe708b1b7e7c5e70":[58,0,21,2,2,0],
-"lci__strategic__plugin_8cpp.html#a066f948508e087006568cb6c9b0674a7":[58,0,21,2,2,1],
-"lci__strategic__plugin_8cpp_source.html":[58,0,21,2,2],
-"lci__strategic__plugin_8hpp.html":[58,0,21,0,0,2]
+"lci__states_8hpp.html#a4fe72a2d01efe2944d2a4cf06a6058c0a1869d56535e8b1449a6da54ff5e11f50":[58,0,21,0,0,1,1,2]
 };

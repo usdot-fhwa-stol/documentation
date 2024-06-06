@@ -1,5 +1,17 @@
 var NAVTREEINDEX38 =
 {
+"lci__states_8hpp.html#a4fe72a2d01efe2944d2a4cf06a6058c0a2b848128bb8786c999e137b1d94d93f8":[58,0,21,0,0,1,1,3],
+"lci__states_8hpp.html#a4fe72a2d01efe2944d2a4cf06a6058c0a4c260d6101d1401c17ed75443624e59b":[58,0,21,0,0,1,1,1],
+"lci__states_8hpp.html#ab1592a4c03317796102d8a3f6c98420d":[58,0,21,0,0,1,3],
+"lci__states_8hpp_source.html":[58,0,21,0,0,1],
+"lci__strategic__plugin_2src_2main_8cpp.html":[58,0,21,2,4],
+"lci__strategic__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[58,0,21,2,4,0],
+"lci__strategic__plugin_2src_2main_8cpp_source.html":[58,0,21,2,4],
+"lci__strategic__plugin_8cpp.html":[58,0,21,2,2],
+"lci__strategic__plugin_8cpp.html#a002b2f4894492820fe708b1b7e7c5e70":[58,0,21,2,2,0],
+"lci__strategic__plugin_8cpp.html#a066f948508e087006568cb6c9b0674a7":[58,0,21,2,2,1],
+"lci__strategic__plugin_8cpp_source.html":[58,0,21,2,2],
+"lci__strategic__plugin_8hpp.html":[58,0,21,0,0,2],
 "lci__strategic__plugin_8hpp.html#a1e0201b2cf65a27f7075fd60ce35e2e9":[58,0,21,0,0,2,5],
 "lci__strategic__plugin_8hpp.html#a1e0201b2cf65a27f7075fd60ce35e2e9a92b09c7c48c520c3c55e497875da437c":[58,0,21,0,0,2,5,1],
 "lci__strategic__plugin_8hpp.html#a1e0201b2cf65a27f7075fd60ce35e2e9a945d5e233cf7d6240f6b783b36a374ff":[58,0,21,0,0,2,5,2],
@@ -237,17 +249,5 @@ var NAVTREEINDEX38 =
 "md_carma_cooperative_perception_docs_sdsm_to_detection_list_node.html":[13],
 "md_carma_cooperative_perception_docs_sdsm_to_detection_list_node.html#autotoc_md46":[13,0],
 "md_carma_cooperative_perception_docs_sdsm_to_detection_list_node.html#autotoc_md47":[13,1],
-"md_carma_cooperative_perception_docs_sdsm_to_detection_list_node.html#autotoc_md48":[13,2],
-"md_carma_cooperative_perception_docs_sdsm_to_detection_list_node.html#autotoc_md49":[13,3],
-"md_carma_cooperative_perception_docs_sdsm_to_detection_list_node.html#autotoc_md50":[13,4],
-"md_carma_cooperative_perception_docs_stack_design.html":[14],
-"md_carma_cooperative_perception_docs_stack_design.html#autotoc_md52":[14,0],
-"md_carma_cooperative_perception_docs_stack_design.html#autotoc_md53":[14,1],
-"md_carma_cooperative_perception_docs_stack_design.html#autotoc_md54":[14,2],
-"md_carma_cooperative_perception_docs_stack_design.html#autotoc_md55":[14,3],
-"md_carma_cooperative_perception_docs_track_list_to_external_object_list_node.html":[15],
-"md_carma_cooperative_perception_docs_track_list_to_external_object_list_node.html#autotoc_md57":[15,0],
-"md_carma_cooperative_perception_docs_track_list_to_external_object_list_node.html#autotoc_md58":[15,1],
-"md_carma_cooperative_perception_docs_track_list_to_external_object_list_node.html#autotoc_md59":[15,2],
-"md_carma_cooperative_perception_docs_track_list_to_external_object_list_node.html#autotoc_md60":[15,3]
+"md_carma_cooperative_perception_docs_sdsm_to_detection_list_node.html#autotoc_md48":[13,2]
 };

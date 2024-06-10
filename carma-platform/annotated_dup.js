@@ -415,9 +415,6 @@ var annotated_dup =
       [ "Config", "structtrajectory__visualizer_1_1Config.html", "structtrajectory__visualizer_1_1Config" ],
       [ "TrajectoryVisualizer", "classtrajectory__visualizer_1_1TrajectoryVisualizer.html", "classtrajectory__visualizer_1_1TrajectoryVisualizer" ]
     ] ],
-    [ "truck_inspection_client", "namespacetruck__inspection__client.html", [
-      [ "TruckInspectionClient", "classtruck__inspection__client_1_1TruckInspectionClient.html", "classtruck__inspection__client_1_1TruckInspectionClient" ]
-    ] ],
     [ "yield_plugin", "namespaceyield__plugin.html", [
       [ "GetCollisionResult", "structyield__plugin_1_1GetCollisionResult.html", "structyield__plugin_1_1GetCollisionResult" ],
       [ "PointSpeedPair", "structyield__plugin_1_1PointSpeedPair.html", "structyield__plugin_1_1PointSpeedPair" ],

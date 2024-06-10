@@ -391,7 +391,6 @@ var hierarchy =
     [ "frame_transformer::TransformerBase", "classframe__transformer_1_1TransformerBase.html", [
       [ "frame_transformer::Transformer< T >", "classframe__transformer_1_1Transformer.html", null ]
     ] ],
-    [ "truck_inspection_client::TruckInspectionClient", "classtruck__inspection__client_1_1TruckInspectionClient.html", null ],
     [ "IsBaseOf::Type", null, [
       [ "internal::IsGenericValueImpl< T, typename Void< typename T::EncodingType >::Type, typename Void< typename T::AllocatorType >::Type >", "structinternal_1_1IsGenericValueImpl_3_01T_00_01typename_01Void_3_01typename_01T_1_1EncodingType794abcc01fcce01e300668fa57e4d036.html", null ]
     ] ],

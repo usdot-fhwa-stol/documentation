@@ -11,6 +11,5 @@ var searchData=
   ['trajectory_5ffollower_5fwrapper_5flaunch_8',['trajectory_follower_wrapper_launch',['../namespacetrajectory__follower__wrapper__launch.html',1,'']]],
   ['trajectory_5fvisualizer_9',['trajectory_visualizer',['../namespacetrajectory__visualizer.html',1,'']]],
   ['trajectory_5fvisualizer_5flaunch_10',['trajectory_visualizer_launch',['../namespacetrajectory__visualizer__launch.html',1,'']]],
-  ['transforms_11',['transforms',['../namespacetransforms.html',1,'']]],
-  ['truck_5finspection_5fclient_12',['truck_inspection_client',['../namespacetruck__inspection__client.html',1,'']]]
+  ['transforms_11',['transforms',['../namespacetransforms.html',1,'']]]
 ];

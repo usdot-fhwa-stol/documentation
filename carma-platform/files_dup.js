@@ -55,6 +55,5 @@ var files_dup =
     [ "trajectory_executor", "dir_ae7a4963f17aa1ce6ff163c5b02751fc.html", "dir_ae7a4963f17aa1ce6ff163c5b02751fc" ],
     [ "trajectory_follower_wrapper", "dir_26091af7e8e8048957c66927b68005a4.html", "dir_26091af7e8e8048957c66927b68005a4" ],
     [ "trajectory_visualizer", "dir_9bc5f00cc3ead623685db069e9e67b7f.html", "dir_9bc5f00cc3ead623685db069e9e67b7f" ],
-    [ "truck_inspection_client", "dir_f9c77b76235ee52a4357ed320f502ffa.html", "dir_f9c77b76235ee52a4357ed320f502ffa" ],
     [ "yield_plugin", "dir_f2ecdaa25f4bea09ca4e467995c3c717.html", "dir_f2ecdaa25f4bea09ca4e467995c3c717" ]
 ];

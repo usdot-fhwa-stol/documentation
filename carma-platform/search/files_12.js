@@ -40,7 +40,5 @@ var searchData=
   ['transforms_2elaunch_2epy_37',['transforms.launch.py',['../transforms_8launch_8py.html',1,'']]],
   ['tree_5fplanner_2ecpp_38',['tree_planner.cpp',['../tree__planner_8cpp.html',1,'']]],
   ['tree_5fplanner_2ehpp_39',['tree_planner.hpp',['../tree__planner_8hpp.html',1,'']]],
-  ['truck_5finspection_5fclient_2ecpp_40',['truck_inspection_client.cpp',['../truck__inspection__client_8cpp.html',1,'']]],
-  ['truck_5finspection_5fclient_2eh_41',['truck_inspection_client.h',['../truck__inspection__client_8h.html',1,'']]],
-  ['types_2eh_42',['types.h',['../types_8h.html',1,'']]]
+  ['types_2eh_40',['types.h',['../types_8h.html',1,'']]]
 ];

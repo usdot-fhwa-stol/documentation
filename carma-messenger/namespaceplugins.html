@@ -125,98 +125,67 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   48</span>    declare_configuration_delay_arg = DeclareLaunchArgument(</div>
 <div class="line"><span class="lineno">   49</span>        name =<span class="stringliteral">&#39;configuration_delay&#39;</span>, default_value=<span class="stringliteral">&#39;4.0&#39;</span>)</div>
 <div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>    truck_inspection_plugin_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   52</span>        get_package_share_directory(<span class="stringliteral">&#39;truck_inspection_plugin&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">   51</span>    emergency_response_vehicle_plugin_param_file = os.path.join(</div>
+<div class="line"><span class="lineno">   52</span>        get_package_share_directory(<span class="stringliteral">&#39;emergency_response_vehicle_plugin&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
 <div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>    emergency_response_vehicle_plugin_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   55</span>        get_package_share_directory(<span class="stringliteral">&#39;emergency_response_vehicle_plugin&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>    carma_v2x_plugins_container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">   58</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
-<div class="line"><span class="lineno">   59</span>        name=<span class="stringliteral">&#39;carma_v2x_plugins_container&#39;</span>,</div>
-<div class="line"><span class="lineno">   60</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">   61</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">   62</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">   63</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">   64</span>                package=<span class="stringliteral">&#39;truck_inspection_plugin&#39;</span>,</div>
-<div class="line"><span class="lineno">   65</span>                plugin=<span class="stringliteral">&#39;truck_inspection_plugin::Node&#39;</span>,</div>
-<div class="line"><span class="lineno">   66</span>                name=<span class="stringliteral">&#39;truck_inspection_plugin_node&#39;</span>,</div>
-<div class="line"><span class="lineno">   67</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">   68</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">   69</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;truck_inspection_plugin&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">   70</span>                ],</div>
-<div class="line"><span class="lineno">   71</span>                parameters = [</div>
-<div class="line"><span class="lineno">   72</span>                    truck_inspection_plugin_param_file</div>
-<div class="line"><span class="lineno">   73</span>                ]</div>
-<div class="line"><span class="lineno">   74</span>            ),</div>
-<div class="line"><span class="lineno">   75</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">   76</span>                package=<span class="stringliteral">&#39;emergency_response_vehicle_plugin&#39;</span>,</div>
-<div class="line"><span class="lineno">   77</span>                plugin=<span class="stringliteral">&#39;emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin&#39;</span>,</div>
-<div class="line"><span class="lineno">   78</span>                name=<span class="stringliteral">&#39;emergency_response_vehicle_plugin_node&#39;</span>,</div>
-<div class="line"><span class="lineno">   79</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">   80</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">   81</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;emergency_response_vehicle_plugin&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">   82</span>                ],</div>
-<div class="line"><span class="lineno">   83</span>                remappings=[</div>
-<div class="line"><span class="lineno">   84</span>                    (<span class="stringliteral">&quot;vehicle_pose&quot;</span>, <span class="stringliteral">&quot;position/gps_common_fix&quot;</span> ),</div>
-<div class="line"><span class="lineno">   85</span>                    (<span class="stringliteral">&quot;velocity&quot;</span>,     <span class="stringliteral">&quot;position/velocity&quot;</span> ),</div>
-<div class="line"><span class="lineno">   86</span>                    (<span class="stringliteral">&quot;outgoing_bsm&quot;</span>, <span class="stringliteral">&quot;bsm_outbound&quot;</span>)</div>
-<div class="line"><span class="lineno">   87</span>                ],</div>
-<div class="line"><span class="lineno">   88</span>                parameters = [</div>
-<div class="line"><span class="lineno">   89</span>                    {<span class="stringliteral">&#39;route_file_folder&#39;</span>: route_file_folder},</div>
-<div class="line"><span class="lineno">   90</span>                    emergency_response_vehicle_plugin_param_file</div>
-<div class="line"><span class="lineno">   91</span>                ]</div>
-<div class="line"><span class="lineno">   92</span>            )</div>
-<div class="line"><span class="lineno">   93</span>        ],</div>
-<div class="line"><span class="lineno">   94</span>        on_exit = Shutdown()</div>
-<div class="line"><span class="lineno">   95</span>    )</div>
-<div class="line"><span class="lineno">   96</span>    </div>
-<div class="line"><span class="lineno">   97</span>    ros2_cmd = launch.substitutions.FindExecutable(name=<span class="stringliteral">&#39;ros2&#39;</span>)</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>    process_configure_truck_inspection_plugin = launch.actions.ExecuteProcess(</div>
-<div class="line"><span class="lineno">  100</span>        cmd=[ros2_cmd, <span class="stringliteral">&quot;lifecycle&quot;</span>, <span class="stringliteral">&quot;set&quot;</span>, <span class="stringliteral">&quot;/truck_inspection_plugin_node&quot;</span>, <span class="stringliteral">&quot;configure&quot;</span>],</div>
-<div class="line"><span class="lineno">  101</span>    )</div>
-<div class="line"><span class="lineno">  102</span> </div>
-<div class="line"><span class="lineno">  103</span>    process_configure_emergency_response_vehicle_plugin = launch.actions.ExecuteProcess(</div>
-<div class="line"><span class="lineno">  104</span>        cmd=[ros2_cmd, <span class="stringliteral">&quot;lifecycle&quot;</span>, <span class="stringliteral">&quot;set&quot;</span>, <span class="stringliteral">&quot;/emergency_response_vehicle_plugin_node&quot;</span>, <span class="stringliteral">&quot;configure&quot;</span>],</div>
-<div class="line"><span class="lineno">  105</span>    )</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>    configuration_trigger = launch.actions.TimerAction(</div>
-<div class="line"><span class="lineno">  108</span>        period=configuration_delay,</div>
-<div class="line"><span class="lineno">  109</span>        actions=[</div>
-<div class="line"><span class="lineno">  110</span>            process_configure_truck_inspection_plugin,</div>
-<div class="line"><span class="lineno">  111</span>            process_configure_emergency_response_vehicle_plugin</div>
-<div class="line"><span class="lineno">  112</span>        ]</div>
-<div class="line"><span class="lineno">  113</span>    )</div>
-<div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>    configured_event_handler_truck_inspection_plugin = launch.actions.RegisterEventHandler(launch.event_handlers.OnExecutionComplete(</div>
-<div class="line"><span class="lineno">  116</span>            target_action=process_configure_truck_inspection_plugin,</div>
-<div class="line"><span class="lineno">  117</span>            on_completion=[ </div>
-<div class="line"><span class="lineno">  118</span>                launch.actions.ExecuteProcess(</div>
-<div class="line"><span class="lineno">  119</span>                    cmd=[ros2_cmd, <span class="stringliteral">&quot;lifecycle&quot;</span>, <span class="stringliteral">&quot;set&quot;</span>, <span class="stringliteral">&quot;/truck_inspection_plugin_node&quot;</span>, <span class="stringliteral">&quot;activate&quot;</span>],</div>
-<div class="line"><span class="lineno">  120</span>                )</div>
-<div class="line"><span class="lineno">  121</span>            ]</div>
-<div class="line"><span class="lineno">  122</span>        )</div>
-<div class="line"><span class="lineno">  123</span>    )</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>    configured_event_handler_emergency_response_vehicle_plugin = launch.actions.RegisterEventHandler(launch.event_handlers.OnExecutionComplete(</div>
-<div class="line"><span class="lineno">  126</span>            target_action=process_configure_emergency_response_vehicle_plugin,</div>
-<div class="line"><span class="lineno">  127</span>            on_completion=[ </div>
-<div class="line"><span class="lineno">  128</span>                launch.actions.ExecuteProcess(</div>
-<div class="line"><span class="lineno">  129</span>                    cmd=[ros2_cmd, <span class="stringliteral">&quot;lifecycle&quot;</span>, <span class="stringliteral">&quot;set&quot;</span>, <span class="stringliteral">&quot;/emergency_response_vehicle_plugin_node&quot;</span>, <span class="stringliteral">&quot;activate&quot;</span>],</div>
-<div class="line"><span class="lineno">  130</span>                )</div>
-<div class="line"><span class="lineno">  131</span>            ]</div>
-<div class="line"><span class="lineno">  132</span>        )</div>
-<div class="line"><span class="lineno">  133</span>    )</div>
-<div class="line"><span class="lineno">  134</span> </div>
-<div class="line"><span class="lineno">  135</span> </div>
-<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">  137</span>        declare_configuration_delay_arg,</div>
-<div class="line"><span class="lineno">  138</span>        carma_v2x_plugins_container,</div>
-<div class="line"><span class="lineno">  139</span>        configuration_trigger,</div>
-<div class="line"><span class="lineno">  140</span>        configured_event_handler_truck_inspection_plugin,</div>
-<div class="line"><span class="lineno">  141</span>        configured_event_handler_emergency_response_vehicle_plugin</div>
-<div class="line"><span class="lineno">  142</span>    ])</div>
+<div class="line"><span class="lineno">   54</span>    carma_v2x_plugins_container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">   55</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
+<div class="line"><span class="lineno">   56</span>        name=<span class="stringliteral">&#39;carma_v2x_plugins_container&#39;</span>,</div>
+<div class="line"><span class="lineno">   57</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
+<div class="line"><span class="lineno">   58</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">   59</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">   60</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">   61</span>                package=<span class="stringliteral">&#39;emergency_response_vehicle_plugin&#39;</span>,</div>
+<div class="line"><span class="lineno">   62</span>                plugin=<span class="stringliteral">&#39;emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin&#39;</span>,</div>
+<div class="line"><span class="lineno">   63</span>                name=<span class="stringliteral">&#39;emergency_response_vehicle_plugin_node&#39;</span>,</div>
+<div class="line"><span class="lineno">   64</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">   65</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">   66</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;emergency_response_vehicle_plugin&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">   67</span>                ],</div>
+<div class="line"><span class="lineno">   68</span>                remappings=[</div>
+<div class="line"><span class="lineno">   69</span>                    (<span class="stringliteral">&quot;vehicle_pose&quot;</span>, <span class="stringliteral">&quot;position/gps_common_fix&quot;</span> ),</div>
+<div class="line"><span class="lineno">   70</span>                    (<span class="stringliteral">&quot;velocity&quot;</span>,     <span class="stringliteral">&quot;position/velocity&quot;</span> ),</div>
+<div class="line"><span class="lineno">   71</span>                    (<span class="stringliteral">&quot;outgoing_bsm&quot;</span>, <span class="stringliteral">&quot;bsm_outbound&quot;</span>)</div>
+<div class="line"><span class="lineno">   72</span>                ],</div>
+<div class="line"><span class="lineno">   73</span>                parameters = [</div>
+<div class="line"><span class="lineno">   74</span>                    {<span class="stringliteral">&#39;route_file_folder&#39;</span>: route_file_folder},</div>
+<div class="line"><span class="lineno">   75</span>                    emergency_response_vehicle_plugin_param_file</div>
+<div class="line"><span class="lineno">   76</span>                ]</div>
+<div class="line"><span class="lineno">   77</span>            )</div>
+<div class="line"><span class="lineno">   78</span>        ],</div>
+<div class="line"><span class="lineno">   79</span>        on_exit = Shutdown()</div>
+<div class="line"><span class="lineno">   80</span>    )</div>
+<div class="line"><span class="lineno">   81</span>    </div>
+<div class="line"><span class="lineno">   82</span>    ros2_cmd = launch.substitutions.FindExecutable(name=<span class="stringliteral">&#39;ros2&#39;</span>)</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    process_configure_emergency_response_vehicle_plugin = launch.actions.ExecuteProcess(</div>
+<div class="line"><span class="lineno">   85</span>        cmd=[ros2_cmd, <span class="stringliteral">&quot;lifecycle&quot;</span>, <span class="stringliteral">&quot;set&quot;</span>, <span class="stringliteral">&quot;/emergency_response_vehicle_plugin_node&quot;</span>, <span class="stringliteral">&quot;configure&quot;</span>],</div>
+<div class="line"><span class="lineno">   86</span>    )</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    configuration_trigger = launch.actions.TimerAction(</div>
+<div class="line"><span class="lineno">   89</span>        period=configuration_delay,</div>
+<div class="line"><span class="lineno">   90</span>        actions=[</div>
+<div class="line"><span class="lineno">   91</span>            process_configure_emergency_response_vehicle_plugin</div>
+<div class="line"><span class="lineno">   92</span>        ]</div>
+<div class="line"><span class="lineno">   93</span>    )</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    configured_event_handler_emergency_response_vehicle_plugin = launch.actions.RegisterEventHandler(launch.event_handlers.OnExecutionComplete(</div>
+<div class="line"><span class="lineno">   96</span>            target_action=process_configure_emergency_response_vehicle_plugin,</div>
+<div class="line"><span class="lineno">   97</span>            on_completion=[ </div>
+<div class="line"><span class="lineno">   98</span>                launch.actions.ExecuteProcess(</div>
+<div class="line"><span class="lineno">   99</span>                    cmd=[ros2_cmd, <span class="stringliteral">&quot;lifecycle&quot;</span>, <span class="stringliteral">&quot;set&quot;</span>, <span class="stringliteral">&quot;/emergency_response_vehicle_plugin_node&quot;</span>, <span class="stringliteral">&quot;activate&quot;</span>],</div>
+<div class="line"><span class="lineno">  100</span>                )</div>
+<div class="line"><span class="lineno">  101</span>            ]</div>
+<div class="line"><span class="lineno">  102</span>        )</div>
+<div class="line"><span class="lineno">  103</span>    )</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><span class="lineno">  107</span>        declare_configuration_delay_arg,</div>
+<div class="line"><span class="lineno">  108</span>        carma_v2x_plugins_container,</div>
+<div class="line"><span class="lineno">  109</span>        configuration_trigger,</div>
+<div class="line"><span class="lineno">  110</span>        configured_event_handler_emergency_response_vehicle_plugin</div>
+<div class="line"><span class="lineno">  111</span>    ])</div>
 <div class="ttc" id="anamespaceplugins_html_ac3f3c843d1dfcb998c4dbafd7c596419"><div class="ttname"><a href="namespaceplugins.html#ac3f3c843d1dfcb998c4dbafd7c596419">plugins.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="plugins_8launch_8py_source.html#l00038">plugins.launch.py:38</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -227,7 +196,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceplugins.html">plugins</a></li>
-    <li class="footer">Generated on Wed May 8 2024 16:48:52 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Jun 12 2024 19:27:47 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

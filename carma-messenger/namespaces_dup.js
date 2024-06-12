@@ -30,9 +30,5 @@ var namespaces_dup =
     [ "traffic", "namespacetraffic.html", "namespacetraffic" ],
     [ "transforms", "namespacetransforms.html", [
       [ "generate_launch_description", "namespacetransforms.html#a13fd6834bb02a04f4c2dcf48fcd2cd5a", null ]
-    ] ],
-    [ "truck_inspection_plugin", "namespacetruck__inspection__plugin.html", "namespacetruck__inspection__plugin" ],
-    [ "truck_inspection_plugin_launch", "namespacetruck__inspection__plugin__launch.html", [
-      [ "generate_launch_description", "namespacetruck__inspection__plugin__launch.html#a4a4c806eeb318a4b25748bd283a9a641", null ]
     ] ]
 ];

@@ -33,10 +33,6 @@ var annotated_dup =
       [ "TrafficIncidentNode", "classtraffic_1_1TrafficIncidentNode.html", "classtraffic_1_1TrafficIncidentNode" ],
       [ "TrafficIncidentWorker", "classtraffic_1_1TrafficIncidentWorker.html", "classtraffic_1_1TrafficIncidentWorker" ]
     ] ],
-    [ "truck_inspection_plugin", "namespacetruck__inspection__plugin.html", [
-      [ "Config", "structtruck__inspection__plugin_1_1Config.html", "structtruck__inspection__plugin_1_1Config" ],
-      [ "Node", "classtruck__inspection__plugin_1_1Node.html", "classtruck__inspection__plugin_1_1Node" ]
-    ] ],
     [ "_el_buffer", "struct__el__buffer.html", "struct__el__buffer" ],
     [ "_stack", "struct__stack.html", "struct__stack" ],
     [ "_stack_el", "struct__stack__el.html", "struct__stack__el" ],

@@ -64,8 +64,7 @@ var hierarchy =
     [ "carma_ros2_utils::CarmaLifecycleNode", null, [
       [ "cpp_message::Node", "classcpp__message_1_1Node.html", null ],
       [ "emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html", null ],
-      [ "j2735_convertor::Node", "classj2735__convertor_1_1Node.html", null ],
-      [ "truck_inspection_plugin::Node", "classtruck__inspection__plugin_1_1Node.html", null ]
+      [ "j2735_convertor::Node", "classj2735__convertor_1_1Node.html", null ]
     ] ],
     [ "Circle", "structCircle.html", null ],
     [ "CommonSafetyRequest", "structCommonSafetyRequest.html", null ],
@@ -78,7 +77,6 @@ var hierarchy =
     [ "ComputedLane::ComputedLane__regional", "structComputedLane_1_1ComputedLane____regional.html", null ],
     [ "ConfidenceSet", "structConfidenceSet.html", null ],
     [ "emergency_response_vehicle_plugin::Config", "structemergency__response__vehicle__plugin_1_1Config.html", null ],
-    [ "truck_inspection_plugin::Config", "structtruck__inspection__plugin_1_1Config.html", null ],
     [ "ConnectingLane", "structConnectingLane.html", null ],
     [ "Connection", "structConnection.html", null ],
     [ "ConnectionManeuverAssist", "structConnectionManeuverAssist.html", null ],

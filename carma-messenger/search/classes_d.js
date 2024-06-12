@@ -2,7 +2,7 @@ var searchData=
 [
   ['nmeacorrections_0',['NMEAcorrections',['../structNMEAcorrections.html',1,'']]],
   ['nmeacorrections_5f_5fregional_1',['NMEAcorrections__regional',['../structNMEAcorrections_1_1NMEAcorrections____regional.html',1,'NMEAcorrections']]],
-  ['node_2',['Node',['../classcpp__message_1_1Node.html',1,'cpp_message::Node'],['../classj2735__convertor_1_1Node.html',1,'j2735_convertor::Node'],['../classtruck__inspection__plugin_1_1Node.html',1,'truck_inspection_plugin::Node']]],
+  ['node_2',['Node',['../classcpp__message_1_1Node.html',1,'cpp_message::Node'],['../classj2735__convertor_1_1Node.html',1,'j2735_convertor::Node']]],
   ['node_5fll_5f24b_3',['Node_LL_24B',['../structNode__LL__24B.html',1,'']]],
   ['node_5fll_5f28b_4',['Node_LL_28B',['../structNode__LL__28B.html',1,'']]],
   ['node_5fll_5f32b_5',['Node_LL_32B',['../structNode__LL__32B.html',1,'']]],

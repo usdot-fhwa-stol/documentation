@@ -66,9 +66,5 @@ var searchData=
   ['travelerdataframe_2eh_63',['TravelerDataFrame.h',['../TravelerDataFrame_8h.html',1,'']]],
   ['travelerdataframelist_2eh_64',['TravelerDataFrameList.h',['../TravelerDataFrameList_8h.html',1,'']]],
   ['travelerinformation_2eh_65',['TravelerInformation.h',['../TravelerInformation_8h.html',1,'']]],
-  ['travelerinfotype_2eh_66',['TravelerInfoType.h',['../TravelerInfoType_8h.html',1,'']]],
-  ['truck_5finspection_5fplugin_5fconfig_2ehpp_67',['truck_inspection_plugin_config.hpp',['../truck__inspection__plugin__config_8hpp.html',1,'']]],
-  ['truck_5finspection_5fplugin_5flaunch_2epy_68',['truck_inspection_plugin_launch.py',['../truck__inspection__plugin__launch_8py.html',1,'']]],
-  ['truck_5finspection_5fplugin_5fnode_2ecpp_69',['truck_inspection_plugin_node.cpp',['../truck__inspection__plugin__node_8cpp.html',1,'']]],
-  ['truck_5finspection_5fplugin_5fnode_2ehpp_70',['truck_inspection_plugin_node.hpp',['../truck__inspection__plugin__node_8hpp.html',1,'']]]
+  ['travelerinfotype_2eh_66',['TravelerInfoType.h',['../TravelerInfoType_8h.html',1,'']]]
 ];

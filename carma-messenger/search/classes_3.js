@@ -10,7 +10,7 @@ var searchData=
   ['computedlane_5f_5foffsetyaxis_5fu_7',['ComputedLane__offsetYaxis_u',['../unionComputedLane_1_1ComputedLane____offsetYaxis_1_1ComputedLane____offsetYaxis__u.html',1,'ComputedLane::ComputedLane__offsetYaxis']]],
   ['computedlane_5f_5fregional_8',['ComputedLane__regional',['../structComputedLane_1_1ComputedLane____regional.html',1,'ComputedLane']]],
   ['confidenceset_9',['ConfidenceSet',['../structConfidenceSet.html',1,'']]],
-  ['config_10',['Config',['../structemergency__response__vehicle__plugin_1_1Config.html',1,'emergency_response_vehicle_plugin::Config'],['../structtruck__inspection__plugin_1_1Config.html',1,'truck_inspection_plugin::Config']]],
+  ['config_10',['Config',['../structemergency__response__vehicle__plugin_1_1Config.html',1,'emergency_response_vehicle_plugin']]],
   ['connectinglane_11',['ConnectingLane',['../structConnectingLane.html',1,'']]],
   ['connection_12',['Connection',['../structConnection.html',1,'']]],
   ['connectionmaneuverassist_13',['ConnectionManeuverAssist',['../structConnectionManeuverAssist.html',1,'']]],

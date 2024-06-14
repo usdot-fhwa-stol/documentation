@@ -1,5 +1,7 @@
 var NAVTREEINDEX54 =
 {
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a70c1c665328617502a7d71dfb92b927d":[57,0,46,1,11],
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a70c1c665328617502a7d71dfb92b927d":[56,0,87,2,11],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a824aa99bf3c580e2fb312111499c3c51":[57,0,46,1,14],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a824aa99bf3c580e2fb312111499c3c51":[56,0,87,2,14],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#ab0895b533e41f7f78326d702f45e9789":[57,0,46,1,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX54 =
 "template__package_2src_2main_8cpp.html":[58,0,50,2,0],
 "template__package_2src_2main_8cpp.html#a9712098dc9c1c3f51d8c05b3614c9467":[58,0,50,2,0,0],
 "template__package_2src_2main_8cpp_source.html":[58,0,50,2,0],
-"template__package__config_8hpp.html":[58,0,50,0,0,1],
-"template__package__config_8hpp_source.html":[58,0,50,0,0,1],
-"template__package__launch_8py.html":[58,0,50,1,0]
+"template__package__config_8hpp.html":[58,0,50,0,0,1]
 };

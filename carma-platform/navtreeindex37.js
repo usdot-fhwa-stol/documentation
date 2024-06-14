@@ -1,5 +1,7 @@
 var NAVTREEINDEX37 =
 {
+"inttypes_8h.html#a338058775569b00a80a67080aee77934":[58,0,30,2,0,0,0,2,0,155],
+"inttypes_8h.html#a359197f54f7db4ae57ab7c9ff4b74456":[58,0,30,2,0,0,0,2,0,116],
 "inttypes_8h.html#a35974d44b5dcebcb222b8e2c1384241d":[58,0,30,2,0,0,0,2,0,86],
 "inttypes_8h.html#a37bbde0e3f124b7f482d54adb13b0248":[58,0,30,2,0,0,0,2,0,128],
 "inttypes_8h.html#a37f93445f1795033c9ba577661da6a91":[58,0,30,2,0,0,0,2,0,37],
@@ -247,7 +249,5 @@ var NAVTREEINDEX37 =
 "light__controlled__intersection__tactical__plugin__launch_8py_source.html":[58,0,22,1,0],
 "light__controlled__intersection__tactical__plugin__node_8cpp.html":[58,0,22,2,1],
 "light__controlled__intersection__tactical__plugin__node_8cpp_source.html":[58,0,22,2,1],
-"light__controlled__intersection__tactical__plugin__node_8hpp.html":[58,0,22,0,0,2],
-"light__controlled__intersection__tactical__plugin__node_8hpp_source.html":[58,0,22,0,0,2],
-"lightbar__manager_2src_2main_8cpp.html":[58,0,23,2,3]
+"light__controlled__intersection__tactical__plugin__node_8hpp.html":[58,0,22,0,0,2]
 };

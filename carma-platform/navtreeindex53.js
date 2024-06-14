@@ -1,5 +1,7 @@
 var NAVTREEINDEX53 =
 {
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#abcf064c79eab1c9ce7c5eef21ff67097":[57,0,35,4,16],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#abcf064c79eab1c9ce7c5eef21ff67097":[56,0,61,4,16],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ac248c0d9f95bc2ff52ebf3727dcc5bc6":[57,0,35,4,2],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ac248c0d9f95bc2ff52ebf3727dcc5bc6":[56,0,61,4,2],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ac3de67add9aeafaae4ab278bf0feff9d":[57,0,35,4,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX53 =
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a617d379b5f70ba29205714781cb0581a":[56,0,87,2,13],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a617d379b5f70ba29205714781cb0581a":[57,0,46,1,13],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a6685e36b86fac17ff20c6e389afc0ce0":[57,0,46,1,15],
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a6685e36b86fac17ff20c6e389afc0ce0":[56,0,87,2,15],
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a70c1c665328617502a7d71dfb92b927d":[57,0,46,1,11],
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a70c1c665328617502a7d71dfb92b927d":[56,0,87,2,11]
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a6685e36b86fac17ff20c6e389afc0ce0":[56,0,87,2,15]
 };

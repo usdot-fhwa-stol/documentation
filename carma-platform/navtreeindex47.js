@@ -1,5 +1,7 @@
 var NAVTREEINDEX47 =
 {
+"structInLaneCruisingPluginConfig.html#a64210b3e520043278df883e7eaf098a3":[57,0,95,15],
+"structInLaneCruisingPluginConfig.html#a75502c29c82cec188f865b22ca5bf936":[57,0,95,4],
 "structInLaneCruisingPluginConfig.html#a7ac7cbee199f26215c5a2a894236e20f":[57,0,95,3],
 "structInLaneCruisingPluginConfig.html#a903f4efb3c01f8fee57377f0e44ce2f8":[57,0,95,10],
 "structInLaneCruisingPluginConfig.html#a9816e6e5d54265b90ef6362cd4c7dcf2":[57,0,95,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX47 =
 "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#ac34d23f97859c1239886108d1e8c7828":[57,0,0,3,5],
 "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#ae3384c5e028e78ee1691738c53698e02":[56,0,0,4,4],
 "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#ae3384c5e028e78ee1691738c53698e02":[57,0,0,3,4],
-"structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#af0375acd994c05aea49759b8ed9ef544":[56,0,0,4,1],
-"structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#af0375acd994c05aea49759b8ed9ef544":[57,0,0,3,1],
-"structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html":[57,0,0,4]
+"structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#af0375acd994c05aea49759b8ed9ef544":[56,0,0,4,1]
 };

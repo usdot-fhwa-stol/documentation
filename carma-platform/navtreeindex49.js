@@ -1,5 +1,7 @@
 var NAVTREEINDEX49 =
 {
+"structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#ab9154be5337c7d5cab55f8b05bfb57a8":[57,0,7,16,0],
+"structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#acf322c3c8150cc9e1c26b5e68a675bff":[57,0,7,16,1],
 "structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#acf322c3c8150cc9e1c26b5e68a675bff":[56,0,12,16,1],
 "structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#aef38db3d31e2fb8393f13bdc6cfe0ed4":[56,0,12,16,2],
 "structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#aef38db3d31e2fb8393f13bdc6cfe0ed4":[57,0,7,16,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX49 =
 "structinternal_1_1DiyFp.html#aa6cbacc8dfcd92cb8c57884e45548976":[57,0,20,2,3],
 "structinternal_1_1DiyFp.html#aa6cbacc8dfcd92cb8c57884e45548976":[56,0,36,2,3],
 "structinternal_1_1DiyFp.html#aaacbf068c44275f4451db750938bd1d3":[57,0,20,2,14],
-"structinternal_1_1DiyFp.html#aaacbf068c44275f4451db750938bd1d3":[56,0,36,2,14],
-"structinternal_1_1DiyFp.html#aac30e0c32d43425ac403281fc9b0cee4":[57,0,20,2,11],
-"structinternal_1_1DiyFp.html#aac30e0c32d43425ac403281fc9b0cee4":[56,0,36,2,11]
+"structinternal_1_1DiyFp.html#aaacbf068c44275f4451db750938bd1d3":[56,0,36,2,14]
 };

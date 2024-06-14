@@ -1,5 +1,7 @@
 var NAVTREEINDEX27 =
 {
+"classplatooning__control_1_1PlatooningControlWorker.html#a4d032ee581b235fe9b3515f02b98c677":[57,0,36,3,3],
+"classplatooning__control_1_1PlatooningControlWorker.html#a560397f316a068142f94cfac068694b8":[57,0,36,3,2],
 "classplatooning__control_1_1PlatooningControlWorker.html#a560397f316a068142f94cfac068694b8":[56,0,63,3,2],
 "classplatooning__control_1_1PlatooningControlWorker.html#a675aa964973c99e75bb5178573ff192c":[56,0,63,3,14],
 "classplatooning__control_1_1PlatooningControlWorker.html#a675aa964973c99e75bb5178573ff192c":[57,0,36,3,14],
@@ -247,7 +249,5 @@ var NAVTREEINDEX27 =
 "classport__drayage__plugin_1_1PortDrayageWorker.html#adde3df89de4705812d1e9b958908441e":[57,0,39,6,25],
 "classport__drayage__plugin_1_1PortDrayageWorker.html#ae0295dde7b85f62b05e363df48926f67":[57,0,39,6,9],
 "classport__drayage__plugin_1_1PortDrayageWorker.html#ae0295dde7b85f62b05e363df48926f67":[56,0,69,6,9],
-"classport__drayage__plugin_1_1PortDrayageWorker.html#af01bbbbad64a0875a570400ac732889c":[57,0,39,6,18],
-"classport__drayage__plugin_1_1PortDrayageWorker.html#af01bbbbad64a0875a570400ac732889c":[56,0,69,6,18],
-"classport__drayage__plugin_1_1PortDrayageWorker.html#af2d62bba0c24866a6802e2b1fb30b38b":[56,0,69,6,20]
+"classport__drayage__plugin_1_1PortDrayageWorker.html#af01bbbbad64a0875a570400ac732889c":[57,0,39,6,18]
 };

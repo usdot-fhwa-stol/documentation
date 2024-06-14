@@ -1,5 +1,7 @@
 var NAVTREEINDEX39 =
 {
+"md_docs_Release_notes.html#autotoc_md189":[26,5,1],
+"md_docs_Release_notes.html#autotoc_md190":[26,5,2],
 "md_docs_Release_notes.html#autotoc_md191":[26,6],
 "md_docs_Release_notes.html#autotoc_md192":[26,7],
 "md_docs_Release_notes.html#autotoc_md193":[26,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX39 =
 "namespaceRouteCreation__KML2CSV.html#a8071162f3473e6e1986e7782f62a2906":[56,0,86,1],
 "namespaceRouteCreation__KML2CSV.html#ab83033c194f79816a6e88149fb1d134d":[56,0,86,0],
 "namespaceSUB_3_01package__name_01_4.html":[56,0,95],
-"namespaceapproaching__emergency__vehicle__plugin.html":[56,0,0],
-"namespaceapproaching__emergency__vehicle__plugin.html#a2dbb3f37c243c291470089b3d68d82e4":[56,0,0,10],
-"namespaceapproaching__emergency__vehicle__plugin.html#aa1f0528bd901591593adb2c34b007b57":[56,0,0,8]
+"namespaceapproaching__emergency__vehicle__plugin.html":[56,0,0]
 };

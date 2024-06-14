@@ -1,5 +1,7 @@
 var NAVTREEINDEX48 =
 {
+"structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#af0375acd994c05aea49759b8ed9ef544":[57,0,0,3,1],
+"structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html":[57,0,0,4],
 "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html":[56,0,0,5],
 "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html#a0276d31105789c8076965c78e6167b8b":[57,0,0,4,6],
 "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html#a0276d31105789c8076965c78e6167b8b":[56,0,0,5,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX48 =
 "structcarma__cooperative__perception_1_1SemanticDistance2dScore.html":[57,0,7,16],
 "structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#a887e7440d07c013139def1a5af49ee1a":[56,0,12,16,3],
 "structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#a887e7440d07c013139def1a5af49ee1a":[57,0,7,16,3],
-"structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#ab9154be5337c7d5cab55f8b05bfb57a8":[56,0,12,16,0],
-"structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#ab9154be5337c7d5cab55f8b05bfb57a8":[57,0,7,16,0],
-"structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#acf322c3c8150cc9e1c26b5e68a675bff":[57,0,7,16,1]
+"structcarma__cooperative__perception_1_1SemanticDistance2dScore.html#ab9154be5337c7d5cab55f8b05bfb57a8":[56,0,12,16,0]
 };

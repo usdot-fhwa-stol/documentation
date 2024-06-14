@@ -1,5 +1,7 @@
 var NAVTREEINDEX43 =
 {
+"namespacesci__strategic__plugin.html#a566a001705be58d1fa9b8b13ba6e3677":[56,0,87,3],
+"namespacesci__strategic__plugin.html#a566a001705be58d1fa9b8b13ba6e3677a0614364ce8a300e7a392919c4753d8a8":[56,0,87,3,2],
 "namespacesci__strategic__plugin.html#a566a001705be58d1fa9b8b13ba6e3677aa3ecbb35a47d32c1522462f894760117":[56,0,87,3,0],
 "namespacesci__strategic__plugin.html#a566a001705be58d1fa9b8b13ba6e3677ae56f9187e18e7976a4565df987d0962e":[56,0,87,3,1],
 "namespacesci__strategic__plugin.html#a671440ed74ec49fde9455203b9f02f22":[56,0,87,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX43 =
 "platooning__control__worker_8hpp.html":[58,0,34,0,0,3],
 "platooning__control__worker_8hpp_source.html":[58,0,34,0,0,3],
 "platooning__strategic__IHP_2src_2main_8cpp.html":[58,0,35,2,0],
-"platooning__strategic__IHP_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[58,0,35,2,0,0],
-"platooning__strategic__IHP_2src_2main_8cpp_source.html":[58,0,35,2,0],
-"platooning__tactical__plugin_2src_2main_8cpp.html":[58,0,36,2,0]
+"platooning__strategic__IHP_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[58,0,35,2,0,0]
 };

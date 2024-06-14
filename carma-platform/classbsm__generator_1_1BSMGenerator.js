@@ -22,6 +22,7 @@ var classbsm__generator_1_1BSMGenerator =
     [ "bsm_pub_", "classbsm__generator_1_1BSMGenerator.html#a5ba93aa18292c8c695b47f923983e4a5", null ],
     [ "config_", "classbsm__generator_1_1BSMGenerator.html#ad8356a752b985fea5cf466085037bed3", null ],
     [ "gear_sub_", "classbsm__generator_1_1BSMGenerator.html#a49e2a42b9a67cd2771f37d32729a62f8", null ],
+    [ "georeference_", "classbsm__generator_1_1BSMGenerator.html#a7e4eed76da6243cdc79c7cd544adbe0b", null ],
     [ "georeference_sub_", "classbsm__generator_1_1BSMGenerator.html#a46391260c38b6c1e118ea524e0178bf5", null ],
     [ "heading_sub_", "classbsm__generator_1_1BSMGenerator.html#a4565e20bbf8a21a59785bb7fd754e608", null ],
     [ "map_projector_", "classbsm__generator_1_1BSMGenerator.html#a1048d9f6f71358d5f3d2b889beee2911", null ],

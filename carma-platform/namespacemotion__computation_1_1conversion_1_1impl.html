@@ -168,7 +168,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00237">getYawFromQuaternionMsg()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00029">motion_computation::conversion::convert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00031">motion_computation::conversion::convert()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -290,7 +290,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  208</span>  <span class="keywordflow">return</span> std::make_pair(output_state, yaw);</div>
 <div class="line"><span class="lineno">  209</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00029">motion_computation::conversion::convert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00031">motion_computation::conversion::convert()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -329,111 +329,111 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00477">477</a> of file <a class="el" href="psm__to__external__object__convertor_8cpp_source.html">psm_to_external_object_convertor.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  479</span>{</div>
-<div class="line"><span class="lineno">  480</span>  boost::posix_time::ptime utc_time_of_current_psm;</div>
-<div class="line"><span class="lineno">  481</span> </div>
-<div class="line"><span class="lineno">  482</span>  <span class="comment">// Get the utc epoch start time</span></div>
-<div class="line"><span class="lineno">  483</span>  <span class="keyword">static</span> <span class="keyword">const</span> boost::posix_time::ptime inception_boost(</div>
-<div class="line"><span class="lineno">  484</span>    boost::posix_time::time_from_string(<span class="stringliteral">&quot;1970-01-01 00:00:00.000&quot;</span>));</div>
-<div class="line"><span class="lineno">  485</span> </div>
-<div class="line"><span class="lineno">  486</span>  <span class="comment">// Determine if the utc time of the path history can be used instead of the</span></div>
-<div class="line"><span class="lineno">  487</span>  <span class="comment">// sec_mark The sec_mark is susceptible to large error on minute transitions</span></div>
-<div class="line"><span class="lineno">  488</span>  <span class="comment">// due to missing &quot;minute of the year&quot; field If the second mark in the path</span></div>
-<div class="line"><span class="lineno">  489</span>  <span class="comment">// history is identical and the full utc time is provided with ms resolution</span></div>
-<div class="line"><span class="lineno">  490</span>  <span class="comment">// then it can be assumed the initial_position is the same as the PSM data and</span></div>
-<div class="line"><span class="lineno">  491</span>  <span class="comment">// the utc_time can be used instead of sec_mark</span></div>
-<div class="line"><span class="lineno">  492</span>  <span class="comment">// clang-format off</span></div>
-<div class="line"><span class="lineno">  493</span> </div>
-<div class="line"><span class="lineno">  494</span>  <span class="keyword">const</span> <span class="keyword">auto</span> initial_position_time{in_msg.path_history.initial_position.utc_time};</div>
-<div class="line"><span class="lineno">  495</span>  <span class="keywordflow">if</span> ((in_msg.presence_vector &amp;</div>
-<div class="line"><span class="lineno">  496</span>        carma_v2x_msgs::msg::PSM::HAS_PATH_HISTORY) &amp;&amp;</div>
-<div class="line"><span class="lineno">  497</span>        (in_msg.path_history.presence_vector &amp;</div>
-<div class="line"><span class="lineno">  498</span>        carma_v2x_msgs::msg::PathHistory::HAS_INITIAL_POSITION) &amp;&amp;</div>
-<div class="line"><span class="lineno">  499</span>        (initial_position_time.presence_vector &amp; j2735_v2x_msgs::msg::DDateTime::YEAR) &amp;&amp;</div>
-<div class="line"><span class="lineno">  500</span>        (initial_position_time.presence_vector &amp; j2735_v2x_msgs::msg::DDateTime::MONTH) &amp;&amp;</div>
-<div class="line"><span class="lineno">  501</span>        (initial_position_time.presence_vector &amp; j2735_v2x_msgs::msg::DDateTime::DAY) &amp;&amp;</div>
-<div class="line"><span class="lineno">  502</span>        (initial_position_time.presence_vector &amp; j2735_v2x_msgs::msg::DDateTime::HOUR) &amp;&amp;</div>
-<div class="line"><span class="lineno">  503</span>        (initial_position_time.presence_vector &amp; j2735_v2x_msgs::msg::DDateTime::MINUTE) &amp;&amp;</div>
-<div class="line"><span class="lineno">  504</span>        (initial_position_time.presence_vector &amp; j2735_v2x_msgs::msg::DDateTime::SECOND) &amp;&amp;</div>
-<div class="line"><span class="lineno">  505</span>      (in_msg.sec_mark.millisecond == initial_position_time.second.millisecond)) {</div>
-<div class="line"><span class="lineno">  506</span>    <span class="comment">// clang-format on</span></div>
-<div class="line"><span class="lineno">  507</span>    RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><span class="lineno">  508</span>      rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>),</div>
-<div class="line"><span class="lineno">  509</span>      <span class="stringliteral">&quot;Using UTC time of path history to determine PSM &quot;</span></div>
-<div class="line"><span class="lineno">  510</span>      <span class="stringliteral">&quot;timestamp. Assumed valid since UTC is fully specified &quot;</span></div>
-<div class="line"><span class="lineno">  511</span>      <span class="stringliteral">&quot;and sec_mark == utc_time.seconds in this message.&quot;</span>);</div>
-<div class="line"><span class="lineno">  512</span> </div>
-<div class="line"><span class="lineno">  513</span>    boost::posix_time::time_duration time_of_day =</div>
-<div class="line"><span class="lineno">  514</span>      boost::posix_time::hours(in_msg.path_history.initial_position.utc_time.hour.hour) +</div>
-<div class="line"><span class="lineno">  515</span>      boost::posix_time::minutes(in_msg.path_history.initial_position.utc_time.minute.minute) +</div>
-<div class="line"><span class="lineno">  516</span>      boost::posix_time::milliseconds(</div>
-<div class="line"><span class="lineno">  517</span>        in_msg.path_history.initial_position.utc_time.second.millisecond);</div>
-<div class="line"><span class="lineno">  518</span> </div>
-<div class="line"><span class="lineno">  519</span>    boost::gregorian::date utc_day(</div>
-<div class="line"><span class="lineno">  520</span>      in_msg.path_history.initial_position.utc_time.year.year,</div>
-<div class="line"><span class="lineno">  521</span>      in_msg.path_history.initial_position.utc_time.month.month,</div>
-<div class="line"><span class="lineno">  522</span>      in_msg.path_history.initial_position.utc_time.day.day);</div>
-<div class="line"><span class="lineno">  523</span> </div>
-<div class="line"><span class="lineno">  524</span>    utc_time_of_current_psm = boost::posix_time::ptime(utc_day) + time_of_day;</div>
-<div class="line"><span class="lineno">  525</span>  } <span class="keywordflow">else</span> {  <span class="comment">// If the utc time of the path history cannot be used to account for minute</span></div>
-<div class="line"><span class="lineno">  526</span>            <span class="comment">// change over, then we have to default to the sec mark</span></div>
-<div class="line"><span class="lineno">  527</span> </div>
-<div class="line"><span class="lineno">  528</span>    RCLCPP_WARN_STREAM_THROTTLE(</div>
-<div class="line"><span class="lineno">  529</span>      rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>), *clock.get(),</div>
-<div class="line"><span class="lineno">  530</span>      rclcpp::Duration(5, 0).nanoseconds(),</div>
-<div class="line"><span class="lineno">  531</span>      <span class="stringliteral">&quot;PSM PathHistory utc timstamp does not match &quot;</span></div>
-<div class="line"><span class="lineno">  532</span>      <span class="stringliteral">&quot;sec_mark. Unable to determine the minute of &quot;</span></div>
-<div class="line"><span class="lineno">  533</span>      <span class="stringliteral">&quot;the year used for PSM data. Assuming local &quot;</span></div>
-<div class="line"><span class="lineno">  534</span>      <span class="stringliteral">&quot;clock is exactly synced. This is NOT &quot;</span></div>
-<div class="line"><span class="lineno">  535</span>      <span class="stringliteral">&quot;ADVISED.&quot;</span>);</div>
-<div class="line"><span class="lineno">  536</span> </div>
-<div class="line"><span class="lineno">  537</span>    <span class="comment">// Get the current ROS time</span></div>
-<div class="line"><span class="lineno">  538</span>    <span class="keyword">auto</span> current_time = clock-&gt;now();</div>
-<div class="line"><span class="lineno">  539</span> </div>
-<div class="line"><span class="lineno">  540</span>    <span class="comment">// Convert the ros time to a boost duration</span></div>
-<div class="line"><span class="lineno">  541</span>    boost::posix_time::time_duration duration_since_inception(</div>
-<div class="line"><span class="lineno">  542</span>      lanelet::time::durationFromSec(current_time.seconds()));</div>
-<div class="line"><span class="lineno">  543</span> </div>
-<div class="line"><span class="lineno">  544</span>    <span class="comment">// Get the current ROS time in UTC</span></div>
-<div class="line"><span class="lineno">  545</span>    <span class="keyword">auto</span> curr_time_boost = inception_boost + duration_since_inception;</div>
-<div class="line"><span class="lineno">  546</span> </div>
-<div class="line"><span class="lineno">  547</span>    <span class="comment">// Get duration of current day</span></div>
-<div class="line"><span class="lineno">  548</span>    <span class="keyword">auto</span> duration_in_day_till_current_time = curr_time_boost.time_of_day();</div>
-<div class="line"><span class="lineno">  549</span> </div>
-<div class="line"><span class="lineno">  550</span>    <span class="comment">// Extract hours and minutes</span></div>
-<div class="line"><span class="lineno">  551</span>    <span class="keyword">auto</span> hour_count_in_day = duration_in_day_till_current_time.hours();</div>
-<div class="line"><span class="lineno">  552</span>    <span class="keyword">auto</span> minute_count_in_hour = duration_in_day_till_current_time.minutes();</div>
-<div class="line"><span class="lineno">  553</span> </div>
-<div class="line"><span class="lineno">  554</span>    <span class="comment">// Get the duration of the minute in the day</span></div>
-<div class="line"><span class="lineno">  555</span>    <span class="keyword">auto</span> start_of_minute_in_day = boost::posix_time::hours(hour_count_in_day) +</div>
-<div class="line"><span class="lineno">  556</span>                                  boost::posix_time::minutes(minute_count_in_hour);</div>
-<div class="line"><span class="lineno">  557</span> </div>
-<div class="line"><span class="lineno">  558</span>    <span class="comment">// Get the start of the day in ROS time</span></div>
-<div class="line"><span class="lineno">  559</span>    boost::posix_time::ptime start_of_day(curr_time_boost.date());</div>
-<div class="line"><span class="lineno">  560</span> </div>
-<div class="line"><span class="lineno">  561</span>    <span class="comment">// Ge the start of the current minute in ROS time</span></div>
-<div class="line"><span class="lineno">  562</span>    boost::posix_time::ptime utc_start_of_current_minute = start_of_day + start_of_minute_in_day;</div>
-<div class="line"><span class="lineno">  563</span> </div>
-<div class="line"><span class="lineno">  564</span>    <span class="comment">// Compute the UTC PSM stamp from the sec_mark using ROS time as the clock</span></div>
-<div class="line"><span class="lineno">  565</span> </div>
-<div class="line"><span class="lineno">  566</span>    boost::posix_time::time_duration s_in_cur_minute =</div>
-<div class="line"><span class="lineno">  567</span>      boost::posix_time::milliseconds(in_msg.sec_mark.millisecond);</div>
-<div class="line"><span class="lineno">  568</span> </div>
-<div class="line"><span class="lineno">  569</span>    utc_time_of_current_psm = utc_start_of_current_minute + s_in_cur_minute;</div>
-<div class="line"><span class="lineno">  570</span>  }</div>
-<div class="line"><span class="lineno">  571</span> </div>
-<div class="line"><span class="lineno">  572</span>  boost::posix_time::time_duration nsec_since_epoch = utc_time_of_current_psm - inception_boost;</div>
-<div class="line"><span class="lineno">  573</span> </div>
-<div class="line"><span class="lineno">  574</span>  <span class="keywordflow">if</span> (nsec_since_epoch.is_special()) {</div>
-<div class="line"><span class="lineno">  575</span>    RCLCPP_ERROR_STREAM(</div>
-<div class="line"><span class="lineno">  576</span>      rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>),</div>
-<div class="line"><span class="lineno">  577</span>      <span class="stringliteral">&quot;Computed psm nsec_since_epoch is special (computation &quot;</span></div>
-<div class="line"><span class="lineno">  578</span>      <span class="stringliteral">&quot;failed). Value effectively undefined.&quot;</span>);</div>
-<div class="line"><span class="lineno">  579</span>  }</div>
-<div class="line"><span class="lineno">  580</span> </div>
-<div class="line"><span class="lineno">  581</span>  <span class="keywordflow">return</span> rclcpp::Time(nsec_since_epoch.total_nanoseconds());</div>
-<div class="line"><span class="lineno">  582</span>}</div>
+<p class="definition">Definition at line <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00476">476</a> of file <a class="el" href="psm__to__external__object__convertor_8cpp_source.html">psm_to_external_object_convertor.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  478</span>{</div>
+<div class="line"><span class="lineno">  479</span>  boost::posix_time::ptime utc_time_of_current_psm;</div>
+<div class="line"><span class="lineno">  480</span> </div>
+<div class="line"><span class="lineno">  481</span>  <span class="comment">// Get the utc epoch start time</span></div>
+<div class="line"><span class="lineno">  482</span>  <span class="keyword">static</span> <span class="keyword">const</span> boost::posix_time::ptime inception_boost(</div>
+<div class="line"><span class="lineno">  483</span>    boost::posix_time::time_from_string(<span class="stringliteral">&quot;1970-01-01 00:00:00.000&quot;</span>));</div>
+<div class="line"><span class="lineno">  484</span> </div>
+<div class="line"><span class="lineno">  485</span>  <span class="comment">// Determine if the utc time of the path history can be used instead of the</span></div>
+<div class="line"><span class="lineno">  486</span>  <span class="comment">// sec_mark The sec_mark is susceptible to large error on minute transitions</span></div>
+<div class="line"><span class="lineno">  487</span>  <span class="comment">// due to missing &quot;minute of the year&quot; field If the second mark in the path</span></div>
+<div class="line"><span class="lineno">  488</span>  <span class="comment">// history is identical and the full utc time is provided with ms resolution</span></div>
+<div class="line"><span class="lineno">  489</span>  <span class="comment">// then it can be assumed the initial_position is the same as the PSM data and</span></div>
+<div class="line"><span class="lineno">  490</span>  <span class="comment">// the utc_time can be used instead of sec_mark</span></div>
+<div class="line"><span class="lineno">  491</span>  <span class="comment">// clang-format off</span></div>
+<div class="line"><span class="lineno">  492</span> </div>
+<div class="line"><span class="lineno">  493</span>  <span class="keyword">const</span> <span class="keyword">auto</span> initial_position_time{in_msg.path_history.initial_position.utc_time};</div>
+<div class="line"><span class="lineno">  494</span>  <span class="keywordflow">if</span> ((in_msg.presence_vector &amp;</div>
+<div class="line"><span class="lineno">  495</span>        carma_v2x_msgs::msg::PSM::HAS_PATH_HISTORY) &amp;&amp;</div>
+<div class="line"><span class="lineno">  496</span>        (in_msg.path_history.presence_vector &amp;</div>
+<div class="line"><span class="lineno">  497</span>        carma_v2x_msgs::msg::PathHistory::HAS_INITIAL_POSITION) &amp;&amp;</div>
+<div class="line"><span class="lineno">  498</span>        (initial_position_time.presence_vector &amp; j2735_v2x_msgs::msg::DDateTime::YEAR) &amp;&amp;</div>
+<div class="line"><span class="lineno">  499</span>        (initial_position_time.presence_vector &amp; j2735_v2x_msgs::msg::DDateTime::MONTH) &amp;&amp;</div>
+<div class="line"><span class="lineno">  500</span>        (initial_position_time.presence_vector &amp; j2735_v2x_msgs::msg::DDateTime::DAY) &amp;&amp;</div>
+<div class="line"><span class="lineno">  501</span>        (initial_position_time.presence_vector &amp; j2735_v2x_msgs::msg::DDateTime::HOUR) &amp;&amp;</div>
+<div class="line"><span class="lineno">  502</span>        (initial_position_time.presence_vector &amp; j2735_v2x_msgs::msg::DDateTime::MINUTE) &amp;&amp;</div>
+<div class="line"><span class="lineno">  503</span>        (initial_position_time.presence_vector &amp; j2735_v2x_msgs::msg::DDateTime::SECOND) &amp;&amp;</div>
+<div class="line"><span class="lineno">  504</span>      (in_msg.sec_mark.millisecond == initial_position_time.second.millisecond)) {</div>
+<div class="line"><span class="lineno">  505</span>    <span class="comment">// clang-format on</span></div>
+<div class="line"><span class="lineno">  506</span>    RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><span class="lineno">  507</span>      rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>),</div>
+<div class="line"><span class="lineno">  508</span>      <span class="stringliteral">&quot;Using UTC time of path history to determine PSM &quot;</span></div>
+<div class="line"><span class="lineno">  509</span>      <span class="stringliteral">&quot;timestamp. Assumed valid since UTC is fully specified &quot;</span></div>
+<div class="line"><span class="lineno">  510</span>      <span class="stringliteral">&quot;and sec_mark == utc_time.seconds in this message.&quot;</span>);</div>
+<div class="line"><span class="lineno">  511</span> </div>
+<div class="line"><span class="lineno">  512</span>    boost::posix_time::time_duration time_of_day =</div>
+<div class="line"><span class="lineno">  513</span>      boost::posix_time::hours(in_msg.path_history.initial_position.utc_time.hour.hour) +</div>
+<div class="line"><span class="lineno">  514</span>      boost::posix_time::minutes(in_msg.path_history.initial_position.utc_time.minute.minute) +</div>
+<div class="line"><span class="lineno">  515</span>      boost::posix_time::milliseconds(</div>
+<div class="line"><span class="lineno">  516</span>        in_msg.path_history.initial_position.utc_time.second.millisecond);</div>
+<div class="line"><span class="lineno">  517</span> </div>
+<div class="line"><span class="lineno">  518</span>    boost::gregorian::date utc_day(</div>
+<div class="line"><span class="lineno">  519</span>      in_msg.path_history.initial_position.utc_time.year.year,</div>
+<div class="line"><span class="lineno">  520</span>      in_msg.path_history.initial_position.utc_time.month.month,</div>
+<div class="line"><span class="lineno">  521</span>      in_msg.path_history.initial_position.utc_time.day.day);</div>
+<div class="line"><span class="lineno">  522</span> </div>
+<div class="line"><span class="lineno">  523</span>    utc_time_of_current_psm = boost::posix_time::ptime(utc_day) + time_of_day;</div>
+<div class="line"><span class="lineno">  524</span>  } <span class="keywordflow">else</span> {  <span class="comment">// If the utc time of the path history cannot be used to account for minute</span></div>
+<div class="line"><span class="lineno">  525</span>            <span class="comment">// change over, then we have to default to the sec mark</span></div>
+<div class="line"><span class="lineno">  526</span> </div>
+<div class="line"><span class="lineno">  527</span>    RCLCPP_WARN_STREAM_THROTTLE(</div>
+<div class="line"><span class="lineno">  528</span>      rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>), *clock.get(),</div>
+<div class="line"><span class="lineno">  529</span>      rclcpp::Duration(5, 0).nanoseconds(),</div>
+<div class="line"><span class="lineno">  530</span>      <span class="stringliteral">&quot;PSM PathHistory utc timstamp does not match &quot;</span></div>
+<div class="line"><span class="lineno">  531</span>      <span class="stringliteral">&quot;sec_mark. Unable to determine the minute of &quot;</span></div>
+<div class="line"><span class="lineno">  532</span>      <span class="stringliteral">&quot;the year used for PSM data. Assuming local &quot;</span></div>
+<div class="line"><span class="lineno">  533</span>      <span class="stringliteral">&quot;clock is exactly synced. This is NOT &quot;</span></div>
+<div class="line"><span class="lineno">  534</span>      <span class="stringliteral">&quot;ADVISED.&quot;</span>);</div>
+<div class="line"><span class="lineno">  535</span> </div>
+<div class="line"><span class="lineno">  536</span>    <span class="comment">// Get the current ROS time</span></div>
+<div class="line"><span class="lineno">  537</span>    <span class="keyword">auto</span> current_time = clock-&gt;now();</div>
+<div class="line"><span class="lineno">  538</span> </div>
+<div class="line"><span class="lineno">  539</span>    <span class="comment">// Convert the ros time to a boost duration</span></div>
+<div class="line"><span class="lineno">  540</span>    boost::posix_time::time_duration duration_since_inception(</div>
+<div class="line"><span class="lineno">  541</span>      lanelet::time::durationFromSec(current_time.seconds()));</div>
+<div class="line"><span class="lineno">  542</span> </div>
+<div class="line"><span class="lineno">  543</span>    <span class="comment">// Get the current ROS time in UTC</span></div>
+<div class="line"><span class="lineno">  544</span>    <span class="keyword">auto</span> curr_time_boost = inception_boost + duration_since_inception;</div>
+<div class="line"><span class="lineno">  545</span> </div>
+<div class="line"><span class="lineno">  546</span>    <span class="comment">// Get duration of current day</span></div>
+<div class="line"><span class="lineno">  547</span>    <span class="keyword">auto</span> duration_in_day_till_current_time = curr_time_boost.time_of_day();</div>
+<div class="line"><span class="lineno">  548</span> </div>
+<div class="line"><span class="lineno">  549</span>    <span class="comment">// Extract hours and minutes</span></div>
+<div class="line"><span class="lineno">  550</span>    <span class="keyword">auto</span> hour_count_in_day = duration_in_day_till_current_time.hours();</div>
+<div class="line"><span class="lineno">  551</span>    <span class="keyword">auto</span> minute_count_in_hour = duration_in_day_till_current_time.minutes();</div>
+<div class="line"><span class="lineno">  552</span> </div>
+<div class="line"><span class="lineno">  553</span>    <span class="comment">// Get the duration of the minute in the day</span></div>
+<div class="line"><span class="lineno">  554</span>    <span class="keyword">auto</span> start_of_minute_in_day = boost::posix_time::hours(hour_count_in_day) +</div>
+<div class="line"><span class="lineno">  555</span>                                  boost::posix_time::minutes(minute_count_in_hour);</div>
+<div class="line"><span class="lineno">  556</span> </div>
+<div class="line"><span class="lineno">  557</span>    <span class="comment">// Get the start of the day in ROS time</span></div>
+<div class="line"><span class="lineno">  558</span>    boost::posix_time::ptime start_of_day(curr_time_boost.date());</div>
+<div class="line"><span class="lineno">  559</span> </div>
+<div class="line"><span class="lineno">  560</span>    <span class="comment">// Ge the start of the current minute in ROS time</span></div>
+<div class="line"><span class="lineno">  561</span>    boost::posix_time::ptime utc_start_of_current_minute = start_of_day + start_of_minute_in_day;</div>
+<div class="line"><span class="lineno">  562</span> </div>
+<div class="line"><span class="lineno">  563</span>    <span class="comment">// Compute the UTC PSM stamp from the sec_mark using ROS time as the clock</span></div>
+<div class="line"><span class="lineno">  564</span> </div>
+<div class="line"><span class="lineno">  565</span>    boost::posix_time::time_duration s_in_cur_minute =</div>
+<div class="line"><span class="lineno">  566</span>      boost::posix_time::milliseconds(in_msg.sec_mark.millisecond);</div>
+<div class="line"><span class="lineno">  567</span> </div>
+<div class="line"><span class="lineno">  568</span>    utc_time_of_current_psm = utc_start_of_current_minute + s_in_cur_minute;</div>
+<div class="line"><span class="lineno">  569</span>  }</div>
+<div class="line"><span class="lineno">  570</span> </div>
+<div class="line"><span class="lineno">  571</span>  boost::posix_time::time_duration nsec_since_epoch = utc_time_of_current_psm - inception_boost;</div>
+<div class="line"><span class="lineno">  572</span> </div>
+<div class="line"><span class="lineno">  573</span>  <span class="keywordflow">if</span> (nsec_since_epoch.is_special()) {</div>
+<div class="line"><span class="lineno">  574</span>    RCLCPP_ERROR_STREAM(</div>
+<div class="line"><span class="lineno">  575</span>      rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>),</div>
+<div class="line"><span class="lineno">  576</span>      <span class="stringliteral">&quot;Computed psm nsec_since_epoch is special (computation &quot;</span></div>
+<div class="line"><span class="lineno">  577</span>      <span class="stringliteral">&quot;failed). Value effectively undefined.&quot;</span>);</div>
+<div class="line"><span class="lineno">  578</span>  }</div>
+<div class="line"><span class="lineno">  579</span> </div>
+<div class="line"><span class="lineno">  580</span>  <span class="keywordflow">return</span> rclcpp::Time(nsec_since_epoch.total_nanoseconds());</div>
+<div class="line"><span class="lineno">  581</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00038">motion_computation::conversion::convert()</a>.</p>
 <div class="dynheader">
@@ -581,98 +581,97 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  352</span> </div>
 <div class="line"><span class="lineno">  353</span>  <span class="keywordflow">if</span> (</div>
 <div class="line"><span class="lineno">  354</span>    fabs(map_point.x()) &gt; 10000.0 ||</div>
-<div class="line"><span class="lineno">  355</span>    fabs(map_point.y()) &gt;</div>
-<div class="line"><span class="lineno">  356</span>      10000.0) {  <span class="comment">// Above 10km from map origin earth curvature will start to have a negative</span></div>
-<div class="line"><span class="lineno">  357</span>                  <span class="comment">// impact on system performance</span></div>
-<div class="line"><span class="lineno">  358</span> </div>
-<div class="line"><span class="lineno">  359</span>    RCLCPP_WARN_STREAM(</div>
-<div class="line"><span class="lineno">  360</span>      rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>),</div>
-<div class="line"><span class="lineno">  361</span>      <span class="stringliteral">&quot;Distance from map origin is larger than supported by system &quot;</span></div>
-<div class="line"><span class="lineno">  362</span>      <span class="stringliteral">&quot;assumptions. Strongly advise &quot;</span></div>
-<div class="line"><span class="lineno">  363</span>      <span class="stringliteral">&quot;alternative map origin be used. &quot;</span>);</div>
-<div class="line"><span class="lineno">  364</span>  }</div>
-<div class="line"><span class="lineno">  365</span> </div>
-<div class="line"><span class="lineno">  367</span>  <span class="comment">// This logic assumes that the orientation difference between an NED frame</span></div>
-<div class="line"><span class="lineno">  368</span>  <span class="comment">// located at the map origin and an NED frame located at the GNSS point are</span></div>
-<div class="line"><span class="lineno">  369</span>  <span class="comment">// sufficiently small that they can be ignored. Therefore it is assumed the</span></div>
-<div class="line"><span class="lineno">  370</span>  <span class="comment">// heading report of the GNSS system regardless of its postion in the map</span></div>
-<div class="line"><span class="lineno">  371</span>  <span class="comment">// without change in its orientation will give the same result (as far as we</span></div>
-<div class="line"><span class="lineno">  372</span>  <span class="comment">// are concered).</span></div>
-<div class="line"><span class="lineno">  373</span> </div>
-<div class="line"><span class="lineno">  374</span>  tf2::Quaternion R_m_n(ned_in_map_rotation);  <span class="comment">// Rotation of NED frame in map</span></div>
-<div class="line"><span class="lineno">  375</span>                                               <span class="comment">// frame</span></div>
-<div class="line"><span class="lineno">  376</span>  tf2::Quaternion R_n_h;                       <span class="comment">// Rotation of sensor heading report in NED frame</span></div>
-<div class="line"><span class="lineno">  377</span>  R_n_h.setRPY(0, 0, heading * wgs84_utils::DEG2RAD);</div>
-<div class="line"><span class="lineno">  378</span> </div>
-<div class="line"><span class="lineno">  379</span>  tf2::Quaternion R_m_s = R_m_n * R_n_h;  <span class="comment">// Rotation of sensor in map frame under assumption that</span></div>
-<div class="line"><span class="lineno">  380</span>                                          <span class="comment">// distance from map origin is sufficiently small so as to</span></div>
-<div class="line"><span class="lineno">  381</span>                                          <span class="comment">// ignore local changes in NED orientation</span></div>
-<div class="line"><span class="lineno">  382</span> </div>
-<div class="line"><span class="lineno">  383</span>  RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><span class="lineno">  384</span>    rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>),</div>
-<div class="line"><span class="lineno">  385</span>    <span class="stringliteral">&quot;R_m_n (x,y,z,w) : ( &quot;</span> &lt;&lt; R_m_n.x() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; R_m_n.y() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; R_m_n.z() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
-<div class="line"><span class="lineno">  386</span>                           &lt;&lt; R_m_n.w());</div>
-<div class="line"><span class="lineno">  387</span> </div>
-<div class="line"><span class="lineno">  388</span>  RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><span class="lineno">  389</span>    rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>),</div>
-<div class="line"><span class="lineno">  390</span>    <span class="stringliteral">&quot;R_n_h (x,y,z,w) : ( &quot;</span> &lt;&lt; R_n_h.x() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; R_n_h.y() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; R_n_h.z() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
-<div class="line"><span class="lineno">  391</span>                           &lt;&lt; R_n_h.w());</div>
-<div class="line"><span class="lineno">  392</span> </div>
-<div class="line"><span class="lineno">  393</span>  RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><span class="lineno">  394</span>    rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>),</div>
-<div class="line"><span class="lineno">  395</span>    <span class="stringliteral">&quot;R_m_s (x,y,z,w) : ( &quot;</span> &lt;&lt; R_m_s.x() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; R_m_s.y() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; R_m_s.z() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
-<div class="line"><span class="lineno">  396</span>                           &lt;&lt; R_m_s.w());</div>
-<div class="line"><span class="lineno">  397</span> </div>
-<div class="line"><span class="lineno">  398</span>  tf2::Transform T_m_s(</div>
-<div class="line"><span class="lineno">  399</span>    R_m_s, tf2::Vector3(</div>
-<div class="line"><span class="lineno">  400</span>             map_point.x(), map_point.y(),</div>
-<div class="line"><span class="lineno">  401</span>             map_point.z()));  <span class="comment">// Reported position and orientation</span></div>
-<div class="line"><span class="lineno">  402</span>                               <span class="comment">// of sensor frame in map frame</span></div>
-<div class="line"><span class="lineno">  403</span> </div>
-<div class="line"><span class="lineno">  404</span>  tf2::Transform T_m_n_no_heading(</div>
-<div class="line"><span class="lineno">  405</span>    R_m_n, tf2::Vector3(0, 0, 0));  <span class="comment">// Used to transform the covariance</span></div>
-<div class="line"><span class="lineno">  406</span> </div>
-<div class="line"><span class="lineno">  407</span>  <span class="comment">// This covariance represents the covariance of the NED frame N-lat,</span></div>
-<div class="line"><span class="lineno">  408</span>  <span class="comment">// E-lon, heading- angle east of north This means that the covariance is</span></div>
-<div class="line"><span class="lineno">  409</span>  <span class="comment">// in the NED frame, and needs to be transformed to the map frame</span></div>
-<div class="line"><span class="lineno">  410</span>  <span class="comment">// clang-format off</span></div>
-<div class="line"><span class="lineno">  411</span>        std::array&lt;double, 36&gt; input_covariance = {</div>
-<div class="line"><span class="lineno">  412</span>          lat_variance, 0, 0,  0, 0, 0,</div>
-<div class="line"><span class="lineno">  413</span>          0, lon_variance, 0,  0, 0, 0,</div>
-<div class="line"><span class="lineno">  414</span>          0, 0, 1,  0, 0, 0,</div>
-<div class="line"><span class="lineno">  415</span>          0,  0,  0,  1,  0, 0,</div>
-<div class="line"><span class="lineno">  416</span>          0,  0,  0,  0,  1, 0,</div>
-<div class="line"><span class="lineno">  417</span>          0,  0,  0,  0,  0, heading_variance</div>
-<div class="line"><span class="lineno">  418</span>        };</div>
-<div class="line"><span class="lineno">  419</span>  <span class="comment">// clang-format on</span></div>
-<div class="line"><span class="lineno">  420</span> </div>
-<div class="line"><span class="lineno">  421</span>  std::array&lt;double, 36&gt; new_cov = <a class="code hl_function" href="namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e">tf2::transformCovariance</a>(</div>
-<div class="line"><span class="lineno">  422</span>    input_covariance,</div>
-<div class="line"><span class="lineno">  423</span>    <span class="comment">// Per the usage of transformCovariance in tf2_geometry_msgs</span></div>
-<div class="line"><span class="lineno">  424</span>    <span class="comment">// this frame should be the transform between the map which the pose</span></div>
-<div class="line"><span class="lineno">  425</span>    <span class="comment">// is in an the target frame.</span></div>
-<div class="line"><span class="lineno">  426</span>    T_m_n_no_heading);</div>
-<div class="line"><span class="lineno">  427</span> </div>
-<div class="line"><span class="lineno">  428</span>  <span class="comment">// Populate message</span></div>
-<div class="line"><span class="lineno">  429</span>  geometry_msgs::msg::PoseWithCovariance pose;</div>
-<div class="line"><span class="lineno">  430</span>  pose.pose.position.x = T_m_s.getOrigin().getX();</div>
-<div class="line"><span class="lineno">  431</span>  pose.pose.position.y = T_m_s.getOrigin().getY();</div>
-<div class="line"><span class="lineno">  432</span>  pose.pose.position.z = T_m_s.getOrigin().getZ();</div>
-<div class="line"><span class="lineno">  433</span> </div>
-<div class="line"><span class="lineno">  434</span>  pose.pose.orientation.x = T_m_s.getRotation().getX();</div>
-<div class="line"><span class="lineno">  435</span>  pose.pose.orientation.y = T_m_s.getRotation().getY();</div>
-<div class="line"><span class="lineno">  436</span>  pose.pose.orientation.z = T_m_s.getRotation().getZ();</div>
-<div class="line"><span class="lineno">  437</span>  pose.pose.orientation.w = T_m_s.getRotation().getW();</div>
-<div class="line"><span class="lineno">  438</span> </div>
-<div class="line"><span class="lineno">  439</span>  pose.covariance = new_cov;</div>
-<div class="line"><span class="lineno">  440</span> </div>
-<div class="line"><span class="lineno">  441</span>  <span class="keywordflow">return</span> pose;</div>
-<div class="line"><span class="lineno">  442</span>}</div>
+<div class="line"><span class="lineno">  355</span>    fabs(map_point.y()) &gt; 10000.0) {  <span class="comment">// Above 10km from map origin earth curvature will start to</span></div>
+<div class="line"><span class="lineno">  356</span>                                      <span class="comment">// have a negative impact on system performance</span></div>
+<div class="line"><span class="lineno">  357</span> </div>
+<div class="line"><span class="lineno">  358</span>    RCLCPP_WARN_STREAM(</div>
+<div class="line"><span class="lineno">  359</span>      rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>),</div>
+<div class="line"><span class="lineno">  360</span>      <span class="stringliteral">&quot;Distance from map origin is larger than supported by system &quot;</span></div>
+<div class="line"><span class="lineno">  361</span>      <span class="stringliteral">&quot;assumptions. Strongly advise &quot;</span></div>
+<div class="line"><span class="lineno">  362</span>      <span class="stringliteral">&quot;alternative map origin be used. &quot;</span>);</div>
+<div class="line"><span class="lineno">  363</span>  }</div>
+<div class="line"><span class="lineno">  364</span> </div>
+<div class="line"><span class="lineno">  366</span>  <span class="comment">// This logic assumes that the orientation difference between an NED frame</span></div>
+<div class="line"><span class="lineno">  367</span>  <span class="comment">// located at the map origin and an NED frame located at the GNSS point are</span></div>
+<div class="line"><span class="lineno">  368</span>  <span class="comment">// sufficiently small that they can be ignored. Therefore it is assumed the</span></div>
+<div class="line"><span class="lineno">  369</span>  <span class="comment">// heading report of the GNSS system regardless of its postion in the map</span></div>
+<div class="line"><span class="lineno">  370</span>  <span class="comment">// without change in its orientation will give the same result (as far as we</span></div>
+<div class="line"><span class="lineno">  371</span>  <span class="comment">// are concered).</span></div>
+<div class="line"><span class="lineno">  372</span> </div>
+<div class="line"><span class="lineno">  373</span>  tf2::Quaternion R_m_n(ned_in_map_rotation);  <span class="comment">// Rotation of NED frame in map</span></div>
+<div class="line"><span class="lineno">  374</span>                                               <span class="comment">// frame</span></div>
+<div class="line"><span class="lineno">  375</span>  tf2::Quaternion R_n_h;                       <span class="comment">// Rotation of sensor heading report in NED frame</span></div>
+<div class="line"><span class="lineno">  376</span>  R_n_h.setRPY(0, 0, heading * wgs84_utils::DEG2RAD);</div>
+<div class="line"><span class="lineno">  377</span> </div>
+<div class="line"><span class="lineno">  378</span>  tf2::Quaternion R_m_s = R_m_n * R_n_h;  <span class="comment">// Rotation of sensor in map frame under assumption that</span></div>
+<div class="line"><span class="lineno">  379</span>                                          <span class="comment">// distance from map origin is sufficiently small so as to</span></div>
+<div class="line"><span class="lineno">  380</span>                                          <span class="comment">// ignore local changes in NED orientation</span></div>
+<div class="line"><span class="lineno">  381</span> </div>
+<div class="line"><span class="lineno">  382</span>  RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><span class="lineno">  383</span>    rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>),</div>
+<div class="line"><span class="lineno">  384</span>    <span class="stringliteral">&quot;R_m_n (x,y,z,w) : ( &quot;</span> &lt;&lt; R_m_n.x() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; R_m_n.y() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; R_m_n.z() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><span class="lineno">  385</span>                           &lt;&lt; R_m_n.w());</div>
+<div class="line"><span class="lineno">  386</span> </div>
+<div class="line"><span class="lineno">  387</span>  RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><span class="lineno">  388</span>    rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>),</div>
+<div class="line"><span class="lineno">  389</span>    <span class="stringliteral">&quot;R_n_h (x,y,z,w) : ( &quot;</span> &lt;&lt; R_n_h.x() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; R_n_h.y() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; R_n_h.z() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><span class="lineno">  390</span>                           &lt;&lt; R_n_h.w());</div>
+<div class="line"><span class="lineno">  391</span> </div>
+<div class="line"><span class="lineno">  392</span>  RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><span class="lineno">  393</span>    rclcpp::get_logger(<span class="stringliteral">&quot;motion_computation::conversion&quot;</span>),</div>
+<div class="line"><span class="lineno">  394</span>    <span class="stringliteral">&quot;R_m_s (x,y,z,w) : ( &quot;</span> &lt;&lt; R_m_s.x() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; R_m_s.y() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; R_m_s.z() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><span class="lineno">  395</span>                           &lt;&lt; R_m_s.w());</div>
+<div class="line"><span class="lineno">  396</span> </div>
+<div class="line"><span class="lineno">  397</span>  tf2::Transform T_m_s(</div>
+<div class="line"><span class="lineno">  398</span>    R_m_s, tf2::Vector3(</div>
+<div class="line"><span class="lineno">  399</span>             map_point.x(), map_point.y(),</div>
+<div class="line"><span class="lineno">  400</span>             map_point.z()));  <span class="comment">// Reported position and orientation</span></div>
+<div class="line"><span class="lineno">  401</span>                               <span class="comment">// of sensor frame in map frame</span></div>
+<div class="line"><span class="lineno">  402</span> </div>
+<div class="line"><span class="lineno">  403</span>  tf2::Transform T_m_n_no_heading(</div>
+<div class="line"><span class="lineno">  404</span>    R_m_n, tf2::Vector3(0, 0, 0));  <span class="comment">// Used to transform the covariance</span></div>
+<div class="line"><span class="lineno">  405</span> </div>
+<div class="line"><span class="lineno">  406</span>  <span class="comment">// This covariance represents the covariance of the NED frame N-lat,</span></div>
+<div class="line"><span class="lineno">  407</span>  <span class="comment">// E-lon, heading- angle east of north This means that the covariance is</span></div>
+<div class="line"><span class="lineno">  408</span>  <span class="comment">// in the NED frame, and needs to be transformed to the map frame</span></div>
+<div class="line"><span class="lineno">  409</span>  <span class="comment">// clang-format off</span></div>
+<div class="line"><span class="lineno">  410</span>        std::array&lt;double, 36&gt; input_covariance = {</div>
+<div class="line"><span class="lineno">  411</span>          lat_variance, 0, 0,  0, 0, 0,</div>
+<div class="line"><span class="lineno">  412</span>          0, lon_variance, 0,  0, 0, 0,</div>
+<div class="line"><span class="lineno">  413</span>          0, 0, 1,  0, 0, 0,</div>
+<div class="line"><span class="lineno">  414</span>          0,  0,  0,  1,  0, 0,</div>
+<div class="line"><span class="lineno">  415</span>          0,  0,  0,  0,  1, 0,</div>
+<div class="line"><span class="lineno">  416</span>          0,  0,  0,  0,  0, heading_variance</div>
+<div class="line"><span class="lineno">  417</span>        };</div>
+<div class="line"><span class="lineno">  418</span>  <span class="comment">// clang-format on</span></div>
+<div class="line"><span class="lineno">  419</span> </div>
+<div class="line"><span class="lineno">  420</span>  std::array&lt;double, 36&gt; new_cov = <a class="code hl_function" href="namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e">tf2::transformCovariance</a>(</div>
+<div class="line"><span class="lineno">  421</span>    input_covariance,</div>
+<div class="line"><span class="lineno">  422</span>    <span class="comment">// Per the usage of transformCovariance in tf2_geometry_msgs</span></div>
+<div class="line"><span class="lineno">  423</span>    <span class="comment">// this frame should be the transform between the map which the pose</span></div>
+<div class="line"><span class="lineno">  424</span>    <span class="comment">// is in an the target frame.</span></div>
+<div class="line"><span class="lineno">  425</span>    T_m_n_no_heading);</div>
+<div class="line"><span class="lineno">  426</span> </div>
+<div class="line"><span class="lineno">  427</span>  <span class="comment">// Populate message</span></div>
+<div class="line"><span class="lineno">  428</span>  geometry_msgs::msg::PoseWithCovariance pose;</div>
+<div class="line"><span class="lineno">  429</span>  pose.pose.position.x = T_m_s.getOrigin().getX();</div>
+<div class="line"><span class="lineno">  430</span>  pose.pose.position.y = T_m_s.getOrigin().getY();</div>
+<div class="line"><span class="lineno">  431</span>  pose.pose.position.z = T_m_s.getOrigin().getZ();</div>
+<div class="line"><span class="lineno">  432</span> </div>
+<div class="line"><span class="lineno">  433</span>  pose.pose.orientation.x = T_m_s.getRotation().getX();</div>
+<div class="line"><span class="lineno">  434</span>  pose.pose.orientation.y = T_m_s.getRotation().getY();</div>
+<div class="line"><span class="lineno">  435</span>  pose.pose.orientation.z = T_m_s.getRotation().getZ();</div>
+<div class="line"><span class="lineno">  436</span>  pose.pose.orientation.w = T_m_s.getRotation().getW();</div>
+<div class="line"><span class="lineno">  437</span> </div>
+<div class="line"><span class="lineno">  438</span>  pose.covariance = new_cov;</div>
+<div class="line"><span class="lineno">  439</span> </div>
+<div class="line"><span class="lineno">  440</span>  <span class="keywordflow">return</span> pose;</div>
+<div class="line"><span class="lineno">  441</span>}</div>
 <div class="ttc" id="anamespacecovariance__helper_html_af38530465ec3a2a40b4e9be14032f65e"><div class="ttname"><a href="namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e">covariance_helper::transformCovariance</a></div><div class="ttdeci">geometry_msgs::msg::PoseWithCovariance::_covariance_type transformCovariance(const geometry_msgs::msg::PoseWithCovariance::_covariance_type &amp;cov_in, const tf2::Transform &amp;transform)</div><div class="ttdoc">Transform the covariance matrix of a PoseWithCovariance message to a new frame.</div><div class="ttdef"><b>Definition:</b> <a href="covariance__helper_8h_source.html#l00057">covariance_helper.h:57</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="covariance__helper_8h_source.html#l00057">covariance_helper::transformCovariance()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bsm__to__external__object__convertor_8cpp_source.html#l00029">motion_computation::conversion::convert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bsm__to__external__object__convertor_8cpp_source.html#l00028">motion_computation::conversion::convert()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -750,37 +749,37 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00444">444</a> of file <a class="el" href="psm__to__external__object__convertor_8cpp_source.html">psm_to_external_object_convertor.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  448</span>{</div>
-<div class="line"><span class="lineno">  449</span>  std::vector&lt;carma_perception_msgs::msg::PredictedState&gt; output;</div>
-<div class="line"><span class="lineno">  450</span>  output.reserve(poses.size());</div>
-<div class="line"><span class="lineno">  451</span> </div>
-<div class="line"><span class="lineno">  452</span>  rclcpp::Time time(start_time);</div>
-<div class="line"><span class="lineno">  453</span> </div>
-<div class="line"><span class="lineno">  454</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> p : poses) {</div>
-<div class="line"><span class="lineno">  455</span>    time += step_size;</div>
-<div class="line"><span class="lineno">  456</span>    carma_perception_msgs::msg::PredictedState pred_state;</div>
-<div class="line"><span class="lineno">  457</span>    pred_state.header.stamp = time;</div>
-<div class="line"><span class="lineno">  458</span>    pred_state.header.frame_id = frame;</div>
-<div class="line"><span class="lineno">  459</span> </div>
-<div class="line"><span class="lineno">  460</span>    pred_state.predicted_position = p;</div>
-<div class="line"><span class="lineno">  461</span>    pred_state.predicted_position_confidence =</div>
-<div class="line"><span class="lineno">  462</span>      0.9 * initial_pose_confidence;  <span class="comment">// Reduce confidence by 10 % per timestep</span></div>
-<div class="line"><span class="lineno">  463</span>    initial_pose_confidence = pred_state.predicted_position_confidence;</div>
-<div class="line"><span class="lineno">  464</span> </div>
-<div class="line"><span class="lineno">  465</span>    pred_state.predicted_velocity.linear.x = constant_velocity;</div>
-<div class="line"><span class="lineno">  466</span>    pred_state.predicted_velocity_confidence =</div>
-<div class="line"><span class="lineno">  467</span>      0.9 * initial_vel_confidence;  <span class="comment">// Reduce confidence by 10 % per</span></div>
-<div class="line"><span class="lineno">  468</span>                                     <span class="comment">// timestep</span></div>
-<div class="line"><span class="lineno">  469</span>    initial_vel_confidence = pred_state.predicted_velocity_confidence;</div>
-<div class="line"><span class="lineno">  470</span> </div>
-<div class="line"><span class="lineno">  471</span>    output.push_back(pred_state);</div>
-<div class="line"><span class="lineno">  472</span>  }</div>
-<div class="line"><span class="lineno">  473</span> </div>
-<div class="line"><span class="lineno">  474</span>  <span class="keywordflow">return</span> output;</div>
-<div class="line"><span class="lineno">  475</span>}</div>
+<p class="definition">Definition at line <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00443">443</a> of file <a class="el" href="psm__to__external__object__convertor_8cpp_source.html">psm_to_external_object_convertor.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  447</span>{</div>
+<div class="line"><span class="lineno">  448</span>  std::vector&lt;carma_perception_msgs::msg::PredictedState&gt; output;</div>
+<div class="line"><span class="lineno">  449</span>  output.reserve(poses.size());</div>
+<div class="line"><span class="lineno">  450</span> </div>
+<div class="line"><span class="lineno">  451</span>  rclcpp::Time time(start_time);</div>
+<div class="line"><span class="lineno">  452</span> </div>
+<div class="line"><span class="lineno">  453</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> p : poses) {</div>
+<div class="line"><span class="lineno">  454</span>    time += step_size;</div>
+<div class="line"><span class="lineno">  455</span>    carma_perception_msgs::msg::PredictedState pred_state;</div>
+<div class="line"><span class="lineno">  456</span>    pred_state.header.stamp = time;</div>
+<div class="line"><span class="lineno">  457</span>    pred_state.header.frame_id = frame;</div>
+<div class="line"><span class="lineno">  458</span> </div>
+<div class="line"><span class="lineno">  459</span>    pred_state.predicted_position = p;</div>
+<div class="line"><span class="lineno">  460</span>    pred_state.predicted_position_confidence =</div>
+<div class="line"><span class="lineno">  461</span>      0.9 * initial_pose_confidence;  <span class="comment">// Reduce confidence by 10 % per timestep</span></div>
+<div class="line"><span class="lineno">  462</span>    initial_pose_confidence = pred_state.predicted_position_confidence;</div>
+<div class="line"><span class="lineno">  463</span> </div>
+<div class="line"><span class="lineno">  464</span>    pred_state.predicted_velocity.linear.x = constant_velocity;</div>
+<div class="line"><span class="lineno">  465</span>    pred_state.predicted_velocity_confidence =</div>
+<div class="line"><span class="lineno">  466</span>      0.9 * initial_vel_confidence;  <span class="comment">// Reduce confidence by</span></div>
+<div class="line"><span class="lineno">  467</span>                                     <span class="comment">// 10 % per timestep</span></div>
+<div class="line"><span class="lineno">  468</span>    initial_vel_confidence = pred_state.predicted_velocity_confidence;</div>
+<div class="line"><span class="lineno">  469</span> </div>
+<div class="line"><span class="lineno">  470</span>    output.push_back(pred_state);</div>
+<div class="line"><span class="lineno">  471</span>  }</div>
+<div class="line"><span class="lineno">  472</span> </div>
+<div class="line"><span class="lineno">  473</span>  <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno">  474</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="bsm__to__external__object__convertor_8cpp_source.html#l00029">motion_computation::conversion::convert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bsm__to__external__object__convertor_8cpp_source.html#l00028">motion_computation::conversion::convert()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -877,7 +876,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="process__traj__logs_8py_source.html#l00128">process_traj_logs::x</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="bsm__to__external__object__convertor_8cpp_source.html#l00029">motion_computation::conversion::convert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="bsm__to__external__object__convertor_8cpp_source.html#l00028">motion_computation::conversion::convert()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1060,7 +1059,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  260</span>  <span class="keywordflow">return</span> tf2::Vector3(map_point.x(), map_point.y(), map_point.z());</div>
 <div class="line"><span class="lineno">  261</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00029">motion_computation::conversion::convert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00031">motion_computation::conversion::convert()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1079,7 +1078,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemotion__computation.html">motion_computation</a></li><li class="navelem"><a class="el" href="namespacemotion__computation_1_1conversion.html">conversion</a></li><li class="navelem"><a class="el" href="namespacemotion__computation_1_1conversion_1_1impl.html">impl</a></li>
-    <li class="footer">Generated on Mon Jun 10 2024 20:37:42 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Jun 14 2024 18:22:37 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

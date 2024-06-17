@@ -35,6 +35,7 @@ var classmotion__computation_1_1MotionComputationWorker =
     [ "enable_mobility_path_processing_", "classmotion__computation_1_1MotionComputationWorker.html#aa3bf88e34198e07a6d056a0d27d04575", null ],
     [ "enable_psm_processing_", "classmotion__computation_1_1MotionComputationWorker.html#ab21b0e0accf676fcf19e5eb57430d79c", null ],
     [ "enable_sensor_processing_", "classmotion__computation_1_1MotionComputationWorker.html#a69d455e77570113355e84c6eb33b7048", null ],
+    [ "georeference_", "classmotion__computation_1_1MotionComputationWorker.html#a479a3708ba05e6b8602f7c63cfeefa98", null ],
     [ "logger_", "classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856", null ],
     [ "map_frame_id_", "classmotion__computation_1_1MotionComputationWorker.html#ad16fbbcd1551e7af616d9f5270ca3d24", null ],
     [ "map_projector_", "classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127", null ],

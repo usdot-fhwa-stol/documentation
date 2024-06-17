@@ -34,6 +34,7 @@ var classyield__plugin_1_1YieldPlugin =
     [ "current_speed_", "classyield__plugin_1_1YieldPlugin.html#a6ab4d1bc8ff90e4df4b086fb7b75eb02", null ],
     [ "ecef_traj_timestep_", "classyield__plugin_1_1YieldPlugin.html#a7de1720c3d602feb197f52f6ce25fa73", null ],
     [ "external_objects_", "classyield__plugin_1_1YieldPlugin.html#ade1ae58ef6dfc4c31025162c8c150b0a", null ],
+    [ "georeference_", "classyield__plugin_1_1YieldPlugin.html#a0139ba3f27c4205d7820c5e8ed668042", null ],
     [ "host_bsm_id_", "classyield__plugin_1_1YieldPlugin.html#ad25df251a12c9c052daeab2f58385c7d", null ],
     [ "host_vehicle_size", "classyield__plugin_1_1YieldPlugin.html#a238b7f67b846cc65d8d55e8d3500f96c", null ],
     [ "lc_status_publisher_", "classyield__plugin_1_1YieldPlugin.html#a274208e09bc96aaef0ba731904aa57de", null ],

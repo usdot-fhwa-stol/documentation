@@ -10,6 +10,7 @@ var classgnss__to__map__convertor_1_1GNSSToMapConvertor =
     [ "poseFromGnss", "classgnss__to__map__convertor_1_1GNSSToMapConvertor.html#acb95a7a9e22c963b9a331b689848b2d2", null ],
     [ "base_link_frame_id_", "classgnss__to__map__convertor_1_1GNSSToMapConvertor.html#a122bcd41b87949c9370dac0bab877a3a", null ],
     [ "baselink_in_sensor_", "classgnss__to__map__convertor_1_1GNSSToMapConvertor.html#ab0e02aa9161fb7a76b0caacb3569f356", null ],
+    [ "georeference_", "classgnss__to__map__convertor_1_1GNSSToMapConvertor.html#a8d4a7232fce7fde73fcd9615509b22bc", null ],
     [ "heading_frame_id_", "classgnss__to__map__convertor_1_1GNSSToMapConvertor.html#a503c6e9be73b61aca14eb857c02df828", null ],
     [ "logger_", "classgnss__to__map__convertor_1_1GNSSToMapConvertor.html#aef7e05163fdce1d1e2c0eb12b727e58e", null ],
     [ "map_frame_id_", "classgnss__to__map__convertor_1_1GNSSToMapConvertor.html#ade7dfdd1922bc87e18453e9d6e83a111", null ],

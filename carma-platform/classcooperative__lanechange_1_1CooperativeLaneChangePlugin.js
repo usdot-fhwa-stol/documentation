@@ -34,6 +34,7 @@ var classcooperative__lanechange_1_1CooperativeLaneChangePlugin =
     [ "is_lanechange_accepted_", "classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#ab3b94caed35f8af08c675ab1d7e9ef72", null ],
     [ "lanechange_status_pub_", "classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#acc435b415dff24e791a7a55553063035", null ],
     [ "maneuver_fraction_completed_", "classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#af89c7f901e5c0736914999a6db5d198a", null ],
+    [ "map_georeference_", "classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a126d2bf6de3d0711981e8b1522cd0df8", null ],
     [ "map_projector_", "classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#adb885b0268087dd3513fbcf21786f368", null ],
     [ "original_lc_maneuver_values_", "classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#a862520b468f4a206ac84e2e4b901a1c2", null ],
     [ "outgoing_mobility_request_pub_", "classcooperative__lanechange_1_1CooperativeLaneChangePlugin.html#acea7d07d2bb9cc35c2d1da3634ca8a25", null ],

@@ -15,6 +15,7 @@ var classmobilitypath__visualizer_1_1MobilityPathVisualizer =
     [ "cav_markers_", "classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#a9597747489eb21098a98d294183fb95b", null ],
     [ "cav_mob_path_sub_", "classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#a20f89e002d7ca5f7b900d20eef146117", null ],
     [ "config_", "classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#aadb3e34799f0b6eff02dd9739d41b6dd", null ],
+    [ "georeference_", "classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#af6020923d7dac2ae3c066be3b122dcd0", null ],
     [ "georeference_sub_", "classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#a23c52ebd960df148f57175d0beb528f7", null ],
     [ "host_marker_", "classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#a42df0dff4d0238cbc9efdb8f6ce2c468", null ],
     [ "host_marker_pub_", "classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#af689219edb7702a1285164691e39ba00", null ],

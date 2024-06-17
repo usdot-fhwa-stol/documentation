@@ -102,17 +102,17 @@ Collaboration diagram for motion_computation::MotionComputationWorker:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmotion__computation_1_1MotionComputationWorker__coll__graph.png" border="0" usemap="#amotion__computation_1_1MotionComputationWorker_coll__map" alt="Collaboration graph"/></div>
 <map name="amotion__computation_1_1MotionComputationWorker_coll__map" id="amotion__computation_1_1MotionComputationWorker_coll__map">
-<area shape="rect" title="The class containing the primary business logic for the Motion Computation Package." alt="" coords="659,439,887,809"/>
+<area shape="rect" title="The class containing the primary business logic for the Motion Computation Package." alt="" coords="655,439,883,809"/>
 <area shape="rect" title=" " alt="" coords="5,5,195,112"/>
 <area shape="rect" title=" " alt="" coords="219,20,279,97"/>
 <area shape="rect" href="classbool.html" title=" " alt="" coords="386,20,433,97"/>
 <area shape="rect" title=" " alt="" coords="578,20,633,97"/>
-<area shape="rect" title=" " alt="" coords="663,20,743,97"/>
-<area shape="rect" title=" " alt="" coords="767,20,847,97"/>
-<area shape="rect" title=" " alt="" coords="871,20,999,97"/>
-<area shape="rect" title=" " alt="" coords="1023,13,1180,105"/>
-<area shape="rect" title=" " alt="" coords="1205,13,1427,105"/>
-<area shape="rect" title=" " alt="" coords="1452,20,1537,97"/>
+<area shape="rect" title=" " alt="" coords="661,20,741,97"/>
+<area shape="rect" title=" " alt="" coords="765,20,845,97"/>
+<area shape="rect" title=" " alt="" coords="869,20,997,97"/>
+<area shape="rect" title=" " alt="" coords="1021,13,1179,105"/>
+<area shape="rect" title=" " alt="" coords="1203,13,1426,105"/>
+<area shape="rect" title=" " alt="" coords="1451,20,1536,97"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -227,6 +227,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a528c5c257f58e5102f6a268d4fe0eb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a716c579f206b023a78f068ceaeb6356f"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="stdint_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion__computation_1_1MotionComputationWorker.html#a716c579f206b023a78f068ceaeb6356f">psm_obj_id_map_</a></td></tr>
 <tr class="separator:a716c579f206b023a78f068ceaeb6356f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a479a3708ba05e6b8602f7c63cfeefa98"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion__computation_1_1MotionComputationWorker.html#a479a3708ba05e6b8602f7c63cfeefa98">georeference_</a> {&quot;&quot;}</td></tr>
+<tr class="separator:a479a3708ba05e6b8602f7c63cfeefa98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a601902717851b06edd88dcd9f8c07127"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; lanelet::projection::LocalFrameProjector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a></td></tr>
 <tr class="separator:a601902717851b06edd88dcd9f8c07127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4661782a56d39e53ffd369f943d7bcf5"><td class="memItemLeft" align="right" valign="top">tf2::Quaternion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a></td></tr>
@@ -331,47 +333,47 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00268">268</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  269</span>{</div>
-<div class="line"><span class="lineno">  270</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a>) {</div>
-<div class="line"><span class="lineno">  271</span>    RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><span class="lineno">  272</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Map projection not available yet so ignoring PSM messages&quot;</span>);</div>
-<div class="line"><span class="lineno">  273</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  274</span>  }</div>
-<div class="line"><span class="lineno">  275</span> </div>
-<div class="line"><span class="lineno">  276</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ad282d001b3a63ace2ab5456484da5e53">enable_bsm_processing_</a>) {</div>
-<div class="line"><span class="lineno">  277</span>    RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><span class="lineno">  278</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;enable_bsm_processing is false so ignoring BSM messages&quot;</span>);</div>
-<div class="line"><span class="lineno">  279</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  280</span>  }</div>
-<div class="line"><span class="lineno">  281</span> </div>
-<div class="line"><span class="lineno">  282</span>  carma_perception_msgs::msg::ExternalObject obj_msg;</div>
-<div class="line"><span class="lineno">  283</span>  <a class="code hl_function" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29">conversion::convert</a>(</div>
-<div class="line"><span class="lineno">  284</span>    *msg, obj_msg, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ad16fbbcd1551e7af616d9f5270ca3d24">map_frame_id_</a>, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a2b00f2256a1762699ce4d873dff0754e">prediction_period_</a>, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a75a91331d4caf17b295a821b7a29119d">prediction_time_step_</a>, *<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a>,</div>
-<div class="line"><span class="lineno">  285</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a>);</div>
-<div class="line"><span class="lineno">  286</span> </div>
-<div class="line"><span class="lineno">  287</span>  <span class="comment">// Check if this bsm is from an object already being queded.</span></div>
-<div class="line"><span class="lineno">  288</span>  <span class="comment">// If so then update the existing object, if not add it to the queue</span></div>
-<div class="line"><span class="lineno">  289</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a528c5c257f58e5102f6a268d4fe0eb45">bsm_obj_id_map_</a>.find(obj_msg.id) != <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a528c5c257f58e5102f6a268d4fe0eb45">bsm_obj_id_map_</a>.end()) {</div>
-<div class="line"><span class="lineno">  290</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a1a3aa0e53d8931645b9cb4c1e1f9999b">bsm_list_</a>.objects[<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a528c5c257f58e5102f6a268d4fe0eb45">bsm_obj_id_map_</a>[obj_msg.id]] = obj_msg;</div>
-<div class="line"><span class="lineno">  291</span> </div>
-<div class="line"><span class="lineno">  292</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  293</span>    <span class="comment">// Add the new object to the queue and save its index</span></div>
-<div class="line"><span class="lineno">  294</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a528c5c257f58e5102f6a268d4fe0eb45">bsm_obj_id_map_</a>[obj_msg.id] = <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a1a3aa0e53d8931645b9cb4c1e1f9999b">bsm_list_</a>.objects.size();</div>
-<div class="line"><span class="lineno">  295</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a1a3aa0e53d8931645b9cb4c1e1f9999b">bsm_list_</a>.objects.push_back(obj_msg);</div>
-<div class="line"><span class="lineno">  296</span>  }</div>
-<div class="line"><span class="lineno">  297</span>}</div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00272">272</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  273</span>{</div>
+<div class="line"><span class="lineno">  274</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a>) {</div>
+<div class="line"><span class="lineno">  275</span>    RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><span class="lineno">  276</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Map projection not available yet so ignoring PSM messages&quot;</span>);</div>
+<div class="line"><span class="lineno">  277</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  278</span>  }</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ad282d001b3a63ace2ab5456484da5e53">enable_bsm_processing_</a>) {</div>
+<div class="line"><span class="lineno">  281</span>    RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><span class="lineno">  282</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;enable_bsm_processing is false so ignoring BSM messages&quot;</span>);</div>
+<div class="line"><span class="lineno">  283</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  284</span>  }</div>
+<div class="line"><span class="lineno">  285</span> </div>
+<div class="line"><span class="lineno">  286</span>  carma_perception_msgs::msg::ExternalObject obj_msg;</div>
+<div class="line"><span class="lineno">  287</span>  <a class="code hl_function" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29">conversion::convert</a>(</div>
+<div class="line"><span class="lineno">  288</span>    *msg, obj_msg, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ad16fbbcd1551e7af616d9f5270ca3d24">map_frame_id_</a>, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a2b00f2256a1762699ce4d873dff0754e">prediction_period_</a>, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a75a91331d4caf17b295a821b7a29119d">prediction_time_step_</a>, *<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a>,</div>
+<div class="line"><span class="lineno">  289</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a>);</div>
+<div class="line"><span class="lineno">  290</span> </div>
+<div class="line"><span class="lineno">  291</span>  <span class="comment">// Check if this bsm is from an object already being queded.</span></div>
+<div class="line"><span class="lineno">  292</span>  <span class="comment">// If so then update the existing object, if not add it to the queue</span></div>
+<div class="line"><span class="lineno">  293</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a528c5c257f58e5102f6a268d4fe0eb45">bsm_obj_id_map_</a>.find(obj_msg.id) != <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a528c5c257f58e5102f6a268d4fe0eb45">bsm_obj_id_map_</a>.end()) {</div>
+<div class="line"><span class="lineno">  294</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a1a3aa0e53d8931645b9cb4c1e1f9999b">bsm_list_</a>.objects[<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a528c5c257f58e5102f6a268d4fe0eb45">bsm_obj_id_map_</a>[obj_msg.id]] = obj_msg;</div>
+<div class="line"><span class="lineno">  295</span> </div>
+<div class="line"><span class="lineno">  296</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  297</span>    <span class="comment">// Add the new object to the queue and save its index</span></div>
+<div class="line"><span class="lineno">  298</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a528c5c257f58e5102f6a268d4fe0eb45">bsm_obj_id_map_</a>[obj_msg.id] = <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a1a3aa0e53d8931645b9cb4c1e1f9999b">bsm_list_</a>.objects.size();</div>
+<div class="line"><span class="lineno">  299</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a1a3aa0e53d8931645b9cb4c1e1f9999b">bsm_list_</a>.objects.push_back(obj_msg);</div>
+<div class="line"><span class="lineno">  300</span>  }</div>
+<div class="line"><span class="lineno">  301</span>}</div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a1a3aa0e53d8931645b9cb4c1e1f9999b"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a1a3aa0e53d8931645b9cb4c1e1f9999b">motion_computation::MotionComputationWorker::bsm_list_</a></div><div class="ttdeci">carma_perception_msgs::msg::ExternalObjectList bsm_list_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00166">motion_computation_worker.hpp:166</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a2b00f2256a1762699ce4d873dff0754e"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a2b00f2256a1762699ce4d873dff0754e">motion_computation::MotionComputationWorker::prediction_period_</a></div><div class="ttdeci">double prediction_period_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00137">motion_computation_worker.hpp:137</a></div></div>
-<div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a4661782a56d39e53ffd369f943d7bcf5"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">motion_computation::MotionComputationWorker::ned_in_map_rotation_</a></div><div class="ttdeci">tf2::Quaternion ned_in_map_rotation_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00177">motion_computation_worker.hpp:177</a></div></div>
+<div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a4661782a56d39e53ffd369f943d7bcf5"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">motion_computation::MotionComputationWorker::ned_in_map_rotation_</a></div><div class="ttdeci">tf2::Quaternion ned_in_map_rotation_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00178">motion_computation_worker.hpp:178</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a528c5c257f58e5102f6a268d4fe0eb45"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a528c5c257f58e5102f6a268d4fe0eb45">motion_computation::MotionComputationWorker::bsm_obj_id_map_</a></div><div class="ttdeci">std::unordered_map&lt; uint32_t, size_t &gt; bsm_obj_id_map_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00171">motion_computation_worker.hpp:171</a></div></div>
-<div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a601902717851b06edd88dcd9f8c07127"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">motion_computation::MotionComputationWorker::map_projector_</a></div><div class="ttdeci">std::shared_ptr&lt; lanelet::projection::LocalFrameProjector &gt; map_projector_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00174">motion_computation_worker.hpp:174</a></div></div>
+<div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a601902717851b06edd88dcd9f8c07127"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">motion_computation::MotionComputationWorker::map_projector_</a></div><div class="ttdeci">std::shared_ptr&lt; lanelet::projection::LocalFrameProjector &gt; map_projector_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00175">motion_computation_worker.hpp:175</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a75a91331d4caf17b295a821b7a29119d"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a75a91331d4caf17b295a821b7a29119d">motion_computation::MotionComputationWorker::prediction_time_step_</a></div><div class="ttdeci">double prediction_time_step_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00136">motion_computation_worker.hpp:136</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_ad16fbbcd1551e7af616d9f5270ca3d24"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#ad16fbbcd1551e7af616d9f5270ca3d24">motion_computation::MotionComputationWorker::map_frame_id_</a></div><div class="ttdeci">std::string map_frame_id_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00157">motion_computation_worker.hpp:157</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_ad282d001b3a63ace2ab5456484da5e53"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#ad282d001b3a63ace2ab5456484da5e53">motion_computation::MotionComputationWorker::enable_bsm_processing_</a></div><div class="ttdeci">bool enable_bsm_processing_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00145">motion_computation_worker.hpp:145</a></div></div>
 <div class="ttc" id="anamespacemotion__computation_1_1conversion_html_a9884e63460f3d5f5e2b755354984dc29"><div class="ttname"><a href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29">motion_computation::conversion::convert</a></div><div class="ttdeci">void convert(const carma_v2x_msgs::msg::PSM &amp;in_msg, carma_perception_msgs::msg::ExternalObject &amp;out_msg, const std::string &amp;map_frame_id, double pred_period, double pred_step_size, const lanelet::projection::LocalFrameProjector &amp;map_projector, const tf2::Quaternion &amp;ned_in_map_rotation, rclcpp::node_interfaces::NodeClockInterface::SharedPtr node_clock)</div><div class="ttdef"><b>Definition:</b> <a href="psm__to__external__object__convertor_8cpp_source.html#l00038">psm_to_external_object_convertor.cpp:38</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00166">bsm_list_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00171">bsm_obj_id_map_</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00038">motion_computation::conversion::convert()</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00145">enable_bsm_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00160">logger_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00157">map_frame_id_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00174">map_projector_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00177">ned_in_map_rotation_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00137">prediction_period_</a>, and <a class="el" href="motion__computation__worker_8hpp_source.html#l00136">prediction_time_step_</a>.</p>
+<p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00166">bsm_list_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00171">bsm_obj_id_map_</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00038">motion_computation::conversion::convert()</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00145">enable_bsm_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00160">logger_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00157">map_frame_id_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00175">map_projector_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00178">ned_in_map_rotation_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00137">prediction_period_</a>, and <a class="el" href="motion__computation__worker_8hpp_source.html#l00136">prediction_time_step_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="motion__computation__node_8cpp_source.html#l00111">motion_computation::MotionComputationNode::handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -531,24 +533,29 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00143">143</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  144</span>{</div>
 <div class="line"><span class="lineno">  145</span>  <span class="comment">// Build projector from proj string</span></div>
-<div class="line"><span class="lineno">  146</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a> = std::make_shared&lt;lanelet::projection::LocalFrameProjector&gt;(msg-&gt;data.c_str());</div>
-<div class="line"><span class="lineno">  147</span> </div>
-<div class="line"><span class="lineno">  148</span>  std::string axis =</div>
-<div class="line"><span class="lineno">  149</span>    wgs84_utils::proj_tools::getAxisFromProjString(msg-&gt;data);  <span class="comment">// Extract axis for orientation calc</span></div>
+<div class="line"><span class="lineno">  146</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a479a3708ba05e6b8602f7c63cfeefa98">georeference_</a> != msg-&gt;data)</div>
+<div class="line"><span class="lineno">  147</span>  {</div>
+<div class="line"><span class="lineno">  148</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a479a3708ba05e6b8602f7c63cfeefa98">georeference_</a> = msg-&gt;data;</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a> = std::make_shared&lt;lanelet::projection::LocalFrameProjector&gt;(msg-&gt;data.c_str());</div>
 <div class="line"><span class="lineno">  150</span> </div>
-<div class="line"><span class="lineno">  151</span>  RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Extracted Axis: &quot;</span> &lt;&lt; axis);</div>
-<div class="line"><span class="lineno">  152</span> </div>
-<div class="line"><span class="lineno">  153</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a> =</div>
-<div class="line"><span class="lineno">  154</span>    wgs84_utils::proj_tools::getRotationOfNEDFromProjAxis(axis);  <span class="comment">// Extract map rotation from axis</span></div>
+<div class="line"><span class="lineno">  151</span>    std::string axis =</div>
+<div class="line"><span class="lineno">  152</span>      wgs84_utils::proj_tools::getAxisFromProjString(msg-&gt;data);  <span class="comment">// Extract axis for orientation</span></div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Extracted Axis: &quot;</span> &lt;&lt; axis);</div>
 <div class="line"><span class="lineno">  155</span> </div>
-<div class="line"><span class="lineno">  156</span>  RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><span class="lineno">  157</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Extracted NED in Map Rotation (x,y,z,w) : ( &quot;</span></div>
-<div class="line"><span class="lineno">  158</span>                             &lt;&lt; <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a>.getX() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a>.getY()</div>
-<div class="line"><span class="lineno">  159</span>                             &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a>.getZ() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
-<div class="line"><span class="lineno">  160</span>                             &lt;&lt; <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a>.getW());</div>
-<div class="line"><span class="lineno">  161</span>}</div>
+<div class="line"><span class="lineno">  156</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a> =</div>
+<div class="line"><span class="lineno">  157</span>      wgs84_utils::proj_tools::getRotationOfNEDFromProjAxis(axis);  <span class="comment">// Extract map rotation</span></div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>    RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><span class="lineno">  160</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Extracted NED in Map Rotation (x,y,z,w) : ( &quot;</span></div>
+<div class="line"><span class="lineno">  161</span>                              &lt;&lt; <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a>.getX() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a>.getY()</div>
+<div class="line"><span class="lineno">  162</span>                              &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a>.getZ() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line"><span class="lineno">  163</span>                              &lt;&lt; <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a>.getW());</div>
+<div class="line"><span class="lineno">  164</span>  }</div>
+<div class="line"><span class="lineno">  165</span>}</div>
+<div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a479a3708ba05e6b8602f7c63cfeefa98"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a479a3708ba05e6b8602f7c63cfeefa98">motion_computation::MotionComputationWorker::georeference_</a></div><div class="ttdeci">std::string georeference_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00174">motion_computation_worker.hpp:174</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00160">logger_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00174">map_projector_</a>, and <a class="el" href="motion__computation__worker_8hpp_source.html#l00177">ned_in_map_rotation_</a>.</p>
+<p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00174">georeference_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00160">logger_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00175">map_projector_</a>, and <a class="el" href="motion__computation__worker_8hpp_source.html#l00178">ned_in_map_rotation_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="motion__computation__node_8cpp_source.html#l00111">motion_computation::MotionComputationNode::handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -600,87 +607,87 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>carma_perception_msgs::msg::ExternalObject </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>It assumes time_to_match falls in prediction time's whole interval. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00322">322</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  324</span>{</div>
-<div class="line"><span class="lineno">  325</span>  carma_perception_msgs::msg::ExternalObject output = path;</div>
-<div class="line"><span class="lineno">  326</span>  <span class="comment">// empty predictions</span></div>
-<div class="line"><span class="lineno">  327</span>  output.predictions = {};</div>
-<div class="line"><span class="lineno">  328</span> </div>
-<div class="line"><span class="lineno">  329</span>  <span class="comment">// add the first point to start of the predictions to easily loop over</span></div>
-<div class="line"><span class="lineno">  330</span>  carma_perception_msgs::msg::PredictedState prev_state;</div>
-<div class="line"><span class="lineno">  331</span>  prev_state.header.stamp = output.header.stamp;</div>
-<div class="line"><span class="lineno">  332</span>  prev_state.predicted_position.orientation = output.pose.pose.orientation;</div>
-<div class="line"><span class="lineno">  333</span>  prev_state.predicted_velocity = output.velocity.twist;</div>
-<div class="line"><span class="lineno">  334</span>  prev_state.predicted_position.position.x = output.pose.pose.position.x;</div>
-<div class="line"><span class="lineno">  335</span>  prev_state.predicted_position.position.y = output.pose.pose.position.y;</div>
-<div class="line"><span class="lineno">  336</span>  prev_state.predicted_position.position.z = output.pose.pose.position.z;</div>
-<div class="line"><span class="lineno">  337</span>  path.predictions.insert(path.predictions.begin(), prev_state);</div>
-<div class="line"><span class="lineno">  338</span> </div>
-<div class="line"><span class="lineno">  339</span>  rclcpp::Time curr_time_to_match = time_to_match;</div>
-<div class="line"><span class="lineno">  340</span> </div>
-<div class="line"><span class="lineno">  341</span>  <span class="comment">// because of this logic, we would not encounter mobility path</span></div>
-<div class="line"><span class="lineno">  342</span>  <span class="comment">// that starts later than the time we are trying to match (which is starting</span></div>
-<div class="line"><span class="lineno">  343</span>  <span class="comment">// time of sensed objects)</span></div>
-<div class="line"><span class="lineno">  344</span>  <span class="keywordtype">bool</span> is_first_point = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  345</span>  carma_perception_msgs::msg::PredictedState new_state;</div>
-<div class="line"><span class="lineno">  346</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp; curr_state : path.predictions) {</div>
-<div class="line"><span class="lineno">  347</span>    <span class="keywordflow">if</span> (curr_time_to_match &gt; curr_state.header.stamp) {</div>
-<div class="line"><span class="lineno">  348</span>      prev_state = curr_state;</div>
-<div class="line"><span class="lineno">  349</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  350</span>    }</div>
-<div class="line"><span class="lineno">  351</span> </div>
-<div class="line"><span class="lineno">  352</span>    <span class="keywordflow">if</span> (is_first_point)  <span class="comment">// we store in the body if it is the first point, not predictions</span></div>
-<div class="line"><span class="lineno">  353</span>    {</div>
-<div class="line"><span class="lineno">  354</span>      <span class="comment">// reaching here means curr_state starts later than the time we are trying to match</span></div>
-<div class="line"><span class="lineno">  355</span>      <span class="comment">// copy old unchanged parts</span></div>
-<div class="line"><span class="lineno">  356</span>      new_state.header.stamp = curr_time_to_match;</div>
-<div class="line"><span class="lineno">  357</span>      new_state.predicted_velocity = prev_state.predicted_velocity;</div>
-<div class="line"><span class="lineno">  358</span>      new_state.predicted_position.orientation = prev_state.predicted_position.orientation;</div>
-<div class="line"><span class="lineno">  359</span> </div>
-<div class="line"><span class="lineno">  360</span>      <span class="comment">// interpolate position</span></div>
-<div class="line"><span class="lineno">  361</span>      rclcpp::Duration delta_t = rclcpp::Time(curr_state.header.stamp) - curr_time_to_match;</div>
-<div class="line"><span class="lineno">  362</span>      rclcpp::Duration pred_delta_t =</div>
-<div class="line"><span class="lineno">  363</span>        rclcpp::Time(curr_state.header.stamp) - rclcpp::Time(prev_state.header.stamp);</div>
-<div class="line"><span class="lineno">  364</span>      <span class="keywordtype">double</span> ratio;</div>
-<div class="line"><span class="lineno">  365</span>      <span class="keywordflow">if</span> (pred_delta_t.seconds() &lt; 0.00000001) {  <span class="comment">// Divide by zero check</span></div>
-<div class="line"><span class="lineno">  366</span>        <span class="comment">// This can only happen if effectively all 3 points are on top of each other</span></div>
-<div class="line"><span class="lineno">  367</span>        <span class="comment">// which is extremely unlikely</span></div>
-<div class="line"><span class="lineno">  368</span>        ratio = 0.0;</div>
-<div class="line"><span class="lineno">  369</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  370</span>        ratio = delta_t.seconds() / pred_delta_t.seconds();</div>
-<div class="line"><span class="lineno">  371</span>      }</div>
-<div class="line"><span class="lineno">  372</span> </div>
-<div class="line"><span class="lineno">  373</span>      <span class="keywordtype">double</span> delta_x =</div>
-<div class="line"><span class="lineno">  374</span>        curr_state.predicted_position.position.x - prev_state.predicted_position.position.x;</div>
-<div class="line"><span class="lineno">  375</span>      <span class="keywordtype">double</span> delta_y =</div>
-<div class="line"><span class="lineno">  376</span>        curr_state.predicted_position.position.y - prev_state.predicted_position.position.y;</div>
-<div class="line"><span class="lineno">  377</span>      <span class="keywordtype">double</span> delta_z =</div>
-<div class="line"><span class="lineno">  378</span>        curr_state.predicted_position.position.z - prev_state.predicted_position.position.z;</div>
-<div class="line"><span class="lineno">  379</span>      <span class="comment">// we are &quot;stepping back in time&quot; to match the position</span></div>
-<div class="line"><span class="lineno">  380</span>      new_state.predicted_position.position.x =</div>
-<div class="line"><span class="lineno">  381</span>        curr_state.predicted_position.position.x - delta_x * ratio;</div>
-<div class="line"><span class="lineno">  382</span>      new_state.predicted_position.position.y =</div>
-<div class="line"><span class="lineno">  383</span>        curr_state.predicted_position.position.y - delta_y * ratio;</div>
-<div class="line"><span class="lineno">  384</span>      new_state.predicted_position.position.z =</div>
-<div class="line"><span class="lineno">  385</span>        curr_state.predicted_position.position.z - delta_z * ratio;</div>
-<div class="line"><span class="lineno">  386</span> </div>
-<div class="line"><span class="lineno">  387</span>      output.header.stamp = curr_time_to_match;</div>
-<div class="line"><span class="lineno">  388</span>      output.pose.pose.orientation = new_state.predicted_position.orientation;</div>
-<div class="line"><span class="lineno">  389</span>      output.velocity.twist = new_state.predicted_velocity;</div>
-<div class="line"><span class="lineno">  390</span>      output.pose.pose.position.x = new_state.predicted_position.position.x;</div>
-<div class="line"><span class="lineno">  391</span>      output.pose.pose.position.y = new_state.predicted_position.position.y;</div>
-<div class="line"><span class="lineno">  392</span>      output.pose.pose.position.z = new_state.predicted_position.position.z;</div>
-<div class="line"><span class="lineno">  393</span>      is_first_point = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  394</span> </div>
-<div class="line"><span class="lineno">  395</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  396</span>      output.predictions.push_back(curr_state);</div>
-<div class="line"><span class="lineno">  397</span>    }</div>
-<div class="line"><span class="lineno">  398</span>  }</div>
-<div class="line"><span class="lineno">  399</span> </div>
-<div class="line"><span class="lineno">  400</span>  <span class="keywordflow">return</span> output;</div>
-<div class="line"><span class="lineno">  401</span>}</div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00326">326</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  328</span>{</div>
+<div class="line"><span class="lineno">  329</span>  carma_perception_msgs::msg::ExternalObject output = path;</div>
+<div class="line"><span class="lineno">  330</span>  <span class="comment">// empty predictions</span></div>
+<div class="line"><span class="lineno">  331</span>  output.predictions = {};</div>
+<div class="line"><span class="lineno">  332</span> </div>
+<div class="line"><span class="lineno">  333</span>  <span class="comment">// add the first point to start of the predictions to easily loop over</span></div>
+<div class="line"><span class="lineno">  334</span>  carma_perception_msgs::msg::PredictedState prev_state;</div>
+<div class="line"><span class="lineno">  335</span>  prev_state.header.stamp = output.header.stamp;</div>
+<div class="line"><span class="lineno">  336</span>  prev_state.predicted_position.orientation = output.pose.pose.orientation;</div>
+<div class="line"><span class="lineno">  337</span>  prev_state.predicted_velocity = output.velocity.twist;</div>
+<div class="line"><span class="lineno">  338</span>  prev_state.predicted_position.position.x = output.pose.pose.position.x;</div>
+<div class="line"><span class="lineno">  339</span>  prev_state.predicted_position.position.y = output.pose.pose.position.y;</div>
+<div class="line"><span class="lineno">  340</span>  prev_state.predicted_position.position.z = output.pose.pose.position.z;</div>
+<div class="line"><span class="lineno">  341</span>  path.predictions.insert(path.predictions.begin(), prev_state);</div>
+<div class="line"><span class="lineno">  342</span> </div>
+<div class="line"><span class="lineno">  343</span>  rclcpp::Time curr_time_to_match = time_to_match;</div>
+<div class="line"><span class="lineno">  344</span> </div>
+<div class="line"><span class="lineno">  345</span>  <span class="comment">// because of this logic, we would not encounter mobility path</span></div>
+<div class="line"><span class="lineno">  346</span>  <span class="comment">// that starts later than the time we are trying to match (which is starting</span></div>
+<div class="line"><span class="lineno">  347</span>  <span class="comment">// time of sensed objects)</span></div>
+<div class="line"><span class="lineno">  348</span>  <span class="keywordtype">bool</span> is_first_point = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  349</span>  carma_perception_msgs::msg::PredictedState new_state;</div>
+<div class="line"><span class="lineno">  350</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp; curr_state : path.predictions) {</div>
+<div class="line"><span class="lineno">  351</span>    <span class="keywordflow">if</span> (curr_time_to_match &gt; curr_state.header.stamp) {</div>
+<div class="line"><span class="lineno">  352</span>      prev_state = curr_state;</div>
+<div class="line"><span class="lineno">  353</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  354</span>    }</div>
+<div class="line"><span class="lineno">  355</span> </div>
+<div class="line"><span class="lineno">  356</span>    <span class="keywordflow">if</span> (is_first_point)  <span class="comment">// we store in the body if it is the first point, not predictions</span></div>
+<div class="line"><span class="lineno">  357</span>    {</div>
+<div class="line"><span class="lineno">  358</span>      <span class="comment">// reaching here means curr_state starts later than the time we are trying to match</span></div>
+<div class="line"><span class="lineno">  359</span>      <span class="comment">// copy old unchanged parts</span></div>
+<div class="line"><span class="lineno">  360</span>      new_state.header.stamp = curr_time_to_match;</div>
+<div class="line"><span class="lineno">  361</span>      new_state.predicted_velocity = prev_state.predicted_velocity;</div>
+<div class="line"><span class="lineno">  362</span>      new_state.predicted_position.orientation = prev_state.predicted_position.orientation;</div>
+<div class="line"><span class="lineno">  363</span> </div>
+<div class="line"><span class="lineno">  364</span>      <span class="comment">// interpolate position</span></div>
+<div class="line"><span class="lineno">  365</span>      rclcpp::Duration delta_t = rclcpp::Time(curr_state.header.stamp) - curr_time_to_match;</div>
+<div class="line"><span class="lineno">  366</span>      rclcpp::Duration pred_delta_t =</div>
+<div class="line"><span class="lineno">  367</span>        rclcpp::Time(curr_state.header.stamp) - rclcpp::Time(prev_state.header.stamp);</div>
+<div class="line"><span class="lineno">  368</span>      <span class="keywordtype">double</span> ratio;</div>
+<div class="line"><span class="lineno">  369</span>      <span class="keywordflow">if</span> (pred_delta_t.seconds() &lt; 0.00000001) {  <span class="comment">// Divide by zero check</span></div>
+<div class="line"><span class="lineno">  370</span>        <span class="comment">// This can only happen if effectively all 3 points are on top of each other</span></div>
+<div class="line"><span class="lineno">  371</span>        <span class="comment">// which is extremely unlikely</span></div>
+<div class="line"><span class="lineno">  372</span>        ratio = 0.0;</div>
+<div class="line"><span class="lineno">  373</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  374</span>        ratio = delta_t.seconds() / pred_delta_t.seconds();</div>
+<div class="line"><span class="lineno">  375</span>      }</div>
+<div class="line"><span class="lineno">  376</span> </div>
+<div class="line"><span class="lineno">  377</span>      <span class="keywordtype">double</span> delta_x =</div>
+<div class="line"><span class="lineno">  378</span>        curr_state.predicted_position.position.x - prev_state.predicted_position.position.x;</div>
+<div class="line"><span class="lineno">  379</span>      <span class="keywordtype">double</span> delta_y =</div>
+<div class="line"><span class="lineno">  380</span>        curr_state.predicted_position.position.y - prev_state.predicted_position.position.y;</div>
+<div class="line"><span class="lineno">  381</span>      <span class="keywordtype">double</span> delta_z =</div>
+<div class="line"><span class="lineno">  382</span>        curr_state.predicted_position.position.z - prev_state.predicted_position.position.z;</div>
+<div class="line"><span class="lineno">  383</span>      <span class="comment">// we are &quot;stepping back in time&quot; to match the position</span></div>
+<div class="line"><span class="lineno">  384</span>      new_state.predicted_position.position.x =</div>
+<div class="line"><span class="lineno">  385</span>        curr_state.predicted_position.position.x - delta_x * ratio;</div>
+<div class="line"><span class="lineno">  386</span>      new_state.predicted_position.position.y =</div>
+<div class="line"><span class="lineno">  387</span>        curr_state.predicted_position.position.y - delta_y * ratio;</div>
+<div class="line"><span class="lineno">  388</span>      new_state.predicted_position.position.z =</div>
+<div class="line"><span class="lineno">  389</span>        curr_state.predicted_position.position.z - delta_z * ratio;</div>
+<div class="line"><span class="lineno">  390</span> </div>
+<div class="line"><span class="lineno">  391</span>      output.header.stamp = curr_time_to_match;</div>
+<div class="line"><span class="lineno">  392</span>      output.pose.pose.orientation = new_state.predicted_position.orientation;</div>
+<div class="line"><span class="lineno">  393</span>      output.velocity.twist = new_state.predicted_velocity;</div>
+<div class="line"><span class="lineno">  394</span>      output.pose.pose.position.x = new_state.predicted_position.position.x;</div>
+<div class="line"><span class="lineno">  395</span>      output.pose.pose.position.y = new_state.predicted_position.position.y;</div>
+<div class="line"><span class="lineno">  396</span>      output.pose.pose.position.z = new_state.predicted_position.position.z;</div>
+<div class="line"><span class="lineno">  397</span>      is_first_point = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  398</span> </div>
+<div class="line"><span class="lineno">  399</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  400</span>      output.predictions.push_back(curr_state);</div>
+<div class="line"><span class="lineno">  401</span>    }</div>
+<div class="line"><span class="lineno">  402</span>  }</div>
+<div class="line"><span class="lineno">  403</span> </div>
+<div class="line"><span class="lineno">  404</span>  <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno">  405</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00299">synchronizeAndAppend()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00303">synchronizeAndAppend()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -711,40 +718,40 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00206">206</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  208</span>{</div>
-<div class="line"><span class="lineno">  209</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a>) {</div>
-<div class="line"><span class="lineno">  210</span>    RCLCPP_ERROR(</div>
-<div class="line"><span class="lineno">  211</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Map projection not available yet so ignoring MobilityPath messages&quot;</span>);</div>
-<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  213</span>  }</div>
-<div class="line"><span class="lineno">  214</span> </div>
-<div class="line"><span class="lineno">  215</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#aa3bf88e34198e07a6d056a0d27d04575">enable_mobility_path_processing_</a>) {</div>
-<div class="line"><span class="lineno">  216</span>    RCLCPP_WARN(</div>
-<div class="line"><span class="lineno">  217</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(),</div>
-<div class="line"><span class="lineno">  218</span>      <span class="stringliteral">&quot;enable_mobility_path_processing is false so ignoring MobilityPath messages&quot;</span>);</div>
-<div class="line"><span class="lineno">  219</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  220</span>  }</div>
-<div class="line"><span class="lineno">  221</span> </div>
-<div class="line"><span class="lineno">  222</span>  carma_perception_msgs::msg::ExternalObject obj_msg;</div>
-<div class="line"><span class="lineno">  223</span>  <a class="code hl_function" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29">conversion::convert</a>(*msg, obj_msg, *<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a>);</div>
-<div class="line"><span class="lineno">  224</span> </div>
-<div class="line"><span class="lineno">  225</span>  <span class="comment">// Check if this mobility path is from an object already being queded.</span></div>
-<div class="line"><span class="lineno">  226</span>  <span class="comment">// If so then update the existing object, if not add it to the queue</span></div>
-<div class="line"><span class="lineno">  227</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#adf18dbb989d5bdac136894cc1fd5f46b">mobility_path_obj_id_map_</a>.find(obj_msg.id) != <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#adf18dbb989d5bdac136894cc1fd5f46b">mobility_path_obj_id_map_</a>.end()) {</div>
-<div class="line"><span class="lineno">  228</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4644ab2f5f3c1666478d7df96d42a4a3">mobility_path_list_</a>.objects[<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#adf18dbb989d5bdac136894cc1fd5f46b">mobility_path_obj_id_map_</a>[obj_msg.id]] = obj_msg;</div>
-<div class="line"><span class="lineno">  229</span> </div>
-<div class="line"><span class="lineno">  230</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  231</span>    <span class="comment">// Add the new object to the queue and save its index</span></div>
-<div class="line"><span class="lineno">  232</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#adf18dbb989d5bdac136894cc1fd5f46b">mobility_path_obj_id_map_</a>[obj_msg.id] = <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4644ab2f5f3c1666478d7df96d42a4a3">mobility_path_list_</a>.objects.size();</div>
-<div class="line"><span class="lineno">  233</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4644ab2f5f3c1666478d7df96d42a4a3">mobility_path_list_</a>.objects.push_back(obj_msg);</div>
-<div class="line"><span class="lineno">  234</span>  }</div>
-<div class="line"><span class="lineno">  235</span>}</div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00210">210</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  212</span>{</div>
+<div class="line"><span class="lineno">  213</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a>) {</div>
+<div class="line"><span class="lineno">  214</span>    RCLCPP_ERROR(</div>
+<div class="line"><span class="lineno">  215</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Map projection not available yet so ignoring MobilityPath messages&quot;</span>);</div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  217</span>  }</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#aa3bf88e34198e07a6d056a0d27d04575">enable_mobility_path_processing_</a>) {</div>
+<div class="line"><span class="lineno">  220</span>    RCLCPP_WARN(</div>
+<div class="line"><span class="lineno">  221</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(),</div>
+<div class="line"><span class="lineno">  222</span>      <span class="stringliteral">&quot;enable_mobility_path_processing is false so ignoring MobilityPath messages&quot;</span>);</div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  224</span>  }</div>
+<div class="line"><span class="lineno">  225</span> </div>
+<div class="line"><span class="lineno">  226</span>  carma_perception_msgs::msg::ExternalObject obj_msg;</div>
+<div class="line"><span class="lineno">  227</span>  <a class="code hl_function" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29">conversion::convert</a>(*msg, obj_msg, *<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a>);</div>
+<div class="line"><span class="lineno">  228</span> </div>
+<div class="line"><span class="lineno">  229</span>  <span class="comment">// Check if this mobility path is from an object already being queded.</span></div>
+<div class="line"><span class="lineno">  230</span>  <span class="comment">// If so then update the existing object, if not add it to the queue</span></div>
+<div class="line"><span class="lineno">  231</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#adf18dbb989d5bdac136894cc1fd5f46b">mobility_path_obj_id_map_</a>.find(obj_msg.id) != <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#adf18dbb989d5bdac136894cc1fd5f46b">mobility_path_obj_id_map_</a>.end()) {</div>
+<div class="line"><span class="lineno">  232</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4644ab2f5f3c1666478d7df96d42a4a3">mobility_path_list_</a>.objects[<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#adf18dbb989d5bdac136894cc1fd5f46b">mobility_path_obj_id_map_</a>[obj_msg.id]] = obj_msg;</div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  235</span>    <span class="comment">// Add the new object to the queue and save its index</span></div>
+<div class="line"><span class="lineno">  236</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#adf18dbb989d5bdac136894cc1fd5f46b">mobility_path_obj_id_map_</a>[obj_msg.id] = <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4644ab2f5f3c1666478d7df96d42a4a3">mobility_path_list_</a>.objects.size();</div>
+<div class="line"><span class="lineno">  237</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4644ab2f5f3c1666478d7df96d42a4a3">mobility_path_list_</a>.objects.push_back(obj_msg);</div>
+<div class="line"><span class="lineno">  238</span>  }</div>
+<div class="line"><span class="lineno">  239</span>}</div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a4644ab2f5f3c1666478d7df96d42a4a3"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a4644ab2f5f3c1666478d7df96d42a4a3">motion_computation::MotionComputationWorker::mobility_path_list_</a></div><div class="ttdeci">carma_perception_msgs::msg::ExternalObjectList mobility_path_list_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00165">motion_computation_worker.hpp:165</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_aa3bf88e34198e07a6d056a0d27d04575"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#aa3bf88e34198e07a6d056a0d27d04575">motion_computation::MotionComputationWorker::enable_mobility_path_processing_</a></div><div class="ttdeci">bool enable_mobility_path_processing_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00147">motion_computation_worker.hpp:147</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_adf18dbb989d5bdac136894cc1fd5f46b"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#adf18dbb989d5bdac136894cc1fd5f46b">motion_computation::MotionComputationWorker::mobility_path_obj_id_map_</a></div><div class="ttdeci">std::unordered_map&lt; uint32_t, size_t &gt; mobility_path_obj_id_map_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00170">motion_computation_worker.hpp:170</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00038">motion_computation::conversion::convert()</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00147">enable_mobility_path_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00160">logger_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00174">map_projector_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00165">mobility_path_list_</a>, and <a class="el" href="motion__computation__worker_8hpp_source.html#l00170">mobility_path_obj_id_map_</a>.</p>
+<p class="reference">References <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00038">motion_computation::conversion::convert()</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00147">enable_mobility_path_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00160">logger_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00175">map_projector_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00165">mobility_path_list_</a>, and <a class="el" href="motion__computation__worker_8hpp_source.html#l00170">mobility_path_obj_id_map_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="motion__computation__node_8cpp_source.html#l00111">motion_computation::MotionComputationNode::handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -938,7 +945,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a33f5389aa7cc8457cc9810781e4e7569"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a33f5389aa7cc8457cc9810781e4e7569">motion_computation::MotionComputationWorker::prediction_confidence_drop_rate_</a></div><div class="ttdeci">double prediction_confidence_drop_rate_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00141">motion_computation_worker.hpp:141</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a3abe5df93c5f4696797a144953119f07"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a3abe5df93c5f4696797a144953119f07">motion_computation::MotionComputationWorker::prediction_process_noise_max_</a></div><div class="ttdeci">double prediction_process_noise_max_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00140">motion_computation_worker.hpp:140</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a43bf7980171df291fc8e41b978f01da6"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a43bf7980171df291fc8e41b978f01da6">motion_computation::MotionComputationWorker::psm_list_</a></div><div class="ttdeci">carma_perception_msgs::msg::ExternalObjectList psm_list_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00167">motion_computation_worker.hpp:167</a></div></div>
-<div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a49a5ef12b634224276cc3d8efa5f64e9"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a49a5ef12b634224276cc3d8efa5f64e9">motion_computation::MotionComputationWorker::synchronizeAndAppend</a></div><div class="ttdeci">carma_perception_msgs::msg::ExternalObjectList synchronizeAndAppend(const carma_perception_msgs::msg::ExternalObjectList &amp;base_objects, carma_perception_msgs::msg::ExternalObjectList new_objects) const</div><div class="ttdoc">Appends external objects list behind base_objects. This does not do sensor fusion....</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8cpp_source.html#l00299">motion_computation_worker.cpp:299</a></div></div>
+<div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a49a5ef12b634224276cc3d8efa5f64e9"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a49a5ef12b634224276cc3d8efa5f64e9">motion_computation::MotionComputationWorker::synchronizeAndAppend</a></div><div class="ttdeci">carma_perception_msgs::msg::ExternalObjectList synchronizeAndAppend(const carma_perception_msgs::msg::ExternalObjectList &amp;base_objects, carma_perception_msgs::msg::ExternalObjectList new_objects) const</div><div class="ttdoc">Appends external objects list behind base_objects. This does not do sensor fusion....</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8cpp_source.html#l00303">motion_computation_worker.cpp:303</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a4ba37f3e7e73d1b7f5f1e47f75080ef3"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a4ba37f3e7e73d1b7f5f1e47f75080ef3">motion_computation::MotionComputationWorker::enable_ctrv_for_small_vehicle_obj_</a></div><div class="ttdeci">bool enable_ctrv_for_small_vehicle_obj_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00152">motion_computation_worker.hpp:152</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a4dbb52fc92b8345ec6d62108c73ca299"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a4dbb52fc92b8345ec6d62108c73ca299">motion_computation::MotionComputationWorker::cv_y_accel_noise_</a></div><div class="ttdeci">double cv_y_accel_noise_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00139">motion_computation_worker.hpp:139</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_a69d455e77570113355e84c6eb33b7048"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#a69d455e77570113355e84c6eb33b7048">motion_computation::MotionComputationWorker::enable_sensor_processing_</a></div><div class="ttdeci">bool enable_sensor_processing_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00144">motion_computation_worker.hpp:144</a></div></div>
@@ -948,7 +955,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_ad8abb22138f9974cb82eeabfbcd5bb07"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#ad8abb22138f9974cb82eeabfbcd5bb07">motion_computation::MotionComputationWorker::cv_x_accel_noise_</a></div><div class="ttdeci">double cv_x_accel_noise_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00138">motion_computation_worker.hpp:138</a></div></div>
 <div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_ae586bae2e8a517773654c2da4bf6e1ea"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#ae586bae2e8a517773654c2da4bf6e1ea">motion_computation::MotionComputationWorker::enable_ctrv_for_large_vehicle_obj_</a></div><div class="ttdeci">bool enable_ctrv_for_large_vehicle_obj_</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8hpp_source.html#l00153">motion_computation_worker.hpp:153</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00166">bsm_list_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00171">bsm_obj_id_map_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00138">cv_x_accel_noise_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00139">cv_y_accel_noise_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00145">enable_bsm_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00153">enable_ctrv_for_large_vehicle_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00151">enable_ctrv_for_motorcycle_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00154">enable_ctrv_for_pedestrian_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00152">enable_ctrv_for_small_vehicle_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00150">enable_ctrv_for_unknown_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00147">enable_mobility_path_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00146">enable_psm_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00144">enable_sensor_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00160">logger_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00165">mobility_path_list_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00170">mobility_path_obj_id_map_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00132">obj_pub_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00141">prediction_confidence_drop_rate_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00137">prediction_period_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00140">prediction_process_noise_max_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00136">prediction_time_step_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00167">psm_list_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00172">psm_obj_id_map_</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00299">synchronizeAndAppend()</a>.</p>
+<p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00166">bsm_list_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00171">bsm_obj_id_map_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00138">cv_x_accel_noise_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00139">cv_y_accel_noise_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00145">enable_bsm_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00153">enable_ctrv_for_large_vehicle_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00151">enable_ctrv_for_motorcycle_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00154">enable_ctrv_for_pedestrian_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00152">enable_ctrv_for_small_vehicle_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00150">enable_ctrv_for_unknown_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00147">enable_mobility_path_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00146">enable_psm_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00144">enable_sensor_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00160">logger_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00165">mobility_path_list_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00170">mobility_path_obj_id_map_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00132">obj_pub_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00141">prediction_confidence_drop_rate_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00137">prediction_period_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00140">prediction_process_noise_max_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00136">prediction_time_step_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00167">psm_list_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00172">psm_obj_id_map_</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00303">synchronizeAndAppend()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="motion__computation__node_8cpp_source.html#l00111">motion_computation::MotionComputationNode::handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -989,38 +996,38 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00237">237</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  238</span>{</div>
-<div class="line"><span class="lineno">  239</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a>) {</div>
-<div class="line"><span class="lineno">  240</span>    RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><span class="lineno">  241</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Map projection not available yet so ignoring PSM messages&quot;</span>);</div>
-<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  243</span>  }</div>
-<div class="line"><span class="lineno">  244</span> </div>
-<div class="line"><span class="lineno">  245</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ab21b0e0accf676fcf19e5eb57430d79c">enable_psm_processing_</a>) {</div>
-<div class="line"><span class="lineno">  246</span>    RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><span class="lineno">  247</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;enable_psm_processing is false so ignoring PSM messages&quot;</span>);</div>
-<div class="line"><span class="lineno">  248</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  249</span>  }</div>
-<div class="line"><span class="lineno">  250</span> </div>
-<div class="line"><span class="lineno">  251</span>  carma_perception_msgs::msg::ExternalObject obj_msg;</div>
-<div class="line"><span class="lineno">  252</span>  <a class="code hl_function" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29">conversion::convert</a>(</div>
-<div class="line"><span class="lineno">  253</span>    *msg, obj_msg, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ad16fbbcd1551e7af616d9f5270ca3d24">map_frame_id_</a>, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a2b00f2256a1762699ce4d873dff0754e">prediction_period_</a>, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a75a91331d4caf17b295a821b7a29119d">prediction_time_step_</a>, *<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a>,</div>
-<div class="line"><span class="lineno">  254</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a>, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#aba7073627f99c92ccb34784ab27f0131">node_clock_</a>);</div>
-<div class="line"><span class="lineno">  255</span> </div>
-<div class="line"><span class="lineno">  256</span>  <span class="comment">// Check if this psm is from an object already being queded.</span></div>
-<div class="line"><span class="lineno">  257</span>  <span class="comment">// If so then update the existing object, if not add it to the queue</span></div>
-<div class="line"><span class="lineno">  258</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a716c579f206b023a78f068ceaeb6356f">psm_obj_id_map_</a>.find(obj_msg.id) != <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a716c579f206b023a78f068ceaeb6356f">psm_obj_id_map_</a>.end()) {</div>
-<div class="line"><span class="lineno">  259</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a43bf7980171df291fc8e41b978f01da6">psm_list_</a>.objects[<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a716c579f206b023a78f068ceaeb6356f">psm_obj_id_map_</a>[obj_msg.id]] = obj_msg;</div>
-<div class="line"><span class="lineno">  260</span> </div>
-<div class="line"><span class="lineno">  261</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  262</span>    <span class="comment">// Add the new object to the queue and save its index</span></div>
-<div class="line"><span class="lineno">  263</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a716c579f206b023a78f068ceaeb6356f">psm_obj_id_map_</a>[obj_msg.id] = <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a43bf7980171df291fc8e41b978f01da6">psm_list_</a>.objects.size();</div>
-<div class="line"><span class="lineno">  264</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a43bf7980171df291fc8e41b978f01da6">psm_list_</a>.objects.push_back(obj_msg);</div>
-<div class="line"><span class="lineno">  265</span>  }</div>
-<div class="line"><span class="lineno">  266</span>}</div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00241">241</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  242</span>{</div>
+<div class="line"><span class="lineno">  243</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a>) {</div>
+<div class="line"><span class="lineno">  244</span>    RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><span class="lineno">  245</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Map projection not available yet so ignoring PSM messages&quot;</span>);</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  247</span>  }</div>
+<div class="line"><span class="lineno">  248</span> </div>
+<div class="line"><span class="lineno">  249</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ab21b0e0accf676fcf19e5eb57430d79c">enable_psm_processing_</a>) {</div>
+<div class="line"><span class="lineno">  250</span>    RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><span class="lineno">  251</span>      <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6a97268cc2703045349e70af791e5856">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;enable_psm_processing is false so ignoring PSM messages&quot;</span>);</div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  253</span>  }</div>
+<div class="line"><span class="lineno">  254</span> </div>
+<div class="line"><span class="lineno">  255</span>  carma_perception_msgs::msg::ExternalObject obj_msg;</div>
+<div class="line"><span class="lineno">  256</span>  <a class="code hl_function" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29">conversion::convert</a>(</div>
+<div class="line"><span class="lineno">  257</span>    *msg, obj_msg, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ad16fbbcd1551e7af616d9f5270ca3d24">map_frame_id_</a>, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a2b00f2256a1762699ce4d873dff0754e">prediction_period_</a>, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a75a91331d4caf17b295a821b7a29119d">prediction_time_step_</a>, *<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a601902717851b06edd88dcd9f8c07127">map_projector_</a>,</div>
+<div class="line"><span class="lineno">  258</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5">ned_in_map_rotation_</a>, <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#aba7073627f99c92ccb34784ab27f0131">node_clock_</a>);</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>  <span class="comment">// Check if this psm is from an object already being queded.</span></div>
+<div class="line"><span class="lineno">  261</span>  <span class="comment">// If so then update the existing object, if not add it to the queue</span></div>
+<div class="line"><span class="lineno">  262</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a716c579f206b023a78f068ceaeb6356f">psm_obj_id_map_</a>.find(obj_msg.id) != <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a716c579f206b023a78f068ceaeb6356f">psm_obj_id_map_</a>.end()) {</div>
+<div class="line"><span class="lineno">  263</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a43bf7980171df291fc8e41b978f01da6">psm_list_</a>.objects[<a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a716c579f206b023a78f068ceaeb6356f">psm_obj_id_map_</a>[obj_msg.id]] = obj_msg;</div>
+<div class="line"><span class="lineno">  264</span> </div>
+<div class="line"><span class="lineno">  265</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  266</span>    <span class="comment">// Add the new object to the queue and save its index</span></div>
+<div class="line"><span class="lineno">  267</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a716c579f206b023a78f068ceaeb6356f">psm_obj_id_map_</a>[obj_msg.id] = <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a43bf7980171df291fc8e41b978f01da6">psm_list_</a>.objects.size();</div>
+<div class="line"><span class="lineno">  268</span>    <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a43bf7980171df291fc8e41b978f01da6">psm_list_</a>.objects.push_back(obj_msg);</div>
+<div class="line"><span class="lineno">  269</span>  }</div>
+<div class="line"><span class="lineno">  270</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00038">motion_computation::conversion::convert()</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00146">enable_psm_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00160">logger_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00157">map_frame_id_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00174">map_projector_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00177">ned_in_map_rotation_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00162">node_clock_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00137">prediction_period_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00136">prediction_time_step_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00167">psm_list_</a>, and <a class="el" href="motion__computation__worker_8hpp_source.html#l00172">psm_obj_id_map_</a>.</p>
+<p class="reference">References <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00038">motion_computation::conversion::convert()</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00146">enable_psm_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00160">logger_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00157">map_frame_id_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00175">map_projector_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00178">ned_in_map_rotation_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00162">node_clock_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00137">prediction_period_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00136">prediction_time_step_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00167">psm_list_</a>, and <a class="el" href="motion__computation__worker_8hpp_source.html#l00172">psm_obj_id_map_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="motion__computation__node_8cpp_source.html#l00111">motion_computation::MotionComputationNode::handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -1066,10 +1073,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00179">179</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  180</span>{</div>
-<div class="line"><span class="lineno">  181</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a33f5389aa7cc8457cc9810781e4e7569">prediction_confidence_drop_rate_</a> = drop_rate;</div>
-<div class="line"><span class="lineno">  182</span>}</div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00183">183</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>{</div>
+<div class="line"><span class="lineno">  185</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a33f5389aa7cc8457cc9810781e4e7569">prediction_confidence_drop_rate_</a> = drop_rate;</div>
+<div class="line"><span class="lineno">  186</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00141">prediction_confidence_drop_rate_</a>.</p>
 
@@ -1125,13 +1132,13 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00184">184</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  187</span>{</div>
-<div class="line"><span class="lineno">  188</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a69d455e77570113355e84c6eb33b7048">enable_sensor_processing_</a> = enable_sensor_processing;</div>
-<div class="line"><span class="lineno">  189</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ad282d001b3a63ace2ab5456484da5e53">enable_bsm_processing_</a> = enable_bsm_processing;</div>
-<div class="line"><span class="lineno">  190</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ab21b0e0accf676fcf19e5eb57430d79c">enable_psm_processing_</a> = enable_psm_processing;</div>
-<div class="line"><span class="lineno">  191</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#aa3bf88e34198e07a6d056a0d27d04575">enable_mobility_path_processing_</a> = enable_mobility_path_processing;</div>
-<div class="line"><span class="lineno">  192</span>}</div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00188">188</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>{</div>
+<div class="line"><span class="lineno">  192</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a69d455e77570113355e84c6eb33b7048">enable_sensor_processing_</a> = enable_sensor_processing;</div>
+<div class="line"><span class="lineno">  193</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ad282d001b3a63ace2ab5456484da5e53">enable_bsm_processing_</a> = enable_bsm_processing;</div>
+<div class="line"><span class="lineno">  194</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ab21b0e0accf676fcf19e5eb57430d79c">enable_psm_processing_</a> = enable_psm_processing;</div>
+<div class="line"><span class="lineno">  195</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#aa3bf88e34198e07a6d056a0d27d04575">enable_mobility_path_processing_</a> = enable_mobility_path_processing;</div>
+<div class="line"><span class="lineno">  196</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00145">enable_bsm_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00147">enable_mobility_path_processing_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00146">enable_psm_processing_</a>, and <a class="el" href="motion__computation__worker_8hpp_source.html#l00144">enable_sensor_processing_</a>.</p>
 
@@ -1193,14 +1200,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00194">194</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  198</span>{</div>
-<div class="line"><span class="lineno">  199</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6cd80194281019f401442eedbfca8c93">enable_ctrv_for_unknown_obj_</a> = enable_ctrv_for_unknown_obj;</div>
-<div class="line"><span class="lineno">  200</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a0c8e5f75c4e64ef6a7446c23ea585c84">enable_ctrv_for_motorcycle_obj_</a> = enable_ctrv_for_motorcycle_obj;</div>
-<div class="line"><span class="lineno">  201</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4ba37f3e7e73d1b7f5f1e47f75080ef3">enable_ctrv_for_small_vehicle_obj_</a> = enable_ctrv_for_small_vehicle_obj;</div>
-<div class="line"><span class="lineno">  202</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ae586bae2e8a517773654c2da4bf6e1ea">enable_ctrv_for_large_vehicle_obj_</a> = enable_ctrv_for_large_vehicle_obj;</div>
-<div class="line"><span class="lineno">  203</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a2c2340a6340334b163821cdb2e489788">enable_ctrv_for_pedestrian_obj_</a> = enable_ctrv_for_pedestrian_obj;</div>
-<div class="line"><span class="lineno">  204</span>}</div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00198">198</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  202</span>{</div>
+<div class="line"><span class="lineno">  203</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a6cd80194281019f401442eedbfca8c93">enable_ctrv_for_unknown_obj_</a> = enable_ctrv_for_unknown_obj;</div>
+<div class="line"><span class="lineno">  204</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a0c8e5f75c4e64ef6a7446c23ea585c84">enable_ctrv_for_motorcycle_obj_</a> = enable_ctrv_for_motorcycle_obj;</div>
+<div class="line"><span class="lineno">  205</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4ba37f3e7e73d1b7f5f1e47f75080ef3">enable_ctrv_for_small_vehicle_obj_</a> = enable_ctrv_for_small_vehicle_obj;</div>
+<div class="line"><span class="lineno">  206</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ae586bae2e8a517773654c2da4bf6e1ea">enable_ctrv_for_large_vehicle_obj_</a> = enable_ctrv_for_large_vehicle_obj;</div>
+<div class="line"><span class="lineno">  207</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a2c2340a6340334b163821cdb2e489788">enable_ctrv_for_pedestrian_obj_</a> = enable_ctrv_for_pedestrian_obj;</div>
+<div class="line"><span class="lineno">  208</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00153">enable_ctrv_for_large_vehicle_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00151">enable_ctrv_for_motorcycle_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00154">enable_ctrv_for_pedestrian_obj_</a>, <a class="el" href="motion__computation__worker_8hpp_source.html#l00152">enable_ctrv_for_small_vehicle_obj_</a>, and <a class="el" href="motion__computation__worker_8hpp_source.html#l00150">enable_ctrv_for_unknown_obj_</a>.</p>
 
@@ -1234,8 +1241,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00168">168</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  168</span>{ <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a2b00f2256a1762699ce4d873dff0754e">prediction_period_</a> = period; }</div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00172">172</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>{ <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a2b00f2256a1762699ce4d873dff0754e">prediction_period_</a> = period; }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00137">prediction_period_</a>.</p>
 
@@ -1269,10 +1276,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00163">163</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  164</span>{</div>
-<div class="line"><span class="lineno">  165</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a75a91331d4caf17b295a821b7a29119d">prediction_time_step_</a> = time_step;</div>
-<div class="line"><span class="lineno">  166</span>}</div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00167">167</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>{</div>
+<div class="line"><span class="lineno">  169</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a75a91331d4caf17b295a821b7a29119d">prediction_time_step_</a> = time_step;</div>
+<div class="line"><span class="lineno">  170</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00136">prediction_time_step_</a>.</p>
 
@@ -1306,10 +1313,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00174">174</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  175</span>{</div>
-<div class="line"><span class="lineno">  176</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a3abe5df93c5f4696797a144953119f07">prediction_process_noise_max_</a> = noise_max;</div>
-<div class="line"><span class="lineno">  177</span>}</div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00178">178</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  179</span>{</div>
+<div class="line"><span class="lineno">  180</span>  <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a3abe5df93c5f4696797a144953119f07">prediction_process_noise_max_</a> = noise_max;</div>
+<div class="line"><span class="lineno">  181</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00140">prediction_process_noise_max_</a>.</p>
 
@@ -1343,8 +1350,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00170">170</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  170</span>{ <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ad8abb22138f9974cb82eeabfbcd5bb07">cv_x_accel_noise_</a> = noise; }</div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00174">174</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  174</span>{ <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#ad8abb22138f9974cb82eeabfbcd5bb07">cv_x_accel_noise_</a> = noise; }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00138">cv_x_accel_noise_</a>.</p>
 
@@ -1378,8 +1385,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00172">172</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  172</span>{ <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4dbb52fc92b8345ec6d62108c73ca299">cv_y_accel_noise_</a> = noise; }</div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00176">176</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>{ <a class="code hl_variable" href="classmotion__computation_1_1MotionComputationWorker.html#a4dbb52fc92b8345ec6d62108c73ca299">cv_y_accel_noise_</a> = noise; }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="motion__computation__worker_8hpp_source.html#l00139">cv_y_accel_noise_</a>.</p>
 
@@ -1433,29 +1440,29 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>append and synchronized list of external objects </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00299">299</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  302</span>{</div>
-<div class="line"><span class="lineno">  303</span>  carma_perception_msgs::msg::ExternalObjectList output_list;</div>
-<div class="line"><span class="lineno">  304</span>  output_list.header = base_objects.header;</div>
-<div class="line"><span class="lineno">  305</span>  output_list.objects.reserve(base_objects.objects.size() + new_objects.objects.size());</div>
-<div class="line"><span class="lineno">  306</span> </div>
-<div class="line"><span class="lineno">  307</span>  <span class="comment">// Compare time_stamps of first elements of each list as they are guaranteed to be the</span></div>
-<div class="line"><span class="lineno">  308</span>  <span class="comment">// earliest of the respective lists</span></div>
-<div class="line"><span class="lineno">  309</span> </div>
-<div class="line"><span class="lineno">  310</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; obj : new_objects.objects) {</div>
-<div class="line"><span class="lineno">  311</span>    <span class="comment">// interpolate and match timesteps</span></div>
-<div class="line"><span class="lineno">  312</span>    obj = <a class="code hl_function" href="classmotion__computation_1_1MotionComputationWorker.html#aeef9e93bc84a885e83223b726470fb78">matchAndInterpolateTimeStamp</a>(obj, rclcpp::Time(base_objects.header.stamp));</div>
-<div class="line"><span class="lineno">  313</span>  }</div>
-<div class="line"><span class="lineno">  314</span> </div>
-<div class="line"><span class="lineno">  315</span>  output_list.objects.insert(</div>
-<div class="line"><span class="lineno">  316</span>    output_list.objects.begin(), base_objects.objects.begin(), base_objects.objects.end());</div>
-<div class="line"><span class="lineno">  317</span>  output_list.objects.insert(</div>
-<div class="line"><span class="lineno">  318</span>    output_list.objects.end(), new_objects.objects.begin(), new_objects.objects.end());</div>
-<div class="line"><span class="lineno">  319</span>  <span class="keywordflow">return</span> output_list;</div>
-<div class="line"><span class="lineno">  320</span>}</div>
-<div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_aeef9e93bc84a885e83223b726470fb78"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#aeef9e93bc84a885e83223b726470fb78">motion_computation::MotionComputationWorker::matchAndInterpolateTimeStamp</a></div><div class="ttdeci">carma_perception_msgs::msg::ExternalObject matchAndInterpolateTimeStamp(carma_perception_msgs::msg::ExternalObject path, const rclcpp::Time &amp;time_to_match) const</div><div class="ttdoc">It cuts ExternalObject's prediction points before the time_to_match. And uses the average velocity in...</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8cpp_source.html#l00322">motion_computation_worker.cpp:322</a></div></div>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8cpp_source.html#l00303">303</a> of file <a class="el" href="motion__computation__worker_8cpp_source.html">motion_computation_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  306</span>{</div>
+<div class="line"><span class="lineno">  307</span>  carma_perception_msgs::msg::ExternalObjectList output_list;</div>
+<div class="line"><span class="lineno">  308</span>  output_list.header = base_objects.header;</div>
+<div class="line"><span class="lineno">  309</span>  output_list.objects.reserve(base_objects.objects.size() + new_objects.objects.size());</div>
+<div class="line"><span class="lineno">  310</span> </div>
+<div class="line"><span class="lineno">  311</span>  <span class="comment">// Compare time_stamps of first elements of each list as they are guaranteed to be the</span></div>
+<div class="line"><span class="lineno">  312</span>  <span class="comment">// earliest of the respective lists</span></div>
+<div class="line"><span class="lineno">  313</span> </div>
+<div class="line"><span class="lineno">  314</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; obj : new_objects.objects) {</div>
+<div class="line"><span class="lineno">  315</span>    <span class="comment">// interpolate and match timesteps</span></div>
+<div class="line"><span class="lineno">  316</span>    obj = <a class="code hl_function" href="classmotion__computation_1_1MotionComputationWorker.html#aeef9e93bc84a885e83223b726470fb78">matchAndInterpolateTimeStamp</a>(obj, rclcpp::Time(base_objects.header.stamp));</div>
+<div class="line"><span class="lineno">  317</span>  }</div>
+<div class="line"><span class="lineno">  318</span> </div>
+<div class="line"><span class="lineno">  319</span>  output_list.objects.insert(</div>
+<div class="line"><span class="lineno">  320</span>    output_list.objects.begin(), base_objects.objects.begin(), base_objects.objects.end());</div>
+<div class="line"><span class="lineno">  321</span>  output_list.objects.insert(</div>
+<div class="line"><span class="lineno">  322</span>    output_list.objects.end(), new_objects.objects.begin(), new_objects.objects.end());</div>
+<div class="line"><span class="lineno">  323</span>  <span class="keywordflow">return</span> output_list;</div>
+<div class="line"><span class="lineno">  324</span>}</div>
+<div class="ttc" id="aclassmotion__computation_1_1MotionComputationWorker_html_aeef9e93bc84a885e83223b726470fb78"><div class="ttname"><a href="classmotion__computation_1_1MotionComputationWorker.html#aeef9e93bc84a885e83223b726470fb78">motion_computation::MotionComputationWorker::matchAndInterpolateTimeStamp</a></div><div class="ttdeci">carma_perception_msgs::msg::ExternalObject matchAndInterpolateTimeStamp(carma_perception_msgs::msg::ExternalObject path, const rclcpp::Time &amp;time_to_match) const</div><div class="ttdoc">It cuts ExternalObject's prediction points before the time_to_match. And uses the average velocity in...</div><div class="ttdef"><b>Definition:</b> <a href="motion__computation__worker_8cpp_source.html#l00326">motion_computation_worker.cpp:326</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="motion__computation__worker_8cpp_source.html#l00322">matchAndInterpolateTimeStamp()</a>.</p>
+<p class="reference">References <a class="el" href="motion__computation__worker_8cpp_source.html#l00326">matchAndInterpolateTimeStamp()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>.</p>
 <div class="dynheader">
@@ -1503,7 +1510,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00166">166</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00268">bsmCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00272">bsmCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>.</p>
 
 </div>
 </div>
@@ -1529,7 +1536,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00171">171</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00268">bsmCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00272">bsmCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>.</p>
 
 </div>
 </div>
@@ -1555,7 +1562,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00138">138</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00170">setXAccelerationNoise()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00174">setXAccelerationNoise()</a>.</p>
 
 </div>
 </div>
@@ -1581,7 +1588,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00139">139</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00172">setYAccelerationNoise()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00176">setYAccelerationNoise()</a>.</p>
 
 </div>
 </div>
@@ -1607,7 +1614,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00145">145</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00268">bsmCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00184">setDetectionInputFlags()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00272">bsmCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00188">setDetectionInputFlags()</a>.</p>
 
 </div>
 </div>
@@ -1633,7 +1640,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00153">153</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00194">setDetectionMotionModelFlags()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00198">setDetectionMotionModelFlags()</a>.</p>
 
 </div>
 </div>
@@ -1659,7 +1666,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00151">151</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00194">setDetectionMotionModelFlags()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00198">setDetectionMotionModelFlags()</a>.</p>
 
 </div>
 </div>
@@ -1685,7 +1692,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00154">154</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00194">setDetectionMotionModelFlags()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00198">setDetectionMotionModelFlags()</a>.</p>
 
 </div>
 </div>
@@ -1711,7 +1718,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00152">152</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00194">setDetectionMotionModelFlags()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00198">setDetectionMotionModelFlags()</a>.</p>
 
 </div>
 </div>
@@ -1737,7 +1744,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00150">150</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00194">setDetectionMotionModelFlags()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00198">setDetectionMotionModelFlags()</a>.</p>
 
 </div>
 </div>
@@ -1763,7 +1770,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00147">147</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00206">mobilityPathCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00184">setDetectionInputFlags()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00210">mobilityPathCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00188">setDetectionInputFlags()</a>.</p>
 
 </div>
 </div>
@@ -1789,7 +1796,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00146">146</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00237">psmCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00184">setDetectionInputFlags()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00241">psmCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00188">setDetectionInputFlags()</a>.</p>
 
 </div>
 </div>
@@ -1815,7 +1822,33 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00144">144</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00184">setDetectionInputFlags()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00188">setDetectionInputFlags()</a>.</p>
+
+</div>
+</div>
+<a id="a479a3708ba05e6b8602f7c63cfeefa98" name="a479a3708ba05e6b8602f7c63cfeefa98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a479a3708ba05e6b8602f7c63cfeefa98">&#9670;&nbsp;</a></span>georeference_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string motion_computation::MotionComputationWorker::georeference_ {&quot;&quot;}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00174">174</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00143">georeferenceCallback()</a>.</p>
 
 </div>
 </div>
@@ -1841,7 +1874,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00160">160</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00268">bsmCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00143">georeferenceCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00206">mobilityPathCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00237">psmCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00272">bsmCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00143">georeferenceCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00210">mobilityPathCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00241">psmCallback()</a>.</p>
 
 </div>
 </div>
@@ -1867,7 +1900,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00157">157</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00268">bsmCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00237">psmCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00272">bsmCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00241">psmCallback()</a>.</p>
 
 </div>
 </div>
@@ -1891,9 +1924,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00174">174</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00175">175</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00268">bsmCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00143">georeferenceCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00206">mobilityPathCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00237">psmCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00272">bsmCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00143">georeferenceCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00210">mobilityPathCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00241">psmCallback()</a>.</p>
 
 </div>
 </div>
@@ -1919,7 +1952,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00165">165</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00206">mobilityPathCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00210">mobilityPathCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>.</p>
 
 </div>
 </div>
@@ -1945,7 +1978,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00170">170</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00206">mobilityPathCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00210">mobilityPathCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>.</p>
 
 </div>
 </div>
@@ -1969,9 +2002,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00177">177</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00178">178</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00268">bsmCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00143">georeferenceCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00237">psmCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00272">bsmCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00143">georeferenceCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00241">psmCallback()</a>.</p>
 
 </div>
 </div>
@@ -1997,7 +2030,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00162">162</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00237">psmCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00241">psmCallback()</a>.</p>
 
 </div>
 </div>
@@ -2049,7 +2082,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00141">141</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00179">setConfidenceDropRate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00183">setConfidenceDropRate()</a>.</p>
 
 </div>
 </div>
@@ -2075,7 +2108,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00137">137</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00268">bsmCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00237">psmCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00168">setPredictionPeriod()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00272">bsmCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00241">psmCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00172">setPredictionPeriod()</a>.</p>
 
 </div>
 </div>
@@ -2101,7 +2134,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00140">140</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00174">setProcessNoiseMax()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00178">setProcessNoiseMax()</a>.</p>
 
 </div>
 </div>
@@ -2127,7 +2160,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00136">136</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00268">bsmCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00237">psmCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00163">setPredictionTimeStep()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00272">bsmCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00241">psmCallback()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00167">setPredictionTimeStep()</a>.</p>
 
 </div>
 </div>
@@ -2153,7 +2186,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00167">167</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00237">psmCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00241">psmCallback()</a>.</p>
 
 </div>
 </div>
@@ -2179,7 +2212,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="motion__computation__worker_8hpp_source.html#l00172">172</a> of file <a class="el" href="motion__computation__worker_8hpp_source.html">motion_computation_worker.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00237">psmCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00033">predictionLogic()</a>, and <a class="el" href="motion__computation__worker_8cpp_source.html#l00241">psmCallback()</a>.</p>
 
 </div>
 </div>
@@ -2193,7 +2226,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemotion__computation.html">motion_computation</a></li><li class="navelem"><a class="el" href="classmotion__computation_1_1MotionComputationWorker.html">MotionComputationWorker</a></li>
-    <li class="footer">Generated on Fri Jun 14 2024 21:04:39 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Jun 17 2024 15:08:30 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

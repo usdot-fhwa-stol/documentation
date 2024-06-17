@@ -91,6 +91,7 @@ var classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin =
     [ "current_speed_", "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a3e827c7f2e764c6e7de83f0a81a9593f", null ],
     [ "desiredJoinGap", "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a92f6e3771b23b30e6be6201969e1a5d2", null ],
     [ "desiredJoinTimeGap", "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#ab3712cdbc6fc84fa631da3ec72733880", null ],
+    [ "georeference_", "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a73e7ae2d95573aaea32f7645d0be9b0f", null ],
     [ "HostMobilityId", "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a986341c08763b68ba3aa958535b61fda", null ],
     [ "infoMessageInterval_", "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#af12e6e347833e62db64c99229643d23e", null ],
     [ "JOIN_PARAMS", "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#aca973fa2125f768cffaf33812403f45c", null ],

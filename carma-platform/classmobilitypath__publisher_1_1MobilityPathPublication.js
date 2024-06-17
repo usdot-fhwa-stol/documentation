@@ -16,6 +16,7 @@ var classmobilitypath__publisher_1_1MobilityPathPublication =
     [ "bsm_core_", "classmobilitypath__publisher_1_1MobilityPathPublication.html#ae356454ebdef56b92998d73cea93ec69", null ],
     [ "bsm_sub_", "classmobilitypath__publisher_1_1MobilityPathPublication.html#ab53e6de5dc0009a8ef7e548f364069d4", null ],
     [ "config_", "classmobilitypath__publisher_1_1MobilityPathPublication.html#a7a6fbc298281b5283c82bb4d347b1ffc", null ],
+    [ "georeference_", "classmobilitypath__publisher_1_1MobilityPathPublication.html#a203e2f1b9c67f508f43695b75bf9a0b3", null ],
     [ "georeference_sub_", "classmobilitypath__publisher_1_1MobilityPathPublication.html#a653e1cdffce27de352809d5705c5105e", null ],
     [ "guidance_engaged_", "classmobilitypath__publisher_1_1MobilityPathPublication.html#a12ac03555cd89ae362519f894bd931c1", null ],
     [ "guidance_state_sub_", "classmobilitypath__publisher_1_1MobilityPathPublication.html#a5b1a390a969e715ab0a374397ae45007", null ],

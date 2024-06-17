@@ -24,6 +24,7 @@ var classport__drayage__plugin_1_1PortDrayageWorker =
     [ "cmv_id_", "classport__drayage__plugin_1_1PortDrayageWorker.html#a6dd1bc55af78a1294b502f729176af1c", null ],
     [ "current_gps_position_", "classport__drayage__plugin_1_1PortDrayageWorker.html#a23df258f50894a92445b70a98a0b0a63", null ],
     [ "enable_port_drayage_", "classport__drayage__plugin_1_1PortDrayageWorker.html#a8be4a3ead9e4273e2b5b57d3a7aae6a0", null ],
+    [ "georeference_", "classport__drayage__plugin_1_1PortDrayageWorker.html#a66be4c682bc09b22c545559426ff59bb", null ],
     [ "latest_mobility_operation_msg_", "classport__drayage__plugin_1_1PortDrayageWorker.html#a6073a99d417bad7fefc7874c3b529250", null ],
     [ "latest_route_event_", "classport__drayage__plugin_1_1PortDrayageWorker.html#adde3df89de4705812d1e9b958908441e", null ],
     [ "logger_", "classport__drayage__plugin_1_1PortDrayageWorker.html#ad0dc863aa36236131322bca88b355a08", null ],

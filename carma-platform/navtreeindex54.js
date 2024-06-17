@@ -1,5 +1,13 @@
 var NAVTREEINDEX54 =
 {
+"structroute__following__plugin_1_1Config.html#a9cae5fa7d5eb58d2be34b101958a131c":[57,0,45,0,5],
+"structroute__following__plugin_1_1Config.html#a9cae5fa7d5eb58d2be34b101958a131c":[56,0,83,1,5],
+"structroute__following__plugin_1_1Config.html#ad8ce5533d8d609c69f82a11568f16e50":[57,0,45,0,9],
+"structroute__following__plugin_1_1Config.html#ad8ce5533d8d609c69f82a11568f16e50":[56,0,83,1,9],
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html":[56,0,87,2],
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html":[57,0,46,1],
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a236dd9b96855336e4a4a4409ec0a1a3a":[56,0,87,2,2],
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a236dd9b96855336e4a4a4409ec0a1a3a":[57,0,46,1,2],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a2c3495266a9184914b24373c4796cda8":[56,0,87,2,0],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a2c3495266a9184914b24373c4796cda8":[57,0,46,1,0],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a3ad153b59a26991537caad1dbfe307fe":[57,0,46,1,10],
@@ -241,13 +249,5 @@ var NAVTREEINDEX54 =
 "subsystem__controllers_2src_2v2x__controller_2main_8cpp.html":[58,0,48,1,5,0],
 "subsystem__controllers_2src_2v2x__controller_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[58,0,48,1,5,0,0],
 "subsystem__controllers_2src_2v2x__controller_2main_8cpp_source.html":[58,0,48,1,5,0],
-"swap_8h.html":[58,0,30,2,0,0,0,1,11],
-"swap_8h.html#a72b2c71d36273b9691487f58c671ce04":[58,0,30,2,0,0,0,1,11,0],
-"swap_8h_source.html":[58,0,30,2,0,0,0,1,11],
-"system__controller_2src_2main_8cpp.html":[58,0,49,1,0],
-"system__controller_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[58,0,49,1,0,0],
-"system__controller_2src_2main_8cpp_source.html":[58,0,49,1,0],
-"system__controller__config_8hpp.html":[58,0,49,0,0,0],
-"system__controller__config_8hpp_source.html":[58,0,49,0,0,0],
-"system__controller__node_8cpp.html":[58,0,49,1,1]
+"swap_8h.html":[58,0,30,2,0,0,0,1,11]
 };

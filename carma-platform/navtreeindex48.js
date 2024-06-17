@@ -1,5 +1,13 @@
 var NAVTREEINDEX48 =
 {
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#ae64572ff061924d56fa9998852a2a945":[56,0,0,3,19],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#afe9dff631c6c75497bbecfe6f6029753":[57,0,0,2,23],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#afe9dff631c6c75497bbecfe6f6029753":[56,0,0,3,23],
+"structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html":[57,0,0,3],
+"structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html":[56,0,0,4],
+"structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#a2d25462696d7933e72bc33239c42287d":[56,0,0,4,9],
+"structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#a2d25462696d7933e72bc33239c42287d":[57,0,0,3,9],
+"structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#a530fa1cfa45c494906acb6d55da222e7":[57,0,0,3,2],
 "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#a530fa1cfa45c494906acb6d55da222e7":[56,0,0,4,2],
 "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#a54055d98a4a44a8b89d7e69b1c161f0b":[56,0,0,4,8],
 "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html#a54055d98a4a44a8b89d7e69b1c161f0b":[57,0,0,3,8],
@@ -241,13 +249,5 @@ var NAVTREEINDEX48 =
 "structcarma__cooperative__perception_1_1Position3D.html":[57,0,7,13],
 "structcarma__cooperative__perception_1_1Position3D.html#a0a36123837e5b67dba79c55d053e2c92":[56,0,12,13,3],
 "structcarma__cooperative__perception_1_1Position3D.html#a0a36123837e5b67dba79c55d053e2c92":[57,0,7,13,3],
-"structcarma__cooperative__perception_1_1Position3D.html#a3e841d38e6e0567cb71eedc8d55f6e73":[56,0,12,13,0],
-"structcarma__cooperative__perception_1_1Position3D.html#a3e841d38e6e0567cb71eedc8d55f6e73":[57,0,7,13,0],
-"structcarma__cooperative__perception_1_1Position3D.html#af394078671528953d9717b750a595168":[56,0,12,13,1],
-"structcarma__cooperative__perception_1_1Position3D.html#af394078671528953d9717b750a595168":[57,0,7,13,1],
-"structcarma__cooperative__perception_1_1Position3D.html#af6f8599a0929fc5a3145c3e871cd7f15":[56,0,12,13,4],
-"structcarma__cooperative__perception_1_1Position3D.html#af6f8599a0929fc5a3145c3e871cd7f15":[57,0,7,13,4],
-"structcarma__cooperative__perception_1_1Position3D.html#af757eef99fb43e020aef2683022e556c":[56,0,12,13,2],
-"structcarma__cooperative__perception_1_1Position3D.html#af757eef99fb43e020aef2683022e556c":[57,0,7,13,2],
-"structcarma__cooperative__perception_1_1PositionOffsetXYZ.html":[57,0,7,14]
+"structcarma__cooperative__perception_1_1Position3D.html#a3e841d38e6e0567cb71eedc8d55f6e73":[56,0,12,13,0]
 };

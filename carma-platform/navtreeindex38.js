@@ -1,5 +1,13 @@
 var NAVTREEINDEX38 =
 {
+"light__controlled__intersection__tactical__plugin_8cpp_source.html":[58,0,22,2,0],
+"light__controlled__intersection__tactical__plugin_8hpp.html":[58,0,22,0,0,0],
+"light__controlled__intersection__tactical__plugin_8hpp.html#a066f948508e087006568cb6c9b0674a7":[58,0,22,0,0,0,2],
+"light__controlled__intersection__tactical__plugin_8hpp.html#a1d574ede6bd2fe34726484c4f8576aa3":[58,0,22,0,0,0,6],
+"light__controlled__intersection__tactical__plugin_8hpp.html#a1d574ede6bd2fe34726484c4f8576aa3a0fcd7b0a90d5904363a3e76a1aa31bf0":[58,0,22,0,0,0,6,5],
+"light__controlled__intersection__tactical__plugin_8hpp.html#a1d574ede6bd2fe34726484c4f8576aa3a367b395183c2f41eeeaa87a0c55c894d":[58,0,22,0,0,0,6,7],
+"light__controlled__intersection__tactical__plugin_8hpp.html#a1d574ede6bd2fe34726484c4f8576aa3a48496a8206bc9bf555d33290b437f944":[58,0,22,0,0,0,6,3],
+"light__controlled__intersection__tactical__plugin_8hpp.html#a1d574ede6bd2fe34726484c4f8576aa3a89e6110a8b77f7a18e992d0d6245e5f7":[58,0,22,0,0,0,6,0],
 "light__controlled__intersection__tactical__plugin_8hpp.html#a1d574ede6bd2fe34726484c4f8576aa3aac2aa9f2c031332d1c84ab87c8716153":[58,0,22,0,0,0,6,6],
 "light__controlled__intersection__tactical__plugin_8hpp.html#a1d574ede6bd2fe34726484c4f8576aa3aad9f64445cda6941d3e40bfdce4dcb3f":[58,0,22,0,0,0,6,1],
 "light__controlled__intersection__tactical__plugin_8hpp.html#a1d574ede6bd2fe34726484c4f8576aa3abc197a0f9fc500fbe39c647e2a9abd42":[58,0,22,0,0,0,6,4],
@@ -241,13 +249,5 @@ var NAVTREEINDEX38 =
 "md_docs_Release_notes.html#autotoc_md161":[26,0,12],
 "md_docs_Release_notes.html#autotoc_md162":[26,0,13],
 "md_docs_Release_notes.html#autotoc_md163":[26,0,14],
-"md_docs_Release_notes.html#autotoc_md164":[26,0,15],
-"md_docs_Release_notes.html#autotoc_md165":[26,0,16],
-"md_docs_Release_notes.html#autotoc_md166":[26,1],
-"md_docs_Release_notes.html#autotoc_md167":[26,1,0],
-"md_docs_Release_notes.html#autotoc_md168":[26,1,1],
-"md_docs_Release_notes.html#autotoc_md169":[26,1,2],
-"md_docs_Release_notes.html#autotoc_md170":[26,1,3],
-"md_docs_Release_notes.html#autotoc_md171":[26,1,4],
-"md_docs_Release_notes.html#autotoc_md172":[26,1,5]
+"md_docs_Release_notes.html#autotoc_md164":[26,0,15]
 };

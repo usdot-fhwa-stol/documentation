@@ -1,5 +1,13 @@
 var NAVTREEINDEX41 =
 {
+"namespacecarma__wm_1_1geometry.html#a4e12c2971926486d1447e44e978f8d4d":[56,0,16,1,14],
+"namespacecarma__wm_1_1geometry.html#a50c966bd5e6ed00ea0b1a70e93cd0d4a":[56,0,16,1,31],
+"namespacecarma__wm_1_1geometry.html#a527def551d1300fdb8d1b47230b50b18":[56,0,16,1,8],
+"namespacecarma__wm_1_1geometry.html#a56bddbee1116988543192b2f235a692c":[56,0,16,1,26],
+"namespacecarma__wm_1_1geometry.html#a6704d3b310afef54189310c11300c4fc":[56,0,16,1,9],
+"namespacecarma__wm_1_1geometry.html#a6f156f9d93ac8bd84fa6663b1efa5db4":[56,0,16,1,28],
+"namespacecarma__wm_1_1geometry.html#a7eb61db7c8cef6d70093927f8f824cfc":[56,0,16,1,1],
+"namespacecarma__wm_1_1geometry.html#a8613e0408964a148aef8cb034fa1b1ce":[56,0,16,1,4],
 "namespacecarma__wm_1_1geometry.html#a906a93ecedb3430179178f7b44d0b2e8":[56,0,16,1,3],
 "namespacecarma__wm_1_1geometry.html#a99c83b095273261648f894b27c2af5b7":[56,0,16,1,13],
 "namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0":[56,0,16,1,6],
@@ -241,13 +249,5 @@ var NAVTREEINDEX41 =
 "namespacelightbar__manager.html#adceb65c2a950c18cf2b4178b3bf97138a53042c961c9e5fd8dca57e773f819250":[56,0,43,10,2],
 "namespacelightbar__manager.html#adceb65c2a950c18cf2b4178b3bf97138a77787d07592c4a4a325207de2195c29f":[56,0,43,10,3],
 "namespacelightbar__manager.html#adceb65c2a950c18cf2b4178b3bf97138a903f302a0aac0cfcaa649c8009e4a2af":[56,0,43,10,1],
-"namespacelightbar__manager.html#adceb65c2a950c18cf2b4178b3bf97138abdebb707d7a27d1be9266ad9a3ff6e2b":[56,0,43,10,0],
-"namespacelightbar__manager.html#aeae77409769a5bae91ce5a512a5f1595":[56,0,43,7],
-"namespacelightbar__manager.html#aeae77409769a5bae91ce5a512a5f1595a05b3b3edde2417e2e6f7946fc276bc34":[56,0,43,7,1],
-"namespacelightbar__manager.html#aeae77409769a5bae91ce5a512a5f1595a235509dd9a0e73a902e6c0367d0d6de9":[56,0,43,7,0],
-"namespacelocalization.html":[56,0,44],
-"namespacelocalization.html#a03aa809ae87723efe694476a74017b40":[56,0,44,0],
-"namespacelocalization__manager.html":[56,0,45],
-"namespacelocalization__manager.html#a0dd225fbc4cf3989bc6a2b0a78b57eb8":[56,0,45,11],
-"namespacelocalization__manager.html#a2d1ef987d2dd3681555d69d1ae725355":[56,0,45,7]
+"namespacelightbar__manager.html#adceb65c2a950c18cf2b4178b3bf97138abdebb707d7a27d1be9266ad9a3ff6e2b":[56,0,43,10,0]
 };

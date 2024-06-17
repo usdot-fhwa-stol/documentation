@@ -1,5 +1,13 @@
 var NAVTREEINDEX52 =
 {
+"structlightbar__manager_1_1INVALID__LIGHTBAR__MANAGER__PRIORITY.html":[57,0,24,2],
+"structlightbar__manager_1_1INVALID__LIGHTBAR__MANAGER__PRIORITY.html":[56,0,43,2],
+"structlightbar__manager_1_1INVALID__LIGHTBAR__MANAGER__PRIORITY.html#ad9f0f580d2f5aa04e02281ad8c44becb":[57,0,24,2,0],
+"structlightbar__manager_1_1INVALID__LIGHTBAR__MANAGER__PRIORITY.html#ad9f0f580d2f5aa04e02281ad8c44becb":[56,0,43,2,0],
+"structlocalization__manager_1_1LocalizationManagerConfig.html":[56,0,45,1],
+"structlocalization__manager_1_1LocalizationManagerConfig.html":[57,0,25,1],
+"structlocalization__manager_1_1LocalizationManagerConfig.html#a0755604ab7b77f80fcd3ae0cb467099d":[57,0,25,1,5],
+"structlocalization__manager_1_1LocalizationManagerConfig.html#a0755604ab7b77f80fcd3ae0cb467099d":[56,0,45,1,5],
 "structlocalization__manager_1_1LocalizationManagerConfig.html#a0cdb308c05aa70c80687938f4f043949":[57,0,25,1,3],
 "structlocalization__manager_1_1LocalizationManagerConfig.html#a0cdb308c05aa70c80687938f4f043949":[56,0,45,1,3],
 "structlocalization__manager_1_1LocalizationManagerConfig.html#a1809d3864ece9da5caddbae982d26253":[57,0,25,1,13],
@@ -241,13 +249,5 @@ var NAVTREEINDEX52 =
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a5d5fe22035fdba42dae4e023263499ca":[56,0,61,4,37],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a5d5fe22035fdba42dae4e023263499ca":[57,0,35,4,37],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a5dd4e17d9c70df4af83abe5f4d81af0f":[57,0,35,4,14],
-"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a5dd4e17d9c70df4af83abe5f4d81af0f":[56,0,61,4,14],
-"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a63ddcdd4c1280f41bc9ddb0bc16e2b93":[56,0,61,4,13],
-"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a63ddcdd4c1280f41bc9ddb0bc16e2b93":[57,0,35,4,13],
-"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a674f088482c677e215b4842b9b8552f5":[56,0,61,4,24],
-"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a674f088482c677e215b4842b9b8552f5":[57,0,35,4,24],
-"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a75c1cc22d698c88b0772ffa7c664dd24":[56,0,61,4,10],
-"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a75c1cc22d698c88b0772ffa7c664dd24":[57,0,35,4,10],
-"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a7ebcbd6d830ed897edc245524b9625f9":[57,0,35,4,15],
-"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a7ebcbd6d830ed897edc245524b9625f9":[56,0,61,4,15]
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a5dd4e17d9c70df4af83abe5f4d81af0f":[56,0,61,4,14]
 };

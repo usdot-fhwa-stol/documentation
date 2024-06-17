@@ -1,5 +1,13 @@
 var NAVTREEINDEX42 =
 {
+"namespacelightbar__manager.html#aeae77409769a5bae91ce5a512a5f1595":[56,0,43,7],
+"namespacelightbar__manager.html#aeae77409769a5bae91ce5a512a5f1595a05b3b3edde2417e2e6f7946fc276bc34":[56,0,43,7,1],
+"namespacelightbar__manager.html#aeae77409769a5bae91ce5a512a5f1595a235509dd9a0e73a902e6c0367d0d6de9":[56,0,43,7,0],
+"namespacelocalization.html":[56,0,44],
+"namespacelocalization.html#a03aa809ae87723efe694476a74017b40":[56,0,44,0],
+"namespacelocalization__manager.html":[56,0,45],
+"namespacelocalization__manager.html#a0dd225fbc4cf3989bc6a2b0a78b57eb8":[56,0,45,11],
+"namespacelocalization__manager.html#a2d1ef987d2dd3681555d69d1ae725355":[56,0,45,7],
 "namespacelocalization__manager.html#a49ed41f9c61f009ca0b46e5a9e1b603a":[56,0,45,8],
 "namespacelocalization__manager.html#a539480c89bbebadc494867fa841b35d1":[56,0,45,5],
 "namespacelocalization__manager.html#a539480c89bbebadc494867fa841b35d1a0021017005f0e5134b204c2e69d3d4ed":[56,0,45,5,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX42 =
 "namespaceprocess__traj__logs.html#af55954ec94e00bc57b6008a971d766b5":[56,0,74,9],
 "namespaceprocess__traj__logs.html#af5e44de9c0b464b735b24f3da14a8dba":[56,0,74,10],
 "namespacepure__pursuit__wrapper.html":[56,0,75],
-"namespacepure__pursuit__wrapper.html#a2768a734fb88e0b12390e35976ef5546":[56,0,75,2],
-"namespacepure__pursuit__wrapper.html#a438e4ee9c214679dea4c4915dbe2b7c8":[56,0,75,3],
-"namespacepure__pursuit__wrapper.html#a840203ceec344e7884953678b8cf7c2f":[56,0,75,4],
-"namespacerapidjson.html":[56,0,76],
-"namespacereindex__active__rosbags.html":[56,0,77],
-"namespacereindex__active__rosbags.html#a1785876f05e3d4be9940d810642656d8":[56,0,77,1],
-"namespacereindex__active__rosbags.html#ab1a72370720c2c6ea079e177e005f6c7":[56,0,77,0],
-"namespacereverse__waypoints.html":[56,0,78],
-"namespacereverse__waypoints.html#a40e40026c0463e037fbf9ca29f25e06e":[56,0,78,0]
+"namespacepure__pursuit__wrapper.html#a2768a734fb88e0b12390e35976ef5546":[56,0,75,2]
 };

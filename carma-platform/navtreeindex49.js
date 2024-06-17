@@ -1,5 +1,13 @@
 var NAVTREEINDEX49 =
 {
+"structcarma__cooperative__perception_1_1Position3D.html#a3e841d38e6e0567cb71eedc8d55f6e73":[57,0,7,13,0],
+"structcarma__cooperative__perception_1_1Position3D.html#af394078671528953d9717b750a595168":[56,0,12,13,1],
+"structcarma__cooperative__perception_1_1Position3D.html#af394078671528953d9717b750a595168":[57,0,7,13,1],
+"structcarma__cooperative__perception_1_1Position3D.html#af6f8599a0929fc5a3145c3e871cd7f15":[56,0,12,13,4],
+"structcarma__cooperative__perception_1_1Position3D.html#af6f8599a0929fc5a3145c3e871cd7f15":[57,0,7,13,4],
+"structcarma__cooperative__perception_1_1Position3D.html#af757eef99fb43e020aef2683022e556c":[56,0,12,13,2],
+"structcarma__cooperative__perception_1_1Position3D.html#af757eef99fb43e020aef2683022e556c":[57,0,7,13,2],
+"structcarma__cooperative__perception_1_1PositionOffsetXYZ.html":[57,0,7,14],
 "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html":[56,0,12,14],
 "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#a094715553928cccc0c23616e8f4e2654":[57,0,7,14,1],
 "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html#a094715553928cccc0c23616e8f4e2654":[56,0,12,14,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX49 =
 "structinternal_1_1DiyFp.html#a037aed0fa0b66af0a13657418edef19e":[57,0,20,2,19],
 "structinternal_1_1DiyFp.html#a037aed0fa0b66af0a13657418edef19e":[56,0,36,2,19],
 "structinternal_1_1DiyFp.html#a09b9217a86e8a2e6aa8d2d48fc351008":[57,0,20,2,10],
-"structinternal_1_1DiyFp.html#a09b9217a86e8a2e6aa8d2d48fc351008":[56,0,36,2,10],
-"structinternal_1_1DiyFp.html#a38b6f864ae0859d43fa96c3ff27959be":[57,0,20,2,13],
-"structinternal_1_1DiyFp.html#a38b6f864ae0859d43fa96c3ff27959be":[56,0,36,2,13],
-"structinternal_1_1DiyFp.html#a3a840e739b412e20e11c05a03f4573df":[56,0,36,2,4],
-"structinternal_1_1DiyFp.html#a3a840e739b412e20e11c05a03f4573df":[57,0,20,2,4],
-"structinternal_1_1DiyFp.html#a43ea451ce20095b1ff53cccf132ca15f":[56,0,36,2,15],
-"structinternal_1_1DiyFp.html#a43ea451ce20095b1ff53cccf132ca15f":[57,0,20,2,15],
-"structinternal_1_1DiyFp.html#a80535a5594dae96fc482757a54162c7d":[57,0,20,2,16],
-"structinternal_1_1DiyFp.html#a80535a5594dae96fc482757a54162c7d":[56,0,36,2,16]
+"structinternal_1_1DiyFp.html#a09b9217a86e8a2e6aa8d2d48fc351008":[56,0,36,2,10]
 };

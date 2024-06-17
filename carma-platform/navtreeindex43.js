@@ -1,5 +1,13 @@
 var NAVTREEINDEX43 =
 {
+"namespacepure__pursuit__wrapper.html#a438e4ee9c214679dea4c4915dbe2b7c8":[56,0,75,3],
+"namespacepure__pursuit__wrapper.html#a840203ceec344e7884953678b8cf7c2f":[56,0,75,4],
+"namespacerapidjson.html":[56,0,76],
+"namespacereindex__active__rosbags.html":[56,0,77],
+"namespacereindex__active__rosbags.html#a1785876f05e3d4be9940d810642656d8":[56,0,77,1],
+"namespacereindex__active__rosbags.html#ab1a72370720c2c6ea079e177e005f6c7":[56,0,77,0],
+"namespacereverse__waypoints.html":[56,0,78],
+"namespacereverse__waypoints.html#a40e40026c0463e037fbf9ca29f25e06e":[56,0,78,0],
 "namespaceroadway__objects.html":[56,0,79],
 "namespaceroadway__objects__launch.html":[56,0,80],
 "namespaceroadway__objects__launch.html#a968bec41644500a2281d050e31bcbf01":[56,0,80,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX43 =
 "platoon__strategic__ihp_8h.html":[58,0,35,0,0,2],
 "platoon__strategic__ihp_8h.html#a3c19ae18fa9f6083007c65b58293776a":[58,0,35,0,0,2,1],
 "platoon__strategic__ihp_8h.html#a5402323f00d5763553277415c786fbca":[58,0,35,0,0,2,4],
-"platoon__strategic__ihp_8h.html#a71d95090a6e2bf7ed0b85142e9081f97":[58,0,35,0,0,2,3],
-"platoon__strategic__ihp_8h.html#ae866cb8846f2484b40536e455bfecaff":[58,0,35,0,0,2,2],
-"platoon__strategic__ihp_8h_source.html":[58,0,35,0,0,2],
-"platoon__strategic__ihp__launch_8py.html":[58,0,35,1,0],
-"platoon__strategic__ihp__launch_8py.html#ae0a9a9afb68d9777e81d8c40e3ddbfc3":[58,0,35,1,0,0],
-"platoon__strategic__ihp__launch_8py_source.html":[58,0,35,1,0],
-"platoon__strategic__ihp__node_8cpp.html":[58,0,35,2,3],
-"platoon__strategic__ihp__node_8cpp_source.html":[58,0,35,2,3],
-"platoon__strategic__plugin__node__ihp_8h.html":[58,0,35,0,0,3]
+"platoon__strategic__ihp_8h.html#a71d95090a6e2bf7ed0b85142e9081f97":[58,0,35,0,0,2,3]
 };

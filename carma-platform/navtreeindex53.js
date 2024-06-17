@@ -1,5 +1,13 @@
 var NAVTREEINDEX53 =
 {
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a63ddcdd4c1280f41bc9ddb0bc16e2b93":[56,0,61,4,13],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a63ddcdd4c1280f41bc9ddb0bc16e2b93":[57,0,35,4,13],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a674f088482c677e215b4842b9b8552f5":[56,0,61,4,24],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a674f088482c677e215b4842b9b8552f5":[57,0,35,4,24],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a75c1cc22d698c88b0772ffa7c664dd24":[56,0,61,4,10],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a75c1cc22d698c88b0772ffa7c664dd24":[57,0,35,4,10],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a7ebcbd6d830ed897edc245524b9625f9":[57,0,35,4,15],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a7ebcbd6d830ed897edc245524b9625f9":[56,0,61,4,15],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a7f7c75e78767a304bbca12ce49c91cf8":[57,0,35,4,8],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a7f7c75e78767a304bbca12ce49c91cf8":[56,0,61,4,8],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a823eb5a9395a9700d16b465e52d1eb6e":[57,0,35,4,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX53 =
 "structroute__following__plugin_1_1Config.html#a7ee8465bea603709497a36e9ecd36cec":[57,0,45,0,10],
 "structroute__following__plugin_1_1Config.html#a7ee8465bea603709497a36e9ecd36cec":[56,0,83,1,10],
 "structroute__following__plugin_1_1Config.html#a8d931f2dc9bd78bd001a1cef0a9fe040":[57,0,45,0,4],
-"structroute__following__plugin_1_1Config.html#a8d931f2dc9bd78bd001a1cef0a9fe040":[56,0,83,1,4],
-"structroute__following__plugin_1_1Config.html#a9cae5fa7d5eb58d2be34b101958a131c":[57,0,45,0,5],
-"structroute__following__plugin_1_1Config.html#a9cae5fa7d5eb58d2be34b101958a131c":[56,0,83,1,5],
-"structroute__following__plugin_1_1Config.html#ad8ce5533d8d609c69f82a11568f16e50":[57,0,45,0,9],
-"structroute__following__plugin_1_1Config.html#ad8ce5533d8d609c69f82a11568f16e50":[56,0,83,1,9],
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html":[56,0,87,2],
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html":[57,0,46,1],
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a236dd9b96855336e4a4a4409ec0a1a3a":[56,0,87,2,2],
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a236dd9b96855336e4a4a4409ec0a1a3a":[57,0,46,1,2]
+"structroute__following__plugin_1_1Config.html#a8d931f2dc9bd78bd001a1cef0a9fe040":[56,0,83,1,4]
 };

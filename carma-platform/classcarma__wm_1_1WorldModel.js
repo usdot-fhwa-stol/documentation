@@ -4,6 +4,7 @@ var classcarma__wm_1_1WorldModel =
     [ "distToNearestObjInLane", "classcarma__wm_1_1WorldModel.html#ab43abbec54bfaff13206ef3d63b3e526", null ],
     [ "getBusStopsAlongRoute", "classcarma__wm_1_1WorldModel.html#af7f4c2be71fca378db3a09483c829959", null ],
     [ "getEntryExitOfSignalAlongRoute", "classcarma__wm_1_1WorldModel.html#a20b4d370140cce9e56f00f624e545dae", null ],
+    [ "getFirstLaneletOnShortestPath", "classcarma__wm_1_1WorldModel.html#a7c50454683e2c6ab31573f3d500fcb6e", null ],
     [ "getInLaneObjects", "classcarma__wm_1_1WorldModel.html#a8fcc52a19e42a4a1b63bb96add8ad028", null ],
     [ "getIntersectingLanelet", "classcarma__wm_1_1WorldModel.html#a3239fded8c5085c5e533c928512c4099", null ],
     [ "getIntersectionsAlongRoute", "classcarma__wm_1_1WorldModel.html#af0bf672c96bfd542e35f77e9de09ee0a", null ],

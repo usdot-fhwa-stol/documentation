@@ -69,6 +69,7 @@ var hierarchy =
       [ "cc.vector_tile.VectorTile.Tile.Value", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Value.html", null ]
     ] ],
     [ "cc.util.FileUtil", "classcc_1_1util_1_1FileUtil.html", null ],
+    [ "cc.util.FilterControls", "classcc_1_1util_1_1FilterControls.html", null ],
     [ "com.google.protobuf.GeneratedMessageLite", "classcom_1_1google_1_1protobuf_1_1GeneratedMessageLite.html", [
       [ "cc.vector_tile.VectorTile.Tile.Feature", "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Feature.html", null ]
     ] ],

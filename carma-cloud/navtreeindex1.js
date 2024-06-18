@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"classcc_1_1ctrl_1_1CtrlLineArcs.html#a48e6a5765c92f531cfbf7f8356b0b52d":[3,0,0,0,4,7],
+"classcc_1_1ctrl_1_1CtrlLineArcs.html#a53daaa355a4e8883a3096dc7148d5568":[3,0,0,0,4,4],
 "classcc_1_1ctrl_1_1CtrlLineArcs.html#a5c54929139627765f1fd236e7815265b":[3,0,0,0,4,3],
 "classcc_1_1ctrl_1_1CtrlLineArcs.html#a6b951f6f2b54d63b4db229f7dfbc562c":[3,0,0,0,4,9],
 "classcc_1_1ctrl_1_1CtrlLineArcs.html#a7f04fc9caf18646de4452ed7e129c6fb":[3,0,0,0,4,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "classcc_1_1ctrl_1_1proc_1_1ProcMaxSpeed_1_1SpdMapping.html#af5157f987261e02766b300e17a260005":[3,0,0,0,0,9,0,3],
 "classcc_1_1ctrl_1_1proc_1_1ProcMinPlatoonHdwy.html":[3,0,0,0,0,10],
 "classcc_1_1ctrl_1_1proc_1_1ProcMinPlatoonHdwy.html#a0a8c1d6df7e11dce1e6d04a1b096d731":[3,0,0,0,0,10,2],
-"classcc_1_1ctrl_1_1proc_1_1ProcMinPlatoonHdwy.html#a67b808691ad6bb796772652e9a06317a":[3,0,0,0,0,10,1],
-"classcc_1_1ctrl_1_1proc_1_1ProcMinPlatoonHdwy.html#a698e65078bd026df82e4f08d6f5da83b":[3,0,0,0,0,10,3],
-"classcc_1_1ctrl_1_1proc_1_1ProcMinPlatoonHdwy.html#a8dabeb194d55e3d3c9c8320bd70055ac":[3,0,0,0,0,10,4]
+"classcc_1_1ctrl_1_1proc_1_1ProcMinPlatoonHdwy.html#a67b808691ad6bb796772652e9a06317a":[3,0,0,0,0,10,1]
 };

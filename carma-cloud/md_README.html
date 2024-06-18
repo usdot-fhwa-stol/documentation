@@ -202,18 +202,25 @@ Bounds File for IHP2 Speed Harmonization</h3>
  </p>
 </blockquote>
 <h2><a class="anchor" id="autotoc_md5"></a>
+Testing Considerations</h2>
+<p >Upon startup, CARMA Cloud automatically creates traffic controls for later sending to CARMA platform by reading XML OpenDrive files placed in its XODR work folder, e.g. &lt;tomcat_home&gt;/work/xodr. This can result in thousands of traffic controls that are mostly uninteresting for testing purposes. The <a class="el" href="classcc_1_1util_1_1FilterControls.html">cc.util.FilterControls</a> command-line application accepts a list of traffic control identifiers, and creates a much smaller and more manageable subset of traffic controls that can be saved along with their respective testing scenarios.</p>
+<p >After CARMA Cloud has been started for the first time in a testing scenario, XODR files will have been processed, and the tester can login to CARMA Cloud to add traffic controls for his testing needs. Executing an ls -lrt in the traffic controls folder, typically &lt;tomcat_home&gt;/work/carmacloud/traf_ctrls, will put the newly created traffic controls at the bottom of the list. The hexadecimal encoded text for the 16-byte traffic control ids to be kept can then be derived from three levels of folder paths and the traffic control filename.</p>
+<p >The FilterControls application takes the source work folder name, the destination work folder name, and a space-separated list of at least one 16-byte hexadecimal encoded text traffic control id. </p><div class="fragment"><div class="line">&lt;java_home&gt;/bin/java -cp &lt;path_to_carmacloud_classes&gt;:&lt;path_to_carmacloud_lib&gt;/keccakj.jar cc.util.FilterControls &lt;source_path&gt; &lt;destination_path&gt; &lt;id1&gt; &lt;id2&gt; ... &lt;idN&gt;</div>
+</div><!-- fragment --><p> For example: </p><div class="fragment"><div class="line">&lt;java_home&gt;/bin/java -cp &lt;path_to_carmacloud_classes&gt;:&lt;path_to_carmacloud_lib&gt;/keccakj.jar cc.util.FilterControls &lt;tomcat_home&gt;/work/carmacloud &lt;tomcat_home&gt;/work/filtered 00109ab6d542f12ca8942b436c9c9d8d</div>
+</div><!-- fragment --><p> FilterControls creates the destination folder structure containing geolanes, linearcs, td, and traf_ctrls subfolders. The filtered traffic control files can then be saved with the appropriate testing scenarios. Both the td and traf_ctrls folders should always contain at least one file, and it is also normal under some circumstances that the geolanes and linearcs folders may contain no files.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Contribution</h2>
 <p >Welcome to the CARMA contributing guide. Please read this guide to learn about our development process, how to propose pull requests and improvements, and how to build and test your changes to this project. CARMA Contributing Guide</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Code of Conduct</h2>
 <p >Please read our CARMA Code of Conduct which outlines our expectations for participants within the CARMA community, as well as steps to reporting unacceptable behavior. We are committed to providing a welcoming and inspiring community for all and expect our code of conduct to be honored. Anyone who violates this code of conduct may be banned from the community.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Attribution</h2>
 <p >The development team would like to acknowledge the people who have made direct contributions to the design and code in this repository. CARMA Attribution</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 License</h2>
 <p >By contributing to the Federal Highway Administration (FHWA) Connected Automated Research Mobility Applications (CARMA), you agree that your contributions will be licensed under its Apache License 2.0 license. CARMA License</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Contact</h2>
 <p >Please click on the CARMA logo below to visit the Federal Highway Adminstration(FHWA) CARMA website. For more information, contact <a href="#" onclick="location.href='mai'+'lto:'+'CAR'+'MA'+'@do'+'t.'+'gov'; return false;">CARMA<span class="obfuscator">.nosp@m.</span>@dot<span class="obfuscator">.nosp@m.</span>.gov</a>.</p>
 <p ><a href="https://highways.dot.gov/research/research-programs/operations/CARMA"><img src="docs/image/CARMA_icon2.png" alt="CARMA Image" class="inline"/></a> </p>
@@ -223,7 +230,7 @@ Contact</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed May 29 2024 19:38:42 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Jun 18 2024 21:13:12 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -1,5 +1,11 @@
 var NAVTREEINDEX8 =
 {
+"classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer_1_1Builder.html#a73c2b1cea0364d5892506af4d11ff56d":[3,0,0,6,0,0,4,0,11],
+"classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer_1_1Builder.html#a750aec79c085dc2821daa9232ad97a5f":[3,0,0,6,0,0,4,0,34],
+"classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer_1_1Builder.html#a869569565fddde91cbee4314bdcef2bb":[3,0,0,6,0,0,4,0,5],
+"classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer_1_1Builder.html#a91d2410b8bc1e4e1583253c15b86dcd3":[3,0,0,6,0,0,4,0,20],
+"classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer_1_1Builder.html#a9bf5b795a9446ae0b79a5193184c31ef":[3,0,0,6,0,0,4,0,0],
+"classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer_1_1Builder.html#aa22e6b3ec374a014bb0a691e489b49b2":[3,0,0,6,0,0,4,0,19],
 "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer_1_1Builder.html#aa7b174609b6080a1c746298ad8a0167b":[3,0,0,6,0,0,4,0,26],
 "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer_1_1Builder.html#aab65e28df8a256748307465473afeb69":[3,0,0,6,0,0,4,0,13],
 "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer_1_1Builder.html#aabde9eb9ed5b9579628b65cfcae6c402":[3,0,0,6,0,0,4,0,14],
@@ -243,11 +249,5 @@ var NAVTREEINDEX8 =
 "classcc_1_1ws_1_1ReplayMgr_1_1Storm.html#a76ed355c9744780f54a7c88a83979aca":[3,0,0,7,5,0,1],
 "classcc_1_1ws_1_1ReplayMgr_1_1Storm.html#ad0ab42667e6c047e4f8216cebff6347c":[3,0,0,7,5,0,5],
 "classcc_1_1ws_1_1ReplayMgr_1_1Storm.html#ad19241a7c51435276b1590d3ec3e58cd":[3,0,0,7,5,0,2],
-"classcc_1_1ws_1_1ReplayMgr_1_1Storm.html#ad5fbc7f418cf32763ba5660252a97661":[3,0,0,7,5,0,4],
-"classcc_1_1ws_1_1ReplayMgr_1_1Storm.html#ad91965003fc301437b6a03a9ee43b578":[3,0,0,7,5,0,0],
-"classcc_1_1ws_1_1ReplayMgr_1_1Storm.html#ae8a3e1765b7e2204074a38b85b672237":[3,0,0,7,5,0,6],
-"classcc_1_1ws_1_1RopMgr.html":[3,0,0,7,6],
-"classcc_1_1ws_1_1RopMgr.html#a0bd85e3a91d2c838004bc59f23ef384b":[3,0,0,7,6,3],
-"classcc_1_1ws_1_1RopMgr.html#a78fec92ea7b3909cd76e8e3a008a7b61":[3,0,0,7,6,1],
-"classcc_1_1ws_1_1RopMgr.html#a7d4d3918f2f2a3ae3986aca7470025de":[3,0,0,7,6,2]
+"classcc_1_1ws_1_1ReplayMgr_1_1Storm.html#ad5fbc7f418cf32763ba5660252a97661":[3,0,0,7,5,0,4]
 };

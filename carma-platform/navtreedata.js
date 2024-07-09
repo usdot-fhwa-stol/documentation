@@ -278,51 +278,51 @@ var NAVTREE =
     [ "platooning_tactical_plugin", "md_platooning_tactical_plugin_README.html", null ],
     [ "points_map_filter", "md_points_map_filter_README.html", null ],
     [ "port_drayage_plugin", "md_port_drayage_plugin_README.html", null ],
-    [ "README", "md_README.html", [
-      [ "CARMA", "md_README.html#autotoc_md245", [
-        [ "What Is CARMA Platform", "md_README.html#autotoc_md246", null ],
-        [ "Documentation", "md_README.html#autotoc_md247", null ],
-        [ "Release Notes", "md_README.html#autotoc_md249", null ],
-        [ "Roadmap", "md_README.html#autotoc_md250", null ],
-        [ "Architecture Guide", "md_README.html#autotoc_md251", null ],
-        [ "Detailed Design Documents", "md_README.html#autotoc_md252", null ],
-        [ "Developers Guide", "md_README.html#autotoc_md253", null ],
-        [ "Users Guide", "md_README.html#autotoc_md254", null ],
-        [ "Administrator Guide", "md_README.html#autotoc_md255", null ],
-        [ "Other CARMA Packages", "md_README.html#autotoc_md256", [
-          [ "Vehicle Controller Interface Drivers", "md_README.html#autotoc_md257", null ],
-          [ "Sensor Drivers", "md_README.html#autotoc_md258", null ],
-          [ "General System Utilites", "md_README.html#autotoc_md259", null ],
-          [ "Vehicle Configurations", "md_README.html#autotoc_md260", null ]
+    [ "Develop CI/CD Processes", "md_README.html", [
+      [ "CARMA", "md_README.html#autotoc_md246", [
+        [ "What Is CARMA Platform", "md_README.html#autotoc_md247", null ],
+        [ "Documentation", "md_README.html#autotoc_md248", null ],
+        [ "Release Notes", "md_README.html#autotoc_md250", null ],
+        [ "Roadmap", "md_README.html#autotoc_md251", null ],
+        [ "Architecture Guide", "md_README.html#autotoc_md252", null ],
+        [ "Detailed Design Documents", "md_README.html#autotoc_md253", null ],
+        [ "Developers Guide", "md_README.html#autotoc_md254", null ],
+        [ "Users Guide", "md_README.html#autotoc_md255", null ],
+        [ "Administrator Guide", "md_README.html#autotoc_md256", null ],
+        [ "Other CARMA Packages", "md_README.html#autotoc_md257", [
+          [ "Vehicle Controller Interface Drivers", "md_README.html#autotoc_md258", null ],
+          [ "Sensor Drivers", "md_README.html#autotoc_md259", null ],
+          [ "General System Utilites", "md_README.html#autotoc_md260", null ],
+          [ "Vehicle Configurations", "md_README.html#autotoc_md261", null ]
         ] ],
-        [ "Contribution", "md_README.html#autotoc_md261", null ],
-        [ "Code of Conduct", "md_README.html#autotoc_md262", null ],
-        [ "Attribution", "md_README.html#autotoc_md263", null ],
-        [ "License", "md_README.html#autotoc_md264", null ],
-        [ "Code.gov Registration Info", "md_README.html#autotoc_md265", null ],
-        [ "Contact", "md_README.html#autotoc_md266", null ]
+        [ "Contribution", "md_README.html#autotoc_md262", null ],
+        [ "Code of Conduct", "md_README.html#autotoc_md263", null ],
+        [ "Attribution", "md_README.html#autotoc_md264", null ],
+        [ "License", "md_README.html#autotoc_md265", null ],
+        [ "Code.gov Registration Info", "md_README.html#autotoc_md266", null ],
+        [ "Contact", "md_README.html#autotoc_md267", null ]
       ] ]
     ] ],
     [ "CARMA roadway objects - ROS 2 package design", "md_roadway_objects_docs_package_design.html", [
-      [ "Package Nodes", "md_roadway_objects_docs_package_design.html#autotoc_md268", null ],
-      [ "Package Launch files", "md_roadway_objects_docs_package_design.html#autotoc_md269", null ]
+      [ "Package Nodes", "md_roadway_objects_docs_package_design.html#autotoc_md269", null ],
+      [ "Package Launch files", "md_roadway_objects_docs_package_design.html#autotoc_md270", null ]
     ] ],
     [ "Roadway objects Launch", "md_roadway_objects_docs_roadway_objects_launch.html", [
-      [ "Launch arguments", "md_roadway_objects_docs_roadway_objects_launch.html#autotoc_md271", null ]
+      [ "Launch arguments", "md_roadway_objects_docs_roadway_objects_launch.html#autotoc_md272", null ]
     ] ],
     [ "Roadway objects Node", "md_roadway_objects_docs_roadway_objects_node.html", [
-      [ "Subscriptions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md273", null ],
-      [ "Publishers", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md274", null ],
-      [ "Parameters", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md275", null ],
-      [ "Services", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md276", null ],
-      [ "Actions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md277", null ]
+      [ "Subscriptions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md274", null ],
+      [ "Publishers", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md275", null ],
+      [ "Parameters", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md276", null ],
+      [ "Services", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md277", null ],
+      [ "Actions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md278", null ]
     ] ],
     [ "Roadway objects Package", "md_roadway_objects_README.html", [
-      [ "Documentation", "md_roadway_objects_README.html#autotoc_md279", null ]
+      [ "Documentation", "md_roadway_objects_README.html#autotoc_md280", null ]
     ] ],
     [ "route", "md_route_README.html", null ],
     [ "template_package", "md_template_package_README.html", [
-      [ "Creating a new ROS2 package for CARMA Platform", "md_template_package_README.html#autotoc_md282", null ]
+      [ "Creating a new ROS2 package for CARMA Platform", "md_template_package_README.html#autotoc_md283", null ]
     ] ],
     [ "<SUB><package_name>", "md_template_package_template_package_README.html", null ],
     [ "traffic_incident_parser", "md_traffic_incident_parser_README.html", null ],

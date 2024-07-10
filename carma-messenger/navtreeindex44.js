@@ -1,5 +1,7 @@
 var NAVTREEINDEX44 =
 {
+"structDDateTime.html#a03f4cef1872661cc500c2ffb49d4cfcc":[9,0,68,3],
+"structDDateTime.html#a175f44ab5912012da8c89f8237a9dd92":[9,0,68,5],
 "structDDateTime.html#a4a6d21644a545e14ab5c0dc2142e0feb":[9,0,68,2],
 "structDDateTime.html#a68d43b5ad317cd60d353a4cefb434834":[9,0,68,1],
 "structDDateTime.html#a6cdc8bafed6a8b519885acfde3e06ff3":[9,0,68,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX44 =
 "structIntersectionAccessPoint.html#a42a83990bcfb2f40189061e8f38d7378":[9,0,98,3],
 "structIntersectionAccessPoint.html#a8fe21766b7a664e931657fb79e50e193":[9,0,98,2],
 "structIntersectionAccessPoint.html#ad3b612a2820c2348466f79d3b5dc56e2":[9,0,98,1],
-"structIntersectionCollision.html":[9,0,99],
-"structIntersectionCollision.html#a04e42ebd22dc9cdcd605b9d9be51db23":[9,0,99,6],
-"structIntersectionCollision.html#a23be84c4675422e2d81091c276936975":[9,0,99,2]
+"structIntersectionCollision.html":[9,0,99]
 };

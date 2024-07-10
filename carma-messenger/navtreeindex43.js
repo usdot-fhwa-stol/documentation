@@ -1,5 +1,7 @@
 var NAVTREEINDEX43 =
 {
+"per__encoder_8h_source.html":[10,0,1,1,0,1,347],
+"per__opentype_8h.html":[10,0,1,1,0,1,348],
 "per__opentype_8h.html#af982816769b79caaed46bad857722eff":[10,0,1,1,0,1,348,0],
 "per__opentype_8h_source.html":[10,0,1,1,0,1,348],
 "per__support_8h.html":[10,0,1,1,0,1,349],
@@ -247,7 +249,5 @@ var NAVTREEINDEX43 =
 "structDDate.html#a92aefb5072c8884e6e8e4f89c5fe10d0":[9,0,67,3],
 "structDDate.html#ab0af30e17e80f499a5ef72fffe069e7d":[9,0,67,0],
 "structDDate.html#adbb4137863868c93ab6ba39ec88eb976":[9,0,67,2],
-"structDDateTime.html":[9,0,68],
-"structDDateTime.html#a03f4cef1872661cc500c2ffb49d4cfcc":[9,0,68,3],
-"structDDateTime.html#a175f44ab5912012da8c89f8237a9dd92":[9,0,68,5]
+"structDDateTime.html":[9,0,68]
 };

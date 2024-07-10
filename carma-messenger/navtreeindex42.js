@@ -219,6 +219,8 @@ var NAVTREEINDEX42 =
 "namespacetraffic.html":[8,0,11],
 "namespacetransforms.html":[8,0,12],
 "namespacetransforms.html#a13fd6834bb02a04f4c2dcf48fcd2cd5a":[8,0,12,0],
+"namespaceui.html":[8,0,13],
+"namespaceui.html#a148c770b4109d293449a5e8d60732081":[8,0,13,0],
 "oer__decoder_8h.html":[10,0,1,1,0,1,317],
 "oer__decoder_8h.html#a53167b0ee7ec690e38c9c83f1bc44965":[10,0,1,1,0,1,317,2],
 "oer__decoder_8h.html#a6f161582272513aee5f9eb34ebd03f28":[10,0,1,1,0,1,317,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX42 =
 "per__encoder_8h.html#a21089530ad1799cad8ceefe6edbcf544":[10,0,1,1,0,1,347,1],
 "per__encoder_8h.html#a2dcf11177fe567c4351bd29fd57cc375":[10,0,1,1,0,1,347,2],
 "per__encoder_8h.html#ad53dcd2d8a0c4b685671310c00c7b8a7":[10,0,1,1,0,1,347,3],
-"per__encoder_8h.html#ae46f4ae688b908149be12f635cddc81c":[10,0,1,1,0,1,347,4],
-"per__encoder_8h_source.html":[10,0,1,1,0,1,347],
-"per__opentype_8h.html":[10,0,1,1,0,1,348]
+"per__encoder_8h.html#ae46f4ae688b908149be12f635cddc81c":[10,0,1,1,0,1,347,4]
 };

@@ -30,5 +30,8 @@ var namespaces_dup =
     [ "traffic", "namespacetraffic.html", "namespacetraffic" ],
     [ "transforms", "namespacetransforms.html", [
       [ "generate_launch_description", "namespacetransforms.html#a13fd6834bb02a04f4c2dcf48fcd2cd5a", null ]
+    ] ],
+    [ "ui", "namespaceui.html", [
+      [ "generate_launch_description", "namespaceui.html#a148c770b4109d293449a5e8d60732081", null ]
     ] ]
 ];

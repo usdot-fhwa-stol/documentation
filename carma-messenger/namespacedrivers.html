@@ -111,67 +111,165 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <pre class="fragment">Launch desired CARMA Messenger drivers
 </pre> 
-<p class="definition">Definition at line <a class="el" href="chevrolet__tahoe__2018_2drivers_8launch_8py_source.html#l00036">36</a> of file <a class="el" href="chevrolet__tahoe__2018_2drivers_8launch_8py_source.html">drivers.launch.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span><span class="keyword">def </span><a class="code hl_function" href="namespacedrivers.html#aa911b3266eb7a2a400026f3dd9e2e562">generate_launch_description</a>():</div>
-<div class="line"><span class="lineno">   37</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   38</span><span class="stringliteral">    Launch desired CARMA Messenger drivers</span></div>
-<div class="line"><span class="lineno">   39</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   40</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">   41</span><span class="stringliteral">    env_log_levels = EnvironmentVariable(&#39;CARMA_ROS_LOGGING_CONFIG&#39;</span>, default_value=<span class="stringliteral">&#39;{ &quot;default_level&quot; : &quot;WARN&quot; }&#39;</span>)</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    configuration_delay = LaunchConfiguration(<span class="stringliteral">&#39;configuration_delay&#39;</span>)</div>
-<div class="line"><span class="lineno">   44</span>    declare_configuration_delay_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   45</span>        name =<span class="stringliteral">&#39;configuration_delay&#39;</span>, default_value=<span class="stringliteral">&#39;4.0&#39;</span>)</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    drivers = LaunchConfiguration(<span class="stringliteral">&#39;drivers&#39;</span>)</div>
-<div class="line"><span class="lineno">   48</span>    declare_drivers_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   49</span>        name = <span class="stringliteral">&#39;drivers&#39;</span>, default_value = <span class="stringliteral">&#39;dsrc_driver&#39;</span>, description = <span class="stringliteral">&quot;Desired drivers to launch specified by package name.&quot;</span></div>
-<div class="line"><span class="lineno">   50</span>    )</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    dsrc_group = GroupAction(</div>
-<div class="line"><span class="lineno">   53</span>        condition=IfCondition(PythonExpression([<span class="stringliteral">&quot;&#39;dsrc_driver&#39; in &#39;&quot;</span>, drivers, <span class="stringliteral">&quot;&#39;.split()&quot;</span>])),</div>
-<div class="line"><span class="lineno">   54</span>        actions=[</div>
-<div class="line"><span class="lineno">   55</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;hardware_interface&#39;</span>)),</div>
-<div class="line"><span class="lineno">   56</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">   57</span>                PythonLaunchDescriptionSource([ FindPackageShare(<span class="stringliteral">&#39;dsrc_driver&#39;</span>), <span class="stringliteral">&#39;/launch/dsrc_driver.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">   58</span>                launch_arguments = { </div>
-<div class="line"><span class="lineno">   59</span>                    <span class="stringliteral">&#39;log_level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;dsrc_driver&#39;</span>, env_log_levels),</div>
-<div class="line"><span class="lineno">   60</span>                    }.items()</div>
-<div class="line"><span class="lineno">   61</span>            ),</div>
-<div class="line"><span class="lineno">   62</span>        ]</div>
-<div class="line"><span class="lineno">   63</span>    )</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>    ros2_cmd = launch.substitutions.FindExecutable(name=<span class="stringliteral">&#39;ros2&#39;</span>)</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>    process_configure_dsrc_driver_node = launch.actions.ExecuteProcess(</div>
-<div class="line"><span class="lineno">   68</span>        cmd=[ros2_cmd, <span class="stringliteral">&quot;lifecycle&quot;</span>, <span class="stringliteral">&quot;set&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;hardware_interface&#39;</span>), <span class="stringliteral">&quot;/dsrc_driver_node&quot;</span> ], <span class="stringliteral">&quot;configure&quot;</span>],</div>
-<div class="line"><span class="lineno">   69</span>    )</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>    configuration_trigger = launch.actions.TimerAction(</div>
-<div class="line"><span class="lineno">   72</span>        period=configuration_delay,</div>
-<div class="line"><span class="lineno">   73</span>        actions=[</div>
-<div class="line"><span class="lineno">   74</span>            process_configure_dsrc_driver_node</div>
-<div class="line"><span class="lineno">   75</span>        ]</div>
-<div class="line"><span class="lineno">   76</span>    )</div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>    configured_event_handler_dsrc_driver_node = launch.actions.RegisterEventHandler(launch.event_handlers.OnExecutionComplete(</div>
-<div class="line"><span class="lineno">   79</span>            target_action=process_configure_dsrc_driver_node,</div>
-<div class="line"><span class="lineno">   80</span>            on_completion=[ </div>
-<div class="line"><span class="lineno">   81</span>                launch.actions.ExecuteProcess(</div>
-<div class="line"><span class="lineno">   82</span>                    cmd=[ros2_cmd, <span class="stringliteral">&quot;lifecycle&quot;</span>, <span class="stringliteral">&quot;set&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;hardware_interface&#39;</span>), <span class="stringliteral">&quot;/dsrc_driver_node&quot;</span> ], <span class="stringliteral">&quot;activate&quot;</span>],</div>
-<div class="line"><span class="lineno">   83</span>                )</div>
-<div class="line"><span class="lineno">   84</span>            ]</div>
-<div class="line"><span class="lineno">   85</span>        )</div>
-<div class="line"><span class="lineno">   86</span>    )</div>
-<div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">   89</span>        declare_configuration_delay_arg,</div>
-<div class="line"><span class="lineno">   90</span>        declare_drivers_arg,</div>
-<div class="line"><span class="lineno">   91</span>        dsrc_group,</div>
-<div class="line"><span class="lineno">   92</span>        configuration_trigger,</div>
-<div class="line"><span class="lineno">   93</span>        configured_event_handler_dsrc_driver_node</div>
-<div class="line"><span class="lineno">   94</span>    ])</div>
-<div class="ttc" id="anamespacedrivers_html_aa911b3266eb7a2a400026f3dd9e2e562"><div class="ttname"><a href="namespacedrivers.html#aa911b3266eb7a2a400026f3dd9e2e562">drivers.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="chevrolet__tahoe__2018_2drivers_8launch_8py_source.html#l00036">drivers.launch.py:36</a></div></div>
+<p class="definition">Definition at line <a class="el" href="chevrolet__tahoe__2018_2drivers_8launch_8py_source.html#l00037">37</a> of file <a class="el" href="chevrolet__tahoe__2018_2drivers_8launch_8py_source.html">drivers.launch.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span><span class="keyword">def </span><a class="code hl_function" href="namespacedrivers.html#aa911b3266eb7a2a400026f3dd9e2e562">generate_launch_description</a>():</div>
+<div class="line"><span class="lineno">   38</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   39</span><span class="stringliteral">    Launch desired CARMA Messenger drivers</span></div>
+<div class="line"><span class="lineno">   40</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   41</span><span class="stringliteral"></span> </div>
+<div class="line"><span class="lineno">   42</span><span class="stringliteral">    env_log_levels = EnvironmentVariable(</span></div>
+<div class="line"><span class="lineno">   43</span><span class="stringliteral">        &quot;CARMA_ROS_LOGGING_CONFIG&quot;</span>, default_value=<span class="stringliteral">&#39;{ &quot;default_level&quot; : &quot;WARN&quot; }&#39;</span></div>
+<div class="line"><span class="lineno">   44</span>    )</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    configuration_delay = LaunchConfiguration(<span class="stringliteral">&quot;configuration_delay&quot;</span>)</div>
+<div class="line"><span class="lineno">   47</span>    declare_configuration_delay_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   48</span>        name=<span class="stringliteral">&quot;configuration_delay&quot;</span>, default_value=<span class="stringliteral">&quot;4.0&quot;</span></div>
+<div class="line"><span class="lineno">   49</span>    )</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    drivers = LaunchConfiguration(<span class="stringliteral">&quot;drivers&quot;</span>)</div>
+<div class="line"><span class="lineno">   52</span>    declare_drivers_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   53</span>        name=<span class="stringliteral">&quot;drivers&quot;</span>,</div>
+<div class="line"><span class="lineno">   54</span>        default_value=<span class="stringliteral">&quot;dsrc_driver&quot;</span>,</div>
+<div class="line"><span class="lineno">   55</span>        description=<span class="stringliteral">&quot;Desired drivers to launch specified by package name.&quot;</span>,</div>
+<div class="line"><span class="lineno">   56</span>    )</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>    dsrc_group = GroupAction(</div>
+<div class="line"><span class="lineno">   59</span>        condition=IfCondition(</div>
+<div class="line"><span class="lineno">   60</span>            PythonExpression([<span class="stringliteral">&quot;&#39;dsrc_driver&#39; in &#39;&quot;</span>, drivers, <span class="stringliteral">&quot;&#39;.split()&quot;</span>])</div>
+<div class="line"><span class="lineno">   61</span>        ),</div>
+<div class="line"><span class="lineno">   62</span>        actions=[</div>
+<div class="line"><span class="lineno">   63</span>            PushRosNamespace(</div>
+<div class="line"><span class="lineno">   64</span>                EnvironmentVariable(<span class="stringliteral">&quot;CARMA_INTR_NS&quot;</span>, default_value=<span class="stringliteral">&quot;hardware_interface&quot;</span>)</div>
+<div class="line"><span class="lineno">   65</span>            ),</div>
+<div class="line"><span class="lineno">   66</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">   67</span>                PythonLaunchDescriptionSource(</div>
+<div class="line"><span class="lineno">   68</span>                    [FindPackageShare(<span class="stringliteral">&quot;dsrc_driver&quot;</span>), <span class="stringliteral">&quot;/launch/dsrc_driver.py&quot;</span>]</div>
+<div class="line"><span class="lineno">   69</span>                ),</div>
+<div class="line"><span class="lineno">   70</span>                launch_arguments={</div>
+<div class="line"><span class="lineno">   71</span>                    <span class="stringliteral">&quot;log_level&quot;</span>: GetLogLevel(<span class="stringliteral">&quot;dsrc_driver&quot;</span>, env_log_levels),</div>
+<div class="line"><span class="lineno">   72</span>                }.items(),</div>
+<div class="line"><span class="lineno">   73</span>            ),</div>
+<div class="line"><span class="lineno">   74</span>        ],</div>
+<div class="line"><span class="lineno">   75</span>    )</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>    pinpoint_group = GroupAction(</div>
+<div class="line"><span class="lineno">   78</span>        condition=IfCondition(</div>
+<div class="line"><span class="lineno">   79</span>            PythonExpression([<span class="stringliteral">&quot;&#39;pinpoint_driver&#39; in &#39;&quot;</span>, drivers, <span class="stringliteral">&quot;&#39;.split()&quot;</span>])</div>
+<div class="line"><span class="lineno">   80</span>        ),</div>
+<div class="line"><span class="lineno">   81</span>        actions=[</div>
+<div class="line"><span class="lineno">   82</span>            PushRosNamespace(</div>
+<div class="line"><span class="lineno">   83</span>                EnvironmentVariable(<span class="stringliteral">&quot;CARMA_INTR_NS&quot;</span>, default_value=<span class="stringliteral">&quot;hardware_interface&quot;</span>)</div>
+<div class="line"><span class="lineno">   84</span>            ),</div>
+<div class="line"><span class="lineno">   85</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">   86</span>                PythonLaunchDescriptionSource(</div>
+<div class="line"><span class="lineno">   87</span>                    [FindPackageShare(<span class="stringliteral">&quot;pinpoint&quot;</span>), <span class="stringliteral">&quot;/launch/pinpoint.launch.py&quot;</span>]</div>
+<div class="line"><span class="lineno">   88</span>                ),</div>
+<div class="line"><span class="lineno">   89</span>                launch_arguments={</div>
+<div class="line"><span class="lineno">   90</span>                    <span class="stringliteral">&quot;log_level&quot;</span>: GetLogLevel(<span class="stringliteral">&quot;pinpoint&quot;</span>, env_log_levels),</div>
+<div class="line"><span class="lineno">   91</span>                }.items(),</div>
+<div class="line"><span class="lineno">   92</span>            ),</div>
+<div class="line"><span class="lineno">   93</span>        ],</div>
+<div class="line"><span class="lineno">   94</span>    )</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    ros2_cmd = launch.substitutions.FindExecutable(name=<span class="stringliteral">&quot;ros2&quot;</span>)</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    process_configure_dsrc_driver_node = launch.actions.ExecuteProcess(</div>
+<div class="line"><span class="lineno">   99</span>        condition=IfCondition(</div>
+<div class="line"><span class="lineno">  100</span>            PythonExpression([<span class="stringliteral">&quot;&#39;dsrc_driver&#39; in &#39;&quot;</span>, drivers, <span class="stringliteral">&quot;&#39;.split()&quot;</span>])</div>
+<div class="line"><span class="lineno">  101</span>        ),</div>
+<div class="line"><span class="lineno">  102</span>        cmd=[</div>
+<div class="line"><span class="lineno">  103</span>            ros2_cmd,</div>
+<div class="line"><span class="lineno">  104</span>            <span class="stringliteral">&quot;lifecycle&quot;</span>,</div>
+<div class="line"><span class="lineno">  105</span>            <span class="stringliteral">&quot;set&quot;</span>,</div>
+<div class="line"><span class="lineno">  106</span>            [</div>
+<div class="line"><span class="lineno">  107</span>                EnvironmentVariable(</div>
+<div class="line"><span class="lineno">  108</span>                    <span class="stringliteral">&quot;CARMA_INTR_NS&quot;</span>, default_value=<span class="stringliteral">&quot;hardware_interface&quot;</span></div>
+<div class="line"><span class="lineno">  109</span>                ),</div>
+<div class="line"><span class="lineno">  110</span>                <span class="stringliteral">&quot;/dsrc_driver_node&quot;</span>,</div>
+<div class="line"><span class="lineno">  111</span>            ],</div>
+<div class="line"><span class="lineno">  112</span>            <span class="stringliteral">&quot;configure&quot;</span>,</div>
+<div class="line"><span class="lineno">  113</span>        ],</div>
+<div class="line"><span class="lineno">  114</span>    )</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    configured_event_handler_dsrc_driver_node = launch.actions.RegisterEventHandler(</div>
+<div class="line"><span class="lineno">  117</span>        launch.event_handlers.OnExecutionComplete(</div>
+<div class="line"><span class="lineno">  118</span>            target_action=process_configure_dsrc_driver_node,</div>
+<div class="line"><span class="lineno">  119</span>            on_completion=[</div>
+<div class="line"><span class="lineno">  120</span>                launch.actions.ExecuteProcess(</div>
+<div class="line"><span class="lineno">  121</span>                    cmd=[</div>
+<div class="line"><span class="lineno">  122</span>                        ros2_cmd,</div>
+<div class="line"><span class="lineno">  123</span>                        <span class="stringliteral">&quot;lifecycle&quot;</span>,</div>
+<div class="line"><span class="lineno">  124</span>                        <span class="stringliteral">&quot;set&quot;</span>,</div>
+<div class="line"><span class="lineno">  125</span>                        [</div>
+<div class="line"><span class="lineno">  126</span>                            EnvironmentVariable(</div>
+<div class="line"><span class="lineno">  127</span>                                <span class="stringliteral">&quot;CARMA_INTR_NS&quot;</span>, default_value=<span class="stringliteral">&quot;hardware_interface&quot;</span></div>
+<div class="line"><span class="lineno">  128</span>                            ),</div>
+<div class="line"><span class="lineno">  129</span>                            <span class="stringliteral">&quot;/dsrc_driver_node&quot;</span>,</div>
+<div class="line"><span class="lineno">  130</span>                        ],</div>
+<div class="line"><span class="lineno">  131</span>                        <span class="stringliteral">&quot;activate&quot;</span>,</div>
+<div class="line"><span class="lineno">  132</span>                    ],</div>
+<div class="line"><span class="lineno">  133</span>                )</div>
+<div class="line"><span class="lineno">  134</span>            ],</div>
+<div class="line"><span class="lineno">  135</span>        )</div>
+<div class="line"><span class="lineno">  136</span>    )</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    process_configure_pinpoint_node = launch.actions.ExecuteProcess(</div>
+<div class="line"><span class="lineno">  139</span>        condition=IfCondition(</div>
+<div class="line"><span class="lineno">  140</span>            PythonExpression([<span class="stringliteral">&quot;&#39;pinpoint_driver&#39; in &#39;&quot;</span>, drivers, <span class="stringliteral">&quot;&#39;.split()&quot;</span>])</div>
+<div class="line"><span class="lineno">  141</span>        ),</div>
+<div class="line"><span class="lineno">  142</span>        cmd=[</div>
+<div class="line"><span class="lineno">  143</span>            ros2_cmd,</div>
+<div class="line"><span class="lineno">  144</span>            <span class="stringliteral">&quot;lifecycle&quot;</span>,</div>
+<div class="line"><span class="lineno">  145</span>            <span class="stringliteral">&quot;set&quot;</span>,</div>
+<div class="line"><span class="lineno">  146</span>            [</div>
+<div class="line"><span class="lineno">  147</span>                EnvironmentVariable(</div>
+<div class="line"><span class="lineno">  148</span>                    <span class="stringliteral">&quot;CARMA_INTR_NS&quot;</span>, default_value=<span class="stringliteral">&quot;hardware_interface&quot;</span></div>
+<div class="line"><span class="lineno">  149</span>                ),</div>
+<div class="line"><span class="lineno">  150</span>                <span class="stringliteral">&quot;/pinpoint&quot;</span>,</div>
+<div class="line"><span class="lineno">  151</span>            ],</div>
+<div class="line"><span class="lineno">  152</span>            <span class="stringliteral">&quot;configure&quot;</span>,</div>
+<div class="line"><span class="lineno">  153</span>        ],</div>
+<div class="line"><span class="lineno">  154</span>    )</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    configured_event_handler_pinpoint_node = launch.actions.RegisterEventHandler(</div>
+<div class="line"><span class="lineno">  157</span>        launch.event_handlers.OnExecutionComplete(</div>
+<div class="line"><span class="lineno">  158</span>            target_action=process_configure_pinpoint_node,</div>
+<div class="line"><span class="lineno">  159</span>            on_completion=[</div>
+<div class="line"><span class="lineno">  160</span>                launch.actions.ExecuteProcess(</div>
+<div class="line"><span class="lineno">  161</span>                    cmd=[</div>
+<div class="line"><span class="lineno">  162</span>                        ros2_cmd,</div>
+<div class="line"><span class="lineno">  163</span>                        <span class="stringliteral">&quot;lifecycle&quot;</span>,</div>
+<div class="line"><span class="lineno">  164</span>                        <span class="stringliteral">&quot;set&quot;</span>,</div>
+<div class="line"><span class="lineno">  165</span>                        [</div>
+<div class="line"><span class="lineno">  166</span>                            EnvironmentVariable(</div>
+<div class="line"><span class="lineno">  167</span>                                <span class="stringliteral">&quot;CARMA_INTR_NS&quot;</span>, default_value=<span class="stringliteral">&quot;hardware_interface&quot;</span></div>
+<div class="line"><span class="lineno">  168</span>                            ),</div>
+<div class="line"><span class="lineno">  169</span>                            <span class="stringliteral">&quot;/pinpoint&quot;</span>,</div>
+<div class="line"><span class="lineno">  170</span>                        ],</div>
+<div class="line"><span class="lineno">  171</span>                        <span class="stringliteral">&quot;activate&quot;</span>,</div>
+<div class="line"><span class="lineno">  172</span>                    ],</div>
+<div class="line"><span class="lineno">  173</span>                )</div>
+<div class="line"><span class="lineno">  174</span>            ],</div>
+<div class="line"><span class="lineno">  175</span>        )</div>
+<div class="line"><span class="lineno">  176</span>    )</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>    configuration_trigger = launch.actions.TimerAction(</div>
+<div class="line"><span class="lineno">  179</span>        period=configuration_delay,</div>
+<div class="line"><span class="lineno">  180</span>        actions=[process_configure_dsrc_driver_node, process_configure_pinpoint_node],</div>
+<div class="line"><span class="lineno">  181</span>    )</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">return</span> LaunchDescription(</div>
+<div class="line"><span class="lineno">  184</span>        [</div>
+<div class="line"><span class="lineno">  185</span>            declare_configuration_delay_arg,</div>
+<div class="line"><span class="lineno">  186</span>            declare_drivers_arg,</div>
+<div class="line"><span class="lineno">  187</span>            dsrc_group,</div>
+<div class="line"><span class="lineno">  188</span>            pinpoint_group,</div>
+<div class="line"><span class="lineno">  189</span>            configuration_trigger,</div>
+<div class="line"><span class="lineno">  190</span>            configured_event_handler_dsrc_driver_node,</div>
+<div class="line"><span class="lineno">  191</span>            configured_event_handler_pinpoint_node,</div>
+<div class="line"><span class="lineno">  192</span>        ]</div>
+<div class="line"><span class="lineno">  193</span>    )</div>
+<div class="ttc" id="anamespacedrivers_html_aa911b3266eb7a2a400026f3dd9e2e562"><div class="ttname"><a href="namespacedrivers.html#aa911b3266eb7a2a400026f3dd9e2e562">drivers.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="chevrolet__tahoe__2018_2drivers_8launch_8py_source.html#l00037">drivers.launch.py:37</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -181,7 +279,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacedrivers.html">drivers</a></li>
-    <li class="footer">Generated on Wed Jul 10 2024 14:20:58 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Jul 11 2024 19:09:17 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

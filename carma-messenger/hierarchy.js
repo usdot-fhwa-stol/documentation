@@ -64,7 +64,8 @@ var hierarchy =
     [ "carma_ros2_utils::CarmaLifecycleNode", null, [
       [ "cpp_message::Node", "classcpp__message_1_1Node.html", null ],
       [ "emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin", "classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html", null ],
-      [ "j2735_convertor::Node", "classj2735__convertor_1_1Node.html", null ]
+      [ "j2735_convertor::Node", "classj2735__convertor_1_1Node.html", null ],
+      [ "traffic::TrafficIncidentNode", "classtraffic_1_1TrafficIncidentNode.html", null ]
     ] ],
     [ "Circle", "structCircle.html", null ],
     [ "CommonSafetyRequest", "structCommonSafetyRequest.html", null ],
@@ -388,7 +389,6 @@ var hierarchy =
     [ "TrafficControlRequestV01::TrafficControlRequestV01__bounds", "structTrafficControlRequestV01_1_1TrafficControlRequestV01____bounds.html", null ],
     [ "TrafficControlSchedule", "structTrafficControlSchedule.html", null ],
     [ "TrafficControlSchedule::TrafficControlSchedule__between", "structTrafficControlSchedule_1_1TrafficControlSchedule____between.html", null ],
-    [ "traffic::TrafficIncidentNode", "classtraffic_1_1TrafficIncidentNode.html", null ],
     [ "traffic::TrafficIncidentWorker", "classtraffic_1_1TrafficIncidentWorker.html", null ],
     [ "TrailerData", "structTrailerData.html", null ],
     [ "TrailerHistoryPoint", "structTrailerHistoryPoint.html", null ],

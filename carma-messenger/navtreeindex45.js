@@ -1,5 +1,7 @@
 var NAVTREEINDEX45 =
 {
+"structIntersectionAccessPoint.html#ad3b612a2820c2348466f79d3b5dc56e2":[9,0,98,1],
+"structIntersectionCollision.html":[9,0,99],
 "structIntersectionCollision.html#a04e42ebd22dc9cdcd605b9d9be51db23":[9,0,99,6],
 "structIntersectionCollision.html#a23be84c4675422e2d81091c276936975":[9,0,99,2],
 "structIntersectionCollision.html#a598c7170cfb4605cf459952034e75789":[9,0,99,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX45 =
 "structNodeAttributeSetXY.html#ae640a4c9dfed002924da566daeb39e63":[9,0,154,7],
 "structNodeAttributeSetXY_1_1NodeAttributeSetXY____regional.html":[9,0,154,0],
 "structNodeAttributeSetXY_1_1NodeAttributeSetXY____regional.html#a4890347fdd07042f263bea44a86676c2":[9,0,154,0,0],
-"structNodeAttributeSetXY_1_1NodeAttributeSetXY____regional.html#a7c349429e791875bc9b04723c65818a7":[9,0,154,0,1],
-"structNodeAttributeXYList.html":[9,0,155],
-"structNodeAttributeXYList.html#a903a9086af7ca66611a6ec64648d3c09":[9,0,155,1]
+"structNodeAttributeSetXY_1_1NodeAttributeSetXY____regional.html#a7c349429e791875bc9b04723c65818a7":[9,0,154,0,1]
 };

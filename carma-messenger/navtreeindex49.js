@@ -1,5 +1,7 @@
 var NAVTREEINDEX49 =
 {
+"structTrafficControlMessageV01.html#abe9393ba8bd4b4647110e6f65a4b276d":[9,0,271,8],
+"structTrafficControlPackage.html":[9,0,272],
 "structTrafficControlPackage.html#a2c467bf7444f41db84fe8411838ea38b":[9,0,272,1],
 "structTrafficControlPackage.html#ac4f09f01618ffbda6f2ef6d7040c1493":[9,0,272,2],
 "structTrafficControlPackage.html#acbe182bbe9a5527d57996e8c7922d410":[9,0,272,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX49 =
 "structVehicleToLanePosition.html#a5f2cfb92b8267e1b1c461468eb40a75d":[9,0,297,2],
 "structVehicleToLanePositionList.html":[9,0,298],
 "structVehicleToLanePositionList.html#a439ba2fcddae4054fc2fef8add41c90f":[9,0,298,0],
-"structVehicleToLanePositionList.html#ac4de427f6bfb8b71327ec3ef663ed90e":[9,0,298,1],
-"structVerticalOffset.html":[9,0,299],
-"structVerticalOffset.html#a089ccf5078ae499be8fe276eb54ef145":[9,0,299,3]
+"structVehicleToLanePositionList.html#ac4de427f6bfb8b71327ec3ef663ed90e":[9,0,298,1]
 };

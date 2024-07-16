@@ -1,5 +1,7 @@
 var NAVTREEINDEX44 =
 {
+"structDDate.html#adbb4137863868c93ab6ba39ec88eb976":[9,0,67,2],
+"structDDateTime.html":[9,0,68],
 "structDDateTime.html#a03f4cef1872661cc500c2ffb49d4cfcc":[9,0,68,3],
 "structDDateTime.html#a175f44ab5912012da8c89f8237a9dd92":[9,0,68,5],
 "structDDateTime.html#a4a6d21644a545e14ab5c0dc2142e0feb":[9,0,68,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX44 =
 "structITIScodesAndText____Member_1_1ITIScodesAndText____Member____item.html#aee357b675fb3e95d456d37577557e96e":[9,0,107,0,3],
 "structIntersectionAccessPoint.html":[9,0,98],
 "structIntersectionAccessPoint.html#a42a83990bcfb2f40189061e8f38d7378":[9,0,98,3],
-"structIntersectionAccessPoint.html#a8fe21766b7a664e931657fb79e50e193":[9,0,98,2],
-"structIntersectionAccessPoint.html#ad3b612a2820c2348466f79d3b5dc56e2":[9,0,98,1],
-"structIntersectionCollision.html":[9,0,99]
+"structIntersectionAccessPoint.html#a8fe21766b7a664e931657fb79e50e193":[9,0,98,2]
 };

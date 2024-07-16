@@ -28,6 +28,9 @@ var namespaces_dup =
       [ "generate_launch_description", "namespaceplugins.html#ac3f3c843d1dfcb998c4dbafd7c596419", null ]
     ] ],
     [ "traffic", "namespacetraffic.html", "namespacetraffic" ],
+    [ "traffic_incident", "namespacetraffic__incident.html", [
+      [ "generate_launch_description", "namespacetraffic__incident.html#ae9f6441ee2913489cbacfa4330527df7", null ]
+    ] ],
     [ "transforms", "namespacetransforms.html", [
       [ "generate_launch_description", "namespacetransforms.html#a13fd6834bb02a04f4c2dcf48fcd2cd5a", null ]
     ] ],

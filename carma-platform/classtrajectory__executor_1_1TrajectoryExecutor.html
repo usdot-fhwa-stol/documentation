@@ -294,7 +294,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  112</span> </div>
 <div class="line"><span class="lineno">  113</span>    <a class="code hl_variable" href="classtrajectory__executor_1_1TrajectoryExecutor.html#a81e81ded13e4ed2d574aa1dfa4624cd5">timer_</a> = create_timer(</div>
 <div class="line"><span class="lineno">  114</span>        get_clock(),</div>
-<div class="line"><span class="lineno">  115</span>        std::chrono::milliseconds(timer_period_ms), </div>
+<div class="line"><span class="lineno">  115</span>        std::chrono::milliseconds(timer_period_ms),</div>
 <div class="line"><span class="lineno">  116</span>        std::bind(&amp;<a class="code hl_function" href="classtrajectory__executor_1_1TrajectoryExecutor.html#aca463468d5f75dfc6edf3505045addc0">TrajectoryExecutor::onTrajEmitTick</a>, <span class="keyword">this</span>));</div>
 <div class="line"><span class="lineno">  117</span> </div>
 <div class="line"><span class="lineno">  118</span>    <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
@@ -438,7 +438,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  159</span> </div>
 <div class="line"><span class="lineno">  160</span>    <a class="code hl_variable" href="classtrajectory__executor_1_1TrajectoryExecutor.html#abf0128244e28413a7f2f9113ed156164">cur_traj_</a> = std::unique_ptr&lt;carma_planning_msgs::msg::TrajectoryPlan&gt;(move(msg));</div>
 <div class="line"><span class="lineno">  161</span>    <a class="code hl_variable" href="classtrajectory__executor_1_1TrajectoryExecutor.html#a0dbf9ccb618425dda735fbe6c3987e41">timesteps_since_last_traj_</a> = 0;</div>
-<div class="line"><span class="lineno">  162</span>    RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Successfully swapped trajectories!&quot;</span>);  </div>
+<div class="line"><span class="lineno">  162</span>    RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Successfully swapped trajectories!&quot;</span>);</div>
 <div class="line"><span class="lineno">  163</span>  }</div>
 <div class="ttc" id="aclasstrajectory__executor_1_1TrajectoryExecutor_html_a0dbf9ccb618425dda735fbe6c3987e41"><div class="ttname"><a href="classtrajectory__executor_1_1TrajectoryExecutor.html#a0dbf9ccb618425dda735fbe6c3987e41">trajectory_executor::TrajectoryExecutor::timesteps_since_last_traj_</a></div><div class="ttdeci">int timesteps_since_last_traj_</div><div class="ttdef"><b>Definition:</b> <a href="trajectory__executor__node_8hpp_source.html#l00056">trajectory_executor_node.hpp:56</a></div></div>
 </div><!-- fragment -->
@@ -500,13 +500,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  136</span>        it-&gt;second-&gt;publish(*<a class="code hl_variable" href="classtrajectory__executor_1_1TrajectoryExecutor.html#abf0128244e28413a7f2f9113ed156164">cur_traj_</a>);</div>
 <div class="line"><span class="lineno">  137</span>      } <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">  138</span>        std::ostringstream description_builder;</div>
-<div class="line"><span class="lineno">  139</span>              description_builder &lt;&lt; <span class="stringliteral">&quot;No match found for control plugin &quot;</span> </div>
-<div class="line"><span class="lineno">  140</span>              &lt;&lt; control_plugin &lt;&lt; <span class="stringliteral">&quot; at point &quot;</span> </div>
+<div class="line"><span class="lineno">  139</span>              description_builder &lt;&lt; <span class="stringliteral">&quot;No match found for control plugin &quot;</span></div>
+<div class="line"><span class="lineno">  140</span>              &lt;&lt; control_plugin &lt;&lt; <span class="stringliteral">&quot; at point &quot;</span></div>
 <div class="line"><span class="lineno">  141</span>              &lt;&lt; <a class="code hl_variable" href="classtrajectory__executor_1_1TrajectoryExecutor.html#a0dbf9ccb618425dda735fbe6c3987e41">timesteps_since_last_traj_</a> &lt;&lt; <span class="stringliteral">&quot; in current trajectory!&quot;</span>;</div>
 <div class="line"><span class="lineno">  142</span> </div>
 <div class="line"><span class="lineno">  143</span>        <span class="keywordflow">throw</span> std::invalid_argument(description_builder.str());</div>
 <div class="line"><span class="lineno">  144</span>      }</div>
-<div class="line"><span class="lineno">  145</span>      <a class="code hl_variable" href="classtrajectory__executor_1_1TrajectoryExecutor.html#a0dbf9ccb618425dda735fbe6c3987e41">timesteps_since_last_traj_</a>++; </div>
+<div class="line"><span class="lineno">  145</span>      <a class="code hl_variable" href="classtrajectory__executor_1_1TrajectoryExecutor.html#a0dbf9ccb618425dda735fbe6c3987e41">timesteps_since_last_traj_</a>++;</div>
 <div class="line"><span class="lineno">  146</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">  147</span>      RCLCPP_DEBUG_STREAM(get_logger(), <span class="stringliteral">&quot;Awaiting initial trajectory publication...&quot;</span>);</div>
 <div class="line"><span class="lineno">  148</span>    }</div>
@@ -613,8 +613,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   55</span>      out[<a class="code hl_variable" href="classtrajectory__executor_1_1TrajectoryExecutor.html#abc22533686236b1e6acc371e448ecc62">config_</a>.<a class="code hl_variable" href="structtrajectory__executor_1_1Config.html#adf4e4461f7c701f583faeb65fa2d727b">default_control_plugin</a>] = <a class="code hl_variable" href="classtrajectory__executor_1_1TrajectoryExecutor.html#abc22533686236b1e6acc371e448ecc62">config_</a>.<a class="code hl_variable" href="structtrajectory__executor_1_1Config.html#a807c18b2e8a405af02e59a34e9d8029a">default_control_plugin_topic</a>;</div>
 <div class="line"><span class="lineno">   56</span> </div>
 <div class="line"><span class="lineno">   57</span>      <span class="comment">//Hardcoding platoon control plugins</span></div>
-<div class="line"><span class="lineno">   58</span>      std::string control_plugin2 = <span class="stringliteral">&quot;platoon_control&quot;</span>;</div>
-<div class="line"><span class="lineno">   59</span>      std::string control_plugin_topic2 = <span class="stringliteral">&quot;/guidance/plugins/platoon_control/plan_trajectory&quot;</span>;</div>
+<div class="line"><span class="lineno">   58</span>      std::string control_plugin2 = <span class="stringliteral">&quot;platooning_control&quot;</span>;</div>
+<div class="line"><span class="lineno">   59</span>      std::string control_plugin_topic2 = <span class="stringliteral">&quot;/guidance/plugins/platooning_control/plan_trajectory&quot;</span>;</div>
 <div class="line"><span class="lineno">   60</span>      out[control_plugin2] = control_plugin_topic2;</div>
 <div class="line"><span class="lineno">   61</span> </div>
 <div class="line"><span class="lineno">   62</span>      <span class="keywordflow">return</span> out;</div>
@@ -828,7 +828,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetrajectory__executor.html">trajectory_executor</a></li><li class="navelem"><a class="el" href="classtrajectory__executor_1_1TrajectoryExecutor.html">TrajectoryExecutor</a></li>
-    <li class="footer">Generated on Tue Jul 16 2024 13:32:56 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Jul 26 2024 20:48:22 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

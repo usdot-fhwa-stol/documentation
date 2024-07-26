@@ -447,7 +447,7 @@ $(document).ready(function(){initNavTree('platooning__control_8cpp_source.html',
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <span class="keywordtype">double</span> dx1 = trajectory_points[trajectory_points.size()-1].x - trajectory_points[0].x;</div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    <span class="keywordtype">double</span> dy1 = trajectory_points[trajectory_points.size()-1].y - trajectory_points[0].y;</div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    <span class="keywordtype">double</span> d1 = sqrt(dx1*dx1 + dy1*dy1);</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    <span class="keywordtype">double</span> t1 = rclcpp::Time((trajectory_points[trajectory_points.size()-1].target_time)).seconds() - rclcpp::Time(trajectory_points[0].target_time).nanoseconds();</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    <span class="keywordtype">double</span> t1 = (rclcpp::Time((trajectory_points[trajectory_points.size()-1].target_time)).nanoseconds() - rclcpp::Time(trajectory_points[0].target_time).nanoseconds())/1e9;</div>
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span> </div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    <span class="keywordtype">double</span> avg_speed = d1/t1;</div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;platooning_control&quot;</span>), <span class="stringliteral">&quot;trajectory_points size = &quot;</span> &lt;&lt; trajectory_points.size() &lt;&lt; <span class="stringliteral">&quot;, d1 = &quot;</span> &lt;&lt; d1 &lt;&lt; <span class="stringliteral">&quot;, t1 = &quot;</span> &lt;&lt; t1 &lt;&lt; <span class="stringliteral">&quot;, avg_speed = &quot;</span> &lt;&lt; avg_speed);</div>
@@ -561,7 +561,7 @@ $(document).ready(function(){initNavTree('platooning__control_8cpp_source.html',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_ad77897b1ccd4abcbd6dd417d098445b.html">platooning_control</a></li><li class="navelem"><a class="el" href="dir_eb68dce615fe1273c42bce9c8695dbd4.html">src</a></li><li class="navelem"><a class="el" href="platooning__control_8cpp.html">platooning_control.cpp</a></li>
-    <li class="footer">Generated on Tue Jul 16 2024 13:32:48 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Jul 26 2024 20:48:14 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -1,5 +1,7 @@
 var NAVTREEINDEX44 =
 {
+"platoon__strategic__ihp_8h.html#a5402323f00d5763553277415c786fbca":[58,0,35,0,0,2,4],
+"platoon__strategic__ihp_8h.html#a71d95090a6e2bf7ed0b85142e9081f97":[58,0,35,0,0,2,3],
 "platoon__strategic__ihp_8h.html#ae866cb8846f2484b40536e455bfecaff":[58,0,35,0,0,2,2],
 "platoon__strategic__ihp_8h_source.html":[58,0,35,0,0,2],
 "platoon__strategic__ihp__launch_8py.html":[58,0,35,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX44 =
 "pure__pursuit__wrapper_8hpp_source.html":[58,0,40,0,0,0],
 "pure__pursuit__wrapper_8launch_8py.html":[58,0,40,1,0],
 "pure__pursuit__wrapper_8launch_8py.html#a840203ceec344e7884953678b8cf7c2f":[58,0,40,1,0,0],
-"pure__pursuit__wrapper_8launch_8py_source.html":[58,0,40,1,0],
-"pure__pursuit__wrapper__config_8hpp.html":[58,0,40,0,0,1],
-"pure__pursuit__wrapper__config_8hpp_source.html":[58,0,40,0,0,1]
+"pure__pursuit__wrapper_8launch_8py_source.html":[58,0,40,1,0]
 };

@@ -10,6 +10,7 @@ var classtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperNode =
     [ "generate_command", "classtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperNode.html#ae641e152beac0d0b5fc0372e535c05fe", null ],
     [ "get_availability", "classtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperNode.html#ad06bee033d2c0469d2cd0d507d1c309c", null ],
     [ "get_version_id", "classtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperNode.html#af41897630d591957ff0cc1baf871d4c2", null ],
+    [ "get_wheel_angle_rad_from_twist", "classtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperNode.html#a49b343a3cede8a39076ddada8539b507", null ],
     [ "isControlCommandOld", "classtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperNode.html#a15d90d2699efcc656b418c97d6a1969f", null ],
     [ "on_configure_plugin", "classtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperNode.html#af62d9f8916376761696a76bcb475aca3", null ],
     [ "parameter_update_callback", "classtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperNode.html#a913e52c18af2a0510da489ed2ec71c78", null ],

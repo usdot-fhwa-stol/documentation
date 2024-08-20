@@ -1,5 +1,7 @@
 var NAVTREEINDEX39 =
 {
+"md_docs_Release_notes.html#autotoc_md163":[26,0,14],
+"md_docs_Release_notes.html#autotoc_md164":[26,0,15],
 "md_docs_Release_notes.html#autotoc_md165":[26,0,16],
 "md_docs_Release_notes.html#autotoc_md166":[26,1],
 "md_docs_Release_notes.html#autotoc_md167":[26,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX39 =
 "msg__conversion_8hpp.html#afc3289cc4274cc16b86cbb6f169b149b":[58,0,7,1,0,8,16],
 "msg__conversion_8hpp_source.html":[58,0,7,1,0,8],
 "multiple__object__tracker__component_8cpp.html":[58,0,7,3,12],
-"multiple__object__tracker__component_8cpp.html#a15cb67e02f6f82074e6766be6bc0ba4a":[58,0,7,3,12,8],
-"multiple__object__tracker__component_8cpp.html#a219bbbe418d854cb95f4872622ac8c76":[58,0,7,3,12,2],
-"multiple__object__tracker__component_8cpp.html#a311208d76f15c87cdc235e4e8fab719a":[58,0,7,3,12,7]
+"multiple__object__tracker__component_8cpp.html#a15cb67e02f6f82074e6766be6bc0ba4a":[58,0,7,3,12,8]
 };

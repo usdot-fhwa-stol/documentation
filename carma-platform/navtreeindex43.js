@@ -1,5 +1,7 @@
 var NAVTREEINDEX43 =
 {
+"namespacepure__pursuit__wrapper.html":[56,0,75],
+"namespacepure__pursuit__wrapper.html#a2768a734fb88e0b12390e35976ef5546":[56,0,75,2],
 "namespacepure__pursuit__wrapper.html#a438e4ee9c214679dea4c4915dbe2b7c8":[56,0,75,3],
 "namespacepure__pursuit__wrapper.html#a840203ceec344e7884953678b8cf7c2f":[56,0,75,4],
 "namespacerapidjson.html":[56,0,76],
@@ -247,7 +249,5 @@ var NAVTREEINDEX43 =
 "platoon__strategic__ihp_8cpp.html":[58,0,35,2,2],
 "platoon__strategic__ihp_8cpp_source.html":[58,0,35,2,2],
 "platoon__strategic__ihp_8h.html":[58,0,35,0,0,2],
-"platoon__strategic__ihp_8h.html#a3c19ae18fa9f6083007c65b58293776a":[58,0,35,0,0,2,1],
-"platoon__strategic__ihp_8h.html#a5402323f00d5763553277415c786fbca":[58,0,35,0,0,2,4],
-"platoon__strategic__ihp_8h.html#a71d95090a6e2bf7ed0b85142e9081f97":[58,0,35,0,0,2,3]
+"platoon__strategic__ihp_8h.html#a3c19ae18fa9f6083007c65b58293776a":[58,0,35,0,0,2,1]
 };

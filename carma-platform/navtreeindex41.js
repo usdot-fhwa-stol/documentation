@@ -1,5 +1,7 @@
 var NAVTREEINDEX41 =
 {
+"namespacecarma__wm_1_1geometry.html#a31ddfa96008060a7c10c2bbd08a5739d":[56,0,16,1,30],
+"namespacecarma__wm_1_1geometry.html#a33b80c2f327d0293d7bdb9b4503a1cd5":[56,0,16,1,29],
 "namespacecarma__wm_1_1geometry.html#a4e12c2971926486d1447e44e978f8d4d":[56,0,16,1,14],
 "namespacecarma__wm_1_1geometry.html#a50c966bd5e6ed00ea0b1a70e93cd0d4a":[56,0,16,1,31],
 "namespacecarma__wm_1_1geometry.html#a527def551d1300fdb8d1b47230b50b18":[56,0,16,1,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX41 =
 "namespacelightbar__manager.html#ad65e92a99b6a98bdd0f10d921e9df5a5afe711ba8de3311ab7db7b80d7acb46a0":[56,0,43,11,7],
 "namespacelightbar__manager.html#adceb65c2a950c18cf2b4178b3bf97138":[56,0,43,10],
 "namespacelightbar__manager.html#adceb65c2a950c18cf2b4178b3bf97138a53042c961c9e5fd8dca57e773f819250":[56,0,43,10,2],
-"namespacelightbar__manager.html#adceb65c2a950c18cf2b4178b3bf97138a77787d07592c4a4a325207de2195c29f":[56,0,43,10,3],
-"namespacelightbar__manager.html#adceb65c2a950c18cf2b4178b3bf97138a903f302a0aac0cfcaa649c8009e4a2af":[56,0,43,10,1],
-"namespacelightbar__manager.html#adceb65c2a950c18cf2b4178b3bf97138abdebb707d7a27d1be9266ad9a3ff6e2b":[56,0,43,10,0]
+"namespacelightbar__manager.html#adceb65c2a950c18cf2b4178b3bf97138a77787d07592c4a4a325207de2195c29f":[56,0,43,10,3]
 };

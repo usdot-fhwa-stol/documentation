@@ -1,10 +1,4 @@
 var searchData=
 [
-  ['map_5fgroup_5fdirection_0',['map_group_direction',['../namespaceintersection__model.html#ae4b706d1cdee7b78ec5df5cf141a3e1a',1,'intersection_model']]],
-  ['map_5flane_5ftype_1',['map_lane_type',['../namespaceintersection__model.html#aa7ffa99ba647ab571c0bbeb2591c40b8',1,'intersection_model']]],
-  ['map_5fmessage_5fattributes_2',['map_message_attributes',['../namespaceintersection__model.html#a46cdfc6ed74c650a70c2f6cd1ade7a5a',1,'intersection_model']]],
-  ['map_5fnode_5fattributes_3',['map_node_attributes',['../namespaceintersection__model.html#a636d7a45dcacadc8139f3e24e3d6393d',1,'intersection_model']]],
-  ['map_5ftype_4',['map_type',['../namespaceintersection__model.html#a9665ff9720af0b25d1c6a216e7bf66b4',1,'intersection_model']]],
-  ['motorized_5fpropelled_5ftype_5',['motorized_propelled_type',['../namespacestreets__utils_1_1messages_1_1sdsm.html#a9765c7b93ab942803c925d51ebf5c602',1,'streets_utils::messages::sdsm']]],
-  ['movement_5fphase_5fstate_6',['movement_phase_state',['../namespacesignal__phase__and__timing.html#a89bd5b280352669f719b2c36a9dc2a14',1,'signal_phase_and_timing']]]
+  ['locationdatatype_0',['LocationDataType',['../namespacesensor__data__sharing__service.html#a09370ceb1455766c3f0c65ca9b4f24e5',1,'sensor_data_sharing_service']]]
 ];

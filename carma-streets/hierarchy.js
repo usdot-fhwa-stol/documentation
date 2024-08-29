@@ -145,6 +145,7 @@ var hierarchy =
     [ "scheduling_service::scheduling_service", "classscheduling__service_1_1scheduling__service.html", null ],
     [ "scheduling_service::scheduling_worker", "classscheduling__service_1_1scheduling__worker.html", null ],
     [ "streets_utils::messages::sdsm::sensor_data_sharing_msg", "structstreets__utils_1_1messages_1_1sdsm_1_1sensor__data__sharing__msg.html", null ],
+    [ "sensor_data_sharing_service::SensorReference", "structsensor__data__sharing__service_1_1SensorReference.html", null ],
     [ "streets_desired_phase_plan::signal_group2green_phase_timing", "structstreets__desired__phase__plan_1_1signal__group2green__phase__timing.html", null ],
     [ "streets_tsc_configuration::signal_group_configuration", "structstreets__tsc__configuration_1_1signal__group__configuration.html", null ],
     [ "traffic_signal_controller_service::signal_group_state", "structtraffic__signal__controller__service_1_1signal__group__state.html", null ],

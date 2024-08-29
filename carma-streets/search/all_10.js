@@ -29,7 +29,7 @@ var searchData=
   ['parse_5fposition_5foffset_26',['parse_position_offset',['../namespacestreets__utils_1_1messages_1_1sdsm.html#aa02013080aae5daaba6163550e7da4c0',1,'streets_utils::messages::sdsm']]],
   ['parse_5fpositional_5faccuracy_27',['parse_positional_accuracy',['../namespacestreets__utils_1_1messages_1_1sdsm.html#a58808de84ee1687033f744edbdec3f64',1,'streets_utils::messages::sdsm']]],
   ['parse_5fpropelled_5finformation_28',['parse_propelled_information',['../namespacestreets__utils_1_1messages_1_1sdsm.html#a2883e3189dc7638ec79bcd27ff680147',1,'streets_utils::messages::sdsm']]],
-  ['parse_5fsensor_5flocation_29',['parse_sensor_location',['../namespacesensor__data__sharing__service.html#ad7f7b7b70fe0f7b7357aa4cae820ff5f',1,'sensor_data_sharing_service']]],
+  ['parse_5fsensor_5fref_29',['parse_sensor_ref',['../namespacesensor__data__sharing__service.html#a1f5ff3b94bc2ebd58d196bef354bff32',1,'sensor_data_sharing_service']]],
   ['parse_5fsize_30',['parse_size',['../namespacestreets__utils_1_1messages_1_1detected__objects__msg.html#a2d55e3c4d1987281c47166e465114453',1,'streets_utils::messages::detected_objects_msg']]],
   ['parse_5fstring_5fmember_31',['parse_string_member',['../namespacestreets__utils_1_1json__utils.html#ae0e4ff2f10a0b2acd2ff600ecfc2b73b',1,'streets_utils::json_utils']]],
   ['parse_5ftime_5fstamp_32',['parse_time_stamp',['../namespacestreets__utils_1_1messages_1_1sdsm.html#ada4e926d7f5e13d733fb0d2fae1ed6f3',1,'streets_utils::messages::sdsm']]],

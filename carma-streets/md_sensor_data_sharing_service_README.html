@@ -88,15 +88,65 @@ $(document).ready(function(){initNavTree('md_sensor_data_sharing_service_README.
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md96"></a>
 Introduction</h1>
-<p >This is the <b>CARMA Streets</b> service responsible for consuming <a class="el" href="md_streets_utils_streets_messages_DetectedObjectsMessage.html">detected_objects_msg</a> and publishing <a class="el" href="md_streets_utils_streets_messages_SensorDataSharingMessage.html">sensor_data_sharing_msg</a> in accordance with the J3224 specification. This service is built on the <a class="el" href="md_streets_service_base_lanelet_aware_README.html">streets_service_base_lanelet_aware</a> base image to include lanelet2 dependencies used for map coordinate frame translations. </p>
-<h1><a class="anchor" id="autotoc_md97"></a>
-Configuration Parameters</h1>
-<p ><b>TODO</b> Saving this part for once I finalize the implementation </p><blockquote class="doxtable">
-<p >&zwj;[!IMPORTANT]\ Initial implementation of this service will not support the BSM functionality described in the J3224 specification and will also not support any data fusion from multiple infrastructure sensors. </p>
+<p >This is the <b>CARMA Streets</b> service responsible for consuming <a class="el" href="md_streets_utils_streets_messages_DetectedObjectsMessage.html">detected_objects_msg</a> and publishing <a class="el" href="md_streets_utils_streets_messages_SensorDataSharingMessage.html">sensor_data_sharing_msg</a> in accordance with the J3224 specification. This service is built on the <a class="el" href="md_streets_service_base_lanelet_aware_README.html">streets_service_base_lanelet_aware</a> base image to include lanelet2 dependencies used for map coordinate frame translations. </p><blockquote class="doxtable">
+<p >&zwj;[!IMPORTANT] Initial implementation of this service will not support the BSM functionality described in the J3224 specification and will also not support any data fusion from multiple infrastructure sensors. </p>
 </blockquote>
-<p>## Covariance to confidence conversion <img src="https://github.com/usdot-fhwa-stol/carma-streets/assets/77466294/b5f4d827-7768-40ba-8674-3115ff4a338c" alt="image" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md97"></a>
+Configuration</h1>
+<h2><a class="anchor" id="autotoc_md98"></a>
+Environment Variables</h2>
+<p >The <b>Sensor Data Sharing Service</b> uses the following environment variables to retreive CARMA Streets system level configuration information.</p>
+<p ><b>SIMULATION_MODE</b> : Boolean flag indicating whether the service is being run in a simulation or real-world enviroment. In simulation mode, this service use an external signal from the kafka <code>time_sync</code> topic as time.</p>
+<p ><b>SENSOR_JSON_FILE_PATH</b>: Path to a sensor configuration file with the following format. Used for retrieving a reference location and projection for received cartesian detection data </p><blockquote class="doxtable">
+<p >&zwj;[!NOTE] Sensor reference or "ref" can either be defined as a "CARTESIAN" offset from a provided lanelet2 osm map (first example) or a "WGS84" location (second example). The "CARTESIAN" offset is only recommended for simulation testing as it adds a dependency on a lanelet2 map. For real-world deployments it is recommended that the "WGS84" location is provided. </p>
+</blockquote>
+<p><b>CARTESIAN</b>:</p>
+<div class="fragment"><div class="line">[</div>
+<div class="line">  {</div>
+<div class="line">    &quot;sensorId&quot;: &quot;sensor_1&quot;,</div>
+<div class="line">    &quot;type&quot;: &quot;SemanticLidar&quot;,</div>
+<div class="line">    &quot;ref&quot;: {</div>
+<div class="line">      &quot;type&quot;: &quot;CARTESIAN&quot;,</div>
+<div class="line">      &quot;location&quot;: {</div>
+<div class="line">        &quot;x&quot;: 1.0, /* in meters */</div>
+<div class="line">        &quot;y&quot;: 2.0, /* in meters */</div>
+<div class="line">        &quot;z&quot;: -3.2 /* in meters */</div>
+<div class="line">      },</div>
+<div class="line">       &quot;orientation&quot;: { </div>
+<div class="line">        &quot;yaw&quot;: 0.0,</div>
+<div class="line">        &quot;pitch&quot;: 0.0,</div>
+<div class="line">        &quot;roll&quot;: 0.0</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">  } </div>
+<div class="line">]</div>
+</div><!-- fragment --><p >or</p>
+<p ><b>WGS84</b>:</p>
+<div class="fragment"><div class="line">[</div>
+<div class="line">  {</div>
+<div class="line">    &quot;sensorId&quot;: &quot;sensor_1&quot;,</div>
+<div class="line">    &quot;type&quot;: &quot;SemanticLidar&quot;,</div>
+<div class="line">    &quot;ref&quot;: {</div>
+<div class="line">      &quot;type&quot;: &quot;WGS84&quot;,</div>
+<div class="line">      &quot;location&quot;: {</div>
+<div class="line">        &quot;latitude&quot;: 38.9549716548523, /* in degrees */</div>
+<div class="line">        &quot;longitude&quot;: -77.14935313519123, /* in degrees */</div>
+<div class="line">        &quot;altitude&quot;: 5.5 /* in meters */</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">  } </div>
+<div class="line">]</div>
+</div><!-- fragment --><p ><b>LANELET2_MAP</b>: Only required for "CARTESIAN" sensor references. This is a file path to a lanelet2 osm map for which the cartesian offset is relavent.</p>
+<h2><a class="anchor" id="autotoc_md99"></a>
+Service Configuration</h2>
+<p ><b>sdsm_producer_topic</b>: Kafka topic to which the sensor data sharing service will produce SDSMs. <b>detection_consumer_topic</b>: Kafka topic from which the sensor data sharing service will consume Detected Objects. <b>sensor_configuration_file_path</b>: Path to sensor configuration information that includes sensor location and orientation. <b>bootstrap_server</b>: Kafka Broker Server Address. <b>sensor_id</b>: Unique id of sensor for which to publish SDSMS </p><blockquote class="doxtable">
+<p >&zwj;[!NOTE] While the sensor configuration file described above currently supports multiple sensors, the <b>Sensor Data Sharing Service</b> currently is only able to publish detections from a single source. The sensor_id service configuration will check incoming detections for sensor id and only publish SDSMs containing detections from this sensor. Future work to incorporate sensor fusion is being considered to allow the sensor data sharing service to consume detections from multiple sources and fuse them. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md100"></a>
+Covariance to confidence conversion</h1>
+<p ><img src="https://github.com/usdot-fhwa-stol/carma-streets/assets/77466294/b5f4d827-7768-40ba-8674-3115ff4a338c" alt="image" class="inline"/></p>
 <p >For covariance to confidence/accuracy translation assumed the following. All confidence/accuracy measurements in SDSM assume 95% confidence interval ( from J3224 documentation). Assuming normal distribution of measurements. Diagonal in covariance matrix is variance for each component. SD (Standard deviation) is square root of variance. 2 standard deviations covers 95 % of sample in normal distribution <img src="https://github.com/usdot-fhwa-stol/carma-streets/assets/77466294/4a6e9875-2f87-4a8f-b1a0-33a6769439ac" alt="image" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md98"></a>
+<h1><a class="anchor" id="autotoc_md101"></a>
 Sensor Data Sharing speed and heading</h1>
 <p >For heading and speed we use following coordinate frame (NED) as described in the J3224 specifications.</p>
 <p ><img src="docs/image.png" alt="Alt text" class="inline"/></p>
@@ -108,7 +158,7 @@ Sensor Data Sharing speed and heading</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Aug 28 2024 16:23:48 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Aug 29 2024 16:56:47 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

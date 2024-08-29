@@ -1,8 +1,13 @@
 var namespacesensor__data__sharing__service =
 [
     [ "sds_service", "classsensor__data__sharing__service_1_1sds__service.html", "classsensor__data__sharing__service_1_1sds__service" ],
+    [ "SensorReference", "structsensor__data__sharing__service_1_1SensorReference.html", "structsensor__data__sharing__service_1_1SensorReference" ],
+    [ "LocationDataType", "namespacesensor__data__sharing__service.html#a09370ceb1455766c3f0c65ca9b4f24e5", [
+      [ "WGS84", "namespacesensor__data__sharing__service.html#a09370ceb1455766c3f0c65ca9b4f24e5a5dda43a21474cf33e7088b8247f19c4b", null ],
+      [ "CARTESIAN", "namespacesensor__data__sharing__service.html#a09370ceb1455766c3f0c65ca9b4f24e5ac02304094f2866a43251b12946a9a21b", null ]
+    ] ],
     [ "detected_object_enu_to_ned", "namespacesensor__data__sharing__service.html#a536a528bd908691171dcb85db713fb7a", null ],
-    [ "parse_sensor_location", "namespacesensor__data__sharing__service.html#ad7f7b7b70fe0f7b7357aa4cae820ff5f", null ],
+    [ "parse_sensor_ref", "namespacesensor__data__sharing__service.html#a1f5ff3b94bc2ebd58d196bef354bff32", null ],
     [ "to_angular_velocity_confidence", "namespacesensor__data__sharing__service.html#a45b012119c686e006cfb3330ea6e0a69", null ],
     [ "to_detected_object_data", "namespacesensor__data__sharing__service.html#ac7883e0c836f56838d524ba13cbea5e7", null ],
     [ "to_heading", "namespacesensor__data__sharing__service.html#a69f88b750e17c2825a61d30f1adb6539", null ],

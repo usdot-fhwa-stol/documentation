@@ -97,123 +97,127 @@ var NAVTREE =
     ] ],
     [ "Sensor Data Sharing Service", "md_sensor_data_sharing_service_README.html", [
       [ "Introduction", "md_sensor_data_sharing_service_README.html#autotoc_md96", null ],
-      [ "Configuration Parameters", "md_sensor_data_sharing_service_README.html#autotoc_md97", null ],
-      [ "Sensor Data Sharing speed and heading", "md_sensor_data_sharing_service_README.html#autotoc_md98", null ]
+      [ "Configuration", "md_sensor_data_sharing_service_README.html#autotoc_md97", [
+        [ "Environment Variables", "md_sensor_data_sharing_service_README.html#autotoc_md98", null ],
+        [ "Service Configuration", "md_sensor_data_sharing_service_README.html#autotoc_md99", null ]
+      ] ],
+      [ "Covariance to confidence conversion", "md_sensor_data_sharing_service_README.html#autotoc_md100", null ],
+      [ "Sensor Data Sharing speed and heading", "md_sensor_data_sharing_service_README.html#autotoc_md101", null ]
     ] ],
     [ "Signal Optimization Service", "md_signal_opt_service_readme.html", [
-      [ "Configuration parameters", "md_signal_opt_service_readme.html#autotoc_md101", [
-        [ "Introduction", "md_signal_opt_service_readme.html#autotoc_md100", null ],
-        [ "Kafka topic names", "md_signal_opt_service_readme.html#autotoc_md102", null ],
-        [ "Additional parameters", "md_signal_opt_service_readme.html#autotoc_md103", null ]
+      [ "Configuration parameters", "md_signal_opt_service_readme.html#autotoc_md104", [
+        [ "Introduction", "md_signal_opt_service_readme.html#autotoc_md103", null ],
+        [ "Kafka topic names", "md_signal_opt_service_readme.html#autotoc_md105", null ],
+        [ "Additional parameters", "md_signal_opt_service_readme.html#autotoc_md106", null ]
       ] ],
-      [ "Implementation", "md_signal_opt_service_readme.html#autotoc_md104", null ]
+      [ "Implementation", "md_signal_opt_service_readme.html#autotoc_md107", null ]
     ] ],
     [ "Streets Service Base", "md_streets_service_base_README.html", [
-      [ "Introduction", "md_streets_service_base_README.html#autotoc_md106", null ],
-      [ "Usage", "md_streets_service_base_README.html#autotoc_md107", null ]
+      [ "Introduction", "md_streets_service_base_README.html#autotoc_md109", null ],
+      [ "Usage", "md_streets_service_base_README.html#autotoc_md110", null ]
     ] ],
     [ "Streets Service Base Lanelet Aware", "md_streets_service_base_lanelet_aware_README.html", [
-      [ "Introduction", "md_streets_service_base_lanelet_aware_README.html#autotoc_md109", null ],
-      [ "Usage", "md_streets_service_base_lanelet_aware_README.html#autotoc_md110", null ]
+      [ "Introduction", "md_streets_service_base_lanelet_aware_README.html#autotoc_md112", null ],
+      [ "Usage", "md_streets_service_base_lanelet_aware_README.html#autotoc_md113", null ]
     ] ],
     [ "JSON Utility Library", "md_streets_utils_json_utils_README.html", [
-      [ "Introduction", "md_streets_utils_json_utils_README.html#autotoc_md112", null ],
-      [ "Functions", "md_streets_utils_json_utils_README.html#autotoc_md113", null ],
-      [ "Include Library", "md_streets_utils_json_utils_README.html#autotoc_md114", null ]
+      [ "Introduction", "md_streets_utils_json_utils_README.html#autotoc_md115", null ],
+      [ "Functions", "md_streets_utils_json_utils_README.html#autotoc_md116", null ],
+      [ "Include Library", "md_streets_utils_json_utils_README.html#autotoc_md117", null ]
     ] ],
     [ "Streets Desired phase plan", "md_streets_utils_streets_desired_phase_plan_README.html", [
-      [ "Introduction", "md_streets_utils_streets_desired_phase_plan_README.html#autotoc_md116", [
-        [ "Message specs", "md_streets_utils_streets_desired_phase_plan_README.html#autotoc_md117", null ]
+      [ "Introduction", "md_streets_utils_streets_desired_phase_plan_README.html#autotoc_md119", [
+        [ "Message specs", "md_streets_utils_streets_desired_phase_plan_README.html#autotoc_md120", null ]
       ] ]
     ] ],
     [ "Detected Objects Message", "md_streets_utils_streets_messages_DetectedObjectsMessage.html", [
-      [ "Introduction", "md_streets_utils_streets_messages_DetectedObjectsMessage.html#autotoc_md119", null ],
-      [ "Example JSON payload", "md_streets_utils_streets_messages_DetectedObjectsMessage.html#autotoc_md120", null ]
+      [ "Introduction", "md_streets_utils_streets_messages_DetectedObjectsMessage.html#autotoc_md122", null ],
+      [ "Example JSON payload", "md_streets_utils_streets_messages_DetectedObjectsMessage.html#autotoc_md123", null ]
     ] ],
     [ "Streets Messages Library", "md_streets_utils_streets_messages_README.html", [
-      [ "Introduction", "md_streets_utils_streets_messages_README.html#autotoc_md122", null ],
-      [ "Messages", "md_streets_utils_streets_messages_README.html#autotoc_md123", null ],
-      [ "Serialization and Deserialization", "md_streets_utils_streets_messages_README.html#autotoc_md124", null ],
-      [ "Some future planned improvements to this library include:", "md_streets_utils_streets_messages_README.html#autotoc_md125", null ],
-      [ "Installation", "md_streets_utils_streets_messages_README.html#autotoc_md126", null ],
-      [ "Using Library", "md_streets_utils_streets_messages_README.html#autotoc_md127", null ]
+      [ "Introduction", "md_streets_utils_streets_messages_README.html#autotoc_md125", null ],
+      [ "Messages", "md_streets_utils_streets_messages_README.html#autotoc_md126", null ],
+      [ "Serialization and Deserialization", "md_streets_utils_streets_messages_README.html#autotoc_md127", null ],
+      [ "Some future planned improvements to this library include:", "md_streets_utils_streets_messages_README.html#autotoc_md128", null ],
+      [ "Installation", "md_streets_utils_streets_messages_README.html#autotoc_md129", null ],
+      [ "Using Library", "md_streets_utils_streets_messages_README.html#autotoc_md130", null ]
     ] ],
     [ "Sensor Data Sharing Message", "md_streets_utils_streets_messages_SensorDataSharingMessage.html", [
-      [ "Introduction", "md_streets_utils_streets_messages_SensorDataSharingMessage.html#autotoc_md129", null ]
+      [ "Introduction", "md_streets_utils_streets_messages_SensorDataSharingMessage.html#autotoc_md132", null ]
     ] ],
     [ "Streets Phase Control Schedule Command library", "md_streets_utils_streets_phase_control_schedule_README.html", [
-      [ "Introduction", "md_streets_utils_streets_phase_control_schedule_README.html#autotoc_md131", null ],
-      [ "Phase Control Schedule", "md_streets_utils_streets_phase_control_schedule_README.html#autotoc_md132", [
-        [ "<b>Parameter description</b>", "md_streets_utils_streets_phase_control_schedule_README.html#autotoc_md133", null ],
-        [ "<b>Sample</b>", "md_streets_utils_streets_phase_control_schedule_README.html#autotoc_md134", null ]
+      [ "Introduction", "md_streets_utils_streets_phase_control_schedule_README.html#autotoc_md134", null ],
+      [ "Phase Control Schedule", "md_streets_utils_streets_phase_control_schedule_README.html#autotoc_md135", [
+        [ "<b>Parameter description</b>", "md_streets_utils_streets_phase_control_schedule_README.html#autotoc_md136", null ],
+        [ "<b>Sample</b>", "md_streets_utils_streets_phase_control_schedule_README.html#autotoc_md137", null ]
       ] ],
-      [ "Including library", "md_streets_utils_streets_phase_control_schedule_README.html#autotoc_md135", null ]
+      [ "Including library", "md_streets_utils_streets_phase_control_schedule_README.html#autotoc_md138", null ]
     ] ],
     [ "Streets Service Base Library", "md_streets_utils_streets_service_base_README.html", [
-      [ "Introduction", "md_streets_utils_streets_service_base_README.html#autotoc_md137", null ],
-      [ "streets_clock_singleton", "md_streets_utils_streets_service_base_README.html#autotoc_md138", null ],
-      [ "streets_service", "md_streets_utils_streets_service_base_README.html#autotoc_md139", null ],
-      [ "Include streets_service_base_lib", "md_streets_utils_streets_service_base_README.html#autotoc_md140", null ]
+      [ "Introduction", "md_streets_utils_streets_service_base_README.html#autotoc_md140", null ],
+      [ "streets_clock_singleton", "md_streets_utils_streets_service_base_README.html#autotoc_md141", null ],
+      [ "streets_service", "md_streets_utils_streets_service_base_README.html#autotoc_md142", null ],
+      [ "Include streets_service_base_lib", "md_streets_utils_streets_service_base_README.html#autotoc_md143", null ]
     ] ],
     [ "Streets Service Configuration Library", "md_streets_utils_streets_service_configuration_README.html", [
-      [ "Introduction", "md_streets_utils_streets_service_configuration_README.html#autotoc_md142", null ],
-      [ "Streets Singleton", "md_streets_utils_streets_service_configuration_README.html#autotoc_md143", null ],
-      [ "Streets Configuration", "md_streets_utils_streets_service_configuration_README.html#autotoc_md144", null ],
-      [ "Include streets_service_configuration_lib::streets_service_configuration_lib", "md_streets_utils_streets_service_configuration_README.html#autotoc_md145", null ]
+      [ "Introduction", "md_streets_utils_streets_service_configuration_README.html#autotoc_md145", null ],
+      [ "Streets Singleton", "md_streets_utils_streets_service_configuration_README.html#autotoc_md146", null ],
+      [ "Streets Configuration", "md_streets_utils_streets_service_configuration_README.html#autotoc_md147", null ],
+      [ "Include streets_service_configuration_lib::streets_service_configuration_lib", "md_streets_utils_streets_service_configuration_README.html#autotoc_md148", null ]
     ] ],
     [ "Streets Signal Optimization Library", "md_streets_utils_streets_signal_optimization_README.html", [
-      [ "Introduction", "md_streets_utils_streets_signal_optimization_README.html#autotoc_md147", null ],
-      [ "streets_desired_phase_plan_generator", "md_streets_utils_streets_signal_optimization_README.html#autotoc_md148", null ],
-      [ "streets_desired phase plan arbitrator", "md_streets_utils_streets_signal_optimization_README.html#autotoc_md149", [
-        [ "Use of desired phase plan arbitrator lib", "md_streets_utils_streets_signal_optimization_README.html#autotoc_md150", null ]
+      [ "Introduction", "md_streets_utils_streets_signal_optimization_README.html#autotoc_md150", null ],
+      [ "streets_desired_phase_plan_generator", "md_streets_utils_streets_signal_optimization_README.html#autotoc_md151", null ],
+      [ "streets_desired phase plan arbitrator", "md_streets_utils_streets_signal_optimization_README.html#autotoc_md152", [
+        [ "Use of desired phase plan arbitrator lib", "md_streets_utils_streets_signal_optimization_README.html#autotoc_md153", null ]
       ] ]
     ] ],
     [ "Streets Signal Phase and Timing Library", "md_streets_utils_streets_signal_phase_and_timing_README.html", [
-      [ "Introduction", "md_streets_utils_streets_signal_phase_and_timing_README.html#autotoc_md152", null ],
-      [ "SPaT Traffic Signal State Information", "md_streets_utils_streets_signal_phase_and_timing_README.html#autotoc_md153", null ],
-      [ "Including Library", "md_streets_utils_streets_signal_phase_and_timing_README.html#autotoc_md154", null ],
-      [ "Initializing SPaT Object for consuming NTCIP UDP data", "md_streets_utils_streets_signal_phase_and_timing_README.html#autotoc_md155", null ],
-      [ "Modifying SPaT Object", "md_streets_utils_streets_signal_phase_and_timing_README.html#autotoc_md156", null ]
+      [ "Introduction", "md_streets_utils_streets_signal_phase_and_timing_README.html#autotoc_md155", null ],
+      [ "SPaT Traffic Signal State Information", "md_streets_utils_streets_signal_phase_and_timing_README.html#autotoc_md156", null ],
+      [ "Including Library", "md_streets_utils_streets_signal_phase_and_timing_README.html#autotoc_md157", null ],
+      [ "Initializing SPaT Object for consuming NTCIP UDP data", "md_streets_utils_streets_signal_phase_and_timing_README.html#autotoc_md158", null ],
+      [ "Modifying SPaT Object", "md_streets_utils_streets_signal_phase_and_timing_README.html#autotoc_md159", null ]
     ] ],
     [ "Streets SNMP Command library", "md_streets_utils_streets_snmp_cmd_README.html", [
-      [ "Introduction", "md_streets_utils_streets_snmp_cmd_README.html#autotoc_md158", null ],
-      [ "Streets SNMP command structure", "md_streets_utils_streets_snmp_cmd_README.html#autotoc_md159", [
-        [ "<b>Parameter description</b>", "md_streets_utils_streets_snmp_cmd_README.html#autotoc_md160", [
-          [ "snmp_cmd_struct definition", "md_streets_utils_streets_snmp_cmd_README.html#autotoc_md161", null ],
-          [ "snmp_response_obj definition", "md_streets_utils_streets_snmp_cmd_README.html#autotoc_md162", null ]
+      [ "Introduction", "md_streets_utils_streets_snmp_cmd_README.html#autotoc_md161", null ],
+      [ "Streets SNMP command structure", "md_streets_utils_streets_snmp_cmd_README.html#autotoc_md162", [
+        [ "<b>Parameter description</b>", "md_streets_utils_streets_snmp_cmd_README.html#autotoc_md163", [
+          [ "snmp_cmd_struct definition", "md_streets_utils_streets_snmp_cmd_README.html#autotoc_md164", null ],
+          [ "snmp_response_obj definition", "md_streets_utils_streets_snmp_cmd_README.html#autotoc_md165", null ]
         ] ]
       ] ],
-      [ "Including library", "md_streets_utils_streets_snmp_cmd_README.html#autotoc_md163", null ]
+      [ "Including library", "md_streets_utils_streets_snmp_cmd_README.html#autotoc_md166", null ]
     ] ],
     [ "Streets Timing Plan Command library", "md_streets_utils_streets_timing_plan_README.html", [
-      [ "Introduction", "md_streets_utils_streets_timing_plan_README.html#autotoc_md165", [
-        [ "<b>Sample</b>", "md_streets_utils_streets_timing_plan_README.html#autotoc_md166", null ]
+      [ "Introduction", "md_streets_utils_streets_timing_plan_README.html#autotoc_md168", [
+        [ "<b>Sample</b>", "md_streets_utils_streets_timing_plan_README.html#autotoc_md169", null ]
       ] ],
-      [ "Including library", "md_streets_utils_streets_timing_plan_README.html#autotoc_md167", null ]
+      [ "Including library", "md_streets_utils_streets_timing_plan_README.html#autotoc_md170", null ]
     ] ],
     [ "Streets TSC Configuration Library", "md_streets_utils_streets_tsc_configuration_README.html", [
-      [ "Introduction", "md_streets_utils_streets_tsc_configuration_README.html#autotoc_md169", null ],
-      [ "TSC Configuration State Information", "md_streets_utils_streets_tsc_configuration_README.html#autotoc_md170", [
-        [ "Including Library", "md_streets_utils_streets_tsc_configuration_README.html#autotoc_md172", null ]
+      [ "Introduction", "md_streets_utils_streets_tsc_configuration_README.html#autotoc_md172", null ],
+      [ "TSC Configuration State Information", "md_streets_utils_streets_tsc_configuration_README.html#autotoc_md173", [
+        [ "Including Library", "md_streets_utils_streets_tsc_configuration_README.html#autotoc_md175", null ]
       ] ]
     ] ],
     [ "Streets Vehicle List Library", "md_streets_utils_streets_vehicle_list_README.html", [
-      [ "Introduction", "md_streets_utils_streets_vehicle_list_README.html#autotoc_md174", null ],
-      [ "Data Objects", "md_streets_utils_streets_vehicle_list_README.html#autotoc_md175", null ],
-      [ "Status Intent Processor", "md_streets_utils_streets_vehicle_list_README.html#autotoc_md176", null ],
-      [ "Include streets_vehicle_list", "md_streets_utils_streets_vehicle_list_README.html#autotoc_md177", null ]
+      [ "Introduction", "md_streets_utils_streets_vehicle_list_README.html#autotoc_md177", null ],
+      [ "Data Objects", "md_streets_utils_streets_vehicle_list_README.html#autotoc_md178", null ],
+      [ "Status Intent Processor", "md_streets_utils_streets_vehicle_list_README.html#autotoc_md179", null ],
+      [ "Include streets_vehicle_list", "md_streets_utils_streets_vehicle_list_README.html#autotoc_md180", null ]
     ] ],
     [ "Streets Vehicle Scheduler Library", "md_streets_utils_streets_vehicle_scheduler_README.html", [
-      [ "Introduction", "md_streets_utils_streets_vehicle_scheduler_README.html#autotoc_md179", [
-        [ "Intersection Schedule", "md_streets_utils_streets_vehicle_scheduler_README.html#autotoc_md180", null ],
-        [ "Vehicle scheduler", "md_streets_utils_streets_vehicle_scheduler_README.html#autotoc_md181", null ]
+      [ "Introduction", "md_streets_utils_streets_vehicle_scheduler_README.html#autotoc_md182", [
+        [ "Intersection Schedule", "md_streets_utils_streets_vehicle_scheduler_README.html#autotoc_md183", null ],
+        [ "Vehicle scheduler", "md_streets_utils_streets_vehicle_scheduler_README.html#autotoc_md184", null ]
       ] ]
     ] ],
     [ "Traffic Signal Controller Service Library", "md_tsc_client_service_README.html", [
-      [ "Introduction", "md_tsc_client_service_README.html#autotoc_md183", null ],
-      [ "tsc_service", "md_tsc_client_service_README.html#autotoc_md184", null ],
-      [ "tsc_service to MMITSS integration", "md_tsc_client_service_README.html#autotoc_md185", [
-        [ "Configuration parameter", "md_tsc_client_service_README.html#autotoc_md186", null ]
+      [ "Introduction", "md_tsc_client_service_README.html#autotoc_md186", null ],
+      [ "tsc_service", "md_tsc_client_service_README.html#autotoc_md187", null ],
+      [ "tsc_service to MMITSS integration", "md_tsc_client_service_README.html#autotoc_md188", [
+        [ "Configuration parameter", "md_tsc_client_service_README.html#autotoc_md189", null ]
       ] ]
     ] ],
     [ "Namespaces", "namespaces.html", [
@@ -270,17 +274,17 @@ var NAVTREEINDEX =
 "dir_90fbb20d3a91f6579ea4785668869581.html",
 "intersection__client__api_2OAIHelpers_8cpp.html#adaf74a3f78b5c7bf17942caf88d1d884",
 "json__utils_8hpp.html#ac675baaea86ecc126f2e57727aa7d386",
-"monitor__tsc__state_8cpp.html",
-"namespacesignal__phase__and__timing.html#a73071ea25111b378aeca7eb3d5a91bc3a07d250079e1cc0e1d595104c4d9a5129",
-"namespacestreets__utils_1_1messages_1_1sdsm.html#a6c765dc88563e6951267470da37140c7ab0d5c9e92ccdd034f5311c256bfb2763",
-"personal__device__user__type_8hpp.html#ac45dc8404048e211de931f5ac0c7b277",
-"simulate__mobilitypath_8py.html#a2b49e4b498d2420706ae8f9914267bcb",
-"structintersection__model_1_1intersection__map.html#aa431297df6352a663f734f4b91cd8abc",
-"structntcip_1_1ntcip__1202__ext.html#a494df3028a1a0d9b6463401cf01f5b54",
-"structsignal__phase__and__timing_1_1time__change__details.html#af48143f84b1047346da1d7d571f4511a",
-"structstreets__utils_1_1messages_1_1sdsm_1_1angular__velocity__confidence__set.html#a5b841ecd183ce4f4cb517cc4f89f031d",
-"structstreets__vehicle__scheduler_1_1signalized__intersection__schedule.html",
-"vehicle__status__intent__service_8cpp.html#a4b7d4a8ab4ecfa31372593ca82fc843b"
+"monitor__states__exception_8cpp_source.html",
+"namespacesensor__data__sharing__service.html#aefce9304438d6e8ee060b745140f925e",
+"namespacestreets__utils_1_1messages_1_1sdsm.html#a6c765dc88563e6951267470da37140c7a28ca29a51973ab3857f56566bba1999f",
+"obstacle__size_8hpp.html",
+"simulate__mobilityoperation_8py.html#a53dff21a6d447ca660693de3432b79d0",
+"structintersection__model_1_1intersection__info__t.html#aaec275e8e8b2d9ab62c83f6e04087f15",
+"structntcip_1_1ntcip__1202__ext.html#a42e57cef6ca5c2a191b9ea7f1d482b37",
+"structsignal__phase__and__timing_1_1time__change__details.html#aa43eafdf46377a5743e82b5be8ce3133",
+"structstreets__utils_1_1messages_1_1detected__objects__msg_1_1vector__3d.html#a2bb88f8925832e1c942b25eaffe063e7",
+"structstreets__vehicle__scheduler_1_1all__stop__vehicle__schedule.html#ab735125526f509961867602dc459f8e6",
+"vehicle__sorting_8cpp.html#aa9f946d7c588b2697fd379fbed72f382"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

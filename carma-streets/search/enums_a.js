@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['request_5ftype_0',['REQUEST_TYPE',['../namespacestreets__snmp__cmd.html#adc71a58a54cd2d720c4a550635f0eba6',1,'streets_snmp_cmd']]],
-  ['response_5ftype_1',['RESPONSE_TYPE',['../namespacestreets__snmp__cmd.html#a6f3945d9a8ecb3f1265d1b3606b02949',1,'streets_snmp_cmd']]]
+  ['personal_5fdevice_5fuser_5ftype_0',['personal_device_user_type',['../namespacestreets__utils_1_1messages_1_1sdsm.html#adacfbef3c71d9ee8b55346133ace590c',1,'streets_utils::messages::sdsm']]],
+  ['phase_5fcontrol_5ftype_1',['PHASE_CONTROL_TYPE',['../namespacestreets__snmp__cmd.html#a59b439b9f091a4d2ae645e728a8fb9f6',1,'streets_snmp_cmd']]],
+  ['position_5fconfidence_2',['position_confidence',['../namespacestreets__utils_1_1messages_1_1sdsm.html#a6c765dc88563e6951267470da37140c7',1,'streets_utils::messages::sdsm']]]
 ];

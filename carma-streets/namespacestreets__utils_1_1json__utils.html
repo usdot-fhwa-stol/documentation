@@ -112,6 +112,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ac69527db262595b9d8c0a8c6a476d53e"><td class="memItemLeft" align="right" valign="top">std::optional&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestreets__utils_1_1json__utils.html#ac69527db262595b9d8c0a8c6a476d53e">parse_uint_member</a> (const std::string &amp;member_name, const rapidjson::Value &amp;obj, bool required)</td></tr>
 <tr class="memdesc:ac69527db262595b9d8c0a8c6a476d53e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions to retrieve uint member values from JSON object <a href="https://miloyip.github.io/rapidjson/index.html">RapidJSON</a> with <a href="https://miloyip.github.io/rapidjson/md_doc_dom.html">DOM parsing</a>. Functions will return unintialized <code>std::optional</code> for optional members that are not found in JSON object and will throw <code><a class="el" href="classstreets__utils_1_1json__utils_1_1json__parse__exception.html" title="Runtime exception related to json_utils functions. Thrown when :">json_parse_exception</a></code>. for required members that are not found in JSON object.  <a href="namespacestreets__utils_1_1json__utils.html#ac69527db262595b9d8c0a8c6a476d53e">More...</a><br /></td></tr>
 <tr class="separator:ac69527db262595b9d8c0a8c6a476d53e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5131e22b1a6f3b1aadbbd64d80b7f91"><td class="memItemLeft" align="right" valign="top">std::optional&lt; long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestreets__utils_1_1json__utils.html#af5131e22b1a6f3b1aadbbd64d80b7f91">parse_long_member</a> (const std::string &amp;member_name, const rapidjson::Value &amp;obj, bool required)</td></tr>
+<tr class="memdesc:af5131e22b1a6f3b1aadbbd64d80b7f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions to retrieve uint member values from JSON object <a href="https://miloyip.github.io/rapidjson/index.html">RapidJSON</a> with <a href="https://miloyip.github.io/rapidjson/md_doc_dom.html">DOM parsing</a>. Functions will return unintialized <code>std::optional</code> for optional members that are not found in JSON object and will throw <code><a class="el" href="classstreets__utils_1_1json__utils_1_1json__parse__exception.html" title="Runtime exception related to json_utils functions. Thrown when :">json_parse_exception</a></code>. for required members that are not found in JSON object.  <a href="namespacestreets__utils_1_1json__utils.html#af5131e22b1a6f3b1aadbbd64d80b7f91">More...</a><br /></td></tr>
+<tr class="separator:af5131e22b1a6f3b1aadbbd64d80b7f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e2373f83c60b617d2a203ae67663ea1"><td class="memItemLeft" align="right" valign="top">std::optional&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestreets__utils_1_1json__utils.html#a5e2373f83c60b617d2a203ae67663ea1">parse_bool_member</a> (const std::string &amp;member_name, const rapidjson::Value &amp;obj, bool required)</td></tr>
 <tr class="memdesc:a5e2373f83c60b617d2a203ae67663ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions to retrieve bool member values from JSON object <a href="https://miloyip.github.io/rapidjson/index.html">RapidJSON</a> with <a href="https://miloyip.github.io/rapidjson/md_doc_dom.html">DOM parsing</a>. Functions will return unintialized <code>std::optional</code> for optional members that are not found in JSON object and will throw <code><a class="el" href="classstreets__utils_1_1json__utils_1_1json__parse__exception.html" title="Runtime exception related to json_utils functions. Thrown when :">json_parse_exception</a></code>. for required members that are not found in JSON object.  <a href="namespacestreets__utils_1_1json__utils.html#a5e2373f83c60b617d2a203ae67663ea1">More...</a><br /></td></tr>
 <tr class="separator:a5e2373f83c60b617d2a203ae67663ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,18 +181,18 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;rapidjson::Value::ConstArray&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json__utils_8cpp_source.html#l00109">109</a> of file <a class="el" href="json__utils_8cpp_source.html">json_utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  109</span>                                                                                                                                     {</div>
-<div class="line"><span class="lineno">  110</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.HasMember(member_name.c_str()) &amp;&amp; <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.FindMember(member_name.c_str())-&gt;value.IsArray())</div>
-<div class="line"><span class="lineno">  111</span>        {</div>
-<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>[member_name.c_str()].GetArray();</div>
-<div class="line"><span class="lineno">  113</span>        }</div>
-<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (required)</div>
-<div class="line"><span class="lineno">  115</span>        {</div>
-<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">throw</span> json_parse_exception(<span class="stringliteral">&quot;Missing or incorrect type for required member &quot;</span> + member_name + <span class="stringliteral">&quot;!&quot;</span>);</div>
-<div class="line"><span class="lineno">  117</span>        }</div>
-<div class="line"><span class="lineno">  118</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">  119</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="json__utils_8cpp_source.html#l00122">122</a> of file <a class="el" href="json__utils_8cpp_source.html">json_utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>                                                                                                                                     {</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.HasMember(member_name.c_str()) &amp;&amp; <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.FindMember(member_name.c_str())-&gt;value.IsArray())</div>
+<div class="line"><span class="lineno">  124</span>        {</div>
+<div class="line"><span class="lineno">  125</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>[member_name.c_str()].GetArray();</div>
+<div class="line"><span class="lineno">  126</span>        }</div>
+<div class="line"><span class="lineno">  127</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (required)</div>
+<div class="line"><span class="lineno">  128</span>        {</div>
+<div class="line"><span class="lineno">  129</span>            <span class="keywordflow">throw</span> json_parse_exception(<span class="stringliteral">&quot;Missing or incorrect type for required member &quot;</span> + member_name + <span class="stringliteral">&quot;!&quot;</span>);</div>
+<div class="line"><span class="lineno">  130</span>        }</div>
+<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  132</span>    }</div>
 <div class="ttc" id="anamespacesimulate__detected__object_html_a6484253b871796fad2994b6a389dd5f3"><div class="ttname"><a href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">simulate_detected_object.obj</a></div><div class="ttdeci">obj</div><div class="ttdef"><b>Definition:</b> <a href="simulate__detected__object_8py_source.html#l00018">simulate_detected_object.py:18</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="simulate__detected__object_8py_source.html#l00018">simulate_detected_object::obj</a>.</p>
@@ -261,19 +264,19 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;boll&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json__utils_8cpp_source.html#l00058">58</a> of file <a class="el" href="json__utils_8cpp_source.html">json_utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>                                                                                                                  {</div>
-<div class="line"><span class="lineno">   59</span>        std::optional&lt;bool&gt; member;</div>
-<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.HasMember(member_name.c_str()) &amp;&amp; <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.FindMember(member_name.c_str())-&gt;value.IsBool())</div>
-<div class="line"><span class="lineno">   61</span>        {</div>
-<div class="line"><span class="lineno">   62</span>            member = <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>[member_name.c_str()].GetBool();</div>
-<div class="line"><span class="lineno">   63</span>        }</div>
-<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (required)</div>
-<div class="line"><span class="lineno">   65</span>        {</div>
-<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">throw</span> json_parse_exception(<span class="stringliteral">&quot;Missing or incorrect type for required member &quot;</span> + member_name + <span class="stringliteral">&quot;!&quot;</span>);</div>
-<div class="line"><span class="lineno">   67</span>        }</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span> member;</div>
-<div class="line"><span class="lineno">   69</span>    };</div>
+<p class="definition">Definition at line <a class="el" href="json__utils_8cpp_source.html#l00071">71</a> of file <a class="el" href="json__utils_8cpp_source.html">json_utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>                                                                                                                  {</div>
+<div class="line"><span class="lineno">   72</span>        std::optional&lt;bool&gt; member;</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.HasMember(member_name.c_str()) &amp;&amp; <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.FindMember(member_name.c_str())-&gt;value.IsBool())</div>
+<div class="line"><span class="lineno">   74</span>        {</div>
+<div class="line"><span class="lineno">   75</span>            member = <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>[member_name.c_str()].GetBool();</div>
+<div class="line"><span class="lineno">   76</span>        }</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (required)</div>
+<div class="line"><span class="lineno">   78</span>        {</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">throw</span> json_parse_exception(<span class="stringliteral">&quot;Missing or incorrect type for required member &quot;</span> + member_name + <span class="stringliteral">&quot;!&quot;</span>);</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">return</span> member;</div>
+<div class="line"><span class="lineno">   82</span>    };</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="simulate__detected__object_8py_source.html#l00018">simulate_detected_object::obj</a>.</p>
 
@@ -328,19 +331,19 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;double&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json__utils_8cpp_source.html#l00084">84</a> of file <a class="el" href="json__utils_8cpp_source.html">json_utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>                                                                                                                    {</div>
-<div class="line"><span class="lineno">   85</span>        std::optional&lt;double&gt; member;</div>
-<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.HasMember(member_name.c_str()) &amp;&amp; <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.FindMember(member_name.c_str())-&gt;value.IsNumber())</div>
-<div class="line"><span class="lineno">   87</span>        {</div>
-<div class="line"><span class="lineno">   88</span>            member = <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>[member_name.c_str()].GetDouble();</div>
-<div class="line"><span class="lineno">   89</span>        }</div>
-<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (required)</div>
-<div class="line"><span class="lineno">   91</span>        {</div>
-<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">throw</span> json_parse_exception(<span class="stringliteral">&quot;Missing or incorrect type for required member &quot;</span> + member_name + <span class="stringliteral">&quot;!&quot;</span>);</div>
-<div class="line"><span class="lineno">   93</span>        }</div>
-<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">return</span> member;</div>
-<div class="line"><span class="lineno">   95</span>    };</div>
+<p class="definition">Definition at line <a class="el" href="json__utils_8cpp_source.html#l00097">97</a> of file <a class="el" href="json__utils_8cpp_source.html">json_utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>                                                                                                                    {</div>
+<div class="line"><span class="lineno">   98</span>        std::optional&lt;double&gt; member;</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.HasMember(member_name.c_str()) &amp;&amp; <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.FindMember(member_name.c_str())-&gt;value.IsNumber())</div>
+<div class="line"><span class="lineno">  100</span>        {</div>
+<div class="line"><span class="lineno">  101</span>            member = <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>[member_name.c_str()].GetDouble();</div>
+<div class="line"><span class="lineno">  102</span>        }</div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (required)</div>
+<div class="line"><span class="lineno">  104</span>        {</div>
+<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">throw</span> json_parse_exception(<span class="stringliteral">&quot;Missing or incorrect type for required member &quot;</span> + member_name + <span class="stringliteral">&quot;!&quot;</span>);</div>
+<div class="line"><span class="lineno">  106</span>        }</div>
+<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">return</span> member;</div>
+<div class="line"><span class="lineno">  108</span>    };</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="simulate__detected__object_8py_source.html#l00018">simulate_detected_object::obj</a>.</p>
 
@@ -580,6 +583,87 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="af5131e22b1a6f3b1aadbbd64d80b7f91" name="af5131e22b1a6f3b1aadbbd64d80b7f91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5131e22b1a6f3b1aadbbd64d80b7f91">&#9670;&nbsp;</a></span>parse_long_member()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; long &gt; streets_utils::json_utils::parse_long_member </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>member_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const rapidjson::Value &amp;&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>required</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Functions to retrieve uint member values from JSON object <a href="https://miloyip.github.io/rapidjson/index.html">RapidJSON</a> with <a href="https://miloyip.github.io/rapidjson/md_doc_dom.html">DOM parsing</a>. Functions will return unintialized <code>std::optional</code> for optional members that are not found in JSON object and will throw <code><a class="el" href="classstreets__utils_1_1json__utils_1_1json__parse__exception.html" title="Runtime exception related to json_utils functions. Thrown when :">json_parse_exception</a></code>. for required members that are not found in JSON object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">member_name</td><td>string member name to search for. </td></tr>
+    <tr><td class="paramname">obj</td><td>JSON object with member </td></tr>
+    <tr><td class="paramname">required</td><td>bool flag to indicate whether member is required by calling code. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classstreets__utils_1_1json__utils_1_1json__parse__exception.html" title="Runtime exception related to json_utils functions. Thrown when :">json_parse_exception</a></td><td>if member is required but not found. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::optional&lt;long&gt; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="json__utils_8cpp_source.html#l00058">58</a> of file <a class="el" href="json__utils_8cpp_source.html">json_utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>                                                                                                                   {</div>
+<div class="line"><span class="lineno">   59</span>        std::optional&lt;long&gt; member;</div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.HasMember(member_name.c_str()) &amp;&amp; <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.FindMember(member_name.c_str())-&gt;value.IsUint64())</div>
+<div class="line"><span class="lineno">   61</span>        {</div>
+<div class="line"><span class="lineno">   62</span>            member = <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>[member_name.c_str()].GetUint64();</div>
+<div class="line"><span class="lineno">   63</span>        }</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (required)</div>
+<div class="line"><span class="lineno">   65</span>        {</div>
+<div class="line"><span class="lineno">   66</span>            <span class="keywordflow">throw</span> json_parse_exception(<span class="stringliteral">&quot;Missing or incorrect type for required member &quot;</span> + member_name + <span class="stringliteral">&quot;!&quot;</span>);</div>
+<div class="line"><span class="lineno">   67</span>        }</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span> member;</div>
+<div class="line"><span class="lineno">   69</span>    };</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="simulate__detected__object_8py_source.html#l00018">simulate_detected_object::obj</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="detected__obj__msg__deserializer_8cpp_source.html#l00020">streets_utils::messages::detected_objects_msg::from_json()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacestreets__utils_1_1json__utils_af5131e22b1a6f3b1aadbbd64d80b7f91_icgraph.png" border="0" usemap="#anamespacestreets__utils_1_1json__utils_af5131e22b1a6f3b1aadbbd64d80b7f91_icgraph" alt=""/></div>
+<map name="anamespacestreets__utils_1_1json__utils_af5131e22b1a6f3b1aadbbd64d80b7f91_icgraph" id="anamespacestreets__utils_1_1json__utils_af5131e22b1a6f3b1aadbbd64d80b7f91_icgraph">
+<area shape="rect" title="Functions to retrieve uint member values from JSON object RapidJSON with DOM parsing...." alt="" coords="701,13,877,54"/>
+<area shape="rect" href="namespacestreets__utils_1_1messages_1_1detected__objects__msg.html#a172f1bb91dcbc257a72f2b0e59986bde" title=" " alt="" coords="495,5,653,61"/>
+<area shape="rect" href="classsensor__data__sharing__service_1_1sds__service.html#ae1c6b5529f6d39f6baebe028179cb3b2" title="Loop to consume detections from kafka detection consumer. Will terminate if kafka consumer is no long..." alt="" coords="299,5,447,61"/>
+<area shape="rect" href="classsensor__data__sharing__service_1_1sds__service.html#a9ee2b8ce146ec179703350d609652785" title="Method to start all threads included in the tsc_service." alt="" coords="104,5,251,61"/>
+<area shape="rect" href="sensor__data__sharing__service_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,20,56,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ac675baaea86ecc126f2e57727aa7d386" name="ac675baaea86ecc126f2e57727aa7d386"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac675baaea86ecc126f2e57727aa7d386">&#9670;&nbsp;</a></span>parse_object_member()</h2>
 
@@ -629,18 +713,18 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;rapidJson::Value::ConstObject&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json__utils_8cpp_source.html#l00097">97</a> of file <a class="el" href="json__utils_8cpp_source.html">json_utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   97</span>                                                                                                                                       {</div>
-<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.HasMember(member_name.c_str()) &amp;&amp; <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.FindMember(member_name.c_str())-&gt;value.IsObject())</div>
-<div class="line"><span class="lineno">   99</span>        {</div>
-<div class="line"><span class="lineno">  100</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>[member_name.c_str()].GetObject();</div>
-<div class="line"><span class="lineno">  101</span>        }</div>
-<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (required)</div>
-<div class="line"><span class="lineno">  103</span>        {</div>
-<div class="line"><span class="lineno">  104</span>            <span class="keywordflow">throw</span> json_parse_exception(<span class="stringliteral">&quot;Missing or incorrect type for required member &quot;</span> + member_name + <span class="stringliteral">&quot;!&quot;</span>);</div>
-<div class="line"><span class="lineno">  105</span>        }</div>
-<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><span class="lineno">  107</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="json__utils_8cpp_source.html#l00110">110</a> of file <a class="el" href="json__utils_8cpp_source.html">json_utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>                                                                                                                                       {</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.HasMember(member_name.c_str()) &amp;&amp; <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.FindMember(member_name.c_str())-&gt;value.IsObject())</div>
+<div class="line"><span class="lineno">  112</span>        {</div>
+<div class="line"><span class="lineno">  113</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>[member_name.c_str()].GetObject();</div>
+<div class="line"><span class="lineno">  114</span>        }</div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (required)</div>
+<div class="line"><span class="lineno">  116</span>        {</div>
+<div class="line"><span class="lineno">  117</span>            <span class="keywordflow">throw</span> json_parse_exception(<span class="stringliteral">&quot;Missing or incorrect type for required member &quot;</span> + member_name + <span class="stringliteral">&quot;!&quot;</span>);</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><span class="lineno">  120</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="simulate__detected__object_8py_source.html#l00018">simulate_detected_object::obj</a>.</p>
 
@@ -718,19 +802,19 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;std::string&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="json__utils_8cpp_source.html#l00071">71</a> of file <a class="el" href="json__utils_8cpp_source.html">json_utils.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>                                                                                                                        {</div>
-<div class="line"><span class="lineno">   72</span>        std::optional&lt;std::string&gt; member;</div>
-<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.HasMember(member_name.c_str()) &amp;&amp; <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.FindMember(member_name.c_str())-&gt;value.IsString())</div>
-<div class="line"><span class="lineno">   74</span>        {</div>
-<div class="line"><span class="lineno">   75</span>            member = <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>[member_name.c_str()].GetString();</div>
-<div class="line"><span class="lineno">   76</span>        }</div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (required)</div>
-<div class="line"><span class="lineno">   78</span>        {</div>
-<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">throw</span> json_parse_exception(<span class="stringliteral">&quot;Missing or incorrect type for required member &quot;</span> + member_name + <span class="stringliteral">&quot;!&quot;</span>);</div>
-<div class="line"><span class="lineno">   80</span>        }</div>
-<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">return</span> member;</div>
-<div class="line"><span class="lineno">   82</span>    };</div>
+<p class="definition">Definition at line <a class="el" href="json__utils_8cpp_source.html#l00084">84</a> of file <a class="el" href="json__utils_8cpp_source.html">json_utils.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>                                                                                                                        {</div>
+<div class="line"><span class="lineno">   85</span>        std::optional&lt;std::string&gt; member;</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.HasMember(member_name.c_str()) &amp;&amp; <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.FindMember(member_name.c_str())-&gt;value.IsString())</div>
+<div class="line"><span class="lineno">   87</span>        {</div>
+<div class="line"><span class="lineno">   88</span>            member = <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>[member_name.c_str()].GetString();</div>
+<div class="line"><span class="lineno">   89</span>        }</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (required)</div>
+<div class="line"><span class="lineno">   91</span>        {</div>
+<div class="line"><span class="lineno">   92</span>            <span class="keywordflow">throw</span> json_parse_exception(<span class="stringliteral">&quot;Missing or incorrect type for required member &quot;</span> + member_name + <span class="stringliteral">&quot;!&quot;</span>);</div>
+<div class="line"><span class="lineno">   93</span>        }</div>
+<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">return</span> member;</div>
+<div class="line"><span class="lineno">   95</span>    };</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="simulate__detected__object_8py_source.html#l00018">simulate_detected_object::obj</a>.</p>
 
@@ -807,7 +891,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="json__utils_8cpp_source.html#l00045">45</a> of file <a class="el" href="json__utils_8cpp_source.html">json_utils.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   45</span>                                                                                                                          {</div>
-<div class="line"><span class="lineno">   46</span>        std::optional&lt;u_int64_t&gt; member;</div>
+<div class="line"><span class="lineno">   46</span>        std::optional&lt;unsigned int&gt; member;</div>
 <div class="line"><span class="lineno">   47</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.HasMember(member_name.c_str()) &amp;&amp; <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>.FindMember(member_name.c_str())-&gt;value.IsUint64())</div>
 <div class="line"><span class="lineno">   48</span>        {</div>
 <div class="line"><span class="lineno">   49</span>            member = <a class="code hl_variable" href="namespacesimulate__detected__object.html#a6484253b871796fad2994b6a389dd5f3">obj</a>[member_name.c_str()].GetUint64();</div>
@@ -861,7 +945,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacestreets__utils.html">streets_utils</a></li><li class="navelem"><a class="el" href="namespacestreets__utils_1_1json__utils.html">json_utils</a></li>
-    <li class="footer">Generated on Thu Aug 29 2024 18:03:12 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Aug 29 2024 21:02:02 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

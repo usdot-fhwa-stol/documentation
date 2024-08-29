@@ -1,5 +1,8 @@
 var NAVTREEINDEX26 =
 {
+"vehicle__size__confidence_8hpp_source.html":[34,0,12,3,0,2,1,6],
+"vehicle__sorting_8cpp.html":[34,0,12,13,1,6],
+"vehicle__sorting_8cpp.html#a62007ad8cbd331963378ff836d2ce767":[34,0,12,13,1,6,4],
 "vehicle__sorting_8cpp.html#aa9f946d7c588b2697fd379fbed72f382":[34,0,12,13,1,6,1],
 "vehicle__sorting_8cpp.html#ab550673e6a269f9f374ca3ca7ff6ba82":[34,0,12,13,1,6,2],
 "vehicle__sorting_8cpp.html#ab6598f6bcdf2edaadecc3f4b68debb66":[34,0,12,13,1,6,0],

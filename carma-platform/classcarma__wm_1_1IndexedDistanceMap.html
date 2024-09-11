@@ -135,7 +135,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9d72c7d2aa37c1619776b3959d7954d3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1IndexedDistanceMap.html#a9d72c7d2aa37c1619776b3959d7954d3">size</a> (size_t index) const</td></tr>
 <tr class="memdesc:a9d72c7d2aa37c1619776b3959d7954d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the linestring at the specified index.  <a href="classcarma__wm_1_1IndexedDistanceMap.html#a9d72c7d2aa37c1619776b3959d7954d3">More...</a><br /></td></tr>
 <tr class="separator:a9d72c7d2aa37c1619776b3959d7954d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a56236ca7587395b6a5cd84c08ec811"><td class="memItemLeft" align="right" valign="top">std::pair&lt; size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1IndexedDistanceMap.html#a8a56236ca7587395b6a5cd84c08ec811">getElementIndexByDistance</a> (double distance, <a class="el" href="classbool.html">bool</a> get_point=true) const</td></tr>
+<tr class="memitem:a8a56236ca7587395b6a5cd84c08ec811"><td class="memItemLeft" align="right" valign="top">std::pair&lt; size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm_1_1IndexedDistanceMap.html#a8a56236ca7587395b6a5cd84c08ec811">getElementIndexByDistance</a> (double distance, bool get_point=true) const</td></tr>
 <tr class="memdesc:a8a56236ca7587395b6a5cd84c08ec811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns index of the linestring which the provided distance is within. NOTE: Unlike the rest of this class, this method runs in O(log n) where n is this.size() for accessing linestring index If accessing point index (get_point=true) then it runs an addition O(log m) where m is the linestring index.size(); This means the max complexity of this function is O(log n) + O(log m)  <a href="classcarma__wm_1_1IndexedDistanceMap.html#a8a56236ca7587395b6a5cd84c08ec811">More...</a><br /></td></tr>
 <tr class="separator:a8a56236ca7587395b6a5cd84c08ec811"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -408,7 +408,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classbool.html">bool</a>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>get_point</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
@@ -448,7 +448,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   53</span>  }</div>
 <div class="line"><span class="lineno">   54</span> </div>
 <div class="line"><span class="lineno">   55</span>  <span class="keyword">auto</span> low = std::lower_bound (<a class="code hl_variable" href="classcarma__wm_1_1IndexedDistanceMap.html#a7f18b38e4588452b85472867601b7923">accum_lengths</a>.begin(), <a class="code hl_variable" href="classcarma__wm_1_1IndexedDistanceMap.html#a7f18b38e4588452b85472867601b7923">accum_lengths</a>.end(), distance, <span class="comment">// Binary search to find the index </span></div>
-<div class="line"><span class="lineno">   56</span>    [](<span class="keyword">const</span> std::tuple&lt;std::vector&lt;double&gt;, <span class="keywordtype">double</span>&gt;&amp; <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; b){return std::get&lt;1&gt;(a) &lt; b;});</div>
+<div class="line"><span class="lineno">   56</span>    [](<span class="keyword">const</span> std::tuple&lt;std::vector&lt;double&gt;, <span class="keywordtype">double</span>&gt;&amp; a, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; b){return std::get&lt;1&gt;(a) &lt; b;});</div>
 <div class="line"><span class="lineno">   57</span>  </div>
 <div class="line"><span class="lineno">   58</span>  <span class="keywordtype">size_t</span> ls_index = 0;</div>
 <div class="line"><span class="lineno">   59</span>  <span class="keywordflow">if</span> (low == <a class="code hl_variable" href="classcarma__wm_1_1IndexedDistanceMap.html#a7f18b38e4588452b85472867601b7923">accum_lengths</a>.end()) { <span class="comment">// If we reached the end, it means we should pick the final point since we already checked the bounds</span></div>
@@ -466,7 +466,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   71</span>  <span class="keywordtype">double</span> relative_dist = distance - dist_to_ls;</div>
 <div class="line"><span class="lineno">   72</span> </div>
 <div class="line"><span class="lineno">   73</span>  <span class="keyword">auto</span> low_point = std::lower_bound (std::get&lt;0&gt;(<a class="code hl_variable" href="classcarma__wm_1_1IndexedDistanceMap.html#a7f18b38e4588452b85472867601b7923">accum_lengths</a>[ls_index]).begin(), std::get&lt;0&gt;(<a class="code hl_variable" href="classcarma__wm_1_1IndexedDistanceMap.html#a7f18b38e4588452b85472867601b7923">accum_lengths</a>[ls_index]).end(), relative_dist, <span class="comment">// Binary search to find the point index </span></div>
-<div class="line"><span class="lineno">   74</span>    [](<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; b){ <span class="keywordflow">return</span> <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a> &lt; b; });</div>
+<div class="line"><span class="lineno">   74</span>    [](<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; a, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; b){ <span class="keywordflow">return</span> a &lt; b; });</div>
 <div class="line"><span class="lineno">   75</span>  </div>
 <div class="line"><span class="lineno">   76</span>  <span class="keywordtype">size_t</span> point_idx = std::max(low_point - std::get&lt;0&gt;(<a class="code hl_variable" href="classcarma__wm_1_1IndexedDistanceMap.html#a7f18b38e4588452b85472867601b7923">accum_lengths</a>[ls_index]).begin() - 1, (<span class="keywordtype">long</span> <span class="keywordtype">int</span>)0);</div>
 <div class="line"><span class="lineno">   77</span>  <span class="keywordflow">return</span> std::make_pair(ls_index, point_idx);</div>
@@ -474,9 +474,8 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclasscarma__wm_1_1IndexedDistanceMap_html_a984999e739e3b5f2971da657da6d6adb"><div class="ttname"><a href="classcarma__wm_1_1IndexedDistanceMap.html#a984999e739e3b5f2971da657da6d6adb">carma_wm::IndexedDistanceMap::totalLength</a></div><div class="ttdeci">double totalLength() const</div><div class="ttdoc">Returns the total along-line length of this structure.</div><div class="ttdef"><b>Definition:</b> <a href="IndexedDistanceMap_8cpp_source.html#l00100">IndexedDistanceMap.cpp:100</a></div></div>
 <div class="ttc" id="aclasscarma__wm_1_1IndexedDistanceMap_html_aaf9700fe30cc2819ca4423a2acffa27d"><div class="ttname"><a href="classcarma__wm_1_1IndexedDistanceMap.html#aaf9700fe30cc2819ca4423a2acffa27d">carma_wm::IndexedDistanceMap::distanceToElement</a></div><div class="ttdeci">double distanceToElement(size_t index) const</div><div class="ttdoc">Get the distance to the start of the linestring at the specified index.</div><div class="ttdef"><b>Definition:</b> <a href="IndexedDistanceMap_8cpp_source.html#l00085">IndexedDistanceMap.cpp:85</a></div></div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_a64b708654c8aecb09122d39577df31b5"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">carma_cooperative_perception::to_string</a></div><div class="ttdeci">auto to_string(const UtmZone &amp;zone) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="utm__zone_8cpp_source.html#l00021">utm_zone.cpp:21</a></div></div>
-<div class="ttc" id="apointer_8h_html_aeeddce917cf130d62c370b8f216026dd"><div class="ttname"><a href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a></div><div class="ttdeci">const GenericPointer&lt; typename T::ValueType &gt; T2 T::AllocatorType &amp; a</div><div class="ttdef"><b>Definition:</b> <a href="pointer_8h_source.html#l01121">pointer.h:1121</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pointer_8h_source.html#l01121">a</a>, <a class="el" href="IndexedDistanceMap_8hpp_source.html#l00050">accum_lengths</a>, <a class="el" href="IndexedDistanceMap_8cpp_source.html#l00085">distanceToElement()</a>, <a class="el" href="utm__zone_8cpp_source.html#l00021">carma_cooperative_perception::to_string()</a>, and <a class="el" href="IndexedDistanceMap_8cpp_source.html#l00100">totalLength()</a>.</p>
+<p class="reference">References <a class="el" href="IndexedDistanceMap_8hpp_source.html#l00050">accum_lengths</a>, <a class="el" href="IndexedDistanceMap_8cpp_source.html#l00085">distanceToElement()</a>, <a class="el" href="utm__zone_8cpp_source.html#l00021">carma_cooperative_perception::to_string()</a>, and <a class="el" href="IndexedDistanceMap_8cpp_source.html#l00100">totalLength()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CARMAWorldModel_8cpp_source.html#l00430">carma_wm::CARMAWorldModel::pointFromRouteTrackPos()</a>.</p>
 <div class="dynheader">
@@ -819,7 +818,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm.html">carma_wm</a></li><li class="navelem"><a class="el" href="classcarma__wm_1_1IndexedDistanceMap.html">IndexedDistanceMap</a></li>
-    <li class="footer">Generated on Thu Sep 5 2024 19:37:50 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 11 2024 21:00:43 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

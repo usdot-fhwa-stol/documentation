@@ -111,13 +111,13 @@ Collaboration diagram for arbitrator::BeamSearchStrategy:</div>
 <map name="aarbitrator_1_1BeamSearchStrategy_coll__map" id="aarbitrator_1_1BeamSearchStrategy_coll__map">
 <area shape="rect" title="Implementation of SearchStrategy by usage of Beam Search." alt="" coords="52,160,255,252"/>
 <area shape="rect" href="classarbitrator_1_1SearchStrategy.html" title="Generic interface representing a computation to prioritize nodes for expansion in a search graph." alt="" coords="5,5,173,97"/>
-<area shape="rect" href="classint.html" title=" " alt="" coords="198,13,237,90"/>
+<area shape="rect" title=" " alt="" coords="198,13,237,90"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a70c137b43c6f4de13a6b819dddb1207d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarbitrator_1_1BeamSearchStrategy.html#a70c137b43c6f4de13a6b819dddb1207d">BeamSearchStrategy</a> (<a class="el" href="classint.html">int</a> beam_width)</td></tr>
+<tr class="memitem:a70c137b43c6f4de13a6b819dddb1207d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarbitrator_1_1BeamSearchStrategy.html#a70c137b43c6f4de13a6b819dddb1207d">BeamSearchStrategy</a> (int beam_width)</td></tr>
 <tr class="memdesc:a70c137b43c6f4de13a6b819dddb1207d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classarbitrator_1_1BeamSearchStrategy.html" title="Implementation of SearchStrategy by usage of Beam Search.">BeamSearchStrategy</a>.  <a href="classarbitrator_1_1BeamSearchStrategy.html#a70c137b43c6f4de13a6b819dddb1207d">More...</a><br /></td></tr>
 <tr class="separator:a70c137b43c6f4de13a6b819dddb1207d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9be86a1fbd606b8c0c59aa1cd76fd6aa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; carma_planning_msgs::msg::ManeuverPlan, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarbitrator_1_1BeamSearchStrategy.html#a9be86a1fbd606b8c0c59aa1cd76fd6aa">prioritize_plans</a> (std::vector&lt; std::pair&lt; carma_planning_msgs::msg::ManeuverPlan, double &gt; &gt; plans) const</td></tr>
@@ -133,7 +133,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aa75f48539a728645a9cc115289a69c90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classint.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarbitrator_1_1BeamSearchStrategy.html#aa75f48539a728645a9cc115289a69c90">beam_width_</a></td></tr>
+<tr class="memitem:aa75f48539a728645a9cc115289a69c90"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarbitrator_1_1BeamSearchStrategy.html#aa75f48539a728645a9cc115289a69c90">beam_width_</a></td></tr>
 <tr class="separator:aa75f48539a728645a9cc115289a69c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -156,7 +156,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">arbitrator::BeamSearchStrategy::BeamSearchStrategy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classint.html">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>beam_width</em></td><td>)</td>
           <td></td>
         </tr>
@@ -223,7 +223,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   22</span>    {</div>
 <div class="line"><span class="lineno">   23</span>        std::sort(plans.begin(), </div>
 <div class="line"><span class="lineno">   24</span>            plans.end(), </div>
-<div class="line"><span class="lineno">   25</span>            [] (<span class="keyword">const</span> std::pair&lt;carma_planning_msgs::msg::ManeuverPlan, double&gt;&amp; <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>, <span class="keyword">const</span> std::pair&lt;carma_planning_msgs::msg::ManeuverPlan, double&gt;&amp; b) </div>
+<div class="line"><span class="lineno">   25</span>            [] (<span class="keyword">const</span> std::pair&lt;carma_planning_msgs::msg::ManeuverPlan, double&gt;&amp; a, <span class="keyword">const</span> std::pair&lt;carma_planning_msgs::msg::ManeuverPlan, double&gt;&amp; b) </div>
 <div class="line"><span class="lineno">   26</span>            {</div>
 <div class="line"><span class="lineno">   27</span>                return a.second &lt; b.second;</div>
 <div class="line"><span class="lineno">   28</span>            }</div>
@@ -236,9 +236,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   35</span>        </div>
 <div class="line"><span class="lineno">   36</span>        <span class="keywordflow">return</span> plans;</div>
 <div class="line"><span class="lineno">   37</span>    }</div>
-<div class="ttc" id="apointer_8h_html_aeeddce917cf130d62c370b8f216026dd"><div class="ttname"><a href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a></div><div class="ttdeci">const GenericPointer&lt; typename T::ValueType &gt; T2 T::AllocatorType &amp; a</div><div class="ttdef"><b>Definition:</b> <a href="pointer_8h_source.html#l01121">pointer.h:1121</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pointer_8h_source.html#l01121">a</a>, and <a class="el" href="beam__search__strategy_8hpp_source.html#l00056">beam_width_</a>.</p>
+<p class="reference">References <a class="el" href="beam__search__strategy_8hpp_source.html#l00056">beam_width_</a>.</p>
 
 </div>
 </div>
@@ -253,7 +252,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classint.html">int</a> arbitrator::BeamSearchStrategy::beam_width_</td>
+          <td class="memname">int arbitrator::BeamSearchStrategy::beam_width_</td>
         </tr>
       </table>
   </td>
@@ -279,7 +278,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacearbitrator.html">arbitrator</a></li><li class="navelem"><a class="el" href="classarbitrator_1_1BeamSearchStrategy.html">BeamSearchStrategy</a></li>
-    <li class="footer">Generated on Thu Sep 5 2024 19:37:49 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 11 2024 21:00:43 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -218,7 +218,7 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">while</span>(cnt&lt;totBounds)</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    {</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      <a class="code hl_typedef" href="stdint_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> oldest = tm;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      uint32_t oldest = tm;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keywordtype">long</span> lat = j2735_tcr.tcr_v01.bounds[cnt].reflat;</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      <span class="keywordtype">long</span> longg = j2735_tcr.tcr_v01.bounds[cnt].reflon;</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
@@ -402,9 +402,9 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>      tcm.tcm_v01.reqid.id[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = 16 * <a class="code hl_function" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a863a60435b44b3106a51d043093bbbd5">parse_hex</a>(reqid_string[2 * <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]) + <a class="code hl_function" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a863a60435b44b3106a51d043093bbbd5">parse_hex</a>(reqid_string[2 * <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> + 1]);</div>
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    }</div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    tcm.tcm_v01.reqseq = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&gt;(<span class="stringliteral">&quot;tcmV01.reqseq&quot;</span>);</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    tcm.tcm_v01.msgtot = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&gt;(<span class="stringliteral">&quot;tcmV01.msgtot&quot;</span>);</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    tcm.tcm_v01.msgnum = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&gt;(<span class="stringliteral">&quot;tcmV01.msgnum&quot;</span>);</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    tcm.tcm_v01.reqseq = tree.get&lt;uint8_t&gt;(<span class="stringliteral">&quot;tcmV01.reqseq&quot;</span>);</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    tcm.tcm_v01.msgtot = tree.get&lt;uint16_t&gt;(<span class="stringliteral">&quot;tcmV01.msgtot&quot;</span>);</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    tcm.tcm_v01.msgnum = tree.get&lt;uint16_t&gt;(<span class="stringliteral">&quot;tcmV01.msgnum&quot;</span>);</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    std::string id_string = tree.get&lt;std::string&gt;(<span class="stringliteral">&quot;tcmV01.id&quot;</span>);</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keywordflow">for</span> (std::size_t <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> != id_string.size() / 2; ++<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>)</div>
@@ -412,7 +412,7 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>      tcm.tcm_v01.id.id[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = 16 * <a class="code hl_function" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a863a60435b44b3106a51d043093bbbd5">parse_hex</a>(id_string[2 * <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]) + <a class="code hl_function" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a863a60435b44b3106a51d043093bbbd5">parse_hex</a>(id_string[2 * <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> + 1]);</div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    }</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    tcm.tcm_v01.updated = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#aec6fcb673ff035718c238c8c9d544c47">uint64_t</a>&gt;(<span class="stringliteral">&quot;tcmV01.updated&quot;</span>);</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    tcm.tcm_v01.updated = tree.get&lt;uint64_t&gt;(<span class="stringliteral">&quot;tcmV01.updated&quot;</span>);</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    <span class="keyword">auto</span> tree_package = tree.get_child_optional(<span class="stringliteral">&quot;tcmV01.package&quot;</span>);</div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    <span class="keywordflow">if</span> (!tree_package)</div>
@@ -457,7 +457,7 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>    <span class="comment">//Web services</span></div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>    <span class="keywordtype">char</span> *placeholderX[1]={0};</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    <span class="keywordtype">int</span> placeholderC=1;</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    QCoreApplication <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>(placeholderC,placeholderX);</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    QCoreApplication a(placeholderC,placeholderX);</div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    QHostAddress address = QHostAddress(QString::fromStdString (<a class="code hl_variable" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a643009675562624ec9b68cbd46404172">config_</a>.<a class="code hl_variable" href="structcarma__cloud__client_1_1Config.html#a98bdd2fb789aaf8820139cda916ebafc">webip</a>));</div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    quint16 port = <span class="keyword">static_cast&lt;</span>quint16<span class="keyword">&gt;</span>(<a class="code hl_variable" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a643009675562624ec9b68cbd46404172">config_</a>.<a class="code hl_variable" href="structcarma__cloud__client_1_1Config.html#a6271b94e0d9f098fdcc6b1a4897a63e6">webport</a>);</div>
@@ -482,7 +482,7 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>    }</div>
 <div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span> </div>
 <div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>    RCLCPP_DEBUG_STREAM(this-&gt;get_logger(), <span class="stringliteral">&quot;CarmaCloudClient :: Started web service&quot;</span>);</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>.exec();</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>    <span class="keywordflow">return</span> a.exec();</div>
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span> </div>
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>  }</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span> </div>
@@ -510,7 +510,7 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div class="line"><a id="l00422" name="l00422"></a><span class="lineno"><a class="line" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a608caea5eda3f672f1f55f21d3e9c449">  422</a></span>  j2735_v2x_msgs::msg::TrafficControlSchedule <a class="code hl_function" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a608caea5eda3f672f1f55f21d3e9c449">CarmaCloudClient::parse_schedule</a>(boost::property_tree::ptree&amp; tree)</div>
 <div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>  {</div>
 <div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>    j2735_v2x_msgs::msg::TrafficControlSchedule tcm_schedule;</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    tcm_schedule.start = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#aec6fcb673ff035718c238c8c9d544c47">uint64_t</a>&gt;(<span class="stringliteral">&quot;schedule.start&quot;</span>);</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    tcm_schedule.start = tree.get&lt;uint64_t&gt;(<span class="stringliteral">&quot;schedule.start&quot;</span>);</div>
 <div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span> </div>
 <div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>    <span class="keyword">auto</span> child_end = tree.get_child_optional(<span class="stringliteral">&quot;schedule.end&quot;</span>);</div>
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    <span class="keywordflow">if</span> (!child_end)</div>
@@ -520,7 +520,7 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>    {</div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>      tcm_schedule.end_exists = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>      tcm_schedule.end = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#aec6fcb673ff035718c238c8c9d544c47">uint64_t</a>&gt;(<span class="stringliteral">&quot;schedule.end&quot;</span>);</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>      tcm_schedule.end = tree.get&lt;uint64_t&gt;(<span class="stringliteral">&quot;schedule.end&quot;</span>);</div>
 <div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>    }</div>
 <div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span> </div>
 <div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>    <span class="keyword">auto</span> child_dow = tree.get_child_optional(<span class="stringliteral">&quot;schedule.dow&quot;</span>);</div>
@@ -554,11 +554,11 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>        {</div>
 <div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>          <span class="keywordflow">if</span> (which.first == <span class="stringliteral">&quot;begin&quot;</span>)</div>
 <div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>          {</div>
-<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>            daily.begin = which.second.get_value&lt;<a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&gt;();</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>            daily.begin = which.second.get_value&lt;uint16_t&gt;();</div>
 <div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>          }</div>
 <div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (which.first == <span class="stringliteral">&quot;duration&quot;</span>)</div>
 <div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>          {</div>
-<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>            daily.duration = which.second.get_value&lt;<a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&gt;();</div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>            daily.duration = which.second.get_value&lt;uint16_t&gt;();</div>
 <div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>          }</div>
 <div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>        }</div>
 <div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>        tcm_schedule.between.push_back(daily);</div>
@@ -573,9 +573,9 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>    {</div>
 <div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>      tcm_schedule.repeat_exists = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>      tcm_schedule.repeat.offset = child_repeat.get().get&lt;<a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&gt;(<span class="stringliteral">&quot;offset&quot;</span>);</div>
-<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>      tcm_schedule.repeat.period = child_repeat.get().get&lt;<a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&gt;(<span class="stringliteral">&quot;period&quot;</span>);</div>
-<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>      tcm_schedule.repeat.span = child_repeat.get().get&lt;<a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&gt;(<span class="stringliteral">&quot;span&quot;</span>);</div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>      tcm_schedule.repeat.offset = child_repeat.get().get&lt;uint16_t&gt;(<span class="stringliteral">&quot;offset&quot;</span>);</div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>      tcm_schedule.repeat.period = child_repeat.get().get&lt;uint16_t&gt;(<span class="stringliteral">&quot;period&quot;</span>);</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>      tcm_schedule.repeat.span = child_repeat.get().get&lt;uint16_t&gt;(<span class="stringliteral">&quot;span&quot;</span>);</div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    }</div>
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span> </div>
 <div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>    <span class="keywordflow">return</span> tcm_schedule;</div>
@@ -677,70 +677,70 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>    <span class="keywordflow">if</span>( child_maxs )</div>
 <div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>    {</div>
 <div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>      tcm_detail.choice = j2735_v2x_msgs::msg::TrafficControlDetail::MAXSPEED_CHOICE;</div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>      tcm_detail.maxspeed = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&gt;(<span class="stringliteral">&quot;detail.maxspeed&quot;</span>);</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>      tcm_detail.maxspeed = tree.get&lt;uint16_t&gt;(<span class="stringliteral">&quot;detail.maxspeed&quot;</span>);</div>
 <div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>    }</div>
 <div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span> </div>
 <div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>    <span class="keyword">auto</span> child_minhdwy = tree.get_child_optional(<span class="stringliteral">&quot;detail.minhdwy&quot;</span>);</div>
 <div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>    <span class="keywordflow">if</span>( child_minhdwy )</div>
 <div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>    {</div>
 <div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>      tcm_detail.choice = j2735_v2x_msgs::msg::TrafficControlDetail::MINHDWY_CHOICE;</div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>      tcm_detail.minhdwy = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&gt;(<span class="stringliteral">&quot;detail.minhdwy&quot;</span>);</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>      tcm_detail.minhdwy = tree.get&lt;uint16_t&gt;(<span class="stringliteral">&quot;detail.minhdwy&quot;</span>);</div>
 <div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>    }</div>
 <div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span> </div>
 <div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>    <span class="keyword">auto</span> child_maxvehmass = tree.get_child_optional(<span class="stringliteral">&quot;detail.maxvehmass&quot;</span>);</div>
 <div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>    <span class="keywordflow">if</span>( child_maxvehmass )</div>
 <div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    {</div>
 <div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>      tcm_detail.choice = j2735_v2x_msgs::msg::TrafficControlDetail::MAXVEHMASS_CHOICE;</div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>      tcm_detail.maxvehmass = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&gt;(<span class="stringliteral">&quot;detail.maxvehmass&quot;</span>);</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>      tcm_detail.maxvehmass = tree.get&lt;uint16_t&gt;(<span class="stringliteral">&quot;detail.maxvehmass&quot;</span>);</div>
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>    }</div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span> </div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    <span class="keyword">auto</span> child_maxvehheight = tree.get_child_optional(<span class="stringliteral">&quot;detail.maxvehheight&quot;</span>);</div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <span class="keywordflow">if</span>( child_maxvehheight )</div>
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    {</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>      tcm_detail.choice = j2735_v2x_msgs::msg::TrafficControlDetail::MAXVEHHEIGHT_CHOICE;</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>      tcm_detail.maxvehheight = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&gt;(<span class="stringliteral">&quot;detail.maxvehheight&quot;</span>);</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>      tcm_detail.maxvehheight = tree.get&lt;uint8_t&gt;(<span class="stringliteral">&quot;detail.maxvehheight&quot;</span>);</div>
 <div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>    }</div>
 <div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span> </div>
 <div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    <span class="keyword">auto</span> child_maxvehwidth = tree.get_child_optional(<span class="stringliteral">&quot;detail.maxvehwidth&quot;</span>);</div>
 <div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    <span class="keywordflow">if</span>( child_maxvehwidth )</div>
 <div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>    {</div>
 <div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>      tcm_detail.choice = j2735_v2x_msgs::msg::TrafficControlDetail::MAXVEHWIDTH_CHOICE;</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>      tcm_detail.maxvehwidth = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&gt;(<span class="stringliteral">&quot;detail.maxvehwidth&quot;</span>);</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>      tcm_detail.maxvehwidth = tree.get&lt;uint8_t&gt;(<span class="stringliteral">&quot;detail.maxvehwidth&quot;</span>);</div>
 <div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>    }</div>
 <div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span> </div>
 <div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    <span class="keyword">auto</span> child_maxvehlength = tree.get_child_optional(<span class="stringliteral">&quot;detail.maxvehlength&quot;</span>);</div>
 <div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>    <span class="keywordflow">if</span>( child_maxvehlength )</div>
 <div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>    {</div>
 <div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>      tcm_detail.choice = j2735_v2x_msgs::msg::TrafficControlDetail::MAXVEHLENGTH_CHOICE;</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>      tcm_detail.maxvehlength = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&gt;(<span class="stringliteral">&quot;detail.maxvehlength&quot;</span>);</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>      tcm_detail.maxvehlength = tree.get&lt;uint16_t&gt;(<span class="stringliteral">&quot;detail.maxvehlength&quot;</span>);</div>
 <div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>    }</div>
 <div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span> </div>
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>    <span class="keyword">auto</span> child_maxvehaxles = tree.get_child_optional(<span class="stringliteral">&quot;detail.maxvehaxles&quot;</span>);</div>
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>    <span class="keywordflow">if</span>( child_maxvehaxles)</div>
 <div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    {</div>
 <div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>      tcm_detail.choice = j2735_v2x_msgs::msg::TrafficControlDetail::MAXVEHAXLES_CHOICE;</div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>      tcm_detail.maxvehaxles = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&gt;(<span class="stringliteral">&quot;detail.maxvehaxles&quot;</span>);</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>      tcm_detail.maxvehaxles = tree.get&lt;uint8_t&gt;(<span class="stringliteral">&quot;detail.maxvehaxles&quot;</span>);</div>
 <div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>    }</div>
 <div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span> </div>
 <div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>    <span class="keyword">auto</span> child_minvehocc = tree.get_child_optional(<span class="stringliteral">&quot;detail.minvehocc&quot;</span>);</div>
 <div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>    <span class="keywordflow">if</span>( child_minvehocc)</div>
 <div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>    {</div>
 <div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>      tcm_detail.choice = j2735_v2x_msgs::msg::TrafficControlDetail::MINVEHOCC_CHOICE;</div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>      tcm_detail.minvehocc = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&gt;(<span class="stringliteral">&quot;detail.minvehocc&quot;</span>);</div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>      tcm_detail.minvehocc = tree.get&lt;uint8_t&gt;(<span class="stringliteral">&quot;detail.minvehocc&quot;</span>);</div>
 <div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>    }</div>
 <div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span> </div>
 <div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>    <span class="keyword">auto</span> child_maxplatoonsize = tree.get_child_optional(<span class="stringliteral">&quot;detail.maxplatoonsize&quot;</span>);</div>
 <div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    <span class="keywordflow">if</span>( child_maxplatoonsize)</div>
 <div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>    {</div>
 <div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>      tcm_detail.choice = j2735_v2x_msgs::msg::TrafficControlDetail::MAXPLATOONSIZE_CHOICE;</div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>      tcm_detail.maxplatoonsize = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&gt;(<span class="stringliteral">&quot;detail.maxplatoonsize&quot;</span>);</div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>      tcm_detail.maxplatoonsize = tree.get&lt;uint8_t&gt;(<span class="stringliteral">&quot;detail.maxplatoonsize&quot;</span>);</div>
 <div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    }</div>
 <div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span> </div>
 <div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    <span class="keyword">auto</span> child_minplatoonhdwy = tree.get_child_optional(<span class="stringliteral">&quot;detail.minplatoonhdwy&quot;</span>);</div>
 <div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    <span class="keywordflow">if</span>( child_minplatoonhdwy)</div>
 <div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>    {</div>
 <div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>      tcm_detail.choice = j2735_v2x_msgs::msg::TrafficControlDetail::MINPLATOONHDWY_CHOICE;</div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>      tcm_detail.minplatoonhdwy = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&gt;(<span class="stringliteral">&quot;detail.minplatoonhdwy&quot;</span>);</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>      tcm_detail.minplatoonhdwy = tree.get&lt;uint16_t&gt;(<span class="stringliteral">&quot;detail.minplatoonhdwy&quot;</span>);</div>
 <div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>    }</div>
 <div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span> </div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>    <span class="keywordflow">return</span> tcm_detail;</div>
@@ -848,12 +848,12 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>    tcm_geometry.proj = tree.get&lt;std::string&gt;(<span class="stringliteral">&quot;proj&quot;</span>);</div>
 <div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>    tcm_geometry.datum = tree.get&lt;std::string&gt;(<span class="stringliteral">&quot;datum&quot;</span>);</div>
 <div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span> </div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>    tcm_geometry.reftime = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#aec6fcb673ff035718c238c8c9d544c47">uint64_t</a>&gt;(<span class="stringliteral">&quot;reftime&quot;</span>);</div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>    tcm_geometry.reftime = tree.get&lt;uint64_t&gt;(<span class="stringliteral">&quot;reftime&quot;</span>);</div>
 <div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span> </div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>    tcm_geometry.reflon = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#ab1967d8591af1a4e48c37fd2b0f184d0">int32_t</a>&gt;(<span class="stringliteral">&quot;reflon&quot;</span>);</div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>    tcm_geometry.reflat = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#ab1967d8591af1a4e48c37fd2b0f184d0">int32_t</a>&gt;(<span class="stringliteral">&quot;reflat&quot;</span>);</div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>    tcm_geometry.refelv = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#ab1967d8591af1a4e48c37fd2b0f184d0">int32_t</a>&gt;(<span class="stringliteral">&quot;refelv&quot;</span>);</div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>    tcm_geometry.heading = tree.get&lt;<a class="code hl_typedef" href="stdint_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a>&gt;(<span class="stringliteral">&quot;heading&quot;</span>);</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>    tcm_geometry.reflon = tree.get&lt;int32_t&gt;(<span class="stringliteral">&quot;reflon&quot;</span>);</div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>    tcm_geometry.reflat = tree.get&lt;int32_t&gt;(<span class="stringliteral">&quot;reflat&quot;</span>);</div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>    tcm_geometry.refelv = tree.get&lt;int32_t&gt;(<span class="stringliteral">&quot;refelv&quot;</span>);</div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>    tcm_geometry.heading = tree.get&lt;int16_t&gt;(<span class="stringliteral">&quot;heading&quot;</span>);</div>
 <div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span> </div>
 <div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; item : tree.get_child(<span class="stringliteral">&quot;nodes&quot;</span>))</div>
 <div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>    {</div>
@@ -938,13 +938,6 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div class="ttc" id="anamespaceprocess__bag_html_af102a02c97622dd30b0dbf7bafb0d199"><div class="ttname"><a href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">process_bag.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00059">process_bag.py:59</a></div></div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_a49cd466f330a9498d8373baecf47e071"><div class="ttname"><a href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">process_traj_logs.c</a></div><div class="ttdeci">c</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00166">process_traj_logs.py:166</a></div></div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_af3ba6144a2d35a4990f1a8d04632a052"><div class="ttname"><a href="namespaceprocess__traj__logs.html#af3ba6144a2d35a4990f1a8d04632a052">process_traj_logs.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00128">process_traj_logs.py:128</a></div></div>
-<div class="ttc" id="apointer_8h_html_aeeddce917cf130d62c370b8f216026dd"><div class="ttname"><a href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a></div><div class="ttdeci">const GenericPointer&lt; typename T::ValueType &gt; T2 T::AllocatorType &amp; a</div><div class="ttdef"><b>Definition:</b> <a href="pointer_8h_source.html#l01121">pointer.h:1121</a></div></div>
-<div class="ttc" id="astdint_8h_html_a269259c924dce846340ddbb810db2e3c"><div class="ttname"><a href="stdint_8h.html#a269259c924dce846340ddbb810db2e3c">int16_t</a></div><div class="ttdeci">signed short int16_t</div><div class="ttdef"><b>Definition:</b> <a href="stdint_8h_source.html#l00122">stdint.h:122</a></div></div>
-<div class="ttc" id="astdint_8h_html_a273cf69d639a59973b6019625df33e30"><div class="ttname"><a href="stdint_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a></div><div class="ttdeci">unsigned short uint16_t</div><div class="ttdef"><b>Definition:</b> <a href="stdint_8h_source.html#l00125">stdint.h:125</a></div></div>
-<div class="ttc" id="astdint_8h_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="stdint_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdef"><b>Definition:</b> <a href="stdint_8h_source.html#l00126">stdint.h:126</a></div></div>
-<div class="ttc" id="astdint_8h_html_ab1967d8591af1a4e48c37fd2b0f184d0"><div class="ttname"><a href="stdint_8h.html#ab1967d8591af1a4e48c37fd2b0f184d0">int32_t</a></div><div class="ttdeci">signed int int32_t</div><div class="ttdef"><b>Definition:</b> <a href="stdint_8h_source.html#l00123">stdint.h:123</a></div></div>
-<div class="ttc" id="astdint_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="stdint_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="stdint_8h_source.html#l00124">stdint.h:124</a></div></div>
-<div class="ttc" id="astdint_8h_html_aec6fcb673ff035718c238c8c9d544c47"><div class="ttname"><a href="stdint_8h.html#aec6fcb673ff035718c238c8c9d544c47">uint64_t</a></div><div class="ttdeci">unsigned __int64 uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="stdint_8h_source.html#l00136">stdint.h:136</a></div></div>
 <div class="ttc" id="astructcarma__cloud__client_1_1Config_html"><div class="ttname"><a href="structcarma__cloud__client_1_1Config.html">carma_cloud_client::Config</a></div><div class="ttdoc">Stuct containing the algorithm configuration values for carma_cloud_client.</div><div class="ttdef"><b>Definition:</b> <a href="carma__cloud__client__config_8hpp_source.html#l00028">carma_cloud_client_config.hpp:29</a></div></div>
 <div class="ttc" id="astructcarma__cloud__client_1_1Config_html_a0080512820b090a1f919d66eb23e1a1b"><div class="ttname"><a href="structcarma__cloud__client_1_1Config.html#a0080512820b090a1f919d66eb23e1a1b">carma_cloud_client::Config::port</a></div><div class="ttdeci">std::string port</div><div class="ttdef"><b>Definition:</b> <a href="carma__cloud__client__config_8hpp_source.html#l00039">carma_cloud_client_config.hpp:39</a></div></div>
 <div class="ttc" id="astructcarma__cloud__client_1_1Config_html_a4bc4e39f7a5a330ad647bdc3d5af63b7"><div class="ttname"><a href="structcarma__cloud__client_1_1Config.html#a4bc4e39f7a5a330ad647bdc3d5af63b7">carma_cloud_client::Config::url</a></div><div class="ttdeci">std::string url</div><div class="ttdef"><b>Definition:</b> <a href="carma__cloud__client__config_8hpp_source.html#l00031">carma_cloud_client_config.hpp:31</a></div></div>
@@ -961,7 +954,7 @@ $(document).ready(function(){initNavTree('carma__cloud__client__node_8cpp_source
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_e26c8738d2025130a9ad40823cbd5c67.html">carma_cloud_client</a></li><li class="navelem"><a class="el" href="dir_cdb3fba396c258685a236d8122ba111f.html">src</a></li><li class="navelem"><a class="el" href="carma__cloud__client__node_8cpp.html">carma_cloud_client_node.cpp</a></li>
-    <li class="footer">Generated on Thu Sep 5 2024 19:37:44 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 11 2024 21:00:39 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

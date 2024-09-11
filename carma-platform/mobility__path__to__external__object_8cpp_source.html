@@ -150,18 +150,18 @@ $(document).ready(function(){initNavTree('mobility__path__to__external__object_8
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="comment">// TODO(carma) hasher returns size_t, message accept uint32_t which we might lose info</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keyword">auto</span> hashed = hasher(in_msg.m_header.sender_id);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  out_msg.id = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="stdint_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a><span class="keyword">&gt;</span>(hashed);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  out_msg.id = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(hashed);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="comment">// convert hex std::string to uint8_t array</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; in_msg.m_header.sender_bsm_id.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> += 2) {</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> num = 0;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    sscanf(in_msg.m_header.sender_bsm_id.substr(<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>, <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> + 2).c_str(), <span class="stringliteral">&quot;%x&quot;</span>, &amp;num);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    out_msg.bsm_id.push_back((<a class="code hl_typedef" href="stdint_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>)num);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    out_msg.bsm_id.push_back((uint8_t)num);</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="comment">// first point&#39;s timestamp</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  out_msg.header.stamp =</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    rclcpp::Time((<a class="code hl_typedef" href="stdint_8h.html#aec6fcb673ff035718c238c8c9d544c47">uint64_t</a>)in_msg.m_header.timestamp * 1e6);  <span class="comment">// ms to nanoseconds</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    rclcpp::Time((uint64_t)in_msg.m_header.timestamp * 1e6);  <span class="comment">// ms to nanoseconds</span></div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">// If it is a static object, we finished processing</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">if</span> (in_msg.trajectory.offsets.size() &lt; 2) {</div>
@@ -360,16 +360,13 @@ $(document).ready(function(){initNavTree('mobility__path__to__external__object_8
 <div class="ttc" id="anamespacemotion__computation_1_1conversion_html_a9884e63460f3d5f5e2b755354984dc29"><div class="ttname"><a href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29">motion_computation::conversion::convert</a></div><div class="ttdeci">void convert(const carma_v2x_msgs::msg::PSM &amp;in_msg, carma_perception_msgs::msg::ExternalObject &amp;out_msg, const std::string &amp;map_frame_id, double pred_period, double pred_step_size, const lanelet::projection::LocalFrameProjector &amp;map_projector, const tf2::Quaternion &amp;ned_in_map_rotation, rclcpp::node_interfaces::NodeClockInterface::SharedPtr node_clock)</div><div class="ttdef"><b>Definition:</b> <a href="psm__to__external__object__convertor_8cpp_source.html#l00038">psm_to_external_object_convertor.cpp:38</a></div></div>
 <div class="ttc" id="anamespacemotion__computation_html"><div class="ttname"><a href="namespacemotion__computation.html">motion_computation</a></div><div class="ttdef"><b>Definition:</b> <a href="mobility__path__to__external__object__helpers_8hpp_source.html#l00031">mobility_path_to_external_object_helpers.hpp:32</a></div></div>
 <div class="ttc" id="anamespaceprocess__bag_html_af102a02c97622dd30b0dbf7bafb0d199"><div class="ttname"><a href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">process_bag.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00059">process_bag.py:59</a></div></div>
-<div class="ttc" id="astdint_8h_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="stdint_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdef"><b>Definition:</b> <a href="stdint_8h_source.html#l00126">stdint.h:126</a></div></div>
-<div class="ttc" id="astdint_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="stdint_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="stdint_8h_source.html#l00124">stdint.h:124</a></div></div>
-<div class="ttc" id="astdint_8h_html_aec6fcb673ff035718c238c8c9d544c47"><div class="ttname"><a href="stdint_8h.html#aec6fcb673ff035718c238c8c9d544c47">uint64_t</a></div><div class="ttdeci">unsigned __int64 uint64_t</div><div class="ttdef"><b>Definition:</b> <a href="stdint_8h_source.html#l00136">stdint.h:136</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_63e6aad264477fa7f28f31d2fc233dbe.html">motion_computation</a></li><li class="navelem"><a class="el" href="dir_54c025c2a7d69c52f0ce93d682ccc770.html">src</a></li><li class="navelem"><a class="el" href="mobility__path__to__external__object_8cpp.html">mobility_path_to_external_object.cpp</a></li>
-    <li class="footer">Generated on Thu Sep 5 2024 19:37:45 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 11 2024 21:00:40 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

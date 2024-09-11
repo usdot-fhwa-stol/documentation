@@ -134,11 +134,11 @@ $(document).ready(function(){initNavTree('RoutingGraphAccessor_8hpp_source.html'
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>       </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      autoware_lanelet2_msgs::msg::RoutingGraphVertexAndEdges vertex_and_edges;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      lanelet::routing::internal::GraphType::vertex_descriptor <a class="code hl_variable" href="pointer_8h.html#adb82dfe18535e9a30aa97d275f82bd55">source</a> = *vi;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      lanelet::routing::internal::GraphType::vertex_descriptor source = *vi;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      <span class="comment">// Iterate over all outgoing edges for this vertex</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      boost::graph_traits&lt;lanelet::routing::internal::GraphType&gt;::out_edge_iterator ei, ei_end;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keywordflow">for</span>(boost::tie(ei, ei_end) = boost::out_edges(<a class="code hl_variable" href="pointer_8h.html#adb82dfe18535e9a30aa97d275f82bd55">source</a>, underlying_graph); ei != ei_end; ++ei) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keywordflow">for</span>(boost::tie(ei, ei_end) = boost::out_edges(source, underlying_graph); ei != ei_end; ++ei) {</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>       </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        lanelet::routing::internal::GraphType::edge_descriptor edge = *ei;</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        lanelet::routing::internal::GraphType::vertex_descriptor target = boost::target(edge, underlying_graph);</div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('RoutingGraphAccessor_8hpp_source.html'
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        vertex_and_edges.edge_routing_costs.push_back(underlying_graph[edge].routingCost);</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        vertex_and_edges.edge_routing_cost_source_ids.push_back(underlying_graph[edge].costId);</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <a class="code hl_typedef" href="stdint_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> relation = 0;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        uint8_t relation = 0;</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">switch</span>(underlying_graph[edge].relation) {</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          <span class="keywordflow">case</span> lanelet::routing::RelationType::Successor:</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            relation = autoware_lanelet2_msgs::msg::RoutingGraphVertexAndEdges::RELATION_SUCCESSOR; <span class="keywordflow">break</span>;</div>
@@ -174,10 +174,10 @@ $(document).ready(function(){initNavTree('RoutingGraphAccessor_8hpp_source.html'
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      }</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      vertex_and_edges.lanelet_or_area = underlying_graph[<a class="code hl_variable" href="pointer_8h.html#adb82dfe18535e9a30aa97d275f82bd55">source</a>].laneletOrArea.id();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      vertex_and_edges.lanelet_or_area = underlying_graph[source].laneletOrArea.id();</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="comment">// Assign core vertext to the correct array in the ros message based on its type</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keywordflow">if</span> (underlying_graph[<a class="code hl_variable" href="pointer_8h.html#adb82dfe18535e9a30aa97d275f82bd55">source</a>].laneletOrArea.isLanelet()) { <span class="comment">// Lanelet</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keywordflow">if</span> (underlying_graph[source].laneletOrArea.isLanelet()) { <span class="comment">// Lanelet</span></div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        msg.lanelet_vertices.push_back(vertex_and_edges);</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      } <span class="keywordflow">else</span> { <span class="comment">// Area</span></div>
@@ -195,15 +195,13 @@ $(document).ready(function(){initNavTree('RoutingGraphAccessor_8hpp_source.html'
 <div class="ttc" id="aclasslanelet_1_1routing_1_1RoutingGraph_html"><div class="ttname"><a href="classlanelet_1_1routing_1_1RoutingGraph.html">lanelet::routing::RoutingGraph</a></div></div>
 <div class="ttc" id="anamespacesci__strategic__plugin_html_a566a001705be58d1fa9b8b13ba6e3677a0614364ce8a300e7a392919c4753d8a8"><div class="ttname"><a href="namespacesci__strategic__plugin.html#a566a001705be58d1fa9b8b13ba6e3677a0614364ce8a300e7a392919c4753d8a8">sci_strategic_plugin::Left</a></div><div class="ttdeci">@ Left</div><div class="ttdef"><b>Definition:</b> <a href="sci__strategic__plugin_8hpp_source.html#l00046">sci_strategic_plugin.hpp:45</a></div></div>
 <div class="ttc" id="anamespacesci__strategic__plugin_html_a566a001705be58d1fa9b8b13ba6e3677ae56f9187e18e7976a4565df987d0962e"><div class="ttname"><a href="namespacesci__strategic__plugin.html#a566a001705be58d1fa9b8b13ba6e3677ae56f9187e18e7976a4565df987d0962e">sci_strategic_plugin::Right</a></div><div class="ttdeci">@ Right</div><div class="ttdef"><b>Definition:</b> <a href="sci__strategic__plugin_8hpp_source.html#l00044">sci_strategic_plugin.hpp:44</a></div></div>
-<div class="ttc" id="apointer_8h_html_adb82dfe18535e9a30aa97d275f82bd55"><div class="ttname"><a href="pointer_8h.html#adb82dfe18535e9a30aa97d275f82bd55">source</a></div><div class="ttdeci">const CharType(&amp; source)[N]</div><div class="ttdef"><b>Definition:</b> <a href="pointer_8h_source.html#l01144">pointer.h:1144</a></div></div>
-<div class="ttc" id="astdint_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="stdint_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdef"><b>Definition:</b> <a href="stdint_8h_source.html#l00124">stdint.h:124</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_b6b186497da38ed570e46f8088aa19ef.html">carma_wm_ctrl</a></li><li class="navelem"><a class="el" href="dir_32e5f8abfc2730f22e7cf9d33e386ffd.html">src</a></li><li class="navelem"><a class="el" href="RoutingGraphAccessor_8hpp.html">RoutingGraphAccessor.hpp</a></li>
-    <li class="footer">Generated on Thu Sep 5 2024 19:37:45 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 11 2024 21:00:40 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

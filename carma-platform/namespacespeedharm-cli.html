@@ -145,7 +145,7 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a979a8b66607cfccc604e46e7f199f9b6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespeedharm-cli.html#a979a8b66607cfccc604e46e7f199f9b6">version_id</a> = &quot;v0.1&quot;</td></tr>
 <tr class="separator:a979a8b66607cfccc604e46e7f199f9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a895f30b0cdb144dc994889706e388718"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespeedharm-cli.html#a895f30b0cdb144dc994889706e388718">running</a> = True</td></tr>
+<tr class="memitem:a895f30b0cdb144dc994889706e388718"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespeedharm-cli.html#a895f30b0cdb144dc994889706e388718">running</a> = True</td></tr>
 <tr class="separator:a895f30b0cdb144dc994889706e388718"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c151ea60260cb5605044f4b94bffa6b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacespeedharm-cli.html#a9c151ea60260cb5605044f4b94bffa6b">base_url</a> = &quot;http://35.153.64.44:8081&quot;</td></tr>
 <tr class="separator:a9c151ea60260cb5605044f4b94bffa6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -504,12 +504,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  170</span>    algo_id = raw_input(<span class="stringliteral">&quot;Algorithm ID#? &quot;</span>)</div>
 <div class="line"><span class="lineno">  171</span> </div>
 <div class="line"><span class="lineno">  172</span>    headers = { <span class="stringliteral">&quot;Content-Type&quot;</span> : <span class="stringliteral">&quot;application/json&quot;</span> }</div>
-<div class="line"><span class="lineno">  173</span>    data = json.dumps({<span class="stringliteral">&quot;id&quot;</span>: <a class="code hl_class" href="classint.html">int</a>(veh_id)})</div>
+<div class="line"><span class="lineno">  173</span>    data = json.dumps({<span class="stringliteral">&quot;id&quot;</span>: int(veh_id)})</div>
 <div class="line"><span class="lineno">  174</span> </div>
 <div class="line"><span class="lineno">  175</span>    r = requests.post(urlparse.urljoin(base_url, algorithms_url + <span class="stringliteral">&quot;/&quot;</span> + algo_id + <span class="stringliteral">&quot;/vehicles&quot;</span>), data=data, headers=headers, verify=<span class="keyword">False</span>)</div>
 <div class="line"><span class="lineno">  176</span>    <a class="code hl_function" href="namespacespeedharm-cli.html#a987debee359c2538651ad540914ba3b6">print_response</a>(r)</div>
 <div class="line"><span class="lineno">  177</span> </div>
-<div class="ttc" id="aclassint_html"><div class="ttname"><a href="classint.html">int</a></div></div>
 <div class="ttc" id="anamespacespeedharm-cli_html_aaa22c7d79eedb5b32df4d323bad514fb"><div class="ttname"><a href="namespacespeedharm-cli.html#aaa22c7d79eedb5b32df4d323bad514fb">speedharm-cli.process_assign_algorithm</a></div><div class="ttdeci">def process_assign_algorithm()</div><div class="ttdef"><b>Definition:</b> <a href="speedharm-cli_8py_source.html#l00162">speedharm-cli.py:162</a></div></div>
 <div class="ttc" id="anamespacespeedharm-cli_html_ad34301b62000b045707362dbd639ba45"><div class="ttname"><a href="namespacespeedharm-cli.html#ad34301b62000b045707362dbd639ba45">speedharm-cli.select_vehicle</a></div><div class="ttdeci">def select_vehicle()</div><div class="ttdef"><b>Definition:</b> <a href="speedharm-cli_8py_source.html#l00137">speedharm-cli.py:137</a></div></div>
 </div><!-- fragment -->
@@ -623,7 +622,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  154</span>    exp_id = raw_input(<span class="stringliteral">&quot;Experiment ID#? &quot;</span>)</div>
 <div class="line"><span class="lineno">  155</span> </div>
 <div class="line"><span class="lineno">  156</span>    headers = { <span class="stringliteral">&quot;Content-Type&quot;</span> : <span class="stringliteral">&quot;application/json&quot;</span> }</div>
-<div class="line"><span class="lineno">  157</span>    data = json.dumps({<span class="stringliteral">&quot;id&quot;</span>: <a class="code hl_class" href="classint.html">int</a>(veh_id)})</div>
+<div class="line"><span class="lineno">  157</span>    data = json.dumps({<span class="stringliteral">&quot;id&quot;</span>: int(veh_id)})</div>
 <div class="line"><span class="lineno">  158</span> </div>
 <div class="line"><span class="lineno">  159</span>    r = requests.post(urlparse.urljoin(base_url, experiments_url + <span class="stringliteral">&quot;/&quot;</span> + exp_id + <span class="stringliteral">&quot;/vehicles&quot;</span>), data=data, headers=headers, verify=<span class="keyword">False</span>)</div>
 <div class="line"><span class="lineno">  160</span>    <a class="code hl_function" href="namespacespeedharm-cli.html#a987debee359c2538651ad540914ba3b6">print_response</a>(r)</div>
@@ -1505,7 +1504,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classbool.html">bool</a> speedharm-cli.running = True</td>
+          <td class="memname">bool speedharm-cli.running = True</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1552,7 +1551,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacespeedharm-cli.html">speedharm-cli</a></li>
-    <li class="footer">Generated on Thu Sep 5 2024 19:37:54 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 11 2024 21:00:47 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

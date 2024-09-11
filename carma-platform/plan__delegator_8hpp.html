@@ -203,7 +203,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a066f948508e087006568cb6c9b0674a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plan__delegator_8hpp.html#a066f948508e087006568cb6c9b0674a7">GET_MANEUVER_PROPERTY</a>(mvr,  property)</td></tr>
 <tr class="memdesc:a066f948508e087006568cb6c9b0674a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro definition to enable easier access to fields shared across the maneuver typees.  <a href="plan__delegator_8hpp.html#a066f948508e087006568cb6c9b0674a7">More...</a><br /></td></tr>
 <tr class="separator:a066f948508e087006568cb6c9b0674a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a490076edf649de33d777ebd52faf68b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plan__delegator_8hpp.html#a490076edf649de33d777ebd52faf68b6">SET_MANEUVER_PROPERTY</a>(mvr,  property,  <a class="el" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>)</td></tr>
+<tr class="memitem:a490076edf649de33d777ebd52faf68b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plan__delegator_8hpp.html#a490076edf649de33d777ebd52faf68b6">SET_MANEUVER_PROPERTY</a>(mvr,  property,  value)</td></tr>
 <tr class="separator:a490076edf649de33d777ebd52faf68b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -276,7 +276,7 @@ Macros</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>&#160;</td>
+          <td class="paramname">value&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -285,15 +285,14 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">        (((mvr).type == carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_LEFT_TURN ? (mvr).intersection_transit_left_turn_maneuver.property = (<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>) :\</div>
-<div class="line">            ((mvr).type == carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_RIGHT_TURN ? (mvr).intersection_transit_right_turn_maneuver.property = (<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>) :\</div>
-<div class="line">                ((mvr).type == carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_STRAIGHT ? (mvr).intersection_transit_straight_maneuver.property = (<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>) :\</div>
-<div class="line">                    ((mvr).type == carma_planning_msgs::msg::Maneuver::LANE_CHANGE ? (mvr).lane_change_maneuver.property = (<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>) :\</div>
-<div class="line">                        ((mvr).type == carma_planning_msgs::msg::Maneuver::STOP_AND_WAIT ? (mvr).stop_and_wait_maneuver.property = (<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>) :\</div>
-<div class="line">                            ((mvr).type == carma_planning_msgs::msg::Maneuver::LANE_FOLLOWING ? (mvr).lane_following_maneuver.property = (<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>) :\</div>
+<b>Value:</b><div class="fragment"><div class="line">        (((mvr).type == carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_LEFT_TURN ? (mvr).intersection_transit_left_turn_maneuver.property = (value) :\</div>
+<div class="line">            ((mvr).type == carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_RIGHT_TURN ? (mvr).intersection_transit_right_turn_maneuver.property = (value) :\</div>
+<div class="line">                ((mvr).type == carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_STRAIGHT ? (mvr).intersection_transit_straight_maneuver.property = (value) :\</div>
+<div class="line">                    ((mvr).type == carma_planning_msgs::msg::Maneuver::LANE_CHANGE ? (mvr).lane_change_maneuver.property = (value) :\</div>
+<div class="line">                        ((mvr).type == carma_planning_msgs::msg::Maneuver::STOP_AND_WAIT ? (mvr).stop_and_wait_maneuver.property = (value) :\</div>
+<div class="line">                            ((mvr).type == carma_planning_msgs::msg::Maneuver::LANE_FOLLOWING ? (mvr).lane_following_maneuver.property = (value) :\</div>
 <div class="line">                                throw std::invalid_argument(<span class="stringliteral">&quot;ADJUST_MANEUVER_PROPERTY (property) called on maneuver with invalid type id &quot;</span> + <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>((mvr).type)))))))))</div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_a64b708654c8aecb09122d39577df31b5"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">carma_cooperative_perception::to_string</a></div><div class="ttdeci">auto to_string(const UtmZone &amp;zone) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="utm__zone_8cpp_source.html#l00021">utm_zone.cpp:21</a></div></div>
-<div class="ttc" id="apointer_8h_html_a32aff7c6c4cd253fdf6563677afab5ce"><div class="ttname"><a href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a></div><div class="ttdeci">const GenericPointer&lt; typename T::ValueType &gt; T2 value</div><div class="ttdef"><b>Definition:</b> <a href="pointer_8h_source.html#l01222">pointer.h:1222</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00055">55</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
 
@@ -305,7 +304,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d710a7fa5a044dfe5a073f69014868e3.html">plan_delegator</a></li><li class="navelem"><a class="el" href="dir_1e2a8de91c06a5ed4c93bbfcd84d0359.html">include</a></li><li class="navelem"><a class="el" href="plan__delegator_8hpp.html">plan_delegator.hpp</a></li>
-    <li class="footer">Generated on Thu Sep 5 2024 19:37:48 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 11 2024 21:00:42 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -545,12 +545,12 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  299</span> </div>
 <div class="line"><span class="lineno">  300</span>            break;</div>
 <div class="line"><span class="lineno">  301</span>          } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  302</span>            if (const auto value{parameter.as_int()}; <a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a> &lt; 0) {</div>
+<div class="line"><span class="lineno">  302</span>            if (const auto value{parameter.as_int()}; value &lt; 0) {</div>
 <div class="line"><span class="lineno">  303</span>              result.successful = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  304</span>              result.reason = <span class="stringliteral">&quot;parameter must be nonnegative&quot;</span>;</div>
 <div class="line"><span class="lineno">  305</span>            } <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">  306</span>              this-&gt;<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.set_promotion_threshold_and_update(</div>
-<div class="line"><span class="lineno">  307</span>                mot::PromotionThreshold{<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>)});</div>
+<div class="line"><span class="lineno">  307</span>                mot::PromotionThreshold{<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(value)});</div>
 <div class="line"><span class="lineno">  308</span>            }</div>
 <div class="line"><span class="lineno">  309</span>          }</div>
 <div class="line"><span class="lineno">  310</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (parameter.get_name() == <span class="stringliteral">&quot;track_removal_threshold&quot;</span>) {</div>
@@ -563,12 +563,12 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  317</span> </div>
 <div class="line"><span class="lineno">  318</span>            <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  319</span>          } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  320</span>            <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>{parameter.as_int()}; <a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a> &lt; 0) {</div>
+<div class="line"><span class="lineno">  320</span>            <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> value{parameter.as_int()}; value &lt; 0) {</div>
 <div class="line"><span class="lineno">  321</span>              result.successful = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  322</span>              result.reason = <span class="stringliteral">&quot;parameter must be nonnegative&quot;</span>;</div>
 <div class="line"><span class="lineno">  323</span>            } <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">  324</span>              this-&gt;<a class="code hl_variable" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a6ace10f7fd3588582ea94e4b1f9b0316">track_manager_</a>.set_removal_threshold_and_update(</div>
-<div class="line"><span class="lineno">  325</span>                mot::RemovalThreshold{<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>)});</div>
+<div class="line"><span class="lineno">  325</span>                mot::RemovalThreshold{<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(value)});</div>
 <div class="line"><span class="lineno">  326</span>            }</div>
 <div class="line"><span class="lineno">  327</span>          }</div>
 <div class="line"><span class="lineno">  328</span>        } <span class="keywordflow">else</span> {</div>
@@ -594,10 +594,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  348</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><span class="lineno">  349</span>}</div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_ac589e80fc3d047d98d8341547b14b334"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#ac589e80fc3d047d98d8341547b14b334">carma_cooperative_perception::MultipleObjectTrackerNode::store_new_detections</a></div><div class="ttdeci">auto store_new_detections(const carma_cooperative_perception_interfaces::msg::DetectionList &amp;msg) -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00413">multiple_object_tracker_component.cpp:413</a></div></div>
-<div class="ttc" id="apointer_8h_html_a32aff7c6c4cd253fdf6563677afab5ce"><div class="ttname"><a href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a></div><div class="ttdeci">const GenericPointer&lt; typename T::ValueType &gt; T2 value</div><div class="ttdef"><b>Definition:</b> <a href="pointer_8h_source.html#l01222">pointer.h:1222</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pointer_8h_source.html#l01222">value</a>.</p>
-
 </div>
 </div>
 <a id="a671cccb47c088c9013cd56a3d7630e27" name="a671cccb47c088c9013cd56a3d7630e27"></a>
@@ -970,7 +967,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html">MultipleObjectTrackerNode</a></li>
-    <li class="footer">Generated on Thu Sep 5 2024 19:37:50 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 11 2024 21:00:43 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -2,22 +2,11 @@ var hierarchy =
 [
     [ "carma_cooperative_perception::AccelerationSet4Way", "structcarma__cooperative__perception_1_1AccelerationSet4Way.html", null ],
     [ "platoon_strategic_ihp::ActionPlan", "structplatoon__strategic__ihp_1_1ActionPlan.html", null ],
-    [ "Allocator", "classrapidjson_1_1Allocator.html", null ],
     [ "approaching_emergency_vehicle_plugin::ApproachingEmergencyVehicleTransitionTable", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html", null ],
     [ "arbitrator::Arbitrator", "classarbitrator_1_1Arbitrator.html", null ],
     [ "arbitrator::ArbitratorStateMachine", "classarbitrator_1_1ArbitratorStateMachine.html", null ],
     [ "arbitrator::ArbitratorStateTransition", "structarbitrator_1_1ArbitratorStateTransition.html", null ],
-    [ "GenericValue< Encoding, Allocator >::ArrayData", "structGenericValue_1_1ArrayData.html", null ],
-    [ "ASCII< CharType >", "structASCII.html", null ],
-    [ "AutoUTF< CharType >", "structAutoUTF.html", null ],
-    [ "AutoUTFInputStream< CharType, InputByteStream >", "classAutoUTFInputStream.html", null ],
-    [ "AutoUTFOutputStream< CharType, OutputByteStream >", "classAutoUTFOutputStream.html", null ],
-    [ "BaseReaderHandler< Encoding, Derived >", "structBaseReaderHandler.html", null ],
-    [ "BaseReaderHandler< typename SchemaDocumentType::SchemaType::EncodingType >", "structBaseReaderHandler.html", null ],
     [ "subsystem_controllers::BaseSubSystemControllerConfig", "structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html", null ],
-    [ "BasicIStreamWrapper< StreamType >", "classBasicIStreamWrapper.html", null ],
-    [ "BasicOStreamWrapper< StreamType >", "classBasicOStreamWrapper.html", null ],
-    [ "internal::BigInteger", "classinternal_1_1BigInteger.html", null ],
     [ "lci_strategic_plugin::BoundaryDistances", "structlci__strategic__plugin_1_1BoundaryDistances.html", null ],
     [ "bsm_generator::BSMGeneratorWorker", "classbsm__generator_1_1BSMGeneratorWorker.html", null ],
     [ "CallInterface", "classCallInterface.html", [
@@ -94,9 +83,6 @@ var hierarchy =
       [ "trajectory_visualizer::TrajectoryVisualizer", "classtrajectory__visualizer_1_1TrajectoryVisualizer.html", null ]
     ] ],
     [ "carma_record::CarmaRecordNode", "classcarma__record_1_1CarmaRecordNode.html", null ],
-    [ "MemoryPoolAllocator< BaseAllocator >::ChunkHeader", "structMemoryPoolAllocator_1_1ChunkHeader.html", null ],
-    [ "GenericDocument< Encoding, Allocator, StackAllocator >::ClearStackOnExit", "structGenericDocument_1_1ClearStackOnExit.html", null ],
-    [ "GenericReader< SourceEncoding, TargetEncoding, StackAllocator >::ClearStackOnExit", "structGenericReader_1_1ClearStackOnExit.html", null ],
     [ "approaching_emergency_vehicle_plugin::Config", "structapproaching__emergency__vehicle__plugin_1_1Config.html", null ],
     [ "approximate_intersection::Config", "structapproximate__intersection_1_1Config.html", null ],
     [ "arbitrator::Config", "structarbitrator_1_1Config.html", null ],
@@ -121,32 +107,15 @@ var hierarchy =
     [ "SUB::Config", "structSUB_1_1Config.html", null ],
     [ "trajectory_executor::Config", "structtrajectory__executor_1_1Config.html", null ],
     [ "trajectory_visualizer::Config", "structtrajectory__visualizer_1_1Config.html", null ],
-    [ "guidance_plugin_validator.guidance_plugin_components.ControlPluginResults", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1ControlPluginResults.html", null ],
     [ "extract_rpy_from_quat.Converter", "classextract__rpy__from__quat_1_1Converter.html", null ],
     [ "arbitrator::CostFunction", "classarbitrator_1_1CostFunction.html", [
       [ "arbitrator::CostSystemCostFunction", "classarbitrator_1_1CostSystemCostFunction.html", null ],
       [ "arbitrator::FixedPriorityCostFunction", "classarbitrator_1_1FixedPriorityCostFunction.html", null ]
     ] ],
-    [ "CrtAllocator", "classCrtAllocator.html", null ],
-    [ "GenericValue< Encoding, Allocator >::Data", "unionGenericValue_1_1Data.html", null ],
     [ "carma_cooperative_perception::DDateTime", "structcarma__cooperative__perception_1_1DDateTime.html", null ],
-    [ "internal::DecodedStream< SourceStream, Encoding >", "classinternal_1_1DecodedStream.html", null ],
     [ "basic_autonomy::waypoint_generation::DetailedTrajConfig", "structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html", null ],
-    [ "internal::DiyFp", "structinternal_1_1DiyFp.html", null ],
-    [ "internal::Double", "classinternal_1_1Double.html", null ],
-    [ "cav::DriverApplication", "classcav_1_1DriverApplication.html", [
-      [ "NS3Adapter", "classNS3Adapter.html", null ]
-    ] ],
     [ "subsystem_controllers::DriverManager", "classsubsystem__controllers_1_1DriverManager.html", null ],
     [ "subsystem_controllers::DriversControllerConfig", "structsubsystem__controllers_1_1DriversControllerConfig.html", null ],
-    [ "cav::DriverWrapper", "classcav_1_1DriverWrapper.html", null ],
-    [ "std::enable_shared_from_this", null, [
-      [ "cav::UDPListener", "classcav_1_1UDPListener.html", null ]
-    ] ],
-    [ "EncodedInputStream< Encoding, InputByteStream >", "classEncodedInputStream.html", null ],
-    [ "EncodedInputStream< UTF8<>, MemoryStream >", "classEncodedInputStream_3_01UTF8_3_4_00_01MemoryStream_01_4.html", null ],
-    [ "EncodedOutputStream< Encoding, OutputByteStream >", "classEncodedOutputStream.html", null ],
-    [ "Encoding", "classrapidjson_1_1Encoding.html", null ],
     [ "subsystem_controllers::Entry", "structsubsystem__controllers_1_1Entry.html", null ],
     [ "subsystem_controllers::EntryManager", "classsubsystem__controllers_1_1EntryManager.html", null ],
     [ "approaching_emergency_vehicle_plugin::ErvInformation", "structapproaching__emergency__vehicle__plugin_1_1ErvInformation.html", null ],
@@ -156,37 +125,10 @@ var hierarchy =
         [ "lightbar_manager::INVALID_LIGHTBAR_MANAGER_PRIORITY", "structlightbar__manager_1_1INVALID__LIGHTBAR__MANAGER__PRIORITY.html", null ]
       ] ]
     ] ],
-    [ "FalseType", "classFalseType.html", [
-      [ "internal::IsGenericValueImpl< T, Encoding, Allocator >", "structinternal_1_1IsGenericValueImpl.html", null ]
-    ] ],
-    [ "FileReadStream", "classFileReadStream.html", null ],
-    [ "FileWriteStream", "classFileWriteStream.html", null ],
     [ "FilterIndices", "classFilterIndices.html", [
       [ "pcl::experimental::advanced::FunctorFilter< PointT, FunctionObject >", "classpcl_1_1experimental_1_1advanced_1_1FunctorFilter.html", null ]
     ] ],
-    [ "GenericValue< Encoding, Allocator >::Flag", "structGenericValue_1_1Flag.html", null ],
-    [ "internal::GenericRegex< Encoding, Allocator >::Frag", "structinternal_1_1GenericRegex_1_1Frag.html", null ],
     [ "basic_autonomy::waypoint_generation::GeneralTrajConfig", "structbasic__autonomy_1_1waypoint__generation_1_1GeneralTrajConfig.html", null ],
-    [ "GenericArray< Const, ValueT >", "classGenericArray.html", null ],
-    [ "GenericInsituStringStream< Encoding >", "structGenericInsituStringStream.html", null ],
-    [ "GenericMember< Encoding, Allocator >", "structGenericMember.html", null ],
-    [ "GenericMemoryBuffer< Allocator >", "structGenericMemoryBuffer.html", null ],
-    [ "GenericObject< Const, ValueT >", "classGenericObject.html", null ],
-    [ "GenericPointer< ValueType, Allocator >", "classGenericPointer.html", null ],
-    [ "GenericPointer< ValueType, Allocator >", "classGenericPointer.html", null ],
-    [ "GenericReader< SourceEncoding, TargetEncoding, StackAllocator >", "classGenericReader.html", null ],
-    [ "internal::GenericRegex< Encoding, Allocator >", "classinternal_1_1GenericRegex.html", null ],
-    [ "internal::GenericRegexSearch< RegexType, Allocator >", "classinternal_1_1GenericRegexSearch.html", null ],
-    [ "GenericSchemaDocument< ValueT, Allocator >", "classGenericSchemaDocument.html", null ],
-    [ "GenericStringBuffer< Encoding, Allocator >", "classGenericStringBuffer.html", null ],
-    [ "GenericStringRef< CharType >", "structGenericStringRef.html", null ],
-    [ "GenericStringStream< Encoding >", "structGenericStringStream.html", null ],
-    [ "GenericValue< Encoding, Allocator >", "classGenericValue.html", null ],
-    [ "GenericValue< Encoding, MemoryPoolAllocator<> >", "classGenericValue.html", [
-      [ "GenericDocument< Encoding, Allocator, StackAllocator >", "classGenericDocument.html", null ]
-    ] ],
-    [ "GenericValue< EncodingType, AllocatorType >", "classGenericValue.html", null ],
-    [ "GenericValue< rapidjson::Encoding, rapidjson::Allocator >", "classGenericValue.html", null ],
     [ "carma_wm_ctrl::Geofence", "classcarma__wm__ctrl_1_1Geofence.html", null ],
     [ "carma_wm_ctrl::GeofenceSchedule", "classcarma__wm__ctrl_1_1GeofenceSchedule.html", null ],
     [ "carma_wm_ctrl::GeofenceScheduler", "classcarma__wm__ctrl_1_1GeofenceScheduler.html", null ],
@@ -194,17 +136,11 @@ var hierarchy =
     [ "gnss_to_map_convertor::GNSSToMapConvertor", "classgnss__to__map__convertor_1_1GNSSToMapConvertor.html", null ],
     [ "GNSSToMapConvertor", "classGNSSToMapConvertor.html", null ],
     [ "subsystem_controllers::GuidanceControllerConfig", "structsubsystem__controllers_1_1GuidanceControllerConfig.html", null ],
-    [ "guidance_plugin_validator.guidance_plugin_validator.GuidancePluginValidator", "classguidance__plugin__validator_1_1guidance__plugin__validator_1_1GuidancePluginValidator.html", null ],
     [ "guidance::GuidanceStateMachine", "classguidance_1_1GuidanceStateMachine.html", null ],
-    [ "Handler", "classrapidjson_1_1Handler.html", null ],
     [ "boost::hash", null, [
       [ "subsystem_controllers::VectorHash", "structsubsystem__controllers_1_1VectorHash.html", null ]
     ] ],
-    [ "internal::Hasher< Encoding, Allocator >", "classinternal_1_1Hasher.html", null ],
     [ "carma_cooperative_perception::Heading", "structcarma__cooperative__perception_1_1Heading.html", null ],
-    [ "GenericValue< Encoding, Allocator >::Number::I", "structGenericValue_1_1Number_1_1I.html", null ],
-    [ "IGenericRemoteSchemaDocumentProvider< SchemaDocumentType >", "classIGenericRemoteSchemaDocumentProvider.html", null ],
-    [ "imaxdiv_t", "structimaxdiv__t.html", null ],
     [ "carma_wm::IndexedDistanceMap", "classcarma__wm_1_1IndexedDistanceMap.html", null ],
     [ "inlanecruising_plugin::InLaneCruisingPlugin", "classinlanecruising__plugin_1_1InLaneCruisingPlugin.html", null ],
     [ "InLaneCruisingPluginConfig", "structInLaneCruisingPluginConfig.html", null ],
@@ -217,16 +153,6 @@ var hierarchy =
     [ "pcl::detail::int_type< 64, true >", "structpcl_1_1detail_1_1int__type_3_0164_00_01true_01_4.html", null ],
     [ "pcl::detail::int_type< 8, false >", "structpcl_1_1detail_1_1int__type_3_018_00_01false_01_4.html", null ],
     [ "pcl::detail::int_type< 8, true >", "structpcl_1_1detail_1_1int__type_3_018_00_01true_01_4.html", null ],
-    [ "internal::ISchemaStateFactory< SchemaType >", "classinternal_1_1ISchemaStateFactory.html", null ],
-    [ "internal::ISchemaStateFactory< SchemaDocumentType::SchemaType >", "classinternal_1_1ISchemaStateFactory.html", [
-      [ "GenericSchemaValidator< SchemaDocumentType, OutputHandler, StateAllocator >", "classGenericSchemaValidator.html", null ]
-    ] ],
-    [ "internal::ISchemaValidator", "classinternal_1_1ISchemaValidator.html", [
-      [ "GenericSchemaValidator< SchemaDocumentType, OutputHandler, StateAllocator >", "classGenericSchemaValidator.html", null ]
-    ] ],
-    [ "std::iterator", null, [
-      [ "GenericMemberIterator< Const, Encoding, Allocator >", "classGenericMemberIterator.html", null ]
-    ] ],
     [ "carma_wm::LANE_DIRECTION", "structcarma__wm_1_1LANE__DIRECTION.html", null ],
     [ "plan_delegator::LaneChangeInformation", "structplan__delegator_1_1LaneChangeInformation.html", null ],
     [ "cooperative_lanechange::LaneChangeManeuverOriginalValues", "structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html", null ],
@@ -234,7 +160,6 @@ var hierarchy =
     [ "port_drayage_plugin::LatLonCoordinate", "structport__drayage__plugin_1_1LatLonCoordinate.html", null ],
     [ "lci_strategic_plugin::LCIStrategicPluginConfig", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html", null ],
     [ "lci_strategic_plugin::LCIStrategicStateTransitionTable", "classlci__strategic__plugin_1_1LCIStrategicStateTransitionTable.html", null ],
-    [ "Writer< OutputStream, SourceEncoding, TargetEncoding, StackAllocator, writeFlags >::Level", "structWriter_1_1Level.html", null ],
     [ "LightBarManager", "classLightBarManager.html", null ],
     [ "lightbar_manager::LightBarManagerStateMachine", "classlightbar__manager_1_1LightBarManagerStateMachine.html", null ],
     [ "lightbar_manager::LightBarManagerWorker", "classlightbar__manager_1_1LightBarManagerWorker.html", null ],
@@ -248,8 +173,6 @@ var hierarchy =
     [ "carma_wm::test::MapOptions", "structcarma__wm_1_1test_1_1MapOptions.html", null ],
     [ "mobilitypath_visualizer::MarkerColor", "structmobilitypath__visualizer_1_1MarkerColor.html", null ],
     [ "carma_cooperative_perception::MeasurementTimeOffset", "structcarma__cooperative__perception_1_1MeasurementTimeOffset.html", null ],
-    [ "MemoryPoolAllocator< BaseAllocator >", "classMemoryPoolAllocator.html", null ],
-    [ "MemoryStream", "structMemoryStream.html", null ],
     [ "carma_cooperative_perception::MetricSe2", "structcarma__cooperative__perception_1_1MetricSe2.html", null ],
     [ "mock_drivers::MockDriver", "classmock__drivers_1_1MockDriver.html", [
       [ "mock_drivers::MockCANDriver", "classmock__drivers_1_1MockCANDriver.html", null ],
@@ -276,25 +199,8 @@ var hierarchy =
       [ "carma_cooperative_perception::DetectionListVizNode", "classcarma__cooperative__perception_1_1DetectionListVizNode.html", null ],
       [ "system_controller::SystemControllerNode", "classsystem__controller_1_1SystemControllerNode.html", null ]
     ] ],
-    [ "NS3Client", "classNS3Client.html", null ],
-    [ "GenericValue< Encoding, Allocator >::Number", "unionGenericValue_1_1Number.html", null ],
-    [ "internal::Hasher< Encoding, Allocator >::Number", "structinternal_1_1Hasher_1_1Number.html", null ],
-    [ "GenericReader< SourceEncoding, TargetEncoding, StackAllocator >::NumberStream< InputStream, backup, pushOnTake >", "classGenericReader_1_1NumberStream.html", null ],
-    [ "GenericReader< SourceEncoding, TargetEncoding, StackAllocator >::NumberStream< InputStream, false, false >", "classGenericReader_1_1NumberStream_3_01InputStream_00_01false_00_01false_01_4.html", [
-      [ "GenericReader< SourceEncoding, TargetEncoding, StackAllocator >::NumberStream< InputStream, true, false >", "classGenericReader_1_1NumberStream_3_01InputStream_00_01true_00_01false_01_4.html", [
-        [ "GenericReader< SourceEncoding, TargetEncoding, StackAllocator >::NumberStream< InputStream, true, true >", "classGenericReader_1_1NumberStream_3_01InputStream_00_01true_00_01true_01_4.html", null ]
-      ] ]
-    ] ],
-    [ "GenericValue< Encoding, Allocator >::ObjectData", "structGenericValue_1_1ObjectData.html", null ],
     [ "object::ObjectDetectionTrackingWorker", "classobject_1_1ObjectDetectionTrackingWorker.html", null ],
     [ "port_drayage_plugin::OperationID", "classport__drayage__plugin_1_1OperationID.html", null ],
-    [ "guidance_plugin_validator.guidance_plugin_components.OptionalControlComponents", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1OptionalControlComponents.html", null ],
-    [ "guidance_plugin_validator.guidance_plugin_components.OptionalStrategicComponents", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1OptionalStrategicComponents.html", null ],
-    [ "guidance_plugin_validator.guidance_plugin_components.OptionalTacticalComponents", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1OptionalTacticalComponents.html", null ],
-    [ "ParseResult", "structParseResult.html", null ],
-    [ "internal::Schema< SchemaDocumentType >::PatternProperty", "structinternal_1_1Schema_1_1PatternProperty.html", null ],
-    [ "GenericPointer< ValueType, Allocator >::PercentDecodeStream", "classGenericPointer_1_1PercentDecodeStream.html", null ],
-    [ "GenericPointer< ValueType, Allocator >::PercentEncodeStream< OutputStream >", "classGenericPointer_1_1PercentEncodeStream.html", null ],
     [ "platooning_control::PIDController", "classplatooning__control_1_1PIDController.html", null ],
     [ "arbitrator::PlanningStrategy", "classarbitrator_1_1PlanningStrategy.html", [
       [ "arbitrator::TreePlanner", "classarbitrator_1_1TreePlanner.html", null ]
@@ -320,13 +226,8 @@ var hierarchy =
     [ "pose_to_tf::PoseToTF2Config", "structpose__to__tf_1_1PoseToTF2Config.html", null ],
     [ "carma_cooperative_perception::Position3D", "structcarma__cooperative__perception_1_1Position3D.html", null ],
     [ "carma_cooperative_perception::PositionOffsetXYZ", "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html", null ],
-    [ "internal::Schema< SchemaDocumentType >::Property", "structinternal_1_1Schema_1_1Property.html", null ],
     [ "mock_drivers::PublisherWapper", "structmock__drivers_1_1PublisherWapper.html", null ],
     [ "pure_pursuit_wrapper::PurePursuitWrapperConfig", "structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html", null ],
-    [ "internal::GenericRegex< Encoding, Allocator >::Range", "structinternal_1_1GenericRegex_1_1Range.html", null ],
-    [ "guidance_plugin_validator.guidance_plugin_components.RequiredControlComponents", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1RequiredControlComponents.html", null ],
-    [ "guidance_plugin_validator.guidance_plugin_components.RequiredStrategicComponents", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1RequiredStrategicComponents.html", null ],
-    [ "guidance_plugin_validator.guidance_plugin_components.RequiredTacticalComponents", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1RequiredTacticalComponents.html", null ],
     [ "mock_drivers::ROSComms<... >", "classmock__drivers_1_1ROSComms.html", null ],
     [ "mock_drivers::ROSComms< M, T >", "classmock__drivers_1_1ROSComms_3_01M_00_01T_01_4.html", null ],
     [ "mock_drivers::ROSComms< T >", "classmock__drivers_1_1ROSComms_3_01T_01_4.html", null ],
@@ -335,18 +236,11 @@ var hierarchy =
     [ "lanelet::routing::RoutingGraph", "classlanelet_1_1routing_1_1RoutingGraph.html", [
       [ "RoutingGraphAccessor", "classRoutingGraphAccessor.html", null ]
     ] ],
-    [ "internal::Schema< SchemaDocumentType >", "classinternal_1_1Schema.html", null ],
-    [ "internal::Schema< SchemaDocumentType >::SchemaArray", "structinternal_1_1Schema_1_1SchemaArray.html", null ],
-    [ "GenericSchemaDocument< ValueT, Allocator >::SchemaEntry", "structGenericSchemaDocument_1_1SchemaEntry.html", null ],
-    [ "GenericSchemaDocument< ValueT, Allocator >::SchemaRefEntry", "structGenericSchemaDocument_1_1SchemaRefEntry.html", null ],
-    [ "SchemaValidatingReader< parseFlags, InputStream, SourceEncoding, SchemaDocumentType, StackAllocator >", "classSchemaValidatingReader.html", null ],
-    [ "internal::SchemaValidationContext< SchemaDocumentType >", "structinternal_1_1SchemaValidationContext.html", null ],
     [ "sci_strategic_plugin::SCIStrategicPluginConfig", "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html", null ],
     [ "arbitrator::SearchStrategy", "classarbitrator_1_1SearchStrategy.html", [
       [ "arbitrator::BeamSearchStrategy", "classarbitrator_1_1BeamSearchStrategy.html", null ]
     ] ],
     [ "carma_cooperative_perception::SemanticDistance2dScore", "structcarma__cooperative__perception_1_1SemanticDistance2dScore.html", null ],
-    [ "GenericValue< Encoding, Allocator >::ShortString", "structGenericValue_1_1ShortString.html", null ],
     [ "carma_wm::SignalizedIntersectionManager", "classcarma__wm_1_1SignalizedIntersectionManager.html", null ],
     [ "carma_cooperative_perception::Speed", "structcarma__cooperative__perception_1_1Speed.html", null ],
     [ "basic_autonomy::smoothing::SplineI", "classbasic__autonomy_1_1smoothing_1_1SplineI.html", [
@@ -355,75 +249,21 @@ var hierarchy =
     [ "inlanecruising_plugin::smoothing::SplineI", "classinlanecruising__plugin_1_1smoothing_1_1SplineI.html", [
       [ "inlanecruising_plugin::smoothing::BSpline", "classinlanecruising__plugin_1_1smoothing_1_1BSpline.html", null ]
     ] ],
-    [ "internal::Stack< Allocator >", "classinternal_1_1Stack.html", null ],
-    [ "internal::Stack< CrtAllocator >", "classinternal_1_1Stack.html", null ],
-    [ "internal::Stack< rapidjson::Allocator >", "classinternal_1_1Stack.html", null ],
-    [ "internal::Stack< StackAllocator >", "classinternal_1_1Stack.html", null ],
-    [ "GenericReader< SourceEncoding, TargetEncoding, StackAllocator >::StackStream< CharType >", "classGenericReader_1_1StackStream.html", null ],
-    [ "GenericReader< SourceEncoding, TargetEncoding, StackAllocator >::StackStream< char >", "classGenericReader_1_1StackStream.html", null ],
-    [ "internal::GenericRegex< Encoding, Allocator >::State", "structinternal_1_1GenericRegex_1_1State.html", null ],
     [ "stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html", null ],
     [ "stop_and_wait_plugin::StopandWait", "classstop__and__wait__plugin_1_1StopandWait.html", null ],
     [ "StopandWaitConfig", "structStopandWaitConfig.html", null ],
     [ "stop_controlled_intersection_tactical_plugin::StopControlledIntersectionTacticalPluginConfig", "structstop__controlled__intersection__tactical__plugin_1_1StopControlledIntersectionTacticalPluginConfig.html", null ],
-    [ "guidance_plugin_validator.guidance_plugin_components.StrategicPluginResults", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1StrategicPluginResults.html", null ],
-    [ "Stream", "classrapidjson_1_1Stream.html", null ],
-    [ "internal::StreamLocalCopy< Stream, int >", "classinternal_1_1StreamLocalCopy.html", null ],
-    [ "internal::StreamLocalCopy< Stream, 0 >", "classinternal_1_1StreamLocalCopy_3_01Stream_00_010_01_4.html", null ],
-    [ "internal::StreamLocalCopy< Stream, 1 >", "classinternal_1_1StreamLocalCopy_3_01Stream_00_011_01_4.html", null ],
-    [ "StreamTraits< Stream >", "structStreamTraits.html", null ],
-    [ "StreamTraits< GenericInsituStringStream< Encoding > >", "structStreamTraits_3_01GenericInsituStringStream_3_01Encoding_01_4_01_4.html", null ],
-    [ "StreamTraits< GenericStringStream< Encoding > >", "structStreamTraits_3_01GenericStringStream_3_01Encoding_01_4_01_4.html", null ],
-    [ "GenericValue< Encoding, Allocator >::String", "structGenericValue_1_1String.html", null ],
     [ "SystemControllerConfig", "structSystemControllerConfig.html", null ],
-    [ "guidance_plugin_validator.guidance_plugin_components.TacticalPluginResults", "classguidance__plugin__validator_1_1guidance__plugin__components_1_1TacticalPluginResults.html", null ],
-    [ "GenericPointer< ValueType, Allocator >::Token", "structGenericPointer_1_1Token.html", null ],
-    [ "internal::TokenHelper< Stack, Ch >", "structinternal_1_1TokenHelper.html", null ],
-    [ "internal::TokenHelper< Stack, char >", "structinternal_1_1TokenHelper_3_01Stack_00_01char_01_4.html", null ],
     [ "carma_wm::TrackPos", "classcarma__wm_1_1TrackPos.html", null ],
     [ "carma_wm::TrafficControl", "classcarma__wm_1_1TrafficControl.html", null ],
     [ "traffic_incident_parser::TrafficIncidentParserWorker", "classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html", null ],
     [ "trajectory_follower_wrapper::TrajectoryFollowerWrapperConfig", "structtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperConfig.html", null ],
     [ "lci_strategic_plugin::TrajectoryParams", "structlci__strategic__plugin_1_1TrajectoryParams.html", null ],
     [ "light_controlled_intersection_tactical_plugin::TrajectoryParams", "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html", null ],
-    [ "Transcoder< SourceEncoding, TargetEncoding >", "structTranscoder.html", null ],
-    [ "Transcoder< Encoding, Encoding >", "structTranscoder_3_01Encoding_00_01Encoding_01_4.html", null ],
     [ "frame_transformer::TransformerBase", "classframe__transformer_1_1TransformerBase.html", [
       [ "frame_transformer::Transformer< T >", "classframe__transformer_1_1Transformer.html", null ]
     ] ],
-    [ "IsBaseOf::Type", null, [
-      [ "internal::IsGenericValueImpl< T, typename Void< typename T::EncodingType >::Type, typename Void< typename T::AllocatorType >::Type >", "structinternal_1_1IsGenericValueImpl_3_01T_00_01typename_01Void_3_01typename_01T_1_1EncodingType794abcc01fcce01e300668fa57e4d036.html", null ]
-    ] ],
-    [ "IsGenericValueImpl::Type", null, [
-      [ "internal::IsGenericValue< T >", "structinternal_1_1IsGenericValue.html", null ]
-    ] ],
-    [ "internal::TypeHelper< ValueType, T >", "structinternal_1_1TypeHelper.html", null ],
-    [ "internal::TypeHelper< ValueType, bool >", "structinternal_1_1TypeHelper_3_01ValueType_00_01bool_01_4.html", null ],
-    [ "internal::TypeHelper< ValueType, const typename ValueType::Ch * >", "structinternal_1_1TypeHelper_3_01ValueType_00_01const_01typename_01ValueType_1_1Ch_01_5_01_4.html", null ],
-    [ "internal::TypeHelper< ValueType, double >", "structinternal_1_1TypeHelper_3_01ValueType_00_01double_01_4.html", null ],
-    [ "internal::TypeHelper< ValueType, float >", "structinternal_1_1TypeHelper_3_01ValueType_00_01float_01_4.html", null ],
-    [ "internal::TypeHelper< ValueType, int >", "structinternal_1_1TypeHelper_3_01ValueType_00_01int_01_4.html", null ],
-    [ "internal::TypeHelper< ValueType, int64_t >", "structinternal_1_1TypeHelper_3_01ValueType_00_01int64__t_01_4.html", null ],
-    [ "internal::TypeHelper< ValueType, typename ValueType::Array >", "structinternal_1_1TypeHelper_3_01ValueType_00_01typename_01ValueType_1_1Array_01_4.html", null ],
-    [ "internal::TypeHelper< ValueType, typename ValueType::ConstArray >", "structinternal_1_1TypeHelper_3_01ValueType_00_01typename_01ValueType_1_1ConstArray_01_4.html", null ],
-    [ "internal::TypeHelper< ValueType, typename ValueType::ConstObject >", "structinternal_1_1TypeHelper_3_01ValueType_00_01typename_01ValueType_1_1ConstObject_01_4.html", null ],
-    [ "internal::TypeHelper< ValueType, typename ValueType::Object >", "structinternal_1_1TypeHelper_3_01ValueType_00_01typename_01ValueType_1_1Object_01_4.html", null ],
-    [ "internal::TypeHelper< ValueType, uint64_t >", "structinternal_1_1TypeHelper_3_01ValueType_00_01uint64__t_01_4.html", null ],
-    [ "internal::TypeHelper< ValueType, unsigned >", "structinternal_1_1TypeHelper_3_01ValueType_00_01unsigned_01_4.html", null ],
-    [ "GenericValue< Encoding, Allocator >::Number::U", "structGenericValue_1_1Number_1_1U.html", null ],
-    [ "internal::Hasher< Encoding, Allocator >::Number::U", "unioninternal_1_1Hasher_1_1Number_1_1U.html", null ],
     [ "approaching_emergency_vehicle_plugin::UpcomingLaneChangeParameters", "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html", null ],
-    [ "UTF16< CharType >", "structUTF16.html", null ],
-    [ "UTF16< wchar_t >", "structUTF16.html", [
-      [ "UTF16BE< CharType >", "structUTF16BE.html", null ],
-      [ "UTF16LE< CharType >", "structUTF16LE.html", null ]
-    ] ],
-    [ "UTF32< CharType >", "structUTF32.html", null ],
-    [ "UTF32< unsigned >", "structUTF32.html", [
-      [ "UTF32BE< CharType >", "structUTF32BE.html", null ],
-      [ "UTF32LE< CharType >", "structUTF32LE.html", null ]
-    ] ],
-    [ "UTF8< CharType >", "structUTF8.html", null ],
     [ "carma_cooperative_perception::UtmCoordinate", "structcarma__cooperative__perception_1_1UtmCoordinate.html", null ],
     [ "carma_cooperative_perception::UtmDisplacement", "structcarma__cooperative__perception_1_1UtmDisplacement.html", null ],
     [ "carma_cooperative_perception::UtmZone", "structcarma__cooperative__perception_1_1UtmZone.html", null ],
@@ -431,7 +271,6 @@ var hierarchy =
     [ "lci_strategic_plugin::LCIStrategicPlugin::VehicleState", "structlci__strategic__plugin_1_1LCIStrategicPlugin_1_1VehicleState.html", null ],
     [ "sci_strategic_plugin::SCIStrategicPlugin::VehicleState", "structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html", null ],
     [ "stop_and_dwell_strategic_plugin::VehicleState", "structstop__and__dwell__strategic__plugin_1_1VehicleState.html", null ],
-    [ "NS3Adapter::WaveConfigStruct", "structNS3Adapter_1_1WaveConfigStruct.html", null ],
     [ "carma_cooperative_perception::Wgs84Coordinate", "structcarma__cooperative__perception_1_1Wgs84Coordinate.html", null ],
     [ "carma_wm_ctrl::WMBroadcaster", "classcarma__wm__ctrl_1_1WMBroadcaster.html", null ],
     [ "carma_wm::WMListener", "classcarma__wm_1_1WMListener.html", null ],
@@ -440,17 +279,9 @@ var hierarchy =
     [ "carma_wm::WorldModel", "classcarma__wm_1_1WorldModel.html", [
       [ "carma_wm::CARMAWorldModel", "classcarma__wm_1_1CARMAWorldModel.html", null ]
     ] ],
-    [ "Writer< OutputStream, SourceEncoding, TargetEncoding, StackAllocator, writeFlags >", "classWriter.html", null ],
-    [ "Writer< OutputStream, UTF8<>, UTF8<>, CrtAllocator, kWriteDefaultFlags >", "classWriter.html", [
-      [ "PrettyWriter< OutputStream, SourceEncoding, TargetEncoding, StackAllocator, writeFlags >", "classPrettyWriter.html", null ]
-    ] ],
     [ "yield_plugin::YieldPlugin", "classyield__plugin_1_1YieldPlugin.html", null ],
     [ "YieldPluginConfig", "structYieldPluginConfig.html", null ],
-    [ "bool", "classbool.html", null ],
     [ "Enum", null, [
       [ "process_traj_logs.DataSource", "classprocess__traj__logs_1_1DataSource.html", null ]
-    ] ],
-    [ "int", "classint.html", null ],
-    [ "StackAllocator *", "classStackAllocator_01_5.html", null ],
-    [ "static const int", "classstatic_01const_01int.html", null ]
+    ] ]
 ];

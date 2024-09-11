@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            break;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>          }</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          if (<span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>{parameter.as_double()}; <a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a> &lt; 0) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          if (<span class="keyword">const</span> <span class="keyword">auto</span> value{parameter.as_double()}; value &lt; 0) {</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            result.successful = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            result.reason = <span class="stringliteral">&quot;parameter must be nonnegative&quot;</span>;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
@@ -178,7 +178,7 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>          } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            this-&gt;squared_distance_threshold_meters_ = std::pow(<a class="code hl_variable" href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a>, 2);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            this-&gt;squared_distance_threshold_meters_ = std::pow(value, 2);</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>          }</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>          result.successful = <span class="keyword">false</span>;</div>
@@ -275,10 +275,10 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>}</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="namespacecarma__cooperative__perception.html#a594a030d4475614c0b1a4642ec074c0f">  189</a></span><span class="keyword">auto</span> <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a594a030d4475614c0b1a4642ec074c0f">euclidean_distance_squared</a>(</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="keyword">const</span> geometry_msgs::msg::Pose &amp; <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>, <span class="keyword">const</span> geometry_msgs::msg::Pose &amp; b) -&gt; <span class="keywordtype">double</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="keyword">const</span> geometry_msgs::msg::Pose &amp; a, <span class="keyword">const</span> geometry_msgs::msg::Pose &amp; b) -&gt; <span class="keywordtype">double</span></div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>{</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="keywordflow">return</span> std::pow(<a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>.position.x - b.position.x, 2) + std::pow(<a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>.position.y - b.position.y, 2) +</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>         std::pow(<a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>.position.z - b.position.z, 2);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="keywordflow">return</span> std::pow(a.position.x - b.position.x, 2) + std::pow(a.position.y - b.position.y, 2) +</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>         std::pow(a.position.z - b.position.z, 2);</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>}</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>}  <span class="comment">// namespace carma_cooperative_perception</span></div>
@@ -294,15 +294,13 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="ttc" id="ahost__vehicle__filter__component_8hpp_html"><div class="ttname"><a href="host__vehicle__filter__component_8hpp.html">host_vehicle_filter_component.hpp</a></div></div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html"><div class="ttname"><a href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></div><div class="ttdef"><b>Definition:</b> <a href="detection__list__viz__component_8hpp_source.html#l00022">detection_list_viz_component.hpp:23</a></div></div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_a594a030d4475614c0b1a4642ec074c0f"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a594a030d4475614c0b1a4642ec074c0f">carma_cooperative_perception::euclidean_distance_squared</a></div><div class="ttdeci">auto euclidean_distance_squared(const geometry_msgs::msg::Pose &amp;a, const geometry_msgs::msg::Pose &amp;b) -&gt; double</div><div class="ttdef"><b>Definition:</b> <a href="host__vehicle__filter__component_8cpp_source.html#l00189">host_vehicle_filter_component.cpp:189</a></div></div>
-<div class="ttc" id="apointer_8h_html_a32aff7c6c4cd253fdf6563677afab5ce"><div class="ttname"><a href="pointer_8h.html#a32aff7c6c4cd253fdf6563677afab5ce">value</a></div><div class="ttdeci">const GenericPointer&lt; typename T::ValueType &gt; T2 value</div><div class="ttdef"><b>Definition:</b> <a href="pointer_8h_source.html#l01222">pointer.h:1222</a></div></div>
-<div class="ttc" id="apointer_8h_html_aeeddce917cf130d62c370b8f216026dd"><div class="ttname"><a href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a></div><div class="ttdeci">const GenericPointer&lt; typename T::ValueType &gt; T2 T::AllocatorType &amp; a</div><div class="ttdef"><b>Definition:</b> <a href="pointer_8h_source.html#l01121">pointer.h:1121</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_de73b34821d297bc7072366944012629.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="dir_18b6d8ada02823679ceefdf3a51fdefd.html">src</a></li><li class="navelem"><a class="el" href="host__vehicle__filter__component_8cpp.html">host_vehicle_filter_component.cpp</a></li>
-    <li class="footer">Generated on Thu Sep 5 2024 19:37:44 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 11 2024 21:00:40 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -135,7 +135,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a8613e0408964a148aef8cb034fa1b1ce"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__wm_1_1geometry.html#a8613e0408964a148aef8cb034fa1b1ce">compute_arc_lengths</a> (const lanelet::BasicLineString2d &amp;data)</td></tr>
 <tr class="memdesc:a8613e0408964a148aef8cb034fa1b1ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the arc length at each point around the curve.  <a href="namespacecarma__wm_1_1geometry.html#a8613e0408964a148aef8cb034fa1b1ce">More...</a><br /></td></tr>
 <tr class="separator:a8613e0408964a148aef8cb034fa1b1ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bc48b810ba18270fcc21674b55922f0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0">compute_euclidean_distance</a> (const Eigen::Vector2d &amp;<a class="el" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>, const Eigen::Vector2d &amp;b)</td></tr>
+<tr class="memitem:a9bc48b810ba18270fcc21674b55922f0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0">compute_euclidean_distance</a> (const Eigen::Vector2d &amp;a, const Eigen::Vector2d &amp;b)</td></tr>
 <tr class="memdesc:a9bc48b810ba18270fcc21674b55922f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the Euclidean distance between the two points.  <a href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0">More...</a><br /></td></tr>
 <tr class="separator:a9bc48b810ba18270fcc21674b55922f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56bddbee1116988543192b2f235a692c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Eigen::Vector2d &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__wm_1_1geometry.html#a56bddbee1116988543192b2f235a692c">normalize_vectors</a> (const std::vector&lt; Eigen::Vector2d &gt; &amp;vectors)</td></tr>
@@ -184,10 +184,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a906a93ecedb3430179178f7b44d0b2e8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__wm_1_1geometry.html#a906a93ecedb3430179178f7b44d0b2e8">circular_arc_curvature</a> (const lanelet::BasicPoint2d &amp;cur_point, const lanelet::BasicPoint2d &amp;next_point)</td></tr>
 <tr class="memdesc:a906a93ecedb3430179178f7b44d0b2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the curvature of a circular arc that passes through the two provided points. If the two points lie on a curve then larger distances between them will result in less accurate, but also less noisy curvature calculations.  <a href="namespacecarma__wm_1_1geometry.html#a906a93ecedb3430179178f7b44d0b2e8">More...</a><br /></td></tr>
 <tr class="separator:a906a93ecedb3430179178f7b44d0b2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec227caee1708506f7fec3561538ef38"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__wm_1_1geometry.html#aec227caee1708506f7fec3561538ef38">local_circular_arc_curvatures</a> (const std::vector&lt; lanelet::BasicPoint2d &gt; &amp;points, <a class="el" href="classint.html">int</a> lookahead)</td></tr>
+<tr class="memitem:aec227caee1708506f7fec3561538ef38"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__wm_1_1geometry.html#aec227caee1708506f7fec3561538ef38">local_circular_arc_curvatures</a> (const std::vector&lt; lanelet::BasicPoint2d &gt; &amp;points, int lookahead)</td></tr>
 <tr class="memdesc:aec227caee1708506f7fec3561538ef38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the curvature of each point in the provided list by calling circular_arc_curvature using that point and the point at index current point index + lookahead. In this way the curvature of a path is effectively low pass filtered by the size of the lookahead value.  <a href="namespacecarma__wm_1_1geometry.html#aec227caee1708506f7fec3561538ef38">More...</a><br /></td></tr>
 <tr class="separator:aec227caee1708506f7fec3561538ef38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0a06818149f7430fee80e295ef04548"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classbool.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__wm_1_1geometry.html#ae0a06818149f7430fee80e295ef04548">selectFirstSegment</a> (const <a class="el" href="classcarma__wm_1_1TrackPos.html">TrackPos</a> &amp;first_seg_trackPos, const <a class="el" href="classcarma__wm_1_1TrackPos.html">TrackPos</a> &amp;second_seg_trackPos, double first_seg_length, double second_seg_length)</td></tr>
+<tr class="memitem:ae0a06818149f7430fee80e295ef04548"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecarma__wm_1_1geometry.html#ae0a06818149f7430fee80e295ef04548">selectFirstSegment</a> (const <a class="el" href="classcarma__wm_1_1TrackPos.html">TrackPos</a> &amp;first_seg_trackPos, const <a class="el" href="classcarma__wm_1_1TrackPos.html">TrackPos</a> &amp;second_seg_trackPos, double first_seg_length, double second_seg_length)</td></tr>
 <tr class="memdesc:ae0a06818149f7430fee80e295ef04548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to identify whether to select the preceeding or succeeding segment of a linstring point that is nearest an external point when trying to find the <a class="el" href="classcarma__wm_1_1TrackPos.html" title="Position in a track based coordinate system where the axis are downtrack and crosstrack....">TrackPos</a> of the external point. Of the 3 points comprising the 2 segment linestirng the external point must be closest to the midpoint for this function to be valid.  <a href="namespacecarma__wm_1_1geometry.html#ae0a06818149f7430fee80e295ef04548">More...</a><br /></td></tr>
 <tr class="separator:ae0a06818149f7430fee80e295ef04548"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adebf4a245f31404e822133b23e061ed3"><td class="memTemplParams" colspan="2">template&lt;class P , class A &gt; </td></tr>
@@ -555,12 +555,9 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="Geometry_8cpp_source.html#l00504">504</a> of file <a class="el" href="Geometry_8cpp_source.html">Geometry.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  505</span>{</div>
-<div class="line"><span class="lineno">  506</span>  <span class="keywordflow">return</span> std::sqrt(std::pow(b[0] - <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>[0], 2) + std::pow(b[1] - <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>[1], 2));</div>
+<div class="line"><span class="lineno">  506</span>  <span class="keywordflow">return</span> std::sqrt(std::pow(b[0] - a[0], 2) + std::pow(b[1] - a[1], 2));</div>
 <div class="line"><span class="lineno">  507</span>}</div>
-<div class="ttc" id="apointer_8h_html_aeeddce917cf130d62c370b8f216026dd"><div class="ttname"><a href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a></div><div class="ttdeci">const GenericPointer&lt; typename T::ValueType &gt; T2 T::AllocatorType &amp; a</div><div class="ttdef"><b>Definition:</b> <a href="pointer_8h_source.html#l01121">pointer.h:1121</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pointer_8h_source.html#l01121">a</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="Geometry_8cpp_source.html#l00475">compute_templated_arc_lengths()</a>, and <a class="el" href="Geometry_8cpp_source.html#l00373">concatenate_line_strings()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1305,18 +1302,18 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  376</span>  lanelet::BasicLineString2d out;</div>
 <div class="line"><span class="lineno">  377</span> </div>
 <div class="line"><span class="lineno">  378</span>  <span class="keywordtype">int</span> start_offset = 0;</div>
-<div class="line"><span class="lineno">  379</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>.empty() &amp;&amp; !b.empty() &amp;&amp; <a class="code hl_function" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0">compute_euclidean_distance</a>(<a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>.back(), b.front()) &lt; <a class="code hl_variable" href="namespacecarma__wm_1_1geometry.html#a2d95e2615fd8cbd681414e997bb513aa">SPATIAL_EPSILON_M</a>) {</div>
+<div class="line"><span class="lineno">  379</span>  <span class="keywordflow">if</span> (!a.empty() &amp;&amp; !b.empty() &amp;&amp; <a class="code hl_function" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0">compute_euclidean_distance</a>(a.back(), b.front()) &lt; <a class="code hl_variable" href="namespacecarma__wm_1_1geometry.html#a2d95e2615fd8cbd681414e997bb513aa">SPATIAL_EPSILON_M</a>) {</div>
 <div class="line"><span class="lineno">  380</span>    start_offset = 1;</div>
 <div class="line"><span class="lineno">  381</span>  }</div>
 <div class="line"><span class="lineno">  382</span> </div>
-<div class="line"><span class="lineno">  383</span>  out.insert(out.end(), <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>.begin(), <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>.end());</div>
+<div class="line"><span class="lineno">  383</span>  out.insert(out.end(), a.begin(), a.end());</div>
 <div class="line"><span class="lineno">  384</span>  out.insert(out.end(), b.begin() + start_offset, b.end());</div>
 <div class="line"><span class="lineno">  385</span> </div>
 <div class="line"><span class="lineno">  386</span>  <span class="keywordflow">return</span> out;</div>
 <div class="line"><span class="lineno">  387</span>}</div>
 <div class="ttc" id="anamespacecarma__wm_1_1geometry_html_a2d95e2615fd8cbd681414e997bb513aa"><div class="ttname"><a href="namespacecarma__wm_1_1geometry.html#a2d95e2615fd8cbd681414e997bb513aa">carma_wm::geometry::SPATIAL_EPSILON_M</a></div><div class="ttdeci">constexpr double SPATIAL_EPSILON_M</div><div class="ttdef"><b>Definition:</b> <a href="Geometry_8cpp_source.html#l00028">Geometry.cpp:28</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="pointer_8h_source.html#l01121">a</a>, <a class="el" href="Geometry_8cpp_source.html#l00504">compute_euclidean_distance()</a>, and <a class="el" href="Geometry_8cpp_source.html#l00028">SPATIAL_EPSILON_M</a>.</p>
+<p class="reference">References <a class="el" href="Geometry_8cpp_source.html#l00504">compute_euclidean_distance()</a>, and <a class="el" href="Geometry_8cpp_source.html#l00028">SPATIAL_EPSILON_M</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Geometry_8cpp_source.html#l00316">concatenate_lanelets()</a>, and <a class="el" href="basic__autonomy_8cpp_source.html#l00068">basic_autonomy::waypoint_generation::create_lanefollow_geometry()</a>.</p>
 <div class="dynheader">
@@ -1443,7 +1440,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classint.html">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>lookahead</em>&#160;</td>
         </tr>
         <tr>
@@ -2298,7 +2295,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classbool.html">bool</a> carma_wm::geometry::selectFirstSegment </td>
+          <td class="memname">bool carma_wm::geometry::selectFirstSegment </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classcarma__wm_1_1TrackPos.html">TrackPos</a> &amp;&#160;</td>
           <td class="paramname"><em>first_seg_trackPos</em>, </td>
@@ -2732,7 +2729,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm.html">carma_wm</a></li><li class="navelem"><a class="el" href="namespacecarma__wm_1_1geometry.html">geometry</a></li>
-    <li class="footer">Generated on Thu Sep 5 2024 19:37:51 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 11 2024 21:00:44 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

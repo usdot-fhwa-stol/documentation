@@ -420,17 +420,17 @@ $(document).ready(function(){initNavTree('Geometry_8cpp_source.html',''); initRe
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>}</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>lanelet::BasicLineString2d </div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno"><a class="line" href="namespacecarma__wm_1_1geometry.html#ae7d5ca280140dce2bf7bcfb78bdfd55d">  373</a></span><a class="code hl_function" href="namespacecarma__wm_1_1geometry.html#ae7d5ca280140dce2bf7bcfb78bdfd55d">concatenate_line_strings</a>(<span class="keyword">const</span> lanelet::BasicLineString2d&amp; <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>, </div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno"><a class="line" href="namespacecarma__wm_1_1geometry.html#ae7d5ca280140dce2bf7bcfb78bdfd55d">  373</a></span><a class="code hl_function" href="namespacecarma__wm_1_1geometry.html#ae7d5ca280140dce2bf7bcfb78bdfd55d">concatenate_line_strings</a>(<span class="keyword">const</span> lanelet::BasicLineString2d&amp; a, </div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                                          <span class="keyword">const</span> lanelet::BasicLineString2d&amp; b)</div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>{</div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  lanelet::BasicLineString2d out;</div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span> </div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>  <span class="keywordtype">int</span> start_offset = 0;</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>.empty() &amp;&amp; !b.empty() &amp;&amp; <a class="code hl_function" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0">compute_euclidean_distance</a>(<a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>.back(), b.front()) &lt; <a class="code hl_variable" href="namespacecarma__wm_1_1geometry.html#a2d95e2615fd8cbd681414e997bb513aa">SPATIAL_EPSILON_M</a>) {</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>  <span class="keywordflow">if</span> (!a.empty() &amp;&amp; !b.empty() &amp;&amp; <a class="code hl_function" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0">compute_euclidean_distance</a>(a.back(), b.front()) &lt; <a class="code hl_variable" href="namespacecarma__wm_1_1geometry.html#a2d95e2615fd8cbd681414e997bb513aa">SPATIAL_EPSILON_M</a>) {</div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>    start_offset = 1;</div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>  }</div>
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span> </div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>  out.insert(out.end(), <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>.begin(), <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>.end());</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>  out.insert(out.end(), a.begin(), a.end());</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>  out.insert(out.end(), b.begin() + start_offset, b.end());</div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span> </div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>  <span class="keywordflow">return</span> out;</div>
@@ -551,9 +551,9 @@ $(document).ready(function(){initNavTree('Geometry_8cpp_source.html',''); initRe
 <div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>}</div>
 <div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span> </div>
 <div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span><span class="keywordtype">double</span> </div>
-<div class="line"><a id="l00504" name="l00504"></a><span class="lineno"><a class="line" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0">  504</a></span><a class="code hl_function" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0">compute_euclidean_distance</a>(<span class="keyword">const</span> Eigen::Vector2d&amp; <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>, <span class="keyword">const</span> Eigen::Vector2d&amp; b)</div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno"><a class="line" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0">  504</a></span><a class="code hl_function" href="namespacecarma__wm_1_1geometry.html#a9bc48b810ba18270fcc21674b55922f0">compute_euclidean_distance</a>(<span class="keyword">const</span> Eigen::Vector2d&amp; a, <span class="keyword">const</span> Eigen::Vector2d&amp; b)</div>
 <div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>{</div>
-<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>  <span class="keywordflow">return</span> std::sqrt(std::pow(b[0] - <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>[0], 2) + std::pow(b[1] - <a class="code hl_variable" href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a>[1], 2));</div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>  <span class="keywordflow">return</span> std::sqrt(std::pow(b[0] - a[0], 2) + std::pow(b[1] - a[1], 2));</div>
 <div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>}</div>
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span> </div>
 <div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>std::vector&lt;Eigen::Vector2d&gt;</div>
@@ -730,14 +730,13 @@ $(document).ready(function(){initNavTree('Geometry_8cpp_source.html',''); initRe
 <div class="ttc" id="anamespaceprocess__traj__logs_html_ab81a05c3d1d100117b6781d7dedf8a29"><div class="ttname"><a href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">process_traj_logs.point</a></div><div class="ttdeci">point</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00126">process_traj_logs.py:126</a></div></div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_ac70c24fdb487f1aed5b846490501b5f1"><div class="ttname"><a href="namespaceprocess__traj__logs.html#ac70c24fdb487f1aed5b846490501b5f1">process_traj_logs.data</a></div><div class="ttdeci">list data</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00041">process_traj_logs.py:41</a></div></div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_af3ba6144a2d35a4990f1a8d04632a052"><div class="ttname"><a href="namespaceprocess__traj__logs.html#af3ba6144a2d35a4990f1a8d04632a052">process_traj_logs.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00128">process_traj_logs.py:128</a></div></div>
-<div class="ttc" id="apointer_8h_html_aeeddce917cf130d62c370b8f216026dd"><div class="ttname"><a href="pointer_8h.html#aeeddce917cf130d62c370b8f216026dd">a</a></div><div class="ttdeci">const GenericPointer&lt; typename T::ValueType &gt; T2 T::AllocatorType &amp; a</div><div class="ttdef"><b>Definition:</b> <a href="pointer_8h_source.html#l01121">pointer.h:1121</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_063394ac95ddab6826ca68be56e39eae.html">carma_wm</a></li><li class="navelem"><a class="el" href="dir_bed7bb81c6bc1fae1bac689cbf6acc02.html">src</a></li><li class="navelem"><a class="el" href="Geometry_8cpp.html">Geometry.cpp</a></li>
-    <li class="footer">Generated on Thu Sep 5 2024 19:37:45 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Sep 11 2024 21:00:40 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

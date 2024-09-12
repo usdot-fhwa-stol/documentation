@@ -1,6 +1,6 @@
 var classsubsystem__controllers_1_1PluginManager =
 [
-    [ "PluginManager", "classsubsystem__controllers_1_1PluginManager.html#a6cad9b30b4f2e7cecf4a2726944310fd", null ],
+    [ "PluginManager", "classsubsystem__controllers_1_1PluginManager.html#a47d286f4418648c345174c0851f5f41e", null ],
     [ "activate", "classsubsystem__controllers_1_1PluginManager.html#a312b193d3903ed7fe998ac40710f6f1c", null ],
     [ "activate_plugin", "classsubsystem__controllers_1_1PluginManager.html#ad002f6cc78d9ceb6ba76bce4c309362b", null ],
     [ "add_plugin", "classsubsystem__controllers_1_1PluginManager.html#a1823614749aa3885622ca8fbf499728a", null ],
@@ -26,6 +26,5 @@ var classsubsystem__controllers_1_1PluginManager =
     [ "plan_trajectory_suffix_", "classsubsystem__controllers_1_1PluginManager.html#a5db745e7c0511afcc0ea63fae5238a12", null ],
     [ "plugin_lifecycle_mgr_", "classsubsystem__controllers_1_1PluginManager.html#a0acf941bd1c859962c39c63bf3aa25b0", null ],
     [ "required_plugins_", "classsubsystem__controllers_1_1PluginManager.html#a5f0ab0911506fc80fc363e7911ec3e72", null ],
-    [ "ros2_initial_plugins_", "classsubsystem__controllers_1_1PluginManager.html#a0fe1f6c54980a8fc6cc48c1be7df66ae", null ],
     [ "service_timeout_", "classsubsystem__controllers_1_1PluginManager.html#aa751beb402db0442a24ad5504a0708cb", null ]
 ];

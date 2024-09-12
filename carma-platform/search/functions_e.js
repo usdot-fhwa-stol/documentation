@@ -36,7 +36,7 @@ var searchData=
   ['platoonstrategicihpplugin_33',['PlatoonStrategicIHPPlugin',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a16e212542f5668833ab6e6e7854143d2',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]],
   ['plugin_5fpriorities_5fmap_5ffrom_5fjson_34',['plugin_priorities_map_from_json',['../classarbitrator_1_1ArbitratorNode.html#a0bf5eb19413d98bba2ee9c774cd9f4c6',1,'arbitrator::ArbitratorNode']]],
   ['pluginbasenode_35',['PluginBaseNode',['../classcarma__guidance__plugins_1_1PluginBaseNode.html#a870d8e69433a175360bced984fa9a580',1,'carma_guidance_plugins::PluginBaseNode']]],
-  ['pluginmanager_36',['PluginManager',['../classsubsystem__controllers_1_1PluginManager.html#a6cad9b30b4f2e7cecf4a2726944310fd',1,'subsystem_controllers::PluginManager']]],
+  ['pluginmanager_36',['PluginManager',['../classsubsystem__controllers_1_1PluginManager.html#a47d286f4418648c345174c0851f5f41e',1,'subsystem_controllers::PluginManager']]],
   ['pluginneighborgenerator_37',['PluginNeighborGenerator',['../classarbitrator_1_1PluginNeighborGenerator.html#aac8f07baba4f06b21d6078364435376e',1,'arbitrator::PluginNeighborGenerator']]],
   ['point_5fto_5fpoint_5fyaw_38',['point_to_point_yaw',['../namespacecarma__wm_1_1geometry.html#a6f156f9d93ac8bd84fa6663b1efa5db4',1,'carma_wm::geometry']]],
   ['pointfromroutetrackpos_39',['pointFromRouteTrackPos',['../classcarma__wm_1_1CARMAWorldModel.html#a1e7bf1856cd6cd7dbf1e262d378c6087',1,'carma_wm::CARMAWorldModel::pointFromRouteTrackPos()'],['../classcarma__wm_1_1WorldModel.html#aa9276d80f070d7d179cf2298a540f892',1,'carma_wm::WorldModel::pointFromRouteTrackPos()']]],

@@ -1,7 +1,5 @@
 var NAVTREEINDEX31 =
 {
-"mobilitypath__publisher_8cpp.html":[57,0,24,2,1],
-"mobilitypath__publisher_8cpp_source.html":[57,0,24,2,1],
 "mobilitypath__publisher_8hpp.html":[57,0,24,0,0,0],
 "mobilitypath__publisher_8hpp_source.html":[57,0,24,0,0,0],
 "mobilitypath__publisher__config_8hpp.html":[57,0,24,0,0,1],
@@ -249,5 +247,7 @@ var NAVTREEINDEX31 =
 "namespacecarma__cloud__client__launch.html#a61660dc0389cc0486295cd5ab8c7bfcc":[55,0,11,0],
 "namespacecarma__cooperative__perception.html":[55,0,12],
 "namespacecarma__cooperative__perception.html#a022345575eaee624c48c9c248598b0da":[55,0,12,25],
-"namespacecarma__cooperative__perception.html#a022345575eaee624c48c9c248598b0daaa71b63644c9f83d8f5a14cce40f0e53c":[55,0,12,25,1]
+"namespacecarma__cooperative__perception.html#a022345575eaee624c48c9c248598b0daaa71b63644c9f83d8f5a14cce40f0e53c":[55,0,12,25,1],
+"namespacecarma__cooperative__perception.html#a022345575eaee624c48c9c248598b0daac1079db2ce4428bb7b1f7ce7288c887c":[55,0,12,25,0],
+"namespacecarma__cooperative__perception.html#a067dbaa6dc9efb21503e30ac03908c7d":[55,0,12,32]
 };

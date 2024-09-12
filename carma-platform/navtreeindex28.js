@@ -1,7 +1,5 @@
 var NAVTREEINDEX28 =
 {
-"external__object__list__to__detection__list__component_8hpp_source.html":[57,0,7,1,0,1],
-"external__object__list__to__detection__list__node_8cpp.html":[57,0,7,3,3],
 "external__object__list__to__detection__list__node_8cpp.html#a7114aa2dd6837734db57667a298dfcc4":[57,0,7,3,3,0],
 "external__object__list__to__detection__list__node_8cpp_source.html":[57,0,7,3,3],
 "external__object__list__to__sdsm__component_8cpp.html":[57,0,7,3,4],
@@ -46,8 +44,8 @@ var NAVTREEINDEX28 =
 "functions_enum.html":[56,3,4],
 "functions_eval.html":[56,3,5],
 "functions_f.html":[56,3,0,6],
-"functions_func.html":[56,3,1],
 "functions_func.html":[56,3,1,0],
+"functions_func.html":[56,3,1],
 "functions_func_a.html":[56,3,1,1],
 "functions_func_b.html":[56,3,1,2],
 "functions_func_c.html":[56,3,1,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX28 =
 "index.html#autotoc_md147":[0,15],
 "inlanecruising__config_8hpp.html":[57,0,18,0,0,2],
 "inlanecruising__config_8hpp_source.html":[57,0,18,0,0,2],
-"inlanecruising__plugin_2include_2inlanecruising__plugin_2log_2log_8hpp.html":[57,0,18,0,0,0,0]
+"inlanecruising__plugin_2include_2inlanecruising__plugin_2log_2log_8hpp.html":[57,0,18,0,0,0,0],
+"inlanecruising__plugin_2include_2inlanecruising__plugin_2log_2log_8hpp.html#a4e946617a591b9e02a1b62f65234b15b":[57,0,18,0,0,0,0,1],
+"inlanecruising__plugin_2include_2inlanecruising__plugin_2log_2log_8hpp.html#a5e9bcb5b1e75d11eb4715012cd651e52":[57,0,18,0,0,0,0,0]
 };

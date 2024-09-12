@@ -100,7 +100,7 @@ Collaboration diagram for subsystem_controllers::GuidanceControllerConfig:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsubsystem__controllers_1_1GuidanceControllerConfig__coll__graph.png" border="0" usemap="#asubsystem__controllers_1_1GuidanceControllerConfig_coll__map" alt="Collaboration graph"/></div>
 <map name="asubsystem__controllers_1_1GuidanceControllerConfig_coll__map" id="asubsystem__controllers_1_1GuidanceControllerConfig_coll__map">
-<area shape="rect" title="Stuct containing the algorithm configuration values for the GuidanceController." alt="" coords="5,175,180,267"/>
+<area shape="rect" title="Stuct containing the algorithm configuration values for the GuidanceController." alt="" coords="5,160,180,252"/>
 <area shape="rect" title=" " alt="" coords="25,5,161,83"/>
 </map>
 </div>
@@ -113,9 +113,6 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a0a4c01b556c3cd9d26200fce1f6354fc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsubsystem__controllers_1_1GuidanceControllerConfig.html#a0a4c01b556c3cd9d26200fce1f6354fc">auto_activated_plugins</a></td></tr>
 <tr class="memdesc:a0a4c01b556c3cd9d26200fce1f6354fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of guidance plugins which are not required but the user wishes to have automatically activated.  <a href="structsubsystem__controllers_1_1GuidanceControllerConfig.html#a0a4c01b556c3cd9d26200fce1f6354fc">More...</a><br /></td></tr>
 <tr class="separator:a0a4c01b556c3cd9d26200fce1f6354fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad25a5403bb810799036bf26173d97ed4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsubsystem__controllers_1_1GuidanceControllerConfig.html#ad25a5403bb810799036bf26173d97ed4">ros2_initial_plugins</a></td></tr>
-<tr class="memdesc:ad25a5403bb810799036bf26173d97ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of guidance plugins that are ROS2. If it is not in the list, it is assumed to be ROS1 and not managed.  <a href="structsubsystem__controllers_1_1GuidanceControllerConfig.html#ad25a5403bb810799036bf26173d97ed4">More...</a><br /></td></tr>
-<tr class="separator:ad25a5403bb810799036bf26173d97ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -161,29 +158,24 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="guidance__controller__config_8hpp_source.html#l00044">44</a> of file <a class="el" href="guidance__controller__config_8hpp_source.html">guidance_controller_config.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>    {</div>
-<div class="line"><span class="lineno">   46</span>      </div>
-<div class="line"><span class="lineno">   47</span>      output &lt;&lt; <span class="stringliteral">&quot;GuidanceControllerConfig { &quot;</span> &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">   48</span>             &lt;&lt; <span class="stringliteral">&quot;required_plugins: [ &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   49</span>            </div>
-<div class="line"><span class="lineno">   50</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> node : <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.required_plugins)</div>
-<div class="line"><span class="lineno">   51</span>        output &lt;&lt; node &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>      output &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;auto_activated_plugins: [ &quot;</span>;</div>
+<p class="definition">Definition at line <a class="el" href="guidance__controller__config_8hpp_source.html#l00041">41</a> of file <a class="el" href="guidance__controller__config_8hpp_source.html">guidance_controller_config.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span> </div>
+<div class="line"><span class="lineno">   44</span>      output &lt;&lt; <span class="stringliteral">&quot;GuidanceControllerConfig { &quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   45</span>             &lt;&lt; <span class="stringliteral">&quot;required_plugins: [ &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> node : <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.required_plugins)</div>
+<div class="line"><span class="lineno">   48</span>        output &lt;&lt; node &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>      output &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;auto_activated_plugins: [ &quot;</span>;</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> node : <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.auto_activated_plugins)</div>
+<div class="line"><span class="lineno">   53</span>        output &lt;&lt; node &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> node : <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.auto_activated_plugins)</div>
-<div class="line"><span class="lineno">   56</span>        output &lt;&lt; node &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>      output &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;ros2_initial_plugins: [ &quot;</span>;</div>
-<div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>       <span class="keywordflow">for</span> (<span class="keyword">auto</span> node : <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.ros2_initial_plugins)</div>
-<div class="line"><span class="lineno">   61</span>        output &lt;&lt; node &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><span class="lineno">   62</span>      </div>
-<div class="line"><span class="lineno">   63</span>      output &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; std::endl </div>
-<div class="line"><span class="lineno">   64</span>        &lt;&lt; <span class="stringliteral">&quot;}&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   65</span>      <span class="keywordflow">return</span> output;</div>
-<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="line"><span class="lineno">   55</span>      output &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   56</span>        &lt;&lt; <span class="stringliteral">&quot;}&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   57</span>      <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_a49cd466f330a9498d8373baecf47e071"><div class="ttname"><a href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">process_traj_logs.c</a></div><div class="ttdeci">c</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00166">process_traj_logs.py:166</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -205,7 +197,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="guidance__controller__config_8hpp_source.html#l00038">38</a> of file <a class="el" href="guidance__controller__config_8hpp_source.html">guidance_controller_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="guidance__controller_8cpp_source.html#l00025">subsystem_controllers::GuidanceControllerNode::GuidanceControllerNode()</a>, and <a class="el" href="guidance__controller_8cpp_source.html#l00036">subsystem_controllers::GuidanceControllerNode::handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="guidance__controller_8cpp_source.html#l00025">subsystem_controllers::GuidanceControllerNode::GuidanceControllerNode()</a>, and <a class="el" href="guidance__controller_8cpp_source.html#l00035">subsystem_controllers::GuidanceControllerNode::handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -225,27 +217,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="guidance__controller__config_8hpp_source.html#l00033">33</a> of file <a class="el" href="guidance__controller__config_8hpp_source.html">guidance_controller_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="guidance__controller_8cpp_source.html#l00025">subsystem_controllers::GuidanceControllerNode::GuidanceControllerNode()</a>, and <a class="el" href="guidance__controller_8cpp_source.html#l00036">subsystem_controllers::GuidanceControllerNode::handle_on_configure()</a>.</p>
-
-</div>
-</div>
-<a id="ad25a5403bb810799036bf26173d97ed4" name="ad25a5403bb810799036bf26173d97ed4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad25a5403bb810799036bf26173d97ed4">&#9670;&nbsp;</a></span>ros2_initial_plugins</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::string&gt; subsystem_controllers::GuidanceControllerConfig::ros2_initial_plugins</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of guidance plugins that are ROS2. If it is not in the list, it is assumed to be ROS1 and not managed. </p>
-
-<p class="definition">Definition at line <a class="el" href="guidance__controller__config_8hpp_source.html#l00041">41</a> of file <a class="el" href="guidance__controller__config_8hpp_source.html">guidance_controller_config.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="guidance__controller_8cpp_source.html#l00025">subsystem_controllers::GuidanceControllerNode::GuidanceControllerNode()</a>, and <a class="el" href="guidance__controller_8cpp_source.html#l00036">subsystem_controllers::GuidanceControllerNode::handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="guidance__controller_8cpp_source.html#l00025">subsystem_controllers::GuidanceControllerNode::GuidanceControllerNode()</a>, and <a class="el" href="guidance__controller_8cpp_source.html#l00035">subsystem_controllers::GuidanceControllerNode::handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -258,7 +230,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesubsystem__controllers.html">subsystem_controllers</a></li><li class="navelem"><a class="el" href="structsubsystem__controllers_1_1GuidanceControllerConfig.html">GuidanceControllerConfig</a></li>
-    <li class="footer">Generated on Wed Sep 11 2024 21:00:47 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Sep 12 2024 13:05:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

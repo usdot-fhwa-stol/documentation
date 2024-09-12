@@ -163,7 +163,7 @@ var searchData=
   ['plugin_5fpriorities_5fmap_5ffrom_5fjson_160',['plugin_priorities_map_from_json',['../classarbitrator_1_1ArbitratorNode.html#a0bf5eb19413d98bba2ee9c774cd9f4c6',1,'arbitrator::ArbitratorNode']]],
   ['pluginbasenode_161',['PluginBaseNode',['../classcarma__guidance__plugins_1_1PluginBaseNode.html',1,'carma_guidance_plugins::PluginBaseNode'],['../classcarma__guidance__plugins_1_1PluginBaseNode.html#a870d8e69433a175360bced984fa9a580',1,'carma_guidance_plugins::PluginBaseNode::PluginBaseNode()']]],
   ['plugindiscoverypub_162',['PluginDiscoveryPub',['../namespacepure__pursuit__wrapper.html#a2768a734fb88e0b12390e35976ef5546',1,'pure_pursuit_wrapper']]],
-  ['pluginmanager_163',['PluginManager',['../classsubsystem__controllers_1_1PluginManager.html#a6cad9b30b4f2e7cecf4a2726944310fd',1,'subsystem_controllers::PluginManager::PluginManager()'],['../classsubsystem__controllers_1_1PluginManager.html',1,'subsystem_controllers::PluginManager']]],
+  ['pluginmanager_163',['PluginManager',['../classsubsystem__controllers_1_1PluginManager.html#a47d286f4418648c345174c0851f5f41e',1,'subsystem_controllers::PluginManager::PluginManager()'],['../classsubsystem__controllers_1_1PluginManager.html',1,'subsystem_controllers::PluginManager']]],
   ['pluginneighborgenerator_164',['PluginNeighborGenerator',['../classarbitrator_1_1PluginNeighborGenerator.html',1,'arbitrator::PluginNeighborGenerator&lt; T &gt;'],['../classarbitrator_1_1PluginNeighborGenerator.html#aac8f07baba4f06b21d6078364435376e',1,'arbitrator::PluginNeighborGenerator::PluginNeighborGenerator()']]],
   ['plugins_165',['plugins',['../namespaceplugins.html',1,'']]],
   ['plugins_2elaunch_2epy_166',['plugins.launch.py',['../plugins_8launch_8py.html',1,'']]],

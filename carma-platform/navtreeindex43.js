@@ -1,5 +1,6 @@
 var NAVTREEINDEX43 =
 {
+"tactical__plugin_8cpp.html":[57,0,8,1,3],
 "tactical__plugin_8cpp_source.html":[57,0,8,1,3],
 "tactical__plugin_8hpp.html":[57,0,8,0,0,3],
 "tactical__plugin_8hpp_source.html":[57,0,8,0,0,3],

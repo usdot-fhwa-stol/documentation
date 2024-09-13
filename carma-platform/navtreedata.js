@@ -284,45 +284,46 @@ var NAVTREE =
         [ "Documentation", "md_README.html#autotoc_md248", null ],
         [ "Release Notes", "md_README.html#autotoc_md250", null ],
         [ "Roadmap", "md_README.html#autotoc_md251", null ],
-        [ "Architecture Guide", "md_README.html#autotoc_md252", null ],
-        [ "Detailed Design Documents", "md_README.html#autotoc_md253", null ],
-        [ "Developers Guide", "md_README.html#autotoc_md254", null ],
-        [ "Users Guide", "md_README.html#autotoc_md255", null ],
-        [ "Administrator Guide", "md_README.html#autotoc_md256", null ],
-        [ "Other CARMA Packages", "md_README.html#autotoc_md257", [
-          [ "Vehicle Controller Interface Drivers", "md_README.html#autotoc_md258", null ],
-          [ "Sensor Drivers", "md_README.html#autotoc_md259", null ],
-          [ "General System Utilites", "md_README.html#autotoc_md260", null ],
-          [ "Vehicle Configurations", "md_README.html#autotoc_md261", null ]
+        [ "Current Status of ROS 1 and ROS 2 Packages", "md_README.html#autotoc_md252", null ],
+        [ "Architecture Guide", "md_README.html#autotoc_md253", null ],
+        [ "Detailed Design Documents", "md_README.html#autotoc_md254", null ],
+        [ "Developers Guide", "md_README.html#autotoc_md255", null ],
+        [ "Users Guide", "md_README.html#autotoc_md256", null ],
+        [ "Administrator Guide", "md_README.html#autotoc_md257", null ],
+        [ "Other CARMA Packages", "md_README.html#autotoc_md258", [
+          [ "Vehicle Controller Interface Drivers", "md_README.html#autotoc_md259", null ],
+          [ "Sensor Drivers", "md_README.html#autotoc_md260", null ],
+          [ "General System Utilites", "md_README.html#autotoc_md261", null ],
+          [ "Vehicle Configurations", "md_README.html#autotoc_md262", null ]
         ] ],
-        [ "Contribution", "md_README.html#autotoc_md262", null ],
-        [ "Code of Conduct", "md_README.html#autotoc_md263", null ],
-        [ "Attribution", "md_README.html#autotoc_md264", null ],
-        [ "License", "md_README.html#autotoc_md265", null ],
-        [ "Code.gov Registration Info", "md_README.html#autotoc_md266", null ],
-        [ "Contact", "md_README.html#autotoc_md267", null ]
+        [ "Contribution", "md_README.html#autotoc_md263", null ],
+        [ "Code of Conduct", "md_README.html#autotoc_md264", null ],
+        [ "Attribution", "md_README.html#autotoc_md265", null ],
+        [ "License", "md_README.html#autotoc_md266", null ],
+        [ "Code.gov Registration Info", "md_README.html#autotoc_md267", null ],
+        [ "Contact", "md_README.html#autotoc_md268", null ]
       ] ]
     ] ],
     [ "CARMA roadway objects - ROS 2 package design", "md_roadway_objects_docs_package_design.html", [
-      [ "Package Nodes", "md_roadway_objects_docs_package_design.html#autotoc_md269", null ],
-      [ "Package Launch files", "md_roadway_objects_docs_package_design.html#autotoc_md270", null ]
+      [ "Package Nodes", "md_roadway_objects_docs_package_design.html#autotoc_md270", null ],
+      [ "Package Launch files", "md_roadway_objects_docs_package_design.html#autotoc_md271", null ]
     ] ],
     [ "Roadway objects Launch", "md_roadway_objects_docs_roadway_objects_launch.html", [
-      [ "Launch arguments", "md_roadway_objects_docs_roadway_objects_launch.html#autotoc_md272", null ]
+      [ "Launch arguments", "md_roadway_objects_docs_roadway_objects_launch.html#autotoc_md273", null ]
     ] ],
     [ "Roadway objects Node", "md_roadway_objects_docs_roadway_objects_node.html", [
-      [ "Subscriptions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md274", null ],
-      [ "Publishers", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md275", null ],
-      [ "Parameters", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md276", null ],
-      [ "Services", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md277", null ],
-      [ "Actions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md278", null ]
+      [ "Subscriptions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md275", null ],
+      [ "Publishers", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md276", null ],
+      [ "Parameters", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md277", null ],
+      [ "Services", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md278", null ],
+      [ "Actions", "md_roadway_objects_docs_roadway_objects_node.html#autotoc_md279", null ]
     ] ],
     [ "Roadway objects Package", "md_roadway_objects_README.html", [
-      [ "Documentation", "md_roadway_objects_README.html#autotoc_md280", null ]
+      [ "Documentation", "md_roadway_objects_README.html#autotoc_md281", null ]
     ] ],
     [ "route", "md_route_README.html", null ],
     [ "template_package", "md_template_package_README.html", [
-      [ "Creating a new ROS2 package for CARMA Platform", "md_template_package_README.html#autotoc_md283", null ]
+      [ "Creating a new ROS2 package for CARMA Platform", "md_template_package_README.html#autotoc_md284", null ]
     ] ],
     [ "<SUB><package_name>", "md_template_package_template_package_README.html", null ],
     [ "traffic_incident_parser", "md_traffic_incident_parser_README.html", null ],
@@ -400,19 +401,19 @@ var NAVTREEINDEX =
 "external__object__list__to__detection__list__node_8cpp.html#a7114aa2dd6837734db57667a298dfcc4",
 "inlanecruising__plugin_2include_2inlanecruising__plugin_2log_2log_8hpp.html#a6a334b025039babfc527007d0049f7b7",
 "md_Contributing.html#autotoc_md90",
-"mobilitypath__publisher_8hpp.html",
-"namespacecarma__cooperative__perception.html#a0744e4e2672612a387326dbef5e5b632",
-"namespacelci__strategic__plugin.html#a1e0201b2cf65a27f7075fd60ce35e2e9ab6bd418b8879851e86bcaccd553b74db",
-"namespaceport__drayage__plugin.html#a07e372bdd4a2a88aa7c4bb0b83978d28",
-"pages.html",
-"reindex__active__rosbags_8py_source.html",
-"structYieldPluginConfig.html#a9c609df9146f9f8dbbf4838decc6fb0b",
-"structcarma__cooperative__perception_1_1DDateTime.html#a2ab098b09627a991bdf0cf06d31140cf",
-"structcooperative__lanechange_1_1Config.html#ab736b781cc446add6559116a2803e1c8",
-"structlocalization__manager_1_1LocalizationManagerConfig.html#a0cdb308c05aa70c80687938f4f043949",
-"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a7f7c75e78767a304bbca12ce49c91cf8",
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a2c3495266a9184914b24373c4796cda8",
-"tactical__plugin_8cpp_source.html"
+"mobilitypath__publisher_8cpp_source.html",
+"namespacecarma__cooperative__perception.html#a067dbaa6dc9efb21503e30ac03908c7d",
+"namespacelci__strategic__plugin.html#a1e0201b2cf65a27f7075fd60ce35e2e9a945d5e233cf7d6240f6b783b36a374ff",
+"namespaceport__drayage__plugin.html",
+"object__visualizer__node_8hpp_source.html",
+"reindex__active__rosbags_8py.html#ab1a72370720c2c6ea079e177e005f6c7",
+"structYieldPluginConfig.html#a92f70f21fdd60cc19df76491b18c041e",
+"structcarma__cooperative__perception_1_1DDateTime.html#a1d40befc5c0d3f775b2a1486d43e126f",
+"structcooperative__lanechange_1_1Config.html#ab336f530c52f154bf0435a8de3934b37",
+"structlocalization__manager_1_1LocalizationManagerConfig.html#a0755604ab7b77f80fcd3ae0cb467099d",
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#a7ebcbd6d830ed897edc245524b9625f9",
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#a236dd9b96855336e4a4a4409ec0a1a3a",
+"tactical__plugin_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

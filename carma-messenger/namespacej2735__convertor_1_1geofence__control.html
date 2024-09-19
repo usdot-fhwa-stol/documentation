@@ -151,7 +151,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Namespace responsible for converting j2735 style Geofence control messages to CARMA usable control messages. </p>
-<p >Handles conversion between ControlMessages in the j2735_msgs and cav_msgs packages. Unit conversions and presence flags are also handled </p>
+<p >Handles conversion between ControlMessages in the j2735_v2x_msgs and cav_msgs packages. Unit conversions and presence flags are also handled </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="abe5592bea0ab39679648ab3cacf90dc2" name="abe5592bea0ab39679648ab3cacf90dc2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe5592bea0ab39679648ab3cacf90dc2">&#9670;&nbsp;</a></span>convert() <span class="overload">[1/18]</span></h2>
@@ -610,7 +610,7 @@ Here is the call graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="control__message__convertor_8cpp_source.html#l00466">466</a> of file <a class="el" href="control__message__convertor_8cpp_source.html">control_message_convertor.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  467</span>{</div>
 <div class="line"><span class="lineno">  468</span>  <span class="comment">// # reqid ::= Id64b</span></div>
-<div class="line"><span class="lineno">  469</span>  <span class="comment">// j2735_msgs/Id64b reqid</span></div>
+<div class="line"><span class="lineno">  469</span>  <span class="comment">// j2735_v2x_msgs/Id64b reqid</span></div>
 <div class="line"><span class="lineno">  470</span>  out_msg.reqid = in_msg.reqid;</div>
 <div class="line"><span class="lineno">  471</span> </div>
 <div class="line"><span class="lineno">  472</span>  <span class="comment">// # reqseq ::= INTEGER (0..255)</span></div>
@@ -626,7 +626,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  482</span>  out_msg.msgnum = in_msg.msgnum;</div>
 <div class="line"><span class="lineno">  483</span> </div>
 <div class="line"><span class="lineno">  484</span>  <span class="comment">// # id Id128b, -- unique traffic control id</span></div>
-<div class="line"><span class="lineno">  485</span>  <span class="comment">// j2735_msgs/Id128b id</span></div>
+<div class="line"><span class="lineno">  485</span>  <span class="comment">// j2735_v2x_msgs/Id128b id</span></div>
 <div class="line"><span class="lineno">  486</span>  out_msg.id = in_msg.id;</div>
 <div class="line"><span class="lineno">  487</span> </div>
 <div class="line"><span class="lineno">  488</span>  <span class="comment">// # updated EpochMins</span></div>
@@ -635,7 +635,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  491</span>  out_msg.updated = updated.seconds() / <a class="code hl_variable" href="namespacej2735__convertor_1_1units.html#a1fb5a4dd4c6081910896c289478a47f8">units::SEC_PER_MIN</a>;</div>
 <div class="line"><span class="lineno">  492</span> </div>
 <div class="line"><span class="lineno">  493</span>  <span class="comment">// # package [0] TrafficControlPackage OPTIONAL, -- related traffic control ids</span></div>
-<div class="line"><span class="lineno">  494</span>  <span class="comment">// j2735_msgs/TrafficControlPackage package</span></div>
+<div class="line"><span class="lineno">  494</span>  <span class="comment">// j2735_v2x_msgs/TrafficControlPackage package</span></div>
 <div class="line"><span class="lineno">  495</span>  <span class="comment">// bool package_exists</span></div>
 <div class="line"><span class="lineno">  496</span>  out_msg.package_exists = in_msg.package_exists;</div>
 <div class="line"><span class="lineno">  497</span>  <span class="keywordflow">if</span>(out_msg.package_exists)</div>
@@ -713,7 +713,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="control__message__convertor_8cpp_source.html#l00521">521</a> of file <a class="el" href="control__message__convertor_8cpp_source.html">control_message_convertor.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  522</span>{</div>
-<div class="line"><span class="lineno">  523</span>  <span class="comment">// j2735_msgs/TrafficControlVehClass[] vclasses</span></div>
+<div class="line"><span class="lineno">  523</span>  <span class="comment">// j2735_v2x_msgs/TrafficControlVehClass[] vclasses</span></div>
 <div class="line"><span class="lineno">  524</span>  out_msg.vclasses = in_msg.vclasses;</div>
 <div class="line"><span class="lineno">  525</span>  </div>
 <div class="line"><span class="lineno">  526</span>  <span class="comment">// # schedule TrafficControlSchedule</span></div>
@@ -1298,7 +1298,7 @@ Here is the call graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="control__message__convertor_8cpp_source.html#l00189">189</a> of file <a class="el" href="control__message__convertor_8cpp_source.html">control_message_convertor.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  190</span>{</div>
 <div class="line"><span class="lineno">  191</span>  <span class="comment">// # reqid ::= Id64b</span></div>
-<div class="line"><span class="lineno">  192</span>  <span class="comment">// j2735_msgs/Id64b reqid</span></div>
+<div class="line"><span class="lineno">  192</span>  <span class="comment">// j2735_v2x_msgs/Id64b reqid</span></div>
 <div class="line"><span class="lineno">  193</span>  out_msg.reqid = in_msg.reqid;</div>
 <div class="line"><span class="lineno">  194</span> </div>
 <div class="line"><span class="lineno">  195</span>  <span class="comment">// # reqseq ::= INTEGER (0..255)</span></div>
@@ -1314,7 +1314,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  205</span>  out_msg.msgnum = in_msg.msgnum;</div>
 <div class="line"><span class="lineno">  206</span> </div>
 <div class="line"><span class="lineno">  207</span>  <span class="comment">// # id Id128b, -- unique traffic control id</span></div>
-<div class="line"><span class="lineno">  208</span>  <span class="comment">// j2735_msgs/Id128b id</span></div>
+<div class="line"><span class="lineno">  208</span>  <span class="comment">// j2735_v2x_msgs/Id128b id</span></div>
 <div class="line"><span class="lineno">  209</span>  out_msg.id = in_msg.id;</div>
 <div class="line"><span class="lineno">  210</span> </div>
 <div class="line"><span class="lineno">  211</span>  <span class="comment">// # updated EpochMins</span></div>
@@ -1322,7 +1322,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  213</span>  out_msg.updated = rclcpp::Time(in_msg.updated * <a class="code hl_variable" href="namespacej2735__convertor_1_1units.html#a1fb5a4dd4c6081910896c289478a47f8">units::SEC_PER_MIN</a>, 0);</div>
 <div class="line"><span class="lineno">  214</span> </div>
 <div class="line"><span class="lineno">  215</span>  <span class="comment">// # package [0] TrafficControlPackage OPTIONAL, -- related traffic control ids</span></div>
-<div class="line"><span class="lineno">  216</span>  <span class="comment">// j2735_msgs/TrafficControlPackage package</span></div>
+<div class="line"><span class="lineno">  216</span>  <span class="comment">// j2735_v2x_msgs/TrafficControlPackage package</span></div>
 <div class="line"><span class="lineno">  217</span>  <span class="comment">// bool package_exists</span></div>
 <div class="line"><span class="lineno">  218</span>  out_msg.package_exists = in_msg.package_exists;</div>
 <div class="line"><span class="lineno">  219</span>  <span class="keywordflow">if</span>(out_msg.package_exists)</div>
@@ -1400,7 +1400,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="control__message__convertor_8cpp_source.html#l00243">243</a> of file <a class="el" href="control__message__convertor_8cpp_source.html">control_message_convertor.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  244</span>{</div>
-<div class="line"><span class="lineno">  245</span>  <span class="comment">// j2735_msgs/TrafficControlVehClass[] vclasses</span></div>
+<div class="line"><span class="lineno">  245</span>  <span class="comment">// j2735_v2x_msgs/TrafficControlVehClass[] vclasses</span></div>
 <div class="line"><span class="lineno">  246</span>  out_msg.vclasses = in_msg.vclasses;</div>
 <div class="line"><span class="lineno">  247</span>  </div>
 <div class="line"><span class="lineno">  248</span>  <span class="comment">// # schedule TrafficControlSchedule</span></div>
@@ -1532,7 +1532,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacej2735__convertor.html">j2735_convertor</a></li><li class="navelem"><a class="el" href="namespacej2735__convertor_1_1geofence__control.html">geofence_control</a></li>
-    <li class="footer">Generated on Tue Jul 16 2024 19:18:27 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Sep 19 2024 20:11:49 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

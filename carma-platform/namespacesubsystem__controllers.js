@@ -2,7 +2,6 @@ var namespacesubsystem__controllers =
 [
     [ "BaseSubsystemController", "classsubsystem__controllers_1_1BaseSubsystemController.html", "classsubsystem__controllers_1_1BaseSubsystemController" ],
     [ "BaseSubSystemControllerConfig", "structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html", "structsubsystem__controllers_1_1BaseSubSystemControllerConfig" ],
-    [ "DriverManager", "classsubsystem__controllers_1_1DriverManager.html", "classsubsystem__controllers_1_1DriverManager" ],
     [ "DriversControllerConfig", "structsubsystem__controllers_1_1DriversControllerConfig.html", "structsubsystem__controllers_1_1DriversControllerConfig" ],
     [ "DriversControllerNode", "classsubsystem__controllers_1_1DriversControllerNode.html", "classsubsystem__controllers_1_1DriversControllerNode" ],
     [ "Entry", "structsubsystem__controllers_1_1Entry.html", "structsubsystem__controllers_1_1Entry" ],
@@ -13,6 +12,7 @@ var namespacesubsystem__controllers =
     [ "LocalizationControllerConfig", "structsubsystem__controllers_1_1LocalizationControllerConfig.html", "structsubsystem__controllers_1_1LocalizationControllerConfig" ],
     [ "LocalizationControllerNode", "classsubsystem__controllers_1_1LocalizationControllerNode.html", "classsubsystem__controllers_1_1LocalizationControllerNode" ],
     [ "PluginManager", "classsubsystem__controllers_1_1PluginManager.html", "classsubsystem__controllers_1_1PluginManager" ],
+    [ "SSCDriverManager", "classsubsystem__controllers_1_1SSCDriverManager.html", "classsubsystem__controllers_1_1SSCDriverManager" ],
     [ "V2XControllerNode", "classsubsystem__controllers_1_1V2XControllerNode.html", "classsubsystem__controllers_1_1V2XControllerNode" ],
     [ "VectorHash", "structsubsystem__controllers_1_1VectorHash.html", null ],
     [ "GetParentNodeStateFunc", "namespacesubsystem__controllers.html#ab771989d997708ab4746b7c213bd53df", null ],

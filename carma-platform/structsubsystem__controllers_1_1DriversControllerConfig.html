@@ -100,21 +100,18 @@ Collaboration diagram for subsystem_controllers::DriversControllerConfig:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsubsystem__controllers_1_1DriversControllerConfig__coll__graph.png" border="0" usemap="#asubsystem__controllers_1_1DriversControllerConfig_coll__map" alt="Collaboration graph"/></div>
 <map name="asubsystem__controllers_1_1DriversControllerConfig_coll__map" id="asubsystem__controllers_1_1DriversControllerConfig_coll__map">
-<area shape="rect" title="Stuct containing the algorithm configuration values for the GuidanceController." alt="" coords="161,219,321,311"/>
-<area shape="rect" title=" " alt="" coords="5,5,141,83"/>
-<area shape="rect" title=" " alt="" coords="222,5,261,83"/>
-<area shape="rect" title=" " alt="" coords="354,5,414,83"/>
+<area shape="rect" title="Stuct containing the algorithm configuration values for the GuidanceController." alt="" coords="217,160,377,252"/>
+<area shape="rect" title=" " alt="" coords="5,5,60,83"/>
+<area shape="rect" title=" " alt="" coords="145,5,281,83"/>
+<area shape="rect" title=" " alt="" coords="361,5,400,83"/>
+<area shape="rect" title=" " alt="" coords="493,5,553,83"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ac10901eb2c60db3fa86eef6a5d13b63e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsubsystem__controllers_1_1DriversControllerConfig.html#ac10901eb2c60db3fa86eef6a5d13b63e">ros1_required_drivers_</a></td></tr>
-<tr class="memdesc:ac10901eb2c60db3fa86eef6a5d13b63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of ros1 controller drivers (node name) to consider required and who's failure shall result in automation abort.  <a href="structsubsystem__controllers_1_1DriversControllerConfig.html#ac10901eb2c60db3fa86eef6a5d13b63e">More...</a><br /></td></tr>
-<tr class="separator:ac10901eb2c60db3fa86eef6a5d13b63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66491d4f7e7d1f287b09fc27e0ba7a48"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsubsystem__controllers_1_1DriversControllerConfig.html#a66491d4f7e7d1f287b09fc27e0ba7a48">ros1_camera_drivers_</a></td></tr>
-<tr class="memdesc:a66491d4f7e7d1f287b09fc27e0ba7a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of ros1 camera drivers (node name) to consider required and who's failure shall result in automation abort.  <a href="structsubsystem__controllers_1_1DriversControllerConfig.html#a66491d4f7e7d1f287b09fc27e0ba7a48">More...</a><br /></td></tr>
-<tr class="separator:a66491d4f7e7d1f287b09fc27e0ba7a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6841dc7a5440c97696105fc09d8abb95"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsubsystem__controllers_1_1DriversControllerConfig.html#a6841dc7a5440c97696105fc09d8abb95">ros1_ssc_driver_name_</a></td></tr>
+<tr class="separator:a6841dc7a5440c97696105fc09d8abb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad82d0934d404a50cd54b48d93c884fdc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsubsystem__controllers_1_1DriversControllerConfig.html#ad82d0934d404a50cd54b48d93c884fdc">excluded_namespace_nodes_</a></td></tr>
 <tr class="memdesc:ad82d0934d404a50cd54b48d93c884fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of nodes in the namespace which will not be managed by this subsystem controller.  <a href="structsubsystem__controllers_1_1DriversControllerConfig.html#ad82d0934d404a50cd54b48d93c884fdc">More...</a><br /></td></tr>
 <tr class="separator:ad82d0934d404a50cd54b48d93c884fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,32 +166,21 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="drivers__controller__config_8hpp_source.html#l00043">43</a> of file <a class="el" href="drivers__controller__config_8hpp_source.html">drivers_controller_config.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>    {</div>
-<div class="line"><span class="lineno">   45</span>      </div>
-<div class="line"><span class="lineno">   46</span>      output &lt;&lt; <span class="stringliteral">&quot;DriversControllerConfig { &quot;</span> &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">   47</span>             &lt;&lt; <span class="stringliteral">&quot;ros1_required_drivers: [ &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   48</span>            </div>
-<div class="line"><span class="lineno">   49</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> node : <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.ros1_required_drivers_)</div>
-<div class="line"><span class="lineno">   50</span>        output &lt;&lt; node &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>      output &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;ros1_camera_drivers: [ &quot;</span>;</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> node : <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.ros1_camera_drivers_)</div>
-<div class="line"><span class="lineno">   55</span>        output &lt;&lt; node &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><span class="lineno">   56</span>      </div>
-<div class="line"><span class="lineno">   57</span>      output &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;excluded_namespace_nodes: [ &quot;</span>;</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> node : <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.excluded_namespace_nodes_)</div>
-<div class="line"><span class="lineno">   60</span>        output &lt;&lt; node &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>      output&lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;startup_duration: &quot;</span>&lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.startup_duration_ &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>      output &lt;&lt;<span class="stringliteral">&quot;driver_timeout: &quot;</span>&lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.driver_timeout_ &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">   65</span>      </div>
-<div class="line"><span class="lineno">   66</span>        &lt;&lt; <span class="stringliteral">&quot;}&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   67</span>      <span class="keywordflow">return</span> output;</div>
-<div class="line"><span class="lineno">   68</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="drivers__controller__config_8hpp_source.html#l00041">41</a> of file <a class="el" href="drivers__controller__config_8hpp_source.html">drivers_controller_config.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>  {</div>
+<div class="line"><span class="lineno">   43</span>    output &lt;&lt; <span class="stringliteral">&quot;DriversControllerConfig { &quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   44</span>           &lt;&lt; <span class="stringliteral">&quot;ros1_ssc_driver_name: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.ros1_ssc_driver_name_ &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   45</span>           &lt;&lt; <span class="stringliteral">&quot;excluded_namespace_nodes: [  &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> node : <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.excluded_namespace_nodes_) output &lt;&lt; node &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    output &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;startup_duration: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.startup_duration_ &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    output &lt;&lt; <span class="stringliteral">&quot;driver_timeout: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.driver_timeout_ &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>           &lt;&lt; <span class="stringliteral">&quot;}&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno">   55</span>  }</div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_a49cd466f330a9498d8373baecf47e071"><div class="ttname"><a href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">process_traj_logs.c</a></div><div class="ttdeci">c</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00166">process_traj_logs.py:166</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -214,9 +200,9 @@ Friends</h2></td></tr>
 
 <p>The timeout threshold for essential drivers in ms. </p>
 
-<p class="definition">Definition at line <a class="el" href="drivers__controller__config_8hpp_source.html#l00039">39</a> of file <a class="el" href="drivers__controller__config_8hpp_source.html">drivers_controller_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="drivers__controller__config_8hpp_source.html#l00038">38</a> of file <a class="el" href="drivers__controller__config_8hpp_source.html">drivers_controller_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="drivers__controller__node_8cpp_source.html#l00022">subsystem_controllers::DriversControllerNode::DriversControllerNode()</a>, and <a class="el" href="drivers__controller__node_8cpp_source.html#l00039">subsystem_controllers::DriversControllerNode::handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="drivers__controller__node_8cpp_source.html#l00022">subsystem_controllers::DriversControllerNode::DriversControllerNode()</a>, and <a class="el" href="drivers__controller__node_8cpp_source.html#l00041">subsystem_controllers::DriversControllerNode::handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -234,49 +220,28 @@ Friends</h2></td></tr>
 
 <p>List of nodes in the namespace which will not be managed by this subsystem controller. </p>
 
-<p class="definition">Definition at line <a class="el" href="drivers__controller__config_8hpp_source.html#l00035">35</a> of file <a class="el" href="drivers__controller__config_8hpp_source.html">drivers_controller_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="drivers__controller__config_8hpp_source.html#l00034">34</a> of file <a class="el" href="drivers__controller__config_8hpp_source.html">drivers_controller_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="drivers__controller__node_8cpp_source.html#l00022">subsystem_controllers::DriversControllerNode::DriversControllerNode()</a>, and <a class="el" href="drivers__controller__node_8cpp_source.html#l00039">subsystem_controllers::DriversControllerNode::handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="drivers__controller__node_8cpp_source.html#l00022">subsystem_controllers::DriversControllerNode::DriversControllerNode()</a>, and <a class="el" href="drivers__controller__node_8cpp_source.html#l00041">subsystem_controllers::DriversControllerNode::handle_on_configure()</a>.</p>
 
 </div>
 </div>
-<a id="a66491d4f7e7d1f287b09fc27e0ba7a48" name="a66491d4f7e7d1f287b09fc27e0ba7a48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66491d4f7e7d1f287b09fc27e0ba7a48">&#9670;&nbsp;</a></span>ros1_camera_drivers_</h2>
+<a id="a6841dc7a5440c97696105fc09d8abb95" name="a6841dc7a5440c97696105fc09d8abb95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6841dc7a5440c97696105fc09d8abb95">&#9670;&nbsp;</a></span>ros1_ssc_driver_name_</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::string&gt; subsystem_controllers::DriversControllerConfig::ros1_camera_drivers_</td>
+          <td class="memname">std::string subsystem_controllers::DriversControllerConfig::ros1_ssc_driver_name_</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >ros1 controller driver (node name) to consider required and whose failure shall result in automation abort. </p>
 
-<p>List of ros1 camera drivers (node name) to consider required and who's failure shall result in automation abort. </p>
+<p class="definition">Definition at line <a class="el" href="drivers__controller__config_8hpp_source.html#l00032">32</a> of file <a class="el" href="drivers__controller__config_8hpp_source.html">drivers_controller_config.hpp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="drivers__controller__config_8hpp_source.html#l00033">33</a> of file <a class="el" href="drivers__controller__config_8hpp_source.html">drivers_controller_config.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="drivers__controller__node_8cpp_source.html#l00022">subsystem_controllers::DriversControllerNode::DriversControllerNode()</a>, and <a class="el" href="drivers__controller__node_8cpp_source.html#l00039">subsystem_controllers::DriversControllerNode::handle_on_configure()</a>.</p>
-
-</div>
-</div>
-<a id="ac10901eb2c60db3fa86eef6a5d13b63e" name="ac10901eb2c60db3fa86eef6a5d13b63e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac10901eb2c60db3fa86eef6a5d13b63e">&#9670;&nbsp;</a></span>ros1_required_drivers_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::string&gt; subsystem_controllers::DriversControllerConfig::ros1_required_drivers_</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>List of ros1 controller drivers (node name) to consider required and who's failure shall result in automation abort. </p>
-
-<p class="definition">Definition at line <a class="el" href="drivers__controller__config_8hpp_source.html#l00031">31</a> of file <a class="el" href="drivers__controller__config_8hpp_source.html">drivers_controller_config.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="drivers__controller__node_8cpp_source.html#l00022">subsystem_controllers::DriversControllerNode::DriversControllerNode()</a>, and <a class="el" href="drivers__controller__node_8cpp_source.html#l00039">subsystem_controllers::DriversControllerNode::handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="drivers__controller__node_8cpp_source.html#l00022">subsystem_controllers::DriversControllerNode::DriversControllerNode()</a>, and <a class="el" href="drivers__controller__node_8cpp_source.html#l00041">subsystem_controllers::DriversControllerNode::handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -294,9 +259,9 @@ Friends</h2></td></tr>
 
 <p>The time allocated for system startup in seconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="drivers__controller__config_8hpp_source.html#l00037">37</a> of file <a class="el" href="drivers__controller__config_8hpp_source.html">drivers_controller_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="drivers__controller__config_8hpp_source.html#l00036">36</a> of file <a class="el" href="drivers__controller__config_8hpp_source.html">drivers_controller_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="drivers__controller__node_8cpp_source.html#l00022">subsystem_controllers::DriversControllerNode::DriversControllerNode()</a>, <a class="el" href="drivers__controller__node_8cpp_source.html#l00039">subsystem_controllers::DriversControllerNode::handle_on_configure()</a>, and <a class="el" href="drivers__controller__node_8cpp_source.html#l00127">subsystem_controllers::DriversControllerNode::timer_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="drivers__controller__node_8cpp_source.html#l00022">subsystem_controllers::DriversControllerNode::DriversControllerNode()</a>, <a class="el" href="drivers__controller__node_8cpp_source.html#l00129">subsystem_controllers::DriversControllerNode::critical_drivers_check_callback()</a>, and <a class="el" href="drivers__controller__node_8cpp_source.html#l00041">subsystem_controllers::DriversControllerNode::handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -309,7 +274,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesubsystem__controllers.html">subsystem_controllers</a></li><li class="navelem"><a class="el" href="structsubsystem__controllers_1_1DriversControllerConfig.html">DriversControllerConfig</a></li>
-    <li class="footer">Generated on Fri Sep 13 2024 19:36:50 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Sep 23 2024 16:54:52 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

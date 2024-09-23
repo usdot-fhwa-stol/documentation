@@ -114,7 +114,6 @@ var hierarchy =
     ] ],
     [ "carma_cooperative_perception::DDateTime", "structcarma__cooperative__perception_1_1DDateTime.html", null ],
     [ "basic_autonomy::waypoint_generation::DetailedTrajConfig", "structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html", null ],
-    [ "subsystem_controllers::DriverManager", "classsubsystem__controllers_1_1DriverManager.html", null ],
     [ "subsystem_controllers::DriversControllerConfig", "structsubsystem__controllers_1_1DriversControllerConfig.html", null ],
     [ "subsystem_controllers::Entry", "structsubsystem__controllers_1_1Entry.html", null ],
     [ "subsystem_controllers::EntryManager", "classsubsystem__controllers_1_1EntryManager.html", null ],
@@ -249,6 +248,7 @@ var hierarchy =
     [ "inlanecruising_plugin::smoothing::SplineI", "classinlanecruising__plugin_1_1smoothing_1_1SplineI.html", [
       [ "inlanecruising_plugin::smoothing::BSpline", "classinlanecruising__plugin_1_1smoothing_1_1BSpline.html", null ]
     ] ],
+    [ "subsystem_controllers::SSCDriverManager", "classsubsystem__controllers_1_1SSCDriverManager.html", null ],
     [ "stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html", null ],
     [ "stop_and_wait_plugin::StopandWait", "classstop__and__wait__plugin_1_1StopandWait.html", null ],
     [ "StopandWaitConfig", "structStopandWaitConfig.html", null ],

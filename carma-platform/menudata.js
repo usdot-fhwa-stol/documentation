@@ -217,7 +217,6 @@ var menudata={children:[
 {text:"z",url:"functions_vars_z.html#index_z"}]},
 {text:"Typedefs",url:"functions_type.html",children:[
 {text:"b",url:"functions_type.html#index_b"},
-{text:"c",url:"functions_type.html#index_c"},
 {text:"d",url:"functions_type.html#index_d"},
 {text:"e",url:"functions_type.html#index_e"},
 {text:"f",url:"functions_type.html#index_f"},
@@ -251,7 +250,6 @@ var menudata={children:[
 {text:"File Members",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
 {text:"c",url:"globals.html#index_c"},
-{text:"d",url:"globals.html#index_d"},
 {text:"e",url:"globals.html#index_e"},
 {text:"g",url:"globals.html#index_g"},
 {text:"i",url:"globals.html#index_i"},
@@ -263,5 +261,4 @@ var menudata={children:[
 {text:"m",url:"globals_func.html#index_m"}]},
 {text:"Variables",url:"globals_vars.html"},
 {text:"Typedefs",url:"globals_type.html"},
-{text:"Enumerations",url:"globals_enum.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['commtypes_0',['CommTypes',['../comm__types_8h.html#a1e7c51636d3896b55ca0813f2396a7db',1,'comm_types.h']]]
+  ['geofencetype_0',['GeofenceType',['../namespacecarma__wm.html#ac09d7a77e6f8f955651e7afa16136bf1',1,'carma_wm']]]
 ];

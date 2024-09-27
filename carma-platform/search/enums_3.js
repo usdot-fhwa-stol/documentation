@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['geofencetype_0',['GeofenceType',['../namespacecarma__wm.html#ac09d7a77e6f8f955651e7afa16136bf1',1,'carma_wm']]]
+  ['indicatorcontrolevent_0',['IndicatorControlEvent',['../namespacelightbar__manager.html#aeae77409769a5bae91ce5a512a5f1595',1,'lightbar_manager']]],
+  ['indicatorstatus_1',['IndicatorStatus',['../namespacelightbar__manager.html#a91d9a15f8f9254d400b2123adb042c22',1,'lightbar_manager']]]
 ];

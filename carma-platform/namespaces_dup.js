@@ -96,7 +96,7 @@ var namespaces_dup =
       [ "generate_launch_description", "namespacemobilitypath__publisher__launch.html#aed8ad47047efc6bbe84689ec4916d5ce", null ]
     ] ],
     [ "mobilitypath_visualizer", "namespacemobilitypath__visualizer.html", "namespacemobilitypath__visualizer" ],
-    [ "mock_drivers", "namespacemock__drivers.html", "namespacemock__drivers" ],
+    [ "mock_controller_driver", "namespacemock__controller__driver.html", "namespacemock__controller__driver" ],
     [ "motion_computation", "namespacemotion__computation.html", "namespacemotion__computation" ],
     [ "motion_computation_launch", "namespacemotion__computation__launch.html", [
       [ "generate_launch_description", "namespacemotion__computation__launch.html#a55ceded82280a1b26dd9e38e93304c14", null ]

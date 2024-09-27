@@ -9,6 +9,5 @@ var searchData=
   ['planning_5ftimer_5ftrigger_6',['PLANNING_TIMER_TRIGGER',['../namespacearbitrator.html#a4a07092774e143f298b2e71bd4a710d5a3e67e64d17d48850a988135c8f34d69a',1,'arbitrator']]],
   ['poor_5fndt_5ffreq_5for_5ffitness_5fscore_7',['POOR_NDT_FREQ_OR_FITNESS_SCORE',['../namespacelocalization__manager.html#af61876be3f0f4998db813dd549c8bf4aa30b13d34b135451276460125d3bebae5',1,'localization_manager']]],
   ['port_5fcheckpoint_8',['PORT_CHECKPOINT',['../classport__drayage__plugin_1_1OperationID.html#a8bf3f1b49349e1653f84acf527d6d9feac68c0b76b396b9bc8f38f9f56eb50097',1,'port_drayage_plugin::OperationID']]],
-  ['preparetojoin_9',['PREPARETOJOIN',['../namespaceplatoon__strategic__ihp.html#a20539b6c81ea3b1868c7ca5d7c403dafafe45c20d03a8d502486cff766672bdf9',1,'platoon_strategic_ihp']]],
-  ['pub_10',['pub',['../comm__types_8h.html#a1e7c51636d3896b55ca0813f2396a7dba3a21cd7317e1445be89999f5d7f62a53',1,'comm_types.h']]]
+  ['preparetojoin_9',['PREPARETOJOIN',['../namespaceplatoon__strategic__ihp.html#a20539b6c81ea3b1868c7ca5d7c403dafafe45c20d03a8d502486cff766672bdf9',1,'platoon_strategic_ihp']]]
 ];

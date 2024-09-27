@@ -26,7 +26,6 @@ var searchData=
   ['posetotfnode_23',['PoseToTfNode',['../classpose__to__tf_1_1PoseToTfNode.html',1,'pose_to_tf']]],
   ['position3d_24',['Position3D',['../structcarma__cooperative__perception_1_1Position3D.html',1,'carma_cooperative_perception']]],
   ['positionoffsetxyz_25',['PositionOffsetXYZ',['../structcarma__cooperative__perception_1_1PositionOffsetXYZ.html',1,'carma_cooperative_perception']]],
-  ['publisherwapper_26',['PublisherWapper',['../structmock__drivers_1_1PublisherWapper.html',1,'mock_drivers']]],
-  ['purepursuitwrapperconfig_27',['PurePursuitWrapperConfig',['../structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html',1,'pure_pursuit_wrapper']]],
-  ['purepursuitwrappernode_28',['PurePursuitWrapperNode',['../classpure__pursuit__wrapper_1_1PurePursuitWrapperNode.html',1,'pure_pursuit_wrapper']]]
+  ['purepursuitwrapperconfig_26',['PurePursuitWrapperConfig',['../structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html',1,'pure_pursuit_wrapper']]],
+  ['purepursuitwrappernode_27',['PurePursuitWrapperNode',['../classpure__pursuit__wrapper_1_1PurePursuitWrapperNode.html',1,'pure_pursuit_wrapper']]]
 ];

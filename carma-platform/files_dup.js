@@ -26,7 +26,7 @@ var files_dup =
     [ "localization_manager", "dir_5e0ca44c07024f7586a0751084a58b32.html", "dir_5e0ca44c07024f7586a0751084a58b32" ],
     [ "mobilitypath_publisher", "dir_7d28955b2fc3caa2602c4d4e09e012ca.html", "dir_7d28955b2fc3caa2602c4d4e09e012ca" ],
     [ "mobilitypath_visualizer", "dir_9b544eb1e3d8695fecab7b3d3ca75042.html", "dir_9b544eb1e3d8695fecab7b3d3ca75042" ],
-    [ "mock_drivers", "dir_cd6f167b37c29f7c7eb9f38975b914ba.html", "dir_cd6f167b37c29f7c7eb9f38975b914ba" ],
+    [ "mock_controller_driver", "dir_6e4148668c7884ad0bcd76affaede4d5.html", "dir_6e4148668c7884ad0bcd76affaede4d5" ],
     [ "motion_computation", "dir_63e6aad264477fa7f28f31d2fc233dbe.html", "dir_63e6aad264477fa7f28f31d2fc233dbe" ],
     [ "motion_prediction_visualizer", "dir_b605fa2608e6931ce0190fc23ed134ca.html", "dir_b605fa2608e6931ce0190fc23ed134ca" ],
     [ "object_detection_tracking", "dir_e987e7fc23bcfc96384011af3a3f1e81.html", "dir_e987e7fc23bcfc96384011af3a3f1e81" ],

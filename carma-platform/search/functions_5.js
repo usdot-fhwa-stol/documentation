@@ -3,7 +3,7 @@ var searchData=
   ['ecef_5fto_5fmap_5fpoint_0',['ecef_to_map_point',['../classyield__plugin_1_1YieldPlugin.html#ac0b6fb988e61ce2cfb04c4a1f33070d5',1,'yield_plugin::YieldPlugin::ecef_to_map_point()'],['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a876cee27af19b1f215ffd4a2190be371',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin::ecef_to_map_point()']]],
   ['eceftomappoint_1',['ECEFToMapPoint',['../classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#a9bbace9dcd2b48e3bb168e08b58ddf73',1,'mobilitypath_visualizer::MobilityPathVisualizer']]],
   ['elementlength_2',['elementLength',['../classcarma__wm_1_1IndexedDistanceMap.html#a7bd91613ee531f0bb715d9e89a1285f1',1,'carma_wm::IndexedDistanceMap']]],
-  ['enableroboticsrv_3',['enableRoboticSrv',['../classmock__drivers_1_1MockControllerDriver.html#a51c6104dc3aaf6cd44b0e4b9b6f485ad',1,'mock_drivers::MockControllerDriver']]],
+  ['enable_5frobotic_5fsrv_3',['enable_robotic_srv',['../classmock__controller__driver_1_1MockControllerDriver.html#a5e10c5b6de302061b7f54e6e52ad1568',1,'mock_controller_driver::MockControllerDriver']]],
   ['enableupdateswithoutroute_4',['enableUpdatesWithoutRoute',['../classcarma__wm_1_1WMListenerWorker.html#a4c2fcc147efbee76b18ad285f0555d2c',1,'carma_wm::WMListenerWorker']]],
   ['enableupdateswithoutroutewl_5',['enableUpdatesWithoutRouteWL',['../classcarma__wm_1_1WMListener.html#a9fd81c1eba4beba6c3f49ba32b964b62',1,'carma_wm::WMListener']]],
   ['endgeofencecallback_6',['endGeofenceCallback',['../classcarma__wm__ctrl_1_1GeofenceScheduler.html#a0f58b227dcbd413eb451146d36cb1728',1,'carma_wm_ctrl::GeofenceScheduler']]],

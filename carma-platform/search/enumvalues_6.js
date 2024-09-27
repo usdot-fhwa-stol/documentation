@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['gnss_0',['GNSS',['../namespacelocalization__manager.html#a9b86b848ab2c2216f0987be7c5007b70a431084dcdffff3622797a3b87e3660ef',1,'localization_manager::GNSS()'],['../DriverType_8h.html#a65f6b96a978d61016279c563847224c8ad6f7806b5d17e3c6493a6578ab64fd5a',1,'GNSS():&#160;DriverType.h']]],
+  ['gnss_0',['GNSS',['../namespacelocalization__manager.html#a9b86b848ab2c2216f0987be7c5007b70a431084dcdffff3622797a3b87e3660ef',1,'localization_manager']]],
   ['gnss_5fdata_5ftimeout_1',['GNSS_DATA_TIMEOUT',['../namespacelocalization__manager.html#af61876be3f0f4998db813dd549c8bf4aa37815e2063ce32e3d059ed60121d98e7',1,'localization_manager']]],
   ['gnss_5fwith_5ffixed_5foffset_2',['GNSS_WITH_FIXED_OFFSET',['../namespacelocalization__manager.html#a9b86b848ab2c2216f0987be7c5007b70a0430b40fe2d8ddf273cd76756b9ea35a',1,'localization_manager']]],
   ['gnss_5fwith_5fndt_5finit_3',['GNSS_WITH_NDT_INIT',['../namespacelocalization__manager.html#a9b86b848ab2c2216f0987be7c5007b70a90db69d58f7274bfad34570f2fdce99c',1,'localization_manager']]],

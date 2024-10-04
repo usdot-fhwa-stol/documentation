@@ -137,10 +137,6 @@ var namespaces_dup =
     [ "port_drayage_plugin_launch", "namespaceport__drayage__plugin__launch.html", [
       [ "generate_launch_description", "namespaceport__drayage__plugin__launch.html#a3f3abdc8c3ea260c6cde3bc2eaa56fbb", null ]
     ] ],
-    [ "pose_to_tf", "namespacepose__to__tf.html", "namespacepose__to__tf" ],
-    [ "pose_to_tf_launch", "namespacepose__to__tf__launch.html", [
-      [ "generate_launch_description", "namespacepose__to__tf__launch.html#a95a29c11f26bf0939ef4c78ec3c95f6c", null ]
-    ] ],
     [ "process_bag", "namespaceprocess__bag.html", [
       [ "index_plot_with_slider", "namespaceprocess__bag.html#a6880cde02f7ce936126a7d8632b23c90", null ],
       [ "bag", "namespaceprocess__bag.html#a42d96167e26564c592b97465749bfac7", null ],
@@ -256,7 +252,6 @@ var namespaces_dup =
     [ "template_package_launch", "namespacetemplate__package__launch.html", [
       [ "generate_launch_description", "namespacetemplate__package__launch.html#adc507c0b4372d75cdab3bf5ce32f41a3", null ]
     ] ],
-    [ "tf2", "namespacetf2.html", "namespacetf2" ],
     [ "traffic_incident_parser", "namespacetraffic__incident__parser.html", "namespacetraffic__incident__parser" ],
     [ "traffic_incident_parser_launch", "namespacetraffic__incident__parser__launch.html", [
       [ "generate_launch_description", "namespacetraffic__incident__parser__launch.html#a87625f907b19959d11f87e382f5d5f9d", null ]

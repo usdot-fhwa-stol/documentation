@@ -310,166 +310,167 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  232</span>                    (<span class="stringliteral">&quot;/imu_raw&quot;</span>, [ EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/imu_raw&quot;</span> ] ),</div>
 <div class="line"><span class="lineno">  233</span>                    (<span class="stringliteral">&#39;filtered_points&#39;</span>, <span class="stringliteral">&#39;random_points&#39;</span>),</div>
 <div class="line"><span class="lineno">  234</span>                    (<span class="stringliteral">&#39;initialpose&#39;</span>,<span class="stringliteral">&#39;managed_initialpose&#39;</span>),</div>
-<div class="line"><span class="lineno">  235</span>                ],</div>
-<div class="line"><span class="lineno">  236</span>                parameters=[</div>
-<div class="line"><span class="lineno">  237</span>                    ndt_matching_param_file,</div>
-<div class="line"><span class="lineno">  238</span>                    {<span class="stringliteral">&#39;get_height&#39;</span> : <span class="keyword">True</span> },</div>
-<div class="line"><span class="lineno">  239</span>                    {<span class="stringliteral">&#39;use_odom&#39;</span> : <span class="keyword">True</span> },</div>
-<div class="line"><span class="lineno">  240</span>                    {<span class="stringliteral">&#39;use_gnss&#39;</span> : 0 },</div>
-<div class="line"><span class="lineno">  241</span>                    {<span class="stringliteral">&#39;gnss_reinit_fitness&#39;</span> : 10000.0 }, <span class="comment"># Set to unreasonably high value to ensure no reinitialization occurs as it rarely works</span></div>
-<div class="line"><span class="lineno">  242</span>                    {<span class="stringliteral">&#39;base_frame&#39;</span>: <span class="stringliteral">&quot;base_link&quot;</span>}</div>
-<div class="line"><span class="lineno">  243</span>                ]</div>
-<div class="line"><span class="lineno">  244</span>            )</div>
-<div class="line"><span class="lineno">  245</span>        ]</div>
-<div class="line"><span class="lineno">  246</span>    )</div>
-<div class="line"><span class="lineno">  247</span> </div>
-<div class="line"><span class="lineno">  248</span>    <span class="comment"># EKF Localizer</span></div>
-<div class="line"><span class="lineno">  249</span>    <span class="comment"># Comment out to remove and change marked line in waypoint following.launch</span></div>
-<div class="line"><span class="lineno">  250</span>    ekf_localizer_container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">  251</span>        condition=UnlessCondition(use_sim_time), <span class="comment"># not needed in simulation</span></div>
-<div class="line"><span class="lineno">  252</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
-<div class="line"><span class="lineno">  253</span>        name=<span class="stringliteral">&#39;ekf_localizer_container&#39;</span>,</div>
-<div class="line"><span class="lineno">  254</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">  255</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">  256</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">  257</span> </div>
-<div class="line"><span class="lineno">  258</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  259</span>                package=<span class="stringliteral">&#39;ekf_localizer&#39;</span>,</div>
-<div class="line"><span class="lineno">  260</span>                plugin=<span class="stringliteral">&#39;ekf_localizer::EKFLocalizer&#39;</span>,</div>
-<div class="line"><span class="lineno">  261</span>                name=<span class="stringliteral">&#39;ekf_localizer&#39;</span>,</div>
-<div class="line"><span class="lineno">  262</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  263</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  264</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;ekf_localizer&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  265</span>                ],</div>
-<div class="line"><span class="lineno">  266</span>                remappings=[</div>
-<div class="line"><span class="lineno">  267</span>                    (<span class="stringliteral">&quot;in_pose&quot;</span>,<span class="stringliteral">&quot;selected_pose&quot;</span>),</div>
-<div class="line"><span class="lineno">  268</span>                    (<span class="stringliteral">&quot;in_pose_with_covariance&quot;</span>, <span class="stringliteral">&quot;input_pose_with_cov_UNUSED&quot;</span>),</div>
-<div class="line"><span class="lineno">  269</span>                    (<span class="stringliteral">&quot;in_twist&quot;</span>,  [EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/vehicle/twist&quot;</span> ]),</div>
-<div class="line"><span class="lineno">  270</span>                    (<span class="stringliteral">&quot;in_twist_with_covariance&quot;</span>, <span class="stringliteral">&quot;input_twist_with_covariance_UNUSED&quot;</span>),</div>
-<div class="line"><span class="lineno">  271</span>                    (<span class="stringliteral">&quot;initialpose&quot;</span>, <span class="stringliteral">&quot;managed_initialpose&quot;</span>),</div>
-<div class="line"><span class="lineno">  272</span>                    (<span class="stringliteral">&quot;ekf_pose&quot;</span>, <span class="stringliteral">&quot;current_pose&quot;</span>),</div>
-<div class="line"><span class="lineno">  273</span>                    (<span class="stringliteral">&quot;ekf_pose_with_covariance&quot;</span>, <span class="stringliteral">&quot;current_pose_with_covariance&quot;</span>),</div>
-<div class="line"><span class="lineno">  274</span>                    <span class="comment"># remap to namespace/nodename/topic_name</span></div>
-<div class="line"><span class="lineno">  275</span>                    (<span class="stringliteral">&quot;debug&quot;</span>, <span class="stringliteral">&quot;~/debug&quot;</span>),</div>
-<div class="line"><span class="lineno">  276</span>                    (<span class="stringliteral">&quot;debug/measured_pose&quot;</span>, <span class="stringliteral">&quot;~/debug/measured_pose&quot;</span>),</div>
-<div class="line"><span class="lineno">  277</span>                    (<span class="stringliteral">&quot;estimated_yaw_bias&quot;</span>, <span class="stringliteral">&quot;~/estimated_yaw_bias&quot;</span>)</div>
-<div class="line"><span class="lineno">  278</span>                ],</div>
-<div class="line"><span class="lineno">  279</span>                parameters=[</div>
-<div class="line"><span class="lineno">  280</span>                    {<span class="stringliteral">&#39;show_debug_info&#39;</span>: <span class="keyword">False</span>},</div>
-<div class="line"><span class="lineno">  281</span>                    {<span class="stringliteral">&#39;predict_frequency&#39;</span>: 50.0},</div>
-<div class="line"><span class="lineno">  282</span>                    {<span class="stringliteral">&#39;enable_yaw_bias_estimation&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  283</span>                    {<span class="stringliteral">&#39;extend_state_step&#39;</span>: 50},</div>
-<div class="line"><span class="lineno">  284</span>                    {<span class="stringliteral">&#39;pose_frame_id&#39;</span>: <span class="stringliteral">&#39;map&#39;</span>},</div>
-<div class="line"><span class="lineno">  285</span>                    {<span class="stringliteral">&#39;child_frame_id&#39;</span>: <span class="stringliteral">&#39;base_link&#39;</span>},</div>
-<div class="line"><span class="lineno">  286</span>                    {<span class="stringliteral">&#39;pose_additional_delay&#39;</span>: 0.0},</div>
-<div class="line"><span class="lineno">  287</span>                    {<span class="stringliteral">&#39;pose_measure_uncertainty_time&#39;</span>: 0.01},</div>
-<div class="line"><span class="lineno">  288</span>                    {<span class="stringliteral">&#39;pose_rate&#39;</span>: 10.0},</div>
-<div class="line"><span class="lineno">  289</span>                    {<span class="stringliteral">&#39;pose_gate_dist&#39;</span>: 10000.0},</div>
-<div class="line"><span class="lineno">  290</span>                    {<span class="stringliteral">&#39;pose_stddev_x&#39;</span>: 0.05},</div>
-<div class="line"><span class="lineno">  291</span>                    {<span class="stringliteral">&#39;pose_stddev_y&#39;</span>: 0.05},</div>
-<div class="line"><span class="lineno">  292</span>                    {<span class="stringliteral">&#39;pose_stddev_yaw&#39;</span>: 0.025},</div>
-<div class="line"><span class="lineno">  293</span>                    {<span class="stringliteral">&#39;use_pose_with_covariance&#39;</span>: <span class="keyword">False</span>},</div>
-<div class="line"><span class="lineno">  294</span>                    {<span class="stringliteral">&#39;twist_additional_delay&#39;</span>: 0.0},</div>
-<div class="line"><span class="lineno">  295</span>                    {<span class="stringliteral">&#39;twist_rate&#39;</span>: 30.0},</div>
-<div class="line"><span class="lineno">  296</span>                    {<span class="stringliteral">&#39;twist_gate_dist&#39;</span>: 10000.0},</div>
-<div class="line"><span class="lineno">  297</span>                    {<span class="stringliteral">&#39;twist_stddev_vx&#39;</span>: 0.2},</div>
-<div class="line"><span class="lineno">  298</span>                    {<span class="stringliteral">&#39;twist_stddev_wz&#39;</span>: 0.03},</div>
-<div class="line"><span class="lineno">  299</span>                    {<span class="stringliteral">&#39;proc_stddev_yaw_c&#39;</span>: 0.005},</div>
-<div class="line"><span class="lineno">  300</span>                    {<span class="stringliteral">&#39;proc_stddev_yaw_bias_c&#39;</span>: 0.001},</div>
-<div class="line"><span class="lineno">  301</span>                    {<span class="stringliteral">&#39;proc_stddev_vx_c&#39;</span>: 0.1},</div>
-<div class="line"><span class="lineno">  302</span>                    {<span class="stringliteral">&#39;proc_stddev_wz_c&#39;</span>: 0.05}</div>
-<div class="line"><span class="lineno">  303</span>                ],</div>
-<div class="line"><span class="lineno">  304</span>            )</div>
-<div class="line"><span class="lineno">  305</span>        ]</div>
-<div class="line"><span class="lineno">  306</span>    )</div>
-<div class="line"><span class="lineno">  307</span> </div>
-<div class="line"><span class="lineno">  308</span>    </div>
-<div class="line"><span class="lineno">  309</span> </div>
-<div class="line"><span class="lineno">  310</span>    voxel_grid_filter_container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">  311</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
-<div class="line"><span class="lineno">  312</span>        name=<span class="stringliteral">&#39;voxel_grid_filter_container&#39;</span>,</div>
-<div class="line"><span class="lineno">  313</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">  314</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">  315</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">  316</span> </div>
-<div class="line"><span class="lineno">  317</span>            <span class="comment"># Launch the core node(s)</span></div>
-<div class="line"><span class="lineno">  318</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  319</span>                package=<span class="stringliteral">&#39;points_downsampler&#39;</span>,</div>
-<div class="line"><span class="lineno">  320</span>                plugin=<span class="stringliteral">&#39;voxel_grid_filter::VoxelGridFilter&#39;</span>,</div>
-<div class="line"><span class="lineno">  321</span>                name=<span class="stringliteral">&#39;voxel_grid_filter_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  322</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  323</span>                     {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  324</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;voxel_grid_filter&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  325</span>                ],</div>
-<div class="line"><span class="lineno">  326</span>                parameters=[</div>
-<div class="line"><span class="lineno">  327</span>                    {<span class="stringliteral">&quot;points_topic&quot;</span>: [EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/lidar/points_raw&quot;</span> ]},</div>
-<div class="line"><span class="lineno">  328</span>                    {<span class="stringliteral">&quot;output_log&quot;</span>: <span class="keyword">False</span>},</div>
-<div class="line"><span class="lineno">  329</span>                    {<span class="stringliteral">&quot;measurement_range&quot;</span>: 200.0},</div>
-<div class="line"><span class="lineno">  330</span>                    {<span class="stringliteral">&quot;voxel_leaf_size&quot;</span>: 3.0}</div>
-<div class="line"><span class="lineno">  331</span>                ],</div>
-<div class="line"><span class="lineno">  332</span>            ),</div>
-<div class="line"><span class="lineno">  333</span>        ]</div>
-<div class="line"><span class="lineno">  334</span>    )</div>
-<div class="line"><span class="lineno">  335</span> </div>
-<div class="line"><span class="lineno">  336</span>    random_filter_container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">  337</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
-<div class="line"><span class="lineno">  338</span>        name=<span class="stringliteral">&#39;random_filter_container&#39;</span>,</div>
-<div class="line"><span class="lineno">  339</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">  340</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">  341</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">  342</span> </div>
-<div class="line"><span class="lineno">  343</span>            <span class="comment"># Launch the core node(s)</span></div>
-<div class="line"><span class="lineno">  344</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">  345</span>                package=<span class="stringliteral">&#39;points_downsampler&#39;</span>,</div>
-<div class="line"><span class="lineno">  346</span>                plugin=<span class="stringliteral">&#39;random_filter::RandomFilter&#39;</span>,</div>
-<div class="line"><span class="lineno">  347</span>                name=<span class="stringliteral">&#39;random_filter_node&#39;</span>,</div>
-<div class="line"><span class="lineno">  348</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">  349</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">  350</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;random_filter&#39;</span>, env_log_levels) }</div>
-<div class="line"><span class="lineno">  351</span>                ],</div>
-<div class="line"><span class="lineno">  352</span>                parameters=[</div>
-<div class="line"><span class="lineno">  353</span>                    {<span class="stringliteral">&quot;points_topic&quot;</span>: <span class="stringliteral">&quot;filtered_points&quot;</span>},</div>
-<div class="line"><span class="lineno">  354</span>                    {<span class="stringliteral">&quot;output_log&quot;</span>: <span class="keyword">False</span>},</div>
-<div class="line"><span class="lineno">  355</span>                    {<span class="stringliteral">&quot;measurement_range&quot;</span>: 200.0},</div>
-<div class="line"><span class="lineno">  356</span>                    {<span class="stringliteral">&quot;sample_num&quot;</span>: 700}</div>
-<div class="line"><span class="lineno">  357</span>                ],</div>
-<div class="line"><span class="lineno">  358</span>            ),</div>
-<div class="line"><span class="lineno">  359</span>        ]</div>
-<div class="line"><span class="lineno">  360</span>    )</div>
-<div class="line"><span class="lineno">  361</span> </div>
+<div class="line"><span class="lineno">  235</span>                    (<span class="stringliteral">&#39;/tf&#39;</span>, <span class="stringliteral">&#39;/tf_ndt_UNUSED&#39;</span>), <span class="comment">#renaming /tf to avoid duplocation. Main /tf is published by ekf_localizer</span></div>
+<div class="line"><span class="lineno">  236</span>                ],</div>
+<div class="line"><span class="lineno">  237</span>                parameters=[</div>
+<div class="line"><span class="lineno">  238</span>                    ndt_matching_param_file,</div>
+<div class="line"><span class="lineno">  239</span>                    {<span class="stringliteral">&#39;get_height&#39;</span> : <span class="keyword">True</span> },</div>
+<div class="line"><span class="lineno">  240</span>                    {<span class="stringliteral">&#39;use_odom&#39;</span> : <span class="keyword">True</span> },</div>
+<div class="line"><span class="lineno">  241</span>                    {<span class="stringliteral">&#39;use_gnss&#39;</span> : 0 },</div>
+<div class="line"><span class="lineno">  242</span>                    {<span class="stringliteral">&#39;gnss_reinit_fitness&#39;</span> : 10000.0 }, <span class="comment"># Set to unreasonably high value to ensure no reinitialization occurs as it rarely works</span></div>
+<div class="line"><span class="lineno">  243</span>                    {<span class="stringliteral">&#39;base_frame&#39;</span>: <span class="stringliteral">&quot;base_link&quot;</span>}</div>
+<div class="line"><span class="lineno">  244</span>                ]</div>
+<div class="line"><span class="lineno">  245</span>            )</div>
+<div class="line"><span class="lineno">  246</span>        ]</div>
+<div class="line"><span class="lineno">  247</span>    )</div>
+<div class="line"><span class="lineno">  248</span> </div>
+<div class="line"><span class="lineno">  249</span>    <span class="comment"># EKF Localizer</span></div>
+<div class="line"><span class="lineno">  250</span>    <span class="comment"># Comment out to remove and change marked line in waypoint following.launch</span></div>
+<div class="line"><span class="lineno">  251</span>    ekf_localizer_container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">  252</span>        condition=UnlessCondition(use_sim_time), <span class="comment"># not needed in simulation</span></div>
+<div class="line"><span class="lineno">  253</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
+<div class="line"><span class="lineno">  254</span>        name=<span class="stringliteral">&#39;ekf_localizer_container&#39;</span>,</div>
+<div class="line"><span class="lineno">  255</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">  256</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
+<div class="line"><span class="lineno">  257</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">  258</span> </div>
+<div class="line"><span class="lineno">  259</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  260</span>                package=<span class="stringliteral">&#39;ekf_localizer&#39;</span>,</div>
+<div class="line"><span class="lineno">  261</span>                plugin=<span class="stringliteral">&#39;ekf_localizer::EKFLocalizer&#39;</span>,</div>
+<div class="line"><span class="lineno">  262</span>                name=<span class="stringliteral">&#39;ekf_localizer&#39;</span>,</div>
+<div class="line"><span class="lineno">  263</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  264</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  265</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;ekf_localizer&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  266</span>                ],</div>
+<div class="line"><span class="lineno">  267</span>                remappings=[</div>
+<div class="line"><span class="lineno">  268</span>                    (<span class="stringliteral">&quot;in_pose&quot;</span>,<span class="stringliteral">&quot;selected_pose&quot;</span>),</div>
+<div class="line"><span class="lineno">  269</span>                    (<span class="stringliteral">&quot;in_pose_with_covariance&quot;</span>, <span class="stringliteral">&quot;input_pose_with_cov_UNUSED&quot;</span>),</div>
+<div class="line"><span class="lineno">  270</span>                    (<span class="stringliteral">&quot;in_twist&quot;</span>,  [EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/vehicle/twist&quot;</span> ]),</div>
+<div class="line"><span class="lineno">  271</span>                    (<span class="stringliteral">&quot;in_twist_with_covariance&quot;</span>, <span class="stringliteral">&quot;input_twist_with_covariance_UNUSED&quot;</span>),</div>
+<div class="line"><span class="lineno">  272</span>                    (<span class="stringliteral">&quot;initialpose&quot;</span>, <span class="stringliteral">&quot;managed_initialpose&quot;</span>),</div>
+<div class="line"><span class="lineno">  273</span>                    (<span class="stringliteral">&quot;ekf_pose&quot;</span>, <span class="stringliteral">&quot;current_pose&quot;</span>),</div>
+<div class="line"><span class="lineno">  274</span>                    (<span class="stringliteral">&quot;ekf_pose_with_covariance&quot;</span>, <span class="stringliteral">&quot;current_pose_with_covariance&quot;</span>),</div>
+<div class="line"><span class="lineno">  275</span>                    <span class="comment"># remap to namespace/nodename/topic_name</span></div>
+<div class="line"><span class="lineno">  276</span>                    (<span class="stringliteral">&quot;debug&quot;</span>, <span class="stringliteral">&quot;~/debug&quot;</span>),</div>
+<div class="line"><span class="lineno">  277</span>                    (<span class="stringliteral">&quot;debug/measured_pose&quot;</span>, <span class="stringliteral">&quot;~/debug/measured_pose&quot;</span>),</div>
+<div class="line"><span class="lineno">  278</span>                    (<span class="stringliteral">&quot;estimated_yaw_bias&quot;</span>, <span class="stringliteral">&quot;~/estimated_yaw_bias&quot;</span>)</div>
+<div class="line"><span class="lineno">  279</span>                ],</div>
+<div class="line"><span class="lineno">  280</span>                parameters=[</div>
+<div class="line"><span class="lineno">  281</span>                    {<span class="stringliteral">&#39;show_debug_info&#39;</span>: <span class="keyword">False</span>},</div>
+<div class="line"><span class="lineno">  282</span>                    {<span class="stringliteral">&#39;predict_frequency&#39;</span>: 50.0},</div>
+<div class="line"><span class="lineno">  283</span>                    {<span class="stringliteral">&#39;enable_yaw_bias_estimation&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  284</span>                    {<span class="stringliteral">&#39;extend_state_step&#39;</span>: 50},</div>
+<div class="line"><span class="lineno">  285</span>                    {<span class="stringliteral">&#39;pose_frame_id&#39;</span>: <span class="stringliteral">&#39;map&#39;</span>},</div>
+<div class="line"><span class="lineno">  286</span>                    {<span class="stringliteral">&#39;child_frame_id&#39;</span>: <span class="stringliteral">&#39;base_link&#39;</span>},</div>
+<div class="line"><span class="lineno">  287</span>                    {<span class="stringliteral">&#39;pose_additional_delay&#39;</span>: 0.0},</div>
+<div class="line"><span class="lineno">  288</span>                    {<span class="stringliteral">&#39;pose_measure_uncertainty_time&#39;</span>: 0.01},</div>
+<div class="line"><span class="lineno">  289</span>                    {<span class="stringliteral">&#39;pose_rate&#39;</span>: 10.0},</div>
+<div class="line"><span class="lineno">  290</span>                    {<span class="stringliteral">&#39;pose_gate_dist&#39;</span>: 10000.0},</div>
+<div class="line"><span class="lineno">  291</span>                    {<span class="stringliteral">&#39;pose_stddev_x&#39;</span>: 0.05},</div>
+<div class="line"><span class="lineno">  292</span>                    {<span class="stringliteral">&#39;pose_stddev_y&#39;</span>: 0.05},</div>
+<div class="line"><span class="lineno">  293</span>                    {<span class="stringliteral">&#39;pose_stddev_yaw&#39;</span>: 0.025},</div>
+<div class="line"><span class="lineno">  294</span>                    {<span class="stringliteral">&#39;use_pose_with_covariance&#39;</span>: <span class="keyword">False</span>},</div>
+<div class="line"><span class="lineno">  295</span>                    {<span class="stringliteral">&#39;twist_additional_delay&#39;</span>: 0.0},</div>
+<div class="line"><span class="lineno">  296</span>                    {<span class="stringliteral">&#39;twist_rate&#39;</span>: 30.0},</div>
+<div class="line"><span class="lineno">  297</span>                    {<span class="stringliteral">&#39;twist_gate_dist&#39;</span>: 10000.0},</div>
+<div class="line"><span class="lineno">  298</span>                    {<span class="stringliteral">&#39;twist_stddev_vx&#39;</span>: 0.2},</div>
+<div class="line"><span class="lineno">  299</span>                    {<span class="stringliteral">&#39;twist_stddev_wz&#39;</span>: 0.03},</div>
+<div class="line"><span class="lineno">  300</span>                    {<span class="stringliteral">&#39;proc_stddev_yaw_c&#39;</span>: 0.005},</div>
+<div class="line"><span class="lineno">  301</span>                    {<span class="stringliteral">&#39;proc_stddev_yaw_bias_c&#39;</span>: 0.001},</div>
+<div class="line"><span class="lineno">  302</span>                    {<span class="stringliteral">&#39;proc_stddev_vx_c&#39;</span>: 0.1},</div>
+<div class="line"><span class="lineno">  303</span>                    {<span class="stringliteral">&#39;proc_stddev_wz_c&#39;</span>: 0.05}</div>
+<div class="line"><span class="lineno">  304</span>                ],</div>
+<div class="line"><span class="lineno">  305</span>            )</div>
+<div class="line"><span class="lineno">  306</span>        ]</div>
+<div class="line"><span class="lineno">  307</span>    )</div>
+<div class="line"><span class="lineno">  308</span> </div>
+<div class="line"><span class="lineno">  309</span>    </div>
+<div class="line"><span class="lineno">  310</span> </div>
+<div class="line"><span class="lineno">  311</span>    voxel_grid_filter_container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">  312</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
+<div class="line"><span class="lineno">  313</span>        name=<span class="stringliteral">&#39;voxel_grid_filter_container&#39;</span>,</div>
+<div class="line"><span class="lineno">  314</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">  315</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
+<div class="line"><span class="lineno">  316</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>            <span class="comment"># Launch the core node(s)</span></div>
+<div class="line"><span class="lineno">  319</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  320</span>                package=<span class="stringliteral">&#39;points_downsampler&#39;</span>,</div>
+<div class="line"><span class="lineno">  321</span>                plugin=<span class="stringliteral">&#39;voxel_grid_filter::VoxelGridFilter&#39;</span>,</div>
+<div class="line"><span class="lineno">  322</span>                name=<span class="stringliteral">&#39;voxel_grid_filter_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  323</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  324</span>                     {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  325</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;voxel_grid_filter&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  326</span>                ],</div>
+<div class="line"><span class="lineno">  327</span>                parameters=[</div>
+<div class="line"><span class="lineno">  328</span>                    {<span class="stringliteral">&quot;points_topic&quot;</span>: [EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;&#39;</span>), <span class="stringliteral">&quot;/lidar/points_raw&quot;</span> ]},</div>
+<div class="line"><span class="lineno">  329</span>                    {<span class="stringliteral">&quot;output_log&quot;</span>: <span class="keyword">False</span>},</div>
+<div class="line"><span class="lineno">  330</span>                    {<span class="stringliteral">&quot;measurement_range&quot;</span>: 200.0},</div>
+<div class="line"><span class="lineno">  331</span>                    {<span class="stringliteral">&quot;voxel_leaf_size&quot;</span>: 3.0}</div>
+<div class="line"><span class="lineno">  332</span>                ],</div>
+<div class="line"><span class="lineno">  333</span>            ),</div>
+<div class="line"><span class="lineno">  334</span>        ]</div>
+<div class="line"><span class="lineno">  335</span>    )</div>
+<div class="line"><span class="lineno">  336</span> </div>
+<div class="line"><span class="lineno">  337</span>    random_filter_container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">  338</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
+<div class="line"><span class="lineno">  339</span>        name=<span class="stringliteral">&#39;random_filter_container&#39;</span>,</div>
+<div class="line"><span class="lineno">  340</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">  341</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
+<div class="line"><span class="lineno">  342</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">  343</span> </div>
+<div class="line"><span class="lineno">  344</span>            <span class="comment"># Launch the core node(s)</span></div>
+<div class="line"><span class="lineno">  345</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">  346</span>                package=<span class="stringliteral">&#39;points_downsampler&#39;</span>,</div>
+<div class="line"><span class="lineno">  347</span>                plugin=<span class="stringliteral">&#39;random_filter::RandomFilter&#39;</span>,</div>
+<div class="line"><span class="lineno">  348</span>                name=<span class="stringliteral">&#39;random_filter_node&#39;</span>,</div>
+<div class="line"><span class="lineno">  349</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">  350</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">  351</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : GetLogLevel(<span class="stringliteral">&#39;random_filter&#39;</span>, env_log_levels) }</div>
+<div class="line"><span class="lineno">  352</span>                ],</div>
+<div class="line"><span class="lineno">  353</span>                parameters=[</div>
+<div class="line"><span class="lineno">  354</span>                    {<span class="stringliteral">&quot;points_topic&quot;</span>: <span class="stringliteral">&quot;filtered_points&quot;</span>},</div>
+<div class="line"><span class="lineno">  355</span>                    {<span class="stringliteral">&quot;output_log&quot;</span>: <span class="keyword">False</span>},</div>
+<div class="line"><span class="lineno">  356</span>                    {<span class="stringliteral">&quot;measurement_range&quot;</span>: 200.0},</div>
+<div class="line"><span class="lineno">  357</span>                    {<span class="stringliteral">&quot;sample_num&quot;</span>: 700}</div>
+<div class="line"><span class="lineno">  358</span>                ],</div>
+<div class="line"><span class="lineno">  359</span>            ),</div>
+<div class="line"><span class="lineno">  360</span>        ]</div>
+<div class="line"><span class="lineno">  361</span>    )</div>
 <div class="line"><span class="lineno">  362</span> </div>
-<div class="line"><span class="lineno">  363</span>    <span class="comment"># subsystem_controller which orchestrates the lifecycle of this subsystem&#39;s components</span></div>
-<div class="line"><span class="lineno">  364</span>    subsystem_controller = Node(</div>
-<div class="line"><span class="lineno">  365</span>        package=<span class="stringliteral">&#39;subsystem_controllers&#39;</span>,</div>
-<div class="line"><span class="lineno">  366</span>        name=<span class="stringliteral">&#39;localization_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  367</span>        executable=<span class="stringliteral">&#39;localization_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  368</span>        parameters=[</div>
-<div class="line"><span class="lineno">  369</span>            subsystem_controller_default_param_file,</div>
-<div class="line"><span class="lineno">  370</span>            subsystem_controller_param_file,</div>
-<div class="line"><span class="lineno">  371</span>            {<span class="stringliteral">&quot;use_sim_time&quot;</span> : use_sim_time}], <span class="comment"># Default file is loaded first followed by config file</span></div>
-<div class="line"><span class="lineno">  372</span>        on_exit= Shutdown(), <span class="comment"># Mark the subsystem controller as required</span></div>
-<div class="line"><span class="lineno">  373</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;subsystem_controllers&#39;</span>, env_log_levels)]</div>
-<div class="line"><span class="lineno">  374</span>    )</div>
-<div class="line"><span class="lineno">  375</span> </div>
-<div class="line"><span class="lineno">  376</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">  377</span>        declare_subsystem_controller_param_file_arg,</div>
-<div class="line"><span class="lineno">  378</span>        declare_load_type,</div>
-<div class="line"><span class="lineno">  379</span>        declare_single_pcd_path,</div>
-<div class="line"><span class="lineno">  380</span>        declare_area,</div>
-<div class="line"><span class="lineno">  381</span>        declare_arealist_path,</div>
-<div class="line"><span class="lineno">  382</span>        declare_map_file,</div>
-<div class="line"><span class="lineno">  383</span>        declare_use_sim_time_arg,</div>
-<div class="line"><span class="lineno">  384</span>        gnss_to_map_convertor_container,</div>
-<div class="line"><span class="lineno">  385</span>        localization_manager_container,</div>
-<div class="line"><span class="lineno">  386</span>        dead_reckoner_container,</div>
-<div class="line"><span class="lineno">  387</span>        voxel_grid_filter_container,</div>
-<div class="line"><span class="lineno">  388</span>        random_filter_container,</div>
-<div class="line"><span class="lineno">  389</span>        map_param_loader_container,</div>
-<div class="line"><span class="lineno">  390</span>        pcd_map_file_loader_container,</div>
-<div class="line"><span class="lineno">  391</span>        ndt_matching_container,</div>
-<div class="line"><span class="lineno">  392</span>        ekf_localizer_container,</div>
-<div class="line"><span class="lineno">  393</span>        subsystem_controller</div>
-<div class="line"><span class="lineno">  394</span>    ])</div>
+<div class="line"><span class="lineno">  363</span> </div>
+<div class="line"><span class="lineno">  364</span>    <span class="comment"># subsystem_controller which orchestrates the lifecycle of this subsystem&#39;s components</span></div>
+<div class="line"><span class="lineno">  365</span>    subsystem_controller = Node(</div>
+<div class="line"><span class="lineno">  366</span>        package=<span class="stringliteral">&#39;subsystem_controllers&#39;</span>,</div>
+<div class="line"><span class="lineno">  367</span>        name=<span class="stringliteral">&#39;localization_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  368</span>        executable=<span class="stringliteral">&#39;localization_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  369</span>        parameters=[</div>
+<div class="line"><span class="lineno">  370</span>            subsystem_controller_default_param_file,</div>
+<div class="line"><span class="lineno">  371</span>            subsystem_controller_param_file,</div>
+<div class="line"><span class="lineno">  372</span>            {<span class="stringliteral">&quot;use_sim_time&quot;</span> : use_sim_time}], <span class="comment"># Default file is loaded first followed by config file</span></div>
+<div class="line"><span class="lineno">  373</span>        on_exit= Shutdown(), <span class="comment"># Mark the subsystem controller as required</span></div>
+<div class="line"><span class="lineno">  374</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;subsystem_controllers&#39;</span>, env_log_levels)]</div>
+<div class="line"><span class="lineno">  375</span>    )</div>
+<div class="line"><span class="lineno">  376</span> </div>
+<div class="line"><span class="lineno">  377</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><span class="lineno">  378</span>        declare_subsystem_controller_param_file_arg,</div>
+<div class="line"><span class="lineno">  379</span>        declare_load_type,</div>
+<div class="line"><span class="lineno">  380</span>        declare_single_pcd_path,</div>
+<div class="line"><span class="lineno">  381</span>        declare_area,</div>
+<div class="line"><span class="lineno">  382</span>        declare_arealist_path,</div>
+<div class="line"><span class="lineno">  383</span>        declare_map_file,</div>
+<div class="line"><span class="lineno">  384</span>        declare_use_sim_time_arg,</div>
+<div class="line"><span class="lineno">  385</span>        gnss_to_map_convertor_container,</div>
+<div class="line"><span class="lineno">  386</span>        localization_manager_container,</div>
+<div class="line"><span class="lineno">  387</span>        dead_reckoner_container,</div>
+<div class="line"><span class="lineno">  388</span>        voxel_grid_filter_container,</div>
+<div class="line"><span class="lineno">  389</span>        random_filter_container,</div>
+<div class="line"><span class="lineno">  390</span>        map_param_loader_container,</div>
+<div class="line"><span class="lineno">  391</span>        pcd_map_file_loader_container,</div>
+<div class="line"><span class="lineno">  392</span>        ndt_matching_container,</div>
+<div class="line"><span class="lineno">  393</span>        ekf_localizer_container,</div>
+<div class="line"><span class="lineno">  394</span>        subsystem_controller</div>
+<div class="line"><span class="lineno">  395</span>    ])</div>
 <div class="ttc" id="anamespacelocalization_html_a03aa809ae87723efe694476a74017b40"><div class="ttname"><a href="namespacelocalization.html#a03aa809ae87723efe694476a74017b40">localization.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="localization_8launch_8py_source.html#l00037">localization.launch.py:37</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -480,7 +481,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacelocalization.html">localization</a></li>
-    <li class="footer">Generated on Fri Sep 27 2024 21:35:07 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Oct 4 2024 10:58:16 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -261,11 +261,6 @@ var annotated_dup =
       [ "PortDrayageStateMachine", "classport__drayage__plugin_1_1PortDrayageStateMachine.html", "classport__drayage__plugin_1_1PortDrayageStateMachine" ],
       [ "PortDrayageWorker", "classport__drayage__plugin_1_1PortDrayageWorker.html", "classport__drayage__plugin_1_1PortDrayageWorker" ]
     ] ],
-    [ "pose_to_tf", "namespacepose__to__tf.html", [
-      [ "PoseToTF2", "classpose__to__tf_1_1PoseToTF2.html", "classpose__to__tf_1_1PoseToTF2" ],
-      [ "PoseToTF2Config", "structpose__to__tf_1_1PoseToTF2Config.html", "structpose__to__tf_1_1PoseToTF2Config" ],
-      [ "PoseToTfNode", "classpose__to__tf_1_1PoseToTfNode.html", "classpose__to__tf_1_1PoseToTfNode" ]
-    ] ],
     [ "process_traj_logs", "namespaceprocess__traj__logs.html", [
       [ "DataSource", "classprocess__traj__logs_1_1DataSource.html", "classprocess__traj__logs_1_1DataSource" ]
     ] ],

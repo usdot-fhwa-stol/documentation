@@ -37,7 +37,6 @@ var files_dup =
     [ "platooning_tactical_plugin", "dir_d2404bbdd96252d96dc5c9d8a98a0dc0.html", "dir_d2404bbdd96252d96dc5c9d8a98a0dc0" ],
     [ "points_map_filter", "dir_dffd8d85dea2c56e102f96f6de0dc4a7.html", "dir_dffd8d85dea2c56e102f96f6de0dc4a7" ],
     [ "port_drayage_plugin", "dir_6c0dca5e075ee86c370066ee5cef759d.html", "dir_6c0dca5e075ee86c370066ee5cef759d" ],
-    [ "pose_to_tf", "dir_e2b614ecdc816df457d9baf90bf5944c.html", "dir_e2b614ecdc816df457d9baf90bf5944c" ],
     [ "pure_pursuit_wrapper", "dir_64a97241906d2269ee65f23acb19cf0b.html", "dir_64a97241906d2269ee65f23acb19cf0b" ],
     [ "roadway_objects", "dir_5fbc69dfc9cbf52d4afb98122cc9dcb3.html", "dir_5fbc69dfc9cbf52d4afb98122cc9dcb3" ],
     [ "route", "dir_4005b166026311c360bb4fe9f8933493.html", "dir_4005b166026311c360bb4fe9f8933493" ],

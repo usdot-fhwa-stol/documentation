@@ -69,7 +69,6 @@ var hierarchy =
       [ "plan_delegator::PlanDelegator", "classplan__delegator_1_1PlanDelegator.html", null ],
       [ "points_map_filter::Node", "classpoints__map__filter_1_1Node.html", null ],
       [ "port_drayage_plugin::PortDrayagePlugin", "classport__drayage__plugin_1_1PortDrayagePlugin.html", null ],
-      [ "pose_to_tf::PoseToTfNode", "classpose__to__tf_1_1PoseToTfNode.html", null ],
       [ "roadway_objects::RoadwayObjectsNode", "classroadway__objects_1_1RoadwayObjectsNode.html", null ],
       [ "route::Route", "classroute_1_1Route.html", null ],
       [ "subsystem_controllers::BaseSubsystemController", "classsubsystem__controllers_1_1BaseSubsystemController.html", [
@@ -209,8 +208,6 @@ var hierarchy =
     [ "port_drayage_plugin::PortDrayageMobilityOperationMsg", "structport__drayage__plugin_1_1PortDrayageMobilityOperationMsg.html", null ],
     [ "port_drayage_plugin::PortDrayageStateMachine", "classport__drayage__plugin_1_1PortDrayageStateMachine.html", null ],
     [ "port_drayage_plugin::PortDrayageWorker", "classport__drayage__plugin_1_1PortDrayageWorker.html", null ],
-    [ "pose_to_tf::PoseToTF2", "classpose__to__tf_1_1PoseToTF2.html", null ],
-    [ "pose_to_tf::PoseToTF2Config", "structpose__to__tf_1_1PoseToTF2Config.html", null ],
     [ "carma_cooperative_perception::Position3D", "structcarma__cooperative__perception_1_1Position3D.html", null ],
     [ "carma_cooperative_perception::PositionOffsetXYZ", "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html", null ],
     [ "pure_pursuit_wrapper::PurePursuitWrapperConfig", "structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html", null ],

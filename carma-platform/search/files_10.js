@@ -12,7 +12,7 @@ var searchData=
   ['signalizedintersectionmanager_2ehpp_9',['SignalizedIntersectionManager.hpp',['../SignalizedIntersectionManager_8hpp.html',1,'']]],
   ['speedharm_2dcli_2epy_10',['speedharm-cli.py',['../speedharm-cli_8py.html',1,'']]],
   ['speedharm_5fauto_5fconfigure_2epy_11',['speedharm_auto_configure.py',['../speedharm__auto__configure_8py.html',1,'']]],
-  ['splinei_2ehpp_12',['SplineI.hpp',['../inlanecruising__plugin_2include_2inlanecruising__plugin_2smoothing_2SplineI_8hpp.html',1,'(Global Namespace)'],['../basic__autonomy_2include_2basic__autonomy_2smoothing_2SplineI_8hpp.html',1,'(Global Namespace)']]],
+  ['splinei_2ehpp_12',['SplineI.hpp',['../basic__autonomy_2include_2basic__autonomy_2smoothing_2SplineI_8hpp.html',1,'(Global Namespace)'],['../inlanecruising__plugin_2include_2inlanecruising__plugin_2smoothing_2SplineI_8hpp.html',1,'(Global Namespace)']]],
   ['ssc_5fdriver_5fmanager_2ecpp_13',['ssc_driver_manager.cpp',['../ssc__driver__manager_8cpp.html',1,'']]],
   ['ssc_5fdriver_5fmanager_2ehpp_14',['ssc_driver_manager.hpp',['../ssc__driver__manager_8hpp.html',1,'']]],
   ['stack_5fdesign_2emd_15',['stack_design.md',['../stack__design_8md.html',1,'']]],

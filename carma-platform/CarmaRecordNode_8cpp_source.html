@@ -174,12 +174,15 @@ $(document).ready(function(){initNavTree('CarmaRecordNode_8cpp_source.html','');
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_variable" href="classcarma__record_1_1CarmaRecordNode.html#a6bf902669e7dd7099087b39c0b125e95">cnh_</a>.setParam(<span class="stringliteral">&quot;no_exclusions&quot;</span>, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="comment">// End node because there is no need to spin</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="comment">// No need to spin here, but it prevents ros1_bridge from continuously </span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="comment">// printing error logs about failing to connect</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="comment">// to this node&#39;s services indefinitely which is confusing to many users</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  ros::spin();</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}  <span class="comment">// namespace carma_record</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}  <span class="comment">// namespace carma_record</span></div>
 <div class="ttc" id="aCarmaRecordNode_8h_html"><div class="ttname"><a href="CarmaRecordNode_8h.html">CarmaRecordNode.h</a></div></div>
 <div class="ttc" id="aclasscarma__record_1_1CarmaRecordNode_html_a6bf902669e7dd7099087b39c0b125e95"><div class="ttname"><a href="classcarma__record_1_1CarmaRecordNode.html#a6bf902669e7dd7099087b39c0b125e95">carma_record::CarmaRecordNode::cnh_</a></div><div class="ttdeci">ros::CARMANodeHandle cnh_</div><div class="ttdef"><b>Definition:</b> <a href="CarmaRecordNode_8h_source.html#l00049">CarmaRecordNode.h:49</a></div></div>
 <div class="ttc" id="aclasscarma__record_1_1CarmaRecordNode_html_a72ec038484c8560269b912b1de2d3c38"><div class="ttname"><a href="classcarma__record_1_1CarmaRecordNode.html#a72ec038484c8560269b912b1de2d3c38">carma_record::CarmaRecordNode::run</a></div><div class="ttdeci">int run() const</div><div class="ttdoc">Starts the Node.</div><div class="ttdef"><b>Definition:</b> <a href="CarmaRecordNode_8cpp_source.html#l00022">CarmaRecordNode.cpp:22</a></div></div>
@@ -190,7 +193,7 @@ $(document).ready(function(){initNavTree('CarmaRecordNode_8cpp_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_3f61e4bc5851cf3435ec5d8ed501421a.html">carma_record</a></li><li class="navelem"><a class="el" href="dir_9c642a57f6afe4d5ce7017f83ee83392.html">src</a></li><li class="navelem"><a class="el" href="CarmaRecordNode_8cpp.html">CarmaRecordNode.cpp</a></li>
-    <li class="footer">Generated on Fri Nov 1 2024 18:31:10 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Nov 5 2024 17:09:06 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

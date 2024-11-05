@@ -238,10 +238,13 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   86</span>  } <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">   87</span>    <a class="code hl_variable" href="classcarma__record_1_1CarmaRecordNode.html#a6bf902669e7dd7099087b39c0b125e95">cnh_</a>.setParam(<span class="stringliteral">&quot;no_exclusions&quot;</span>, <span class="keyword">false</span>);</div>
 <div class="line"><span class="lineno">   88</span>  }</div>
-<div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>  <span class="comment">// End node because there is no need to spin</span></div>
-<div class="line"><span class="lineno">   91</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   92</span>}</div>
+<div class="line"><span class="lineno">   89</span>  <span class="comment">// No need to spin here, but it prevents ros1_bridge from continuously </span></div>
+<div class="line"><span class="lineno">   90</span>  <span class="comment">// printing error logs about failing to connect</span></div>
+<div class="line"><span class="lineno">   91</span>  <span class="comment">// to this node&#39;s services indefinitely which is confusing to many users</span></div>
+<div class="line"><span class="lineno">   92</span>  ros::spin();</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   95</span>}</div>
 <div class="ttc" id="aclasscarma__record_1_1CarmaRecordNode_html_a6bf902669e7dd7099087b39c0b125e95"><div class="ttname"><a href="classcarma__record_1_1CarmaRecordNode.html#a6bf902669e7dd7099087b39c0b125e95">carma_record::CarmaRecordNode::cnh_</a></div><div class="ttdeci">ros::CARMANodeHandle cnh_</div><div class="ttdef"><b>Definition:</b> <a href="CarmaRecordNode_8h_source.html#l00049">CarmaRecordNode.h:49</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="CarmaRecordNode_8h_source.html#l00049">cnh_</a>.</p>
@@ -296,7 +299,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__record.html">carma_record</a></li><li class="navelem"><a class="el" href="classcarma__record_1_1CarmaRecordNode.html">CarmaRecordNode</a></li>
-    <li class="footer">Generated on Fri Nov 1 2024 18:31:13 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Nov 5 2024 17:09:10 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

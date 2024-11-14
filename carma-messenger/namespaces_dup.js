@@ -27,6 +27,10 @@ var namespaces_dup =
     [ "plugins", "namespaceplugins.html", [
       [ "generate_launch_description", "namespaceplugins.html#ac3f3c843d1dfcb998c4dbafd7c596419", null ]
     ] ],
+    [ "ros2_rosbag", "namespaceros2__rosbag.html", [
+      [ "generate_launch_description", "namespaceros2__rosbag.html#a34db9f1acdab007c1e2d29c46cff42ec", null ],
+      [ "record_ros2_rosbag", "namespaceros2__rosbag.html#a063f314c78ed474cdec9303855eee9e4", null ]
+    ] ],
     [ "traffic", "namespacetraffic.html", "namespacetraffic" ],
     [ "traffic_incident", "namespacetraffic__incident.html", [
       [ "generate_launch_description", "namespacetraffic__incident.html#ae9f6441ee2913489cbacfa4330527df7", null ]

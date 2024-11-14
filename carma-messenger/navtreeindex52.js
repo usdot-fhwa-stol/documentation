@@ -1,5 +1,12 @@
 var NAVTREEINDEX52 =
 {
+"uper__decoder_8h.html":[10,0,1,1,0,1,552],
+"uper__decoder_8h.html#a76f8c1079ff1986561a848a2b41c1bda":[10,0,1,1,0,1,552,0],
+"uper__decoder_8h.html#aee9f028338b959499187da5241cdf31a":[10,0,1,1,0,1,552,1],
+"uper__decoder_8h_source.html":[10,0,1,1,0,1,552],
+"uper__encoder_8h.html":[10,0,1,1,0,1,553],
+"uper__encoder_8h.html#a1c9d61e78c5db3dc5d4100eb057a3504":[10,0,1,1,0,1,553,0],
+"uper__encoder_8h.html#ad9d25a879d4499db83fb133c1b8636b9":[10,0,1,1,0,1,553,1],
 "uper__encoder_8h.html#ae7441963699d456133f4b994aa12a91a":[10,0,1,1,0,1,553,2],
 "uper__encoder_8h_source.html":[10,0,1,1,0,1,553],
 "uper__opentype_8h.html":[10,0,1,1,0,1,554],

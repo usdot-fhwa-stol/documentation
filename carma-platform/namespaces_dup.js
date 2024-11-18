@@ -97,6 +97,11 @@ var namespaces_dup =
     ] ],
     [ "mobilitypath_visualizer", "namespacemobilitypath__visualizer.html", "namespacemobilitypath__visualizer" ],
     [ "mock_controller_driver", "namespacemock__controller__driver.html", "namespacemock__controller__driver" ],
+    [ "monitor-ros-cpu", "namespacemonitor-ros-cpu.html", [
+      [ "main", "namespacemonitor-ros-cpu.html#aa9f6eb5096958afb3000d7398bfe0acb", null ],
+      [ "parse_args", "namespacemonitor-ros-cpu.html#a133a64f3f4111f52684f34d28c2acba1", null ],
+      [ "setup_logging_directory", "namespacemonitor-ros-cpu.html#ac257c1d303839f435711c424b8937fda", null ]
+    ] ],
     [ "motion_computation", "namespacemotion__computation.html", "namespacemotion__computation" ],
     [ "motion_computation_launch", "namespacemotion__computation__launch.html", [
       [ "generate_launch_description", "namespacemotion__computation__launch.html#a55ceded82280a1b26dd9e38e93304c14", null ]

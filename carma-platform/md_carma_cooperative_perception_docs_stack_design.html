@@ -107,13 +107,42 @@ $(document).ready(function(){initNavTree('md_carma_cooperative_perception_docs_s
 </table>
 <p >We assume all actors can receive incoming messages such as SDSMs, whether they can use that data is a different matter. We also assume actors with local perception abilities have access to object-level data regarding the environment.</p>
 <h1><a class="anchor" id="autotoc_md52"></a>
+General approach with notations</h1>
+<p >The CP stack in general has three key stages:</p>
+<ul>
+<li>Detection Generation:<ul>
+<li>Collects raw detections (D^i_k) from multiple sources (V2X, or local sensors)</li>
+<li>Each detection has its own timestamp when recorded</li>
+<li>All detections are in the vehicle's map frame which is handled by the Detection Generators</li>
+</ul>
+</li>
+<li>MOT (Multiple Object Tracking) Pipeline: Takes N raw detections with varying timestamps<ul>
+<li>Aligns them temporally to create time-synchronized detections</li>
+<li>Produces M tracks/estimates (T^i_k) where typically N ≥ M</li>
+<li>Executes within a fixed time window Δt <blockquote class="doxtable">
+<p >&zwj;[!NOTE]\ </p>
+</blockquote>
+Since this step's implementation can vary, the specific architecture used in CARMA is provided below in "Multiple Object Tracking Pipeline Archecture" section</li>
+</ul>
+</li>
+<li>Execution Timeline: System runs in discrete steps (k). During each step:<ul>
+<li>Processes detections collected between k-1 and k</li>
+<li>Uses previous tracks from step k-1</li>
+<li>Generates new tracks for step k</li>
+<li>Small time offset ε accounts for detection timing variations</li>
+</ul>
+</li>
+</ul>
+<p >The pipeline efficiently converts asynchronous sensor data into synchronized object tracks that downstream components can use for vehicle planning and control.</p>
+<p ><img src="assets/Overall_MOT.png" alt="Alt text" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md53"></a>
 Local perception and fusion</h1>
 <blockquote class="doxtable">
 <p >&zwj;[!IMPORTANT]\ This stack configuration is currently unsupported because the required Nodes are unimplemented. </p>
 </blockquote>
 <p>In this stack configuration variant, the host vehicle (HV) or host roadside unit (HRSU) can perceive objects using its local sensors, and it can fuse remotely-received object data from BSMs and SDSMs. Actors using this configuration broadcast sensor data sharing messages (SDSMs) containing locally-perceived objects. The figure below shows the Node diagram for this deployment configuration.</p>
 <p ><img src="assets/carma_cooperative_perception_perception_fusion_node_diagram.png" alt="" class="inline"/> <img src="assets/carma_cooperative_perception_perception_fusion_system_diagram.png" alt="" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md53"></a>
+<h1><a class="anchor" id="autotoc_md54"></a>
 Local fusion only</h1>
 <blockquote class="doxtable">
 <p >&zwj;[!IMPORTANT]\ This stack configuration is currently unsupported because the required Nodes are unimplemented. </p>
@@ -121,14 +150,14 @@ Local fusion only</h1>
 <p>Host vehicles (HVs) or host roadside units (HRSUs) using this deployment configuration are unable to perceive the environment using only their local abilities (i.e., their own sensors). However, they can fuse object information they receive from nearby actors into single representations using their own computational power. The figure below shows the Node diagram for this deployment configuration.</p>
 <p >Depending on the application or use case, actors with this stack configuration might rely on an external entity to provide object data. If neighboring actors…</p>
 <p ><img src="assets/carma_cooperative_perception_no_perception_fusion_node_diagram.png" alt="" class="inline"/> <img src="assets/carma_cooperative_perception_no_perception_fusion_system_diagram.png" alt="" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md54"></a>
+<h1><a class="anchor" id="autotoc_md55"></a>
 Local Perception Only</h1>
 <blockquote class="doxtable">
 <p >&zwj;[!IMPORTANT]\ This stack configuration is currently unsupported because the required Nodes are unimplemented. </p>
 </blockquote>
 <p>In this stack configuration, the host vehicle (HV) or host roadside unit (HRSU) can use object information only from its local sensors; it cannot fuse that data with any remotely-received object data. Actors using this stack deployment variant do not use incoming SDSMs, but they still publish their local sensor data with others through SDSMs. The figure below shows the Node diagram for this deployment configuration.</p>
 <p ><img src="assets/carma_cooperative_perception_perception_no_fusion_node_diagram.png" alt="" class="inline"/> <img src="assets/carma_cooperative_perception_perception_no_fusion_system_diagram.png" alt="" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md55"></a>
+<h1><a class="anchor" id="autotoc_md56"></a>
 No Local Perception or Fusion</h1>
 <blockquote class="doxtable">
 <p >&zwj;[!IMPORTANT]\ This stack configuration is currently unsupported because the required Nodes are unimplemented. </p>
@@ -137,14 +166,73 @@ No Local Perception or Fusion</h1>
 <p >&zwj;[!WARNING]\ We do not recommend this stack configuration but included it for completeness. If you intent to use this configuration in your application, we suggest you reevaluate your approach. </p>
 </blockquote>
 <p>In this stack configuration, the host vehicle (HV) or host roadside unit (HRSU) can neither perceive objects locally nor fuse object data from nearby actors. The HV or HRSU is entirely dependent on an external system to provide an authoritative list of environment objects. Essentially, actors with this configuration receive the all the cooperative perception benefits without contributing themselves. The figure below shows the Node diagram for this deployment configuration.</p>
-<p ><img src="assets/carma_cooperative_perception_no_perception_no_fusion_node_diagram.png" alt="" class="inline"/> <img src="assets/carma_cooperative_perception_no_perception_no_fusion_system_diagram.png" alt="" class="inline"/> </p>
+<p ><img src="assets/carma_cooperative_perception_no_perception_no_fusion_node_diagram.png" alt="" class="inline"/> <img src="assets/carma_cooperative_perception_no_perception_no_fusion_system_diagram.png" alt="" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md57"></a>
+Multiple Object Tracking Pipeline Archecture</h1>
+<p >A modular pipeline implmented in CARMA CP stack for processing and fusing multi-source object detections into tracks. Individual components utilize library functions available in <a href="https://github.com/usdot-fhwa-stol/multiple_object_tracking">https://github.com/usdot-fhwa-stol/multiple_object_tracking</a>. In other words, this is just one example that is possible from the library.</p>
+<p >Pipeline Main Components, for each k step:</p><ol type="1">
+<li>Temporal Alignment</li>
+</ol>
+<ul>
+<li>Synchronizes raw detections D from N sources to the host vehicle timestamp</li>
+<li>Outputs time-aligned detections D̄ to k timestamp</li>
+<li>Ensures consistent temporal reference frame for processing</li>
+</ul>
+<ol type="1">
+<li>Scoring and Gating</li>
+</ol>
+<ul>
+<li>Computes association scores between detections and existing tracks</li>
+<li>Uses MetricVisitor pattern for customizable scoring strategies</li>
+<li>Generates ScoreMap: (track_id, det_id) -&gt; score</li>
+<li>Takes previous tracks (from k-1 step) T̄ as input</li>
+</ul>
+<ol type="1">
+<li>Association</li>
+</ol>
+<ul>
+<li>Maps detections to existing tracks using AssociationVisitor</li>
+<li>Produces AssociationMap: track_id -&gt; vector&lt;det_id&gt;</li>
+<li>Handles track initialization and termination</li>
+</ul>
+<ol type="1">
+<li>Track Maintenance</li>
+</ol>
+<ul>
+<li>Updates track states using associated detections</li>
+<li>Manages track lifecycle (creation, updates, deletion)</li>
+<li>Integrates with prediction system for motion estimation</li>
+</ul>
+<ol type="1">
+<li>Fusion</li>
+</ol>
+<ul>
+<li>Combines associated detections and track data</li>
+<li>Uses FusionVisitor for customizable fusion strategies</li>
+<li>Outputs final fused tracks T̄ of M size for k step</li>
+</ul>
+<p >Supporting Components and Steps:</p><ol type="1">
+<li>Track Cache</li>
+</ol>
+<ul>
+<li>Stores historical track information</li>
+<li>Enables prediction and temporal consistency</li>
+</ul>
+<ol type="1">
+<li>Predict Track</li>
+</ol>
+<ul>
+<li>Projects track states forward in time</li>
+<li>Supports gating and association processes</li>
+</ul>
+<p ><img src="assets/MOT_Detailed_Pipeline.png" alt="Alt text" class="inline"/> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Nov 18 2024 16:56:17 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Nov 18 2024 19:01:16 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -114,76 +114,76 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="monitor-ros-cpu_8py_source.html#l00033">33</a> of file <a class="el" href="monitor-ros-cpu_8py_source.html">monitor-ros-cpu.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span><span class="keyword">def </span><a class="code hl_function" href="namespacemonitor-ros-cpu.html#aa9f6eb5096958afb3000d7398bfe0acb">main</a>():</div>
-<div class="line"><span class="lineno">   34</span>    args = <a class="code hl_function" href="namespacemonitor-ros-cpu.html#a133a64f3f4111f52684f34d28c2acba1">parse_args</a>()</div>
-<div class="line"><span class="lineno">   35</span>    output_file = <a class="code hl_function" href="namespacemonitor-ros-cpu.html#ac257c1d303839f435711c424b8937fda">setup_logging_directory</a>(args.output_dir)</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>    <span class="keyword">with</span> open(output_file, mode=<span class="stringliteral">&quot;a&quot;</span>) <span class="keyword">as</span> file:</div>
-<div class="line"><span class="lineno">   38</span>        writer = csv.writer(file)</div>
-<div class="line"><span class="lineno">   39</span>        writer.writerow(</div>
-<div class="line"><span class="lineno">   40</span>            [</div>
-<div class="line"><span class="lineno">   41</span>                <span class="stringliteral">&quot;Timestamp&quot;</span>,</div>
-<div class="line"><span class="lineno">   42</span>                <span class="stringliteral">&quot;PID&quot;</span>,</div>
-<div class="line"><span class="lineno">   43</span>                <span class="stringliteral">&quot;Process Name&quot;</span>,</div>
-<div class="line"><span class="lineno">   44</span>                <span class="stringliteral">&quot;CPU (%)&quot;</span>,</div>
-<div class="line"><span class="lineno">   45</span>                <span class="stringliteral">&quot;Memory (%)&quot;</span>,</div>
-<div class="line"><span class="lineno">   46</span>                <span class="stringliteral">&quot;Command Line&quot;</span>,</div>
-<div class="line"><span class="lineno">   47</span>                <span class="stringliteral">&quot;Total CPU (%)&quot;</span>,</div>
-<div class="line"><span class="lineno">   48</span>            ]</div>
-<div class="line"><span class="lineno">   49</span>        )</div>
-<div class="line"><span class="lineno">   50</span>        print(f<span class="stringliteral">&quot;Starting to monitor the CPU usage data and saving to: {output_file}&quot;</span>)</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">while</span> <span class="keyword">True</span>:</div>
-<div class="line"><span class="lineno">   53</span>            timestamp = datetime.now().strftime(<span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S.%f&quot;</span>)[:-3]</div>
-<div class="line"><span class="lineno">   54</span>            total_cpu_percent = psutil.cpu_percent(interval=<span class="keywordtype">None</span>)</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">for</span> proc <span class="keywordflow">in</span> psutil.process_iter(</div>
-<div class="line"><span class="lineno">   57</span>                [<span class="stringliteral">&quot;pid&quot;</span>, <span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;cpu_percent&quot;</span>, <span class="stringliteral">&quot;memory_percent&quot;</span>, <span class="stringliteral">&quot;cmdline&quot;</span>]</div>
-<div class="line"><span class="lineno">   58</span>            ):</div>
-<div class="line"><span class="lineno">   59</span>                <span class="keywordflow">try</span>:</div>
-<div class="line"><span class="lineno">   60</span>                    cmdline = <span class="stringliteral">&quot; &quot;</span>.join(proc.info[<span class="stringliteral">&quot;cmdline&quot;</span>])</div>
-<div class="line"><span class="lineno">   61</span>                    <span class="keywordflow">if</span> (</div>
-<div class="line"><span class="lineno">   62</span>                        <span class="stringliteral">&quot;ros&quot;</span> <span class="keywordflow">in</span> proc.info[<span class="stringliteral">&quot;name&quot;</span>]</div>
-<div class="line"><span class="lineno">   63</span>                        <span class="keywordflow">or</span> <span class="stringliteral">&quot;node&quot;</span> <span class="keywordflow">in</span> proc.info[<span class="stringliteral">&quot;name&quot;</span>]</div>
-<div class="line"><span class="lineno">   64</span>                        <span class="keywordflow">or</span> <span class="stringliteral">&quot;node&quot;</span> <span class="keywordflow">in</span> cmdline</div>
-<div class="line"><span class="lineno">   65</span>                        <span class="keywordflow">or</span> <span class="stringliteral">&quot;python3&quot;</span> <span class="keywordflow">in</span> proc.info[<span class="stringliteral">&quot;name&quot;</span>]</div>
-<div class="line"><span class="lineno">   66</span>                        <span class="keywordflow">or</span> <span class="stringliteral">&quot;ros&quot;</span> <span class="keywordflow">in</span> cmdline</div>
-<div class="line"><span class="lineno">   67</span>                    ) <span class="keywordflow">and</span> <span class="keywordflow">not</span> (<span class="stringliteral">&quot;code&quot;</span> <span class="keywordflow">in</span> proc.info[<span class="stringliteral">&quot;name&quot;</span>]):</div>
-<div class="line"><span class="lineno">   68</span>                        pid = proc.info[<span class="stringliteral">&quot;pid&quot;</span>]</div>
-<div class="line"><span class="lineno">   69</span>                        name = proc.info[<span class="stringliteral">&quot;name&quot;</span>]</div>
-<div class="line"><span class="lineno">   70</span>                        cpu_percent = proc.info[<span class="stringliteral">&quot;cpu_percent&quot;</span>]</div>
-<div class="line"><span class="lineno">   71</span>                        memory_percent = proc.info[<span class="stringliteral">&quot;memory_percent&quot;</span>]</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>                        writer.writerow(</div>
-<div class="line"><span class="lineno">   74</span>                            [</div>
-<div class="line"><span class="lineno">   75</span>                                timestamp,</div>
-<div class="line"><span class="lineno">   76</span>                                pid,</div>
-<div class="line"><span class="lineno">   77</span>                                name,</div>
-<div class="line"><span class="lineno">   78</span>                                cpu_percent,</div>
-<div class="line"><span class="lineno">   79</span>                                memory_percent,</div>
-<div class="line"><span class="lineno">   80</span>                                cmdline,</div>
-<div class="line"><span class="lineno">   81</span>                                total_cpu_percent,</div>
-<div class="line"><span class="lineno">   82</span>                            ]</div>
-<div class="line"><span class="lineno">   83</span>                        )</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>                <span class="keywordflow">except</span> (</div>
-<div class="line"><span class="lineno">   86</span>                    psutil.NoSuchProcess,</div>
-<div class="line"><span class="lineno">   87</span>                    psutil.AccessDenied,</div>
-<div class="line"><span class="lineno">   88</span>                    psutil.ZombieProcess,</div>
-<div class="line"><span class="lineno">   89</span>                ):</div>
-<div class="line"><span class="lineno">   90</span>                    <span class="keywordflow">continue</span></div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>            time.sleep(1)</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span> </div>
-<div class="ttc" id="anamespacemonitor-ros-cpu_html_a133a64f3f4111f52684f34d28c2acba1"><div class="ttname"><a href="namespacemonitor-ros-cpu.html#a133a64f3f4111f52684f34d28c2acba1">monitor-ros-cpu.parse_args</a></div><div class="ttdeci">def parse_args()</div><div class="ttdef"><b>Definition:</b> <a href="monitor-ros-cpu_8py_source.html#l00012">monitor-ros-cpu.py:12</a></div></div>
-<div class="ttc" id="anamespacemonitor-ros-cpu_html_aa9f6eb5096958afb3000d7398bfe0acb"><div class="ttname"><a href="namespacemonitor-ros-cpu.html#aa9f6eb5096958afb3000d7398bfe0acb">monitor-ros-cpu.main</a></div><div class="ttdeci">def main()</div><div class="ttdef"><b>Definition:</b> <a href="monitor-ros-cpu_8py_source.html#l00033">monitor-ros-cpu.py:33</a></div></div>
-<div class="ttc" id="anamespacemonitor-ros-cpu_html_ac257c1d303839f435711c424b8937fda"><div class="ttname"><a href="namespacemonitor-ros-cpu.html#ac257c1d303839f435711c424b8937fda">monitor-ros-cpu.setup_logging_directory</a></div><div class="ttdeci">def setup_logging_directory(output_dir)</div><div class="ttdef"><b>Definition:</b> <a href="monitor-ros-cpu_8py_source.html#l00023">monitor-ros-cpu.py:23</a></div></div>
+<p class="definition">Definition at line <a class="el" href="monitor-ros-cpu_8py_source.html#l00027">27</a> of file <a class="el" href="monitor-ros-cpu_8py_source.html">monitor-ros-cpu.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span><span class="keyword">def </span><a class="code hl_function" href="namespacemonitor-ros-cpu.html#aa9f6eb5096958afb3000d7398bfe0acb">main</a>():</div>
+<div class="line"><span class="lineno">   28</span>    args = <a class="code hl_function" href="namespacemonitor-ros-cpu.html#a133a64f3f4111f52684f34d28c2acba1">parse_args</a>()</div>
+<div class="line"><span class="lineno">   29</span>    output_file = <a class="code hl_function" href="namespacemonitor-ros-cpu.html#ac257c1d303839f435711c424b8937fda">setup_logging_directory</a>(args.output_dir)</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <span class="keyword">with</span> open(output_file, mode=<span class="stringliteral">&quot;a&quot;</span>) <span class="keyword">as</span> file:</div>
+<div class="line"><span class="lineno">   32</span>        writer = csv.writer(file)</div>
+<div class="line"><span class="lineno">   33</span>        writer.writerow(</div>
+<div class="line"><span class="lineno">   34</span>            [</div>
+<div class="line"><span class="lineno">   35</span>                <span class="stringliteral">&quot;Timestamp&quot;</span>,</div>
+<div class="line"><span class="lineno">   36</span>                <span class="stringliteral">&quot;PID&quot;</span>,</div>
+<div class="line"><span class="lineno">   37</span>                <span class="stringliteral">&quot;Process Name&quot;</span>,</div>
+<div class="line"><span class="lineno">   38</span>                <span class="stringliteral">&quot;CPU (%)&quot;</span>,</div>
+<div class="line"><span class="lineno">   39</span>                <span class="stringliteral">&quot;Memory (%)&quot;</span>,</div>
+<div class="line"><span class="lineno">   40</span>                <span class="stringliteral">&quot;Command Line&quot;</span>,</div>
+<div class="line"><span class="lineno">   41</span>                <span class="stringliteral">&quot;Total CPU (%)&quot;</span>,</div>
+<div class="line"><span class="lineno">   42</span>            ]</div>
+<div class="line"><span class="lineno">   43</span>        )</div>
+<div class="line"><span class="lineno">   44</span>        print(f<span class="stringliteral">&quot;Starting to monitor the CPU usage data and saving to: {output_file}&quot;</span>)</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">while</span> <span class="keyword">True</span>:</div>
+<div class="line"><span class="lineno">   47</span>            timestamp = datetime.now().strftime(<span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S.%f&quot;</span>)[:-3]</div>
+<div class="line"><span class="lineno">   48</span>            total_cpu_percent = psutil.cpu_percent(interval=<span class="keywordtype">None</span>)</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">for</span> proc <span class="keywordflow">in</span> psutil.process_iter(</div>
+<div class="line"><span class="lineno">   51</span>                [<span class="stringliteral">&quot;pid&quot;</span>, <span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;cpu_percent&quot;</span>, <span class="stringliteral">&quot;memory_percent&quot;</span>, <span class="stringliteral">&quot;cmdline&quot;</span>]</div>
+<div class="line"><span class="lineno">   52</span>            ):</div>
+<div class="line"><span class="lineno">   53</span>                <span class="keywordflow">try</span>:</div>
+<div class="line"><span class="lineno">   54</span>                    <span class="comment"># Fix for the join() error - handle None case</span></div>
+<div class="line"><span class="lineno">   55</span>                    cmdline = <span class="stringliteral">&quot; &quot;</span>.join(proc.info[<span class="stringliteral">&quot;cmdline&quot;</span>]) <span class="keywordflow">if</span> proc.info[<span class="stringliteral">&quot;cmdline&quot;</span>] <span class="keywordflow">else</span> <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>                    <span class="keywordflow">if</span> (</div>
+<div class="line"><span class="lineno">   58</span>                        <span class="stringliteral">&quot;ros&quot;</span> <span class="keywordflow">in</span> proc.info[<span class="stringliteral">&quot;name&quot;</span>].lower()</div>
+<div class="line"><span class="lineno">   59</span>                        <span class="keywordflow">or</span> <span class="stringliteral">&quot;node&quot;</span> <span class="keywordflow">in</span> proc.info[<span class="stringliteral">&quot;name&quot;</span>].lower()</div>
+<div class="line"><span class="lineno">   60</span>                        <span class="keywordflow">or</span> <span class="stringliteral">&quot;node&quot;</span> <span class="keywordflow">in</span> cmdline.lower()</div>
+<div class="line"><span class="lineno">   61</span>                        <span class="keywordflow">or</span> <span class="stringliteral">&quot;python3&quot;</span> <span class="keywordflow">in</span> proc.info[<span class="stringliteral">&quot;name&quot;</span>].lower()</div>
+<div class="line"><span class="lineno">   62</span>                        <span class="keywordflow">or</span> <span class="stringliteral">&quot;ros&quot;</span> <span class="keywordflow">in</span> cmdline.lower()</div>
+<div class="line"><span class="lineno">   63</span>                    ) <span class="keywordflow">and</span> <span class="keywordflow">not</span> (<span class="stringliteral">&quot;code&quot;</span> <span class="keywordflow">in</span> proc.info[<span class="stringliteral">&quot;name&quot;</span>].lower()):</div>
+<div class="line"><span class="lineno">   64</span>                        pid = proc.info[<span class="stringliteral">&quot;pid&quot;</span>]</div>
+<div class="line"><span class="lineno">   65</span>                        name = proc.info[<span class="stringliteral">&quot;name&quot;</span>]</div>
+<div class="line"><span class="lineno">   66</span>                        cpu_percent = proc.info[<span class="stringliteral">&quot;cpu_percent&quot;</span>]</div>
+<div class="line"><span class="lineno">   67</span>                        memory_percent = proc.info[<span class="stringliteral">&quot;memory_percent&quot;</span>]</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>                        writer.writerow(</div>
+<div class="line"><span class="lineno">   70</span>                            [</div>
+<div class="line"><span class="lineno">   71</span>                                timestamp,</div>
+<div class="line"><span class="lineno">   72</span>                                pid,</div>
+<div class="line"><span class="lineno">   73</span>                                name,</div>
+<div class="line"><span class="lineno">   74</span>                                cpu_percent,</div>
+<div class="line"><span class="lineno">   75</span>                                memory_percent,</div>
+<div class="line"><span class="lineno">   76</span>                                cmdline,</div>
+<div class="line"><span class="lineno">   77</span>                                total_cpu_percent,</div>
+<div class="line"><span class="lineno">   78</span>                            ]</div>
+<div class="line"><span class="lineno">   79</span>                        )</div>
+<div class="line"><span class="lineno">   80</span>                <span class="keywordflow">except</span> (</div>
+<div class="line"><span class="lineno">   81</span>                    psutil.NoSuchProcess,</div>
+<div class="line"><span class="lineno">   82</span>                    psutil.AccessDenied,</div>
+<div class="line"><span class="lineno">   83</span>                    psutil.ZombieProcess,</div>
+<div class="line"><span class="lineno">   84</span>                ):</div>
+<div class="line"><span class="lineno">   85</span>                    <span class="keywordflow">continue</span></div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>            time.sleep(1)</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="ttc" id="anamespacemonitor-ros-cpu_html_a133a64f3f4111f52684f34d28c2acba1"><div class="ttname"><a href="namespacemonitor-ros-cpu.html#a133a64f3f4111f52684f34d28c2acba1">monitor-ros-cpu.parse_args</a></div><div class="ttdeci">def parse_args()</div><div class="ttdef"><b>Definition:</b> <a href="monitor-ros-cpu_8py_source.html#l00010">monitor-ros-cpu.py:10</a></div></div>
+<div class="ttc" id="anamespacemonitor-ros-cpu_html_aa9f6eb5096958afb3000d7398bfe0acb"><div class="ttname"><a href="namespacemonitor-ros-cpu.html#aa9f6eb5096958afb3000d7398bfe0acb">monitor-ros-cpu.main</a></div><div class="ttdeci">def main()</div><div class="ttdef"><b>Definition:</b> <a href="monitor-ros-cpu_8py_source.html#l00027">monitor-ros-cpu.py:27</a></div></div>
+<div class="ttc" id="anamespacemonitor-ros-cpu_html_ac257c1d303839f435711c424b8937fda"><div class="ttname"><a href="namespacemonitor-ros-cpu.html#ac257c1d303839f435711c424b8937fda">monitor-ros-cpu.setup_logging_directory</a></div><div class="ttdeci">def setup_logging_directory(output_dir)</div><div class="ttdef"><b>Definition:</b> <a href="monitor-ros-cpu_8py_source.html#l00020">monitor-ros-cpu.py:20</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="monitor-ros-cpu_8py_source.html#l00033">main()</a>, <a class="el" href="monitor-ros-cpu_8py_source.html#l00012">parse_args()</a>, and <a class="el" href="monitor-ros-cpu_8py_source.html#l00023">setup_logging_directory()</a>.</p>
+<p class="reference">References <a class="el" href="monitor-ros-cpu_8py_source.html#l00027">main()</a>, <a class="el" href="monitor-ros-cpu_8py_source.html#l00010">parse_args()</a>, and <a class="el" href="monitor-ros-cpu_8py_source.html#l00020">setup_logging_directory()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="monitor-ros-cpu_8py_source.html#l00033">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor-ros-cpu_8py_source.html#l00027">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -220,20 +220,19 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="monitor-ros-cpu_8py_source.html#l00012">12</a> of file <a class="el" href="monitor-ros-cpu_8py_source.html">monitor-ros-cpu.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span><span class="keyword">def </span><a class="code hl_function" href="namespacemonitor-ros-cpu.html#a133a64f3f4111f52684f34d28c2acba1">parse_args</a>():</div>
-<div class="line"><span class="lineno">   13</span>    parser = argparse.ArgumentParser(description=<span class="stringliteral">&quot;Monitor CPU usage of ROS2 nodes&quot;</span>)</div>
-<div class="line"><span class="lineno">   14</span>    parser.add_argument(</div>
-<div class="line"><span class="lineno">   15</span>        <span class="stringliteral">&quot;--output-dir&quot;</span>,</div>
-<div class="line"><span class="lineno">   16</span>        <span class="stringliteral">&quot;-o&quot;</span>,</div>
-<div class="line"><span class="lineno">   17</span>        default=<span class="stringliteral">&quot;carma-cpu-usage-logs&quot;</span>,</div>
-<div class="line"><span class="lineno">   18</span>        help=<span class="stringliteral">&quot;Directory to store output files (default: carma-cpu-usage-logs)&quot;</span>,</div>
-<div class="line"><span class="lineno">   19</span>    )</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> parser.parse_args()</div>
-<div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span> </div>
+<p class="definition">Definition at line <a class="el" href="monitor-ros-cpu_8py_source.html#l00010">10</a> of file <a class="el" href="monitor-ros-cpu_8py_source.html">monitor-ros-cpu.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span><span class="keyword">def </span><a class="code hl_function" href="namespacemonitor-ros-cpu.html#a133a64f3f4111f52684f34d28c2acba1">parse_args</a>():</div>
+<div class="line"><span class="lineno">   11</span>    parser = argparse.ArgumentParser(description=<span class="stringliteral">&quot;Monitor CPU usage of ROS2 nodes&quot;</span>)</div>
+<div class="line"><span class="lineno">   12</span>    parser.add_argument(</div>
+<div class="line"><span class="lineno">   13</span>        <span class="stringliteral">&quot;--output-dir&quot;</span>,</div>
+<div class="line"><span class="lineno">   14</span>        <span class="stringliteral">&quot;-o&quot;</span>,</div>
+<div class="line"><span class="lineno">   15</span>        default=<span class="stringliteral">&quot;carma-cpu-usage-logs&quot;</span>,</div>
+<div class="line"><span class="lineno">   16</span>        help=<span class="stringliteral">&quot;Directory to store output files (default: carma-cpu-usage-logs)&quot;</span>,</div>
+<div class="line"><span class="lineno">   17</span>    )</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">return</span> parser.parse_args()</div>
+<div class="line"><span class="lineno">   19</span> </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="monitor-ros-cpu_8py_source.html#l00033">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor-ros-cpu_8py_source.html#l00027">main()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -262,19 +261,16 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="monitor-ros-cpu_8py_source.html#l00023">23</a> of file <a class="el" href="monitor-ros-cpu_8py_source.html">monitor-ros-cpu.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span><span class="keyword">def </span><a class="code hl_function" href="namespacemonitor-ros-cpu.html#ac257c1d303839f435711c424b8937fda">setup_logging_directory</a>(output_dir):</div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> <span class="keywordflow">not</span> os.path.exists(output_dir):</div>
-<div class="line"><span class="lineno">   25</span>        os.makedirs(output_dir)</div>
+<p class="definition">Definition at line <a class="el" href="monitor-ros-cpu_8py_source.html#l00020">20</a> of file <a class="el" href="monitor-ros-cpu_8py_source.html">monitor-ros-cpu.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span><span class="keyword">def </span><a class="code hl_function" href="namespacemonitor-ros-cpu.html#ac257c1d303839f435711c424b8937fda">setup_logging_directory</a>(output_dir):</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">if</span> <span class="keywordflow">not</span> os.path.exists(output_dir):</div>
+<div class="line"><span class="lineno">   22</span>        os.makedirs(output_dir)</div>
+<div class="line"><span class="lineno">   23</span>    timestamp = datetime.now().strftime(<span class="stringliteral">&quot;%Y_%m_%d-%H_%M_%S&quot;</span>)</div>
+<div class="line"><span class="lineno">   24</span>    filename = f<span class="stringliteral">&quot;cpu_usage_ros2_nodes_{timestamp}.csv&quot;</span></div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">return</span> os.path.join(output_dir, filename)</div>
 <div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    timestamp = datetime.now().strftime(<span class="stringliteral">&quot;%Y_%m_%d-%H_%M_%S&quot;</span>)</div>
-<div class="line"><span class="lineno">   28</span>    filename = f<span class="stringliteral">&quot;cpu_usage_ros2_nodes_{timestamp}.csv&quot;</span></div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> os.path.join(output_dir, filename)</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span> </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="monitor-ros-cpu_8py_source.html#l00033">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="monitor-ros-cpu_8py_source.html#l00027">main()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -293,7 +289,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemonitor-ros-cpu.html">monitor-ros-cpu</a></li>
-    <li class="footer">Generated on Mon Nov 18 2024 19:01:18 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Nov 19 2024 19:27:14 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

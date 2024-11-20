@@ -1,5 +1,13 @@
 var NAVTREEINDEX33 =
 {
+"planning__strategy_8hpp_source.html":[57,0,2,0,11],
+"platoon__config__ihp_8h.html":[57,0,33,0,0,0],
+"platoon__config__ihp_8h_source.html":[57,0,33,0,0,0],
+"platoon__control_8launch_8py.html":[57,0,32,1,0],
+"platoon__control_8launch_8py.html#aa1236e257737a743b9f4977fb878d6f6":[57,0,32,1,0,0],
+"platoon__control_8launch_8py_source.html":[57,0,32,1,0],
+"platoon__manager__ihp_8cpp.html":[57,0,33,2,1],
+"platoon__manager__ihp_8cpp_source.html":[57,0,33,2,1],
 "platoon__manager__ihp_8h.html":[57,0,33,0,0,1],
 "platoon__manager__ihp_8h.html#a20539b6c81ea3b1868c7ca5d7c403daf":[57,0,33,0,0,1,4],
 "platoon__manager__ihp_8h.html#a20539b6c81ea3b1868c7ca5d7c403dafa0d2c16ab07ed24865f7ba27ad8a83dc0":[57,0,33,0,0,1,4,4],
@@ -241,13 +249,5 @@ var NAVTREEINDEX33 =
 "route__following__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,40,2,0,0],
 "route__following__plugin_2src_2main_8cpp_source.html":[57,0,40,2,0],
 "route__following__plugin_8cpp.html":[57,0,40,2,1],
-"route__following__plugin_8cpp.html#a69b9c9bf1a2410dfb992ec9874073e4e":[57,0,40,2,1,1],
-"route__following__plugin_8cpp.html#a9b29dd085f9f59d468b1c9320f0b5102":[57,0,40,2,1,0],
-"route__following__plugin_8cpp_source.html":[57,0,40,2,1],
-"route__following__plugin_8hpp.html":[57,0,40,0,0],
-"route__following__plugin_8hpp.html#a066f948508e087006568cb6c9b0674a7":[57,0,40,0,0,1],
-"route__following__plugin_8hpp.html#a490076edf649de33d777ebd52faf68b6":[57,0,40,0,0,2],
-"route__following__plugin_8hpp_source.html":[57,0,40,0,0],
-"route__following__plugin_8launch_8py.html":[57,0,40,1,0],
-"route__following__plugin_8launch_8py.html#ab70de7252eb44577e3424feca49a8df3":[57,0,40,1,0,0]
+"route__following__plugin_8cpp.html#a69b9c9bf1a2410dfb992ec9874073e4e":[57,0,40,2,1,1]
 };

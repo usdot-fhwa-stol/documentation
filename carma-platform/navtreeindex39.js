@@ -1,5 +1,9 @@
 var NAVTREEINDEX39 =
 {
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ae740350fe3cd974900aca40a8799af6b":[55,0,59,4,29],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#af3ea8d899c219ad4793f649a566fe6e8":[55,0,59,4,17],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#af3ea8d899c219ad4793f649a566fe6e8":[56,0,32,4,17],
+"structplatooning__control_1_1PlatoonLeaderInfo.html":[55,0,61,4],
 "structplatooning__control_1_1PlatoonLeaderInfo.html":[56,0,33,4],
 "structplatooning__control_1_1PlatoonLeaderInfo.html#a02bebc7c50c5961f281281cc7cae322f":[56,0,33,4,5],
 "structplatooning__control_1_1PlatoonLeaderInfo.html#a02bebc7c50c5961f281281cc7cae322f":[55,0,61,4,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX39 =
 "structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#aee17a24ce290b27f7f8610182bd61060":[56,0,42,0,0,2],
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html":[55,0,85,2],
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html":[56,0,43,1],
-"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a00278312ed09ccdc135ba9180e674787":[56,0,43,1,1],
-"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a00278312ed09ccdc135ba9180e674787":[55,0,85,2,1],
-"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a0a95f0e136c876d17b634b7482e1ad16":[55,0,85,2,10],
-"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a0a95f0e136c876d17b634b7482e1ad16":[56,0,43,1,10],
-"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a0c03c72bf198dcd6e311a4fb753b47db":[55,0,85,2,0]
+"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a00278312ed09ccdc135ba9180e674787":[56,0,43,1,1]
 };

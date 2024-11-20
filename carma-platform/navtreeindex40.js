@@ -1,5 +1,9 @@
 var NAVTREEINDEX40 =
 {
+"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a00278312ed09ccdc135ba9180e674787":[55,0,85,2,1],
+"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a0a95f0e136c876d17b634b7482e1ad16":[55,0,85,2,10],
+"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a0a95f0e136c876d17b634b7482e1ad16":[56,0,43,1,10],
+"structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a0c03c72bf198dcd6e311a4fb753b47db":[55,0,85,2,0],
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a0c03c72bf198dcd6e311a4fb753b47db":[56,0,43,1,0],
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a10ceb704b1016d9f4ddbeeb37d68d0c6":[56,0,43,1,14],
 "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html#a10ceb704b1016d9f4ddbeeb37d68d0c6":[55,0,85,2,14],
@@ -245,9 +249,5 @@ var NAVTREEINDEX40 =
 "traffic__incident__parser__node_8hpp_source.html":[57,0,48,0,0,0],
 "traffic__incident__parser__worker_8cpp.html":[57,0,48,2,2],
 "traffic__incident__parser__worker_8cpp.html#a97e7194817b789964ce7d56b96e19cb3":[57,0,48,2,2,0],
-"traffic__incident__parser__worker_8cpp_source.html":[57,0,48,2,2],
-"traffic__incident__parser__worker_8hpp.html":[57,0,48,0,0,1],
-"traffic__incident__parser__worker_8hpp_source.html":[57,0,48,0,0,1],
-"trajectory__executor_2src_2main_8cpp.html":[57,0,49,2,0],
-"trajectory__executor_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,49,2,0,0]
+"traffic__incident__parser__worker_8cpp_source.html":[57,0,48,2,2]
 };

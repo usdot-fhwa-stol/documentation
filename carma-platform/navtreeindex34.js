@@ -1,5 +1,9 @@
 var NAVTREEINDEX34 =
 {
+"route__following__plugin_8launch_8py_source.html":[57,0,40,1,0],
+"route__following__plugin__config_8hpp.html":[57,0,40,0,1],
+"route__following__plugin__config_8hpp_source.html":[57,0,40,0,1],
+"route__generator__worker_8cpp.html":[57,0,39,2,1],
 "route__generator__worker_8cpp_source.html":[57,0,39,2,1],
 "route__generator__worker_8hpp.html":[57,0,39,0,0,1],
 "route__generator__worker_8hpp_source.html":[57,0,39,0,0,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX34 =
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a3f55d992021d18a02478cbc07ef0bb25":[56,0,0,2,13],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a64b3bef57508c81e9403778f1415d3be":[55,0,0,3,5],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a64b3bef57508c81e9403778f1415d3be":[56,0,0,2,5],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a6dd3156876736b67368486db8f4fcc7f":[55,0,0,3,7],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a6dd3156876736b67368486db8f4fcc7f":[56,0,0,2,7],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a725f395f09130e206956a7deb30f6644":[56,0,0,2,4],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a725f395f09130e206956a7deb30f6644":[55,0,0,3,4],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a7573a5e45947f7d8fa3504161936bd19":[55,0,0,3,6]
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a6dd3156876736b67368486db8f4fcc7f":[55,0,0,3,7]
 };

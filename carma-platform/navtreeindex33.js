@@ -1,5 +1,9 @@
 var NAVTREEINDEX33 =
 {
+"platoon__manager__ihp_8h.html":[57,0,33,0,0,1],
+"platoon__manager__ihp_8h.html#a20539b6c81ea3b1868c7ca5d7c403daf":[57,0,33,0,0,1,4],
+"platoon__manager__ihp_8h.html#a20539b6c81ea3b1868c7ca5d7c403dafa0d2c16ab07ed24865f7ba27ad8a83dc0":[57,0,33,0,0,1,4,4],
+"platoon__manager__ihp_8h.html#a20539b6c81ea3b1868c7ca5d7c403dafa52c17c95a5cd81220db3fdd9181d43bd":[57,0,33,0,0,1,4,6],
 "platoon__manager__ihp_8h.html#a20539b6c81ea3b1868c7ca5d7c403dafa57f78e815f4fc2ac271a9fd85cd80ebc":[57,0,33,0,0,1,4,2],
 "platoon__manager__ihp_8h.html#a20539b6c81ea3b1868c7ca5d7c403dafa70d610aa504abb163caf9a5ee931d090":[57,0,33,0,0,1,4,1],
 "platoon__manager__ihp_8h.html#a20539b6c81ea3b1868c7ca5d7c403dafa7d32254f1798e4564e467d332c383112":[57,0,33,0,0,1,4,7],
@@ -245,9 +249,5 @@ var NAVTREEINDEX33 =
 "route__following__plugin_8hpp.html#a490076edf649de33d777ebd52faf68b6":[57,0,40,0,0,2],
 "route__following__plugin_8hpp_source.html":[57,0,40,0,0],
 "route__following__plugin_8launch_8py.html":[57,0,40,1,0],
-"route__following__plugin_8launch_8py.html#ab70de7252eb44577e3424feca49a8df3":[57,0,40,1,0,0],
-"route__following__plugin_8launch_8py_source.html":[57,0,40,1,0],
-"route__following__plugin__config_8hpp.html":[57,0,40,0,1],
-"route__following__plugin__config_8hpp_source.html":[57,0,40,0,1],
-"route__generator__worker_8cpp.html":[57,0,39,2,1]
+"route__following__plugin_8launch_8py.html#ab70de7252eb44577e3424feca49a8df3":[57,0,40,1,0,0]
 };

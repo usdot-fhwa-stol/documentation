@@ -32,10 +32,11 @@ var searchData=
   ['ismaneuverexpired_29',['isManeuverExpired',['../classplan__delegator_1_1PlanDelegator.html#a4548e8d6a52f762c4207099e9e571b06',1,'plan_delegator::PlanDelegator']]],
   ['ismaneuverplanvalid_30',['isManeuverPlanValid',['../classplan__delegator_1_1PlanDelegator.html#aa3e135f15af41704f2dc59dc8f40dee7',1,'plan_delegator::PlanDelegator']]],
   ['isspatwalltime_31',['isSpatWallTime',['../classcarma__wm_1_1WMListenerWorker.html#a3e4cb967434a9e31251d3575087731bf',1,'carma_wm::WMListenerWorker']]],
-  ['istrajectorylongenough_32',['isTrajectoryLongEnough',['../classplan__delegator_1_1PlanDelegator.html#a73072006eb567e8fa0e32b7c48ec56e6',1,'plan_delegator::PlanDelegator']]],
-  ['istrajectoryvalid_33',['isTrajectoryValid',['../classplan__delegator_1_1PlanDelegator.html#a33c99ac83fc07014db94d406e1e11da2',1,'plan_delegator::PlanDelegator']]],
-  ['isusingsimtime_34',['isUsingSimTime',['../classcarma__wm_1_1WMListenerWorker.html#aba49ce4302c5629cc030363e0f0d810d',1,'carma_wm::WMListenerWorker']]],
-  ['isvehicleneartargetplatoon_35',['isVehicleNearTargetPlatoon',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#aa76f916a1f30e25204262dcd17fcf4ac',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]],
-  ['isvehiclerightbehind_36',['isVehicleRightBehind',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#af86af042a60d31a38a0be515bd4e5f9b',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]],
-  ['isvehiclerightinfront_37',['isVehicleRightInFront',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a1f96a7552ba7778a703930c546a9816b',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]]
+  ['isstateallowedgreen_32',['isStateAllowedGreen',['../classlci__strategic__plugin_1_1LCIStrategicPlugin.html#ad636d50b0006a88e8739516f0d65ac52',1,'lci_strategic_plugin::LCIStrategicPlugin']]],
+  ['istrajectorylongenough_33',['isTrajectoryLongEnough',['../classplan__delegator_1_1PlanDelegator.html#a73072006eb567e8fa0e32b7c48ec56e6',1,'plan_delegator::PlanDelegator']]],
+  ['istrajectoryvalid_34',['isTrajectoryValid',['../classplan__delegator_1_1PlanDelegator.html#a33c99ac83fc07014db94d406e1e11da2',1,'plan_delegator::PlanDelegator']]],
+  ['isusingsimtime_35',['isUsingSimTime',['../classcarma__wm_1_1WMListenerWorker.html#aba49ce4302c5629cc030363e0f0d810d',1,'carma_wm::WMListenerWorker']]],
+  ['isvehicleneartargetplatoon_36',['isVehicleNearTargetPlatoon',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#aa76f916a1f30e25204262dcd17fcf4ac',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]],
+  ['isvehiclerightbehind_37',['isVehicleRightBehind',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#af86af042a60d31a38a0be515bd4e5f9b',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]],
+  ['isvehiclerightinfront_38',['isVehicleRightInFront',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a1f96a7552ba7778a703930c546a9816b',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]]
 ];

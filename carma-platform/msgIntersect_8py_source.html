@@ -95,60 +95,58 @@ $(document).ready(function(){initNavTree('msgIntersect_8py_source.html',''); ini
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> socket</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">from</span> time <span class="keyword">import</span> sleep</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">from</span> binascii <span class="keyword">import</span> unhexlify</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">from</span> binascii <span class="keyword">import</span> unhexlify</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespacemsgIntersect.html#aeaddbce1be2d8e5fb7a1f36a76ca2fd1">   17</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacemsgIntersect.html#aeaddbce1be2d8e5fb7a1f36a76ca2fd1">send</a>(msg, ip_send, port_send):</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    sk_send = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    sk_send.sendto(msg, (ip_send, port_send))</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment"># print(&quot;Sent: &quot;, msg)</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    sk_send.close()</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespacemsgIntersect.html#a1403c56f2531b38dcb55ba5f65451348">   23</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacemsgIntersect.html#a1403c56f2531b38dcb55ba5f65451348">listen</a>(ip_listen, port_listen):</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    listen_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    listen_socket.bind((ip_listen, port_listen))</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> listen_socket</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespacemsgIntersect.html#aeaddbce1be2d8e5fb7a1f36a76ca2fd1">   16</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacemsgIntersect.html#aeaddbce1be2d8e5fb7a1f36a76ca2fd1">send</a>(msg, ip_send, port_send):</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    sk_send = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    sk_send.sendto(msg, (ip_send, port_send))</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment"># print(&quot;Sent: &quot;, msg)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    sk_send.close()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespacemsgIntersect.html#a1403c56f2531b38dcb55ba5f65451348">   22</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacemsgIntersect.html#a1403c56f2531b38dcb55ba5f65451348">listen</a>(ip_listen, port_listen):</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    listen_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    listen_socket.bind((ip_listen, port_listen))</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> listen_socket</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespacemsgIntersect.html#aa2345adc1b3feaedb7306e5d32bbe40d">   30</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacemsgIntersect.html#aa2345adc1b3feaedb7306e5d32bbe40d">main</a>():</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment"># declarations</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    print(<span class="stringliteral">&#39;Starting intersect.&#39;</span>)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    ip_listen = <span class="stringliteral">&#39;127.0.0.1&#39;</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    ip_send = <span class="stringliteral">&#39;192.168.0.146&#39;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    port_listen = 1516  <span class="comment"># listen to Immediate Forward Plugin</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    port_send = 5398    <span class="comment"># send to CARMA listening_port</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    sk_listen = <a class="code hl_function" href="namespacemsgIntersect.html#a1403c56f2531b38dcb55ba5f65451348">listen</a>(ip_listen, port_listen)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    print(<span class="stringliteral">&quot;Waiting to receive data\n&quot;</span>)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    while(1):</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        data = sk_listen.recvfrom(10000)[0]</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        data = data.decode(<span class="stringliteral">&#39;ascii&#39;</span>)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="comment"># print(data)</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        idx = data.find(<span class="stringliteral">&quot;Payload=&quot;</span>)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        payload = data[idx+8:-1]</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        encoded = payload.encode(<span class="stringliteral">&#39;utf-8&#39;</span>)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        msgBytes = unhexlify(encoded)</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="comment"># send</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_function" href="namespacemsgIntersect.html#aeaddbce1be2d8e5fb7a1f36a76ca2fd1">send</a>(msgBytes, ip_send, port_send)</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        sleep(0.1)</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordflow">if</span> __name__==<span class="stringliteral">&quot;__main__&quot;</span>:</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_function" href="namespacemsgIntersect.html#aa2345adc1b3feaedb7306e5d32bbe40d">main</a>()</div>
-<div class="ttc" id="anamespacemsgIntersect_html_a1403c56f2531b38dcb55ba5f65451348"><div class="ttname"><a href="namespacemsgIntersect.html#a1403c56f2531b38dcb55ba5f65451348">msgIntersect.listen</a></div><div class="ttdeci">def listen(ip_listen, port_listen)</div><div class="ttdef"><b>Definition:</b> <a href="msgIntersect_8py_source.html#l00023">msgIntersect.py:23</a></div></div>
-<div class="ttc" id="anamespacemsgIntersect_html_aa2345adc1b3feaedb7306e5d32bbe40d"><div class="ttname"><a href="namespacemsgIntersect.html#aa2345adc1b3feaedb7306e5d32bbe40d">msgIntersect.main</a></div><div class="ttdeci">def main()</div><div class="ttdef"><b>Definition:</b> <a href="msgIntersect_8py_source.html#l00030">msgIntersect.py:30</a></div></div>
-<div class="ttc" id="anamespacemsgIntersect_html_aeaddbce1be2d8e5fb7a1f36a76ca2fd1"><div class="ttname"><a href="namespacemsgIntersect.html#aeaddbce1be2d8e5fb7a1f36a76ca2fd1">msgIntersect.send</a></div><div class="ttdeci">def send(msg, ip_send, port_send)</div><div class="ttdef"><b>Definition:</b> <a href="msgIntersect_8py_source.html#l00017">msgIntersect.py:17</a></div></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespacemsgIntersect.html#aa2345adc1b3feaedb7306e5d32bbe40d">   29</a></span><span class="keyword">def </span><a class="code hl_function" href="namespacemsgIntersect.html#aa2345adc1b3feaedb7306e5d32bbe40d">main</a>():</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment"># declarations</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    print(<span class="stringliteral">&#39;Starting intersect.&#39;</span>)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    ip_listen = <span class="stringliteral">&#39;127.0.0.1&#39;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    ip_send = <span class="stringliteral">&#39;192.168.0.146&#39;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    port_listen = 1516  <span class="comment"># listen to Immediate Forward Plugin</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    port_send = 5398    <span class="comment"># send to CARMA listening_port</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    sk_listen = <a class="code hl_function" href="namespacemsgIntersect.html#a1403c56f2531b38dcb55ba5f65451348">listen</a>(ip_listen, port_listen)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    print(<span class="stringliteral">&quot;Waiting to receive data\n&quot;</span>)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    while(1):</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        data = sk_listen.recvfrom(10000)[0]</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        data = data.decode(<span class="stringliteral">&#39;ascii&#39;</span>)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="comment"># print(data)</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        idx = data.find(<span class="stringliteral">&quot;Payload=&quot;</span>)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        payload = data[idx+8:-1]</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        encoded = payload.encode(<span class="stringliteral">&#39;utf-8&#39;</span>)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        msgBytes = unhexlify(encoded)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="comment"># send</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_function" href="namespacemsgIntersect.html#aeaddbce1be2d8e5fb7a1f36a76ca2fd1">send</a>(msgBytes, ip_send, port_send)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keywordflow">if</span> __name__==<span class="stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_function" href="namespacemsgIntersect.html#aa2345adc1b3feaedb7306e5d32bbe40d">main</a>()</div>
+<div class="ttc" id="anamespacemsgIntersect_html_a1403c56f2531b38dcb55ba5f65451348"><div class="ttname"><a href="namespacemsgIntersect.html#a1403c56f2531b38dcb55ba5f65451348">msgIntersect.listen</a></div><div class="ttdeci">def listen(ip_listen, port_listen)</div><div class="ttdef"><b>Definition:</b> <a href="msgIntersect_8py_source.html#l00022">msgIntersect.py:22</a></div></div>
+<div class="ttc" id="anamespacemsgIntersect_html_aa2345adc1b3feaedb7306e5d32bbe40d"><div class="ttname"><a href="namespacemsgIntersect.html#aa2345adc1b3feaedb7306e5d32bbe40d">msgIntersect.main</a></div><div class="ttdeci">def main()</div><div class="ttdef"><b>Definition:</b> <a href="msgIntersect_8py_source.html#l00029">msgIntersect.py:29</a></div></div>
+<div class="ttc" id="anamespacemsgIntersect_html_aeaddbce1be2d8e5fb7a1f36a76ca2fd1"><div class="ttname"><a href="namespacemsgIntersect.html#aeaddbce1be2d8e5fb7a1f36a76ca2fd1">msgIntersect.send</a></div><div class="ttdeci">def send(msg, ip_send, port_send)</div><div class="ttdef"><b>Definition:</b> <a href="msgIntersect_8py_source.html#l00016">msgIntersect.py:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_4a8c277c4b1d15e69887f2f48f6ac8d3.html">engineering_tools</a></li><li class="navelem"><a class="el" href="msgIntersect_8py.html">msgIntersect.py</a></li>
-    <li class="footer">Generated on Wed Nov 20 2024 20:32:17 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Nov 22 2024 16:28:22 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

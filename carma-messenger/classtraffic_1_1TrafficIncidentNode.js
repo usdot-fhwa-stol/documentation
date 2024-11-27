@@ -8,6 +8,7 @@ var classtraffic_1_1TrafficIncidentNode =
     [ "startTrafficBroadcastCallback", "classtraffic_1_1TrafficIncidentNode.html#aa886b556d422f2d59327f2c551a6eafd", null ],
     [ "stopTrafficBroadcastCallback", "classtraffic_1_1TrafficIncidentNode.html#a862c1619952afec37836cd4ac0adb186", null ],
     [ "down_track_", "classtraffic_1_1TrafficIncidentNode.html#a7bb0eae6cb9c62406aeb51486b5823d0", null ],
+    [ "epsilon_", "classtraffic_1_1TrafficIncidentNode.html#a0765a9fbda2dd361024c52abc41aaee5", null ],
     [ "event_reason_", "classtraffic_1_1TrafficIncidentNode.html#a12f744430a4368c62dc02378e72e862d", null ],
     [ "event_type_", "classtraffic_1_1TrafficIncidentNode.html#a6dea1c7c7ccfabbe4547030ed175de1f", null ],
     [ "min_gap_", "classtraffic_1_1TrafficIncidentNode.html#ab2f6c0b6344d17f2844233bf5aaf5dc7", null ],

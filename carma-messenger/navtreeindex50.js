@@ -1,5 +1,7 @@
 var NAVTREEINDEX50 =
 {
+"structVehicleStatus_1_1VehicleStatus____weatherReport.html#ac5aeb6a8f71133cebcc9fec7c8c6a06d":[9,0,294,4,3],
+"structVehicleStatus_1_1VehicleStatus____weatherReport.html#aeb7960a877cccc667e1f03a2af7455d6":[9,0,294,4,5],
 "structVehicleToLanePosition.html":[9,0,297],
 "structVehicleToLanePosition.html#a1fda4930821490e463ea55f8cde04663":[9,0,297,0],
 "structVehicleToLanePosition.html#a33817cf9c2e2cdf731175b70bf59523c":[9,0,297,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX50 =
 "structenc__dyn__arg.html":[9,0,86],
 "structenc__dyn__arg.html#a4c8686de2dc51032e9786fe3e0312df4":[9,0,86,1],
 "structenc__dyn__arg.html#ab684602f92786b0b69fc50f368a436ab":[9,0,86,0],
-"structenc__dyn__arg.html#af0e4156eb79f3fd0cb8a129d28bb3c59":[9,0,86,2],
-"traffic__incident_2src_2main_8cpp.html":[10,0,1,4,2,0],
-"traffic__incident_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[10,0,1,4,2,0,0]
+"structenc__dyn__arg.html#af0e4156eb79f3fd0cb8a129d28bb3c59":[9,0,86,2]
 };

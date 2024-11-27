@@ -1,5 +1,7 @@
 var NAVTREEINDEX44 =
 {
+"structConnectionManeuverAssist__addGrpC.html#a4adb1c43f67cae0405fade33f96612c6":[9,0,63,1],
+"structConnectionManeuverAssist__addGrpC.html#ae62418896df028c71e4658d1def24e87":[9,0,63,0],
 "structConnectsToList.html":[9,0,64],
 "structConnectsToList.html#a0b196d741902436143c7428584b9b15e":[9,0,64,0],
 "structConnectsToList.html#afa1418992848f8bb3ad8ce21197e9a23":[9,0,64,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX44 =
 "structITIScodesAndText.html":[9,0,106],
 "structITIScodesAndText.html#aae1e410706733a4a044c354133023f38":[9,0,106,0],
 "structITIScodesAndText.html#aeb775c4f3021b2c25ed7675334300a55":[9,0,106,1],
-"structITIScodesAndText____Member.html":[9,0,107],
-"structITIScodesAndText____Member.html#a2bd9036f83d27adeff0813e1a734023c":[9,0,107,1],
-"structITIScodesAndText____Member.html#a4f59bbae850c3205cf24b97988392539":[9,0,107,2]
+"structITIScodesAndText____Member.html":[9,0,107]
 };

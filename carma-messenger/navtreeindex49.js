@@ -1,5 +1,7 @@
 var NAVTREEINDEX49 =
 {
+"structTrafficControlMessageV01.html#a32d0f9c19d02ef4362f94af9e4b0236a":[9,0,271,5],
+"structTrafficControlMessageV01.html#a416c237dde0a7046ed4fe7cbccaa95b9":[9,0,271,3],
 "structTrafficControlMessageV01.html#a4805fbd2a6464787624689c6bfdbad5d":[9,0,271,0],
 "structTrafficControlMessageV01.html#a51b7220b596ea6aaf7c2d60983a9d055":[9,0,271,6],
 "structTrafficControlMessageV01.html#a5ea5cea1c0107cc2198e1b8c842dab9c":[9,0,271,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX49 =
 "structVehicleStatus_1_1VehicleStatus____weatherReport.html#a22ca00083546d8cdcd2eface2f6297d1":[9,0,294,4,0],
 "structVehicleStatus_1_1VehicleStatus____weatherReport.html#a2d75252576ee34cabd0901cf44a8a6ff":[9,0,294,4,2],
 "structVehicleStatus_1_1VehicleStatus____weatherReport.html#a476b4dd11d593bede19dd64470435695":[9,0,294,4,1],
-"structVehicleStatus_1_1VehicleStatus____weatherReport.html#a6fb00aa26c4a510d958c5f9c6d201d1f":[9,0,294,4,4],
-"structVehicleStatus_1_1VehicleStatus____weatherReport.html#ac5aeb6a8f71133cebcc9fec7c8c6a06d":[9,0,294,4,3],
-"structVehicleStatus_1_1VehicleStatus____weatherReport.html#aeb7960a877cccc667e1f03a2af7455d6":[9,0,294,4,5]
+"structVehicleStatus_1_1VehicleStatus____weatherReport.html#a6fb00aa26c4a510d958c5f9c6d201d1f":[9,0,294,4,4]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX45 =
 {
+"structITIScodesAndText____Member.html#a2bd9036f83d27adeff0813e1a734023c":[9,0,107,1],
+"structITIScodesAndText____Member.html#a4f59bbae850c3205cf24b97988392539":[9,0,107,2],
 "structITIScodesAndText____Member_1_1ITIScodesAndText____Member____item.html":[9,0,107,0],
 "structITIScodesAndText____Member_1_1ITIScodesAndText____Member____item.html#a3457b25b7c2f22703bb60319c7ddc5c6":[9,0,107,0,2],
 "structITIScodesAndText____Member_1_1ITIScodesAndText____Member____item.html#aaef569b331a8358fef9101c471d39d9c":[9,0,107,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX45 =
 "structNodeAttributeSetLL_1_1NodeAttributeSetLL____regional.html#aafe83d2e1e612e403379f17056acb49d":[9,0,153,0,0],
 "structNodeAttributeSetXY.html":[9,0,154],
 "structNodeAttributeSetXY.html#a182dde36c5fe2c986f7dd8324ac7164d":[9,0,154,3],
-"structNodeAttributeSetXY.html#a19f1870b2a91fecbc095a8704455cf3b":[9,0,154,8],
-"structNodeAttributeSetXY.html#a61fe8dd136f8c9b3b155aca8e7e6aae6":[9,0,154,6],
-"structNodeAttributeSetXY.html#a6f94fa99f827152c4e36f5ff78f6485f":[9,0,154,1]
+"structNodeAttributeSetXY.html#a19f1870b2a91fecbc095a8704455cf3b":[9,0,154,8]
 };

@@ -1,5 +1,13 @@
 var NAVTREEINDEX36 =
 {
+"structcarma__cooperative__perception_1_1Heading.html#a3f9aa6bee0ea794042394086afdcc63e":[55,0,12,5,0],
+"structcarma__cooperative__perception_1_1Heading.html#a489e9438fe854b7b4570a5258e40b8bc":[56,0,7,5,1],
+"structcarma__cooperative__perception_1_1Heading.html#a489e9438fe854b7b4570a5258e40b8bc":[55,0,12,5,1],
+"structcarma__cooperative__perception_1_1Heading.html#aa120cb648b91e89c6d531161b26ee24c":[56,0,7,5,2],
+"structcarma__cooperative__perception_1_1Heading.html#aa120cb648b91e89c6d531161b26ee24c":[55,0,12,5,2],
+"structcarma__cooperative__perception_1_1MapCoordinate.html":[56,0,7,7],
+"structcarma__cooperative__perception_1_1MapCoordinate.html":[55,0,12,7],
+"structcarma__cooperative__perception_1_1MapCoordinate.html#a70ca6b501f497dba865ea4b3333b04da":[56,0,7,7,0],
 "structcarma__cooperative__perception_1_1MapCoordinate.html#a70ca6b501f497dba865ea4b3333b04da":[55,0,12,7,0],
 "structcarma__cooperative__perception_1_1MapCoordinate.html#a75d58f8b2f07906b853d210ba9c8ea18":[56,0,7,7,1],
 "structcarma__cooperative__perception_1_1MapCoordinate.html#a75d58f8b2f07906b853d210ba9c8ea18":[55,0,12,7,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX36 =
 "structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html":[56,0,12,2],
 "structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#a124416a8f5f43c0bdc4d2e38668a5878":[56,0,12,2,1],
 "structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#a124416a8f5f43c0bdc4d2e38668a5878":[55,0,19,2,1],
-"structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#a126d29d61e81bad979b6d921e0b8c743":[55,0,19,2,2],
-"structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#a126d29d61e81bad979b6d921e0b8c743":[56,0,12,2,2],
-"structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#a37eb4e705b9762c623befe7352f43aee":[55,0,19,2,3],
-"structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#a37eb4e705b9762c623befe7352f43aee":[56,0,12,2,3],
-"structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#aad9cd3fd038e63ad9c1db341df971d70":[55,0,19,2,4],
-"structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#aad9cd3fd038e63ad9c1db341df971d70":[56,0,12,2,4],
-"structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#afa8579ffe0f7f10358b9ca5df5352a4a":[55,0,19,2,0],
-"structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#afa8579ffe0f7f10358b9ca5df5352a4a":[56,0,12,2,0],
-"structframe__transformer_1_1Config.html":[55,0,27,0]
+"structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html#a126d29d61e81bad979b6d921e0b8c743":[55,0,19,2,2]
 };

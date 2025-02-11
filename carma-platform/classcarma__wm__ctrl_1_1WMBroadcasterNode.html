@@ -101,7 +101,7 @@ Inheritance diagram for carma_wm_ctrl::WMBroadcasterNode:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm__ctrl_1_1WMBroadcasterNode__inherit__graph.png" border="0" usemap="#acarma__wm__ctrl_1_1WMBroadcasterNode_inherit__map" alt="Inheritance graph"/></div>
 <map name="acarma__wm__ctrl_1_1WMBroadcasterNode_inherit__map" id="acarma__wm__ctrl_1_1WMBroadcasterNode_inherit__map">
-<area shape="rect" title="Node which provies exposes map publication and carma_wm update logic." alt="" coords="9,131,250,604"/>
+<area shape="rect" title="Node which provies exposes map publication and carma_wm update logic." alt="" coords="9,131,250,619"/>
 <area shape="rect" title=" " alt="" coords="5,5,253,83"/>
 </map>
 </div>
@@ -110,7 +110,7 @@ Collaboration diagram for carma_wm_ctrl::WMBroadcasterNode:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm__ctrl_1_1WMBroadcasterNode__coll__graph.png" border="0" usemap="#acarma__wm__ctrl_1_1WMBroadcasterNode_coll__map" alt="Collaboration graph"/></div>
 <map name="acarma__wm__ctrl_1_1WMBroadcasterNode_coll__map" id="acarma__wm__ctrl_1_1WMBroadcasterNode_coll__map">
-<area shape="rect" title="Node which provies exposes map publication and carma_wm update logic." alt="" coords="1801,373,2042,583"/>
+<area shape="rect" title="Node which provies exposes map publication and carma_wm update logic." alt="" coords="1801,388,2042,597"/>
 <area shape="rect" title=" " alt="" coords="5,204,253,281"/>
 <area shape="rect" href="structcarma__wm__ctrl_1_1Config.html" title="Config struct." alt="" coords="277,204,430,281"/>
 <area shape="rect" title=" " alt="" coords="71,5,110,83"/>
@@ -183,6 +183,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a14a79b9084de8925961bd85f0afba738"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e18bc782c6012c132fa33dfd0f21097"><td class="memItemLeft" align="right" valign="top">carma_ros2_utils::PubPtr&lt; visualization_msgs::msg::MarkerArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a5e18bc782c6012c132fa33dfd0f21097">tcm_visualizer_pub_</a></td></tr>
 <tr class="separator:a5e18bc782c6012c132fa33dfd0f21097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ad5cd33f2a41b03b67b04bc46fc5097"><td class="memItemLeft" align="right" valign="top">carma_ros2_utils::PubPtr&lt; visualization_msgs::msg::MarkerArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a2ad5cd33f2a41b03b67b04bc46fc5097">j2735_map_msg_visualizer_pub_</a></td></tr>
+<tr class="separator:a2ad5cd33f2a41b03b67b04bc46fc5097"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acaf64880bad6b9ff6f470567fadc15d2"><td class="memItemLeft" align="right" valign="top">carma_ros2_utils::PubPtr&lt; carma_v2x_msgs::msg::TrafficControlRequestPolygon &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#acaf64880bad6b9ff6f470567fadc15d2">tcr_visualizer_pub_</a></td></tr>
 <tr class="separator:acaf64880bad6b9ff6f470567fadc15d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd07f9943487603c353cbe2f3b445287"><td class="memItemLeft" align="right" valign="top">carma_ros2_utils::PubPtr&lt; std_msgs::msg::Int32MultiArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#abd07f9943487603c353cbe2f3b445287">upcoming_intersection_ids_pub_</a></td></tr>
@@ -287,58 +289,58 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00153">153</a> of file <a class="el" href="WMBroadcasterNode_8cpp_source.html">WMBroadcasterNode.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  154</span>{</div>
-<div class="line"><span class="lineno">  155</span>  <span class="comment">// Timer setup</span></div>
-<div class="line"><span class="lineno">  156</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a7b965f9becd30a20f026087fc67a3114">timer_</a> = create_timer(get_clock(),</div>
-<div class="line"><span class="lineno">  157</span>                          std::chrono::milliseconds((<span class="keywordtype">int</span>)(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#ad1e80d7ff8c52ca1d452f8956fe4c965">config_</a>.<a class="code hl_variable" href="structcarma__wm__ctrl_1_1Config.html#af123d6b15811d2cd5df9105fa8e4557b">traffic_control_request_period</a> * 1000)),</div>
-<div class="line"><span class="lineno">  158</span>                          std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#ac8b518fb45261e2fb262e4c20ef67077">WMBroadcasterNode::spin_callback</a>, <span class="keyword">this</span>));</div>
-<div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  161</span>  <span class="comment">//SUBSCRIBERS</span></div>
-<div class="line"><span class="lineno">  163</span><span class="comment"></span> </div>
-<div class="line"><span class="lineno">  164</span>  <span class="comment">// Base Map Sub</span></div>
-<div class="line"><span class="lineno">  165</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#af0ee5280ac46e273497644959a12ec32">base_map_sub_</a> = create_subscription&lt;autoware_lanelet2_msgs::msg::MapBin&gt;(<span class="stringliteral">&quot;base_map&quot;</span>, 1, std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a243d8d82a364aad6270e38f0202a68cb">WMBroadcaster::baseMapCallback</a>, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>.get(), std_ph::_1));</div>
-<div class="line"><span class="lineno">  166</span> </div>
-<div class="line"><span class="lineno">  167</span>  <span class="comment">// Base Map Georeference Sub</span></div>
-<div class="line"><span class="lineno">  168</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a408a78e2ae6937430535eab06b31d263">georef_sub_</a> = create_subscription&lt;std_msgs::msg::String&gt;(<span class="stringliteral">&quot;georeference&quot;</span>, 1, std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#af400fb26c47adae60502bc64c600b298">WMBroadcaster::geoReferenceCallback</a>, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>.get(), std_ph::_1));</div>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00156">156</a> of file <a class="el" href="WMBroadcasterNode_8cpp_source.html">WMBroadcasterNode.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  157</span>{</div>
+<div class="line"><span class="lineno">  158</span>  <span class="comment">// Timer setup</span></div>
+<div class="line"><span class="lineno">  159</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a7b965f9becd30a20f026087fc67a3114">timer_</a> = create_timer(get_clock(),</div>
+<div class="line"><span class="lineno">  160</span>                          std::chrono::milliseconds((<span class="keywordtype">int</span>)(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#ad1e80d7ff8c52ca1d452f8956fe4c965">config_</a>.<a class="code hl_variable" href="structcarma__wm__ctrl_1_1Config.html#af123d6b15811d2cd5df9105fa8e4557b">traffic_control_request_period</a> * 1000)),</div>
+<div class="line"><span class="lineno">  161</span>                          std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#ac8b518fb45261e2fb262e4c20ef67077">WMBroadcasterNode::spin_callback</a>, <span class="keyword">this</span>));</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  164</span>  <span class="comment">//SUBSCRIBERS</span></div>
+<div class="line"><span class="lineno">  166</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  167</span>  <span class="comment">// Base Map Sub</span></div>
+<div class="line"><span class="lineno">  168</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#af0ee5280ac46e273497644959a12ec32">base_map_sub_</a> = create_subscription&lt;autoware_lanelet2_msgs::msg::MapBin&gt;(<span class="stringliteral">&quot;base_map&quot;</span>, 1, std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a243d8d82a364aad6270e38f0202a68cb">WMBroadcaster::baseMapCallback</a>, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>.get(), std_ph::_1));</div>
 <div class="line"><span class="lineno">  169</span> </div>
-<div class="line"><span class="lineno">  170</span>  <span class="comment">// Geofence Sub</span></div>
-<div class="line"><span class="lineno">  171</span>  rclcpp::SubscriptionOptions geofence_sub_options;</div>
-<div class="line"><span class="lineno">  172</span>  <span class="comment">// NOTE: Currently, intra-process comms must be disabled for subscribers that are transient_local: https://github.com/ros2/rclcpp/issues/1753</span></div>
-<div class="line"><span class="lineno">  173</span>  geofence_sub_options.use_intra_process_comm = rclcpp::IntraProcessSetting::Disable;</div>
-<div class="line"><span class="lineno">  174</span>  <span class="keyword">auto</span> sub_qos_transient_local = rclcpp::QoS(rclcpp::KeepAll());</div>
-<div class="line"><span class="lineno">  175</span>  sub_qos_transient_local.transient_local();</div>
-<div class="line"><span class="lineno">  176</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a4ff63d96f3572010ec8f9892bd4f40df">geofence_sub_</a> = create_subscription&lt;carma_v2x_msgs::msg::TrafficControlMessage&gt;(<span class="stringliteral">&quot;geofence&quot;</span>, sub_qos_transient_local, std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a63a919c2cf6736a80fa29a706b020330">WMBroadcaster::geofenceCallback</a>, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>.get(), std_ph::_1), geofence_sub_options);</div>
-<div class="line"><span class="lineno">  177</span> </div>
-<div class="line"><span class="lineno">  178</span>  <span class="comment">// External Map Msg Sub</span></div>
-<div class="line"><span class="lineno">  179</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a4455b0267333e0d07139cc41a3f79372">incoming_map_sub_</a> = create_subscription&lt;carma_v2x_msgs::msg::MapData&gt;(<span class="stringliteral">&quot;incoming_map&quot;</span>, 20, std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9d4ee6959ff334d9f4f16864e5bd0cfe">WMBroadcaster::externalMapMsgCallback</a>, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>.get(), std_ph::_1));</div>
+<div class="line"><span class="lineno">  170</span>  <span class="comment">// Base Map Georeference Sub</span></div>
+<div class="line"><span class="lineno">  171</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a408a78e2ae6937430535eab06b31d263">georef_sub_</a> = create_subscription&lt;std_msgs::msg::String&gt;(<span class="stringliteral">&quot;georeference&quot;</span>, 1, std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#af400fb26c47adae60502bc64c600b298">WMBroadcaster::geoReferenceCallback</a>, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>.get(), std_ph::_1));</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>  <span class="comment">// Geofence Sub</span></div>
+<div class="line"><span class="lineno">  174</span>  rclcpp::SubscriptionOptions geofence_sub_options;</div>
+<div class="line"><span class="lineno">  175</span>  <span class="comment">// NOTE: Currently, intra-process comms must be disabled for subscribers that are transient_local: https://github.com/ros2/rclcpp/issues/1753</span></div>
+<div class="line"><span class="lineno">  176</span>  geofence_sub_options.use_intra_process_comm = rclcpp::IntraProcessSetting::Disable;</div>
+<div class="line"><span class="lineno">  177</span>  <span class="keyword">auto</span> sub_qos_transient_local = rclcpp::QoS(rclcpp::KeepAll());</div>
+<div class="line"><span class="lineno">  178</span>  sub_qos_transient_local.transient_local();</div>
+<div class="line"><span class="lineno">  179</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a4ff63d96f3572010ec8f9892bd4f40df">geofence_sub_</a> = create_subscription&lt;carma_v2x_msgs::msg::TrafficControlMessage&gt;(<span class="stringliteral">&quot;geofence&quot;</span>, sub_qos_transient_local, std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a63a919c2cf6736a80fa29a706b020330">WMBroadcaster::geofenceCallback</a>, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>.get(), std_ph::_1), geofence_sub_options);</div>
 <div class="line"><span class="lineno">  180</span> </div>
-<div class="line"><span class="lineno">  181</span>  <span class="comment">//Route Message Sub</span></div>
-<div class="line"><span class="lineno">  182</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a947e6739ad3d7cc532ea936d1804436b">route_callmsg_sub_</a> = create_subscription&lt;carma_planning_msgs::msg::Route&gt;(<span class="stringliteral">&quot;route&quot;</span>, 1, std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a7efa8028648e4ed8b847c97e952b07d1">WMBroadcaster::routeCallbackMessage</a>, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>.get(), std_ph::_1));</div>
+<div class="line"><span class="lineno">  181</span>  <span class="comment">// External Map Msg Sub</span></div>
+<div class="line"><span class="lineno">  182</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a4455b0267333e0d07139cc41a3f79372">incoming_map_sub_</a> = create_subscription&lt;carma_v2x_msgs::msg::MapData&gt;(<span class="stringliteral">&quot;incoming_map&quot;</span>, 20, std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9d4ee6959ff334d9f4f16864e5bd0cfe">WMBroadcaster::externalMapMsgCallback</a>, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>.get(), std_ph::_1));</div>
 <div class="line"><span class="lineno">  183</span> </div>
-<div class="line"><span class="lineno">  184</span>  <span class="comment">//Current Location Sub</span></div>
-<div class="line"><span class="lineno">  185</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a067ae400c26d255a25d5c8f5bcb67f58">curr_location_sub_</a> = create_subscription&lt;geometry_msgs::msg::PoseStamped&gt;(<span class="stringliteral">&quot;current_pose&quot;</span>, 1, std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a7269b37f5fcdbc502122c980fa814387">WMBroadcaster::currentLocationCallback</a>, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>.get(), std_ph::_1));</div>
+<div class="line"><span class="lineno">  184</span>  <span class="comment">//Route Message Sub</span></div>
+<div class="line"><span class="lineno">  185</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a947e6739ad3d7cc532ea936d1804436b">route_callmsg_sub_</a> = create_subscription&lt;carma_planning_msgs::msg::Route&gt;(<span class="stringliteral">&quot;route&quot;</span>, 1, std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a7efa8028648e4ed8b847c97e952b07d1">WMBroadcaster::routeCallbackMessage</a>, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>.get(), std_ph::_1));</div>
 <div class="line"><span class="lineno">  186</span> </div>
-<div class="line"><span class="lineno">  187</span> </div>
-<div class="line"><span class="lineno">  188</span>  <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
-<div class="line"><span class="lineno">  189</span>}</div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a067ae400c26d255a25d5c8f5bcb67f58"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a067ae400c26d255a25d5c8f5bcb67f58">carma_wm_ctrl::WMBroadcasterNode::curr_location_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; geometry_msgs::msg::PoseStamped &gt; curr_location_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00125">WMBroadcasterNode.hpp:125</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a408a78e2ae6937430535eab06b31d263"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a408a78e2ae6937430535eab06b31d263">carma_wm_ctrl::WMBroadcasterNode::georef_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; std_msgs::msg::String &gt; georef_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00122">WMBroadcasterNode.hpp:122</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a4455b0267333e0d07139cc41a3f79372"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a4455b0267333e0d07139cc41a3f79372">carma_wm_ctrl::WMBroadcasterNode::incoming_map_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; carma_v2x_msgs::msg::MapData &gt; incoming_map_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00124">WMBroadcasterNode.hpp:124</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a4ff63d96f3572010ec8f9892bd4f40df"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a4ff63d96f3572010ec8f9892bd4f40df">carma_wm_ctrl::WMBroadcasterNode::geofence_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; carma_v2x_msgs::msg::TrafficControlMessage &gt; geofence_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00123">WMBroadcasterNode.hpp:123</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a7b965f9becd30a20f026087fc67a3114"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a7b965f9becd30a20f026087fc67a3114">carma_wm_ctrl::WMBroadcasterNode::timer_</a></div><div class="ttdeci">rclcpp::TimerBase::SharedPtr timer_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00128">WMBroadcasterNode.hpp:128</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a947e6739ad3d7cc532ea936d1804436b"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a947e6739ad3d7cc532ea936d1804436b">carma_wm_ctrl::WMBroadcasterNode::route_callmsg_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; carma_planning_msgs::msg::Route &gt; route_callmsg_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00121">WMBroadcasterNode.hpp:121</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_ac8b518fb45261e2fb262e4c20ef67077"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#ac8b518fb45261e2fb262e4c20ef67077">carma_wm_ctrl::WMBroadcasterNode::spin_callback</a></div><div class="ttdeci">bool spin_callback()</div><div class="ttdoc">Spin callback, which will be called frequently based on the configured spin rate.</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8cpp_source.html#l00191">WMBroadcasterNode.cpp:191</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_adb20de611701e525baa49d58646c538a"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">carma_wm_ctrl::WMBroadcasterNode::wmb_</a></div><div class="ttdeci">std::unique_ptr&lt; carma_wm_ctrl::WMBroadcaster &gt; wmb_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00131">WMBroadcasterNode.hpp:131</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_af0ee5280ac46e273497644959a12ec32"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#af0ee5280ac46e273497644959a12ec32">carma_wm_ctrl::WMBroadcasterNode::base_map_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; autoware_lanelet2_msgs::msg::MapBin &gt; base_map_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00120">WMBroadcasterNode.hpp:120</a></div></div>
+<div class="line"><span class="lineno">  187</span>  <span class="comment">//Current Location Sub</span></div>
+<div class="line"><span class="lineno">  188</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a067ae400c26d255a25d5c8f5bcb67f58">curr_location_sub_</a> = create_subscription&lt;geometry_msgs::msg::PoseStamped&gt;(<span class="stringliteral">&quot;current_pose&quot;</span>, 1, std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a7269b37f5fcdbc502122c980fa814387">WMBroadcaster::currentLocationCallback</a>, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>.get(), std_ph::_1));</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>  <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
+<div class="line"><span class="lineno">  192</span>}</div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a067ae400c26d255a25d5c8f5bcb67f58"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a067ae400c26d255a25d5c8f5bcb67f58">carma_wm_ctrl::WMBroadcasterNode::curr_location_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; geometry_msgs::msg::PoseStamped &gt; curr_location_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00126">WMBroadcasterNode.hpp:126</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a408a78e2ae6937430535eab06b31d263"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a408a78e2ae6937430535eab06b31d263">carma_wm_ctrl::WMBroadcasterNode::georef_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; std_msgs::msg::String &gt; georef_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00123">WMBroadcasterNode.hpp:123</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a4455b0267333e0d07139cc41a3f79372"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a4455b0267333e0d07139cc41a3f79372">carma_wm_ctrl::WMBroadcasterNode::incoming_map_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; carma_v2x_msgs::msg::MapData &gt; incoming_map_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00125">WMBroadcasterNode.hpp:125</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a4ff63d96f3572010ec8f9892bd4f40df"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a4ff63d96f3572010ec8f9892bd4f40df">carma_wm_ctrl::WMBroadcasterNode::geofence_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; carma_v2x_msgs::msg::TrafficControlMessage &gt; geofence_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00124">WMBroadcasterNode.hpp:124</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a7b965f9becd30a20f026087fc67a3114"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a7b965f9becd30a20f026087fc67a3114">carma_wm_ctrl::WMBroadcasterNode::timer_</a></div><div class="ttdeci">rclcpp::TimerBase::SharedPtr timer_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00129">WMBroadcasterNode.hpp:129</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a947e6739ad3d7cc532ea936d1804436b"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a947e6739ad3d7cc532ea936d1804436b">carma_wm_ctrl::WMBroadcasterNode::route_callmsg_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; carma_planning_msgs::msg::Route &gt; route_callmsg_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00122">WMBroadcasterNode.hpp:122</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_ac8b518fb45261e2fb262e4c20ef67077"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#ac8b518fb45261e2fb262e4c20ef67077">carma_wm_ctrl::WMBroadcasterNode::spin_callback</a></div><div class="ttdeci">bool spin_callback()</div><div class="ttdoc">Spin callback, which will be called frequently based on the configured spin rate.</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8cpp_source.html#l00194">WMBroadcasterNode.cpp:194</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_adb20de611701e525baa49d58646c538a"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">carma_wm_ctrl::WMBroadcasterNode::wmb_</a></div><div class="ttdeci">std::unique_ptr&lt; carma_wm_ctrl::WMBroadcaster &gt; wmb_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00132">WMBroadcasterNode.hpp:132</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_af0ee5280ac46e273497644959a12ec32"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#af0ee5280ac46e273497644959a12ec32">carma_wm_ctrl::WMBroadcasterNode::base_map_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; autoware_lanelet2_msgs::msg::MapBin &gt; base_map_sub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00121">WMBroadcasterNode.hpp:121</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a243d8d82a364aad6270e38f0202a68cb"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a243d8d82a364aad6270e38f0202a68cb">carma_wm_ctrl::WMBroadcaster::baseMapCallback</a></div><div class="ttdeci">void baseMapCallback(autoware_lanelet2_msgs::msg::MapBin::UniquePtr map_msg)</div><div class="ttdoc">Callback to set the base map when it has been loaded.</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l00056">WMBroadcaster.cpp:56</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a63a919c2cf6736a80fa29a706b020330"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a63a919c2cf6736a80fa29a706b020330">carma_wm_ctrl::WMBroadcaster::geofenceCallback</a></div><div class="ttdeci">void geofenceCallback(carma_v2x_msgs::msg::TrafficControlMessage::UniquePtr geofence_msg)</div><div class="ttdoc">Callback to add a geofence to the map. Currently only supports version 1 TrafficControlMessage.</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l01077">WMBroadcaster.cpp:1077</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a7269b37f5fcdbc502122c980fa814387"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a7269b37f5fcdbc502122c980fa814387">carma_wm_ctrl::WMBroadcaster::currentLocationCallback</a></div><div class="ttdeci">void currentLocationCallback(geometry_msgs::msg::PoseStamped::UniquePtr current_pos)</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l01946">WMBroadcaster.cpp:1946</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a7efa8028648e4ed8b847c97e952b07d1"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a7efa8028648e4ed8b847c97e952b07d1">carma_wm_ctrl::WMBroadcaster::routeCallbackMessage</a></div><div class="ttdeci">void routeCallbackMessage(carma_planning_msgs::msg::Route::UniquePtr route_msg)</div><div class="ttdoc">Calls controlRequestFromRoute() and publishes the TrafficControlRequest Message returned after the co...</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l01632">WMBroadcaster.cpp:1632</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a9d4ee6959ff334d9f4f16864e5bd0cfe"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9d4ee6959ff334d9f4f16864e5bd0cfe">carma_wm_ctrl::WMBroadcaster::externalMapMsgCallback</a></div><div class="ttdeci">void externalMapMsgCallback(carma_v2x_msgs::msg::MapData::UniquePtr map_msg)</div><div class="ttdoc">Callback to MAP.msg which contains intersections' static info such geometry and lane ids.</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l01030">WMBroadcaster.cpp:1030</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_af400fb26c47adae60502bc64c600b298"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#af400fb26c47adae60502bc64c600b298">carma_wm_ctrl::WMBroadcaster::geoReferenceCallback</a></div><div class="ttdeci">void geoReferenceCallback(std_msgs::msg::String::UniquePtr geo_ref)</div><div class="ttdoc">Callback to set the base map georeference (proj string)</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l01198">WMBroadcaster.cpp:1198</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a63a919c2cf6736a80fa29a706b020330"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a63a919c2cf6736a80fa29a706b020330">carma_wm_ctrl::WMBroadcaster::geofenceCallback</a></div><div class="ttdeci">void geofenceCallback(carma_v2x_msgs::msg::TrafficControlMessage::UniquePtr geofence_msg)</div><div class="ttdoc">Callback to add a geofence to the map. Currently only supports version 1 TrafficControlMessage.</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l01084">WMBroadcaster.cpp:1084</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a7269b37f5fcdbc502122c980fa814387"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a7269b37f5fcdbc502122c980fa814387">carma_wm_ctrl::WMBroadcaster::currentLocationCallback</a></div><div class="ttdeci">void currentLocationCallback(geometry_msgs::msg::PoseStamped::UniquePtr current_pos)</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l01962">WMBroadcaster.cpp:1962</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a7efa8028648e4ed8b847c97e952b07d1"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a7efa8028648e4ed8b847c97e952b07d1">carma_wm_ctrl::WMBroadcaster::routeCallbackMessage</a></div><div class="ttdeci">void routeCallbackMessage(carma_planning_msgs::msg::Route::UniquePtr route_msg)</div><div class="ttdoc">Calls controlRequestFromRoute() and publishes the TrafficControlRequest Message returned after the co...</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l01649">WMBroadcaster.cpp:1649</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_a9d4ee6959ff334d9f4f16864e5bd0cfe"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a9d4ee6959ff334d9f4f16864e5bd0cfe">carma_wm_ctrl::WMBroadcaster::externalMapMsgCallback</a></div><div class="ttdeci">void externalMapMsgCallback(carma_v2x_msgs::msg::MapData::UniquePtr map_msg)</div><div class="ttdoc">Callback to MAP.msg which contains intersections' static info such geometry and lane ids.</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l01037">WMBroadcaster.cpp:1037</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcaster_html_af400fb26c47adae60502bc64c600b298"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcaster.html#af400fb26c47adae60502bc64c600b298">carma_wm_ctrl::WMBroadcaster::geoReferenceCallback</a></div><div class="ttdeci">void geoReferenceCallback(std_msgs::msg::String::UniquePtr geo_ref)</div><div class="ttdoc">Callback to set the base map georeference (proj string)</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8cpp_source.html#l01205">WMBroadcaster.cpp:1205</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00120">base_map_sub_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00056">carma_wm_ctrl::WMBroadcaster::baseMapCallback()</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00109">config_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00125">curr_location_sub_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01946">carma_wm_ctrl::WMBroadcaster::currentLocationCallback()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01030">carma_wm_ctrl::WMBroadcaster::externalMapMsgCallback()</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00123">geofence_sub_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01077">carma_wm_ctrl::WMBroadcaster::geofenceCallback()</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00122">georef_sub_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01198">carma_wm_ctrl::WMBroadcaster::geoReferenceCallback()</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00124">incoming_map_sub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00121">route_callmsg_sub_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01632">carma_wm_ctrl::WMBroadcaster::routeCallbackMessage()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00191">spin_callback()</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00128">timer_</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00032">carma_wm_ctrl::Config::traffic_control_request_period</a>, and <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00131">wmb_</a>.</p>
+<p class="reference">References <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00121">base_map_sub_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l00056">carma_wm_ctrl::WMBroadcaster::baseMapCallback()</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00109">config_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00126">curr_location_sub_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01962">carma_wm_ctrl::WMBroadcaster::currentLocationCallback()</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01037">carma_wm_ctrl::WMBroadcaster::externalMapMsgCallback()</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00124">geofence_sub_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01084">carma_wm_ctrl::WMBroadcaster::geofenceCallback()</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00123">georef_sub_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01205">carma_wm_ctrl::WMBroadcaster::geoReferenceCallback()</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00125">incoming_map_sub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00122">route_callmsg_sub_</a>, <a class="el" href="WMBroadcaster_8cpp_source.html#l01649">carma_wm_ctrl::WMBroadcaster::routeCallbackMessage()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00194">spin_callback()</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00129">timer_</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00032">carma_wm_ctrl::Config::traffic_control_request_period</a>, and <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00132">wmb_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -465,29 +467,33 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  139</span>  <span class="comment">//TCM Visualizer pub</span></div>
 <div class="line"><span class="lineno">  140</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a5e18bc782c6012c132fa33dfd0f21097">tcm_visualizer_pub_</a>= create_publisher&lt;visualization_msgs::msg::MarkerArray&gt;(<span class="stringliteral">&quot;tcm_visualizer&quot;</span>,1);</div>
 <div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>  <span class="comment">//TCR Visualizer pub (visualized on UI)</span></div>
-<div class="line"><span class="lineno">  143</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#acaf64880bad6b9ff6f470567fadc15d2">tcr_visualizer_pub_</a> = create_publisher&lt;carma_v2x_msgs::msg::TrafficControlRequestPolygon&gt;(<span class="stringliteral">&quot;tcr_bounding_points&quot;</span>,1);</div>
+<div class="line"><span class="lineno">  142</span>  <span class="comment">//J2735 MAP msg Visualizer pub</span></div>
+<div class="line"><span class="lineno">  143</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a2ad5cd33f2a41b03b67b04bc46fc5097">j2735_map_msg_visualizer_pub_</a>= create_publisher&lt;visualization_msgs::msg::MarkerArray&gt;(<span class="stringliteral">&quot;j2735_map_msg_visualizer&quot;</span>,1);</div>
 <div class="line"><span class="lineno">  144</span> </div>
-<div class="line"><span class="lineno">  145</span>  <span class="comment">//Upcoming intersection and group id of traffic light</span></div>
-<div class="line"><span class="lineno">  146</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#abd07f9943487603c353cbe2f3b445287">upcoming_intersection_ids_pub_</a> = create_publisher&lt;std_msgs::msg::Int32MultiArray&gt;(<span class="stringliteral">&quot;intersection_signal_group_ids&quot;</span>, 1);</div>
+<div class="line"><span class="lineno">  145</span>  <span class="comment">//TCR Visualizer pub (visualized on UI)</span></div>
+<div class="line"><span class="lineno">  146</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#acaf64880bad6b9ff6f470567fadc15d2">tcr_visualizer_pub_</a> = create_publisher&lt;carma_v2x_msgs::msg::TrafficControlRequestPolygon&gt;(<span class="stringliteral">&quot;tcr_bounding_points&quot;</span>,1);</div>
 <div class="line"><span class="lineno">  147</span> </div>
-<div class="line"><span class="lineno">  148</span>  <span class="comment">// Return success if everything initialized successfully</span></div>
-<div class="line"><span class="lineno">  149</span> </div>
-<div class="line"><span class="lineno">  150</span>  <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
-<div class="line"><span class="lineno">  151</span>}</div>
+<div class="line"><span class="lineno">  148</span>  <span class="comment">//Upcoming intersection and group id of traffic light</span></div>
+<div class="line"><span class="lineno">  149</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#abd07f9943487603c353cbe2f3b445287">upcoming_intersection_ids_pub_</a> = create_publisher&lt;std_msgs::msg::Int32MultiArray&gt;(<span class="stringliteral">&quot;intersection_signal_group_ids&quot;</span>, 1);</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>  <span class="comment">// Return success if everything initialized successfully</span></div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>  <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
+<div class="line"><span class="lineno">  154</span>}</div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a14a79b9084de8925961bd85f0afba738"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a14a79b9084de8925961bd85f0afba738">carma_wm_ctrl::WMBroadcasterNode::control_msg_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; carma_v2x_msgs::msg::TrafficControlRequest &gt; control_msg_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00113">WMBroadcasterNode.hpp:113</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a19c1aa36e32ed4a3688d21340582b7a9"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a19c1aa36e32ed4a3688d21340582b7a9">carma_wm_ctrl::WMBroadcasterNode::active_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; carma_perception_msgs::msg::CheckActiveGeofence &gt; active_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00117">WMBroadcasterNode.hpp:117</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a19c1aa36e32ed4a3688d21340582b7a9"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a19c1aa36e32ed4a3688d21340582b7a9">carma_wm_ctrl::WMBroadcasterNode::active_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; carma_perception_msgs::msg::CheckActiveGeofence &gt; active_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00118">WMBroadcasterNode.hpp:118</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a2ad5cd33f2a41b03b67b04bc46fc5097"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a2ad5cd33f2a41b03b67b04bc46fc5097">carma_wm_ctrl::WMBroadcasterNode::j2735_map_msg_visualizer_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; visualization_msgs::msg::MarkerArray &gt; j2735_map_msg_visualizer_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00115">WMBroadcasterNode.hpp:115</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a2ec0c26ff0bced4e2b8ccb18c693c6ab"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a2ec0c26ff0bced4e2b8ccb18c693c6ab">carma_wm_ctrl::WMBroadcasterNode::map_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; autoware_lanelet2_msgs::msg::MapBin &gt; map_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00111">WMBroadcasterNode.hpp:111</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a3674e8d12c8aae39451ebd2c34d360b8"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a3674e8d12c8aae39451ebd2c34d360b8">carma_wm_ctrl::WMBroadcasterNode::map_update_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; autoware_lanelet2_msgs::msg::MapBin &gt; map_update_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00112">WMBroadcasterNode.hpp:112</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a5e18bc782c6012c132fa33dfd0f21097"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a5e18bc782c6012c132fa33dfd0f21097">carma_wm_ctrl::WMBroadcasterNode::tcm_visualizer_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; visualization_msgs::msg::MarkerArray &gt; tcm_visualizer_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00114">WMBroadcasterNode.hpp:114</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_a9fed1dd61516b445318a7c48a3490eb2"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a9fed1dd61516b445318a7c48a3490eb2">carma_wm_ctrl::WMBroadcasterNode::initializeWorker</a></div><div class="ttdeci">void initializeWorker(std::weak_ptr&lt; carma_ros2_utils::CarmaLifecycleNode &gt; weak_node_pointer)</div><div class="ttdoc">Initializes the WMBroadcaster worker with reference to the CarmaLifecycleNode itself.</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8cpp_source.html#l00069">WMBroadcasterNode.cpp:69</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_abd07f9943487603c353cbe2f3b445287"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#abd07f9943487603c353cbe2f3b445287">carma_wm_ctrl::WMBroadcasterNode::upcoming_intersection_ids_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; std_msgs::msg::Int32MultiArray &gt; upcoming_intersection_ids_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00116">WMBroadcasterNode.hpp:116</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_acaf64880bad6b9ff6f470567fadc15d2"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#acaf64880bad6b9ff6f470567fadc15d2">carma_wm_ctrl::WMBroadcasterNode::tcr_visualizer_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; carma_v2x_msgs::msg::TrafficControlRequestPolygon &gt; tcr_visualizer_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00115">WMBroadcasterNode.hpp:115</a></div></div>
-<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_add69ab44171505ecfe39dd2b7655ac5a"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#add69ab44171505ecfe39dd2b7655ac5a">carma_wm_ctrl::WMBroadcasterNode::tcm_ack_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; carma_v2x_msgs::msg::MobilityOperation &gt; tcm_ack_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00118">WMBroadcasterNode.hpp:118</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_abd07f9943487603c353cbe2f3b445287"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#abd07f9943487603c353cbe2f3b445287">carma_wm_ctrl::WMBroadcasterNode::upcoming_intersection_ids_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; std_msgs::msg::Int32MultiArray &gt; upcoming_intersection_ids_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00117">WMBroadcasterNode.hpp:117</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_acaf64880bad6b9ff6f470567fadc15d2"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#acaf64880bad6b9ff6f470567fadc15d2">carma_wm_ctrl::WMBroadcasterNode::tcr_visualizer_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; carma_v2x_msgs::msg::TrafficControlRequestPolygon &gt; tcr_visualizer_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00116">WMBroadcasterNode.hpp:116</a></div></div>
+<div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_add69ab44171505ecfe39dd2b7655ac5a"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#add69ab44171505ecfe39dd2b7655ac5a">carma_wm_ctrl::WMBroadcasterNode::tcm_ack_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; carma_v2x_msgs::msg::MobilityOperation &gt; tcm_ack_pub_</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8hpp_source.html#l00119">WMBroadcasterNode.hpp:119</a></div></div>
 <div class="ttc" id="astructcarma__wm__ctrl_1_1Config_html_ab33c2e3565742c601e4d869225657bba"><div class="ttname"><a href="structcarma__wm__ctrl_1_1Config.html#ab33c2e3565742c601e4d869225657bba">carma_wm_ctrl::Config::intersection_coord_correction</a></div><div class="ttdeci">std::vector&lt; double &gt; intersection_coord_correction</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterConfig_8hpp_source.html#l00033">WMBroadcasterConfig.hpp:33</a></div></div>
 <div class="ttc" id="astructcarma__wm__ctrl_1_1Config_html_ad2f36eb5f9f4d69182bde3288522fc9b"><div class="ttname"><a href="structcarma__wm__ctrl_1_1Config.html#ad2f36eb5f9f4d69182bde3288522fc9b">carma_wm_ctrl::Config::intersection_ids_for_correction</a></div><div class="ttdeci">std::vector&lt; int64_t &gt; intersection_ids_for_correction</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterConfig_8hpp_source.html#l00034">WMBroadcasterConfig.hpp:34</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00030">carma_wm_ctrl::Config::ack_pub_times</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00117">active_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00109">config_</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00035">carma_wm_ctrl::Config::config_limit</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00113">control_msg_pub_</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00069">initializeWorker()</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00033">carma_wm_ctrl::Config::intersection_coord_correction</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00034">carma_wm_ctrl::Config::intersection_ids_for_correction</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00111">map_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00112">map_update_pub_</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00031">carma_wm_ctrl::Config::max_lane_width</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00037">carma_wm_ctrl::Config::participant</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00118">tcm_ack_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00114">tcm_visualizer_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00115">tcr_visualizer_pub_</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00032">carma_wm_ctrl::Config::traffic_control_request_period</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00116">upcoming_intersection_ids_pub_</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00036">carma_wm_ctrl::Config::vehicle_id</a>, and <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00131">wmb_</a>.</p>
+<p class="reference">References <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00030">carma_wm_ctrl::Config::ack_pub_times</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00118">active_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00109">config_</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00035">carma_wm_ctrl::Config::config_limit</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00113">control_msg_pub_</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00069">initializeWorker()</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00033">carma_wm_ctrl::Config::intersection_coord_correction</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00034">carma_wm_ctrl::Config::intersection_ids_for_correction</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00115">j2735_map_msg_visualizer_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00111">map_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00112">map_update_pub_</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00031">carma_wm_ctrl::Config::max_lane_width</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00037">carma_wm_ctrl::Config::participant</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00119">tcm_ack_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00114">tcm_visualizer_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00116">tcr_visualizer_pub_</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00032">carma_wm_ctrl::Config::traffic_control_request_period</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00117">upcoming_intersection_ids_pub_</a>, <a class="el" href="WMBroadcasterConfig_8hpp_source.html#l00036">carma_wm_ctrl::Config::vehicle_id</a>, and <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00132">wmb_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -542,7 +548,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_aa0211099de1b21918abb44afcc6ca96d"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#aa0211099de1b21918abb44afcc6ca96d">carma_wm_ctrl::WMBroadcasterNode::publishMapUpdate</a></div><div class="ttdeci">void publishMapUpdate(const autoware_lanelet2_msgs::msg::MapBin &amp;geofence_msg) const</div><div class="ttdoc">Callback to publish map updates (geofences)</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8cpp_source.html#l00032">WMBroadcasterNode.cpp:32</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1WMBroadcasterNode_html_afa97e72faca02d7e112131d97b81a55e"><div class="ttname"><a href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#afa97e72faca02d7e112131d97b81a55e">carma_wm_ctrl::WMBroadcasterNode::publishActiveGeofence</a></div><div class="ttdeci">void publishActiveGeofence(const carma_perception_msgs::msg::CheckActiveGeofence &amp;active_geof_msg)</div><div class="ttdoc">Callback to publish active geofence information.</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcasterNode_8cpp_source.html#l00042">WMBroadcasterNode.cpp:42</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00042">publishActiveGeofence()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00037">publishCtrlReq()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00027">publishMap()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00032">publishMapUpdate()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00047">publishTCMACK()</a>, and <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00131">wmb_</a>.</p>
+<p class="reference">References <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00042">publishActiveGeofence()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00037">publishCtrlReq()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00027">publishMap()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00032">publishMapUpdate()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00047">publishTCMACK()</a>, and <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00132">wmb_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -599,7 +605,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   44</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a19c1aa36e32ed4a3688d21340582b7a9">active_pub_</a>-&gt;publish(active_geof_msg);</div>
 <div class="line"><span class="lineno">   45</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00117">active_pub_</a>.</p>
+<p class="reference">References <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00118">active_pub_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00069">initializeWorker()</a>.</p>
 <div class="dynheader">
@@ -779,7 +785,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   49</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#add69ab44171505ecfe39dd2b7655ac5a">tcm_ack_pub_</a>-&gt;publish(mom_msg);</div>
 <div class="line"><span class="lineno">   50</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00118">tcm_ack_pub_</a>.</p>
+<p class="reference">References <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00119">tcm_ack_pub_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00069">initializeWorker()</a>.</p>
 <div class="dynheader">
@@ -820,24 +826,25 @@ Here is the caller graph for this function:</div>
 
 <p>Spin callback, which will be called frequently based on the configured spin rate. </p>
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00191">191</a> of file <a class="el" href="WMBroadcasterNode_8cpp_source.html">WMBroadcasterNode.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  192</span>{</div>
-<div class="line"><span class="lineno">  193</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a5e18bc782c6012c132fa33dfd0f21097">tcm_visualizer_pub_</a>-&gt;publish(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;tcm_marker_array_);</div>
-<div class="line"><span class="lineno">  194</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#acaf64880bad6b9ff6f470567fadc15d2">tcr_visualizer_pub_</a>-&gt;publish(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;tcr_polygon_);</div>
-<div class="line"><span class="lineno">  195</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;publishLightId();</div>
-<div class="line"><span class="lineno">  196</span>  <span class="comment">//updating upcoming traffic signal group id and intersection id</span></div>
-<div class="line"><span class="lineno">  197</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;updateUpcomingSGIntersectionIds();</div>
-<div class="line"><span class="lineno">  198</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;upcoming_intersection_ids_.data.size() &gt; 0)</div>
-<div class="line"><span class="lineno">  199</span>    <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#abd07f9943487603c353cbe2f3b445287">upcoming_intersection_ids_pub_</a>-&gt;publish(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;upcoming_intersection_ids_);</div>
-<div class="line"><span class="lineno">  200</span>  <span class="keywordflow">if</span>(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;getRoute().route_path_lanelet_ids.size() &gt; 0)</div>
-<div class="line"><span class="lineno">  201</span>    <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;routeCallbackMessage(std::make_unique&lt;carma_planning_msgs::msg::Route&gt;(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;getRoute()));</div>
-<div class="line"><span class="lineno">  202</span> </div>
-<div class="line"><span class="lineno">  203</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  204</span>}</div>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00194">194</a> of file <a class="el" href="WMBroadcasterNode_8cpp_source.html">WMBroadcasterNode.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  195</span>{</div>
+<div class="line"><span class="lineno">  196</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a5e18bc782c6012c132fa33dfd0f21097">tcm_visualizer_pub_</a>-&gt;publish(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;tcm_marker_array_);</div>
+<div class="line"><span class="lineno">  197</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a2ad5cd33f2a41b03b67b04bc46fc5097">j2735_map_msg_visualizer_pub_</a>-&gt;publish(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;j2735_map_msg_marker_array_);</div>
+<div class="line"><span class="lineno">  198</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#acaf64880bad6b9ff6f470567fadc15d2">tcr_visualizer_pub_</a>-&gt;publish(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;tcr_polygon_);</div>
+<div class="line"><span class="lineno">  199</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;publishLightId();</div>
+<div class="line"><span class="lineno">  200</span>  <span class="comment">//updating upcoming traffic signal group id and intersection id</span></div>
+<div class="line"><span class="lineno">  201</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;updateUpcomingSGIntersectionIds();</div>
+<div class="line"><span class="lineno">  202</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;upcoming_intersection_ids_.data.size() &gt; 0)</div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#abd07f9943487603c353cbe2f3b445287">upcoming_intersection_ids_pub_</a>-&gt;publish(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;upcoming_intersection_ids_);</div>
+<div class="line"><span class="lineno">  204</span>  <span class="keywordflow">if</span>(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;getRoute().route_path_lanelet_ids.size() &gt; 0)</div>
+<div class="line"><span class="lineno">  205</span>    <a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;routeCallbackMessage(std::make_unique&lt;carma_planning_msgs::msg::Route&gt;(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html#adb20de611701e525baa49d58646c538a">wmb_</a>-&gt;getRoute()));</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  208</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00114">tcm_visualizer_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00115">tcr_visualizer_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00116">upcoming_intersection_ids_pub_</a>, and <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00131">wmb_</a>.</p>
+<p class="reference">References <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00115">j2735_map_msg_visualizer_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00114">tcm_visualizer_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00116">tcr_visualizer_pub_</a>, <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00117">upcoming_intersection_ids_pub_</a>, and <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00132">wmb_</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00153">handle_on_activate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00156">handle_on_activate()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -871,7 +878,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00117">117</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00118">118</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00042">publishActiveGeofence()</a>.</p>
 
@@ -897,9 +904,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00120">120</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00121">121</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00153">handle_on_activate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00156">handle_on_activate()</a>.</p>
 
 </div>
 </div>
@@ -925,7 +932,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00109">109</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00052">WMBroadcasterNode()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00153">handle_on_activate()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00052">WMBroadcasterNode()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00156">handle_on_activate()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -975,9 +982,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00125">125</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00126">126</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00153">handle_on_activate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00156">handle_on_activate()</a>.</p>
 
 </div>
 </div>
@@ -1001,9 +1008,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00123">123</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00124">124</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00153">handle_on_activate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00156">handle_on_activate()</a>.</p>
 
 </div>
 </div>
@@ -1027,9 +1034,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00122">122</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00123">123</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00153">handle_on_activate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00156">handle_on_activate()</a>.</p>
 
 </div>
 </div>
@@ -1053,9 +1060,35 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00124">124</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00125">125</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00153">handle_on_activate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00156">handle_on_activate()</a>.</p>
+
+</div>
+</div>
+<a id="a2ad5cd33f2a41b03b67b04bc46fc5097" name="a2ad5cd33f2a41b03b67b04bc46fc5097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ad5cd33f2a41b03b67b04bc46fc5097">&#9670;&nbsp;</a></span>j2735_map_msg_visualizer_pub_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">carma_ros2_utils::PubPtr&lt;visualization_msgs::msg::MarkerArray&gt; carma_wm_ctrl::WMBroadcasterNode::j2735_map_msg_visualizer_pub_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00115">115</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00194">spin_callback()</a>.</p>
 
 </div>
 </div>
@@ -1131,7 +1164,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00130">130</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00131">131</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
 </div>
 </div>
@@ -1155,9 +1188,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00121">121</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00122">122</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00153">handle_on_activate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00156">handle_on_activate()</a>.</p>
 
 </div>
 </div>
@@ -1181,7 +1214,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00118">118</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00119">119</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00047">publishTCMACK()</a>.</p>
 
@@ -1209,7 +1242,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00114">114</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00191">spin_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00194">spin_callback()</a>.</p>
 
 </div>
 </div>
@@ -1233,9 +1266,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00115">115</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00116">116</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00191">spin_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00194">spin_callback()</a>.</p>
 
 </div>
 </div>
@@ -1259,9 +1292,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00128">128</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00129">129</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00153">handle_on_activate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00156">handle_on_activate()</a>.</p>
 
 </div>
 </div>
@@ -1285,9 +1318,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00116">116</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00117">117</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00191">spin_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00194">spin_callback()</a>.</p>
 
 </div>
 </div>
@@ -1311,9 +1344,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00131">131</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WMBroadcasterNode_8hpp_source.html#l00132">132</a> of file <a class="el" href="WMBroadcasterNode_8hpp_source.html">WMBroadcasterNode.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00153">handle_on_activate()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00069">initializeWorker()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00191">spin_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00156">handle_on_activate()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00077">handle_on_configure()</a>, <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00069">initializeWorker()</a>, and <a class="el" href="WMBroadcasterNode_8cpp_source.html#l00194">spin_callback()</a>.</p>
 
 </div>
 </div>
@@ -1327,7 +1360,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm__ctrl.html">carma_wm_ctrl</a></li><li class="navelem"><a class="el" href="classcarma__wm__ctrl_1_1WMBroadcasterNode.html">WMBroadcasterNode</a></li>
-    <li class="footer">Generated on Wed Jan 22 2025 13:59:58 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Feb 11 2025 19:21:31 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

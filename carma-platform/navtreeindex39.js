@@ -1,5 +1,13 @@
 var NAVTREEINDEX39 =
 {
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ac3de67add9aeafaae4ab278bf0feff9d":[56,0,32,4,7],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ac8d626f63900bae289b590bde67b35a6":[56,0,32,4,32],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ac8d626f63900bae289b590bde67b35a6":[55,0,59,4,32],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ad3c1054a6d0028028bddb5019cd4738f":[56,0,32,4,25],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ad3c1054a6d0028028bddb5019cd4738f":[55,0,59,4,25],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ad7b48a6b79025b31ab7ef922a7f8e740":[56,0,32,4,3],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ad7b48a6b79025b31ab7ef922a7f8e740":[55,0,59,4,3],
+"structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ad956cb17c5ea0b77e2f82449a476c6a1":[55,0,59,4,0],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#ad956cb17c5ea0b77e2f82449a476c6a1":[56,0,32,4,0],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#adfa90129270c151fd23cf1db61ef0cf8":[55,0,59,4,18],
 "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html#adfa90129270c151fd23cf1db61ef0cf8":[56,0,32,4,18],
@@ -241,13 +249,5 @@ var NAVTREEINDEX39 =
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#ad7145c0b986c008e49ff346acec57938":[56,0,42,1,16],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#aef980954c9c547701e3f68f1271dfdf2":[56,0,42,1,3],
 "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#aef980954c9c547701e3f68f1271dfdf2":[55,0,82,2,3],
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#af77d91a1d597e6d185488823109ed307":[56,0,42,1,9],
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#af77d91a1d597e6d185488823109ed307":[55,0,82,2,9],
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#afffeb1d7f537113aabc22f0cca16f6f0":[56,0,42,1,12],
-"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#afffeb1d7f537113aabc22f0cca16f6f0":[55,0,82,2,12],
-"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html":[55,0,82,1,0],
-"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html":[56,0,42,0,0],
-"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#a9abd4258c073f1412b608038c56b8283":[55,0,82,1,0,3],
-"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#a9abd4258c073f1412b608038c56b8283":[56,0,42,0,0,3],
-"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#aa65ec11175fdf5ac236ea7d2c15e13ef":[55,0,82,1,0,1]
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#af77d91a1d597e6d185488823109ed307":[56,0,42,1,9]
 };

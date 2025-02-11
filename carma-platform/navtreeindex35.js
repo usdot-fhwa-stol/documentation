@@ -1,5 +1,13 @@
 var NAVTREEINDEX35 =
 {
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a0bacd4168f75ca1d5c784847ebf52598":[56,0,0,2,24],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a1b30e6e0c5ce1e2eefa70b1af6e941eb":[56,0,0,2,21],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a1b30e6e0c5ce1e2eefa70b1af6e941eb":[55,0,0,3,21],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2617bd4b6850d11f938dfd39efb0ad1c":[56,0,0,2,10],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2617bd4b6850d11f938dfd39efb0ad1c":[55,0,0,3,10],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2bad9c38f2c863cb52ce08c89c2ed0f8":[56,0,0,2,8],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2bad9c38f2c863cb52ce08c89c2ed0f8":[55,0,0,3,8],
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2e6f2566571a01c095800f712e8ee183":[56,0,0,2,3],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a2e6f2566571a01c095800f712e8ee183":[55,0,0,3,3],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a357d49d8f1e6e554bf550a1f873c63bc":[56,0,0,2,9],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a357d49d8f1e6e554bf550a1f873c63bc":[55,0,0,3,9],
@@ -241,13 +249,5 @@ var NAVTREEINDEX35 =
 "structcarma__cooperative__perception_1_1DDateTime.html#ae9ff51cadd6a27cb3dc40cd496c4f5fb":[55,0,12,1,6],
 "structcarma__cooperative__perception_1_1Heading.html":[56,0,7,5],
 "structcarma__cooperative__perception_1_1Heading.html":[55,0,12,5],
-"structcarma__cooperative__perception_1_1Heading.html#a3f9aa6bee0ea794042394086afdcc63e":[56,0,7,5,0],
-"structcarma__cooperative__perception_1_1Heading.html#a3f9aa6bee0ea794042394086afdcc63e":[55,0,12,5,0],
-"structcarma__cooperative__perception_1_1Heading.html#a489e9438fe854b7b4570a5258e40b8bc":[56,0,7,5,1],
-"structcarma__cooperative__perception_1_1Heading.html#a489e9438fe854b7b4570a5258e40b8bc":[55,0,12,5,1],
-"structcarma__cooperative__perception_1_1Heading.html#aa120cb648b91e89c6d531161b26ee24c":[56,0,7,5,2],
-"structcarma__cooperative__perception_1_1Heading.html#aa120cb648b91e89c6d531161b26ee24c":[55,0,12,5,2],
-"structcarma__cooperative__perception_1_1MapCoordinate.html":[56,0,7,7],
-"structcarma__cooperative__perception_1_1MapCoordinate.html":[55,0,12,7],
-"structcarma__cooperative__perception_1_1MapCoordinate.html#a70ca6b501f497dba865ea4b3333b04da":[56,0,7,7,0]
+"structcarma__cooperative__perception_1_1Heading.html#a3f9aa6bee0ea794042394086afdcc63e":[56,0,7,5,0]
 };

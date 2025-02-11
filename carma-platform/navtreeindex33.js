@@ -1,5 +1,13 @@
 var NAVTREEINDEX33 =
 {
+"plan__delegator_8hpp_source.html":[57,0,31,0,0],
+"plan__delegator_8launch_8py.html":[57,0,31,1,0],
+"plan__delegator_8launch_8py.html#a01d640cbe710262bfae0f08e752bc164":[57,0,31,1,0,0],
+"plan__delegator_8launch_8py_source.html":[57,0,31,1,0],
+"plan__delegator__node_8cpp.html":[57,0,31,2,1],
+"plan__delegator__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,31,2,1,0],
+"plan__delegator__node_8cpp_source.html":[57,0,31,2,1],
+"planning__strategy_8hpp.html":[57,0,2,0,11],
 "planning__strategy_8hpp_source.html":[57,0,2,0,11],
 "platoon__config__ihp_8h.html":[57,0,33,0,0,0],
 "platoon__config__ihp_8h_source.html":[57,0,33,0,0,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX33 =
 "ros2__rosbag_8launch_8py.html#a7588e5ca901471037f188a4a29a081bf":[57,0,5,0,7,1],
 "ros2__rosbag_8launch_8py_source.html":[57,0,5,0,7],
 "route_2src_2main_8cpp.html":[57,0,39,2,0],
-"route_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,39,2,0,0],
-"route_2src_2main_8cpp_source.html":[57,0,39,2,0],
-"route__config_8hpp.html":[57,0,39,0,0,0],
-"route__config_8hpp_source.html":[57,0,39,0,0,0],
-"route__following__plugin_2src_2main_8cpp.html":[57,0,40,2,0],
-"route__following__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,40,2,0,0],
-"route__following__plugin_2src_2main_8cpp_source.html":[57,0,40,2,0],
-"route__following__plugin_8cpp.html":[57,0,40,2,1],
-"route__following__plugin_8cpp.html#a69b9c9bf1a2410dfb992ec9874073e4e":[57,0,40,2,1,1]
+"route_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,39,2,0,0]
 };

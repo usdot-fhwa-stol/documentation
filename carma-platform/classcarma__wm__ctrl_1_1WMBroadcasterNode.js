@@ -18,6 +18,7 @@ var classcarma__wm__ctrl_1_1WMBroadcasterNode =
     [ "geofence_sub_", "classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a4ff63d96f3572010ec8f9892bd4f40df", null ],
     [ "georef_sub_", "classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a408a78e2ae6937430535eab06b31d263", null ],
     [ "incoming_map_sub_", "classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a4455b0267333e0d07139cc41a3f79372", null ],
+    [ "j2735_map_msg_visualizer_pub_", "classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a2ad5cd33f2a41b03b67b04bc46fc5097", null ],
     [ "map_pub_", "classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a2ec0c26ff0bced4e2b8ccb18c693c6ab", null ],
     [ "map_update_pub_", "classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a3674e8d12c8aae39451ebd2c34d360b8", null ],
     [ "ptr_", "classcarma__wm__ctrl_1_1WMBroadcasterNode.html#a9c2d6f9e17e100d0a2a48c55f2d6e227", null ],

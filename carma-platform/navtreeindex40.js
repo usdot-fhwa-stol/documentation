@@ -1,5 +1,13 @@
 var NAVTREEINDEX40 =
 {
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#af77d91a1d597e6d185488823109ed307":[55,0,82,2,9],
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#afffeb1d7f537113aabc22f0cca16f6f0":[56,0,42,1,12],
+"structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html#afffeb1d7f537113aabc22f0cca16f6f0":[55,0,82,2,12],
+"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html":[55,0,82,1,0],
+"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html":[56,0,42,0,0],
+"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#a9abd4258c073f1412b608038c56b8283":[55,0,82,1,0,3],
+"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#a9abd4258c073f1412b608038c56b8283":[56,0,42,0,0,3],
+"structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#aa65ec11175fdf5ac236ea7d2c15e13ef":[55,0,82,1,0,1],
 "structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#aa65ec11175fdf5ac236ea7d2c15e13ef":[56,0,42,0,0,1],
 "structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#acc40d28e2bff30c28ba242702a53aae9":[55,0,82,1,0,0],
 "structsci__strategic__plugin_1_1SCIStrategicPlugin_1_1VehicleState.html#acc40d28e2bff30c28ba242702a53aae9":[56,0,42,0,0,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX40 =
 "track__list__to__external__object__list__component_8cpp.html":[57,0,7,3,15],
 "track__list__to__external__object__list__component_8cpp_source.html":[57,0,7,3,15],
 "track__list__to__external__object__list__component_8hpp.html":[57,0,7,1,0,11],
-"track__list__to__external__object__list__component_8hpp_source.html":[57,0,7,1,0,11],
-"track__list__to__external__object__list__node_8cpp.html":[57,0,7,3,16],
-"track__list__to__external__object__list__node_8cpp.html#a7114aa2dd6837734db57667a298dfcc4":[57,0,7,3,16,0],
-"track__list__to__external__object__list__node_8cpp_source.html":[57,0,7,3,16],
-"traffic__incident__parser_2src_2main_8cpp.html":[57,0,48,2,0],
-"traffic__incident__parser_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,48,2,0,0],
-"traffic__incident__parser_2src_2main_8cpp_source.html":[57,0,48,2,0],
-"traffic__incident__parser__launch_8py.html":[57,0,48,1,0],
-"traffic__incident__parser__launch_8py.html#a87625f907b19959d11f87e382f5d5f9d":[57,0,48,1,0,0]
+"track__list__to__external__object__list__component_8hpp_source.html":[57,0,7,1,0,11]
 };

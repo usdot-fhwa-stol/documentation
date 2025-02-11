@@ -1,5 +1,13 @@
 var NAVTREEINDEX34 =
 {
+"route_2src_2main_8cpp_source.html":[57,0,39,2,0],
+"route__config_8hpp.html":[57,0,39,0,0,0],
+"route__config_8hpp_source.html":[57,0,39,0,0,0],
+"route__following__plugin_2src_2main_8cpp.html":[57,0,40,2,0],
+"route__following__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,40,2,0,0],
+"route__following__plugin_2src_2main_8cpp_source.html":[57,0,40,2,0],
+"route__following__plugin_8cpp.html":[57,0,40,2,1],
+"route__following__plugin_8cpp.html#a69b9c9bf1a2410dfb992ec9874073e4e":[57,0,40,2,1,1],
 "route__following__plugin_8cpp.html#a9b29dd085f9f59d468b1c9320f0b5102":[57,0,40,2,1,0],
 "route__following__plugin_8cpp_source.html":[57,0,40,2,1],
 "route__following__plugin_8hpp.html":[57,0,40,0,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX34 =
 "structapproaching__emergency__vehicle__plugin_1_1Config.html":[55,0,0,3],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a021c15bd670c461bd74b23f40ce28594":[55,0,0,3,20],
 "structapproaching__emergency__vehicle__plugin_1_1Config.html#a021c15bd670c461bd74b23f40ce28594":[56,0,0,2,20],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a0bacd4168f75ca1d5c784847ebf52598":[55,0,0,3,24],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a0bacd4168f75ca1d5c784847ebf52598":[56,0,0,2,24],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a1b30e6e0c5ce1e2eefa70b1af6e941eb":[56,0,0,2,21],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a1b30e6e0c5ce1e2eefa70b1af6e941eb":[55,0,0,3,21],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2617bd4b6850d11f938dfd39efb0ad1c":[56,0,0,2,10],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2617bd4b6850d11f938dfd39efb0ad1c":[55,0,0,3,10],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2bad9c38f2c863cb52ce08c89c2ed0f8":[56,0,0,2,8],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2bad9c38f2c863cb52ce08c89c2ed0f8":[55,0,0,3,8],
-"structapproaching__emergency__vehicle__plugin_1_1Config.html#a2e6f2566571a01c095800f712e8ee183":[56,0,0,2,3]
+"structapproaching__emergency__vehicle__plugin_1_1Config.html#a0bacd4168f75ca1d5c784847ebf52598":[55,0,0,3,24]
 };

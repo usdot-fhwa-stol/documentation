@@ -1,5 +1,12 @@
 var NAVTREEINDEX32 =
 {
+"namespaceplatoon__strategic__ihp.html#a20539b6c81ea3b1868c7ca5d7c403dafa7d32254f1798e4564e467d332c383112":[55,0,59,11,7],
+"namespaceplatoon__strategic__ihp.html#a20539b6c81ea3b1868c7ca5d7c403dafa839ccd0c7e2e3441b3cd9ca0546be97b":[55,0,59,11,0],
+"namespaceplatoon__strategic__ihp.html#a20539b6c81ea3b1868c7ca5d7c403dafab7680aa6ec3a24dc42cb374192eb39a3":[55,0,59,11,3],
+"namespaceplatoon__strategic__ihp.html#a20539b6c81ea3b1868c7ca5d7c403dafae176dd79ff2c2bc4b2f7901fbfc53014":[55,0,59,11,5],
+"namespaceplatoon__strategic__ihp.html#a20539b6c81ea3b1868c7ca5d7c403dafafe45c20d03a8d502486cff766672bdf9":[55,0,59,11,8],
+"namespaceplatoon__strategic__ihp.html#a3c19ae18fa9f6083007c65b58293776a":[55,0,59,6],
+"namespaceplatoon__strategic__ihp.html#a5402323f00d5763553277415c786fbca":[55,0,59,9],
 "namespaceplatoon__strategic__ihp.html#a71d95090a6e2bf7ed0b85142e9081f97":[55,0,59,8],
 "namespaceplatoon__strategic__ihp.html#ae866cb8846f2484b40536e455bfecaff":[55,0,59,7],
 "namespaceplatoon__strategic__ihp.html#afdeaa181289e9678d31f8928ec036217":[55,0,59,10],
@@ -242,12 +249,5 @@ var NAVTREEINDEX32 =
 "object__detection__tracking_2src_2bounding__box__to__detected__object_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,29,2,0,1,0],
 "object__detection__tracking_2src_2bounding__box__to__detected__object_2main_8cpp_source.html":[57,0,29,2,0,1],
 "object__detection__tracking_2src_2main_8cpp.html":[57,0,29,2,2],
-"object__detection__tracking_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,29,2,2,0],
-"object__detection__tracking_2src_2main_8cpp_source.html":[57,0,29,2,2],
-"object__detection__tracking__node_8cpp.html":[57,0,29,2,3],
-"object__detection__tracking__node_8cpp_source.html":[57,0,29,2,3],
-"object__detection__tracking__node_8h.html":[57,0,29,0,1],
-"object__detection__tracking__node_8h_source.html":[57,0,29,0,1],
-"object__detection__tracking__worker_8cpp.html":[57,0,29,2,4],
-"object__detection__tracking__worker_8cpp_source.html":[57,0,29,2,4]
+"object__detection__tracking_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,29,2,2,0]
 };

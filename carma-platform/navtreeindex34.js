@@ -1,5 +1,12 @@
 var NAVTREEINDEX34 =
 {
+"pure__pursuit__wrapper_2src_2main_8cpp_source.html":[57,0,37,2,0],
+"pure__pursuit__wrapper_8cpp.html":[57,0,37,2,1],
+"pure__pursuit__wrapper_8cpp_source.html":[57,0,37,2,1],
+"pure__pursuit__wrapper_8hpp.html":[57,0,37,0,0,0],
+"pure__pursuit__wrapper_8hpp.html#a2768a734fb88e0b12390e35976ef5546":[57,0,37,0,0,0,1],
+"pure__pursuit__wrapper_8hpp.html#a438e4ee9c214679dea4c4915dbe2b7c8":[57,0,37,0,0,0,2],
+"pure__pursuit__wrapper_8hpp_source.html":[57,0,37,0,0,0],
 "pure__pursuit__wrapper_8launch_8py.html":[57,0,37,1,0],
 "pure__pursuit__wrapper_8launch_8py.html#a840203ceec344e7884953678b8cf7c2f":[57,0,37,1,0,0],
 "pure__pursuit__wrapper_8launch_8py_source.html":[57,0,37,1,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX34 =
 "structStopandWaitConfig.html#aca43edbb1111fbf89bf99f7cbacd6796":[56,0,62,5],
 "structStopandWaitConfig.html#ae028cbbe5066f0c0a70f877188a739c4":[56,0,62,2],
 "structStopandWaitConfig.html#ae1af2b1d26f072bf494c62634514f3e7":[56,0,62,7],
-"structStopandWaitConfig.html#af15c8b21219680d90ce427c056542ba5":[56,0,62,9],
-"structStopandWaitConfig.html#af830ceb9940a67c70d3283b186a1c68c":[56,0,62,8],
-"structSystemControllerConfig.html":[56,0,63],
-"structSystemControllerConfig.html#a091d8425b37976b1c7853996775fc308":[56,0,63,3],
-"structSystemControllerConfig.html#a1551083184cce9981308379f8106ae21":[56,0,63,0],
-"structSystemControllerConfig.html#a826f468223411983821a1da7bb295a65":[56,0,63,1],
-"structSystemControllerConfig.html#a9762f353b24aa045cfaf14e0af41d409":[56,0,63,4],
-"structSystemControllerConfig.html#a9de6a90acf9c6b9d8b79c23fc27d9431":[56,0,63,2]
+"structStopandWaitConfig.html#af15c8b21219680d90ce427c056542ba5":[56,0,62,9]
 };

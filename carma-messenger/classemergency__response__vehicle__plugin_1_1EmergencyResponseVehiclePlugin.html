@@ -161,19 +161,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ab150d0d01c03970ce4d77b55268bbff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service callback for a service call that indicates the Emergency Response Vehicle has arrived at its destination. Service is called by the Emergency Response Web UI Widget, and results in this plugin clearing its route_destination_points_ so that future route destination points will not be included in regional extension of the BSMs generated within <a class="el" href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a799090d050825e0ebf281570faaf1383" title="Function for generating a BSM for the Emergency Response Vehicle based on the latest status of this o...">generateBSM()</a>.  <a href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ab150d0d01c03970ce4d77b55268bbff5">More...</a><br /></td></tr>
 <tr class="separator:ab150d0d01c03970ce4d77b55268bbff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a895f80339a3bed97417df7f4d64ed028"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a895f80339a3bed97417df7f4d64ed028">incomingEmergencyVehicleResponseCallback</a> (carma_v2x_msgs::msg::EmergencyVehicleResponse::UniquePtr msg)</td></tr>
-<tr class="memdesc:a895f80339a3bed97417df7f4d64ed028"><td class="mdescLeft">&#160;</td><td class="mdescRight">A callback to process a received <a class="el" href="structEmergencyVehicleResponse.html">EmergencyVehicleResponse</a> message, which indicates that a CDA vehicle is unable to change lanes out of the path of an approaching Emergency Response Vehicle. If the message is intended for the ego Emergency Response Vehicle, then a call to <a class="el" href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ae0f4217007231d59bd9458a9e7a8ce75" title="A function for publishing an outgoing EmergencyVehicleAck message in response to the CDA vehicle that...">broadcastEmergencyVehicleAck()</a> will be made, and message will be published using emergency_vehicle_ui_warnings_pub_ to provide the Emergency Response Web UI widget with information to display in a warning message to the user.  <a href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a895f80339a3bed97417df7f4d64ed028">More...</a><br /></td></tr>
+<tr class="memdesc:a895f80339a3bed97417df7f4d64ed028"><td class="mdescLeft">&#160;</td><td class="mdescRight">A callback to process a received EmergencyVehicleResponse message, which indicates that a CDA vehicle is unable to change lanes out of the path of an approaching Emergency Response Vehicle. If the message is intended for the ego Emergency Response Vehicle, then a call to <a class="el" href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ae0f4217007231d59bd9458a9e7a8ce75" title="A function for publishing an outgoing EmergencyVehicleAck message in response to the CDA vehicle that...">broadcastEmergencyVehicleAck()</a> will be made, and message will be published using emergency_vehicle_ui_warnings_pub_ to provide the Emergency Response Web UI widget with information to display in a warning message to the user.  <a href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a895f80339a3bed97417df7f4d64ed028">More...</a><br /></td></tr>
 <tr class="separator:a895f80339a3bed97417df7f4d64ed028"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0f4217007231d59bd9458a9e7a8ce75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ae0f4217007231d59bd9458a9e7a8ce75">broadcastEmergencyVehicleAck</a> (const std::string &amp;recipient_id)</td></tr>
-<tr class="memdesc:ae0f4217007231d59bd9458a9e7a8ce75"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function for publishing an outgoing <a class="el" href="structEmergencyVehicleAck.html">EmergencyVehicleAck</a> message in response to the CDA vehicle that broadcasted an <a class="el" href="structEmergencyVehicleResponse.html">EmergencyVehicleResponse</a> message to this Emergency Resposne Vehicle.  <a href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ae0f4217007231d59bd9458a9e7a8ce75">More...</a><br /></td></tr>
+<tr class="memdesc:ae0f4217007231d59bd9458a9e7a8ce75"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function for publishing an outgoing EmergencyVehicleAck message in response to the CDA vehicle that broadcasted an EmergencyVehicleResponse message to this Emergency Resposne Vehicle.  <a href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ae0f4217007231d59bd9458a9e7a8ce75">More...</a><br /></td></tr>
 <tr class="separator:ae0f4217007231d59bd9458a9e7a8ce75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ceec14aa51f981f3cd9e8a08e804fe7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a9ceec14aa51f981f3cd9e8a08e804fe7">getDistanceBetween</a> (const double &amp;lat_1_deg, const double &amp;lon_1_deg, const double &amp;lat_2_deg, const double &amp;lon_2_deg)</td></tr>
 <tr class="memdesc:a9ceec14aa51f981f3cd9e8a08e804fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helpfer function to approximate the distance (in meters) between two pairs of latitude/longitude coordinates. This function uses the Haversine Formula and assumes Earth as a spherical shape to approximate this measurement.  <a href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a9ceec14aa51f981f3cd9e8a08e804fe7">More...</a><br /></td></tr>
 <tr class="separator:a9ceec14aa51f981f3cd9e8a08e804fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfc866f92781a25cf12f10df5c4d62a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#abfc866f92781a25cf12f10df5c4d62a0">poseCallback</a> (gps_msgs::msg::GPSFix::UniquePtr msg)</td></tr>
-<tr class="memdesc:abfc866f92781a25cf12f10df5c4d62a0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMessage.html" title="Is the class responsible for DSRC message encoding and decoding.">Message</a> callback for the Emergency Response Vehicle's current latitude and longitude.  <a href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#abfc866f92781a25cf12f10df5c4d62a0">More...</a><br /></td></tr>
+<tr class="memdesc:abfc866f92781a25cf12f10df5c4d62a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message callback for the Emergency Response Vehicle's current latitude and longitude.  <a href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#abfc866f92781a25cf12f10df5c4d62a0">More...</a><br /></td></tr>
 <tr class="separator:abfc866f92781a25cf12f10df5c4d62a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c95d8b788aeddf1b3b1f0498dcf5c76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a5c95d8b788aeddf1b3b1f0498dcf5c76">twistCallback</a> (geometry_msgs::msg::TwistStamped::UniquePtr msg)</td></tr>
-<tr class="memdesc:a5c95d8b788aeddf1b3b1f0498dcf5c76"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classMessage.html" title="Is the class responsible for DSRC message encoding and decoding.">Message</a> callback for the Emergency Response Vehicle's current velocity.  <a href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a5c95d8b788aeddf1b3b1f0498dcf5c76">More...</a><br /></td></tr>
+<tr class="memdesc:a5c95d8b788aeddf1b3b1f0498dcf5c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message callback for the Emergency Response Vehicle's current velocity.  <a href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a5c95d8b788aeddf1b3b1f0498dcf5c76">More...</a><br /></td></tr>
 <tr class="separator:a5c95d8b788aeddf1b3b1f0498dcf5c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35cdb6f84b872aff64b6cfc3803a1cbd"><td class="memItemLeft" align="right" valign="top">carma_ros2_utils::CallbackReturn&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a35cdb6f84b872aff64b6cfc3803a1cbd">handle_on_configure</a> (const rclcpp_lifecycle::State &amp;)</td></tr>
 <tr class="separator:a35cdb6f84b872aff64b6cfc3803a1cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -385,10 +385,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>A function for publishing an outgoing <a class="el" href="structEmergencyVehicleAck.html">EmergencyVehicleAck</a> message in response to the CDA vehicle that broadcasted an <a class="el" href="structEmergencyVehicleResponse.html">EmergencyVehicleResponse</a> message to this Emergency Resposne Vehicle. </p>
+<p>A function for publishing an outgoing EmergencyVehicleAck message in response to the CDA vehicle that broadcasted an EmergencyVehicleResponse message to this Emergency Resposne Vehicle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">recipient_id</td><td>The vehicle id of the CDA vehicle that this <a class="el" href="structEmergencyVehicleAck.html">EmergencyVehicleAck</a> message is intended for. </td></tr>
+    <tr><td class="paramname">recipient_id</td><td>The vehicle id of the CDA vehicle that this EmergencyVehicleAck message is intended for. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1169,10 +1169,10 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>A callback to process a received <a class="el" href="structEmergencyVehicleResponse.html">EmergencyVehicleResponse</a> message, which indicates that a CDA vehicle is unable to change lanes out of the path of an approaching Emergency Response Vehicle. If the message is intended for the ego Emergency Response Vehicle, then a call to <a class="el" href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ae0f4217007231d59bd9458a9e7a8ce75" title="A function for publishing an outgoing EmergencyVehicleAck message in response to the CDA vehicle that...">broadcastEmergencyVehicleAck()</a> will be made, and message will be published using emergency_vehicle_ui_warnings_pub_ to provide the Emergency Response Web UI widget with information to display in a warning message to the user. </p>
+<p>A callback to process a received EmergencyVehicleResponse message, which indicates that a CDA vehicle is unable to change lanes out of the path of an approaching Emergency Response Vehicle. If the message is intended for the ego Emergency Response Vehicle, then a call to <a class="el" href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ae0f4217007231d59bd9458a9e7a8ce75" title="A function for publishing an outgoing EmergencyVehicleAck message in response to the CDA vehicle that...">broadcastEmergencyVehicleAck()</a> will be made, and message will be published using emergency_vehicle_ui_warnings_pub_ to provide the Emergency Response Web UI widget with information to display in a warning message to the user. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">msg</td><td>The incoming <a class="el" href="structEmergencyVehicleResponse.html">EmergencyVehicleResponse</a> message. </td></tr>
+    <tr><td class="paramname">msg</td><td>The incoming EmergencyVehicleResponse message. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1375,7 +1375,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classMessage.html" title="Is the class responsible for DSRC message encoding and decoding.">Message</a> callback for the Emergency Response Vehicle's current latitude and longitude. </p>
+<p>Message callback for the Emergency Response Vehicle's current latitude and longitude. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">msg</td><td>The incoming gps_msgs::msg::GPSFix message. </td></tr>
@@ -1570,7 +1570,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classMessage.html" title="Is the class responsible for DSRC message encoding and decoding.">Message</a> callback for the Emergency Response Vehicle's current velocity. </p>
+<p>Message callback for the Emergency Response Vehicle's current velocity. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">msg</td><td>The incoming geometry_msgs::msg::TwistStamped message. </td></tr>
@@ -2181,7 +2181,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceemergency__response__vehicle__plugin.html">emergency_response_vehicle_plugin</a></li><li class="navelem"><a class="el" href="classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html">EmergencyResponseVehiclePlugin</a></li>
-    <li class="footer">Generated on Thu Feb 20 2025 15:24:33 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 4 2025 18:37:27 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

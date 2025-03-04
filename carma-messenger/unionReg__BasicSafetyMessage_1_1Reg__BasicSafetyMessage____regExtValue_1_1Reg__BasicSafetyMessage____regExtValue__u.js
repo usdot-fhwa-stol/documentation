@@ -1,4 +1,0 @@
-var unionReg__BasicSafetyMessage_1_1Reg__BasicSafetyMessage____regExtValue_1_1Reg__BasicSafetyMessage____regExtValue__u =
-[
-    [ "BasicSafetyMessage_addGrpCarma", "unionReg__BasicSafetyMessage_1_1Reg__BasicSafetyMessage____regExtValue_1_1Reg__BasicSafetyMessage____regExtValue__u.html#a7e9abed83af8e9c985e1b940457a2d85", null ]
-];

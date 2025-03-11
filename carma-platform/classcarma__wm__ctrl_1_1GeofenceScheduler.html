@@ -310,7 +310,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   25</span>{</div>
 <div class="line"><span class="lineno">   26</span>  <span class="comment">// Create repeating loop to clear geofence timers which are no longer needed</span></div>
 <div class="line"><span class="lineno">   27</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a94fb1648f94220fbf95048c9e326ec91">deletion_timer_</a> =</div>
-<div class="line"><span class="lineno">   28</span>      <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;buildTimer(<a class="code hl_function" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a9072b770cf240953a50f1d926b733b7c">nextId</a>(), rclcpp::Duration(1), std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#af4a7eb048e0ab28239aa434a9a25b1ac">GeofenceScheduler::clearTimers</a>, <span class="keyword">this</span>));</div>
+<div class="line"><span class="lineno">   28</span>      <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;buildTimer(<a class="code hl_function" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a9072b770cf240953a50f1d926b733b7c">nextId</a>(), rclcpp::Duration::from_nanoseconds(1), std::bind(&amp;<a class="code hl_function" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#af4a7eb048e0ab28239aa434a9a25b1ac">GeofenceScheduler::clearTimers</a>, <span class="keyword">this</span>));</div>
 <div class="line"><span class="lineno">   29</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a25cf6d0585adc5532044638ab6cf1547">clock_type_</a> = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;now().get_clock_type();</div>
 <div class="line"><span class="lineno">   30</span>}</div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1GeofenceScheduler_html_a25cf6d0585adc5532044638ab6cf1547"><div class="ttname"><a href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a25cf6d0585adc5532044638ab6cf1547">carma_wm_ctrl::GeofenceScheduler::clock_type_</a></div><div class="ttdeci">rcl_clock_type_t clock_type_</div><div class="ttdef"><b>Definition:</b> <a href="GeofenceScheduler_8hpp_source.html#l00048">GeofenceScheduler.hpp:48</a></div></div>
@@ -386,7 +386,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   95</span> </div>
 <div class="line"><span class="lineno">   96</span>    int32_t timer_id = <a class="code hl_function" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a9072b770cf240953a50f1d926b733b7c">nextId</a>();</div>
 <div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>    rclcpp::Duration control_duration = rclcpp::Duration(std::max((startTime - <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;now()).seconds() * 1e9, 0.0)); <span class="comment">//guard for negative value</span></div>
+<div class="line"><span class="lineno">   98</span>    rclcpp::Duration control_duration = rclcpp::Duration::from_nanoseconds(std::max((startTime - <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;now()).seconds() * 1e9, 0.0)); <span class="comment">//guard for negative value</span></div>
 <div class="line"><span class="lineno">   99</span> </div>
 <div class="line"><span class="lineno">  100</span>    <span class="comment">// Build timer to trigger when this geofence becomes active</span></div>
 <div class="line"><span class="lineno">  101</span>    <a class="code hl_typedef" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a2042b25ec29dafe31e07bdd6de53cc33">TimerPtr</a> timer = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;buildTimer(</div>
@@ -564,7 +564,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  157</span>  <span class="comment">// Build timer to trigger when this geofence becomes active</span></div>
 <div class="line"><span class="lineno">  158</span>  int32_t start_timer_id = <a class="code hl_function" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a9072b770cf240953a50f1d926b733b7c">nextId</a>();</div>
 <div class="line"><span class="lineno">  159</span> </div>
-<div class="line"><span class="lineno">  160</span>  rclcpp::Duration control_duration = rclcpp::Duration(std::max((startTime - <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;now()).seconds() * 1e9, 0.0)); <span class="comment">//guard for negative value</span></div>
+<div class="line"><span class="lineno">  160</span>  rclcpp::Duration control_duration = rclcpp::Duration::from_nanoseconds(std::max((startTime - <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;now()).seconds() * 1e9, 0.0)); <span class="comment">//guard for negative value</span></div>
 <div class="line"><span class="lineno">  161</span> </div>
 <div class="line"><span class="lineno">  162</span>  <a class="code hl_typedef" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a2042b25ec29dafe31e07bdd6de53cc33">TimerPtr</a> timer = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;buildTimer(</div>
 <div class="line"><span class="lineno">  163</span>      start_timer_id, control_duration,</div>
@@ -895,7 +895,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  119</span>  <span class="comment">// Build timer to trigger when this geofence becomes inactive</span></div>
 <div class="line"><span class="lineno">  120</span>  int32_t ending_timer_id = <a class="code hl_function" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a9072b770cf240953a50f1d926b733b7c">nextId</a>();</div>
 <div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>  rclcpp::Duration control_duration = rclcpp::Duration(std::max((endTime - <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;now()).seconds() * 1e9, 0.0)); <span class="comment">//guard for negative value</span></div>
+<div class="line"><span class="lineno">  122</span>  rclcpp::Duration control_duration = rclcpp::Duration::from_nanoseconds(std::max((endTime - <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;now()).seconds() * 1e9, 0.0)); <span class="comment">//guard for negative value</span></div>
 <div class="line"><span class="lineno">  123</span> </div>
 <div class="line"><span class="lineno">  124</span>  <a class="code hl_typedef" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a2042b25ec29dafe31e07bdd6de53cc33">TimerPtr</a> timer = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;buildTimer(</div>
 <div class="line"><span class="lineno">  125</span>      ending_timer_id, control_duration,</div>
@@ -1155,7 +1155,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm__ctrl.html">carma_wm_ctrl</a></li><li class="navelem"><a class="el" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html">GeofenceScheduler</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:13 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:24 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

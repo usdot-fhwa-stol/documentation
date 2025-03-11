@@ -115,8 +115,8 @@ Collaboration diagram for object::ObjectDetectionTrackingNode:</div>
 <area shape="rect" title=" " alt="" coords="819,5,1040,141"/>
 <area shape="rect" title=" " alt="" coords="739,35,794,112"/>
 <area shape="rect" title=" " alt="" coords="1064,35,1144,112"/>
-<area shape="rect" title=" " alt="" coords="1120,233,1176,311"/>
-<area shape="rect" title=" " alt="" coords="1200,233,1328,311"/>
+<area shape="rect" title=" " alt="" coords="1121,226,1255,318"/>
+<area shape="rect" title=" " alt="" coords="1279,226,1425,318"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -142,10 +142,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aeea88cea70e4f222ea308d9939add2d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae642900507ce8b7dd03c7334540551d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classobject_1_1ObjectDetectionTrackingWorker.html">ObjectDetectionTrackingWorker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobject_1_1ObjectDetectionTrackingNode.html#aae642900507ce8b7dd03c7334540551d">object_worker_</a></td></tr>
 <tr class="separator:aae642900507ce8b7dd03c7334540551d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a219de8091ceb60a98637e9f6409afb05"><td class="memItemLeft" align="right" valign="top">tf2_ros::Buffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobject_1_1ObjectDetectionTrackingNode.html#a219de8091ceb60a98637e9f6409afb05">tfBuffer_</a></td></tr>
-<tr class="separator:a219de8091ceb60a98637e9f6409afb05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0240654d7143b08b1205ae6a8df4cc92"><td class="memItemLeft" align="right" valign="top">tf2_ros::TransformListener&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobject_1_1ObjectDetectionTrackingNode.html#a0240654d7143b08b1205ae6a8df4cc92">tfListener_</a> {<a class="el" href="classobject_1_1ObjectDetectionTrackingNode.html#a219de8091ceb60a98637e9f6409afb05">tfBuffer_</a>}</td></tr>
-<tr class="separator:a0240654d7143b08b1205ae6a8df4cc92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af09f28051738511deb2abfdc6c9dc472"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; tf2_ros::Buffer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobject_1_1ObjectDetectionTrackingNode.html#af09f28051738511deb2abfdc6c9dc472">tfBuffer_</a></td></tr>
+<tr class="separator:af09f28051738511deb2abfdc6c9dc472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bfb69b0fbdaa691ab95e474a0feadfc"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; tf2_ros::TransformListener &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobject_1_1ObjectDetectionTrackingNode.html#a8bfb69b0fbdaa691ab95e474a0feadfc">tfListener_</a></td></tr>
+<tr class="separator:a8bfb69b0fbdaa691ab95e474a0feadfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72a2c6fe7e97754da08aacbd7923cab6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a></td></tr>
 <tr class="separator:a72a2c6fe7e97754da08aacbd7923cab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -185,20 +185,22 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   27</span>      std::bind(&amp;<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingNode.html#a32ebff5f7c586d66554ad1c7e21801b1">ObjectDetectionTrackingNode::publishObject</a>, <span class="keyword">this</span>, _1), </div>
 <div class="line"><span class="lineno">   28</span>      std::bind(&amp;<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingNode.html#a75d2b13e517cf223c317e5cb46493fe3">ObjectDetectionTrackingNode::lookupTransform</a>, <span class="keyword">this</span>, _1, _2, _3),</div>
 <div class="line"><span class="lineno">   29</span>      get_node_logging_interface()</div>
-<div class="line"><span class="lineno">   30</span>    ),</div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a219de8091ceb60a98637e9f6409afb05">tfBuffer_</a>(get_clock()),</div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a0240654d7143b08b1205ae6a8df4cc92">tfListener_</a>(<a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a219de8091ceb60a98637e9f6409afb05">tfBuffer_</a>)</div>
-<div class="line"><span class="lineno">   33</span>    {</div>
-<div class="line"><span class="lineno">   34</span>      <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a> = this-&gt;declare_parameter&lt;std::string&gt;(<span class="stringliteral">&quot;map_frame&quot;</span>, <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a>);</div>
-<div class="line"><span class="lineno">   35</span>    }</div>
-<div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingNode_html_a0240654d7143b08b1205ae6a8df4cc92"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingNode.html#a0240654d7143b08b1205ae6a8df4cc92">object::ObjectDetectionTrackingNode::tfListener_</a></div><div class="ttdeci">tf2_ros::TransformListener tfListener_</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8h_source.html#l00049">object_detection_tracking_node.h:49</a></div></div>
-<div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingNode_html_a219de8091ceb60a98637e9f6409afb05"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingNode.html#a219de8091ceb60a98637e9f6409afb05">object::ObjectDetectionTrackingNode::tfBuffer_</a></div><div class="ttdeci">tf2_ros::Buffer tfBuffer_</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8h_source.html#l00046">object_detection_tracking_node.h:46</a></div></div>
-<div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingNode_html_a32ebff5f7c586d66554ad1c7e21801b1"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingNode.html#a32ebff5f7c586d66554ad1c7e21801b1">object::ObjectDetectionTrackingNode::publishObject</a></div><div class="ttdeci">void publishObject(const carma_perception_msgs::msg::ExternalObjectList &amp;obj_msg)</div><div class="ttdoc">Callback to publish ObjectList.</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8cpp_source.html#l00073">object_detection_tracking_node.cpp:73</a></div></div>
+<div class="line"><span class="lineno">   30</span>    )</div>
+<div class="line"><span class="lineno">   31</span>    {</div>
+<div class="line"><span class="lineno">   32</span>      <span class="comment">// Initialize tf buffer with clock and duration</span></div>
+<div class="line"><span class="lineno">   33</span>      <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#af09f28051738511deb2abfdc6c9dc472">tfBuffer_</a> = std::make_shared&lt;tf2_ros::Buffer&gt;(this-&gt;get_clock());</div>
+<div class="line"><span class="lineno">   34</span>      <span class="comment">// Initialize transform listener with buffer</span></div>
+<div class="line"><span class="lineno">   35</span>      <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a8bfb69b0fbdaa691ab95e474a0feadfc">tfListener_</a> = std::make_shared&lt;tf2_ros::TransformListener&gt;(*<a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#af09f28051738511deb2abfdc6c9dc472">tfBuffer_</a>);</div>
+<div class="line"><span class="lineno">   36</span>      <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a> = this-&gt;declare_parameter&lt;std::string&gt;(<span class="stringliteral">&quot;map_frame&quot;</span>, <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a>);</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
+<div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingNode_html_a32ebff5f7c586d66554ad1c7e21801b1"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingNode.html#a32ebff5f7c586d66554ad1c7e21801b1">object::ObjectDetectionTrackingNode::publishObject</a></div><div class="ttdeci">void publishObject(const carma_perception_msgs::msg::ExternalObjectList &amp;obj_msg)</div><div class="ttdoc">Callback to publish ObjectList.</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8cpp_source.html#l00075">object_detection_tracking_node.cpp:75</a></div></div>
 <div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingNode_html_a72a2c6fe7e97754da08aacbd7923cab6"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">object::ObjectDetectionTrackingNode::map_frame_</a></div><div class="ttdeci">std::string map_frame_</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8h_source.html#l00052">object_detection_tracking_node.h:52</a></div></div>
-<div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingNode_html_a75d2b13e517cf223c317e5cb46493fe3"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingNode.html#a75d2b13e517cf223c317e5cb46493fe3">object::ObjectDetectionTrackingNode::lookupTransform</a></div><div class="ttdeci">boost::optional&lt; geometry_msgs::msg::TransformStamped &gt; lookupTransform(const std::string &amp;parent, const std::string &amp;child, const rclcpp::Time &amp;stamp)</div><div class="ttdoc">Callback to lookup a transform between two frames.</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8cpp_source.html#l00079">object_detection_tracking_node.cpp:79</a></div></div>
+<div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingNode_html_a75d2b13e517cf223c317e5cb46493fe3"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingNode.html#a75d2b13e517cf223c317e5cb46493fe3">object::ObjectDetectionTrackingNode::lookupTransform</a></div><div class="ttdeci">boost::optional&lt; geometry_msgs::msg::TransformStamped &gt; lookupTransform(const std::string &amp;parent, const std::string &amp;child, const rclcpp::Time &amp;stamp)</div><div class="ttdoc">Callback to lookup a transform between two frames.</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8cpp_source.html#l00081">object_detection_tracking_node.cpp:81</a></div></div>
+<div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingNode_html_a8bfb69b0fbdaa691ab95e474a0feadfc"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingNode.html#a8bfb69b0fbdaa691ab95e474a0feadfc">object::ObjectDetectionTrackingNode::tfListener_</a></div><div class="ttdeci">std::shared_ptr&lt; tf2_ros::TransformListener &gt; tfListener_</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8h_source.html#l00049">object_detection_tracking_node.h:49</a></div></div>
 <div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingNode_html_aae642900507ce8b7dd03c7334540551d"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingNode.html#aae642900507ce8b7dd03c7334540551d">object::ObjectDetectionTrackingNode::object_worker_</a></div><div class="ttdeci">ObjectDetectionTrackingWorker object_worker_</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8h_source.html#l00043">object_detection_tracking_node.h:43</a></div></div>
+<div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingNode_html_af09f28051738511deb2abfdc6c9dc472"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingNode.html#af09f28051738511deb2abfdc6c9dc472">object::ObjectDetectionTrackingNode::tfBuffer_</a></div><div class="ttdeci">std::shared_ptr&lt; tf2_ros::Buffer &gt; tfBuffer_</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8h_source.html#l00046">object_detection_tracking_node.h:46</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="object__detection__tracking__node_8h_source.html#l00052">map_frame_</a>.</p>
+<p class="reference">References <a class="el" href="object__detection__tracking__node_8h_source.html#l00052">map_frame_</a>, <a class="el" href="object__detection__tracking__node_8h_source.html#l00046">tfBuffer_</a>, and <a class="el" href="object__detection__tracking__node_8h_source.html#l00049">tfListener_</a>.</p>
 
 </div>
 </div>
@@ -219,42 +221,42 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00037">37</a> of file <a class="el" href="object__detection__tracking__node_8cpp_source.html">object_detection_tracking_node.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>                                                                                                               {</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    <span class="comment">// Load parameters</span></div>
-<div class="line"><span class="lineno">   40</span>    this-&gt;get_parameter&lt;std::string&gt;(<span class="stringliteral">&quot;map_frame&quot;</span>, <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a>);</div>
-<div class="line"><span class="lineno">   41</span>    this-&gt;<a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#aae642900507ce8b7dd03c7334540551d">object_worker_</a>.<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#aa5dad36722d59ca9fe1026cbe3b8ce44">setMapFrame</a>(<a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a>);</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    this-&gt;add_on_set_parameters_callback(</div>
-<div class="line"><span class="lineno">   44</span>        [<span class="keyword">this</span>](<span class="keyword">auto</span> param_vec) {</div>
-<div class="line"><span class="lineno">   45</span>          </div>
-<div class="line"><span class="lineno">   46</span>          <span class="keyword">auto</span> error = update_params&lt;std::string&gt;({ {<span class="stringliteral">&quot;map_frame&quot;</span>, <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a>} }, param_vec);</div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>          rcl_interfaces::msg::SetParametersResult result;</div>
+<p class="definition">Definition at line <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00039">39</a> of file <a class="el" href="object__detection__tracking__node_8cpp_source.html">object_detection_tracking_node.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>                                                                                                               {</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <span class="comment">// Load parameters</span></div>
+<div class="line"><span class="lineno">   42</span>    this-&gt;get_parameter&lt;std::string&gt;(<span class="stringliteral">&quot;map_frame&quot;</span>, <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a>);</div>
+<div class="line"><span class="lineno">   43</span>    this-&gt;<a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#aae642900507ce8b7dd03c7334540551d">object_worker_</a>.<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#aa5dad36722d59ca9fe1026cbe3b8ce44">setMapFrame</a>(<a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a>);</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    this-&gt;add_on_set_parameters_callback(</div>
+<div class="line"><span class="lineno">   46</span>        [<span class="keyword">this</span>](<span class="keyword">auto</span> param_vec) {</div>
+<div class="line"><span class="lineno">   47</span>          </div>
+<div class="line"><span class="lineno">   48</span>          <span class="keyword">auto</span> error = update_params&lt;std::string&gt;({ {<span class="stringliteral">&quot;map_frame&quot;</span>, <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a>} }, param_vec);</div>
 <div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>          result.successful = !error;</div>
+<div class="line"><span class="lineno">   50</span>          rcl_interfaces::msg::SetParametersResult result;</div>
 <div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>          <span class="keywordflow">if</span> (error) {</div>
-<div class="line"><span class="lineno">   53</span>            result.reason = error.get();</div>
-<div class="line"><span class="lineno">   54</span>          } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   55</span>            this-&gt;<a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#aae642900507ce8b7dd03c7334540551d">object_worker_</a>.<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#aa5dad36722d59ca9fe1026cbe3b8ce44">setMapFrame</a>(<a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a>);</div>
-<div class="line"><span class="lineno">   56</span>          }</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>          <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">   59</span>        }</div>
-<div class="line"><span class="lineno">   60</span>      );</div>
-<div class="line"><span class="lineno">   61</span>    </div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>    <span class="comment">// Setup pub/sub</span></div>
-<div class="line"><span class="lineno">   64</span>    <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a2cd709b10fab3f0e4a615ed2cb81ee03">autoware_obj_sub_</a>= create_subscription&lt;autoware_auto_msgs::msg::TrackedObjects&gt;(<span class="stringliteral">&quot;detected_objects&quot;</span>,10,</div>
-<div class="line"><span class="lineno">   65</span>      std::bind(&amp;<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a9c50f3a7d96105185537b87dda4b1c11">ObjectDetectionTrackingWorker::detectedObjectCallback</a>,&amp;<a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#aae642900507ce8b7dd03c7334540551d">object_worker_</a>, _1)</div>
-<div class="line"><span class="lineno">   66</span>    );</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#aeea88cea70e4f222ea308d9939add2d8">carma_obj_pub_</a>= create_publisher&lt;carma_perception_msgs::msg::ExternalObjectList&gt;(<span class="stringliteral">&quot;external_objects&quot;</span>, 10);</div>
+<div class="line"><span class="lineno">   52</span>          result.successful = !error;</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>          <span class="keywordflow">if</span> (error) {</div>
+<div class="line"><span class="lineno">   55</span>            result.reason = error.get();</div>
+<div class="line"><span class="lineno">   56</span>          } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   57</span>            this-&gt;<a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#aae642900507ce8b7dd03c7334540551d">object_worker_</a>.<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#aa5dad36722d59ca9fe1026cbe3b8ce44">setMapFrame</a>(<a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a72a2c6fe7e97754da08aacbd7923cab6">map_frame_</a>);</div>
+<div class="line"><span class="lineno">   58</span>          }</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>          <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
+<div class="line"><span class="lineno">   62</span>      );</div>
+<div class="line"><span class="lineno">   63</span>    </div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <span class="comment">// Setup pub/sub</span></div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a2cd709b10fab3f0e4a615ed2cb81ee03">autoware_obj_sub_</a>= create_subscription&lt;autoware_auto_msgs::msg::TrackedObjects&gt;(<span class="stringliteral">&quot;detected_objects&quot;</span>,10,</div>
+<div class="line"><span class="lineno">   67</span>      std::bind(&amp;<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a9c50f3a7d96105185537b87dda4b1c11">ObjectDetectionTrackingWorker::detectedObjectCallback</a>,&amp;<a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#aae642900507ce8b7dd03c7334540551d">object_worker_</a>, _1)</div>
+<div class="line"><span class="lineno">   68</span>    );</div>
 <div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
-<div class="line"><span class="lineno">   71</span>  }</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#aeea88cea70e4f222ea308d9939add2d8">carma_obj_pub_</a>= create_publisher&lt;carma_perception_msgs::msg::ExternalObjectList&gt;(<span class="stringliteral">&quot;external_objects&quot;</span>, 10);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
+<div class="line"><span class="lineno">   73</span>  }</div>
 <div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingNode_html_a2cd709b10fab3f0e4a615ed2cb81ee03"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingNode.html#a2cd709b10fab3f0e4a615ed2cb81ee03">object::ObjectDetectionTrackingNode::autoware_obj_sub_</a></div><div class="ttdeci">carma_ros2_utils::SubPtr&lt; autoware_auto_msgs::msg::TrackedObjects &gt; autoware_obj_sub_</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8h_source.html#l00037">object_detection_tracking_node.h:37</a></div></div>
 <div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingNode_html_aeea88cea70e4f222ea308d9939add2d8"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingNode.html#aeea88cea70e4f222ea308d9939add2d8">object::ObjectDetectionTrackingNode::carma_obj_pub_</a></div><div class="ttdeci">carma_ros2_utils::PubPtr&lt; carma_perception_msgs::msg::ExternalObjectList &gt; carma_obj_pub_</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8h_source.html#l00040">object_detection_tracking_node.h:40</a></div></div>
 <div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingWorker_html_a9c50f3a7d96105185537b87dda4b1c11"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingWorker.html#a9c50f3a7d96105185537b87dda4b1c11">object::ObjectDetectionTrackingWorker::detectedObjectCallback</a></div><div class="ttdeci">void detectedObjectCallback(autoware_auto_msgs::msg::TrackedObjects::UniquePtr msg)</div><div class="ttdoc">detectedObjectCallback populates detected object along with its velocity,yaw, yaw_rate and static/dyn...</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__worker_8cpp_source.html#l00039">object_detection_tracking_worker.cpp:39</a></div></div>
@@ -319,18 +321,17 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>boost::optional&lt;geometry_msgs::TransformStamped&gt; The transform between the two frames or boost::none if the transform does not exist or cannot be computed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00079">79</a> of file <a class="el" href="object__detection__tracking__node_8cpp_source.html">object_detection_tracking_node.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>                                                                                                                       {</div>
-<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">try</span> {</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#a219de8091ceb60a98637e9f6409afb05">tfBuffer_</a>.lookupTransform(parent ,child, stamp);</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>    } <span class="keywordflow">catch</span> (tf2::TransformException &amp;ex) {</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>      RCLCPP_WARN_STREAM(get_logger(), <span class="stringliteral">&quot;Failed to find transform with exception &quot;</span> &lt;&lt; ex.what());</div>
-<div class="line"><span class="lineno">   87</span>      <span class="keywordflow">return</span> boost::none;</div>
-<div class="line"><span class="lineno">   88</span>    }</div>
-<div class="line"><span class="lineno">   89</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00081">81</a> of file <a class="el" href="object__detection__tracking__node_8cpp_source.html">object_detection_tracking_node.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                                                                                                                       {</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><span class="lineno">   83</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#af09f28051738511deb2abfdc6c9dc472">tfBuffer_</a>-&gt;lookupTransform(parent, child, stamp);</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    } <span class="keywordflow">catch</span> (tf2::TransformException &amp;ex) {</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>      RCLCPP_WARN_STREAM(get_logger(), <span class="stringliteral">&quot;Failed to find transform with exception &quot;</span> &lt;&lt; ex.what());</div>
+<div class="line"><span class="lineno">   88</span>      <span class="keywordflow">return</span> boost::none;</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="line"><span class="lineno">   90</span>  }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="object__detection__tracking__node_8h_source.html#l00046">tfBuffer_</a>.</p>
 
@@ -354,10 +355,10 @@ Here is the call graph for this function:</div>
 
 <p>Callback to publish ObjectList. </p>
 
-<p class="definition">Definition at line <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00073">73</a> of file <a class="el" href="object__detection__tracking__node_8cpp_source.html">object_detection_tracking_node.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>  {</div>
-<div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#aeea88cea70e4f222ea308d9939add2d8">carma_obj_pub_</a>-&gt;publish(obj_msg);</div>
-<div class="line"><span class="lineno">   76</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00075">75</a> of file <a class="el" href="object__detection__tracking__node_8cpp_source.html">object_detection_tracking_node.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>  {</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingNode.html#aeea88cea70e4f222ea308d9939add2d8">carma_obj_pub_</a>-&gt;publish(obj_msg);</div>
+<div class="line"><span class="lineno">   78</span>  }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="object__detection__tracking__node_8h_source.html#l00040">carma_obj_pub_</a>.</p>
 
@@ -386,7 +387,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="object__detection__tracking__node_8h_source.html#l00037">37</a> of file <a class="el" href="object__detection__tracking__node_8h_source.html">object_detection_tracking_node.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00037">handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00039">handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -412,7 +413,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="object__detection__tracking__node_8h_source.html#l00040">40</a> of file <a class="el" href="object__detection__tracking__node_8h_source.html">object_detection_tracking_node.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00037">handle_on_configure()</a>, and <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00073">publishObject()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00039">handle_on_configure()</a>, and <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00075">publishObject()</a>.</p>
 
 </div>
 </div>
@@ -438,7 +439,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="object__detection__tracking__node_8h_source.html#l00052">52</a> of file <a class="el" href="object__detection__tracking__node_8h_source.html">object_detection_tracking_node.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00024">ObjectDetectionTrackingNode()</a>, and <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00037">handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00024">ObjectDetectionTrackingNode()</a>, and <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00039">handle_on_configure()</a>.</p>
 
 </div>
 </div>
@@ -464,12 +465,12 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="object__detection__tracking__node_8h_source.html#l00043">43</a> of file <a class="el" href="object__detection__tracking__node_8h_source.html">object_detection_tracking_node.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00037">handle_on_configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00039">handle_on_configure()</a>.</p>
 
 </div>
 </div>
-<a id="a219de8091ceb60a98637e9f6409afb05" name="a219de8091ceb60a98637e9f6409afb05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a219de8091ceb60a98637e9f6409afb05">&#9670;&nbsp;</a></span>tfBuffer_</h2>
+<a id="af09f28051738511deb2abfdc6c9dc472" name="af09f28051738511deb2abfdc6c9dc472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af09f28051738511deb2abfdc6c9dc472">&#9670;&nbsp;</a></span>tfBuffer_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -478,7 +479,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tf2_ros::Buffer object::ObjectDetectionTrackingNode::tfBuffer_</td>
+          <td class="memname">std::shared_ptr&lt;tf2_ros::Buffer&gt; object::ObjectDetectionTrackingNode::tfBuffer_</td>
         </tr>
       </table>
   </td>
@@ -490,12 +491,12 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="object__detection__tracking__node_8h_source.html#l00046">46</a> of file <a class="el" href="object__detection__tracking__node_8h_source.html">object_detection_tracking_node.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00079">lookupTransform()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00024">ObjectDetectionTrackingNode()</a>, and <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00081">lookupTransform()</a>.</p>
 
 </div>
 </div>
-<a id="a0240654d7143b08b1205ae6a8df4cc92" name="a0240654d7143b08b1205ae6a8df4cc92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0240654d7143b08b1205ae6a8df4cc92">&#9670;&nbsp;</a></span>tfListener_</h2>
+<a id="a8bfb69b0fbdaa691ab95e474a0feadfc" name="a8bfb69b0fbdaa691ab95e474a0feadfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bfb69b0fbdaa691ab95e474a0feadfc">&#9670;&nbsp;</a></span>tfListener_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -504,7 +505,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tf2_ros::TransformListener object::ObjectDetectionTrackingNode::tfListener_ {<a class="el" href="classobject_1_1ObjectDetectionTrackingNode.html#a219de8091ceb60a98637e9f6409afb05">tfBuffer_</a>}</td>
+          <td class="memname">std::shared_ptr&lt;tf2_ros::TransformListener&gt; object::ObjectDetectionTrackingNode::tfListener_</td>
         </tr>
       </table>
   </td>
@@ -515,6 +516,8 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="object__detection__tracking__node_8h_source.html#l00049">49</a> of file <a class="el" href="object__detection__tracking__node_8h_source.html">object_detection_tracking_node.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="object__detection__tracking__node_8cpp_source.html#l00024">ObjectDetectionTrackingNode()</a>.</p>
 
 </div>
 </div>
@@ -528,7 +531,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceobject.html">object</a></li><li class="navelem"><a class="el" href="classobject_1_1ObjectDetectionTrackingNode.html">ObjectDetectionTrackingNode</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:14 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:25 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

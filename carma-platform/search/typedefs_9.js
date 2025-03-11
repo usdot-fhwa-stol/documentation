@@ -1,13 +1,20 @@
 var searchData=
 [
-  ['lanechangestatuscb_0',['LaneChangeStatusCB',['../namespaceyield__plugin.html#a508edd284962f40938944f9304e66263',1,'yield_plugin']]],
-  ['laneletrouteconstptr_1',['LaneletRouteConstPtr',['../namespacecarma__wm.html#a5fd066f918b870bd4c2d19a4acbd6247',1,'carma_wm']]],
-  ['laneletrouteptr_2',['LaneletRoutePtr',['../namespacecarma__wm.html#ae21cba9eaf353a58738fc2c1773c5ffa',1,'carma_wm']]],
-  ['laneletrouteuconstptr_3',['LaneletRouteUConstPtr',['../namespacecarma__wm.html#af29435c76ce233178b6fb22bff0e299f',1,'carma_wm']]],
-  ['laneletrouteuptr_4',['LaneletRouteUPtr',['../namespacecarma__wm.html#ab120ba5848315c23cb06b2979c4f8fd4',1,'carma_wm']]],
-  ['laneletroutinggraphconstptr_5',['LaneletRoutingGraphConstPtr',['../namespacecarma__wm.html#adf411948c7e36aa0fb3071195e103015',1,'carma_wm']]],
-  ['laneletroutinggraphconstuptr_6',['LaneletRoutingGraphConstUPtr',['../namespacecarma__wm.html#a22efdd09d9c9896b39281abfc5b9e9bb',1,'carma_wm']]],
-  ['laneletroutinggraphptr_7',['LaneletRoutingGraphPtr',['../namespacecarma__wm.html#a23411d3d299da623ec379efbc1a5b14a',1,'carma_wm']]],
-  ['laneletroutinggraphuptr_8',['LaneletRoutingGraphUPtr',['../namespacecarma__wm.html#ac03d683ea9ece96ffce7853704ab3739',1,'carma_wm']]],
-  ['lookuptransform_9',['LookUpTransform',['../classmotion__computation_1_1MotionComputationWorker.html#a785e0e561270a2df71f000d9968e5d59',1,'motion_computation::MotionComputationWorker']]]
+  ['platooninginfocb_0',['PlatooningInfoCB',['../namespaceplatooning__strategic__ihp.html#ac78f5efe59674836961e51da54ad3d41',1,'platooning_strategic_ihp']]],
+  ['plugindiscoverypub_1',['PluginDiscoveryPub',['../namespacepure__pursuit__wrapper.html#a2768a734fb88e0b12390e35976ef5546',1,'pure_pursuit_wrapper']]],
+  ['point_5ft_2',['point_t',['../namespacecarma__wm_1_1collision__detection.html#a6004c603e70ad2964e784209574662ee',1,'carma_wm::collision_detection']]],
+  ['pointspeedpair_3',['PointSpeedPair',['../namespacestop__controlled__intersection__tactical__plugin.html#afa295d53ae945f3d845e2d9bd4e7a6be',1,'stop_controlled_intersection_tactical_plugin::PointSpeedPair()'],['../namespacelight__controlled__intersection__tactical__plugin.html#a4c20dbb679334f4929694a86232c3298',1,'light_controlled_intersection_tactical_plugin::PointSpeedPair()'],['../namespaceinlanecruising__plugin.html#a2db6b939afc2965cea1af8ae4def7a1b',1,'inlanecruising_plugin::PointSpeedPair()'],['../namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67',1,'cooperative_lanechange::PointSpeedPair()']]],
+  ['pointt_4',['PointT',['../namespacepoints__map__filter.html#a736fe65fbcb796322ba932403697e760',1,'points_map_filter']]],
+  ['polygon_5ft_5',['polygon_t',['../namespacecarma__wm_1_1collision__detection.html#a3002eac85a8982d9fc6c6e9d16900174',1,'carma_wm::collision_detection']]],
+  ['pose_5fmsg_5ftype_6',['pose_msg_type',['../classcarma__cooperative__perception_1_1ExternalObjectListToSdsmNode.html#a4eee3cbb2d8204123af8cbede2ee10ff',1,'carma_cooperative_perception::ExternalObjectListToSdsmNode']]],
+  ['posepubcallback_7',['PosePubCallback',['../classgnss__to__map__convertor_1_1GNSSToMapConvertor.html#a1f1758fa4a4a9e1131dce2971637cec6',1,'gnss_to_map_convertor::GNSSToMapConvertor']]],
+  ['posepublisher_8',['PosePublisher',['../classlocalization__manager_1_1LocalizationManager.html#ac75e2c2af5e2a75a6ee3ce23ce2a290d',1,'localization_manager::LocalizationManager']]],
+  ['publishactivegeofcallback_9',['PublishActiveGeofCallback',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#a1f39f2021825ba09363d9ee1c456ced6',1,'carma_wm_ctrl::WMBroadcaster']]],
+  ['publishctrlrequestcallback_10',['PublishCtrlRequestCallback',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#af3784647580aee6501347090b46c3244',1,'carma_wm_ctrl::WMBroadcaster']]],
+  ['publishmapcallback_11',['PublishMapCallback',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#ad4e8773338ce55f7132025e04d492e23',1,'carma_wm_ctrl::WMBroadcaster']]],
+  ['publishmapupdatecallback_12',['PublishMapUpdateCallback',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#a7ed209093ad1ddb36c00f97951063f8b',1,'carma_wm_ctrl::WMBroadcaster']]],
+  ['publishmobilityoperationcallback_13',['PublishMobilityOperationCallback',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#ac4bb2c122bfd96977dd89b9999a4050d',1,'carma_wm_ctrl::WMBroadcaster']]],
+  ['publishobjectcallback_14',['PublishObjectCallback',['../classobject_1_1ObjectDetectionTrackingWorker.html#acae5834696ba4c2f9d37677bc443895c',1,'object::ObjectDetectionTrackingWorker::PublishObjectCallback()'],['../classmotion__computation_1_1MotionComputationWorker.html#a9aad378cce19f70eb8840ea4600fcccb',1,'motion_computation::MotionComputationWorker::PublishObjectCallback()']]],
+  ['publishplugindiscoverycb_15',['PublishPluginDiscoveryCB',['../namespaceinlanecruising__plugin.html#acb051b1744e0113bd257658865e8e9c4',1,'inlanecruising_plugin']]],
+  ['publishtrafficcontrolcallback_16',['PublishTrafficControlCallback',['../classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a0dc52dc2423f3d6e74d1c2310a72125a',1,'traffic_incident_parser::TrafficIncidentParserWorker']]]
 ];

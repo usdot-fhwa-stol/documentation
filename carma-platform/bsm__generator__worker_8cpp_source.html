@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('bsm__generator__worker_8cpp_source.htm
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classbsm__generator_1_1BSMGeneratorWorker.html#acbe27f20f2ea05637eccf04ebe69fef7">   36</a></span>    std::vector&lt;uint8_t&gt; <a class="code hl_function" href="classbsm__generator_1_1BSMGeneratorWorker.html#acbe27f20f2ea05637eccf04ebe69fef7">BSMGeneratorWorker::getMsgId</a>(<span class="keyword">const</span> rclcpp::Time now, <span class="keywordtype">double</span> secs)</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="comment">// need to change ID every designated period</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        rclcpp::Duration id_timeout(secs * 1e9);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        rclcpp::Duration id_timeout = rclcpp::Duration::from_nanoseconds(secs * 1e9);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_variable" href="classbsm__generator_1_1BSMGeneratorWorker.html#a7ee76bcda467823297abac59c81b7164">generator_</a>.seed(std::random_device{}()); <span class="comment">// guarantee randomness</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        std::uniform_int_distribution&lt;int&gt; dis(0,INT_MAX);</div>
@@ -210,7 +210,7 @@ $(document).ready(function(){initNavTree('bsm__generator__worker_8cpp_source.htm
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_9702e71d13d159944d09538e3f25fe74.html">bsm_generator</a></li><li class="navelem"><a class="el" href="dir_cd3f5041b41a115e02a047c90b21f9e0.html">src</a></li><li class="navelem"><a class="el" href="bsm__generator__worker_8cpp.html">bsm_generator_worker.cpp</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:09 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:20 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

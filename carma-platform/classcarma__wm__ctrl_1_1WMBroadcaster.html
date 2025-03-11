@@ -1518,7 +1518,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  181</span>                                  end_time,</div>
 <div class="line"><span class="lineno">  182</span>                                  rclcpp::Duration(daily_schedule.begin),</div>
 <div class="line"><span class="lineno">  183</span>                                  rclcpp::Duration(daily_schedule.duration),</div>
-<div class="line"><span class="lineno">  184</span>                                  rclcpp::Duration(0.0), <span class="comment">// No offset</span></div>
+<div class="line"><span class="lineno">  184</span>                                  rclcpp::Duration::from_nanoseconds(0.0), <span class="comment">// No offset</span></div>
 <div class="line"><span class="lineno">  185</span>                                  rclcpp::Duration(daily_schedule.duration) - rclcpp::Duration(daily_schedule.begin),   <span class="comment">// Compute schedule portion end time</span></div>
 <div class="line"><span class="lineno">  186</span>                                  rclcpp::Duration(daily_schedule.duration) - rclcpp::Duration(daily_schedule.begin),   <span class="comment">// No repetition so same as portion end time</span></div>
 <div class="line"><span class="lineno">  187</span>                                  week_day_set));</div>
@@ -1530,8 +1530,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  193</span>    <span class="keywordflow">if</span> (msg_schedule.repeat_exists) {</div>
 <div class="line"><span class="lineno">  194</span>      gf_ptr-&gt;schedules.push_back(GeofenceSchedule({msg_schedule.start, clock_type},</div>
 <div class="line"><span class="lineno">  195</span>                                  end_time,</div>
-<div class="line"><span class="lineno">  196</span>                                  rclcpp::Duration(0.0),</div>
-<div class="line"><span class="lineno">  197</span>                                  rclcpp::Duration(86400.0e9), <span class="comment">// 24 hr daily application</span></div>
+<div class="line"><span class="lineno">  196</span>                                  rclcpp::Duration::from_nanoseconds(0.0),</div>
+<div class="line"><span class="lineno">  197</span>                                  rclcpp::Duration::from_nanoseconds(86400.0e9), <span class="comment">// 24 hr daily application</span></div>
 <div class="line"><span class="lineno">  198</span>                                  rclcpp::Duration(msg_schedule.repeat.offset),</div>
 <div class="line"><span class="lineno">  199</span>                                  rclcpp::Duration(msg_schedule.repeat.span),</div>
 <div class="line"><span class="lineno">  200</span>                                  rclcpp::Duration(msg_schedule.repeat.period),</div>
@@ -1539,11 +1539,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  202</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">  203</span>      gf_ptr-&gt;schedules.push_back(GeofenceSchedule({msg_schedule.start, clock_type},</div>
 <div class="line"><span class="lineno">  204</span>                                  end_time,</div>
-<div class="line"><span class="lineno">  205</span>                                  rclcpp::Duration(0.0),</div>
-<div class="line"><span class="lineno">  206</span>                                  rclcpp::Duration(86400.0e9), <span class="comment">// 24 hr daily application</span></div>
-<div class="line"><span class="lineno">  207</span>                                  rclcpp::Duration(0.0),     <span class="comment">// No offset</span></div>
-<div class="line"><span class="lineno">  208</span>                                  rclcpp::Duration(86400.0e9), <span class="comment">// Applied for full lenth of 24 hrs</span></div>
-<div class="line"><span class="lineno">  209</span>                                  rclcpp::Duration(86400.0e9), <span class="comment">// No repetition</span></div>
+<div class="line"><span class="lineno">  205</span>                                  rclcpp::Duration::from_nanoseconds(0.0),</div>
+<div class="line"><span class="lineno">  206</span>                                  rclcpp::Duration::from_nanoseconds(86400.0e9), <span class="comment">// 24 hr daily application</span></div>
+<div class="line"><span class="lineno">  207</span>                                  rclcpp::Duration::from_nanoseconds(0.0),     <span class="comment">// No offset</span></div>
+<div class="line"><span class="lineno">  208</span>                                  rclcpp::Duration::from_nanoseconds(86400.0e9), <span class="comment">// Applied for full lenth of 24 hrs</span></div>
+<div class="line"><span class="lineno">  209</span>                                  rclcpp::Duration::from_nanoseconds(86400.0e9), <span class="comment">// No repetition</span></div>
 <div class="line"><span class="lineno">  210</span>                                  week_day_set));</div>
 <div class="line"><span class="lineno">  211</span>    }</div>
 <div class="line"><span class="lineno">  212</span> </div>
@@ -5273,10 +5273,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1369</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno"> 1370</span>  }</div>
 <div class="line"><span class="lineno"> 1371</span> </div>
-<div class="line"><span class="lineno"> 1372</span>  lanelet::PassingControlLinePtr <a class="code hl_namespace" href="namespacepcl.html">pcl</a> =  std::dynamic_pointer_cast&lt;lanelet::PassingControlLine&gt;(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(regem-&gt;id()));</div>
+<div class="line"><span class="lineno"> 1372</span>  lanelet::PassingControlLinePtr pcl =  std::dynamic_pointer_cast&lt;lanelet::PassingControlLine&gt;(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(regem-&gt;id()));</div>
 <div class="line"><span class="lineno"> 1373</span>  <span class="comment">// if this geofence&#39;s pcl doesn&#39;t match with the lanelets current bound side, return false as we shouldn&#39;t change</span></div>
 <div class="line"><span class="lineno"> 1374</span>  <span class="keywordtype">bool</span> should_change_pcl = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno"> 1375</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> control_line : <a class="code hl_namespace" href="namespacepcl.html">pcl</a>-&gt;controlLine())</div>
+<div class="line"><span class="lineno"> 1375</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> control_line : pcl-&gt;controlLine())</div>
 <div class="line"><span class="lineno"> 1376</span>  {</div>
 <div class="line"><span class="lineno"> 1377</span>    <span class="keywordflow">if</span> ((control_line.id() == el.lanelet()-&gt;leftBound2d().id() &amp;&amp; gf_ptr-&gt;pcl_affects_left_) ||</div>
 <div class="line"><span class="lineno"> 1378</span>        (control_line.id() == el.lanelet()-&gt;rightBound2d().id() &amp;&amp; gf_ptr-&gt;pcl_affects_right_))</div>
@@ -5287,7 +5287,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1383</span>  }</div>
 <div class="line"><span class="lineno"> 1384</span>  <span class="keywordflow">return</span> should_change_pcl;</div>
 <div class="line"><span class="lineno"> 1385</span>}</div>
-<div class="ttc" id="anamespacepcl_html"><div class="ttname"><a href="namespacepcl.html">pcl</a></div><div class="ttdef"><b>Definition:</b> <a href="functor__filter_8h_source.html#l00024">functor_filter.h:24</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="WMBroadcaster_8hpp_source.html#l00433">current_map_</a>.</p>
 
@@ -6764,7 +6763,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm__ctrl.html">carma_wm_ctrl</a></li><li class="navelem"><a class="el" href="classcarma__wm__ctrl_1_1WMBroadcaster.html">WMBroadcaster</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:13 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:24 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

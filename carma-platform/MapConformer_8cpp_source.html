@@ -336,26 +336,26 @@ $(document).ready(function(){initNavTree('MapConformer_8cpp_source.html',''); in
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>      <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    }</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    <span class="keyword">auto</span> <a class="code hl_namespace" href="namespacepcl.html">pcl</a> = std::static_pointer_cast&lt;PassingControlLine&gt;(reg_elem);</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> sub_line : <a class="code hl_namespace" href="namespacepcl.html">pcl</a>-&gt;controlLine())</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    <span class="keyword">auto</span> pcl = std::static_pointer_cast&lt;PassingControlLine&gt;(reg_elem);</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> sub_line : pcl-&gt;controlLine())</div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    {</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>      <span class="keywordtype">bool</span> shouldAdd = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>      </div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>      <span class="keywordflow">if</span> (left_bound.id() == sub_line.id() &amp;&amp; !foundLeft)</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>      {</div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        foundLeft = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        shouldAdd = !lanelet::utils::contains(local_control_lines, <a class="code hl_namespace" href="namespacepcl.html">pcl</a>);</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        shouldAdd = !lanelet::utils::contains(local_control_lines, pcl);</div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>      }</div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (right_bound.id() == sub_line.id() &amp;&amp; !foundRight)</div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>      {</div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        foundRight = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        shouldAdd = !lanelet::utils::contains(local_control_lines, <a class="code hl_namespace" href="namespacepcl.html">pcl</a>);</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        shouldAdd = !lanelet::utils::contains(local_control_lines, pcl);</div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>      }</div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>      <span class="comment">// Check if our lanelet contains this control line</span></div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>      <span class="comment">// If it does not then add it</span></div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>      <span class="keywordflow">if</span> (shouldAdd)</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>      {</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.addRegulatoryElement(<a class="code hl_namespace" href="namespacepcl.html">pcl</a>);</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.addRegulatoryElement(pcl);</div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>      }</div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    }</div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    </div>
@@ -395,8 +395,8 @@ $(document).ready(function(){initNavTree('MapConformer_8cpp_source.html',''); in
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>  {</div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>    <span class="keywordflow">if</span> (reg_elem-&gt;attribute(AttributeName::Subtype).value() == PassingControlLine::RuleName)</div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>    {</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>      <span class="keyword">auto</span> <a class="code hl_namespace" href="namespacepcl.html">pcl</a> = std::static_pointer_cast&lt;PassingControlLine&gt;(reg_elem);</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> sub_line : <a class="code hl_namespace" href="namespacepcl.html">pcl</a>-&gt;controlLine())</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>      <span class="keyword">auto</span> pcl = std::static_pointer_cast&lt;PassingControlLine&gt;(reg_elem);</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> sub_line : pcl-&gt;controlLine())</div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>      {</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>        <span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0;</div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> sub_bound : outerBounds)</div>
@@ -405,10 +405,10 @@ $(document).ready(function(){initNavTree('MapConformer_8cpp_source.html',''); in
 <div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>          {</div>
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>            found_indices.push_back(<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>);</div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>            <span class="comment">// If an existing regulation applies to this area&#39;s bounds then add it to the area</span></div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>            <span class="keywordtype">bool</span> alreadyAdded = lanelet::utils::contains(local_control_lines, <a class="code hl_namespace" href="namespacepcl.html">pcl</a>);</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>            <span class="keywordtype">bool</span> alreadyAdded = lanelet::utils::contains(local_control_lines, pcl);</div>
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>            <span class="keywordflow">if</span> (!alreadyAdded)</div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>            {</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>              area.addRegulatoryElement(<a class="code hl_namespace" href="namespacepcl.html">pcl</a>);</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>              area.addRegulatoryElement(pcl);</div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>            }</div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>          }</div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        }</div>
@@ -577,7 +577,6 @@ $(document).ready(function(){initNavTree('MapConformer_8cpp_source.html',''); in
 <div class="ttc" id="anamespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03_html_ae80c94af49478480f8b4795333455307"><div class="ttname"><a href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#ae80c94af49478480f8b4795333455307">lanelet::MapConformer::anonymous_namespace{MapConformer.cpp}::addInferredAccessRule</a></div><div class="ttdeci">void addInferredAccessRule(Area &amp;area, lanelet::LaneletMapPtr map, const std::vector&lt; lanelet::traffic_rules::TrafficRulesUPtr &gt; &amp;default_traffic_rules)</div><div class="ttdoc">Generate RegionAccessRules from the inferred regulations in the provided map and area.</div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8cpp_source.html#l00278">MapConformer.cpp:278</a></div></div>
 <div class="ttc" id="anamespacelanelet_1_1MapConformer_html_a20caaf0f529166126f0f4ea4d80f80d0"><div class="ttname"><a href="namespacelanelet_1_1MapConformer.html#a20caaf0f529166126f0f4ea4d80f80d0">lanelet::MapConformer::ensureCompliance</a></div><div class="ttdeci">void ensureCompliance(lanelet::LaneletMapPtr map, lanelet::Velocity config_limit=80_mph)</div><div class="ttdoc">Function modifies an existing map to make a best effort attempt at ensuring the map confroms to the e...</div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8cpp_source.html#l00550">MapConformer.cpp:550</a></div></div>
 <div class="ttc" id="anamespacelanelet_html"><div class="ttname"><a href="namespacelanelet.html">lanelet</a></div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8hpp_source.html#l00038">MapConformer.hpp:39</a></div></div>
-<div class="ttc" id="anamespacepcl_html"><div class="ttname"><a href="namespacepcl.html">pcl</a></div><div class="ttdef"><b>Definition:</b> <a href="functor__filter_8h_source.html#l00024">functor_filter.h:24</a></div></div>
 <div class="ttc" id="anamespaceprocess__bag_html_af102a02c97622dd30b0dbf7bafb0d199"><div class="ttname"><a href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">process_bag.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00059">process_bag.py:59</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -585,7 +584,7 @@ $(document).ready(function(){initNavTree('MapConformer_8cpp_source.html',''); in
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_063394ac95ddab6826ca68be56e39eae.html">carma_wm</a></li><li class="navelem"><a class="el" href="dir_bed7bb81c6bc1fae1bac689cbf6acc02.html">src</a></li><li class="navelem"><a class="el" href="MapConformer_8cpp.html">MapConformer.cpp</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:10 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:20 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

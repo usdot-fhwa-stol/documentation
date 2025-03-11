@@ -103,8 +103,9 @@ $(document).ready(function(){initNavTree('plan__delegator_8hpp.html',''); initRe
 <code>#include &lt;geometry_msgs/msg/twist_stamped.hpp&gt;</code><br />
 <code>#include &lt;autoware_msgs/msg/lamp_cmd.hpp&gt;</code><br />
 <code>#include &lt;tf2_ros/transform_listener.h&gt;</code><br />
+<code>#include &lt;tf2_ros/buffer.h&gt;</code><br />
 <code>#include &lt;tf2/LinearMath/Transform.h&gt;</code><br />
-<code>#include &lt;tf2_geometry_msgs/tf2_geometry_msgs.h&gt;</code><br />
+<code>#include &lt;tf2_geometry_msgs/tf2_geometry_msgs.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="WMListener_8hpp_source.html">carma_wm/WMListener.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="WorldModel_8hpp_source.html">carma_wm/WorldModel.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="Geometry_8hpp_source.html">carma_wm/Geometry.hpp</a>&gt;</code><br />
@@ -114,59 +115,61 @@ Include dependency graph for plan_delegator.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="plan__delegator_8hpp__incl.png" border="0" usemap="#aplan__delegator_2include_2plan__delegator_8hpp" alt=""/></div>
 <map name="aplan__delegator_2include_2plan__delegator_8hpp" id="aplan__delegator_2include_2plan__delegator_8hpp">
-<area shape="rect" title=" " alt="" coords="3120,5,3271,47"/>
-<area shape="rect" title=" " alt="" coords="1972,109,2083,136"/>
-<area shape="rect" title=" " alt="" coords="2108,109,2169,136"/>
-<area shape="rect" title=" " alt="" coords="2294,206,2414,233"/>
-<area shape="rect" title=" " alt="" coords="2962,109,3088,136"/>
-<area shape="rect" title=" " alt="" coords="3112,102,3279,143"/>
-<area shape="rect" title=" " alt="" coords="3303,102,3470,143"/>
-<area shape="rect" title=" " alt="" coords="3494,95,3684,151"/>
-<area shape="rect" title=" " alt="" coords="3708,102,3864,143"/>
-<area shape="rect" title=" " alt="" coords="2439,199,2600,240"/>
-<area shape="rect" title=" " alt="" coords="3888,102,4063,143"/>
-<area shape="rect" title=" " alt="" coords="4087,102,4262,143"/>
-<area shape="rect" title=" " alt="" coords="4286,102,4460,143"/>
-<area shape="rect" title=" " alt="" coords="4484,109,4664,136"/>
-<area shape="rect" title=" " alt="" coords="4689,109,4868,136"/>
-<area shape="rect" title=" " alt="" coords="1130,295,1285,337"/>
-<area shape="rect" href="WMListener_8hpp.html" title=" " alt="" coords="2753,109,2937,136"/>
-<area shape="rect" href="WorldModel_8hpp.html" title=" " alt="" coords="2624,206,2807,233"/>
-<area shape="rect" href="Geometry_8hpp.html" title=" " alt="" coords="1008,206,1178,233"/>
-<area shape="rect" title=" " alt="" coords="4892,109,4947,136"/>
-<area shape="rect" title=" " alt="" coords="3408,206,3487,233"/>
-<area shape="rect" title=" " alt="" coords="3511,206,3568,233"/>
-<area shape="rect" title=" " alt="" coords="4274,288,4438,344"/>
-<area shape="rect" title=" " alt="" coords="3644,199,3806,240"/>
-<area shape="rect" title=" " alt="" coords="3830,199,3996,240"/>
-<area shape="rect" title=" " alt="" coords="4020,206,4078,233"/>
-<area shape="rect" title=" " alt="" coords="2832,199,2984,240"/>
-<area shape="rect" title=" " alt="" coords="3008,199,3162,240"/>
-<area shape="rect" title=" " alt="" coords="3186,206,3384,233"/>
-<area shape="rect" title=" " alt="" coords="1384,303,1461,329"/>
-<area shape="rect" title=" " alt="" coords="3051,303,3119,329"/>
-<area shape="rect" title=" " alt="" coords="1309,303,1360,329"/>
-<area shape="rect" title=" " alt="" coords="3144,303,3325,329"/>
-<area shape="rect" title=" " alt="" coords="3350,295,3508,337"/>
-<area shape="rect" title=" " alt="" coords="1546,392,1704,433"/>
-<area shape="rect" title=" " alt="" coords="1728,392,1887,433"/>
-<area shape="rect" title=" " alt="" coords="3532,303,3694,329"/>
-<area shape="rect" title=" " alt="" coords="3718,295,3879,337"/>
-<area shape="rect" title=" " alt="" coords="3903,295,4043,337"/>
-<area shape="rect" title=" " alt="" coords="1485,295,1618,337"/>
-<area shape="rect" title=" " alt="" coords="4067,295,4250,337"/>
-<area shape="rect" title=" " alt="" coords="1888,295,2055,337"/>
-<area shape="rect" title=" " alt="" coords="2079,288,2243,344"/>
-<area shape="rect" title=" " alt="" coords="2267,288,2412,344"/>
-<area shape="rect" title=" " alt="" coords="2437,288,2600,344"/>
-<area shape="rect" title=" " alt="" coords="2624,295,2808,337"/>
-<area shape="rect" href="TrackPos_8hpp.html" title=" " alt="" coords="1693,303,1864,329"/>
-<area shape="rect" title=" " alt="" coords="2832,288,2975,344"/>
-<area shape="rect" title=" " alt="" coords="675,295,834,337"/>
-<area shape="rect" title=" " alt="" coords="858,303,1056,329"/>
-<area shape="rect" title=" " alt="" coords="31,303,246,329"/>
-<area shape="rect" title=" " alt="" coords="270,303,452,329"/>
-<area shape="rect" title=" " alt="" coords="476,303,651,329"/>
+<area shape="rect" title=" " alt="" coords="3200,5,3351,47"/>
+<area shape="rect" title=" " alt="" coords="1957,109,2068,136"/>
+<area shape="rect" title=" " alt="" coords="2093,109,2154,136"/>
+<area shape="rect" title=" " alt="" coords="2279,206,2399,233"/>
+<area shape="rect" title=" " alt="" coords="2947,109,3073,136"/>
+<area shape="rect" title=" " alt="" coords="3097,102,3264,143"/>
+<area shape="rect" title=" " alt="" coords="3288,102,3455,143"/>
+<area shape="rect" title=" " alt="" coords="3479,95,3669,151"/>
+<area shape="rect" title=" " alt="" coords="3693,102,3849,143"/>
+<area shape="rect" title=" " alt="" coords="2424,199,2585,240"/>
+<area shape="rect" title=" " alt="" coords="3873,102,4048,143"/>
+<area shape="rect" title=" " alt="" coords="4072,102,4247,143"/>
+<area shape="rect" title=" " alt="" coords="4271,102,4445,143"/>
+<area shape="rect" title=" " alt="" coords="4469,109,4649,136"/>
+<area shape="rect" title=" " alt="" coords="4673,109,4781,136"/>
+<area shape="rect" title=" " alt="" coords="4806,109,4985,136"/>
+<area shape="rect" title=" " alt="" coords="1157,295,1311,337"/>
+<area shape="rect" href="WMListener_8hpp.html" title=" " alt="" coords="2738,109,2922,136"/>
+<area shape="rect" href="WorldModel_8hpp.html" title=" " alt="" coords="2609,206,2792,233"/>
+<area shape="rect" href="Geometry_8hpp.html" title=" " alt="" coords="1034,206,1205,233"/>
+<area shape="rect" title=" " alt="" coords="5009,109,5064,136"/>
+<area shape="rect" title=" " alt="" coords="3393,206,3472,233"/>
+<area shape="rect" title=" " alt="" coords="3496,206,3553,233"/>
+<area shape="rect" title=" " alt="" coords="4391,288,4555,344"/>
+<area shape="rect" title=" " alt="" coords="3629,199,3791,240"/>
+<area shape="rect" title=" " alt="" coords="3815,199,3981,240"/>
+<area shape="rect" title=" " alt="" coords="4005,206,4063,233"/>
+<area shape="rect" title=" " alt="" coords="2817,199,2969,240"/>
+<area shape="rect" title=" " alt="" coords="2993,199,3147,240"/>
+<area shape="rect" title=" " alt="" coords="3171,206,3369,233"/>
+<area shape="rect" title=" " alt="" coords="1762,303,1839,329"/>
+<area shape="rect" title=" " alt="" coords="3633,303,3701,329"/>
+<area shape="rect" title=" " alt="" coords="1493,303,1543,329"/>
+<area shape="rect" title=" " alt="" coords="3726,303,3793,329"/>
+<area shape="rect" title=" " alt="" coords="3817,303,3998,329"/>
+<area shape="rect" title=" " alt="" coords="4023,295,4181,337"/>
+<area shape="rect" title=" " alt="" coords="1481,392,1640,433"/>
+<area shape="rect" title=" " alt="" coords="1664,392,1823,433"/>
+<area shape="rect" title=" " alt="" coords="4205,303,4367,329"/>
+<area shape="rect" title=" " alt="" coords="1915,295,2076,337"/>
+<area shape="rect" title=" " alt="" coords="2100,295,2240,337"/>
+<area shape="rect" title=" " alt="" coords="1335,295,1469,337"/>
+<area shape="rect" title=" " alt="" coords="2264,295,2447,337"/>
+<area shape="rect" title=" " alt="" coords="2523,295,2689,337"/>
+<area shape="rect" title=" " alt="" coords="2713,288,2877,344"/>
+<area shape="rect" title=" " alt="" coords="2901,288,3047,344"/>
+<area shape="rect" title=" " alt="" coords="3071,288,3234,344"/>
+<area shape="rect" title=" " alt="" coords="3258,295,3442,337"/>
+<area shape="rect" href="TrackPos_8hpp.html" title=" " alt="" coords="1567,303,1738,329"/>
+<area shape="rect" title=" " alt="" coords="3467,288,3609,344"/>
+<area shape="rect" title=" " alt="" coords="5,295,164,337"/>
+<area shape="rect" title=" " alt="" coords="188,303,387,329"/>
+<area shape="rect" title=" " alt="" coords="461,303,676,329"/>
+<area shape="rect" title=" " alt="" coords="700,303,883,329"/>
+<area shape="rect" title=" " alt="" coords="907,303,1081,329"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -250,7 +253,7 @@ Macros</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Expands to an expression (in the form of chained ternary operators) that evalutes to the desired field </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00045">45</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00046">46</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
 
 </div>
 </div>
@@ -294,7 +297,7 @@ Macros</h2></td></tr>
 <div class="line">                                throw std::invalid_argument(<span class="stringliteral">&quot;ADJUST_MANEUVER_PROPERTY (property) called on maneuver with invalid type id &quot;</span> + <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>((mvr).type)))))))))</div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_a64b708654c8aecb09122d39577df31b5"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">carma_cooperative_perception::to_string</a></div><div class="ttdeci">auto to_string(const UtmZone &amp;zone) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="utm__zone_8cpp_source.html#l00021">utm_zone.cpp:21</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00055">55</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="plan__delegator_8hpp_source.html#l00056">56</a> of file <a class="el" href="plan__delegator_8hpp_source.html">plan_delegator.hpp</a>.</p>
 
 </div>
 </div>
@@ -304,7 +307,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d710a7fa5a044dfe5a073f69014868e3.html">plan_delegator</a></li><li class="navelem"><a class="el" href="dir_1e2a8de91c06a5ed4c93bbfcd84d0359.html">include</a></li><li class="navelem"><a class="el" href="plan__delegator_8hpp.html">plan_delegator.hpp</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:11 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:22 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

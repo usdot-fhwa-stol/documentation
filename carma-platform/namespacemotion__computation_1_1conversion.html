@@ -325,15 +325,16 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  201</span> </div>
 <div class="line"><span class="lineno">  202</span>  out_msg.predictions = <a class="code hl_function" href="namespacemotion__computation_1_1conversion_1_1impl.html#a7cf9dd84c4528278ce20562def3047c3">impl::predicted_poses_to_predicted_state</a>(</div>
 <div class="line"><span class="lineno">  203</span>    predicted_poses, out_msg.velocity.twist.linear.x, rclcpp::Time(out_msg.header.stamp),</div>
-<div class="line"><span class="lineno">  204</span>    rclcpp::Duration(pred_step_size * 1e9), map_frame_id, out_msg.confidence, out_msg.confidence);</div>
-<div class="line"><span class="lineno">  205</span>  out_msg.presence_vector |= carma_perception_msgs::msg::ExternalObject::PREDICTION_PRESENCE_VECTOR;</div>
-<div class="line"><span class="lineno">  206</span>}</div>
-<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_a50c675cb23fd3a743226b22287b32945"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#a50c675cb23fd3a743226b22287b32945">motion_computation::conversion::impl::pose_from_gnss</a></div><div class="ttdeci">geometry_msgs::msg::PoseWithCovariance pose_from_gnss(const lanelet::projection::LocalFrameProjector &amp;projector, const tf2::Quaternion &amp;ned_in_map_rotation, const lanelet::GPSPoint &amp;gps_point, const double &amp;heading, const double lat_variance, const double lon_variance, const double heading_variance)</div><div class="ttdef"><b>Definition:</b> <a href="psm__to__external__object__convertor_8cpp_source.html#l00339">psm_to_external_object_convertor.cpp:339</a></div></div>
-<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_a7cf9dd84c4528278ce20562def3047c3"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#a7cf9dd84c4528278ce20562def3047c3">motion_computation::conversion::impl::predicted_poses_to_predicted_state</a></div><div class="ttdeci">std::vector&lt; carma_perception_msgs::msg::PredictedState &gt; predicted_poses_to_predicted_state(const std::vector&lt; geometry_msgs::msg::Pose &gt; &amp;poses, double constant_velocity, const rclcpp::Time &amp;start_time, const rclcpp::Duration &amp;step_size, const std::string &amp;frame, double initial_pose_confidence, double initial_vel_confidence)</div><div class="ttdef"><b>Definition:</b> <a href="psm__to__external__object__convertor_8cpp_source.html#l00443">psm_to_external_object_convertor.cpp:443</a></div></div>
-<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_ae5e3a18881b54fc666c13199ea6c7073"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#ae5e3a18881b54fc666c13199ea6c7073">motion_computation::conversion::impl::sample_2d_linear_motion</a></div><div class="ttdeci">std::vector&lt; geometry_msgs::msg::Pose &gt; sample_2d_linear_motion(const geometry_msgs::msg::Pose &amp;pose, double velocity, double period, double step_size)</div><div class="ttdef"><b>Definition:</b> <a href="psm__to__external__object__convertor_8cpp_source.html#l00293">psm_to_external_object_convertor.cpp:293</a></div></div>
+<div class="line"><span class="lineno">  204</span>    rclcpp::Duration::from_nanoseconds(pred_step_size * 1e9), map_frame_id, out_msg.confidence,</div>
+<div class="line"><span class="lineno">  205</span>    out_msg.confidence);</div>
+<div class="line"><span class="lineno">  206</span>  out_msg.presence_vector |= carma_perception_msgs::msg::ExternalObject::PREDICTION_PRESENCE_VECTOR;</div>
+<div class="line"><span class="lineno">  207</span>}</div>
+<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_a50c675cb23fd3a743226b22287b32945"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#a50c675cb23fd3a743226b22287b32945">motion_computation::conversion::impl::pose_from_gnss</a></div><div class="ttdeci">geometry_msgs::msg::PoseWithCovariance pose_from_gnss(const lanelet::projection::LocalFrameProjector &amp;projector, const tf2::Quaternion &amp;ned_in_map_rotation, const lanelet::GPSPoint &amp;gps_point, const double &amp;heading, const double lat_variance, const double lon_variance, const double heading_variance)</div><div class="ttdef"><b>Definition:</b> <a href="psm__to__external__object__convertor_8cpp_source.html#l00340">psm_to_external_object_convertor.cpp:340</a></div></div>
+<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_a7cf9dd84c4528278ce20562def3047c3"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#a7cf9dd84c4528278ce20562def3047c3">motion_computation::conversion::impl::predicted_poses_to_predicted_state</a></div><div class="ttdeci">std::vector&lt; carma_perception_msgs::msg::PredictedState &gt; predicted_poses_to_predicted_state(const std::vector&lt; geometry_msgs::msg::Pose &gt; &amp;poses, double constant_velocity, const rclcpp::Time &amp;start_time, const rclcpp::Duration &amp;step_size, const std::string &amp;frame, double initial_pose_confidence, double initial_vel_confidence)</div><div class="ttdef"><b>Definition:</b> <a href="psm__to__external__object__convertor_8cpp_source.html#l00444">psm_to_external_object_convertor.cpp:444</a></div></div>
+<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_ae5e3a18881b54fc666c13199ea6c7073"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#ae5e3a18881b54fc666c13199ea6c7073">motion_computation::conversion::impl::sample_2d_linear_motion</a></div><div class="ttdeci">std::vector&lt; geometry_msgs::msg::Pose &gt; sample_2d_linear_motion(const geometry_msgs::msg::Pose &amp;pose, double velocity, double period, double step_size)</div><div class="ttdef"><b>Definition:</b> <a href="psm__to__external__object__convertor_8cpp_source.html#l00294">psm_to_external_object_convertor.cpp:294</a></div></div>
 <div class="ttc" id="anamespaceprocess__bag_html_af102a02c97622dd30b0dbf7bafb0d199"><div class="ttname"><a href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">process_bag.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00059">process_bag.py:59</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00339">motion_computation::conversion::impl::pose_from_gnss()</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00443">motion_computation::conversion::impl::predicted_poses_to_predicted_state()</a>, and <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00293">motion_computation::conversion::impl::sample_2d_linear_motion()</a>.</p>
+<p class="reference">References <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00340">motion_computation::conversion::impl::pose_from_gnss()</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00444">motion_computation::conversion::impl::predicted_poses_to_predicted_state()</a>, and <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00294">motion_computation::conversion::impl::sample_2d_linear_motion()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -443,78 +444,79 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   93</span>  <span class="keywordtype">double</span> message_offset_y = 0.0;</div>
 <div class="line"><span class="lineno">   94</span>  <span class="keywordtype">double</span> message_offset_z = 0.0;</div>
 <div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>  rclcpp::Duration mobility_path_point_delta_t(mobility_path_points_timestep_size * 1e9);</div>
-<div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>  <span class="comment">// Note the usage of current vs previous in this loop can be a bit confusing</span></div>
-<div class="line"><span class="lineno">   99</span>  <span class="comment">// The intended behavior is we our always storing our prev_point but using</span></div>
-<div class="line"><span class="lineno">  100</span>  <span class="comment">// curr_pt for computing velocity at prev_point</span></div>
-<div class="line"><span class="lineno">  101</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; in_msg.trajectory.offsets.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++) {</div>
-<div class="line"><span class="lineno">  102</span>    <span class="keyword">auto</span> curr_pt_msg = in_msg.trajectory.offsets[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>    message_offset_x = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(curr_pt_msg.offset_x) + message_offset_x;</div>
-<div class="line"><span class="lineno">  105</span>    message_offset_y = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(curr_pt_msg.offset_y) + message_offset_y;</div>
-<div class="line"><span class="lineno">  106</span>    message_offset_z = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(curr_pt_msg.offset_z) + message_offset_z;</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>    tf2::Vector3 curr_pt_ecef{</div>
-<div class="line"><span class="lineno">  109</span>      ecef_x + message_offset_x / 100.0, ecef_y + message_offset_y / 100.0,</div>
-<div class="line"><span class="lineno">  110</span>      ecef_z + message_offset_z /</div>
-<div class="line"><span class="lineno">  111</span>                 100.0};  <span class="comment">// ecef_x is in m while message_offset_x is in cm. Want m as final result</span></div>
-<div class="line"><span class="lineno">  112</span>    <span class="keyword">auto</span> curr_pt_map = <a class="code hl_function" href="namespacemotion__computation_1_1conversion_1_1impl.html#aa543f123dea7c2e5476ed7e17e25456f">impl::transform_to_map_frame</a>(curr_pt_ecef, map_projector);</div>
-<div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>    carma_perception_msgs::msg::PredictedState curr_state;</div>
-<div class="line"><span class="lineno">  115</span> </div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> == 0)  <span class="comment">// First point&#39;s state should be stored outside &quot;predictions&quot;</span></div>
-<div class="line"><span class="lineno">  117</span>    {</div>
-<div class="line"><span class="lineno">  118</span>      rclcpp::Time prev_stamp_as_time = rclcpp::Time(out_msg.header.stamp);</div>
-<div class="line"><span class="lineno">  119</span>      rclcpp::Time updated_time_step = prev_stamp_as_time + mobility_path_point_delta_t;</div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>      <span class="keyword">auto</span> res = <a class="code hl_function" href="namespacemotion__computation_1_1conversion_1_1impl.html#abb4c108e6903a12b1dff436ef0e6d825">impl::composePredictedState</a>(</div>
-<div class="line"><span class="lineno">  122</span>        curr_pt_map, prev_pt_map, prev_stamp_as_time, updated_time_step,</div>
-<div class="line"><span class="lineno">  123</span>        prev_yaw);  <span class="comment">// Position returned is that of prev_pt_map NOT curr_pt_map</span></div>
-<div class="line"><span class="lineno">  124</span>      curr_state = std::get&lt;0&gt;(res);</div>
-<div class="line"><span class="lineno">  125</span>      prev_yaw = std::get&lt;1&gt;(res);</div>
-<div class="line"><span class="lineno">  126</span>      <span class="comment">// Compute out_msg pose</span></div>
-<div class="line"><span class="lineno">  127</span>      out_msg.pose.pose = curr_state.predicted_position;  <span class="comment">// Orientation computed from first point</span></div>
-<div class="line"><span class="lineno">  128</span>                                                          <span class="comment">// in offsets with location</span></div>
-<div class="line"><span class="lineno">  129</span>      out_msg.velocity.twist = curr_state.predicted_velocity;  <span class="comment">// Velocity derived from first point</span></div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  132</span>      <span class="comment">// NOTE: This is where the time increment happens but it feels incorrect.</span></div>
-<div class="line"><span class="lineno">  133</span>      <span class="comment">// since the corresponding data is actually from the original prev_state stamp</span></div>
-<div class="line"><span class="lineno">  134</span>      rclcpp::Time prev_stamp_as_time =</div>
-<div class="line"><span class="lineno">  135</span>        rclcpp::Time(prev_state.header.stamp) + mobility_path_point_delta_t;</div>
-<div class="line"><span class="lineno">  136</span>      rclcpp::Time updated_time_step = prev_stamp_as_time + mobility_path_point_delta_t;</div>
-<div class="line"><span class="lineno">  137</span> </div>
-<div class="line"><span class="lineno">  138</span>      <span class="keyword">auto</span> res = <a class="code hl_function" href="namespacemotion__computation_1_1conversion_1_1impl.html#abb4c108e6903a12b1dff436ef0e6d825">impl::composePredictedState</a>(</div>
-<div class="line"><span class="lineno">  139</span>        curr_pt_map, prev_pt_map, prev_stamp_as_time, updated_time_step, prev_yaw);</div>
-<div class="line"><span class="lineno">  140</span>      curr_state = std::get&lt;0&gt;(res);</div>
-<div class="line"><span class="lineno">  141</span>      prev_yaw = std::get&lt;1&gt;(res);</div>
-<div class="line"><span class="lineno">  142</span>      out_msg.predictions.push_back(curr_state);</div>
-<div class="line"><span class="lineno">  143</span>    }</div>
-<div class="line"><span class="lineno">  144</span> </div>
-<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">if</span> (</div>
-<div class="line"><span class="lineno">  146</span>      <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> == in_msg.trajectory.offsets.size() -</div>
-<div class="line"><span class="lineno">  147</span>             1)  <span class="comment">// if last point, copy the prev_state velocity &amp; orientation to the last point too</span></div>
-<div class="line"><span class="lineno">  148</span>    {</div>
-<div class="line"><span class="lineno">  149</span>      curr_state.predicted_position.position.x = curr_pt_map.x();</div>
-<div class="line"><span class="lineno">  150</span>      curr_state.predicted_position.position.y = curr_pt_map.y();</div>
-<div class="line"><span class="lineno">  151</span>      curr_state.predicted_position.position.z = curr_pt_map.z();</div>
-<div class="line"><span class="lineno">  152</span>      out_msg.predictions.push_back(curr_state);</div>
-<div class="line"><span class="lineno">  153</span>    }</div>
-<div class="line"><span class="lineno">  154</span> </div>
-<div class="line"><span class="lineno">  155</span>    prev_state = curr_state;</div>
-<div class="line"><span class="lineno">  156</span>    prev_pt_map = curr_pt_map;</div>
-<div class="line"><span class="lineno">  157</span>  }</div>
-<div class="line"><span class="lineno">  158</span> </div>
-<div class="line"><span class="lineno">  159</span>  <a class="code hl_function" href="namespacemotion__computation_1_1conversion_1_1impl.html#aa87a85102ac70d15b834d6e1cd3d9429">impl::calculateAngVelocityOfPredictedStates</a>(out_msg);</div>
-<div class="line"><span class="lineno">  160</span> </div>
-<div class="line"><span class="lineno">  161</span>  <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  162</span>}</div>
-<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_aa543f123dea7c2e5476ed7e17e25456f"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#aa543f123dea7c2e5476ed7e17e25456f">motion_computation::conversion::impl::transform_to_map_frame</a></div><div class="ttdeci">tf2::Vector3 transform_to_map_frame(const tf2::Vector3 &amp;ecef_point, const lanelet::projection::LocalFrameProjector &amp;map_projector)</div><div class="ttdoc">Transforms ecef point to map frame using internally saved map transform.</div><div class="ttdef"><b>Definition:</b> <a href="mobility__path__to__external__object_8cpp_source.html#l00253">mobility_path_to_external_object.cpp:253</a></div></div>
-<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_aa87a85102ac70d15b834d6e1cd3d9429"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#aa87a85102ac70d15b834d6e1cd3d9429">motion_computation::conversion::impl::calculateAngVelocityOfPredictedStates</a></div><div class="ttdeci">void calculateAngVelocityOfPredictedStates(carma_perception_msgs::msg::ExternalObject &amp;object)</div><div class="ttdoc">Helper function to fill in the angular velocity of the external object.</div><div class="ttdef"><b>Definition:</b> <a href="mobility__path__to__external__object_8cpp_source.html#l00211">mobility_path_to_external_object.cpp:211</a></div></div>
-<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_abb4c108e6903a12b1dff436ef0e6d825"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#abb4c108e6903a12b1dff436ef0e6d825">motion_computation::conversion::impl::composePredictedState</a></div><div class="ttdeci">std::pair&lt; carma_perception_msgs::msg::PredictedState, double &gt; composePredictedState(const tf2::Vector3 &amp;curr_pt, const tf2::Vector3 &amp;prev_pt, const rclcpp::Time &amp;prev_time_stamp, const rclcpp::Time &amp;curr_time_stamp, double prev_yaw)</div><div class="ttdoc">Composes a PredictedState message form a provided current point and previous point....</div><div class="ttdef"><b>Definition:</b> <a href="mobility__path__to__external__object_8cpp_source.html#l00166">mobility_path_to_external_object.cpp:166</a></div></div>
+<div class="line"><span class="lineno">   96</span>  rclcpp::Duration mobility_path_point_delta_t =</div>
+<div class="line"><span class="lineno">   97</span>    rclcpp::Duration::from_nanoseconds(mobility_path_points_timestep_size * 1e9);</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>  <span class="comment">// Note the usage of current vs previous in this loop can be a bit confusing</span></div>
+<div class="line"><span class="lineno">  100</span>  <span class="comment">// The intended behavior is we our always storing our prev_point but using</span></div>
+<div class="line"><span class="lineno">  101</span>  <span class="comment">// curr_pt for computing velocity at prev_point</span></div>
+<div class="line"><span class="lineno">  102</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; in_msg.trajectory.offsets.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++) {</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keyword">auto</span> curr_pt_msg = in_msg.trajectory.offsets[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    message_offset_x = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(curr_pt_msg.offset_x) + message_offset_x;</div>
+<div class="line"><span class="lineno">  106</span>    message_offset_y = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(curr_pt_msg.offset_y) + message_offset_y;</div>
+<div class="line"><span class="lineno">  107</span>    message_offset_z = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(curr_pt_msg.offset_z) + message_offset_z;</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    tf2::Vector3 curr_pt_ecef{</div>
+<div class="line"><span class="lineno">  110</span>      ecef_x + message_offset_x / 100.0, ecef_y + message_offset_y / 100.0,</div>
+<div class="line"><span class="lineno">  111</span>      ecef_z + message_offset_z /</div>
+<div class="line"><span class="lineno">  112</span>                 100.0};  <span class="comment">// ecef_x is in m while message_offset_x is in cm. Want m as final result</span></div>
+<div class="line"><span class="lineno">  113</span>    <span class="keyword">auto</span> curr_pt_map = <a class="code hl_function" href="namespacemotion__computation_1_1conversion_1_1impl.html#aa543f123dea7c2e5476ed7e17e25456f">impl::transform_to_map_frame</a>(curr_pt_ecef, map_projector);</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    carma_perception_msgs::msg::PredictedState curr_state;</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> == 0)  <span class="comment">// First point&#39;s state should be stored outside &quot;predictions&quot;</span></div>
+<div class="line"><span class="lineno">  118</span>    {</div>
+<div class="line"><span class="lineno">  119</span>      rclcpp::Time prev_stamp_as_time = rclcpp::Time(out_msg.header.stamp);</div>
+<div class="line"><span class="lineno">  120</span>      rclcpp::Time updated_time_step = prev_stamp_as_time + mobility_path_point_delta_t;</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>      <span class="keyword">auto</span> res = <a class="code hl_function" href="namespacemotion__computation_1_1conversion_1_1impl.html#abb4c108e6903a12b1dff436ef0e6d825">impl::composePredictedState</a>(</div>
+<div class="line"><span class="lineno">  123</span>        curr_pt_map, prev_pt_map, prev_stamp_as_time, updated_time_step,</div>
+<div class="line"><span class="lineno">  124</span>        prev_yaw);  <span class="comment">// Position returned is that of prev_pt_map NOT curr_pt_map</span></div>
+<div class="line"><span class="lineno">  125</span>      curr_state = std::get&lt;0&gt;(res);</div>
+<div class="line"><span class="lineno">  126</span>      prev_yaw = std::get&lt;1&gt;(res);</div>
+<div class="line"><span class="lineno">  127</span>      <span class="comment">// Compute out_msg pose</span></div>
+<div class="line"><span class="lineno">  128</span>      out_msg.pose.pose = curr_state.predicted_position;  <span class="comment">// Orientation computed from first point</span></div>
+<div class="line"><span class="lineno">  129</span>                                                          <span class="comment">// in offsets with location</span></div>
+<div class="line"><span class="lineno">  130</span>      out_msg.velocity.twist = curr_state.predicted_velocity;  <span class="comment">// Velocity derived from first point</span></div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  133</span>      <span class="comment">// NOTE: This is where the time increment happens but it feels incorrect.</span></div>
+<div class="line"><span class="lineno">  134</span>      <span class="comment">// since the corresponding data is actually from the original prev_state stamp</span></div>
+<div class="line"><span class="lineno">  135</span>      rclcpp::Time prev_stamp_as_time =</div>
+<div class="line"><span class="lineno">  136</span>        rclcpp::Time(prev_state.header.stamp) + mobility_path_point_delta_t;</div>
+<div class="line"><span class="lineno">  137</span>      rclcpp::Time updated_time_step = prev_stamp_as_time + mobility_path_point_delta_t;</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>      <span class="keyword">auto</span> res = <a class="code hl_function" href="namespacemotion__computation_1_1conversion_1_1impl.html#abb4c108e6903a12b1dff436ef0e6d825">impl::composePredictedState</a>(</div>
+<div class="line"><span class="lineno">  140</span>        curr_pt_map, prev_pt_map, prev_stamp_as_time, updated_time_step, prev_yaw);</div>
+<div class="line"><span class="lineno">  141</span>      curr_state = std::get&lt;0&gt;(res);</div>
+<div class="line"><span class="lineno">  142</span>      prev_yaw = std::get&lt;1&gt;(res);</div>
+<div class="line"><span class="lineno">  143</span>      out_msg.predictions.push_back(curr_state);</div>
+<div class="line"><span class="lineno">  144</span>    }</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">if</span> (</div>
+<div class="line"><span class="lineno">  147</span>      <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> == in_msg.trajectory.offsets.size() -</div>
+<div class="line"><span class="lineno">  148</span>             1)  <span class="comment">// if last point, copy the prev_state velocity &amp; orientation to the last point too</span></div>
+<div class="line"><span class="lineno">  149</span>    {</div>
+<div class="line"><span class="lineno">  150</span>      curr_state.predicted_position.position.x = curr_pt_map.x();</div>
+<div class="line"><span class="lineno">  151</span>      curr_state.predicted_position.position.y = curr_pt_map.y();</div>
+<div class="line"><span class="lineno">  152</span>      curr_state.predicted_position.position.z = curr_pt_map.z();</div>
+<div class="line"><span class="lineno">  153</span>      out_msg.predictions.push_back(curr_state);</div>
+<div class="line"><span class="lineno">  154</span>    }</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    prev_state = curr_state;</div>
+<div class="line"><span class="lineno">  157</span>    prev_pt_map = curr_pt_map;</div>
+<div class="line"><span class="lineno">  158</span>  }</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>  <a class="code hl_function" href="namespacemotion__computation_1_1conversion_1_1impl.html#aa87a85102ac70d15b834d6e1cd3d9429">impl::calculateAngVelocityOfPredictedStates</a>(out_msg);</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>  <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  163</span>}</div>
+<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_aa543f123dea7c2e5476ed7e17e25456f"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#aa543f123dea7c2e5476ed7e17e25456f">motion_computation::conversion::impl::transform_to_map_frame</a></div><div class="ttdeci">tf2::Vector3 transform_to_map_frame(const tf2::Vector3 &amp;ecef_point, const lanelet::projection::LocalFrameProjector &amp;map_projector)</div><div class="ttdoc">Transforms ecef point to map frame using internally saved map transform.</div><div class="ttdef"><b>Definition:</b> <a href="mobility__path__to__external__object_8cpp_source.html#l00254">mobility_path_to_external_object.cpp:254</a></div></div>
+<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_aa87a85102ac70d15b834d6e1cd3d9429"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#aa87a85102ac70d15b834d6e1cd3d9429">motion_computation::conversion::impl::calculateAngVelocityOfPredictedStates</a></div><div class="ttdeci">void calculateAngVelocityOfPredictedStates(carma_perception_msgs::msg::ExternalObject &amp;object)</div><div class="ttdoc">Helper function to fill in the angular velocity of the external object.</div><div class="ttdef"><b>Definition:</b> <a href="mobility__path__to__external__object_8cpp_source.html#l00212">mobility_path_to_external_object.cpp:212</a></div></div>
+<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_abb4c108e6903a12b1dff436ef0e6d825"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#abb4c108e6903a12b1dff436ef0e6d825">motion_computation::conversion::impl::composePredictedState</a></div><div class="ttdeci">std::pair&lt; carma_perception_msgs::msg::PredictedState, double &gt; composePredictedState(const tf2::Vector3 &amp;curr_pt, const tf2::Vector3 &amp;prev_pt, const rclcpp::Time &amp;prev_time_stamp, const rclcpp::Time &amp;curr_time_stamp, double prev_yaw)</div><div class="ttdoc">Composes a PredictedState message form a provided current point and previous point....</div><div class="ttdef"><b>Definition:</b> <a href="mobility__path__to__external__object_8cpp_source.html#l00167">mobility_path_to_external_object.cpp:167</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00211">motion_computation::conversion::impl::calculateAngVelocityOfPredictedStates()</a>, <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00166">motion_computation::conversion::impl::composePredictedState()</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, and <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00253">motion_computation::conversion::impl::transform_to_map_frame()</a>.</p>
+<p class="reference">References <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00212">motion_computation::conversion::impl::calculateAngVelocityOfPredictedStates()</a>, <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00167">motion_computation::conversion::impl::composePredictedState()</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, and <a class="el" href="mobility__path__to__external__object_8cpp_source.html#l00254">motion_computation::conversion::impl::transform_to_map_frame()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -769,15 +771,16 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  227</span> </div>
 <div class="line"><span class="lineno">  228</span>  out_msg.predictions = <a class="code hl_function" href="namespacemotion__computation_1_1conversion_1_1impl.html#a7cf9dd84c4528278ce20562def3047c3">impl::predicted_poses_to_predicted_state</a>(</div>
 <div class="line"><span class="lineno">  229</span>    predicted_poses, out_msg.velocity.twist.linear.x, rclcpp::Time(out_msg.header.stamp),</div>
-<div class="line"><span class="lineno">  230</span>    rclcpp::Duration(pred_step_size * 1e9), map_frame_id, out_msg.confidence, out_msg.confidence);</div>
-<div class="line"><span class="lineno">  231</span>  out_msg.presence_vector |= carma_perception_msgs::msg::ExternalObject::PREDICTION_PRESENCE_VECTOR;</div>
-<div class="line"><span class="lineno">  232</span>}</div>
-<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_a48389a44ecd9e272dbbcdebea32601fb"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#a48389a44ecd9e272dbbcdebea32601fb">motion_computation::conversion::impl::sample_2d_path_from_radius</a></div><div class="ttdeci">std::vector&lt; geometry_msgs::msg::Pose &gt; sample_2d_path_from_radius(const geometry_msgs::msg::Pose &amp;pose, double velocity, double radius_of_curvature, double period, double step_size)</div><div class="ttdef"><b>Definition:</b> <a href="psm__to__external__object__convertor_8cpp_source.html#l00236">psm_to_external_object_convertor.cpp:236</a></div></div>
-<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_adcf6c7b8fa415af10c0cc489388fce40"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#adcf6c7b8fa415af10c0cc489388fce40">motion_computation::conversion::impl::get_psm_timestamp</a></div><div class="ttdeci">rclcpp::Time get_psm_timestamp(const carma_v2x_msgs::msg::PSM &amp;in_msg, rclcpp::Clock::SharedPtr clock)</div><div class="ttdef"><b>Definition:</b> <a href="psm__to__external__object__convertor_8cpp_source.html#l00476">psm_to_external_object_convertor.cpp:476</a></div></div>
+<div class="line"><span class="lineno">  230</span>    rclcpp::Duration::from_nanoseconds(pred_step_size * 1e9), map_frame_id, out_msg.confidence,</div>
+<div class="line"><span class="lineno">  231</span>    out_msg.confidence);</div>
+<div class="line"><span class="lineno">  232</span>  out_msg.presence_vector |= carma_perception_msgs::msg::ExternalObject::PREDICTION_PRESENCE_VECTOR;</div>
+<div class="line"><span class="lineno">  233</span>}</div>
+<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_a48389a44ecd9e272dbbcdebea32601fb"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#a48389a44ecd9e272dbbcdebea32601fb">motion_computation::conversion::impl::sample_2d_path_from_radius</a></div><div class="ttdeci">std::vector&lt; geometry_msgs::msg::Pose &gt; sample_2d_path_from_radius(const geometry_msgs::msg::Pose &amp;pose, double velocity, double radius_of_curvature, double period, double step_size)</div><div class="ttdef"><b>Definition:</b> <a href="psm__to__external__object__convertor_8cpp_source.html#l00237">psm_to_external_object_convertor.cpp:237</a></div></div>
+<div class="ttc" id="anamespacemotion__computation_1_1conversion_1_1impl_html_adcf6c7b8fa415af10c0cc489388fce40"><div class="ttname"><a href="namespacemotion__computation_1_1conversion_1_1impl.html#adcf6c7b8fa415af10c0cc489388fce40">motion_computation::conversion::impl::get_psm_timestamp</a></div><div class="ttdeci">rclcpp::Time get_psm_timestamp(const carma_v2x_msgs::msg::PSM &amp;in_msg, rclcpp::Clock::SharedPtr clock)</div><div class="ttdef"><b>Definition:</b> <a href="psm__to__external__object__convertor_8cpp_source.html#l00477">psm_to_external_object_convertor.cpp:477</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00476">motion_computation::conversion::impl::get_psm_timestamp()</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00339">motion_computation::conversion::impl::pose_from_gnss()</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00443">motion_computation::conversion::impl::predicted_poses_to_predicted_state()</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00293">motion_computation::conversion::impl::sample_2d_linear_motion()</a>, and <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00236">motion_computation::conversion::impl::sample_2d_path_from_radius()</a>.</p>
+<p class="reference">References <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00477">motion_computation::conversion::impl::get_psm_timestamp()</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00340">motion_computation::conversion::impl::pose_from_gnss()</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00444">motion_computation::conversion::impl::predicted_poses_to_predicted_state()</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00294">motion_computation::conversion::impl::sample_2d_linear_motion()</a>, and <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00237">motion_computation::conversion::impl::sample_2d_path_from_radius()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00272">motion_computation::MotionComputationWorker::bsmCallback()</a>, <a class="el" href="GNSSToMapConvertor_8cpp_source.html#l00036">gnss_to_map_convertor::GNSSToMapConvertor::gnssFixCb()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00210">motion_computation::MotionComputationWorker::mobilityPathCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00241">motion_computation::MotionComputationWorker::psmCallback()</a>, <a class="el" href="Geometry_8cpp_source.html#l00058">carma_wm::geometry::rpyFromQuaternion()</a>, and <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00099">carma_cloud_client::CarmaCloudClient::XMLconversion()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motion__computation__worker_8cpp_source.html#l00271">motion_computation::MotionComputationWorker::bsmCallback()</a>, <a class="el" href="GNSSToMapConvertor_8cpp_source.html#l00036">gnss_to_map_convertor::GNSSToMapConvertor::gnssFixCb()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00209">motion_computation::MotionComputationWorker::mobilityPathCallback()</a>, <a class="el" href="motion__computation__worker_8cpp_source.html#l00240">motion_computation::MotionComputationWorker::psmCallback()</a>, <a class="el" href="Geometry_8cpp_source.html#l00058">carma_wm::geometry::rpyFromQuaternion()</a>, and <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00099">carma_cloud_client::CarmaCloudClient::XMLconversion()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -819,7 +822,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemotion__computation.html">motion_computation</a></li><li class="navelem"><a class="el" href="namespacemotion__computation_1_1conversion.html">conversion</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:14 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:25 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -402,7 +402,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  294</span>        marker.color.b = 1.0;</div>
 <div class="line"><span class="lineno">  295</span>        marker.color.a = 1.0;</div>
 <div class="line"><span class="lineno">  296</span>        marker.frame_locked = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  297</span>        marker.lifetime = builtin_interfaces::msg::Duration((rclcpp::Duration(<a class="code hl_variable" href="classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#aadb3e34799f0b6eff02dd9739d41b6dd">config_</a>.<a class="code hl_variable" href="structmobilitypath__visualizer_1_1Config.html#affe1e0f398dd1cce7a23bbe7c455d102">t</a> * 1e9)));</div>
+<div class="line"><span class="lineno">  297</span>        marker.lifetime = builtin_interfaces::msg::Duration((rclcpp::Duration::from_nanoseconds(<a class="code hl_variable" href="classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#aadb3e34799f0b6eff02dd9739d41b6dd">config_</a>.<a class="code hl_variable" href="structmobilitypath__visualizer_1_1Config.html#affe1e0f398dd1cce7a23bbe7c455d102">t</a> * 1e9)));</div>
 <div class="line"><span class="lineno">  298</span> </div>
 <div class="line"><span class="lineno">  299</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; cav_marker: cav_markers)</div>
 <div class="line"><span class="lineno">  300</span>        {</div>
@@ -569,7 +569,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  229</span>            marker.id = <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>;</div>
 <div class="line"><span class="lineno">  230</span>            rclcpp::Time marker_cur_time(marker.header.stamp);</div>
 <div class="line"><span class="lineno">  231</span>            <span class="comment">//Update time by 0.1s</span></div>
-<div class="line"><span class="lineno">  232</span>            rclcpp::Time updated_time =  marker_cur_time + rclcpp::Duration(0.1 * 1e9);</div>
+<div class="line"><span class="lineno">  232</span>            rclcpp::Time updated_time =  marker_cur_time + rclcpp::Duration::from_nanoseconds(0.1 * 1e9);</div>
 <div class="line"><span class="lineno">  233</span>            marker.header.stamp = builtin_interfaces::msg::Time(updated_time);</div>
 <div class="line"><span class="lineno">  234</span> </div>
 <div class="line"><span class="lineno">  235</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &gt;= msg.trajectory.offsets.size()) { <span class="comment">// If we need to delete previous points</span></div>
@@ -938,7 +938,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  367</span>            rclcpp::Time host_marker_stamp(host_marker.markers[0].header.stamp);</div>
 <div class="line"><span class="lineno">  368</span> </div>
 <div class="line"><span class="lineno">  369</span> </div>
-<div class="line"><span class="lineno">  370</span>            <span class="keywordflow">if</span> (curr_cav_marker_stamp + rclcpp::Duration(time_step * 1e9) &lt; host_marker_stamp){</div>
+<div class="line"><span class="lineno">  370</span>            <span class="keywordflow">if</span> (curr_cav_marker_stamp + rclcpp::Duration::from_nanoseconds(time_step * 1e9) &lt; host_marker_stamp){</div>
 <div class="line"><span class="lineno">  371</span>                <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">  372</span>            }</div>
 <div class="line"><span class="lineno">  373</span> </div>
@@ -1534,7 +1534,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemobilitypath__visualizer.html">mobilitypath_visualizer</a></li><li class="navelem"><a class="el" href="classmobilitypath__visualizer_1_1MobilityPathVisualizer.html">MobilityPathVisualizer</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:14 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:25 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -30,7 +30,6 @@ var namespaces_dup =
     ] ],
     [ "carma_cooperative_perception", "namespacecarma__cooperative__perception.html", "namespacecarma__cooperative__perception" ],
     [ "carma_guidance_plugins", "namespacecarma__guidance__plugins.html", "namespacecarma__guidance__plugins" ],
-    [ "carma_record", "namespacecarma__record.html", "namespacecarma__record" ],
     [ "carma_src", "namespacecarma__src.html", [
       [ "create_ros2_tracing_action", "namespacecarma__src.html#a9c61779e545502538d8f7cb27d18fe10", null ],
       [ "generate_launch_description", "namespacecarma__src.html#af9b310123d70f1b0131bc831678af1b1", null ]
@@ -121,16 +120,15 @@ var namespaces_dup =
     [ "object_visualizer_launch", "namespaceobject__visualizer__launch.html", [
       [ "generate_launch_description", "namespaceobject__visualizer__launch.html#a334121870219379dc2e172cb7eccc61c", null ]
     ] ],
-    [ "pcl", "namespacepcl.html", "namespacepcl" ],
     [ "plan_delegator", "namespaceplan__delegator.html", "namespaceplan__delegator" ],
     [ "platoon_control", "namespaceplatoon__control.html", [
       [ "generate_launch_description", "namespaceplatoon__control.html#aa1236e257737a743b9f4977fb878d6f6", null ]
     ] ],
-    [ "platoon_strategic_ihp", "namespaceplatoon__strategic__ihp.html", "namespaceplatoon__strategic__ihp" ],
-    [ "platoon_strategic_ihp_launch", "namespaceplatoon__strategic__ihp__launch.html", [
-      [ "generate_launch_description", "namespaceplatoon__strategic__ihp__launch.html#ae0a9a9afb68d9777e81d8c40e3ddbfc3", null ]
-    ] ],
     [ "platooning_control", "namespaceplatooning__control.html", "namespaceplatooning__control" ],
+    [ "platooning_strategic_ihp", "namespaceplatooning__strategic__ihp.html", "namespaceplatooning__strategic__ihp" ],
+    [ "platooning_strategic_ihp_launch", "namespaceplatooning__strategic__ihp__launch.html", [
+      [ "generate_launch_description", "namespaceplatooning__strategic__ihp__launch.html#a817474448b2233c58fe8f433c7475986", null ]
+    ] ],
     [ "platooning_tactical_plugin", "namespaceplatooning__tactical__plugin.html", "namespaceplatooning__tactical__plugin" ],
     [ "platooning_tactical_plugin_launch", "namespaceplatooning__tactical__plugin__launch.html", [
       [ "generate_launch_description", "namespaceplatooning__tactical__plugin__launch.html#a8353def0af6696af7eac7ed07e9be333", null ]

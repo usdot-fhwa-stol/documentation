@@ -443,10 +443,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  390</span> </div>
 <div class="line"><span class="lineno">  391</span>  <span class="keyword">auto</span> traj = <a class="code hl_function" href="classstop__and__wait__plugin_1_1StopandWait.html#afda81ce6bf1b8913bad9f071b7881790">trajectory_from_points_times_orientations</a>(raw_points, times, yaws, start_time);</div>
 <div class="line"><span class="lineno">  392</span> </div>
-<div class="line"><span class="lineno">  393</span>  <span class="keywordflow">while</span> (rclcpp::Time(traj.back().target_time) - rclcpp::Time(traj.front().target_time) &lt; rclcpp::Duration(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#ae1af2b1d26f072bf494c62634514f3e7">minimal_trajectory_duration</a> * 1e9))</div>
+<div class="line"><span class="lineno">  393</span>  <span class="keywordflow">while</span> (rclcpp::Time(traj.back().target_time) - rclcpp::Time(traj.front().target_time) &lt; rclcpp::Duration::from_nanoseconds(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#ae1af2b1d26f072bf494c62634514f3e7">minimal_trajectory_duration</a> * 1e9))</div>
 <div class="line"><span class="lineno">  394</span>  {</div>
 <div class="line"><span class="lineno">  395</span>    carma_planning_msgs::msg::TrajectoryPlanPoint new_point = traj.back();</div>
-<div class="line"><span class="lineno">  396</span>    new_point.target_time = rclcpp::Time(new_point.target_time) + rclcpp::Duration(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#af15c8b21219680d90ce427c056542ba5">stop_timestep</a> * 1e9);</div>
+<div class="line"><span class="lineno">  396</span>    new_point.target_time = rclcpp::Time(new_point.target_time) + rclcpp::Duration::from_nanoseconds(<a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a30fade0856056bba97e3a5db61c15ced">config_</a>.<a class="code hl_variable" href="structStopandWaitConfig.html#af15c8b21219680d90ce427c056542ba5">stop_timestep</a> * 1e9);</div>
 <div class="line"><span class="lineno">  397</span>    new_point.planner_plugin_name = <a class="code hl_variable" href="classstop__and__wait__plugin_1_1StopandWait.html#a64d6b1a64dc7e3fc03e39b6f1d7225e3">plugin_name_</a>;</div>
 <div class="line"><span class="lineno">  398</span>    traj.push_back(new_point);</div>
 <div class="line"><span class="lineno">  399</span>  }</div>
@@ -912,7 +912,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  216</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; points.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
 <div class="line"><span class="lineno">  217</span>  {</div>
 <div class="line"><span class="lineno">  218</span>    carma_planning_msgs::msg::TrajectoryPlanPoint tpp;</div>
-<div class="line"><span class="lineno">  219</span>    rclcpp::Duration relative_time(times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] * 1e9);</div>
+<div class="line"><span class="lineno">  219</span>    rclcpp::Duration relative_time = rclcpp::Duration::from_nanoseconds(times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] * 1e9);</div>
 <div class="line"><span class="lineno">  220</span>    tpp.target_time = startTime + relative_time;</div>
 <div class="line"><span class="lineno">  221</span>    tpp.x = points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].x();</div>
 <div class="line"><span class="lineno">  222</span>    tpp.y = points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].y();</div>
@@ -1133,7 +1133,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacestop__and__wait__plugin.html">stop_and_wait_plugin</a></li><li class="navelem"><a class="el" href="classstop__and__wait__plugin_1_1StopandWait.html">StopandWait</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:16 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:26 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

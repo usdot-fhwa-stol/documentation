@@ -264,7 +264,7 @@ $(document).ready(function(){initNavTree('WMBroadcaster_8cpp_source.html',''); i
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                                  end_time,</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                                  rclcpp::Duration(daily_schedule.begin),</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                                  rclcpp::Duration(daily_schedule.duration),</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                                  rclcpp::Duration(0.0), <span class="comment">// No offset</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                                  rclcpp::Duration::from_nanoseconds(0.0), <span class="comment">// No offset</span></div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                                  rclcpp::Duration(daily_schedule.duration) - rclcpp::Duration(daily_schedule.begin),   <span class="comment">// Compute schedule portion end time</span></div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                                  rclcpp::Duration(daily_schedule.duration) - rclcpp::Duration(daily_schedule.begin),   <span class="comment">// No repetition so same as portion end time</span></div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                                  week_day_set));</div>
@@ -276,8 +276,8 @@ $(document).ready(function(){initNavTree('WMBroadcaster_8cpp_source.html',''); i
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordflow">if</span> (msg_schedule.repeat_exists) {</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>      gf_ptr-&gt;schedules.push_back(<a class="code hl_class" href="classcarma__wm__ctrl_1_1GeofenceSchedule.html">GeofenceSchedule</a>({msg_schedule.start, clock_type},</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                                  end_time,</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                                  rclcpp::Duration(0.0),</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                                  rclcpp::Duration(86400.0e9), <span class="comment">// 24 hr daily application</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                                  rclcpp::Duration::from_nanoseconds(0.0),</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                                  rclcpp::Duration::from_nanoseconds(86400.0e9), <span class="comment">// 24 hr daily application</span></div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                                  rclcpp::Duration(msg_schedule.repeat.offset),</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                                  rclcpp::Duration(msg_schedule.repeat.span),</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                                  rclcpp::Duration(msg_schedule.repeat.period),</div>
@@ -285,11 +285,11 @@ $(document).ready(function(){initNavTree('WMBroadcaster_8cpp_source.html',''); i
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      gf_ptr-&gt;schedules.push_back(<a class="code hl_class" href="classcarma__wm__ctrl_1_1GeofenceSchedule.html">GeofenceSchedule</a>({msg_schedule.start, clock_type},</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                                  end_time,</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                                  rclcpp::Duration(0.0),</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                                  rclcpp::Duration(86400.0e9), <span class="comment">// 24 hr daily application</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                                  rclcpp::Duration(0.0),     <span class="comment">// No offset</span></div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                                  rclcpp::Duration(86400.0e9), <span class="comment">// Applied for full lenth of 24 hrs</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                                  rclcpp::Duration(86400.0e9), <span class="comment">// No repetition</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                                  rclcpp::Duration::from_nanoseconds(0.0),</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                                  rclcpp::Duration::from_nanoseconds(86400.0e9), <span class="comment">// 24 hr daily application</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                                  rclcpp::Duration::from_nanoseconds(0.0),     <span class="comment">// No offset</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                                  rclcpp::Duration::from_nanoseconds(86400.0e9), <span class="comment">// Applied for full lenth of 24 hrs</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                                  rclcpp::Duration::from_nanoseconds(86400.0e9), <span class="comment">// No repetition</span></div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                                  week_day_set));</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    }</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
@@ -1418,10 +1418,10 @@ $(document).ready(function(){initNavTree('WMBroadcaster_8cpp_source.html',''); i
 <div class="line"><a id="l01369" name="l01369"></a><span class="lineno"> 1369</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l01370" name="l01370"></a><span class="lineno"> 1370</span>  }</div>
 <div class="line"><a id="l01371" name="l01371"></a><span class="lineno"> 1371</span> </div>
-<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>  lanelet::PassingControlLinePtr <a class="code hl_namespace" href="namespacepcl.html">pcl</a> =  std::dynamic_pointer_cast&lt;lanelet::PassingControlLine&gt;(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(regem-&gt;id()));</div>
+<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>  lanelet::PassingControlLinePtr pcl =  std::dynamic_pointer_cast&lt;lanelet::PassingControlLine&gt;(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1WMBroadcaster.html#a040ca7a37cb8e92574f77401eb80b856">current_map_</a>-&gt;regulatoryElementLayer.get(regem-&gt;id()));</div>
 <div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span>  <span class="comment">// if this geofence&#39;s pcl doesn&#39;t match with the lanelets current bound side, return false as we shouldn&#39;t change</span></div>
 <div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span>  <span class="keywordtype">bool</span> should_change_pcl = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> control_line : <a class="code hl_namespace" href="namespacepcl.html">pcl</a>-&gt;controlLine())</div>
+<div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> control_line : pcl-&gt;controlLine())</div>
 <div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span>  {</div>
 <div class="line"><a id="l01377" name="l01377"></a><span class="lineno"> 1377</span>    <span class="keywordflow">if</span> ((control_line.id() == el.lanelet()-&gt;leftBound2d().id() &amp;&amp; gf_ptr-&gt;pcl_affects_left_) ||</div>
 <div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span>        (control_line.id() == el.lanelet()-&gt;rightBound2d().id() &amp;&amp; gf_ptr-&gt;pcl_affects_right_))</div>
@@ -2487,7 +2487,6 @@ $(document).ready(function(){initNavTree('WMBroadcaster_8cpp_source.html',''); i
 <div class="ttc" id="anamespacecarma__wm_html_aef665263f7df5afa3781f4319fe95e9c"><div class="ttname"><a href="namespacecarma__wm.html#aef665263f7df5afa3781f4319fe95e9c">carma_wm::toBinMsg</a></div><div class="ttdeci">void toBinMsg(std::shared_ptr&lt; carma_wm::TrafficControl &gt; gf_ptr, autoware_lanelet2_msgs::msg::MapBin *msg)</div><div class="ttdef"><b>Definition:</b> <a href="TrafficControl_8cpp_source.html#l00024">TrafficControl.cpp:24</a></div></div>
 <div class="ttc" id="anamespacelanelet_1_1MapConformer_html_a20caaf0f529166126f0f4ea4d80f80d0"><div class="ttname"><a href="namespacelanelet_1_1MapConformer.html#a20caaf0f529166126f0f4ea4d80f80d0">lanelet::MapConformer::ensureCompliance</a></div><div class="ttdeci">void ensureCompliance(lanelet::LaneletMapPtr map, lanelet::Velocity config_limit=80_mph)</div><div class="ttdoc">Function modifies an existing map to make a best effort attempt at ensuring the map confroms to the e...</div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8cpp_source.html#l00550">MapConformer.cpp:550</a></div></div>
 <div class="ttc" id="anamespacelanelet_html"><div class="ttname"><a href="namespacelanelet.html">lanelet</a></div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8hpp_source.html#l00038">MapConformer.hpp:39</a></div></div>
-<div class="ttc" id="anamespacepcl_html"><div class="ttname"><a href="namespacepcl.html">pcl</a></div><div class="ttdef"><b>Definition:</b> <a href="functor__filter_8h_source.html#l00024">functor_filter.h:24</a></div></div>
 <div class="ttc" id="anamespaceprocess__bag_html_af102a02c97622dd30b0dbf7bafb0d199"><div class="ttname"><a href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">process_bag.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00059">process_bag.py:59</a></div></div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_a49cd466f330a9498d8373baecf47e071"><div class="ttname"><a href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">process_traj_logs.c</a></div><div class="ttdeci">c</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00166">process_traj_logs.py:166</a></div></div>
 <div class="ttc" id="astructcarma__wm__ctrl_1_1WorkZoneSection_html_a078b48714a5bbfb9657b81a550fb28c8"><div class="ttname"><a href="structcarma__wm__ctrl_1_1WorkZoneSection.html#a078b48714a5bbfb9657b81a550fb28c8">carma_wm_ctrl::WorkZoneSection::OPEN</a></div><div class="ttdeci">static const uint8_t OPEN</div><div class="ttdef"><b>Definition:</b> <a href="WMBroadcaster_8hpp_source.html#l00062">WMBroadcaster.hpp:62</a></div></div>
@@ -2503,7 +2502,7 @@ $(document).ready(function(){initNavTree('WMBroadcaster_8cpp_source.html',''); i
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_b6b186497da38ed570e46f8088aa19ef.html">carma_wm_ctrl</a></li><li class="navelem"><a class="el" href="dir_32e5f8abfc2730f22e7cf9d33e386ffd.html">src</a></li><li class="navelem"><a class="el" href="WMBroadcaster_8cpp.html">WMBroadcaster.cpp</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:10 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:20 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -8,6 +8,6 @@ var classgnss__to__map__convertor_1_1Node =
     [ "fix_sub_", "classgnss__to__map__convertor_1_1Node.html#a5217518bea0600ac66203c3fb7007b4b", null ],
     [ "geo_sub", "classgnss__to__map__convertor_1_1Node.html#aadf97c6feb13afc57157aca4c7860c46", null ],
     [ "map_pose_pub", "classgnss__to__map__convertor_1_1Node.html#af7b7851d18d51f57a8b13fe6b56f0cb3", null ],
-    [ "tfBuffer_", "classgnss__to__map__convertor_1_1Node.html#a09d8a35fe8373355b787bab4d3ad0195", null ],
-    [ "tfListener_", "classgnss__to__map__convertor_1_1Node.html#aaac2a4ab1c4b1fa0c30ef5c6b0f3c61f", null ]
+    [ "tfBuffer_", "classgnss__to__map__convertor_1_1Node.html#af7f715249f02fdafeb73cd60eb39efc4", null ],
+    [ "tfListener_", "classgnss__to__map__convertor_1_1Node.html#a7bd33160ce8f8093157f83bcaa5a0441", null ]
 ];

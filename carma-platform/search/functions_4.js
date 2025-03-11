@@ -8,7 +8,7 @@ var searchData=
   ['detectedobjectcallback_5',['detectedObjectCallback',['../classobject_1_1ObjectDetectionTrackingWorker.html#a9c50f3a7d96105185537b87dda4b1c11',1,'object::ObjectDetectionTrackingWorker']]],
   ['detectionlistviznode_6',['DetectionListVizNode',['../classcarma__cooperative__perception_1_1DetectionListVizNode.html#af8fef1f2b0cbeb13e210a664ed7eaa11',1,'carma_cooperative_perception::DetectionListVizNode']]],
   ['determine_5fspeed_5fprofile_5fcase_7',['determine_speed_profile_case',['../classsci__strategic__plugin_1_1SCIStrategicPlugin.html#a16d353d1135dd8b869322242479f634b',1,'sci_strategic_plugin::SCIStrategicPlugin']]],
-  ['determinedynamicleaderbasedonviolation_8',['determineDynamicLeaderBasedOnViolation',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a24583fcb6596efbb2772001a58c36588',1,'platoon_strategic_ihp::PlatoonManager']]],
+  ['determinedynamicleaderbasedonviolation_8',['determineDynamicLeaderBasedOnViolation',['../classplatooning__strategic__ihp_1_1PlatooningManager.html#a4a8cc48989efb67fc5d05ef62ff521d4',1,'platooning_strategic_ihp::PlatooningManager']]],
   ['discovery_5ftimer_5fcallback_9',['discovery_timer_callback',['../classcarma__guidance__plugins_1_1PluginBaseNode.html#ae38e2f1beee22ec9f49e934820b60b7c',1,'carma_guidance_plugins::PluginBaseNode']]],
   ['distancebetween_10',['distanceBetween',['../classcarma__wm_1_1IndexedDistanceMap.html#ab89af3367270704b5467c46a7cdf3987',1,'carma_wm::IndexedDistanceMap']]],
   ['distancetoelement_11',['distanceToElement',['../classcarma__wm_1_1IndexedDistanceMap.html#aaf9700fe30cc2819ca4423a2acffa27d',1,'carma_wm::IndexedDistanceMap']]],

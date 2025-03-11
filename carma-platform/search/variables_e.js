@@ -7,12 +7,12 @@ var searchData=
   ['ndt_5fscore_5fsub_5f_4',['ndt_score_sub_',['../classlocalization__manager_1_1Node.html#abc2750f754fb2299d995e905c7bdbd61',1,'localization_manager::Node']]],
   ['nearest_5fgreen_5fentry_5ftime_5fcached_5f_5',['nearest_green_entry_time_cached_',['../classlci__strategic__plugin_1_1LCIStrategicPlugin.html#a27f805a687c1d09b8e21087c5b2ff0e8',1,'lci_strategic_plugin::LCIStrategicPlugin']]],
   ['ned_5fin_5fmap_5frotation_5f_6',['ned_in_map_rotation_',['../classgnss__to__map__convertor_1_1GNSSToMapConvertor.html#abe5710923cf4def723b3c00c4cd64343',1,'gnss_to_map_convertor::GNSSToMapConvertor::ned_in_map_rotation_()'],['../classmotion__computation_1_1MotionComputationWorker.html#a4661782a56d39e53ffd369f943d7bcf5',1,'motion_computation::MotionComputationWorker::ned_in_map_rotation_()']]],
-  ['negotiation_5ftimeout_7',['NEGOTIATION_TIMEOUT',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#aef3664c4c7ac360846defce18161e92b',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]],
+  ['negotiation_5ftimeout_7',['NEGOTIATION_TIMEOUT',['../classplatooning__strategic__ihp_1_1PlatooningStrategicIHPPlugin.html#a2614878ccf0120bf0459fad4b277bcac',1,'platooning_strategic_ihp::PlatooningStrategicIHPPlugin']]],
   ['neighbor_5fgenerator_5f_8',['neighbor_generator_',['../classarbitrator_1_1TreePlanner.html#abed6184a5fae5039d212244d60e736a2',1,'arbitrator::TreePlanner']]],
-  ['neighbor_5fplatoon_5f_9',['neighbor_platoon_',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a5810c2ddb1b317d7cd7a038615844185',1,'platoon_strategic_ihp::PlatoonManager']]],
-  ['neighbor_5fplatoon_5finfo_5fsize_5f_10',['neighbor_platoon_info_size_',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a36f41aa23d9cc311f1d2b017a008d0ed',1,'platoon_strategic_ihp::PlatoonManager']]],
-  ['neighbor_5fplatoon_5fleader_5fid_5f_11',['neighbor_platoon_leader_id_',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a8fa6576577e52bb8e1a31fef457defa9',1,'platoon_strategic_ihp::PlatoonManager']]],
-  ['neighborplatoonid_12',['neighborPlatoonID',['../classplatoon__strategic__ihp_1_1PlatoonManager.html#a0fadcff41a35df3fe821f05cc1452c45',1,'platoon_strategic_ihp::PlatoonManager']]],
+  ['neighbor_5fplatoon_5f_9',['neighbor_platoon_',['../classplatooning__strategic__ihp_1_1PlatooningManager.html#a157ba4ded3b4548bfb8dedcb4df41a62',1,'platooning_strategic_ihp::PlatooningManager']]],
+  ['neighbor_5fplatoon_5finfo_5fsize_5f_10',['neighbor_platoon_info_size_',['../classplatooning__strategic__ihp_1_1PlatooningManager.html#aae7915b82a6bacc5e375169f96c2e982',1,'platooning_strategic_ihp::PlatooningManager']]],
+  ['neighbor_5fplatoon_5fleader_5fid_5f_11',['neighbor_platoon_leader_id_',['../classplatooning__strategic__ihp_1_1PlatooningManager.html#afe410477e0d5bb7fb8a1c8a80be820e1',1,'platooning_strategic_ihp::PlatooningManager']]],
+  ['neighborplatoonid_12',['neighborPlatoonID',['../classplatooning__strategic__ihp_1_1PlatooningManager.html#a4a255dcb025627d4dced8ac0b6bcd16a',1,'platooning_strategic_ihp::PlatooningManager']]],
   ['new_5froute_5fmarker_5fgenerated_5f_13',['new_route_marker_generated_',['../classroute_1_1RouteGeneratorWorker.html#a44d2aa8c2f5818ab20a5edf541dc4da3',1,'route::RouteGeneratorWorker']]],
   ['new_5froute_5fmsg_5fgenerated_5f_14',['new_route_msg_generated_',['../classroute_1_1RouteGeneratorWorker.html#a235892b04febaed76747202c64340f90',1,'route::RouteGeneratorWorker']]],
   ['next_5fid_5f_15',['next_id_',['../classcarma__wm__ctrl_1_1GeofenceScheduler.html#a96fcef824db9cef40d74bd31a83cdf81',1,'carma_wm_ctrl::GeofenceScheduler::next_id_()'],['../classlocalization__manager_1_1LocalizationManager.html#a56f2d3375a21dea78754e388dac1997e',1,'localization_manager::LocalizationManager::next_id_()']]],
@@ -25,7 +25,7 @@ var searchData=
   ['node_5fname_5f_22',['node_name_',['../classlightbar__manager_1_1LightBarManager.html#a0595579cba8d9b73b8f69268113b9755',1,'lightbar_manager::LightBarManager']]],
   ['node_5fparams_5f_23',['node_params_',['../classcarma__wm_1_1WMListener.html#aa7447636b88f59b01d98af44d4af6bd4',1,'carma_wm::WMListener']]],
   ['node_5ftopics_5f_24',['node_topics_',['../classcarma__wm_1_1WMListener.html#a7552441c5026cc1474fa1ab3d8217957',1,'carma_wm::WMListener']]],
-  ['noleaderupdatescounter_25',['noLeaderUpdatesCounter',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a3055c6de78415d37b56209a66c079e57',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]],
+  ['noleaderupdatescounter_25',['noLeaderUpdatesCounter',['../classplatooning__strategic__ihp_1_1PlatooningStrategicIHPPlugin.html#a926cd2cdda1f7176e151a11aed3fb576',1,'platooning_strategic_ihp::PlatooningStrategicIHPPlugin']]],
   ['non_5freduced_5fspeed_5fto_5fmaintain_5f_26',['non_reduced_speed_to_maintain_',['../classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin.html#a69840d1c02ccdf825a638165e40a1ece',1,'approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin']]],
   ['none_27',['NONE',['../classprocess__traj__logs_1_1DataSource.html#af34479dc9866a93afd42fe76d7523a85',1,'process_traj_logs::DataSource']]],
   ['normal_5foperation_28',['normal_operation',['../structlightbar__manager_1_1Config.html#a4c20a084669d714f615db41540292cd2',1,'lightbar_manager::Config']]],
@@ -34,5 +34,5 @@ var searchData=
   ['num_5fwarnings_5fbroadcasted_5f_31',['num_warnings_broadcasted_',['../classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin.html#a85e8e1b36feedaeeccc56f68eb072c4d',1,'approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin']]],
   ['number_32',['number',['../structcarma__cooperative__perception_1_1UtmZone.html#afede8fc594627a558acbb24d4e1b2754',1,'carma_cooperative_perception::UtmZone']]],
   ['numberofvehicleinfront_33',['NumberOfVehicleInFront',['../structplatooning__control_1_1PlatoonLeaderInfo.html#a8e3579ece4344b545427cf909f9cb02d',1,'platooning_control::PlatoonLeaderInfo']]],
-  ['numleaderabortingcalls_5f_34',['numLeaderAbortingCalls_',['../classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html#a50637636926375340be2ba15d016b06a',1,'platoon_strategic_ihp::PlatoonStrategicIHPPlugin']]]
+  ['numleaderabortingcalls_5f_34',['numLeaderAbortingCalls_',['../classplatooning__strategic__ihp_1_1PlatooningStrategicIHPPlugin.html#ad004702a9a9a0c2ee3e8d336e6877898',1,'platooning_strategic_ihp::PlatooningStrategicIHPPlugin']]]
 ];

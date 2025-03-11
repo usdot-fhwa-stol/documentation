@@ -1,7 +1,7 @@
 var hierarchy =
 [
     [ "carma_cooperative_perception::AccelerationSet4Way", "structcarma__cooperative__perception_1_1AccelerationSet4Way.html", null ],
-    [ "platoon_strategic_ihp::ActionPlan", "structplatoon__strategic__ihp_1_1ActionPlan.html", null ],
+    [ "platooning_strategic_ihp::ActionPlan", "structplatooning__strategic__ihp_1_1ActionPlan.html", null ],
     [ "approaching_emergency_vehicle_plugin::ApproachingEmergencyVehicleTransitionTable", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html", null ],
     [ "arbitrator::Arbitrator", "classarbitrator_1_1Arbitrator.html", null ],
     [ "arbitrator::ArbitratorStateMachine", "classarbitrator_1_1ArbitratorStateMachine.html", null ],
@@ -36,7 +36,7 @@ var hierarchy =
           [ "SUB::Node", "classSUB_1_1Node.html", null ],
           [ "approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin", "classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin.html", null ],
           [ "lci_strategic_plugin::LCIStrategicPlugin", "classlci__strategic__plugin_1_1LCIStrategicPlugin.html", null ],
-          [ "platoon_strategic_ihp::Node", "classplatoon__strategic__ihp_1_1Node.html", null ],
+          [ "platooning_strategic_ihp::Node", "classplatooning__strategic__ihp_1_1Node.html", null ],
           [ "route_following_plugin::RouteFollowingPlugin", "classroute__following__plugin_1_1RouteFollowingPlugin.html", null ],
           [ "sci_strategic_plugin::SCIStrategicPlugin", "classsci__strategic__plugin_1_1SCIStrategicPlugin.html", null ],
           [ "stop_and_dwell_strategic_plugin::StopAndDwellStrategicPlugin", "classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html", null ]
@@ -82,7 +82,6 @@ var hierarchy =
       [ "trajectory_executor::TrajectoryExecutor", "classtrajectory__executor_1_1TrajectoryExecutor.html", null ],
       [ "trajectory_visualizer::TrajectoryVisualizer", "classtrajectory__visualizer_1_1TrajectoryVisualizer.html", null ]
     ] ],
-    [ "carma_record::CarmaRecordNode", "classcarma__record_1_1CarmaRecordNode.html", null ],
     [ "approaching_emergency_vehicle_plugin::Config", "structapproaching__emergency__vehicle__plugin_1_1Config.html", null ],
     [ "approximate_intersection::Config", "structapproximate__intersection_1_1Config.html", null ],
     [ "arbitrator::Config", "structarbitrator_1_1Config.html", null ],
@@ -124,9 +123,6 @@ var hierarchy =
         [ "lightbar_manager::INVALID_LIGHTBAR_MANAGER_PRIORITY", "structlightbar__manager_1_1INVALID__LIGHTBAR__MANAGER__PRIORITY.html", null ]
       ] ]
     ] ],
-    [ "FilterIndices", "classFilterIndices.html", [
-      [ "pcl::experimental::advanced::FunctorFilter< PointT, FunctionObject >", "classpcl_1_1experimental_1_1advanced_1_1FunctorFilter.html", null ]
-    ] ],
     [ "basic_autonomy::waypoint_generation::GeneralTrajConfig", "structbasic__autonomy_1_1waypoint__generation_1_1GeneralTrajConfig.html", null ],
     [ "carma_wm_ctrl::Geofence", "classcarma__wm__ctrl_1_1Geofence.html", null ],
     [ "carma_wm_ctrl::GeofenceSchedule", "classcarma__wm__ctrl_1_1GeofenceSchedule.html", null ],
@@ -143,15 +139,6 @@ var hierarchy =
     [ "carma_wm::IndexedDistanceMap", "classcarma__wm_1_1IndexedDistanceMap.html", null ],
     [ "inlanecruising_plugin::InLaneCruisingPlugin", "classinlanecruising__plugin_1_1InLaneCruisingPlugin.html", null ],
     [ "InLaneCruisingPluginConfig", "structInLaneCruisingPluginConfig.html", null ],
-    [ "pcl::detail::int_type< Bits, Signed >", "structpcl_1_1detail_1_1int__type.html", null ],
-    [ "pcl::detail::int_type< 16, false >", "structpcl_1_1detail_1_1int__type_3_0116_00_01false_01_4.html", null ],
-    [ "pcl::detail::int_type< 16, true >", "structpcl_1_1detail_1_1int__type_3_0116_00_01true_01_4.html", null ],
-    [ "pcl::detail::int_type< 32, false >", "structpcl_1_1detail_1_1int__type_3_0132_00_01false_01_4.html", null ],
-    [ "pcl::detail::int_type< 32, true >", "structpcl_1_1detail_1_1int__type_3_0132_00_01true_01_4.html", null ],
-    [ "pcl::detail::int_type< 64, false >", "structpcl_1_1detail_1_1int__type_3_0164_00_01false_01_4.html", null ],
-    [ "pcl::detail::int_type< 64, true >", "structpcl_1_1detail_1_1int__type_3_0164_00_01true_01_4.html", null ],
-    [ "pcl::detail::int_type< 8, false >", "structpcl_1_1detail_1_1int__type_3_018_00_01false_01_4.html", null ],
-    [ "pcl::detail::int_type< 8, true >", "structpcl_1_1detail_1_1int__type_3_018_00_01true_01_4.html", null ],
     [ "carma_wm::LANE_DIRECTION", "structcarma__wm_1_1LANE__DIRECTION.html", null ],
     [ "plan_delegator::LaneChangeInformation", "structplan__delegator_1_1LaneChangeInformation.html", null ],
     [ "cooperative_lanechange::LaneChangeManeuverOriginalValues", "structcooperative__lanechange_1_1LaneChangeManeuverOriginalValues.html", null ],
@@ -193,13 +180,13 @@ var hierarchy =
     ] ],
     [ "platooning_control::PlatooningControlPluginConfig", "structplatooning__control_1_1PlatooningControlPluginConfig.html", null ],
     [ "platooning_control::PlatooningControlWorker", "classplatooning__control_1_1PlatooningControlWorker.html", null ],
+    [ "platooning_strategic_ihp::PlatooningManager", "classplatooning__strategic__ihp_1_1PlatooningManager.html", null ],
+    [ "platooning_strategic_ihp::PlatooningPluginConfig", "structplatooning__strategic__ihp_1_1PlatooningPluginConfig.html", null ],
+    [ "platooning_strategic_ihp::PlatooningStrategicIHPPlugin", "classplatooning__strategic__ihp_1_1PlatooningStrategicIHPPlugin.html", null ],
     [ "platooning_tactical_plugin::PlatooningTacticalPlugin", "classplatooning__tactical__plugin_1_1PlatooningTacticalPlugin.html", null ],
     [ "PlatooningTacticalPluginConfig", "structPlatooningTacticalPluginConfig.html", null ],
     [ "platooning_control::PlatoonLeaderInfo", "structplatooning__control_1_1PlatoonLeaderInfo.html", null ],
-    [ "platoon_strategic_ihp::PlatoonManager", "classplatoon__strategic__ihp_1_1PlatoonManager.html", null ],
-    [ "platoon_strategic_ihp::PlatoonMember", "structplatoon__strategic__ihp_1_1PlatoonMember.html", null ],
-    [ "platoon_strategic_ihp::PlatoonPluginConfig", "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html", null ],
-    [ "platoon_strategic_ihp::PlatoonStrategicIHPPlugin", "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html", null ],
+    [ "platooning_strategic_ihp::PlatoonMember", "structplatooning__strategic__ihp_1_1PlatoonMember.html", null ],
     [ "subsystem_controllers::PluginManager", "classsubsystem__controllers_1_1PluginManager.html", null ],
     [ "basic_autonomy::waypoint_generation::PointSpeedPair", "structbasic__autonomy_1_1waypoint__generation_1_1PointSpeedPair.html", null ],
     [ "platooning_tactical_plugin::PointSpeedPair", "structplatooning__tactical__plugin_1_1PointSpeedPair.html", null ],

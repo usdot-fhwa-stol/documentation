@@ -312,7 +312,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   67</span>        <span class="keyword">auto</span> bss = std::make_shared&lt;arbitrator::BeamSearchStrategy&gt;(<a class="code hl_variable" href="classarbitrator_1_1ArbitratorNode.html#aa13f0f1ac25777c39accd44b156f6f1c">config_</a>.<a class="code hl_variable" href="structarbitrator_1_1Config.html#ace96b1ccc6bd4b6f40b2dc68df1da9e5">beam_width</a>);</div>
 <div class="line"><span class="lineno">   68</span> </div>
 <div class="line"><span class="lineno">   69</span>        <span class="keyword">auto</span> png = std::make_shared&lt;arbitrator::PluginNeighborGenerator&lt;arbitrator::CapabilitiesInterface&gt;&gt;(ci);</div>
-<div class="line"><span class="lineno">   70</span>        <a class="code hl_class" href="classarbitrator_1_1TreePlanner.html">arbitrator::TreePlanner</a> tp(cf, png, bss, rclcpp::Duration(<a class="code hl_variable" href="classarbitrator_1_1ArbitratorNode.html#aa13f0f1ac25777c39accd44b156f6f1c">config_</a>.<a class="code hl_variable" href="structarbitrator_1_1Config.html#ad4acbfd9aaa6134608d026d01703b4ca">target_plan_duration</a>* 1e9));</div>
+<div class="line"><span class="lineno">   70</span>        <a class="code hl_class" href="classarbitrator_1_1TreePlanner.html">arbitrator::TreePlanner</a> tp(cf, png, bss, rclcpp::Duration::from_nanoseconds(<a class="code hl_variable" href="classarbitrator_1_1ArbitratorNode.html#aa13f0f1ac25777c39accd44b156f6f1c">config_</a>.<a class="code hl_variable" href="structarbitrator_1_1Config.html#ad4acbfd9aaa6134608d026d01703b4ca">target_plan_duration</a>* 1e9));</div>
 <div class="line"><span class="lineno">   71</span> </div>
 <div class="line"><span class="lineno">   72</span>        <a class="code hl_variable" href="classarbitrator_1_1ArbitratorNode.html#abff157ce0e4fe61276300c828d388684">wm_listener_</a> = std::make_shared&lt;carma_wm::WMListener&gt;(</div>
 <div class="line"><span class="lineno">   73</span>            this-&gt;get_node_base_interface(), this-&gt;get_node_logging_interface(),</div>
@@ -326,7 +326,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   81</span>            std::make_shared&lt;ArbitratorStateMachine&gt;(sm),</div>
 <div class="line"><span class="lineno">   82</span>            ci,</div>
 <div class="line"><span class="lineno">   83</span>            std::make_shared&lt;TreePlanner&gt;(tp),</div>
-<div class="line"><span class="lineno">   84</span>            rclcpp::Duration(<a class="code hl_variable" href="classarbitrator_1_1ArbitratorNode.html#aa13f0f1ac25777c39accd44b156f6f1c">config_</a>.<a class="code hl_variable" href="structarbitrator_1_1Config.html#ac851706188e04be2c1ff844215ee9ca5">min_plan_duration</a>* 1e9),</div>
+<div class="line"><span class="lineno">   84</span>            rclcpp::Duration::from_nanoseconds(<a class="code hl_variable" href="classarbitrator_1_1ArbitratorNode.html#aa13f0f1ac25777c39accd44b156f6f1c">config_</a>.<a class="code hl_variable" href="structarbitrator_1_1Config.html#ac851706188e04be2c1ff844215ee9ca5">min_plan_duration</a>* 1e9),</div>
 <div class="line"><span class="lineno">   85</span>            1/<a class="code hl_variable" href="classarbitrator_1_1ArbitratorNode.html#aa13f0f1ac25777c39accd44b156f6f1c">config_</a>.<a class="code hl_variable" href="structarbitrator_1_1Config.html#ac98c3bb441587def19d7c2334c5c74c7">planning_frequency</a>,</div>
 <div class="line"><span class="lineno">   86</span>            <a class="code hl_variable" href="classarbitrator_1_1ArbitratorNode.html#a17d25fa12d5a4123b52aab553aa608d6">wm_</a> );</div>
 <div class="line"><span class="lineno">   87</span> </div>
@@ -618,7 +618,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacearbitrator.html">arbitrator</a></li><li class="navelem"><a class="el" href="classarbitrator_1_1ArbitratorNode.html">ArbitratorNode</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:12 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:23 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

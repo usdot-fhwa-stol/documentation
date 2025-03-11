@@ -984,7 +984,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  513</span>      <span class="comment">// Derived from constant accelaration kinematic equation: (vi + vf) / 2 * dt = d_dist</span></div>
 <div class="line"><span class="lineno">  514</span>      <span class="comment">// This also handles a case correctly when current_speed is 0, but prev_speed is not 0 yet</span></div>
 <div class="line"><span class="lineno">  515</span>      <span class="keyword">const</span> <span class="keywordtype">double</span> dt = (2 * original_traj_relative_downtracks.at(<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>)) / (current_speed + prev_speed);</div>
-<div class="line"><span class="lineno">  516</span>      jmt_tpp.target_time =  rclcpp::Time(jmt_trajectory_points.back().target_time) + rclcpp::Duration(dt*1e9);</div>
+<div class="line"><span class="lineno">  516</span>      jmt_tpp.target_time =  rclcpp::Time(jmt_trajectory_points.back().target_time) + rclcpp::Duration::from_nanoseconds(dt*1e9);</div>
 <div class="line"><span class="lineno">  517</span> </div>
 <div class="line"><span class="lineno">  518</span>      <span class="keywordflow">if</span> (prev_speed &lt; <a class="code hl_variable" href="yield__plugin_8cpp.html#a6f9399eaf2efb1b12e797b77909df9ac">EPSILON</a>) <span class="comment">// Handle a special case if prev_speed (thus current_speed too) is 0</span></div>
 <div class="line"><span class="lineno">  519</span>      {</div>
@@ -993,7 +993,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  522</span>        <span class="comment">// if the vehicle goes past the point, it may cruise toward undesirable location (for example into the intersection).</span></div>
 <div class="line"><span class="lineno">  523</span>        <span class="comment">// Keeping the points help the controller steer the vehicle toward direction of travel even when stopping.</span></div>
 <div class="line"><span class="lineno">  524</span>        <span class="comment">// Only downside is the trajectory plan is huge where only 15 sec is expected, but since this is stopping case, it shouldn&#39;t matter.</span></div>
-<div class="line"><span class="lineno">  525</span>        jmt_tpp.target_time = rclcpp::Time(jmt_trajectory_points.back().target_time) + rclcpp::Duration(6000 * 1e9);</div>
+<div class="line"><span class="lineno">  525</span>        jmt_tpp.target_time = rclcpp::Time(jmt_trajectory_points.back().target_time) + rclcpp::Duration::from_nanoseconds(6000 * 1e9);</div>
 <div class="line"><span class="lineno">  526</span>        RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classyield__plugin_1_1YieldPlugin.html#aa2f96dc545c04733e8ba11a6f3a0c2c6">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;Zero speed = x: &quot;</span> &lt;&lt; jmt_tpp.x &lt;&lt; <span class="stringliteral">&quot;, y:&quot;</span> &lt;&lt; jmt_tpp.y</div>
 <div class="line"><span class="lineno">  527</span>          &lt;&lt; <span class="stringliteral">&quot;, t:&quot;</span> &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(rclcpp::Time(jmt_tpp.target_time).seconds())</div>
 <div class="line"><span class="lineno">  528</span>          &lt;&lt; <span class="stringliteral">&quot;, prev_speed: &quot;</span> &lt;&lt; prev_speed &lt;&lt; <span class="stringliteral">&quot;, current_speed: &quot;</span> &lt;&lt; current_speed);</div>
@@ -3465,7 +3465,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceyield__plugin.html">yield_plugin</a></li><li class="navelem"><a class="el" href="classyield__plugin_1_1YieldPlugin.html">YieldPlugin</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:16 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:27 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

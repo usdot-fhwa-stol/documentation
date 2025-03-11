@@ -317,7 +317,7 @@ $(document).ready(function(){initNavTree('mobilitypath__visualizer_8cpp_source.h
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            marker.id = <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>;</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            rclcpp::Time marker_cur_time(marker.header.stamp);</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            <span class="comment">//Update time by 0.1s</span></div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            rclcpp::Time updated_time =  marker_cur_time + rclcpp::Duration(0.1 * 1e9);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            rclcpp::Time updated_time =  marker_cur_time + rclcpp::Duration::from_nanoseconds(0.1 * 1e9);</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            marker.header.stamp = builtin_interfaces::msg::Time(updated_time);</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &gt;= msg.trajectory.offsets.size()) { <span class="comment">// If we need to delete previous points</span></div>
@@ -382,7 +382,7 @@ $(document).ready(function(){initNavTree('mobilitypath__visualizer_8cpp_source.h
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        marker.color.b = 1.0;</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        marker.color.a = 1.0;</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        marker.frame_locked = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        marker.lifetime = builtin_interfaces::msg::Duration((rclcpp::Duration(<a class="code hl_variable" href="classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#aadb3e34799f0b6eff02dd9739d41b6dd">config_</a>.<a class="code hl_variable" href="structmobilitypath__visualizer_1_1Config.html#affe1e0f398dd1cce7a23bbe7c455d102">t</a> * 1e9)));</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        marker.lifetime = builtin_interfaces::msg::Duration((rclcpp::Duration::from_nanoseconds(<a class="code hl_variable" href="classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#aadb3e34799f0b6eff02dd9739d41b6dd">config_</a>.<a class="code hl_variable" href="structmobilitypath__visualizer_1_1Config.html#affe1e0f398dd1cce7a23bbe7c455d102">t</a> * 1e9)));</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; cav_marker: cav_markers)</div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        {</div>
@@ -455,7 +455,7 @@ $(document).ready(function(){initNavTree('mobilitypath__visualizer_8cpp_source.h
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>            rclcpp::Time host_marker_stamp(host_marker.markers[0].header.stamp);</div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span> </div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span> </div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>            <span class="keywordflow">if</span> (curr_cav_marker_stamp + rclcpp::Duration(time_step * 1e9) &lt; host_marker_stamp){</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>            <span class="keywordflow">if</span> (curr_cav_marker_stamp + rclcpp::Duration::from_nanoseconds(time_step * 1e9) &lt; host_marker_stamp){</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>            }</div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
@@ -588,7 +588,7 @@ $(document).ready(function(){initNavTree('mobilitypath__visualizer_8cpp_source.h
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_9b544eb1e3d8695fecab7b3d3ca75042.html">mobilitypath_visualizer</a></li><li class="navelem"><a class="el" href="dir_72ad64128385889fefa516da8aa2fc84.html">src</a></li><li class="navelem"><a class="el" href="mobilitypath__visualizer_8cpp.html">mobilitypath_visualizer.cpp</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:10 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:21 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -481,8 +481,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  401</span>  {</div>
 <div class="line"><span class="lineno">  402</span>    <span class="keywordflow">if</span> (reg_elem-&gt;attribute(AttributeName::Subtype).value() == PassingControlLine::RuleName)</div>
 <div class="line"><span class="lineno">  403</span>    {</div>
-<div class="line"><span class="lineno">  404</span>      <span class="keyword">auto</span> <a class="code hl_namespace" href="namespacepcl.html">pcl</a> = std::static_pointer_cast&lt;PassingControlLine&gt;(reg_elem);</div>
-<div class="line"><span class="lineno">  405</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> sub_line : <a class="code hl_namespace" href="namespacepcl.html">pcl</a>-&gt;controlLine())</div>
+<div class="line"><span class="lineno">  404</span>      <span class="keyword">auto</span> pcl = std::static_pointer_cast&lt;PassingControlLine&gt;(reg_elem);</div>
+<div class="line"><span class="lineno">  405</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> sub_line : pcl-&gt;controlLine())</div>
 <div class="line"><span class="lineno">  406</span>      {</div>
 <div class="line"><span class="lineno">  407</span>        <span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0;</div>
 <div class="line"><span class="lineno">  408</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> sub_bound : outerBounds)</div>
@@ -491,10 +491,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  411</span>          {</div>
 <div class="line"><span class="lineno">  412</span>            found_indices.push_back(<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>);</div>
 <div class="line"><span class="lineno">  413</span>            <span class="comment">// If an existing regulation applies to this area&#39;s bounds then add it to the area</span></div>
-<div class="line"><span class="lineno">  414</span>            <span class="keywordtype">bool</span> alreadyAdded = lanelet::utils::contains(local_control_lines, <a class="code hl_namespace" href="namespacepcl.html">pcl</a>);</div>
+<div class="line"><span class="lineno">  414</span>            <span class="keywordtype">bool</span> alreadyAdded = lanelet::utils::contains(local_control_lines, pcl);</div>
 <div class="line"><span class="lineno">  415</span>            <span class="keywordflow">if</span> (!alreadyAdded)</div>
 <div class="line"><span class="lineno">  416</span>            {</div>
-<div class="line"><span class="lineno">  417</span>              area.addRegulatoryElement(<a class="code hl_namespace" href="namespacepcl.html">pcl</a>);</div>
+<div class="line"><span class="lineno">  417</span>              area.addRegulatoryElement(pcl);</div>
 <div class="line"><span class="lineno">  418</span>            }</div>
 <div class="line"><span class="lineno">  419</span>          }</div>
 <div class="line"><span class="lineno">  420</span>        }</div>
@@ -523,7 +523,6 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03_html_a20f16cf50f446f986b716c00d71c6e86"><div class="ttname"><a href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#a20f16cf50f446f986b716c00d71c6e86">lanelet::MapConformer::anonymous_namespace{MapConformer.cpp}::buildControlLine</a></div><div class="ttdeci">PassingControlLinePtr buildControlLine(LineString3d &amp;bound, const LaneChangeType type, const std::string &amp;participant)</div><div class="ttdoc">Helper function constructs a PassingControlLine based off the provided bound and lane change type.</div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8cpp_source.html#l00198">MapConformer.cpp:198</a></div></div>
 <div class="ttc" id="anamespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03_html_a3dcd4f6f6ba91a1012f1200d38bc16af"><div class="ttname"><a href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#a3dcd4f6f6ba91a1012f1200d38bc16af">lanelet::MapConformer::anonymous_namespace{MapConformer.cpp}::getChangeType</a></div><div class="ttdeci">LaneChangeType getChangeType(const std::string &amp;type, const std::string &amp;subtype, const std::string &amp;participant)</div><div class="ttdoc">Helper function to determine the type of lane change implicitly allowed by the markings on the road.</div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8cpp_source.html#l00155">MapConformer.cpp:155</a></div></div>
 <div class="ttc" id="anamespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03_html_ab35f87a726141bcdebae6fa19a7f0820"><div class="ttname"><a href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#ab35f87a726141bcdebae6fa19a7f0820">lanelet::MapConformer::anonymous_namespace{MapConformer.cpp}::LaneChangeType</a></div><div class="ttdeci">LaneChangeType</div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8cpp_source.html#l00038">MapConformer.cpp:39</a></div></div>
-<div class="ttc" id="anamespacepcl_html"><div class="ttname"><a href="namespacepcl.html">pcl</a></div><div class="ttdef"><b>Definition:</b> <a href="functor__filter_8h_source.html#l00024">functor_filter.h:24</a></div></div>
 <div class="ttc" id="anamespaceprocess__bag_html_af102a02c97622dd30b0dbf7bafb0d199"><div class="ttname"><a href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">process_bag.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00059">process_bag.py:59</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="MapConformer_8cpp_source.html#l00198">buildControlLine()</a>, <a class="el" href="MapConformer_8cpp_source.html#l00155">getChangeType()</a>, and <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>.</p>
@@ -622,26 +621,26 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  336</span>      <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">  337</span>    }</div>
 <div class="line"><span class="lineno">  338</span> </div>
-<div class="line"><span class="lineno">  339</span>    <span class="keyword">auto</span> <a class="code hl_namespace" href="namespacepcl.html">pcl</a> = std::static_pointer_cast&lt;PassingControlLine&gt;(reg_elem);</div>
-<div class="line"><span class="lineno">  340</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> sub_line : <a class="code hl_namespace" href="namespacepcl.html">pcl</a>-&gt;controlLine())</div>
+<div class="line"><span class="lineno">  339</span>    <span class="keyword">auto</span> pcl = std::static_pointer_cast&lt;PassingControlLine&gt;(reg_elem);</div>
+<div class="line"><span class="lineno">  340</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> sub_line : pcl-&gt;controlLine())</div>
 <div class="line"><span class="lineno">  341</span>    {</div>
 <div class="line"><span class="lineno">  342</span>      <span class="keywordtype">bool</span> shouldAdd = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  343</span>      </div>
 <div class="line"><span class="lineno">  344</span>      <span class="keywordflow">if</span> (left_bound.id() == sub_line.id() &amp;&amp; !foundLeft)</div>
 <div class="line"><span class="lineno">  345</span>      {</div>
 <div class="line"><span class="lineno">  346</span>        foundLeft = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  347</span>        shouldAdd = !lanelet::utils::contains(local_control_lines, <a class="code hl_namespace" href="namespacepcl.html">pcl</a>);</div>
+<div class="line"><span class="lineno">  347</span>        shouldAdd = !lanelet::utils::contains(local_control_lines, pcl);</div>
 <div class="line"><span class="lineno">  348</span>      }</div>
 <div class="line"><span class="lineno">  349</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (right_bound.id() == sub_line.id() &amp;&amp; !foundRight)</div>
 <div class="line"><span class="lineno">  350</span>      {</div>
 <div class="line"><span class="lineno">  351</span>        foundRight = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  352</span>        shouldAdd = !lanelet::utils::contains(local_control_lines, <a class="code hl_namespace" href="namespacepcl.html">pcl</a>);</div>
+<div class="line"><span class="lineno">  352</span>        shouldAdd = !lanelet::utils::contains(local_control_lines, pcl);</div>
 <div class="line"><span class="lineno">  353</span>      }</div>
 <div class="line"><span class="lineno">  354</span>      <span class="comment">// Check if our lanelet contains this control line</span></div>
 <div class="line"><span class="lineno">  355</span>      <span class="comment">// If it does not then add it</span></div>
 <div class="line"><span class="lineno">  356</span>      <span class="keywordflow">if</span> (shouldAdd)</div>
 <div class="line"><span class="lineno">  357</span>      {</div>
-<div class="line"><span class="lineno">  358</span>        <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.addRegulatoryElement(<a class="code hl_namespace" href="namespacepcl.html">pcl</a>);</div>
+<div class="line"><span class="lineno">  358</span>        <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.addRegulatoryElement(pcl);</div>
 <div class="line"><span class="lineno">  359</span>      }</div>
 <div class="line"><span class="lineno">  360</span>    }</div>
 <div class="line"><span class="lineno">  361</span>    </div>
@@ -1267,7 +1266,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacelanelet.html">lanelet</a></li><li class="navelem"><a class="el" href="namespacelanelet_1_1MapConformer.html">MapConformer</a></li><li class="navelem"><a class="el" href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html">anonymous_namespace{MapConformer.cpp}</a></li>
-    <li class="footer">Generated on Tue Mar 4 2025 18:41:14 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Mar 11 2025 19:47:24 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

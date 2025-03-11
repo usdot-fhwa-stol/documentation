@@ -1,21 +1,13 @@
 var searchData=
 [
-  ['pcl_5fbase_0',['PCL_Base',['../classpcl_1_1experimental_1_1advanced_1_1FunctorFilter.html#a4575f627b29c4a2d57e6759fc80f252e',1,'pcl::experimental::advanced::FunctorFilter']]],
-  ['platooninginfocb_1',['PlatooningInfoCB',['../namespaceplatoon__strategic__ihp.html#a5402323f00d5763553277415c786fbca',1,'platoon_strategic_ihp']]],
-  ['plugindiscoverypub_2',['PluginDiscoveryPub',['../namespacepure__pursuit__wrapper.html#a2768a734fb88e0b12390e35976ef5546',1,'pure_pursuit_wrapper']]],
-  ['point_5ft_3',['point_t',['../namespacecarma__wm_1_1collision__detection.html#a6004c603e70ad2964e784209574662ee',1,'carma_wm::collision_detection']]],
-  ['pointspeedpair_4',['PointSpeedPair',['../namespacestop__controlled__intersection__tactical__plugin.html#afa295d53ae945f3d845e2d9bd4e7a6be',1,'stop_controlled_intersection_tactical_plugin::PointSpeedPair()'],['../namespacelight__controlled__intersection__tactical__plugin.html#a4c20dbb679334f4929694a86232c3298',1,'light_controlled_intersection_tactical_plugin::PointSpeedPair()'],['../namespaceinlanecruising__plugin.html#a2db6b939afc2965cea1af8ae4def7a1b',1,'inlanecruising_plugin::PointSpeedPair()'],['../namespacecooperative__lanechange.html#af2521f0bb23baab64641072110316a67',1,'cooperative_lanechange::PointSpeedPair()']]],
-  ['pointt_5',['PointT',['../namespacepoints__map__filter.html#a736fe65fbcb796322ba932403697e760',1,'points_map_filter']]],
-  ['polygon_5ft_6',['polygon_t',['../namespacecarma__wm_1_1collision__detection.html#a3002eac85a8982d9fc6c6e9d16900174',1,'carma_wm::collision_detection']]],
-  ['pose_5fmsg_5ftype_7',['pose_msg_type',['../classcarma__cooperative__perception_1_1ExternalObjectListToSdsmNode.html#a4eee3cbb2d8204123af8cbede2ee10ff',1,'carma_cooperative_perception::ExternalObjectListToSdsmNode']]],
-  ['posepubcallback_8',['PosePubCallback',['../classgnss__to__map__convertor_1_1GNSSToMapConvertor.html#a1f1758fa4a4a9e1131dce2971637cec6',1,'gnss_to_map_convertor::GNSSToMapConvertor']]],
-  ['posepublisher_9',['PosePublisher',['../classlocalization__manager_1_1LocalizationManager.html#ac75e2c2af5e2a75a6ee3ce23ce2a290d',1,'localization_manager::LocalizationManager']]],
-  ['publishactivegeofcallback_10',['PublishActiveGeofCallback',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#a1f39f2021825ba09363d9ee1c456ced6',1,'carma_wm_ctrl::WMBroadcaster']]],
-  ['publishctrlrequestcallback_11',['PublishCtrlRequestCallback',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#af3784647580aee6501347090b46c3244',1,'carma_wm_ctrl::WMBroadcaster']]],
-  ['publishmapcallback_12',['PublishMapCallback',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#ad4e8773338ce55f7132025e04d492e23',1,'carma_wm_ctrl::WMBroadcaster']]],
-  ['publishmapupdatecallback_13',['PublishMapUpdateCallback',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#a7ed209093ad1ddb36c00f97951063f8b',1,'carma_wm_ctrl::WMBroadcaster']]],
-  ['publishmobilityoperationcallback_14',['PublishMobilityOperationCallback',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#ac4bb2c122bfd96977dd89b9999a4050d',1,'carma_wm_ctrl::WMBroadcaster']]],
-  ['publishobjectcallback_15',['PublishObjectCallback',['../classobject_1_1ObjectDetectionTrackingWorker.html#acae5834696ba4c2f9d37677bc443895c',1,'object::ObjectDetectionTrackingWorker::PublishObjectCallback()'],['../classmotion__computation_1_1MotionComputationWorker.html#a9aad378cce19f70eb8840ea4600fcccb',1,'motion_computation::MotionComputationWorker::PublishObjectCallback()']]],
-  ['publishplugindiscoverycb_16',['PublishPluginDiscoveryCB',['../namespaceinlanecruising__plugin.html#acb051b1744e0113bd257658865e8e9c4',1,'inlanecruising_plugin']]],
-  ['publishtrafficcontrolcallback_17',['PublishTrafficControlCallback',['../classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a0dc52dc2423f3d6e74d1c2310a72125a',1,'traffic_incident_parser::TrafficIncidentParserWorker']]]
+  ['timer_0',['Timer',['../classcarma__wm__ctrl_1_1GeofenceScheduler.html#a7e62a2ba769b7ff43dc934424d4ed3f4',1,'carma_wm_ctrl::GeofenceScheduler']]],
+  ['timerfactory_1',['TimerFactory',['../classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad2cfc53e33f90571ac5a103f0c6f9275',1,'carma_wm_ctrl::GeofenceScheduler']]],
+  ['timerptr_2',['TimerPtr',['../classcarma__wm__ctrl_1_1GeofenceScheduler.html#a2042b25ec29dafe31e07bdd6de53cc33',1,'carma_wm_ctrl::GeofenceScheduler']]],
+  ['timeruniqueptr_3',['TimerUniquePtr',['../classlocalization__manager_1_1LocalizationManager.html#aad90c46a0d8ac4dfa2a76eb3a65bd0af',1,'localization_manager::LocalizationManager']]],
+  ['timesynchronizer_4',['TimeSynchronizer',['../classlocalization__manager_1_1Node.html#a185fea059c3620c426d165abfd893f0e',1,'localization_manager::Node']]],
+  ['track_5',['Track',['../namespacecarma__cooperative__perception.html#aedfce236df3f84ec5ebc8b4013798808',1,'carma_cooperative_perception']]],
+  ['trafficrulesconstptr_6',['TrafficRulesConstPtr',['../namespacecarma__wm.html#a509eecc524933da5a1bb5369542888a9',1,'carma_wm']]],
+  ['trafficrulesuconstptr_7',['TrafficRulesUConstPtr',['../namespacecarma__wm.html#a750e2bfd6db8d143067f391f031b93c8',1,'carma_wm']]],
+  ['transformlookupcallback_8',['TransformLookupCallback',['../classgnss__to__map__convertor_1_1GNSSToMapConvertor.html#a28164a0a73fb901caa0649eeb0c4e5ea',1,'gnss_to_map_convertor::GNSSToMapConvertor::TransformLookupCallback()'],['../classobject_1_1ObjectDetectionTrackingWorker.html#ad41f9c01caaac89410a23f55411a7821',1,'object::ObjectDetectionTrackingWorker::TransformLookupCallback()']]],
+  ['transitioncallback_9',['TransitionCallback',['../classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehicleTransitionTable.html#ae3ff22892ec5697be2552504630217de',1,'approaching_emergency_vehicle_plugin::ApproachingEmergencyVehicleTransitionTable::TransitionCallback()'],['../classlci__strategic__plugin_1_1LCIStrategicStateTransitionTable.html#ad59347d331c670c8a797f1977a654e9a',1,'lci_strategic_plugin::LCIStrategicStateTransitionTable::TransitionCallback()'],['../classlocalization__manager_1_1LocalizationTransitionTable.html#ae07d5a37458ac9816750b048eaa5a0a9',1,'localization_manager::LocalizationTransitionTable::TransitionCallback()']]]
 ];

@@ -4,7 +4,7 @@ var searchData=
   ['shutdown_1',['SHUTDOWN',['../classguidance_1_1GuidanceStateMachine.html#ac44b8eaf78830829b3c0027da1b56f93acb0a6967d542b8e93b7f49325248d852',1,'guidance::GuidanceStateMachine::SHUTDOWN()'],['../namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a71d9b235fbf749d1bbc5b783898a4211',1,'arbitrator::SHUTDOWN()']]],
   ['signalized_5fintersection_2',['SIGNALIZED_INTERSECTION',['../namespacecarma__wm.html#ac09d7a77e6f8f955651e7afa16136bf1a5183fcbc60f37b81f9ca22d76af71867',1,'carma_wm']]],
   ['slowing_5fdown_5ffor_5ferv_3',['SLOWING_DOWN_FOR_ERV',['../namespaceapproaching__emergency__vehicle__plugin.html#aeb182d0e6c9d53e276e1b9935aff0630abe5a505910aae73e4a99392e4b36e99a',1,'approaching_emergency_vehicle_plugin']]],
-  ['standby_4',['STANDBY',['../namespaceplatoon__strategic__ihp.html#a20539b6c81ea3b1868c7ca5d7c403dafa839ccd0c7e2e3441b3cd9ca0546be97b',1,'platoon_strategic_ihp']]],
+  ['standby_4',['STANDBY',['../namespaceplatooning__strategic__ihp.html#acb1df391a9cf4615c6b9d16ac08bcf08a45dff0c859d1247de8a5beee36a32079',1,'platooning_strategic_ihp']]],
   ['startup_5',['STARTUP',['../classguidance_1_1GuidanceStateMachine.html#a668977d45c9644ed4df39dfa2a9e5af1a3cdf392380e468e3d30afc5f61a3568a',1,'guidance::GuidanceStateMachine']]],
   ['stop_5frule_6',['STOP_RULE',['../namespacecarma__wm.html#ac09d7a77e6f8f955651e7afa16136bf1a3ef9e3ed7808c7c32a48e954fad71c04',1,'carma_wm']]],
   ['stopped_7',['STOPPED',['../namespacelci__strategic__plugin.html#a30ec591be59af7f7b98c679e8ecfaa08a09d4d696b4e935115b9313e3c412509a',1,'lci_strategic_plugin']]],

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['candidatefollower_0',['CANDIDATEFOLLOWER',['../namespaceplatoon__strategic__ihp.html#a20539b6c81ea3b1868c7ca5d7c403dafab7680aa6ec3a24dc42cb374192eb39a3',1,'platoon_strategic_ihp']]],
-  ['candidateleader_1',['CANDIDATELEADER',['../namespaceplatoon__strategic__ihp.html#a20539b6c81ea3b1868c7ca5d7c403dafa52c17c95a5cd81220db3fdd9181d43bd',1,'platoon_strategic_ihp']]],
+  ['candidatefollower_0',['CANDIDATEFOLLOWER',['../namespaceplatooning__strategic__ihp.html#acb1df391a9cf4615c6b9d16ac08bcf08aa045e302761f1ea1e7fd1d8e139dc9a7',1,'platooning_strategic_ihp']]],
+  ['candidateleader_1',['CANDIDATELEADER',['../namespaceplatooning__strategic__ihp.html#acb1df391a9cf4615c6b9d16ac08bcf08a634a4adf1fb3e124138bc7d353364dca',1,'platooning_strategic_ihp']]],
   ['carma_5ftraffic_5flight_2',['CARMA_TRAFFIC_LIGHT',['../namespacecarma__wm.html#ac09d7a77e6f8f955651e7afa16136bf1a269b80a3c3f0b44a73071e21d4ab36c2',1,'carma_wm']]],
   ['case_5f1_3',['CASE_1',['../namespacelci__strategic__plugin.html#a8c6e35d446c028b1e38bd354bb3a273ba68d989babe6297b5f85a05a94cd056c5',1,'lci_strategic_plugin::CASE_1()'],['../namespacelight__controlled__intersection__tactical__plugin.html#a1d574ede6bd2fe34726484c4f8576aa3a89e6110a8b77f7a18e992d0d6245e5f7',1,'light_controlled_intersection_tactical_plugin::CASE_1()']]],
   ['case_5f2_4',['CASE_2',['../namespacelci__strategic__plugin.html#a8c6e35d446c028b1e38bd354bb3a273ba4fd308faeca0a68a10f65685126fb7d7',1,'lci_strategic_plugin::CASE_2()'],['../namespacelight__controlled__intersection__tactical__plugin.html#a1d574ede6bd2fe34726484c4f8576aa3aad9f64445cda6941d3e40bfdce4dcb3f',1,'light_controlled_intersection_tactical_plugin::CASE_2()']]],

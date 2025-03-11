@@ -83,9 +83,6 @@ var annotated_dup =
       [ "StrategicPlugin", "classcarma__guidance__plugins_1_1StrategicPlugin.html", "classcarma__guidance__plugins_1_1StrategicPlugin" ],
       [ "TacticalPlugin", "classcarma__guidance__plugins_1_1TacticalPlugin.html", "classcarma__guidance__plugins_1_1TacticalPlugin" ]
     ] ],
-    [ "carma_record", "namespacecarma__record.html", [
-      [ "CarmaRecordNode", "classcarma__record_1_1CarmaRecordNode.html", "classcarma__record_1_1CarmaRecordNode" ]
-    ] ],
     [ "carma_wm", "namespacecarma__wm.html", [
       [ "collision_detection", "namespacecarma__wm_1_1collision__detection.html", [
         [ "MovingObject", "structcarma__wm_1_1collision__detection_1_1MovingObject.html", "structcarma__wm_1_1collision__detection_1_1MovingObject" ]
@@ -205,36 +202,10 @@ var annotated_dup =
       [ "Config", "structobject__visualizer_1_1Config.html", "structobject__visualizer_1_1Config" ],
       [ "Node", "classobject__visualizer_1_1Node.html", "classobject__visualizer_1_1Node" ]
     ] ],
-    [ "pcl", "namespacepcl.html", [
-      [ "detail", "namespacepcl_1_1detail.html", [
-        [ "int_type", "structpcl_1_1detail_1_1int__type.html", "structpcl_1_1detail_1_1int__type" ],
-        [ "int_type< 16, false >", "structpcl_1_1detail_1_1int__type_3_0116_00_01false_01_4.html", "structpcl_1_1detail_1_1int__type_3_0116_00_01false_01_4" ],
-        [ "int_type< 16, true >", "structpcl_1_1detail_1_1int__type_3_0116_00_01true_01_4.html", "structpcl_1_1detail_1_1int__type_3_0116_00_01true_01_4" ],
-        [ "int_type< 32, false >", "structpcl_1_1detail_1_1int__type_3_0132_00_01false_01_4.html", "structpcl_1_1detail_1_1int__type_3_0132_00_01false_01_4" ],
-        [ "int_type< 32, true >", "structpcl_1_1detail_1_1int__type_3_0132_00_01true_01_4.html", "structpcl_1_1detail_1_1int__type_3_0132_00_01true_01_4" ],
-        [ "int_type< 64, false >", "structpcl_1_1detail_1_1int__type_3_0164_00_01false_01_4.html", "structpcl_1_1detail_1_1int__type_3_0164_00_01false_01_4" ],
-        [ "int_type< 64, true >", "structpcl_1_1detail_1_1int__type_3_0164_00_01true_01_4.html", "structpcl_1_1detail_1_1int__type_3_0164_00_01true_01_4" ],
-        [ "int_type< 8, false >", "structpcl_1_1detail_1_1int__type_3_018_00_01false_01_4.html", "structpcl_1_1detail_1_1int__type_3_018_00_01false_01_4" ],
-        [ "int_type< 8, true >", "structpcl_1_1detail_1_1int__type_3_018_00_01true_01_4.html", "structpcl_1_1detail_1_1int__type_3_018_00_01true_01_4" ]
-      ] ],
-      [ "experimental", "namespacepcl_1_1experimental.html", [
-        [ "advanced", "namespacepcl_1_1experimental_1_1advanced.html", [
-          [ "FunctorFilter", "classpcl_1_1experimental_1_1advanced_1_1FunctorFilter.html", "classpcl_1_1experimental_1_1advanced_1_1FunctorFilter" ]
-        ] ]
-      ] ]
-    ] ],
     [ "plan_delegator", "namespaceplan__delegator.html", [
       [ "Config", "structplan__delegator_1_1Config.html", "structplan__delegator_1_1Config" ],
       [ "LaneChangeInformation", "structplan__delegator_1_1LaneChangeInformation.html", "structplan__delegator_1_1LaneChangeInformation" ],
       [ "PlanDelegator", "classplan__delegator_1_1PlanDelegator.html", "classplan__delegator_1_1PlanDelegator" ]
-    ] ],
-    [ "platoon_strategic_ihp", "namespaceplatoon__strategic__ihp.html", [
-      [ "ActionPlan", "structplatoon__strategic__ihp_1_1ActionPlan.html", "structplatoon__strategic__ihp_1_1ActionPlan" ],
-      [ "Node", "classplatoon__strategic__ihp_1_1Node.html", "classplatoon__strategic__ihp_1_1Node" ],
-      [ "PlatoonManager", "classplatoon__strategic__ihp_1_1PlatoonManager.html", "classplatoon__strategic__ihp_1_1PlatoonManager" ],
-      [ "PlatoonMember", "structplatoon__strategic__ihp_1_1PlatoonMember.html", "structplatoon__strategic__ihp_1_1PlatoonMember" ],
-      [ "PlatoonPluginConfig", "structplatoon__strategic__ihp_1_1PlatoonPluginConfig.html", "structplatoon__strategic__ihp_1_1PlatoonPluginConfig" ],
-      [ "PlatoonStrategicIHPPlugin", "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin.html", "classplatoon__strategic__ihp_1_1PlatoonStrategicIHPPlugin" ]
     ] ],
     [ "platooning_control", "namespaceplatooning__control.html", [
       [ "PIDController", "classplatooning__control_1_1PIDController.html", "classplatooning__control_1_1PIDController" ],
@@ -242,6 +213,14 @@ var annotated_dup =
       [ "PlatooningControlPluginConfig", "structplatooning__control_1_1PlatooningControlPluginConfig.html", "structplatooning__control_1_1PlatooningControlPluginConfig" ],
       [ "PlatooningControlWorker", "classplatooning__control_1_1PlatooningControlWorker.html", "classplatooning__control_1_1PlatooningControlWorker" ],
       [ "PlatoonLeaderInfo", "structplatooning__control_1_1PlatoonLeaderInfo.html", "structplatooning__control_1_1PlatoonLeaderInfo" ]
+    ] ],
+    [ "platooning_strategic_ihp", "namespaceplatooning__strategic__ihp.html", [
+      [ "ActionPlan", "structplatooning__strategic__ihp_1_1ActionPlan.html", "structplatooning__strategic__ihp_1_1ActionPlan" ],
+      [ "Node", "classplatooning__strategic__ihp_1_1Node.html", "classplatooning__strategic__ihp_1_1Node" ],
+      [ "PlatooningManager", "classplatooning__strategic__ihp_1_1PlatooningManager.html", "classplatooning__strategic__ihp_1_1PlatooningManager" ],
+      [ "PlatooningPluginConfig", "structplatooning__strategic__ihp_1_1PlatooningPluginConfig.html", "structplatooning__strategic__ihp_1_1PlatooningPluginConfig" ],
+      [ "PlatooningStrategicIHPPlugin", "classplatooning__strategic__ihp_1_1PlatooningStrategicIHPPlugin.html", "classplatooning__strategic__ihp_1_1PlatooningStrategicIHPPlugin" ],
+      [ "PlatoonMember", "structplatooning__strategic__ihp_1_1PlatoonMember.html", "structplatooning__strategic__ihp_1_1PlatoonMember" ]
     ] ],
     [ "platooning_tactical_plugin", "namespaceplatooning__tactical__plugin.html", [
       [ "Node", "classplatooning__tactical__plugin_1_1Node.html", "classplatooning__tactical__plugin_1_1Node" ],
@@ -346,7 +325,6 @@ var annotated_dup =
       [ "YieldPluginNode", "classyield__plugin_1_1YieldPluginNode.html", "classyield__plugin_1_1YieldPluginNode" ]
     ] ],
     [ "CallInterface", "classCallInterface.html", "classCallInterface" ],
-    [ "FilterIndices", "classFilterIndices.html", null ],
     [ "GNSSToMapConvertor", "classGNSSToMapConvertor.html", null ],
     [ "InLaneCruisingPluginConfig", "structInLaneCruisingPluginConfig.html", "structInLaneCruisingPluginConfig" ],
     [ "LightBarManager", "classLightBarManager.html", null ],

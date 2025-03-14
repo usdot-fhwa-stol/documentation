@@ -45,13 +45,14 @@ var searchData=
   ['updateupcomingsgintersectionids_42',['updateUpcomingSGIntersectionIds',['../classcarma__wm__ctrl_1_1WMBroadcaster.html#ad8d0e8fc5b08ab5f722e4f0afb8ee9f6',1,'carma_wm_ctrl::WMBroadcaster']]],
   ['url_43',['url',['../structcarma__cloud__client_1_1Config.html#a4bc4e39f7a5a330ad647bdc3d5af63b7',1,'carma_cloud_client::Config']]],
   ['use_5ffixed_5fcosts_44',['use_fixed_costs',['../structarbitrator_1_1Config.html#aba6e22d41904cf47e6bf602d12d39ef3',1,'arbitrator::Config']]],
-  ['use_5fsim_5ftime_5f_45',['use_sim_time_',['../classcarma__wm_1_1WMListenerWorker.html#acab7ad4d3841c78cf96da2deec5c751b',1,'carma_wm::WMListenerWorker']]],
-  ['user_5frequested_5factivation_5f_46',['user_requested_activation_',['../structsubsystem__controllers_1_1Entry.html#a91c245cbfbc0fb117cfacbc5f16ed3f0',1,'subsystem_controllers::Entry']]],
-  ['utm_5fzone_47',['utm_zone',['../structcarma__cooperative__perception_1_1UtmCoordinate.html#a5aece7021819085fc85d65cf2cc94c72',1,'carma_cooperative_perception::UtmCoordinate']]],
-  ['utm_5fzone_2ecpp_48',['utm_zone.cpp',['../utm__zone_8cpp.html',1,'']]],
-  ['utm_5fzone_2ehpp_49',['utm_zone.hpp',['../utm__zone_8hpp.html',1,'']]],
-  ['utmcoordinate_50',['UtmCoordinate',['../structcarma__cooperative__perception_1_1UtmCoordinate.html',1,'carma_cooperative_perception']]],
-  ['utmdisplacement_51',['UtmDisplacement',['../structcarma__cooperative__perception_1_1UtmDisplacement.html',1,'carma_cooperative_perception']]],
-  ['utmzone_52',['UtmZone',['../structcarma__cooperative__perception_1_1UtmZone.html',1,'carma_cooperative_perception']]],
-  ['uuid_5findex_5fmap_5f_53',['uuid_index_map_',['../classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a868421b28207e15914b83e31c00c68fb',1,'carma_cooperative_perception::MultipleObjectTrackerNode']]]
+  ['use_5freal_5ftime_5fspat_5fin_5fsim_5f_45',['use_real_time_spat_in_sim_',['../classcarma__wm_1_1WMListenerWorker.html#a554fe5766df9e61bc25352d2ba7cc8cb',1,'carma_wm::WMListenerWorker']]],
+  ['use_5fsim_5ftime_5f_46',['use_sim_time_',['../classcarma__wm_1_1WMListenerWorker.html#acab7ad4d3841c78cf96da2deec5c751b',1,'carma_wm::WMListenerWorker']]],
+  ['user_5frequested_5factivation_5f_47',['user_requested_activation_',['../structsubsystem__controllers_1_1Entry.html#a91c245cbfbc0fb117cfacbc5f16ed3f0',1,'subsystem_controllers::Entry']]],
+  ['utm_5fzone_48',['utm_zone',['../structcarma__cooperative__perception_1_1UtmCoordinate.html#a5aece7021819085fc85d65cf2cc94c72',1,'carma_cooperative_perception::UtmCoordinate']]],
+  ['utm_5fzone_2ecpp_49',['utm_zone.cpp',['../utm__zone_8cpp.html',1,'']]],
+  ['utm_5fzone_2ehpp_50',['utm_zone.hpp',['../utm__zone_8hpp.html',1,'']]],
+  ['utmcoordinate_51',['UtmCoordinate',['../structcarma__cooperative__perception_1_1UtmCoordinate.html',1,'carma_cooperative_perception']]],
+  ['utmdisplacement_52',['UtmDisplacement',['../structcarma__cooperative__perception_1_1UtmDisplacement.html',1,'carma_cooperative_perception']]],
+  ['utmzone_53',['UtmZone',['../structcarma__cooperative__perception_1_1UtmZone.html',1,'carma_cooperative_perception']]],
+  ['uuid_5findex_5fmap_5f_54',['uuid_index_map_',['../classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a868421b28207e15914b83e31c00c68fb',1,'carma_cooperative_perception::MultipleObjectTrackerNode']]]
 ];

@@ -268,28 +268,28 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   53</span>    use_sim_time_param_value = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aa7447636b88f59b01d98af44d4af6bd4">node_params_</a>-&gt;declare_parameter(<span class="stringliteral">&quot;use_sim_time&quot;</span>, rclcpp::ParameterValue (<span class="keyword">false</span>));</div>
 <div class="line"><span class="lineno">   54</span>  }</div>
 <div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>  rclcpp::Parameter is_spat_wall_time_param(<span class="stringliteral">&quot;is_spat_wall_time&quot;</span>);</div>
-<div class="line"><span class="lineno">   57</span>  <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aa7447636b88f59b01d98af44d4af6bd4">node_params_</a>-&gt;get_parameter(<span class="stringliteral">&quot;is_spat_wall_time&quot;</span>, is_spat_wall_time_param)){</div>
-<div class="line"><span class="lineno">   58</span>    rclcpp::ParameterValue is_spat_wall_time_param_value;</div>
-<div class="line"><span class="lineno">   59</span>    is_spat_wall_time_param_value = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aa7447636b88f59b01d98af44d4af6bd4">node_params_</a>-&gt;declare_parameter(<span class="stringliteral">&quot;is_spat_wall_time&quot;</span>, rclcpp::ParameterValue (<span class="keyword">true</span>));</div>
+<div class="line"><span class="lineno">   56</span>  rclcpp::Parameter use_real_time_spat_in_sim_param(<span class="stringliteral">&quot;use_real_time_spat_in_sim&quot;</span>);</div>
+<div class="line"><span class="lineno">   57</span>  <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aa7447636b88f59b01d98af44d4af6bd4">node_params_</a>-&gt;get_parameter(<span class="stringliteral">&quot;use_real_time_spat_in_sim&quot;</span>, use_real_time_spat_in_sim_param)){</div>
+<div class="line"><span class="lineno">   58</span>    rclcpp::ParameterValue use_real_time_spat_in_sim_param_value;</div>
+<div class="line"><span class="lineno">   59</span>    use_real_time_spat_in_sim_param_value = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aa7447636b88f59b01d98af44d4af6bd4">node_params_</a>-&gt;declare_parameter(<span class="stringliteral">&quot;use_real_time_spat_in_sim&quot;</span>, rclcpp::ParameterValue (<span class="keyword">true</span>));</div>
 <div class="line"><span class="lineno">   60</span>  }</div>
 <div class="line"><span class="lineno">   61</span> </div>
 <div class="line"><span class="lineno">   62</span>  <span class="comment">// Get params</span></div>
 <div class="line"><span class="lineno">   63</span>  config_speed_limit_param = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aa7447636b88f59b01d98af44d4af6bd4">node_params_</a>-&gt;get_parameter(<span class="stringliteral">&quot;config_speed_limit&quot;</span>);</div>
 <div class="line"><span class="lineno">   64</span>  participant_param = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aa7447636b88f59b01d98af44d4af6bd4">node_params_</a>-&gt;get_parameter(<span class="stringliteral">&quot;vehicle_participant_type&quot;</span>);</div>
 <div class="line"><span class="lineno">   65</span>  use_sim_time_param = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aa7447636b88f59b01d98af44d4af6bd4">node_params_</a>-&gt;get_parameter(<span class="stringliteral">&quot;use_sim_time&quot;</span>);</div>
-<div class="line"><span class="lineno">   66</span>  is_spat_wall_time_param = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aa7447636b88f59b01d98af44d4af6bd4">node_params_</a>-&gt;get_parameter(<span class="stringliteral">&quot;is_spat_wall_time&quot;</span>);</div>
+<div class="line"><span class="lineno">   66</span>  use_real_time_spat_in_sim_param = <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#aa7447636b88f59b01d98af44d4af6bd4">node_params_</a>-&gt;get_parameter(<span class="stringliteral">&quot;use_real_time_spat_in_sim&quot;</span>);</div>
 <div class="line"><span class="lineno">   67</span> </div>
 <div class="line"><span class="lineno">   68</span>  RCLCPP_INFO_STREAM(node_logging-&gt;get_logger(), <span class="stringliteral">&quot;Loaded config speed limit: &quot;</span> &lt;&lt; config_speed_limit_param.as_double());</div>
 <div class="line"><span class="lineno">   69</span>  RCLCPP_INFO_STREAM(node_logging-&gt;get_logger(), <span class="stringliteral">&quot;Loaded vehicle participant type: &quot;</span> &lt;&lt; participant_param.as_string());</div>
 <div class="line"><span class="lineno">   70</span>  RCLCPP_INFO_STREAM(node_logging-&gt;get_logger(), <span class="stringliteral">&quot;Is using simulation time? : &quot;</span> &lt;&lt; use_sim_time_param.as_bool());</div>
-<div class="line"><span class="lineno">   71</span>  RCLCPP_INFO_STREAM(node_logging-&gt;get_logger(), <span class="stringliteral">&quot;Is SPaT using wall time? : &quot;</span> &lt;&lt; is_spat_wall_time_param.as_bool());</div>
+<div class="line"><span class="lineno">   71</span>  RCLCPP_INFO_STREAM(node_logging-&gt;get_logger(), <span class="stringliteral">&quot;Is SPaT using wall time? : &quot;</span> &lt;&lt; use_real_time_spat_in_sim_param.as_bool());</div>
 <div class="line"><span class="lineno">   72</span> </div>
 <div class="line"><span class="lineno">   73</span> </div>
 <div class="line"><span class="lineno">   74</span>  <a class="code hl_function" href="classcarma__wm_1_1WMListener.html#a32d00d4cd06bc8accbd2d201cb7a063b">setConfigSpeedLimit</a>(config_speed_limit_param.as_double());</div>
 <div class="line"><span class="lineno">   75</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;setVehicleParticipationType(participant_param.as_string());</div>
 <div class="line"><span class="lineno">   76</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;isUsingSimTime(use_sim_time_param.as_bool());</div>
-<div class="line"><span class="lineno">   77</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;isSpatWallTime(is_spat_wall_time_param.as_bool());</div>
+<div class="line"><span class="lineno">   77</span>  <a class="code hl_variable" href="classcarma__wm_1_1WMListener.html#a9e274eb5d6cf9ecf663640d28decf215">worker_</a>-&gt;isSpatWallTime(use_real_time_spat_in_sim_param.as_bool());</div>
 <div class="line"><span class="lineno">   78</span> </div>
 <div class="line"><span class="lineno">   79</span>  rclcpp::SubscriptionOptions map_update_options;</div>
 <div class="line"><span class="lineno">   80</span>  rclcpp::SubscriptionOptions map_options;</div>
@@ -1146,7 +1146,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm.html">carma_wm</a></li><li class="navelem"><a class="el" href="classcarma__wm_1_1WMListener.html">WMListener</a></li>
-    <li class="footer">Generated on Fri Mar 14 2025 14:19:02 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Mar 14 2025 17:57:19 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

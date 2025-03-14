@@ -195,10 +195,10 @@ $(document).ready(function(){initNavTree('carma__src_8launch_8py_source.html',''
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        description = <span class="stringliteral">&quot;True of simulation mode is on&quot;</span></div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    )</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    is_spat_wall_time = LaunchConfiguration(<span class="stringliteral">&#39;is_spat_wall_time&#39;</span>)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    declare_is_spat_wall_time_arg = DeclareLaunchArgument(</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        name = <span class="stringliteral">&#39;is_spat_wall_time&#39;</span>,</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        default_value = <span class="stringliteral">&#39;True&#39;</span>,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    use_real_time_spat_in_sim = LaunchConfiguration(<span class="stringliteral">&#39;use_real_time_spat_in_sim&#39;</span>)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    declare_use_real_time_spat_in_sim_arg = DeclareLaunchArgument(</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        name = <span class="stringliteral">&#39;use_real_time_spat_in_sim&#39;</span>,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        default_value = <span class="stringliteral">&#39;False&#39;</span>,</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        description = <span class="stringliteral">&quot;True if SPaT is being published based on wall clock&quot;</span></div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    )</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
@@ -376,7 +376,7 @@ $(document).ready(function(){initNavTree('carma__src_8launch_8py_source.html',''
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                    <span class="stringliteral">&#39;control_plugins_to_validate&#39;</span> : control_plugins_to_validate,</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                    <span class="stringliteral">&#39;use_sim_time&#39;</span> : use_sim_time,</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                    <span class="stringliteral">&#39;is_spat_wall_time&#39;</span> : is_spat_wall_time</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                    <span class="stringliteral">&#39;use_real_time_spat_in_sim&#39;</span> : use_real_time_spat_in_sim</div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                }.items()</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            ),</div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        ]</div>
@@ -426,7 +426,7 @@ $(document).ready(function(){initNavTree('carma__src_8launch_8py_source.html',''
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        declare_vehicle_characteristics_param_file_arg,</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        declare_vehicle_config_param_file_arg,</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        declare_use_sim_time_arg,</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        declare_is_spat_wall_time_arg,</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        declare_use_real_time_spat_in_sim_arg,</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        declare_route_file_folder,</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        declare_enable_guidance_plugin_validator,</div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>        declare_strategic_plugins_to_validate,</div>
@@ -459,7 +459,7 @@ $(document).ready(function(){initNavTree('carma__src_8launch_8py_source.html',''
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_65035b4805221094def83884081b1f33.html">carma</a></li><li class="navelem"><a class="el" href="dir_f58cda9f7f9da9aabc437fb1be4786b2.html">launch</a></li><li class="navelem"><a class="el" href="carma__src_8launch_8py.html">carma_src.launch.py</a></li>
-    <li class="footer">Generated on Fri Mar 14 2025 14:18:59 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Mar 14 2025 17:57:15 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -55,7 +55,6 @@ var searchData=
   ['is_5fright_5flane_5fchange_52',['is_right_lane_change',['../structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html#aaba665f5ee18db85363601f0c385fd5a',1,'approaching_emergency_vehicle_plugin::UpcomingLaneChangeParameters::is_right_lane_change()'],['../structplan__delegator_1_1LaneChangeInformation.html#a53d04c665e138441a95ab4af95869a4b',1,'plan_delegator::LaneChangeInformation::is_right_lane_change()']]],
   ['is_5fsame_5fdirection_5f_53',['is_same_direction_',['../classapproaching__emergency__vehicle__plugin_1_1ApproachingEmergencyVehiclePlugin.html#a89890b783f6dd3f5f943b7308afb5ca2',1,'approaching_emergency_vehicle_plugin::ApproachingEmergencyVehiclePlugin']]],
   ['is_5fsequential_5f_54',['is_sequential_',['../classlocalization__manager_1_1LocalizationManager.html#a39c9636657b5d522204253456836b13b',1,'localization_manager::LocalizationManager']]],
-  ['is_5fspat_5fwall_5ftime_5f_55',['is_spat_wall_time_',['../classcarma__wm_1_1WMListenerWorker.html#a7c30c45e3da523c1ef5a0b279c164b4d',1,'carma_wm::WMListenerWorker']]],
-  ['iscreategap_56',['isCreateGap',['../classplatooning__strategic__ihp_1_1PlatooningManager.html#a892acd370b64bffe151da8183b6cec75',1,'platooning_strategic_ihp::PlatooningManager']]],
-  ['isfollower_57',['isFollower',['../classplatooning__strategic__ihp_1_1PlatooningManager.html#a7ceb7068a84c30aeff6701ceabcfa7f0',1,'platooning_strategic_ihp::PlatooningManager']]]
+  ['iscreategap_55',['isCreateGap',['../classplatooning__strategic__ihp_1_1PlatooningManager.html#a892acd370b64bffe151da8183b6cec75',1,'platooning_strategic_ihp::PlatooningManager']]],
+  ['isfollower_56',['isFollower',['../classplatooning__strategic__ihp_1_1PlatooningManager.html#a7ceb7068a84c30aeff6701ceabcfa7f0',1,'platooning_strategic_ihp::PlatooningManager']]]
 ];

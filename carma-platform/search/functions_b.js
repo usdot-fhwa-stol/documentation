@@ -19,7 +19,7 @@ var searchData=
   ['matchsignalizedintersection_16',['matchSignalizedIntersection',['../classcarma__wm_1_1SignalizedIntersectionManager.html#a0a70ce89fbb9e0f3536a740864c5e1e0',1,'carma_wm::SignalizedIntersectionManager']]],
   ['matchtrajectorytimestamps_17',['matchTrajectoryTimestamps',['../classmobilitypath__visualizer_1_1MobilityPathVisualizer.html#a430f0c901d9e30cbf1eaf0a185fe5f04',1,'mobilitypath_visualizer::MobilityPathVisualizer']]],
   ['max_5ftrajectory_5fspeed_18',['max_trajectory_speed',['../classyield__plugin_1_1YieldPlugin.html#ae53a42abb996d38cf701a3fba7e473f8',1,'yield_plugin::YieldPlugin']]],
-  ['min_5fend_5ftime_5fconverter_5fminute_5fof_5fyear_19',['min_end_time_converter_minute_of_year',['../classcarma__wm_1_1CARMAWorldModel.html#a44dfa322c111e29045a1d00fdc65c810',1,'carma_wm::CARMAWorldModel']]],
+  ['min_5fend_5ftime_5fconverter_5fminute_5fof_5fyear_19',['min_end_time_converter_minute_of_year',['../classcarma__wm_1_1CARMAWorldModel.html#a4e1406f0d04b33d56ed4ce13a3e099ac',1,'carma_wm::CARMAWorldModel']]],
   ['min_5fwith_5fexclusions_20',['min_with_exclusions',['../namespacebasic__autonomy_1_1waypoint__generation.html#a9dd6a1f0fa9c6f6590b83a7cc2e0d118',1,'basic_autonomy::waypoint_generation']]],
   ['mob_5fop_5fcb_21',['mob_op_cb',['../classplatooning__strategic__ihp_1_1PlatooningStrategicIHPPlugin.html#af8c78c66386415ea227a079983ab253a',1,'platooning_strategic_ihp::PlatooningStrategicIHPPlugin']]],
   ['mob_5fop_5fcb_5fcandidatefollower_22',['mob_op_cb_candidatefollower',['../classplatooning__strategic__ihp_1_1PlatooningStrategicIHPPlugin.html#a703b7040514d083430fff2bda742b218',1,'platooning_strategic_ihp::PlatooningStrategicIHPPlugin']]],

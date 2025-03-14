@@ -148,10 +148,10 @@ $(document).ready(function(){initNavTree('guidance_8launch_8py_source.html','');
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        description = <span class="stringliteral">&quot;True if simulation mode is on&quot;</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    )</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    is_spat_wall_time = LaunchConfiguration(<span class="stringliteral">&#39;is_spat_wall_time&#39;</span>)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    declare_is_spat_wall_time_arg = DeclareLaunchArgument(</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        name = <span class="stringliteral">&#39;is_spat_wall_time&#39;</span>,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        default_value = <span class="stringliteral">&#39;True&#39;</span>,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    use_real_time_spat_in_sim = LaunchConfiguration(<span class="stringliteral">&#39;use_real_time_spat_in_sim&#39;</span>)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    declare_use_real_time_spat_in_sim_arg = DeclareLaunchArgument(</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        name = <span class="stringliteral">&#39;use_real_time_spat_in_sim&#39;</span>,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        default_value = <span class="stringliteral">&#39;False&#39;</span>,</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        description = <span class="stringliteral">&quot;True if SPaT is being published based on wall clock&quot;</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    )</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
@@ -489,7 +489,7 @@ $(document).ready(function(){initNavTree('guidance_8launch_8py_source.html','');
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>            subsystem_controller_default_param_file,</div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>            subsystem_controller_param_file,</div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>            {<span class="stringliteral">&quot;use_sim_time&quot;</span> : use_sim_time},</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>            {<span class="stringliteral">&quot;is_spat_wall_time&quot;</span> : is_spat_wall_time}],</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>            {<span class="stringliteral">&quot;use_real_time_spat_in_sim&quot;</span> : use_real_time_spat_in_sim}],</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>        on_exit= Shutdown(), <span class="comment"># Mark the subsystem controller as required</span></div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;subsystem_controllers&#39;</span>, env_log_levels)]</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    )</div>
@@ -498,7 +498,7 @@ $(document).ready(function(){initNavTree('guidance_8launch_8py_source.html','');
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>        declare_vehicle_config_param_file_arg,</div>
 <div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>        declare_use_sim_time_arg,</div>
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>        declare_subsystem_controller_param_file_arg,</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>        declare_is_spat_wall_time_arg,</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>        declare_use_real_time_spat_in_sim_arg,</div>
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        carma_trajectory_executor_and_route_container,</div>
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>        carma_guidance_visualizer_container,</div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>        carma_guidance_worker_container,</div>
@@ -516,7 +516,7 @@ $(document).ready(function(){initNavTree('guidance_8launch_8py_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_65035b4805221094def83884081b1f33.html">carma</a></li><li class="navelem"><a class="el" href="dir_f58cda9f7f9da9aabc437fb1be4786b2.html">launch</a></li><li class="navelem"><a class="el" href="guidance_8launch_8py.html">guidance.launch.py</a></li>
-    <li class="footer">Generated on Fri Mar 14 2025 14:18:59 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Mar 14 2025 17:57:15 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

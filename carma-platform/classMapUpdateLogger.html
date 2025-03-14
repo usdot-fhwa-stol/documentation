@@ -137,7 +137,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This node provides some debugging functionality for <a class="el" href="namespacecarma__wm.html">carma_wm</a> in order to allow for inspection of map updates. The node can be run with rosrun <a class="el" href="namespacecarma__wm.html">carma_wm</a> map_update_logger_node</p>
-<p >The map updates can be inspected with rostopic echo /map_update_debug </p>
+<p >The map updates can be inspected with ros2 topic echo /map_update_debug </p>
 
 <p class="definition">Definition at line <a class="el" href="MapUpdateLoggerNode_8cpp_source.html#l00047">47</a> of file <a class="el" href="MapUpdateLoggerNode_8cpp_source.html">MapUpdateLoggerNode.cpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -163,11 +163,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   82</span>    <span class="comment">// Setup publishers</span></div>
 <div class="line"><span class="lineno">   83</span> </div>
 <div class="line"><span class="lineno">   84</span>    <span class="comment">// NOTE: Currently, intra-process comms must be disabled for publishers that are transient_local: https://github.com/ros2/rclcpp/issues/1753</span></div>
-<div class="line"><span class="lineno">   85</span>    rclcpp::PublisherOptions readable_pub_options; </div>
+<div class="line"><span class="lineno">   85</span>    rclcpp::PublisherOptions readable_pub_options;</div>
 <div class="line"><span class="lineno">   86</span>    readable_pub_options.use_intra_process_comm = rclcpp::IntraProcessSetting::Disable; <span class="comment">// Disable intra-process comms for the map update debug publisher</span></div>
 <div class="line"><span class="lineno">   87</span> </div>
 <div class="line"><span class="lineno">   88</span>    <span class="keyword">auto</span> readable_pub_qos = rclcpp::QoS(rclcpp::KeepAll()); <span class="comment">// A publisher with this QoS will store all messages that it has sent on the topic</span></div>
-<div class="line"><span class="lineno">   89</span>    readable_pub_qos.transient_local();  <span class="comment">// A publisher with this QoS will re-send all (when KeepAll is used) messages to all late-joining subscribers </span></div>
+<div class="line"><span class="lineno">   89</span>    readable_pub_qos.transient_local();  <span class="comment">// A publisher with this QoS will re-send all (when KeepAll is used) messages to all late-joining subscribers</span></div>
 <div class="line"><span class="lineno">   90</span>                                         <span class="comment">// NOTE: The subscriber&#39;s QoS must be set to transisent_local() as well for earlier messages to be resent to the later-joiner.</span></div>
 <div class="line"><span class="lineno">   91</span> </div>
 <div class="line"><span class="lineno">   92</span>    <span class="comment">// Create map update debug publisher, which will send all previously published messages to late-joining subscribers ONLY If the subscriber is transient_local too</span></div>
@@ -176,7 +176,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   95</span>    <span class="comment">// Setup subscribers</span></div>
 <div class="line"><span class="lineno">   96</span> </div>
 <div class="line"><span class="lineno">   97</span>    <span class="comment">// NOTE: Currently, intra-process comms must be disabled for subcribers that are transient_local: https://github.com/ros2/rclcpp/issues/1753</span></div>
-<div class="line"><span class="lineno">   98</span>    rclcpp::SubscriptionOptions update_sub_options; </div>
+<div class="line"><span class="lineno">   98</span>    rclcpp::SubscriptionOptions update_sub_options;</div>
 <div class="line"><span class="lineno">   99</span>    update_sub_options.use_intra_process_comm = rclcpp::IntraProcessSetting::Disable; <span class="comment">// Disable intra-process comms for this SubscriptionOptions object</span></div>
 <div class="line"><span class="lineno">  100</span> </div>
 <div class="line"><span class="lineno">  101</span>    <span class="keyword">auto</span> update_sub_qos = rclcpp::QoS(rclcpp::KeepLast(100)); <span class="comment">// Set the queue size for a subscriber with this QoS</span></div>
@@ -243,7 +243,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="MapUpdateLoggerNode_8cpp_source.html#l00162">162</a> of file <a class="el" href="MapUpdateLoggerNode_8cpp_source.html">MapUpdateLoggerNode.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  162</span>                                                                                                                          {</div>
-<div class="line"><span class="lineno">  163</span>  </div>
+<div class="line"><span class="lineno">  163</span> </div>
 <div class="line"><span class="lineno">  164</span>  RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Recieved map update &quot;</span>);</div>
 <div class="line"><span class="lineno">  165</span> </div>
 <div class="line"><span class="lineno">  166</span>  <span class="keyword">auto</span> control = std::make_shared&lt;carma_wm::TrafficControl&gt;(<a class="code hl_class" href="classcarma__wm_1_1TrafficControl.html">carma_wm::TrafficControl</a>());</div>
@@ -343,7 +343,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  115</span>  pair.element.rule_name = rule_name;</div>
 <div class="line"><span class="lineno">  116</span> </div>
 <div class="line"><span class="lineno">  117</span>  <span class="keywordflow">if</span> (rule_name.compare(<span class="stringliteral">&quot;digital_minimum_gap&quot;</span>) == 0) {</div>
-<div class="line"><span class="lineno">  118</span>    </div>
+<div class="line"><span class="lineno">  118</span> </div>
 <div class="line"><span class="lineno">  119</span>    <span class="keyword">auto</span> cast = std::static_pointer_cast&lt;lanelet::DigitalMinimumGap&gt;(element);</div>
 <div class="line"><span class="lineno">  120</span>    pair.element.min_gap = cast-&gt;getMinimumGap();</div>
 <div class="line"><span class="lineno">  121</span>    pair.element.participants.insert(pair.element.participants.begin(), cast-&gt;participants_.begin(), cast-&gt;participants_.end());</div>
@@ -380,7 +380,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  152</span>  } <span class="keywordflow">else</span> {</div>
 <div class="line"><span class="lineno">  153</span> </div>
 <div class="line"><span class="lineno">  154</span>    RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;map_update_debug&quot;</span>), <span class="stringliteral">&quot;MapUpdateLogger recieved unsupported regulatory element in map update.&quot;</span>);</div>
-<div class="line"><span class="lineno">  155</span>    pair.element.unsupported_type = <span class="keyword">true</span>; </div>
+<div class="line"><span class="lineno">  155</span>    pair.element.unsupported_type = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">  156</span> </div>
 <div class="line"><span class="lineno">  157</span>  }</div>
 <div class="line"><span class="lineno">  158</span>  <span class="keywordflow">return</span> pair;</div>
@@ -519,7 +519,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classMapUpdateLogger.html">MapUpdateLogger</a></li>
-    <li class="footer">Generated on Thu Mar 13 2025 17:16:35 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Mar 14 2025 14:19:01 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

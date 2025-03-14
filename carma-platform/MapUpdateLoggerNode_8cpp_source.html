@@ -127,13 +127,13 @@ $(document).ready(function(){initNavTree('MapUpdateLoggerNode_8cpp_source.html',
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="classMapUpdateLogger.html#a1fb05e84dc5d3d91fadf29793af7587b">MapUpdateLogger</a>(<span class="keyword">const</span> rclcpp::NodeOptions&amp; options);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classMapUpdateLogger.html#ac405e6eb8f64675d7b8e0616ee3f6244">   53</a></span>    rclcpp::Publisher&lt;carma_debug_ros2_msgs::msg::MapUpdateReadable&gt;::SharedPtr <a class="code hl_variable" href="classMapUpdateLogger.html#ac405e6eb8f64675d7b8e0616ee3f6244">readable_pub_</a>;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classMapUpdateLogger.html#ae0ad21d1ff208e93c26265ac532e21f5">   54</a></span>    rclcpp::Subscription&lt;autoware_lanelet2_msgs::msg::MapBin&gt;::SharedPtr <a class="code hl_variable" href="classMapUpdateLogger.html#ae0ad21d1ff208e93c26265ac532e21f5">update_sub_</a>;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    carma_debug_ros2_msgs::msg::LaneletIdRegulatoryElementPair <a class="code hl_function" href="classMapUpdateLogger.html#ab98014c863eaf2d66753f837be154d7d">pairToDebugMessage</a>(<span class="keyword">const</span> std::pair&lt;lanelet::Id, lanelet::RegulatoryElementPtr&gt;&amp; id_reg_pair);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    carma_debug_ros2_msgs::msg::MapUpdateReadable <a class="code hl_function" href="classMapUpdateLogger.html#afa5c600a6be77593cfb3f2a2517a7df5">mapUpdateCallback</a>(<span class="keyword">const</span> autoware_lanelet2_msgs::msg::MapBin&amp; update);</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classMapUpdateLogger.html#ac782a1014626a3fd5a8cd133a79b7263">   74</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMapUpdateLogger.html#ac782a1014626a3fd5a8cd133a79b7263">raw_callback</a>(<span class="keyword">const</span> autoware_lanelet2_msgs::msg::MapBin::SharedPtr msg) {</div>
@@ -147,11 +147,11 @@ $(document).ready(function(){initNavTree('MapUpdateLoggerNode_8cpp_source.html',
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment">// Setup publishers</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="comment">// NOTE: Currently, intra-process comms must be disabled for publishers that are transient_local: https://github.com/ros2/rclcpp/issues/1753</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    rclcpp::PublisherOptions readable_pub_options; </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    rclcpp::PublisherOptions readable_pub_options;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    readable_pub_options.use_intra_process_comm = rclcpp::IntraProcessSetting::Disable; <span class="comment">// Disable intra-process comms for the map update debug publisher</span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">auto</span> readable_pub_qos = rclcpp::QoS(rclcpp::KeepAll()); <span class="comment">// A publisher with this QoS will store all messages that it has sent on the topic</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    readable_pub_qos.transient_local();  <span class="comment">// A publisher with this QoS will re-send all (when KeepAll is used) messages to all late-joining subscribers </span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    readable_pub_qos.transient_local();  <span class="comment">// A publisher with this QoS will re-send all (when KeepAll is used) messages to all late-joining subscribers</span></div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                                         <span class="comment">// NOTE: The subscriber&#39;s QoS must be set to transisent_local() as well for earlier messages to be resent to the later-joiner.</span></div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">// Create map update debug publisher, which will send all previously published messages to late-joining subscribers ONLY If the subscriber is transient_local too</span></div>
@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('MapUpdateLoggerNode_8cpp_source.html',
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="comment">// Setup subscribers</span></div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// NOTE: Currently, intra-process comms must be disabled for subcribers that are transient_local: https://github.com/ros2/rclcpp/issues/1753</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    rclcpp::SubscriptionOptions update_sub_options; </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    rclcpp::SubscriptionOptions update_sub_options;</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    update_sub_options.use_intra_process_comm = rclcpp::IntraProcessSetting::Disable; <span class="comment">// Disable intra-process comms for this SubscriptionOptions object</span></div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">auto</span> update_sub_qos = rclcpp::QoS(rclcpp::KeepLast(100)); <span class="comment">// Set the queue size for a subscriber with this QoS</span></div>
@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('MapUpdateLoggerNode_8cpp_source.html',
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  pair.element.rule_name = rule_name;</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">if</span> (rule_name.compare(<span class="stringliteral">&quot;digital_minimum_gap&quot;</span>) == 0) {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keyword">auto</span> cast = std::static_pointer_cast&lt;lanelet::DigitalMinimumGap&gt;(element);</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    pair.element.min_gap = cast-&gt;getMinimumGap();</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    pair.element.participants.insert(pair.element.participants.begin(), cast-&gt;participants_.begin(), cast-&gt;participants_.end());</div>
@@ -217,7 +217,7 @@ $(document).ready(function(){initNavTree('MapUpdateLoggerNode_8cpp_source.html',
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;map_update_debug&quot;</span>), <span class="stringliteral">&quot;MapUpdateLogger recieved unsupported regulatory element in map update.&quot;</span>);</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    pair.element.unsupported_type = <span class="keyword">true</span>; </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    pair.element.unsupported_type = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  }</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keywordflow">return</span> pair;</div>
@@ -225,7 +225,7 @@ $(document).ready(function(){initNavTree('MapUpdateLoggerNode_8cpp_source.html',
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classMapUpdateLogger.html#afa5c600a6be77593cfb3f2a2517a7df5">  162</a></span>carma_debug_ros2_msgs::msg::MapUpdateReadable <a class="code hl_function" href="classMapUpdateLogger.html#afa5c600a6be77593cfb3f2a2517a7df5">MapUpdateLogger::mapUpdateCallback</a>(<span class="keyword">const</span> autoware_lanelet2_msgs::msg::MapBin&amp; update) {</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Recieved map update &quot;</span>);</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="keyword">auto</span> control = std::make_shared&lt;carma_wm::TrafficControl&gt;(<a class="code hl_class" href="classcarma__wm_1_1TrafficControl.html">carma_wm::TrafficControl</a>());</div>
@@ -265,7 +265,7 @@ $(document).ready(function(){initNavTree('MapUpdateLoggerNode_8cpp_source.html',
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  rclcpp::init(argc, argv);</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  rclcpp::spin(std::make_shared&lt;MapUpdateLogger&gt;(rclcpp::NodeOptions()));</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  rclcpp::shutdown();</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keywordflow">return</span> 0;</div>
@@ -287,7 +287,7 @@ $(document).ready(function(){initNavTree('MapUpdateLoggerNode_8cpp_source.html',
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_063394ac95ddab6826ca68be56e39eae.html">carma_wm</a></li><li class="navelem"><a class="el" href="dir_bed7bb81c6bc1fae1bac689cbf6acc02.html">src</a></li><li class="navelem"><a class="el" href="MapUpdateLoggerNode_8cpp.html">MapUpdateLoggerNode.cpp</a></li>
-    <li class="footer">Generated on Thu Mar 13 2025 17:16:33 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Mar 14 2025 14:18:59 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

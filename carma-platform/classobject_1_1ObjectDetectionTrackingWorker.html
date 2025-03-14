@@ -262,7 +262,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   51</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   52</span>  }</div>
 <div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>  geometry_msgs::msg::TransformStamped object_frame_tf = transform.get(); </div>
+<div class="line"><span class="lineno">   54</span>  geometry_msgs::msg::TransformStamped object_frame_tf = transform.get();</div>
 <div class="line"><span class="lineno">   55</span> </div>
 <div class="line"><span class="lineno">   56</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; obj_array-&gt;objects.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
 <div class="line"><span class="lineno">   57</span>  {</div>
@@ -281,7 +281,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   70</span>    obj.presence_vector = obj.presence_vector | obj.OBJECT_TYPE_PRESENCE_VECTOR;</div>
 <div class="line"><span class="lineno">   71</span>    obj.presence_vector = obj.presence_vector | obj.DYNAMIC_OBJ_PRESENCE;</div>
 <div class="line"><span class="lineno">   72</span>    obj.presence_vector = obj.presence_vector | obj.CONFIDENCE_PRESENCE_VECTOR;</div>
-<div class="line"><span class="lineno">   73</span>     </div>
+<div class="line"><span class="lineno">   73</span> </div>
 <div class="line"><span class="lineno">   74</span>    <span class="comment">// Object id. Matching ids on a topic should refer to the same object within some time period, expanded</span></div>
 <div class="line"><span class="lineno">   75</span>    obj.id = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].object_id;</div>
 <div class="line"><span class="lineno">   76</span> </div>
@@ -297,129 +297,128 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   86</span> </div>
 <div class="line"><span class="lineno">   87</span>    obj.pose.pose = output_pose.pose;</div>
 <div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>    <span class="comment">// In ROS2 foxy the doTransform call does not set the covariance, so we need to do it manually</span></div>
-<div class="line"><span class="lineno">   90</span>    <span class="comment">// Copy over the position covariance</span></div>
-<div class="line"><span class="lineno">   91</span>    <span class="comment">// Variable names used here are row, column so row major order</span></div>
-<div class="line"><span class="lineno">   92</span>    <span class="keyword">auto</span> xx = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[0];</div>
-<div class="line"><span class="lineno">   93</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a5320d01448ddd395e971d73eebdef288">xy</a> = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[1];</div>
-<div class="line"><span class="lineno">   94</span>    <span class="keyword">auto</span> xz = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[2];</div>
-<div class="line"><span class="lineno">   95</span>    <span class="keyword">auto</span> yx = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[3];</div>
-<div class="line"><span class="lineno">   96</span>    <span class="keyword">auto</span> yy = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[4];</div>
-<div class="line"><span class="lineno">   97</span>    <span class="keyword">auto</span> yz = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[5];</div>
-<div class="line"><span class="lineno">   98</span>    <span class="keyword">auto</span> zx = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[6];</div>
-<div class="line"><span class="lineno">   99</span>    <span class="keyword">auto</span> zy = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[7];</div>
-<div class="line"><span class="lineno">  100</span>    <span class="keyword">auto</span> zz = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[8];</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>    <span class="comment">// This matrix represents the covariance of the object before transformation</span></div>
-<div class="line"><span class="lineno">  103</span>    std::array&lt;double, 36&gt; input_covariance = { </div>
-<div class="line"><span class="lineno">  104</span>      xx, <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a5320d01448ddd395e971d73eebdef288">xy</a>, xz,  0, 0, 0,</div>
-<div class="line"><span class="lineno">  105</span>      yx, yy, yz,  0, 0, 0,</div>
-<div class="line"><span class="lineno">  106</span>      zx, zy, zz,  0, 0, 0,</div>
-<div class="line"><span class="lineno">  107</span>      0,  0,  0,  1,  0, 0, <span class="comment">// Since no covariance for the orientation is provided we will assume an identity relationship (1s on the diagonal)</span></div>
-<div class="line"><span class="lineno">  108</span>      0,  0,  0,  0,  1, 0, <span class="comment">// TODO when autoware suplies this information we should update this to reflect the new covariance</span></div>
-<div class="line"><span class="lineno">  109</span>      0,  0,  0,  0,  0, 1</div>
-<div class="line"><span class="lineno">  110</span>    };</div>
-<div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>    <span class="comment">// Transform the covariance matrix</span></div>
-<div class="line"><span class="lineno">  113</span>    tf2::Transform covariance_transform;</div>
-<div class="line"><span class="lineno">  114</span>    tf2::fromMsg(object_frame_tf.transform, covariance_transform);</div>
-<div class="line"><span class="lineno">  115</span>    obj.pose.covariance = <a class="code hl_function" href="namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e">covariance_helper::transformCovariance</a>(input_covariance, covariance_transform);</div>
-<div class="line"><span class="lineno">  116</span> </div>
-<div class="line"><span class="lineno">  117</span>    <span class="comment">// Store the object ovarall confidence</span></div>
-<div class="line"><span class="lineno">  118</span>    obj.confidence = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].existence_probability;</div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>    <span class="comment">// Average velocity of the object within the frame specified in header</span></div>
-<div class="line"><span class="lineno">  121</span>    obj.velocity = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.twist;</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>    <span class="comment">// The size of the object aligned along the axis of the object described by the orientation in pose</span></div>
-<div class="line"><span class="lineno">  124</span>    <span class="comment">// Dimensions are specified in meters</span></div>
-<div class="line"><span class="lineno">  125</span>    <span class="comment">// Autoware provides a set of 2d bounding boxes and supports articulated shapes.</span></div>
-<div class="line"><span class="lineno">  126</span>    <span class="comment">// The loop below finds the overall bounding box to ensure information is not lost</span></div>
-<div class="line"><span class="lineno">  127</span> </div>
-<div class="line"><span class="lineno">  128</span>    <span class="keywordtype">double</span> minX = std::numeric_limits&lt;double&gt;::max();</div>
-<div class="line"><span class="lineno">  129</span>    <span class="keywordtype">double</span> maxX = std::numeric_limits&lt;double&gt;::lowest();</div>
-<div class="line"><span class="lineno">  130</span>    <span class="keywordtype">double</span> minY = std::numeric_limits&lt;double&gt;::max();</div>
-<div class="line"><span class="lineno">  131</span>    <span class="keywordtype">double</span> maxY = std::numeric_limits&lt;double&gt;::lowest();</div>
-<div class="line"><span class="lineno">  132</span>    <span class="keywordtype">double</span> maxHeight = std::numeric_limits&lt;double&gt;::lowest();</div>
-<div class="line"><span class="lineno">  133</span> </div>
-<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> shape : obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].shape) {</div>
-<div class="line"><span class="lineno">  135</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a> :  shape.polygon.points) {</div>
-<div class="line"><span class="lineno">  136</span>        </div>
-<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.x &gt; maxX)</div>
-<div class="line"><span class="lineno">  138</span>          maxX = <a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.x;</div>
-<div class="line"><span class="lineno">  139</span> </div>
-<div class="line"><span class="lineno">  140</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.x &lt; minX)</div>
-<div class="line"><span class="lineno">  141</span>          minX = <a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.x;</div>
-<div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.y &gt; maxY)</div>
-<div class="line"><span class="lineno">  144</span>          maxY = <a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.y;</div>
-<div class="line"><span class="lineno">  145</span> </div>
-<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.y &lt; minY)</div>
-<div class="line"><span class="lineno">  147</span>          minY = <a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.y;</div>
-<div class="line"><span class="lineno">  148</span>      }</div>
-<div class="line"><span class="lineno">  149</span>      <span class="keywordflow">if</span> (shape.height &gt; maxHeight)</div>
-<div class="line"><span class="lineno">  150</span>        maxHeight = shape.height;</div>
-<div class="line"><span class="lineno">  151</span>    }</div>
-<div class="line"><span class="lineno">  152</span> </div>
-<div class="line"><span class="lineno">  153</span>    <span class="keywordtype">double</span> dX = maxX - minX;</div>
-<div class="line"><span class="lineno">  154</span>    <span class="keywordtype">double</span> dY = maxY - minY;</div>
-<div class="line"><span class="lineno">  155</span> </div>
-<div class="line"><span class="lineno">  156</span>    obj.size.x = dX / 2.0; <span class="comment">// Shape in carma is defined by the half delta from the centroid</span></div>
-<div class="line"><span class="lineno">  157</span>    obj.size.y = dY / 2.0;</div>
-<div class="line"><span class="lineno">  158</span> </div>
-<div class="line"><span class="lineno">  159</span>    <span class="comment">// Height provided by autoware is overall height divide by 2 for delta from centroid</span></div>
-<div class="line"><span class="lineno">  160</span>    obj.size.z = maxHeight / 2.0; </div>
-<div class="line"><span class="lineno">  161</span> </div>
-<div class="line"><span class="lineno">  162</span>    <span class="comment">// Update the object type and generate predictions using CV or CTRV vehicle models.</span></div>
-<div class="line"><span class="lineno">  163</span>        <span class="comment">// If the object is a bicycle or motor vehicle use CTRV otherwise use CV.</span></div>
-<div class="line"><span class="lineno">  164</span> </div>
-<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">isClass</a>(obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], autoware_auto_msgs::msg::ObjectClassification::MOTORCYCLE))</div>
-<div class="line"><span class="lineno">  166</span>    {</div>
-<div class="line"><span class="lineno">  167</span>      obj.object_type = obj.MOTORCYCLE;</div>
-<div class="line"><span class="lineno">  168</span>    }</div>
-<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">isClass</a>(obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], autoware_auto_msgs::msg::ObjectClassification::BICYCLE))</div>
-<div class="line"><span class="lineno">  170</span>    {</div>
-<div class="line"><span class="lineno">  171</span>      obj.object_type = obj.MOTORCYCLE; <span class="comment">// Currently external object cannot represent bicycles</span></div>
-<div class="line"><span class="lineno">  172</span>    }</div>
-<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">isClass</a>(obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], autoware_auto_msgs::msg::ObjectClassification::CAR))</div>
-<div class="line"><span class="lineno">  174</span>    {</div>
-<div class="line"><span class="lineno">  175</span>      obj.object_type = obj.SMALL_VEHICLE;</div>
-<div class="line"><span class="lineno">  176</span>    }</div>
-<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">isClass</a>(obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], autoware_auto_msgs::msg::ObjectClassification::TRUCK))</div>
-<div class="line"><span class="lineno">  178</span>    {</div>
-<div class="line"><span class="lineno">  179</span>      obj.object_type = obj.LARGE_VEHICLE;</div>
-<div class="line"><span class="lineno">  180</span>    }</div>
-<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">isClass</a>(obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], autoware_auto_msgs::msg::ObjectClassification::TRAILER))</div>
-<div class="line"><span class="lineno">  182</span>    {</div>
-<div class="line"><span class="lineno">  183</span>      obj.object_type = obj.LARGE_VEHICLE; <span class="comment">// Currently external object cannot represent trailers</span></div>
-<div class="line"><span class="lineno">  184</span>    }</div>
-<div class="line"><span class="lineno">  185</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">isClass</a>(obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], autoware_auto_msgs::msg::ObjectClassification::PEDESTRIAN))</div>
-<div class="line"><span class="lineno">  186</span>    {</div>
-<div class="line"><span class="lineno">  187</span>      obj.object_type = obj.PEDESTRIAN;</div>
-<div class="line"><span class="lineno">  188</span>    }</div>
-<div class="line"><span class="lineno">  189</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  190</span>    {</div>
-<div class="line"><span class="lineno">  191</span>      obj.object_type = obj.UNKNOWN;</div>
-<div class="line"><span class="lineno">  192</span>    }</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>    <span class="comment">// Binary value to show if the object is static or dynamic (1: dynamic, 0: static)</span></div>
-<div class="line"><span class="lineno">  195</span> </div>
-<div class="line"><span class="lineno">  196</span>    <span class="keywordflow">if</span> ((fabs(obj.velocity.twist.linear.x || obj.velocity.twist.linear.y || obj.velocity.twist.linear.z)) &gt; 0.75)</div>
-<div class="line"><span class="lineno">  197</span>    {</div>
-<div class="line"><span class="lineno">  198</span>      obj.dynamic_obj = 1;</div>
-<div class="line"><span class="lineno">  199</span>    }</div>
-<div class="line"><span class="lineno">  200</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  201</span>    {</div>
-<div class="line"><span class="lineno">  202</span>      obj.dynamic_obj = 0;</div>
-<div class="line"><span class="lineno">  203</span>    }</div>
-<div class="line"><span class="lineno">  204</span> </div>
-<div class="line"><span class="lineno">  205</span>    msg.objects.emplace_back(obj);</div>
-<div class="line"><span class="lineno">  206</span>  }</div>
+<div class="line"><span class="lineno">   89</span>    <span class="comment">// Coming from legacy code, manually copying over the position covariance</span></div>
+<div class="line"><span class="lineno">   90</span>    <span class="comment">// Variable names used here are row, column so row major order</span></div>
+<div class="line"><span class="lineno">   91</span>    <span class="keyword">auto</span> xx = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[0];</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keyword">auto</span> <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a5320d01448ddd395e971d73eebdef288">xy</a> = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[1];</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keyword">auto</span> xz = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[2];</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keyword">auto</span> yx = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[3];</div>
+<div class="line"><span class="lineno">   95</span>    <span class="keyword">auto</span> yy = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[4];</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keyword">auto</span> yz = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[5];</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keyword">auto</span> zx = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[6];</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keyword">auto</span> zy = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[7];</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keyword">auto</span> zz = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.position_covariance[8];</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    <span class="comment">// This matrix represents the covariance of the object before transformation</span></div>
+<div class="line"><span class="lineno">  102</span>    std::array&lt;double, 36&gt; input_covariance = {</div>
+<div class="line"><span class="lineno">  103</span>      xx, <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a5320d01448ddd395e971d73eebdef288">xy</a>, xz,  0, 0, 0,</div>
+<div class="line"><span class="lineno">  104</span>      yx, yy, yz,  0, 0, 0,</div>
+<div class="line"><span class="lineno">  105</span>      zx, zy, zz,  0, 0, 0,</div>
+<div class="line"><span class="lineno">  106</span>      0,  0,  0,  1,  0, 0, <span class="comment">// Since no covariance for the orientation is provided we will assume an identity relationship (1s on the diagonal)</span></div>
+<div class="line"><span class="lineno">  107</span>      0,  0,  0,  0,  1, 0, <span class="comment">// TODO when autoware suplies this information we should update this to reflect the new covariance</span></div>
+<div class="line"><span class="lineno">  108</span>      0,  0,  0,  0,  0, 1</div>
+<div class="line"><span class="lineno">  109</span>    };</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>    <span class="comment">// Transform the covariance matrix</span></div>
+<div class="line"><span class="lineno">  112</span>    tf2::Transform covariance_transform;</div>
+<div class="line"><span class="lineno">  113</span>    tf2::fromMsg(object_frame_tf.transform, covariance_transform);</div>
+<div class="line"><span class="lineno">  114</span>    obj.pose.covariance = <a class="code hl_function" href="namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e">covariance_helper::transformCovariance</a>(input_covariance, covariance_transform);</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    <span class="comment">// Store the object ovarall confidence</span></div>
+<div class="line"><span class="lineno">  117</span>    obj.confidence = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].existence_probability;</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    <span class="comment">// Average velocity of the object within the frame specified in header</span></div>
+<div class="line"><span class="lineno">  120</span>    obj.velocity = obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].kinematics.twist;</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <span class="comment">// The size of the object aligned along the axis of the object described by the orientation in pose</span></div>
+<div class="line"><span class="lineno">  123</span>    <span class="comment">// Dimensions are specified in meters</span></div>
+<div class="line"><span class="lineno">  124</span>    <span class="comment">// Autoware provides a set of 2d bounding boxes and supports articulated shapes.</span></div>
+<div class="line"><span class="lineno">  125</span>    <span class="comment">// The loop below finds the overall bounding box to ensure information is not lost</span></div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordtype">double</span> minX = std::numeric_limits&lt;double&gt;::max();</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordtype">double</span> maxX = std::numeric_limits&lt;double&gt;::lowest();</div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordtype">double</span> minY = std::numeric_limits&lt;double&gt;::max();</div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordtype">double</span> maxY = std::numeric_limits&lt;double&gt;::lowest();</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordtype">double</span> maxHeight = std::numeric_limits&lt;double&gt;::lowest();</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">for</span>(<span class="keyword">auto</span> shape : obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].shape) {</div>
+<div class="line"><span class="lineno">  134</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a> :  shape.polygon.points) {</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.x &gt; maxX)</div>
+<div class="line"><span class="lineno">  137</span>          maxX = <a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.x;</div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.x &lt; minX)</div>
+<div class="line"><span class="lineno">  140</span>          minX = <a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.x;</div>
+<div class="line"><span class="lineno">  141</span> </div>
+<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.y &gt; maxY)</div>
+<div class="line"><span class="lineno">  143</span>          maxY = <a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.y;</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.y &lt; minY)</div>
+<div class="line"><span class="lineno">  146</span>          minY = <a class="code hl_variable" href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">point</a>.y;</div>
+<div class="line"><span class="lineno">  147</span>      }</div>
+<div class="line"><span class="lineno">  148</span>      <span class="keywordflow">if</span> (shape.height &gt; maxHeight)</div>
+<div class="line"><span class="lineno">  149</span>        maxHeight = shape.height;</div>
+<div class="line"><span class="lineno">  150</span>    }</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordtype">double</span> dX = maxX - minX;</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordtype">double</span> dY = maxY - minY;</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    obj.size.x = dX / 2.0; <span class="comment">// Shape in carma is defined by the half delta from the centroid</span></div>
+<div class="line"><span class="lineno">  156</span>    obj.size.y = dY / 2.0;</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <span class="comment">// Height provided by autoware is overall height divide by 2 for delta from centroid</span></div>
+<div class="line"><span class="lineno">  159</span>    obj.size.z = maxHeight / 2.0;</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>    <span class="comment">// Update the object type and generate predictions using CV or CTRV vehicle models.</span></div>
+<div class="line"><span class="lineno">  162</span>        <span class="comment">// If the object is a bicycle or motor vehicle use CTRV otherwise use CV.</span></div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">isClass</a>(obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], autoware_auto_msgs::msg::ObjectClassification::MOTORCYCLE))</div>
+<div class="line"><span class="lineno">  165</span>    {</div>
+<div class="line"><span class="lineno">  166</span>      obj.object_type = obj.MOTORCYCLE;</div>
+<div class="line"><span class="lineno">  167</span>    }</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">isClass</a>(obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], autoware_auto_msgs::msg::ObjectClassification::BICYCLE))</div>
+<div class="line"><span class="lineno">  169</span>    {</div>
+<div class="line"><span class="lineno">  170</span>      obj.object_type = obj.MOTORCYCLE; <span class="comment">// Currently external object cannot represent bicycles</span></div>
+<div class="line"><span class="lineno">  171</span>    }</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">isClass</a>(obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], autoware_auto_msgs::msg::ObjectClassification::CAR))</div>
+<div class="line"><span class="lineno">  173</span>    {</div>
+<div class="line"><span class="lineno">  174</span>      obj.object_type = obj.SMALL_VEHICLE;</div>
+<div class="line"><span class="lineno">  175</span>    }</div>
+<div class="line"><span class="lineno">  176</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">isClass</a>(obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], autoware_auto_msgs::msg::ObjectClassification::TRUCK))</div>
+<div class="line"><span class="lineno">  177</span>    {</div>
+<div class="line"><span class="lineno">  178</span>      obj.object_type = obj.LARGE_VEHICLE;</div>
+<div class="line"><span class="lineno">  179</span>    }</div>
+<div class="line"><span class="lineno">  180</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">isClass</a>(obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], autoware_auto_msgs::msg::ObjectClassification::TRAILER))</div>
+<div class="line"><span class="lineno">  181</span>    {</div>
+<div class="line"><span class="lineno">  182</span>      obj.object_type = obj.LARGE_VEHICLE; <span class="comment">// Currently external object cannot represent trailers</span></div>
+<div class="line"><span class="lineno">  183</span>    }</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">isClass</a>(obj_array-&gt;objects[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>], autoware_auto_msgs::msg::ObjectClassification::PEDESTRIAN))</div>
+<div class="line"><span class="lineno">  185</span>    {</div>
+<div class="line"><span class="lineno">  186</span>      obj.object_type = obj.PEDESTRIAN;</div>
+<div class="line"><span class="lineno">  187</span>    }</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  189</span>    {</div>
+<div class="line"><span class="lineno">  190</span>      obj.object_type = obj.UNKNOWN;</div>
+<div class="line"><span class="lineno">  191</span>    }</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>    <span class="comment">// Binary value to show if the object is static or dynamic (1: dynamic, 0: static)</span></div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">if</span> ((fabs(obj.velocity.twist.linear.x || obj.velocity.twist.linear.y || obj.velocity.twist.linear.z)) &gt; 0.75)</div>
+<div class="line"><span class="lineno">  196</span>    {</div>
+<div class="line"><span class="lineno">  197</span>      obj.dynamic_obj = 1;</div>
+<div class="line"><span class="lineno">  198</span>    }</div>
+<div class="line"><span class="lineno">  199</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  200</span>    {</div>
+<div class="line"><span class="lineno">  201</span>      obj.dynamic_obj = 0;</div>
+<div class="line"><span class="lineno">  202</span>    }</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>    msg.objects.emplace_back(obj);</div>
+<div class="line"><span class="lineno">  205</span>  }</div>
+<div class="line"><span class="lineno">  206</span> </div>
 <div class="line"><span class="lineno">  207</span> </div>
 <div class="line"><span class="lineno">  208</span> </div>
-<div class="line"><span class="lineno">  209</span> </div>
-<div class="line"><span class="lineno">  210</span>  <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingWorker.html#a17fc325608629d81eaf156192d276191">obj_pub_</a>(msg);</div>
-<div class="line"><span class="lineno">  211</span>}</div>
+<div class="line"><span class="lineno">  209</span>  <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingWorker.html#a17fc325608629d81eaf156192d276191">obj_pub_</a>(msg);</div>
+<div class="line"><span class="lineno">  210</span>}</div>
 <div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingWorker_html_a7246e975b019782d244594b4ba849945"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingWorker.html#a7246e975b019782d244594b4ba849945">object::ObjectDetectionTrackingWorker::isClass</a></div><div class="ttdeci">bool isClass(const autoware_auto_msgs::msg::TrackedObject &amp;obj, uint8_t class_id)</div><div class="ttdoc">Helper method to check if the provided tracked object has the provided class type.</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__worker_8cpp_source.html#l00031">object_detection_tracking_worker.cpp:31</a></div></div>
 <div class="ttc" id="aclassobject_1_1ObjectDetectionTrackingWorker_html_aab9163d25442c64e3777fcbcbbd43c7e"><div class="ttname"><a href="classobject_1_1ObjectDetectionTrackingWorker.html#aab9163d25442c64e3777fcbcbbd43c7e">object::ObjectDetectionTrackingWorker::map_frame_</a></div><div class="ttdeci">std::string map_frame_</div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__worker_8h_source.html#l00081">object_detection_tracking_worker.h:81</a></div></div>
 <div class="ttc" id="anamespacecovariance__helper_html_af38530465ec3a2a40b4e9be14032f65e"><div class="ttname"><a href="namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e">covariance_helper::transformCovariance</a></div><div class="ttdeci">geometry_msgs::msg::PoseWithCovariance::_covariance_type transformCovariance(const geometry_msgs::msg::PoseWithCovariance::_covariance_type &amp;cov_in, const tf2::Transform &amp;transform)</div><div class="ttdoc">Transform the covariance matrix of a PoseWithCovariance message to a new frame.</div><div class="ttdef"><b>Definition:</b> <a href="covariance__helper_8h_source.html#l00057">covariance_helper.h:57</a></div></div>
@@ -499,7 +498,7 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="object__detection__tracking__worker_8cpp_source.html#l00031">31</a> of file <a class="el" href="object__detection__tracking__worker_8cpp_source.html">object_detection_tracking_worker.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   31</span>                                                                                                           {</div>
 <div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>  <span class="keywordflow">return</span> obj.classification.end() != std::find_if(obj.classification.begin(), obj.classification.end(), </div>
+<div class="line"><span class="lineno">   33</span>  <span class="keywordflow">return</span> obj.classification.end() != std::find_if(obj.classification.begin(), obj.classification.end(),</div>
 <div class="line"><span class="lineno">   34</span>    [&amp;class_id](<span class="keyword">auto</span> o){ return o.classification == class_id; }</div>
 <div class="line"><span class="lineno">   35</span>  );</div>
 <div class="line"><span class="lineno">   36</span> </div>
@@ -535,10 +534,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="object__detection__tracking__worker_8cpp_source.html#l00213">213</a> of file <a class="el" href="object__detection__tracking__worker_8cpp_source.html">object_detection_tracking_worker.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  214</span>{</div>
-<div class="line"><span class="lineno">  215</span>  <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingWorker.html#aab9163d25442c64e3777fcbcbbd43c7e">map_frame_</a> = map_frame;</div>
-<div class="line"><span class="lineno">  216</span>}</div>
+<p class="definition">Definition at line <a class="el" href="object__detection__tracking__worker_8cpp_source.html#l00212">212</a> of file <a class="el" href="object__detection__tracking__worker_8cpp_source.html">object_detection_tracking_worker.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>{</div>
+<div class="line"><span class="lineno">  214</span>  <a class="code hl_variable" href="classobject_1_1ObjectDetectionTrackingWorker.html#aab9163d25442c64e3777fcbcbbd43c7e">map_frame_</a> = map_frame;</div>
+<div class="line"><span class="lineno">  215</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="object__detection__tracking__worker_8h_source.html#l00081">map_frame_</a>.</p>
 
@@ -604,7 +603,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="object__detection__tracking__worker_8h_source.html#l00081">81</a> of file <a class="el" href="object__detection__tracking__worker_8h_source.html">object_detection_tracking_worker.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="object__detection__tracking__worker_8cpp_source.html#l00039">detectedObjectCallback()</a>, and <a class="el" href="object__detection__tracking__worker_8cpp_source.html#l00213">setMapFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="object__detection__tracking__worker_8cpp_source.html#l00039">detectedObjectCallback()</a>, and <a class="el" href="object__detection__tracking__worker_8cpp_source.html#l00212">setMapFrame()</a>.</p>
 
 </div>
 </div>
@@ -670,7 +669,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceobject.html">object</a></li><li class="navelem"><a class="el" href="classobject_1_1ObjectDetectionTrackingWorker.html">ObjectDetectionTrackingWorker</a></li>
-    <li class="footer">Generated on Thu Mar 13 2025 17:16:38 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Mar 14 2025 14:19:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

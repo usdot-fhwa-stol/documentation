@@ -96,7 +96,7 @@ var searchData=
   ['robot_5fstatus_5fsubscriber_5f_93',['robot_status_subscriber_',['../classguidance_1_1GuidanceWorker.html#a6a590ae0e4f033181dd0e9143f198cde',1,'guidance::GuidanceWorker']]],
   ['robot_5fstatus_5ftopic_5f_94',['robot_status_topic_',['../classmock__controller__driver_1_1MockControllerDriver.html#a75a2003f363ac3d742e26687764541e9',1,'mock_controller_driver::MockControllerDriver']]],
   ['robotic_5factive_5fstatus_5f_95',['robotic_active_status_',['../classguidance_1_1GuidanceStateMachine.html#a3cc33618d3a056b638e4cf3bb8b7406f',1,'guidance::GuidanceStateMachine']]],
-  ['ros1_5fclock_5f_96',['ros1_clock_',['../classcarma__wm_1_1CARMAWorldModel.html#a255353f016ca62c487b554b4ffcfbf40',1,'carma_wm::CARMAWorldModel']]],
+  ['ros1_5fclock_5f_96',['ros1_clock_',['../classcarma__wm_1_1SignalizedIntersectionManager.html#a331b68f8b773c9ca52e10933eab2ace7',1,'carma_wm::SignalizedIntersectionManager']]],
   ['ros1_5fclock_5fsub_5f_97',['ros1_clock_sub_',['../classcarma__wm_1_1WMListener.html#a73b3f70df6e8482014c6472a933088ac',1,'carma_wm::WMListener']]],
   ['ros1_5fssc_5fdriver_5fname_5f_98',['ros1_ssc_driver_name_',['../structsubsystem__controllers_1_1DriversControllerConfig.html#a6841dc7a5440c97696105fc09d8abb95',1,'subsystem_controllers::DriversControllerConfig::ros1_ssc_driver_name_()'],['../classsubsystem__controllers_1_1DriversControllerNode.html#afc73801142f17c4f114b62f9a6011c19',1,'subsystem_controllers::DriversControllerNode::ros1_ssc_driver_name_()']]],
   ['ros1clockcallback_99',['ros1ClockCallback',['../classcarma__wm_1_1WMListenerWorker.html#ada3e493ebddb3bcb7596c2af2a3a14d6',1,'carma_wm::WMListenerWorker']]],

@@ -32,11 +32,11 @@ var searchData=
   ['islanechangeneeded_29',['isLaneChangeNeeded',['../classroute__following__plugin_1_1RouteFollowingPlugin.html#a8e0fd7dd9f9a88105188469767d99dee',1,'route_following_plugin::RouteFollowingPlugin']]],
   ['ismaneuverexpired_30',['isManeuverExpired',['../classplan__delegator_1_1PlanDelegator.html#a4548e8d6a52f762c4207099e9e571b06',1,'plan_delegator::PlanDelegator']]],
   ['ismaneuverplanvalid_31',['isManeuverPlanValid',['../classplan__delegator_1_1PlanDelegator.html#aa3e135f15af41704f2dc59dc8f40dee7',1,'plan_delegator::PlanDelegator']]],
-  ['isspatwalltime_32',['isSpatWallTime',['../classcarma__wm_1_1WMListenerWorker.html#a816c9b34cefcb29f48b03e1f40b7d51c',1,'carma_wm::WMListenerWorker']]],
+  ['isspatwalltime_32',['isSpatWallTime',['../classcarma__wm_1_1WMListenerWorker.html#a447972046e99121387b9a858372a8921',1,'carma_wm::WMListenerWorker']]],
   ['isstateallowedgreen_33',['isStateAllowedGreen',['../classlci__strategic__plugin_1_1LCIStrategicPlugin.html#ad636d50b0006a88e8739516f0d65ac52',1,'lci_strategic_plugin::LCIStrategicPlugin']]],
   ['istrajectorylongenough_34',['isTrajectoryLongEnough',['../classplan__delegator_1_1PlanDelegator.html#a73072006eb567e8fa0e32b7c48ec56e6',1,'plan_delegator::PlanDelegator']]],
   ['istrajectoryvalid_35',['isTrajectoryValid',['../classplan__delegator_1_1PlanDelegator.html#a33c99ac83fc07014db94d406e1e11da2',1,'plan_delegator::PlanDelegator']]],
-  ['isusingsimtime_36',['isUsingSimTime',['../classcarma__wm_1_1WMListenerWorker.html#aba49ce4302c5629cc030363e0f0d810d',1,'carma_wm::WMListenerWorker']]],
+  ['isusingsimtime_36',['isUsingSimTime',['../classcarma__wm_1_1WMListenerWorker.html#abe46565cc8e7db790fca1d360f330589',1,'carma_wm::WMListenerWorker']]],
   ['isvehicleneartargetplatoon_37',['isVehicleNearTargetPlatoon',['../classplatooning__strategic__ihp_1_1PlatooningStrategicIHPPlugin.html#a743c77ee65ec484a9b8893087656ee4a',1,'platooning_strategic_ihp::PlatooningStrategicIHPPlugin']]],
   ['isvehiclerightbehind_38',['isVehicleRightBehind',['../classplatooning__strategic__ihp_1_1PlatooningStrategicIHPPlugin.html#a052bd74b05ec6b361ad72c93168710b8',1,'platooning_strategic_ihp::PlatooningStrategicIHPPlugin']]],
   ['isvehiclerightinfront_39',['isVehicleRightInFront',['../classplatooning__strategic__ihp_1_1PlatooningStrategicIHPPlugin.html#a62080ecc704e5df9b7fd2d7a56e1a5b2',1,'platooning_strategic_ihp::PlatooningStrategicIHPPlugin']]]

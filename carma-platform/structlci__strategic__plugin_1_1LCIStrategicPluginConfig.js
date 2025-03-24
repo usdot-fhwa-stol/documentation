@@ -5,6 +5,7 @@ var structlci__strategic__plugin_1_1LCIStrategicPluginConfig =
     [ "deceleration_fraction", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#aa23372bc397e9fd707e0acd75b9aa941", null ],
     [ "desired_distance_to_stop_buffer", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#ab79bce20a6f3373603ad92b33b1f4232", null ],
     [ "enable_carma_streets_connection", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a055fcdaa6b5f1b2065df726a6687de84", null ],
+    [ "enable_carma_wm_spat_processing", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a8fd4b6b35f443351c7fbc2ad76861d63", null ],
     [ "green_light_time_buffer", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a3081657f4f8d1d20729ac84897561c27", null ],
     [ "intersection_transit_plugin_name", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a001ab9c72909eec9d6870cbd92dfa152", null ],
     [ "lane_following_plugin_name", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a62ccfdacfd9ef06d1ed0515d7cd6a2d8", null ],

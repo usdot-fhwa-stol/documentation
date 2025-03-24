@@ -90,6 +90,10 @@ var namespacecarma__wm =
       [ "LANE_BEHIND", "namespacecarma__wm.html#a4d1f40e90b83192f3f9de7cc2bba1827ab59ef9ec33d15acbeb69a4a5d404d6a9", null ],
       [ "LANE_FULL", "namespacecarma__wm.html#a4d1f40e90b83192f3f9de7cc2bba1827a691fa9ffda7df45ba0884770f2687926", null ]
     ] ],
+    [ "SIGNAL_PHASE_PROCESSING", "namespacecarma__wm.html#ab03d2f4855152889f2395e3e713c8f52", [
+      [ "OFF", "namespacecarma__wm.html#ab03d2f4855152889f2395e3e713c8f52a88559a0cfd8250c9d65970cc145c92d4", null ],
+      [ "ON", "namespacecarma__wm.html#ab03d2f4855152889f2395e3e713c8f52a90651ebea9a35ec4e018c8157492e17c", null ]
+    ] ],
     [ "fromBinMsg", "namespacecarma__wm.html#a3c6c82d3e0fcfc7dd50176a453598911", null ],
     [ "logSignalizedIntersectionManager", "namespacecarma__wm.html#aae8a9e16b161a8edf05ca9df4307a5ec", null ],
     [ "resolveGeofenceType", "namespacecarma__wm.html#a4c3b7aaa05aea0c95189c98c5d902cf8", null ],

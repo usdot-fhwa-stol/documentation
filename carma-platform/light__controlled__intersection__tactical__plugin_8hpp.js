@@ -3,6 +3,7 @@ var light__controlled__intersection__tactical__plugin_8hpp =
     [ "light_controlled_intersection_tactical_plugin::TrajectoryParams", "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html", "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams" ],
     [ "light_controlled_intersection_tactical_plugin::LightControlledIntersectionTacticalPlugin", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin" ],
     [ "GET_MANEUVER_PROPERTY", "light__controlled__intersection__tactical__plugin_8hpp.html#a066f948508e087006568cb6c9b0674a7", null ],
+    [ "DebugPublisher", "light__controlled__intersection__tactical__plugin_8hpp.html#a7448111d75d650cdc70bbd89d3fab739", null ],
     [ "DetailedTrajConfig", "light__controlled__intersection__tactical__plugin_8hpp.html#acc59b09f334e43f0170c7b026974af91", null ],
     [ "GeneralTrajConfig", "light__controlled__intersection__tactical__plugin_8hpp.html#afa903fb319bfe3921e659ccba5535a88", null ],
     [ "PointSpeedPair", "light__controlled__intersection__tactical__plugin_8hpp.html#a4c20dbb679334f4929694a86232c3298", null ],

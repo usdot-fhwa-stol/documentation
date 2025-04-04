@@ -22,5 +22,6 @@ var structlci__strategic__plugin_1_1LCIStrategicPluginConfig =
     [ "vehicle_accel_limit_multiplier", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a287e3511b9dcc1ec1ec28c6034c15799", null ],
     [ "vehicle_decel_limit", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a78e238191c3ba5b1a495a32df80c240b", null ],
     [ "vehicle_decel_limit_multiplier", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a803ac90d8ed6a841a1e5f7343d65a1aa", null ],
-    [ "vehicle_id", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a1004d0cff80a036bdf02a20c0fbc46cd", null ]
+    [ "vehicle_id", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a1004d0cff80a036bdf02a20c0fbc46cd", null ],
+    [ "vehicle_response_lag", "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a43b99cf2fd3c69658000d59bd23b2a49", null ]
 ];

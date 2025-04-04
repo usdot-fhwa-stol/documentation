@@ -100,7 +100,7 @@ Collaboration diagram for lci_strategic_plugin::LCIStrategicPluginConfig:</div>
 <div class="dyncontent">
 <div class="center"><img src="structlci__strategic__plugin_1_1LCIStrategicPluginConfig__coll__graph.png" border="0" usemap="#alci__strategic__plugin_1_1LCIStrategicPluginConfig_coll__map" alt="Collaboration graph"/></div>
 <map name="alci__strategic__plugin_1_1LCIStrategicPluginConfig_coll__map" id="alci__strategic__plugin_1_1LCIStrategicPluginConfig_coll__map">
-<area shape="rect" title="Struct to store the configuration settings for the LCIStrategicPlugin class." alt="" coords="214,336,387,531"/>
+<area shape="rect" title="Struct to store the configuration settings for the LCIStrategicPlugin class." alt="" coords="214,336,387,545"/>
 <area shape="rect" title=" " alt="" coords="5,5,65,83"/>
 <area shape="rect" title=" " alt="" coords="192,5,239,83"/>
 <area shape="rect" title=" " alt="" coords="367,5,405,83"/>
@@ -134,6 +134,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a3081657f4f8d1d20729ac84897561c27"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a3081657f4f8d1d20729ac84897561c27">green_light_time_buffer</a> = 0.0</td></tr>
 <tr class="memdesc:a3081657f4f8d1d20729ac84897561c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">A buffer in seconds around the green phase which will reduce the phase length such that vehicle still considers it non-green.  <a href="structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a3081657f4f8d1d20729ac84897561c27">More...</a><br /></td></tr>
 <tr class="separator:a3081657f4f8d1d20729ac84897561c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b99cf2fd3c69658000d59bd23b2a49"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a43b99cf2fd3c69658000d59bd23b2a49">vehicle_response_lag</a> = 0.0</td></tr>
+<tr class="memdesc:a43b99cf2fd3c69658000d59bd23b2a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">An approximation of the delay (sec) between sent vehicle commands and the vehicle begining a meaningful acceleration to that command.  <a href="structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a43b99cf2fd3c69658000d59bd23b2a49">More...</a><br /></td></tr>
+<tr class="separator:a43b99cf2fd3c69658000d59bd23b2a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26987cdb2e41209df729d5f5c087bec2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a26987cdb2e41209df729d5f5c087bec2">algo_minimum_speed</a> = 2.2352</td></tr>
 <tr class="memdesc:a26987cdb2e41209df729d5f5c087bec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum allowable speed TS algorithm in m/s.  <a href="structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a26987cdb2e41209df729d5f5c087bec2">More...</a><br /></td></tr>
 <tr class="separator:a26987cdb2e41209df729d5f5c087bec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,33 +221,34 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00095">95</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>  {</div>
-<div class="line"><span class="lineno">   97</span>    output &lt;&lt; <span class="stringliteral">&quot;LCIStrategicPluginConfig { &quot;</span> &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">   98</span>          &lt;&lt; <span class="stringliteral">&quot;vehicle_decel_limit: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.vehicle_decel_limit &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">   99</span>          &lt;&lt; <span class="stringliteral">&quot;vehicle_decel_limit_multiplier: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.vehicle_decel_limit_multiplier &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  100</span>          &lt;&lt; <span class="stringliteral">&quot;vehicle_accel_limit: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.vehicle_accel_limit &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  101</span>          &lt;&lt; <span class="stringliteral">&quot;vehicle_accel_limit_multiplier: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.vehicle_accel_limit_multiplier &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  102</span>          &lt;&lt; <span class="stringliteral">&quot;min_approach_distance: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.min_approach_distance &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  103</span>          &lt;&lt; <span class="stringliteral">&quot;trajectory_smoothing_activation_distance: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.trajectory_smoothing_activation_distance &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  104</span>          &lt;&lt; <span class="stringliteral">&quot;stopping_location_buffer: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.stopping_location_buffer &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  105</span>          &lt;&lt; <span class="stringliteral">&quot;green_light_time_buffer: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.green_light_time_buffer &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  106</span>          &lt;&lt; <span class="stringliteral">&quot;algo_minimum_speed: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.algo_minimum_speed &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  107</span>          &lt;&lt; <span class="stringliteral">&quot;deceleration_fraction: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.deceleration_fraction &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  108</span>          &lt;&lt; <span class="stringliteral">&quot;desired_distance_to_stop_buffer: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.desired_distance_to_stop_buffer &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  109</span>          &lt;&lt; <span class="stringliteral">&quot;min_maneuver_planning_period: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.min_maneuver_planning_period &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  110</span>          &lt;&lt; <span class="stringliteral">&quot;reaction_time: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.reaction_time &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  111</span>          &lt;&lt; <span class="stringliteral">&quot;min_gap: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.min_gap &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  112</span>          &lt;&lt; <span class="stringliteral">&quot;enable_carma_streets_connection: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.enable_carma_streets_connection &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  113</span>          &lt;&lt; <span class="stringliteral">&quot;mobility_rate: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.mobility_rate &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  114</span>          &lt;&lt; <span class="stringliteral">&quot;vehicle_id: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.vehicle_id &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  115</span>          &lt;&lt; <span class="stringliteral">&quot;strategic_plugin_name: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.strategic_plugin_name &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  116</span>          &lt;&lt; <span class="stringliteral">&quot;lane_following_plugin_name: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.lane_following_plugin_name &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  117</span>          &lt;&lt; <span class="stringliteral">&quot;stop_and_wait_plugin_name: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.stop_and_wait_plugin_name &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  118</span>          &lt;&lt; <span class="stringliteral">&quot;intersection_transit_plugin_name: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.intersection_transit_plugin_name &lt;&lt; std::endl</div>
-<div class="line"><span class="lineno">  119</span>          &lt;&lt; <span class="stringliteral">&quot;}&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">return</span> output;</div>
-<div class="line"><span class="lineno">  121</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00098">98</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>  {</div>
+<div class="line"><span class="lineno">  100</span>    output &lt;&lt; <span class="stringliteral">&quot;LCIStrategicPluginConfig { &quot;</span> &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  101</span>          &lt;&lt; <span class="stringliteral">&quot;vehicle_decel_limit: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.vehicle_decel_limit &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  102</span>          &lt;&lt; <span class="stringliteral">&quot;vehicle_decel_limit_multiplier: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.vehicle_decel_limit_multiplier &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  103</span>          &lt;&lt; <span class="stringliteral">&quot;vehicle_accel_limit: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.vehicle_accel_limit &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  104</span>          &lt;&lt; <span class="stringliteral">&quot;vehicle_accel_limit_multiplier: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.vehicle_accel_limit_multiplier &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  105</span>          &lt;&lt; <span class="stringliteral">&quot;min_approach_distance: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.min_approach_distance &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  106</span>          &lt;&lt; <span class="stringliteral">&quot;trajectory_smoothing_activation_distance: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.trajectory_smoothing_activation_distance &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  107</span>          &lt;&lt; <span class="stringliteral">&quot;stopping_location_buffer: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.stopping_location_buffer &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  108</span>          &lt;&lt; <span class="stringliteral">&quot;green_light_time_buffer: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.green_light_time_buffer &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  109</span>          &lt;&lt; <span class="stringliteral">&quot;vehicle_response_lag: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.vehicle_response_lag &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  110</span>          &lt;&lt; <span class="stringliteral">&quot;algo_minimum_speed: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.algo_minimum_speed &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  111</span>          &lt;&lt; <span class="stringliteral">&quot;deceleration_fraction: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.deceleration_fraction &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  112</span>          &lt;&lt; <span class="stringliteral">&quot;desired_distance_to_stop_buffer: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.desired_distance_to_stop_buffer &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  113</span>          &lt;&lt; <span class="stringliteral">&quot;min_maneuver_planning_period: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.min_maneuver_planning_period &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  114</span>          &lt;&lt; <span class="stringliteral">&quot;reaction_time: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.reaction_time &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  115</span>          &lt;&lt; <span class="stringliteral">&quot;min_gap: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.min_gap &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  116</span>          &lt;&lt; <span class="stringliteral">&quot;enable_carma_streets_connection: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.enable_carma_streets_connection &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  117</span>          &lt;&lt; <span class="stringliteral">&quot;mobility_rate: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.mobility_rate &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  118</span>          &lt;&lt; <span class="stringliteral">&quot;vehicle_id: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.vehicle_id &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  119</span>          &lt;&lt; <span class="stringliteral">&quot;strategic_plugin_name: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.strategic_plugin_name &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  120</span>          &lt;&lt; <span class="stringliteral">&quot;lane_following_plugin_name: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.lane_following_plugin_name &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  121</span>          &lt;&lt; <span class="stringliteral">&quot;stop_and_wait_plugin_name: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.stop_and_wait_plugin_name &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  122</span>          &lt;&lt; <span class="stringliteral">&quot;intersection_transit_plugin_name: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">c</a>.intersection_transit_plugin_name &lt;&lt; std::endl</div>
+<div class="line"><span class="lineno">  123</span>          &lt;&lt; <span class="stringliteral">&quot;}&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno">  125</span>  }</div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_a49cd466f330a9498d8373baecf47e071"><div class="ttname"><a href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">process_traj_logs.c</a></div><div class="ttdeci">c</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00166">process_traj_logs.py:166</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -264,9 +268,9 @@ Friends</h2></td></tr>
 
 <p>Minimum allowable speed TS algorithm in m/s. </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00050">50</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00053">53</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00191">lci_strategic_plugin::LCIStrategicPlugin::get_earliest_entry_time()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00826">lci_strategic_plugin::LCIStrategicPlugin::planWhenAPPROACHING()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00756">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00191">lci_strategic_plugin::LCIStrategicPlugin::get_earliest_entry_time()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00840">lci_strategic_plugin::LCIStrategicPlugin::planWhenAPPROACHING()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00770">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>.</p>
 
 </div>
 </div>
@@ -283,9 +287,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >Double: Safety multiplier of planned allowable vehicle deceleration to use when stopping. This new deceleration makes vehicle decelerate earlier distance. NOTE: Stacks on vehicle_decel_limit_multiplier and stopping uses max_decel; this distance is only used for calculating earlier downtrack </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00054">54</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00057">57</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00826">lci_strategic_plugin::LCIStrategicPlugin::planWhenAPPROACHING()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00840">lci_strategic_plugin::LCIStrategicPlugin::planWhenAPPROACHING()</a>.</p>
 
 </div>
 </div>
@@ -303,9 +307,9 @@ Friends</h2></td></tr>
 
 <p>Double: Desired distance to stop buffer in meters. </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00057">57</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00060">60</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00826">lci_strategic_plugin::LCIStrategicPlugin::planWhenAPPROACHING()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00840">lci_strategic_plugin::LCIStrategicPlugin::planWhenAPPROACHING()</a>.</p>
 
 </div>
 </div>
@@ -323,9 +327,9 @@ Friends</h2></td></tr>
 
 <p>Bool: Enable carma streets connection. </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00069">69</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00072">72</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00264">lci_strategic_plugin::LCIStrategicPlugin::get_final_entry_time_and_conditions()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01275">lci_strategic_plugin::LCIStrategicPlugin::plan_maneuvers_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01069">lci_strategic_plugin::LCIStrategicPlugin::planWhenWAITING()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00264">lci_strategic_plugin::LCIStrategicPlugin::get_final_entry_time_and_conditions()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01289">lci_strategic_plugin::LCIStrategicPlugin::plan_maneuvers_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01083">lci_strategic_plugin::LCIStrategicPlugin::planWhenWAITING()</a>.</p>
 
 </div>
 </div>
@@ -343,9 +347,9 @@ Friends</h2></td></tr>
 
 <p>Int: 0 to turn off and 1 to turn on. </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00072">72</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00075">75</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>.</p>
 
 </div>
 </div>
@@ -365,7 +369,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00047">47</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00307">lci_strategic_plugin::LCIStrategicPlugin::canArriveAtGreenWithCertainty()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00264">lci_strategic_plugin::LCIStrategicPlugin::get_final_entry_time_and_conditions()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00321">lci_strategic_plugin::LCIStrategicPlugin::canArriveAtGreenWithCertainty()</a>, <a class="el" href="lci__strategic__plugin__algo_8cpp_source.html#l00264">lci_strategic_plugin::LCIStrategicPlugin::get_final_entry_time_and_conditions()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>.</p>
 
 </div>
 </div>
@@ -382,9 +386,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >The name of the plugin to use for intersection transit trajectory planning This plugin is used to travel INSIDE the intersection where there is no trajectory smoothing algorithm active </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00092">92</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00095">95</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01518">lci_strategic_plugin::LCIStrategicPlugin::composeIntersectionTransitMessage()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01532">lci_strategic_plugin::LCIStrategicPlugin::composeIntersectionTransitMessage()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>.</p>
 
 </div>
 </div>
@@ -401,9 +405,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p >The name of the tactical plugin to use for Lane Following trajectory planning This plugin is used to apply trajectory smoothing algorithm BEFORE entering the intersection if within activation distance </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00085">85</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00088">88</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01434">lci_strategic_plugin::LCIStrategicPlugin::composeTrajectorySmoothingManeuverMessage()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01448">lci_strategic_plugin::LCIStrategicPlugin::composeTrajectorySmoothingManeuverMessage()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>.</p>
 
 </div>
 </div>
@@ -423,7 +427,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00038">38</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00756">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00770">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>.</p>
 
 </div>
 </div>
@@ -441,9 +445,9 @@ Friends</h2></td></tr>
 
 <p>Double: Minimum inter-vehicle gap. </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00066">66</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00069">69</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01210">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01224">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>.</p>
 
 </div>
 </div>
@@ -461,9 +465,9 @@ Friends</h2></td></tr>
 
 <p>The minimum period in seconds which a maneuver plan must cover if the plugin wishes to control the whole plan. </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00060">60</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00063">63</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00447">lci_strategic_plugin::LCIStrategicPlugin::handleCruisingUntilStop()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00373">lci_strategic_plugin::LCIStrategicPlugin::handleStopping()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01069">lci_strategic_plugin::LCIStrategicPlugin::planWhenWAITING()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00461">lci_strategic_plugin::LCIStrategicPlugin::handleCruisingUntilStop()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00387">lci_strategic_plugin::LCIStrategicPlugin::handleStopping()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01083">lci_strategic_plugin::LCIStrategicPlugin::planWhenWAITING()</a>.</p>
 
 </div>
 </div>
@@ -481,9 +485,9 @@ Friends</h2></td></tr>
 
 <p>Double: Mobility operation rate. </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00075">75</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00078">78</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00187">lci_strategic_plugin::LCIStrategicPlugin::on_activate_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00201">lci_strategic_plugin::LCIStrategicPlugin::on_activate_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>.</p>
 
 </div>
 </div>
@@ -501,9 +505,9 @@ Friends</h2></td></tr>
 
 <p>Double: Vehicle reaction time to a received schedule in seconds (approximate value, only used for communication with the schedule) </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00063">63</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00066">66</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01210">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01224">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>.</p>
 
 </div>
 </div>
@@ -521,9 +525,9 @@ Friends</h2></td></tr>
 
 <p>The name of the plugin to use for stop and wait trajectory planning. </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00088">88</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00091">91</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01485">lci_strategic_plugin::LCIStrategicPlugin::composeStopAndWaitManeuverMessage()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01499">lci_strategic_plugin::LCIStrategicPlugin::composeStopAndWaitManeuverMessage()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>.</p>
 
 </div>
 </div>
@@ -543,7 +547,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00044">44</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01485">lci_strategic_plugin::LCIStrategicPlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00826">lci_strategic_plugin::LCIStrategicPlugin::planWhenAPPROACHING()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01499">lci_strategic_plugin::LCIStrategicPlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00840">lci_strategic_plugin::LCIStrategicPlugin::planWhenAPPROACHING()</a>.</p>
 
 </div>
 </div>
@@ -561,9 +565,9 @@ Friends</h2></td></tr>
 
 <p>The name to use for this plugin during comminications with the arbitrator. </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00081">81</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00084">84</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01518">lci_strategic_plugin::LCIStrategicPlugin::composeIntersectionTransitMessage()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01485">lci_strategic_plugin::LCIStrategicPlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01434">lci_strategic_plugin::LCIStrategicPlugin::composeTrajectorySmoothingManeuverMessage()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01532">lci_strategic_plugin::LCIStrategicPlugin::composeIntersectionTransitMessage()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01499">lci_strategic_plugin::LCIStrategicPlugin::composeStopAndWaitManeuverMessage()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01448">lci_strategic_plugin::LCIStrategicPlugin::composeTrajectorySmoothingManeuverMessage()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>.</p>
 
 </div>
 </div>
@@ -583,7 +587,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00041">41</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00756">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00770">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>.</p>
 
 </div>
 </div>
@@ -603,7 +607,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00032">32</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01210">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00756">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01224">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00770">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>.</p>
 
 </div>
 </div>
@@ -623,7 +627,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00035">35</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01210">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00756">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01224">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00770">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>.</p>
 
 </div>
 </div>
@@ -643,7 +647,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00026">26</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01210">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00756">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01069">lci_strategic_plugin::LCIStrategicPlugin::planWhenWAITING()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01224">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00770">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01083">lci_strategic_plugin::LCIStrategicPlugin::planWhenWAITING()</a>.</p>
 
 </div>
 </div>
@@ -663,7 +667,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00029">29</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01210">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00144">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00756">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01069">lci_strategic_plugin::LCIStrategicPlugin::planWhenWAITING()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01224">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00770">lci_strategic_plugin::LCIStrategicPlugin::planWhenUNAVAILABLE()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01083">lci_strategic_plugin::LCIStrategicPlugin::planWhenWAITING()</a>.</p>
 
 </div>
 </div>
@@ -681,9 +685,29 @@ Friends</h2></td></tr>
 
 <p>License plate of the vehicle. </p>
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00078">78</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00081">81</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01210">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01164">lci_strategic_plugin::LCIStrategicPlugin::mobilityOperationCb()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00076">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01224">lci_strategic_plugin::LCIStrategicPlugin::generateMobilityOperation()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l01178">lci_strategic_plugin::LCIStrategicPlugin::mobilityOperationCb()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>.</p>
+
+</div>
+</div>
+<a id="a43b99cf2fd3c69658000d59bd23b2a49" name="a43b99cf2fd3c69658000d59bd23b2a49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43b99cf2fd3c69658000d59bd23b2a49">&#9670;&nbsp;</a></span>vehicle_response_lag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lci_strategic_plugin::LCIStrategicPluginConfig::vehicle_response_lag = 0.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An approximation of the delay (sec) between sent vehicle commands and the vehicle begining a meaningful acceleration to that command. </p>
+
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin__config_8hpp_source.html#l00050">50</a> of file <a class="el" href="lci__strategic__plugin__config_8hpp_source.html">lci_strategic_plugin_config.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00042">lci_strategic_plugin::LCIStrategicPlugin::LCIStrategicPlugin()</a>, <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00077">lci_strategic_plugin::LCIStrategicPlugin::on_configure_plugin()</a>, and <a class="el" href="lci__strategic__plugin_8cpp_source.html#l00151">lci_strategic_plugin::LCIStrategicPlugin::parameter_update_callback()</a>.</p>
 
 </div>
 </div>
@@ -696,7 +720,7 @@ Friends</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacelci__strategic__plugin.html">lci_strategic_plugin</a></li><li class="navelem"><a class="el" href="structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html">LCIStrategicPluginConfig</a></li>
-    <li class="footer">Generated on Fri Apr 4 2025 13:06:05 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Apr 4 2025 15:30:30 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -4,6 +4,7 @@ var namespacelight__controlled__intersection__tactical__plugin =
     [ "LightControlledIntersectionTacticalPlugin", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin.html", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTacticalPlugin" ],
     [ "LightControlledIntersectionTransitPluginNode", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode.html", "classlight__controlled__intersection__tactical__plugin_1_1LightControlledIntersectionTransitPluginNode" ],
     [ "TrajectoryParams", "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams.html", "structlight__controlled__intersection__tactical__plugin_1_1TrajectoryParams" ],
+    [ "DebugPublisher", "namespacelight__controlled__intersection__tactical__plugin.html#a7448111d75d650cdc70bbd89d3fab739", null ],
     [ "DetailedTrajConfig", "namespacelight__controlled__intersection__tactical__plugin.html#acc59b09f334e43f0170c7b026974af91", null ],
     [ "GeneralTrajConfig", "namespacelight__controlled__intersection__tactical__plugin.html#afa903fb319bfe3921e659ccba5535a88", null ],
     [ "PointSpeedPair", "namespacelight__controlled__intersection__tactical__plugin.html#a4c20dbb679334f4929694a86232c3298", null ],

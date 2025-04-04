@@ -11,6 +11,7 @@ var basic__autonomy_8cpp =
     [ "compute_curvature_at", "basic__autonomy_8cpp.html#ae4ca284ba04f4f76fb88bf8d20731835", null ],
     [ "compute_fit", "basic__autonomy_8cpp.html#a9e0eab343d21d18c665083839d706f04", null ],
     [ "compute_heading_frame", "basic__autonomy_8cpp.html#ada2ee63b890bfa23d67a17cf61dd0129", null ],
+    [ "constrain_to_time_boundary", "basic__autonomy_8cpp.html#a1819f79ee9fb0091ea7df3ca55a4ac74", null ],
     [ "constrain_to_time_boundary", "basic__autonomy_8cpp.html#af509efce135492493e13c9bb86329dcd", null ],
     [ "create_geometry_profile", "basic__autonomy_8cpp.html#acdcd3bb44d31aa6405b30f151ea35ae4", null ],
     [ "create_lanechange_geometry", "basic__autonomy_8cpp.html#a2219ab96db87781023137bdb45af1ea2", null ],

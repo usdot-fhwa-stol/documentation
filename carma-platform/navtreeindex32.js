@@ -1,5 +1,9 @@
 var NAVTREEINDEX32 =
 {
+"namespaceplatooning__tactical__plugin__launch.html":[55,0,61],
+"namespaceplatooning__tactical__plugin__launch.html#a8353def0af6696af7eac7ed07e9be333":[55,0,61,0],
+"namespaceplugins.html":[55,0,62],
+"namespaceplugins.html#ac3f3c843d1dfcb998c4dbafd7c596419":[55,0,62,0],
 "namespacepoints__map__filter.html":[55,0,63],
 "namespacepoints__map__filter.html#a725addb6ce3a1ab001d79140ef988618":[55,0,63,3],
 "namespacepoints__map__filter.html#a736fe65fbcb796322ba932403697e760":[55,0,63,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX32 =
 "object__visualizer__launch_8py.html":[57,0,29,1,0],
 "object__visualizer__launch_8py.html#a334121870219379dc2e172cb7eccc61c":[57,0,29,1,0,0],
 "object__visualizer__launch_8py_source.html":[57,0,29,1,0],
-"object__visualizer__node_8cpp.html":[57,0,29,2,1],
-"object__visualizer__node_8cpp_source.html":[57,0,29,2,1],
-"object__visualizer__node_8hpp.html":[57,0,29,0,0,1],
-"object__visualizer__node_8hpp_source.html":[57,0,29,0,0,1],
-"pages.html":[]
+"object__visualizer__node_8cpp.html":[57,0,29,2,1]
 };

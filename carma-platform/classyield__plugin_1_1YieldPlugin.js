@@ -37,6 +37,8 @@ var classyield__plugin_1_1YieldPlugin =
     [ "georeference_", "classyield__plugin_1_1YieldPlugin.html#a0139ba3f27c4205d7820c5e8ed668042", null ],
     [ "host_bsm_id_", "classyield__plugin_1_1YieldPlugin.html#ad25df251a12c9c052daeab2f58385c7d", null ],
     [ "host_vehicle_size", "classyield__plugin_1_1YieldPlugin.html#a238b7f67b846cc65d8d55e8d3500f96c", null ],
+    [ "last_speed_", "classyield__plugin_1_1YieldPlugin.html#ae83e8d7920cbcdd7ebcc1d8e55cb458c", null ],
+    [ "last_speed_time_", "classyield__plugin_1_1YieldPlugin.html#a6702ee43cc866be7264ef20be40d2697", null ],
     [ "lc_status_publisher_", "classyield__plugin_1_1YieldPlugin.html#a274208e09bc96aaef0ba731904aa57de", null ],
     [ "map_projector_", "classyield__plugin_1_1YieldPlugin.html#a42d2a2d8a9f88afbedaa566ad57c8444", null ],
     [ "mobility_response_publisher_", "classyield__plugin_1_1YieldPlugin.html#a82d36ef453849014abfe64e6ecac5e58", null ],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX27 =
 {
+"intersection__transit__maneuvering_8cpp.html#a8212f1302ee6736745dc97bb5b3caaf5":[57,0,18,2,0,0],
+"intersection__transit__maneuvering_8cpp.html#a8a97ee793a4f8ddc4acbd53d1acd8753":[57,0,18,2,0,6],
+"intersection__transit__maneuvering_8cpp.html#ab6541699f47c70666e4534fcf4275cec":[57,0,18,2,0,4],
+"intersection__transit__maneuvering_8cpp.html#aca1bfbfd4824b20240d584bfd3ae870d":[57,0,18,2,0,5],
 "intersection__transit__maneuvering_8cpp.html#adde2ca5a1abb75b94d8dd6207ddac5b8":[57,0,18,2,0,3],
 "intersection__transit__maneuvering_8cpp.html#af1f6470235f2f8dd77bcaf594ab166a1":[57,0,18,2,0,2],
 "intersection__transit__maneuvering_8cpp_source.html":[57,0,18,2,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX27 =
 "md_README.html#autotoc_md299":[44,0,13],
 "md_README.html#autotoc_md300":[44,0,14],
 "md_README.html#autotoc_md301":[44,0,15],
-"md_README.html#autotoc_md302":[44,0,16],
-"md_approaching_emergency_vehicle_plugin_README.html":[1],
-"md_approximate_intersection_README.html":[2],
-"md_basic_autonomy_README.html":[4],
-"md_bsm_generator_README.html":[5]
+"md_README.html#autotoc_md302":[44,0,16]
 };

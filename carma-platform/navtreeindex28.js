@@ -1,5 +1,9 @@
 var NAVTREEINDEX28 =
 {
+"md_approaching_emergency_vehicle_plugin_README.html":[1],
+"md_approximate_intersection_README.html":[2],
+"md_basic_autonomy_README.html":[4],
+"md_bsm_generator_README.html":[5],
 "md_carma_cloud_client_README.html":[7],
 "md_carma_cloud_client_launch_scripts_readme.html":[6],
 "md_carma_cooperative_perception_README.html":[16],
@@ -245,9 +249,5 @@ var NAVTREEINDEX28 =
 "mobilitypath__publisher_8cpp.html":[57,0,23,2,1],
 "mobilitypath__publisher_8cpp_source.html":[57,0,23,2,1],
 "mobilitypath__publisher_8hpp.html":[57,0,23,0,0,0],
-"mobilitypath__publisher_8hpp_source.html":[57,0,23,0,0,0],
-"mobilitypath__publisher__config_8hpp.html":[57,0,23,0,0,1],
-"mobilitypath__publisher__config_8hpp_source.html":[57,0,23,0,0,1],
-"mobilitypath__publisher__launch_8py.html":[57,0,23,1,0],
-"mobilitypath__publisher__launch_8py.html#aed8ad47047efc6bbe84689ec4916d5ce":[57,0,23,1,0,0]
+"mobilitypath__publisher_8hpp_source.html":[57,0,23,0,0,0]
 };

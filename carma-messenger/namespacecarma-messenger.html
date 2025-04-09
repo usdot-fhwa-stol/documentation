@@ -119,7 +119,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   37</span><span class="stringliteral"></span> </div>
 <div class="line"><span class="lineno">   38</span><span class="stringliteral">    configuration_delay = LaunchConfiguration(&#39;configuration_delay&#39;</span>)</div>
 <div class="line"><span class="lineno">   39</span>    declare_configuration_delay_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   40</span>        name =<span class="stringliteral">&#39;configuration_delay&#39;</span>, default_value=<span class="stringliteral">&#39;4.0&#39;</span>)</div>
+<div class="line"><span class="lineno">   40</span>        name =<span class="stringliteral">&#39;configuration_delay&#39;</span>, default_value=<span class="stringliteral">&#39;2.0&#39;</span>)</div>
 <div class="line"><span class="lineno">   41</span> </div>
 <div class="line"><span class="lineno">   42</span>    use_rosbag = LaunchConfiguration(<span class="stringliteral">&#39;use_rosbag&#39;</span>)</div>
 <div class="line"><span class="lineno">   43</span>    declare_use_rosbag = DeclareLaunchArgument(</div>
@@ -136,91 +136,81 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   54</span>        description = <span class="stringliteral">&#39;Path of folder on host PC containing route CSV file(s) that can be accessed by plugins&#39;</span></div>
 <div class="line"><span class="lineno">   55</span>    )</div>
 <div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>    <span class="comment"># Launch ROS2 rosbag logging</span></div>
-<div class="line"><span class="lineno">   58</span>    ros2_rosbag_launch = GroupAction(</div>
-<div class="line"><span class="lineno">   59</span>        actions=[</div>
+<div class="line"><span class="lineno">   57</span>    transform_group = GroupAction(</div>
+<div class="line"><span class="lineno">   58</span>        actions=[</div>
+<div class="line"><span class="lineno">   59</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_TF_NS&#39;</span>, default_value=<span class="stringliteral">&#39;/&#39;</span>)),</div>
 <div class="line"><span class="lineno">   60</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">   61</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/ros2_rosbag.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">   62</span>            )</div>
+<div class="line"><span class="lineno">   61</span>                PythonLaunchDescriptionSource([get_package_share_directory(<span class="stringliteral">&#39;carma-messenger&#39;</span>), <span class="stringliteral">&#39;/launch&#39;</span>, <span class="stringliteral">&#39;/transforms.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">   62</span>            ),</div>
 <div class="line"><span class="lineno">   63</span>        ]</div>
 <div class="line"><span class="lineno">   64</span>    )</div>
 <div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>    transform_group = GroupAction(</div>
+<div class="line"><span class="lineno">   66</span>    v2x_group = GroupAction(</div>
 <div class="line"><span class="lineno">   67</span>        actions=[</div>
-<div class="line"><span class="lineno">   68</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_TF_NS&#39;</span>, default_value=<span class="stringliteral">&#39;/&#39;</span>)),</div>
-<div class="line"><span class="lineno">   69</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">   70</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/transforms.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">   71</span>            ),</div>
-<div class="line"><span class="lineno">   72</span>        ]</div>
-<div class="line"><span class="lineno">   73</span>    )</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>    v2x_group = GroupAction(</div>
-<div class="line"><span class="lineno">   76</span>        actions=[</div>
-<div class="line"><span class="lineno">   77</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">   78</span>                PythonLaunchDescriptionSource([get_package_share_directory(<span class="stringliteral">&#39;v2x-ros-conversion&#39;</span>), <span class="stringliteral">&#39;/v2x-ros-conversion.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">   79</span>                launch_arguments = {</div>
-<div class="line"><span class="lineno">   80</span>                    <span class="stringliteral">&#39;configuration_delay&#39;</span> : [configuration_delay]</div>
-<div class="line"><span class="lineno">   81</span>                }.items()</div>
-<div class="line"><span class="lineno">   82</span>            ),</div>
-<div class="line"><span class="lineno">   83</span>        ]</div>
-<div class="line"><span class="lineno">   84</span>    )</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>    plugins_group = GroupAction(</div>
-<div class="line"><span class="lineno">   87</span>        actions=[</div>
-<div class="line"><span class="lineno">   88</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">   89</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/plugins.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">   90</span>                launch_arguments = {</div>
-<div class="line"><span class="lineno">   91</span>                    <span class="stringliteral">&#39;configuration_delay&#39;</span> : [configuration_delay],</div>
-<div class="line"><span class="lineno">   92</span>                    <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder</div>
-<div class="line"><span class="lineno">   93</span>                }.items()</div>
-<div class="line"><span class="lineno">   94</span>            ),</div>
-<div class="line"><span class="lineno">   95</span>        ]</div>
-<div class="line"><span class="lineno">   96</span>    )</div>
-<div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>    ui_group = GroupAction(</div>
-<div class="line"><span class="lineno">   99</span>        actions=[</div>
-<div class="line"><span class="lineno">  100</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  101</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/ui.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  102</span>            ),</div>
-<div class="line"><span class="lineno">  103</span>        ]</div>
-<div class="line"><span class="lineno">  104</span>    )</div>
-<div class="line"><span class="lineno">  105</span> </div>
-<div class="line"><span class="lineno">  106</span>    <span class="comment"># Launch ROS2 rosbag logging</span></div>
-<div class="line"><span class="lineno">  107</span>    ros2_rosbag_group = GroupAction(</div>
-<div class="line"><span class="lineno">  108</span>        condition = IfCondition(use_rosbag),</div>
-<div class="line"><span class="lineno">  109</span>        actions=[</div>
-<div class="line"><span class="lineno">  110</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  111</span>                PythonLaunchDescriptionSource([get_package_share_directory(<span class="stringliteral">&#39;carma-messenger&#39;</span>), <span class="stringliteral">&#39;/launch&#39;</span>, <span class="stringliteral">&#39;/ros2_rosbag.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  112</span>            )</div>
-<div class="line"><span class="lineno">  113</span>        ]</div>
-<div class="line"><span class="lineno">  114</span>    )</div>
+<div class="line"><span class="lineno">   68</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">   69</span>                PythonLaunchDescriptionSource([get_package_share_directory(<span class="stringliteral">&#39;v2x-ros-conversion&#39;</span>), <span class="stringliteral">&#39;/launch&#39;</span>,<span class="stringliteral">&#39;/v2x-ros-conversion.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">   70</span>                launch_arguments = {</div>
+<div class="line"><span class="lineno">   71</span>                    <span class="stringliteral">&#39;configuration_delay&#39;</span> : [configuration_delay]</div>
+<div class="line"><span class="lineno">   72</span>                }.items()</div>
+<div class="line"><span class="lineno">   73</span>            ),</div>
+<div class="line"><span class="lineno">   74</span>        ]</div>
+<div class="line"><span class="lineno">   75</span>    )</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>    plugins_group = GroupAction(</div>
+<div class="line"><span class="lineno">   78</span>        actions=[</div>
+<div class="line"><span class="lineno">   79</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">   80</span>                PythonLaunchDescriptionSource([get_package_share_directory(<span class="stringliteral">&#39;carma-messenger&#39;</span>), <span class="stringliteral">&#39;/launch&#39;</span>, <span class="stringliteral">&#39;/plugins.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">   81</span>                launch_arguments = {</div>
+<div class="line"><span class="lineno">   82</span>                    <span class="stringliteral">&#39;configuration_delay&#39;</span> : [configuration_delay],</div>
+<div class="line"><span class="lineno">   83</span>                    <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder</div>
+<div class="line"><span class="lineno">   84</span>                }.items()</div>
+<div class="line"><span class="lineno">   85</span>            ),</div>
+<div class="line"><span class="lineno">   86</span>        ]</div>
+<div class="line"><span class="lineno">   87</span>    )</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    ui_group = GroupAction(</div>
+<div class="line"><span class="lineno">   90</span>        actions=[</div>
+<div class="line"><span class="lineno">   91</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">   92</span>                PythonLaunchDescriptionSource([get_package_share_directory(<span class="stringliteral">&#39;carma-messenger&#39;</span>), <span class="stringliteral">&#39;/launch&#39;</span>, <span class="stringliteral">&#39;/ui.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">   93</span>            ),</div>
+<div class="line"><span class="lineno">   94</span>        ]</div>
+<div class="line"><span class="lineno">   95</span>    )</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>    <span class="comment"># Launch ROS2 rosbag logging</span></div>
+<div class="line"><span class="lineno">   98</span>    ros2_rosbag_group = GroupAction(</div>
+<div class="line"><span class="lineno">   99</span>        condition = IfCondition(use_rosbag),</div>
+<div class="line"><span class="lineno">  100</span>        actions=[</div>
+<div class="line"><span class="lineno">  101</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  102</span>                PythonLaunchDescriptionSource([get_package_share_directory(<span class="stringliteral">&#39;carma-messenger&#39;</span>), <span class="stringliteral">&#39;/launch&#39;</span>, <span class="stringliteral">&#39;/ros2_rosbag.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  103</span>            )</div>
+<div class="line"><span class="lineno">  104</span>        ]</div>
+<div class="line"><span class="lineno">  105</span>    )</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    traffic_incident_group = GroupAction(</div>
+<div class="line"><span class="lineno">  108</span>        actions=[</div>
+<div class="line"><span class="lineno">  109</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  110</span>                PythonLaunchDescriptionSource([get_package_share_directory(<span class="stringliteral">&#39;traffic_incident&#39;</span>), <span class="stringliteral">&#39;/launch&#39;</span>, <span class="stringliteral">&#39;/traffic_incident.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  111</span>            ),</div>
+<div class="line"><span class="lineno">  112</span>        ]</div>
+<div class="line"><span class="lineno">  113</span>    )</div>
+<div class="line"><span class="lineno">  114</span> </div>
 <div class="line"><span class="lineno">  115</span> </div>
-<div class="line"><span class="lineno">  116</span>    traffic_incident_group = GroupAction(</div>
-<div class="line"><span class="lineno">  117</span>        actions=[</div>
-<div class="line"><span class="lineno">  118</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  119</span>                PythonLaunchDescriptionSource([get_package_share_directory(<span class="stringliteral">&#39;traffic_incident&#39;</span>), <span class="stringliteral">&#39;/launch&#39;</span>, <span class="stringliteral">&#39;/traffic_incident.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  120</span>            ),</div>
-<div class="line"><span class="lineno">  121</span>        ]</div>
-<div class="line"><span class="lineno">  122</span>    )</div>
-<div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>    system_alert_publisher = ExecuteProcess(</div>
-<div class="line"><span class="lineno">  126</span>        cmd=[<span class="stringliteral">&#39;ros2&#39;</span>, <span class="stringliteral">&#39;topic&#39;</span>, <span class="stringliteral">&#39;pub&#39;</span>, <span class="stringliteral">&#39;/system_alert&#39;</span>, <span class="stringliteral">&#39;carma_msgs/msg/SystemAlert&#39;</span>, <span class="stringliteral">&#39;&quot;{ type: 5, description: Simulated Drivers Ready }&quot;&#39;</span>]</div>
-<div class="line"><span class="lineno">  127</span>    )</div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">  130</span>        declare_configuration_delay_arg,</div>
-<div class="line"><span class="lineno">  131</span>        declare_use_rosbag,</div>
-<div class="line"><span class="lineno">  132</span>        declare_route_file_folder,</div>
-<div class="line"><span class="lineno">  133</span>        ros2_rosbag_launch,</div>
-<div class="line"><span class="lineno">  134</span>        transform_group,</div>
-<div class="line"><span class="lineno">  135</span>        v2x_group,</div>
-<div class="line"><span class="lineno">  136</span>        plugins_group,</div>
-<div class="line"><span class="lineno">  137</span>        ui_group,</div>
-<div class="line"><span class="lineno">  138</span>        ros2_rosbag_group,</div>
-<div class="line"><span class="lineno">  139</span>        traffic_incident_group,</div>
-<div class="line"><span class="lineno">  140</span>        system_alert_publisher</div>
-<div class="line"><span class="lineno">  141</span>    ])</div>
+<div class="line"><span class="lineno">  116</span>    system_alert_publisher = ExecuteProcess(</div>
+<div class="line"><span class="lineno">  117</span>        cmd=[<span class="stringliteral">&#39;ros2&#39;</span>, <span class="stringliteral">&#39;topic&#39;</span>, <span class="stringliteral">&#39;pub&#39;</span>, <span class="stringliteral">&#39;/system_alert&#39;</span>, <span class="stringliteral">&#39;carma_msgs/msg/SystemAlert&#39;</span>, <span class="stringliteral">&#39;&quot;{ type: 5, description: Simulated Drivers Ready }&quot;&#39;</span>]</div>
+<div class="line"><span class="lineno">  118</span>    )</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><span class="lineno">  121</span>        declare_configuration_delay_arg,</div>
+<div class="line"><span class="lineno">  122</span>        declare_use_rosbag,</div>
+<div class="line"><span class="lineno">  123</span>        declare_route_file_folder,</div>
+<div class="line"><span class="lineno">  124</span>        transform_group,</div>
+<div class="line"><span class="lineno">  125</span>        v2x_group,</div>
+<div class="line"><span class="lineno">  126</span>        plugins_group,</div>
+<div class="line"><span class="lineno">  127</span>        ui_group,</div>
+<div class="line"><span class="lineno">  128</span>        ros2_rosbag_group,</div>
+<div class="line"><span class="lineno">  129</span>        traffic_incident_group,</div>
+<div class="line"><span class="lineno">  130</span>        system_alert_publisher</div>
+<div class="line"><span class="lineno">  131</span>    ])</div>
 <div class="ttc" id="anamespacecarma-messenger_html_a111bc28796dc376bb4331b6b7d9b0024"><div class="ttname"><a href="namespacecarma-messenger.html#a111bc28796dc376bb4331b6b7d9b0024">carma-messenger.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="carma-messenger_8launch_8py_source.html#l00033">carma-messenger.launch.py:33</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -231,7 +221,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma-messenger.html">carma-messenger</a></li>
-    <li class="footer">Generated on Tue Mar 11 2025 19:43:37 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 9 2025 17:13:16 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

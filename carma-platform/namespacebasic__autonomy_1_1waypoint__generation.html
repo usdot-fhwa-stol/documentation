@@ -3192,7 +3192,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno"> 1367</span>        {</div>
 <div class="line"><span class="lineno"> 1368</span>            <span class="keywordflow">if</span> (yield_plan.trajectory_points.size() &lt; 2)</div>
 <div class="line"><span class="lineno"> 1369</span>            {</div>
-<div class="line"><span class="lineno"> 1370</span>                RCLCPP_WARN(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Invalid Yield Trajectory&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1370</span>                RCLCPP_WARN(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Invalid Yield Trajectory with less than 2 points!&quot;</span>);</div>
 <div class="line"><span class="lineno"> 1371</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno"> 1372</span>            }</div>
 <div class="line"><span class="lineno"> 1373</span> </div>
@@ -3205,13 +3205,26 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1380</span>            }</div>
 <div class="line"><span class="lineno"> 1381</span>            <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno"> 1382</span>            {</div>
-<div class="line"><span class="lineno"> 1383</span>                RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Old Yield Trajectory&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1384</span>            }</div>
-<div class="line"><span class="lineno"> 1385</span> </div>
-<div class="line"><span class="lineno"> 1386</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno"> 1387</span>        }</div>
+<div class="line"><span class="lineno"> 1383</span>                RCLCPP_WARN_STREAM(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Invalid Yield Trajectory with old target_time: &quot;</span> &lt;&lt; </div>
+<div class="line"><span class="lineno"> 1384</span>                    <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(rclcpp::Time(yield_plan.trajectory_points[0].target_time).seconds()) &lt;&lt; <span class="stringliteral">&quot;, where now: &quot;</span> &lt;&lt;</div>
+<div class="line"><span class="lineno"> 1385</span>                    <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(node_handler-&gt;now().seconds()));</div>
+<div class="line"><span class="lineno"> 1386</span>            }</div>
+<div class="line"><span class="lineno"> 1387</span> </div>
+<div class="line"><span class="lineno"> 1388</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1389</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="basic__autonomy_8cpp_source.html#l01389">modify_trajectory_to_yield_to_obstacles()</a>.</p>
+<p class="reference">References <a class="el" href="utm__zone_8cpp_source.html#l00021">carma_cooperative_perception::to_string()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="basic__autonomy_8cpp_source.html#l01391">modify_trajectory_to_yield_to_obstacles()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacebasic__autonomy_1_1waypoint__generation_a9a8cf0ed437bc3b0eb8008bd74782aa1_cgraph.png" border="0" usemap="#anamespacebasic__autonomy_1_1waypoint__generation_a9a8cf0ed437bc3b0eb8008bd74782aa1_cgraph" alt=""/></div>
+<map name="anamespacebasic__autonomy_1_1waypoint__generation_a9a8cf0ed437bc3b0eb8008bd74782aa1_cgraph" id="anamespacebasic__autonomy_1_1waypoint__generation_a9a8cf0ed437bc3b0eb8008bd74782aa1_cgraph">
+<area shape="rect" title="Helper function to verify if the input yield trajectory plan is valid." alt="" coords="5,29,208,71"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="256,29,455,71"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3361,47 +3374,50 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The original response modified to contain the modified planned trajectory </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="basic__autonomy_8cpp_source.html#l01389">1389</a> of file <a class="el" href="basic__autonomy_8cpp_source.html">basic_autonomy.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1395</span>        {</div>
-<div class="line"><span class="lineno"> 1396</span>            RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Activate Object Avoidance&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1397</span> </div>
-<div class="line"><span class="lineno"> 1398</span>            <span class="keywordflow">if</span> (!yield_client || !yield_client-&gt;service_is_ready())</div>
-<div class="line"><span class="lineno"> 1399</span>            {</div>
-<div class="line"><span class="lineno"> 1400</span>                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Yield Client is not set or unavailable after configuration state of lifecycle&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1401</span>            }</div>
-<div class="line"><span class="lineno"> 1402</span> </div>
-<div class="line"><span class="lineno"> 1403</span>            RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Yield Client is valid&quot;</span>);</div>
+<p class="definition">Definition at line <a class="el" href="basic__autonomy_8cpp_source.html#l01391">1391</a> of file <a class="el" href="basic__autonomy_8cpp_source.html">basic_autonomy.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1397</span>        {</div>
+<div class="line"><span class="lineno"> 1398</span>            RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Object avoidance activated&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1399</span> </div>
+<div class="line"><span class="lineno"> 1400</span>            <span class="keywordflow">if</span> (!yield_client || !yield_client-&gt;service_is_ready())</div>
+<div class="line"><span class="lineno"> 1401</span>            {</div>
+<div class="line"><span class="lineno"> 1402</span>                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Yield Client is not set or unavailable after configuration state of lifecycle&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1403</span>            }</div>
 <div class="line"><span class="lineno"> 1404</span> </div>
-<div class="line"><span class="lineno"> 1405</span>            <span class="keyword">auto</span> yield_srv = std::make_shared&lt;carma_planning_msgs::srv::PlanTrajectory::Request&gt;();</div>
-<div class="line"><span class="lineno"> 1406</span>            yield_srv-&gt;initial_trajectory_plan = resp-&gt;trajectory_plan;</div>
-<div class="line"><span class="lineno"> 1407</span>            yield_srv-&gt;vehicle_state = req-&gt;vehicle_state;</div>
-<div class="line"><span class="lineno"> 1408</span> </div>
-<div class="line"><span class="lineno"> 1409</span>            <span class="keyword">auto</span> yield_resp = yield_client-&gt;async_send_request(yield_srv);</div>
+<div class="line"><span class="lineno"> 1405</span>            RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Yield Client is valid&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1406</span> </div>
+<div class="line"><span class="lineno"> 1407</span>            <span class="keyword">auto</span> yield_srv = std::make_shared&lt;carma_planning_msgs::srv::PlanTrajectory::Request&gt;();</div>
+<div class="line"><span class="lineno"> 1408</span>            yield_srv-&gt;initial_trajectory_plan = resp-&gt;trajectory_plan;</div>
+<div class="line"><span class="lineno"> 1409</span>            yield_srv-&gt;vehicle_state = req-&gt;vehicle_state;</div>
 <div class="line"><span class="lineno"> 1410</span> </div>
-<div class="line"><span class="lineno"> 1411</span>            <span class="keyword">auto</span> future_status = yield_resp.wait_for(std::chrono::milliseconds(yield_plugin_service_call_timeout));</div>
+<div class="line"><span class="lineno"> 1411</span>            <span class="keyword">auto</span> yield_resp = yield_client-&gt;async_send_request(yield_srv);</div>
 <div class="line"><span class="lineno"> 1412</span> </div>
-<div class="line"><span class="lineno"> 1413</span>            <span class="keywordflow">if</span> (future_status != std::future_status::ready)</div>
-<div class="line"><span class="lineno"> 1414</span>            {</div>
-<div class="line"><span class="lineno"> 1415</span>                <span class="comment">// Sometimes the yield plugin&#39;s service call may be unsuccessful due to its computationally expensive logic.</span></div>
-<div class="line"><span class="lineno"> 1416</span>                <span class="comment">// However, consecutive calls can be successful, so return original trajectory for now</span></div>
-<div class="line"><span class="lineno"> 1417</span>                RCLCPP_WARN(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Service request to yield plugin timed out waiting on a reply from the service server&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1418</span>                <span class="keywordflow">return</span> resp;</div>
-<div class="line"><span class="lineno"> 1419</span>            }</div>
-<div class="line"><span class="lineno"> 1420</span> </div>
-<div class="line"><span class="lineno"> 1421</span>            RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Received Traj from Yield&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1422</span>            carma_planning_msgs::msg::TrajectoryPlan yield_plan = yield_resp.get()-&gt;trajectory_plan;</div>
-<div class="line"><span class="lineno"> 1423</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9a8cf0ed437bc3b0eb8008bd74782aa1">is_valid_yield_plan</a>(node_handler, yield_plan))</div>
-<div class="line"><span class="lineno"> 1424</span>            {</div>
-<div class="line"><span class="lineno"> 1425</span>                RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Yield trajectory validated&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1426</span>                resp-&gt;trajectory_plan = yield_plan;</div>
-<div class="line"><span class="lineno"> 1427</span>            }</div>
-<div class="line"><span class="lineno"> 1428</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno"> 1429</span>            {</div>
-<div class="line"><span class="lineno"> 1430</span>                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Invalid Yield Trajectory&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1431</span>            }</div>
-<div class="line"><span class="lineno"> 1432</span> </div>
-<div class="line"><span class="lineno"> 1433</span>            <span class="keywordflow">return</span> resp;</div>
-<div class="line"><span class="lineno"> 1434</span>        }</div>
+<div class="line"><span class="lineno"> 1413</span>            <span class="keyword">auto</span> future_status = yield_resp.wait_for(std::chrono::milliseconds(yield_plugin_service_call_timeout));</div>
+<div class="line"><span class="lineno"> 1414</span> </div>
+<div class="line"><span class="lineno"> 1415</span>            <span class="keywordflow">if</span> (future_status != std::future_status::ready)</div>
+<div class="line"><span class="lineno"> 1416</span>            {</div>
+<div class="line"><span class="lineno"> 1417</span>                <span class="comment">// Sometimes the yield plugin&#39;s service call may be unsuccessful due to its computationally expensive logic.</span></div>
+<div class="line"><span class="lineno"> 1418</span>                <span class="comment">// However, consecutive calls can be successful, so return original trajectory for now</span></div>
+<div class="line"><span class="lineno"> 1419</span>                RCLCPP_WARN(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Service request to yield plugin timed out waiting on a reply from the service server&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1420</span>                <span class="keywordflow">return</span> resp;</div>
+<div class="line"><span class="lineno"> 1421</span>            }</div>
+<div class="line"><span class="lineno"> 1422</span> </div>
+<div class="line"><span class="lineno"> 1423</span>            RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Received Traj from Yield&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1424</span>            carma_planning_msgs::msg::TrajectoryPlan yield_plan = yield_resp.get()-&gt;trajectory_plan;</div>
+<div class="line"><span class="lineno"> 1425</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9a8cf0ed437bc3b0eb8008bd74782aa1">is_valid_yield_plan</a>(node_handler, yield_plan))</div>
+<div class="line"><span class="lineno"> 1426</span>            {</div>
+<div class="line"><span class="lineno"> 1427</span>                RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Yield trajectory validated&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1428</span>                resp-&gt;trajectory_plan = yield_plan;</div>
+<div class="line"><span class="lineno"> 1429</span>            }</div>
+<div class="line"><span class="lineno"> 1430</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 1431</span>            {</div>
+<div class="line"><span class="lineno"> 1432</span>                <span class="comment">// This logic used to throw. However, yield_plugin is intermittently returning invalid trajectory when it shouldn&#39;t</span></div>
+<div class="line"><span class="lineno"> 1433</span>                <span class="comment">// TODO: CAR-6118 is tracking it </span></div>
+<div class="line"><span class="lineno"> 1434</span>                RCLCPP_WARN_STREAM(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Invalid yield trajectory detected, returning original trajectory of size: &quot;</span> &lt;&lt;</div>
+<div class="line"><span class="lineno"> 1435</span>                    resp-&gt;trajectory_plan.trajectory_points.size());</div>
+<div class="line"><span class="lineno"> 1436</span>            }</div>
+<div class="line"><span class="lineno"> 1437</span> </div>
+<div class="line"><span class="lineno"> 1438</span>            <span class="keywordflow">return</span> resp;</div>
+<div class="line"><span class="lineno"> 1439</span>        }</div>
 <div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_a9a8cf0ed437bc3b0eb8008bd74782aa1"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#a9a8cf0ed437bc3b0eb8008bd74782aa1">basic_autonomy::waypoint_generation::is_valid_yield_plan</a></div><div class="ttdeci">bool is_valid_yield_plan(const std::shared_ptr&lt; carma_ros2_utils::CarmaLifecycleNode &gt; &amp;node_handler, const carma_planning_msgs::msg::TrajectoryPlan &amp;yield_plan)</div><div class="ttdoc">Helper function to verify if the input yield trajectory plan is valid.</div><div class="ttdef"><b>Definition:</b> <a href="basic__autonomy_8cpp_source.html#l01366">basic_autonomy.cpp:1366</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="basic__autonomy_8cpp_source.html#l01366">is_valid_yield_plan()</a>.</p>
@@ -3412,8 +3428,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacebasic__autonomy_1_1waypoint__generation_a2de71503d10ed9a644bafd31fd102081_cgraph.png" border="0" usemap="#anamespacebasic__autonomy_1_1waypoint__generation_a2de71503d10ed9a644bafd31fd102081_cgraph" alt=""/></div>
 <map name="anamespacebasic__autonomy_1_1waypoint__generation_a2de71503d10ed9a644bafd31fd102081_cgraph" id="anamespacebasic__autonomy_1_1waypoint__generation_a2de71503d10ed9a644bafd31fd102081_cgraph">
-<area shape="rect" title="Applies a yield trajectory to the original trajectory set in response." alt="" coords="5,5,199,61"/>
-<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9a8cf0ed437bc3b0eb8008bd74782aa1" title="Helper function to verify if the input yield trajectory plan is valid." alt="" coords="247,13,449,54"/>
+<area shape="rect" title="Applies a yield trajectory to the original trajectory set in response." alt="" coords="5,22,199,78"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9a8cf0ed437bc3b0eb8008bd74782aa1" title="Helper function to verify if the input yield trajectory plan is valid." alt="" coords="247,29,449,71"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="497,29,696,71"/>
 </map>
 </div>
 <div class="dynheader">
@@ -4104,7 +4121,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacebasic__autonomy.html">basic_autonomy</a></li><li class="navelem"><a class="el" href="namespacebasic__autonomy_1_1waypoint__generation.html">waypoint_generation</a></li>
-    <li class="footer">Generated on Fri Apr 4 2025 17:23:48 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Apr 10 2025 20:19:41 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

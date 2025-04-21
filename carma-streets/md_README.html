@@ -140,17 +140,15 @@ Data Collection</h2>
 <p ><b>CARMA Streets</b> services have several source from which data about usecase performance can be pulled. <b>Kafka Message Topics</b> can be pulled using the <code><a class="el" href="collect__kafka__logs_8py.html">collect_kafka_logs.py</a></code> script and includes message traffic on a configurable list of topics. Service log files can be found in a given <b>CARMA Streets</b> service <code>logs/</code> directory. The <code>collect_service_logs.sh</code> adds all log files in this directory to a zip file and then deletes the originals. Some <b>CARMA Streets</b> services can configurable log performance in <code>.csv</code> file in the <code>logs/</code> directory.</p>
 <h3><a class="anchor" id="autotoc_md80"></a>
 Collect Kafka Logs</h3>
-<p >This script uses <code>docker exec</code> to ssh into a running kafka container. Then using kafka container scripts to read all kafka data from a list of provided topics. </p><div class="fragment"><div class="line">usage: collect_kafka_logs.py [-h] [--start_timestamp START_TIMESTAMP] [--end_timestamp END_TIMESTAMP] [--start_hours_ago START_HOURS_AGO] [--end_hours_ago END_HOURS_AGO]</div>
-<div class="line">                             [--topics TOPICS [TOPICS ...]] [--timeout TIMEOUT] [--zip ZIP]</div>
-<div class="line">                             outdir</div>
+<p >This script uses <code>docker exec</code> to ssh into a running kafka container. Then using kafka container scripts to read all kafka data from a list of provided topics. </p><div class="fragment"><div class="line">usage: collect_kafka_logs.py [-h] [--outdir OUTDIR] [--start_timestamp START_TIMESTAMP] [--end_timestamp END_TIMESTAMP] [--start_hours_ago START_HOURS_AGO]</div>
+<div class="line">                             [--end_hours_ago END_HOURS_AGO] [--topics TOPICS [TOPICS ...]] [--timeout TIMEOUT] [--zip ZIP]</div>
+<div class="line">                             [--container_names CONTAINER_NAMES [CONTAINER_NAMES ...]]</div>
 <div class="line"> </div>
 <div class="line">Script to grab data from kafka</div>
 <div class="line"> </div>
-<div class="line">positional arguments:</div>
-<div class="line">  outdir                Folder name for the resulting folder logs are placed in</div>
-<div class="line"> </div>
 <div class="line">options:</div>
 <div class="line">  -h, --help            show this help message and exit</div>
+<div class="line">  --outdir OUTDIR       Folder name for the resulting folder logs are placed in</div>
 <div class="line">  --start_timestamp START_TIMESTAMP</div>
 <div class="line">                        Unix timestamp (seconds) for the first message to grab. Exclusive with start_hours_ago.</div>
 <div class="line">  --end_timestamp END_TIMESTAMP</div>
@@ -163,6 +161,8 @@ Collect Kafka Logs</h3>
 <div class="line">                        list of topics to grab data from</div>
 <div class="line">  --timeout TIMEOUT     timeout for receiving messages on a topic, default is 5 seconds</div>
 <div class="line">  --zip ZIP             bool flag. When set to true, folder is compressed into a zip file.</div>
+<div class="line">  --container_names CONTAINER_NAMES [CONTAINER_NAMES ...]</div>
+<div class="line">                        list of kafka containers to grab data from</div>
 </div><!-- fragment --> <h3><a class="anchor" id="autotoc_md81"></a>
 Collection Service Logs</h3>
 <p >This script collects all <b>CARMA Streets</b> service log files, adds them to a zip file. </p><div class="fragment"><div class="line">usage: collect_service_logs.sh [-h | --help] [--output &lt;zip_file_name&gt;.zip]</div>
@@ -194,7 +194,7 @@ Contact</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Nov 13 2024 17:14:31 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Apr 21 2025 18:27:55 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

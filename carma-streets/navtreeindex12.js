@@ -109,7 +109,7 @@ var NAVTREEINDEX12 =
 "classtraffic__signal__controller__service_1_1udp__socket__listener__exception.html#a989aa85d4ec13ab8fd3a658d71bcea7d":[32,0,33,14,1],
 "collect__kafka__logs_8py.html":[34,0,14],
 "collect__kafka__logs_8py.html#a5624652a60794ffc2b2a80698361b335":[34,0,14,0],
-"collect__kafka__logs_8py.html#a865d902d44390655d826670cfa2bd8c1":[34,0,14,1],
+"collect__kafka__logs_8py.html#a9392009435264da7ff8b1c133231c5a0":[34,0,14,1],
 "collect__kafka__logs_8py_source.html":[34,0,14],
 "configuration_8cpp.html":[34,0,12,6,1,0],
 "configuration_8cpp_source.html":[34,0,12,6,1,0],

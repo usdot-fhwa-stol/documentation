@@ -2,7 +2,7 @@ var namespaces_dup =
 [
     [ "collect_kafka_logs", "namespacecollect__kafka__logs.html", [
       [ "main", "namespacecollect__kafka__logs.html#a5624652a60794ffc2b2a80698361b335", null ],
-      [ "store_kafka_topic", "namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1", null ]
+      [ "store_kafka_topic", "namespacecollect__kafka__logs.html#a9392009435264da7ff8b1c133231c5a0", null ]
     ] ],
     [ "dpp_script", "namespacedpp__script.html", "namespacedpp__script" ],
     [ "intersection_model", "namespaceintersection__model.html", "namespaceintersection__model" ],

@@ -110,7 +110,7 @@ var NAVTREEINDEX16 =
 "namespaceOpenAPI.html#af4eeee29a1b288f0c4cc71c3530c3f2b":[32,0,8,17],
 "namespacecollect__kafka__logs.html":[32,0,0],
 "namespacecollect__kafka__logs.html#a5624652a60794ffc2b2a80698361b335":[32,0,0,0],
-"namespacecollect__kafka__logs.html#a865d902d44390655d826670cfa2bd8c1":[32,0,0,1],
+"namespacecollect__kafka__logs.html#a9392009435264da7ff8b1c133231c5a0":[32,0,0,1],
 "namespacedpp__script.html":[32,0,1],
 "namespacedpp__script.html#a29405a5bd5f67c33dd4212b69cbf57b5":[32,0,1,1],
 "namespaceintersection__model.html":[32,0,2],

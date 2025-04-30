@@ -1,5 +1,6 @@
 var NAVTREEINDEX28 =
 {
+"md_README.html#autotoc_md302":[44,0,16],
 "md_approaching_emergency_vehicle_plugin_README.html":[1],
 "md_approximate_intersection_README.html":[2],
 "md_basic_autonomy_README.html":[4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX28 =
 "mobilitypath__publisher_2src_2main_8cpp_source.html":[57,0,23,2,0],
 "mobilitypath__publisher_8cpp.html":[57,0,23,2,1],
 "mobilitypath__publisher_8cpp_source.html":[57,0,23,2,1],
-"mobilitypath__publisher_8hpp.html":[57,0,23,0,0,0],
-"mobilitypath__publisher_8hpp_source.html":[57,0,23,0,0,0]
+"mobilitypath__publisher_8hpp.html":[57,0,23,0,0,0]
 };

@@ -575,11 +575,11 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="GNSSToMapConvertor_8cpp_source.html#l00128">128</a> of file <a class="el" href="GNSSToMapConvertor_8cpp_source.html">GNSSToMapConvertor.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  134</span>{</div>
-<div class="line"><span class="lineno">  136</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> lat = fix_msg.latitude;</div>
-<div class="line"><span class="lineno">  137</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> lon = fix_msg.longitude;</div>
+<div class="line"><span class="lineno">  136</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="namespaceosm__transform.html#ac0391cfd8b0bf43dd854fc2d1636ff07">lat</a> = fix_msg.latitude;</div>
+<div class="line"><span class="lineno">  137</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="namespaceosm__transform.html#a40c9f4773bebbc993c457d376ad398e6">lon</a> = fix_msg.longitude;</div>
 <div class="line"><span class="lineno">  138</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> alt = fix_msg.altitude;</div>
 <div class="line"><span class="lineno">  139</span> </div>
-<div class="line"><span class="lineno">  140</span>  lanelet::BasicPoint3d map_point = projector.forward({ lat, lon, alt });</div>
+<div class="line"><span class="lineno">  140</span>  lanelet::BasicPoint3d map_point = projector.forward({ <a class="code hl_variable" href="namespaceosm__transform.html#ac0391cfd8b0bf43dd854fc2d1636ff07">lat</a>, <a class="code hl_variable" href="namespaceosm__transform.html#a40c9f4773bebbc993c457d376ad398e6">lon</a>, alt });</div>
 <div class="line"><span class="lineno">  141</span>  RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classgnss__to__map__convertor_1_1GNSSToMapConvertor.html#aef7e05163fdce1d1e2c0eb12b727e58e">logger_</a>-&gt;get_logger(), <span class="stringliteral">&quot;map_point: &quot;</span> &lt;&lt; map_point.x() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; map_point.y() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; map_point.z());</div>
 <div class="line"><span class="lineno">  142</span> </div>
 <div class="line"><span class="lineno">  143</span>  <span class="keywordflow">if</span> (fabs(map_point.x()) &gt; 10000.0 || fabs(map_point.y()) &gt; 10000.0)</div>
@@ -653,8 +653,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  212</span> </div>
 <div class="line"><span class="lineno">  213</span>  <span class="keywordflow">return</span> pose;</div>
 <div class="line"><span class="lineno">  214</span>}</div>
+<div class="ttc" id="anamespaceosm__transform_html_a40c9f4773bebbc993c457d376ad398e6"><div class="ttname"><a href="namespaceosm__transform.html#a40c9f4773bebbc993c457d376ad398e6">osm_transform.lon</a></div><div class="ttdeci">lon</div><div class="ttdef"><b>Definition:</b> <a href="osm__transform_8py_source.html#l00101">osm_transform.py:101</a></div></div>
+<div class="ttc" id="anamespaceosm__transform_html_ac0391cfd8b0bf43dd854fc2d1636ff07"><div class="ttname"><a href="namespaceosm__transform.html#ac0391cfd8b0bf43dd854fc2d1636ff07">osm_transform.lat</a></div><div class="ttdeci">lat</div><div class="ttdef"><b>Definition:</b> <a href="osm__transform_8py_source.html#l00100">osm_transform.py:100</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="GNSSToMapConvertor_8hpp_source.html#l00156">logger_</a>.</p>
+<p class="reference">References <a class="el" href="osm__transform_8py_source.html#l00100">osm_transform::lat</a>, <a class="el" href="GNSSToMapConvertor_8hpp_source.html#l00156">logger_</a>, and <a class="el" href="osm__transform_8py_source.html#l00101">osm_transform::lon</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="GNSSToMapConvertor_8cpp_source.html#l00036">gnssFixCb()</a>.</p>
 <div class="dynheader">
@@ -967,7 +969,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacegnss__to__map__convertor.html">gnss_to_map_convertor</a></li><li class="navelem"><a class="el" href="classgnss__to__map__convertor_1_1GNSSToMapConvertor.html">GNSSToMapConvertor</a></li>
-    <li class="footer">Generated on Tue Apr 29 2025 20:48:52 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Wed Apr 30 2025 16:05:03 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

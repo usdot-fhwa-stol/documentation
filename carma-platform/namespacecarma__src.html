@@ -365,145 +365,146 @@ variable as a string.
 <div class="line"><span class="lineno">  246</span>                launch_arguments = {</div>
 <div class="line"><span class="lineno">  247</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
 <div class="line"><span class="lineno">  248</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
-<div class="line"><span class="lineno">  249</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file,</div>
-<div class="line"><span class="lineno">  250</span>                    <span class="stringliteral">&#39;vector_map_file&#39;</span> : vector_map_file,</div>
-<div class="line"><span class="lineno">  251</span>                    <span class="stringliteral">&#39;use_sim_time&#39;</span> : use_sim_time,</div>
-<div class="line"><span class="lineno">  252</span>                    <span class="stringliteral">&#39;is_cp_mot_enabled&#39;</span> : is_cp_mot_enabled,</div>
-<div class="line"><span class="lineno">  253</span>                    <span class="stringliteral">&#39;is_autoware_lidar_obj_detection_enabled&#39;</span> : is_autoware_lidar_obj_detection_enabled</div>
-<div class="line"><span class="lineno">  254</span>                    }.items()</div>
-<div class="line"><span class="lineno">  255</span>            ),</div>
-<div class="line"><span class="lineno">  256</span>        ]</div>
-<div class="line"><span class="lineno">  257</span>    )</div>
-<div class="line"><span class="lineno">  258</span> </div>
-<div class="line"><span class="lineno">  259</span>    localization_group = GroupAction(</div>
-<div class="line"><span class="lineno">  260</span>        actions=[</div>
-<div class="line"><span class="lineno">  261</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;localization&#39;</span>)),</div>
-<div class="line"><span class="lineno">  262</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  263</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/localization.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  264</span>                launch_arguments = {</div>
-<div class="line"><span class="lineno">  265</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
-<div class="line"><span class="lineno">  266</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
-<div class="line"><span class="lineno">  267</span>                    <span class="stringliteral">&#39;load_type&#39;</span> : load_type,</div>
-<div class="line"><span class="lineno">  268</span>                    <span class="stringliteral">&#39;single_pcd_path&#39;</span> : single_pcd_path,</div>
-<div class="line"><span class="lineno">  269</span>                    <span class="stringliteral">&#39;area&#39;</span> : area,</div>
-<div class="line"><span class="lineno">  270</span>                    <span class="stringliteral">&#39;arealist_path&#39;</span> : arealist_path,</div>
-<div class="line"><span class="lineno">  271</span>                    <span class="stringliteral">&#39;vector_map_file&#39;</span> : vector_map_file,</div>
-<div class="line"><span class="lineno">  272</span>                    <span class="stringliteral">&#39;vehicle_calibration_dir&#39;</span>: vehicle_calibration_dir,</div>
-<div class="line"><span class="lineno">  273</span>                    <span class="stringliteral">&#39;use_sim_time&#39;</span> : use_sim_time</div>
-<div class="line"><span class="lineno">  274</span>                }.items()</div>
-<div class="line"><span class="lineno">  275</span>            )</div>
-<div class="line"><span class="lineno">  276</span>        ]</div>
-<div class="line"><span class="lineno">  277</span>    )</div>
-<div class="line"><span class="lineno">  278</span> </div>
-<div class="line"><span class="lineno">  279</span>    v2x_group = GroupAction(</div>
-<div class="line"><span class="lineno">  280</span>        actions=[</div>
-<div class="line"><span class="lineno">  281</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;message&#39;</span>)),</div>
-<div class="line"><span class="lineno">  282</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  283</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/message.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  284</span>                launch_arguments = {</div>
-<div class="line"><span class="lineno">  285</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file,</div>
-<div class="line"><span class="lineno">  286</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
-<div class="line"><span class="lineno">  287</span>                    <span class="stringliteral">&#39;enable_opening_tunnels&#39;</span>  : enable_opening_tunnels,</div>
-<div class="line"><span class="lineno">  288</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
-<div class="line"><span class="lineno">  289</span>                    <span class="stringliteral">&#39;use_sim_time&#39;</span> : use_sim_time</div>
-<div class="line"><span class="lineno">  290</span>                }.items()</div>
-<div class="line"><span class="lineno">  291</span>            ),</div>
-<div class="line"><span class="lineno">  292</span>        ]</div>
-<div class="line"><span class="lineno">  293</span>    )</div>
-<div class="line"><span class="lineno">  294</span> </div>
-<div class="line"><span class="lineno">  295</span>    guidance_group = GroupAction(</div>
-<div class="line"><span class="lineno">  296</span>        actions=[</div>
-<div class="line"><span class="lineno">  297</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_GUIDE_NS&#39;</span>, default_value=<span class="stringliteral">&#39;guidance&#39;</span>)),</div>
-<div class="line"><span class="lineno">  298</span> </div>
-<div class="line"><span class="lineno">  299</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  300</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/guidance.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  301</span>                launch_arguments={</div>
-<div class="line"><span class="lineno">  302</span>                    <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder,</div>
-<div class="line"><span class="lineno">  303</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file,</div>
-<div class="line"><span class="lineno">  304</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
-<div class="line"><span class="lineno">  305</span>                    <span class="stringliteral">&#39;enable_guidance_plugin_validator&#39;</span> : enable_guidance_plugin_validator,</div>
-<div class="line"><span class="lineno">  306</span>                    <span class="stringliteral">&#39;strategic_plugins_to_validate&#39;</span> : strategic_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  307</span>                    <span class="stringliteral">&#39;tactical_plugins_to_validate&#39;</span> : tactical_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  308</span>                    <span class="stringliteral">&#39;control_plugins_to_validate&#39;</span> : control_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  309</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
-<div class="line"><span class="lineno">  310</span>                    <span class="stringliteral">&#39;use_sim_time&#39;</span> : use_sim_time,</div>
-<div class="line"><span class="lineno">  311</span>                    <span class="stringliteral">&#39;use_real_time_spat_in_sim&#39;</span> : use_real_time_spat_in_sim</div>
-<div class="line"><span class="lineno">  312</span>                }.items()</div>
-<div class="line"><span class="lineno">  313</span>            ),</div>
-<div class="line"><span class="lineno">  314</span>        ]</div>
-<div class="line"><span class="lineno">  315</span>    )</div>
-<div class="line"><span class="lineno">  316</span> </div>
-<div class="line"><span class="lineno">  317</span>    drivers_group = GroupAction(</div>
-<div class="line"><span class="lineno">  318</span>        actions=[</div>
-<div class="line"><span class="lineno">  319</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;hardware_interface&#39;</span>)),</div>
-<div class="line"><span class="lineno">  320</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  321</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/drivers.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  322</span>                launch_arguments = {</div>
-<div class="line"><span class="lineno">  323</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
-<div class="line"><span class="lineno">  324</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
-<div class="line"><span class="lineno">  325</span>                    <span class="stringliteral">&#39;use_sim_time&#39;</span> : use_sim_time</div>
-<div class="line"><span class="lineno">  326</span>                }.items()</div>
-<div class="line"><span class="lineno">  327</span>            ),</div>
-<div class="line"><span class="lineno">  328</span>        ]</div>
-<div class="line"><span class="lineno">  329</span>    )</div>
-<div class="line"><span class="lineno">  330</span> </div>
-<div class="line"><span class="lineno">  331</span>    system_controller = Node(</div>
-<div class="line"><span class="lineno">  332</span>        package=<span class="stringliteral">&#39;system_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  333</span>        name=<span class="stringliteral">&#39;system_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  334</span>        executable=<span class="stringliteral">&#39;system_controller&#39;</span>,</div>
-<div class="line"><span class="lineno">  335</span>        parameters=[</div>
-<div class="line"><span class="lineno">  336</span>                    system_controller_param_file,</div>
-<div class="line"><span class="lineno">  337</span>                    {<span class="stringliteral">&quot;use_sim_time&quot;</span> : use_sim_time}],</div>
-<div class="line"><span class="lineno">  338</span>        on_exit = Shutdown(), <span class="comment"># Mark the subsystem controller as required for segfaults</span></div>
-<div class="line"><span class="lineno">  339</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;system_controller&#39;</span>, env_log_levels)]</div>
-<div class="line"><span class="lineno">  340</span>    )</div>
-<div class="line"><span class="lineno">  341</span> </div>
-<div class="line"><span class="lineno">  342</span>    ui_group = GroupAction(</div>
-<div class="line"><span class="lineno">  343</span>        actions=[</div>
-<div class="line"><span class="lineno">  344</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_UI_NS&#39;</span>, default_value=<span class="stringliteral">&#39;ui&#39;</span>)),</div>
-<div class="line"><span class="lineno">  345</span> </div>
-<div class="line"><span class="lineno">  346</span>            IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">  347</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/ui.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">  348</span>                launch_arguments={</div>
-<div class="line"><span class="lineno">  349</span>                <span class="stringliteral">&#39;port&#39;</span> : port</div>
-<div class="line"><span class="lineno">  350</span>                }.items()</div>
-<div class="line"><span class="lineno">  351</span>            ),</div>
-<div class="line"><span class="lineno">  352</span>        ]</div>
-<div class="line"><span class="lineno">  353</span>    )</div>
-<div class="line"><span class="lineno">  354</span> </div>
-<div class="line"><span class="lineno">  355</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">  356</span>        declare_vehicle_calibration_dir_arg,</div>
-<div class="line"><span class="lineno">  357</span>        declare_vehicle_config_dir_arg,</div>
-<div class="line"><span class="lineno">  358</span>        declare_vehicle_characteristics_param_file_arg,</div>
-<div class="line"><span class="lineno">  359</span>        declare_vehicle_config_param_file_arg,</div>
-<div class="line"><span class="lineno">  360</span>        declare_use_sim_time_arg,</div>
-<div class="line"><span class="lineno">  361</span>        declare_use_real_time_spat_in_sim_arg,</div>
-<div class="line"><span class="lineno">  362</span>        declare_route_file_folder,</div>
-<div class="line"><span class="lineno">  363</span>        declare_enable_guidance_plugin_validator,</div>
-<div class="line"><span class="lineno">  364</span>        declare_strategic_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  365</span>        declare_tactical_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  366</span>        declare_control_plugins_to_validate,</div>
-<div class="line"><span class="lineno">  367</span>        declare_enable_opening_tunnels,</div>
-<div class="line"><span class="lineno">  368</span>        declare_port,</div>
-<div class="line"><span class="lineno">  369</span>        declare_load_type,</div>
-<div class="line"><span class="lineno">  370</span>        declare_single_pcd_path,</div>
-<div class="line"><span class="lineno">  371</span>        declare_area,</div>
-<div class="line"><span class="lineno">  372</span>        declare_arealist_path,</div>
-<div class="line"><span class="lineno">  373</span>        declare_vector_map_file,</div>
-<div class="line"><span class="lineno">  374</span>        declare_is_ros2_tracing_enabled,</div>
-<div class="line"><span class="lineno">  375</span>        declare_is_cp_mot_enabled,</div>
-<div class="line"><span class="lineno">  376</span>        declare_is_autoware_lidar_obj_detection_enabled,</div>
-<div class="line"><span class="lineno">  377</span>        ros2_rosbag_launch,</div>
-<div class="line"><span class="lineno">  378</span>        OpaqueFunction(function=create_ros2_tracing_action),</div>
-<div class="line"><span class="lineno">  379</span>        drivers_group,</div>
-<div class="line"><span class="lineno">  380</span>        transform_group,</div>
-<div class="line"><span class="lineno">  381</span>        environment_group,</div>
-<div class="line"><span class="lineno">  382</span>        localization_group,</div>
-<div class="line"><span class="lineno">  383</span>        v2x_group,</div>
-<div class="line"><span class="lineno">  384</span>        guidance_group,</div>
-<div class="line"><span class="lineno">  385</span>        ui_group,</div>
-<div class="line"><span class="lineno">  386</span>        system_controller</div>
-<div class="line"><span class="lineno">  387</span>    ])</div>
+<div class="line"><span class="lineno">  249</span>                    <span class="stringliteral">&#39;vehicle_calibration_dir&#39;</span>: vehicle_calibration_dir,</div>
+<div class="line"><span class="lineno">  250</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file,</div>
+<div class="line"><span class="lineno">  251</span>                    <span class="stringliteral">&#39;vector_map_file&#39;</span> : vector_map_file,</div>
+<div class="line"><span class="lineno">  252</span>                    <span class="stringliteral">&#39;use_sim_time&#39;</span> : use_sim_time,</div>
+<div class="line"><span class="lineno">  253</span>                    <span class="stringliteral">&#39;is_cp_mot_enabled&#39;</span> : is_cp_mot_enabled,</div>
+<div class="line"><span class="lineno">  254</span>                    <span class="stringliteral">&#39;is_autoware_lidar_obj_detection_enabled&#39;</span> : is_autoware_lidar_obj_detection_enabled</div>
+<div class="line"><span class="lineno">  255</span>                    }.items()</div>
+<div class="line"><span class="lineno">  256</span>            ),</div>
+<div class="line"><span class="lineno">  257</span>        ]</div>
+<div class="line"><span class="lineno">  258</span>    )</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>    localization_group = GroupAction(</div>
+<div class="line"><span class="lineno">  261</span>        actions=[</div>
+<div class="line"><span class="lineno">  262</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_LOCZ_NS&#39;</span>, default_value=<span class="stringliteral">&#39;localization&#39;</span>)),</div>
+<div class="line"><span class="lineno">  263</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  264</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/localization.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  265</span>                launch_arguments = {</div>
+<div class="line"><span class="lineno">  266</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
+<div class="line"><span class="lineno">  267</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
+<div class="line"><span class="lineno">  268</span>                    <span class="stringliteral">&#39;load_type&#39;</span> : load_type,</div>
+<div class="line"><span class="lineno">  269</span>                    <span class="stringliteral">&#39;single_pcd_path&#39;</span> : single_pcd_path,</div>
+<div class="line"><span class="lineno">  270</span>                    <span class="stringliteral">&#39;area&#39;</span> : area,</div>
+<div class="line"><span class="lineno">  271</span>                    <span class="stringliteral">&#39;arealist_path&#39;</span> : arealist_path,</div>
+<div class="line"><span class="lineno">  272</span>                    <span class="stringliteral">&#39;vector_map_file&#39;</span> : vector_map_file,</div>
+<div class="line"><span class="lineno">  273</span>                    <span class="stringliteral">&#39;vehicle_calibration_dir&#39;</span>: vehicle_calibration_dir,</div>
+<div class="line"><span class="lineno">  274</span>                    <span class="stringliteral">&#39;use_sim_time&#39;</span> : use_sim_time</div>
+<div class="line"><span class="lineno">  275</span>                }.items()</div>
+<div class="line"><span class="lineno">  276</span>            )</div>
+<div class="line"><span class="lineno">  277</span>        ]</div>
+<div class="line"><span class="lineno">  278</span>    )</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>    v2x_group = GroupAction(</div>
+<div class="line"><span class="lineno">  281</span>        actions=[</div>
+<div class="line"><span class="lineno">  282</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_MSG_NS&#39;</span>, default_value=<span class="stringliteral">&#39;message&#39;</span>)),</div>
+<div class="line"><span class="lineno">  283</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  284</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/message.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  285</span>                launch_arguments = {</div>
+<div class="line"><span class="lineno">  286</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file,</div>
+<div class="line"><span class="lineno">  287</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
+<div class="line"><span class="lineno">  288</span>                    <span class="stringliteral">&#39;enable_opening_tunnels&#39;</span>  : enable_opening_tunnels,</div>
+<div class="line"><span class="lineno">  289</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
+<div class="line"><span class="lineno">  290</span>                    <span class="stringliteral">&#39;use_sim_time&#39;</span> : use_sim_time</div>
+<div class="line"><span class="lineno">  291</span>                }.items()</div>
+<div class="line"><span class="lineno">  292</span>            ),</div>
+<div class="line"><span class="lineno">  293</span>        ]</div>
+<div class="line"><span class="lineno">  294</span>    )</div>
+<div class="line"><span class="lineno">  295</span> </div>
+<div class="line"><span class="lineno">  296</span>    guidance_group = GroupAction(</div>
+<div class="line"><span class="lineno">  297</span>        actions=[</div>
+<div class="line"><span class="lineno">  298</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_GUIDE_NS&#39;</span>, default_value=<span class="stringliteral">&#39;guidance&#39;</span>)),</div>
+<div class="line"><span class="lineno">  299</span> </div>
+<div class="line"><span class="lineno">  300</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  301</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/guidance.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  302</span>                launch_arguments={</div>
+<div class="line"><span class="lineno">  303</span>                    <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder,</div>
+<div class="line"><span class="lineno">  304</span>                    <span class="stringliteral">&#39;vehicle_characteristics_param_file&#39;</span> : vehicle_characteristics_param_file,</div>
+<div class="line"><span class="lineno">  305</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
+<div class="line"><span class="lineno">  306</span>                    <span class="stringliteral">&#39;enable_guidance_plugin_validator&#39;</span> : enable_guidance_plugin_validator,</div>
+<div class="line"><span class="lineno">  307</span>                    <span class="stringliteral">&#39;strategic_plugins_to_validate&#39;</span> : strategic_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  308</span>                    <span class="stringliteral">&#39;tactical_plugins_to_validate&#39;</span> : tactical_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  309</span>                    <span class="stringliteral">&#39;control_plugins_to_validate&#39;</span> : control_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  310</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
+<div class="line"><span class="lineno">  311</span>                    <span class="stringliteral">&#39;use_sim_time&#39;</span> : use_sim_time,</div>
+<div class="line"><span class="lineno">  312</span>                    <span class="stringliteral">&#39;use_real_time_spat_in_sim&#39;</span> : use_real_time_spat_in_sim</div>
+<div class="line"><span class="lineno">  313</span>                }.items()</div>
+<div class="line"><span class="lineno">  314</span>            ),</div>
+<div class="line"><span class="lineno">  315</span>        ]</div>
+<div class="line"><span class="lineno">  316</span>    )</div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>    drivers_group = GroupAction(</div>
+<div class="line"><span class="lineno">  319</span>        actions=[</div>
+<div class="line"><span class="lineno">  320</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_INTR_NS&#39;</span>, default_value=<span class="stringliteral">&#39;hardware_interface&#39;</span>)),</div>
+<div class="line"><span class="lineno">  321</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  322</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/drivers.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  323</span>                launch_arguments = {</div>
+<div class="line"><span class="lineno">  324</span>                    <span class="stringliteral">&#39;subsystem_controller_param_file&#39;</span> : [vehicle_config_dir, <span class="stringliteral">&#39;/SubsystemControllerParams.yaml&#39;</span>],</div>
+<div class="line"><span class="lineno">  325</span>                    <span class="stringliteral">&#39;vehicle_config_param_file&#39;</span> : vehicle_config_param_file,</div>
+<div class="line"><span class="lineno">  326</span>                    <span class="stringliteral">&#39;use_sim_time&#39;</span> : use_sim_time</div>
+<div class="line"><span class="lineno">  327</span>                }.items()</div>
+<div class="line"><span class="lineno">  328</span>            ),</div>
+<div class="line"><span class="lineno">  329</span>        ]</div>
+<div class="line"><span class="lineno">  330</span>    )</div>
+<div class="line"><span class="lineno">  331</span> </div>
+<div class="line"><span class="lineno">  332</span>    system_controller = Node(</div>
+<div class="line"><span class="lineno">  333</span>        package=<span class="stringliteral">&#39;system_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  334</span>        name=<span class="stringliteral">&#39;system_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  335</span>        executable=<span class="stringliteral">&#39;system_controller&#39;</span>,</div>
+<div class="line"><span class="lineno">  336</span>        parameters=[</div>
+<div class="line"><span class="lineno">  337</span>                    system_controller_param_file,</div>
+<div class="line"><span class="lineno">  338</span>                    {<span class="stringliteral">&quot;use_sim_time&quot;</span> : use_sim_time}],</div>
+<div class="line"><span class="lineno">  339</span>        on_exit = Shutdown(), <span class="comment"># Mark the subsystem controller as required for segfaults</span></div>
+<div class="line"><span class="lineno">  340</span>        arguments=[<span class="stringliteral">&#39;--ros-args&#39;</span>, <span class="stringliteral">&#39;--log-level&#39;</span>, GetLogLevel(<span class="stringliteral">&#39;system_controller&#39;</span>, env_log_levels)]</div>
+<div class="line"><span class="lineno">  341</span>    )</div>
+<div class="line"><span class="lineno">  342</span> </div>
+<div class="line"><span class="lineno">  343</span>    ui_group = GroupAction(</div>
+<div class="line"><span class="lineno">  344</span>        actions=[</div>
+<div class="line"><span class="lineno">  345</span>            PushRosNamespace(EnvironmentVariable(<span class="stringliteral">&#39;CARMA_UI_NS&#39;</span>, default_value=<span class="stringliteral">&#39;ui&#39;</span>)),</div>
+<div class="line"><span class="lineno">  346</span> </div>
+<div class="line"><span class="lineno">  347</span>            IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">  348</span>                PythonLaunchDescriptionSource([ThisLaunchFileDir(), <span class="stringliteral">&#39;/ui.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">  349</span>                launch_arguments={</div>
+<div class="line"><span class="lineno">  350</span>                <span class="stringliteral">&#39;port&#39;</span> : port</div>
+<div class="line"><span class="lineno">  351</span>                }.items()</div>
+<div class="line"><span class="lineno">  352</span>            ),</div>
+<div class="line"><span class="lineno">  353</span>        ]</div>
+<div class="line"><span class="lineno">  354</span>    )</div>
+<div class="line"><span class="lineno">  355</span> </div>
+<div class="line"><span class="lineno">  356</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><span class="lineno">  357</span>        declare_vehicle_calibration_dir_arg,</div>
+<div class="line"><span class="lineno">  358</span>        declare_vehicle_config_dir_arg,</div>
+<div class="line"><span class="lineno">  359</span>        declare_vehicle_characteristics_param_file_arg,</div>
+<div class="line"><span class="lineno">  360</span>        declare_vehicle_config_param_file_arg,</div>
+<div class="line"><span class="lineno">  361</span>        declare_use_sim_time_arg,</div>
+<div class="line"><span class="lineno">  362</span>        declare_use_real_time_spat_in_sim_arg,</div>
+<div class="line"><span class="lineno">  363</span>        declare_route_file_folder,</div>
+<div class="line"><span class="lineno">  364</span>        declare_enable_guidance_plugin_validator,</div>
+<div class="line"><span class="lineno">  365</span>        declare_strategic_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  366</span>        declare_tactical_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  367</span>        declare_control_plugins_to_validate,</div>
+<div class="line"><span class="lineno">  368</span>        declare_enable_opening_tunnels,</div>
+<div class="line"><span class="lineno">  369</span>        declare_port,</div>
+<div class="line"><span class="lineno">  370</span>        declare_load_type,</div>
+<div class="line"><span class="lineno">  371</span>        declare_single_pcd_path,</div>
+<div class="line"><span class="lineno">  372</span>        declare_area,</div>
+<div class="line"><span class="lineno">  373</span>        declare_arealist_path,</div>
+<div class="line"><span class="lineno">  374</span>        declare_vector_map_file,</div>
+<div class="line"><span class="lineno">  375</span>        declare_is_ros2_tracing_enabled,</div>
+<div class="line"><span class="lineno">  376</span>        declare_is_cp_mot_enabled,</div>
+<div class="line"><span class="lineno">  377</span>        declare_is_autoware_lidar_obj_detection_enabled,</div>
+<div class="line"><span class="lineno">  378</span>        ros2_rosbag_launch,</div>
+<div class="line"><span class="lineno">  379</span>        OpaqueFunction(function=create_ros2_tracing_action),</div>
+<div class="line"><span class="lineno">  380</span>        drivers_group,</div>
+<div class="line"><span class="lineno">  381</span>        transform_group,</div>
+<div class="line"><span class="lineno">  382</span>        environment_group,</div>
+<div class="line"><span class="lineno">  383</span>        localization_group,</div>
+<div class="line"><span class="lineno">  384</span>        v2x_group,</div>
+<div class="line"><span class="lineno">  385</span>        guidance_group,</div>
+<div class="line"><span class="lineno">  386</span>        ui_group,</div>
+<div class="line"><span class="lineno">  387</span>        system_controller</div>
+<div class="line"><span class="lineno">  388</span>    ])</div>
 <div class="ttc" id="anamespacecarma__src_html_af9b310123d70f1b0131bc831678af1b1"><div class="ttname"><a href="namespacecarma__src.html#af9b310123d70f1b0131bc831678af1b1">carma_src.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="carma__src_8launch_8py_source.html#l00063">carma_src.launch.py:63</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -514,7 +515,7 @@ variable as a string.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__src.html">carma_src</a></li>
-    <li class="footer">Generated on Wed Apr 30 2025 16:05:02 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu May 1 2025 16:44:05 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

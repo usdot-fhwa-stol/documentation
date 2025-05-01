@@ -1,5 +1,7 @@
 var NAVTREEINDEX27 =
 {
+"intersection__transit__maneuvering_2src_2main_8cpp_source.html":[57,0,18,2,2],
+"intersection__transit__maneuvering_8cpp.html":[57,0,18,2,0],
 "intersection__transit__maneuvering_8cpp.html#a0a1c421fe60acc2ce59c8da1c642d60b":[57,0,18,2,0,1],
 "intersection__transit__maneuvering_8cpp.html#a8212f1302ee6736745dc97bb5b3caaf5":[57,0,18,2,0,0],
 "intersection__transit__maneuvering_8cpp.html#a8a97ee793a4f8ddc4acbd53d1acd8753":[57,0,18,2,0,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX27 =
 "md_README.html#autotoc_md296":[44,0,10,3],
 "md_README.html#autotoc_md297":[44,0,11],
 "md_README.html#autotoc_md298":[44,0,12],
-"md_README.html#autotoc_md299":[44,0,13],
-"md_README.html#autotoc_md300":[44,0,14],
-"md_README.html#autotoc_md301":[44,0,15]
+"md_README.html#autotoc_md299":[44,0,13]
 };

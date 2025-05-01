@@ -2,6 +2,7 @@ var classobject__visualizer_1_1Node =
 [
     [ "Node", "classobject__visualizer_1_1Node.html#aa9ff722672880f0ad01df5f0e97bcc4f", null ],
     [ "clear_and_update_old_objects", "classobject__visualizer_1_1Node.html#a4db9260841f85e37db81172b3ae0a8d6", null ],
+    [ "createPedestrianMarker", "classobject__visualizer_1_1Node.html#a117f0dc89f2261559203cd872e728ef7", null ],
     [ "external_objects_callback", "classobject__visualizer_1_1Node.html#afc59564f518fc710f07e26dc343e28b2", null ],
     [ "handle_on_configure", "classobject__visualizer_1_1Node.html#a47bdce39cc71549a9b236397138a78de", null ],
     [ "parameter_update_callback", "classobject__visualizer_1_1Node.html#a377f66a70c55be8c96dffe4181ad96f9", null ],

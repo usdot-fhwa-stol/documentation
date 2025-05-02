@@ -625,7 +625,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  340</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> sub_line : pcl-&gt;controlLine())</div>
 <div class="line"><span class="lineno">  341</span>    {</div>
 <div class="line"><span class="lineno">  342</span>      <span class="keywordtype">bool</span> shouldAdd = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  343</span>      </div>
+<div class="line"><span class="lineno">  343</span> </div>
 <div class="line"><span class="lineno">  344</span>      <span class="keywordflow">if</span> (left_bound.id() == sub_line.id() &amp;&amp; !foundLeft)</div>
 <div class="line"><span class="lineno">  345</span>      {</div>
 <div class="line"><span class="lineno">  346</span>        foundLeft = <span class="keyword">true</span>;</div>
@@ -643,7 +643,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  358</span>        <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.addRegulatoryElement(pcl);</div>
 <div class="line"><span class="lineno">  359</span>      }</div>
 <div class="line"><span class="lineno">  360</span>    }</div>
-<div class="line"><span class="lineno">  361</span>    </div>
+<div class="line"><span class="lineno">  361</span> </div>
 <div class="line"><span class="lineno">  362</span>  }</div>
 <div class="line"><span class="lineno">  363</span> </div>
 <div class="line"><span class="lineno">  364</span>  <span class="comment">// If no existing regulation was found for this lanelet&#39;s right or left bound then create a new one and add it to</span></div>
@@ -721,18 +721,18 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  484</span>  lanelet::Velocity max_speed;</div>
 <div class="line"><span class="lineno">  485</span>    <span class="keyword">auto</span> speed_limit = <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.regulatoryElementsAs&lt;DigitalSpeedLimit&gt;();</div>
 <div class="line"><span class="lineno">  486</span>     <span class="keywordflow">if</span>(config_limit &lt; 80_mph &amp;&amp; config_limit &gt; 0_mph)<span class="comment">//Accounting for the configured speed limit, input zero when not in use</span></div>
-<div class="line"><span class="lineno">  487</span>      {  </div>
+<div class="line"><span class="lineno">  487</span>      {</div>
 <div class="line"><span class="lineno">  488</span>        max_speed = config_limit;</div>
 <div class="line"><span class="lineno">  489</span>      }</div>
 <div class="line"><span class="lineno">  490</span>      <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  491</span>      {</div>
 <div class="line"><span class="lineno">  492</span>        max_speed = 80_mph;</div>
 <div class="line"><span class="lineno">  493</span>      }</div>
-<div class="line"><span class="lineno">  494</span>      </div>
+<div class="line"><span class="lineno">  494</span> </div>
 <div class="line"><span class="lineno">  495</span>    <span class="comment">// If the lanelet does not have a digital speed limit then add one with the maximum value of 80</span></div>
 <div class="line"><span class="lineno">  496</span>    std::vector&lt;std::string&gt; allowed_participants;</div>
 <div class="line"><span class="lineno">  497</span>     <span class="comment">//Maximum speed limit is 80</span></div>
-<div class="line"><span class="lineno">  498</span>   </div>
+<div class="line"><span class="lineno">  498</span> </div>
 <div class="line"><span class="lineno">  499</span> </div>
 <div class="line"><span class="lineno">  500</span>    <span class="keywordflow">if</span> (speed_limit.empty())<span class="comment">//If there is no assigned speed limit value</span></div>
 <div class="line"><span class="lineno">  501</span>    {</div>
@@ -755,7 +755,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  518</span> </div>
 <div class="line"><span class="lineno">  519</span>     }</div>
 <div class="line"><span class="lineno">  520</span>  }</div>
-<div class="line"><span class="lineno">  521</span>  <span class="keywordflow">else</span>  <span class="comment">//If the speed limit value already exists </span></div>
+<div class="line"><span class="lineno">  521</span>  <span class="keywordflow">else</span>  <span class="comment">//If the speed limit value already exists</span></div>
 <div class="line"><span class="lineno">  522</span>  {</div>
 <div class="line"><span class="lineno">  523</span>      <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; rules : default_traffic_rules)</div>
 <div class="line"><span class="lineno">  524</span>         {</div>
@@ -766,18 +766,18 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  529</span>        }</div>
 <div class="line"><span class="lineno">  530</span>    <span class="keywordflow">if</span>(speed_limit.back().get()-&gt;speed_limit_ &gt; max_speed)<span class="comment">//Check that speed limit value does not exceed the maximum value</span></div>
 <div class="line"><span class="lineno">  531</span>    {</div>
-<div class="line"><span class="lineno">  532</span>    </div>
+<div class="line"><span class="lineno">  532</span> </div>
 <div class="line"><span class="lineno">  533</span>      RCLCPP_DEBUG_STREAM( rclcpp::get_logger(<span class="stringliteral">&quot;lanelet::MapConformer&quot;</span>), <span class="stringliteral">&quot;Invalid speed limit value. Value reset to maximum speed limit.&quot;</span>);</div>
 <div class="line"><span class="lineno">  534</span>      <span class="keyword">auto</span> rar = std::make_shared&lt;DigitalSpeedLimit&gt;(DigitalSpeedLimit::buildData(lanelet::utils::getId(), max_speed, {<a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>},</div>
 <div class="line"><span class="lineno">  535</span>      {}, allowed_participants));</div>
 <div class="line"><span class="lineno">  536</span>      <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.removeRegulatoryElement(speed_limit.back());</div>
 <div class="line"><span class="lineno">  537</span>      <a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>.addRegulatoryElement(rar);</div>
 <div class="line"><span class="lineno">  538</span>      map-&gt;update(<a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>, rar);<span class="comment">//Add DigitalSpeedLimit data to the map</span></div>
-<div class="line"><span class="lineno">  539</span>      RCLCPP_INFO_STREAM( rclcpp::get_logger(<span class="stringliteral">&quot;lanelet::MapConformer&quot;</span>), <span class="stringliteral">&quot;Number of Regulatory Elements: &quot;</span>&lt;&lt; map-&gt;regulatoryElementLayer.size());</div>
+<div class="line"><span class="lineno">  539</span>      RCLCPP_DEBUG_STREAM( rclcpp::get_logger(<span class="stringliteral">&quot;lanelet::MapConformer&quot;</span>), <span class="stringliteral">&quot;Number of Regulatory Elements: &quot;</span>&lt;&lt; map-&gt;regulatoryElementLayer.size());</div>
 <div class="line"><span class="lineno">  540</span> </div>
 <div class="line"><span class="lineno">  541</span> </div>
 <div class="line"><span class="lineno">  542</span>    }</div>
-<div class="line"><span class="lineno">  543</span>    </div>
+<div class="line"><span class="lineno">  543</span> </div>
 <div class="line"><span class="lineno">  544</span>  }</div>
 <div class="line"><span class="lineno">  545</span>}</div>
 </div><!-- fragment -->
@@ -1266,7 +1266,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacelanelet.html">lanelet</a></li><li class="navelem"><a class="el" href="namespacelanelet_1_1MapConformer.html">MapConformer</a></li><li class="navelem"><a class="el" href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html">anonymous_namespace{MapConformer.cpp}</a></li>
-    <li class="footer">Generated on Thu May 1 2025 16:44:06 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri May 2 2025 13:46:06 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

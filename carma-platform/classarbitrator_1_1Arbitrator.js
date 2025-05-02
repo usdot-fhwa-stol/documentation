@@ -21,6 +21,7 @@ var classarbitrator_1_1Arbitrator =
     [ "nh_", "classarbitrator_1_1Arbitrator.html#a3dda7c66707812f583da5715f89a9647", null ],
     [ "planning_in_progress_", "classarbitrator_1_1Arbitrator.html#a0f8d5860c35f8a848f44b895560335be", null ],
     [ "planning_strategy_", "classarbitrator_1_1Arbitrator.html#ac62099fca7aef7bb1a4db4d65c48f6bf", null ],
+    [ "previous_guidance_state_", "classarbitrator_1_1Arbitrator.html#a1bed50aebc16c8387718d93aff3c92d7", null ],
     [ "sm_", "classarbitrator_1_1Arbitrator.html#afa8df447cf2131908b025c19f092ef41", null ],
     [ "tf2_buffer_", "classarbitrator_1_1Arbitrator.html#a4f280f42e58722907e29e4b066d4eeae", null ],
     [ "tf2_listener_", "classarbitrator_1_1Arbitrator.html#acaa9d790f9a27d4e7db83d8bb301b886", null ],

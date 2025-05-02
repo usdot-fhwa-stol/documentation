@@ -143,7 +143,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MapConformer_8cpp_source.html#l00550">550</a> of file <a class="el" href="MapConformer_8cpp_source.html">MapConformer.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  551</span>{</div>
-<div class="line"><span class="lineno">  552</span>  </div>
+<div class="line"><span class="lineno">  552</span> </div>
 <div class="line"><span class="lineno">  553</span>  <span class="keyword">auto</span> default_traffic_rules = <a class="code hl_function" href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#a01b13b2659da99328b90f3d9ef8a332a">getAllGermanTrafficRules</a>();  <span class="comment">// Use german traffic rules as default as they most closely</span></div>
 <div class="line"><span class="lineno">  554</span>                                                            <span class="comment">// match the generic traffic rules</span></div>
 <div class="line"><span class="lineno">  555</span>  <span class="comment">// Handle lanelets</span></div>
@@ -153,16 +153,17 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">  559</span>    <a class="code hl_function" href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#a977838b10c0e695c774107fd26c335f7">addInferredPassingControlLine</a>(<a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>, map);</div>
 <div class="line"><span class="lineno">  560</span>    <a class="code hl_function" href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#a4319f59405930feb81d5313eefde3a2c">addInferredDirectionOfTravel</a>(<a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>, map, default_traffic_rules);</div>
 <div class="line"><span class="lineno">  561</span>    <a class="code hl_function" href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#a76a04caafb69f81d7f16c58060b3644f">addValidSpeedLimit</a>(<a class="code hl_namespace" href="namespacelanelet.html">lanelet</a>, map, config_limit, default_traffic_rules);<span class="comment">// 0_mph can be changed with the config_limit</span></div>
-<div class="line"><span class="lineno">  562</span> </div>
-<div class="line"><span class="lineno">  563</span> </div>
-<div class="line"><span class="lineno">  564</span>  }</div>
-<div class="line"><span class="lineno">  565</span>  <span class="comment">// Handle areas</span></div>
-<div class="line"><span class="lineno">  566</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> area : map-&gt;areaLayer)</div>
-<div class="line"><span class="lineno">  567</span>  {</div>
-<div class="line"><span class="lineno">  568</span>    <a class="code hl_function" href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#ae80c94af49478480f8b4795333455307">addInferredAccessRule</a>(area, map, default_traffic_rules);</div>
-<div class="line"><span class="lineno">  569</span>    <a class="code hl_function" href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#a977838b10c0e695c774107fd26c335f7">addInferredPassingControlLine</a>(area, map);</div>
-<div class="line"><span class="lineno">  570</span>  }</div>
-<div class="line"><span class="lineno">  571</span>}</div>
+<div class="line"><span class="lineno">  562</span>  }</div>
+<div class="line"><span class="lineno">  563</span>  <span class="comment">// Handle areas</span></div>
+<div class="line"><span class="lineno">  564</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> area : map-&gt;areaLayer)</div>
+<div class="line"><span class="lineno">  565</span>  {</div>
+<div class="line"><span class="lineno">  566</span>    <a class="code hl_function" href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#ae80c94af49478480f8b4795333455307">addInferredAccessRule</a>(area, map, default_traffic_rules);</div>
+<div class="line"><span class="lineno">  567</span>    <a class="code hl_function" href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#a977838b10c0e695c774107fd26c335f7">addInferredPassingControlLine</a>(area, map);</div>
+<div class="line"><span class="lineno">  568</span>  }</div>
+<div class="line"><span class="lineno">  569</span>  RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;lanelet::MapConformer&quot;</span>),</div>
+<div class="line"><span class="lineno">  570</span>    <span class="stringliteral">&quot;Ensured compliance of map with &quot;</span></div>
+<div class="line"><span class="lineno">  571</span>    &lt;&lt; map-&gt;laneletLayer.size() &lt;&lt; <span class="stringliteral">&quot; lanelets and &quot;</span> &lt;&lt; map-&gt;areaLayer.size());</div>
+<div class="line"><span class="lineno">  572</span>}</div>
 <div class="ttc" id="anamespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03_html_a01b13b2659da99328b90f3d9ef8a332a"><div class="ttname"><a href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#a01b13b2659da99328b90f3d9ef8a332a">lanelet::MapConformer::anonymous_namespace{MapConformer.cpp}::getAllGermanTrafficRules</a></div><div class="ttdeci">std::vector&lt; lanelet::traffic_rules::TrafficRulesUPtr &gt; getAllGermanTrafficRules()</div><div class="ttdoc">Helper function to return the set of all german traffic rules which are currently implemented.</div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8cpp_source.html#l00066">MapConformer.cpp:66</a></div></div>
 <div class="ttc" id="anamespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03_html_a4319f59405930feb81d5313eefde3a2c"><div class="ttname"><a href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#a4319f59405930feb81d5313eefde3a2c">lanelet::MapConformer::anonymous_namespace{MapConformer.cpp}::addInferredDirectionOfTravel</a></div><div class="ttdeci">void addInferredDirectionOfTravel(Lanelet &amp;lanelet, lanelet::LaneletMapPtr map, const std::vector&lt; lanelet::traffic_rules::TrafficRulesUPtr &gt; &amp;default_traffic_rules)</div><div class="ttdoc">Generate DirectionOfTravel from the inferred regulations in the provided map and lanelet Only adds a ...</div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8cpp_source.html#l00452">MapConformer.cpp:452</a></div></div>
 <div class="ttc" id="anamespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03_html_a76a04caafb69f81d7f16c58060b3644f"><div class="ttname"><a href="namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#a76a04caafb69f81d7f16c58060b3644f">lanelet::MapConformer::anonymous_namespace{MapConformer.cpp}::addValidSpeedLimit</a></div><div class="ttdeci">void addValidSpeedLimit(Lanelet &amp;lanelet, lanelet::LaneletMapPtr map, lanelet::Velocity config_limit, const std::vector&lt; lanelet::traffic_rules::TrafficRulesUPtr &gt; &amp;default_traffic_rules)</div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8cpp_source.html#l00481">MapConformer.cpp:481</a></div></div>
@@ -212,7 +213,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacelanelet.html">lanelet</a></li><li class="navelem"><a class="el" href="namespacelanelet_1_1MapConformer.html">MapConformer</a></li>
-    <li class="footer">Generated on Thu May 1 2025 16:44:06 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri May 2 2025 13:46:06 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

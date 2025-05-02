@@ -638,11 +638,11 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="guidance__state__machine_8cpp_source.html#l00141">141</a> of file <a class="el" href="guidance__state__machine_8cpp_source.html">guidance_state_machine.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  142</span>    {</div>
-<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">if</span>(msg-&gt;event == carma_planning_msgs::msg::RouteEvent::ROUTE_DEPARTED ||</div>
-<div class="line"><span class="lineno">  144</span>           msg-&gt;event == carma_planning_msgs::msg::RouteEvent::ROUTE_ABORTED) {</div>
+<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">if</span>(msg-&gt;event == <a class="code hl_enumvalue" href="namespaceroute.html#a30b57ed010ef3b43d7040bfd43528f97ad201f1e109545a003b704d569ecf2f95">carma_planning_msgs::msg::RouteEvent::ROUTE_DEPARTED</a> ||</div>
+<div class="line"><span class="lineno">  144</span>           msg-&gt;event == <a class="code hl_enumvalue" href="namespaceroute.html#a30b57ed010ef3b43d7040bfd43528f97a72a01e14de65f0fad81b1538844549da">carma_planning_msgs::msg::RouteEvent::ROUTE_ABORTED</a>) {</div>
 <div class="line"><span class="lineno">  145</span>               <a class="code hl_function" href="classguidance_1_1GuidanceStateMachine.html#aaa75a81fec6e28dbbeb446af8355e8e0">onGuidanceSignal</a>(<a class="code hl_enumvalue" href="namespacelightbar__manager.html#aab380495443d8cbd852a707cf8478f49a4d78081400cb2311c7c6f971f49acc83">Signal::DISENGAGED</a>);</div>
 <div class="line"><span class="lineno">  146</span>           }</div>
-<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(msg-&gt;event == carma_planning_msgs::msg::RouteEvent::ROUTE_COMPLETED){</div>
+<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(msg-&gt;event == <a class="code hl_enumvalue" href="namespaceroute.html#a30b57ed010ef3b43d7040bfd43528f97a517d52a12d0e410791b804a753b17a16">carma_planning_msgs::msg::RouteEvent::ROUTE_COMPLETED</a>){</div>
 <div class="line"><span class="lineno">  148</span>            <span class="keywordflow">if</span> (fabs(<a class="code hl_variable" href="classguidance_1_1GuidanceStateMachine.html#ac91fc34489cd203048da88c83e6d568e">current_velocity_</a>) &lt; 0.001) { <span class="comment">// Check we have successfully stopped</span></div>
 <div class="line"><span class="lineno">  149</span>                <a class="code hl_function" href="classguidance_1_1GuidanceStateMachine.html#aaa75a81fec6e28dbbeb446af8355e8e0">onGuidanceSignal</a>(Signal::PARK); <span class="comment">// ENGAGED -&gt; ENTER_PARK this state restricts transitioning out of ENTER_PARK until vehicle is shifted to PARK</span></div>
 <div class="line"><span class="lineno">  150</span>            } <span class="keywordflow">else</span> { <span class="comment">// Vehicle was not able to stop transition to inactive</span></div>
@@ -652,8 +652,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  154</span>        }</div>
 <div class="line"><span class="lineno">  155</span>    }</div>
 <div class="ttc" id="aclassguidance_1_1GuidanceStateMachine_html_ac91fc34489cd203048da88c83e6d568e"><div class="ttname"><a href="classguidance_1_1GuidanceStateMachine.html#ac91fc34489cd203048da88c83e6d568e">guidance::GuidanceStateMachine::current_velocity_</a></div><div class="ttdeci">double current_velocity_</div><div class="ttdef"><b>Definition:</b> <a href="guidance__state__machine_8hpp_source.html#l00117">guidance_state_machine.hpp:117</a></div></div>
+<div class="ttc" id="anamespaceroute_html_a30b57ed010ef3b43d7040bfd43528f97a517d52a12d0e410791b804a753b17a16"><div class="ttname"><a href="namespaceroute.html#a30b57ed010ef3b43d7040bfd43528f97a517d52a12d0e410791b804a753b17a16">route::ROUTE_COMPLETED</a></div><div class="ttdeci">@ ROUTE_COMPLETED</div><div class="ttdef"><b>Definition:</b> <a href="route__state__worker_8hpp_source.html#l00039">route_state_worker.hpp:39</a></div></div>
+<div class="ttc" id="anamespaceroute_html_a30b57ed010ef3b43d7040bfd43528f97a72a01e14de65f0fad81b1538844549da"><div class="ttname"><a href="namespaceroute.html#a30b57ed010ef3b43d7040bfd43528f97a72a01e14de65f0fad81b1538844549da">route::ROUTE_ABORTED</a></div><div class="ttdeci">@ ROUTE_ABORTED</div><div class="ttdef"><b>Definition:</b> <a href="route__state__worker_8hpp_source.html#l00041">route_state_worker.hpp:41</a></div></div>
+<div class="ttc" id="anamespaceroute_html_a30b57ed010ef3b43d7040bfd43528f97ad201f1e109545a003b704d569ecf2f95"><div class="ttname"><a href="namespaceroute.html#a30b57ed010ef3b43d7040bfd43528f97ad201f1e109545a003b704d569ecf2f95">route::ROUTE_DEPARTED</a></div><div class="ttdeci">@ ROUTE_DEPARTED</div><div class="ttdef"><b>Definition:</b> <a href="route__state__worker_8hpp_source.html#l00040">route_state_worker.hpp:40</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="guidance__state__machine_8hpp_source.html#l00117">current_velocity_</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00033">lightbar_manager::DISENGAGED</a>, <a class="el" href="guidance__state__machine_8hpp_source.html#l00120">logger_</a>, and <a class="el" href="guidance__state__machine_8cpp_source.html#l00024">onGuidanceSignal()</a>.</p>
+<p class="reference">References <a class="el" href="guidance__state__machine_8hpp_source.html#l00117">current_velocity_</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00033">lightbar_manager::DISENGAGED</a>, <a class="el" href="guidance__state__machine_8hpp_source.html#l00120">logger_</a>, <a class="el" href="guidance__state__machine_8cpp_source.html#l00024">onGuidanceSignal()</a>, <a class="el" href="route__state__worker_8hpp_source.html#l00041">route::ROUTE_ABORTED</a>, <a class="el" href="route__state__worker_8hpp_source.html#l00039">route::ROUTE_COMPLETED</a>, and <a class="el" href="route__state__worker_8hpp_source.html#l00040">route::ROUTE_DEPARTED</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="guidance__worker_8cpp_source.html#l00133">guidance::GuidanceWorker::route_event_cb()</a>.</p>
 <div class="dynheader">
@@ -983,7 +986,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceguidance.html">guidance</a></li><li class="navelem"><a class="el" href="classguidance_1_1GuidanceStateMachine.html">GuidanceStateMachine</a></li>
-    <li class="footer">Generated on Thu May 1 2025 16:44:06 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri May 2 2025 13:46:06 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

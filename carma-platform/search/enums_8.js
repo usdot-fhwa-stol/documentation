@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['routeevent_0',['RouteEvent',['../classroute_1_1RouteStateWorker.html#a3a74333af16129c99ec1ee0258566414',1,'route::RouteStateWorker']]],
-  ['routestate_1',['RouteState',['../classroute_1_1RouteStateWorker.html#a0ffcb004f9f8e1da60cefa54f1845e95',1,'route::RouteStateWorker']]]
+  ['routeevent_0',['RouteEvent',['../namespaceroute.html#a30b57ed010ef3b43d7040bfd43528f97',1,'route']]],
+  ['routestate_1',['RouteState',['../namespaceroute.html#a3d43cdeeeec429a4043e488ded566299',1,'route']]]
 ];

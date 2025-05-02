@@ -32,5 +32,7 @@ var namespacearbitrator =
       [ "SHUTDOWN", "namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a71d9b235fbf749d1bbc5b783898a4211", null ]
     ] ],
     [ "generate_launch_description", "namespacearbitrator.html#ac1913fd40a8e632f18d1360a7b8f24c3", null ],
+    [ "guidance_state_to_string", "namespacearbitrator.html#aee91e82ef4c1c014180a46e92ea0c35a", null ],
+    [ "maneuver_type_to_string", "namespacearbitrator.html#aee6a66f92c1554f3d30b9a2362cfef86", null ],
     [ "operator<<", "namespacearbitrator.html#aa0854e246e70d1d9ccd16600ed2fad31", null ]
 ];

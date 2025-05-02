@@ -163,8 +163,14 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aee91e82ef4c1c014180a46e92ea0c35a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacearbitrator.html#aee91e82ef4c1c014180a46e92ea0c35a">guidance_state_to_string</a> (uint8_t state)</td></tr>
+<tr class="memdesc:aee91e82ef4c1c014180a46e92ea0c35a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert guidance state enum to string representation.  <a href="namespacearbitrator.html#aee91e82ef4c1c014180a46e92ea0c35a">More...</a><br /></td></tr>
+<tr class="separator:aee91e82ef4c1c014180a46e92ea0c35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0854e246e70d1d9ccd16600ed2fad31"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacearbitrator.html#aa0854e246e70d1d9ccd16600ed2fad31">operator&lt;&lt;</a> (std::ostream &amp;output, const std::map&lt; std::string, double &gt; &amp;map)</td></tr>
 <tr class="separator:aa0854e246e70d1d9ccd16600ed2fad31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee6a66f92c1554f3d30b9a2362cfef86"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacearbitrator.html#aee6a66f92c1554f3d30b9a2362cfef86">maneuver_type_to_string</a> (uint8_t type)</td></tr>
+<tr class="memdesc:aee6a66f92c1554f3d30b9a2362cfef86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert maneuver type enum to string representation.  <a href="namespacearbitrator.html#aee6a66f92c1554f3d30b9a2362cfef86">More...</a><br /></td></tr>
+<tr class="separator:aee6a66f92c1554f3d30b9a2362cfef86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1913fd40a8e632f18d1360a7b8f24c3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacearbitrator.html#ac1913fd40a8e632f18d1360a7b8f24c3">generate_launch_description</a> ()</td></tr>
 <tr class="separator:ac1913fd40a8e632f18d1360a7b8f24c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -303,6 +309,132 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="aee91e82ef4c1c014180a46e92ea0c35a" name="aee91e82ef4c1c014180a46e92ea0c35a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee91e82ef4c1c014180a46e92ea0c35a">&#9670;&nbsp;</a></span>guidance_state_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string arbitrator::guidance_state_to_string </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert guidance state enum to string representation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>The guidance state enum value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String representation of the guidance state </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="arbitrator_8hpp_source.html#l00045">45</a> of file <a class="el" href="arbitrator_8hpp_source.html">arbitrator.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>                                                             {</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">switch</span>(state) {</div>
+<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">case</span> carma_planning_msgs::msg::GuidanceState::STARTUP:</div>
+<div class="line"><span class="lineno">   48</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;STARTUP&quot;</span>;</div>
+<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">case</span> carma_planning_msgs::msg::GuidanceState::DRIVERS_READY:</div>
+<div class="line"><span class="lineno">   50</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;DRIVERS_READY&quot;</span>;</div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacelightbar__manager.html#aab380495443d8cbd852a707cf8478f49ae41477ac7921a06bf04483490b7578bd">carma_planning_msgs::msg::GuidanceState::ACTIVE</a>:</div>
+<div class="line"><span class="lineno">   52</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;ACTIVE&quot;</span>;</div>
+<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacelightbar__manager.html#aab380495443d8cbd852a707cf8478f49aa1efdd482908b789c53ae09fd2ec72fc">carma_planning_msgs::msg::GuidanceState::ENGAGED</a>:</div>
+<div class="line"><span class="lineno">   54</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;ENGAGED&quot;</span>;</div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceport__drayage__plugin.html#a41c70c83633d3190f7ed0809d0e19baca99e6631c99cf8fca9f7a33c085adef26">carma_planning_msgs::msg::GuidanceState::INACTIVE</a>:</div>
+<div class="line"><span class="lineno">   56</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;INACTIVE&quot;</span>;</div>
+<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacearbitrator.html#ac55e5abbc531a17975af03c6b0868a22a71d9b235fbf749d1bbc5b783898a4211">carma_planning_msgs::msg::GuidanceState::SHUTDOWN</a>:</div>
+<div class="line"><span class="lineno">   58</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;SHUTDOWN&quot;</span>;</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   60</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
+<div class="ttc" id="anamespacelightbar__manager_html_aab380495443d8cbd852a707cf8478f49aa1efdd482908b789c53ae09fd2ec72fc"><div class="ttname"><a href="namespacelightbar__manager.html#aab380495443d8cbd852a707cf8478f49aa1efdd482908b789c53ae09fd2ec72fc">lightbar_manager::ENGAGED</a></div><div class="ttdeci">@ ENGAGED</div><div class="ttdef"><b>Definition:</b> <a href="lightbar__manager__sm_8hpp_source.html#l00033">lightbar_manager_sm.hpp:33</a></div></div>
+<div class="ttc" id="anamespacelightbar__manager_html_aab380495443d8cbd852a707cf8478f49ae41477ac7921a06bf04483490b7578bd"><div class="ttname"><a href="namespacelightbar__manager.html#aab380495443d8cbd852a707cf8478f49ae41477ac7921a06bf04483490b7578bd">lightbar_manager::ACTIVE</a></div><div class="ttdeci">@ ACTIVE</div><div class="ttdef"><b>Definition:</b> <a href="lightbar__manager__sm_8hpp_source.html#l00033">lightbar_manager_sm.hpp:33</a></div></div>
+<div class="ttc" id="anamespaceport__drayage__plugin_html_a41c70c83633d3190f7ed0809d0e19baca99e6631c99cf8fca9f7a33c085adef26"><div class="ttname"><a href="namespaceport__drayage__plugin.html#a41c70c83633d3190f7ed0809d0e19baca99e6631c99cf8fca9f7a33c085adef26">port_drayage_plugin::INACTIVE</a></div><div class="ttdeci">@ INACTIVE</div><div class="ttdef"><b>Definition:</b> <a href="port__drayage__state__machine_8hpp_source.html#l00038">port_drayage_state_machine.hpp:38</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00033">lightbar_manager::ACTIVE</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00033">lightbar_manager::ENGAGED</a>, <a class="el" href="port__drayage__state__machine_8hpp_source.html#l00038">port_drayage_plugin::INACTIVE</a>, and <a class="el" href="arbitrator__state__machine_8hpp_source.html#l00036">SHUTDOWN</a>.</p>
+
+</div>
+</div>
+<a id="aee6a66f92c1554f3d30b9a2362cfef86" name="aee6a66f92c1554f3d30b9a2362cfef86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee6a66f92c1554f3d30b9a2362cfef86">&#9670;&nbsp;</a></span>maneuver_type_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string arbitrator::maneuver_type_to_string </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert maneuver type enum to string representation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The maneuver type enum value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String representation of the maneuver type </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="tree__planner_8hpp_source.html#l00039">39</a> of file <a class="el" href="tree__planner_8hpp_source.html">tree_planner.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>                                                           {</div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">switch</span>(type) {</div>
+<div class="line"><span class="lineno">   41</span>            <span class="keywordflow">case</span> carma_planning_msgs::msg::Maneuver::LANE_FOLLOWING:</div>
+<div class="line"><span class="lineno">   42</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;LANE_FOLLOWING&quot;</span>;</div>
+<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">case</span> carma_planning_msgs::msg::Maneuver::LANE_CHANGE:</div>
+<div class="line"><span class="lineno">   44</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;LANE_CHANGE&quot;</span>;</div>
+<div class="line"><span class="lineno">   45</span>            <span class="keywordflow">case</span> carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_STRAIGHT:</div>
+<div class="line"><span class="lineno">   46</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;INTERSECTION_TRANSIT_STRAIGHT&quot;</span>;</div>
+<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">case</span> carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_LEFT_TURN:</div>
+<div class="line"><span class="lineno">   48</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;INTERSECTION_TRANSIT_LEFT_TURN&quot;</span>;</div>
+<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">case</span> carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_RIGHT_TURN:</div>
+<div class="line"><span class="lineno">   50</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;INTERSECTION_TRANSIT_RIGHT_TURN&quot;</span>;</div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">case</span> carma_planning_msgs::msg::Maneuver::STOP_AND_WAIT:</div>
+<div class="line"><span class="lineno">   52</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;STOP_AND_WAIT&quot;</span>;</div>
+<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   54</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;UNKNOWN&quot;</span>;</div>
+<div class="line"><span class="lineno">   55</span>        }</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="tree__planner_8cpp_source.html#l00025">arbitrator::TreePlanner::generate_plan()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacearbitrator_aee6a66f92c1554f3d30b9a2362cfef86_icgraph.png" border="0" usemap="#anamespacearbitrator_aee6a66f92c1554f3d30b9a2362cfef86_icgraph" alt=""/></div>
+<map name="anamespacearbitrator_aee6a66f92c1554f3d30b9a2362cfef86_icgraph" id="anamespacearbitrator_aee6a66f92c1554f3d30b9a2362cfef86_icgraph">
+<area shape="rect" title="Convert maneuver type enum to string representation." alt="" coords="203,5,339,47"/>
+<area shape="rect" href="classarbitrator_1_1TreePlanner.html#a677bf180075bd1e55d0ad79fd56b8c27" title="Utilize the configured cost function, neighbor generator, and search strategy, to generate a plan by ..." alt="" coords="5,5,155,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="aa0854e246e70d1d9ccd16600ed2fad31" name="aa0854e246e70d1d9ccd16600ed2fad31"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa0854e246e70d1d9ccd16600ed2fad31">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
 
@@ -348,7 +480,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacearbitrator.html">arbitrator</a></li>
-    <li class="footer">Generated on Thu May 1 2025 16:44:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri May 2 2025 13:46:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -217,10 +217,10 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="capabilities__interface_8cpp_source.html#l00026">26</a> of file <a class="el" href="capabilities__interface_8cpp_source.html">capabilities_interface.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   27</span>    {</div>
 <div class="line"><span class="lineno">   28</span>        std::vector&lt;std::string&gt; <a class="code hl_variable" href="namespaceprocess__bag.html#afc7d568ed280f8ac9034d0038e1d8fce">topics</a> = {};</div>
-<div class="line"><span class="lineno">   29</span>        </div>
+<div class="line"><span class="lineno">   29</span> </div>
 <div class="line"><span class="lineno">   30</span>        <span class="keyword">auto</span> srv = std::make_shared&lt;carma_planning_msgs::srv::GetPluginApi::Request&gt;();</div>
 <div class="line"><span class="lineno">   31</span>        srv-&gt;capability = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">   32</span>        </div>
+<div class="line"><span class="lineno">   32</span> </div>
 <div class="line"><span class="lineno">   33</span>        <span class="keyword">auto</span> plan_response = <a class="code hl_variable" href="classarbitrator_1_1CapabilitiesInterface.html#a45881b40e8c87e89837dbfae37d44451">sc_s_</a>-&gt;async_send_request(srv);</div>
 <div class="line"><span class="lineno">   34</span> </div>
 <div class="line"><span class="lineno">   35</span>        <span class="keyword">auto</span> future_status = plan_response.wait_for(std::chrono::milliseconds(200));</div>
@@ -228,7 +228,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (query_string == <a class="code hl_variable" href="classarbitrator_1_1CapabilitiesInterface.html#a29bdc37a5f80b31a107e142f98bad910">STRATEGIC_PLAN_CAPABILITY</a> &amp;&amp; future_status == std::future_status::ready)</div>
 <div class="line"><span class="lineno">   38</span>        {</div>
 <div class="line"><span class="lineno">   39</span>            <a class="code hl_variable" href="namespaceprocess__bag.html#afc7d568ed280f8ac9034d0038e1d8fce">topics</a> = plan_response.get()-&gt;plan_service;</div>
-<div class="line"><span class="lineno">   40</span>            </div>
+<div class="line"><span class="lineno">   40</span> </div>
 <div class="line"><span class="lineno">   41</span>            <span class="comment">// Log the topics</span></div>
 <div class="line"><span class="lineno">   42</span>            std::ostringstream stream;</div>
 <div class="line"><span class="lineno">   43</span>            stream &lt;&lt; <span class="stringliteral">&quot;Received Topics: &quot;</span>;</div>
@@ -236,7 +236,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">   45</span>                stream &lt;&lt; topic &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
 <div class="line"><span class="lineno">   46</span>            }</div>
 <div class="line"><span class="lineno">   47</span>            stream &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   48</span>            RCLCPP_INFO_STREAM(<a class="code hl_variable" href="classarbitrator_1_1CapabilitiesInterface.html#a3fbdab950adb45a102abc751ccddfdcf">nh_</a>-&gt;get_logger(), stream.str().c_str());</div>
+<div class="line"><span class="lineno">   48</span>            RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classarbitrator_1_1CapabilitiesInterface.html#a3fbdab950adb45a102abc751ccddfdcf">nh_</a>-&gt;get_logger(), stream.str().c_str());</div>
 <div class="line"><span class="lineno">   49</span>        }</div>
 <div class="line"><span class="lineno">   50</span>        <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">   51</span>        {</div>
@@ -438,7 +438,7 @@ template&lt;typename MSrvReq , typename MSrvRes &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacearbitrator.html">arbitrator</a></li><li class="navelem"><a class="el" href="classarbitrator_1_1CapabilitiesInterface.html">CapabilitiesInterface</a></li>
-    <li class="footer">Generated on Thu May 1 2025 16:44:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri May 2 2025 13:46:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

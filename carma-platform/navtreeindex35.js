@@ -1,5 +1,7 @@
 var NAVTREEINDEX35 =
 {
+"stop__and__wait__plugin_8cpp.html#a8212f1302ee6736745dc97bb5b3caaf5":[57,0,42,2,1,0],
+"stop__and__wait__plugin_8cpp_source.html":[57,0,42,2,1],
 "stop__and__wait__plugin_8hpp.html":[57,0,42,0,2],
 "stop__and__wait__plugin_8hpp_source.html":[57,0,42,0,2],
 "stop__and__wait__plugin__launch_8py.html":[57,0,42,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX35 =
 "structarbitrator_1_1VehicleState.html#a7750c03074ee01efa9a61190aa63dc85":[55,0,3,15,0],
 "structarbitrator_1_1VehicleState.html#a8448983fcaf5ebdd4faf4c1c55d688c6":[55,0,3,15,2],
 "structarbitrator_1_1VehicleState.html#a8448983fcaf5ebdd4faf4c1c55d688c6":[56,0,2,15,2],
-"structarbitrator_1_1VehicleState.html#a88ba572a307c86a871e06113063b6039":[55,0,3,15,4],
-"structarbitrator_1_1VehicleState.html#a88ba572a307c86a871e06113063b6039":[56,0,2,15,4],
-"structarbitrator_1_1VehicleState.html#aa89f91c64fa25163a42921194f9c277f":[55,0,3,15,1]
+"structarbitrator_1_1VehicleState.html#a88ba572a307c86a871e06113063b6039":[55,0,3,15,4]
 };

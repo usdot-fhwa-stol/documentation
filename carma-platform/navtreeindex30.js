@@ -1,5 +1,7 @@
 var NAVTREEINDEX30 =
 {
+"namespacecarma__cooperative__perception.html#a067dbaa6dc9efb21503e30ac03908c7d":[55,0,12,32],
+"namespacecarma__cooperative__perception.html#a0744e4e2672612a387326dbef5e5b632":[55,0,12,57],
 "namespacecarma__cooperative__perception.html#a13db834a01ebe6cd88589a6c69f86934":[55,0,12,59],
 "namespacecarma__cooperative__perception.html#a15cb67e02f6f82074e6766be6bc0ba4a":[55,0,12,53],
 "namespacecarma__cooperative__perception.html#a19c676dcb9a973ab02f86acfa150c341":[55,0,12,69],
@@ -247,7 +249,5 @@ var NAVTREEINDEX30 =
 "namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#ac65728eb2e5688331a88d9dd20ac75a3":[55,0,35,0,0,11],
 "namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#ae5cd14f5d9ebf27510d794f22e61e887":[55,0,35,0,0,10],
 "namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#ae80c94af49478480f8b4795333455307":[55,0,35,0,0,1],
-"namespacelci__strategic__plugin.html":[55,0,36],
-"namespacelci__strategic__plugin.html#a1e0201b2cf65a27f7075fd60ce35e2e9":[55,0,36,8],
-"namespacelci__strategic__plugin.html#a1e0201b2cf65a27f7075fd60ce35e2e9a92b09c7c48c520c3c55e497875da437c":[55,0,36,8,1]
+"namespacelci__strategic__plugin.html":[55,0,36]
 };

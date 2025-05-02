@@ -1,5 +1,7 @@
 var NAVTREEINDEX26 =
 {
+"functions_func_a.html":[56,3,1,1],
+"functions_func_b.html":[56,3,1,2],
 "functions_func_c.html":[56,3,1,3],
 "functions_func_d.html":[56,3,1,4],
 "functions_func_e.html":[56,3,1,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX26 =
 "intersection__transit__maneuvering__node_8hpp.html":[57,0,18,0,0,1],
 "intersection__transit__maneuvering__node_8hpp_source.html":[57,0,18,0,0,1],
 "itm__service_8cpp.html":[57,0,18,2,1],
-"itm__service_8cpp_source.html":[57,0,18,2,1],
-"itm__service_8hpp.html":[57,0,18,0,0,2],
-"itm__service_8hpp_source.html":[57,0,18,0,0,2]
+"itm__service_8cpp_source.html":[57,0,18,2,1]
 };

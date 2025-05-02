@@ -2,6 +2,7 @@ var classbsm__generator_1_1BSMGeneratorWorker =
 [
     [ "BSMGeneratorWorker", "classbsm__generator_1_1BSMGeneratorWorker.html#abd692145a36ca05925438c0c30dd1ae7", null ],
     [ "getBrakeAppliedStatus", "classbsm__generator_1_1BSMGeneratorWorker.html#ad15f477a1a7d10a3d5cabfb0f0a22a04", null ],
+    [ "getHeading", "classbsm__generator_1_1BSMGeneratorWorker.html#a0e8a9244944ef16046246f4dec9db3d2", null ],
     [ "getHeadingInRange", "classbsm__generator_1_1BSMGeneratorWorker.html#aef76258cae4b1e032ebb5518334637c2", null ],
     [ "getLongAccelInRange", "classbsm__generator_1_1BSMGeneratorWorker.html#abecb625b9ba2982f413f916d27132720", null ],
     [ "getMsgId", "classbsm__generator_1_1BSMGeneratorWorker.html#acbe27f20f2ea05637eccf04ebe69fef7", null ],

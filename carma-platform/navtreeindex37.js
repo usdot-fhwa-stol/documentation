@@ -1,5 +1,7 @@
 var NAVTREEINDEX37 =
 {
+"structcarma__wm_1_1test_1_1MapOptions.html#a816db21005734b8b3ceee1e6f9a8d209":[56,0,9,1,0,6],
+"structcarma__wm_1_1test_1_1MapOptions.html#a986ebde9babc5af3428825e4336aebc4":[56,0,9,1,0,2],
 "structcarma__wm_1_1test_1_1MapOptions.html#a986ebde9babc5af3428825e4336aebc4":[55,0,15,3,0,2],
 "structcarma__wm_1_1test_1_1MapOptions.html#a9b5829377f76caae88bf80d43c1bc188":[55,0,15,3,0,1],
 "structcarma__wm_1_1test_1_1MapOptions.html#a9b5829377f76caae88bf80d43c1bc188":[56,0,9,1,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX37 =
 "structlci__strategic__plugin_1_1TrajectoryParams.html#a9fd83b1e6a6b53bfcfe62115fdc32fd2":[56,0,18,4,9],
 "structlci__strategic__plugin_1_1TrajectoryParams.html#aa08f89432481ff9fa6cc700e42c4e4e0":[55,0,36,4,11],
 "structlci__strategic__plugin_1_1TrajectoryParams.html#aa08f89432481ff9fa6cc700e42c4e4e0":[56,0,18,4,11],
-"structlci__strategic__plugin_1_1TrajectoryParams.html#aa7d1c90a2655d59d69186c5d52ac7708":[56,0,18,4,15],
-"structlci__strategic__plugin_1_1TrajectoryParams.html#aa7d1c90a2655d59d69186c5d52ac7708":[55,0,36,4,15],
-"structlci__strategic__plugin_1_1TrajectoryParams.html#aafbadd77d407a1b2cd351105eb9f564e":[56,0,18,4,18]
+"structlci__strategic__plugin_1_1TrajectoryParams.html#aa7d1c90a2655d59d69186c5d52ac7708":[56,0,18,4,15]
 };

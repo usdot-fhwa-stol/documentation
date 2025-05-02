@@ -1,5 +1,7 @@
 var NAVTREEINDEX41 =
 {
+"structtrajectory__executor_1_1Config.html#a9a98973706526c030b44ec3e2a6da82a":[56,0,48,0,3],
+"structtrajectory__executor_1_1Config.html#adf4e4461f7c701f583faeb65fa2d727b":[55,0,94,0,1],
 "structtrajectory__executor_1_1Config.html#adf4e4461f7c701f583faeb65fa2d727b":[56,0,48,0,1],
 "structtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperConfig.html":[55,0,96,0],
 "structtrajectory__follower__wrapper_1_1TrajectoryFollowerWrapperConfig.html":[56,0,49,0],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX34 =
 {
+"process__bag_8py.html#a8b2fb7235114624a12292182dfcc8d07":[57,0,13,5,10],
+"process__bag_8py.html#a8c90680a4e6dca2a2fb3fb38d84fa2e7":[57,0,13,5,16],
 "process__bag_8py.html#a8d9835ca25744a6d6e1bfbc0b6873d3d":[57,0,13,5,6],
 "process__bag_8py.html#aaf4f9c28f15adaccb42c13fc562534f9":[57,0,13,5,8],
 "process__bag_8py.html#ab837520a2d12db910f88bf63e7370a24":[57,0,13,5,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX34 =
 "stop__and__wait__plugin_2src_2main_8cpp.html":[57,0,42,2,0],
 "stop__and__wait__plugin_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[57,0,42,2,0,0],
 "stop__and__wait__plugin_2src_2main_8cpp_source.html":[57,0,42,2,0],
-"stop__and__wait__plugin_8cpp.html":[57,0,42,2,1],
-"stop__and__wait__plugin_8cpp.html#a8212f1302ee6736745dc97bb5b3caaf5":[57,0,42,2,1,0],
-"stop__and__wait__plugin_8cpp_source.html":[57,0,42,2,1]
+"stop__and__wait__plugin_8cpp.html":[57,0,42,2,1]
 };

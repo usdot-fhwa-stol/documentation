@@ -1,5 +1,7 @@
 var NAVTREEINDEX31 =
 {
+"namespacelci__strategic__plugin.html#a1e0201b2cf65a27f7075fd60ce35e2e9":[55,0,36,8],
+"namespacelci__strategic__plugin.html#a1e0201b2cf65a27f7075fd60ce35e2e9a92b09c7c48c520c3c55e497875da437c":[55,0,36,8,1],
 "namespacelci__strategic__plugin.html#a1e0201b2cf65a27f7075fd60ce35e2e9a945d5e233cf7d6240f6b783b36a374ff":[55,0,36,8,2],
 "namespacelci__strategic__plugin.html#a1e0201b2cf65a27f7075fd60ce35e2e9ab6bd418b8879851e86bcaccd553b74db":[55,0,36,8,0],
 "namespacelci__strategic__plugin.html#a30ec591be59af7f7b98c679e8ecfaa08":[55,0,36,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX31 =
 "namespaceplan__delegator_1_1anonymous__namespace_02plan__delegator_8cpp_03.html#a51da4d893313158996c291b4a1a5e375":[55,0,56,0,0],
 "namespaceplan__delegator_1_1anonymous__namespace_02plan__delegator_8cpp_03.html#a67b5db77a092a017168b11736367126b":[55,0,56,0,2],
 "namespaceplan__delegator_1_1anonymous__namespace_02plan__delegator_8cpp_03.html#a805972a3e27fe2fa065d7dab85fb14da":[55,0,56,0,1],
-"namespaceplan__delegator_1_1anonymous__namespace_02plan__delegator_8cpp_03.html#af9151c6e30ac71f3830fb105406bacd8":[55,0,56,0,3],
-"namespaceplatoon__control.html":[55,0,57],
-"namespaceplatoon__control.html#aa1236e257737a743b9f4977fb878d6f6":[55,0,57,0]
+"namespaceplan__delegator_1_1anonymous__namespace_02plan__delegator_8cpp_03.html#af9151c6e30ac71f3830fb105406bacd8":[55,0,56,0,3]
 };

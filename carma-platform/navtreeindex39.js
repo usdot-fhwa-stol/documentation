@@ -1,5 +1,7 @@
 var NAVTREEINDEX39 =
 {
+"structplatooning__control_1_1PlatoonLeaderInfo.html#a5cf72dc1316979cf9f6867b7af5d2b35":[56,0,30,4,7],
+"structplatooning__control_1_1PlatoonLeaderInfo.html#a8e3579ece4344b545427cf909f9cb02d":[55,0,58,4,3],
 "structplatooning__control_1_1PlatoonLeaderInfo.html#a8e3579ece4344b545427cf909f9cb02d":[56,0,30,4,3],
 "structplatooning__control_1_1PlatoonLeaderInfo.html#a9d2b7dc2060a2507c4c92dbe8b740f52":[55,0,58,4,4],
 "structplatooning__control_1_1PlatoonLeaderInfo.html#a9d2b7dc2060a2507c4c92dbe8b740f52":[56,0,30,4,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX39 =
 "structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html#a3f52036541b5802fe341acbb9266dfea":[55,0,70,0,11],
 "structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html#a48b86bc0555d4ce1dccb61d38cbe18e0":[56,0,36,0,8],
 "structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html#a48b86bc0555d4ce1dccb61d38cbe18e0":[55,0,70,0,8],
-"structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html#a49f4af6c6f05906c4d75a636ad2875a3":[56,0,36,0,12],
-"structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html#a49f4af6c6f05906c4d75a636ad2875a3":[55,0,70,0,12],
-"structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html#a5048f509be266c19a7cd21ad1b9d0dfa":[56,0,36,0,2]
+"structpure__pursuit__wrapper_1_1PurePursuitWrapperConfig.html#a49f4af6c6f05906c4d75a636ad2875a3":[56,0,36,0,12]
 };

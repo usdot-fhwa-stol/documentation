@@ -1,5 +1,7 @@
 var NAVTREEINDEX36 =
 {
+"structarbitrator_1_1VehicleState.html#a88ba572a307c86a871e06113063b6039":[56,0,2,15,4],
+"structarbitrator_1_1VehicleState.html#aa89f91c64fa25163a42921194f9c277f":[55,0,3,15,1],
 "structarbitrator_1_1VehicleState.html#aa89f91c64fa25163a42921194f9c277f":[56,0,2,15,1],
 "structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html":[55,0,5,2,0],
 "structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html":[56,0,3,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX36 =
 "structcarma__wm_1_1test_1_1MapOptions.html#a56023dab65434d5e5bb26f0552488290":[56,0,9,1,0,7],
 "structcarma__wm_1_1test_1_1MapOptions.html#a7d9480e4dc456b7d90bc690218c8c689":[55,0,15,3,0,5],
 "structcarma__wm_1_1test_1_1MapOptions.html#a7d9480e4dc456b7d90bc690218c8c689":[56,0,9,1,0,5],
-"structcarma__wm_1_1test_1_1MapOptions.html#a816db21005734b8b3ceee1e6f9a8d209":[55,0,15,3,0,6],
-"structcarma__wm_1_1test_1_1MapOptions.html#a816db21005734b8b3ceee1e6f9a8d209":[56,0,9,1,0,6],
-"structcarma__wm_1_1test_1_1MapOptions.html#a986ebde9babc5af3428825e4336aebc4":[56,0,9,1,0,2]
+"structcarma__wm_1_1test_1_1MapOptions.html#a816db21005734b8b3ceee1e6f9a8d209":[55,0,15,3,0,6]
 };

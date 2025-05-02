@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"namespaceplatoon__control.html":[55,0,57],
+"namespaceplatoon__control.html#aa1236e257737a743b9f4977fb878d6f6":[55,0,57,0],
 "namespaceplatooning__control.html":[55,0,58],
 "namespaceplatooning__strategic__ihp.html":[55,0,59],
 "namespaceplatooning__strategic__ihp.html#a47f203a763213587a84a6fa8a5bf1c3e":[55,0,59,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "namespaceunits.html#a30f1468aa12460e035c86bf6eef7a871":[55,0,102,6],
 "namespaceunits.html#a341883d4fecaa52d2ee6d3e043851014":[55,0,102,7],
 "namespaceunits.html#a35984671425a5d2c124e510acb09d4f9":[55,0,102,8],
-"namespaceunits.html#a3982ea1e3f0c9cd83e3fe31d95aa2c91":[55,0,102,9],
-"namespaceunits.html#a4a29524c104d4c62ca6ad389a744f22d":[55,0,102,1],
-"namespaceunits.html#a50033eb5f505deb3e3e3505bbf4bf455":[55,0,102,3]
+"namespaceunits.html#a3982ea1e3f0c9cd83e3fe31d95aa2c91":[55,0,102,9]
 };

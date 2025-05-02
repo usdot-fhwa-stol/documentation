@@ -131,6 +131,6 @@ var searchData=
   ['cv_5fx_5faccel_5fnoise_5f_128',['cv_x_accel_noise_',['../classmotion__computation_1_1MotionComputationWorker.html#ad8abb22138f9974cb82eeabfbcd5bb07',1,'motion_computation::MotionComputationWorker']]],
   ['cv_5fy_5faccel_5fnoise_129',['cv_y_accel_noise',['../structmotion__computation_1_1Config.html#a8d277ce96f93a16c77913103a452faca',1,'motion_computation::Config']]],
   ['cv_5fy_5faccel_5fnoise_5f_130',['cv_y_accel_noise_',['../classmotion__computation_1_1MotionComputationWorker.html#a4dbb52fc92b8345ec6d62108c73ca299',1,'motion_computation::MotionComputationWorker']]],
-  ['cx_131',['cx',['../namespaceosm__transform.html#a17ce0aa26a0bf88a0aab910863f69a85',1,'osm_transform']]],
-  ['cy_132',['cy',['../namespaceosm__transform.html#acd90a7fe132fd0c7bcdd7a2265d8add6',1,'osm_transform']]]
+  ['cx_5fold_131',['cx_old',['../namespaceosm__transform.html#ad44038f95754564f20987fef5506d4b7',1,'osm_transform']]],
+  ['cy_5fold_132',['cy_old',['../namespaceosm__transform.html#a2e665d015a532ca35eb2f1b89e1e6721',1,'osm_transform']]]
 ];

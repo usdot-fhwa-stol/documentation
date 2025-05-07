@@ -38,7 +38,7 @@ var searchData=
   ['heading_5fsub_5f_35',['heading_sub_',['../classbsm__generator_1_1BSMGenerator.html#a4565e20bbf8a21a59785bb7fd754e608',1,'bsm_generator::BSMGenerator']]],
   ['heading_5fto_5fenu_5fyaw_36',['heading_to_enu_yaw',['../namespacecarma__cooperative__perception.html#aa0ac6f02134ae7a4a1909c51c4ba6d2e',1,'carma_cooperative_perception']]],
   ['headingcallback_37',['headingCallback',['../classbsm__generator_1_1BSMGenerator.html#a71e465312754a33d2a3514b7b91e2de1',1,'bsm_generator::BSMGenerator']]],
-  ['help_38',['help',['../namespaceosm__transform.html#a9257d279fc554b1f4b37268a8ef8d4b6',1,'osm_transform']]],
+  ['help_38',['help',['../namespacecreate__two__lane__map.html#aa98d16a4265947b42cccba55417e67e5',1,'create_two_lane_map.help()'],['../namespaceosm__transform.html#a9257d279fc554b1f4b37268a8ef8d4b6',1,'osm_transform.help()']]],
   ['helper_2ecpp_39',['helper.cpp',['../helper_8cpp.html',1,'']]],
   ['helper_5ffunctions_2ecpp_40',['helper_functions.cpp',['../helper__functions_8cpp.html',1,'']]],
   ['helper_5ffunctions_2ehpp_41',['helper_functions.hpp',['../helper__functions_8hpp.html',1,'']]],

@@ -2,6 +2,7 @@ var classcarma__cooperative__perception_1_1Month =
 [
     [ "Month", "classcarma__cooperative__perception_1_1Month.html#a6a4bda37181056eded253ff9f1cdbdd4", null ],
     [ "Month", "classcarma__cooperative__perception_1_1Month.html#afad268f86eaeda622ab05a221f940f6f", null ],
+    [ "get_value", "classcarma__cooperative__perception_1_1Month.html#af6479c3b75581babafa19b71d96364c5", null ],
     [ "ok", "classcarma__cooperative__perception_1_1Month.html#ad4ce854d5e2761024fe34544a75ebecd", null ],
     [ "operator unsigned", "classcarma__cooperative__perception_1_1Month.html#a77c1cdcafdd3d7f912ef1e41831470c5", null ],
     [ "operator++", "classcarma__cooperative__perception_1_1Month.html#a42710ddcc2db731cc455f601c3dd0eb5", null ],

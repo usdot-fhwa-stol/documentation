@@ -2,6 +2,7 @@ var classcarma__cooperative__perception_1_1MultipleObjectTrackerNode =
 [
     [ "MultipleObjectTrackerNode", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a031c2bba273373d9b7b7bc47b4c4d377", null ],
     [ "execute_pipeline", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a25d32adfecd223998cc98d99488aa532", null ],
+    [ "get_logger", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#ac20777b4190cb43fec24e5cf8fc1824a", null ],
     [ "handle_on_activate", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a4d9d931a84b9f67e2e4ed86f04369e44", null ],
     [ "handle_on_cleanup", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a15da32cc742eb606e05bea4623c9213e", null ],
     [ "handle_on_configure", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a1c77c58bdbbfe1ba4d075c7fc0e5e2f4", null ],

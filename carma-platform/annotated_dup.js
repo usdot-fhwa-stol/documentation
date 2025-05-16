@@ -68,6 +68,7 @@ var annotated_dup =
       [ "MultipleObjectTrackerNode", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html", "classcarma__cooperative__perception_1_1MultipleObjectTrackerNode" ],
       [ "Position3D", "structcarma__cooperative__perception_1_1Position3D.html", "structcarma__cooperative__perception_1_1Position3D" ],
       [ "PositionOffsetXYZ", "structcarma__cooperative__perception_1_1PositionOffsetXYZ.html", "structcarma__cooperative__perception_1_1PositionOffsetXYZ" ],
+      [ "SdsmToDetectionListConfig", "classcarma__cooperative__perception_1_1SdsmToDetectionListConfig.html", "classcarma__cooperative__perception_1_1SdsmToDetectionListConfig" ],
       [ "SdsmToDetectionListNode", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode.html", "classcarma__cooperative__perception_1_1SdsmToDetectionListNode" ],
       [ "SemanticDistance2dScore", "structcarma__cooperative__perception_1_1SemanticDistance2dScore.html", "structcarma__cooperative__perception_1_1SemanticDistance2dScore" ],
       [ "Speed", "structcarma__cooperative__perception_1_1Speed.html", "structcarma__cooperative__perception_1_1Speed" ],

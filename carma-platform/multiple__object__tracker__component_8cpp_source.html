@@ -345,7 +345,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  detection_list_sub_ = create_subscription&lt;</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    carma_cooperative_perception_interfaces::msg::DetectionList&gt;(</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="stringliteral">&quot;input/detection_list&quot;</span>, 1,</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="stringliteral">&quot;input/detection_list&quot;</span>, 100,</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    [<span class="keyword">this</span>](<span class="keyword">const</span> carma_cooperative_perception_interfaces::msg::DetectionList::SharedPtr msg_ptr) {</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>      <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> current_state{this-&gt;get_current_state().label()}; current_state == <span class="stringliteral">&quot;active&quot;</span>) {</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        this-&gt;store_new_detections(*msg_ptr);</div>
@@ -370,7 +370,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>            result.successful = false;</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            result.reason = <span class="stringliteral">&quot;parameter is read-only while node is in &#39;Active&#39; state&quot;</span>;</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            RCLCPP_ERROR(</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            RCLCPP_DEBUG(</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>              get_logger(),</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>              (<span class="stringliteral">&quot;Cannot change parameter &#39;execution_frequency_hz&#39;: &quot;</span> + result.reason).c_str());</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
@@ -659,120 +659,144 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span> </div>
 <div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>    <span class="comment">// This clustering distance is an arbitrarily-chosen heuristic. It is working well for our</span></div>
 <div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>    <span class="comment">// current purposes, but there&#39;s no reason it couldn&#39;t be restricted or loosened.</span></div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    <span class="keyword">const</span> <span class="keyword">auto</span> clusters{mot::cluster_detections(detections_, 0.75)};</div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; cluster : clusters) {</div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>      <span class="keyword">const</span> <span class="keyword">auto</span> detection{std::cbegin(cluster.get_detections())-&gt;second};</div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>      <span class="keyword">const</span> <span class="keyword">auto</span> uuid_str{mot::get_uuid(detection).value()};</div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>      <span class="comment">// CARLA uses three-digit actor identifiers. We want to UUID scheme to be</span></div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>      <span class="comment">// &lt;track_number&gt;-&lt;carla_actor_id&gt; for easier visual analysis by users.</span></div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>      <span class="keyword">const</span> mot::Uuid new_uuid{</div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>        <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(lifetime_generated_track_count_++) +</div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>        uuid_str.substr(std::size(uuid_str) - 4, 4)};</div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>      track_manager_.add_tentative_track(</div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>        std::visit(make_track_visitor, detection, std::variant&lt;mot::Uuid&gt;(new_uuid)));</div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>    }</div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span> </div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>    track_list_pub_-&gt;publish(carma_cooperative_perception_interfaces::msg::TrackList{});</div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span> </div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>    detections_.clear();</div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>    uuid_index_map_.clear();</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>  }</div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span> </div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>  <span class="keyword">const</span> units::time::second_t current_time{this-&gt;now().seconds()};</div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span> </div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>  <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a15cb67e02f6f82074e6766be6bc0ba4a">temporally_align_detections</a>(detections_, current_time);</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>      get_logger(), <span class="stringliteral">&quot;Detection size before clustering: &quot;</span> &lt;&lt; detections_.size());</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    <span class="keyword">const</span> <span class="keyword">auto</span> clusters{mot::cluster_detections(detections_, 0.75)};</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; cluster : clusters) {</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>      <span class="keyword">const</span> <span class="keyword">auto</span> detection{std::cbegin(cluster.get_detections())-&gt;second};</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>      <span class="keyword">const</span> <span class="keyword">auto</span> uuid_str{mot::get_uuid(detection).value()};</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>      <span class="comment">// CARLA uses three-digit actor identifiers. We want to UUID scheme to be</span></div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>      <span class="comment">// &lt;track_number&gt;-&lt;carla_actor_id&gt; for easier visual analysis by users.</span></div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>      <span class="keyword">const</span> mot::Uuid new_uuid{</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>        <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(lifetime_generated_track_count_++) +</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>        uuid_str.substr(std::size(uuid_str) - 4, 4)};</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>      track_manager_.add_tentative_track(</div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>        std::visit(make_track_visitor, detection, std::variant&lt;mot::Uuid&gt;(new_uuid)));</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>    }</div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>    RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>      get_logger(), <span class="stringliteral">&quot;Track size after detection clustering: &quot;</span></div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>      &lt;&lt; track_manager_.get_all_tracks().size());</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>    track_list_pub_-&gt;publish(carma_cooperative_perception_interfaces::msg::TrackList{});</div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span> </div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>    detections_.clear();</div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    uuid_index_map_.clear();</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>  }</div>
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span> </div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>  <span class="keyword">const</span> <span class="keyword">auto</span> predicted_tracks{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a669575db946436c8a91bcbbc79c6a6b4">predict_track_states</a>(track_manager_.get_all_tracks(), current_time)};</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>  <span class="keyword">auto</span> scores{</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    mot::score_tracks_and_detections(predicted_tracks, detections_, <a class="code hl_struct" href="structcarma__cooperative__perception_1_1SemanticDistance2dScore.html">SemanticDistance2dScore</a>{})};</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>  <span class="keyword">const</span> units::time::second_t current_time{this-&gt;now().seconds()};</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>  RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    get_logger(), <span class="stringliteral">&quot;Starting new cycle, detection size: &quot;</span> &lt;&lt; detections_.size());</div>
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span> </div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>  <span class="comment">// This pruning distance is an arbitrarily-chosen heuristic. It is working well for our</span></div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>  <span class="comment">// current purposes, but there&#39;s no reason it couldn&#39;t be restricted or loosened.</span></div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>  mot::prune_track_and_detection_scores_if(scores, [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp; score) { <span class="keywordflow">return</span> score &gt; 1.0; });</div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span> </div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>  <span class="keyword">const</span> <span class="keyword">auto</span> associations{</div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    mot::associate_detections_to_tracks(scores, mot::gnn_association_visitor)};</div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span> </div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>  track_manager_.update_track_lists(associations);</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span> </div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>  std::unordered_map&lt;mot::Uuid, Detection&gt; detection_map;</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; detection : detections_) {</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    detection_map[mot::get_uuid(detection)] = detection;</div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>  }</div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span> </div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>  <span class="keyword">const</span> mot::HasAssociation has_association{associations};</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; track : track_manager_.get_all_tracks()) {</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>    <span class="keywordflow">if</span> (has_association(track)) {</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>      <span class="keyword">const</span> <span class="keyword">auto</span> detection_uuids{associations.at(get_uuid(track))};</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>      <span class="keyword">const</span> <span class="keyword">auto</span> first_detection{detection_map[detection_uuids.at(0)]};</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>      <span class="keyword">const</span> <span class="keyword">auto</span> fused_track{</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>        std::visit(mot::covariance_intersection_visitor, track, first_detection)};</div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>      track_manager_.update_track(mot::get_uuid(track), fused_track);</div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>    }</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>  }</div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span> </div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>  <span class="comment">// Unassociated detections don&#39;t influence the tracking pipeline, so we can add</span></div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>  <span class="comment">// them to the tracker at the end.</span></div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>  std::vector&lt;Detection&gt; unassociated_detections;</div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; [uuid, detection] : detection_map) {</div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>    <span class="keywordflow">if</span> (!has_association(detection)) {</div>
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>      unassociated_detections.push_back(detection);</div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>    }</div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>  }</div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span> </div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>  <span class="comment">// We want to remove unassociated tracks that are close enough to existing tracks</span></div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>  <span class="comment">// to avoid creating duplicates. Duplicate tracks will cause association inconsistencies</span></div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>  <span class="comment">// (flip flopping associations between the two tracks).</span></div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>  <span class="keyword">auto</span> remove_start{std::remove_if(</div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>    std::begin(unassociated_detections), std::end(unassociated_detections),</div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    [&amp;scores](<span class="keyword">const</span> <span class="keyword">auto</span> &amp; detection) {</div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>      <span class="keyword">const</span> <span class="keyword">auto</span> uuid{mot::get_uuid(detection)};</div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>      <span class="keyword">auto</span> min_score{std::numeric_limits&lt;float&gt;::infinity()};</div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; [uuid_pair, score] : scores) {</div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>        <span class="keywordflow">if</span> (uuid_pair.second == uuid) {</div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>          min_score = std::min(min_score, score);</div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>        }</div>
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>      }</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span> </div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>      <span class="comment">// This distance is an arbitrarily-chosen heuristic. It is working well for our</span></div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>      <span class="comment">// current purposes, but there&#39;s no reason it couldn&#39;t be restricted or loosened.</span></div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>      <span class="keywordflow">return</span> min_score &lt; 1.0;</div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>    })};</div>
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span> </div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>  unassociated_detections.erase(remove_start, std::end(unassociated_detections));</div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span> </div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>  <span class="comment">// This clustering distance is an arbitrarily-chosen heuristic. It is working well for our</span></div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>  <span class="comment">// current purposes, but there&#39;s no reason it couldn&#39;t be restricted or loosened.</span></div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>  <span class="keyword">const</span> <span class="keyword">auto</span> clusters{mot::cluster_detections(unassociated_detections, 0.75, <a class="code hl_struct" href="structcarma__cooperative__perception_1_1MetricSe2.html">MetricSe2</a>{})};</div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; cluster : clusters) {</div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>    <span class="keyword">const</span> <span class="keyword">auto</span> detection{std::cbegin(cluster.get_detections())-&gt;second};</div>
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>    <span class="keyword">const</span> <span class="keyword">auto</span> uuid_str{mot::get_uuid(detection).value()};</div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    <span class="comment">// CARLA uses three-digit actor identifiers. We want to UUID scheme to be</span></div>
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>    <span class="comment">// &lt;track_number&gt;-&lt;carla_actor_id&gt; for easier visual analysis by users.</span></div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>    <span class="keyword">const</span> mot::Uuid new_uuid{</div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>      <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(lifetime_generated_track_count_++) +</div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>      uuid_str.substr(std::size(uuid_str) - 4, 4)};</div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>    track_manager_.add_tentative_track(</div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>      std::visit(make_track_visitor, detection, std::variant&lt;mot::Uuid&gt;(new_uuid)));</div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>  }</div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span> </div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>  carma_cooperative_perception_interfaces::msg::TrackList track_list;</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; track : track_manager_.get_confirmed_tracks()) {</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>    track_list.tracks.push_back(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a6972022e649c8122cb8eec43651b7726">to_ros_msg</a>(track));</div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>  }</div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span> </div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>  track_list_pub_-&gt;publish(track_list);</div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span> </div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>  detections_.clear();</div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>  uuid_index_map_.clear();</div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>}</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span> </div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>}  <span class="comment">// namespace carma_cooperative_perception</span></div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span> </div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span><span class="comment">// This is not our macro, so we should not worry about linting it.</span></div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span> </div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>RCLCPP_COMPONENTS_REGISTER_NODE(<a class="code hl_class" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html">carma_cooperative_perception::MultipleObjectTrackerNode</a>)  <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>  <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a15cb67e02f6f82074e6766be6bc0ba4a">temporally_align_detections</a>(detections_, current_time);</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span> </div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>  <span class="keyword">const</span> <span class="keyword">auto</span> predicted_tracks{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a669575db946436c8a91bcbbc79c6a6b4">predict_track_states</a>(track_manager_.get_all_tracks(), current_time)};</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>  RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    get_logger(), <span class="stringliteral">&quot;Track size after prediction: &quot;</span> &lt;&lt; predicted_tracks.size());</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>  <span class="keyword">auto</span> scores{</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>    mot::score_tracks_and_detections(predicted_tracks, detections_, <a class="code hl_struct" href="structcarma__cooperative__perception_1_1SemanticDistance2dScore.html">SemanticDistance2dScore</a>{})};</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span> </div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>  <span class="comment">// This pruning distance is an arbitrarily-chosen heuristic. It is working well for our</span></div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>  <span class="comment">// current purposes, but there&#39;s no reason it couldn&#39;t be restricted or loosened.</span></div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>  mot::prune_track_and_detection_scores_if(scores, [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp; score) { <span class="keywordflow">return</span> score &gt; 1.0; });</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span> </div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>  <span class="keyword">const</span> <span class="keyword">auto</span> associations{</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>    mot::associate_detections_to_tracks(scores, mot::gnn_association_visitor)};</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span> </div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>  track_manager_.update_track_lists(associations);</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>  RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    get_logger(), <span class="stringliteral">&quot;Track size after association: &quot;</span> &lt;&lt; track_manager_.get_all_tracks().size());</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>  std::unordered_map&lt;mot::Uuid, Detection&gt; detection_map;</div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; detection : detections_) {</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    detection_map[mot::get_uuid(detection)] = detection;</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>  }</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span> </div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>  <span class="keyword">const</span> mot::HasAssociation has_association{associations};</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; track : track_manager_.get_all_tracks()) {</div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>    <span class="keywordflow">if</span> (has_association(track)) {</div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>      <span class="keyword">const</span> <span class="keyword">auto</span> detection_uuids{associations.at(get_uuid(track))};</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>      <span class="keyword">const</span> <span class="keyword">auto</span> first_detection{detection_map[detection_uuids.at(0)]};</div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>      <span class="keyword">const</span> <span class="keyword">auto</span> fused_track{</div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>        std::visit(mot::covariance_intersection_visitor, track, first_detection)};</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>      track_manager_.update_track(mot::get_uuid(track), fused_track);</div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>      RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>        get_logger(), <span class="stringliteral">&quot;Updating track: &quot;</span> &lt;&lt; mot::get_uuid(track).value());</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    }</div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>  }</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span> </div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>  <span class="comment">// Unassociated detections don&#39;t influence the tracking pipeline, so we can add</span></div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>  <span class="comment">// them to the tracker at the end.</span></div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>  std::vector&lt;Detection&gt; unassociated_detections;</div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; [uuid, detection] : detection_map) {</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    <span class="keywordflow">if</span> (!has_association(detection)) {</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>      unassociated_detections.push_back(detection);</div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    }</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>  }</div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>  RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>    get_logger(), <span class="stringliteral">&quot;Unassociated detection size: &quot;</span> &lt;&lt; unassociated_detections.size());</div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span> </div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>  <span class="comment">// We want to remove unassociated tracks that are close enough to existing tracks</span></div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>  <span class="comment">// to avoid creating duplicates. Duplicate tracks will cause association inconsistencies</span></div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>  <span class="comment">// (flip flopping associations between the two tracks).</span></div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>  <span class="keyword">auto</span> remove_start{std::remove_if(</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>    std::begin(unassociated_detections), std::end(unassociated_detections),</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>    [&amp;scores](<span class="keyword">const</span> <span class="keyword">auto</span> &amp; detection) {</div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>      <span class="keyword">const</span> <span class="keyword">auto</span> uuid{mot::get_uuid(detection)};</div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>      <span class="keyword">auto</span> min_score{std::numeric_limits&lt;float&gt;::infinity()};</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; [uuid_pair, score] : scores) {</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>        <span class="keywordflow">if</span> (uuid_pair.second == uuid) {</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>          min_score = std::min(min_score, score);</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>        }</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>      }</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span> </div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>      <span class="comment">// This distance is an arbitrarily-chosen heuristic. It is working well for our</span></div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>      <span class="comment">// current purposes, but there&#39;s no reason it couldn&#39;t be restricted or loosened.</span></div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>      <span class="keywordflow">return</span> min_score &lt; 1.0;</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>    })};</div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span> </div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>  unassociated_detections.erase(remove_start, std::end(unassociated_detections));</div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span> </div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>  RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>    get_logger(), <span class="stringliteral">&quot;Unassociated detection size after removal: &quot;</span></div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>    &lt;&lt; unassociated_detections.size());</div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span> </div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>  <span class="comment">// This clustering distance is an arbitrarily-chosen heuristic. It is working well for our</span></div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>  <span class="comment">// current purposes, but there&#39;s no reason it couldn&#39;t be restricted or loosened.</span></div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>  <span class="keyword">const</span> <span class="keyword">auto</span> clusters{mot::cluster_detections(unassociated_detections, 0.75, <a class="code hl_struct" href="structcarma__cooperative__perception_1_1MetricSe2.html">MetricSe2</a>{})};</div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; cluster : clusters) {</div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>    <span class="keyword">const</span> <span class="keyword">auto</span> detection{std::cbegin(cluster.get_detections())-&gt;second};</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>    <span class="keyword">const</span> <span class="keyword">auto</span> uuid_str{mot::get_uuid(detection).value()};</div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>    <span class="comment">// CARLA uses three-digit actor identifiers. We want to UUID scheme to be</span></div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>    <span class="comment">// &lt;track_number&gt;-&lt;carla_actor_id&gt; for easier visual analysis by users.</span></div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>    <span class="keyword">const</span> mot::Uuid new_uuid{</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>      <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(lifetime_generated_track_count_++) +</div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>      uuid_str.substr(std::size(uuid_str) - 4, 4)};</div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>    track_manager_.add_tentative_track(</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>      std::visit(make_track_visitor, detection, std::variant&lt;mot::Uuid&gt;(new_uuid)));</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>  }</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span> </div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>  RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>    get_logger(), <span class="stringliteral">&quot;Track size after adding unassociated detections: &quot;</span></div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    &lt;&lt; track_manager_.get_all_tracks().size());</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span> </div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>  carma_cooperative_perception_interfaces::msg::TrackList track_list;</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; track : track_manager_.get_confirmed_tracks()) {</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>    track_list.tracks.push_back(<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a6972022e649c8122cb8eec43651b7726">to_ros_msg</a>(track));</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>  }</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span> </div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>  RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>    get_logger(), <span class="stringliteral">&quot;Confirmed Track size after converting to ROS message: &quot;</span></div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>    &lt;&lt; track_list.tracks.size());</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>  track_list_pub_-&gt;publish(track_list);</div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span> </div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>  detections_.clear();</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>  uuid_index_map_.clear();</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>}</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span> </div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>}  <span class="comment">// namespace carma_cooperative_perception</span></div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span> </div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span><span class="comment">// This is not our macro, so we should not worry about linting it.</span></div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span> </div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>RCLCPP_COMPONENTS_REGISTER_NODE(<a class="code hl_class" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html">carma_cooperative_perception::MultipleObjectTrackerNode</a>)  <span class="comment">// NOLINT</span></div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html">carma_cooperative_perception::MultipleObjectTrackerNode</a></div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8hpp_source.html#l00042">multiple_object_tracker_component.hpp:43</a></div></div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a031c2bba273373d9b7b7bc47b4c4d377"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a031c2bba273373d9b7b7bc47b4c4d377">carma_cooperative_perception::MultipleObjectTrackerNode::MultipleObjectTrackerNode</a></div><div class="ttdeci">MultipleObjectTrackerNode(const rclcpp::NodeOptions &amp;options)</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00245">multiple_object_tracker_component.cpp:245</a></div></div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a1c77c58bdbbfe1ba4d075c7fc0e5e2f4"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a1c77c58bdbbfe1ba4d075c7fc0e5e2f4">carma_cooperative_perception::MultipleObjectTrackerNode::handle_on_configure</a></div><div class="ttdeci">auto handle_on_configure(const rclcpp_lifecycle::State &amp;) -&gt; carma_ros2_utils::CallbackReturn override</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00250">multiple_object_tracker_component.cpp:250</a></div></div>
@@ -806,7 +830,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_de73b34821d297bc7072366944012629.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="dir_18b6d8ada02823679ceefdf3a51fdefd.html">src</a></li><li class="navelem"><a class="el" href="multiple__object__tracker__component_8cpp.html">multiple_object_tracker_component.cpp</a></li>
-    <li class="footer">Generated on Thu May 15 2025 18:18:19 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri May 16 2025 13:00:18 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

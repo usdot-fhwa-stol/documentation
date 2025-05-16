@@ -204,6 +204,7 @@ var hierarchy =
       [ "RoutingGraphAccessor", "classRoutingGraphAccessor.html", null ]
     ] ],
     [ "sci_strategic_plugin::SCIStrategicPluginConfig", "structsci__strategic__plugin_1_1SCIStrategicPluginConfig.html", null ],
+    [ "carma_cooperative_perception::SdsmToDetectionListConfig", "classcarma__cooperative__perception_1_1SdsmToDetectionListConfig.html", null ],
     [ "arbitrator::SearchStrategy", "classarbitrator_1_1SearchStrategy.html", [
       [ "arbitrator::BeamSearchStrategy", "classarbitrator_1_1BeamSearchStrategy.html", null ]
     ] ],

@@ -1,5 +1,15 @@
 var NAVTREEINDEX34 =
 {
+"platooning__manager__ihp_8cpp.html":[57,0,32,2,1],
+"platooning__manager__ihp_8cpp_source.html":[57,0,32,2,1],
+"platooning__manager__ihp_8h.html":[57,0,32,0,0,1],
+"platooning__manager__ihp_8h.html#a47f203a763213587a84a6fa8a5bf1c3e":[57,0,32,0,0,1,3],
+"platooning__manager__ihp_8h.html#a47f203a763213587a84a6fa8a5bf1c3ea878fa5356c740bea371b4741324d76cb":[57,0,32,0,0,1,3,1],
+"platooning__manager__ihp_8h.html#a47f203a763213587a84a6fa8a5bf1c3eaa0c6d910a3965f1b35b89efd04e6c970":[57,0,32,0,0,1,3,2],
+"platooning__manager__ihp_8h.html#a47f203a763213587a84a6fa8a5bf1c3eae4af9657549e927e3a9ca88d8c358c7a":[57,0,32,0,0,1,3,0],
+"platooning__manager__ihp_8h.html#acb1df391a9cf4615c6b9d16ac08bcf08":[57,0,32,0,0,1,4],
+"platooning__manager__ihp_8h.html#acb1df391a9cf4615c6b9d16ac08bcf08a347a5034df01e341b9411f912c64142e":[57,0,32,0,0,1,4,2],
+"platooning__manager__ihp_8h.html#acb1df391a9cf4615c6b9d16ac08bcf08a45dff0c859d1247de8a5beee36a32079":[57,0,32,0,0,1,4,0],
 "platooning__manager__ihp_8h.html#acb1df391a9cf4615c6b9d16ac08bcf08a4fa04efe617b228eb442d027e12ab492":[57,0,32,0,0,1,4,8],
 "platooning__manager__ihp_8h.html#acb1df391a9cf4615c6b9d16ac08bcf08a5ccb05e3fb505e701f1b3802a5552310":[57,0,32,0,0,1,4,7],
 "platooning__manager__ihp_8h.html#acb1df391a9cf4615c6b9d16ac08bcf08a634a4adf1fb3e124138bc7d353364dca":[57,0,32,0,0,1,4,6],
@@ -239,15 +249,5 @@ var NAVTREEINDEX34 =
 "route__launch_8py.html":[57,0,38,1,0],
 "route__launch_8py.html#a87018a8245f402fc7f5464ba16aa9b72":[57,0,38,1,0,0],
 "route__launch_8py_source.html":[57,0,38,1,0],
-"route__node_8cpp.html":[57,0,38,2,2],
-"route__node_8cpp_source.html":[57,0,38,2,2],
-"route__node_8hpp.html":[57,0,38,0,0,2],
-"route__node_8hpp_source.html":[57,0,38,0,0,2],
-"route__state__worker_8cpp.html":[57,0,38,2,3],
-"route__state__worker_8cpp_source.html":[57,0,38,2,3],
-"route__state__worker_8hpp.html":[57,0,38,0,0,3],
-"route__state__worker_8hpp.html#a2fd81cd368596d57dd846801c8facd6a":[57,0,38,0,0,3,4],
-"route__state__worker_8hpp.html#a30b57ed010ef3b43d7040bfd43528f97":[57,0,38,0,0,3,1],
-"route__state__worker_8hpp.html#a30b57ed010ef3b43d7040bfd43528f97a517d52a12d0e410791b804a753b17a16":[57,0,38,0,0,3,1,3],
-"route__state__worker_8hpp.html#a30b57ed010ef3b43d7040bfd43528f97a6a78524447ca0c527dc21d16c4e6f9e9":[57,0,38,0,0,3,1,1]
+"route__node_8cpp.html":[57,0,38,2,2]
 };

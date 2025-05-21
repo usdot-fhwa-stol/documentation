@@ -366,5 +366,16 @@ var namespaces_dup =
       [ "two_centi_SG", "namespaceunits.html#a5cba359595c6db0b84c01349d609be2e", null ],
       [ "two_centi_standard_gravities", "namespaceunits.html#a58ddd0a627bfec960f9b7d2574f77727", null ]
     ] ],
+    [ "xodr_transform", "namespacexodr__transform.html", [
+      [ "extract_lat_lon_from_georeference", "namespacexodr__transform.html#a4ca731af3ce9fb5d33203e7c1f6f934e", null ],
+      [ "rotate", "namespacexodr__transform.html#ad60e2171538389e6dd9261446c1127a0", null ],
+      [ "transform_hdg", "namespacexodr__transform.html#a242ec0a5e7bed9abc28f66719517fe2b", null ],
+      [ "transform_latlon", "namespacexodr__transform.html#acd87080a8bb8b904e513a5247b6b35b1", null ],
+      [ "transform_xodr_file", "namespacexodr__transform.html#a35590a5faf4e31def3ca91705e8b9515", null ],
+      [ "update_georeference_text", "namespacexodr__transform.html#a272c7c364da91c0c7e536a4b58d7b466", null ],
+      [ "args", "namespacexodr__transform.html#a8c1ddf5b2915f0e599abab66e3ef4426", null ],
+      [ "help", "namespacexodr__transform.html#ae088569af0126d24934706b2be2ce82b", null ],
+      [ "parser", "namespacexodr__transform.html#a3a9c12a941a19aae87a549bcc6edc3ea", null ]
+    ] ],
     [ "yield_plugin", "namespaceyield__plugin.html", "namespaceyield__plugin" ]
 ];

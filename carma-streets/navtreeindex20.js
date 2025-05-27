@@ -1,5 +1,9 @@
 var NAVTREEINDEX20 =
 {
+"simulate__detected__object_8py.html#afee5081259a913fd0827be78cc014c83":[34,0,7,4,1],
+"simulate__detected__object_8py_source.html":[34,0,7,4],
+"simulate__mobilityoperation_8py.html":[34,0,7,5],
+"simulate__mobilityoperation_8py.html#a02b310e14e64dbfde60a7efde691ec5a":[34,0,7,5,7],
 "simulate__mobilityoperation_8py.html#a131be43ac3085e242a652e30af598f28":[34,0,7,5,4],
 "simulate__mobilityoperation_8py.html#a19549c30f68d13d8870bc2875a0ef26e":[34,0,7,5,2],
 "simulate__mobilityoperation_8py.html#a2c39e7ee01a8e135f48a28ce8c2eb91f":[34,0,7,5,1],
@@ -235,19 +239,15 @@ var NAVTREEINDEX20 =
 "streets__timing__plan__exception_8h.html":[34,0,12,10,0,1],
 "streets__timing__plan__exception_8h_source.html":[34,0,12,10,0,1],
 "structConfiguration.html":[33,0,22],
-"structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html":[33,0,6,12,0],
 "structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html":[32,0,8,12,0],
-"structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#a5fe0bdeb5148acce3dd4dce2fed87159":[33,0,6,12,0,3],
+"structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html":[33,0,6,12,0],
 "structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#a5fe0bdeb5148acce3dd4dce2fed87159":[32,0,8,12,0,3],
-"structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#aa9c3e0e3dfa9a06dbf2dbe021f0cfb25":[33,0,6,12,0,1],
+"structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#a5fe0bdeb5148acce3dd4dce2fed87159":[33,0,6,12,0,3],
 "structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#aa9c3e0e3dfa9a06dbf2dbe021f0cfb25":[32,0,8,12,0,1],
-"structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#ac04a7f791647f99590ff07b0bcb7acff":[33,0,6,12,0,0],
+"structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#aa9c3e0e3dfa9a06dbf2dbe021f0cfb25":[33,0,6,12,0,1],
 "structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#ac04a7f791647f99590ff07b0bcb7acff":[32,0,8,12,0,0],
-"structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#aeab3c3c1fecb43a5859afb70bbeac338":[33,0,6,12,0,2],
+"structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#ac04a7f791647f99590ff07b0bcb7acff":[33,0,6,12,0,0],
 "structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#aeab3c3c1fecb43a5859afb70bbeac338":[32,0,8,12,0,2],
-"structintersection__model_1_1intersection__info__t.html":[33,0,1,0],
-"structintersection__model_1_1intersection__info__t.html":[32,0,2,0],
-"structintersection__model_1_1intersection__info__t.html#a3247132d260b9048c39f51d33d1cb0bb":[33,0,1,0,0],
-"structintersection__model_1_1intersection__info__t.html#a3247132d260b9048c39f51d33d1cb0bb":[32,0,2,0,0],
-"structintersection__model_1_1intersection__info__t.html#a4acc0084181c1fbdb453f5301998a2ed":[33,0,1,0,2]
+"structOpenAPI_1_1OAISerializerSettings_1_1CustomDateTimeFormat.html#aeab3c3c1fecb43a5859afb70bbeac338":[33,0,6,12,0,2],
+"structintersection__model_1_1intersection__info__t.html":[33,0,1,0]
 };

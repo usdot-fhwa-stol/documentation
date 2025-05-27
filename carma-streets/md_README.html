@@ -125,20 +125,43 @@ Architecture</h2>
 <p >CARMA Streets architecture is based on a scalable services and layered architecture pattern that allows for easy deployment. Service components are packaged to contain one or more modules (classes) that represent a specific reusable function (e.g., decode a particular ASN.1 message) or an independently deployable business function (e.g., control interface to a signal controller). Services interact with each other via lightweight messaging service (e.g., Kafka) which allows for them be deployed either together or distributed for scalability and performance. A high-level abstract view of the architecture to communicate the design pattern is shown in Upcoming Figure. A more detailed Unified Modeling Language class and packaging diagrams to define the interfaces between services and layers and their interactions will be developed and documented here during implementation following an Agile Development Methodology.</p>
 <h2><a class="anchor" id="autotoc_md75"></a>
 Deployment</h2>
-<p >Docker is the primary deployment mechanism to containerize one or more services. The CARMA Streets application and other major frameworks such as Kafka will run in their own separate containers. This document will be updated with a detailed Docker deployment strategy during later design phases.</p>
-<h2><a class="anchor" id="autotoc_md76"></a>
+<p >Docker is the primary deployment mechanism to containerize one or more services. The CARMA Streets application and other major frameworks such as Kafka will run in their own separate containers. The following are required for deployment of CARMA Streets.</p><ul>
+<li>Docker</li>
+<li>Docker Compose</li>
+</ul>
+<p >To deploy CARMA Streets we currently use Docker Compose, which is a container orchestration tool for defining and running multi-container appilcations. For instruction on installing Docker Compose please refer to their <a href="https://docs.docker.com/compose/install/">installation guide</a>.</p>
+<h3><a class="anchor" id="autotoc_md76"></a>
+Install Images</h3>
+<p >To download and install all relevant images simply use the Docker Compose CLI. The <code>pull</code> command below will pull all images defined in the docker compose file by default but can also be provided a list of services from the <code>docker-compose.yml</code> file to pull a subset.</p>
+<div class="fragment"><div class="line">docker compose pull &lt;optionally specify service names&gt;</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md77"></a>
+Run CARMA Streets</h3>
+<p >After pulling the images, simply use the <code>up</code> command to run all or a selected subset of services.</p>
+<div class="fragment"><div class="line">docker compose up -d &lt;optionally specify service names&gt;</div>
+</div><!-- fragment --><p> THe <code>-d</code> parameter allows you to run the containers in <code>detached mode</code>. This will run the containers in the background and not pipe the container output to the terminal.</p>
+<h3><a class="anchor" id="autotoc_md78"></a>
+V2X Hub</h3>
+<p >Included as part of the CARMA Streets deployment is V2X Hub. V2X Hub is the hardware interface to an RSU (Road Side Unit) and enables CARMA Streets to have V2X (Vehicle to Everything) communication via the J2735 Message Set and CV2X radio communication. Once running V2X Hub needs to be configured to do the following in order for CARMA Streets to have V2X communication cababilites:</p><ul>
+<li>Connect to RSU</li>
+<li>Connect to CARMA Streets For information V2X Hub including configuration information please visit <a href="https://github.com/usdot-fhwa-OPS/V2X-Hub/blob/develop/README.md">V2X Hub GitHub Repository</a></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md79"></a>
+Version Control</h3>
+<p >By default our Docker Compose deployment configuration will pull down develop images for both V2X Hub and CARMA Streets. To configure Docker Compose deployment, use the <code>streets.env</code> file and modify variables defined there. This <code>streets.env</code> file defines variables referenced in the <code>docker-compose.yml</code> deployment file and can either be passed to Docker compose commands via the <code>docker compose --env-file=streets.env</code> parameter or can be renamed to <code>.env</code> which docker compose will use by default. Below is a list of variables currently defined in this file and their functionality</p>
+<p ><b>DOCKER_HOST_IP</b>: The IP of the device hosting the containers (default: 127.0.0.1) <b>OPS_TAG</b>: The version of V2X Hub to deploy (default: develop) <b>STOL_ORG</b> &amp; <b>STOL_TAG</b> : The version of CARMA Streets to deploy (default: usdotfhwastoldev/&lt;image_name&gt;:develop). To use a release update <code>STOL_ORG=usdotfhwastol</code> and <code>STOL_TAG=&lt;release-version&gt;</code>.</p>
+<h2><a class="anchor" id="autotoc_md80"></a>
 Development</h2>
 <p >This repository includes configurations for <a href="https://code.visualstudio.com/docs/devcontainers/containers">devcontainer</a> VSCode extension. This extension allows us to standup a containerized development environment. More information about the CARMA Streets Dev Container Setup can be found here.</p>
-<h2><a class="anchor" id="autotoc_md77"></a>
+<h2><a class="anchor" id="autotoc_md81"></a>
 Base Images</h2>
 <p >To make creating new CARMA Streets services easier and to make our CI/CD more efficient, we have introduced new CARMA Streets base images. These images can be used as a starting point and common build/runtime environment for CARMA Streets services. There are currently two CARMA Streets base images , for which documentation and Dockerfiles can be found <a class="el" href="md_streets_service_base_README.html">Streets Service Base</a> and <a class="el" href="md_streets_service_base_lanelet_aware_README.html">Streets Service Base Lanelet Aware</a>.</p>
-<h1><a class="anchor" id="autotoc_md78"></a>
+<h1><a class="anchor" id="autotoc_md82"></a>
 CARMAStreets</h1>
 <p >The primary carma-streets repository can be found <a href="https://github.com/usdot-fhwa-stol/carma-streets">here</a> and is part of the <a href="https://github.com/usdot-fhwa-stol/">USDOT FHWA STOL</a> github organization. Documentation on how the carma-streets functions, how it will evolve over time, and how you can contribute can be found at the above links, as well as on the <a href="https://usdot-fhwa-stol.github.io/documentation/carma-streets/">Doxygen Source Code Documentation</a>.</p>
-<h2><a class="anchor" id="autotoc_md79"></a>
+<h2><a class="anchor" id="autotoc_md83"></a>
 Data Collection</h2>
 <p ><b>CARMA Streets</b> services have several source from which data about usecase performance can be pulled. <b>Kafka Message Topics</b> can be pulled using the <code><a class="el" href="collect__kafka__logs_8py.html">collect_kafka_logs.py</a></code> script and includes message traffic on a configurable list of topics. Service log files can be found in a given <b>CARMA Streets</b> service <code>logs/</code> directory. The <code>collect_service_logs.sh</code> adds all log files in this directory to a zip file and then deletes the originals. Some <b>CARMA Streets</b> services can configurable log performance in <code>.csv</code> file in the <code>logs/</code> directory.</p>
-<h3><a class="anchor" id="autotoc_md80"></a>
+<h3><a class="anchor" id="autotoc_md84"></a>
 Collect Kafka Logs</h3>
 <p >This script uses <code>docker exec</code> to ssh into a running kafka container. Then using kafka container scripts to read all kafka data from a list of provided topics. </p><div class="fragment"><div class="line">usage: collect_kafka_logs.py [-h] [--outdir OUTDIR] [--start_timestamp START_TIMESTAMP] [--end_timestamp END_TIMESTAMP] [--start_hours_ago START_HOURS_AGO]</div>
 <div class="line">                             [--end_hours_ago END_HOURS_AGO] [--topics TOPICS [TOPICS ...]] [--timeout TIMEOUT] [--zip ZIP]</div>
@@ -163,7 +186,7 @@ Collect Kafka Logs</h3>
 <div class="line">  --zip ZIP             bool flag. When set to true, folder is compressed into a zip file.</div>
 <div class="line">  --container_names CONTAINER_NAMES [CONTAINER_NAMES ...]</div>
 <div class="line">                        list of kafka containers to grab data from</div>
-</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md81"></a>
+</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md85"></a>
 Collection Service Logs</h3>
 <p >This script collects all <b>CARMA Streets</b> service log files, adds them to a zip file. </p><div class="fragment"><div class="line">usage: collect_service_logs.sh [-h | --help] [--output &lt;zip_file_name&gt;.zip]</div>
 <div class="line">                                     [-c | --clear]</div>
@@ -172,19 +195,19 @@ Collection Service Logs</h3>
 <div class="line">-h, --help                Show usage</div>
 <div class="line">--output, -o              Name of the resulting zip file container CARMA Streets Service logs</div>
 <div class="line">--clear, -c               Adding this flag will delete log directories after creating zip.</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md82"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md86"></a>
 Contribution</h2>
 <p >Welcome to the CARMA contributing guide. Please read this guide to learn about our development process, how to propose pull requests and improvements, and how to build and test your changes to this project. <a href="https://github.com/usdot-fhwa-stol/carma-platform/blob/develop/Contributing.md">CARMA Contributing Guide</a></p>
-<h2><a class="anchor" id="autotoc_md83"></a>
+<h2><a class="anchor" id="autotoc_md87"></a>
 Code of Conduct</h2>
 <p >Please read our <a href="https://github.com/usdot-fhwa-stol/carma-platform/blob/develop/Code_of_Conduct.md">CARMA Code of Conduct</a> which outlines our expectations for participants within the CARMA community, as well as steps to reporting unacceptable behavior. We are committed to providing a welcoming and inspiring community for all and expect our code of conduct to be honored. Anyone who violates this code of conduct may be banned from the community.</p>
-<h2><a class="anchor" id="autotoc_md84"></a>
+<h2><a class="anchor" id="autotoc_md88"></a>
 Attribution</h2>
 <p >The development team would like to acknowledge the people who have made direct contributions to the design and code in this repository. <a href="https://github.com/usdot-fhwa-stol/carma-platform/blob/develop/ATTRIBUTION.md">CARMA Attribution</a></p>
-<h2><a class="anchor" id="autotoc_md85"></a>
+<h2><a class="anchor" id="autotoc_md89"></a>
 License</h2>
 <p >By contributing to the Federal Highway Administration (FHWA) Connected Automated Research Mobility Applications (CARMA), you agree that your contributions will be licensed under its Apache License 2.0 license. <a href="https://github.com/usdot-fhwa-stol/carma-platform/blob/develop/docs/License.md">CARMA License</a></p>
-<h2><a class="anchor" id="autotoc_md86"></a>
+<h2><a class="anchor" id="autotoc_md90"></a>
 Contact</h2>
 <p >Please click on the CARMA logo below to visit the Federal Highway Adminstration(FHWA) CARMA website. For technical support from the CARMA team, please contact the CARMA help desk at <a href="#" onclick="location.href='mai'+'lto:'+'CAV'+'Su'+'ppo'+'rt'+'Ser'+'vi'+'ces'+'@d'+'ot.'+'go'+'v'; return false;">CAVSu<span class="obfuscator">.nosp@m.</span>ppor<span class="obfuscator">.nosp@m.</span>tServ<span class="obfuscator">.nosp@m.</span>ices<span class="obfuscator">.nosp@m.</span>@dot.<span class="obfuscator">.nosp@m.</span>gov</a>.</p>
 <p ><a href="https://highways.dot.gov/research/research-programs/operations/CARMA"><img src="https://raw.githubusercontent.com/usdot-fhwa-stol/CARMAPlatform/develop/docs/image/CARMA_icon.png" alt="CARMA Image" class="inline"/></a> </p>
@@ -194,7 +217,7 @@ Contact</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Apr 24 2025 17:44:45 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue May 27 2025 21:38:46 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

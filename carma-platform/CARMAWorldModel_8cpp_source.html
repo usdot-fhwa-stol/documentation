@@ -550,20 +550,20 @@ $(document).ready(function(){initNavTree('CARMAWorldModel_8cpp_source.html','');
 <div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>      }</div>
 <div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span> </div>
 <div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>      lanelet::BasicPoint2d prior_point, next_point;</div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>      <span class="keywordtype">double</span> <a class="code hl_variable" href="namespaceprocess__traj__logs.html#af3ba6144a2d35a4990f1a8d04632a052">x</a>, <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a05bdb238bfbf3836fb0aa69c5aa1bb48">y</a>;</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>      <span class="keywordtype">double</span> <a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a>, <a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a>;</div>
 <div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>      <span class="keywordflow">if</span> (prior_idx &lt; centerline_size - 1)</div>
 <div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>      {  <span class="comment">// If this is not the end point compute the crosstrack based on the next point</span></div>
 <div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>        prior_point = linestring[prior_idx].basicPoint2d();</div>
 <div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>        next_point = linestring[prior_idx + 1].basicPoint2d(); <span class="comment">// No need to check bounds as this class will reject routes with fewer than 2 points in a centerline</span></div>
-<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>        <a class="code hl_variable" href="namespaceprocess__traj__logs.html#af3ba6144a2d35a4990f1a8d04632a052">x</a> = prior_point.x();</div>
-<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>        <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a05bdb238bfbf3836fb0aa69c5aa1bb48">y</a> = prior_point.y();</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>        <a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a> = prior_point.x();</div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>        <a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a> = prior_point.y();</div>
 <div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>      }</div>
 <div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>      <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>      {  <span class="comment">// If this is the end point compute the crosstrack based on previous point</span></div>
 <div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>        prior_point = linestring[prior_idx - 1].basicPoint2d();</div>
 <div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>        next_point = linestring[prior_idx].basicPoint2d();</div>
-<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>        <a class="code hl_variable" href="namespaceprocess__traj__logs.html#af3ba6144a2d35a4990f1a8d04632a052">x</a> = next_point.x();</div>
-<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>        <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a05bdb238bfbf3836fb0aa69c5aa1bb48">y</a> = next_point.y();</div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>        <a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a> = next_point.x();</div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>        <a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a> = next_point.y();</div>
 <div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>      }</div>
 <div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span> </div>
 <div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span>      <span class="comment">// Compute the crosstrack</span></div>
@@ -573,7 +573,7 @@ $(document).ready(function(){initNavTree('CARMAWorldModel_8cpp_source.html','');
 <div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>      <span class="keywordtype">double</span> delta_x = cos(theta) * -crosstrack;</div>
 <div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>      <span class="keywordtype">double</span> delta_y = sin(theta) * -crosstrack;</div>
 <div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span> </div>
-<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>      <span class="keywordflow">return</span> lanelet::BasicPoint2d(<a class="code hl_variable" href="namespaceprocess__traj__logs.html#af3ba6144a2d35a4990f1a8d04632a052">x</a> + delta_x, <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a05bdb238bfbf3836fb0aa69c5aa1bb48">y</a> + delta_y);</div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>      <span class="keywordflow">return</span> lanelet::BasicPoint2d(<a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a> + delta_x, <a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a> + delta_y);</div>
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>    }</div>
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span> </div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    <span class="keywordtype">double</span> prior_downtrack = <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a02750a7d4960c730331976f6c75df7a7">shortest_path_distance_map_</a>.<a class="code hl_function" href="classcarma__wm_1_1IndexedDistanceMap.html#a972f18c7b178a350cfdb85719eb10323">distanceToPointAlongElement</a>(ls_i, prior_idx);</div>
@@ -596,8 +596,8 @@ $(document).ready(function(){initNavTree('CARMAWorldModel_8cpp_source.html','');
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>    <span class="keyword">auto</span> next_point = linestring[next_idx].basicPoint2d();</div>
 <div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>    <span class="keyword">auto</span> delta_vec = next_point - prior_point;</div>
 <div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span> </div>
-<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="namespaceprocess__traj__logs.html#af3ba6144a2d35a4990f1a8d04632a052">x</a> = prior_point.x() + interpolation_percentage * delta_vec.x();</div>
-<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a05bdb238bfbf3836fb0aa69c5aa1bb48">y</a> = prior_point.y() + interpolation_percentage * delta_vec.y();</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a> = prior_point.x() + interpolation_percentage * delta_vec.x();</div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a> = prior_point.y() + interpolation_percentage * delta_vec.y();</div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span> </div>
 <div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>    <span class="keywordflow">if</span> (crosstrack != 0) <span class="comment">// If the crosstrack is not set no need to do the costly computation.</span></div>
 <div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>    {</div>
@@ -607,11 +607,11 @@ $(document).ready(function(){initNavTree('CARMAWorldModel_8cpp_source.html','');
 <div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>      <span class="keywordtype">double</span> delta_x = cos(theta) * -crosstrack;</div>
 <div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>      <span class="keywordtype">double</span> delta_y = sin(theta) * -crosstrack;</div>
 <div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span> </div>
-<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>      <a class="code hl_variable" href="namespaceprocess__traj__logs.html#af3ba6144a2d35a4990f1a8d04632a052">x</a> += delta_x; <span class="comment">// Adjust x and y of target point to account for crosstrack</span></div>
-<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>      <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a05bdb238bfbf3836fb0aa69c5aa1bb48">y</a> += delta_y;</div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>      <a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a> += delta_x; <span class="comment">// Adjust x and y of target point to account for crosstrack</span></div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>      <a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a> += delta_y;</div>
 <div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>    }</div>
 <div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span> </div>
-<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>    <span class="keywordflow">return</span> lanelet::BasicPoint2d(<a class="code hl_variable" href="namespaceprocess__traj__logs.html#af3ba6144a2d35a4990f1a8d04632a052">x</a>, <a class="code hl_variable" href="namespaceprocess__traj__logs.html#a05bdb238bfbf3836fb0aa69c5aa1bb48">y</a>);</div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>    <span class="keywordflow">return</span> lanelet::BasicPoint2d(<a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a>, <a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a>);</div>
 <div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>  }</div>
 <div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span> </div>
 <div class="line"><a id="l00529" name="l00529"></a><span class="lineno"><a class="line" href="classcarma__wm_1_1CARMAWorldModel.html#a5a40e4c8b3107914d61fb8f8064c842d">  529</a></span>  lanelet::LaneletMapConstPtr <a class="code hl_function" href="classcarma__wm_1_1CARMAWorldModel.html#a5a40e4c8b3107914d61fb8f8064c842d">CARMAWorldModel::getMap</a>()<span class="keyword"> const</span></div>
@@ -1577,10 +1577,10 @@ $(document).ready(function(){initNavTree('CARMAWorldModel_8cpp_source.html','');
 <div class="ttc" id="anamespacecarma__wm_html_ae21cba9eaf353a58738fc2c1773c5ffa"><div class="ttname"><a href="namespacecarma__wm.html#ae21cba9eaf353a58738fc2c1773c5ffa">carma_wm::LaneletRoutePtr</a></div><div class="ttdeci">std::shared_ptr&lt; lanelet::routing::Route &gt; LaneletRoutePtr</div><div class="ttdef"><b>Definition:</b> <a href="WorldModel_8hpp_source.html#l00047">WorldModel.hpp:47</a></div></div>
 <div class="ttc" id="anamespacelanelet_html"><div class="ttname"><a href="namespacelanelet.html">lanelet</a></div><div class="ttdef"><b>Definition:</b> <a href="MapConformer_8hpp_source.html#l00038">MapConformer.hpp:39</a></div></div>
 <div class="ttc" id="anamespaceobject_html"><div class="ttname"><a href="namespaceobject.html">object</a></div><div class="ttdef"><b>Definition:</b> <a href="object__detection__tracking__node_8h_source.html#l00029">object_detection_tracking_node.h:29</a></div></div>
+<div class="ttc" id="anamespaceosm__transform_html_a183883d606298855933692078471c4c7"><div class="ttname"><a href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">osm_transform.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="osm__transform_8py_source.html#l00130">osm_transform.py:130</a></div></div>
+<div class="ttc" id="anamespaceosm__transform_html_a3d0da1a0485d619944300ab5dbef56a7"><div class="ttname"><a href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">osm_transform.y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> <a href="osm__transform_8py_source.html#l00131">osm_transform.py:131</a></div></div>
 <div class="ttc" id="anamespaceprocess__bag_html_af102a02c97622dd30b0dbf7bafb0d199"><div class="ttname"><a href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">process_bag.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00059">process_bag.py:59</a></div></div>
-<div class="ttc" id="anamespaceprocess__traj__logs_html_a05bdb238bfbf3836fb0aa69c5aa1bb48"><div class="ttname"><a href="namespaceprocess__traj__logs.html#a05bdb238bfbf3836fb0aa69c5aa1bb48">process_traj_logs.y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00129">process_traj_logs.py:129</a></div></div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_ab81a05c3d1d100117b6781d7dedf8a29"><div class="ttname"><a href="namespaceprocess__traj__logs.html#ab81a05c3d1d100117b6781d7dedf8a29">process_traj_logs.point</a></div><div class="ttdeci">point</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00126">process_traj_logs.py:126</a></div></div>
-<div class="ttc" id="anamespaceprocess__traj__logs_html_af3ba6144a2d35a4990f1a8d04632a052"><div class="ttname"><a href="namespaceprocess__traj__logs.html#af3ba6144a2d35a4990f1a8d04632a052">process_traj_logs.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00128">process_traj_logs.py:128</a></div></div>
 <div class="ttc" id="anamespaceroute_html"><div class="ttname"><a href="namespaceroute.html">route</a></div><div class="ttdef"><b>Definition:</b> <a href="route__config_8hpp_source.html#l00022">route_config.hpp:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -1588,7 +1588,7 @@ $(document).ready(function(){initNavTree('CARMAWorldModel_8cpp_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_063394ac95ddab6826ca68be56e39eae.html">carma_wm</a></li><li class="navelem"><a class="el" href="dir_bed7bb81c6bc1fae1bac689cbf6acc02.html">src</a></li><li class="navelem"><a class="el" href="CARMAWorldModel_8cpp.html">CARMAWorldModel.cpp</a></li>
-    <li class="footer">Generated on Thu May 22 2025 21:45:27 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Jun 2 2025 16:24:23 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

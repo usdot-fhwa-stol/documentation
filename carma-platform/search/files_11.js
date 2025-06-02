@@ -39,5 +39,6 @@ var searchData=
   ['trajectory_5fvisualizer_5flaunch_2epy_36',['trajectory_visualizer_launch.py',['../trajectory__visualizer__launch_8py.html',1,'']]],
   ['transforms_2elaunch_2epy_37',['transforms.launch.py',['../transforms_8launch_8py.html',1,'']]],
   ['tree_5fplanner_2ecpp_38',['tree_planner.cpp',['../tree__planner_8cpp.html',1,'']]],
-  ['tree_5fplanner_2ehpp_39',['tree_planner.hpp',['../tree__planner_8hpp.html',1,'']]]
+  ['tree_5fplanner_2ehpp_39',['tree_planner.hpp',['../tree__planner_8hpp.html',1,'']]],
+  ['trimming_5fxodr_5fmaps_2emd_40',['Trimming_XODR_Maps.md',['../Trimming__XODR__Maps_8md.html',1,'']]]
 ];

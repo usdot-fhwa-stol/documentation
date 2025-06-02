@@ -82,6 +82,12 @@ var namespaces_dup =
       [ "generate_launch_description", "namespaceexternal__object.html#afca4a676cf5848b9ab1617aec871b6f5", null ]
     ] ],
     [ "extract_rpy_from_quat", "namespaceextract__rpy__from__quat.html", "namespaceextract__rpy__from__quat" ],
+    [ "filter_roads", "namespacefilter__roads.html", [
+      [ "filter_xodr", "namespacefilter__roads.html#ac70e94996f5dcb5b94534f4664cda631", null ],
+      [ "input_file", "namespacefilter__roads.html#a554cbfbe0251556323bec2e6260e368f", null ],
+      [ "output_file", "namespacefilter__roads.html#a5ac34df0df725e0b4fa9d1c3af6243d7", null ],
+      [ "road_ids_to_keep", "namespacefilter__roads.html#a399c8acb8a14134f746ae73c32832e38", null ]
+    ] ],
     [ "frame_transformer", "namespaceframe__transformer.html", "namespaceframe__transformer" ],
     [ "frame_transformer_launch", "namespaceframe__transformer__launch.html", [
       [ "generate_launch_description", "namespaceframe__transformer__launch.html#a688c2daf99971c1d8199a9b0cfdf440b", null ]
@@ -365,6 +371,24 @@ var namespaces_dup =
       [ "two_centi_mps", "namespaceunits.html#a3982ea1e3f0c9cd83e3fe31d95aa2c91", null ],
       [ "two_centi_SG", "namespaceunits.html#a5cba359595c6db0b84c01349d609be2e", null ],
       [ "two_centi_standard_gravities", "namespaceunits.html#a58ddd0a627bfec960f9b7d2574f77727", null ]
+    ] ],
+    [ "visualize_xodr", "namespacevisualize__xodr.html", [
+      [ "ax", "namespacevisualize__xodr.html#ac9e6db7859297a70fe5ffc8bebe8269c", null ],
+      [ "dx", "namespacevisualize__xodr.html#a5164631bec130cc9e66f59d8c92511c2", null ],
+      [ "dy", "namespacevisualize__xodr.html#ac81cf63f254e99f3849fdceb1b8af177", null ],
+      [ "fig", "namespacevisualize__xodr.html#af5951cd10a740b0008e206bcd30c7963", null ],
+      [ "figsize", "namespacevisualize__xodr.html#a52c0fac11ac35bae75a15a6a4c9cf900", null ],
+      [ "fontsize", "namespacevisualize__xodr.html#ab85fc5293b6fee0db5145ef471e622e3", null ],
+      [ "hdg", "namespacevisualize__xodr.html#a4a987e37d00047c893c81d231373962c", null ],
+      [ "head_width", "namespacevisualize__xodr.html#aadd5767fa3f79393766ff7adbd0291fa", null ],
+      [ "length", "namespacevisualize__xodr.html#a32e188d23b6228ec5d9803921f4a3cb8", null ],
+      [ "length_includes_head", "namespacevisualize__xodr.html#aa866300b0855f916206d71e128a0bd10", null ],
+      [ "road_name", "namespacevisualize__xodr.html#a2cbda4af1d0322b08d380f663f58b462", null ],
+      [ "root", "namespacevisualize__xodr.html#a3c87852567f491ba1554483709c7f28c", null ],
+      [ "tree", "namespacevisualize__xodr.html#aacf03e4c1e01d0ef7ce9e8a73f724d3a", null ],
+      [ "x", "namespacevisualize__xodr.html#a580dc64d475f53900513be3022216187", null ],
+      [ "xodr_file_path", "namespacevisualize__xodr.html#aad870a9a3b15c37a60f237665628af92", null ],
+      [ "y", "namespacevisualize__xodr.html#afaa7006e0dfd3ba520961e12ca1e78bd", null ]
     ] ],
     [ "xodr_transform", "namespacexodr__transform.html", [
       [ "extract_lat_lon_from_georeference", "namespacexodr__transform.html#a4ca731af3ce9fb5d33203e7c1f6f934e", null ],

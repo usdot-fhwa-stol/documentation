@@ -39,6 +39,6 @@ var searchData=
   ['localizationtypes_2ecpp_36',['LocalizationTypes.cpp',['../LocalizationTypes_8cpp.html',1,'']]],
   ['localizationtypes_2ehpp_37',['LocalizationTypes.hpp',['../LocalizationTypes_8hpp.html',1,'']]],
   ['log_2ecpp_38',['log.cpp',['../log_8cpp.html',1,'']]],
-  ['log_2ehpp_39',['log.hpp',['../inlanecruising__plugin_2include_2inlanecruising__plugin_2log_2log_8hpp.html',1,'(Global Namespace)'],['../basic__autonomy_2include_2basic__autonomy_2log_2log_8hpp.html',1,'(Global Namespace)']]],
+  ['log_2ehpp_39',['log.hpp',['../log_8hpp.html',1,'']]],
   ['lookup_5fgrid_2ehpp_40',['lookup_grid.hpp',['../lookup__grid_8hpp.html',1,'']]]
 ];

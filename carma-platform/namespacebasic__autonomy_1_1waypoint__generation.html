@@ -431,26 +431,26 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A Shifted trajectory </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="basic__autonomy_8cpp_source.html#l01385">1385</a> of file <a class="el" href="basic__autonomy_8cpp_source.html">basic_autonomy.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1386</span>        { <span class="comment">// Note first speed is assumed to be vehicle speed</span></div>
-<div class="line"><span class="lineno"> 1387</span>            <span class="keywordflow">if</span> (speeds.size() != downtracks.size()) {</div>
-<div class="line"><span class="lineno"> 1388</span>                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Speed list and downtrack list are not the same size.&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1389</span>            }</div>
-<div class="line"><span class="lineno"> 1390</span> </div>
-<div class="line"><span class="lineno"> 1391</span>            std::vector&lt;double&gt; output;</div>
-<div class="line"><span class="lineno"> 1392</span>            <span class="keywordflow">if</span> (speeds.empty()) {</div>
-<div class="line"><span class="lineno"> 1393</span>                <span class="keywordflow">return</span> output;</div>
-<div class="line"><span class="lineno"> 1394</span>            }</div>
-<div class="line"><span class="lineno"> 1395</span> </div>
-<div class="line"><span class="lineno"> 1396</span>            <span class="keywordtype">double</span> lookahead_distance = speeds[0] * response_lag;</div>
-<div class="line"><span class="lineno"> 1397</span> </div>
-<div class="line"><span class="lineno"> 1398</span>            <span class="keywordtype">double</span> downtrack_cutoff = downtracks[0] + lookahead_distance;</div>
-<div class="line"><span class="lineno"> 1399</span>            <span class="keywordtype">size_t</span> lookahead_count = std::lower_bound(downtracks.begin(),downtracks.end(), downtrack_cutoff) - downtracks.begin(); <span class="comment">// Use binary search to find lower bound cutoff point</span></div>
-<div class="line"><span class="lineno"> 1400</span>            output = trajectory_utils::shift_by_lookahead(speeds, (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) lookahead_count);</div>
-<div class="line"><span class="lineno"> 1401</span>            <span class="keywordflow">return</span> output;</div>
-<div class="line"><span class="lineno"> 1402</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="basic__autonomy_8cpp_source.html#l01391">1391</a> of file <a class="el" href="basic__autonomy_8cpp_source.html">basic_autonomy.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1392</span>        { <span class="comment">// Note first speed is assumed to be vehicle speed</span></div>
+<div class="line"><span class="lineno"> 1393</span>            <span class="keywordflow">if</span> (speeds.size() != downtracks.size()) {</div>
+<div class="line"><span class="lineno"> 1394</span>                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Speed list and downtrack list are not the same size.&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1395</span>            }</div>
+<div class="line"><span class="lineno"> 1396</span> </div>
+<div class="line"><span class="lineno"> 1397</span>            std::vector&lt;double&gt; output;</div>
+<div class="line"><span class="lineno"> 1398</span>            <span class="keywordflow">if</span> (speeds.empty()) {</div>
+<div class="line"><span class="lineno"> 1399</span>                <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno"> 1400</span>            }</div>
+<div class="line"><span class="lineno"> 1401</span> </div>
+<div class="line"><span class="lineno"> 1402</span>            <span class="keywordtype">double</span> lookahead_distance = speeds[0] * response_lag;</div>
+<div class="line"><span class="lineno"> 1403</span> </div>
+<div class="line"><span class="lineno"> 1404</span>            <span class="keywordtype">double</span> downtrack_cutoff = downtracks[0] + lookahead_distance;</div>
+<div class="line"><span class="lineno"> 1405</span>            <span class="keywordtype">size_t</span> lookahead_count = std::lower_bound(downtracks.begin(),downtracks.end(), downtrack_cutoff) - downtracks.begin(); <span class="comment">// Use binary search to find lower bound cutoff point</span></div>
+<div class="line"><span class="lineno"> 1406</span>            output = trajectory_utils::shift_by_lookahead(speeds, (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>) lookahead_count);</div>
+<div class="line"><span class="lineno"> 1407</span>            <span class="keywordflow">return</span> output;</div>
+<div class="line"><span class="lineno"> 1408</span>        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="basic__autonomy_8cpp_source.html#l01284">process_trajectory_plan()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="basic__autonomy_8cpp_source.html#l01290">process_trajectory_plan()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -988,21 +988,27 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1265</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Before removing extra buffer points, future_geom_points.size()&quot;</span>&lt;&lt; future_geom_points.size());</div>
 <div class="line"><span class="lineno"> 1266</span> </div>
 <div class="line"><span class="lineno"> 1267</span>            <span class="comment">// Find the ending point index in the resampled points</span></div>
-<div class="line"><span class="lineno"> 1268</span>            <span class="keywordtype">int</span> end_dist_pt_index = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a">get_nearest_index_by_downtrack</a>(resampled_points, wm, ending_state_before_buffer);</div>
-<div class="line"><span class="lineno"> 1269</span> </div>
-<div class="line"><span class="lineno"> 1270</span>            <span class="comment">// Resize all arrays to the endpoint</span></div>
-<div class="line"><span class="lineno"> 1271</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Before removing extra buffer points, resampled_points.size(): &quot;</span> &lt;&lt; resampled_points.size());</div>
-<div class="line"><span class="lineno"> 1272</span>            resampled_points.resize(end_dist_pt_index + 1);</div>
-<div class="line"><span class="lineno"> 1273</span>            times.resize(end_dist_pt_index + 1);</div>
-<div class="line"><span class="lineno"> 1274</span>            resampled_yaw_values.resize(end_dist_pt_index + 1);</div>
-<div class="line"><span class="lineno"> 1275</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;After removing extra buffer points, resampled_points.size(): &quot;</span> &lt;&lt; resampled_points.size());</div>
-<div class="line"><span class="lineno"> 1276</span> </div>
-<div class="line"><span class="lineno"> 1277</span>            <span class="comment">// Create trajectory points from the resampled data</span></div>
-<div class="line"><span class="lineno"> 1278</span>            std::vector&lt;carma_planning_msgs::msg::TrajectoryPlanPoint&gt; traj_points =</div>
-<div class="line"><span class="lineno"> 1279</span>                <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#aba6a29cdaf0c4af10647b59bf6df4e01">trajectory_from_points_times_orientations</a>(resampled_points, times, resampled_yaw_values, state_time, detailed_config.<a class="code hl_variable" href="structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a89ca36377e20e514abc609c5bd65a941">desired_controller_plugin</a>);</div>
-<div class="line"><span class="lineno"> 1280</span> </div>
-<div class="line"><span class="lineno"> 1281</span>            <span class="keywordflow">return</span> traj_points;</div>
-<div class="line"><span class="lineno"> 1282</span>        }</div>
+<div class="line"><span class="lineno"> 1268</span>            <span class="comment">// Always leave at least 2 points in the trajectory</span></div>
+<div class="line"><span class="lineno"> 1269</span>            <span class="comment">// NOTE: resampled_points.size() is always &gt;= 2 because</span></div>
+<div class="line"><span class="lineno"> 1270</span>            <span class="comment">// we added the current vehicle position and the division of 0 guard before</span></div>
+<div class="line"><span class="lineno"> 1271</span>            <span class="keywordtype">int</span> end_dist_pt_index =</div>
+<div class="line"><span class="lineno"> 1272</span>                std::max(1, <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#aa399a236f88f7b1c5557327fbb2ba71a">get_nearest_index_by_downtrack</a>(</div>
+<div class="line"><span class="lineno"> 1273</span>                    resampled_points, wm, ending_state_before_buffer)</div>
+<div class="line"><span class="lineno"> 1274</span>                );</div>
+<div class="line"><span class="lineno"> 1275</span> </div>
+<div class="line"><span class="lineno"> 1276</span>            <span class="comment">// Resize all arrays to the endpoint</span></div>
+<div class="line"><span class="lineno"> 1277</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Before removing extra buffer points, resampled_points.size(): &quot;</span> &lt;&lt; resampled_points.size());</div>
+<div class="line"><span class="lineno"> 1278</span>            resampled_points.resize(end_dist_pt_index + 1);</div>
+<div class="line"><span class="lineno"> 1279</span>            times.resize(end_dist_pt_index + 1);</div>
+<div class="line"><span class="lineno"> 1280</span>            resampled_yaw_values.resize(end_dist_pt_index + 1);</div>
+<div class="line"><span class="lineno"> 1281</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;After removing extra buffer points, resampled_points.size(): &quot;</span> &lt;&lt; resampled_points.size());</div>
+<div class="line"><span class="lineno"> 1282</span> </div>
+<div class="line"><span class="lineno"> 1283</span>            <span class="comment">// Create trajectory points from the resampled data</span></div>
+<div class="line"><span class="lineno"> 1284</span>            std::vector&lt;carma_planning_msgs::msg::TrajectoryPlanPoint&gt; traj_points =</div>
+<div class="line"><span class="lineno"> 1285</span>                <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#aba6a29cdaf0c4af10647b59bf6df4e01">trajectory_from_points_times_orientations</a>(resampled_points, times, resampled_yaw_values, state_time, detailed_config.<a class="code hl_variable" href="structbasic__autonomy_1_1waypoint__generation_1_1DetailedTrajConfig.html#a89ca36377e20e514abc609c5bd65a941">desired_controller_plugin</a>);</div>
+<div class="line"><span class="lineno"> 1286</span> </div>
+<div class="line"><span class="lineno"> 1287</span>            <span class="keywordflow">return</span> traj_points;</div>
+<div class="line"><span class="lineno"> 1288</span>        }</div>
 <div class="ttc" id="anamespacebasic__autonomy_1_1smoothing_html_afb726e75a21ada8efa3ca5561ffc9984"><div class="ttname"><a href="namespacebasic__autonomy_1_1smoothing.html#afb726e75a21ada8efa3ca5561ffc9984">basic_autonomy::smoothing::moving_average_filter</a></div><div class="ttdeci">std::vector&lt; double &gt; moving_average_filter(const std::vector&lt; double &gt; input, int window_size, bool ignore_first_point=true)</div><div class="ttdoc">Extremely simplie moving average filter.</div><div class="ttdef"><b>Definition:</b> <a href="filters_8cpp_source.html#l00024">filters.cpp:24</a></div></div>
 <div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_a0f07faaac8c54cc485f2bb217097326e"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#a0f07faaac8c54cc485f2bb217097326e">basic_autonomy::waypoint_generation::split_point_speed_pairs</a></div><div class="ttdeci">void split_point_speed_pairs(const std::vector&lt; PointSpeedPair &gt; &amp;points, std::vector&lt; lanelet::BasicPoint2d &gt; *basic_points, std::vector&lt; double &gt; *speeds)</div><div class="ttdoc">Helper method to split a list of PointSpeedPair into separate point and speed lists.</div><div class="ttdef"><b>Definition:</b> <a href="helper__functions_8cpp_source.html#l00114">helper_functions.cpp:114</a></div></div>
 <div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_a9e0eab343d21d18c665083839d706f04"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#a9e0eab343d21d18c665083839d706f04">basic_autonomy::waypoint_generation::compute_fit</a></div><div class="ttdeci">std::unique_ptr&lt; basic_autonomy::smoothing::SplineI &gt; compute_fit(const std::vector&lt; lanelet::BasicPoint2d &gt; &amp;basic_points)</div><div class="ttdoc">Computes a spline based on the provided points.</div><div class="ttdef"><b>Definition:</b> <a href="basic__autonomy_8cpp_source.html#l00859">basic_autonomy.cpp:859</a></div></div>
@@ -1330,7 +1336,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespacebasic__autonomy_1_1log_html_a54dc1b131f40912ecbf27ce0f42bc782"><div class="ttname"><a href="namespacebasic__autonomy_1_1log.html#a54dc1b131f40912ecbf27ce0f42bc782">basic_autonomy::log::printDoublesPerLineWithPrefix</a></div><div class="ttdeci">void printDoublesPerLineWithPrefix(const std::string &amp;prefix, const std::vector&lt; double &gt; &amp;values)</div><div class="ttdoc">Print a RCLCPP_DEBUG_STREAM for each value in values where the printed value is &lt;&lt; prefix &lt;&lt; value.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00045">log.cpp:45</a></div></div>
 <div class="ttc" id="anamespacebasic__autonomy_1_1log_html_a9123a8bedcfb34f1e6c1336f226956fb"><div class="ttname"><a href="namespacebasic__autonomy_1_1log.html#a9123a8bedcfb34f1e6c1336f226956fb">basic_autonomy::log::basicPointToStream</a></div><div class="ttdeci">std::string basicPointToStream(lanelet::BasicPoint2d point)</div><div class="ttdoc">Helper function to convert a lanelet::BasicPoint2d to a string.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00026">log.cpp:26</a></div></div>
 <div class="ttc" id="anamespacebasic__autonomy_1_1log_html_aa5d9aec52bb2d67d8b163be5d2366c8e"><div class="ttname"><a href="namespacebasic__autonomy_1_1log.html#aa5d9aec52bb2d67d8b163be5d2366c8e">basic_autonomy::log::pointSpeedPairToStream</a></div><div class="ttdeci">std::string pointSpeedPairToStream(waypoint_generation::PointSpeedPair point)</div><div class="ttdoc">Helper function to convert a PointSpeedPair to a string.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00035">log.cpp:35</a></div></div>
-<div class="ttc" id="anamespacebasic__autonomy_1_1log_html_abc6767d55d022e680ccd0d598eba5289"><div class="ttname"><a href="namespacebasic__autonomy_1_1log.html#abc6767d55d022e680ccd0d598eba5289">basic_autonomy::log::printDebugPerLine</a></div><div class="ttdeci">void printDebugPerLine(const std::vector&lt; T &gt; &amp;values, std::function&lt; std::string(T)&gt; func)</div><div class="ttdoc">Print a RCLCPP_DEBUG_STREAM for each value in values where the printed value is a string returned by ...</div><div class="ttdef"><b>Definition:</b> <a href="basic__autonomy_2include_2basic__autonomy_2log_2log_8hpp_source.html#l00040">log.hpp:40</a></div></div>
+<div class="ttc" id="anamespacebasic__autonomy_1_1log_html_abc6767d55d022e680ccd0d598eba5289"><div class="ttname"><a href="namespacebasic__autonomy_1_1log.html#abc6767d55d022e680ccd0d598eba5289">basic_autonomy::log::printDebugPerLine</a></div><div class="ttdeci">void printDebugPerLine(const std::vector&lt; T &gt; &amp;values, std::function&lt; std::string(T)&gt; func)</div><div class="ttdoc">Print a RCLCPP_DEBUG_STREAM for each value in values where the printed value is a string returned by ...</div><div class="ttdef"><b>Definition:</b> <a href="log_8hpp_source.html#l00040">log.hpp:40</a></div></div>
 <div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_a84a6c11da2d9736a8f277b6afd124100"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#a84a6c11da2d9736a8f277b6afd124100">basic_autonomy::waypoint_generation::optimize_speed</a></div><div class="ttdeci">std::vector&lt; double &gt; optimize_speed(const std::vector&lt; double &gt; &amp;downtracks, const std::vector&lt; double &gt; &amp;curv_speeds, double accel_limit)</div><div class="ttdoc">Applies the longitudinal acceleration limit to each point's speed.</div><div class="ttdef"><b>Definition:</b> <a href="basic__autonomy_8cpp_source.html#l00740">basic_autonomy.cpp:740</a></div></div>
 <div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_a924ac023f1b51e791ca1b61b9194f44a"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#a924ac023f1b51e791ca1b61b9194f44a">basic_autonomy::waypoint_generation::get_nearest_point_index</a></div><div class="ttdeci">int get_nearest_point_index(const std::vector&lt; lanelet::BasicPoint2d &gt; &amp;points, const carma_planning_msgs::msg::VehicleState &amp;state)</div><div class="ttdoc">Returns the nearest point (in terms of cartesian 2d distance) to the provided vehicle pose in the pro...</div><div class="ttdef"><b>Definition:</b> <a href="helper__functions_8cpp_source.html#l00025">helper_functions.cpp:25</a></div></div>
 <div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_ab4974a3dfe697ccc0dd1344a8e11c5e1"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#ab4974a3dfe697ccc0dd1344a8e11c5e1">basic_autonomy::waypoint_generation::apply_speed_limits</a></div><div class="ttdeci">std::vector&lt; double &gt; apply_speed_limits(const std::vector&lt; double &gt; speeds, const std::vector&lt; double &gt; speed_limits)</div><div class="ttdoc">Applies the provided speed limits to the provided speeds such that each element is capped at its corr...</div><div class="ttdef"><b>Definition:</b> <a href="basic__autonomy_8cpp_source.html#l00616">basic_autonomy.cpp:616</a></div></div>
@@ -1341,7 +1347,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceosm__transform_html_a3d0da1a0485d619944300ab5dbef56a7"><div class="ttname"><a href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">osm_transform.y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> <a href="osm__transform_8py_source.html#l00131">osm_transform.py:131</a></div></div>
 <div class="ttc" id="anamespaceprocess__traj__logs_html_a49cd466f330a9498d8373baecf47e071"><div class="ttname"><a href="namespaceprocess__traj__logs.html#a49cd466f330a9498d8373baecf47e071">process_traj_logs.c</a></div><div class="ttdeci">c</div><div class="ttdef"><b>Definition:</b> <a href="process__traj__logs_8py_source.html#l00166">process_traj_logs.py:166</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="basic__autonomy_8cpp_source.html#l00616">apply_speed_limits()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00834">attach_past_points()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00089">basic_autonomy::waypoint_generation::DetailedTrajConfig::back_distance</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00063">BASIC_AUTONOMY_LOGGER</a>, <a class="el" href="log_8cpp_source.html#l00026">basic_autonomy::log::basicPointToStream()</a>, <a class="el" href="process__traj__logs_8py_source.html#l00166">process_traj_logs::c</a>, <a class="el" href="Geometry_8cpp_source.html#l00498">carma_wm::geometry::compute_arc_lengths()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00905">compute_curvature_at()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00859">compute_fit()</a>, <a class="el" href="Geometry_8cpp_source.html#l00559">carma_wm::geometry::compute_tangent_orientations()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00684">constrain_to_time_boundary()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00087">basic_autonomy::waypoint_generation::DetailedTrajConfig::curvature_moving_average_window_size</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00082">basic_autonomy::waypoint_generation::DetailedTrajConfig::curve_resample_step_size</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00091">basic_autonomy::waypoint_generation::DetailedTrajConfig::desired_controller_plugin</a>, <a class="el" href="helper__functions_8cpp_source.html#l00088">get_nearest_index_by_downtrack()</a>, <a class="el" href="helper__functions_8cpp_source.html#l00025">get_nearest_point_index()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00085">basic_autonomy::waypoint_generation::DetailedTrajConfig::lateral_accel_limit</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00084">basic_autonomy::waypoint_generation::DetailedTrajConfig::max_accel</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00083">basic_autonomy::waypoint_generation::DetailedTrajConfig::minimum_speed</a>, <a class="el" href="filters_8cpp_source.html#l00024">basic_autonomy::smoothing::moving_average_filter()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00740">optimize_speed()</a>, <a class="el" href="log_8cpp_source.html#l00035">basic_autonomy::log::pointSpeedPairToStream()</a>, <a class="el" href="basic__autonomy_2include_2basic__autonomy_2log_2log_8hpp_source.html#l00040">basic_autonomy::log::printDebugPerLine()</a>, <a class="el" href="log_8cpp_source.html#l00045">basic_autonomy::log::printDoublesPerLineWithPrefix()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00086">basic_autonomy::waypoint_generation::DetailedTrajConfig::speed_moving_average_window_size</a>, <a class="el" href="helper__functions_8cpp_source.html#l00114">split_point_speed_pairs()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00803">trajectory_from_points_times_orientations()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00081">basic_autonomy::waypoint_generation::DetailedTrajConfig::trajectory_time_length</a>, <a class="el" href="osm__transform_8py_source.html#l00130">osm_transform::x</a>, and <a class="el" href="osm__transform_8py_source.html#l00131">osm_transform::y</a>.</p>
+<p class="reference">References <a class="el" href="basic__autonomy_8cpp_source.html#l00616">apply_speed_limits()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00834">attach_past_points()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00089">basic_autonomy::waypoint_generation::DetailedTrajConfig::back_distance</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00063">BASIC_AUTONOMY_LOGGER</a>, <a class="el" href="log_8cpp_source.html#l00026">basic_autonomy::log::basicPointToStream()</a>, <a class="el" href="process__traj__logs_8py_source.html#l00166">process_traj_logs::c</a>, <a class="el" href="Geometry_8cpp_source.html#l00498">carma_wm::geometry::compute_arc_lengths()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00905">compute_curvature_at()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00859">compute_fit()</a>, <a class="el" href="Geometry_8cpp_source.html#l00559">carma_wm::geometry::compute_tangent_orientations()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00684">constrain_to_time_boundary()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00087">basic_autonomy::waypoint_generation::DetailedTrajConfig::curvature_moving_average_window_size</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00082">basic_autonomy::waypoint_generation::DetailedTrajConfig::curve_resample_step_size</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00091">basic_autonomy::waypoint_generation::DetailedTrajConfig::desired_controller_plugin</a>, <a class="el" href="helper__functions_8cpp_source.html#l00088">get_nearest_index_by_downtrack()</a>, <a class="el" href="helper__functions_8cpp_source.html#l00025">get_nearest_point_index()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00085">basic_autonomy::waypoint_generation::DetailedTrajConfig::lateral_accel_limit</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00084">basic_autonomy::waypoint_generation::DetailedTrajConfig::max_accel</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00083">basic_autonomy::waypoint_generation::DetailedTrajConfig::minimum_speed</a>, <a class="el" href="filters_8cpp_source.html#l00024">basic_autonomy::smoothing::moving_average_filter()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00740">optimize_speed()</a>, <a class="el" href="log_8cpp_source.html#l00035">basic_autonomy::log::pointSpeedPairToStream()</a>, <a class="el" href="log_8hpp_source.html#l00040">basic_autonomy::log::printDebugPerLine()</a>, <a class="el" href="log_8cpp_source.html#l00045">basic_autonomy::log::printDoublesPerLineWithPrefix()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00086">basic_autonomy::waypoint_generation::DetailedTrajConfig::speed_moving_average_window_size</a>, <a class="el" href="helper__functions_8cpp_source.html#l00114">split_point_speed_pairs()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00803">trajectory_from_points_times_orientations()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00081">basic_autonomy::waypoint_generation::DetailedTrajConfig::trajectory_time_length</a>, <a class="el" href="osm__transform_8py_source.html#l00130">osm_transform::x</a>, and <a class="el" href="osm__transform_8py_source.html#l00131">osm_transform::y</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="light__controlled__intersection__tactical__plugin_8cpp_source.html#l00106">light_controlled_intersection_tactical_plugin::LightControlledIntersectionTacticalPlugin::generateNewTrajectory()</a>, <a class="el" href="inlanecruising__plugin_8cpp_source.html#l00049">inlanecruising_plugin::InLaneCruisingPlugin::plan_trajectory_callback()</a>, and <a class="el" href="platooning__tactical__plugin_8cpp_source.html#l00044">platooning_tactical_plugin::PlatooningTacticalPlugin::plan_trajectory_cb()</a>.</p>
 <div class="dynheader">
@@ -3226,34 +3232,34 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true or false </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="basic__autonomy_8cpp_source.html#l01404">1404</a> of file <a class="el" href="basic__autonomy_8cpp_source.html">basic_autonomy.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1405</span>        {</div>
-<div class="line"><span class="lineno"> 1406</span>            <span class="keywordflow">if</span> (yield_plan.trajectory_points.size() &lt; 2)</div>
-<div class="line"><span class="lineno"> 1407</span>            {</div>
-<div class="line"><span class="lineno"> 1408</span>                RCLCPP_WARN(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Invalid Yield Trajectory with less than 2 points!&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1409</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno"> 1410</span>            }</div>
-<div class="line"><span class="lineno"> 1411</span> </div>
-<div class="line"><span class="lineno"> 1412</span>            RCLCPP_DEBUG_STREAM(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Yield Trajectory Time&quot;</span> &lt;&lt; rclcpp::Time(yield_plan.trajectory_points[0].target_time).seconds());</div>
-<div class="line"><span class="lineno"> 1413</span>            RCLCPP_DEBUG_STREAM(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Now:&quot;</span> &lt;&lt; node_handler-&gt;now().seconds());</div>
-<div class="line"><span class="lineno"> 1414</span> </div>
-<div class="line"><span class="lineno"> 1415</span>            <span class="keywordflow">if</span> (rclcpp::Time(yield_plan.trajectory_points[0].target_time) + rclcpp::Duration(5.0, 0) &gt; node_handler-&gt;now())</div>
-<div class="line"><span class="lineno"> 1416</span>            {</div>
-<div class="line"><span class="lineno"> 1417</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno"> 1418</span>            }</div>
-<div class="line"><span class="lineno"> 1419</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno"> 1420</span>            {</div>
-<div class="line"><span class="lineno"> 1421</span>                RCLCPP_WARN_STREAM(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Invalid Yield Trajectory with old target_time: &quot;</span> &lt;&lt; </div>
-<div class="line"><span class="lineno"> 1422</span>                    <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(rclcpp::Time(yield_plan.trajectory_points[0].target_time).seconds()) &lt;&lt; <span class="stringliteral">&quot;, where now: &quot;</span> &lt;&lt;</div>
-<div class="line"><span class="lineno"> 1423</span>                    <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(node_handler-&gt;now().seconds()));</div>
+<p class="definition">Definition at line <a class="el" href="basic__autonomy_8cpp_source.html#l01410">1410</a> of file <a class="el" href="basic__autonomy_8cpp_source.html">basic_autonomy.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1411</span>        {</div>
+<div class="line"><span class="lineno"> 1412</span>            <span class="keywordflow">if</span> (yield_plan.trajectory_points.size() &lt; 2)</div>
+<div class="line"><span class="lineno"> 1413</span>            {</div>
+<div class="line"><span class="lineno"> 1414</span>                RCLCPP_WARN(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Invalid Yield Trajectory with less than 2 points!&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1415</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1416</span>            }</div>
+<div class="line"><span class="lineno"> 1417</span> </div>
+<div class="line"><span class="lineno"> 1418</span>            RCLCPP_DEBUG_STREAM(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Yield Trajectory Time&quot;</span> &lt;&lt; rclcpp::Time(yield_plan.trajectory_points[0].target_time).seconds());</div>
+<div class="line"><span class="lineno"> 1419</span>            RCLCPP_DEBUG_STREAM(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Now:&quot;</span> &lt;&lt; node_handler-&gt;now().seconds());</div>
+<div class="line"><span class="lineno"> 1420</span> </div>
+<div class="line"><span class="lineno"> 1421</span>            <span class="keywordflow">if</span> (rclcpp::Time(yield_plan.trajectory_points[0].target_time) + rclcpp::Duration(5.0, 0) &gt; node_handler-&gt;now())</div>
+<div class="line"><span class="lineno"> 1422</span>            {</div>
+<div class="line"><span class="lineno"> 1423</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno"> 1424</span>            }</div>
-<div class="line"><span class="lineno"> 1425</span> </div>
-<div class="line"><span class="lineno"> 1426</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno"> 1427</span>        }</div>
+<div class="line"><span class="lineno"> 1425</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 1426</span>            {</div>
+<div class="line"><span class="lineno"> 1427</span>                RCLCPP_WARN_STREAM(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Invalid Yield Trajectory with old target_time: &quot;</span> &lt;&lt;</div>
+<div class="line"><span class="lineno"> 1428</span>                    <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(rclcpp::Time(yield_plan.trajectory_points[0].target_time).seconds()) &lt;&lt; <span class="stringliteral">&quot;, where now: &quot;</span> &lt;&lt;</div>
+<div class="line"><span class="lineno"> 1429</span>                    <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(node_handler-&gt;now().seconds()));</div>
+<div class="line"><span class="lineno"> 1430</span>            }</div>
+<div class="line"><span class="lineno"> 1431</span> </div>
+<div class="line"><span class="lineno"> 1432</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno"> 1433</span>        }</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="utm__zone_8cpp_source.html#l00021">carma_cooperative_perception::to_string()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="basic__autonomy_8cpp_source.html#l01429">modify_trajectory_to_yield_to_obstacles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="basic__autonomy_8cpp_source.html#l01435">modify_trajectory_to_yield_to_obstacles()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3412,53 +3418,53 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The original response modified to contain the modified planned trajectory </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="basic__autonomy_8cpp_source.html#l01429">1429</a> of file <a class="el" href="basic__autonomy_8cpp_source.html">basic_autonomy.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1435</span>        {</div>
-<div class="line"><span class="lineno"> 1436</span>            RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Object avoidance activated&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1437</span> </div>
-<div class="line"><span class="lineno"> 1438</span>            <span class="keywordflow">if</span> (!yield_client || !yield_client-&gt;service_is_ready())</div>
-<div class="line"><span class="lineno"> 1439</span>            {</div>
-<div class="line"><span class="lineno"> 1440</span>                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Yield Client is not set or unavailable after configuration state of lifecycle&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1441</span>            }</div>
-<div class="line"><span class="lineno"> 1442</span> </div>
-<div class="line"><span class="lineno"> 1443</span>            RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Yield Client is valid&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1444</span> </div>
-<div class="line"><span class="lineno"> 1445</span>            <span class="keyword">auto</span> yield_srv = std::make_shared&lt;carma_planning_msgs::srv::PlanTrajectory::Request&gt;();</div>
-<div class="line"><span class="lineno"> 1446</span>            yield_srv-&gt;initial_trajectory_plan = resp-&gt;trajectory_plan;</div>
-<div class="line"><span class="lineno"> 1447</span>            yield_srv-&gt;vehicle_state = req-&gt;vehicle_state;</div>
+<p class="definition">Definition at line <a class="el" href="basic__autonomy_8cpp_source.html#l01435">1435</a> of file <a class="el" href="basic__autonomy_8cpp_source.html">basic_autonomy.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1441</span>        {</div>
+<div class="line"><span class="lineno"> 1442</span>            RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Object avoidance activated&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1443</span> </div>
+<div class="line"><span class="lineno"> 1444</span>            <span class="keywordflow">if</span> (!yield_client || !yield_client-&gt;service_is_ready())</div>
+<div class="line"><span class="lineno"> 1445</span>            {</div>
+<div class="line"><span class="lineno"> 1446</span>                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Yield Client is not set or unavailable after configuration state of lifecycle&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1447</span>            }</div>
 <div class="line"><span class="lineno"> 1448</span> </div>
-<div class="line"><span class="lineno"> 1449</span>            <span class="keyword">auto</span> yield_resp = yield_client-&gt;async_send_request(yield_srv);</div>
+<div class="line"><span class="lineno"> 1449</span>            RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Yield Client is valid&quot;</span>);</div>
 <div class="line"><span class="lineno"> 1450</span> </div>
-<div class="line"><span class="lineno"> 1451</span>            <span class="keyword">auto</span> future_status = yield_resp.wait_for(std::chrono::milliseconds(yield_plugin_service_call_timeout));</div>
-<div class="line"><span class="lineno"> 1452</span> </div>
-<div class="line"><span class="lineno"> 1453</span>            <span class="keywordflow">if</span> (future_status != std::future_status::ready)</div>
-<div class="line"><span class="lineno"> 1454</span>            {</div>
-<div class="line"><span class="lineno"> 1455</span>                <span class="comment">// Sometimes the yield plugin&#39;s service call may be unsuccessful due to its computationally expensive logic.</span></div>
-<div class="line"><span class="lineno"> 1456</span>                <span class="comment">// However, consecutive calls can be successful, so return original trajectory for now</span></div>
-<div class="line"><span class="lineno"> 1457</span>                RCLCPP_WARN(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Service request to yield plugin timed out waiting on a reply from the service server&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1458</span>                <span class="keywordflow">return</span> resp;</div>
-<div class="line"><span class="lineno"> 1459</span>            }</div>
-<div class="line"><span class="lineno"> 1460</span> </div>
-<div class="line"><span class="lineno"> 1461</span>            RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Received Traj from Yield&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1462</span>            carma_planning_msgs::msg::TrajectoryPlan yield_plan = yield_resp.get()-&gt;trajectory_plan;</div>
-<div class="line"><span class="lineno"> 1463</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9a8cf0ed437bc3b0eb8008bd74782aa1">is_valid_yield_plan</a>(node_handler, yield_plan))</div>
-<div class="line"><span class="lineno"> 1464</span>            {</div>
-<div class="line"><span class="lineno"> 1465</span>                RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Yield trajectory validated&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1466</span>                resp-&gt;trajectory_plan = yield_plan;</div>
-<div class="line"><span class="lineno"> 1467</span>            }</div>
-<div class="line"><span class="lineno"> 1468</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno"> 1469</span>            {</div>
-<div class="line"><span class="lineno"> 1470</span>                <span class="comment">// This logic used to throw. However, yield_plugin is intermittently returning invalid trajectory when it shouldn&#39;t</span></div>
-<div class="line"><span class="lineno"> 1471</span>                <span class="comment">// TODO: CAR-6118 is tracking it </span></div>
-<div class="line"><span class="lineno"> 1472</span>                RCLCPP_WARN_STREAM(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Invalid yield trajectory detected, returning original trajectory of size: &quot;</span> &lt;&lt;</div>
-<div class="line"><span class="lineno"> 1473</span>                    resp-&gt;trajectory_plan.trajectory_points.size());</div>
-<div class="line"><span class="lineno"> 1474</span>            }</div>
-<div class="line"><span class="lineno"> 1475</span> </div>
-<div class="line"><span class="lineno"> 1476</span>            <span class="keywordflow">return</span> resp;</div>
-<div class="line"><span class="lineno"> 1477</span>        }</div>
-<div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_a9a8cf0ed437bc3b0eb8008bd74782aa1"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#a9a8cf0ed437bc3b0eb8008bd74782aa1">basic_autonomy::waypoint_generation::is_valid_yield_plan</a></div><div class="ttdeci">bool is_valid_yield_plan(const std::shared_ptr&lt; carma_ros2_utils::CarmaLifecycleNode &gt; &amp;node_handler, const carma_planning_msgs::msg::TrajectoryPlan &amp;yield_plan)</div><div class="ttdoc">Helper function to verify if the input yield trajectory plan is valid.</div><div class="ttdef"><b>Definition:</b> <a href="basic__autonomy_8cpp_source.html#l01404">basic_autonomy.cpp:1404</a></div></div>
+<div class="line"><span class="lineno"> 1451</span>            <span class="keyword">auto</span> yield_srv = std::make_shared&lt;carma_planning_msgs::srv::PlanTrajectory::Request&gt;();</div>
+<div class="line"><span class="lineno"> 1452</span>            yield_srv-&gt;initial_trajectory_plan = resp-&gt;trajectory_plan;</div>
+<div class="line"><span class="lineno"> 1453</span>            yield_srv-&gt;vehicle_state = req-&gt;vehicle_state;</div>
+<div class="line"><span class="lineno"> 1454</span> </div>
+<div class="line"><span class="lineno"> 1455</span>            <span class="keyword">auto</span> yield_resp = yield_client-&gt;async_send_request(yield_srv);</div>
+<div class="line"><span class="lineno"> 1456</span> </div>
+<div class="line"><span class="lineno"> 1457</span>            <span class="keyword">auto</span> future_status = yield_resp.wait_for(std::chrono::milliseconds(yield_plugin_service_call_timeout));</div>
+<div class="line"><span class="lineno"> 1458</span> </div>
+<div class="line"><span class="lineno"> 1459</span>            <span class="keywordflow">if</span> (future_status != std::future_status::ready)</div>
+<div class="line"><span class="lineno"> 1460</span>            {</div>
+<div class="line"><span class="lineno"> 1461</span>                <span class="comment">// Sometimes the yield plugin&#39;s service call may be unsuccessful due to its computationally expensive logic.</span></div>
+<div class="line"><span class="lineno"> 1462</span>                <span class="comment">// However, consecutive calls can be successful, so return original trajectory for now</span></div>
+<div class="line"><span class="lineno"> 1463</span>                RCLCPP_WARN(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Service request to yield plugin timed out waiting on a reply from the service server&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1464</span>                <span class="keywordflow">return</span> resp;</div>
+<div class="line"><span class="lineno"> 1465</span>            }</div>
+<div class="line"><span class="lineno"> 1466</span> </div>
+<div class="line"><span class="lineno"> 1467</span>            RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Received Traj from Yield&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1468</span>            carma_planning_msgs::msg::TrajectoryPlan yield_plan = yield_resp.get()-&gt;trajectory_plan;</div>
+<div class="line"><span class="lineno"> 1469</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a9a8cf0ed437bc3b0eb8008bd74782aa1">is_valid_yield_plan</a>(node_handler, yield_plan))</div>
+<div class="line"><span class="lineno"> 1470</span>            {</div>
+<div class="line"><span class="lineno"> 1471</span>                RCLCPP_DEBUG(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Yield trajectory validated&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1472</span>                resp-&gt;trajectory_plan = yield_plan;</div>
+<div class="line"><span class="lineno"> 1473</span>            }</div>
+<div class="line"><span class="lineno"> 1474</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 1475</span>            {</div>
+<div class="line"><span class="lineno"> 1476</span>                <span class="comment">// This logic used to throw. However, yield_plugin is intermittently returning invalid trajectory when it shouldn&#39;t</span></div>
+<div class="line"><span class="lineno"> 1477</span>                <span class="comment">// TODO: CAR-6118 is tracking it</span></div>
+<div class="line"><span class="lineno"> 1478</span>                RCLCPP_WARN_STREAM(node_handler-&gt;get_logger(), <span class="stringliteral">&quot;Invalid yield trajectory detected, returning original trajectory of size: &quot;</span> &lt;&lt;</div>
+<div class="line"><span class="lineno"> 1479</span>                    resp-&gt;trajectory_plan.trajectory_points.size());</div>
+<div class="line"><span class="lineno"> 1480</span>            }</div>
+<div class="line"><span class="lineno"> 1481</span> </div>
+<div class="line"><span class="lineno"> 1482</span>            <span class="keywordflow">return</span> resp;</div>
+<div class="line"><span class="lineno"> 1483</span>        }</div>
+<div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_a9a8cf0ed437bc3b0eb8008bd74782aa1"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#a9a8cf0ed437bc3b0eb8008bd74782aa1">basic_autonomy::waypoint_generation::is_valid_yield_plan</a></div><div class="ttdeci">bool is_valid_yield_plan(const std::shared_ptr&lt; carma_ros2_utils::CarmaLifecycleNode &gt; &amp;node_handler, const carma_planning_msgs::msg::TrajectoryPlan &amp;yield_plan)</div><div class="ttdoc">Helper function to verify if the input yield trajectory plan is valid.</div><div class="ttdef"><b>Definition:</b> <a href="basic__autonomy_8cpp_source.html#l01410">basic_autonomy.cpp:1410</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="basic__autonomy_8cpp_source.html#l01404">is_valid_yield_plan()</a>.</p>
+<p class="reference">References <a class="el" href="basic__autonomy_8cpp_source.html#l01410">is_valid_yield_plan()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="inlanecruising__plugin_8cpp_source.html#l00049">inlanecruising_plugin::InLaneCruisingPlugin::plan_trajectory_callback()</a>, <a class="el" href="stop__and__wait__plugin_8cpp_source.html#l00059">stop_and_wait_plugin::StopandWait::plan_trajectory_cb()</a>, and <a class="el" href="light__controlled__intersection__tactical__plugin_8cpp_source.html#l00400">light_controlled_intersection_tactical_plugin::LightControlledIntersectionTacticalPlugin::planTrajectoryCB()</a>.</p>
 <div class="dynheader">
@@ -3658,108 +3664,108 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>trajectory plan of autoware_auto_msgs type </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="basic__autonomy_8cpp_source.html#l01284">1284</a> of file <a class="el" href="basic__autonomy_8cpp_source.html">basic_autonomy.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1285</span>        {</div>
-<div class="line"><span class="lineno"> 1286</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Processing latest TrajectoryPlan message&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1287</span> </div>
-<div class="line"><span class="lineno"> 1288</span>            std::vector&lt;double&gt; times;</div>
-<div class="line"><span class="lineno"> 1289</span>            std::vector&lt;double&gt; downtracks;</div>
-<div class="line"><span class="lineno"> 1290</span> </div>
-<div class="line"><span class="lineno"> 1291</span>            std::vector&lt;carma_planning_msgs::msg::TrajectoryPlanPoint&gt; trajectory_points = tp.trajectory_points;</div>
-<div class="line"><span class="lineno"> 1292</span> </div>
-<div class="line"><span class="lineno"> 1293</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Original Trajectory size:&quot;</span>&lt;&lt;trajectory_points.size());</div>
-<div class="line"><span class="lineno"> 1294</span> </div>
-<div class="line"><span class="lineno"> 1295</span> </div>
-<div class="line"><span class="lineno"> 1296</span>            trajectory_utils::conversions::trajectory_to_downtrack_time(trajectory_points, &amp;downtracks, &amp;times);</div>
-<div class="line"><span class="lineno"> 1297</span> </div>
-<div class="line"><span class="lineno"> 1298</span>            <span class="comment">//detect stopping case</span></div>
-<div class="line"><span class="lineno"> 1299</span>            <span class="keywordtype">size_t</span> stopping_index = 0;</div>
-<div class="line"><span class="lineno"> 1300</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 1; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; times.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
-<div class="line"><span class="lineno"> 1301</span>            {</div>
-<div class="line"><span class="lineno"> 1302</span>                <span class="keywordflow">if</span> (times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] == times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> - 1]) <span class="comment">//if exactly same, it is stopping case</span></div>
-<div class="line"><span class="lineno"> 1303</span>                {</div>
-<div class="line"><span class="lineno"> 1304</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Detected a stopping case where times is exactly equal: &quot;</span> &lt;&lt; times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>-1]);</div>
-<div class="line"><span class="lineno"> 1305</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;And index of that is: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt;&lt; <span class="stringliteral">&quot;, where size is: &quot;</span> &lt;&lt; times.size());</div>
-<div class="line"><span class="lineno"> 1306</span>                    stopping_index = <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>;</div>
-<div class="line"><span class="lineno"> 1307</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno"> 1308</span>                }</div>
-<div class="line"><span class="lineno"> 1309</span>            }</div>
-<div class="line"><span class="lineno"> 1310</span> </div>
-<div class="line"><span class="lineno"> 1311</span>            std::vector&lt;double&gt; speeds;</div>
-<div class="line"><span class="lineno"> 1312</span>            <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno"> 1313</span>            {</div>
-<div class="line"><span class="lineno"> 1314</span>                trajectory_utils::conversions::time_to_speed(downtracks, times, tp.initial_longitudinal_velocity, &amp;speeds);</div>
+<p class="definition">Definition at line <a class="el" href="basic__autonomy_8cpp_source.html#l01290">1290</a> of file <a class="el" href="basic__autonomy_8cpp_source.html">basic_autonomy.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1291</span>        {</div>
+<div class="line"><span class="lineno"> 1292</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Processing latest TrajectoryPlan message&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1293</span> </div>
+<div class="line"><span class="lineno"> 1294</span>            std::vector&lt;double&gt; times;</div>
+<div class="line"><span class="lineno"> 1295</span>            std::vector&lt;double&gt; downtracks;</div>
+<div class="line"><span class="lineno"> 1296</span> </div>
+<div class="line"><span class="lineno"> 1297</span>            std::vector&lt;carma_planning_msgs::msg::TrajectoryPlanPoint&gt; trajectory_points = tp.trajectory_points;</div>
+<div class="line"><span class="lineno"> 1298</span> </div>
+<div class="line"><span class="lineno"> 1299</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Original Trajectory size:&quot;</span>&lt;&lt;trajectory_points.size());</div>
+<div class="line"><span class="lineno"> 1300</span> </div>
+<div class="line"><span class="lineno"> 1301</span> </div>
+<div class="line"><span class="lineno"> 1302</span>            trajectory_utils::conversions::trajectory_to_downtrack_time(trajectory_points, &amp;downtracks, &amp;times);</div>
+<div class="line"><span class="lineno"> 1303</span> </div>
+<div class="line"><span class="lineno"> 1304</span>            <span class="comment">//detect stopping case</span></div>
+<div class="line"><span class="lineno"> 1305</span>            <span class="keywordtype">size_t</span> stopping_index = 0;</div>
+<div class="line"><span class="lineno"> 1306</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 1; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; times.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
+<div class="line"><span class="lineno"> 1307</span>            {</div>
+<div class="line"><span class="lineno"> 1308</span>                <span class="keywordflow">if</span> (times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] == times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> - 1]) <span class="comment">//if exactly same, it is stopping case</span></div>
+<div class="line"><span class="lineno"> 1309</span>                {</div>
+<div class="line"><span class="lineno"> 1310</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Detected a stopping case where times is exactly equal: &quot;</span> &lt;&lt; times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>-1]);</div>
+<div class="line"><span class="lineno"> 1311</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;And index of that is: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt;&lt; <span class="stringliteral">&quot;, where size is: &quot;</span> &lt;&lt; times.size());</div>
+<div class="line"><span class="lineno"> 1312</span>                    stopping_index = <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>;</div>
+<div class="line"><span class="lineno"> 1313</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno"> 1314</span>                }</div>
 <div class="line"><span class="lineno"> 1315</span>            }</div>
-<div class="line"><span class="lineno"> 1316</span>            <span class="keywordflow">catch</span>(<span class="keyword">const</span> std::runtime_error&amp; error)</div>
-<div class="line"><span class="lineno"> 1317</span>            {</div>
-<div class="line"><span class="lineno"> 1318</span>                <span class="comment">// This can only happen if there was negative speed in trajectory generation which usually happens when intending to stop.</span></div>
-<div class="line"><span class="lineno"> 1319</span>                <span class="comment">// The plugin is catching that error and logging it for the user to correct the origin plugin&#39;s logic, but continues</span></div>
-<div class="line"><span class="lineno"> 1320</span>                <span class="comment">// the operation by forcing the negative values to be 0, which is the intention usually.</span></div>
-<div class="line"><span class="lineno"> 1321</span>                RCLCPP_WARN_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Detected a negative speed from &lt;point,time&gt; to &lt;point,speed&gt; trajectory conversion with error: &quot;</span></div>
-<div class="line"><span class="lineno"> 1322</span>                    &lt;&lt; error.what() &lt;&lt; <span class="stringliteral">&quot;. Replacing the negative speed with 0.0 speed, but please revisit the trajectory logic. &quot;</span></div>
-<div class="line"><span class="lineno"> 1323</span>                    <span class="stringliteral">&quot;Responsible plugin is: &quot;</span> &lt;&lt; trajectory_points[std::find(speeds.begin(), speeds.end(), 0.0) - speeds.begin()].planner_plugin_name);</div>
-<div class="line"><span class="lineno"> 1324</span>            }</div>
-<div class="line"><span class="lineno"> 1325</span> </div>
-<div class="line"><span class="lineno"> 1326</span>            <span class="keywordflow">if</span> (speeds.size() != trajectory_points.size())</div>
-<div class="line"><span class="lineno"> 1327</span>            {</div>
-<div class="line"><span class="lineno"> 1328</span>                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Speeds and trajectory points sizes do not match&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1329</span>            }</div>
-<div class="line"><span class="lineno"> 1330</span> </div>
-<div class="line"><span class="lineno"> 1331</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; speeds.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++) { <span class="comment">// Ensure 0 is min speed</span></div>
-<div class="line"><span class="lineno"> 1332</span>                <span class="keywordflow">if</span> (stopping_index != 0 &amp;&amp; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &gt;= stopping_index - 1)</div>
-<div class="line"><span class="lineno"> 1333</span>                {</div>
-<div class="line"><span class="lineno"> 1334</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Made it to 0, i: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>);</div>
-<div class="line"><span class="lineno"> 1335</span> </div>
-<div class="line"><span class="lineno"> 1336</span>                    speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = 0.0;  <span class="comment">//stopping case</span></div>
-<div class="line"><span class="lineno"> 1337</span>                }</div>
-<div class="line"><span class="lineno"> 1338</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 1316</span> </div>
+<div class="line"><span class="lineno"> 1317</span>            std::vector&lt;double&gt; speeds;</div>
+<div class="line"><span class="lineno"> 1318</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno"> 1319</span>            {</div>
+<div class="line"><span class="lineno"> 1320</span>                trajectory_utils::conversions::time_to_speed(downtracks, times, tp.initial_longitudinal_velocity, &amp;speeds);</div>
+<div class="line"><span class="lineno"> 1321</span>            }</div>
+<div class="line"><span class="lineno"> 1322</span>            <span class="keywordflow">catch</span>(<span class="keyword">const</span> std::runtime_error&amp; error)</div>
+<div class="line"><span class="lineno"> 1323</span>            {</div>
+<div class="line"><span class="lineno"> 1324</span>                <span class="comment">// This can only happen if there was negative speed in trajectory generation which usually happens when intending to stop.</span></div>
+<div class="line"><span class="lineno"> 1325</span>                <span class="comment">// The plugin is catching that error and logging it for the user to correct the origin plugin&#39;s logic, but continues</span></div>
+<div class="line"><span class="lineno"> 1326</span>                <span class="comment">// the operation by forcing the negative values to be 0, which is the intention usually.</span></div>
+<div class="line"><span class="lineno"> 1327</span>                RCLCPP_WARN_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Detected a negative speed from &lt;point,time&gt; to &lt;point,speed&gt; trajectory conversion with error: &quot;</span></div>
+<div class="line"><span class="lineno"> 1328</span>                    &lt;&lt; error.what() &lt;&lt; <span class="stringliteral">&quot;. Replacing the negative speed with 0.0 speed, but please revisit the trajectory logic. &quot;</span></div>
+<div class="line"><span class="lineno"> 1329</span>                    <span class="stringliteral">&quot;Responsible plugin is: &quot;</span> &lt;&lt; trajectory_points[std::find(speeds.begin(), speeds.end(), 0.0) - speeds.begin()].planner_plugin_name);</div>
+<div class="line"><span class="lineno"> 1330</span>            }</div>
+<div class="line"><span class="lineno"> 1331</span> </div>
+<div class="line"><span class="lineno"> 1332</span>            <span class="keywordflow">if</span> (speeds.size() != trajectory_points.size())</div>
+<div class="line"><span class="lineno"> 1333</span>            {</div>
+<div class="line"><span class="lineno"> 1334</span>                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Speeds and trajectory points sizes do not match&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1335</span>            }</div>
+<div class="line"><span class="lineno"> 1336</span> </div>
+<div class="line"><span class="lineno"> 1337</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; speeds.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++) { <span class="comment">// Ensure 0 is min speed</span></div>
+<div class="line"><span class="lineno"> 1338</span>                <span class="keywordflow">if</span> (stopping_index != 0 &amp;&amp; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &gt;= stopping_index - 1)</div>
 <div class="line"><span class="lineno"> 1339</span>                {</div>
-<div class="line"><span class="lineno"> 1340</span>                    speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = std::max(0.0, speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]);</div>
-<div class="line"><span class="lineno"> 1341</span>                }</div>
-<div class="line"><span class="lineno"> 1342</span>            }</div>
-<div class="line"><span class="lineno"> 1343</span> </div>
-<div class="line"><span class="lineno"> 1344</span>            std::vector&lt;double&gt; lag_speeds;</div>
-<div class="line"><span class="lineno"> 1345</span>            lag_speeds = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a3c66a834de5e4a066c8c9011e25f8e71">apply_response_lag</a>(speeds, downtracks, vehicle_response_lag); <span class="comment">// This call requires that the first speed point be current speed to work as expected</span></div>
-<div class="line"><span class="lineno"> 1346</span> </div>
-<div class="line"><span class="lineno"> 1347</span>            autoware_auto_msgs::msg::Trajectory autoware_trajectory;</div>
-<div class="line"><span class="lineno"> 1348</span>            autoware_trajectory.header = tp.header;</div>
-<div class="line"><span class="lineno"> 1349</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;size: &quot;</span> &lt;&lt; trajectory_points.size());</div>
-<div class="line"><span class="lineno"> 1350</span> </div>
-<div class="line"><span class="lineno"> 1351</span>            <span class="keyword">auto</span> max_size = std::min(99, (<span class="keywordtype">int</span>)trajectory_points.size());  <span class="comment">//NOTE: more than this size autoware auto raises exception with &quot;Exceeded upper bound while in ACTIVE state.&quot;</span></div>
-<div class="line"><span class="lineno"> 1352</span>                                                                            <span class="comment">//large portion of the points are not needed anyways</span></div>
-<div class="line"><span class="lineno"> 1353</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; max_size; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
-<div class="line"><span class="lineno"> 1354</span>            {</div>
-<div class="line"><span class="lineno"> 1355</span>                autoware_auto_msgs::msg::TrajectoryPoint autoware_point;</div>
+<div class="line"><span class="lineno"> 1340</span>                    RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Made it to 0, i: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>);</div>
+<div class="line"><span class="lineno"> 1341</span> </div>
+<div class="line"><span class="lineno"> 1342</span>                    speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = 0.0;  <span class="comment">//stopping case</span></div>
+<div class="line"><span class="lineno"> 1343</span>                }</div>
+<div class="line"><span class="lineno"> 1344</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 1345</span>                {</div>
+<div class="line"><span class="lineno"> 1346</span>                    speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] = std::max(0.0, speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]);</div>
+<div class="line"><span class="lineno"> 1347</span>                }</div>
+<div class="line"><span class="lineno"> 1348</span>            }</div>
+<div class="line"><span class="lineno"> 1349</span> </div>
+<div class="line"><span class="lineno"> 1350</span>            std::vector&lt;double&gt; lag_speeds;</div>
+<div class="line"><span class="lineno"> 1351</span>            lag_speeds = <a class="code hl_function" href="namespacebasic__autonomy_1_1waypoint__generation.html#a3c66a834de5e4a066c8c9011e25f8e71">apply_response_lag</a>(speeds, downtracks, vehicle_response_lag); <span class="comment">// This call requires that the first speed point be current speed to work as expected</span></div>
+<div class="line"><span class="lineno"> 1352</span> </div>
+<div class="line"><span class="lineno"> 1353</span>            autoware_auto_msgs::msg::Trajectory autoware_trajectory;</div>
+<div class="line"><span class="lineno"> 1354</span>            autoware_trajectory.header = tp.header;</div>
+<div class="line"><span class="lineno"> 1355</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;size: &quot;</span> &lt;&lt; trajectory_points.size());</div>
 <div class="line"><span class="lineno"> 1356</span> </div>
-<div class="line"><span class="lineno"> 1357</span>                autoware_point.x = trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].x;</div>
-<div class="line"><span class="lineno"> 1358</span>                autoware_point.y = trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].y;</div>
-<div class="line"><span class="lineno"> 1359</span>                autoware_point.longitudinal_velocity_mps = lag_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
-<div class="line"><span class="lineno"> 1360</span>                <span class="keywordtype">double</span> yaw = 0.0;</div>
-<div class="line"><span class="lineno"> 1361</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>&lt; max_size-1)</div>
-<div class="line"><span class="lineno"> 1362</span>                {</div>
-<div class="line"><span class="lineno"> 1363</span>                    yaw = std::atan2(trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>+1].<a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a> - trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].<a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a>, trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>+1].<a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a> - trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].<a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a>);</div>
-<div class="line"><span class="lineno"> 1364</span> </div>
-<div class="line"><span class="lineno"> 1365</span>                }</div>
-<div class="line"><span class="lineno"> 1366</span>                <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno"> 1367</span>                {</div>
-<div class="line"><span class="lineno"> 1368</span>                    yaw = std::atan2(trajectory_points[max_size-1].<a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a> - trajectory_points[max_size-2].<a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a>, trajectory_points[max_size-1].<a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a> - trajectory_points[max_size-2].<a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a>);</div>
-<div class="line"><span class="lineno"> 1369</span>                    <span class="comment">// last point in the trajectory will have yaw value of its previous point to avoid sudden steering in some conditions</span></div>
-<div class="line"><span class="lineno"> 1370</span>                }</div>
-<div class="line"><span class="lineno"> 1371</span>                autoware_point.heading.real = std::cos(yaw/2);</div>
-<div class="line"><span class="lineno"> 1372</span>                autoware_point.heading.imag = std::sin(yaw/2);</div>
-<div class="line"><span class="lineno"> 1373</span> </div>
-<div class="line"><span class="lineno"> 1374</span>                autoware_point.time_from_start = rclcpp::Duration::from_nanoseconds(<span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] * 1e9));</div>
-<div class="line"><span class="lineno"> 1375</span>                RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Setting waypoint idx: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt;&lt;<span class="stringliteral">&quot;, with planner: &lt;&lt; &quot;</span> &lt;&lt; trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].planner_plugin_name &lt;&lt; <span class="stringliteral">&quot;, x: &quot;</span> &lt;&lt; trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].<a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a> &lt;&lt;</div>
-<div class="line"><span class="lineno"> 1376</span>                                        <span class="stringliteral">&quot;, y: &quot;</span> &lt;&lt; trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].<a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a> &lt;&lt;</div>
-<div class="line"><span class="lineno"> 1377</span>                                        <span class="stringliteral">&quot;, speed: &quot;</span> &lt;&lt; lag_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]* 2.23694 &lt;&lt; <span class="stringliteral">&quot;mph&quot;</span>);</div>
-<div class="line"><span class="lineno"> 1378</span>                autoware_trajectory.points.push_back(autoware_point);</div>
-<div class="line"><span class="lineno"> 1379</span>            }</div>
-<div class="line"><span class="lineno"> 1380</span> </div>
-<div class="line"><span class="lineno"> 1381</span>            <span class="keywordflow">return</span> autoware_trajectory;</div>
-<div class="line"><span class="lineno"> 1382</span>        }</div>
-<div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_a3c66a834de5e4a066c8c9011e25f8e71"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#a3c66a834de5e4a066c8c9011e25f8e71">basic_autonomy::waypoint_generation::apply_response_lag</a></div><div class="ttdeci">std::vector&lt; double &gt; apply_response_lag(const std::vector&lt; double &gt; &amp;speeds, const std::vector&lt; double &gt; downtracks, double response_lag)</div><div class="ttdoc">Applies a specified response lag in seconds to the trajectory shifting the whole thing by the specifi...</div><div class="ttdef"><b>Definition:</b> <a href="basic__autonomy_8cpp_source.html#l01385">basic_autonomy.cpp:1385</a></div></div>
+<div class="line"><span class="lineno"> 1357</span>            <span class="keyword">auto</span> max_size = std::min(99, (<span class="keywordtype">int</span>)trajectory_points.size());  <span class="comment">//NOTE: more than this size autoware auto raises exception with &quot;Exceeded upper bound while in ACTIVE state.&quot;</span></div>
+<div class="line"><span class="lineno"> 1358</span>                                                                            <span class="comment">//large portion of the points are not needed anyways</span></div>
+<div class="line"><span class="lineno"> 1359</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; max_size; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
+<div class="line"><span class="lineno"> 1360</span>            {</div>
+<div class="line"><span class="lineno"> 1361</span>                autoware_auto_msgs::msg::TrajectoryPoint autoware_point;</div>
+<div class="line"><span class="lineno"> 1362</span> </div>
+<div class="line"><span class="lineno"> 1363</span>                autoware_point.x = trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].x;</div>
+<div class="line"><span class="lineno"> 1364</span>                autoware_point.y = trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].y;</div>
+<div class="line"><span class="lineno"> 1365</span>                autoware_point.longitudinal_velocity_mps = lag_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>];</div>
+<div class="line"><span class="lineno"> 1366</span>                <span class="keywordtype">double</span> yaw = 0.0;</div>
+<div class="line"><span class="lineno"> 1367</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>&lt; max_size-1)</div>
+<div class="line"><span class="lineno"> 1368</span>                {</div>
+<div class="line"><span class="lineno"> 1369</span>                    yaw = std::atan2(trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>+1].<a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a> - trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].<a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a>, trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>+1].<a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a> - trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].<a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a>);</div>
+<div class="line"><span class="lineno"> 1370</span> </div>
+<div class="line"><span class="lineno"> 1371</span>                }</div>
+<div class="line"><span class="lineno"> 1372</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 1373</span>                {</div>
+<div class="line"><span class="lineno"> 1374</span>                    yaw = std::atan2(trajectory_points[max_size-1].<a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a> - trajectory_points[max_size-2].<a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a>, trajectory_points[max_size-1].<a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a> - trajectory_points[max_size-2].<a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a>);</div>
+<div class="line"><span class="lineno"> 1375</span>                    <span class="comment">// last point in the trajectory will have yaw value of its previous point to avoid sudden steering in some conditions</span></div>
+<div class="line"><span class="lineno"> 1376</span>                }</div>
+<div class="line"><span class="lineno"> 1377</span>                autoware_point.heading.real = std::cos(yaw/2);</div>
+<div class="line"><span class="lineno"> 1378</span>                autoware_point.heading.imag = std::sin(yaw/2);</div>
+<div class="line"><span class="lineno"> 1379</span> </div>
+<div class="line"><span class="lineno"> 1380</span>                autoware_point.time_from_start = rclcpp::Duration::from_nanoseconds(<span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(times[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>] * 1e9));</div>
+<div class="line"><span class="lineno"> 1381</span>                RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<a class="code hl_variable" href="namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33">BASIC_AUTONOMY_LOGGER</a>), <span class="stringliteral">&quot;Setting waypoint idx: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt;&lt;<span class="stringliteral">&quot;, with planner: &lt;&lt; &quot;</span> &lt;&lt; trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].planner_plugin_name &lt;&lt; <span class="stringliteral">&quot;, x: &quot;</span> &lt;&lt; trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].<a class="code hl_variable" href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">x</a> &lt;&lt;</div>
+<div class="line"><span class="lineno"> 1382</span>                                        <span class="stringliteral">&quot;, y: &quot;</span> &lt;&lt; trajectory_points[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].<a class="code hl_variable" href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">y</a> &lt;&lt;</div>
+<div class="line"><span class="lineno"> 1383</span>                                        <span class="stringliteral">&quot;, speed: &quot;</span> &lt;&lt; lag_speeds[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]* 2.23694 &lt;&lt; <span class="stringliteral">&quot;mph&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1384</span>                autoware_trajectory.points.push_back(autoware_point);</div>
+<div class="line"><span class="lineno"> 1385</span>            }</div>
+<div class="line"><span class="lineno"> 1386</span> </div>
+<div class="line"><span class="lineno"> 1387</span>            <span class="keywordflow">return</span> autoware_trajectory;</div>
+<div class="line"><span class="lineno"> 1388</span>        }</div>
+<div class="ttc" id="anamespacebasic__autonomy_1_1waypoint__generation_html_a3c66a834de5e4a066c8c9011e25f8e71"><div class="ttname"><a href="namespacebasic__autonomy_1_1waypoint__generation.html#a3c66a834de5e4a066c8c9011e25f8e71">basic_autonomy::waypoint_generation::apply_response_lag</a></div><div class="ttdeci">std::vector&lt; double &gt; apply_response_lag(const std::vector&lt; double &gt; &amp;speeds, const std::vector&lt; double &gt; downtracks, double response_lag)</div><div class="ttdoc">Applies a specified response lag in seconds to the trajectory shifting the whole thing by the specifi...</div><div class="ttdef"><b>Definition:</b> <a href="basic__autonomy_8cpp_source.html#l01391">basic_autonomy.cpp:1391</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="basic__autonomy_8cpp_source.html#l01385">apply_response_lag()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00063">BASIC_AUTONOMY_LOGGER</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="osm__transform_8py_source.html#l00130">osm_transform::x</a>, and <a class="el" href="osm__transform_8py_source.html#l00131">osm_transform::y</a>.</p>
+<p class="reference">References <a class="el" href="basic__autonomy_8cpp_source.html#l01391">apply_response_lag()</a>, <a class="el" href="basic__autonomy_8hpp_source.html#l00063">BASIC_AUTONOMY_LOGGER</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="osm__transform_8py_source.html#l00130">osm_transform::x</a>, and <a class="el" href="osm__transform_8py_source.html#l00131">osm_transform::y</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="trajectory__follower__wrapper__node_8cpp_source.html#l00088">trajectory_follower_wrapper::TrajectoryFollowerWrapperNode::autoware_info_timer_callback()</a>, <a class="el" href="pure__pursuit__wrapper_8cpp_source.html#l00132">pure_pursuit_wrapper::PurePursuitWrapperNode::generate_command()</a>, and <a class="el" href="platooning__control_8cpp_source.html#l00272">platooning_control::PlatooningControlPlugin::generate_control_signals()</a>.</p>
 <div class="dynheader">
@@ -4132,7 +4138,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="basic__autonomy_8hpp_source.html#l00063">63</a> of file <a class="el" href="basic__autonomy_8hpp_source.html">basic_autonomy.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="basic__autonomy_8cpp_source.html#l00225">add_lanefollow_buffer()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00616">apply_speed_limits()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l01174">compose_lanechange_trajectory_from_path()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00915">compose_lanefollow_trajectory_from_path()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00859">compute_fit()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00643">constrain_to_time_boundary()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00024">create_geometry_profile()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00319">create_lanechange_geometry()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00068">create_lanefollow_geometry()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00544">get_lanechange_points_from_maneuver()</a>, <a class="el" href="helper__functions_8cpp_source.html#l00088">get_nearest_index_by_downtrack()</a>, <a class="el" href="helper__functions_8cpp_source.html#l00045">get_nearest_point_index()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l01284">process_trajectory_plan()</a>, and <a class="el" href="basic__autonomy_8cpp_source.html#l00482">resample_linestring_pair_to_same_size()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="basic__autonomy_8cpp_source.html#l00225">add_lanefollow_buffer()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00616">apply_speed_limits()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l01174">compose_lanechange_trajectory_from_path()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00915">compose_lanefollow_trajectory_from_path()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00859">compute_fit()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00643">constrain_to_time_boundary()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00024">create_geometry_profile()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00319">create_lanechange_geometry()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00068">create_lanefollow_geometry()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l00544">get_lanechange_points_from_maneuver()</a>, <a class="el" href="helper__functions_8cpp_source.html#l00088">get_nearest_index_by_downtrack()</a>, <a class="el" href="helper__functions_8cpp_source.html#l00045">get_nearest_point_index()</a>, <a class="el" href="basic__autonomy_8cpp_source.html#l01290">process_trajectory_plan()</a>, and <a class="el" href="basic__autonomy_8cpp_source.html#l00482">resample_linestring_pair_to_same_size()</a>.</p>
 
 </div>
 </div>
@@ -4160,7 +4166,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacebasic__autonomy.html">basic_autonomy</a></li><li class="navelem"><a class="el" href="namespacebasic__autonomy_1_1waypoint__generation.html">waypoint_generation</a></li>
-    <li class="footer">Generated on Mon Jun 9 2025 15:09:19 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Jun 16 2025 22:18:08 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

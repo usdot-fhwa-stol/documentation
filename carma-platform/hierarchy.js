@@ -214,9 +214,6 @@ var hierarchy =
     [ "basic_autonomy::smoothing::SplineI", "classbasic__autonomy_1_1smoothing_1_1SplineI.html", [
       [ "basic_autonomy::smoothing::BSpline", "classbasic__autonomy_1_1smoothing_1_1BSpline.html", null ]
     ] ],
-    [ "inlanecruising_plugin::smoothing::SplineI", "classinlanecruising__plugin_1_1smoothing_1_1SplineI.html", [
-      [ "inlanecruising_plugin::smoothing::BSpline", "classinlanecruising__plugin_1_1smoothing_1_1BSpline.html", null ]
-    ] ],
     [ "subsystem_controllers::SSCDriverManager", "classsubsystem__controllers_1_1SSCDriverManager.html", null ],
     [ "stop_and_dwell_strategic_plugin::StopAndDwellStrategicPluginConfig", "structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html", null ],
     [ "stop_and_wait_plugin::StopandWait", "classstop__and__wait__plugin_1_1StopandWait.html", null ],

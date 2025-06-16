@@ -1,7 +1,7 @@
 var searchData=
 [
   ['_7ebasesubsystemcontroller_0',['~BaseSubsystemController',['../classsubsystem__controllers_1_1BaseSubsystemController.html#a909d81779dd87c3837a328cbcada7082',1,'subsystem_controllers::BaseSubsystemController']]],
-  ['_7ebspline_1',['~BSpline',['../classbasic__autonomy_1_1smoothing_1_1BSpline.html#ad131f054dde5ba418f1a04c2636ad74e',1,'basic_autonomy::smoothing::BSpline::~BSpline()'],['../classinlanecruising__plugin_1_1smoothing_1_1BSpline.html#a6d8bc7a55067e03a00720e1b013dac59',1,'inlanecruising_plugin::smoothing::BSpline::~BSpline()']]],
+  ['_7ebspline_1',['~BSpline',['../classbasic__autonomy_1_1smoothing_1_1BSpline.html#ad131f054dde5ba418f1a04c2636ad74e',1,'basic_autonomy::smoothing::BSpline']]],
   ['_7ecallinterface_2',['~CallInterface',['../classCallInterface.html#a5eb47d7cff60e324a75ba2a74c18e6e9',1,'CallInterface']]],
   ['_7ecarmaworldmodel_3',['~CARMAWorldModel',['../classcarma__wm_1_1CARMAWorldModel.html#a4c325594d148d834fe5d7e11eaa23d7b',1,'carma_wm::CARMAWorldModel']]],
   ['_7econtrolplugin_4',['~ControlPlugin',['../classcarma__guidance__plugins_1_1ControlPlugin.html#ad850e621cedd603d1816b150abd58170',1,'carma_guidance_plugins::ControlPlugin']]],
@@ -14,7 +14,7 @@ var searchData=
   ['_7eplanningstrategy_11',['~PlanningStrategy',['../classarbitrator_1_1PlanningStrategy.html#a1be144f0cfe274dc493fdf6ec15d3b0d',1,'arbitrator::PlanningStrategy']]],
   ['_7epluginbasenode_12',['~PluginBaseNode',['../classcarma__guidance__plugins_1_1PluginBaseNode.html#a4304eac54a14bcc8c3bf5db392863f89',1,'carma_guidance_plugins::PluginBaseNode']]],
   ['_7esearchstrategy_13',['~SearchStrategy',['../classarbitrator_1_1SearchStrategy.html#ac687ecdce8bd2227e564d4d6d8c239ad',1,'arbitrator::SearchStrategy']]],
-  ['_7esplinei_14',['~SplineI',['../classbasic__autonomy_1_1smoothing_1_1SplineI.html#a2a2bebe095c351465ba96827d6ab1c03',1,'basic_autonomy::smoothing::SplineI::~SplineI()'],['../classinlanecruising__plugin_1_1smoothing_1_1SplineI.html#a68b0229d13538f9506685d0a5dc5f455',1,'inlanecruising_plugin::smoothing::SplineI::~SplineI()']]],
+  ['_7esplinei_14',['~SplineI',['../classbasic__autonomy_1_1smoothing_1_1SplineI.html#a2a2bebe095c351465ba96827d6ab1c03',1,'basic_autonomy::smoothing::SplineI']]],
   ['_7estrategicplugin_15',['~StrategicPlugin',['../classcarma__guidance__plugins_1_1StrategicPlugin.html#a51b78b89bc9f80a29f2b6997e8b4677f',1,'carma_guidance_plugins::StrategicPlugin']]],
   ['_7esystemcontrollernode_16',['~SystemControllerNode',['../classsystem__controller_1_1SystemControllerNode.html#ab9e529ff8793b50c870313e1b20710e5',1,'system_controller::SystemControllerNode']]],
   ['_7etacticalplugin_17',['~TacticalPlugin',['../classcarma__guidance__plugins_1_1TacticalPlugin.html#ac64a4ee1db0ba965350592ee9dbc5de5',1,'carma_guidance_plugins::TacticalPlugin']]],

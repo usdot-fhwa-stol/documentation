@@ -9,7 +9,7 @@ var searchData=
   ['servicer_6',['Servicer',['../classintersection__transit__maneuvering_1_1Servicer.html',1,'intersection_transit_maneuvering']]],
   ['signalizedintersectionmanager_7',['SignalizedIntersectionManager',['../classcarma__wm_1_1SignalizedIntersectionManager.html',1,'carma_wm']]],
   ['speed_8',['Speed',['../structcarma__cooperative__perception_1_1Speed.html',1,'carma_cooperative_perception']]],
-  ['splinei_9',['SplineI',['../classbasic__autonomy_1_1smoothing_1_1SplineI.html',1,'basic_autonomy::smoothing::SplineI'],['../classinlanecruising__plugin_1_1smoothing_1_1SplineI.html',1,'inlanecruising_plugin::smoothing::SplineI']]],
+  ['splinei_9',['SplineI',['../classbasic__autonomy_1_1smoothing_1_1SplineI.html',1,'basic_autonomy::smoothing']]],
   ['sscdrivermanager_10',['SSCDriverManager',['../classsubsystem__controllers_1_1SSCDriverManager.html',1,'subsystem_controllers']]],
   ['stopanddwellstrategicplugin_11',['StopAndDwellStrategicPlugin',['../classstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPlugin.html',1,'stop_and_dwell_strategic_plugin']]],
   ['stopanddwellstrategicpluginconfig_12',['StopAndDwellStrategicPluginConfig',['../structstop__and__dwell__strategic__plugin_1_1StopAndDwellStrategicPluginConfig.html',1,'stop_and_dwell_strategic_plugin']]],

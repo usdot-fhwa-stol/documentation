@@ -136,10 +136,6 @@ var annotated_dup =
       [ "GuidanceWorker", "classguidance_1_1GuidanceWorker.html", "classguidance_1_1GuidanceWorker" ]
     ] ],
     [ "inlanecruising_plugin", "namespaceinlanecruising__plugin.html", [
-      [ "smoothing", "namespaceinlanecruising__plugin_1_1smoothing.html", [
-        [ "BSpline", "classinlanecruising__plugin_1_1smoothing_1_1BSpline.html", "classinlanecruising__plugin_1_1smoothing_1_1BSpline" ],
-        [ "SplineI", "classinlanecruising__plugin_1_1smoothing_1_1SplineI.html", "classinlanecruising__plugin_1_1smoothing_1_1SplineI" ]
-      ] ],
       [ "InLaneCruisingPlugin", "classinlanecruising__plugin_1_1InLaneCruisingPlugin.html", "classinlanecruising__plugin_1_1InLaneCruisingPlugin" ],
       [ "InLaneCruisingPluginNode", "classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html", "classinlanecruising__plugin_1_1InLaneCruisingPluginNode" ]
     ] ],

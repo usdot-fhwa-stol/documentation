@@ -1,5 +1,10 @@
 var NAVTREEINDEX0 =
 {
+"BSpline_8cpp.html":[59,0,3,1,1,0],
+"BSpline_8cpp_source.html":[59,0,3,1,1,0],
+"BSpline_8hpp.html":[59,0,3,0,0,1,0],
+"BSpline_8hpp.html#ad461746d4e803dfbb5df6adcc7d79c06":[59,0,3,0,0,1,0,1],
+"BSpline_8hpp_source.html":[59,0,3,0,0,1,0],
 "CARMAWorldModel_8cpp.html":[59,0,9,1,0],
 "CARMAWorldModel_8cpp_source.html":[59,0,9,1,0],
 "CARMAWorldModel_8hpp.html":[59,0,9,0,0,0],
@@ -187,6 +192,8 @@ var NAVTREEINDEX0 =
 "SignalizedIntersectionManager_8hpp.html#ab03d2f4855152889f2395e3e713c8f52a88559a0cfd8250c9d65970cc145c92d4":[59,0,9,0,0,5,2,0],
 "SignalizedIntersectionManager_8hpp.html#ab03d2f4855152889f2395e3e713c8f52a90651ebea9a35ec4e018c8157492e17c":[59,0,9,0,0,5,2,1],
 "SignalizedIntersectionManager_8hpp_source.html":[59,0,9,0,0,5],
+"SplineI_8hpp.html":[59,0,3,0,0,1,2],
+"SplineI_8hpp_source.html":[59,0,3,0,0,1,2],
 "TrackPos_8hpp.html":[59,0,9,0,0,6],
 "TrackPos_8hpp_source.html":[59,0,9,0,0,6],
 "TrafficControl_8cpp.html":[59,0,9,1,7],
@@ -242,12 +249,5 @@ var NAVTREEINDEX0 =
 "WMTestLibForGuidance_8hpp.html#a35b9f217a1e0bba082c0b71eaf7e3d30":[59,0,9,0,0,9,3],
 "WMTestLibForGuidance_8hpp.html#a3b8503388841a33981262f4337f59054":[59,0,9,0,0,9,11],
 "WMTestLibForGuidance_8hpp.html#a45aff489ce75425ec121533ed81bf945":[59,0,9,0,0,9,1],
-"WMTestLibForGuidance_8hpp.html#a77097e8d97f244908d22ea5050c08a70":[59,0,9,0,0,9,10],
-"WMTestLibForGuidance_8hpp.html#a79f776b2b6517beadc6559018bbaaef7":[59,0,9,0,0,9,2],
-"WMTestLibForGuidance_8hpp.html#a89c0e3bfedd0bf9719127896b3fcb06c":[59,0,9,0,0,9,4],
-"WMTestLibForGuidance_8hpp.html#a89de5fe0d1d1bc18c2e8bc13824b3ebc":[59,0,9,0,0,9,5],
-"WMTestLibForGuidance_8hpp.html#a8f15f836dede141bcabe292a0f9a1751":[59,0,9,0,0,9,7],
-"WMTestLibForGuidance_8hpp.html#aa8c3f2912d186f27c17d5752734d0eb3":[59,0,9,0,0,9,13],
-"WMTestLibForGuidance_8hpp.html#abb884a34dd761f2f7acf21b171f86cb5":[59,0,9,0,0,9,9],
-"WMTestLibForGuidance_8hpp.html#ad5b63328736e7f9097165cead7f68b9f":[59,0,9,0,0,9,8]
+"WMTestLibForGuidance_8hpp.html#a77097e8d97f244908d22ea5050c08a70":[59,0,9,0,0,9,10]
 };

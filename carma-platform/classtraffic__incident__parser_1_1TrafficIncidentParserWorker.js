@@ -19,6 +19,7 @@ var classtraffic__incident__parser_1_1TrafficIncidentParserWorker =
     [ "logger_", "classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#aa92b4f1c261feed9f9d35bd89cb6b244", null ],
     [ "longitude", "classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a34ec69fd385c717dbbd41e75880ed343", null ],
     [ "min_gap", "classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a23c6f6c7fef87fabcef79f2a528ce323", null ],
+    [ "MphToMetersPerSec", "classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#aad7bd8c5c4e0d4d67875ac38a536ad90", null ],
     [ "previous_strategy_params", "classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a3b5b41836c8170161c0bec5b2dc9b854", null ],
     [ "projection_msg_", "classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#aa92b3b6946020bbb4b76ef41fab62e43", null ],
     [ "speed_advisory", "classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a4ea454faf91823d1c30716caa912493d", null ],

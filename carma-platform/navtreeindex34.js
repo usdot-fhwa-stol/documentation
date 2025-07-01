@@ -1,5 +1,7 @@
 var NAVTREEINDEX34 =
 {
+"platooning__strategic__IHP_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[59,0,32,2,0,0],
+"platooning__strategic__IHP_2src_2main_8cpp_source.html":[59,0,32,2,0],
 "platooning__strategic__ihp_8cpp.html":[59,0,32,2,2],
 "platooning__strategic__ihp_8cpp_source.html":[59,0,32,2,2],
 "platooning__strategic__ihp_8h.html":[59,0,32,0,0,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX34 =
 "route__state__worker_8hpp.html#a30b57ed010ef3b43d7040bfd43528f97afa28e559c1ab7192cef683b30c86f952":[59,0,38,0,0,3,1,6],
 "route__state__worker_8hpp.html#a3d43cdeeeec429a4043e488ded566299":[59,0,38,0,0,3,2],
 "route__state__worker_8hpp.html#a3d43cdeeeec429a4043e488ded566299a532029a26a9f3d7b40892aa98d0227e6":[59,0,38,0,0,3,2,2],
-"route__state__worker_8hpp.html#a3d43cdeeeec429a4043e488ded566299a5f9c71a803f1024ca09bd7bae3174421":[59,0,38,0,0,3,2,1],
-"route__state__worker_8hpp.html#a3d43cdeeeec429a4043e488ded566299a8a7d87f7f060592742ed05741dbccb75":[59,0,38,0,0,3,2,0],
-"route__state__worker_8hpp.html#a3d43cdeeeec429a4043e488ded566299aa3d8df4909abc45a9dd863ec73d971b9":[59,0,38,0,0,3,2,3]
+"route__state__worker_8hpp.html#a3d43cdeeeec429a4043e488ded566299a5f9c71a803f1024ca09bd7bae3174421":[59,0,38,0,0,3,2,1]
 };

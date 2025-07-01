@@ -1,5 +1,7 @@
 var NAVTREEINDEX33 =
 {
+"namespacespeedharm-cli.html#ae3283b5b50d02d422aaf0584367ea48c":[57,0,84,7],
+"namespacespeedharm-cli.html#ae94d6c2182463d52815559149151af66":[57,0,84,27],
 "namespacespeedharm-cli.html#af4598cb5dd3794aace29acec1846292d":[57,0,84,20],
 "namespacespeedharm__auto__configure.html":[57,0,85],
 "namespacespeedharm__auto__configure.html#a1159b6aa7098b9103843a3f8a69f2712":[57,0,85,15],
@@ -247,7 +249,5 @@ var NAVTREEINDEX33 =
 "platooning__manager__ihp_8h.html#acb1df391a9cf4615c6b9d16ac08bcf08ad5bf007a3fb6b74bbf8a542cf0d8cb82":[59,0,32,0,0,1,4,5],
 "platooning__manager__ihp_8h.html#acb1df391a9cf4615c6b9d16ac08bcf08af52ba81e4f46f3b66a58c17f0939f720":[59,0,32,0,0,1,4,4],
 "platooning__manager__ihp_8h_source.html":[59,0,32,0,0,1],
-"platooning__strategic__IHP_2src_2main_8cpp.html":[59,0,32,2,0],
-"platooning__strategic__IHP_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[59,0,32,2,0,0],
-"platooning__strategic__IHP_2src_2main_8cpp_source.html":[59,0,32,2,0]
+"platooning__strategic__IHP_2src_2main_8cpp.html":[59,0,32,2,0]
 };

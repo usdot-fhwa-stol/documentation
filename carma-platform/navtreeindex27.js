@@ -1,5 +1,7 @@
 var NAVTREEINDEX27 =
 {
+"inlanecruising__plugin__node_8cpp.html":[59,0,17,2,2],
+"inlanecruising__plugin__node_8cpp_source.html":[59,0,17,2,2],
 "inlanecruising__plugin__node_8hpp.html":[59,0,17,0,0,2],
 "inlanecruising__plugin__node_8hpp_source.html":[59,0,17,0,0,2],
 "intersection__transit__maneuvering_2src_2main_8cpp.html":[59,0,18,2,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX27 =
 "md_README.html#autotoc_md291":[46,0,0],
 "md_README.html#autotoc_md292":[46,0,1],
 "md_README.html#autotoc_md294":[46,0,2],
-"md_README.html#autotoc_md295":[46,0,3],
-"md_README.html#autotoc_md296":[46,0,4],
-"md_README.html#autotoc_md297":[46,0,5]
+"md_README.html#autotoc_md295":[46,0,3]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX27 =
 {
+"inlanecruising__plugin_8hpp_source.html":[59,0,17,0,0,1],
+"inlanecruising__plugin_8launch_8py.html":[59,0,17,1,0],
+"inlanecruising__plugin_8launch_8py.html#a39e2ce861dd14142c3f0fbb3d1b7fd46":[59,0,17,1,0,0],
+"inlanecruising__plugin_8launch_8py_source.html":[59,0,17,1,0],
 "inlanecruising__plugin__node_8cpp.html":[59,0,17,2,2],
 "inlanecruising__plugin__node_8cpp_source.html":[59,0,17,2,2],
 "inlanecruising__plugin__node_8hpp.html":[59,0,17,0,0,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX27 =
 "md_Detail_Design.html#autotoc_md106":[23,0,0],
 "md_Detail_Design.html#autotoc_md107":[23,0,1],
 "md_README.html":[46],
-"md_README.html#autotoc_md290":[46,0],
-"md_README.html#autotoc_md291":[46,0,0],
-"md_README.html#autotoc_md292":[46,0,1],
-"md_README.html#autotoc_md294":[46,0,2],
-"md_README.html#autotoc_md295":[46,0,3]
+"md_README.html#autotoc_md290":[46,0]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX26 =
 {
-"tsc__service_8h.html":[34,0,13,0,13],
 "tsc__service_8h_source.html":[34,0,13,0,13],
 "udp__socket__listener_8cpp.html":[34,0,13,1,10],
 "udp__socket__listener_8cpp_source.html":[34,0,13,1,10],

@@ -131,37 +131,82 @@ Deployment</h2>
 </ul>
 <p >To deploy CARMA Streets we currently use Docker Compose, which is a container orchestration tool for defining and running multi-container appilcations. For instruction on installing Docker Compose please refer to their <a href="https://docs.docker.com/compose/install/">installation guide</a>.</p>
 <h3><a class="anchor" id="autotoc_md76"></a>
-Install Images</h3>
-<p >To download and install all relevant images simply use the Docker Compose CLI. The <code>pull</code> command below will pull all images defined in the docker compose file by default but can also be provided a list of services from the <code>docker-compose.yml</code> file to pull a subset.</p>
-<div class="fragment"><div class="line">docker compose pull &lt;optionally specify service names&gt;</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md77"></a>
-Run CARMA Streets</h3>
-<p >After pulling the images, simply use the <code>up</code> command to run all or a selected subset of services.</p>
-<div class="fragment"><div class="line">docker compose up -d &lt;optionally specify service names&gt;</div>
-</div><!-- fragment --><p> THe <code>-d</code> parameter allows you to run the containers in <code>detached mode</code>. This will run the containers in the background and not pipe the container output to the terminal.</p>
-<h3><a class="anchor" id="autotoc_md78"></a>
-V2X Hub</h3>
+Initialization Script</h3>
+<p >For those less familiar with Docker, Docker Compose and their CLIs (Command Line Interfaces) we have provided a script, which does the following:</p><ul>
+<li>Install V2X Hub<ul>
+<li>Setup V2X Hub Docker Environment</li>
+<li>Pull V2X Hub Docker Images</li>
+</ul>
+</li>
+<li>Install CARMA Streets<ul>
+<li>Setup CARMA Streets Docker Environment</li>
+<li>Pull CARMA Streets Docker Images</li>
+</ul>
+</li>
+<li>Deploy CARMA Streets<ul>
+<li>Add V2X Hub Admin Portal user</li>
+<li>Run Docker Compose</li>
+</ul>
+</li>
+</ul>
+<p >Simply run <code>./initialization.sh</code> and answer the prompts to deploy CARMA Streets.</p>
+<blockquote class="doxtable">
+<p >&zwj;[!NOTE] <br  />
+ While this script is the preferred method for deploying CARMA Streets, especially from scratch, for those more experience with Docker, Docker Compose, V2X Hub and CARMA Streets, CARMA Streets can also be deployed directly using the Docker Compose CLI. </p>
+</blockquote>
+<h4><a class="anchor" id="autotoc_md77"></a>
+V2X Hub</h4>
 <p >Included as part of the CARMA Streets deployment is V2X Hub. V2X Hub is the hardware interface to an RSU (Road Side Unit) and enables CARMA Streets to have V2X (Vehicle to Everything) communication via the J2735 Message Set and CV2X radio communication. Once running V2X Hub needs to be configured to do the following in order for CARMA Streets to have V2X communication cababilites:</p><ul>
 <li>Connect to RSU</li>
 <li>Connect to CARMA Streets For information V2X Hub including configuration information please visit <a href="https://github.com/usdot-fhwa-OPS/V2X-Hub/blob/develop/README.md">V2X Hub GitHub Repository</a></li>
 </ul>
-<h3><a class="anchor" id="autotoc_md79"></a>
-Version Control</h3>
-<p >By default our Docker Compose deployment configuration will pull down develop images for both V2X Hub and CARMA Streets. To configure Docker Compose deployment, use the <code>streets.env</code> file and modify variables defined there. This <code>streets.env</code> file defines variables referenced in the <code>docker-compose.yml</code> deployment file and can either be passed to Docker compose commands via the <code>docker compose --env-file=streets.env</code> parameter or can be renamed to <code>.env</code> which docker compose will use by default. Below is a list of variables currently defined in this file and their functionality</p>
-<p ><b>DOCKER_HOST_IP</b>: The IP of the device hosting the containers (default: 127.0.0.1) <b>OPS_TAG</b>: The version of V2X Hub to deploy (default: develop) <b>STOL_ORG</b> &amp; <b>STOL_TAG</b> : The version of CARMA Streets to deploy (default: usdotfhwastoldev/&lt;image_name&gt;:develop). To use a release update <code>STOL_ORG=usdotfhwastol</code> and <code>STOL_TAG=&lt;release-version&gt;</code>.</p>
-<h2><a class="anchor" id="autotoc_md80"></a>
+<h4><a class="anchor" id="autotoc_md78"></a>
+Docker Environment</h4>
+<p >CARMA Streets Docker Compose deployment heavily relies on (Docker Compose Environment Variables)[<a href="https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/">https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/</a>]. We use these for the following:</p><ul>
+<li>Setting Software Version</li>
+<li>Setting functionality to deploy</li>
+<li>Setting Deployment Specific Configurations</li>
+</ul>
+<p ><a class="anchor" id="autotoc_md79"></a> </p><h5>Setting Software Version</h5>
+<p >By default our Docker Compose deployment configuration will pull down develop images for both V2X Hub and CARMA Streets. The <code>initialization.sh</code> script will prompted the user to select a version of CARMA Streets to Deploy, which will override the default value by creating and populating a <code>.env</code> file, used by Docker Compose. To modify this value either edit the <code>.env</code> file directly or run the script. Below is a list of version specific environment variables and descriptions:</p>
+<p ><b>OPS_TAG</b>: The version of V2X Hub to deploy (default: develop) <b>STOL_ORG</b> &amp; <b>STOL_TAG</b> : The version of CARMA Streets to deploy (default: usdotfhwastoldev/&lt;image_name&gt;:develop). To use a release update <code>STOL_ORG=usdotfhwastol</code> and <code>STOL_TAG=&lt;release-version&gt;</code>.</p>
+<p ><a class="anchor" id="autotoc_md80"></a> </p><h5>Setting Functionality to Deploy</h5>
+<p >CARMA Streets consists of a set of microservices, each responsible for executing a specific function that may be linked to one or more use cases CARMA Streets supports. To allow configuration of what use case functionality is deployed we use <a href="https://docs.docker.com/compose/how-tos/profiles/">DOcker Compose Profiles</a> to set in our <code>.env</code> (variable name <b>COMPOSE_PROFILES</b>) a list of functionality to deploy. These profiles control, which microservices will be deployed. Below is a table containing the profiles, the services required for the profile and the use case functionality it supports. This relationship can also be inspected in the <code>docker-compose.yml</code> file. Any services that do not include a profile are always deployed as they are required for any CARMA Streets functionality. Lastly there is an additional profile called <b>debug</b>, which will launch additional tools for debugging functionality, not intended for real-world deployment.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Profile   </th><th class="markdownTableHeadNone">Services   </th><th class="markdownTableHeadNone">Use Cases    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">cooperative_perception   </td><td class="markdownTableBodyNone"><a class="el" href="namespacesensor__data__sharing__service.html">sensor_data_sharing_service</a>   </td><td class="markdownTableBodyNone">Cooperative Perception    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">vehicle_scheduling   </td><td class="markdownTableBodyNone">message_service, <a class="el" href="namespaceintersection__model.html">intersection_model</a>, <a class="el" href="namespacescheduling__service.html">scheduling_service</a>   </td><td class="markdownTableBodyNone">Vehicle Scheduling Through Stop Controlled Intersection    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">signal_optimization   </td><td class="markdownTableBodyNone">message_service, <a class="el" href="namespaceintersection__model.html">intersection_model</a>, <a class="el" href="namespacescheduling__service.html">scheduling_service</a>, <a class="el" href="namespacesignal__opt__service.html">signal_opt_service</a>   </td><td class="markdownTableBodyNone">Signal Optimization for Traffic Signal Controlled Intersection   </td></tr>
+</table>
+<p><a class="anchor" id="autotoc_md81"></a> </p><h5>Setting Deployment Specific Configurations</h5>
+<p >In addition to version and functionality, we use <a href="https://docs.docker.com/compose/how-tos/environment-variables/set-environment-variables/">Docker Environment Variables</a> to set deployment specific configurations. Below is a table listing the current deployment specific variables supported, their default values and descriptions.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Docker Environment Variable   </th><th class="markdownTableHeadNone">Default Value   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">INFRASTRUCTURE_ID   </td><td class="markdownTableBodyNone">rsu_1234   </td><td class="markdownTableBodyNone">Unique numeric 4 digit identifier with rsu prefix used to identify origin of some V2X messages like SDSM    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">INFRASTRUCTURE_NAME   </td><td class="markdownTableBodyNone">East Intersection   </td><td class="markdownTableBodyNone">Unique string optional identifier used in some V2X messages to identify origin like SPAT    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">SIMULATION_MODE   </td><td class="markdownTableBodyNone">False   </td><td class="markdownTableBodyNone">Boolean flag to identify whether CARMA Streets is deployed in a simulation environment (True if deployed in simulation)   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md82"></a>
 Development</h2>
 <p >This repository includes configurations for <a href="https://code.visualstudio.com/docs/devcontainers/containers">devcontainer</a> VSCode extension. This extension allows us to standup a containerized development environment. More information about the CARMA Streets Dev Container Setup can be found here.</p>
-<h2><a class="anchor" id="autotoc_md81"></a>
+<h2><a class="anchor" id="autotoc_md83"></a>
 Base Images</h2>
 <p >To make creating new CARMA Streets services easier and to make our CI/CD more efficient, we have introduced new CARMA Streets base images. These images can be used as a starting point and common build/runtime environment for CARMA Streets services. There are currently two CARMA Streets base images , for which documentation and Dockerfiles can be found <a class="el" href="md_streets_service_base_README.html">Streets Service Base</a> and <a class="el" href="md_streets_service_base_lanelet_aware_README.html">Streets Service Base Lanelet Aware</a>.</p>
-<h1><a class="anchor" id="autotoc_md82"></a>
+<h1><a class="anchor" id="autotoc_md84"></a>
 CARMAStreets</h1>
 <p >The primary carma-streets repository can be found <a href="https://github.com/usdot-fhwa-stol/carma-streets">here</a> and is part of the <a href="https://github.com/usdot-fhwa-stol/">USDOT FHWA STOL</a> github organization. Documentation on how the carma-streets functions, how it will evolve over time, and how you can contribute can be found at the above links, as well as on the <a href="https://usdot-fhwa-stol.github.io/documentation/carma-streets/">Doxygen Source Code Documentation</a>.</p>
-<h2><a class="anchor" id="autotoc_md83"></a>
+<h2><a class="anchor" id="autotoc_md85"></a>
 Data Collection</h2>
 <p ><b>CARMA Streets</b> services have several source from which data about usecase performance can be pulled. <b>Kafka Message Topics</b> can be pulled using the <code><a class="el" href="collect__kafka__logs_8py.html">collect_kafka_logs.py</a></code> script and includes message traffic on a configurable list of topics. Service log files can be found in a given <b>CARMA Streets</b> service <code>logs/</code> directory. The <code>collect_service_logs.sh</code> adds all log files in this directory to a zip file and then deletes the originals. Some <b>CARMA Streets</b> services can configurable log performance in <code>.csv</code> file in the <code>logs/</code> directory.</p>
-<h3><a class="anchor" id="autotoc_md84"></a>
+<h3><a class="anchor" id="autotoc_md86"></a>
 Collect Kafka Logs</h3>
 <p >This script uses <code>docker exec</code> to ssh into a running kafka container. Then using kafka container scripts to read all kafka data from a list of provided topics. </p><div class="fragment"><div class="line">usage: collect_kafka_logs.py [-h] [--outdir OUTDIR] [--start_timestamp START_TIMESTAMP] [--end_timestamp END_TIMESTAMP] [--start_hours_ago START_HOURS_AGO]</div>
 <div class="line">                             [--end_hours_ago END_HOURS_AGO] [--topics TOPICS [TOPICS ...]] [--timeout TIMEOUT] [--zip ZIP]</div>
@@ -186,7 +231,7 @@ Collect Kafka Logs</h3>
 <div class="line">  --zip ZIP             bool flag. When set to true, folder is compressed into a zip file.</div>
 <div class="line">  --container_names CONTAINER_NAMES [CONTAINER_NAMES ...]</div>
 <div class="line">                        list of kafka containers to grab data from</div>
-</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md85"></a>
+</div><!-- fragment --> <h3><a class="anchor" id="autotoc_md87"></a>
 Collection Service Logs</h3>
 <p >This script collects all <b>CARMA Streets</b> service log files, adds them to a zip file. </p><div class="fragment"><div class="line">usage: collect_service_logs.sh [-h | --help] [--output &lt;zip_file_name&gt;.zip]</div>
 <div class="line">                                     [-c | --clear]</div>
@@ -195,19 +240,19 @@ Collection Service Logs</h3>
 <div class="line">-h, --help                Show usage</div>
 <div class="line">--output, -o              Name of the resulting zip file container CARMA Streets Service logs</div>
 <div class="line">--clear, -c               Adding this flag will delete log directories after creating zip.</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md86"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md88"></a>
 Contribution</h2>
 <p >Welcome to the CARMA contributing guide. Please read this guide to learn about our development process, how to propose pull requests and improvements, and how to build and test your changes to this project. <a href="https://github.com/usdot-fhwa-stol/carma-platform/blob/develop/Contributing.md">CARMA Contributing Guide</a></p>
-<h2><a class="anchor" id="autotoc_md87"></a>
+<h2><a class="anchor" id="autotoc_md89"></a>
 Code of Conduct</h2>
 <p >Please read our <a href="https://github.com/usdot-fhwa-stol/carma-platform/blob/develop/Code_of_Conduct.md">CARMA Code of Conduct</a> which outlines our expectations for participants within the CARMA community, as well as steps to reporting unacceptable behavior. We are committed to providing a welcoming and inspiring community for all and expect our code of conduct to be honored. Anyone who violates this code of conduct may be banned from the community.</p>
-<h2><a class="anchor" id="autotoc_md88"></a>
+<h2><a class="anchor" id="autotoc_md90"></a>
 Attribution</h2>
 <p >The development team would like to acknowledge the people who have made direct contributions to the design and code in this repository. <a href="https://github.com/usdot-fhwa-stol/carma-platform/blob/develop/ATTRIBUTION.md">CARMA Attribution</a></p>
-<h2><a class="anchor" id="autotoc_md89"></a>
+<h2><a class="anchor" id="autotoc_md91"></a>
 License</h2>
 <p >By contributing to the Federal Highway Administration (FHWA) Connected Automated Research Mobility Applications (CARMA), you agree that your contributions will be licensed under its Apache License 2.0 license. <a href="https://github.com/usdot-fhwa-stol/carma-platform/blob/develop/docs/License.md">CARMA License</a></p>
-<h2><a class="anchor" id="autotoc_md90"></a>
+<h2><a class="anchor" id="autotoc_md92"></a>
 Contact</h2>
 <p >Please click on the CARMA logo below to visit the Federal Highway Adminstration(FHWA) CARMA website. For technical support from the CARMA team, please contact the CARMA help desk at <a href="#" onclick="location.href='mai'+'lto:'+'CAV'+'Su'+'ppo'+'rt'+'Ser'+'vi'+'ces'+'@d'+'ot.'+'go'+'v'; return false;">CAVSu<span class="obfuscator">.nosp@m.</span>ppor<span class="obfuscator">.nosp@m.</span>tServ<span class="obfuscator">.nosp@m.</span>ices<span class="obfuscator">.nosp@m.</span>@dot.<span class="obfuscator">.nosp@m.</span>gov</a>.</p>
 <p ><a href="https://highways.dot.gov/research/research-programs/operations/CARMA"><img src="https://raw.githubusercontent.com/usdot-fhwa-stol/CARMAPlatform/develop/docs/image/CARMA_icon.png" alt="CARMA Image" class="inline"/></a> </p>
@@ -217,7 +262,7 @@ Contact</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Jul 10 2025 21:58:41 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Jul 11 2025 15:48:48 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

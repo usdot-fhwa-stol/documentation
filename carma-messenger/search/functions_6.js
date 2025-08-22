@@ -2,14 +2,18 @@ var searchData=
 [
   ['generate_5flaunch_5fdescription_0',['generate_launch_description',['../namespacetraffic__incident.html#ae9f6441ee2913489cbacfa4330527df7',1,'traffic_incident.generate_launch_description()'],['../namespaceemergency__response__vehicle__plugin__launch.html#a8942ed221b890858f0461fdfbecd121c',1,'emergency_response_vehicle_plugin_launch.generate_launch_description()'],['../namespaceui.html#a148c770b4109d293449a5e8d60732081',1,'ui.generate_launch_description()'],['../namespacetransforms.html#a13fd6834bb02a04f4c2dcf48fcd2cd5a',1,'transforms.generate_launch_description()'],['../namespaceros2__rosbag.html#a34db9f1acdab007c1e2d29c46cff42ec',1,'ros2_rosbag.generate_launch_description()'],['../namespaceplugins.html#ac3f3c843d1dfcb998c4dbafd7c596419',1,'plugins.generate_launch_description()'],['../namespacecarma-messenger.html#a111bc28796dc376bb4331b6b7d9b0024',1,'carma-messenger.generate_launch_description()'],['../namespacedrivers.html#aa911b3266eb7a2a400026f3dd9e2e562',1,'drivers.generate_launch_description()'],['../namespacecarma-messenger-docker.html#a0ce2cdf4463d7a43d8873c280e76448b',1,'carma-messenger-docker.generate_launch_description()']]],
   ['generatebsm_1',['generateBSM',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a799090d050825e0ebf281570faaf1383',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
-  ['getadvisoryspeed_2',['getAdvisorySpeed',['../classtraffic_1_1TrafficIncidentWorker.html#a8902a17951ecbabd91aac7ce4a7c7b6f',1,'traffic::TrafficIncidentWorker']]],
-  ['getdistancebetween_3',['getDistanceBetween',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a9ceec14aa51f981f3cd9e8a08e804fe7',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
-  ['getdowntrack_4',['getDownTrack',['../classtraffic_1_1TrafficIncidentWorker.html#ab23a012f4384188f62682c47acbfacee',1,'traffic::TrafficIncidentWorker']]],
-  ['geteventreason_5',['getEventReason',['../classtraffic_1_1TrafficIncidentWorker.html#abd99e5a70e78906898682d3754bc0f97',1,'traffic::TrafficIncidentWorker']]],
-  ['geteventtype_6',['getEventType',['../classtraffic_1_1TrafficIncidentWorker.html#a805ecbf3bca42305536d06a9e77b9a7d',1,'traffic::TrafficIncidentWorker']]],
-  ['getmingap_7',['getMinGap',['../classtraffic_1_1TrafficIncidentWorker.html#aa7a9dec950f5207f00153bd1364e206f',1,'traffic::TrafficIncidentWorker']]],
-  ['getnextmsgcount_8',['getNextMsgCount',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a1c6f1819b3be8fefbd093d04e5cb715a',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
-  ['getpinpoint_9',['getPinPoint',['../classtraffic_1_1TrafficIncidentWorker.html#a07d11e213bfd898d5153b82d2d556874',1,'traffic::TrafficIncidentWorker']]],
-  ['getsenderid_10',['getSenderId',['../classtraffic_1_1TrafficIncidentWorker.html#a3a45e080f02bcb99f6067edf99545526',1,'traffic::TrafficIncidentWorker']]],
-  ['getuptrack_11',['getUpTrack',['../classtraffic_1_1TrafficIncidentWorker.html#af978b22d0ac15b8e8ecc64a6fa956764',1,'traffic::TrafficIncidentWorker']]]
+  ['geofenceendloccallback_2',['geofenceEndLocCallback',['../classtraffic_1_1TrafficIncidentWorker.html#a2cc254ef5a6667497042cfc94a5b6dac',1,'traffic::TrafficIncidentWorker']]],
+  ['geofencestartloccallback_3',['geofenceStartLocCallback',['../classtraffic_1_1TrafficIncidentWorker.html#a7cd3f7a3c38f593bf58011c49ae2abab',1,'traffic::TrafficIncidentWorker']]],
+  ['getadvisoryspeed_4',['getAdvisorySpeed',['../classtraffic_1_1TrafficIncidentWorker.html#a8902a17951ecbabd91aac7ce4a7c7b6f',1,'traffic::TrafficIncidentWorker']]],
+  ['getdistancebetween_5',['getDistanceBetween',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a9ceec14aa51f981f3cd9e8a08e804fe7',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
+  ['getdowntrack_6',['getDownTrack',['../classtraffic_1_1TrafficIncidentWorker.html#ab23a012f4384188f62682c47acbfacee',1,'traffic::TrafficIncidentWorker']]],
+  ['geteventreason_7',['getEventReason',['../classtraffic_1_1TrafficIncidentWorker.html#abd99e5a70e78906898682d3754bc0f97',1,'traffic::TrafficIncidentWorker']]],
+  ['geteventtype_8',['getEventType',['../classtraffic_1_1TrafficIncidentWorker.html#a805ecbf3bca42305536d06a9e77b9a7d',1,'traffic::TrafficIncidentWorker']]],
+  ['getgeofenceendloc_9',['getGeofenceEndLoc',['../classtraffic_1_1TrafficIncidentWorker.html#a6272dba330db55d27552ad90409ebdc2',1,'traffic::TrafficIncidentWorker']]],
+  ['getgeofencestartloc_10',['getGeofenceStartLoc',['../classtraffic_1_1TrafficIncidentWorker.html#a694ccdcec4f4daedbfe0fa4361d6bc4c',1,'traffic::TrafficIncidentWorker']]],
+  ['getmingap_11',['getMinGap',['../classtraffic_1_1TrafficIncidentWorker.html#aa7a9dec950f5207f00153bd1364e206f',1,'traffic::TrafficIncidentWorker']]],
+  ['getnextmsgcount_12',['getNextMsgCount',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a1c6f1819b3be8fefbd093d04e5cb715a',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
+  ['getpinpoint_13',['getPinPoint',['../classtraffic_1_1TrafficIncidentWorker.html#a07d11e213bfd898d5153b82d2d556874',1,'traffic::TrafficIncidentWorker']]],
+  ['getsenderid_14',['getSenderId',['../classtraffic_1_1TrafficIncidentWorker.html#a3a45e080f02bcb99f6067edf99545526',1,'traffic::TrafficIncidentWorker']]],
+  ['getuptrack_15',['getUpTrack',['../classtraffic_1_1TrafficIncidentWorker.html#af978b22d0ac15b8e8ecc64a6fa956764',1,'traffic::TrafficIncidentWorker']]]
 ];

@@ -1,10 +1,16 @@
 var searchData=
 [
-  ['readme_0',['README',['../md_carma_messenger_ui_website_thirdparty_bootstrap_switch_button_1_1_0_README.html',1,'(Global Namespace)'],['../md_README.html',1,'(Global Namespace)']]],
-  ['readme_2emd_1',['README.md',['../carma-messenger-config_2example__calibration__folder_2README_8md.html',1,'(Global Namespace)'],['../carma-messenger-core_2carma-messenger_2README_8md.html',1,'(Global Namespace)'],['../carma-messenger-core_2emergency__response__vehicle__plugin_2README_8md.html',1,'(Global Namespace)'],['../carma-messenger-ui_2website_2thirdparty_2bootstrap-switch-button-1_81_80_2README_8md.html',1,'(Global Namespace)'],['../README_8md.html',1,'(Global Namespace)']]],
-  ['record_5fros2_5frosbag_2',['record_ros2_rosbag',['../namespaceros2__rosbag.html#a063f314c78ed474cdec9303855eee9e4',1,'ros2_rosbag']]],
-  ['ros2_5frosbag_3',['ros2_rosbag',['../namespaceros2__rosbag.html',1,'']]],
-  ['ros2_5frosbag_2elaunch_2epy_4',['ros2_rosbag.launch.py',['../ros2__rosbag_8launch_8py.html',1,'']]],
-  ['route_5fdestination_5fpoints_5f_5',['route_destination_points_',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a4414e1e62c3f0b3b6d9cf5d4556e64a6',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
-  ['route_5ffile_5ffolder_6',['route_file_folder',['../structemergency__response__vehicle__plugin_1_1Config.html#af375e999851c7c8977b9ba32c42f0753',1,'emergency_response_vehicle_plugin::Config']]]
+  ['parameter_5fupdate_5fcallback_0',['parameter_update_callback',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ae5e7323804bb12d6f9b1b5cba4b0446b',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
+  ['pinpoint_5fdriver_5fsub_5f_1',['pinpoint_driver_sub_',['../classtraffic_1_1TrafficIncidentNode.html#a08eeccd51ee2bba6775fb4231711cfae',1,'traffic::TrafficIncidentNode']]],
+  ['pinpoint_5fmsg_5f_2',['pinpoint_msg_',['../classtraffic_1_1TrafficIncidentWorker.html#a282bd6e62965051d863559d0d0b86799',1,'traffic::TrafficIncidentWorker']]],
+  ['pinpointdrivercallback_3',['pinpointDriverCallback',['../classtraffic_1_1TrafficIncidentWorker.html#a71526cc72b8e04b18f29b5e139dbcfce',1,'traffic::TrafficIncidentWorker']]],
+  ['plugins_4',['plugins',['../namespaceplugins.html',1,'']]],
+  ['plugins_2elaunch_2epy_5',['plugins.launch.py',['../plugins_8launch_8py.html',1,'']]],
+  ['pose_5fsub_5f_6',['pose_sub_',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a48fd74a1232b8030fce5f4fa26c48a31',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
+  ['posecallback_7',['poseCallback',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#abfc866f92781a25cf12f10df5c4d62a0',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
+  ['prev_5fmsg_5fcount_5f_8',['prev_msg_count_',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a933d82171c4614166abe8a1fde84cd11',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
+  ['processincomingudpbinary_9',['processIncomingUdpBinary',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#a7cf71faaab4d03dbd40d94934a16a9d0',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
+  ['publishbsm_10',['publishBSM',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ade9f37261c47832d51ad57934f8092bf',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin']]],
+  ['publishtrafficcallback_11',['PublishTrafficCallback',['../classtraffic_1_1TrafficIncidentWorker.html#ab27282d747e8fdfe6ae4080504f4b596',1,'traffic::TrafficIncidentWorker']]],
+  ['publishtrafficincidentmobilityoperation_12',['publishTrafficIncidentMobilityOperation',['../classtraffic_1_1TrafficIncidentNode.html#a1cd3fbc0695d2639bb680a56113bb11b',1,'traffic::TrafficIncidentNode']]]
 ];

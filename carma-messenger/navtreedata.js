@@ -115,7 +115,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"dir_c7571de08bfddd0f69f8b41d3a29c498.html"
+"classtraffic_1_1TrafficIncidentWorker.html#ab4a4ce07eed532528efffd9596a9be52"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

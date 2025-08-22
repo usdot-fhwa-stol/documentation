@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['min_5fdistance_5fto_5fnext_5fdestination_5fpoint_0',['min_distance_to_next_destination_point',['../structemergency__response__vehicle__plugin_1_1Config.html#a6ca666827ab660ce8145523092edc05c',1,'emergency_response_vehicle_plugin::Config']]],
-  ['min_5fgap_5f_1',['min_gap_',['../classtraffic_1_1TrafficIncidentNode.html#ab2f6c0b6344d17f2844233bf5aaf5dc7',1,'traffic::TrafficIncidentNode::min_gap_()'],['../classtraffic_1_1TrafficIncidentWorker.html#a53bea83daa5ce3bde41a6bf782b36376',1,'traffic::TrafficIncidentWorker::min_gap_()']]]
+  ['listening_5fport_0',['listening_port',['../structemergency__response__vehicle__plugin_1_1Config.html#a5ed3c679b3b15ee3fa014dc4a8973e5f',1,'emergency_response_vehicle_plugin::Config']]],
+  ['logger_5fname_5f_1',['logger_name_',['../classemergency__response__vehicle__plugin_1_1EmergencyResponseVehiclePlugin.html#ae0039b201dd29ea8c1620a78a0801f88',1,'emergency_response_vehicle_plugin::EmergencyResponseVehiclePlugin::logger_name_()'],['../classemergency__response__vehicle__plugin_1_1UDPListener.html#af32977229315fe7247242856e3305315',1,'emergency_response_vehicle_plugin::UDPListener::logger_name_()']]]
 ];

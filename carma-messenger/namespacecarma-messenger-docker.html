@@ -111,33 +111,42 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <pre class="fragment">Launch CARMA Messenger System.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="chevrolet__tahoe__2018_2carma-messenger-docker_8launch_8py_source.html#l00022">22</a> of file <a class="el" href="chevrolet__tahoe__2018_2carma-messenger-docker_8launch_8py_source.html">carma-messenger-docker.launch.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cave__in__a__box_2carma-messenger-docker_8launch_8py_source.html#l00022">22</a> of file <a class="el" href="cave__in__a__box_2carma-messenger-docker_8launch_8py_source.html">carma-messenger-docker.launch.py</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   22</span><span class="keyword">def </span><a class="code hl_function" href="namespacecarma-messenger-docker.html#a0ce2cdf4463d7a43d8873c280e76448b">generate_launch_description</a>():</div>
 <div class="line"><span class="lineno">   23</span>    <span class="stringliteral">&quot;&quot;&quot;</span></div>
 <div class="line"><span class="lineno">   24</span><span class="stringliteral">    Launch CARMA Messenger System.</span></div>
 <div class="line"><span class="lineno">   25</span><span class="stringliteral">    &quot;&quot;&quot;</span></div>
-<div class="line"><span class="lineno">   26</span><span class="stringliteral"></span> </div>
-<div class="line"><span class="lineno">   27</span><span class="stringliteral">    </span><span class="comment">#Declare the route file folder launch argument</span></div>
-<div class="line"><span class="lineno">   28</span>    route_file_folder = LaunchConfiguration(<span class="stringliteral">&#39;route_file_folder&#39;</span>)</div>
-<div class="line"><span class="lineno">   29</span>    declare_route_file_folder = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   30</span>        name = <span class="stringliteral">&#39;route_file_folder&#39;</span>,</div>
-<div class="line"><span class="lineno">   31</span>        default_value=<span class="stringliteral">&#39;/opt/carma/routes/&#39;</span>,</div>
-<div class="line"><span class="lineno">   32</span>        description = <span class="stringliteral">&#39;Path of folder on host PC containing route CSV file(s) that can be accessed by plugins; currently only used by emergency_response_vehicle_plugin&#39;</span></div>
-<div class="line"><span class="lineno">   33</span>    )</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>    <span class="comment"># Launch the core carma launch file</span></div>
-<div class="line"><span class="lineno">   36</span>    core_launch = IncludeLaunchDescription(</div>
-<div class="line"><span class="lineno">   37</span>        PythonLaunchDescriptionSource([ get_package_share_directory(<span class="stringliteral">&#39;carma-messenger&#39;</span>), <span class="stringliteral">&#39;/launch/carma-messenger.launch.py&#39;</span>]),</div>
-<div class="line"><span class="lineno">   38</span>        launch_arguments = {</div>
-<div class="line"><span class="lineno">   39</span>            <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder</div>
-<div class="line"><span class="lineno">   40</span>        }.items()</div>
-<div class="line"><span class="lineno">   41</span>    )</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">   44</span>        declare_route_file_folder,</div>
-<div class="line"><span class="lineno">   45</span>        core_launch</div>
-<div class="line"><span class="lineno">   46</span>    ])</div>
-<div class="ttc" id="anamespacecarma-messenger-docker_html_a0ce2cdf4463d7a43d8873c280e76448b"><div class="ttname"><a href="namespacecarma-messenger-docker.html#a0ce2cdf4463d7a43d8873c280e76448b">carma-messenger-docker.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="chevrolet__tahoe__2018_2carma-messenger-docker_8launch_8py_source.html#l00022">carma-messenger-docker.launch.py:22</a></div></div>
+<div class="line"><span class="lineno">   26</span><span class="stringliteral">    </span><span class="comment"># Declare record rosbag launch argument</span></div>
+<div class="line"><span class="lineno">   27</span>    use_rosbag = LaunchConfiguration(<span class="stringliteral">&#39;use_rosbag&#39;</span>)</div>
+<div class="line"><span class="lineno">   28</span>    declare_use_rosbag = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   29</span>        name = <span class="stringliteral">&#39;use_rosbag&#39;</span>,</div>
+<div class="line"><span class="lineno">   30</span>        default_value = <span class="stringliteral">&#39;true&#39;</span>,</div>
+<div class="line"><span class="lineno">   31</span>        description = <span class="stringliteral">&quot;Record a ROS2 bag&quot;</span></div>
+<div class="line"><span class="lineno">   32</span>    )</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="comment"># Declare the route file folder launch argument</span></div>
+<div class="line"><span class="lineno">   35</span>    route_file_folder = LaunchConfiguration(<span class="stringliteral">&#39;route_file_folder&#39;</span>)</div>
+<div class="line"><span class="lineno">   36</span>    declare_route_file_folder = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   37</span>        name = <span class="stringliteral">&#39;route_file_folder&#39;</span>,</div>
+<div class="line"><span class="lineno">   38</span>        default_value=<span class="stringliteral">&#39;/opt/carma/routes/&#39;</span>,</div>
+<div class="line"><span class="lineno">   39</span>        description = <span class="stringliteral">&#39;Path of folder on host PC containing route CSV file(s) that can be accessed by plugins&#39;</span></div>
+<div class="line"><span class="lineno">   40</span>    )</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <span class="comment"># Launch the core carma launch file</span></div>
+<div class="line"><span class="lineno">   43</span>    core_launch = IncludeLaunchDescription(</div>
+<div class="line"><span class="lineno">   44</span>        PythonLaunchDescriptionSource([ get_package_share_directory(<span class="stringliteral">&#39;carma-messenger&#39;</span>), <span class="stringliteral">&#39;/launch/carma-messenger.launch.py&#39;</span>]),</div>
+<div class="line"><span class="lineno">   45</span>        launch_arguments = {</div>
+<div class="line"><span class="lineno">   46</span>            <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder,</div>
+<div class="line"><span class="lineno">   47</span>            <span class="stringliteral">&#39;use_rosbag&#39;</span> : use_rosbag,</div>
+<div class="line"><span class="lineno">   48</span>        }.items()</div>
+<div class="line"><span class="lineno">   49</span>    )</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><span class="lineno">   52</span>        declare_use_rosbag,</div>
+<div class="line"><span class="lineno">   53</span>        declare_route_file_folder,</div>
+<div class="line"><span class="lineno">   54</span>        core_launch</div>
+<div class="line"><span class="lineno">   55</span>    ])</div>
+<div class="ttc" id="anamespacecarma-messenger-docker_html_a0ce2cdf4463d7a43d8873c280e76448b"><div class="ttname"><a href="namespacecarma-messenger-docker.html#a0ce2cdf4463d7a43d8873c280e76448b">carma-messenger-docker.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="cave__in__a__box_2carma-messenger-docker_8launch_8py_source.html#l00022">carma-messenger-docker.launch.py:22</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -147,7 +156,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma-messenger-docker.html">carma-messenger-docker</a></li>
-    <li class="footer">Generated on Thu Jul 31 2025 18:53:50 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Aug 22 2025 12:48:09 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

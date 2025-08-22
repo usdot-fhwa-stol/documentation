@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('md_carma_cooperative_perception_docs_s
 <td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">Yes   </td></tr>
 </table>
 <p >We assume all actors can receive incoming messages such as SDSMs, whether they can use that data is a different matter. We also assume actors with local perception abilities have access to object-level data regarding the environment.</p>
-<h1><a class="anchor" id="autotoc_md52"></a>
+<h1><a class="anchor" id="autotoc_md53"></a>
 General approach with notations</h1>
 <p >The CP stack in general has three key stages:</p>
 <ul>
@@ -135,14 +135,14 @@ Since this step's implementation can vary, the specific architecture used in CAR
 </ul>
 <p >The pipeline efficiently converts asynchronous sensor data into synchronized object tracks that downstream components can use for vehicle planning and control.</p>
 <p ><img src="assets/Overall_MOT.png" alt="Alt text" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md53"></a>
+<h1><a class="anchor" id="autotoc_md54"></a>
 Local perception and fusion</h1>
 <blockquote class="doxtable">
 <p >&zwj;[!IMPORTANT]\ This stack configuration is currently unsupported because the required Nodes are unimplemented. </p>
 </blockquote>
 <p>In this stack configuration variant, the host vehicle (HV) or host roadside unit (HRSU) can perceive objects using its local sensors, and it can fuse remotely-received object data from BSMs and SDSMs. Actors using this configuration broadcast sensor data sharing messages (SDSMs) containing locally-perceived objects. The figure below shows the Node diagram for this deployment configuration.</p>
 <p ><img src="assets/carma_cooperative_perception_perception_fusion_node_diagram.png" alt="" class="inline"/> <img src="assets/carma_cooperative_perception_perception_fusion_system_diagram.png" alt="" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md54"></a>
+<h1><a class="anchor" id="autotoc_md55"></a>
 Local fusion only</h1>
 <blockquote class="doxtable">
 <p >&zwj;[!IMPORTANT]\ This stack configuration is currently unsupported because the required Nodes are unimplemented. </p>
@@ -150,14 +150,14 @@ Local fusion only</h1>
 <p>Host vehicles (HVs) or host roadside units (HRSUs) using this deployment configuration are unable to perceive the environment using only their local abilities (i.e., their own sensors). However, they can fuse object information they receive from nearby actors into single representations using their own computational power. The figure below shows the Node diagram for this deployment configuration.</p>
 <p >Depending on the application or use case, actors with this stack configuration might rely on an external entity to provide object data. If neighboring actors…</p>
 <p ><img src="assets/carma_cooperative_perception_no_perception_fusion_node_diagram.png" alt="" class="inline"/> <img src="assets/carma_cooperative_perception_no_perception_fusion_system_diagram.png" alt="" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md55"></a>
+<h1><a class="anchor" id="autotoc_md56"></a>
 Local Perception Only</h1>
 <blockquote class="doxtable">
 <p >&zwj;[!IMPORTANT]\ This stack configuration is currently unsupported because the required Nodes are unimplemented. </p>
 </blockquote>
 <p>In this stack configuration, the host vehicle (HV) or host roadside unit (HRSU) can use object information only from its local sensors; it cannot fuse that data with any remotely-received object data. Actors using this stack deployment variant do not use incoming SDSMs, but they still publish their local sensor data with others through SDSMs. The figure below shows the Node diagram for this deployment configuration.</p>
 <p ><img src="assets/carma_cooperative_perception_perception_no_fusion_node_diagram.png" alt="" class="inline"/> <img src="assets/carma_cooperative_perception_perception_no_fusion_system_diagram.png" alt="" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md56"></a>
+<h1><a class="anchor" id="autotoc_md57"></a>
 No Local Perception or Fusion</h1>
 <blockquote class="doxtable">
 <p >&zwj;[!IMPORTANT]\ This stack configuration is currently unsupported because the required Nodes are unimplemented. </p>
@@ -167,7 +167,7 @@ No Local Perception or Fusion</h1>
 </blockquote>
 <p>In this stack configuration, the host vehicle (HV) or host roadside unit (HRSU) can neither perceive objects locally nor fuse object data from nearby actors. The HV or HRSU is entirely dependent on an external system to provide an authoritative list of environment objects. Essentially, actors with this configuration receive the all the cooperative perception benefits without contributing themselves. The figure below shows the Node diagram for this deployment configuration.</p>
 <p ><img src="assets/carma_cooperative_perception_no_perception_no_fusion_node_diagram.png" alt="" class="inline"/> <img src="assets/carma_cooperative_perception_no_perception_no_fusion_system_diagram.png" alt="" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md57"></a>
+<h1><a class="anchor" id="autotoc_md58"></a>
 Multiple Object Tracking Pipeline Archecture</h1>
 <p >A modular pipeline implmented in CARMA CP stack for processing and fusing multi-source object detections into tracks. Individual components utilize library functions available in <a href="https://github.com/usdot-fhwa-stol/multiple_object_tracking">https://github.com/usdot-fhwa-stol/multiple_object_tracking</a>. In other words, this is just one example that is possible from the library.</p>
 <p >Pipeline Main Components, for each k step:</p><ol type="1">
@@ -232,7 +232,7 @@ Multiple Object Tracking Pipeline Archecture</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Jul 31 2025 17:44:11 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Aug 22 2025 12:51:50 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

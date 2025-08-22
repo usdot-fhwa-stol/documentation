@@ -6,6 +6,7 @@ var classarbitrator_1_1ArbitratorNode =
     [ "plugin_priorities_map_from_json", "classarbitrator_1_1ArbitratorNode.html#a0bf5eb19413d98bba2ee9c774cd9f4c6", null ],
     [ "arbitrator_", "classarbitrator_1_1ArbitratorNode.html#a55579ac17f7c2f12615170e3f268e02c", null ],
     [ "arbitrator_run_", "classarbitrator_1_1ArbitratorNode.html#a1bb04fc666f6b536442f99e50a188815", null ],
+    [ "arbitrator_run_callback_group_", "classarbitrator_1_1ArbitratorNode.html#acd2db3db4320c1d22c2b4c52cc58c825", null ],
     [ "bumper_pose_timer_", "classarbitrator_1_1ArbitratorNode.html#a11a4d64af87ff4256d06daa062435da2", null ],
     [ "config_", "classarbitrator_1_1ArbitratorNode.html#aa13f0f1ac25777c39accd44b156f6f1c", null ],
     [ "twist_sub_", "classarbitrator_1_1ArbitratorNode.html#a3132754db16842b791454f7aeead2388", null ],

@@ -393,8 +393,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  129</span>  std::chrono::system_clock::time_point end_time = std::chrono::system_clock::now();  <span class="comment">// Planning complete</span></div>
 <div class="line"><span class="lineno">  130</span> </div>
 <div class="line"><span class="lineno">  131</span>  <span class="keyword">auto</span> duration = end_time - start_time;</div>
-<div class="line"><span class="lineno">  132</span>  RCLCPP_DEBUG_STREAM(<a class="code hl_variable" href="classinlanecruising__plugin_1_1InLaneCruisingPlugin.html#a29b841a26ec085169abbb6f9354b7dcb">nh_</a>-&gt;get_logger(), <span class="stringliteral">&quot;ExecutionTime: &quot;</span> &lt;&lt; std::chrono::duration&lt;double&gt;(duration).count());</div>
-<div class="line"><span class="lineno">  133</span>}</div>
+<div class="line"><span class="lineno">  132</span>  RCLCPP_DEBUG_STREAM(</div>
+<div class="line"><span class="lineno">  133</span>    rclcpp::get_logger(<span class="stringliteral">&quot;inlanecruising_plugin&quot;</span>),</div>
+<div class="line"><span class="lineno">  134</span>    <span class="stringliteral">&quot;ILC ExecutionTime: &quot;</span> &lt;&lt; std::chrono::duration&lt;double&gt;(duration).count());</div>
+<div class="line"><span class="lineno">  135</span>}</div>
 <div class="ttc" id="aclassinlanecruising__plugin_1_1InLaneCruisingPlugin_html_a23226ded2995b71499f62fd99d436451"><div class="ttname"><a href="classinlanecruising__plugin_1_1InLaneCruisingPlugin.html#a23226ded2995b71499f62fd99d436451">inlanecruising_plugin::InLaneCruisingPlugin::yield_client_</a></div><div class="ttdeci">carma_ros2_utils::ClientPtr&lt; carma_planning_msgs::srv::PlanTrajectory &gt; yield_client_</div><div class="ttdef"><b>Definition:</b> <a href="inlanecruising__plugin_8hpp_source.html#l00095">inlanecruising_plugin.hpp:95</a></div></div>
 <div class="ttc" id="aclassinlanecruising__plugin_1_1InLaneCruisingPlugin_html_a7f0fba0e63a16cc657e868a6fdeea7ba"><div class="ttname"><a href="classinlanecruising__plugin_1_1InLaneCruisingPlugin.html#a7f0fba0e63a16cc657e868a6fdeea7ba">inlanecruising_plugin::InLaneCruisingPlugin::debug_msg_</a></div><div class="ttdeci">carma_debug_ros2_msgs::msg::TrajectoryCurvatureSpeeds debug_msg_</div><div class="ttdef"><b>Definition:</b> <a href="inlanecruising__plugin_8hpp_source.html#l00097">inlanecruising_plugin.hpp:97</a></div></div>
 <div class="ttc" id="aclassinlanecruising__plugin_1_1InLaneCruisingPlugin_html_aa8a9236ef63639733d1e85128b3c690f"><div class="ttname"><a href="classinlanecruising__plugin_1_1InLaneCruisingPlugin.html#aa8a9236ef63639733d1e85128b3c690f">inlanecruising_plugin::InLaneCruisingPlugin::ending_state_before_buffer_</a></div><div class="ttdeci">carma_planning_msgs::msg::VehicleState ending_state_before_buffer_</div><div class="ttdef"><b>Definition:</b> <a href="inlanecruising__plugin_8hpp_source.html#l00087">inlanecruising_plugin.hpp:87</a></div></div>
@@ -497,10 +499,10 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="inlanecruising__plugin_8cpp_source.html#l00135">135</a> of file <a class="el" href="inlanecruising__plugin_8cpp_source.html">inlanecruising_plugin.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  136</span>{</div>
-<div class="line"><span class="lineno">  137</span>  <a class="code hl_variable" href="classinlanecruising__plugin_1_1InLaneCruisingPlugin.html#a23226ded2995b71499f62fd99d436451">yield_client_</a> = client;</div>
-<div class="line"><span class="lineno">  138</span>}</div>
+<p class="definition">Definition at line <a class="el" href="inlanecruising__plugin_8cpp_source.html#l00137">137</a> of file <a class="el" href="inlanecruising__plugin_8cpp_source.html">inlanecruising_plugin.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>{</div>
+<div class="line"><span class="lineno">  139</span>  <a class="code hl_variable" href="classinlanecruising__plugin_1_1InLaneCruisingPlugin.html#a23226ded2995b71499f62fd99d436451">yield_client_</a> = client;</div>
+<div class="line"><span class="lineno">  140</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="inlanecruising__plugin_8hpp_source.html#l00095">yield_client_</a>.</p>
 
@@ -727,7 +729,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="inlanecruising__plugin_8hpp_source.html#l00095">95</a> of file <a class="el" href="inlanecruising__plugin_8hpp_source.html">inlanecruising_plugin.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="inlanecruising__plugin_8cpp_source.html#l00049">plan_trajectory_callback()</a>, and <a class="el" href="inlanecruising__plugin_8cpp_source.html#l00135">set_yield_client()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="inlanecruising__plugin_8cpp_source.html#l00049">plan_trajectory_callback()</a>, and <a class="el" href="inlanecruising__plugin_8cpp_source.html#l00137">set_yield_client()</a>.</p>
 
 </div>
 </div>
@@ -741,7 +743,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceinlanecruising__plugin.html">inlanecruising_plugin</a></li><li class="navelem"><a class="el" href="classinlanecruising__plugin_1_1InLaneCruisingPlugin.html">InLaneCruisingPlugin</a></li>
-    <li class="footer">Generated on Thu Jul 31 2025 17:44:13 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Aug 22 2025 12:51:52 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

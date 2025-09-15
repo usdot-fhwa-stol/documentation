@@ -119,73 +119,84 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   36</span>        name=<span class="stringliteral">&quot;log_level&quot;</span>, default_value=<span class="stringliteral">&quot;WARN&quot;</span></div>
 <div class="line"><span class="lineno">   37</span>    )</div>
 <div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    <span class="comment"># Declare the configuration_delay launch argument</span></div>
-<div class="line"><span class="lineno">   40</span>    configuration_delay = LaunchConfiguration(<span class="stringliteral">&#39;configuration_delay&#39;</span>)</div>
-<div class="line"><span class="lineno">   41</span>    declare_configuration_delay_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   42</span>        name =<span class="stringliteral">&#39;configuration_delay&#39;</span>, default_value=<span class="stringliteral">&#39;4.0&#39;</span>)</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>    traffic_incident_param_file = os.path.join(</div>
-<div class="line"><span class="lineno">   45</span>        get_package_share_directory(<span class="stringliteral">&quot;traffic_incident&quot;</span>), <span class="stringliteral">&quot;config/parameters.yaml&quot;</span></div>
+<div class="line"><span class="lineno">   39</span>    <span class="comment"># Declare the global_params_override_file launch argument</span></div>
+<div class="line"><span class="lineno">   40</span>    <span class="comment"># Parameters in this file will override any parameters loaded in their respective packages</span></div>
+<div class="line"><span class="lineno">   41</span>    global_params_override_file = LaunchConfiguration(<span class="stringliteral">&#39;global_params_override_file&#39;</span>)</div>
+<div class="line"><span class="lineno">   42</span>    declare_global_params_override_file_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   43</span>        name = <span class="stringliteral">&#39;global_params_override_file&#39;</span>,</div>
+<div class="line"><span class="lineno">   44</span>        default_value = <span class="stringliteral">&quot;/opt/carma/vehicle/config/GlobalParamsOverride.yaml&quot;</span>,</div>
+<div class="line"><span class="lineno">   45</span>        description = <span class="stringliteral">&quot;Path to global file containing the parameters override&quot;</span></div>
 <div class="line"><span class="lineno">   46</span>    )</div>
 <div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>    <span class="comment"># Launch node(s) in a carma container to allow logging to be configured</span></div>
-<div class="line"><span class="lineno">   49</span>    container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">   50</span>        package=<span class="stringliteral">&quot;carma_ros2_utils&quot;</span>,</div>
-<div class="line"><span class="lineno">   51</span>        name=<span class="stringliteral">&quot;traffic_incident_container&quot;</span>,</div>
-<div class="line"><span class="lineno">   52</span>        executable=<span class="stringliteral">&quot;carma_component_container_mt&quot;</span>,</div>
-<div class="line"><span class="lineno">   53</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">   54</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">   55</span>            <span class="comment"># Launch the core node(s)</span></div>
-<div class="line"><span class="lineno">   56</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">   57</span>                package=<span class="stringliteral">&quot;traffic_incident&quot;</span>,</div>
-<div class="line"><span class="lineno">   58</span>                plugin=<span class="stringliteral">&quot;traffic::TrafficIncidentNode&quot;</span>,</div>
-<div class="line"><span class="lineno">   59</span>                name=<span class="stringliteral">&quot;traffic_incident&quot;</span>,</div>
-<div class="line"><span class="lineno">   60</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">   61</span>                    {<span class="stringliteral">&quot;use_intra_process_comms&quot;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">   62</span>                    {<span class="stringliteral">&quot;--log-level&quot;</span>: log_level},</div>
-<div class="line"><span class="lineno">   63</span>                ],</div>
-<div class="line"><span class="lineno">   64</span>                parameters=[</div>
-<div class="line"><span class="lineno">   65</span>                    traffic_incident_param_file,</div>
-<div class="line"><span class="lineno">   66</span>                ],</div>
-<div class="line"><span class="lineno">   67</span>                remappings=[</div>
-<div class="line"><span class="lineno">   68</span>                    (<span class="stringliteral">&quot;gps_common_fix&quot;</span>, <span class="stringliteral">&quot;/hardware_interface/gps_common_fix&quot;</span>),</div>
-<div class="line"><span class="lineno">   69</span>                ]</div>
-<div class="line"><span class="lineno">   70</span>            ),</div>
-<div class="line"><span class="lineno">   71</span>        ],</div>
-<div class="line"><span class="lineno">   72</span>    )</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>    ros2_cmd = FindExecutable(name=<span class="stringliteral">&#39;ros2&#39;</span>)</div>
-<div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span>    process_configure_traffic_incident = ExecuteProcess(</div>
-<div class="line"><span class="lineno">   77</span>        cmd=[ros2_cmd, <span class="stringliteral">&quot;lifecycle&quot;</span>, <span class="stringliteral">&quot;set&quot;</span>, <span class="stringliteral">&quot;/traffic_incident&quot;</span>, <span class="stringliteral">&quot;configure&quot;</span>],</div>
-<div class="line"><span class="lineno">   78</span>    )</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>    configuration_trigger = TimerAction(</div>
-<div class="line"><span class="lineno">   81</span>        period=configuration_delay,</div>
-<div class="line"><span class="lineno">   82</span>        actions=[</div>
-<div class="line"><span class="lineno">   83</span>            process_configure_traffic_incident,</div>
-<div class="line"><span class="lineno">   84</span>        ]</div>
-<div class="line"><span class="lineno">   85</span>    )</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>    configured_event_handler_traffic_incident = RegisterEventHandler(OnExecutionComplete(</div>
-<div class="line"><span class="lineno">   88</span>            target_action=process_configure_traffic_incident,</div>
-<div class="line"><span class="lineno">   89</span>            on_completion=[ </div>
-<div class="line"><span class="lineno">   90</span>                ExecuteProcess(</div>
-<div class="line"><span class="lineno">   91</span>                    cmd=[ros2_cmd, <span class="stringliteral">&quot;lifecycle&quot;</span>, <span class="stringliteral">&quot;set&quot;</span>, <span class="stringliteral">&quot;/traffic_incident&quot;</span>, <span class="stringliteral">&quot;activate&quot;</span>],</div>
-<div class="line"><span class="lineno">   92</span>                )</div>
-<div class="line"><span class="lineno">   93</span>            ]</div>
-<div class="line"><span class="lineno">   94</span>        )</div>
+<div class="line"><span class="lineno">   48</span>    <span class="comment"># Declare the configuration_delay launch argument</span></div>
+<div class="line"><span class="lineno">   49</span>    configuration_delay = LaunchConfiguration(<span class="stringliteral">&#39;configuration_delay&#39;</span>)</div>
+<div class="line"><span class="lineno">   50</span>    declare_configuration_delay_arg = DeclareLaunchArgument(</div>
+<div class="line"><span class="lineno">   51</span>        name =<span class="stringliteral">&#39;configuration_delay&#39;</span>, default_value=<span class="stringliteral">&#39;4.0&#39;</span>)</div>
+<div class="line"><span class="lineno">   52</span> </div>
+<div class="line"><span class="lineno">   53</span>    traffic_incident_param_file = os.path.join(</div>
+<div class="line"><span class="lineno">   54</span>        get_package_share_directory(<span class="stringliteral">&quot;traffic_incident&quot;</span>), <span class="stringliteral">&quot;config/parameters.yaml&quot;</span></div>
+<div class="line"><span class="lineno">   55</span>    )</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <span class="comment"># Launch node(s) in a carma container to allow logging to be configured</span></div>
+<div class="line"><span class="lineno">   58</span>    container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">   59</span>        package=<span class="stringliteral">&quot;carma_ros2_utils&quot;</span>,</div>
+<div class="line"><span class="lineno">   60</span>        name=<span class="stringliteral">&quot;traffic_incident_container&quot;</span>,</div>
+<div class="line"><span class="lineno">   61</span>        executable=<span class="stringliteral">&quot;carma_component_container_mt&quot;</span>,</div>
+<div class="line"><span class="lineno">   62</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">   63</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">   64</span>            <span class="comment"># Launch the core node(s)</span></div>
+<div class="line"><span class="lineno">   65</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">   66</span>                package=<span class="stringliteral">&quot;traffic_incident&quot;</span>,</div>
+<div class="line"><span class="lineno">   67</span>                plugin=<span class="stringliteral">&quot;traffic::TrafficIncidentNode&quot;</span>,</div>
+<div class="line"><span class="lineno">   68</span>                name=<span class="stringliteral">&quot;traffic_incident&quot;</span>,</div>
+<div class="line"><span class="lineno">   69</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">   70</span>                    {<span class="stringliteral">&quot;use_intra_process_comms&quot;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">   71</span>                    {<span class="stringliteral">&quot;--log-level&quot;</span>: log_level},</div>
+<div class="line"><span class="lineno">   72</span>                ],</div>
+<div class="line"><span class="lineno">   73</span>                parameters=[</div>
+<div class="line"><span class="lineno">   74</span>                    traffic_incident_param_file,</div>
+<div class="line"><span class="lineno">   75</span>                    global_params_override_file,</div>
+<div class="line"><span class="lineno">   76</span>                ],</div>
+<div class="line"><span class="lineno">   77</span>                remappings=[</div>
+<div class="line"><span class="lineno">   78</span>                    (<span class="stringliteral">&quot;gps_common_fix&quot;</span>, <span class="stringliteral">&quot;/hardware_interface/gps_common_fix&quot;</span>),</div>
+<div class="line"><span class="lineno">   79</span>                ]</div>
+<div class="line"><span class="lineno">   80</span>            ),</div>
+<div class="line"><span class="lineno">   81</span>        ],</div>
+<div class="line"><span class="lineno">   82</span>    )</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    ros2_cmd = FindExecutable(name=<span class="stringliteral">&#39;ros2&#39;</span>)</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    process_configure_traffic_incident = ExecuteProcess(</div>
+<div class="line"><span class="lineno">   87</span>        cmd=[ros2_cmd, <span class="stringliteral">&quot;lifecycle&quot;</span>, <span class="stringliteral">&quot;set&quot;</span>, <span class="stringliteral">&quot;/traffic_incident&quot;</span>, <span class="stringliteral">&quot;configure&quot;</span>],</div>
+<div class="line"><span class="lineno">   88</span>    )</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    configuration_trigger = TimerAction(</div>
+<div class="line"><span class="lineno">   91</span>        period=configuration_delay,</div>
+<div class="line"><span class="lineno">   92</span>        actions=[</div>
+<div class="line"><span class="lineno">   93</span>            process_configure_traffic_incident,</div>
+<div class="line"><span class="lineno">   94</span>        ]</div>
 <div class="line"><span class="lineno">   95</span>    )</div>
 <div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">return</span> LaunchDescription(</div>
-<div class="line"><span class="lineno">   98</span>        [</div>
-<div class="line"><span class="lineno">   99</span>            declare_log_level_arg,</div>
-<div class="line"><span class="lineno">  100</span>            declare_configuration_delay_arg,</div>
-<div class="line"><span class="lineno">  101</span>            container,</div>
-<div class="line"><span class="lineno">  102</span>            configuration_trigger,</div>
-<div class="line"><span class="lineno">  103</span>            configured_event_handler_traffic_incident</div>
-<div class="line"><span class="lineno">  104</span>        ]</div>
+<div class="line"><span class="lineno">   97</span>    configured_event_handler_traffic_incident = RegisterEventHandler(OnExecutionComplete(</div>
+<div class="line"><span class="lineno">   98</span>            target_action=process_configure_traffic_incident,</div>
+<div class="line"><span class="lineno">   99</span>            on_completion=[</div>
+<div class="line"><span class="lineno">  100</span>                ExecuteProcess(</div>
+<div class="line"><span class="lineno">  101</span>                    cmd=[ros2_cmd, <span class="stringliteral">&quot;lifecycle&quot;</span>, <span class="stringliteral">&quot;set&quot;</span>, <span class="stringliteral">&quot;/traffic_incident&quot;</span>, <span class="stringliteral">&quot;activate&quot;</span>],</div>
+<div class="line"><span class="lineno">  102</span>                )</div>
+<div class="line"><span class="lineno">  103</span>            ]</div>
+<div class="line"><span class="lineno">  104</span>        )</div>
 <div class="line"><span class="lineno">  105</span>    )</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">return</span> LaunchDescription(</div>
+<div class="line"><span class="lineno">  108</span>        [</div>
+<div class="line"><span class="lineno">  109</span>            declare_log_level_arg,</div>
+<div class="line"><span class="lineno">  110</span>            declare_configuration_delay_arg,</div>
+<div class="line"><span class="lineno">  111</span>            declare_global_params_override_file_arg,</div>
+<div class="line"><span class="lineno">  112</span>            container,</div>
+<div class="line"><span class="lineno">  113</span>            configuration_trigger,</div>
+<div class="line"><span class="lineno">  114</span>            configured_event_handler_traffic_incident</div>
+<div class="line"><span class="lineno">  115</span>        ]</div>
+<div class="line"><span class="lineno">  116</span>    )</div>
 <div class="ttc" id="anamespacetraffic__incident_html_ae9f6441ee2913489cbacfa4330527df7"><div class="ttname"><a href="namespacetraffic__incident.html#ae9f6441ee2913489cbacfa4330527df7">traffic_incident.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="traffic__incident_8launch_8py_source.html#l00031">traffic_incident.launch.py:31</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -196,7 +207,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetraffic__incident.html">traffic_incident</a></li>
-    <li class="footer">Generated on Fri Aug 22 2025 12:48:09 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Sep 15 2025 21:19:37 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

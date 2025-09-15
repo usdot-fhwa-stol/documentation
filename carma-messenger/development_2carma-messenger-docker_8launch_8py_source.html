@@ -127,20 +127,31 @@ $(document).ready(function(){initNavTree('development_2carma-messenger-docker_8l
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        description = <span class="stringliteral">&#39;Path of folder on host PC containing route CSV file(s) that can be accessed by plugins&#39;</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    )</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment"># Launch the core carma launch file</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    core_launch = IncludeLaunchDescription(</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        PythonLaunchDescriptionSource([ get_package_share_directory(<span class="stringliteral">&#39;carma-messenger&#39;</span>), <span class="stringliteral">&#39;/launch/carma-messenger.launch.py&#39;</span>]),</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        launch_arguments = {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder,</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="stringliteral">&#39;use_rosbag&#39;</span> : use_rosbag,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }.items()</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment"># Declare the global_params_override_file launch argument</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment"># Parameters in this file will override any parameters loaded in their respective packages</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    global_params_override_file = LaunchConfiguration(<span class="stringliteral">&#39;global_params_override_file&#39;</span>)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    declare_global_params_override_file_arg = DeclareLaunchArgument(</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        name = <span class="stringliteral">&#39;global_params_override_file&#39;</span>,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        default_value = <span class="stringliteral">&quot;/opt/carma/vehicle/config/GlobalParamsOverride.yaml&quot;</span>,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        description = <span class="stringliteral">&quot;Path to global file containing the parameters override&quot;</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    )</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        declare_use_rosbag,</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        declare_route_file_folder,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        core_launch</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    ])</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment"># Launch the core carma launch file</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    core_launch = IncludeLaunchDescription(</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        PythonLaunchDescriptionSource([ get_package_share_directory(<span class="stringliteral">&#39;carma-messenger&#39;</span>), <span class="stringliteral">&#39;/launch/carma-messenger.launch.py&#39;</span>]),</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        launch_arguments = {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="stringliteral">&#39;route_file_folder&#39;</span> : route_file_folder,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="stringliteral">&#39;global_params_override_file&#39;</span> : global_params_override_file,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="stringliteral">&#39;use_rosbag&#39;</span> : use_rosbag,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }.items()</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    )</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        declare_use_rosbag,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        declare_route_file_folder,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        declare_global_params_override_file_arg,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        core_launch</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    ])</div>
 <div class="ttc" id="anamespacecarma-messenger-docker_html_a0ce2cdf4463d7a43d8873c280e76448b"><div class="ttname"><a href="namespacecarma-messenger-docker.html#a0ce2cdf4463d7a43d8873c280e76448b">carma-messenger-docker.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="cave__in__a__box_2carma-messenger-docker_8launch_8py_source.html#l00022">carma-messenger-docker.launch.py:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -148,7 +159,7 @@ $(document).ready(function(){initNavTree('development_2carma-messenger-docker_8l
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_7121778ad6946e78437fdbee85ada1b6.html">carma-messenger-config</a></li><li class="navelem"><a class="el" href="dir_ab63de9d198564bf9974b752430ec59f.html">development</a></li><li class="navelem"><a class="el" href="development_2carma-messenger-docker_8launch_8py.html">carma-messenger-docker.launch.py</a></li>
-    <li class="footer">Generated on Fri Aug 22 2025 12:48:09 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Sep 15 2025 21:19:37 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

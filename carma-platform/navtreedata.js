@@ -171,7 +171,7 @@ var NAVTREE =
     [ "index", "md_docs_index.html", null ],
     [ "License", "md_docs_License.html", null ],
     [ "CARMA System Release Notes", "md_docs_Release_notes.html", [
-      [ "Version 4.10.0, released June 24th, 2025", "md_docs_Release_notes.html#autotoc_md151", [
+      [ "Version 4.11.0, released Aug 14th, 2025", "md_docs_Release_notes.html#autotoc_md151", [
         [ "<strong>Summary</strong>", "md_docs_Release_notes.html#autotoc_md152", null ]
       ] ]
     ] ],

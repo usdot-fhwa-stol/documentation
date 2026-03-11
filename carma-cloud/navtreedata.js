@@ -25,22 +25,22 @@
 var NAVTREE =
 [
   [ "Carma-cloud", "index.html", [
-    [ "README", "md_README.html", [
-      [ "CARMAcloud", "md_README.html#autotoc_md0", [
-        [ "Documentation", "md_README.html#autotoc_md1", null ],
-        [ "Deployment", "md_README.html#autotoc_md2", [
-          [ "Deploy using docker", "md_README.html#autotoc_md3", null ],
-          [ "Deploy from source", "md_README.html#autotoc_md4", null ]
+    [ "Develop CI/CD Processes", "md_README.html", [
+      [ "CARMAcloud", "md_README.html#autotoc_md1", [
+        [ "Documentation", "md_README.html#autotoc_md2", null ],
+        [ "Deployment", "md_README.html#autotoc_md3", [
+          [ "Deploy using docker", "md_README.html#autotoc_md4", null ],
+          [ "Deploy from source", "md_README.html#autotoc_md5", null ]
         ] ],
-        [ "Configuration", "md_README.html#autotoc_md5", [
-          [ "Bounds File for IHP2 Speed Harmonization", "md_README.html#autotoc_md6", null ]
+        [ "Configuration", "md_README.html#autotoc_md6", [
+          [ "Bounds File for IHP2 Speed Harmonization", "md_README.html#autotoc_md7", null ]
         ] ],
-        [ "Testing Considerations", "md_README.html#autotoc_md7", null ],
-        [ "Contribution", "md_README.html#autotoc_md8", null ],
-        [ "Code of Conduct", "md_README.html#autotoc_md9", null ],
-        [ "Attribution", "md_README.html#autotoc_md10", null ],
-        [ "License", "md_README.html#autotoc_md11", null ],
-        [ "Contact", "md_README.html#autotoc_md12", null ]
+        [ "Testing Considerations", "md_README.html#autotoc_md8", null ],
+        [ "Contribution", "md_README.html#autotoc_md9", null ],
+        [ "Code of Conduct", "md_README.html#autotoc_md10", null ],
+        [ "Attribution", "md_README.html#autotoc_md11", null ],
+        [ "License", "md_README.html#autotoc_md12", null ],
+        [ "Contact", "md_README.html#autotoc_md13", null ]
       ] ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],

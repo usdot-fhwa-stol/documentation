@@ -161,7 +161,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a23c6f6c7fef87fabcef79f2a528ce323"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ea454faf91823d1c30716caa912493d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a4ea454faf91823d1c30716caa912493d">speed_advisory</a> = 0.0</td></tr>
 <tr class="separator:a4ea454faf91823d1c30716caa912493d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae60a062e4ac06651cd15729d04fe536a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#ae60a062e4ac06651cd15729d04fe536a">event_reason</a></td></tr>
+<tr class="memitem:ae60a062e4ac06651cd15729d04fe536a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#ae60a062e4ac06651cd15729d04fe536a">event_reason</a> = &quot;&quot;</td></tr>
 <tr class="separator:ae60a062e4ac06651cd15729d04fe536a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaff310304aa130f4cb2f3b36796a90a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#aeaff310304aa130f4cb2f3b36796a90a">event_type</a></td></tr>
 <tr class="separator:aeaff310304aa130f4cb2f3b36796a90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -910,7 +910,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  119</span>        <span class="keywordtype">double</span> temp_up_track=stod(<a class="code hl_function" href="classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a2f206b63c99119b16a1b29e49dc06b4c">stringParserHelper</a>(uptrack_str,uptrack_str.find_last_of(<span class="stringliteral">&quot;up_track:&quot;</span>)));</div>
 <div class="line"><span class="lineno">  120</span>        <span class="keywordtype">double</span> temp_min_gap=stod(<a class="code hl_function" href="classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a2f206b63c99119b16a1b29e49dc06b4c">stringParserHelper</a>(min_gap_str,min_gap_str.find_last_of(<span class="stringliteral">&quot;min_gap:&quot;</span>)));</div>
 <div class="line"><span class="lineno">  121</span>        <span class="keywordtype">double</span> temp_speed_advisory=stod(<a class="code hl_function" href="classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a2f206b63c99119b16a1b29e49dc06b4c">stringParserHelper</a>(speed_advisory_str,speed_advisory_str.find_last_of(<span class="stringliteral">&quot;advisory_speed:&quot;</span>))) * <a class="code hl_variable" href="classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#aad7bd8c5c4e0d4d67875ac38a536ad90">MphToMetersPerSec</a>;</div>
-<div class="line"><span class="lineno">  122</span>        std::string temp_event_reason=<a class="code hl_function" href="classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a2f206b63c99119b16a1b29e49dc06b4c">stringParserHelper</a>(event_reason_str,event_reason_str.find_last_of(<span class="stringliteral">&quot;event_reason:&quot;</span>));</div>
+<div class="line"><span class="lineno">  122</span>        std::string temp_event_reason = <a class="code hl_function" href="classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a2f206b63c99119b16a1b29e49dc06b4c">stringParserHelper</a>(event_reason_str, event_reason_str.find(<span class="stringliteral">&quot;event_reason:&quot;</span>) + std::string(<span class="stringliteral">&quot;event_reason:&quot;</span>).length() - 1);</div>
 <div class="line"><span class="lineno">  123</span>        std::string temp_event_type=<a class="code hl_function" href="classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html#a2f206b63c99119b16a1b29e49dc06b4c">stringParserHelper</a>(event_type_str,event_type_str.find_last_of(<span class="stringliteral">&quot;event_type:&quot;</span>));</div>
 <div class="line"><span class="lineno">  124</span> </div>
 <div class="line"><span class="lineno">  125</span>        <span class="keywordflow">if</span> ( approximate_degree_delta &lt; APPROXIMATE_DEG_PER_5M <span class="comment">// If the vehicle has not moved more than 5m and the parameters remain unchanged</span></div>
@@ -1184,7 +1184,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string traffic_incident_parser::TrafficIncidentParserWorker::event_reason</td>
+          <td class="memname">std::string traffic_incident_parser::TrafficIncidentParserWorker::event_reason = &quot;&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1479,7 +1479,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetraffic__incident__parser.html">traffic_incident_parser</a></li><li class="navelem"><a class="el" href="classtraffic__incident__parser_1_1TrafficIncidentParserWorker.html">TrafficIncidentParserWorker</a></li>
-    <li class="footer">Generated on Tue Apr 14 2026 19:04:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu Apr 16 2026 13:56:24 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

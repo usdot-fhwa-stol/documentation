@@ -1,5 +1,11 @@
 var NAVTREEINDEX28 =
 {
+"md_Contributing.html#autotoc_md104":[21,0,2],
+"md_Contributing.html#autotoc_md87":[21,0],
+"md_Contributing.html#autotoc_md88":[21,0,0],
+"md_Contributing.html#autotoc_md89":[21,0,0,0],
+"md_Contributing.html#autotoc_md90":[21,0,0,1],
+"md_Contributing.html#autotoc_md91":[21,0,0,1,0],
 "md_Contributing.html#autotoc_md92":[21,0,0,1,1],
 "md_Contributing.html#autotoc_md93":[21,0,0,1,2],
 "md_Contributing.html#autotoc_md94":[21,0,0,1,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX28 =
 "motion__computation_2src_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[59,0,26,3,1,0],
 "motion__computation_2src_2main_8cpp_source.html":[59,0,26,3,1],
 "motion__computation__config_8hpp.html":[59,0,26,1,0,2],
-"motion__computation__config_8hpp_source.html":[59,0,26,1,0,2],
-"motion__computation__launch_8py.html":[59,0,26,2,0],
-"motion__computation__launch_8py.html#a55ceded82280a1b26dd9e38e93304c14":[59,0,26,2,0,0],
-"motion__computation__launch_8py_source.html":[59,0,26,2,0],
-"motion__computation__node_8cpp.html":[59,0,26,3,3],
-"motion__computation__node_8cpp_source.html":[59,0,26,3,3],
-"motion__computation__node_8hpp.html":[59,0,26,1,0,3]
+"motion__computation__config_8hpp_source.html":[59,0,26,1,0,2]
 };

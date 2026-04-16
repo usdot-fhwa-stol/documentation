@@ -1,5 +1,11 @@
 var NAVTREEINDEX27 =
 {
+"index.html#autotoc_md144":[0,9,3],
+"index.html#autotoc_md145":[0,10],
+"index.html#autotoc_md146":[0,11],
+"index.html#autotoc_md147":[0,12],
+"index.html#autotoc_md148":[0,13],
+"index.html#autotoc_md149":[0,14],
 "index.html#autotoc_md150":[0,15],
 "inlanecruising__config_8hpp.html":[59,0,17,0,0,0],
 "inlanecruising__config_8hpp_source.html":[59,0,17,0,0,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX27 =
 "md_Contributing.html#autotoc_md100":[21,0,1,1],
 "md_Contributing.html#autotoc_md101":[21,0,1,2],
 "md_Contributing.html#autotoc_md102":[21,0,1,3],
-"md_Contributing.html#autotoc_md103":[21,0,1,4],
-"md_Contributing.html#autotoc_md104":[21,0,2],
-"md_Contributing.html#autotoc_md87":[21,0],
-"md_Contributing.html#autotoc_md88":[21,0,0],
-"md_Contributing.html#autotoc_md89":[21,0,0,0],
-"md_Contributing.html#autotoc_md90":[21,0,0,1],
-"md_Contributing.html#autotoc_md91":[21,0,0,1,0]
+"md_Contributing.html#autotoc_md103":[21,0,1,4]
 };

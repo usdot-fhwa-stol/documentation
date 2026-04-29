@@ -25,22 +25,40 @@
 var NAVTREE =
 [
   [ "Carma-cloud", "index.html", [
+    [ "Adding Optional Trusted Organizational Perimeter Certificates", "md_perimeter_certs_README.html", [
+      [ "Example Build Error", "md_perimeter_certs_README.html#autotoc_md1", null ],
+      [ "Install Instructions", "md_perimeter_certs_README.html#autotoc_md2", [
+        [ "1. Obtain Required Certificates", "md_perimeter_certs_README.html#autotoc_md3", null ],
+        [ "2. Save Certificates to the Local Project Directory", "md_perimeter_certs_README.html#autotoc_md4", [
+          [ "Requirements:", "md_perimeter_certs_README.html#autotoc_md5", null ],
+          [ "Example:", "md_perimeter_certs_README.html#autotoc_md6", null ]
+        ] ],
+        [ "3. Rebuild the Docker Image", "md_perimeter_certs_README.html#autotoc_md7", null ]
+      ] ],
+      [ "How It Works", "md_perimeter_certs_README.html#autotoc_md8", null ],
+      [ "Troubleshooting", "md_perimeter_certs_README.html#autotoc_md9", [
+        [ "Security Note", "md_perimeter_certs_README.html#autotoc_md10", null ]
+      ] ]
+    ] ],
     [ "Develop CI/CD Processes", "md_README.html", [
-      [ "CARMAcloud", "md_README.html#autotoc_md1", [
-        [ "Documentation", "md_README.html#autotoc_md2", null ],
-        [ "Deployment", "md_README.html#autotoc_md3", [
-          [ "Deploy using docker", "md_README.html#autotoc_md4", null ],
-          [ "Deploy from source", "md_README.html#autotoc_md5", null ]
+      [ "CARMAcloud", "md_README.html#autotoc_md12", [
+        [ "Documentation", "md_README.html#autotoc_md13", null ],
+        [ "Deployment", "md_README.html#autotoc_md14", [
+          [ "Deploy using docker", "md_README.html#autotoc_md15", [
+            [ "Build Docker Image", "md_README.html#autotoc_md16", null ],
+            [ "Configure Deployment", "md_README.html#autotoc_md17", null ]
+          ] ],
+          [ "Deploy from source", "md_README.html#autotoc_md18", null ]
         ] ],
-        [ "Configuration", "md_README.html#autotoc_md6", [
-          [ "Bounds File for IHP2 Speed Harmonization", "md_README.html#autotoc_md7", null ]
+        [ "Configuration", "md_README.html#autotoc_md19", [
+          [ "Bounds File for IHP2 Speed Harmonization", "md_README.html#autotoc_md20", null ]
         ] ],
-        [ "Testing Considerations", "md_README.html#autotoc_md8", null ],
-        [ "Contribution", "md_README.html#autotoc_md9", null ],
-        [ "Code of Conduct", "md_README.html#autotoc_md10", null ],
-        [ "Attribution", "md_README.html#autotoc_md11", null ],
-        [ "License", "md_README.html#autotoc_md12", null ],
-        [ "Contact", "md_README.html#autotoc_md13", null ]
+        [ "Testing Considerations", "md_README.html#autotoc_md21", null ],
+        [ "Contribution", "md_README.html#autotoc_md22", null ],
+        [ "Code of Conduct", "md_README.html#autotoc_md23", null ],
+        [ "Attribution", "md_README.html#autotoc_md24", null ],
+        [ "License", "md_README.html#autotoc_md25", null ],
+        [ "Contact", "md_README.html#autotoc_md26", null ]
       ] ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
@@ -83,7 +101,7 @@ var NAVTREEINDEX =
 "classcc_1_1vector__tile_1_1VectorTile_1_1Tile.html#a5b5e6bb379b6be1aef732b67ac0c8297",
 "classcc_1_1vector__tile_1_1VectorTile_1_1Tile_1_1Layer_1_1Builder.html#a73c2b1cea0364d5892506af4d11ff56d",
 "classcc_1_1ws_1_1ReplayMgr_1_1Storm.html#ad91965003fc301437b6a03a9ee43b578",
-"geo_2Lane_8java.html"
+"geo_2LaneWidth_8java_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('md_perimeter_certs_README.html',''); i
 <div class="textblock"><p >*(Skip if not required)*</p>
 <p >If your organization uses private Certificate Authorities (CA), TLS inspection, or a corporate VPN that intercepts HTTPS traffic, Docker builds may fail when downloading dependencies.</p>
 <p >Without these certificates installed, tools such as <code>wget</code>, <code>curl</code>, <code>nvm</code>, <code>git</code>, or package managers may fail with TLS certificate verification errors.</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 Example Build Error</h1>
 <div class="fragment"><div class="line">111.8 + wget -q https://download.osgeo.org/proj/proj-9.3.0.tar.gz</div>
 <div class="line">------</div>
@@ -103,9 +103,9 @@ Example Build Error</h1>
 <div class="line">--------------------</div>
 <div class="line">ERROR: failed to build: failed to solve: process &quot;/bin/sh -c /home/carma-cloud/scripts/install_dependencies.sh&quot; did not complete successfully: exit code: 5</div>
 </div><!-- fragment --><p >This occurs because the container does not trust your organization’s internal CA by default.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 Install Instructions</h1>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 1. Obtain Required Certificates</h2>
 <p >Request from your IT/security team:</p>
 <ul>
@@ -115,11 +115,11 @@ Install Instructions</h1>
 <blockquote class="doxtable">
 <p >&zwj;You do <b>not</b> need the VPN server certificate or any private keys — only public CA certificates. </p>
 </blockquote>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 2. Save Certificates to the Local Project Directory</h2>
 <p >Place the certificate files in:</p>
 <div class="fragment"><div class="line">./perimeter-certs/</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md5"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md23"></a>
 Requirements:</h3>
 <ul>
 <li>Files must be in <b>PEM format</b></li>
@@ -128,15 +128,15 @@ Requirements:</h3>
 <li>Multiple certificates may be added if needed</li>
 <li>Do-Not commit certificates to respository. By default, repository is configured to ignore certificate files.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md6"></a>
+<h3><a class="anchor" id="autotoc_md24"></a>
 Example:</h3>
 <div class="fragment"><div class="line">./perimeter-certs/</div>
 <div class="line">├── Corp-Root-CA.crt</div>
 <div class="line">├── Corp-Perimeter-CA.crt</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md25"></a>
 3. Rebuild the Docker Image</h2>
 <div class="fragment"><div class="line">docker build -t usdotfhwastol/carma-cloud:develop .</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md26"></a>
 How It Works</h1>
 <p >During the Docker build:</p><ul>
 <li>The perimeter-certs/ folder is copied into the container</li>
@@ -144,7 +144,7 @@ How It Works</h1>
 <li>The system trust store is updated via update-ca-certificates</li>
 <li>If no .crt files are present, this step is skipped automatically.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md27"></a>
 Troubleshooting</h1>
 <p >If certificate errors persist:</p><ul>
 <li>Ensure certificate files use the <code>.crt</code> extension</li>
@@ -153,7 +153,7 @@ Troubleshooting</h1>
 <li>Rebuild Docker image using <code>--no-cache</code></li>
 <li>Check that files are actually present in <code>perimeter-certs/</code></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md28"></a>
 Security Note</h2>
 <ul>
 <li>Only public CA certificates should be used</li>
@@ -166,7 +166,7 @@ Security Note</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Apr 29 2026 20:55:16 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Thu May 14 2026 13:27:28 for Carma-cloud by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

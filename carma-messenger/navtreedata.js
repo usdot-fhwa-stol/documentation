@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Carma-platform", "index.html", [
+  [ "Carma-Messenger", "index.html", [
     [ "Example Calibration Folder", "md_carma_messenger_config_example_calibration_folder_README.html", null ],
     [ "carma-messenger", "md_carma_messenger_core_carma_messenger_README.html", null ],
     [ "emergency_response_vehicle_plugin", "md_carma_messenger_core_emergency_response_vehicle_plugin_README.html", null ],
@@ -63,21 +63,18 @@ var NAVTREE =
       ] ]
     ] ],
     [ "README", "md_README.html", [
-      [ "DockerHub Release Builds", "md_README.html#autotoc_md29", null ],
-      [ "DockerHub Release Candidate Builds", "md_README.html#autotoc_md30", null ],
-      [ "DockerHub Develop Builds", "md_README.html#autotoc_md31", null ],
-      [ "carma-messenger", "md_README.html#autotoc_md32", [
-        [ "Architecture", "md_README.html#autotoc_md33", null ],
-        [ "System Configuration and Installation", "md_README.html#autotoc_md34", [
-          [ "Example Setup", "md_README.html#autotoc_md35", null ]
+      [ "carma-messenger", "md_README.html#autotoc_md29", [
+        [ "Architecture", "md_README.html#autotoc_md30", null ],
+        [ "System Configuration and Installation", "md_README.html#autotoc_md31", [
+          [ "Example Setup", "md_README.html#autotoc_md32", null ]
         ] ]
       ] ],
-      [ "CARMAPlatform", "md_README.html#autotoc_md36", [
-        [ "Contribution", "md_README.html#autotoc_md37", null ],
-        [ "Code of Conduct", "md_README.html#autotoc_md38", null ],
-        [ "Attribution", "md_README.html#autotoc_md39", null ],
-        [ "License", "md_README.html#autotoc_md40", null ],
-        [ "Contact", "md_README.html#autotoc_md41", null ]
+      [ "CARMAPlatform", "md_README.html#autotoc_md33", [
+        [ "Contribution", "md_README.html#autotoc_md34", null ],
+        [ "Code of Conduct", "md_README.html#autotoc_md35", null ],
+        [ "Attribution", "md_README.html#autotoc_md36", null ],
+        [ "License", "md_README.html#autotoc_md37", null ],
+        [ "Contact", "md_README.html#autotoc_md38", null ]
       ] ]
     ] ],
     [ "Namespaces", "namespaces.html", [

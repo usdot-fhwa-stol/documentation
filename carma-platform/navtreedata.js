@@ -261,6 +261,26 @@ var NAVTREE =
     [ "traffic_incident_parser", "md_traffic_incident_parser_README.html", null ],
     [ "trajectory_executor", "md_trajectory_executor_README.html", null ],
     [ "trajectory_follower_wrapper", "md_trajectory_follower_wrapper_README.html", null ],
+    [ "Yield Plugin", "md_yield_plugin_README.html", [
+      [ "Role in the Stack", "md_yield_plugin_README.html#autotoc_md233", null ],
+      [ "Two Operating Modes", "md_yield_plugin_README.html#autotoc_md235", [
+        [ "1. Object Avoidance (default)", "md_yield_plugin_README.html#autotoc_md236", null ],
+        [ "2. Cooperative Behavior (V2X Cooperative Lane Change)", "md_yield_plugin_README.html#autotoc_md237", null ]
+      ] ],
+      [ "Collision Detection: CPU vs. CUDA", "md_yield_plugin_README.html#autotoc_md239", [
+        [ "CPU path", "md_yield_plugin_README.html#autotoc_md240", null ],
+        [ "CUDA path", "md_yield_plugin_README.html#autotoc_md241", null ],
+        [ "Known accuracy gaps in the CPU path (documented in tests)", "md_yield_plugin_README.html#autotoc_md242", null ]
+      ] ],
+      [ "Jerk Minimizing Trajectory (JMT)", "md_yield_plugin_README.html#autotoc_md244", null ],
+      [ "Node Architecture", "md_yield_plugin_README.html#autotoc_md246", [
+        [ "Subscribed Topics", "md_yield_plugin_README.html#autotoc_md247", null ],
+        [ "Published Topics", "md_yield_plugin_README.html#autotoc_md248", null ],
+        [ "Service", "md_yield_plugin_README.html#autotoc_md249", null ]
+      ] ],
+      [ "Key Parameters", "md_yield_plugin_README.html#autotoc_md251", null ],
+      [ "Notable Design Decisions", "md_yield_plugin_README.html#autotoc_md253", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -326,24 +346,24 @@ var NAVTREEINDEX =
 "classstop__and__wait__plugin_1_1StopandWait.html#af81018d8babdb47605aacb5f819a37c0",
 "classsubsystem__controllers_1_1PluginManager.html#a9f732913ba1f9c7e16986bade344f258",
 "classyield__plugin_1_1YieldPlugin.html#a0139ba3f27c4205d7820c5e8ed668042",
-"dir_26091af7e8e8048957c66927b68005a4.html",
-"external__object_8py.html#afca4a676cf5848b9ab1617aec871b6f5",
-"index.html#autotoc_md144",
-"md_Contributing.html#autotoc_md104",
-"motion__computation__launch_8py.html",
-"namespacecarma__cooperative__perception.html#a9181e3ec7581247ed1767c87c828c193",
-"namespacelci__strategic__plugin.html#a8c6e35d446c028b1e38bd354bb3a273ba2e962f86afb4c45a2b1939726a663a65",
-"namespaceplatooning__strategic__ihp.html#ac78f5efe59674836961e51da54ad3d41",
-"namespacevisualize__xodr.html#a2cbda4af1d0322b08d380f663f58b462",
-"port__drayage__state__machine_8cpp.html",
-"ssc__driver__manager_8cpp.html",
-"structarbitrator_1_1ArbitratorStateTransition.html#ae54bdca91a6c4fa06610e642ee994bf8",
-"structcarma__cooperative__perception_1_1Wgs84Coordinate.html#a1a3214f0f478876390968f41524502a0",
-"structlci__strategic__plugin_1_1LCIStrategicPlugin_1_1VehicleState.html#a3535ec2bdcde231b76fce27e2b64ac0c",
-"structobject__visualizer_1_1Config.html#abf847db863b95a689c661973ed9883ff",
-"structport__drayage__plugin_1_1Config.html#aaea1f1fa79d103bb59f6dce5496e2b88",
-"structsubsystem__controllers_1_1Entry.html#a7f6177644636d63cce9172a72f5ba1f4",
-"xodr__transform_8py.html#a8c1ddf5b2915f0e599abab66e3ef4426"
+"dir_17f3ef06ba736f561f8e2d8083c95e7a.html",
+"entry__manager_8h.html",
+"index.html#autotoc_md134",
+"md_Code_of_Conduct.html#autotoc_md81",
+"monitor-ros-cpu_8py.html#a133a64f3f4111f52684f34d28c2acba1",
+"namespacecarma__cooperative__perception.html#a41ef7798dea1f0d2fec1863e9e926d62",
+"namespacelanelet_1_1MapConformer_1_1anonymous__namespace_02MapConformer_8cpp_03.html#ab35f87a726141bcdebae6fa19a7f0820a130c5b3473c57faa76e2a1c54e26f88e",
+"namespaceosm__transform.html#ac5185ff519ae82498840c74c383797cb",
+"namespacetrajectory__follower__wrapper.html",
+"plugins_8launch_8py_source.html",
+"speedharm-cli_8py.html#ac15ee9609ba28761c12dbc7d613aa29a",
+"structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html#adccbad754ba6efe6c1b6061620bded43",
+"structcarma__cooperative__perception_1_1Speed.html#a90f18ea379f0e9fef015718f594ad3f0",
+"structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a62ccfdacfd9ef06d1ed0515d7cd6a2d8",
+"structmotion__computation_1_1Config.html#ac61f26f557e6eea36e7ce56a7d4ec934",
+"structplatooning__strategic__ihp_1_1PlatooningPluginConfig.html#af36c57f40a296fd0f16ab008ea354daf",
+"structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#ace0bd90a50abe3880a97b2ed30797d4e",
+"v2x__controller__node_8hpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

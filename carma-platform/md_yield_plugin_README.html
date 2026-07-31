@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('md_yield_plugin_README.html',''); init
 <div class="contents">
 <div class="textblock"><p >A CARMA Platform tactical plugin that modifies an existing trajectory to safely yield to obstacles and cooperating vehicles. It operates as a ROS 2 lifecycle node (<code>YieldPluginNode</code>) wrapping the worker class (<code>YieldPlugin</code>).</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md233"></a>
+<h1><a class="anchor" id="autotoc_md236"></a>
 Role in the Stack</h1>
 <p >The yield plugin sits downstream of tactical plugins (e.g., <a class="el" href="namespaceinlanecruising__plugin.html">inlanecruising_plugin</a>, <a class="el" href="namespacecooperative__lanechange.html">cooperative_lanechange</a>). It receives a <em>fully formed</em> trajectory from the planner and either passes it through unchanged or replaces the timestamps to slow/stop the vehicle before a predicted collision.</p>
 <div class="fragment"><div class="line">Upstream planner  --&gt;  [plan_trajectory service]  --&gt;  YieldPlugin  --&gt;  Controller</div>
@@ -96,9 +96,9 @@ Role in the Stack</h1>
 <div class="line">                   external_object_predictions  ----------+</div>
 <div class="line">                   incoming_mobility_request    ----------+</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md235"></a>
+<h1><a class="anchor" id="autotoc_md238"></a>
 Two Operating Modes</h1>
-<h2><a class="anchor" id="autotoc_md236"></a>
+<h2><a class="anchor" id="autotoc_md239"></a>
 1. Object Avoidance (default)</h2>
 <p >Runs whenever the ego trajectory needs to be checked against external objects from <code>/external_object_predictions</code> (populated from onboard sensors and/or V2X msgs such as SDSM). This is the default path: it is skipped only when <code>enable_cooperative_behavior</code> is <code>true</code> (see <a href="config/parameters.yaml#L76">config/parameters.yaml:76</a>) <em>and</em> the urgency of the latest <code>MobilityRequest</code> (<code>clc_urgency_</code>, set in <code>mobilityrequest_cb</code>, see <a href="src/yield_plugin.cpp#L185">yield_plugin.cpp:185</a>) exceeds <code>acceptable_urgency</code> (see <a href="config/parameters.yaml#L85">config/parameters.yaml:85</a>).</p>
 <p >Note that the object avoidance is not a handoff to a different tactical plugin. Yield_plugin's <code>update_traj_for_object</code> logic re-times the trajectory already produced by the upstream tactical plugin (see "Role in the Stack").</p>
@@ -113,7 +113,7 @@ Two Operating Modes</h1>
 <li><b>JMT generation</b> — a Jerk Minimizing Trajectory is computed (see below) to reach <code>goal_pos = object_lead - safety_gap - vehicle_length</code> at <code>goal_velocity</code>.</li>
 <li><b>Commit-to-stop</b> — if the goal velocity is effectively zero and the collision is within <code>time_horizon_until_collision_to_commit_to_stop_in_s</code> seconds, the resulting trajectory is saved as <code>last_traj_plan_committed_to_stopping_</code>. On subsequent planning calls, while the vehicle is still moving, this saved trajectory is re-used (trimmed to the nearest point to the current vehicle position) instead of re-planning, preventing oscillation.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md237"></a>
+<h2><a class="anchor" id="autotoc_md240"></a>
 2. Cooperative Behavior (V2X Cooperative Lane Change)</h2>
 <p ><em><b>NOTE: This logic has not been tested since around 2021.</b></em></p>
 <p >Enabled via <code>enable_cooperative_behavior: true</code>. Activated when a <code>MobilityRequest</code> with strategy <code>carma/cooperative-lane-change</code> and urgency above <code>acceptable_urgency</code> is received and is not stale (within <code>acceptable_passed_timesteps</code> planning cycles).</p>
@@ -135,7 +135,7 @@ Two Operating Modes</h1>
 <li>If trajectories do not intersect, the ego can accept without modifying its own path.</li>
 </ol>
 <hr  />
-<h1><a class="anchor" id="autotoc_md239"></a>
+<h1><a class="anchor" id="autotoc_md242"></a>
 Collision Detection: CPU vs. CUDA</h1>
 <p >The plugin supports two back-ends for <code>get_collision_times_concurrently</code>. At startup, <code>cuda_is_available()</code> checks for a reachable CUDA device; the GPU path is used when one is found and falls back to CPU on any runtime error.</p>
 <div class="fragment"><div class="line">get_collision_times_concurrently()</div>
@@ -152,7 +152,7 @@ Collision Detection: CPU vs. CUDA</h1>
 <div class="line">                                       │</div>
 <div class="line">                               one std::thread per object</div>
 <div class="line">                               get_collision_time() per object (strided CPU loop)</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md240"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md243"></a>
 CPU path</h2>
 <p ><b>How it works:</b></p>
 <ul>
@@ -178,7 +178,7 @@ CPU path</h2>
 <li><code><a class="el" href="namespacecarma__wm_1_1query.html#a8933b74d652e02d07be1170b787d87a2" title="carma_wm::query namespace contains implementations for query functions (input and output read or writ...">getLaneletsFromPoint()</a></code> is a spatial R-tree query; at ~8 calls per object its cost is measurable (tens of microseconds each) and scales linearly with object count.</li>
 <li>CPU thread count is bounded by available cores; on embedded hardware with many objects the threads queue up.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md241"></a>
+<h2><a class="anchor" id="autotoc_md244"></a>
 CUDA path</h2>
 <p ><b>How it works:</b></p>
 <p ><b>CPU-side pre-filter (before GPU launch):</b></p>
@@ -213,7 +213,7 @@ CUDA path</h2>
 <li>Timestamps are normalised and stored as <code>float32</code>. Over a ~15-second planning horizon this gives sub-millisecond precision, which is sufficient but is a lossy representation compared to the CPU path's <code>double</code>.</li>
 <li>The kernel uses a <code>cudaDeviceSynchronize()</code> call, making the GPU dispatch synchronous from the host thread's perspective. Async pipelining with the rest of the planning cycle is not currently implemented.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md242"></a>
+<h2><a class="anchor" id="autotoc_md245"></a>
 Known accuracy gaps in the CPU path (documented in tests)</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -225,7 +225,7 @@ Known accuracy gaps in the CPU path (documented in tests)</h2>
 </table>
 <p >These are covered by <a href="test/test_collision_cuda_benchmark.cpp">test/test_collision_cuda_benchmark.cpp</a>.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md244"></a>
+<h1><a class="anchor" id="autotoc_md247"></a>
 Jerk Minimizing Trajectory (JMT)</h1>
 <p ><code>generate_JMT_trajectory</code> re-times the <em>spatial</em> path of the original trajectory — it never changes waypoint positions, only timestamps.</p>
 <ol type="1">
@@ -237,7 +237,7 @@ Jerk Minimizing Trajectory (JMT)</h1>
 <li>Timestamps are recomputed from the kinematic equation <code>dt = 2d / (v_prev + v_curr)</code>. For zero-speed segments, a sentinel <code>dt</code> of 6000 seconds is inserted so the controller steers toward the next waypoint instead of spinning in place.</li>
 </ol>
 <hr  />
-<h1><a class="anchor" id="autotoc_md246"></a>
+<h1><a class="anchor" id="autotoc_md249"></a>
 Node Architecture</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -253,7 +253,7 @@ Node Architecture</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>CudaPoint</code>, <code>CudaCollisionResult</code> — <a href="include/yield_plugin/yield_plugin_cuda.cuh">include/yield_plugin/yield_plugin_cuda.cuh</a>   </td><td class="markdownTableBodyNone">Flat SoA data types shared between CPU and GPU   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md247"></a>
+<h2><a class="anchor" id="autotoc_md250"></a>
 Subscribed Topics</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -267,7 +267,7 @@ Subscribed Topics</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>georeference</code>   </td><td class="markdownTableBodyNone"><code>std_msgs/String</code>   </td><td class="markdownTableBodyNone">Proj string for ECEF→map conversion   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md248"></a>
+<h2><a class="anchor" id="autotoc_md251"></a>
 Published Topics</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -277,7 +277,7 @@ Published Topics</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>cooperative_lane_change_status</code>   </td><td class="markdownTableBodyNone"><code>LaneChangeStatus</code>   </td><td class="markdownTableBodyNone">CLC state machine status   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md249"></a>
+<h2><a class="anchor" id="autotoc_md252"></a>
 Service</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -286,7 +286,7 @@ Service</h2>
 <td class="markdownTableBodyNone"><code>plan_trajectory</code>   </td><td class="markdownTableBodyNone"><code>PlanTrajectory</code>   </td><td class="markdownTableBodyNone">Called by the CARMA arbitrator/planner   </td></tr>
 </table>
 <hr  />
-<h1><a class="anchor" id="autotoc_md251"></a>
+<h1><a class="anchor" id="autotoc_md254"></a>
 Key Parameters</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -327,7 +327,7 @@ Key Parameters</h1>
 <td class="markdownTableBodyNone"><code>always_accept_mobility_request</code>   </td><td class="markdownTableBodyNone">false   </td><td class="markdownTableBodyNone">Gates whether a feasible cooperative request is actually reported as accepted in the <code>MobilityResponse</code>   </td></tr>
 </table>
 <hr  />
-<h1><a class="anchor" id="autotoc_md253"></a>
+<h1><a class="anchor" id="autotoc_md256"></a>
 Notable Design Decisions</h1>
 <ul>
 <li><b>No spatial re-routing.</b> The plugin only adjusts <em>when</em> the vehicle reaches each waypoint, never <em>where</em>. Steering behavior is therefore unchanged.</li>
@@ -344,7 +344,7 @@ Notable Design Decisions</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 23 2026 19:24:26 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Jul 31 2026 17:49:39 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

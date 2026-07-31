@@ -2,6 +2,7 @@ var classplan__delegator_1_1PlanDelegator =
 [
     [ "PlanDelegator", "classplan__delegator_1_1PlanDelegator.html#acdf319f0bbe10f6070238a39f939688b", null ],
     [ "composePlanTrajectoryRequest", "classplan__delegator_1_1PlanDelegator.html#a1aef70b133aa7887977f205d22dfbf63", null ],
+    [ "FRIEND_TEST", "classplan__delegator_1_1PlanDelegator.html#ae192add08881d9c627c97705e023b3ba", null ],
     [ "FRIEND_TEST", "classplan__delegator_1_1PlanDelegator.html#aa89b0e6a6c11dcc1574f06fae6187745", null ],
     [ "FRIEND_TEST", "classplan__delegator_1_1PlanDelegator.html#abe5a57089f4cd7157b3f08391c3f3c01", null ],
     [ "FRIEND_TEST", "classplan__delegator_1_1PlanDelegator.html#af8119eb05701c0d7b30f80cd21f284b6", null ],

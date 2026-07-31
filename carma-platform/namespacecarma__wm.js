@@ -22,6 +22,7 @@ var namespacecarma__wm =
       [ "computeCurvature", "namespacecarma__wm_1_1geometry.html#aeaa3d6346b083b5fd1b7c699fab5bb5a", null ],
       [ "concatenate_lanelets", "namespacecarma__wm_1_1geometry.html#adb8e11194693e77d9be753dd84d15524", null ],
       [ "concatenate_line_strings", "namespacecarma__wm_1_1geometry.html#ae7d5ca280140dce2bf7bcfb78bdfd55d", null ],
+      [ "get_lanelet_centerline_length", "namespacecarma__wm_1_1geometry.html#ad51bd0932e7ef431dd4c43ea88cfa3a8", null ],
       [ "getAngleBetweenVectors", "namespacecarma__wm_1_1geometry.html#abab7ba4e773f03d6cfc09492742c6b7b", null ],
       [ "local_circular_arc_curvatures", "namespacecarma__wm_1_1geometry.html#aec227caee1708506f7fec3561538ef38", null ],
       [ "local_curvatures", "namespacecarma__wm_1_1geometry.html#a2bae0fef2b76bda05a8ba1f1382f027d", null ],

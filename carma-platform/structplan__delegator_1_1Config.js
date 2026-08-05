@@ -2,6 +2,7 @@ var structplan__delegator_1_1Config =
 [
     [ "operator<<", "structplan__delegator_1_1Config.html#a7809fad27c013c8d8314e46f22f62ca7", null ],
     [ "duration_to_signal_before_lane_change", "structplan__delegator_1_1Config.html#ac5ec85b389472992bf6a3d5391f42d5c", null ],
+    [ "enable_object_avoidance", "structplan__delegator_1_1Config.html#a31456693ed684d62b73356772a086e74", null ],
     [ "max_traj_generation_reattempt", "structplan__delegator_1_1Config.html#a80d8530310c81e8d7e5b057ec3d2133f", null ],
     [ "max_trajectory_duration", "structplan__delegator_1_1Config.html#ac8e357d37edd1e17c78c7c5a0b9e5340", null ],
     [ "min_crawl_speed", "structplan__delegator_1_1Config.html#adeb79573f1c58e9179ddceefeb31bf27", null ],

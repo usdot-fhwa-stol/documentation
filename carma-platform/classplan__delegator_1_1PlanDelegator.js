@@ -52,5 +52,6 @@ var classplan__delegator_1_1PlanDelegator =
     [ "upcoming_lane_change_status_", "classplan__delegator_1_1PlanDelegator.html#a27aa9f8d0ac870325c2fd65232f61eef", null ],
     [ "upcoming_lane_change_status_pub_", "classplan__delegator_1_1PlanDelegator.html#a2669b0d8008ddb1f8da78a88b001b12c", null ],
     [ "wm_", "classplan__delegator_1_1PlanDelegator.html#a196e473da760bee6d74f4c8d79ec807c", null ],
-    [ "wml_", "classplan__delegator_1_1PlanDelegator.html#afb9d50740b142b102ac5dfcf5f0e94f9", null ]
+    [ "wml_", "classplan__delegator_1_1PlanDelegator.html#afb9d50740b142b102ac5dfcf5f0e94f9", null ],
+    [ "yield_client_", "classplan__delegator_1_1PlanDelegator.html#a106cfc7b0116aa7d267d032cb39e74d7", null ]
 ];

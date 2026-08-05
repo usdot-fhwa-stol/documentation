@@ -11,6 +11,5 @@ var classinlanecruising__plugin_1_1InLaneCruisingPluginNode =
     [ "plugin_name_", "classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#ac559a3df1886d533005c29d2e1f4f119", null ],
     [ "trajectory_debug_pub_", "classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#a91b0d7c7c78d557965e203b3375519ca", null ],
     [ "version_id_", "classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#ab5572f2b69d55e5556cf9acea522c976", null ],
-    [ "worker_", "classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#aa65728c83629770ba10f028d5ae66776", null ],
-    [ "yield_client_", "classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#a1db1815c81c83725fb1181bff359ca1b", null ]
+    [ "worker_", "classinlanecruising__plugin_1_1InLaneCruisingPluginNode.html#aa65728c83629770ba10f028d5ae66776", null ]
 ];

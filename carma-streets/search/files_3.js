@@ -13,5 +13,7 @@ var searchData=
   ['detected_5fvehicle_5fdata_2ehpp_10',['detected_vehicle_data.hpp',['../detected__vehicle__data_8hpp.html',1,'']]],
   ['detected_5fvru_5fdata_2ehpp_11',['detected_vru_data.hpp',['../detected__vru__data_8hpp.html',1,'']]],
   ['detectedobjectsmessage_2emd_12',['DetectedObjectsMessage.md',['../DetectedObjectsMessage_8md.html',1,'']]],
-  ['dpp_5fscript_2epy_13',['dpp_script.py',['../dpp__script_8py.html',1,'']]]
+  ['detection_5foffset_5ffrom_5fref_5fconverter_2ecpp_13',['detection_offset_from_ref_converter.cpp',['../detection__offset__from__ref__converter_8cpp.html',1,'']]],
+  ['detection_5foffset_5ffrom_5fref_5fconverter_2ehpp_14',['detection_offset_from_ref_converter.hpp',['../detection__offset__from__ref__converter_8hpp.html',1,'']]],
+  ['dpp_5fscript_2epy_15',['dpp_script.py',['../dpp__script_8py.html',1,'']]]
 ];

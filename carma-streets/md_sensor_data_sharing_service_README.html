@@ -97,46 +97,7 @@ Configuration</h1>
 Environment Variables</h2>
 <p >The <b>Sensor Data Sharing Service</b> uses the following environment variables to retreive CARMA Streets system level configuration information.</p>
 <p ><b>SIMULATION_MODE</b> : Boolean flag indicating whether the service is being run in a simulation or real-world enviroment. In simulation mode, this service use an external signal from the kafka <code>time_sync</code> topic as time.</p>
-<p ><b>SENSOR_JSON_FILE_PATH</b>: Path to a sensor configuration file with the following format. Used for retrieving a reference location and projection for received cartesian detection data </p><blockquote class="doxtable">
-<p >&zwj;[!NOTE] Sensor reference or "ref" can either be defined as a "CARTESIAN" offset from a provided lanelet2 osm map (first example) or a "WGS84" location (second example). The "CARTESIAN" offset is only recommended for simulation testing as it adds a dependency on a lanelet2 map. For real-world deployments it is recommended that the "WGS84" location is provided. </p>
-</blockquote>
-<p><b>CARTESIAN</b>:</p>
-<div class="fragment"><div class="line">[</div>
-<div class="line">  {</div>
-<div class="line">    &quot;sensorId&quot;: &quot;sensor_1&quot;,</div>
-<div class="line">    &quot;type&quot;: &quot;SemanticLidar&quot;,</div>
-<div class="line">    &quot;ref&quot;: {</div>
-<div class="line">      &quot;type&quot;: &quot;CARTESIAN&quot;,</div>
-<div class="line">      &quot;location&quot;: {</div>
-<div class="line">        &quot;x&quot;: 1.0, /* in meters */</div>
-<div class="line">        &quot;y&quot;: 2.0, /* in meters */</div>
-<div class="line">        &quot;z&quot;: -3.2 /* in meters */</div>
-<div class="line">      },</div>
-<div class="line">       &quot;orientation&quot;: { </div>
-<div class="line">        &quot;yaw&quot;: 0.0,</div>
-<div class="line">        &quot;pitch&quot;: 0.0,</div>
-<div class="line">        &quot;roll&quot;: 0.0</div>
-<div class="line">        }</div>
-<div class="line">    }</div>
-<div class="line">  } </div>
-<div class="line">]</div>
-</div><!-- fragment --><p >or</p>
-<p ><b>WGS84</b>:</p>
-<div class="fragment"><div class="line">[</div>
-<div class="line">  {</div>
-<div class="line">    &quot;sensorId&quot;: &quot;sensor_1&quot;,</div>
-<div class="line">    &quot;type&quot;: &quot;SemanticLidar&quot;,</div>
-<div class="line">    &quot;ref&quot;: {</div>
-<div class="line">      &quot;type&quot;: &quot;WGS84&quot;,</div>
-<div class="line">      &quot;location&quot;: {</div>
-<div class="line">        &quot;latitude&quot;: 38.9549716548523, /* in degrees */</div>
-<div class="line">        &quot;longitude&quot;: -77.14935313519123, /* in degrees */</div>
-<div class="line">        &quot;altitude&quot;: 5.5 /* in meters */</div>
-<div class="line">      }</div>
-<div class="line">    }</div>
-<div class="line">  } </div>
-<div class="line">]</div>
-</div><!-- fragment --><p ><b>LANELET2_MAP</b>: Only required for "CARTESIAN" sensor references. This is a file path to a lanelet2 osm map for which the cartesian offset is relavent.</p>
+<p ><b>LANELET2_MAP</b>: Only required for "CARTESIAN" sensor references. This is a file path to a lanelet2 osm map for which the cartesian offset is relavent.</p>
 <h2><a class="anchor" id="autotoc_md101"></a>
 Service Configuration</h2>
 <p ><b>sdsm_producer_topic</b>: Kafka topic to which the sensor data sharing service will produce SDSMs. <b>detection_consumer_topic</b>: Kafka topic from which the sensor data sharing service will consume Detected Objects. <b>sensor_configuration_file_path</b>: Path to sensor configuration information that includes sensor location and orientation. <b>bootstrap_server</b>: Kafka Broker Server Address. <b>sensor_id</b>: Unique id of sensor for which to publish SDSMS </p><blockquote class="doxtable">
@@ -158,7 +119,7 @@ Sensor Data Sharing speed and heading</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu May 14 2026 20:37:55 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Fri Aug 7 2026 19:07:39 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

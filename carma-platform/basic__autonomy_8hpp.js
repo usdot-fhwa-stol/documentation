@@ -29,6 +29,5 @@ var basic__autonomy_8hpp =
     [ "optimize_speed", "basic__autonomy_8hpp.html#a84a6c11da2d9736a8f277b6afd124100", null ],
     [ "process_trajectory_plan", "basic__autonomy_8hpp.html#aef0a6b216ad0be7289773e54843f747b", null ],
     [ "resample_linestring_pair_to_same_size", "basic__autonomy_8hpp.html#a19cf5cf882789e1e9ed3e92d0105a8de", null ],
-    [ "trajectory_from_points_times_orientations", "basic__autonomy_8hpp.html#aba6a29cdaf0c4af10647b59bf6df4e01", null ],
-    [ "BASIC_AUTONOMY_LOGGER", "basic__autonomy_8hpp.html#a40f0df33d30f775890f99bef7a685e33", null ]
+    [ "trajectory_from_points_times_orientations", "basic__autonomy_8hpp.html#aba6a29cdaf0c4af10647b59bf6df4e01", null ]
 ];

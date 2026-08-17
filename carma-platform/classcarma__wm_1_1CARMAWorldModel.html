@@ -891,13 +891,13 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  103</span>    <span class="comment">// Check if the map is loaded yet</span></div>
 <div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a> || <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a>-&gt;laneletLayer.empty())</div>
 <div class="line"><span class="lineno">  105</span>    {</div>
-<div class="line"><span class="lineno">  106</span>      RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Map is not set or does not contain lanelets&quot;</span>);</div>
+<div class="line"><span class="lineno">  106</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Map is not set or does not contain lanelets&quot;</span>);</div>
 <div class="line"><span class="lineno">  107</span>      <span class="keywordflow">return</span> {};</div>
 <div class="line"><span class="lineno">  108</span>    }</div>
 <div class="line"><span class="lineno">  109</span>    <span class="comment">// Check if the route was loaded yet</span></div>
 <div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a690740a182ab45ac2232da7d1b5edff8">route_</a>)</div>
 <div class="line"><span class="lineno">  111</span>    {</div>
-<div class="line"><span class="lineno">  112</span>      RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Route has not yet been loaded&quot;</span>);</div>
+<div class="line"><span class="lineno">  112</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Route has not yet been loaded&quot;</span>);</div>
 <div class="line"><span class="lineno">  113</span>      <span class="keywordflow">return</span> {};</div>
 <div class="line"><span class="lineno">  114</span>    }</div>
 <div class="line"><span class="lineno">  115</span>    std::vector&lt;lanelet::BusStopRulePtr&gt; bus_stop_list;</div>
@@ -917,7 +917,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  129</span>        <span class="keyword">auto</span> stop_line = bus_stop-&gt;stopAndWaitLine();</div>
 <div class="line"><span class="lineno">  130</span>        <span class="keywordflow">if</span> (stop_line.empty())</div>
 <div class="line"><span class="lineno">  131</span>        {</div>
-<div class="line"><span class="lineno">  132</span>          RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;No stop line&quot;</span>);</div>
+<div class="line"><span class="lineno">  132</span>          RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;No stop line&quot;</span>);</div>
 <div class="line"><span class="lineno">  133</span>          <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">  134</span>        }</div>
 <div class="line"><span class="lineno">  135</span>        <span class="keywordflow">else</span></div>
@@ -936,15 +936,18 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  148</span>    <span class="keywordflow">return</span> bus_stop_list;</div>
 <div class="line"><span class="lineno">  149</span>  }</div>
 <div class="ttc" id="aclasscarma__wm_1_1CARMAWorldModel_html_a18e3077b7673f2f92fd71eeea955a597"><div class="ttname"><a href="classcarma__wm_1_1CARMAWorldModel.html#a18e3077b7673f2f92fd71eeea955a597">carma_wm::CARMAWorldModel::routeTrackPos</a></div><div class="ttdeci">std::pair&lt; TrackPos, TrackPos &gt; routeTrackPos(const lanelet::ConstArea &amp;area) const override</div><div class="ttdoc">Returns a pair of TrackPos, computed in 2d, of the provided area relative to the current route....</div><div class="ttdef"><b>Definition:</b> <a href="CARMAWorldModel_8cpp_source.html#l00040">CARMAWorldModel.cpp:40</a></div></div>
+<div class="ttc" id="anamespacebasic__autonomy_html_a8e49f3ae1a0ea4e022da60318805e3e0"><div class="ttname"><a href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">basic_autonomy::get_logger</a></div><div class="ttdeci">rclcpp::Logger get_logger()</div><div class="ttdoc">Return the module-level logger used by all basic_autonomy functions.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00032">log.cpp:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CARMAWorldModel_8hpp_source.html#l00275">route_</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00040">routeTrackPos()</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00274">semantic_map_</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00275">route_</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00040">routeTrackPos()</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00274">semantic_map_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm_1_1CARMAWorldModel_a39dfa00a1066900c54ddae987d19b2d8_cgraph.png" border="0" usemap="#aclasscarma__wm_1_1CARMAWorldModel_a39dfa00a1066900c54ddae987d19b2d8_cgraph" alt=""/></div>
 <map name="aclasscarma__wm_1_1CARMAWorldModel_a39dfa00a1066900c54ddae987d19b2d8_cgraph" id="aclasscarma__wm_1_1CARMAWorldModel_a39dfa00a1066900c54ddae987d19b2d8_cgraph">
-<area shape="rect" title="Return a list of bus stop along the current route. The bus stop along a route and the next bus stop a..." alt="" coords="5,29,212,71"/>
-<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#a18e3077b7673f2f92fd71eeea955a597" title="Returns a pair of TrackPos, computed in 2d, of the provided area relative to the current route...." alt="" coords="260,29,467,71"/>
+<area shape="rect" title="Return a list of bus stop along the current route. The bus stop along a route and the next bus stop a..." alt="" coords="5,51,212,92"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="293,5,433,47"/>
+<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#a18e3077b7673f2f92fd71eeea955a597" title="Returns a pair of TrackPos, computed in 2d, of the provided area relative to the current route...." alt="" coords="260,95,467,136"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="515,5,753,47"/>
 </map>
 </div>
 
@@ -1391,13 +1394,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1302</span>    <span class="comment">// Check if the map is loaded yet</span></div>
 <div class="line"><span class="lineno"> 1303</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a> || <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a>-&gt;laneletLayer.empty())</div>
 <div class="line"><span class="lineno"> 1304</span>    {</div>
-<div class="line"><span class="lineno"> 1305</span>      RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Map is not set or does not contain lanelets&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1305</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Map is not set or does not contain lanelets&quot;</span>);</div>
 <div class="line"><span class="lineno"> 1306</span>      <span class="keywordflow">return</span> {};</div>
 <div class="line"><span class="lineno"> 1307</span>    }</div>
 <div class="line"><span class="lineno"> 1308</span>    <span class="comment">// Check if the route was loaded yet</span></div>
 <div class="line"><span class="lineno"> 1309</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a690740a182ab45ac2232da7d1b5edff8">route_</a>)</div>
 <div class="line"><span class="lineno"> 1310</span>    {</div>
-<div class="line"><span class="lineno"> 1311</span>      RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Route has not yet been loaded&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1311</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Route has not yet been loaded&quot;</span>);</div>
 <div class="line"><span class="lineno"> 1312</span>      <span class="keywordflow">return</span> {};</div>
 <div class="line"><span class="lineno"> 1313</span>    }</div>
 <div class="line"><span class="lineno"> 1314</span>    std::vector&lt;std::shared_ptr&lt;lanelet::AllWayStop&gt;&gt; intersection_list;</div>
@@ -1423,14 +1426,16 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1334</span>    <span class="keywordflow">return</span> intersection_list;</div>
 <div class="line"><span class="lineno"> 1335</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CARMAWorldModel_8hpp_source.html#l00275">route_</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00040">routeTrackPos()</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00274">semantic_map_</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00275">route_</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00040">routeTrackPos()</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00274">semantic_map_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm_1_1CARMAWorldModel_ac3b3d0bac4477eeff7672868a582398c_cgraph.png" border="0" usemap="#aclasscarma__wm_1_1CARMAWorldModel_ac3b3d0bac4477eeff7672868a582398c_cgraph" alt=""/></div>
 <map name="aclasscarma__wm_1_1CARMAWorldModel_ac3b3d0bac4477eeff7672868a582398c_cgraph" id="aclasscarma__wm_1_1CARMAWorldModel_ac3b3d0bac4477eeff7672868a582398c_cgraph">
-<area shape="rect" title="Return a list of all way stop intersections along the current route. The tall way stop intersections ..." alt="" coords="5,29,212,71"/>
-<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#a18e3077b7673f2f92fd71eeea955a597" title="Returns a pair of TrackPos, computed in 2d, of the provided area relative to the current route...." alt="" coords="260,29,467,71"/>
+<area shape="rect" title="Return a list of all way stop intersections along the current route. The tall way stop intersections ..." alt="" coords="5,51,212,92"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="293,5,433,47"/>
+<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#a18e3077b7673f2f92fd71eeea955a597" title="Returns a pair of TrackPos, computed in 2d, of the provided area relative to the current route...." alt="" coords="260,95,467,136"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="515,5,753,47"/>
 </map>
 </div>
 
@@ -2414,13 +2419,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1339</span>    <span class="comment">// Check if the map is loaded yet</span></div>
 <div class="line"><span class="lineno"> 1340</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a> || <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a>-&gt;laneletLayer.empty())</div>
 <div class="line"><span class="lineno"> 1341</span>    {</div>
-<div class="line"><span class="lineno"> 1342</span>      RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Map is not set or does not contain lanelets&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1342</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Map is not set or does not contain lanelets&quot;</span>);</div>
 <div class="line"><span class="lineno"> 1343</span>      <span class="keywordflow">return</span> {};</div>
 <div class="line"><span class="lineno"> 1344</span>    }</div>
 <div class="line"><span class="lineno"> 1345</span>    <span class="comment">// Check if the route was loaded yet</span></div>
 <div class="line"><span class="lineno"> 1346</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a690740a182ab45ac2232da7d1b5edff8">route_</a>)</div>
 <div class="line"><span class="lineno"> 1347</span>    {</div>
-<div class="line"><span class="lineno"> 1348</span>      RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Route has not yet been loaded&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1348</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Route has not yet been loaded&quot;</span>);</div>
 <div class="line"><span class="lineno"> 1349</span>      <span class="keywordflow">return</span> {};</div>
 <div class="line"><span class="lineno"> 1350</span>    }</div>
 <div class="line"><span class="lineno"> 1351</span>    std::vector&lt;lanelet::SignalizedIntersectionPtr&gt; intersection_list;</div>
@@ -2446,14 +2451,16 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno"> 1371</span>    <span class="keywordflow">return</span> intersection_list;</div>
 <div class="line"><span class="lineno"> 1372</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CARMAWorldModel_8hpp_source.html#l00275">route_</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00040">routeTrackPos()</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00274">semantic_map_</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00275">route_</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00040">routeTrackPos()</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00274">semantic_map_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm_1_1CARMAWorldModel_af75fa37311df1df558e148cdfa914eff_cgraph.png" border="0" usemap="#aclasscarma__wm_1_1CARMAWorldModel_af75fa37311df1df558e148cdfa914eff_cgraph" alt=""/></div>
 <map name="aclasscarma__wm_1_1CARMAWorldModel_af75fa37311df1df558e148cdfa914eff_cgraph" id="aclasscarma__wm_1_1CARMAWorldModel_af75fa37311df1df558e148cdfa914eff_cgraph">
-<area shape="rect" title="Return a list of signalized intersections along the current route. The signalized intersections along..." alt="" coords="5,29,252,71"/>
-<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#a18e3077b7673f2f92fd71eeea955a597" title="Returns a pair of TrackPos, computed in 2d, of the provided area relative to the current route...." alt="" coords="300,29,507,71"/>
+<area shape="rect" title="Return a list of signalized intersections along the current route. The signalized intersections along..." alt="" coords="5,51,252,92"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="333,5,473,47"/>
+<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#a18e3077b7673f2f92fd71eeea955a597" title="Returns a pair of TrackPos, computed in 2d, of the provided area relative to the current route...." alt="" coords="300,95,507,136"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="555,5,793,47"/>
 </map>
 </div>
 
@@ -2505,13 +2512,13 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno"> 1202</span>    <span class="comment">// Check if the map is loaded yet</span></div>
 <div class="line"><span class="lineno"> 1203</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a> || <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a>-&gt;laneletLayer.empty())</div>
 <div class="line"><span class="lineno"> 1204</span>    {</div>
-<div class="line"><span class="lineno"> 1205</span>      RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Map is not set or does not contain lanelets&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1205</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Map is not set or does not contain lanelets&quot;</span>);</div>
 <div class="line"><span class="lineno"> 1206</span>      <span class="keywordflow">return</span> {};</div>
 <div class="line"><span class="lineno"> 1207</span>    }</div>
 <div class="line"><span class="lineno"> 1208</span>    <span class="comment">// Check if the route was loaded yet</span></div>
 <div class="line"><span class="lineno"> 1209</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a690740a182ab45ac2232da7d1b5edff8">route_</a>)</div>
 <div class="line"><span class="lineno"> 1210</span>    {</div>
-<div class="line"><span class="lineno"> 1211</span>      RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Route has not yet been loaded&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1211</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Route has not yet been loaded&quot;</span>);</div>
 <div class="line"><span class="lineno"> 1212</span>      <span class="keywordflow">return</span> {};</div>
 <div class="line"><span class="lineno"> 1213</span>    }</div>
 <div class="line"><span class="lineno"> 1214</span>    std::vector&lt;lanelet::CarmaTrafficSignalPtr&gt; light_list;</div>
@@ -2531,7 +2538,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno"> 1228</span>        <span class="keyword">auto</span> stop_line = light-&gt;getStopLine(ll);</div>
 <div class="line"><span class="lineno"> 1229</span>        <span class="keywordflow">if</span> (!stop_line)</div>
 <div class="line"><span class="lineno"> 1230</span>        {</div>
-<div class="line"><span class="lineno"> 1231</span>          RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;No stop line&quot;</span>);</div>
+<div class="line"><span class="lineno"> 1231</span>          RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;No stop line&quot;</span>);</div>
 <div class="line"><span class="lineno"> 1232</span>          <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno"> 1233</span>        }</div>
 <div class="line"><span class="lineno"> 1234</span>        <span class="keywordflow">else</span></div>
@@ -2550,14 +2557,16 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno"> 1247</span>    <span class="keywordflow">return</span> light_list;</div>
 <div class="line"><span class="lineno"> 1248</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CARMAWorldModel_8hpp_source.html#l00275">route_</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00040">routeTrackPos()</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00274">semantic_map_</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00275">route_</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00040">routeTrackPos()</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00274">semantic_map_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm_1_1CARMAWorldModel_adc595705809b40e5eff0355bc296a3ad_cgraph.png" border="0" usemap="#aclasscarma__wm_1_1CARMAWorldModel_adc595705809b40e5eff0355bc296a3ad_cgraph" alt=""/></div>
 <map name="aclasscarma__wm_1_1CARMAWorldModel_adc595705809b40e5eff0355bc296a3ad_cgraph" id="aclasscarma__wm_1_1CARMAWorldModel_adc595705809b40e5eff0355bc296a3ad_cgraph">
-<area shape="rect" title="Return a list of traffic lights/intersections along the current route. The traffic lights along a rou..." alt="" coords="5,29,212,71"/>
-<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#a18e3077b7673f2f92fd71eeea955a597" title="Returns a pair of TrackPos, computed in 2d, of the provided area relative to the current route...." alt="" coords="260,29,467,71"/>
+<area shape="rect" title="Return a list of traffic lights/intersections along the current route. The traffic lights along a rou..." alt="" coords="5,51,212,92"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="293,5,433,47"/>
+<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#a18e3077b7673f2f92fd71eeea955a597" title="Returns a pair of TrackPos, computed in 2d, of the provided area relative to the current route...." alt="" coords="260,95,467,136"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="515,5,753,47"/>
 </map>
 </div>
 
@@ -3019,13 +3028,13 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  416</span> </div>
 <div class="line"><span class="lineno">  417</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a690740a182ab45ac2232da7d1b5edff8">route_</a>)</div>
 <div class="line"><span class="lineno">  418</span>    {</div>
-<div class="line"><span class="lineno">  419</span>      RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Route has not yet been loaded&quot;</span>);</div>
+<div class="line"><span class="lineno">  419</span>      RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Route has not yet been loaded&quot;</span>);</div>
 <div class="line"><span class="lineno">  420</span>      <span class="keywordflow">return</span> boost::none;</div>
 <div class="line"><span class="lineno">  421</span>    }</div>
 <div class="line"><span class="lineno">  422</span> </div>
 <div class="line"><span class="lineno">  423</span>    <span class="keywordflow">if</span> (downtrack &lt; 0 || downtrack &gt; <a class="code hl_function" href="classcarma__wm_1_1CARMAWorldModel.html#ab4df78110aa7dd6644ecbe3e5a69eb29">getRouteEndTrackPos</a>().downtrack)</div>
 <div class="line"><span class="lineno">  424</span>    {</div>
-<div class="line"><span class="lineno">  425</span>      RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Tried to convert a downtrack of: &quot;</span> &lt;&lt; downtrack</div>
+<div class="line"><span class="lineno">  425</span>      RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Tried to convert a downtrack of: &quot;</span> &lt;&lt; downtrack</div>
 <div class="line"><span class="lineno">  426</span>                                                           &lt;&lt; <span class="stringliteral">&quot; to map point, but it did not fit in route bounds of &quot;</span></div>
 <div class="line"><span class="lineno">  427</span>                                                           &lt;&lt; <a class="code hl_function" href="classcarma__wm_1_1CARMAWorldModel.html#ab4df78110aa7dd6644ecbe3e5a69eb29">getRouteEndTrackPos</a>().downtrack);</div>
 <div class="line"><span class="lineno">  428</span>      <span class="keywordflow">return</span> boost::none;</div>
@@ -3137,7 +3146,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceosm__transform_html_a183883d606298855933692078471c4c7"><div class="ttname"><a href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">osm_transform.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="osm__transform_8py_source.html#l00130">osm_transform.py:130</a></div></div>
 <div class="ttc" id="anamespaceosm__transform_html_a3d0da1a0485d619944300ab5dbef56a7"><div class="ttname"><a href="namespaceosm__transform.html#a3d0da1a0485d619944300ab5dbef56a7">osm_transform.y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> <a href="osm__transform_8py_source.html#l00131">osm_transform.py:131</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TrackPos_8hpp_source.html#l00038">carma_wm::TrackPos::crosstrack</a>, <a class="el" href="IndexedDistanceMap_8cpp_source.html#l00085">carma_wm::IndexedDistanceMap::distanceToElement()</a>, <a class="el" href="IndexedDistanceMap_8cpp_source.html#l00095">carma_wm::IndexedDistanceMap::distanceToPointAlongElement()</a>, <a class="el" href="TrackPos_8hpp_source.html#l00037">carma_wm::TrackPos::downtrack</a>, <a class="el" href="IndexedDistanceMap_8cpp_source.html#l00044">carma_wm::IndexedDistanceMap::getElementIndexByDistance()</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00539">getRouteEndTrackPos()</a>, <a class="el" href="Geometry_8cpp_source.html#l00594">carma_wm::geometry::point_to_point_yaw()</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00275">route_</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00280">shortest_path_centerlines_</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00282">shortest_path_distance_map_</a>, <a class="el" href="utm__zone_8cpp_source.html#l00021">carma_cooperative_perception::to_string()</a>, <a class="el" href="osm__transform_8py_source.html#l00130">osm_transform::x</a>, and <a class="el" href="osm__transform_8py_source.html#l00131">osm_transform::y</a>.</p>
+<p class="reference">References <a class="el" href="TrackPos_8hpp_source.html#l00038">carma_wm::TrackPos::crosstrack</a>, <a class="el" href="IndexedDistanceMap_8cpp_source.html#l00085">carma_wm::IndexedDistanceMap::distanceToElement()</a>, <a class="el" href="IndexedDistanceMap_8cpp_source.html#l00095">carma_wm::IndexedDistanceMap::distanceToPointAlongElement()</a>, <a class="el" href="TrackPos_8hpp_source.html#l00037">carma_wm::TrackPos::downtrack</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="IndexedDistanceMap_8cpp_source.html#l00044">carma_wm::IndexedDistanceMap::getElementIndexByDistance()</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00539">getRouteEndTrackPos()</a>, <a class="el" href="Geometry_8cpp_source.html#l00594">carma_wm::geometry::point_to_point_yaw()</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00275">route_</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00280">shortest_path_centerlines_</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00282">shortest_path_distance_map_</a>, <a class="el" href="utm__zone_8cpp_source.html#l00021">carma_cooperative_perception::to_string()</a>, <a class="el" href="osm__transform_8py_source.html#l00130">osm_transform::x</a>, and <a class="el" href="osm__transform_8py_source.html#l00131">osm_transform::y</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="CARMAWorldModel_8cpp_source.html#l00371">sampleRoutePoints()</a>.</p>
 <div class="dynheader">
@@ -3145,15 +3154,17 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm_1_1CARMAWorldModel_a1e7bf1856cd6cd7dbf1e262d378c6087_cgraph.png" border="0" usemap="#aclasscarma__wm_1_1CARMAWorldModel_a1e7bf1856cd6cd7dbf1e262d378c6087_cgraph" alt=""/></div>
 <map name="aclasscarma__wm_1_1CARMAWorldModel_a1e7bf1856cd6cd7dbf1e262d378c6087_cgraph" id="aclasscarma__wm_1_1CARMAWorldModel_a1e7bf1856cd6cd7dbf1e262d378c6087_cgraph">
-<area shape="rect" title="Converts a route track position into a map frame cartesian point." alt="" coords="5,150,212,191"/>
-<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#aaf9700fe30cc2819ca4423a2acffa27d" title="Get the distance to the start of the linestring at the specified index." alt="" coords="781,44,969,86"/>
-<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a972f18c7b178a350cfdb85719eb10323" title="Get the along&#45;line distance to the point on the provided linestring." alt="" coords="260,55,487,96"/>
-<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a8a56236ca7587395b6a5cd84c08ec811" title="Returns index of the linestring which the provided distance is within. NOTE: Unlike the rest of this ..." alt="" coords="266,120,481,162"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="535,195,733,236"/>
-<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#ab4df78110aa7dd6644ecbe3e5a69eb29" title="Get trackpos of the end of route point relative to the route." alt="" coords="270,238,477,279"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a6f156f9d93ac8bd84fa6663b1efa5db4" title="Computes the 2d orientation of the vector from the provided start point to end point." alt="" coords="301,303,446,344"/>
-<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a984999e739e3b5f2971da657da6d6adb" title="Returns the total along&#45;line length of this structure." alt="" coords="540,106,728,147"/>
-<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a7bd91613ee531f0bb715d9e89a1285f1" title="Get the length of the linestring located at the provided index." alt="" coords="781,110,969,151"/>
+<area shape="rect" title="Converts a route track position into a map frame cartesian point." alt="" coords="5,155,212,196"/>
+<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#aaf9700fe30cc2819ca4423a2acffa27d" title="Get the distance to the start of the linestring at the specified index." alt="" coords="821,94,1009,135"/>
+<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a972f18c7b178a350cfdb85719eb10323" title="Get the along&#45;line distance to the point on the provided linestring." alt="" coords="260,24,487,66"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="303,90,443,131"/>
+<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a8a56236ca7587395b6a5cd84c08ec811" title="Returns index of the linestring which the provided distance is within. NOTE: Unlike the rest of this ..." alt="" coords="266,155,481,196"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="555,244,753,286"/>
+<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#ab4df78110aa7dd6644ecbe3e5a69eb29" title="Get trackpos of the end of route point relative to the route." alt="" coords="270,272,477,314"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a6f156f9d93ac8bd84fa6663b1efa5db4" title="Computes the 2d orientation of the vector from the provided start point to end point." alt="" coords="301,338,446,379"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="535,38,773,79"/>
+<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a984999e739e3b5f2971da657da6d6adb" title="Returns the total along&#45;line length of this structure." alt="" coords="560,155,748,196"/>
+<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a7bd91613ee531f0bb715d9e89a1285f1" title="Get the length of the linestring located at the provided index." alt="" coords="821,159,1009,200"/>
 </map>
 </div>
 <div class="dynheader">
@@ -3597,7 +3608,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  374</span>    std::vector&lt;lanelet::BasicPoint2d&gt; output;</div>
 <div class="line"><span class="lineno">  375</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a690740a182ab45ac2232da7d1b5edff8">route_</a>)</div>
 <div class="line"><span class="lineno">  376</span>    {</div>
-<div class="line"><span class="lineno">  377</span>      RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Route has not yet been loaded&quot;</span>);</div>
+<div class="line"><span class="lineno">  377</span>      RCLCPP_WARN_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Route has not yet been loaded&quot;</span>);</div>
 <div class="line"><span class="lineno">  378</span>      <span class="keywordflow">return</span> output;</div>
 <div class="line"><span class="lineno">  379</span>    }</div>
 <div class="line"><span class="lineno">  380</span> </div>
@@ -3606,7 +3617,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  383</span>    <span class="keywordflow">if</span> (start_downtrack &lt; 0 || start_downtrack &gt; route_end || end_downtrack &lt; 0 || end_downtrack &gt; route_end ||</div>
 <div class="line"><span class="lineno">  384</span>        start_downtrack &gt; end_downtrack)</div>
 <div class="line"><span class="lineno">  385</span>    {</div>
-<div class="line"><span class="lineno">  386</span>      RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Invalid input downtracks&quot;</span>);</div>
+<div class="line"><span class="lineno">  386</span>      RCLCPP_WARN_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Invalid input downtracks&quot;</span>);</div>
 <div class="line"><span class="lineno">  387</span>      <span class="keywordflow">return</span> output;</div>
 <div class="line"><span class="lineno">  388</span>    }</div>
 <div class="line"><span class="lineno">  389</span> </div>
@@ -3633,22 +3644,24 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  410</span>  }</div>
 <div class="ttc" id="aclasscarma__wm_1_1CARMAWorldModel_html_a1e7bf1856cd6cd7dbf1e262d378c6087"><div class="ttname"><a href="classcarma__wm_1_1CARMAWorldModel.html#a1e7bf1856cd6cd7dbf1e262d378c6087">carma_wm::CARMAWorldModel::pointFromRouteTrackPos</a></div><div class="ttdeci">boost::optional&lt; lanelet::BasicPoint2d &gt; pointFromRouteTrackPos(const TrackPos &amp;route_pos) const override</div><div class="ttdoc">Converts a route track position into a map frame cartesian point.</div><div class="ttdef"><b>Definition:</b> <a href="CARMAWorldModel_8cpp_source.html#l00412">CARMAWorldModel.cpp:412</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="TrackPos_8hpp_source.html#l00037">carma_wm::TrackPos::downtrack</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00539">getRouteEndTrackPos()</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00412">pointFromRouteTrackPos()</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00275">route_</a>.</p>
+<p class="reference">References <a class="el" href="TrackPos_8hpp_source.html#l00037">carma_wm::TrackPos::downtrack</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00539">getRouteEndTrackPos()</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00412">pointFromRouteTrackPos()</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00275">route_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm_1_1CARMAWorldModel_af091e77668f082aaafea367836118dc9_cgraph.png" border="0" usemap="#aclasscarma__wm_1_1CARMAWorldModel_af091e77668f082aaafea367836118dc9_cgraph" alt=""/></div>
 <map name="aclasscarma__wm_1_1CARMAWorldModel_af091e77668f082aaafea367836118dc9_cgraph" id="aclasscarma__wm_1_1CARMAWorldModel_af091e77668f082aaafea367836118dc9_cgraph">
-<area shape="rect" title="Samples the route centerline between the provided downtracks with the provided step size...." alt="" coords="5,93,212,135"/>
-<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#ab4df78110aa7dd6644ecbe3e5a69eb29" title="Get trackpos of the end of route point relative to the route." alt="" coords="525,5,731,47"/>
-<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#a1e7bf1856cd6cd7dbf1e262d378c6087" title="Converts a route track position into a map frame cartesian point." alt="" coords="260,123,467,164"/>
-<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#aaf9700fe30cc2819ca4423a2acffa27d" title="Get the distance to the start of the linestring at the specified index." alt="" coords="1036,112,1224,153"/>
-<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a972f18c7b178a350cfdb85719eb10323" title="Get the along&#45;line distance to the point on the provided linestring." alt="" coords="515,123,741,164"/>
-<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a8a56236ca7587395b6a5cd84c08ec811" title="Returns index of the linestring which the provided distance is within. NOTE: Unlike the rest of this ..." alt="" coords="521,188,735,229"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="789,263,988,304"/>
-<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a6f156f9d93ac8bd84fa6663b1efa5db4" title="Computes the 2d orientation of the vector from the provided start point to end point." alt="" coords="555,305,701,347"/>
-<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a984999e739e3b5f2971da657da6d6adb" title="Returns the total along&#45;line length of this structure." alt="" coords="795,173,983,215"/>
-<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a7bd91613ee531f0bb715d9e89a1285f1" title="Get the length of the linestring located at the provided index." alt="" coords="1036,177,1224,219"/>
+<area shape="rect" title="Samples the route centerline between the provided downtracks with the provided step size...." alt="" coords="5,71,212,112"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="558,5,698,47"/>
+<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#ab4df78110aa7dd6644ecbe3e5a69eb29" title="Get trackpos of the end of route point relative to the route." alt="" coords="525,71,731,112"/>
+<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#a1e7bf1856cd6cd7dbf1e262d378c6087" title="Converts a route track position into a map frame cartesian point." alt="" coords="260,165,467,207"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="789,5,1028,47"/>
+<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#aaf9700fe30cc2819ca4423a2acffa27d" title="Get the distance to the start of the linestring at the specified index." alt="" coords="1076,140,1264,181"/>
+<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a972f18c7b178a350cfdb85719eb10323" title="Get the along&#45;line distance to the point on the provided linestring." alt="" coords="515,253,741,295"/>
+<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a8a56236ca7587395b6a5cd84c08ec811" title="Returns index of the linestring which the provided distance is within. NOTE: Unlike the rest of this ..." alt="" coords="521,136,735,177"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="809,219,1008,260"/>
+<area shape="rect" href="namespacecarma__wm_1_1geometry.html#a6f156f9d93ac8bd84fa6663b1efa5db4" title="Computes the 2d orientation of the vector from the provided start point to end point." alt="" coords="555,319,701,360"/>
+<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a984999e739e3b5f2971da657da6d6adb" title="Returns the total along&#45;line length of this structure." alt="" coords="815,77,1003,119"/>
+<area shape="rect" href="classcarma__wm_1_1IndexedDistanceMap.html#a7bd91613ee531f0bb715d9e89a1285f1" title="Get the length of the linestring located at the provided index." alt="" coords="1076,75,1264,116"/>
 </map>
 </div>
 
@@ -3733,7 +3746,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  548</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a>)</div>
 <div class="line"><span class="lineno">  549</span>    {</div>
 <div class="line"><span class="lineno">  550</span> </div>
-<div class="line"><span class="lineno">  551</span>      RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;First time map is set in carma_wm. Routing graph will be recomputed reguardless of method inputs.&quot;</span>);</div>
+<div class="line"><span class="lineno">  551</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;First time map is set in carma_wm. Routing graph will be recomputed reguardless of method inputs.&quot;</span>);</div>
 <div class="line"><span class="lineno">  552</span> </div>
 <div class="line"><span class="lineno">  553</span>      recompute_routing_graph = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">  554</span>    }</div>
@@ -3745,7 +3758,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  560</span>    <span class="keywordflow">if</span> (recompute_routing_graph)</div>
 <div class="line"><span class="lineno">  561</span>    {</div>
 <div class="line"><span class="lineno">  562</span> </div>
-<div class="line"><span class="lineno">  563</span>      RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Building routing graph&quot;</span>);</div>
+<div class="line"><span class="lineno">  563</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Building routing graph&quot;</span>);</div>
 <div class="line"><span class="lineno">  564</span> </div>
 <div class="line"><span class="lineno">  565</span>      <span class="keyword">auto</span> tr = <a class="code hl_function" href="classcarma__wm_1_1CARMAWorldModel.html#a6d75cb8cde721072cc7f69edd0ececb6">getTrafficRules</a>(<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a3fec9f047a6a79e5271dc3547769c9ab">participant_type_</a>);</div>
 <div class="line"><span class="lineno">  566</span> </div>
@@ -3759,18 +3772,20 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  574</span>      lanelet::routing::RoutingGraphUPtr map_graph = lanelet::routing::RoutingGraph::build(*<a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#ac52c727f61495307cf42a8c07af24555">semantic_map_</a>, *traffic_rules);</div>
 <div class="line"><span class="lineno">  575</span>      <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a7602bf876d9e8defb3b47239789b34b3">map_routing_graph_</a> = std::move(map_graph);</div>
 <div class="line"><span class="lineno">  576</span> </div>
-<div class="line"><span class="lineno">  577</span>      RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Done building routing graph&quot;</span>);</div>
+<div class="line"><span class="lineno">  577</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Done building routing graph&quot;</span>);</div>
 <div class="line"><span class="lineno">  578</span>    }</div>
 <div class="line"><span class="lineno">  579</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CARMAWorldModel_8cpp_source.html#l00769">getTrafficRules()</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00276">map_routing_graph_</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00287">map_version_</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00254">participant_type_</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00274">semantic_map_</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="CARMAWorldModel_8cpp_source.html#l00769">getTrafficRules()</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00276">map_routing_graph_</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00287">map_version_</a>, <a class="el" href="CARMAWorldModel_8hpp_source.html#l00254">participant_type_</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00274">semantic_map_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm_1_1CARMAWorldModel_a5fe3b961294db12603fe8eb5e7d2ea70_cgraph.png" border="0" usemap="#aclasscarma__wm_1_1CARMAWorldModel_a5fe3b961294db12603fe8eb5e7d2ea70_cgraph" alt=""/></div>
 <map name="aclasscarma__wm_1_1CARMAWorldModel_a5fe3b961294db12603fe8eb5e7d2ea70_cgraph" id="aclasscarma__wm_1_1CARMAWorldModel_a5fe3b961294db12603fe8eb5e7d2ea70_cgraph">
-<area shape="rect" title="Set the current map." alt="" coords="5,29,212,71"/>
-<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#a6d75cb8cde721072cc7f69edd0ececb6" title="Get the Traffic Rules object." alt="" coords="260,29,467,71"/>
+<area shape="rect" title="Set the current map." alt="" coords="5,51,212,92"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="293,5,433,47"/>
+<area shape="rect" href="classcarma__wm_1_1CARMAWorldModel.html#a6d75cb8cde721072cc7f69edd0ececb6" title="Get the Traffic Rules object." alt="" coords="260,95,467,136"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="515,5,753,47"/>
 </map>
 </div>
 
@@ -3992,12 +4007,22 @@ Here is the call graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="CARMAWorldModel_8cpp_source.html#l00581">581</a> of file <a class="el" href="CARMAWorldModel_8cpp_source.html">CARMAWorldModel.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  581</span>                                                                    {</div>
 <div class="line"><span class="lineno">  582</span> </div>
-<div class="line"><span class="lineno">  583</span>    RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Setting the routing graph with user or listener provided graph&quot;</span>);</div>
+<div class="line"><span class="lineno">  583</span>    RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm&quot;</span>), <span class="stringliteral">&quot;Setting the routing graph with user or listener provided graph&quot;</span>);</div>
 <div class="line"><span class="lineno">  584</span> </div>
 <div class="line"><span class="lineno">  585</span>    <a class="code hl_variable" href="classcarma__wm_1_1CARMAWorldModel.html#a7602bf876d9e8defb3b47239789b34b3">map_routing_graph_</a> = graph;</div>
 <div class="line"><span class="lineno">  586</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="CARMAWorldModel_8hpp_source.html#l00276">map_routing_graph_</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, and <a class="el" href="CARMAWorldModel_8hpp_source.html#l00276">map_routing_graph_</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarma__wm_1_1CARMAWorldModel_a6c42204d5a7de0cbd8e713ce49aded7f_cgraph.png" border="0" usemap="#aclasscarma__wm_1_1CARMAWorldModel_a6c42204d5a7de0cbd8e713ce49aded7f_cgraph" alt=""/></div>
+<map name="aclasscarma__wm_1_1CARMAWorldModel_a6c42204d5a7de0cbd8e713ce49aded7f_cgraph" id="aclasscarma__wm_1_1CARMAWorldModel_a6c42204d5a7de0cbd8e713ce49aded7f_cgraph">
+<area shape="rect" title="Set the routing graph for the participant type. This function may serve as an optimization to recompu..." alt="" coords="5,5,212,47"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="260,5,400,47"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="448,5,687,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -4672,7 +4697,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm.html">carma_wm</a></li><li class="navelem"><a class="el" href="classcarma__wm_1_1CARMAWorldModel.html">CARMAWorldModel</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 13:11:06 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 17 2026 17:53:39 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

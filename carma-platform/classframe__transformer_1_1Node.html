@@ -400,7 +400,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   84</span>    get_parameter&lt;int&gt;(<span class="stringliteral">&quot;timeout&quot;</span>, <a class="code hl_variable" href="classframe__transformer_1_1Node.html#ab0a3655b508dc8e4416db77090af7156">config_</a>.<a class="code hl_variable" href="structframe__transformer_1_1Config.html#a39530e42dc3878ebdd99f5b4dfb944ef">timeout</a>);</div>
 <div class="line"><span class="lineno">   85</span> </div>
 <div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>    RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Loaded params: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classframe__transformer_1_1Node.html#ab0a3655b508dc8e4416db77090af7156">config_</a>);</div>
+<div class="line"><span class="lineno">   87</span>    RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Loaded params: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classframe__transformer_1_1Node.html#ab0a3655b508dc8e4416db77090af7156">config_</a>);</div>
 <div class="line"><span class="lineno">   88</span> </div>
 <div class="line"><span class="lineno">   89</span>    <span class="comment">// NOTE: Due to the nature of this node generating sub/pubs based of parameters. </span></div>
 <div class="line"><span class="lineno">   90</span>    <span class="comment">//       Dynamically changing the parameters is not recommended. Therefore a parameter callback is not implemented. </span></div>
@@ -418,7 +418,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  102</span>    <a class="code hl_variable" href="classframe__transformer_1_1Node.html#ac27a9817e51df811cef7102cbee7141f">transformer_</a> = <a class="code hl_function" href="classframe__transformer_1_1Node.html#a513e006a492382b21788a081af6d1ff9">build_transformer</a>();</div>
 <div class="line"><span class="lineno">  103</span> </div>
 <div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classframe__transformer_1_1Node.html#ac27a9817e51df811cef7102cbee7141f">transformer_</a>) {</div>
-<div class="line"><span class="lineno">  105</span>      RCLCPP_ERROR_STREAM(get_logger(), <span class="stringliteral">&quot;Failed to build transformer for specified message_type: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classframe__transformer_1_1Node.html#ab0a3655b508dc8e4416db77090af7156">config_</a>.<a class="code hl_variable" href="structframe__transformer_1_1Config.html#afd4fff7fd0d08bafb9a604b31ed6fa97">message_type</a>);</div>
+<div class="line"><span class="lineno">  105</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Failed to build transformer for specified message_type: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classframe__transformer_1_1Node.html#ab0a3655b508dc8e4416db77090af7156">config_</a>.<a class="code hl_variable" href="structframe__transformer_1_1Config.html#afd4fff7fd0d08bafb9a604b31ed6fa97">message_type</a>);</div>
 <div class="line"><span class="lineno">  106</span>      <span class="keywordflow">return</span> CallbackReturn::FAILURE;</div>
 <div class="line"><span class="lineno">  107</span>    }</div>
 <div class="line"><span class="lineno">  108</span> </div>
@@ -426,15 +426,18 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  110</span>    <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
 <div class="line"><span class="lineno">  111</span>  }</div>
 <div class="ttc" id="aclassframe__transformer_1_1Node_html_a513e006a492382b21788a081af6d1ff9"><div class="ttname"><a href="classframe__transformer_1_1Node.html#a513e006a492382b21788a081af6d1ff9">frame_transformer::Node::build_transformer</a></div><div class="ttdeci">std::unique_ptr&lt; TransformerBase &gt; build_transformer()</div><div class="ttdoc">Factory method which returns an initialized pointer to a TransformerBase.</div><div class="ttdef"><b>Definition:</b> <a href="frame__transformer__node_8cpp_source.html#l00036">frame_transformer_node.cpp:36</a></div></div>
+<div class="ttc" id="anamespacebasic__autonomy_html_a8e49f3ae1a0ea4e022da60318805e3e0"><div class="ttname"><a href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">basic_autonomy::get_logger</a></div><div class="ttdeci">rclcpp::Logger get_logger()</div><div class="ttdoc">Return the module-level logger used by all basic_autonomy functions.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00032">log.cpp:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="frame__transformer__node_8hpp_source.html#l00048">buffer_</a>, <a class="el" href="frame__transformer__node_8cpp_source.html#l00036">build_transformer()</a>, <a class="el" href="frame__transformer__node_8hpp_source.html#l00042">config_</a>, <a class="el" href="frame__transformer__node_8hpp_source.html#l00051">listener_</a>, <a class="el" href="frame__transformer__config_8hpp_source.html#l00033">frame_transformer::Config::message_type</a>, <a class="el" href="frame__transformer__config_8hpp_source.html#l00036">frame_transformer::Config::queue_size</a>, <a class="el" href="frame__transformer__config_8hpp_source.html#l00030">frame_transformer::Config::target_frame</a>, <a class="el" href="frame__transformer__config_8hpp_source.html#l00039">frame_transformer::Config::timeout</a>, and <a class="el" href="frame__transformer__node_8hpp_source.html#l00045">transformer_</a>.</p>
+<p class="reference">References <a class="el" href="frame__transformer__node_8hpp_source.html#l00048">buffer_</a>, <a class="el" href="frame__transformer__node_8cpp_source.html#l00036">build_transformer()</a>, <a class="el" href="frame__transformer__node_8hpp_source.html#l00042">config_</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="frame__transformer__node_8hpp_source.html#l00051">listener_</a>, <a class="el" href="frame__transformer__config_8hpp_source.html#l00033">frame_transformer::Config::message_type</a>, <a class="el" href="frame__transformer__config_8hpp_source.html#l00036">frame_transformer::Config::queue_size</a>, <a class="el" href="frame__transformer__config_8hpp_source.html#l00030">frame_transformer::Config::target_frame</a>, <a class="el" href="frame__transformer__config_8hpp_source.html#l00039">frame_transformer::Config::timeout</a>, and <a class="el" href="frame__transformer__node_8hpp_source.html#l00045">transformer_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classframe__transformer_1_1Node_ac1e37d20ac808b67c23b5d93c2da947f_cgraph.png" border="0" usemap="#aclassframe__transformer_1_1Node_ac1e37d20ac808b67c23b5d93c2da947f_cgraph" alt=""/></div>
 <map name="aclassframe__transformer_1_1Node_ac1e37d20ac808b67c23b5d93c2da947f_cgraph" id="aclassframe__transformer_1_1Node_ac1e37d20ac808b67c23b5d93c2da947f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,183,47"/>
+<area shape="rect" title=" " alt="" coords="5,39,183,80"/>
 <area shape="rect" href="classframe__transformer_1_1Node.html#a513e006a492382b21788a081af6d1ff9" title="Factory method which returns an initialized pointer to a TransformerBase." alt="" coords="231,5,389,47"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="240,71,380,112"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="437,71,676,112"/>
 </map>
 </div>
 
@@ -564,7 +567,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceframe__transformer.html">frame_transformer</a></li><li class="navelem"><a class="el" href="classframe__transformer_1_1Node.html">Node</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 13:11:07 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 17 2026 17:53:39 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

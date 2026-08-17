@@ -313,6 +313,8 @@ Here is the call graph for this function:</div>
 <map name="aclasssubsystem__controllers_1_1LocalizationControllerNode_a0ccd8f9ea4bedbae417941bb962c18ea_cgraph" id="aclasssubsystem__controllers_1_1LocalizationControllerNode_a0ccd8f9ea4bedbae417941bb962c18ea_cgraph">
 <area shape="rect" title="Constructor. Set explicitly to support node composition." alt="" coords="5,5,188,61"/>
 <area shape="rect" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a0c9132c438150ccb4585e9c377cc485f" title="Helper function to convert a json string into an unordered map of sensor status&#39;s to required alerts ..." alt="" coords="236,5,431,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="479,13,619,54"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="667,13,905,54"/>
 </map>
 </div>
 
@@ -350,7 +352,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   38</span>    <span class="keyword">auto</span> base_return = <a class="code hl_function" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a34f5dc91b0ac8a34a399a6ad1585bc8a">BaseSubsystemController::handle_on_configure</a>(prev_state);</div>
 <div class="line"><span class="lineno">   39</span> </div>
 <div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (base_return != carma_ros2_utils::CallbackReturn::SUCCESS) {</div>
-<div class="line"><span class="lineno">   41</span>      RCLCPP_ERROR(get_logger(), <span class="stringliteral">&quot;Localization Controller could not configure&quot;</span>);</div>
+<div class="line"><span class="lineno">   41</span>      RCLCPP_ERROR(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Localization Controller could not configure&quot;</span>);</div>
 <div class="line"><span class="lineno">   42</span>      <span class="keywordflow">return</span> base_return;</div>
 <div class="line"><span class="lineno">   43</span>    }</div>
 <div class="line"><span class="lineno">   44</span> </div>
@@ -366,11 +368,11 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   54</span>    std::string json_string;</div>
 <div class="line"><span class="lineno">   55</span>    get_parameter&lt;std::string&gt;(<span class="stringliteral">&quot;sensor_fault_map&quot;</span>, json_string);</div>
 <div class="line"><span class="lineno">   56</span>    </div>
-<div class="line"><span class="lineno">   57</span>    RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Loaded sensor_fault_map json string: &quot;</span> &lt;&lt; json_string);</div>
+<div class="line"><span class="lineno">   57</span>    RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Loaded sensor_fault_map json string: &quot;</span> &lt;&lt; json_string);</div>
 <div class="line"><span class="lineno">   58</span>    </div>
 <div class="line"><span class="lineno">   59</span>    <a class="code hl_variable" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a90dce6b0187bfc4c631695f621d517d2">config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1LocalizationControllerConfig.html#a848ad5e6bba8fea4ff46710104e4799a">sensor_fault_map</a> = <a class="code hl_function" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a0c9132c438150ccb4585e9c377cc485f">sensor_fault_map_from_json</a>(json_string);</div>
 <div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>    RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Loaded localization config: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a90dce6b0187bfc4c631695f621d517d2">config_</a>);</div>
+<div class="line"><span class="lineno">   61</span>    RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Loaded localization config: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a90dce6b0187bfc4c631695f621d517d2">config_</a>);</div>
 <div class="line"><span class="lineno">   62</span> </div>
 <div class="line"><span class="lineno">   63</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> node : <a class="code hl_variable" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a90dce6b0187bfc4c631695f621d517d2">config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1LocalizationControllerConfig.html#ab525d2a42e7ce5b6f5ef651d73478ef6">sensor_nodes</a>) {</div>
 <div class="line"><span class="lineno">   64</span>      <a class="code hl_variable" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a8c7450e85644637f8e0a75c6c025f2ff">sensor_status_</a>[node] = <a class="code hl_enumvalue" href="namespacesubsystem__controllers.html#a90feee896f86cc1ca40fc9e37289a710ac97e79e14549c9f528427e36c90ae782">SensorBooleanStatus::OPERATIONAL</a>; <span class="comment">// Start tracking the sensor status&#39;s</span></div>
@@ -380,20 +382,23 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   68</span>  }</div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1BaseSubsystemController_html_a34f5dc91b0ac8a34a399a6ad1585bc8a"><div class="ttname"><a href="classsubsystem__controllers_1_1BaseSubsystemController.html#a34f5dc91b0ac8a34a399a6ad1585bc8a">subsystem_controllers::BaseSubsystemController::handle_on_configure</a></div><div class="ttdeci">virtual carma_ros2_utils::CallbackReturn handle_on_configure(const rclcpp_lifecycle::State &amp;prev_state)</div><div class="ttdef"><b>Definition:</b> <a href="base__subsystem__controller_8cpp_source.html#l00092">base_subsystem_controller.cpp:92</a></div></div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1LocalizationControllerNode_html_a8c7450e85644637f8e0a75c6c025f2ff"><div class="ttname"><a href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a8c7450e85644637f8e0a75c6c025f2ff">subsystem_controllers::LocalizationControllerNode::sensor_status_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, SensorBooleanStatus &gt; sensor_status_</div><div class="ttdef"><b>Definition:</b> <a href="localization__controller_8hpp_source.html#l00058">localization_controller.hpp:58</a></div></div>
+<div class="ttc" id="anamespacebasic__autonomy_html_a8e49f3ae1a0ea4e022da60318805e3e0"><div class="ttname"><a href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">basic_autonomy::get_logger</a></div><div class="ttdeci">rclcpp::Logger get_logger()</div><div class="ttdoc">Return the module-level logger used by all basic_autonomy functions.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00032">log.cpp:32</a></div></div>
 <div class="ttc" id="anamespacesubsystem__controllers_html_a90feee896f86cc1ca40fc9e37289a710ac97e79e14549c9f528427e36c90ae782"><div class="ttname"><a href="namespacesubsystem__controllers.html#a90feee896f86cc1ca40fc9e37289a710ac97e79e14549c9f528427e36c90ae782">subsystem_controllers::SensorBooleanStatus::OPERATIONAL</a></div><div class="ttdeci">@ OPERATIONAL</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="localization__controller_8hpp_source.html#l00059">config_</a>, <a class="el" href="base__subsystem__controller_8cpp_source.html#l00092">subsystem_controllers::BaseSubsystemController::handle_on_configure()</a>, <a class="el" href="namespacesubsystem__controllers.html#a90feee896f86cc1ca40fc9e37289a710ac97e79e14549c9f528427e36c90ae782">subsystem_controllers::OPERATIONAL</a>, <a class="el" href="localization__controller__config_8hpp_source.html#l00051">subsystem_controllers::LocalizationControllerConfig::sensor_fault_map</a>, <a class="el" href="localization__controller_8cpp_source.html#l00124">sensor_fault_map_from_json()</a>, <a class="el" href="localization__controller__config_8hpp_source.html#l00048">subsystem_controllers::LocalizationControllerConfig::sensor_nodes</a>, and <a class="el" href="localization__controller_8hpp_source.html#l00058">sensor_status_</a>.</p>
+<p class="reference">References <a class="el" href="localization__controller_8hpp_source.html#l00059">config_</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="base__subsystem__controller_8cpp_source.html#l00092">subsystem_controllers::BaseSubsystemController::handle_on_configure()</a>, <a class="el" href="namespacesubsystem__controllers.html#a90feee896f86cc1ca40fc9e37289a710ac97e79e14549c9f528427e36c90ae782">subsystem_controllers::OPERATIONAL</a>, <a class="el" href="localization__controller__config_8hpp_source.html#l00051">subsystem_controllers::LocalizationControllerConfig::sensor_fault_map</a>, <a class="el" href="localization__controller_8cpp_source.html#l00124">sensor_fault_map_from_json()</a>, <a class="el" href="localization__controller__config_8hpp_source.html#l00048">subsystem_controllers::LocalizationControllerConfig::sensor_nodes</a>, and <a class="el" href="localization__controller_8hpp_source.html#l00058">sensor_status_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsubsystem__controllers_1_1LocalizationControllerNode_ad8dc6bbf6b8e4dbc8121acae898fa576_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1LocalizationControllerNode_ad8dc6bbf6b8e4dbc8121acae898fa576_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1LocalizationControllerNode_ad8dc6bbf6b8e4dbc8121acae898fa576_cgraph" id="aclasssubsystem__controllers_1_1LocalizationControllerNode_ad8dc6bbf6b8e4dbc8121acae898fa576_cgraph">
-<area shape="rect" title=" " alt="" coords="5,125,188,181"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a34f5dc91b0ac8a34a399a6ad1585bc8a" title=" " alt="" coords="244,85,423,141"/>
-<area shape="rect" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a0c9132c438150ccb4585e9c377cc485f" title="Helper function to convert a json string into an unordered map of sensor status&#39;s to required alerts ..." alt="" coords="236,165,431,221"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a418affcaec63b88abe092d10b248054b" title="Returns the list of fully qualified node names for all ROS2 nodes in the provided namespace." alt="" coords="479,5,657,61"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a98837f5beef889c21ebca4cc2f2d6228" title="Returns all elements of the provided set_a which are NOT contained in the provided set_b." alt="" coords="479,85,657,141"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a8087facfdc76c599d690bf3b4ebba0cc" title=" " alt="" coords="479,165,657,221"/>
+<area shape="rect" title=" " alt="" coords="5,96,188,152"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="705,63,845,105"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a34f5dc91b0ac8a34a399a6ad1585bc8a" title=" " alt="" coords="244,96,423,152"/>
+<area shape="rect" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a0c9132c438150ccb4585e9c377cc485f" title="Helper function to convert a json string into an unordered map of sensor status&#39;s to required alerts ..." alt="" coords="236,208,431,264"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="893,63,1132,105"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a418affcaec63b88abe092d10b248054b" title="Returns the list of fully qualified node names for all ROS2 nodes in the provided namespace." alt="" coords="479,56,657,112"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a98837f5beef889c21ebca4cc2f2d6228" title="Returns all elements of the provided set_a which are NOT contained in the provided set_b." alt="" coords="479,136,657,192"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a8087facfdc76c599d690bf3b4ebba0cc" title=" " alt="" coords="479,216,657,272"/>
 </map>
 </div>
 
@@ -434,7 +439,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   76</span>    <span class="comment">// Check if our list of coordinated sensors contains the node providing the alert</span></div>
 <div class="line"><span class="lineno">   77</span>    <span class="comment">// No need to check required nodes as that has already been handled in the parent call</span></div>
 <div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a8c7450e85644637f8e0a75c6c025f2ff">sensor_status_</a>.find(alert.source_node) == <a class="code hl_variable" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a8c7450e85644637f8e0a75c6c025f2ff">sensor_status_</a>.end()) {</div>
-<div class="line"><span class="lineno">   79</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Alert not from a sensor node. Alerting node: &quot;</span> &lt;&lt; alert.source_node);</div>
+<div class="line"><span class="lineno">   79</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Alert not from a sensor node. Alerting node: &quot;</span> &lt;&lt; alert.source_node);</div>
 <div class="line"><span class="lineno">   80</span>      <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   81</span>    }</div>
 <div class="line"><span class="lineno">   82</span> </div>
@@ -451,7 +456,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   93</span> </div>
 <div class="line"><span class="lineno">   94</span>    <span class="comment">// If the controller has not been configured to handle this fault configuration then do nothing</span></div>
 <div class="line"><span class="lineno">   95</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a90dce6b0187bfc4c631695f621d517d2">config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1LocalizationControllerConfig.html#a848ad5e6bba8fea4ff46710104e4799a">sensor_fault_map</a>.find(current_sensor_status) == <a class="code hl_variable" href="classsubsystem__controllers_1_1LocalizationControllerNode.html#a90dce6b0187bfc4c631695f621d517d2">config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1LocalizationControllerConfig.html#a848ad5e6bba8fea4ff46710104e4799a">sensor_fault_map</a>.end()) {</div>
-<div class="line"><span class="lineno">   96</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Failure does not match with fault configuration. Assuming system remains operational &quot;</span>);</div>
+<div class="line"><span class="lineno">   96</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Failure does not match with fault configuration. Assuming system remains operational &quot;</span>);</div>
 <div class="line"><span class="lineno">   97</span>      <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   98</span>    }</div>
 <div class="line"><span class="lineno">   99</span> </div>
@@ -485,14 +490,16 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespacesubsystem__controllers_html_af9ecb3e0503a503a56026638fc78e7a8a18a970540d05e11964e25e6c04e72b53"><div class="ttname"><a href="namespacesubsystem__controllers.html#af9ecb3e0503a503a56026638fc78e7a8a18a970540d05e11964e25e6c04e72b53">subsystem_controllers::SensorAlertStatus::CAUTION</a></div><div class="ttdeci">@ CAUTION</div></div>
 <div class="ttc" id="anamespacesubsystem__controllers_html_af9ecb3e0503a503a56026638fc78e7a8a19da7170bea36556dde582519795f3fc"><div class="ttname"><a href="namespacesubsystem__controllers.html#af9ecb3e0503a503a56026638fc78e7a8a19da7170bea36556dde582519795f3fc">subsystem_controllers::SensorAlertStatus::FATAL</a></div><div class="ttdeci">@ FATAL</div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespacesubsystem__controllers.html#af9ecb3e0503a503a56026638fc78e7a8a18a970540d05e11964e25e6c04e72b53">subsystem_controllers::CAUTION</a>, <a class="el" href="localization__controller_8hpp_source.html#l00059">config_</a>, <a class="el" href="namespacesubsystem__controllers.html#a90feee896f86cc1ca40fc9e37289a710ab9e14d9b2886bcff408b85aefa780419">subsystem_controllers::FAILED</a>, <a class="el" href="namespacesubsystem__controllers.html#af9ecb3e0503a503a56026638fc78e7a8a19da7170bea36556dde582519795f3fc">subsystem_controllers::FATAL</a>, <a class="el" href="base__subsystem__controller_8cpp_source.html#l00055">subsystem_controllers::BaseSubsystemController::on_system_alert()</a>, <a class="el" href="localization__controller__config_8hpp_source.html#l00051">subsystem_controllers::LocalizationControllerConfig::sensor_fault_map</a>, <a class="el" href="localization__controller__config_8hpp_source.html#l00048">subsystem_controllers::LocalizationControllerConfig::sensor_nodes</a>, <a class="el" href="localization__controller_8hpp_source.html#l00058">sensor_status_</a>, and <a class="el" href="namespacesubsystem__controllers.html#af9ecb3e0503a503a56026638fc78e7a8a059e9861e0400dfbe05c98a841f3f96b">subsystem_controllers::WARNING</a>.</p>
+<p class="reference">References <a class="el" href="namespacesubsystem__controllers.html#af9ecb3e0503a503a56026638fc78e7a8a18a970540d05e11964e25e6c04e72b53">subsystem_controllers::CAUTION</a>, <a class="el" href="localization__controller_8hpp_source.html#l00059">config_</a>, <a class="el" href="namespacesubsystem__controllers.html#a90feee896f86cc1ca40fc9e37289a710ab9e14d9b2886bcff408b85aefa780419">subsystem_controllers::FAILED</a>, <a class="el" href="namespacesubsystem__controllers.html#af9ecb3e0503a503a56026638fc78e7a8a19da7170bea36556dde582519795f3fc">subsystem_controllers::FATAL</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="base__subsystem__controller_8cpp_source.html#l00055">subsystem_controllers::BaseSubsystemController::on_system_alert()</a>, <a class="el" href="localization__controller__config_8hpp_source.html#l00051">subsystem_controllers::LocalizationControllerConfig::sensor_fault_map</a>, <a class="el" href="localization__controller__config_8hpp_source.html#l00048">subsystem_controllers::LocalizationControllerConfig::sensor_nodes</a>, <a class="el" href="localization__controller_8hpp_source.html#l00058">sensor_status_</a>, and <a class="el" href="namespacesubsystem__controllers.html#af9ecb3e0503a503a56026638fc78e7a8a059e9861e0400dfbe05c98a841f3f96b">subsystem_controllers::WARNING</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsubsystem__controllers_1_1LocalizationControllerNode_a959f98f3c9ddfd3d6093b983248094e4_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1LocalizationControllerNode_a959f98f3c9ddfd3d6093b983248094e4_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1LocalizationControllerNode_a959f98f3c9ddfd3d6093b983248094e4_cgraph" id="aclasssubsystem__controllers_1_1LocalizationControllerNode_a959f98f3c9ddfd3d6093b983248094e4_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,188,61"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a8087facfdc76c599d690bf3b4ebba0cc" title=" " alt="" coords="236,5,415,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="463,13,603,54"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a8087facfdc76c599d690bf3b4ebba0cc" title=" " alt="" coords="236,37,415,93"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="651,13,889,54"/>
 </map>
 </div>
 
@@ -533,35 +540,35 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  129</span> </div>
 <div class="line"><span class="lineno">  130</span>    <span class="keywordflow">if</span>(d.Parse(json_string.c_str()).HasParseError())</div>
 <div class="line"><span class="lineno">  131</span>    {</div>
-<div class="line"><span class="lineno">  132</span>        RCLCPP_WARN(get_logger(), <span class="stringliteral">&quot;Failed to parse sensor_fault map. Invalid json structure&quot;</span>);</div>
+<div class="line"><span class="lineno">  132</span>        RCLCPP_WARN(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Failed to parse sensor_fault map. Invalid json structure&quot;</span>);</div>
 <div class="line"><span class="lineno">  133</span>        <span class="keywordflow">return</span> map;</div>
 <div class="line"><span class="lineno">  134</span>    }</div>
 <div class="line"><span class="lineno">  135</span> </div>
 <div class="line"><span class="lineno">  136</span>    <span class="keywordflow">if</span> (!d.HasMember(<span class="stringliteral">&quot;sensor_fault_map&quot;</span>)) {</div>
-<div class="line"><span class="lineno">  137</span>      RCLCPP_WARN(get_logger(), <span class="stringliteral">&quot;No sensor_fault_map found in localization config&quot;</span>);</div>
+<div class="line"><span class="lineno">  137</span>      RCLCPP_WARN(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;No sensor_fault_map found in localization config&quot;</span>);</div>
 <div class="line"><span class="lineno">  138</span>      <span class="keywordflow">return</span> map;</div>
 <div class="line"><span class="lineno">  139</span>    }</div>
 <div class="line"><span class="lineno">  140</span> </div>
 <div class="line"><span class="lineno">  141</span>    rapidjson::Value&amp; map_value = d[<span class="stringliteral">&quot;sensor_fault_map&quot;</span>];</div>
 <div class="line"><span class="lineno">  142</span> </div>
 <div class="line"><span class="lineno">  143</span>    <span class="keywordflow">if</span> (!map_value.IsArray()) {</div>
-<div class="line"><span class="lineno">  144</span>      RCLCPP_WARN(get_logger(), <span class="stringliteral">&quot;sensor_fault_map cannot be read as array&quot;</span>);</div>
+<div class="line"><span class="lineno">  144</span>      RCLCPP_WARN(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;sensor_fault_map cannot be read as array&quot;</span>);</div>
 <div class="line"><span class="lineno">  145</span>      <span class="keywordflow">return</span> map;</div>
 <div class="line"><span class="lineno">  146</span>    }</div>
 <div class="line"><span class="lineno">  147</span> </div>
 <div class="line"><span class="lineno">  148</span>    <span class="keywordflow">if</span> (map_value.Size() == 0) {</div>
-<div class="line"><span class="lineno">  149</span>      RCLCPP_WARN(get_logger(), <span class="stringliteral">&quot;sensor_fault_map has zero size&quot;</span>);</div>
+<div class="line"><span class="lineno">  149</span>      RCLCPP_WARN(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;sensor_fault_map has zero size&quot;</span>);</div>
 <div class="line"><span class="lineno">  150</span>      <span class="keywordflow">return</span> map;</div>
 <div class="line"><span class="lineno">  151</span>    }</div>
 <div class="line"><span class="lineno">  152</span> </div>
 <div class="line"><span class="lineno">  153</span>    <span class="keywordflow">for</span> (rapidjson::SizeType <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = 0; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt; map_value.Size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++) {</div>
 <div class="line"><span class="lineno">  154</span>      <span class="keywordflow">if</span> (!map_value[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].IsArray()) {</div>
-<div class="line"><span class="lineno">  155</span>        RCLCPP_WARN(get_logger(), <span class="stringliteral">&quot;sensor_fault_map rows are not arrays&quot;</span>);</div>
+<div class="line"><span class="lineno">  155</span>        RCLCPP_WARN(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;sensor_fault_map rows are not arrays&quot;</span>);</div>
 <div class="line"><span class="lineno">  156</span>        <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">  157</span>      }</div>
 <div class="line"><span class="lineno">  158</span> </div>
 <div class="line"><span class="lineno">  159</span>      <span class="keywordflow">if</span> (map_value[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].Size() &lt; 2) {</div>
-<div class="line"><span class="lineno">  160</span>        RCLCPP_WARN(get_logger(), <span class="stringliteral">&quot;sensor_fault_map rows do not contain more than 1 element&quot;</span>);</div>
+<div class="line"><span class="lineno">  160</span>        RCLCPP_WARN(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;sensor_fault_map rows do not contain more than 1 element&quot;</span>);</div>
 <div class="line"><span class="lineno">  161</span>        <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">  162</span>      }</div>
 <div class="line"><span class="lineno">  163</span> </div>
@@ -569,7 +576,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  165</span>      statuses.reserve(map_value[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].Size()-1);</div>
 <div class="line"><span class="lineno">  166</span>      <span class="keywordflow">for</span> (rapidjson::SizeType j = 0; j &lt; map_value[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].Size() - 1; j++) {</div>
 <div class="line"><span class="lineno">  167</span>        <span class="keywordflow">if</span> (!map_value[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>][j].IsInt()) {</div>
-<div class="line"><span class="lineno">  168</span>          RCLCPP_WARN_STREAM(get_logger(), <span class="stringliteral">&quot;sensor_fault_map row &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt;&lt; <span class="stringliteral">&quot; element &quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot; is not an int&quot;</span>);</div>
+<div class="line"><span class="lineno">  168</span>          RCLCPP_WARN_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;sensor_fault_map row &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> &lt;&lt; <span class="stringliteral">&quot; element &quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot; is not an int&quot;</span>);</div>
 <div class="line"><span class="lineno">  169</span>          <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">  170</span>        }</div>
 <div class="line"><span class="lineno">  171</span> </div>
@@ -579,7 +586,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  175</span>      rapidjson::Value&amp; alert = map_value[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>][map_value[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].Size() - 1];</div>
 <div class="line"><span class="lineno">  176</span> </div>
 <div class="line"><span class="lineno">  177</span>      <span class="keywordflow">if</span> (!alert.IsInt()) {</div>
-<div class="line"><span class="lineno">  178</span>        RCLCPP_WARN_STREAM(get_logger(), <span class="stringliteral">&quot;sensor_fault_map alert type is not an int in row &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>);</div>
+<div class="line"><span class="lineno">  178</span>        RCLCPP_WARN_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;sensor_fault_map alert type is not an int in row &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>);</div>
 <div class="line"><span class="lineno">  179</span>        <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">  180</span>      }</div>
 <div class="line"><span class="lineno">  181</span> </div>
@@ -591,9 +598,19 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceprocess__bag_html_af102a02c97622dd30b0dbf7bafb0d199"><div class="ttname"><a href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">process_bag.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00059">process_bag.py:59</a></div></div>
 <div class="ttc" id="anamespacesubsystem__controllers_html_a90feee896f86cc1ca40fc9e37289a710"><div class="ttname"><a href="namespacesubsystem__controllers.html#a90feee896f86cc1ca40fc9e37289a710">subsystem_controllers::SensorBooleanStatus</a></div><div class="ttdeci">SensorBooleanStatus</div><div class="ttdef"><b>Definition:</b> <a href="localization__controller__config_8hpp_source.html#l00028">localization_controller_config.hpp:28</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, and <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="localization__controller_8cpp_source.html#l00024">LocalizationControllerNode()</a>, and <a class="el" href="localization__controller_8cpp_source.html#l00037">handle_on_configure()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classsubsystem__controllers_1_1LocalizationControllerNode_a0c9132c438150ccb4585e9c377cc485f_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1LocalizationControllerNode_a0c9132c438150ccb4585e9c377cc485f_cgraph" alt=""/></div>
+<map name="aclasssubsystem__controllers_1_1LocalizationControllerNode_a0c9132c438150ccb4585e9c377cc485f_cgraph" id="aclasssubsystem__controllers_1_1LocalizationControllerNode_a0c9132c438150ccb4585e9c377cc485f_cgraph">
+<area shape="rect" title="Helper function to convert a json string into an unordered map of sensor status&#39;s to required alerts ..." alt="" coords="5,5,200,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="248,13,388,54"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="436,13,675,54"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -670,7 +687,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesubsystem__controllers.html">subsystem_controllers</a></li><li class="navelem"><a class="el" href="classsubsystem__controllers_1_1LocalizationControllerNode.html">LocalizationControllerNode</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 13:11:10 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 17 2026 17:53:42 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

@@ -38,6 +38,5 @@ var namespacebasic__autonomy_1_1waypoint__generation =
     [ "resample_linestring_pair_to_same_size", "namespacebasic__autonomy_1_1waypoint__generation.html#a19cf5cf882789e1e9ed3e92d0105a8de", null ],
     [ "split_point_speed_pairs", "namespacebasic__autonomy_1_1waypoint__generation.html#a0f07faaac8c54cc485f2bb217097326e", null ],
     [ "trajectory_from_points_times_orientations", "namespacebasic__autonomy_1_1waypoint__generation.html#aba6a29cdaf0c4af10647b59bf6df4e01", null ],
-    [ "BASIC_AUTONOMY_LOGGER", "namespacebasic__autonomy_1_1waypoint__generation.html#a40f0df33d30f775890f99bef7a685e33", null ],
     [ "epsilon_", "namespacebasic__autonomy_1_1waypoint__generation.html#a05408c147e288f4120ad1a8c90dd3241", null ]
 ];

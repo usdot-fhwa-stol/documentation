@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classcarma__cooperative__perception_1_1HostVehicleFilterNode.html#a0ec7aa8e3b5cfc84b604d979d103bf7c">   25</a></span><span class="keyword">auto</span> <a class="code hl_function" href="classcarma__cooperative__perception_1_1HostVehicleFilterNode.html#a0ec7aa8e3b5cfc84b604d979d103bf7c">HostVehicleFilterNode::handle_on_configure</a>(</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keyword">const</span> rclcpp_lifecycle::State &amp; <span class="comment">/* previous_state */</span>) -&gt; carma_ros2_utils::CallbackReturn</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: configuring&quot;</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: configuring&quot;</span>);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  detection_list_sub_ = create_subscription&lt;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    carma_cooperative_perception_interfaces::msg::DetectionList&gt;(</div>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        attempt_filter_and_republish(*msg_ptr);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        RCLCPP_WARN(</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>          this-&gt;get_logger(),</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>          this-&gt;<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(),</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>          <span class="stringliteral">&quot;Trying to receive message on the topic &#39;%s&#39;, but the containing node is not activated. &quot;</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>          <span class="stringliteral">&quot;Current node state: &#39;%s&#39;&quot;</span>,</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>          this-&gt;detection_list_sub_-&gt;get_topic_name(), current_state.c_str());</div>
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        update_host_vehicle_pose(*msg_ptr);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        RCLCPP_WARN(</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          this-&gt;get_logger(),</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          this-&gt;<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(),</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          <span class="stringliteral">&quot;Trying to receive message on the topic &#39;%s&#39;, but the containing node is not activated. &quot;</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>          <span class="stringliteral">&quot;Current node state: &#39;%s&#39;&quot;</span>,</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>          this-&gt;detection_list_sub_-&gt;get_topic_name(), current_state.c_str());</div>
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    create_publisher&lt;carma_cooperative_perception_interfaces::msg::DetectionList&gt;(</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="stringliteral">&quot;output/detection_list&quot;</span>, 1);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: successfully configured&quot;</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: successfully configured&quot;</span>);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  on_set_parameters_callback_ =</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    add_on_set_parameters_callback([<span class="keyword">this</span>](<span class="keyword">const</span> std::vector&lt;rclcpp::Parameter&gt; &amp; parameters) {</div>
@@ -173,7 +173,7 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            result.reason = <span class="stringliteral">&quot;parameter must be nonnegative&quot;</span>;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            RCLCPP_ERROR(</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>              get_logger(),</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>              <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(),</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>              (<span class="stringliteral">&quot;Cannot change parameter &#39;distance_threshold_meters&#39;: &quot;</span> + result.reason).c_str());</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordflow">break</span>;</div>
@@ -198,8 +198,8 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classcarma__cooperative__perception_1_1HostVehicleFilterNode.html#a45fc6659eb3017426162abfe1d5fbc88">  110</a></span><span class="keyword">auto</span> HostVehicleFilterNode::handle_on_activate(<span class="keyword">const</span> rclcpp_lifecycle::State &amp; <span class="comment">/* previous_state */</span>)</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  -&gt; carma_ros2_utils::CallbackReturn</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>{</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: activating&quot;</span>);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: successfully activated&quot;</span>);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: activating&quot;</span>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: successfully activated&quot;</span>);</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
@@ -207,8 +207,8 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classcarma__cooperative__perception_1_1HostVehicleFilterNode.html#a8dc9214394d28761827b6176a5f2ba9d">  119</a></span><span class="keyword">auto</span> HostVehicleFilterNode::handle_on_deactivate(</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keyword">const</span> rclcpp_lifecycle::State &amp; <span class="comment">/* previous_state */</span>) -&gt; carma_ros2_utils::CallbackReturn</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>{</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: deactivating&quot;</span>);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: successfully deactivated&quot;</span>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: deactivating&quot;</span>);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: successfully deactivated&quot;</span>);</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
@@ -216,13 +216,13 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="classcarma__cooperative__perception_1_1HostVehicleFilterNode.html#a0a145b079e626d0f66ea28e994f74ebc">  128</a></span><span class="keyword">auto</span> HostVehicleFilterNode::handle_on_cleanup(<span class="keyword">const</span> rclcpp_lifecycle::State &amp; <span class="comment">/* previous_state */</span>)</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  -&gt; carma_ros2_utils::CallbackReturn</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>{</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: cleaning up&quot;</span>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: cleaning up&quot;</span>);</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="comment">// CarmaLifecycleNode does not handle subscriber pointer reseting for us</span></div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  detection_list_sub_.reset();</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  host_vehicle_pose_sub_.reset();</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: successfully cleaned up&quot;</span>);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: successfully cleaned up&quot;</span>);</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}</div>
@@ -230,13 +230,13 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classcarma__cooperative__perception_1_1HostVehicleFilterNode.html#a79ea47e5ac6115077346363f0c2afef3">  142</a></span><span class="keyword">auto</span> HostVehicleFilterNode::handle_on_shutdown(<span class="keyword">const</span> rclcpp_lifecycle::State &amp; <span class="comment">/* previous_state */</span>)</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  -&gt; carma_ros2_utils::CallbackReturn</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>{</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: shutting down&quot;</span>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: shutting down&quot;</span>);</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="comment">// CarmaLifecycleNode does not handle subscriber pointer reseting for us</span></div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  detection_list_sub_.reset();</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  host_vehicle_pose_sub_.reset();</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: successfully shut down&quot;</span>);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: successfully shut down&quot;</span>);</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>}</div>
@@ -251,7 +251,7 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  carma_cooperative_perception_interfaces::msg::DetectionList msg) -&gt; <span class="keywordtype">void</span></div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>{</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordflow">if</span> (!host_vehicle_pose_.has_value()) {</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    RCLCPP_WARN(get_logger(), <span class="stringliteral">&quot;Could not filter detection list: host vehicle pose unknown&quot;</span>);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    RCLCPP_WARN(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Could not filter detection list: host vehicle pose unknown&quot;</span>);</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  }</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
@@ -290,6 +290,7 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1HostVehicleFilterNode_html"><div class="ttname"><a href="classcarma__cooperative__perception_1_1HostVehicleFilterNode.html">carma_cooperative_perception::HostVehicleFilterNode</a></div><div class="ttdef"><b>Definition:</b> <a href="host__vehicle__filter__component_8hpp_source.html#l00026">host_vehicle_filter_component.hpp:27</a></div></div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1HostVehicleFilterNode_html_a0ec7aa8e3b5cfc84b604d979d103bf7c"><div class="ttname"><a href="classcarma__cooperative__perception_1_1HostVehicleFilterNode.html#a0ec7aa8e3b5cfc84b604d979d103bf7c">carma_cooperative_perception::HostVehicleFilterNode::handle_on_configure</a></div><div class="ttdeci">auto handle_on_configure(const rclcpp_lifecycle::State &amp;) -&gt; carma_ros2_utils::CallbackReturn override</div><div class="ttdef"><b>Definition:</b> <a href="host__vehicle__filter__component_8cpp_source.html#l00025">host_vehicle_filter_component.cpp:25</a></div></div>
 <div class="ttc" id="ahost__vehicle__filter__component_8hpp_html"><div class="ttname"><a href="host__vehicle__filter__component_8hpp.html">host_vehicle_filter_component.hpp</a></div></div>
+<div class="ttc" id="anamespacebasic__autonomy_html_a8e49f3ae1a0ea4e022da60318805e3e0"><div class="ttname"><a href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">basic_autonomy::get_logger</a></div><div class="ttdeci">rclcpp::Logger get_logger()</div><div class="ttdoc">Return the module-level logger used by all basic_autonomy functions.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00032">log.cpp:32</a></div></div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html"><div class="ttname"><a href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></div><div class="ttdef"><b>Definition:</b> <a href="detection__list__viz__component_8hpp_source.html#l00022">detection_list_viz_component.hpp:23</a></div></div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_a594a030d4475614c0b1a4642ec074c0f"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a594a030d4475614c0b1a4642ec074c0f">carma_cooperative_perception::euclidean_distance_squared</a></div><div class="ttdeci">auto euclidean_distance_squared(const geometry_msgs::msg::Pose &amp;a, const geometry_msgs::msg::Pose &amp;b) -&gt; double</div><div class="ttdef"><b>Definition:</b> <a href="host__vehicle__filter__component_8cpp_source.html#l00189">host_vehicle_filter_component.cpp:189</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -298,7 +299,7 @@ $(document).ready(function(){initNavTree('host__vehicle__filter__component_8cpp_
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_de73b34821d297bc7072366944012629.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="dir_18b6d8ada02823679ceefdf3a51fdefd.html">src</a></li><li class="navelem"><a class="el" href="host__vehicle__filter__component_8cpp.html">host_vehicle_filter_component.cpp</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 13:11:03 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 17 2026 17:53:35 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

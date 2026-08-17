@@ -362,7 +362,7 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   71</span>{ </div>
 <div class="line"><span class="lineno">   72</span>  std::lock_guard&lt;std::mutex&gt; guard(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ac331533fcfffbd8e3317cc7edca662af">mutex_</a>);</div>
 <div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>  RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Attempting to add Geofence with Id: &quot;</span> &lt;&lt; gf_ptr-&gt;id_);</div>
+<div class="line"><span class="lineno">   74</span>  RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Attempting to add Geofence with Id: &quot;</span> &lt;&lt; gf_ptr-&gt;id_);</div>
 <div class="line"><span class="lineno">   75</span> </div>
 <div class="line"><span class="lineno">   76</span>  <span class="comment">// Create timer for next start time</span></div>
 <div class="line"><span class="lineno">   77</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> schedule_idx = 0; schedule_idx &lt; gf_ptr-&gt;schedules.size(); schedule_idx++)</div>
@@ -373,7 +373,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   82</span> </div>
 <div class="line"><span class="lineno">   83</span>    <span class="keywordflow">if</span> (!interval_info.first &amp;&amp; startTime == rclcpp::Time(0, 0, <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a25cf6d0585adc5532044638ab6cf1547">clock_type_</a>))</div>
 <div class="line"><span class="lineno">   84</span>    {</div>
-<div class="line"><span class="lineno">   85</span>      RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), </div>
+<div class="line"><span class="lineno">   85</span>      RCLCPP_WARN_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), </div>
 <div class="line"><span class="lineno">   86</span>          <span class="stringliteral">&quot;Failed to add geofence as its schedule did not contain an active or upcoming control period. GF Id: &quot;</span></div>
 <div class="line"><span class="lineno">   87</span>          &lt;&lt; gf_ptr-&gt;id_);</div>
 <div class="line"><span class="lineno">   88</span>      <span class="keywordflow">return</span>;</div>
@@ -401,8 +401,9 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1GeofenceScheduler_html_a8e993e68cb77c8c77b81dc8dfba2bc1e"><div class="ttname"><a href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a8e993e68cb77c8c77b81dc8dfba2bc1e">carma_wm_ctrl::GeofenceScheduler::startGeofenceCallback</a></div><div class="ttdeci">void startGeofenceCallback(std::shared_ptr&lt; Geofence &gt; gf_ptr, const unsigned int schedule_id, const int32_t timer_id)</div><div class="ttdoc">The callback which is triggered when a geofence becomes active This will call the user set active_cal...</div><div class="ttdef"><b>Definition:</b> <a href="GeofenceScheduler_8cpp_source.html#l00110">GeofenceScheduler.cpp:110</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1GeofenceScheduler_html_ac331533fcfffbd8e3317cc7edca662af"><div class="ttname"><a href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ac331533fcfffbd8e3317cc7edca662af">carma_wm_ctrl::GeofenceScheduler::mutex_</a></div><div class="ttdeci">std::mutex mutex_</div><div class="ttdef"><b>Definition:</b> <a href="GeofenceScheduler_8hpp_source.html#l00041">GeofenceScheduler.hpp:41</a></div></div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1GeofenceScheduler_html_acff2ae99537693361f7f5e9d44d539e2"><div class="ttname"><a href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#acff2ae99537693361f7f5e9d44d539e2">carma_wm_ctrl::GeofenceScheduler::timers_</a></div><div class="ttdeci">std::unordered_map&lt; uint32_t, std::pair&lt; TimerPtr, bool &gt; &gt; timers_</div><div class="ttdef"><b>Definition:</b> <a href="GeofenceScheduler_8hpp_source.html#l00043">GeofenceScheduler.hpp:43</a></div></div>
+<div class="ttc" id="anamespacebasic__autonomy_html_a8e49f3ae1a0ea4e022da60318805e3e0"><div class="ttname"><a href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">basic_autonomy::get_logger</a></div><div class="ttdeci">rclcpp::Logger get_logger()</div><div class="ttdoc">Return the module-level logger used by all basic_autonomy functions.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00032">log.cpp:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="GeofenceScheduler_8hpp_source.html#l00048">clock_type_</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00041">mutex_</a>, <a class="el" href="GeofenceScheduler_8cpp_source.html#l00037">nextId()</a>, <a class="el" href="GeofenceScheduler_8cpp_source.html#l00110">startGeofenceCallback()</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00042">timerFactory_</a>, and <a class="el" href="GeofenceScheduler_8hpp_source.html#l00043">timers_</a>.</p>
+<p class="reference">References <a class="el" href="GeofenceScheduler_8hpp_source.html#l00048">clock_type_</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00041">mutex_</a>, <a class="el" href="GeofenceScheduler_8cpp_source.html#l00037">nextId()</a>, <a class="el" href="GeofenceScheduler_8cpp_source.html#l00110">startGeofenceCallback()</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00042">timerFactory_</a>, and <a class="el" href="GeofenceScheduler_8hpp_source.html#l00043">timers_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="WMBroadcaster_8cpp_source.html#l01141">carma_wm_ctrl::WMBroadcaster::scheduleGeofence()</a>.</p>
 <div class="dynheader">
@@ -410,9 +411,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm__ctrl_1_1GeofenceScheduler_aa6e1c118ed8765ca03a7e52518c6e007_cgraph.png" border="0" usemap="#aclasscarma__wm__ctrl_1_1GeofenceScheduler_aa6e1c118ed8765ca03a7e52518c6e007_cgraph" alt=""/></div>
 <map name="aclasscarma__wm__ctrl_1_1GeofenceScheduler_aa6e1c118ed8765ca03a7e52518c6e007_cgraph" id="aclasscarma__wm__ctrl_1_1GeofenceScheduler_aa6e1c118ed8765ca03a7e52518c6e007_cgraph">
-<area shape="rect" title="Add a geofence to the scheduler. This will cause it to trigger an event when it becomes active or goe..." alt="" coords="5,9,236,51"/>
+<area shape="rect" title="Add a geofence to the scheduler. This will cause it to trigger an event when it becomes active or goe..." alt="" coords="5,64,236,105"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="887,212,1027,253"/>
 <area shape="rect" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a9072b770cf240953a50f1d926b733b7c" title="Generates the next id to be used for a timer." alt="" coords="841,5,1072,47"/>
 <area shape="rect" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a8e993e68cb77c8c77b81dc8dfba2bc1e" title="The callback which is triggered when a geofence becomes active This will call the user set active_cal..." alt="" coords="284,64,515,105"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="1120,212,1359,253"/>
 <area shape="rect" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a0f58b227dcbd413eb451146d36cb1728" title="The callback which is triggered when a geofence becomes in&#45;active This will call the user set inactiv..." alt="" coords="563,64,793,105"/>
 <area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="579,153,777,195"/>
 </map>
@@ -541,7 +544,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">  136</span>{</div>
 <div class="line"><span class="lineno">  137</span>  std::lock_guard&lt;std::mutex&gt; guard(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ac331533fcfffbd8e3317cc7edca662af">mutex_</a>);</div>
 <div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span>  RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Deactivating Geofence with Id: &quot;</span> &lt;&lt; gf_ptr-&gt;id_);</div>
+<div class="line"><span class="lineno">  139</span>  RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), <span class="stringliteral">&quot;Deactivating Geofence with Id: &quot;</span> &lt;&lt; gf_ptr-&gt;id_);</div>
 <div class="line"><span class="lineno">  140</span> </div>
 <div class="line"><span class="lineno">  141</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a9c4db1f970db315ac718aecb6cba850e">inactive_callback_</a>(gf_ptr);</div>
 <div class="line"><span class="lineno">  142</span>  <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#acff2ae99537693361f7f5e9d44d539e2">timers_</a>[timer_id].second = <span class="keyword">true</span>;  <span class="comment">// Mark timer for deletion</span></div>
@@ -575,7 +578,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  170</span>}</div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1GeofenceScheduler_html_a9c4db1f970db315ac718aecb6cba850e"><div class="ttname"><a href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a9c4db1f970db315ac718aecb6cba850e">carma_wm_ctrl::GeofenceScheduler::inactive_callback_</a></div><div class="ttdeci">std::function&lt; void(std::shared_ptr&lt; Geofence &gt;)&gt; inactive_callback_</div><div class="ttdef"><b>Definition:</b> <a href="GeofenceScheduler_8hpp_source.html#l00046">GeofenceScheduler.hpp:46</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="GeofenceScheduler_8hpp_source.html#l00048">clock_type_</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00046">inactive_callback_</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00041">mutex_</a>, <a class="el" href="GeofenceScheduler_8cpp_source.html#l00037">nextId()</a>, <a class="el" href="GeofenceScheduler_8cpp_source.html#l00110">startGeofenceCallback()</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00042">timerFactory_</a>, and <a class="el" href="GeofenceScheduler_8hpp_source.html#l00043">timers_</a>.</p>
+<p class="reference">References <a class="el" href="GeofenceScheduler_8hpp_source.html#l00048">clock_type_</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00046">inactive_callback_</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00041">mutex_</a>, <a class="el" href="GeofenceScheduler_8cpp_source.html#l00037">nextId()</a>, <a class="el" href="GeofenceScheduler_8cpp_source.html#l00110">startGeofenceCallback()</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00042">timerFactory_</a>, and <a class="el" href="GeofenceScheduler_8hpp_source.html#l00043">timers_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="GeofenceScheduler_8cpp_source.html#l00110">startGeofenceCallback()</a>.</p>
 <div class="dynheader">
@@ -583,9 +586,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm__ctrl_1_1GeofenceScheduler_a0f58b227dcbd413eb451146d36cb1728_cgraph.png" border="0" usemap="#aclasscarma__wm__ctrl_1_1GeofenceScheduler_a0f58b227dcbd413eb451146d36cb1728_cgraph" alt=""/></div>
 <map name="aclasscarma__wm__ctrl_1_1GeofenceScheduler_a0f58b227dcbd413eb451146d36cb1728_cgraph" id="aclasscarma__wm__ctrl_1_1GeofenceScheduler_a0f58b227dcbd413eb451146d36cb1728_cgraph">
-<area shape="rect" title="The callback which is triggered when a geofence becomes in&#45;active This will call the user set inactiv..." alt="" coords="5,64,236,105"/>
-<area shape="rect" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a9072b770cf240953a50f1d926b733b7c" title="Generates the next id to be used for a timer." alt="" coords="563,5,793,47"/>
-<area shape="rect" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a8e993e68cb77c8c77b81dc8dfba2bc1e" title="The callback which is triggered when a geofence becomes active This will call the user set active_cal..." alt="" coords="284,64,515,105"/>
+<area shape="rect" title="The callback which is triggered when a geofence becomes in&#45;active This will call the user set inactiv..." alt="" coords="5,95,236,136"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="608,5,748,47"/>
+<area shape="rect" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a9072b770cf240953a50f1d926b733b7c" title="Generates the next id to be used for a timer." alt="" coords="563,160,793,201"/>
+<area shape="rect" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a8e993e68cb77c8c77b81dc8dfba2bc1e" title="The callback which is triggered when a geofence becomes active This will call the user set active_cal..." alt="" coords="284,95,515,136"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="841,5,1080,47"/>
 <area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="579,95,777,136"/>
 </map>
 </div>
@@ -890,7 +895,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  112</span>  std::lock_guard&lt;std::mutex&gt; guard(<a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ac331533fcfffbd8e3317cc7edca662af">mutex_</a>);</div>
 <div class="line"><span class="lineno">  113</span>  rclcpp::Time endTime = <a class="code hl_variable" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#ad7447f295fc340ffa9ae32e9381d4fa6">timerFactory_</a>-&gt;now() + gf_ptr-&gt;schedules[schedule_id].control_span_;</div>
 <div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>  RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), </div>
+<div class="line"><span class="lineno">  115</span>  RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm_ctrl&quot;</span>), </div>
 <div class="line"><span class="lineno">  116</span>    <span class="stringliteral">&quot;Activating Geofence with Id: &quot;</span> </div>
 <div class="line"><span class="lineno">  117</span>    &lt;&lt; gf_ptr-&gt;id_ &lt;&lt; <span class="stringliteral">&quot;, which will end at:&quot;</span> </div>
 <div class="line"><span class="lineno">  118</span>    &lt;&lt; <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(endTime.seconds()));</div>
@@ -912,7 +917,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclasscarma__wm__ctrl_1_1GeofenceScheduler_html_a0f58b227dcbd413eb451146d36cb1728"><div class="ttname"><a href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a0f58b227dcbd413eb451146d36cb1728">carma_wm_ctrl::GeofenceScheduler::endGeofenceCallback</a></div><div class="ttdeci">void endGeofenceCallback(std::shared_ptr&lt; Geofence &gt; gf_ptr, const unsigned int schedule_id, const int32_t timer_id)</div><div class="ttdoc">The callback which is triggered when a geofence becomes in-active This will call the user set inactiv...</div><div class="ttdef"><b>Definition:</b> <a href="GeofenceScheduler_8cpp_source.html#l00135">GeofenceScheduler.cpp:135</a></div></div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_a64b708654c8aecb09122d39577df31b5"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">carma_cooperative_perception::to_string</a></div><div class="ttdeci">auto to_string(const UtmZone &amp;zone) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="utm__zone_8cpp_source.html#l00021">utm_zone.cpp:21</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="GeofenceScheduler_8hpp_source.html#l00045">active_callback_</a>, <a class="el" href="GeofenceScheduler_8cpp_source.html#l00135">endGeofenceCallback()</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00041">mutex_</a>, <a class="el" href="GeofenceScheduler_8cpp_source.html#l00037">nextId()</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00042">timerFactory_</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00043">timers_</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00021">carma_cooperative_perception::to_string()</a>.</p>
+<p class="reference">References <a class="el" href="GeofenceScheduler_8hpp_source.html#l00045">active_callback_</a>, <a class="el" href="GeofenceScheduler_8cpp_source.html#l00135">endGeofenceCallback()</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00041">mutex_</a>, <a class="el" href="GeofenceScheduler_8cpp_source.html#l00037">nextId()</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00042">timerFactory_</a>, <a class="el" href="GeofenceScheduler_8hpp_source.html#l00043">timers_</a>, and <a class="el" href="utm__zone_8cpp_source.html#l00021">carma_cooperative_perception::to_string()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="GeofenceScheduler_8cpp_source.html#l00070">addGeofence()</a>, and <a class="el" href="GeofenceScheduler_8cpp_source.html#l00135">endGeofenceCallback()</a>.</p>
 <div class="dynheader">
@@ -920,10 +925,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__wm__ctrl_1_1GeofenceScheduler_a8e993e68cb77c8c77b81dc8dfba2bc1e_cgraph.png" border="0" usemap="#aclasscarma__wm__ctrl_1_1GeofenceScheduler_a8e993e68cb77c8c77b81dc8dfba2bc1e_cgraph" alt=""/></div>
 <map name="aclasscarma__wm__ctrl_1_1GeofenceScheduler_a8e993e68cb77c8c77b81dc8dfba2bc1e_cgraph" id="aclasscarma__wm__ctrl_1_1GeofenceScheduler_a8e993e68cb77c8c77b81dc8dfba2bc1e_cgraph">
-<area shape="rect" title="The callback which is triggered when a geofence becomes active This will call the user set active_cal..." alt="" coords="5,35,236,76"/>
-<area shape="rect" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a0f58b227dcbd413eb451146d36cb1728" title="The callback which is triggered when a geofence becomes in&#45;active This will call the user set inactiv..." alt="" coords="284,5,515,47"/>
-<area shape="rect" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a9072b770cf240953a50f1d926b733b7c" title="Generates the next id to be used for a timer." alt="" coords="563,35,793,76"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="300,147,499,188"/>
+<area shape="rect" title="The callback which is triggered when a geofence becomes active This will call the user set active_cal..." alt="" coords="5,51,236,92"/>
+<area shape="rect" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a0f58b227dcbd413eb451146d36cb1728" title="The callback which is triggered when a geofence becomes in&#45;active This will call the user set inactiv..." alt="" coords="284,51,515,92"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="608,5,748,47"/>
+<area shape="rect" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html#a9072b770cf240953a50f1d926b733b7c" title="Generates the next id to be used for a timer." alt="" coords="563,84,793,125"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="300,192,499,233"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="841,5,1080,47"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1162,7 +1169,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__wm__ctrl.html">carma_wm_ctrl</a></li><li class="navelem"><a class="el" href="classcarma__wm__ctrl_1_1GeofenceScheduler.html">GeofenceScheduler</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 13:11:07 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 17 2026 17:53:39 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

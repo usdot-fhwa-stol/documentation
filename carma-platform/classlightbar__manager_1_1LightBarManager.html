@@ -466,7 +466,9 @@ Here is the call graph for this function:</div>
 <map name="aclasslightbar__manager_1_1LightBarManager_ad9e61ee722ba71183308f19efe64b643_cgraph" id="aclasslightbar__manager_1_1LightBarManager_ad9e61ee722ba71183308f19efe64b643_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,195,47"/>
 <area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#a0167f90cd16b25a58ed626db6d674359" title="Miscellaneous function that forces the state to disengaged and turn off all indicators...." alt="" coords="243,5,419,47"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="467,5,643,47"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="691,5,831,47"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="467,35,643,76"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="879,5,1117,47"/>
 </map>
 </div>
 
@@ -493,7 +495,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   40</span>    <span class="comment">// Reset config</span></div>
 <div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="classlightbar__manager_1_1LightBarManager.html#a9c2125c7019503e5a87785b7e9b344ad">config_</a> = Config();</div>
 <div class="line"><span class="lineno">   42</span>    </div>
-<div class="line"><span class="lineno">   43</span>    RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;Initalizing lightbar manager node...&quot;</span>);</div>
+<div class="line"><span class="lineno">   43</span>    RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;Initalizing lightbar manager node...&quot;</span>);</div>
 <div class="line"><span class="lineno">   44</span>    </div>
 <div class="line"><span class="lineno">   45</span>    <span class="comment">// Load the spin rate param to determine how fast to process messages</span></div>
 <div class="line"><span class="lineno">   46</span>    <span class="comment">// Default rate 10.0 Hz</span></div>
@@ -541,7 +543,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   88</span>    <span class="comment">// Take control of green light</span></div>
 <div class="line"><span class="lineno">   89</span>    get_parameter&lt;bool&gt;(<span class="stringliteral">&quot;normal_operation&quot;</span>, <a class="code hl_variable" href="classlightbar__manager_1_1LightBarManager.html#a9c2125c7019503e5a87785b7e9b344ad">config_</a>.<a class="code hl_variable" href="structlightbar__manager_1_1Config.html#a4c20a084669d714f615db41540292cd2">normal_operation</a>);</div>
 <div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>    RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;lightbar_manager&quot;</span>), <span class="stringliteral">&quot;Loaded params: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classlightbar__manager_1_1LightBarManager.html#a9c2125c7019503e5a87785b7e9b344ad">config_</a>);</div>
+<div class="line"><span class="lineno">   91</span>    RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;lightbar_manager&quot;</span>), <span class="stringliteral">&quot;Loaded params: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classlightbar__manager_1_1LightBarManager.html#a9c2125c7019503e5a87785b7e9b344ad">config_</a>);</div>
 <div class="line"><span class="lineno">   92</span> </div>
 <div class="line"><span class="lineno">   93</span>    std::vector&lt;LightBarIndicator&gt; denied_list, greens = {<a class="code hl_enumvalue" href="namespacelightbar__manager.html#ad65e92a99b6a98bdd0f10d921e9df5a5a5f52fb059d68323069762b6b9dcce921">GREEN_SOLID</a>, <a class="code hl_enumvalue" href="namespacelightbar__manager.html#ad65e92a99b6a98bdd0f10d921e9df5a5a78f5ff7490fed87469e8e85daee3bfa7">GREEN_FLASH</a>};</div>
 <div class="line"><span class="lineno">   94</span> </div>
@@ -550,14 +552,14 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   97</span>    {</div>
 <div class="line"><span class="lineno">   98</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classlightbar__manager_1_1LightBarManager.html#a9c2125c7019503e5a87785b7e9b344ad">config_</a>.<a class="code hl_variable" href="structlightbar__manager_1_1Config.html#a4c20a084669d714f615db41540292cd2">normal_operation</a>)</div>
 <div class="line"><span class="lineno">   99</span>        {</div>
-<div class="line"><span class="lineno">  100</span>            RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;In fuction &quot;</span> &lt;&lt; __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;, LightBarManager was not able to take control of all green indicators.&quot;</span></div>
+<div class="line"><span class="lineno">  100</span>            RCLCPP_WARN_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;In fuction &quot;</span> &lt;&lt; __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;, LightBarManager was not able to take control of all green indicators.&quot;</span></div>
 <div class="line"><span class="lineno">  101</span>                &lt;&lt; <span class="stringliteral">&quot;.\n Please check priority list rosparameter, and ensure &quot;</span> &lt;&lt; <a class="code hl_variable" href="classlightbar__manager_1_1LightBarManager.html#a0595579cba8d9b73b8f69268113b9755">node_name_</a> &lt;&lt; <span class="stringliteral">&quot; has the highest priority.&quot;</span></div>
 <div class="line"><span class="lineno">  102</span>                &lt;&lt; <span class="stringliteral">&quot;.\n If this is intended, pass false to normal_operation argument. Exiting...&quot;</span>);</div>
 <div class="line"><span class="lineno">  103</span>            <span class="keywordflow">throw</span> INVALID_LIGHTBAR_MANAGER_PRIORITY();</div>
 <div class="line"><span class="lineno">  104</span>        }</div>
 <div class="line"><span class="lineno">  105</span>        <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  106</span>        {</div>
-<div class="line"><span class="lineno">  107</span>            RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;In fuction &quot;</span> &lt;&lt; __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;, LightBarManager was not able to take control of all green indicators.&quot;</span></div>
+<div class="line"><span class="lineno">  107</span>            RCLCPP_WARN_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;In fuction &quot;</span> &lt;&lt; __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;, LightBarManager was not able to take control of all green indicators.&quot;</span></div>
 <div class="line"><span class="lineno">  108</span>                &lt;&lt; <span class="stringliteral">&quot;.\n Resuming...&quot;</span>);   </div>
 <div class="line"><span class="lineno">  109</span>        }</div>
 <div class="line"><span class="lineno">  110</span>    }</div>
@@ -577,26 +579,29 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclasslightbar__manager_1_1LightBarManager_html_ae756f1110a7dc40a73ee313bc8e712f9"><div class="ttname"><a href="classlightbar__manager_1_1LightBarManager.html#ae756f1110a7dc40a73ee313bc8e712f9">lightbar_manager::LightBarManager::request_control_server_</a></div><div class="ttdeci">carma_ros2_utils::ServicePtr&lt; carma_msgs::srv::RequestIndicatorControl &gt; request_control_server_</div><div class="ttdef"><b>Definition:</b> <a href="lightbar__manager__node_8hpp_source.html#l00144">lightbar_manager_node.hpp:144</a></div></div>
 <div class="ttc" id="aclasslightbar__manager_1_1LightBarManager_html_af44c553e38fb43c15a79a97c1deb796f"><div class="ttname"><a href="classlightbar__manager_1_1LightBarManager.html#af44c553e38fb43c15a79a97c1deb796f">lightbar_manager::LightBarManager::setIndicatorCallBack</a></div><div class="ttdeci">bool setIndicatorCallBack(const std::shared_ptr&lt; rmw_request_id_t &gt;, const std::shared_ptr&lt; carma_driver_msgs::srv::SetLightBarIndicator::Request &gt; req, std::shared_ptr&lt; carma_driver_msgs::srv::SetLightBarIndicator::Response &gt; resp)</div><div class="ttdef"><b>Definition:</b> <a href="lightbar__manager__node_8cpp_source.html#l00407">lightbar_manager_node.cpp:407</a></div></div>
 <div class="ttc" id="alightbar__manager__worker_8hpp_html_a1d23dff8c7a77020551af311f6791995"><div class="ttname"><a href="lightbar__manager__worker_8hpp.html#a1d23dff8c7a77020551af311f6791995">INDICATOR_COUNT</a></div><div class="ttdeci">#define INDICATOR_COUNT</div><div class="ttdef"><b>Definition:</b> <a href="lightbar__manager__worker_8hpp_source.html#l00039">lightbar_manager_worker.hpp:39</a></div></div>
+<div class="ttc" id="anamespacebasic__autonomy_html_a8e49f3ae1a0ea4e022da60318805e3e0"><div class="ttname"><a href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">basic_autonomy::get_logger</a></div><div class="ttdeci">rclcpp::Logger get_logger()</div><div class="ttdoc">Return the module-level logger used by all basic_autonomy functions.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00032">log.cpp:32</a></div></div>
 <div class="ttc" id="anamespacelightbar__manager_html_a91d9a15f8f9254d400b2123adb042c22aa263418aef070612ba69e03cc2325fac"><div class="ttname"><a href="namespacelightbar__manager.html#a91d9a15f8f9254d400b2123adb042c22aa263418aef070612ba69e03cc2325fac">lightbar_manager::OFF</a></div><div class="ttdeci">@ OFF</div><div class="ttdef"><b>Definition:</b> <a href="lightbar__manager__sm_8hpp_source.html#l00034">lightbar_manager_sm.hpp:34</a></div></div>
 <div class="ttc" id="anamespacelightbar__manager_html_ad65e92a99b6a98bdd0f10d921e9df5a5a5f52fb059d68323069762b6b9dcce921"><div class="ttname"><a href="namespacelightbar__manager.html#ad65e92a99b6a98bdd0f10d921e9df5a5a5f52fb059d68323069762b6b9dcce921">lightbar_manager::GREEN_SOLID</a></div><div class="ttdeci">@ GREEN_SOLID</div><div class="ttdef"><b>Definition:</b> <a href="lightbar__manager__sm_8hpp_source.html#l00031">lightbar_manager_sm.hpp:31</a></div></div>
 <div class="ttc" id="anamespacelightbar__manager_html_ad65e92a99b6a98bdd0f10d921e9df5a5a78f5ff7490fed87469e8e85daee3bfa7"><div class="ttname"><a href="namespacelightbar__manager.html#ad65e92a99b6a98bdd0f10d921e9df5a5a78f5ff7490fed87469e8e85daee3bfa7">lightbar_manager::GREEN_FLASH</a></div><div class="ttdeci">@ GREEN_FLASH</div><div class="ttdef"><b>Definition:</b> <a href="lightbar__manager__sm_8hpp_source.html#l00031">lightbar_manager_sm.hpp:31</a></div></div>
 <div class="ttc" id="anamespaceprocess__bag_html_af102a02c97622dd30b0dbf7bafb0d199"><div class="ttname"><a href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">process_bag.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00059">process_bag.py:59</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="lightbar__manager__node_8hpp_source.html#l00115">config_</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00031">lightbar_manager::GREEN_FLASH</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00031">lightbar_manager::GREEN_SOLID</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00153">guidance_state_subscriber_</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00150">indicator_control_publisher_</a>, <a class="el" href="lightbar__manager__worker_8hpp_source.html#l00039">INDICATOR_COUNT</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00157">lbm_</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00051">lightbar_manager::Config::lightbar_cda_table</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00147">lightbar_driver_client_</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00052">lightbar_manager::Config::lightbar_ind_table</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00050">lightbar_manager::Config::lightbar_priorities</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00124">node_name_</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00049">lightbar_manager::Config::normal_operation</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00034">lightbar_manager::OFF</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00145">release_control_server_</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00232">releaseControlCallBack()</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00144">request_control_server_</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00180">requestControlCallBack()</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00146">set_indicator_server_</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00407">setIndicatorCallBack()</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00048">lightbar_manager::Config::spin_rate_hz</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00269">stateChangeCallBack()</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00154">turn_signal_subscriber_</a>, and <a class="el" href="lightbar__manager__node_8cpp_source.html#l00296">turnSignalCallback()</a>.</p>
+<p class="reference">References <a class="el" href="lightbar__manager__node_8hpp_source.html#l00115">config_</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00031">lightbar_manager::GREEN_FLASH</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00031">lightbar_manager::GREEN_SOLID</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00153">guidance_state_subscriber_</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00150">indicator_control_publisher_</a>, <a class="el" href="lightbar__manager__worker_8hpp_source.html#l00039">INDICATOR_COUNT</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00157">lbm_</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00051">lightbar_manager::Config::lightbar_cda_table</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00147">lightbar_driver_client_</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00052">lightbar_manager::Config::lightbar_ind_table</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00050">lightbar_manager::Config::lightbar_priorities</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00124">node_name_</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00049">lightbar_manager::Config::normal_operation</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00034">lightbar_manager::OFF</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00145">release_control_server_</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00232">releaseControlCallBack()</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00144">request_control_server_</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00180">requestControlCallBack()</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00146">set_indicator_server_</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00407">setIndicatorCallBack()</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00048">lightbar_manager::Config::spin_rate_hz</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00269">stateChangeCallBack()</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00154">turn_signal_subscriber_</a>, and <a class="el" href="lightbar__manager__node_8cpp_source.html#l00296">turnSignalCallback()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classlightbar__manager_1_1LightBarManager_a548841361b2f9c7f9f0ec79d1cfdbff5_cgraph.png" border="0" usemap="#aclasslightbar__manager_1_1LightBarManager_a548841361b2f9c7f9f0ec79d1cfdbff5_cgraph" alt=""/></div>
 <map name="aclasslightbar__manager_1_1LightBarManager_a548841361b2f9c7f9f0ec79d1cfdbff5_cgraph" id="aclasslightbar__manager_1_1LightBarManager_a548841361b2f9c7f9f0ec79d1cfdbff5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,129,201,171"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aa6509436cf337efa3ac9ea8efdaf50a9" title=" " alt="" coords="250,5,463,47"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#a694fccba54e54233190bf2bf7e37a181" title=" " alt="" coords="249,71,464,112"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#af44c553e38fb43c15a79a97c1deb796f" title=" " alt="" coords="512,115,711,156"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#add2247f1c14afa2faa6f41dfbd742eca" title=" " alt="" coords="255,188,458,229"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#a1534f622fd085e396f868e242fb7df84" title="Callback function for turning signal." alt="" coords="263,268,450,309"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="759,203,935,244"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#a0167f90cd16b25a58ed626db6d674359" title="Miscellaneous function that forces the state to disengaged and turn off all indicators...." alt="" coords="523,232,699,273"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aa2f960a3f80bba2e13d8cfad26ae5e9a" title="Turn signal callback function helper." alt="" coords="518,297,705,339"/>
+<area shape="rect" title=" " alt="" coords="5,153,201,194"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="983,156,1123,197"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aa6509436cf337efa3ac9ea8efdaf50a9" title=" " alt="" coords="250,54,463,96"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#a694fccba54e54233190bf2bf7e37a181" title=" " alt="" coords="249,120,464,161"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#af44c553e38fb43c15a79a97c1deb796f" title=" " alt="" coords="512,244,711,285"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#add2247f1c14afa2faa6f41dfbd742eca" title=" " alt="" coords="255,185,458,226"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#a1534f622fd085e396f868e242fb7df84" title="Callback function for turning signal." alt="" coords="263,305,450,346"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="1171,156,1409,197"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="759,185,935,226"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#a0167f90cd16b25a58ed626db6d674359" title="Miscellaneous function that forces the state to disengaged and turn off all indicators...." alt="" coords="523,126,699,168"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aa2f960a3f80bba2e13d8cfad26ae5e9a" title="Turn signal callback function helper." alt="" coords="518,309,705,350"/>
 </map>
 </div>
 
@@ -633,7 +638,9 @@ Here is the call graph for this function:</div>
 <map name="aclasslightbar__manager_1_1LightBarManager_a8a65d7ac89b1ce2b503112b1598d2a39_cgraph" id="aclasslightbar__manager_1_1LightBarManager_a8a65d7ac89b1ce2b503112b1598d2a39_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,209,47"/>
 <area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#a0167f90cd16b25a58ed626db6d674359" title="Miscellaneous function that forces the state to disengaged and turn off all indicators...." alt="" coords="257,5,433,47"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="481,5,657,47"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="705,5,845,47"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="481,35,657,76"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="893,5,1132,47"/>
 </map>
 </div>
 
@@ -670,7 +677,9 @@ Here is the call graph for this function:</div>
 <map name="aclasslightbar__manager_1_1LightBarManager_a1d70b1538a649fdbcbf6566ecac632eb_cgraph" id="aclasslightbar__manager_1_1LightBarManager_a1d70b1538a649fdbcbf6566ecac632eb_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,181,47"/>
 <area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#a0167f90cd16b25a58ed626db6d674359" title="Miscellaneous function that forces the state to disengaged and turn off all indicators...." alt="" coords="229,5,405,47"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="453,5,629,47"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="677,5,817,47"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="453,35,629,76"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="865,5,1104,47"/>
 </map>
 </div>
 
@@ -707,7 +716,9 @@ Here is the call graph for this function:</div>
 <map name="aclasslightbar__manager_1_1LightBarManager_a1da91040098a5b2e5ad7ec97f44351a9_cgraph" id="aclasslightbar__manager_1_1LightBarManager_a1da91040098a5b2e5ad7ec97f44351a9_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,205,47"/>
 <area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#a0167f90cd16b25a58ed626db6d674359" title="Miscellaneous function that forces the state to disengaged and turn off all indicators...." alt="" coords="253,5,429,47"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="477,5,653,47"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="701,5,841,47"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="477,35,653,76"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="889,5,1128,47"/>
 </map>
 </div>
 
@@ -774,13 +785,13 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  332</span>        <span class="keywordtype">int</span> response_code = 0;</div>
 <div class="line"><span class="lineno">  333</span>        response_code = <a class="code hl_function" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307">setIndicator</a>(changed_turn_signal[0], indicator_status, <a class="code hl_variable" href="classlightbar__manager_1_1LightBarManager.html#a0595579cba8d9b73b8f69268113b9755">node_name_</a>);</div>
 <div class="line"><span class="lineno">  334</span>        <span class="keywordflow">if</span> (response_code != 0)</div>
-<div class="line"><span class="lineno">  335</span>            RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;In Function &quot;</span> &lt;&lt; __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;: LightBarManager was not able to set light of indicator ID:&quot;</span> </div>
+<div class="line"><span class="lineno">  335</span>            RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;In Function &quot;</span> &lt;&lt; __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;: LightBarManager was not able to set light of indicator ID:&quot;</span> </div>
 <div class="line"><span class="lineno">  336</span>                &lt;&lt; changed_turn_signal[0] &lt;&lt; <span class="stringliteral">&quot;. Response code: &quot;</span> &lt;&lt; response_code);</div>
 <div class="line"><span class="lineno">  337</span>    }</div>
 <div class="line"><span class="lineno">  338</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  339</span>    {</div>
 <div class="line"><span class="lineno">  340</span>        std::string turn_string = msg.turn_signal == automotive_platform_msgs::msg::TurnSignalCommand::LEFT ? <span class="stringliteral">&quot;left&quot;</span> : <span class="stringliteral">&quot;right&quot;</span>;</div>
-<div class="line"><span class="lineno">  341</span>        RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;Lightbar was not able to take control of lightbar to indicate &quot;</span> &lt;&lt; turn_string &lt;&lt; <span class="stringliteral">&quot;turn!&quot;</span>);</div>
+<div class="line"><span class="lineno">  341</span>        RCLCPP_WARN_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;Lightbar was not able to take control of lightbar to indicate &quot;</span> &lt;&lt; turn_string &lt;&lt; <span class="stringliteral">&quot;turn!&quot;</span>);</div>
 <div class="line"><span class="lineno">  342</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  343</span>    }</div>
 <div class="line"><span class="lineno">  344</span> </div>
@@ -800,7 +811,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespacelightbar__manager_html_a91d9a15f8f9254d400b2123adb042c22"><div class="ttname"><a href="namespacelightbar__manager.html#a91d9a15f8f9254d400b2123adb042c22">lightbar_manager::IndicatorStatus</a></div><div class="ttdeci">IndicatorStatus</div><div class="ttdef"><b>Definition:</b> <a href="lightbar__manager__sm_8hpp_source.html#l00034">lightbar_manager_sm.hpp:34</a></div></div>
 <div class="ttc" id="anamespacelightbar__manager_html_a91d9a15f8f9254d400b2123adb042c22ac04c0a5e7e0dbe8c83b7cb3dcee893f3"><div class="ttname"><a href="namespacelightbar__manager.html#a91d9a15f8f9254d400b2123adb042c22ac04c0a5e7e0dbe8c83b7cb3dcee893f3">lightbar_manager::ON</a></div><div class="ttdeci">@ ON</div><div class="ttdef"><b>Definition:</b> <a href="lightbar__manager__sm_8hpp_source.html#l00034">lightbar_manager_sm.hpp:34</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="lightbar__manager__node_8hpp_source.html#l00157">lbm_</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00124">node_name_</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00034">lightbar_manager::OFF</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00034">lightbar_manager::ON</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00126">prev_owners_before_turn_</a>, and <a class="el" href="lightbar__manager__node_8cpp_source.html#l00362">setIndicator()</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00157">lbm_</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00124">node_name_</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00034">lightbar_manager::OFF</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00034">lightbar_manager::ON</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00126">prev_owners_before_turn_</a>, and <a class="el" href="lightbar__manager__node_8cpp_source.html#l00362">setIndicator()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="lightbar__manager__node_8cpp_source.html#l00296">turnSignalCallback()</a>.</p>
 <div class="dynheader">
@@ -809,7 +820,9 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classlightbar__manager_1_1LightBarManager_aa2f960a3f80bba2e13d8cfad26ae5e9a_cgraph.png" border="0" usemap="#aclasslightbar__manager_1_1LightBarManager_aa2f960a3f80bba2e13d8cfad26ae5e9a_cgraph" alt=""/></div>
 <map name="aclasslightbar__manager_1_1LightBarManager_aa2f960a3f80bba2e13d8cfad26ae5e9a_cgraph" id="aclasslightbar__manager_1_1LightBarManager_aa2f960a3f80bba2e13d8cfad26ae5e9a_cgraph">
 <area shape="rect" title="Turn signal callback function helper." alt="" coords="5,5,192,47"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="240,5,416,47"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="464,5,604,47"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="240,35,416,76"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="652,5,891,47"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1066,7 +1079,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  374</span>    std::string current_controller = <a class="code hl_variable" href="classlightbar__manager_1_1LightBarManager.html#acddc8310fb9e85f2f080b69557056a1a">lbm_</a>-&gt;getIndicatorControllers()[ind];</div>
 <div class="line"><span class="lineno">  375</span>    <span class="keywordflow">if</span> (requester_name == <span class="stringliteral">&quot;&quot;</span> || current_controller != requester_name) </div>
 <div class="line"><span class="lineno">  376</span>    {</div>
-<div class="line"><span class="lineno">  377</span>        RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),requester_name &lt;&lt; <span class="stringliteral">&quot; failed to set the LightBarIndicator ID&quot;</span> &lt;&lt; ind </div>
+<div class="line"><span class="lineno">  377</span>        RCLCPP_WARN_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),requester_name &lt;&lt; <span class="stringliteral">&quot; failed to set the LightBarIndicator ID&quot;</span> &lt;&lt; ind </div>
 <div class="line"><span class="lineno">  378</span>            &lt;&lt; <span class="stringliteral">&quot; as this was already controlled by &quot;</span> &lt;&lt; current_controller);</div>
 <div class="line"><span class="lineno">  379</span>        response_code = 1;</div>
 <div class="line"><span class="lineno">  380</span>        <span class="keywordflow">return</span> response_code;</div>
@@ -1089,16 +1102,26 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  397</span>    }</div>
 <div class="line"><span class="lineno">  398</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  399</span>    {</div>
-<div class="line"><span class="lineno">  400</span>        RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;In function: &quot;</span> &lt;&lt; __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;: Failed to set lights. ROSservice call to the driver failed. &quot;</span>);</div>
+<div class="line"><span class="lineno">  400</span>        RCLCPP_WARN_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;In function: &quot;</span> &lt;&lt; __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;: Failed to set lights. ROSservice call to the driver failed. &quot;</span>);</div>
 <div class="line"><span class="lineno">  401</span>        response_code =  2;</div>
 <div class="line"><span class="lineno">  402</span>    }</div>
 <div class="line"><span class="lineno">  403</span>    <span class="keywordflow">return</span> response_code;</div>
 <div class="line"><span class="lineno">  404</span> </div>
 <div class="line"><span class="lineno">  405</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="lightbar__manager__worker_8hpp_source.html#l00039">INDICATOR_COUNT</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00157">lbm_</a>, and <a class="el" href="lightbar__manager__node_8hpp_source.html#l00147">lightbar_driver_client_</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="lightbar__manager__worker_8hpp_source.html#l00039">INDICATOR_COUNT</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00157">lbm_</a>, and <a class="el" href="lightbar__manager__node_8hpp_source.html#l00147">lightbar_driver_client_</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="lightbar__manager__node_8cpp_source.html#l00301">processTurnSignal()</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00407">setIndicatorCallBack()</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00269">stateChangeCallBack()</a>, and <a class="el" href="lightbar__manager__node_8cpp_source.html#l00150">turnOffAll()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classlightbar__manager_1_1LightBarManager_aba379860df887de5d0097ecd0f9cc307_cgraph.png" border="0" usemap="#aclasslightbar__manager_1_1LightBarManager_aba379860df887de5d0097ecd0f9cc307_cgraph" alt=""/></div>
+<map name="aclasslightbar__manager_1_1LightBarManager_aba379860df887de5d0097ecd0f9cc307_cgraph" id="aclasslightbar__manager_1_1LightBarManager_aba379860df887de5d0097ecd0f9cc307_cgraph">
+<area shape="rect" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="5,5,181,47"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="229,5,369,47"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="417,5,656,47"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1187,6 +1210,8 @@ Here is the call graph for this function:</div>
 <map name="aclasslightbar__manager_1_1LightBarManager_af44c553e38fb43c15a79a97c1deb796f_cgraph" id="aclasslightbar__manager_1_1LightBarManager_af44c553e38fb43c15a79a97c1deb796f_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,204,47"/>
 <area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="252,5,428,47"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="476,5,616,47"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="664,5,903,47"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1308,9 +1333,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classlightbar__manager_1_1LightBarManager_add2247f1c14afa2faa6f41dfbd742eca_cgraph.png" border="0" usemap="#aclasslightbar__manager_1_1LightBarManager_add2247f1c14afa2faa6f41dfbd742eca_cgraph" alt=""/></div>
 <map name="aclasslightbar__manager_1_1LightBarManager_add2247f1c14afa2faa6f41dfbd742eca_cgraph" id="aclasslightbar__manager_1_1LightBarManager_add2247f1c14afa2faa6f41dfbd742eca_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,208,47"/>
+<area shape="rect" title=" " alt="" coords="5,35,208,76"/>
 <area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="480,5,656,47"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#a0167f90cd16b25a58ed626db6d674359" title="Miscellaneous function that forces the state to disengaged and turn off all indicators...." alt="" coords="256,35,432,76"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#a0167f90cd16b25a58ed626db6d674359" title="Miscellaneous function that forces the state to disengaged and turn off all indicators...." alt="" coords="256,64,432,105"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="704,35,844,76"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="892,35,1131,76"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1347,7 +1374,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  152</span>    <span class="comment">// All components lose controls and turn the indicators off by giving lightbarmanar the control</span></div>
 <div class="line"><span class="lineno">  153</span>    std::vector&lt;LightBarIndicator&gt; all_indicators;</div>
 <div class="line"><span class="lineno">  154</span> </div>
-<div class="line"><span class="lineno">  155</span>    RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;LightBarManager was commanded to turn off all indicators!&quot;</span>);</div>
+<div class="line"><span class="lineno">  155</span>    RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;LightBarManager was commanded to turn off all indicators!&quot;</span>);</div>
 <div class="line"><span class="lineno">  156</span> </div>
 <div class="line"><span class="lineno">  157</span>    <span class="keywordflow">for</span> (std::pair &lt;LightBarIndicator, std::string&gt; element : <a class="code hl_variable" href="classlightbar__manager_1_1LightBarManager.html#acddc8310fb9e85f2f080b69557056a1a">lbm_</a>-&gt;getIndicatorControllers())</div>
 <div class="line"><span class="lineno">  158</span>        all_indicators.push_back(element.first);</div>
@@ -1362,7 +1389,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  167</span>    {</div>
 <div class="line"><span class="lineno">  168</span>        response_code = <a class="code hl_function" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307">setIndicator</a>(indicator, <a class="code hl_enumvalue" href="namespacelightbar__manager.html#a91d9a15f8f9254d400b2123adb042c22aa263418aef070612ba69e03cc2325fac">OFF</a>, <a class="code hl_variable" href="classlightbar__manager_1_1LightBarManager.html#a0595579cba8d9b73b8f69268113b9755">node_name_</a>);</div>
 <div class="line"><span class="lineno">  169</span>        <span class="keywordflow">if</span> (response_code != 0)</div>
-<div class="line"><span class="lineno">  170</span>            RCLCPP_WARN_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;In Function &quot;</span> &lt;&lt; __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;: LightBarManager was not able to turn off indicator ID:&quot;</span> </div>
+<div class="line"><span class="lineno">  170</span>            RCLCPP_WARN_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;lightbar_manager&quot;</span>),<span class="stringliteral">&quot;In Function &quot;</span> &lt;&lt; __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;: LightBarManager was not able to turn off indicator ID:&quot;</span> </div>
 <div class="line"><span class="lineno">  171</span>                &lt;&lt; indicator &lt;&lt; <span class="stringliteral">&quot;. Response code: &quot;</span> &lt;&lt; response_code);</div>
 <div class="line"><span class="lineno">  172</span>    }</div>
 <div class="line"><span class="lineno">  173</span> </div>
@@ -1372,7 +1399,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  177</span>    <a class="code hl_variable" href="classlightbar__manager_1_1LightBarManager.html#acddc8310fb9e85f2f080b69557056a1a">lbm_</a>-&gt;releaseControl(all_indicators, <a class="code hl_variable" href="classlightbar__manager_1_1LightBarManager.html#a0595579cba8d9b73b8f69268113b9755">node_name_</a>);</div>
 <div class="line"><span class="lineno">  178</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00031">lightbar_manager::GREEN_FLASH</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00031">lightbar_manager::GREEN_SOLID</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00157">lbm_</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00124">node_name_</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00034">lightbar_manager::OFF</a>, and <a class="el" href="lightbar__manager__node_8cpp_source.html#l00362">setIndicator()</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00031">lightbar_manager::GREEN_FLASH</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00031">lightbar_manager::GREEN_SOLID</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00157">lbm_</a>, <a class="el" href="lightbar__manager__node_8hpp_source.html#l00124">node_name_</a>, <a class="el" href="lightbar__manager__sm_8hpp_source.html#l00034">lightbar_manager::OFF</a>, and <a class="el" href="lightbar__manager__node_8cpp_source.html#l00362">setIndicator()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="lightbar__manager__node_8cpp_source.html#l00129">handle_on_cleanup()</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00122">handle_on_deactivate()</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00136">handle_on_error()</a>, <a class="el" href="lightbar__manager__node_8cpp_source.html#l00143">handle_on_shutdown()</a>, and <a class="el" href="lightbar__manager__node_8cpp_source.html#l00269">stateChangeCallBack()</a>.</p>
 <div class="dynheader">
@@ -1381,7 +1408,9 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classlightbar__manager_1_1LightBarManager_a0167f90cd16b25a58ed626db6d674359_cgraph.png" border="0" usemap="#aclasslightbar__manager_1_1LightBarManager_a0167f90cd16b25a58ed626db6d674359_cgraph" alt=""/></div>
 <map name="aclasslightbar__manager_1_1LightBarManager_a0167f90cd16b25a58ed626db6d674359_cgraph" id="aclasslightbar__manager_1_1LightBarManager_a0167f90cd16b25a58ed626db6d674359_cgraph">
 <area shape="rect" title="Miscellaneous function that forces the state to disengaged and turn off all indicators...." alt="" coords="5,5,181,47"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="229,5,405,47"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="453,5,593,47"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="229,35,405,76"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="641,5,880,47"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1436,7 +1465,9 @@ Here is the call graph for this function:</div>
 <map name="aclasslightbar__manager_1_1LightBarManager_a1534f622fd085e396f868e242fb7df84_cgraph" id="aclasslightbar__manager_1_1LightBarManager_a1534f622fd085e396f868e242fb7df84_cgraph">
 <area shape="rect" title="Callback function for turning signal." alt="" coords="5,5,192,47"/>
 <area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aa2f960a3f80bba2e13d8cfad26ae5e9a" title="Turn signal callback function helper." alt="" coords="240,5,427,47"/>
-<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="475,5,651,47"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="699,5,839,47"/>
+<area shape="rect" href="classlightbar__manager_1_1LightBarManager.html#aba379860df887de5d0097ecd0f9cc307" title="Try to turn the given indicator ON or OFF (comm with hardware) upon the given component&#39;s request." alt="" coords="475,35,651,76"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="887,5,1125,47"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1798,7 +1829,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacelightbar__manager.html">lightbar_manager</a></li><li class="navelem"><a class="el" href="classlightbar__manager_1_1LightBarManager.html">LightBarManager</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 13:11:08 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 17 2026 17:53:40 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

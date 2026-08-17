@@ -306,7 +306,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  163</span>    CURL *req;</div>
 <div class="line"><span class="lineno">  164</span>    CURLcode res;</div>
 <div class="line"><span class="lineno">  165</span>    std::string urlfull = local_url + <a class="code hl_variable" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a643009675562624ec9b68cbd46404172">config_</a>.<a class="code hl_variable" href="structcarma__cloud__client_1_1Config.html#a0080512820b090a1f919d66eb23e1a1b">port</a> + local_base;</div>
-<div class="line"><span class="lineno">  166</span>    RCLCPP_DEBUG_STREAM(  get_logger(), <span class="stringliteral">&quot;full url: &quot;</span> &lt;&lt; urlfull);</div>
+<div class="line"><span class="lineno">  166</span>    RCLCPP_DEBUG_STREAM(  <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;full url: &quot;</span> &lt;&lt; urlfull);</div>
 <div class="line"><span class="lineno">  167</span>    req = curl_easy_init();</div>
 <div class="line"><span class="lineno">  168</span>    <span class="keywordflow">if</span>(req) {</div>
 <div class="line"><span class="lineno">  169</span>      curl_easy_setopt(req, CURLOPT_URL, urlfull.c_str());</div>
@@ -318,7 +318,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  175</span>        res = curl_easy_perform(req);</div>
 <div class="line"><span class="lineno">  176</span>        <span class="keywordflow">if</span>(res != CURLE_OK)</div>
 <div class="line"><span class="lineno">  177</span>        {</div>
-<div class="line"><span class="lineno">  178</span>          RCLCPP_ERROR_STREAM(  get_logger(), <span class="stringliteral">&quot;curl send failed: &quot;</span> &lt;&lt; curl_easy_strerror(res));</div>
+<div class="line"><span class="lineno">  178</span>          RCLCPP_ERROR_STREAM(  <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;curl send failed: &quot;</span> &lt;&lt; curl_easy_strerror(res));</div>
 <div class="line"><span class="lineno">  179</span>          <span class="keywordflow">return</span> 1;</div>
 <div class="line"><span class="lineno">  180</span>        }</div>
 <div class="line"><span class="lineno">  181</span>      }</div>
@@ -327,10 +327,21 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  184</span> </div>
 <div class="line"><span class="lineno">  185</span>    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><span class="lineno">  186</span>  }</div>
+<div class="ttc" id="anamespacebasic__autonomy_html_a8e49f3ae1a0ea4e022da60318805e3e0"><div class="ttname"><a href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">basic_autonomy::get_logger</a></div><div class="ttdeci">rclcpp::Logger get_logger()</div><div class="ttdoc">Return the module-level logger used by all basic_autonomy functions.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00032">log.cpp:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00073">config_</a>, and <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00039">carma_cloud_client::Config::port</a>.</p>
+<p class="reference">References <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00073">config_</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, and <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00039">carma_cloud_client::Config::port</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00188">CloudSendAsync()</a>, and <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00086">tcr_callback()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarma__cloud__client_1_1CarmaCloudClient_ab697418e5b1158257bad1bc235c1d583_cgraph.png" border="0" usemap="#aclasscarma__cloud__client_1_1CarmaCloudClient_ab697418e5b1158257bad1bc235c1d583_cgraph" alt=""/></div>
+<map name="aclasscarma__cloud__client_1_1CarmaCloudClient_ab697418e5b1158257bad1bc235c1d583_cgraph" id="aclasscarma__cloud__client_1_1CarmaCloudClient_ab697418e5b1158257bad1bc235c1d583_cgraph">
+<area shape="rect" title="Send http request to carma cloud." alt="" coords="5,5,144,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="192,13,332,54"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="380,13,619,54"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -411,6 +422,8 @@ Here is the call graph for this function:</div>
 <map name="aclasscarma__cloud__client_1_1CarmaCloudClient_a6a245c83d03fe331c996074893c8d9d8_cgraph" id="aclasscarma__cloud__client_1_1CarmaCloudClient_a6a245c83d03fe331c996074893c8d9d8_cgraph">
 <area shape="rect" title="Send async http request to carma cloud." alt="" coords="5,5,144,61"/>
 <area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#ab697418e5b1158257bad1bc235c1d583" title="Send http request to carma cloud." alt="" coords="192,5,331,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="379,13,519,54"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="567,13,805,54"/>
 </map>
 </div>
 
@@ -434,7 +447,7 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00058">58</a> of file <a class="el" href="carma__cloud__client__node_8cpp_source.html">carma_cloud_client_node.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   59</span>  {</div>
-<div class="line"><span class="lineno">   60</span>    RCLCPP_DEBUG_STREAM(this-&gt;get_logger(), <span class="stringliteral">&quot;CarmaCloudClient trying to configure&quot;</span>);</div>
+<div class="line"><span class="lineno">   60</span>    RCLCPP_DEBUG_STREAM(this-&gt;<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;CarmaCloudClient trying to configure&quot;</span>);</div>
 <div class="line"><span class="lineno">   61</span>    <span class="comment">// Reset config</span></div>
 <div class="line"><span class="lineno">   62</span>    <a class="code hl_variable" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a643009675562624ec9b68cbd46404172">config_</a> = Config();</div>
 <div class="line"><span class="lineno">   63</span>    <span class="comment">// Load parameters</span></div>
@@ -465,26 +478,28 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclasscarma__cloud__client_1_1CarmaCloudClient_html_afd7abd1f1e4466a60006d823d823d892"><div class="ttname"><a href="classcarma__cloud__client_1_1CarmaCloudClient.html#afd7abd1f1e4466a60006d823d823d892">carma_cloud_client::CarmaCloudClient::StartWebService</a></div><div class="ttdeci">int StartWebService()</div><div class="ttdoc">Starts web service.</div><div class="ttdef"><b>Definition:</b> <a href="carma__cloud__client__node_8cpp_source.html#l00362">carma_cloud_client_node.cpp:362</a></div></div>
 <div class="ttc" id="aclasscarma__cloud__client_1_1CarmaCloudClient_html_aff14cdc803eff87bbf73719ee24d2298"><div class="ttname"><a href="classcarma__cloud__client_1_1CarmaCloudClient.html#aff14cdc803eff87bbf73719ee24d2298">carma_cloud_client::CarmaCloudClient::parameter_update_callback</a></div><div class="ttdeci">rcl_interfaces::msg::SetParametersResult parameter_update_callback(const std::vector&lt; rclcpp::Parameter &gt; &amp;parameters)</div><div class="ttdoc">callback for dynamic parameter updates</div><div class="ttdef"><b>Definition:</b> <a href="carma__cloud__client__node_8cpp_source.html#l00041">carma_cloud_client_node.cpp:41</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00036">carma_cloud_client::Config::base_ack</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00034">carma_cloud_client::Config::base_req</a>, <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00073">config_</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00043">carma_cloud_client::Config::fetchtime</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00041">carma_cloud_client::Config::list</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00037">carma_cloud_client::Config::method</a>, <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00041">parameter_update_callback()</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00039">carma_cloud_client::Config::port</a>, <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00362">StartWebService()</a>, <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00070">tcm_pub_</a>, <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00086">tcr_callback()</a>, <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00069">tcr_sub_</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00031">carma_cloud_client::Config::url</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00046">carma_cloud_client::Config::webip</a>, and <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00045">carma_cloud_client::Config::webport</a>.</p>
+<p class="reference">References <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00036">carma_cloud_client::Config::base_ack</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00034">carma_cloud_client::Config::base_req</a>, <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00073">config_</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00043">carma_cloud_client::Config::fetchtime</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00041">carma_cloud_client::Config::list</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00037">carma_cloud_client::Config::method</a>, <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00041">parameter_update_callback()</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00039">carma_cloud_client::Config::port</a>, <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00362">StartWebService()</a>, <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00070">tcm_pub_</a>, <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00086">tcr_callback()</a>, <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00069">tcr_sub_</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00031">carma_cloud_client::Config::url</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00046">carma_cloud_client::Config::webip</a>, and <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00045">carma_cloud_client::Config::webport</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__cloud__client_1_1CarmaCloudClient_a1813aa46114d0d36cd4de6c56bd1ab35_cgraph.png" border="0" usemap="#aclasscarma__cloud__client_1_1CarmaCloudClient_a1813aa46114d0d36cd4de6c56bd1ab35_cgraph" alt=""/></div>
 <map name="aclasscarma__cloud__client_1_1CarmaCloudClient_a1813aa46114d0d36cd4de6c56bd1ab35_cgraph" id="aclasscarma__cloud__client_1_1CarmaCloudClient_a1813aa46114d0d36cd4de6c56bd1ab35_cgraph">
-<area shape="rect" title=" " alt="" coords="5,91,145,147"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#aff14cdc803eff87bbf73719ee24d2298" title="callback for dynamic parameter updates" alt="" coords="193,11,375,67"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#afd7abd1f1e4466a60006d823d823d892" title="Starts web service." alt="" coords="215,91,353,147"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a235e21b0786bc1fd86185f932f8894f5" title="TCR subscription callback." alt="" coords="215,171,353,227"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#ab697418e5b1158257bad1bc235c1d583" title="Send http request to carma cloud." alt="" coords="423,131,561,187"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#aa9bee7b1b058329f9121ca67e071aa08" title="Funtion to Convert the TCR into XML format." alt="" coords="423,211,561,267"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29" title=" " alt="" coords="639,173,779,214"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="609,262,808,303"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#adcf6c7b8fa415af10c0cc489388fce40" title=" " alt="" coords="901,5,1041,61"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a50c675cb23fd3a743226b22287b32945" title=" " alt="" coords="902,85,1041,141"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a7cf9dd84c4528278ce20562def3047c3" title=" " alt="" coords="856,165,1087,221"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#ae5e3a18881b54fc666c13199ea6c7073" title=" " alt="" coords="887,245,1056,301"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a48389a44ecd9e272dbbcdebea32601fb" title=" " alt="" coords="875,325,1067,381"/>
-<area shape="rect" href="namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e" title="Transform the covariance matrix of a PoseWithCovariance message to a new frame." alt="" coords="1135,93,1277,134"/>
+<area shape="rect" title=" " alt="" coords="5,80,145,136"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="1136,177,1276,218"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#aff14cdc803eff87bbf73719ee24d2298" title="callback for dynamic parameter updates" alt="" coords="193,47,375,103"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#afd7abd1f1e4466a60006d823d823d892" title="Starts web service." alt="" coords="423,47,561,103"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a235e21b0786bc1fd86185f932f8894f5" title="TCR subscription callback." alt="" coords="215,178,353,234"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="1325,177,1564,218"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#ab697418e5b1158257bad1bc235c1d583" title="Send http request to carma cloud." alt="" coords="639,178,778,234"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#aa9bee7b1b058329f9121ca67e071aa08" title="Funtion to Convert the TCR into XML format." alt="" coords="423,304,561,360"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29" title=" " alt="" coords="639,373,779,414"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="609,462,808,504"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#adcf6c7b8fa415af10c0cc489388fce40" title=" " alt="" coords="901,286,1041,342"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a50c675cb23fd3a743226b22287b32945" title=" " alt="" coords="902,366,1041,422"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a7cf9dd84c4528278ce20562def3047c3" title=" " alt="" coords="856,446,1087,502"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#ae5e3a18881b54fc666c13199ea6c7073" title=" " alt="" coords="887,526,1056,582"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a48389a44ecd9e272dbbcdebea32601fb" title=" " alt="" coords="875,606,1067,662"/>
+<area shape="rect" href="namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e" title="Transform the covariance matrix of a PoseWithCovariance message to a new frame." alt="" coords="1135,373,1277,414"/>
 </map>
 </div>
 
@@ -1395,14 +1410,24 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  388</span>        <span class="keywordflow">return</span> 1;</div>
 <div class="line"><span class="lineno">  389</span>    }</div>
 <div class="line"><span class="lineno">  390</span> </div>
-<div class="line"><span class="lineno">  391</span>    RCLCPP_DEBUG_STREAM(this-&gt;get_logger(), <span class="stringliteral">&quot;CarmaCloudClient :: Started web service&quot;</span>);</div>
+<div class="line"><span class="lineno">  391</span>    RCLCPP_DEBUG_STREAM(this-&gt;<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;CarmaCloudClient :: Started web service&quot;</span>);</div>
 <div class="line"><span class="lineno">  392</span>    <span class="keywordflow">return</span> a.exec();</div>
 <div class="line"><span class="lineno">  393</span> </div>
 <div class="line"><span class="lineno">  394</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00073">config_</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00046">carma_cloud_client::Config::webip</a>, and <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00045">carma_cloud_client::Config::webport</a>.</p>
+<p class="reference">References <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00073">config_</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00046">carma_cloud_client::Config::webip</a>, and <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00045">carma_cloud_client::Config::webport</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00058">handle_on_configure()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarma__cloud__client_1_1CarmaCloudClient_afd7abd1f1e4466a60006d823d823d892_cgraph.png" border="0" usemap="#aclasscarma__cloud__client_1_1CarmaCloudClient_afd7abd1f1e4466a60006d823d823d892_cgraph" alt=""/></div>
+<map name="aclasscarma__cloud__client_1_1CarmaCloudClient_afd7abd1f1e4466a60006d823d823d892_cgraph" id="aclasscarma__cloud__client_1_1CarmaCloudClient_afd7abd1f1e4466a60006d823d823d892_cgraph">
+<area shape="rect" title="Starts web service." alt="" coords="5,5,144,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="192,13,332,54"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="380,13,619,54"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1463,11 +1488,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  253</span> </div>
 <div class="line"><span class="lineno">  254</span>    std::string tcm_string = _cloudUpdate;</div>
 <div class="line"><span class="lineno">  255</span> </div>
-<div class="line"><span class="lineno">  256</span>    RCLCPP_DEBUG_STREAM(  get_logger(), <span class="stringliteral">&quot;Received TCM from cloud&quot;</span>);</div>
-<div class="line"><span class="lineno">  257</span>    RCLCPP_DEBUG_STREAM(  get_logger(), <span class="stringliteral">&quot;TCM in XML format: &quot;</span> &lt;&lt; tcm_string);</div>
+<div class="line"><span class="lineno">  256</span>    RCLCPP_DEBUG_STREAM(  <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Received TCM from cloud&quot;</span>);</div>
+<div class="line"><span class="lineno">  257</span>    RCLCPP_DEBUG_STREAM(  <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;TCM in XML format: &quot;</span> &lt;&lt; tcm_string);</div>
 <div class="line"><span class="lineno">  258</span>    <span class="keywordflow">if</span>(tcm_string.length() == 0)</div>
 <div class="line"><span class="lineno">  259</span>    {</div>
-<div class="line"><span class="lineno">  260</span>      RCLCPP_DEBUG_STREAM(  get_logger(), <span class="stringliteral">&quot;Received TCM length is zero, and skipped.&quot;</span>);</div>
+<div class="line"><span class="lineno">  260</span>      RCLCPP_DEBUG_STREAM(  <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Received TCM length is zero, and skipped.&quot;</span>);</div>
 <div class="line"><span class="lineno">  261</span>      <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">  262</span>    }</div>
 <div class="line"><span class="lineno">  263</span> </div>
@@ -1504,21 +1529,23 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclasscarma__cloud__client_1_1CarmaCloudClient_html_aa99307f1d9fffac6c2d4b41e86a1aa98"><div class="ttname"><a href="classcarma__cloud__client_1_1CarmaCloudClient.html#aa99307f1d9fffac6c2d4b41e86a1aa98">carma_cloud_client::CarmaCloudClient::CONTENT_ENCODING_VALUE</a></div><div class="ttdeci">const char * CONTENT_ENCODING_VALUE</div><div class="ttdef"><b>Definition:</b> <a href="carma__cloud__client__node_8hpp_source.html#l00076">carma_cloud_client_node.hpp:76</a></div></div>
 <div class="ttc" id="aclasscarma__cloud__client_1_1CarmaCloudClient_html_ac5b2cf3bfd514e2c12c4b12bcf773e6e"><div class="ttname"><a href="classcarma__cloud__client_1_1CarmaCloudClient.html#ac5b2cf3bfd514e2c12c4b12bcf773e6e">carma_cloud_client::CarmaCloudClient::UncompressBytes</a></div><div class="ttdeci">QByteArray UncompressBytes(const QByteArray compressedBytes) const</div><div class="ttdoc">Uncompress bytes using zlib library.</div><div class="ttdef"><b>Definition:</b> <a href="carma__cloud__client__node_8cpp_source.html#l00196">carma_cloud_client_node.cpp:196</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00075">CONTENT_ENCODING_KEY</a>, <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00076">CONTENT_ENCODING_VALUE</a>, <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00293">parseTCMXML()</a>, <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00070">tcm_pub_</a>, and <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00196">UncompressBytes()</a>.</p>
+<p class="reference">References <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00075">CONTENT_ENCODING_KEY</a>, <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00076">CONTENT_ENCODING_VALUE</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00293">parseTCMXML()</a>, <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00070">tcm_pub_</a>, and <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00196">UncompressBytes()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__cloud__client_1_1CarmaCloudClient_a9e2141b3bc6c8e9ebeaf47933023ab13_cgraph.png" border="0" usemap="#aclasscarma__cloud__client_1_1CarmaCloudClient_a9e2141b3bc6c8e9ebeaf47933023ab13_cgraph" alt=""/></div>
 <map name="aclasscarma__cloud__client_1_1CarmaCloudClient_a9e2141b3bc6c8e9ebeaf47933023ab13_cgraph" id="aclasscarma__cloud__client_1_1CarmaCloudClient_a9e2141b3bc6c8e9ebeaf47933023ab13_cgraph">
-<area shape="rect" title="Handles the TCM received from CARMA Cloud." alt="" coords="5,165,144,221"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a924efffed8d6ed48d20294e38f45aa59" title="Parse xml package of tcm msg using boost property tree xml parser." alt="" coords="192,125,331,181"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#ac5b2cf3bfd514e2c12c4b12bcf773e6e" title="Uncompress bytes using zlib library." alt="" coords="192,205,331,261"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a153794bdca0ce40c774e972c3f98ac9a" title="Parse xml geometry subtree of tcm msg." alt="" coords="379,5,517,61"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a863a60435b44b3106a51d043093bbbd5" title="Convert Hex char to unsigned char." alt="" coords="379,85,517,141"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#af0d11c65a965edbd3453368988daa84c" title="Parse xml package subtree of tcm msg." alt="" coords="379,165,517,221"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a54c02700c33e25fed4e850335e8a09f4" title="Parse xml params subtree of tcm msg." alt="" coords="379,245,517,301"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#aee3fe349c4cffbdd29eb1220935abccc" title="Parse xml detail subtree of tcm msg." alt="" coords="565,205,704,261"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a608caea5eda3f672f1f55f21d3e9c449" title="Parse xml schedule subtree of tcm msg." alt="" coords="565,285,704,341"/>
+<area shape="rect" title="Handles the TCM received from CARMA Cloud." alt="" coords="5,63,144,119"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="379,5,519,47"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a924efffed8d6ed48d20294e38f45aa59" title="Parse xml package of tcm msg using boost property tree xml parser." alt="" coords="192,150,331,206"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#ac5b2cf3bfd514e2c12c4b12bcf773e6e" title="Uncompress bytes using zlib library." alt="" coords="192,63,331,119"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="567,5,805,47"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a153794bdca0ce40c774e972c3f98ac9a" title="Parse xml geometry subtree of tcm msg." alt="" coords="379,70,518,126"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a863a60435b44b3106a51d043093bbbd5" title="Convert Hex char to unsigned char." alt="" coords="379,150,518,206"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#af0d11c65a965edbd3453368988daa84c" title="Parse xml package subtree of tcm msg." alt="" coords="379,230,518,286"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a54c02700c33e25fed4e850335e8a09f4" title="Parse xml params subtree of tcm msg." alt="" coords="379,310,518,366"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#aee3fe349c4cffbdd29eb1220935abccc" title="Parse xml detail subtree of tcm msg." alt="" coords="617,270,755,326"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a608caea5eda3f672f1f55f21d3e9c449" title="Parse xml schedule subtree of tcm msg." alt="" coords="617,350,755,406"/>
 </map>
 </div>
 
@@ -1558,11 +1585,11 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   93</span> </div>
 <div class="line"><span class="lineno">   94</span>    <a class="code hl_function" href="classcarma__cloud__client_1_1CarmaCloudClient.html#ab697418e5b1158257bad1bc235c1d583">CloudSend</a>(xml_str, <a class="code hl_variable" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a643009675562624ec9b68cbd46404172">config_</a>.<a class="code hl_variable" href="structcarma__cloud__client_1_1Config.html#a4bc4e39f7a5a330ad647bdc3d5af63b7">url</a>, <a class="code hl_variable" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a643009675562624ec9b68cbd46404172">config_</a>.<a class="code hl_variable" href="structcarma__cloud__client_1_1Config.html#ab425e927b36593253439e2cdf3bac12d">base_req</a>, <a class="code hl_variable" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a643009675562624ec9b68cbd46404172">config_</a>.<a class="code hl_variable" href="structcarma__cloud__client_1_1Config.html#a5a03c6f612b18c57ead862fb88f616bf">method</a>);</div>
 <div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>    RCLCPP_DEBUG_STREAM(  get_logger(), <span class="stringliteral">&quot;tcr_sub_ callback called &quot;</span>);</div>
+<div class="line"><span class="lineno">   96</span>    RCLCPP_DEBUG_STREAM(  <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;tcr_sub_ callback called &quot;</span>);</div>
 <div class="line"><span class="lineno">   97</span>  }</div>
 <div class="ttc" id="aclasscarma__cloud__client_1_1CarmaCloudClient_html_aa9bee7b1b058329f9121ca67e071aa08"><div class="ttname"><a href="classcarma__cloud__client_1_1CarmaCloudClient.html#aa9bee7b1b058329f9121ca67e071aa08">carma_cloud_client::CarmaCloudClient::XMLconversion</a></div><div class="ttdeci">void XMLconversion(char *xml_str, carma_v2x_msgs::msg::TrafficControlRequest request_msg)</div><div class="ttdoc">Funtion to Convert the TCR into XML format.</div><div class="ttdef"><b>Definition:</b> <a href="carma__cloud__client__node_8cpp_source.html#l00099">carma_cloud_client_node.cpp:99</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00034">carma_cloud_client::Config::base_req</a>, <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00161">CloudSend()</a>, <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00073">config_</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00037">carma_cloud_client::Config::method</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00031">carma_cloud_client::Config::url</a>, and <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00099">XMLconversion()</a>.</p>
+<p class="reference">References <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00034">carma_cloud_client::Config::base_req</a>, <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00161">CloudSend()</a>, <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00073">config_</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00037">carma_cloud_client::Config::method</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00031">carma_cloud_client::Config::url</a>, and <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00099">XMLconversion()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00058">handle_on_configure()</a>.</p>
 <div class="dynheader">
@@ -1570,17 +1597,19 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__cloud__client_1_1CarmaCloudClient_a235e21b0786bc1fd86185f932f8894f5_cgraph.png" border="0" usemap="#aclasscarma__cloud__client_1_1CarmaCloudClient_a235e21b0786bc1fd86185f932f8894f5_cgraph" alt=""/></div>
 <map name="aclasscarma__cloud__client_1_1CarmaCloudClient_a235e21b0786bc1fd86185f932f8894f5_cgraph" id="aclasscarma__cloud__client_1_1CarmaCloudClient_a235e21b0786bc1fd86185f932f8894f5_cgraph">
-<area shape="rect" title="TCR subscription callback." alt="" coords="5,171,144,227"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#ab697418e5b1158257bad1bc235c1d583" title="Send http request to carma cloud." alt="" coords="192,131,331,187"/>
-<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#aa9bee7b1b058329f9121ca67e071aa08" title="Funtion to Convert the TCR into XML format." alt="" coords="192,211,331,267"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29" title=" " alt="" coords="408,173,548,214"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="379,262,577,303"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#adcf6c7b8fa415af10c0cc489388fce40" title=" " alt="" coords="671,5,811,61"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a50c675cb23fd3a743226b22287b32945" title=" " alt="" coords="671,85,810,141"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a7cf9dd84c4528278ce20562def3047c3" title=" " alt="" coords="625,165,856,221"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#ae5e3a18881b54fc666c13199ea6c7073" title=" " alt="" coords="656,245,825,301"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a48389a44ecd9e272dbbcdebea32601fb" title=" " alt="" coords="645,325,837,381"/>
-<area shape="rect" href="namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e" title="Transform the covariance matrix of a PoseWithCovariance message to a new frame." alt="" coords="904,93,1047,134"/>
+<area shape="rect" title="TCR subscription callback." alt="" coords="5,71,144,127"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#ab697418e5b1158257bad1bc235c1d583" title="Send http request to carma cloud." alt="" coords="192,5,331,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="905,129,1045,170"/>
+<area shape="rect" href="classcarma__cloud__client_1_1CarmaCloudClient.html#aa9bee7b1b058329f9121ca67e071aa08" title="Funtion to Convert the TCR into XML format." alt="" coords="192,201,331,257"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="1095,129,1333,170"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29" title=" " alt="" coords="408,274,548,315"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="379,363,577,405"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#adcf6c7b8fa415af10c0cc489388fce40" title=" " alt="" coords="671,187,811,243"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a50c675cb23fd3a743226b22287b32945" title=" " alt="" coords="671,267,810,323"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a7cf9dd84c4528278ce20562def3047c3" title=" " alt="" coords="625,347,856,403"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#ae5e3a18881b54fc666c13199ea6c7073" title=" " alt="" coords="656,427,825,483"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a48389a44ecd9e272dbbcdebea32601fb" title=" " alt="" coords="645,507,837,563"/>
+<area shape="rect" href="namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e" title="Transform the covariance matrix of a PoseWithCovariance message to a new frame." alt="" coords="904,274,1047,315"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1649,14 +1678,26 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  222</span>    }</div>
 <div class="line"><span class="lineno">  223</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  224</span>    {</div>
-<div class="line"><span class="lineno">  225</span>          RCLCPP_DEBUG_STREAM(  get_logger(), <span class="stringliteral">&quot;Error initalize stream. Err code = &quot;</span> &lt;&lt; err);</div>
+<div class="line"><span class="lineno">  225</span>          RCLCPP_DEBUG_STREAM(  <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Error initalize stream. Err code = &quot;</span> &lt;&lt; err);</div>
 <div class="line"><span class="lineno">  226</span>    }</div>
 <div class="line"><span class="lineno">  227</span>    <span class="comment">//Finished decompress data stream</span></div>
 <div class="line"><span class="lineno">  228</span>    inflateEnd(&amp;strm);</div>
 <div class="line"><span class="lineno">  229</span>    <span class="keywordflow">return</span> outBuf;</div>
 <div class="line"><span class="lineno">  230</span>  }</div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00232">TCMHandler()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcarma__cloud__client_1_1CarmaCloudClient_ac5b2cf3bfd514e2c12c4b12bcf773e6e_cgraph.png" border="0" usemap="#aclasscarma__cloud__client_1_1CarmaCloudClient_ac5b2cf3bfd514e2c12c4b12bcf773e6e_cgraph" alt=""/></div>
+<map name="aclasscarma__cloud__client_1_1CarmaCloudClient_ac5b2cf3bfd514e2c12c4b12bcf773e6e_cgraph" id="aclasscarma__cloud__client_1_1CarmaCloudClient_ac5b2cf3bfd514e2c12c4b12bcf773e6e_cgraph">
+<area shape="rect" title="Uncompress bytes using zlib library." alt="" coords="5,5,144,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="192,13,332,54"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="380,13,619,54"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1710,7 +1751,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  102</span> </div>
 <div class="line"><span class="lineno">  103</span>    <a class="code hl_function" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29">j2735_convertor::geofence_request::convert</a>(request_msg, j2735_tcr);</div>
 <div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>    RCLCPP_DEBUG_STREAM(  get_logger(), <span class="stringliteral">&quot;converted: &quot;</span>);</div>
+<div class="line"><span class="lineno">  105</span>    RCLCPP_DEBUG_STREAM(  <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;converted: &quot;</span>);</div>
 <div class="line"><span class="lineno">  106</span> </div>
 <div class="line"><span class="lineno">  107</span>    <span class="keywordtype">size_t</span> hexlen = 2; <span class="comment">//size of each hex representation with a leading 0</span></div>
 <div class="line"><span class="lineno">  108</span>    <span class="keywordtype">char</span> reqid[j2735_tcr.tcr_v01.reqid.id.size() * hexlen + 1];</div>
@@ -1719,13 +1760,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  111</span>      sprintf(reqid+(<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>*hexlen), <span class="stringliteral">&quot;%.2X&quot;</span>, j2735_tcr.tcr_v01.reqid.id[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]);</div>
 <div class="line"><span class="lineno">  112</span>    }</div>
 <div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>      RCLCPP_DEBUG_STREAM(  get_logger(), <span class="stringliteral">&quot;reqid: &quot;</span> &lt;&lt; reqid);</div>
+<div class="line"><span class="lineno">  114</span>      RCLCPP_DEBUG_STREAM(  <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;reqid: &quot;</span> &lt;&lt; reqid);</div>
 <div class="line"><span class="lineno">  115</span> </div>
 <div class="line"><span class="lineno">  116</span>    <span class="keywordtype">long</span> <span class="keywordtype">int</span> reqseq = j2735_tcr.tcr_v01.reqseq;</div>
-<div class="line"><span class="lineno">  117</span>    RCLCPP_DEBUG_STREAM(  get_logger(), <span class="stringliteral">&quot;reqseq: &quot;</span> &lt;&lt; reqseq);</div>
+<div class="line"><span class="lineno">  117</span>    RCLCPP_DEBUG_STREAM(  <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;reqseq: &quot;</span> &lt;&lt; reqseq);</div>
 <div class="line"><span class="lineno">  118</span> </div>
 <div class="line"><span class="lineno">  119</span>      <span class="keywordtype">long</span> <span class="keywordtype">int</span> scale = j2735_tcr.tcr_v01.scale;</div>
-<div class="line"><span class="lineno">  120</span>    RCLCPP_DEBUG_STREAM(  get_logger(), <span class="stringliteral">&quot;scale: &quot;</span> &lt;&lt; scale);</div>
+<div class="line"><span class="lineno">  120</span>    RCLCPP_DEBUG_STREAM(  <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;scale: &quot;</span> &lt;&lt; scale);</div>
 <div class="line"><span class="lineno">  121</span> </div>
 <div class="line"><span class="lineno">  122</span>    <span class="keywordtype">int</span> totBounds =  j2735_tcr.tcr_v01.bounds.size();</div>
 <div class="line"><span class="lineno">  123</span>    <span class="keywordtype">int</span> cnt=0;</div>
@@ -1762,7 +1803,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  154</span>    <span class="comment">// with port and list</span></div>
 <div class="line"><span class="lineno">  155</span>    sprintf(xml_str,<span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;&lt;TrafficControlRequest port=\&quot;%s\&quot; list=\&quot;%s\&quot;&gt;&lt;reqid&gt;%s&lt;/reqid&gt;&lt;reqseq&gt;%ld&lt;/reqseq&gt;&lt;scale&gt;%ld&lt;/scale&gt;%s&lt;/TrafficControlRequest&gt;&quot;</span>, <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">std::to_string</a>(<a class="code hl_variable" href="classcarma__cloud__client_1_1CarmaCloudClient.html#a643009675562624ec9b68cbd46404172">config_</a>.<a class="code hl_variable" href="structcarma__cloud__client_1_1Config.html#a6271b94e0d9f098fdcc6b1a4897a63e6">webport</a>).c_str(), list, reqid, reqseq,scale,bounds_str);</div>
 <div class="line"><span class="lineno">  156</span> </div>
-<div class="line"><span class="lineno">  157</span>    RCLCPP_DEBUG_STREAM(  get_logger(), <span class="stringliteral">&quot;xml_str: &quot;</span> &lt;&lt; xml_str);</div>
+<div class="line"><span class="lineno">  157</span>    RCLCPP_DEBUG_STREAM(  <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;xml_str: &quot;</span> &lt;&lt; xml_str);</div>
 <div class="line"><span class="lineno">  158</span> </div>
 <div class="line"><span class="lineno">  159</span>  }</div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_a64b708654c8aecb09122d39577df31b5"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5">carma_cooperative_perception::to_string</a></div><div class="ttdeci">auto to_string(const UtmZone &amp;zone) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="utm__zone_8cpp_source.html#l00021">utm_zone.cpp:21</a></div></div>
@@ -1770,7 +1811,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceosm__transform_html_a183883d606298855933692078471c4c7"><div class="ttname"><a href="namespaceosm__transform.html#a183883d606298855933692078471c4c7">osm_transform.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="osm__transform_8py_source.html#l00130">osm_transform.py:130</a></div></div>
 <div class="ttc" id="anamespaceosm__transform_html_ac0391cfd8b0bf43dd854fc2d1636ff07"><div class="ttname"><a href="namespaceosm__transform.html#ac0391cfd8b0bf43dd854fc2d1636ff07">osm_transform.lat</a></div><div class="ttdeci">lat</div><div class="ttdef"><b>Definition:</b> <a href="osm__transform_8py_source.html#l00111">osm_transform.py:111</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00073">config_</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00038">motion_computation::conversion::convert()</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00043">carma_cloud_client::Config::fetchtime</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="osm__transform_8py_source.html#l00111">osm_transform::lat</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00041">carma_cloud_client::Config::list</a>, <a class="el" href="utm__zone_8cpp_source.html#l00021">carma_cooperative_perception::to_string()</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00045">carma_cloud_client::Config::webport</a>, and <a class="el" href="osm__transform_8py_source.html#l00130">osm_transform::x</a>.</p>
+<p class="reference">References <a class="el" href="carma__cloud__client__node_8hpp_source.html#l00073">config_</a>, <a class="el" href="psm__to__external__object__convertor_8cpp_source.html#l00038">motion_computation::conversion::convert()</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00043">carma_cloud_client::Config::fetchtime</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, <a class="el" href="osm__transform_8py_source.html#l00111">osm_transform::lat</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00041">carma_cloud_client::Config::list</a>, <a class="el" href="utm__zone_8cpp_source.html#l00021">carma_cooperative_perception::to_string()</a>, <a class="el" href="carma__cloud__client__config_8hpp_source.html#l00045">carma_cloud_client::Config::webport</a>, and <a class="el" href="osm__transform_8py_source.html#l00130">osm_transform::x</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="carma__cloud__client__node_8cpp_source.html#l00086">tcr_callback()</a>.</p>
 <div class="dynheader">
@@ -1778,15 +1819,17 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcarma__cloud__client_1_1CarmaCloudClient_aa9bee7b1b058329f9121ca67e071aa08_cgraph.png" border="0" usemap="#aclasscarma__cloud__client_1_1CarmaCloudClient_aa9bee7b1b058329f9121ca67e071aa08_cgraph" alt=""/></div>
 <map name="aclasscarma__cloud__client_1_1CarmaCloudClient_aa9bee7b1b058329f9121ca67e071aa08_cgraph" id="aclasscarma__cloud__client_1_1CarmaCloudClient_aa9bee7b1b058329f9121ca67e071aa08_cgraph">
-<area shape="rect" title="Funtion to Convert the TCR into XML format." alt="" coords="5,211,144,267"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29" title=" " alt="" coords="221,173,361,214"/>
-<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="192,262,391,303"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#adcf6c7b8fa415af10c0cc489388fce40" title=" " alt="" coords="484,5,624,61"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a50c675cb23fd3a743226b22287b32945" title=" " alt="" coords="485,85,623,141"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a7cf9dd84c4528278ce20562def3047c3" title=" " alt="" coords="439,165,669,221"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#ae5e3a18881b54fc666c13199ea6c7073" title=" " alt="" coords="469,245,639,301"/>
-<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a48389a44ecd9e272dbbcdebea32601fb" title=" " alt="" coords="458,325,650,381"/>
-<area shape="rect" href="namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e" title="Transform the covariance matrix of a PoseWithCovariance message to a new frame." alt="" coords="717,93,860,134"/>
+<area shape="rect" title="Funtion to Convert the TCR into XML format." alt="" coords="5,161,144,217"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion.html#a9884e63460f3d5f5e2b755354984dc29" title=" " alt="" coords="221,169,361,210"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="719,129,859,170"/>
+<area shape="rect" href="namespacecarma__cooperative__perception.html#a64b708654c8aecb09122d39577df31b5" title=" " alt="" coords="192,258,391,299"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#adcf6c7b8fa415af10c0cc489388fce40" title=" " alt="" coords="484,121,624,177"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a50c675cb23fd3a743226b22287b32945" title=" " alt="" coords="485,361,623,417"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a7cf9dd84c4528278ce20562def3047c3" title=" " alt="" coords="439,201,669,257"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#ae5e3a18881b54fc666c13199ea6c7073" title=" " alt="" coords="469,281,639,337"/>
+<area shape="rect" href="namespacemotion__computation_1_1conversion_1_1impl.html#a48389a44ecd9e272dbbcdebea32601fb" title=" " alt="" coords="458,41,650,97"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="908,129,1147,170"/>
+<area shape="rect" href="namespacecovariance__helper.html#af38530465ec3a2a40b4e9be14032f65e" title="Transform the covariance matrix of a PoseWithCovariance message to a new frame." alt="" coords="717,369,860,410"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1943,7 +1986,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecarma__cloud__client.html">carma_cloud_client</a></li><li class="navelem"><a class="el" href="classcarma__cloud__client_1_1CarmaCloudClient.html">CarmaCloudClient</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 13:11:06 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 17 2026 17:53:38 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

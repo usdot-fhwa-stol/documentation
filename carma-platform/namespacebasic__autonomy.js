@@ -1,5 +1,8 @@
 var namespacebasic__autonomy =
 [
+    [ "anonymous_namespace{log.cpp}", "namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html", [
+      [ "module_logger", "namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53", null ]
+    ] ],
     [ "log", "namespacebasic__autonomy_1_1log.html", [
       [ "basicPointToStream", "namespacebasic__autonomy_1_1log.html#a9123a8bedcfb34f1e6c1336f226956fb", null ],
       [ "pointSpeedPairToStream", "namespacebasic__autonomy_1_1log.html#aa5d9aec52bb2d67d8b163be5d2366c8e", null ],
@@ -9,5 +12,6 @@ var namespacebasic__autonomy =
     ] ],
     [ "smoothing", "namespacebasic__autonomy_1_1smoothing.html", "namespacebasic__autonomy_1_1smoothing" ],
     [ "waypoint_generation", "namespacebasic__autonomy_1_1waypoint__generation.html", "namespacebasic__autonomy_1_1waypoint__generation" ],
-    [ "BASIC_AUTONOMY_LOGGER", "namespacebasic__autonomy.html#ae8302914f82f374170163619a939ef6b", null ]
+    [ "get_logger", "namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0", null ],
+    [ "set_logger", "namespacebasic__autonomy.html#a7cd8e9c94ef00cfc37997842da3ff29c", null ]
 ];

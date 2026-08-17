@@ -338,7 +338,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a1c77c58bdbbfe1ba4d075c7fc0e5e2f4">  250</a></span><span class="keyword">auto</span> <a class="code hl_function" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a1c77c58bdbbfe1ba4d075c7fc0e5e2f4">MultipleObjectTrackerNode::handle_on_configure</a>(</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <span class="keyword">const</span> rclcpp_lifecycle::State &amp; <span class="comment">/* previous_state */</span>) -&gt; carma_ros2_utils::CallbackReturn</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>{</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: configuring&quot;</span>);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: configuring&quot;</span>);</div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  track_list_pub_ = create_publisher&lt;carma_cooperative_perception_interfaces::msg::TrackList&gt;(</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="stringliteral">&quot;output/track_list&quot;</span>, 1);</div>
@@ -351,7 +351,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        this-&gt;store_new_detections(*msg_ptr);</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>      } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        RCLCPP_WARN(</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>          this-&gt;get_logger(),</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>          this-&gt;<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(),</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>          <span class="stringliteral">&quot;Trying to receive message on the topic &#39;%s&#39;, but the containing node is not activated. &quot;</span></div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>          <span class="stringliteral">&quot;Current node state: &#39;%s&#39;&quot;</span>,</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>          this-&gt;detection_list_sub_-&gt;get_topic_name(), current_state.c_str());</div>
@@ -403,7 +403,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            result.reason = <span class="stringliteral">&quot;parameter is read-only while node is in &#39;Active&#39; state&quot;</span>;</div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>            RCLCPP_ERROR(</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>              get_logger(),</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>              <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(),</div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>              (<span class="stringliteral">&quot;Cannot change parameter &#39;execution_frequency_hz&#39;: &quot;</span> + result.reason).c_str());</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>            <span class="keywordflow">break</span>;</div>
@@ -434,7 +434,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  declare_parameter(</div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    <span class="stringliteral">&quot;track_removal_threshold&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(track_manager_.get_promotion_threshold().value));</div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: successfully configured&quot;</span>);</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: successfully configured&quot;</span>);</div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>}</div>
@@ -442,7 +442,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno"><a class="line" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a4d9d931a84b9f67e2e4ed86f04369e44">  354</a></span><span class="keyword">auto</span> MultipleObjectTrackerNode::handle_on_activate(</div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  <span class="keyword">const</span> rclcpp_lifecycle::State &amp; <span class="comment">/* previous_state */</span>) -&gt; carma_ros2_utils::CallbackReturn</div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>{</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: activating&quot;</span>);</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: activating&quot;</span>);</div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>  <span class="keywordflow">if</span> (pipeline_execution_timer_ != <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    <span class="comment">// The user might have changed the timer period since last time the Node was active</span></div>
@@ -453,7 +453,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>  pipeline_execution_timer_ =</div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    rclcpp::create_timer(<span class="keyword">this</span>, this-&gt;get_clock(), period_ns, [<span class="keyword">this</span>] { execute_pipeline(); });</div>
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: successfully activated&quot;</span>);</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: successfully activated&quot;</span>);</div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span> </div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>}</div>
@@ -461,13 +461,13 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno"><a class="line" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a671cccb47c088c9013cd56a3d7630e27">  373</a></span><span class="keyword">auto</span> MultipleObjectTrackerNode::handle_on_deactivate(</div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>  <span class="keyword">const</span> rclcpp_lifecycle::State &amp; <span class="comment">/* previous_state */</span>) -&gt; carma_ros2_utils::CallbackReturn</div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>{</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: deactivating&quot;</span>);</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: deactivating&quot;</span>);</div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span> </div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>  <span class="comment">// There is currently no way to change a timer&#39;s period in ROS 2, so we will</span></div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>  <span class="comment">// have to create a new one in case a user changes the period.</span></div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>  pipeline_execution_timer_.reset();</div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: successfully deactivated&quot;</span>);</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: successfully deactivated&quot;</span>);</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>}</div>
@@ -475,7 +475,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno"><a class="line" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a15da32cc742eb606e05bea4623c9213e">  387</a></span><span class="keyword">auto</span> MultipleObjectTrackerNode::handle_on_cleanup(</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>  <span class="keyword">const</span> rclcpp_lifecycle::State &amp; <span class="comment">/* previous_state */</span>) -&gt; carma_ros2_utils::CallbackReturn</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>{</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: cleaning up&quot;</span>);</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: cleaning up&quot;</span>);</div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span> </div>
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>  <span class="comment">// CarmaLifecycleNode does not handle subscriber pointer reseting for us</span></div>
 <div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>  detection_list_sub_.reset();</div>
@@ -483,7 +483,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>  undeclare_parameter(<span class="stringliteral">&quot;execution_frequency_hz&quot;</span>);</div>
 <div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>  remove_on_set_parameters_callback(on_set_parameters_callback_.get());</div>
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span> </div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: successfully cleaned up&quot;</span>);</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: successfully cleaned up&quot;</span>);</div>
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>}</div>
@@ -491,12 +491,12 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno"><a class="line" href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a76e2c9adadcf7fc0a701dab903775037">  403</a></span><span class="keyword">auto</span> MultipleObjectTrackerNode::handle_on_shutdown(</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>  <span class="keyword">const</span> rclcpp_lifecycle::State &amp; <span class="comment">/* previous_state */</span>) -&gt; carma_ros2_utils::CallbackReturn</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>{</div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: shutting down&quot;</span>);</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: shutting down&quot;</span>);</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span> </div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>  <span class="comment">// CarmaLifecycleNode does not handle subscriber pointer reseting for us</span></div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  detection_list_sub_.reset();</div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>  RCLCPP_INFO(get_logger(), <span class="stringliteral">&quot;Lifecycle transition: successfully shut down&quot;</span>);</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>  RCLCPP_INFO(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Lifecycle transition: successfully shut down&quot;</span>);</div>
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span> </div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>  <span class="keywordflow">return</span> carma_ros2_utils::CallbackReturn::SUCCESS;</div>
 <div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>}</div>
@@ -505,7 +505,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>  <span class="keyword">const</span> carma_cooperative_perception_interfaces::msg::DetectionList &amp; msg) -&gt; <span class="keywordtype">void</span></div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>{</div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>  <span class="keywordflow">if</span> (std::size(msg.detections) == 0) {</div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    RCLCPP_WARN(this-&gt;get_logger(), <span class="stringliteral">&quot;Not storing detections: incoming detection list is empty&quot;</span>);</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    RCLCPP_WARN(this-&gt;<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Not storing detections: incoming detection list is empty&quot;</span>);</div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>  }</div>
 <div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
@@ -519,13 +519,13 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>        uuid_index_map_[uuid] = std::size(detections_) - 1;</div>
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>      } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>        RCLCPP_WARN_STREAM(</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>          this-&gt;get_logger(),</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>          this-&gt;<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(),</div>
 <div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>          <span class="stringliteral">&quot;Detection with ID &#39;&quot;</span> &lt;&lt; uuid &lt;&lt; <span class="stringliteral">&quot;&#39; already exists. Overwriting its data&quot;</span>);</div>
 <div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        detections_.at(uuid_index_map_[uuid]) = detection;</div>
 <div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>      }</div>
 <div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::runtime_error &amp; error) {</div>
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>      RCLCPP_ERROR(</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>        this-&gt;get_logger(), <span class="stringliteral">&quot;Ignoring detection with ID &#39;%s&#39;: %s&quot;</span>, detection_msg.id.c_str(),</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>        this-&gt;<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Ignoring detection with ID &#39;%s&#39;: %s&quot;</span>, detection_msg.id.c_str(),</div>
 <div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>        error.what());</div>
 <div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    }</div>
 <div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>  }</div>
@@ -655,12 +655,12 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
 <div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>  <span class="keywordflow">if</span> (track_manager_.get_all_tracks().empty()) {</div>
 <div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>    RCLCPP_DEBUG(</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>      get_logger(), <span class="stringliteral">&quot;List of tracks is empty. Converting detections to tentative tracks&quot;</span>);</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>      <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;List of tracks is empty. Converting detections to tentative tracks&quot;</span>);</div>
 <div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span> </div>
 <div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>    <span class="comment">// This clustering distance is an arbitrarily-chosen heuristic. It is working well for our</span></div>
 <div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>    <span class="comment">// current purposes, but there&#39;s no reason it couldn&#39;t be restricted or loosened.</span></div>
 <div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>      get_logger(), <span class="stringliteral">&quot;Detection size before clustering: &quot;</span> &lt;&lt; detections_.size());</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>      <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Detection size before clustering: &quot;</span> &lt;&lt; detections_.size());</div>
 <div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    <span class="keyword">const</span> <span class="keyword">auto</span> clusters{mot::cluster_detections(detections_, 0.75)};</div>
 <div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; cluster : clusters) {</div>
 <div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>      <span class="keyword">const</span> <span class="keyword">auto</span> detection{std::cbegin(cluster.get_detections())-&gt;second};</div>
@@ -674,7 +674,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>        std::visit(make_track_visitor, detection, std::variant&lt;mot::Uuid&gt;(new_uuid)));</div>
 <div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>    }</div>
 <div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>    RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>      get_logger(), <span class="stringliteral">&quot;Track size after detection clustering: &quot;</span></div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>      <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Track size after detection clustering: &quot;</span></div>
 <div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>      &lt;&lt; track_manager_.get_all_tracks().size());</div>
 <div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>    track_list_pub_-&gt;publish(carma_cooperative_perception_interfaces::msg::TrackList{});</div>
 <div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span> </div>
@@ -685,13 +685,13 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span> </div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>  <span class="keyword">const</span> units::time::second_t current_time{this-&gt;now().seconds()};</div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>  RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    get_logger(), <span class="stringliteral">&quot;Starting new cycle, detection size: &quot;</span> &lt;&lt; detections_.size());</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Starting new cycle, detection size: &quot;</span> &lt;&lt; detections_.size());</div>
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span> </div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>  <a class="code hl_function" href="namespacecarma__cooperative__perception.html#a15cb67e02f6f82074e6766be6bc0ba4a">temporally_align_detections</a>(detections_, current_time);</div>
 <div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span> </div>
 <div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>  <span class="keyword">const</span> <span class="keyword">auto</span> predicted_tracks{<a class="code hl_function" href="namespacecarma__cooperative__perception.html#a669575db946436c8a91bcbbc79c6a6b4">predict_track_states</a>(track_manager_.get_all_tracks(), current_time)};</div>
 <div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>  RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    get_logger(), <span class="stringliteral">&quot;Track size after prediction: &quot;</span> &lt;&lt; predicted_tracks.size());</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Track size after prediction: &quot;</span> &lt;&lt; predicted_tracks.size());</div>
 <div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>  <span class="keyword">auto</span> scores{</div>
 <div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>    mot::score_tracks_and_detections(predicted_tracks, detections_, <a class="code hl_struct" href="structcarma__cooperative__perception_1_1SemanticDistance2dScore.html">SemanticDistance2dScore</a>{})};</div>
 <div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span> </div>
@@ -704,7 +704,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span> </div>
 <div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>  track_manager_.update_track_lists(associations);</div>
 <div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>  RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    get_logger(), <span class="stringliteral">&quot;Track size after association: &quot;</span> &lt;&lt; track_manager_.get_all_tracks().size());</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Track size after association: &quot;</span> &lt;&lt; track_manager_.get_all_tracks().size());</div>
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>  std::unordered_map&lt;mot::Uuid, Detection&gt; detection_map;</div>
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp; detection : detections_) {</div>
 <div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    detection_map[mot::get_uuid(detection)] = detection;</div>
@@ -719,7 +719,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>        std::visit(mot::covariance_intersection_visitor, track, first_detection)};</div>
 <div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>      track_manager_.update_track(mot::get_uuid(track), fused_track);</div>
 <div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>      RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>        get_logger(), <span class="stringliteral">&quot;Updating track: &quot;</span> &lt;&lt; mot::get_uuid(track).value());</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>        <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Updating track: &quot;</span> &lt;&lt; mot::get_uuid(track).value());</div>
 <div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    }</div>
 <div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>  }</div>
 <div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span> </div>
@@ -732,7 +732,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    }</div>
 <div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>  }</div>
 <div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>  RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>    get_logger(), <span class="stringliteral">&quot;Unassociated detection size: &quot;</span> &lt;&lt; unassociated_detections.size());</div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>    <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Unassociated detection size: &quot;</span> &lt;&lt; unassociated_detections.size());</div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span> </div>
 <div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>  <span class="comment">// We want to remove unassociated tracks that are close enough to existing tracks</span></div>
 <div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>  <span class="comment">// to avoid creating duplicates. Duplicate tracks will cause association inconsistencies</span></div>
@@ -756,7 +756,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>  unassociated_detections.erase(remove_start, std::end(unassociated_detections));</div>
 <div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span> </div>
 <div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>  RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>    get_logger(), <span class="stringliteral">&quot;Unassociated detection size after removal: &quot;</span></div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>    <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Unassociated detection size after removal: &quot;</span></div>
 <div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>    &lt;&lt; unassociated_detections.size());</div>
 <div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span> </div>
 <div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>  <span class="comment">// This clustering distance is an arbitrarily-chosen heuristic. It is working well for our</span></div>
@@ -775,7 +775,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>  }</div>
 <div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span> </div>
 <div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>  RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>    get_logger(), <span class="stringliteral">&quot;Track size after adding unassociated detections: &quot;</span></div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>    <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Track size after adding unassociated detections: &quot;</span></div>
 <div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    &lt;&lt; track_manager_.get_all_tracks().size());</div>
 <div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span> </div>
 <div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>  carma_cooperative_perception_interfaces::msg::TrackList track_list;</div>
@@ -784,7 +784,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>  }</div>
 <div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span> </div>
 <div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>  RCLCPP_DEBUG_STREAM(</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>    get_logger(), <span class="stringliteral">&quot;Confirmed Track size after converting to ROS message: &quot;</span></div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>    <a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Confirmed Track size after converting to ROS message: &quot;</span></div>
 <div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>    &lt;&lt; track_list.tracks.size());</div>
 <div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>  track_list_pub_-&gt;publish(track_list);</div>
 <div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span> </div>
@@ -801,6 +801,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a031c2bba273373d9b7b7bc47b4c4d377"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a031c2bba273373d9b7b7bc47b4c4d377">carma_cooperative_perception::MultipleObjectTrackerNode::MultipleObjectTrackerNode</a></div><div class="ttdeci">MultipleObjectTrackerNode(const rclcpp::NodeOptions &amp;options)</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00245">multiple_object_tracker_component.cpp:245</a></div></div>
 <div class="ttc" id="aclasscarma__cooperative__perception_1_1MultipleObjectTrackerNode_html_a1c77c58bdbbfe1ba4d075c7fc0e5e2f4"><div class="ttname"><a href="classcarma__cooperative__perception_1_1MultipleObjectTrackerNode.html#a1c77c58bdbbfe1ba4d075c7fc0e5e2f4">carma_cooperative_perception::MultipleObjectTrackerNode::handle_on_configure</a></div><div class="ttdeci">auto handle_on_configure(const rclcpp_lifecycle::State &amp;) -&gt; carma_ros2_utils::CallbackReturn override</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00250">multiple_object_tracker_component.cpp:250</a></div></div>
 <div class="ttc" id="amultiple__object__tracker__component_8hpp_html"><div class="ttname"><a href="multiple__object__tracker__component_8hpp.html">multiple_object_tracker_component.hpp</a></div></div>
+<div class="ttc" id="anamespacebasic__autonomy_html_a8e49f3ae1a0ea4e022da60318805e3e0"><div class="ttname"><a href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">basic_autonomy::get_logger</a></div><div class="ttdeci">rclcpp::Logger get_logger()</div><div class="ttdoc">Return the module-level logger used by all basic_autonomy functions.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00032">log.cpp:32</a></div></div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html"><div class="ttname"><a href="namespacecarma__cooperative__perception.html">carma_cooperative_perception</a></div><div class="ttdef"><b>Definition:</b> <a href="detection__list__viz__component_8hpp_source.html#l00022">detection_list_viz_component.hpp:23</a></div></div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_a15cb67e02f6f82074e6766be6bc0ba4a"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a15cb67e02f6f82074e6766be6bc0ba4a">carma_cooperative_perception::temporally_align_detections</a></div><div class="ttdeci">static auto temporally_align_detections(std::vector&lt; Detection &gt; &amp;detections, units::time::second_t end_time) -&gt; void</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00446">multiple_object_tracker_component.cpp:446</a></div></div>
 <div class="ttc" id="anamespacecarma__cooperative__perception_html_a219bbbe418d854cb95f4872622ac8c76"><div class="ttname"><a href="namespacecarma__cooperative__perception.html#a219bbbe418d854cb95f4872622ac8c76">carma_cooperative_perception::make_ctra_detection</a></div><div class="ttdeci">auto make_ctra_detection(const carma_cooperative_perception_interfaces::msg::Detection &amp;msg) -&gt; Detection</div><div class="ttdef"><b>Definition:</b> <a href="multiple__object__tracker__component_8cpp_source.html#l00115">multiple_object_tracker_component.cpp:115</a></div></div>
@@ -830,7 +831,7 @@ $(document).ready(function(){initNavTree('multiple__object__tracker__component_8
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_de73b34821d297bc7072366944012629.html">carma_cooperative_perception</a></li><li class="navelem"><a class="el" href="dir_18b6d8ada02823679ceefdf3a51fdefd.html">src</a></li><li class="navelem"><a class="el" href="multiple__object__tracker__component_8cpp.html">multiple_object_tracker_component.cpp</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 13:11:03 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 17 2026 17:53:35 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

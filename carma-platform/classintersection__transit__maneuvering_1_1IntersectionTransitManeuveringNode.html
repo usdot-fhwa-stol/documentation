@@ -329,7 +329,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  235</span>        std::vector&lt;carma_planning_msgs::msg::Maneuver&gt; new_maneuver_plan;</div>
 <div class="line"><span class="lineno">  236</span>        carma_planning_msgs::msg::Maneuver new_maneuver;</div>
 <div class="line"><span class="lineno">  237</span>        new_maneuver.type = carma_planning_msgs::msg::Maneuver::LANE_FOLLOWING; <span class="comment">//All of the converted maneuvers will be of type LANE_FOLLOWING</span></div>
-<div class="line"><span class="lineno">  238</span>        RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Input Maneuver Type = &quot;</span>&lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(maneuvers.front().type));</div>
+<div class="line"><span class="lineno">  238</span>        RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Input Maneuver Type = &quot;</span>&lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(maneuvers.front().type));</div>
 <div class="line"><span class="lineno">  239</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; maneuver : maneuvers)</div>
 <div class="line"><span class="lineno">  240</span>        {</div>
 <div class="line"><span class="lineno">  241</span>            <span class="comment">//Throw exception if the manuever type does not match INTERSECTION_TRANSIT</span></div>
@@ -343,7 +343,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  249</span>            <span class="comment">//Convert IT Straight</span></div>
 <div class="line"><span class="lineno">  250</span>            <span class="keywordflow">if</span> (maneuver.type == carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_STRAIGHT)</div>
 <div class="line"><span class="lineno">  251</span>            {</div>
-<div class="line"><span class="lineno">  252</span>                RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Converting INTERSECTION_TRANSIT_STRAIGHT&quot;</span>);</div>
+<div class="line"><span class="lineno">  252</span>                RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Converting INTERSECTION_TRANSIT_STRAIGHT&quot;</span>);</div>
 <div class="line"><span class="lineno">  253</span> </div>
 <div class="line"><span class="lineno">  254</span>                new_maneuver.lane_following_maneuver.parameters.maneuver_id = maneuver.intersection_transit_straight_maneuver.parameters.maneuver_id;</div>
 <div class="line"><span class="lineno">  255</span>                new_maneuver.lane_following_maneuver.parameters.planning_strategic_plugin = maneuver.intersection_transit_straight_maneuver.parameters.planning_strategic_plugin;</div>
@@ -368,7 +368,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  274</span>             <span class="comment">//Convert IT LEFT TURN</span></div>
 <div class="line"><span class="lineno">  275</span>            <span class="keywordflow">if</span> (maneuver.type == carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_LEFT_TURN)</div>
 <div class="line"><span class="lineno">  276</span>            {</div>
-<div class="line"><span class="lineno">  277</span>                RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Converting INTERSECTION_TRANSIT_LEFT_TURN&quot;</span>);</div>
+<div class="line"><span class="lineno">  277</span>                RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Converting INTERSECTION_TRANSIT_LEFT_TURN&quot;</span>);</div>
 <div class="line"><span class="lineno">  278</span> </div>
 <div class="line"><span class="lineno">  279</span>                new_maneuver.lane_following_maneuver.parameters.maneuver_id = maneuver.intersection_transit_left_turn_maneuver.parameters.maneuver_id;</div>
 <div class="line"><span class="lineno">  280</span>                new_maneuver.lane_following_maneuver.parameters.planning_strategic_plugin = maneuver.intersection_transit_left_turn_maneuver.parameters.planning_strategic_plugin;</div>
@@ -393,7 +393,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  299</span>            <span class="keywordflow">if</span> (maneuver.type == carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_RIGHT_TURN)</div>
 <div class="line"><span class="lineno">  300</span>            {</div>
 <div class="line"><span class="lineno">  301</span> </div>
-<div class="line"><span class="lineno">  302</span>                RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Converting INTERSECTION_TRANSIT_RIGHT_TURN&quot;</span>);</div>
+<div class="line"><span class="lineno">  302</span>                RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Converting INTERSECTION_TRANSIT_RIGHT_TURN&quot;</span>);</div>
 <div class="line"><span class="lineno">  303</span> </div>
 <div class="line"><span class="lineno">  304</span>                new_maneuver.lane_following_maneuver.parameters.maneuver_id = maneuver.intersection_transit_right_turn_maneuver.parameters.maneuver_id;</div>
 <div class="line"><span class="lineno">  305</span>                new_maneuver.lane_following_maneuver.parameters.planning_strategic_plugin = maneuver.intersection_transit_right_turn_maneuver.parameters.planning_strategic_plugin;</div>
@@ -414,15 +414,28 @@ Private Attributes</h2></td></tr>
 <div class="line"><span class="lineno">  320</span>                new_maneuver_plan.push_back(new_maneuver);</div>
 <div class="line"><span class="lineno">  321</span>            }</div>
 <div class="line"><span class="lineno">  322</span> </div>
-<div class="line"><span class="lineno">  323</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Original Maneuver : &quot;</span> &lt;&lt; maneuver &lt;&lt; std::endl &lt;&lt;   <span class="stringliteral">&quot;Converted Maneuver: &quot;</span> &lt;&lt; new_maneuver);</div>
+<div class="line"><span class="lineno">  323</span>            RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Original Maneuver : &quot;</span> &lt;&lt; maneuver &lt;&lt; std::endl &lt;&lt;   <span class="stringliteral">&quot;Converted Maneuver: &quot;</span> &lt;&lt; new_maneuver);</div>
 <div class="line"><span class="lineno">  324</span>  </div>
 <div class="line"><span class="lineno">  325</span>        }<span class="comment">//end for-loop </span></div>
 <div class="line"><span class="lineno">  326</span> </div>
 <div class="line"><span class="lineno">  327</span>        <span class="keywordflow">return</span> new_maneuver_plan; </div>
 <div class="line"><span class="lineno">  328</span> </div>
 <div class="line"><span class="lineno">  329</span>    }</div>
+<div class="ttc" id="anamespacebasic__autonomy_html_a8e49f3ae1a0ea4e022da60318805e3e0"><div class="ttname"><a href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">basic_autonomy::get_logger</a></div><div class="ttdeci">rclcpp::Logger get_logger()</div><div class="ttdoc">Return the module-level logger used by all basic_autonomy functions.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00032">log.cpp:32</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="intersection__transit__maneuvering_8cpp_source.html#l00160">plan_trajectory_callback()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_a41542885695879cee0a19c2c52642ce5_cgraph.png" border="0" usemap="#aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_a41542885695879cee0a19c2c52642ce5_cgraph" alt=""/></div>
+<map name="aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_a41542885695879cee0a19c2c52642ce5_cgraph" id="aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_a41542885695879cee0a19c2c52642ce5_cgraph">
+<area shape="rect" title="Converts a sequence of INTERSECTION_TRANSIT maneuvers to LANE_FOLLOWING maneuvers." alt="" coords="5,5,276,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="324,13,464,54"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="512,13,751,54"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -534,7 +547,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="intersection__transit__maneuvering_8cpp_source.html#l00136">136</a> of file <a class="el" href="intersection__transit__maneuvering_8cpp_source.html">intersection_transit_maneuvering.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  137</span>{</div>
-<div class="line"><span class="lineno">  138</span> RCLCPP_INFO_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>), <span class="stringliteral">&quot;IntersectionTransitManeuveringNode trying to configure&quot;</span>);</div>
+<div class="line"><span class="lineno">  138</span> RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>), <span class="stringliteral">&quot;IntersectionTransitManeuveringNode trying to configure&quot;</span>);</div>
 <div class="line"><span class="lineno">  139</span>                        </div>
 <div class="line"><span class="lineno">  140</span> <a class="code hl_variable" href="classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#a9fbeafa486c4ef25ad427540fe7cea78">object_</a> = std::make_shared&lt;intersection_transit_maneuvering::Servicer&gt;();</div>
 <div class="line"><span class="lineno">  141</span> </div>
@@ -549,7 +562,17 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_html_a1a99cc9cd20e4fe8253da48deca1531c"><div class="ttname"><a href="classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#a1a99cc9cd20e4fe8253da48deca1531c">intersection_transit_maneuvering::IntersectionTransitManeuveringNode::client_</a></div><div class="ttdeci">carma_ros2_utils::ClientPtr&lt; carma_planning_msgs::srv::PlanTrajectory &gt; client_</div><div class="ttdef"><b>Definition:</b> <a href="intersection__transit__maneuvering__node_8hpp_source.html#l00044">intersection_transit_maneuvering_node.hpp:44</a></div></div>
 <div class="ttc" id="aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_html_a9fbeafa486c4ef25ad427540fe7cea78"><div class="ttname"><a href="classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#a9fbeafa486c4ef25ad427540fe7cea78">intersection_transit_maneuvering::IntersectionTransitManeuveringNode::object_</a></div><div class="ttdeci">std::shared_ptr&lt; CallInterface &gt; object_</div><div class="ttdef"><b>Definition:</b> <a href="intersection__transit__maneuvering__node_8hpp_source.html#l00043">intersection_transit_maneuvering_node.hpp:43</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="intersection__transit__maneuvering__node_8hpp_source.html#l00044">client_</a>, and <a class="el" href="intersection__transit__maneuvering__node_8hpp_source.html#l00043">object_</a>.</p>
+<p class="reference">References <a class="el" href="intersection__transit__maneuvering__node_8hpp_source.html#l00044">client_</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, and <a class="el" href="intersection__transit__maneuvering__node_8hpp_source.html#l00043">object_</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_a977501f970d1e23a90994316cc1b5ba6_cgraph.png" border="0" usemap="#aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_a977501f970d1e23a90994316cc1b5ba6_cgraph" alt=""/></div>
+<map name="aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_a977501f970d1e23a90994316cc1b5ba6_cgraph" id="aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_a977501f970d1e23a90994316cc1b5ba6_cgraph">
+<area shape="rect" title="This method should be used to load parameters and will be called on the configure state transition." alt="" coords="5,5,252,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="300,13,440,54"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="488,13,727,54"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -614,17 +637,17 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  169</span> </div>
 <div class="line"><span class="lineno">  170</span>        <span class="keyword">auto</span> related_maneuvers = resp-&gt;related_maneuvers;</div>
 <div class="line"><span class="lineno">  171</span> </div>
-<div class="line"><span class="lineno">  172</span>        RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Starting planning for maneuver index: &quot;</span> &lt;&lt; req-&gt;maneuver_index_to_plan);</div>
-<div class="line"><span class="lineno">  173</span>        RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;req-&gt;maneuver_plan.maneuvers.size(): &quot;</span> &lt;&lt; req-&gt;maneuver_plan.maneuvers.size());</div>
+<div class="line"><span class="lineno">  172</span>        RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Starting planning for maneuver index: &quot;</span> &lt;&lt; req-&gt;maneuver_index_to_plan);</div>
+<div class="line"><span class="lineno">  173</span>        RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;req-&gt;maneuver_plan.maneuvers.size(): &quot;</span> &lt;&lt; req-&gt;maneuver_plan.maneuvers.size());</div>
 <div class="line"><span class="lineno">  174</span> </div>
 <div class="line"><span class="lineno">  175</span>        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a> = req-&gt;maneuver_index_to_plan; i &lt; req-&gt;maneuver_plan.maneuvers.size(); <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>++)</div>
 <div class="line"><span class="lineno">  176</span>        {</div>
-<div class="line"><span class="lineno">  177</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Looping&quot;</span>);</div>
+<div class="line"><span class="lineno">  177</span>            RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Looping&quot;</span>);</div>
 <div class="line"><span class="lineno">  178</span>            <span class="keywordflow">if</span>(req-&gt;maneuver_plan.maneuvers[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].type == carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_STRAIGHT ||</div>
 <div class="line"><span class="lineno">  179</span>            req-&gt;maneuver_plan.maneuvers[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].type == carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_LEFT_TURN || </div>
 <div class="line"><span class="lineno">  180</span>            req-&gt;maneuver_plan.maneuvers[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>].type == carma_planning_msgs::msg::Maneuver::INTERSECTION_TRANSIT_RIGHT_TURN )</div>
 <div class="line"><span class="lineno">  181</span>            {</div>
-<div class="line"><span class="lineno">  182</span>                RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Found valid maneuver for planning at index: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>);</div>
+<div class="line"><span class="lineno">  182</span>                RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Found valid maneuver for planning at index: &quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>);</div>
 <div class="line"><span class="lineno">  183</span>                maneuver_plan.push_back(req-&gt;maneuver_plan.maneuvers[<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>]);</div>
 <div class="line"><span class="lineno">  184</span>                related_maneuvers.push_back(<a class="code hl_variable" href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">i</a>);</div>
 <div class="line"><span class="lineno">  185</span>            }</div>
@@ -650,10 +673,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  205</span> </div>
 <div class="line"><span class="lineno">  206</span>        <span class="keywordflow">if</span>(ilc_resp-&gt;trajectory_plan.trajectory_points.empty())<span class="comment">//Since we&#39;re using an interface for this process, the call() functionality will come from somewhere else</span></div>
 <div class="line"><span class="lineno">  207</span>        {</div>
-<div class="line"><span class="lineno">  208</span>           RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Failed to call service&quot;</span>);</div>
+<div class="line"><span class="lineno">  208</span>           RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Failed to call service&quot;</span>);</div>
 <div class="line"><span class="lineno">  209</span>           return ;</div>
 <div class="line"><span class="lineno">  210</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  211</span>            RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Call Successful&quot;</span>);</div>
+<div class="line"><span class="lineno">  211</span>            RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;Call Successful&quot;</span>);</div>
 <div class="line"><span class="lineno">  212</span>            resp-&gt;trajectory_plan = ilc_resp-&gt;trajectory_plan;</div>
 <div class="line"><span class="lineno">  213</span>        }</div>
 <div class="line"><span class="lineno">  214</span> </div>
@@ -666,21 +689,23 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  221</span>        std::chrono::system_clock::time_point end_time = std::chrono::system_clock::now();  <span class="comment">// Start timing the execution time for planning so it can be logged</span></div>
 <div class="line"><span class="lineno">  222</span> </div>
 <div class="line"><span class="lineno">  223</span>        <span class="keyword">auto</span> duration = end_time - start_time;</div>
-<div class="line"><span class="lineno">  224</span>        RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;ExecutionTime: &quot;</span> &lt;&lt;  std::chrono::duration&lt;double&gt;(duration).count());</div>
+<div class="line"><span class="lineno">  224</span>        RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;intersection_transit_maneuvering&quot;</span>),<span class="stringliteral">&quot;ExecutionTime: &quot;</span> &lt;&lt;  std::chrono::duration&lt;double&gt;(duration).count());</div>
 <div class="line"><span class="lineno">  225</span>        return ; </div>
 <div class="line"><span class="lineno">  226</span>    }</div>
 <div class="ttc" id="aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_html_a39bd12148b6fc23001b5da0d5918501f"><div class="ttname"><a href="classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#a39bd12148b6fc23001b5da0d5918501f">intersection_transit_maneuvering::IntersectionTransitManeuveringNode::converted_maneuvers_</a></div><div class="ttdeci">std::vector&lt; carma_planning_msgs::msg::Maneuver &gt; converted_maneuvers_</div><div class="ttdef"><b>Definition:</b> <a href="intersection__transit__maneuvering__node_8hpp_source.html#l00039">intersection_transit_maneuvering_node.hpp:39</a></div></div>
 <div class="ttc" id="aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_html_a41542885695879cee0a19c2c52642ce5"><div class="ttname"><a href="classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#a41542885695879cee0a19c2c52642ce5">intersection_transit_maneuvering::IntersectionTransitManeuveringNode::convert_maneuver_plan</a></div><div class="ttdeci">std::vector&lt; carma_planning_msgs::msg::Maneuver &gt; convert_maneuver_plan(const std::vector&lt; carma_planning_msgs::msg::Maneuver &gt; &amp;maneuvers)</div><div class="ttdoc">Converts a sequence of INTERSECTION_TRANSIT maneuvers to LANE_FOLLOWING maneuvers.</div><div class="ttdef"><b>Definition:</b> <a href="intersection__transit__maneuvering_8cpp_source.html#l00228">intersection_transit_maneuvering.cpp:228</a></div></div>
 <div class="ttc" id="anamespaceprocess__bag_html_af102a02c97622dd30b0dbf7bafb0d199"><div class="ttname"><a href="namespaceprocess__bag.html#af102a02c97622dd30b0dbf7bafb0d199">process_bag.i</a></div><div class="ttdeci">int i</div><div class="ttdef"><b>Definition:</b> <a href="process__bag_8py_source.html#l00059">process_bag.py:59</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="intersection__transit__maneuvering_8cpp_source.html#l00228">convert_maneuver_plan()</a>, <a class="el" href="intersection__transit__maneuvering__node_8hpp_source.html#l00039">converted_maneuvers_</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, and <a class="el" href="intersection__transit__maneuvering__node_8hpp_source.html#l00043">object_</a>.</p>
+<p class="reference">References <a class="el" href="intersection__transit__maneuvering_8cpp_source.html#l00228">convert_maneuver_plan()</a>, <a class="el" href="intersection__transit__maneuvering__node_8hpp_source.html#l00039">converted_maneuvers_</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="process__bag_8py_source.html#l00059">process_bag::i</a>, and <a class="el" href="intersection__transit__maneuvering__node_8hpp_source.html#l00043">object_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_acc24418a95203157bde8e0b387bd8298_cgraph.png" border="0" usemap="#aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_acc24418a95203157bde8e0b387bd8298_cgraph" alt=""/></div>
 <map name="aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_acc24418a95203157bde8e0b387bd8298_cgraph" id="aclassintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode_acc24418a95203157bde8e0b387bd8298_cgraph">
-<area shape="rect" title="Extending class provided callback which should return a planned trajectory based on the provided traj..." alt="" coords="5,5,223,76"/>
-<area shape="rect" href="classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#a41542885695879cee0a19c2c52642ce5" title="Converts a sequence of INTERSECTION_TRANSIT maneuvers to LANE_FOLLOWING maneuvers." alt="" coords="271,13,541,69"/>
+<area shape="rect" title="Extending class provided callback which should return a planned trajectory based on the provided traj..." alt="" coords="5,31,223,102"/>
+<area shape="rect" href="classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html#a41542885695879cee0a19c2c52642ce5" title="Converts a sequence of INTERSECTION_TRANSIT maneuvers to LANE_FOLLOWING maneuvers." alt="" coords="271,5,541,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="589,46,729,87"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="777,46,1016,87"/>
 </map>
 </div>
 
@@ -783,7 +808,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceintersection__transit__maneuvering.html">intersection_transit_maneuvering</a></li><li class="navelem"><a class="el" href="classintersection__transit__maneuvering_1_1IntersectionTransitManeuveringNode.html">IntersectionTransitManeuveringNode</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 13:11:07 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 17 2026 17:53:40 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

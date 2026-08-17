@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('TrafficControl_8cpp_source.html',''); 
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordflow">if</span> (msg == <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm::TrafficControl&quot;</span>), __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;: msg is null pointer!&quot;</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm::TrafficControl&quot;</span>), __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;: msg is null pointer!&quot;</span>);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  }</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  std::stringstream ss;</div>
@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('TrafficControl_8cpp_source.html',''); 
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordflow">if</span> (!gf_ptr)</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    RCLCPP_ERROR_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm::TrafficControl&quot;</span>), __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;: gf_ptr is null pointer!&quot;</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm::TrafficControl&quot;</span>), __FUNCTION__ &lt;&lt; <span class="stringliteral">&quot;: gf_ptr is null pointer!&quot;</span>);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  }</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('TrafficControl_8cpp_source.html',''); 
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">if</span> (!lanelet_map)</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm::TrafficControl&quot;</span>), <span class="stringliteral">&quot;Lanelet Map is provided to match memory addresses of received binary map update&quot;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm::TrafficControl&quot;</span>), <span class="stringliteral">&quot;Lanelet Map is provided to match memory addresses of received binary map update&quot;</span>);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  lanelet::utils::OverwriteParameterVisitor memory_visitor(lanelet_map);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="comment">// It is sufficient to check single regem as carma_wm_ctrl sends only one type of regem in each list</span></div>
@@ -154,11 +154,12 @@ $(document).ready(function(){initNavTree('TrafficControl_8cpp_source.html',''); 
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordflow">if</span> (!gf_ptr-&gt;remove_list_.empty())</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    gf_ptr-&gt;remove_list_.front().second-&gt;applyVisitor(memory_visitor);</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  RCLCPP_DEBUG_STREAM(rclcpp::get_logger(<span class="stringliteral">&quot;carma_wm::TrafficControl&quot;</span>), <span class="stringliteral">&quot;Done resolving memory addresses of received regulatory elements!&quot;</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  RCLCPP_DEBUG_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">rclcpp::get_logger</a>(<span class="stringliteral">&quot;carma_wm::TrafficControl&quot;</span>), <span class="stringliteral">&quot;Done resolving memory addresses of received regulatory elements!&quot;</span>);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}  <span class="comment">// namespace carma_wm</span></div>
 <div class="ttc" id="aTrafficControl_8hpp_html"><div class="ttname"><a href="TrafficControl_8hpp.html">TrafficControl.hpp</a></div></div>
+<div class="ttc" id="anamespacebasic__autonomy_html_a8e49f3ae1a0ea4e022da60318805e3e0"><div class="ttname"><a href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">basic_autonomy::get_logger</a></div><div class="ttdeci">rclcpp::Logger get_logger()</div><div class="ttdoc">Return the module-level logger used by all basic_autonomy functions.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00032">log.cpp:32</a></div></div>
 <div class="ttc" id="anamespacecarma__wm_html"><div class="ttname"><a href="namespacecarma__wm.html">carma_wm</a></div><div class="ttdef"><b>Definition:</b> <a href="CARMAWorldModel_8hpp_source.html#l00035">CARMAWorldModel.hpp:36</a></div></div>
 <div class="ttc" id="anamespacecarma__wm_html_a3c6c82d3e0fcfc7dd50176a453598911"><div class="ttname"><a href="namespacecarma__wm.html#a3c6c82d3e0fcfc7dd50176a453598911">carma_wm::fromBinMsg</a></div><div class="ttdeci">void fromBinMsg(const autoware_lanelet2_msgs::msg::MapBin &amp;msg, std::shared_ptr&lt; carma_wm::TrafficControl &gt; gf_ptr, lanelet::LaneletMapPtr lanelet_map=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="TrafficControl_8cpp_source.html#l00040">TrafficControl.cpp:40</a></div></div>
 <div class="ttc" id="anamespacecarma__wm_html_aef665263f7df5afa3781f4319fe95e9c"><div class="ttname"><a href="namespacecarma__wm.html#aef665263f7df5afa3781f4319fe95e9c">carma_wm::toBinMsg</a></div><div class="ttdeci">void toBinMsg(std::shared_ptr&lt; carma_wm::TrafficControl &gt; gf_ptr, autoware_lanelet2_msgs::msg::MapBin *msg)</div><div class="ttdef"><b>Definition:</b> <a href="TrafficControl_8cpp_source.html#l00024">TrafficControl.cpp:24</a></div></div>
@@ -168,7 +169,7 @@ $(document).ready(function(){initNavTree('TrafficControl_8cpp_source.html',''); 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_063394ac95ddab6826ca68be56e39eae.html">carma_wm</a></li><li class="navelem"><a class="el" href="dir_bed7bb81c6bc1fae1bac689cbf6acc02.html">src</a></li><li class="navelem"><a class="el" href="TrafficControl_8cpp.html">TrafficControl.cpp</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 13:11:03 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 17 2026 17:53:35 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

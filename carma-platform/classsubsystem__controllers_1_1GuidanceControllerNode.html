@@ -360,7 +360,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">  139</span>    <span class="keyword">auto</span> base_return = <a class="code hl_function" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a77559069f98099588596debefb943433">BaseSubsystemController::handle_on_activate</a>(prev_state); <span class="comment">// This will activate all nodes in the namespace TODO what about the plugins?</span></div>
 <div class="line"><span class="lineno">  140</span> </div>
 <div class="line"><span class="lineno">  141</span>    <span class="keywordflow">if</span> (base_return != cr2::CallbackReturn::SUCCESS) {</div>
-<div class="line"><span class="lineno">  142</span>      RCLCPP_ERROR(get_logger(), <span class="stringliteral">&quot;Guidance Controller could not activate&quot;</span>);</div>
+<div class="line"><span class="lineno">  142</span>      RCLCPP_ERROR(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Guidance Controller could not activate&quot;</span>);</div>
 <div class="line"><span class="lineno">  143</span>      <span class="keywordflow">return</span> base_return;</div>
 <div class="line"><span class="lineno">  144</span>    }</div>
 <div class="line"><span class="lineno">  145</span> </div>
@@ -368,35 +368,38 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">  147</span>    <span class="keywordflow">try</span> {</div>
 <div class="line"><span class="lineno">  148</span>      <a class="code hl_variable" href="classsubsystem__controllers_1_1GuidanceControllerNode.html#afd545bfcc2645f5cedef132c282ac33d">plugin_manager_</a>-&gt;activate(); <span class="comment">// Only checking required nodes. Other node failure tracked by activity status</span></div>
 <div class="line"><span class="lineno">  149</span>    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> std::runtime_error&amp; e) {</div>
-<div class="line"><span class="lineno">  150</span>      RCLCPP_ERROR_STREAM(get_logger(), <span class="stringliteral">&quot;Error activating plugin manager &quot;</span> &lt;&lt; e.what());</div>
+<div class="line"><span class="lineno">  150</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Error activating plugin manager &quot;</span> &lt;&lt; e.what());</div>
 <div class="line"><span class="lineno">  151</span>      success = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  152</span>    }</div>
 <div class="line"><span class="lineno">  153</span> </div>
 <div class="line"><span class="lineno">  154</span>    <span class="keywordflow">if</span> (success)</div>
 <div class="line"><span class="lineno">  155</span>    {</div>
 <div class="line"><span class="lineno">  156</span> </div>
-<div class="line"><span class="lineno">  157</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Subsystem able to activate&quot;</span>);</div>
+<div class="line"><span class="lineno">  157</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Subsystem able to activate&quot;</span>);</div>
 <div class="line"><span class="lineno">  158</span>      <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
 <div class="line"><span class="lineno">  159</span>    }</div>
 <div class="line"><span class="lineno">  160</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  161</span>    {</div>
 <div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Subsystem unable to activate&quot;</span>);</div>
+<div class="line"><span class="lineno">  163</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Subsystem unable to activate&quot;</span>);</div>
 <div class="line"><span class="lineno">  164</span>      <span class="keywordflow">return</span> CallbackReturn::FAILURE;</div>
 <div class="line"><span class="lineno">  165</span>    }</div>
 <div class="line"><span class="lineno">  166</span> </div>
 <div class="line"><span class="lineno">  167</span>  }</div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1BaseSubsystemController_html_a77559069f98099588596debefb943433"><div class="ttname"><a href="classsubsystem__controllers_1_1BaseSubsystemController.html#a77559069f98099588596debefb943433">subsystem_controllers::BaseSubsystemController::handle_on_activate</a></div><div class="ttdeci">virtual carma_ros2_utils::CallbackReturn handle_on_activate(const rclcpp_lifecycle::State &amp;prev_state)</div><div class="ttdef"><b>Definition:</b> <a href="base__subsystem__controller_8cpp_source.html#l00167">base_subsystem_controller.cpp:167</a></div></div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1GuidanceControllerNode_html_afd545bfcc2645f5cedef132c282ac33d"><div class="ttname"><a href="classsubsystem__controllers_1_1GuidanceControllerNode.html#afd545bfcc2645f5cedef132c282ac33d">subsystem_controllers::GuidanceControllerNode::plugin_manager_</a></div><div class="ttdeci">std::shared_ptr&lt; PluginManager &gt; plugin_manager_</div><div class="ttdoc">Plugin manager to handle all the plugin specific discovery and reporting.</div><div class="ttdef"><b>Definition:</b> <a href="guidance__controller_8hpp_source.html#l00065">guidance_controller.hpp:65</a></div></div>
+<div class="ttc" id="anamespacebasic__autonomy_html_a8e49f3ae1a0ea4e022da60318805e3e0"><div class="ttname"><a href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">basic_autonomy::get_logger</a></div><div class="ttdeci">rclcpp::Logger get_logger()</div><div class="ttdoc">Return the module-level logger used by all basic_autonomy functions.</div><div class="ttdef"><b>Definition:</b> <a href="log_8cpp_source.html#l00032">log.cpp:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="base__subsystem__controller_8cpp_source.html#l00167">subsystem_controllers::BaseSubsystemController::handle_on_activate()</a>, and <a class="el" href="guidance__controller_8hpp_source.html#l00065">plugin_manager_</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="base__subsystem__controller_8cpp_source.html#l00167">subsystem_controllers::BaseSubsystemController::handle_on_activate()</a>, and <a class="el" href="guidance__controller_8hpp_source.html#l00065">plugin_manager_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsubsystem__controllers_1_1GuidanceControllerNode_a1bca048a64aec584e96976966872d229_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1GuidanceControllerNode_a1bca048a64aec584e96976966872d229_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1GuidanceControllerNode_a1bca048a64aec584e96976966872d229_cgraph" id="aclasssubsystem__controllers_1_1GuidanceControllerNode_a1bca048a64aec584e96976966872d229_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,175,61"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a77559069f98099588596debefb943433" title=" " alt="" coords="223,5,401,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="449,13,589,54"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a77559069f98099588596debefb943433" title=" " alt="" coords="223,37,401,93"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="637,13,876,54"/>
 </map>
 </div>
 
@@ -433,7 +436,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  202</span>    <span class="keyword">auto</span> base_return = <a class="code hl_function" href="classsubsystem__controllers_1_1BaseSubsystemController.html#af70a9d7ccbcce4d3e131c4a66fdfb7a9">BaseSubsystemController::handle_on_cleanup</a>(prev_state);</div>
 <div class="line"><span class="lineno">  203</span> </div>
 <div class="line"><span class="lineno">  204</span>    <span class="keywordflow">if</span> (base_return != cr2::CallbackReturn::SUCCESS) {</div>
-<div class="line"><span class="lineno">  205</span>      RCLCPP_ERROR(get_logger(), <span class="stringliteral">&quot;Guidance Controller could not cleanup&quot;</span>);</div>
+<div class="line"><span class="lineno">  205</span>      RCLCPP_ERROR(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Guidance Controller could not cleanup&quot;</span>);</div>
 <div class="line"><span class="lineno">  206</span>      <span class="keywordflow">return</span> base_return;</div>
 <div class="line"><span class="lineno">  207</span>    }</div>
 <div class="line"><span class="lineno">  208</span> </div>
@@ -441,33 +444,35 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  210</span>    <span class="keywordflow">try</span> {</div>
 <div class="line"><span class="lineno">  211</span>      <a class="code hl_variable" href="classsubsystem__controllers_1_1GuidanceControllerNode.html#afd545bfcc2645f5cedef132c282ac33d">plugin_manager_</a>-&gt;cleanup(); <span class="comment">// Only checking required nodes. Other node failure tracked by activity status</span></div>
 <div class="line"><span class="lineno">  212</span>    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> std::runtime_error&amp; e) {</div>
-<div class="line"><span class="lineno">  213</span>      RCLCPP_ERROR_STREAM(get_logger(), <span class="stringliteral">&quot;Error cleaning up plugin manager &quot;</span> &lt;&lt; e.what());</div>
+<div class="line"><span class="lineno">  213</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Error cleaning up plugin manager &quot;</span> &lt;&lt; e.what());</div>
 <div class="line"><span class="lineno">  214</span>      success = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  215</span>    }</div>
 <div class="line"><span class="lineno">  216</span> </div>
 <div class="line"><span class="lineno">  217</span>    <span class="keywordflow">if</span> (success)</div>
 <div class="line"><span class="lineno">  218</span>    {</div>
 <div class="line"><span class="lineno">  219</span> </div>
-<div class="line"><span class="lineno">  220</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Subsystem able to cleanup&quot;</span>);</div>
+<div class="line"><span class="lineno">  220</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Subsystem able to cleanup&quot;</span>);</div>
 <div class="line"><span class="lineno">  221</span>      <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
 <div class="line"><span class="lineno">  222</span>    }</div>
 <div class="line"><span class="lineno">  223</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  224</span>    {</div>
 <div class="line"><span class="lineno">  225</span> </div>
-<div class="line"><span class="lineno">  226</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Subsystem unable to cleanup&quot;</span>);</div>
+<div class="line"><span class="lineno">  226</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Subsystem unable to cleanup&quot;</span>);</div>
 <div class="line"><span class="lineno">  227</span>      <span class="keywordflow">return</span> CallbackReturn::FAILURE;</div>
 <div class="line"><span class="lineno">  228</span>    }</div>
 <div class="line"><span class="lineno">  229</span>  }</div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1BaseSubsystemController_html_af70a9d7ccbcce4d3e131c4a66fdfb7a9"><div class="ttname"><a href="classsubsystem__controllers_1_1BaseSubsystemController.html#af70a9d7ccbcce4d3e131c4a66fdfb7a9">subsystem_controllers::BaseSubsystemController::handle_on_cleanup</a></div><div class="ttdeci">virtual carma_ros2_utils::CallbackReturn handle_on_cleanup(const rclcpp_lifecycle::State &amp;prev_state)</div><div class="ttdef"><b>Definition:</b> <a href="base__subsystem__controller_8cpp_source.html#l00215">base_subsystem_controller.cpp:215</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="base__subsystem__controller_8cpp_source.html#l00215">subsystem_controllers::BaseSubsystemController::handle_on_cleanup()</a>, and <a class="el" href="guidance__controller_8hpp_source.html#l00065">plugin_manager_</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="base__subsystem__controller_8cpp_source.html#l00215">subsystem_controllers::BaseSubsystemController::handle_on_cleanup()</a>, and <a class="el" href="guidance__controller_8hpp_source.html#l00065">plugin_manager_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsubsystem__controllers_1_1GuidanceControllerNode_a96bc766435ee398252e2dc84d8fa5389_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1GuidanceControllerNode_a96bc766435ee398252e2dc84d8fa5389_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1GuidanceControllerNode_a96bc766435ee398252e2dc84d8fa5389_cgraph" id="aclasssubsystem__controllers_1_1GuidanceControllerNode_a96bc766435ee398252e2dc84d8fa5389_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,175,61"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#af70a9d7ccbcce4d3e131c4a66fdfb7a9" title=" " alt="" coords="223,5,401,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="449,13,589,54"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#af70a9d7ccbcce4d3e131c4a66fdfb7a9" title=" " alt="" coords="223,37,401,93"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="637,13,876,54"/>
 </map>
 </div>
 
@@ -504,7 +509,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   36</span>    <span class="keyword">auto</span> base_return = <a class="code hl_function" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a34f5dc91b0ac8a34a399a6ad1585bc8a">BaseSubsystemController::handle_on_configure</a>(prev_state);</div>
 <div class="line"><span class="lineno">   37</span> </div>
 <div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (base_return != cr2::CallbackReturn::SUCCESS) {</div>
-<div class="line"><span class="lineno">   39</span>      RCLCPP_ERROR(get_logger(), <span class="stringliteral">&quot;Guidance Controller could not configure&quot;</span>);</div>
+<div class="line"><span class="lineno">   39</span>      RCLCPP_ERROR(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Guidance Controller could not configure&quot;</span>);</div>
 <div class="line"><span class="lineno">   40</span>      <span class="keywordflow">return</span> base_return;</div>
 <div class="line"><span class="lineno">   41</span>    }</div>
 <div class="line"><span class="lineno">   42</span> </div>
@@ -529,7 +534,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   61</span>    get_parameter&lt;std::vector&lt;std::string&gt;&gt;(<span class="stringliteral">&quot;required_plugins&quot;</span>, <a class="code hl_variable" href="classsubsystem__controllers_1_1GuidanceControllerNode.html#ad54d61a498d1b19dfae8938ae1b8eb9d">config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1GuidanceControllerConfig.html#a7376b9397816353f416355d725e1a312">required_plugins</a>);</div>
 <div class="line"><span class="lineno">   62</span>    get_parameter&lt;std::vector&lt;std::string&gt;&gt;(<span class="stringliteral">&quot;auto_activated_plugins&quot;</span>, <a class="code hl_variable" href="classsubsystem__controllers_1_1GuidanceControllerNode.html#ad54d61a498d1b19dfae8938ae1b8eb9d">config_</a>.<a class="code hl_variable" href="structsubsystem__controllers_1_1GuidanceControllerConfig.html#a0a4c01b556c3cd9d26200fce1f6354fc">auto_activated_plugins</a>);</div>
 <div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>    RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Config: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classsubsystem__controllers_1_1GuidanceControllerNode.html#ad54d61a498d1b19dfae8938ae1b8eb9d">config_</a>);</div>
+<div class="line"><span class="lineno">   64</span>    RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Config: &quot;</span> &lt;&lt; <a class="code hl_variable" href="classsubsystem__controllers_1_1GuidanceControllerNode.html#ad54d61a498d1b19dfae8938ae1b8eb9d">config_</a>);</div>
 <div class="line"><span class="lineno">   65</span> </div>
 <div class="line"><span class="lineno">   66</span>    <span class="comment">// The core need is that plugins need to be managed separately from guidance nodes</span></div>
 <div class="line"><span class="lineno">   67</span>    <span class="keyword">auto</span> plugin_lifecycle_manager = std::make_shared&lt;ros2_lifecycle_manager::Ros2LifecycleManager&gt;(</div>
@@ -581,7 +586,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  113</span>    <span class="keywordflow">try</span> {</div>
 <div class="line"><span class="lineno">  114</span>      <a class="code hl_variable" href="classsubsystem__controllers_1_1GuidanceControllerNode.html#afd545bfcc2645f5cedef132c282ac33d">plugin_manager_</a>-&gt;configure(); <span class="comment">// Only checking required nodes. Other node failure tracked by activity status</span></div>
 <div class="line"><span class="lineno">  115</span>    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> std::runtime_error&amp; e) {</div>
-<div class="line"><span class="lineno">  116</span>      RCLCPP_ERROR_STREAM(get_logger(), <span class="stringliteral">&quot;Error configuring plugin manager &quot;</span> &lt;&lt; e.what());</div>
+<div class="line"><span class="lineno">  116</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Error configuring plugin manager &quot;</span> &lt;&lt; e.what());</div>
 <div class="line"><span class="lineno">  117</span>      success = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  118</span>    }</div>
 <div class="line"><span class="lineno">  119</span> </div>
@@ -590,13 +595,13 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  122</span>    <span class="keywordflow">if</span> (success)</div>
 <div class="line"><span class="lineno">  123</span>    {</div>
 <div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Subsystem able to configure&quot;</span>);</div>
+<div class="line"><span class="lineno">  125</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Subsystem able to configure&quot;</span>);</div>
 <div class="line"><span class="lineno">  126</span>      <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
 <div class="line"><span class="lineno">  127</span>    }</div>
 <div class="line"><span class="lineno">  128</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  129</span>    {</div>
 <div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Subsystem unable to configure&quot;</span>);</div>
+<div class="line"><span class="lineno">  131</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Subsystem unable to configure&quot;</span>);</div>
 <div class="line"><span class="lineno">  132</span>      <span class="keywordflow">return</span> CallbackReturn::FAILURE;</div>
 <div class="line"><span class="lineno">  133</span>    }</div>
 <div class="line"><span class="lineno">  134</span> </div>
@@ -625,29 +630,31 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="astructsubsystem__controllers_1_1BaseSubSystemControllerConfig_html_a64e2532f8c029a31dd92ca840111b178"><div class="ttname"><a href="structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#a64e2532f8c029a31dd92ca840111b178">subsystem_controllers::BaseSubSystemControllerConfig::subsystem_namespace</a></div><div class="ttdeci">std::string subsystem_namespace</div><div class="ttdoc">Node Namespace. Any node under this namespace shall have its lifecycle managed by this controller.</div><div class="ttdef"><b>Definition:</b> <a href="base__subsystem__controller__config_8hpp_source.html#l00037">base_subsystem_controller_config.hpp:37</a></div></div>
 <div class="ttc" id="astructsubsystem__controllers_1_1BaseSubSystemControllerConfig_html_a9382b0be3a6b4a38f97d02ef6440b7fb"><div class="ttname"><a href="structsubsystem__controllers_1_1BaseSubSystemControllerConfig.html#a9382b0be3a6b4a38f97d02ef6440b7fb">subsystem_controllers::BaseSubSystemControllerConfig::call_timeout_ms</a></div><div class="ttdeci">int call_timeout_ms</div><div class="ttdoc">Timeout in ms for service calls.</div><div class="ttdef"><b>Definition:</b> <a href="base__subsystem__controller__config_8hpp_source.html#l00043">base_subsystem_controller_config.hpp:43</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="plugin__manager_8cpp_source.html#l00320">subsystem_controllers::PluginManager::activate_plugin()</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00078">activate_plugin_server_</a>, <a class="el" href="guidance__controller__config_8hpp_source.html#l00038">subsystem_controllers::GuidanceControllerConfig::auto_activated_plugins</a>, <a class="el" href="base__subsystem__controller_8hpp_source.html#l00096">subsystem_controllers::BaseSubsystemController::base_config_</a>, <a class="el" href="base__subsystem__controller__config_8hpp_source.html#l00043">subsystem_controllers::BaseSubSystemControllerConfig::call_timeout_ms</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00068">config_</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00302">subsystem_controllers::PluginManager::get_active_plugins()</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00076">get_active_plugins_server_</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00375">subsystem_controllers::PluginManager::get_control_plugins_by_capability()</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00084">get_control_plugins_by_capability_server_</a>, <a class="el" href="base__subsystem__controller_8cpp_source.html#l00356">subsystem_controllers::BaseSubsystemController::get_non_intersecting_set()</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00287">subsystem_controllers::PluginManager::get_registered_plugins()</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00074">get_registered_plugins_server_</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00423">subsystem_controllers::PluginManager::get_strategic_plugins_by_capability()</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00080">get_strategic_plugins_by_capability_server_</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00399">subsystem_controllers::PluginManager::get_tactical_plugins_by_capability()</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00082">get_tactical_plugins_by_capability_server_</a>, <a class="el" href="base__subsystem__controller_8cpp_source.html#l00092">subsystem_controllers::BaseSubsystemController::handle_on_configure()</a>, <a class="el" href="base__subsystem__controller_8hpp_source.html#l00090">subsystem_controllers::BaseSubsystemController::lifecycle_mgr_</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00072">plugin_discovery_sub_</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00065">plugin_manager_</a>, <a class="el" href="guidance__controller__config_8hpp_source.html#l00033">subsystem_controllers::GuidanceControllerConfig::required_plugins</a>, <a class="el" href="base__subsystem__controller__config_8hpp_source.html#l00040">subsystem_controllers::BaseSubSystemControllerConfig::service_timeout_ms</a>, <a class="el" href="base__subsystem__controller__config_8hpp_source.html#l00037">subsystem_controllers::BaseSubSystemControllerConfig::subsystem_namespace</a>, and <a class="el" href="plugin__manager_8cpp_source.html#l00348">subsystem_controllers::PluginManager::update_plugin_status()</a>.</p>
+<p class="reference">References <a class="el" href="plugin__manager_8cpp_source.html#l00320">subsystem_controllers::PluginManager::activate_plugin()</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00078">activate_plugin_server_</a>, <a class="el" href="guidance__controller__config_8hpp_source.html#l00038">subsystem_controllers::GuidanceControllerConfig::auto_activated_plugins</a>, <a class="el" href="base__subsystem__controller_8hpp_source.html#l00096">subsystem_controllers::BaseSubsystemController::base_config_</a>, <a class="el" href="base__subsystem__controller__config_8hpp_source.html#l00043">subsystem_controllers::BaseSubSystemControllerConfig::call_timeout_ms</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00068">config_</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00302">subsystem_controllers::PluginManager::get_active_plugins()</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00076">get_active_plugins_server_</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00375">subsystem_controllers::PluginManager::get_control_plugins_by_capability()</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00084">get_control_plugins_by_capability_server_</a>, <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="base__subsystem__controller_8cpp_source.html#l00356">subsystem_controllers::BaseSubsystemController::get_non_intersecting_set()</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00287">subsystem_controllers::PluginManager::get_registered_plugins()</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00074">get_registered_plugins_server_</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00423">subsystem_controllers::PluginManager::get_strategic_plugins_by_capability()</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00080">get_strategic_plugins_by_capability_server_</a>, <a class="el" href="plugin__manager_8cpp_source.html#l00399">subsystem_controllers::PluginManager::get_tactical_plugins_by_capability()</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00082">get_tactical_plugins_by_capability_server_</a>, <a class="el" href="base__subsystem__controller_8cpp_source.html#l00092">subsystem_controllers::BaseSubsystemController::handle_on_configure()</a>, <a class="el" href="base__subsystem__controller_8hpp_source.html#l00090">subsystem_controllers::BaseSubsystemController::lifecycle_mgr_</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00072">plugin_discovery_sub_</a>, <a class="el" href="guidance__controller_8hpp_source.html#l00065">plugin_manager_</a>, <a class="el" href="guidance__controller__config_8hpp_source.html#l00033">subsystem_controllers::GuidanceControllerConfig::required_plugins</a>, <a class="el" href="base__subsystem__controller__config_8hpp_source.html#l00040">subsystem_controllers::BaseSubSystemControllerConfig::service_timeout_ms</a>, <a class="el" href="base__subsystem__controller__config_8hpp_source.html#l00037">subsystem_controllers::BaseSubSystemControllerConfig::subsystem_namespace</a>, and <a class="el" href="plugin__manager_8cpp_source.html#l00348">subsystem_controllers::PluginManager::update_plugin_status()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsubsystem__controllers_1_1GuidanceControllerNode_a684cb2ec92b8c7dd38c69484c0052bd1_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1GuidanceControllerNode_a684cb2ec92b8c7dd38c69484c0052bd1_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1GuidanceControllerNode_a684cb2ec92b8c7dd38c69484c0052bd1_cgraph" id="aclasssubsystem__controllers_1_1GuidanceControllerNode_a684cb2ec92b8c7dd38c69484c0052bd1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,353,175,409"/>
-<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#ad002f6cc78d9ceb6ba76bce4c309362b" title="Activate the specified plugin." alt="" coords="239,33,406,89"/>
-<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#aa0a83528b66d35c3cfac1bb2f96a5132" title="Get the list of currently active plugins." alt="" coords="247,273,399,329"/>
-<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a273a123b0ce1a5d004c52e2deff69ea4" title="Get control plugins by capability." alt="" coords="224,353,421,409"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a98837f5beef889c21ebca4cc2f2d6228" title="Returns all elements of the provided set_a which are NOT contained in the provided set_b." alt="" coords="471,591,649,647"/>
-<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a9676128e1c0d7bb13979e5fabcbf3871" title="Returns the list of known plugins." alt="" coords="247,193,399,249"/>
-<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#abb246fe8565a91e9890c3639ca333e83" title="Get strategic plugins by capability." alt="" coords="247,434,399,505"/>
-<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#ace48d6d87c84f35018389a67a3b886e1" title="Get tactical plugins by capability." alt="" coords="223,529,423,585"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a34f5dc91b0ac8a34a399a6ad1585bc8a" title=" " alt="" coords="233,664,412,720"/>
-<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a9f732913ba1f9c7e16986bade344f258" title="Update the status of a certain plugin." alt="" coords="243,113,402,169"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#a4204928cd382c992b11ff3e2b8c0da98" title="Get a entry using name as the key." alt="" coords="477,33,643,89"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c" title="Add a new entry if the given name does not exist. Update an existing entry if the given name exists." alt="" coords="697,121,884,162"/>
-<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all entries as a list." alt="" coords="471,361,649,402"/>
-<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a7b5fb468e0d422b8fc47b13103aeaa71" title="Returns true if the provided base capability hierarchy can achieve the requested capability hierarchy..." alt="" coords="473,441,647,497"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a418affcaec63b88abe092d10b248054b" title="Returns the list of fully qualified node names for all ROS2 nodes in the provided namespace." alt="" coords="471,751,649,807"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a8087facfdc76c599d690bf3b4ebba0cc" title=" " alt="" coords="471,671,649,727"/>
-<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a1823614749aa3885622ca8fbf499728a" title="Add the specified entry to our plugin management This function will attempt to move the newly detecte..." alt="" coords="484,113,636,169"/>
+<area shape="rect" title=" " alt="" coords="5,425,175,481"/>
+<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#ad002f6cc78d9ceb6ba76bce4c309362b" title="Activate the specified plugin." alt="" coords="239,32,406,88"/>
+<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#aa0a83528b66d35c3cfac1bb2f96a5132" title="Get the list of currently active plugins." alt="" coords="247,549,399,605"/>
+<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a273a123b0ce1a5d004c52e2deff69ea4" title="Get control plugins by capability." alt="" coords="224,293,421,349"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="721,402,861,443"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a98837f5beef889c21ebca4cc2f2d6228" title="Returns all elements of the provided set_a which are NOT contained in the provided set_b." alt="" coords="471,802,649,858"/>
+<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a9676128e1c0d7bb13979e5fabcbf3871" title="Returns the list of known plugins." alt="" coords="247,629,399,685"/>
+<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#abb246fe8565a91e9890c3639ca333e83" title="Get strategic plugins by capability." alt="" coords="247,374,399,444"/>
+<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#ace48d6d87c84f35018389a67a3b886e1" title="Get tactical plugins by capability." alt="" coords="223,469,423,525"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a34f5dc91b0ac8a34a399a6ad1585bc8a" title=" " alt="" coords="233,709,412,765"/>
+<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a9f732913ba1f9c7e16986bade344f258" title="Update the status of a certain plugin." alt="" coords="243,137,402,193"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#a4204928cd382c992b11ff3e2b8c0da98" title="Get a entry using name as the key." alt="" coords="477,32,643,88"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#a657eaee164195d03c44ec660fbc08c3c" title="Add a new entry if the given name does not exist. Update an existing entry if the given name exists." alt="" coords="697,104,884,146"/>
+<area shape="rect" href="classsubsystem__controllers_1_1EntryManager.html#af5d2082896822651ca7846adf3867e94" title="Get all entries as a list." alt="" coords="471,526,649,567"/>
+<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a7b5fb468e0d422b8fc47b13103aeaa71" title="Returns true if the provided base capability hierarchy can achieve the requested capability hierarchy..." alt="" coords="473,394,647,450"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="932,402,1171,443"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a418affcaec63b88abe092d10b248054b" title="Returns the list of fully qualified node names for all ROS2 nodes in the provided namespace." alt="" coords="471,642,649,698"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a8087facfdc76c599d690bf3b4ebba0cc" title=" " alt="" coords="471,722,649,778"/>
+<area shape="rect" href="classsubsystem__controllers_1_1PluginManager.html#a1823614749aa3885622ca8fbf499728a" title="Add the specified entry to our plugin management This function will attempt to move the newly detecte..." alt="" coords="484,162,636,218"/>
 </map>
 </div>
 
@@ -684,7 +691,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  171</span>    <span class="keyword">auto</span> base_return = <a class="code hl_function" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a5425d549c8892d886b6329ffee195a88">BaseSubsystemController::handle_on_deactivate</a>(prev_state);</div>
 <div class="line"><span class="lineno">  172</span> </div>
 <div class="line"><span class="lineno">  173</span>    <span class="keywordflow">if</span> (base_return != cr2::CallbackReturn::SUCCESS) {</div>
-<div class="line"><span class="lineno">  174</span>      RCLCPP_ERROR(get_logger(), <span class="stringliteral">&quot;Guidance Controller could not deactivate&quot;</span>);</div>
+<div class="line"><span class="lineno">  174</span>      RCLCPP_ERROR(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Guidance Controller could not deactivate&quot;</span>);</div>
 <div class="line"><span class="lineno">  175</span>      <span class="keywordflow">return</span> base_return;</div>
 <div class="line"><span class="lineno">  176</span>    }</div>
 <div class="line"><span class="lineno">  177</span> </div>
@@ -692,33 +699,35 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  179</span>    <span class="keywordflow">try</span> {</div>
 <div class="line"><span class="lineno">  180</span>      <a class="code hl_variable" href="classsubsystem__controllers_1_1GuidanceControllerNode.html#afd545bfcc2645f5cedef132c282ac33d">plugin_manager_</a>-&gt;deactivate(); <span class="comment">// Only checking required nodes. Other node failure tracked by activity status</span></div>
 <div class="line"><span class="lineno">  181</span>    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> std::runtime_error&amp; e) {</div>
-<div class="line"><span class="lineno">  182</span>      RCLCPP_ERROR_STREAM(get_logger(), <span class="stringliteral">&quot;Error deactivating plugin manager &quot;</span> &lt;&lt; e.what());</div>
+<div class="line"><span class="lineno">  182</span>      RCLCPP_ERROR_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Error deactivating plugin manager &quot;</span> &lt;&lt; e.what());</div>
 <div class="line"><span class="lineno">  183</span>      success = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  184</span>    }</div>
 <div class="line"><span class="lineno">  185</span> </div>
 <div class="line"><span class="lineno">  186</span>    <span class="keywordflow">if</span> (success)</div>
 <div class="line"><span class="lineno">  187</span>    {</div>
 <div class="line"><span class="lineno">  188</span> </div>
-<div class="line"><span class="lineno">  189</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Subsystem able to deactivate&quot;</span>);</div>
+<div class="line"><span class="lineno">  189</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Subsystem able to deactivate&quot;</span>);</div>
 <div class="line"><span class="lineno">  190</span>      <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
 <div class="line"><span class="lineno">  191</span>    }</div>
 <div class="line"><span class="lineno">  192</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  193</span>    {</div>
 <div class="line"><span class="lineno">  194</span> </div>
-<div class="line"><span class="lineno">  195</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Subsystem unable to deactivate&quot;</span>);</div>
+<div class="line"><span class="lineno">  195</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Subsystem unable to deactivate&quot;</span>);</div>
 <div class="line"><span class="lineno">  196</span>      <span class="keywordflow">return</span> CallbackReturn::FAILURE;</div>
 <div class="line"><span class="lineno">  197</span>    }</div>
 <div class="line"><span class="lineno">  198</span>  }</div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1BaseSubsystemController_html_a5425d549c8892d886b6329ffee195a88"><div class="ttname"><a href="classsubsystem__controllers_1_1BaseSubsystemController.html#a5425d549c8892d886b6329ffee195a88">subsystem_controllers::BaseSubsystemController::handle_on_deactivate</a></div><div class="ttdeci">virtual carma_ros2_utils::CallbackReturn handle_on_deactivate(const rclcpp_lifecycle::State &amp;prev_state)</div><div class="ttdef"><b>Definition:</b> <a href="base__subsystem__controller_8cpp_source.html#l00191">base_subsystem_controller.cpp:191</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="base__subsystem__controller_8cpp_source.html#l00191">subsystem_controllers::BaseSubsystemController::handle_on_deactivate()</a>, and <a class="el" href="guidance__controller_8hpp_source.html#l00065">plugin_manager_</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="base__subsystem__controller_8cpp_source.html#l00191">subsystem_controllers::BaseSubsystemController::handle_on_deactivate()</a>, and <a class="el" href="guidance__controller_8hpp_source.html#l00065">plugin_manager_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsubsystem__controllers_1_1GuidanceControllerNode_a2e2da408264514049cea852a939b0d1d_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1GuidanceControllerNode_a2e2da408264514049cea852a939b0d1d_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1GuidanceControllerNode_a2e2da408264514049cea852a939b0d1d_cgraph" id="aclasssubsystem__controllers_1_1GuidanceControllerNode_a2e2da408264514049cea852a939b0d1d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,175,61"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a5425d549c8892d886b6329ffee195a88" title=" " alt="" coords="223,5,401,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="449,13,589,54"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a5425d549c8892d886b6329ffee195a88" title=" " alt="" coords="223,37,401,93"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="637,13,876,54"/>
 </map>
 </div>
 
@@ -755,7 +764,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  233</span>    <span class="keyword">auto</span> base_return = <a class="code hl_function" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a11bd46b8629d5a65d67e873e78555d62">BaseSubsystemController::handle_on_shutdown</a>(prev_state);</div>
 <div class="line"><span class="lineno">  234</span> </div>
 <div class="line"><span class="lineno">  235</span>    <span class="keywordflow">if</span> (base_return != cr2::CallbackReturn::SUCCESS) {</div>
-<div class="line"><span class="lineno">  236</span>      RCLCPP_ERROR(get_logger(), <span class="stringliteral">&quot;Guidance Controller could not shutdown&quot;</span>);</div>
+<div class="line"><span class="lineno">  236</span>      RCLCPP_ERROR(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Guidance Controller could not shutdown&quot;</span>);</div>
 <div class="line"><span class="lineno">  237</span>      <span class="keywordflow">return</span> base_return;</div>
 <div class="line"><span class="lineno">  238</span>    }</div>
 <div class="line"><span class="lineno">  239</span> </div>
@@ -764,26 +773,28 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  242</span>    <span class="keywordflow">if</span> (success)</div>
 <div class="line"><span class="lineno">  243</span>    {</div>
 <div class="line"><span class="lineno">  244</span> </div>
-<div class="line"><span class="lineno">  245</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Subsystem able to shutdown cleanly&quot;</span>);</div>
+<div class="line"><span class="lineno">  245</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Subsystem able to shutdown cleanly&quot;</span>);</div>
 <div class="line"><span class="lineno">  246</span>      <span class="keywordflow">return</span> CallbackReturn::SUCCESS;</div>
 <div class="line"><span class="lineno">  247</span>    }</div>
 <div class="line"><span class="lineno">  248</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  249</span>    {</div>
 <div class="line"><span class="lineno">  250</span> </div>
-<div class="line"><span class="lineno">  251</span>      RCLCPP_INFO_STREAM(get_logger(), <span class="stringliteral">&quot;Subsystem unable to shutdown cleanly&quot;</span>);</div>
+<div class="line"><span class="lineno">  251</span>      RCLCPP_INFO_STREAM(<a class="code hl_function" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0">get_logger</a>(), <span class="stringliteral">&quot;Subsystem unable to shutdown cleanly&quot;</span>);</div>
 <div class="line"><span class="lineno">  252</span>      <span class="keywordflow">return</span> CallbackReturn::FAILURE;</div>
 <div class="line"><span class="lineno">  253</span>    }</div>
 <div class="line"><span class="lineno">  254</span>  }</div>
 <div class="ttc" id="aclasssubsystem__controllers_1_1BaseSubsystemController_html_a11bd46b8629d5a65d67e873e78555d62"><div class="ttname"><a href="classsubsystem__controllers_1_1BaseSubsystemController.html#a11bd46b8629d5a65d67e873e78555d62">subsystem_controllers::BaseSubsystemController::handle_on_shutdown</a></div><div class="ttdeci">virtual carma_ros2_utils::CallbackReturn handle_on_shutdown(const rclcpp_lifecycle::State &amp;prev_state)</div><div class="ttdef"><b>Definition:</b> <a href="base__subsystem__controller_8cpp_source.html#l00259">base_subsystem_controller.cpp:259</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="base__subsystem__controller_8cpp_source.html#l00259">subsystem_controllers::BaseSubsystemController::handle_on_shutdown()</a>, and <a class="el" href="guidance__controller_8hpp_source.html#l00065">plugin_manager_</a>.</p>
+<p class="reference">References <a class="el" href="log_8cpp_source.html#l00032">basic_autonomy::get_logger()</a>, <a class="el" href="base__subsystem__controller_8cpp_source.html#l00259">subsystem_controllers::BaseSubsystemController::handle_on_shutdown()</a>, and <a class="el" href="guidance__controller_8hpp_source.html#l00065">plugin_manager_</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsubsystem__controllers_1_1GuidanceControllerNode_ae87cc3c78a434dad11964b963d5a951e_cgraph.png" border="0" usemap="#aclasssubsystem__controllers_1_1GuidanceControllerNode_ae87cc3c78a434dad11964b963d5a951e_cgraph" alt=""/></div>
 <map name="aclasssubsystem__controllers_1_1GuidanceControllerNode_ae87cc3c78a434dad11964b963d5a951e_cgraph" id="aclasssubsystem__controllers_1_1GuidanceControllerNode_ae87cc3c78a434dad11964b963d5a951e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,175,61"/>
-<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a11bd46b8629d5a65d67e873e78555d62" title=" " alt="" coords="223,5,401,61"/>
+<area shape="rect" href="namespacebasic__autonomy.html#a8e49f3ae1a0ea4e022da60318805e3e0" title="Return the module&#45;level logger used by all basic_autonomy functions." alt="" coords="449,13,589,54"/>
+<area shape="rect" href="classsubsystem__controllers_1_1BaseSubsystemController.html#a11bd46b8629d5a65d67e873e78555d62" title=" " alt="" coords="223,37,401,93"/>
+<area shape="rect" href="namespacebasic__autonomy_1_1anonymous__namespace_02log_8cpp_03.html#ac19f31f121bb8eddf8f588e68312da53" title=" " alt="" coords="637,13,876,54"/>
 </map>
 </div>
 
@@ -1040,7 +1051,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacesubsystem__controllers.html">subsystem_controllers</a></li><li class="navelem"><a class="el" href="classsubsystem__controllers_1_1GuidanceControllerNode.html">GuidanceControllerNode</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 13:11:10 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Aug 17 2026 17:53:42 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

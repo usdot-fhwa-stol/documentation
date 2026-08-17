@@ -1,5 +1,7 @@
 var NAVTREEINDEX39 =
 {
+"structobject__visualizer_1_1Config.html":[59,0,28,0],
+"structobject__visualizer_1_1Config.html#a092949af5b04565654794a0fe37da5a7":[58,0,55,0,5],
 "structobject__visualizer_1_1Config.html#a092949af5b04565654794a0fe37da5a7":[59,0,28,0,5],
 "structobject__visualizer_1_1Config.html#a4347942c9b36fb4e8d249a62a8f2e930":[59,0,28,0,6],
 "structobject__visualizer_1_1Config.html#a4347942c9b36fb4e8d249a62a8f2e930":[58,0,55,0,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX39 =
 "structplatooning__tactical__plugin_1_1PointSpeedPair.html":[58,0,63,2],
 "structplatooning__tactical__plugin_1_1PointSpeedPair.html#ab7c2a89dd19ee5f393481803374d8779":[59,0,32,2,1],
 "structplatooning__tactical__plugin_1_1PointSpeedPair.html#ab7c2a89dd19ee5f393481803374d8779":[58,0,63,2,1],
-"structplatooning__tactical__plugin_1_1PointSpeedPair.html#af644b7105c83049111dd4e7c54f3011c":[59,0,32,2,0],
-"structplatooning__tactical__plugin_1_1PointSpeedPair.html#af644b7105c83049111dd4e7c54f3011c":[58,0,63,2,0],
-"structpoints__map__filter_1_1Config.html":[59,0,33,0]
+"structplatooning__tactical__plugin_1_1PointSpeedPair.html#af644b7105c83049111dd4e7c54f3011c":[59,0,32,2,0]
 };

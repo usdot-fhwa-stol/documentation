@@ -1,5 +1,7 @@
 var NAVTREEINDEX36 =
 {
+"structapproximate__intersection_1_1Config.html":[59,0,1,0],
+"structapproximate__intersection_1_1Config.html#a1dbb5b176793109a2563520eddf93035":[59,0,1,0,5],
 "structapproximate__intersection_1_1Config.html#a1dbb5b176793109a2563520eddf93035":[58,0,2,0,5],
 "structapproximate__intersection_1_1Config.html#a5e300ab5ecc062b4496425c05a3d8582":[59,0,1,0,2],
 "structapproximate__intersection_1_1Config.html#a5e300ab5ecc062b4496425c05a3d8582":[58,0,2,0,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX36 =
 "structcarma__cooperative__perception_1_1UtmCoordinate.html#a28e82611172839886d9ce3b004e709a7":[58,0,12,20,1],
 "structcarma__cooperative__perception_1_1UtmCoordinate.html#a5154f0f2acb6680ad73e7c2ebb1cd7a5":[59,0,7,20,2],
 "structcarma__cooperative__perception_1_1UtmCoordinate.html#a5154f0f2acb6680ad73e7c2ebb1cd7a5":[58,0,12,20,2],
-"structcarma__cooperative__perception_1_1UtmCoordinate.html#a5aece7021819085fc85d65cf2cc94c72":[59,0,7,20,3],
-"structcarma__cooperative__perception_1_1UtmCoordinate.html#a5aece7021819085fc85d65cf2cc94c72":[58,0,12,20,3],
-"structcarma__cooperative__perception_1_1UtmCoordinate.html#a91e4437a811922518505940d2538c6c2":[59,0,7,20,0]
+"structcarma__cooperative__perception_1_1UtmCoordinate.html#a5aece7021819085fc85d65cf2cc94c72":[59,0,7,20,3]
 };

@@ -1,6 +1,6 @@
 var classcarma__wm_1_1WMListenerWorker =
 [
-    [ "WMListenerWorker", "classcarma__wm_1_1WMListenerWorker.html#ae5b964291859114c54b1f726d8cdeda2", null ],
+    [ "WMListenerWorker", "classcarma__wm_1_1WMListenerWorker.html#a3d9f82933e7e9317f5b2c0695720049b", null ],
     [ "checkIfReRoutingNeeded", "classcarma__wm_1_1WMListenerWorker.html#a75d47a05771e1d53c0c8f516e290d4a2", null ],
     [ "enableUpdatesWithoutRoute", "classcarma__wm_1_1WMListenerWorker.html#a4c2fcc147efbee76b18ad285f0555d2c", null ],
     [ "getConfigSpeedLimit", "classcarma__wm_1_1WMListenerWorker.html#a4a2d5eac51fade96787fe5056c357afa", null ],
@@ -26,6 +26,7 @@ var classcarma__wm_1_1WMListenerWorker =
     [ "config_speed_limit_", "classcarma__wm_1_1WMListenerWorker.html#a84466a412323d469f5a53bbd9fbcaf6d", null ],
     [ "current_map_version_", "classcarma__wm_1_1WMListenerWorker.html#aae0b14b4566a06ba1c99e46e79de0fba", null ],
     [ "delayed_route_msg_", "classcarma__wm_1_1WMListenerWorker.html#a295aefa7073627e0c645ab19ec123a73", null ],
+    [ "logger_", "classcarma__wm_1_1WMListenerWorker.html#af76ce436826d3b662eaccc39ab993879", null ],
     [ "map_callback_", "classcarma__wm_1_1WMListenerWorker.html#a3c2e638e8fdc934482ba9076a5ca7bb5", null ],
     [ "map_update_queue_", "classcarma__wm_1_1WMListenerWorker.html#ae5106bd418dff1ee316864d929c02c93", null ],
     [ "most_recent_update_msg_seq_", "classcarma__wm_1_1WMListenerWorker.html#ae838d10e2677708b7b86c13fbb62d452", null ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX40 =
 {
+"structplatooning__tactical__plugin_1_1PointSpeedPair.html#af644b7105c83049111dd4e7c54f3011c":[58,0,63,2,0],
+"structpoints__map__filter_1_1Config.html":[59,0,33,0],
 "structpoints__map__filter_1_1Config.html":[58,0,66,1],
 "structpoints__map__filter_1_1Config.html#a7809fad27c013c8d8314e46f22f62ca7":[58,0,66,1,0],
 "structpoints__map__filter_1_1Config.html#a7809fad27c013c8d8314e46f22f62ca7":[59,0,33,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX40 =
 "structsubsystem__controllers_1_1DriversControllerConfig.html#a05b5160df2b41eabe0123eeb4343ddd7":[59,0,45,2,0],
 "structsubsystem__controllers_1_1DriversControllerConfig.html#a6841dc7a5440c97696105fc09d8abb95":[59,0,45,2,3],
 "structsubsystem__controllers_1_1DriversControllerConfig.html#a6841dc7a5440c97696105fc09d8abb95":[58,0,91,2,3],
-"structsubsystem__controllers_1_1DriversControllerConfig.html#a892172f0f63011c09595721b5b43051d":[58,0,91,2,1],
-"structsubsystem__controllers_1_1DriversControllerConfig.html#a892172f0f63011c09595721b5b43051d":[59,0,45,2,1],
-"structsubsystem__controllers_1_1DriversControllerConfig.html#ac023a5b32b79d0ddee24708d8ffe1aca":[59,0,45,2,4]
+"structsubsystem__controllers_1_1DriversControllerConfig.html#a892172f0f63011c09595721b5b43051d":[58,0,91,2,1]
 };

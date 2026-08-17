@@ -96,7 +96,7 @@ var namespacecarma__wm =
       [ "ON", "namespacecarma__wm.html#ab03d2f4855152889f2395e3e713c8f52a90651ebea9a35ec4e018c8157492e17c", null ]
     ] ],
     [ "fromBinMsg", "namespacecarma__wm.html#a3c6c82d3e0fcfc7dd50176a453598911", null ],
-    [ "logSignalizedIntersectionManager", "namespacecarma__wm.html#aae8a9e16b161a8edf05ca9df4307a5ec", null ],
+    [ "logSignalizedIntersectionManager", "namespacecarma__wm.html#a76ad811ae96c0f1e30ab8fff9e708265", null ],
     [ "resolveGeofenceType", "namespacecarma__wm.html#a4c3b7aaa05aea0c95189c98c5d902cf8", null ],
     [ "toBinMsg", "namespacecarma__wm.html#aef665263f7df5afa3781f4319fe95e9c", null ]
 ];

@@ -11,6 +11,6 @@ var WMListenerWorker_8cpp =
       [ "CARMA_TRAFFIC_LIGHT", "WMListenerWorker_8cpp.html#ac09d7a77e6f8f955651e7afa16136bf1a269b80a3c3f0b44a73071e21d4ab36c2", null ],
       [ "SIGNALIZED_INTERSECTION", "WMListenerWorker_8cpp.html#ac09d7a77e6f8f955651e7afa16136bf1a5183fcbc60f37b81f9ca22d76af71867", null ]
     ] ],
-    [ "logSignalizedIntersectionManager", "WMListenerWorker_8cpp.html#aae8a9e16b161a8edf05ca9df4307a5ec", null ],
+    [ "logSignalizedIntersectionManager", "WMListenerWorker_8cpp.html#a76ad811ae96c0f1e30ab8fff9e708265", null ],
     [ "resolveGeofenceType", "WMListenerWorker_8cpp.html#a4c3b7aaa05aea0c95189c98c5d902cf8", null ]
 ];

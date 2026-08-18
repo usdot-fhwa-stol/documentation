@@ -360,46 +360,39 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin_8launch_8py_source.html#l00031">31</a> of file <a class="el" href="lci__strategic__plugin_8launch_8py_source.html">lci_strategic_plugin.launch.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span><span class="keyword">def </span><a class="code hl_function" href="namespacelci__strategic__plugin.html#aad04e8c64222c6172863fa4d5d3af0f0">generate_launch_description</a>():</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>    <span class="comment"># Declare the log_level launch argument</span></div>
-<div class="line"><span class="lineno">   34</span>    log_level = LaunchConfiguration(<span class="stringliteral">&#39;log_level&#39;</span>)</div>
-<div class="line"><span class="lineno">   35</span>    declare_log_level_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   36</span>        name =<span class="stringliteral">&#39;log_level&#39;</span>, default_value=<span class="stringliteral">&#39;WARN&#39;</span>)</div>
-<div class="line"><span class="lineno">   37</span>    </div>
-<div class="line"><span class="lineno">   38</span>    lci_strategic_plugin_file_path = os.path.join(</div>
-<div class="line"><span class="lineno">   39</span>        get_package_share_directory(<span class="stringliteral">&#39;lci_strategic_plugin&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>    <span class="comment"># Launch node(s) in a carma container to allow logging to be configured</span></div>
-<div class="line"><span class="lineno">   42</span>    container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">   43</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
-<div class="line"><span class="lineno">   44</span>        name=<span class="stringliteral">&#39;lci_strategic_plugin_container&#39;</span>,</div>
-<div class="line"><span class="lineno">   45</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">   46</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">   47</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">   48</span>            </div>
-<div class="line"><span class="lineno">   49</span>            <span class="comment"># Launch the core node(s)</span></div>
-<div class="line"><span class="lineno">   50</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">   51</span>                package=<span class="stringliteral">&#39;lci_strategic_plugin&#39;</span>,</div>
-<div class="line"><span class="lineno">   52</span>                plugin=<span class="stringliteral">&#39;lci_strategic_plugin::LCIStrategicPlugin&#39;</span>,</div>
-<div class="line"><span class="lineno">   53</span>                name=<span class="stringliteral">&#39;lci_strategic_plugin_node&#39;</span>,</div>
-<div class="line"><span class="lineno">   54</span>                extra_arguments=[</div>
-<div class="line"><span class="lineno">   55</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">   56</span>                    {<span class="stringliteral">&#39;--log-level&#39;</span> : log_level }</div>
-<div class="line"><span class="lineno">   57</span>                ],</div>
-<div class="line"><span class="lineno">   58</span>                parameters=[</div>
-<div class="line"><span class="lineno">   59</span>                    lci_strategic_plugin_file_path</div>
-<div class="line"><span class="lineno">   60</span>                ]</div>
-<div class="line"><span class="lineno">   61</span>            ),</div>
-<div class="line"><span class="lineno">   62</span>        ]</div>
-<div class="line"><span class="lineno">   63</span>    )</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">   66</span>        declare_log_level_arg,</div>
-<div class="line"><span class="lineno">   67</span>        container</div>
-<div class="line"><span class="lineno">   68</span>    ])</div>
-<div class="ttc" id="anamespacelci__strategic__plugin_html_aad04e8c64222c6172863fa4d5d3af0f0"><div class="ttname"><a href="namespacelci__strategic__plugin.html#aad04e8c64222c6172863fa4d5d3af0f0">lci_strategic_plugin.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="lci__strategic__plugin_8launch_8py_source.html#l00031">lci_strategic_plugin.launch.py:31</a></div></div>
+<p class="definition">Definition at line <a class="el" href="lci__strategic__plugin_8launch_8py_source.html#l00029">29</a> of file <a class="el" href="lci__strategic__plugin_8launch_8py_source.html">lci_strategic_plugin.launch.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span><span class="keyword">def </span><a class="code hl_function" href="namespacelci__strategic__plugin.html#aad04e8c64222c6172863fa4d5d3af0f0">generate_launch_description</a>():</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    lci_strategic_plugin_file_path = os.path.join(</div>
+<div class="line"><span class="lineno">   32</span>        get_package_share_directory(<span class="stringliteral">&#39;lci_strategic_plugin&#39;</span>), <span class="stringliteral">&#39;config/parameters.yaml&#39;</span>)</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="comment"># Launch node(s) in a carma container to allow logging to be configured</span></div>
+<div class="line"><span class="lineno">   35</span>    container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">   36</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
+<div class="line"><span class="lineno">   37</span>        name=<span class="stringliteral">&#39;lci_strategic_plugin_container&#39;</span>,</div>
+<div class="line"><span class="lineno">   38</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">   39</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
+<div class="line"><span class="lineno">   40</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>            <span class="comment"># Launch the core node(s)</span></div>
+<div class="line"><span class="lineno">   43</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">   44</span>                package=<span class="stringliteral">&#39;lci_strategic_plugin&#39;</span>,</div>
+<div class="line"><span class="lineno">   45</span>                plugin=<span class="stringliteral">&#39;lci_strategic_plugin::LCIStrategicPlugin&#39;</span>,</div>
+<div class="line"><span class="lineno">   46</span>                name=<span class="stringliteral">&#39;lci_strategic_plugin_node&#39;</span>,</div>
+<div class="line"><span class="lineno">   47</span>                extra_arguments=[</div>
+<div class="line"><span class="lineno">   48</span>                    {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">   49</span>                ],</div>
+<div class="line"><span class="lineno">   50</span>                parameters=[</div>
+<div class="line"><span class="lineno">   51</span>                    lci_strategic_plugin_file_path</div>
+<div class="line"><span class="lineno">   52</span>                ]</div>
+<div class="line"><span class="lineno">   53</span>            ),</div>
+<div class="line"><span class="lineno">   54</span>        ]</div>
+<div class="line"><span class="lineno">   55</span>    )</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><span class="lineno">   58</span>        container</div>
+<div class="line"><span class="lineno">   59</span>    ])</div>
+<div class="ttc" id="anamespacelci__strategic__plugin_html_aad04e8c64222c6172863fa4d5d3af0f0"><div class="ttname"><a href="namespacelci__strategic__plugin.html#aad04e8c64222c6172863fa4d5d3af0f0">lci_strategic_plugin.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="lci__strategic__plugin_8launch_8py_source.html#l00029">lci_strategic_plugin.launch.py:29</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -502,7 +495,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacelci__strategic__plugin.html">lci_strategic_plugin</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 18:15:25 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Aug 18 2026 15:11:02 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

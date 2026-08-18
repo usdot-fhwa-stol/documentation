@@ -110,40 +110,33 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="traffic__incident__parser__launch_8py_source.html#l00031">31</a> of file <a class="el" href="traffic__incident__parser__launch_8py_source.html">traffic_incident_parser_launch.py</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span><span class="keyword">def </span><a class="code hl_function" href="namespacetraffic__incident__parser__launch.html#a87625f907b19959d11f87e382f5d5f9d">generate_launch_description</a>():</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>    <span class="comment"># Declare the log_level launch argument</span></div>
-<div class="line"><span class="lineno">   34</span>    log_level = LaunchConfiguration(<span class="stringliteral">&#39;log_level&#39;</span>)</div>
-<div class="line"><span class="lineno">   35</span>    declare_log_level_arg = DeclareLaunchArgument(</div>
-<div class="line"><span class="lineno">   36</span>        name =<span class="stringliteral">&#39;log_level&#39;</span>, default_value=<span class="stringliteral">&#39;WARN&#39;</span>)</div>
-<div class="line"><span class="lineno">   37</span>        </div>
-<div class="line"><span class="lineno">   38</span>    <span class="comment"># Launch node(s) in a carma container to allow logging to be configured</span></div>
-<div class="line"><span class="lineno">   39</span>    container = ComposableNodeContainer(</div>
-<div class="line"><span class="lineno">   40</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
-<div class="line"><span class="lineno">   41</span>        name=<span class="stringliteral">&#39;traffic_incident_parser_container&#39;</span>,</div>
-<div class="line"><span class="lineno">   42</span>        namespace=GetCurrentNamespace(),</div>
-<div class="line"><span class="lineno">   43</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
-<div class="line"><span class="lineno">   44</span>        composable_node_descriptions=[</div>
-<div class="line"><span class="lineno">   45</span>            </div>
-<div class="line"><span class="lineno">   46</span>            <span class="comment"># Launch the core node(s)</span></div>
-<div class="line"><span class="lineno">   47</span>            ComposableNode(</div>
-<div class="line"><span class="lineno">   48</span>                    package=<span class="stringliteral">&#39;traffic_incident_parser&#39;</span>,</div>
-<div class="line"><span class="lineno">   49</span>                    plugin=<span class="stringliteral">&#39;traffic_incident_parser::TrafficIncidentParserNode&#39;</span>,</div>
-<div class="line"><span class="lineno">   50</span>                    name=<span class="stringliteral">&#39;traffic_incident_parser_node&#39;</span>,</div>
-<div class="line"><span class="lineno">   51</span>                    extra_arguments=[</div>
-<div class="line"><span class="lineno">   52</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
-<div class="line"><span class="lineno">   53</span>                        {<span class="stringliteral">&#39;--log-level&#39;</span> : log_level }</div>
-<div class="line"><span class="lineno">   54</span>                    ],</div>
-<div class="line"><span class="lineno">   55</span>            ),</div>
-<div class="line"><span class="lineno">   56</span>        ]</div>
-<div class="line"><span class="lineno">   57</span>    )</div>
-<div class="line"><span class="lineno">   58</span> </div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
-<div class="line"><span class="lineno">   60</span>        declare_log_level_arg,</div>
-<div class="line"><span class="lineno">   61</span>        container</div>
-<div class="line"><span class="lineno">   62</span>    ])</div>
-<div class="ttc" id="anamespacetraffic__incident__parser__launch_html_a87625f907b19959d11f87e382f5d5f9d"><div class="ttname"><a href="namespacetraffic__incident__parser__launch.html#a87625f907b19959d11f87e382f5d5f9d">traffic_incident_parser_launch.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="traffic__incident__parser__launch_8py_source.html#l00031">traffic_incident_parser_launch.py:31</a></div></div>
+<p class="definition">Definition at line <a class="el" href="traffic__incident__parser__launch_8py_source.html#l00029">29</a> of file <a class="el" href="traffic__incident__parser__launch_8py_source.html">traffic_incident_parser_launch.py</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span><span class="keyword">def </span><a class="code hl_function" href="namespacetraffic__incident__parser__launch.html#a87625f907b19959d11f87e382f5d5f9d">generate_launch_description</a>():</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <span class="comment"># Launch node(s) in a carma container to allow logging to be configured</span></div>
+<div class="line"><span class="lineno">   32</span>    container = ComposableNodeContainer(</div>
+<div class="line"><span class="lineno">   33</span>        package=<span class="stringliteral">&#39;carma_ros2_utils&#39;</span>,</div>
+<div class="line"><span class="lineno">   34</span>        name=<span class="stringliteral">&#39;traffic_incident_parser_container&#39;</span>,</div>
+<div class="line"><span class="lineno">   35</span>        namespace=GetCurrentNamespace(),</div>
+<div class="line"><span class="lineno">   36</span>        executable=<span class="stringliteral">&#39;carma_component_container_mt&#39;</span>,</div>
+<div class="line"><span class="lineno">   37</span>        composable_node_descriptions=[</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>            <span class="comment"># Launch the core node(s)</span></div>
+<div class="line"><span class="lineno">   40</span>            ComposableNode(</div>
+<div class="line"><span class="lineno">   41</span>                    package=<span class="stringliteral">&#39;traffic_incident_parser&#39;</span>,</div>
+<div class="line"><span class="lineno">   42</span>                    plugin=<span class="stringliteral">&#39;traffic_incident_parser::TrafficIncidentParserNode&#39;</span>,</div>
+<div class="line"><span class="lineno">   43</span>                    name=<span class="stringliteral">&#39;traffic_incident_parser_node&#39;</span>,</div>
+<div class="line"><span class="lineno">   44</span>                    extra_arguments=[</div>
+<div class="line"><span class="lineno">   45</span>                        {<span class="stringliteral">&#39;use_intra_process_comms&#39;</span>: <span class="keyword">True</span>},</div>
+<div class="line"><span class="lineno">   46</span>                    ],</div>
+<div class="line"><span class="lineno">   47</span>            ),</div>
+<div class="line"><span class="lineno">   48</span>        ]</div>
+<div class="line"><span class="lineno">   49</span>    )</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">return</span> LaunchDescription([</div>
+<div class="line"><span class="lineno">   52</span>        container</div>
+<div class="line"><span class="lineno">   53</span>    ])</div>
+<div class="ttc" id="anamespacetraffic__incident__parser__launch_html_a87625f907b19959d11f87e382f5d5f9d"><div class="ttname"><a href="namespacetraffic__incident__parser__launch.html#a87625f907b19959d11f87e382f5d5f9d">traffic_incident_parser_launch.generate_launch_description</a></div><div class="ttdeci">def generate_launch_description()</div><div class="ttdef"><b>Definition:</b> <a href="traffic__incident__parser__launch_8py_source.html#l00029">traffic_incident_parser_launch.py:29</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -153,7 +146,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacetraffic__incident__parser__launch.html">traffic_incident_parser_launch</a></li>
-    <li class="footer">Generated on Mon Aug 17 2026 18:15:27 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Tue Aug 18 2026 15:11:04 for Carma-platform by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

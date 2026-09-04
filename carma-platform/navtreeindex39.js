@@ -1,5 +1,7 @@
 var NAVTREEINDEX39 =
 {
+"structmotion__computation_1_1Config.html#ae1dc9abcdbf939e77d24e8fe710c5c24":[59,0,25,0,12],
+"structmotion__computation_1_1Config.html#ae1dc9abcdbf939e77d24e8fe710c5c24":[58,0,50,1,12],
 "structmotion__computation_1_1Config.html#ae23d32febf61009d359ca71749e84892":[58,0,50,1,15],
 "structmotion__computation_1_1Config.html#ae23d32febf61009d359ca71749e84892":[59,0,25,0,15],
 "structmotion__computation_1_1Config.html#afae21605b6f71bdad0a4daf31c0ca551":[59,0,25,0,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX39 =
 "structplatooning__strategic__ihp_1_1PlatooningPluginConfig.html#af36c57f40a296fd0f16ab008ea354daf":[59,0,31,3,16],
 "structplatooning__strategic__ihp_1_1PlatooningPluginConfig.html#af36c57f40a296fd0f16ab008ea354daf":[58,0,61,3,16],
 "structplatooning__strategic__ihp_1_1PlatooningPluginConfig.html#af7886595c414ffd605645788ea3757f6":[58,0,61,3,17],
-"structplatooning__strategic__ihp_1_1PlatooningPluginConfig.html#af7886595c414ffd605645788ea3757f6":[59,0,31,3,17],
-"structplatooning__strategic__ihp_1_1PlatooningPluginConfig.html#afac750af4c0f39b2fd2f348fca18c835":[58,0,61,3,9],
-"structplatooning__strategic__ihp_1_1PlatooningPluginConfig.html#afac750af4c0f39b2fd2f348fca18c835":[59,0,31,3,9]
+"structplatooning__strategic__ihp_1_1PlatooningPluginConfig.html#af7886595c414ffd605645788ea3757f6":[59,0,31,3,17]
 };

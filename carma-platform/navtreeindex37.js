@@ -1,5 +1,7 @@
 var NAVTREEINDEX37 =
 {
+"structcarma__cooperative__perception_1_1UtmCoordinate.html":[59,0,7,20],
+"structcarma__cooperative__perception_1_1UtmCoordinate.html":[58,0,12,20],
 "structcarma__cooperative__perception_1_1UtmCoordinate.html#a28e82611172839886d9ce3b004e709a7":[59,0,7,20,1],
 "structcarma__cooperative__perception_1_1UtmCoordinate.html#a28e82611172839886d9ce3b004e709a7":[58,0,12,20,1],
 "structcarma__cooperative__perception_1_1UtmCoordinate.html#a5154f0f2acb6680ad73e7c2ebb1cd7a5":[59,0,7,20,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX37 =
 "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a4815821904dcefecf744a71e0ca50a9e":[59,0,18,2,13],
 "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a4815821904dcefecf744a71e0ca50a9e":[58,0,38,2,13],
 "structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a62ccfdacfd9ef06d1ed0515d7cd6a2d8":[59,0,18,2,8],
-"structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a62ccfdacfd9ef06d1ed0515d7cd6a2d8":[58,0,38,2,8],
-"structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a78e238191c3ba5b1a495a32df80c240b":[59,0,18,2,20],
-"structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a78e238191c3ba5b1a495a32df80c240b":[58,0,38,2,20]
+"structlci__strategic__plugin_1_1LCIStrategicPluginConfig.html#a62ccfdacfd9ef06d1ed0515d7cd6a2d8":[58,0,38,2,8]
 };

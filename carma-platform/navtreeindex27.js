@@ -1,5 +1,7 @@
 var NAVTREEINDEX27 =
 {
+"index.html#autotoc_md146":[0,9,2],
+"index.html#autotoc_md147":[0,9,3],
 "index.html#autotoc_md148":[0,10],
 "index.html#autotoc_md149":[0,11],
 "index.html#autotoc_md150":[0,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX27 =
 "md_Code_of_Conduct.html#autotoc_md85":[20,1],
 "md_Code_of_Conduct.html#autotoc_md86":[20,2],
 "md_Code_of_Conduct.html#autotoc_md87":[20,3],
-"md_Code_of_Conduct.html#autotoc_md88":[20,4],
-"md_Contributing.html":[21],
-"md_Contributing.html#autotoc_md100":[21,0,0,1,6]
+"md_Code_of_Conduct.html#autotoc_md88":[20,4]
 };

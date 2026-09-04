@@ -1,5 +1,7 @@
 var NAVTREEINDEX36 =
 {
+"structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html#ae48fc7188493fdd07e58d765a78ffd17":[58,0,0,5,4],
+"structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html#ae48fc7188493fdd07e58d765a78ffd17":[59,0,0,4,4],
 "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html#ae583a07d646008f81d0ad1d4ed1201dd":[59,0,0,4,2],
 "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html#ae583a07d646008f81d0ad1d4ed1201dd":[58,0,0,5,2],
 "structapproaching__emergency__vehicle__plugin_1_1UpcomingLaneChangeParameters.html#afabe50de6bef9dbcf906f85044b6e56f":[59,0,0,4,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX36 =
 "structcarma__cooperative__perception_1_1Speed.html#a503a3187de256e07c9dc49a3c3c785eb":[58,0,12,18,0],
 "structcarma__cooperative__perception_1_1Speed.html#a503a3187de256e07c9dc49a3c3c785eb":[59,0,7,18,0],
 "structcarma__cooperative__perception_1_1Speed.html#a90f18ea379f0e9fef015718f594ad3f0":[58,0,12,18,1],
-"structcarma__cooperative__perception_1_1Speed.html#a90f18ea379f0e9fef015718f594ad3f0":[59,0,7,18,1],
-"structcarma__cooperative__perception_1_1UtmCoordinate.html":[59,0,7,20],
-"structcarma__cooperative__perception_1_1UtmCoordinate.html":[58,0,12,20]
+"structcarma__cooperative__perception_1_1Speed.html#a90f18ea379f0e9fef015718f594ad3f0":[59,0,7,18,1]
 };

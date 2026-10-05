@@ -121,7 +121,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="kafka__consumer__worker_8h_source.html#l00076">76</a> of file <a class="el" href="kafka__consumer__worker_8h_source.html">kafka_consumer_worker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="kafka__consumer__worker_8h_source.html#l00077">77</a> of file <a class="el" href="kafka__consumer__worker_8h_source.html">kafka_consumer_worker.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3053451cc2b3293a0c13222165c97b05" name="a3053451cc2b3293a0c13222165c97b05"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3053451cc2b3293a0c13222165c97b05">&#9670;&nbsp;</a></span>consumer_event_cb()</h2>
@@ -146,8 +146,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="kafka__consumer__worker_8h_source.html#l00079">79</a> of file <a class="el" href="kafka__consumer__worker_8h_source.html">kafka_consumer_worker.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="kafka__consumer__worker_8h_source.html#l00080">80</a> of file <a class="el" href="kafka__consumer__worker_8h_source.html">kafka_consumer_worker.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -174,8 +174,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="kafka__consumer__worker_8h_source.html#l00080">80</a> of file <a class="el" href="kafka__consumer__worker_8h_source.html">kafka_consumer_worker.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="kafka__consumer__worker_8h_source.html#l00081">81</a> of file <a class="el" href="kafka__consumer__worker_8h_source.html">kafka_consumer_worker.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -204,35 +204,35 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="kafka__consumer__worker_8h_source.html#l00081">81</a> of file <a class="el" href="kafka__consumer__worker_8h_source.html">kafka_consumer_worker.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   82</span>            {</div>
-<div class="line"><span class="lineno">   83</span>                <span class="keywordflow">switch</span> (event.type())</div>
-<div class="line"><span class="lineno">   84</span>                {</div>
-<div class="line"><span class="lineno">   85</span>                <span class="keywordflow">case</span> RdKafka::Event::EVENT_ERROR:</div>
-<div class="line"><span class="lineno">   86</span>                    <span class="keywordflow">if</span> (event.fatal()) </div>
-<div class="line"><span class="lineno">   87</span>                    {</div>
-<div class="line"><span class="lineno">   88</span>                        SPDLOG_CRITICAL(<span class="stringliteral">&quot;{0} : Line {1}. FATAL  {2}  {3}&quot;</span>,__FILE__, __LINE__,RdKafka::err2str(event.err()) ,event.str());</div>
-<div class="line"><span class="lineno">   89</span>                    }</div>
-<div class="line"><span class="lineno">   90</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;{0} : Line {1}. ERROR:  {2}  {3}&quot;</span>,__FILE__, __LINE__,  RdKafka::err2str(event.err()) ,event.str() );</div>
-<div class="line"><span class="lineno">   91</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>                <span class="keywordflow">case</span> RdKafka::Event::EVENT_STATS:</div>
-<div class="line"><span class="lineno">   94</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;{0} : Line {1}. STATS:  {2}  {3}&quot;</span>,__FILE__, __LINE__, RdKafka::err2str(event.err()) ,event.str() );</div>
-<div class="line"><span class="lineno">   95</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>                <span class="keywordflow">case</span> RdKafka::Event::EVENT_LOG:</div>
-<div class="line"><span class="lineno">   98</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;{0} : Line {1}. LOG:  {2}  {3} {4}&quot;</span>,__FILE__, __LINE__, event.severity(), event.fac().c_str(), event.str().c_str() );</div>
-<div class="line"><span class="lineno">   99</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>                <span class="keywordflow">case</span> RdKafka::Event::EVENT_THROTTLE:</div>
-<div class="line"><span class="lineno">  102</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;{0} : Line {1}. THROTTLED: {2} ms by {3} id &quot;</span>,__FILE__, __LINE__, event.throttle_time(),(<span class="keywordtype">int</span>)event.broker_id() );</div>
-<div class="line"><span class="lineno">  103</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>                <span class="keywordflow">default</span>:</div>
-<div class="line"><span class="lineno">  106</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;{0} : Line {1}. EVENT: {1} ms by {2} id &quot;</span>,__FILE__, __LINE__, RdKafka::err2str(event.err()),event.str() );</div>
-<div class="line"><span class="lineno">  107</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  108</span>                }</div>
-<div class="line"><span class="lineno">  109</span>            }</div>
+<p class="definition">Definition at line <a class="el" href="kafka__consumer__worker_8h_source.html#l00082">82</a> of file <a class="el" href="kafka__consumer__worker_8h_source.html">kafka_consumer_worker.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>            {</div>
+<div class="line"><span class="lineno">   84</span>                <span class="keywordflow">switch</span> (event.type())</div>
+<div class="line"><span class="lineno">   85</span>                {</div>
+<div class="line"><span class="lineno">   86</span>                <span class="keywordflow">case</span> RdKafka::Event::EVENT_ERROR:</div>
+<div class="line"><span class="lineno">   87</span>                    <span class="keywordflow">if</span> (event.fatal()) </div>
+<div class="line"><span class="lineno">   88</span>                    {</div>
+<div class="line"><span class="lineno">   89</span>                        SPDLOG_CRITICAL(<span class="stringliteral">&quot;{0} : Line {1}. FATAL  {2}  {3}&quot;</span>,__FILE__, __LINE__,RdKafka::err2str(event.err()) ,event.str());</div>
+<div class="line"><span class="lineno">   90</span>                    }</div>
+<div class="line"><span class="lineno">   91</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;{0} : Line {1}. ERROR:  {2}  {3}&quot;</span>,__FILE__, __LINE__,  RdKafka::err2str(event.err()) ,event.str() );</div>
+<div class="line"><span class="lineno">   92</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>                <span class="keywordflow">case</span> RdKafka::Event::EVENT_STATS:</div>
+<div class="line"><span class="lineno">   95</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;{0} : Line {1}. STATS:  {2}  {3}&quot;</span>,__FILE__, __LINE__, RdKafka::err2str(event.err()) ,event.str() );</div>
+<div class="line"><span class="lineno">   96</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>                <span class="keywordflow">case</span> RdKafka::Event::EVENT_LOG:</div>
+<div class="line"><span class="lineno">   99</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;{0} : Line {1}. LOG:  {2}  {3} {4}&quot;</span>,__FILE__, __LINE__, event.severity(), event.fac().c_str(), event.str().c_str() );</div>
+<div class="line"><span class="lineno">  100</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>                <span class="keywordflow">case</span> RdKafka::Event::EVENT_THROTTLE:</div>
+<div class="line"><span class="lineno">  103</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;{0} : Line {1}. THROTTLED: {2} ms by {3} id &quot;</span>,__FILE__, __LINE__, event.throttle_time(),(<span class="keywordtype">int</span>)event.broker_id() );</div>
+<div class="line"><span class="lineno">  104</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>                <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  107</span>                    SPDLOG_CRITICAL(<span class="stringliteral">&quot;{0} : Line {1}. EVENT: {1} ms by {2} id &quot;</span>,__FILE__, __LINE__, RdKafka::err2str(event.err()),event.str() );</div>
+<div class="line"><span class="lineno">  108</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  109</span>                }</div>
+<div class="line"><span class="lineno">  110</span>            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -245,7 +245,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacekafka__clients.html">kafka_clients</a></li><li class="navelem"><a class="el" href="classkafka__clients_1_1consumer__event__cb.html">consumer_event_cb</a></li>
-    <li class="footer">Generated on Tue Sep 8 2026 19:13:51 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+    <li class="footer">Generated on Mon Oct 5 2026 16:20:45 for Carma-streets by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
 </body>

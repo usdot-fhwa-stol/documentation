@@ -20,11 +20,13 @@ var namespacesensor__data__sharing__service =
     [ "to_yaw_rate_confidence", "namespacesensor__data__sharing__service.html#ac39f27a9a718d07aca61164fc4f15bdd", null ],
     [ "to_z_speed_confidence", "namespacesensor__data__sharing__service.html#a3dab2d908c31f73d1355dbe869283ef4", null ],
     [ "write_detection_metrics", "namespacesensor__data__sharing__service.html#a25a836fe7c6325d6c6709c7c2c61dcf7", null ],
+    [ "DETECTION_METRICS_WRITE_PERIOD_MS", "namespacesensor__data__sharing__service.html#a35edc9b70144469213a629bbc705485e", null ],
     [ "METERS_PER_SECOND_TO_2_CM_PER_SECOND", "namespacesensor__data__sharing__service.html#ab66f41f6981a80f61656cd3c78551a2f", null ],
     [ "METERS_TO_10_CM", "namespacesensor__data__sharing__service.html#aa0f6446b844687fac2e0d45cdfdb6041", null ],
     [ "METERS_TO_5_CM", "namespacesensor__data__sharing__service.html#affe83a8088853a49a55a6db4751130e3", null ],
     [ "METERS_TO_CM", "namespacesensor__data__sharing__service.html#ae0bc66f21c971d9b9021ca02ff052006", null ],
     [ "MILLISECONDS_TO_MICROSECONDS", "namespacesensor__data__sharing__service.html#ada6f6f405701c8030fe52475b74c544b", null ],
     [ "sdsm_object_types", "namespacesensor__data__sharing__service.html#a53662f78d10f163c6206b263db74b62e", null ],
+    [ "SDSM_PUBLISH_PERIOD_MS", "namespacesensor__data__sharing__service.html#a91005b189810455dc4ef05a157726669", null ],
     [ "SECONDS_TO_MILLISECONDS", "namespacesensor__data__sharing__service.html#aefce9304438d6e8ee060b745140f925e", null ]
 ];
